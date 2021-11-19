@@ -4,16 +4,14 @@ const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
 
 module.exports = {
   root: true,
-  extends: [
-    "airbnb",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:testing-library/recommended",
-    "plugin:testing-library/react",
-    "plugin:jest-dom/recommended",
-  ],
+  extends: ["airbnb", "prettier", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
   plugins: ["prettier", "react-hooks", "@typescript-eslint", "testing-library", "jest-dom"],
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    babelOptions: {
+      rootMode: "upward",
+    },
+  },
   rules: {
     "react/jsx-filename-extension": [1, { extensions: javascriptFileExtensions }],
     "react/jsx-wrap-multilines": ["error", { declaration: false, assignment: false }],
@@ -26,6 +24,17 @@ module.exports = {
     "react/jsx-fragments": "off",
     "react/destructuring-assignment": "off",
     "react/jsx-no-bind": "off",
+    "react/no-unstable-nested-components": ["warn", { allowAsProps: true }],
+    "arrow-body-style": "off",
+    "default-param-last": "off",
+    "react/function-component-definition": "off",
+    "no-restricted-exports": "off",
+    "testing-library/render-result-naming-convention": "off",
+    "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
+    "prefer-regex-literals": ["warn", { disallowRedundantWrapping: true }],
+    "default-case-last": "off",
+    "class-methods-use-this": "off",
+    "prefer-arrow-callback": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -47,6 +56,8 @@ module.exports = {
         "react/prop-types": "off",
         "import/no-extraneous-dependencies": "off",
         "react/jsx-no-bind": "off",
+        "react/no-unstable-nested-components": "off",
+        "import/no-relative-packages": "off",
       },
     },
     {
@@ -54,6 +65,10 @@ module.exports = {
       env: { jest: true },
       rules: {
         "import/no-unresolved": [2, { ignore: ["^testing-utils$"] }],
+        "testing-library/prefer-screen-queries": "off",
+        "testing-library/render-result-naming-convention": "warn",
+        "testing-library/no-node-access": "warn",
+        "no-promise-executor-return": "off",
       },
     },
     {
@@ -71,12 +86,7 @@ module.exports = {
           },
         ],
       },
-      extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "prettier/@typescript-eslint",
-      ],
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },

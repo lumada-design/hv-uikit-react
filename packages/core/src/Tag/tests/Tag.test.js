@@ -16,12 +16,12 @@ describe("<Tag />", () => {
     });
 
     it("should correctly render component elements", () => {
-      const { queryByText } = render(<Main />);
+      const { getByText } = render(<Main />);
 
-      expect(queryByText("Informational")).toBeInTheDocument();
-      expect(queryByText("Success")).toBeInTheDocument();
-      expect(queryByText("Warning")).toBeInTheDocument();
-      expect(queryByText("Error")).toBeInTheDocument();
+      expect(getByText("Informational")).toBeInTheDocument();
+      expect(getByText("Success")).toBeInTheDocument();
+      expect(getByText("Warning")).toBeInTheDocument();
+      expect(getByText("Error")).toBeInTheDocument();
     });
   });
 
@@ -165,14 +165,14 @@ describe("<Tag />", () => {
       });
 
       it("should correctly render component elements", () => {
-        const { getAllByRole, queryByText } = render(<CategoricalTags />);
+        const { getAllByRole, getByText } = render(<CategoricalTags />);
 
         expect(getAllByRole("button").length).toBe(5);
-        expect(queryByText("Feat")).toBeInTheDocument();
-        expect(queryByText("Docs")).toBeInTheDocument();
-        expect(queryByText("Fix")).toBeInTheDocument();
-        expect(queryByText("New")).toBeInTheDocument();
-        expect(queryByText("Deprecated")).toBeInTheDocument();
+        expect(getByText("Feat")).toBeInTheDocument();
+        expect(getByText("Docs")).toBeInTheDocument();
+        expect(getByText("Fix")).toBeInTheDocument();
+        expect(getByText("New")).toBeInTheDocument();
+        expect(getByText("Deprecated")).toBeInTheDocument();
       });
     });
 

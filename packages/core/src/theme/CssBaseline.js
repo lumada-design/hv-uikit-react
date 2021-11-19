@@ -1,4 +1,3 @@
-import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 const html = {
@@ -56,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 function CssBaseline() {
   useStyles();
 
-  return <></>;
+  return null;
 }
 
 export default CssBaseline;

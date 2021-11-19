@@ -207,6 +207,8 @@ describe("HvRadioGroup", () => {
 
       const radioGroup = getByRole("radiogroup");
       const labelId = radioGroup.getAttribute("aria-labelledby");
+      // the direct node access is intentional
+      // eslint-disable-next-line testing-library/no-node-access
       const label = document.getElementById(labelId);
       expect(label).toHaveTextContent("Choose your favorite checkboxes*");
     });
@@ -427,9 +429,7 @@ describe("HvRadioGroup", () => {
       );
       const radioGroup = getByRole("radiogroup");
       expect(radioGroup).toBeInvalid();
-      const errorId = radioGroup.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-      expect(error).toHaveTextContent("No way for this to be valid!");
+      expect(radioGroup).toHaveErrorMessage("No way for this to be valid!");
     });
     it("doesn't display the statusMessage when the status is valid", () => {
       const { getByRole, queryByText } = render(

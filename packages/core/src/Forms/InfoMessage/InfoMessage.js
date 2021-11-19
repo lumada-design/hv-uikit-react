@@ -26,20 +26,18 @@ const HvInfoMessage = (props) => {
   const localId = id ?? setId(elementId, "description");
 
   return (
-    <>
-      <HvTypography
-        id={localId}
-        className={clsx(className, classes.root, {
-          [classes.infoDisabled]: localDisabled,
-          [classes.gutter]: !disableGutter,
-        })}
-        variant="normalText"
-        component="label"
-        {...others}
-      >
-        {children}
-      </HvTypography>
-    </>
+    <HvTypography
+      id={localId}
+      className={clsx(className, classes.root, {
+        [classes.infoDisabled]: localDisabled,
+        [classes.gutter]: !disableGutter,
+      })}
+      variant="normalText"
+      component="label"
+      {...others}
+    >
+      {children}
+    </HvTypography>
   );
 };
 

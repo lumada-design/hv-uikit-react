@@ -85,11 +85,7 @@ ReadOnly.parameters = {
   },
 };
 
-export const Required = () => (
-  <>
-    <HvSwitch required defaultChecked aria-label="Engine 1" />
-  </>
-);
+export const Required = () => <HvSwitch required defaultChecked aria-label="Engine 1" />;
 
 Required.parameters = {
   docs: {

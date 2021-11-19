@@ -97,13 +97,11 @@ WithoutLabel.parameters = {
 };
 
 export const Required = () => (
-  <>
-    <HvCheckBoxGroup orientation="horizontal" label="Select at least one" required>
-      <HvCheckBox label="Checkbox 1" value="1" />
-      <HvCheckBox label="Checkbox 2" value="2" checked />
-      <HvCheckBox label="Checkbox 3" value="3" />
-    </HvCheckBoxGroup>
-  </>
+  <HvCheckBoxGroup orientation="horizontal" label="Select at least one" required>
+    <HvCheckBox label="Checkbox 1" value="1" />
+    <HvCheckBox label="Checkbox 2" value="2" checked />
+    <HvCheckBox label="Checkbox 3" value="3" />
+  </HvCheckBoxGroup>
 );
 
 Required.parameters = {

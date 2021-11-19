@@ -78,7 +78,8 @@ const HvSingleCalendar = ({
     // This code is very brittle and should be managed with the focus wrapper
     const el = document?.activeElement;
     const parent = el?.parentElement?.parentElement;
-    const siblings = [...parent?.getElementsByClassName(classes.cellContainer)];
+    const siblings =
+      parent != null ? [...parent.getElementsByClassName(classes.cellContainer)] : [];
     const elIndex = siblings.indexOf(el);
 
     if (isKeypress(event, Enter)) {
@@ -133,34 +134,32 @@ const HvSingleCalendar = ({
           onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
         />
-        <>
-          {calViewMode === VIEW_MODE.CALENDAR && (
-            <div>
-              <HvComposedNavigation
-                id={id}
-                locale={locale}
-                onChange={onVisibleDateChange}
-                onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-                visibleYear={visibleYear || today.getFullYear()}
-                visibleMonth={visibleMonth || today.getMonth() + 1}
-              />
-              <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
-                <CalendarWeekLabels labels={listWeekdayNames} />
-                {calModel.dates.map(renderCalendarDate)}
-              </div>
-            </div>
-          )}
-          {calViewMode === VIEW_MODE.MONTHLY && (
-            <HvMonthSelector
+        {calViewMode === VIEW_MODE.CALENDAR && (
+          <div>
+            <HvComposedNavigation
               id={id}
               locale={locale}
               onChange={onVisibleDateChange}
               onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+              visibleYear={visibleYear || today.getFullYear()}
               visibleMonth={visibleMonth || today.getMonth() + 1}
-              rangeMode={rangeMode}
             />
-          )}
-        </>
+            <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
+              <CalendarWeekLabels labels={listWeekdayNames} />
+              {calModel.dates.map(renderCalendarDate)}
+            </div>
+          </div>
+        )}
+        {calViewMode === VIEW_MODE.MONTHLY && (
+          <HvMonthSelector
+            id={id}
+            locale={locale}
+            onChange={onVisibleDateChange}
+            onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+            visibleMonth={visibleMonth || today.getMonth() + 1}
+            rangeMode={rangeMode}
+          />
+        )}
       </div>
     </div>
   );

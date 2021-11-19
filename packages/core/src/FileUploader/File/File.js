@@ -24,7 +24,7 @@ const getProgressText = (classes, data) => {
 
   return (
     <>
-      {data.progress || data.size || data.errorMessage ? `\xa0|\xa0` : <></>}
+      {data.progress || data.size || data.errorMessage ? `\xa0|\xa0` : null}
 
       {inProgress && data.progress != null && (
         <HvTypography variant="highlightText">

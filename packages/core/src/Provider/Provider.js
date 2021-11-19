@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 
 import set from "lodash/set";
@@ -88,7 +88,10 @@ const HvProvider = ({
   const generateClassName =
     generateClassNameProp || createGenerateClassName(generateClassNameOptions);
 
-  const pConfig = { changeTheme, locale: localeSetting };
+  const pConfig = useMemo(
+    () => ({ changeTheme, locale: localeSetting }),
+    [changeTheme, localeSetting]
+  );
 
   return (
     <MuiStylesProvider

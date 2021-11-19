@@ -148,11 +148,9 @@ const DropZone = ({
 
         <div className={classes.dropArea}>
           {dragState ? (
-            <>
-              <div className={classes.dropZoneAreaLabels}>
-                <HvTypography className={classes.dragText}>{labels.dropFiles}</HvTypography>
-              </div>
-            </>
+            <div className={classes.dropZoneAreaLabels}>
+              <HvTypography className={classes.dragText}>{labels.dropFiles}</HvTypography>
+            </div>
           ) : (
             <>
               <Doc

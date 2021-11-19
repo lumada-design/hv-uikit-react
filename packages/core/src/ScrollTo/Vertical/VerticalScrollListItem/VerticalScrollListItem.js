@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -25,9 +25,9 @@ const HvVerticalScrollListItem = (props) => {
   const labelId = setId(id, "label");
   const buttonId = setId(id, "button");
   const Tooltip = tooltipWrapper;
-  const NotSelected = () => {
+  const NotSelected = useCallback(() => {
     return <div className={classes.notSelected} />;
-  };
+  }, [classes.notSelected]);
   const icon = selected ? <CurrentStep height="10px" width="10px" /> : <NotSelected />;
   return (
     <li id={id} className={clsx(className, classes.root)} aria-current={selected}>

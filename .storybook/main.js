@@ -82,8 +82,6 @@ module.exports = {
       "@hv/uikit-react-icons": iconsPackageBin,
       "@hv/uikit-react-lab": labPackageSrc,
 
-      "react-hook-form": "react-hook-form/dist/index.ie11",
-
       "storybook-root": storybookFolder,
     };
 

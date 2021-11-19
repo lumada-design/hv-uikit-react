@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useMemo, useReducer } from "react";
 import PropTypes from "prop-types";
 
 const reducer = (state, action) => {
@@ -15,9 +15,10 @@ const FocusContext = createContext(initialState);
 
 const FocusProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const contextValue = useMemo(() => ({ ...state, dispatch }), [state, dispatch]);
   const { children } = props;
 
-  return <FocusContext.Provider value={{ state, dispatch }}>{children}</FocusContext.Provider>;
+  return <FocusContext.Provider value={contextValue}>{children}</FocusContext.Provider>;
 };
 
 FocusProvider.propTypes = {

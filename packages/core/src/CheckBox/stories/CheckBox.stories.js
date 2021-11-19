@@ -103,11 +103,7 @@ WithoutLabel.parameters = {
   },
 };
 
-export const Required = () => (
-  <>
-    <HvCheckBox required defaultChecked label="Checkbox 1" />
-  </>
-);
+export const Required = () => <HvCheckBox required defaultChecked label="Checkbox 1" />;
 
 Required.parameters = {
   docs: {

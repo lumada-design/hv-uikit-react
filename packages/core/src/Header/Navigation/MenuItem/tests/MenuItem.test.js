@@ -5,12 +5,12 @@ import HvProvider from "../../../../Provider";
 import SelectionContext from "../../utils/SelectionContext";
 import MenuItem from "../index";
 
+const contextValue = ["someId"];
+
 describe("MenuItem withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {
-    const contextValue = ["someId"];
-
     wrapper = mount(
       <HvProvider>
         <SelectionContext.Provider value={contextValue}>

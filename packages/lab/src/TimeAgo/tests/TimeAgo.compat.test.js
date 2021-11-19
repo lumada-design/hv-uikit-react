@@ -21,6 +21,15 @@ jest.mock("../formatUtils", () => ({
 }));
 
 describe("TimeAgo", () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.spyOn(global, "setTimeout");
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
   it("should be defined", () => {
     expect(HvTimeAgo).toBeDefined();
   });

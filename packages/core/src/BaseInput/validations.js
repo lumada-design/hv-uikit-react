@@ -19,9 +19,8 @@ const isNumeric = (num) =>
  * @returns {Boolean} - `true` if the value is an email `false` otherwise.
  */
 const isEmail = (email) => {
-  const regexp = new RegExp(
-    "^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$"
-  );
+  const regexp =
+    /^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$/i;
   return regexp.test(email);
 };
 

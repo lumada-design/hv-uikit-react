@@ -52,44 +52,50 @@ describe("TimeAgo without timestamp", () => {
 
 describe("TimeAgo with timestamp", () => {
   const timestamp = Date.now();
-  let wrapper;
 
-  beforeEach(() => {
-    wrapper = render(
+  it("should be defined", () => {
+    const { container } = render(
       <HvProvider>
         <HvTimeAgo timestamp={timestamp} />
       </HvProvider>
     );
-  });
 
-  it("should be defined", () => {
-    expect(wrapper.container).toBeDefined();
+    expect(container).toBeDefined();
   });
 
   it("should contain the relative time", () => {
-    const component = wrapper.getByText("MOCK_TIME_AGO");
+    const { getByText } = render(
+      <HvProvider>
+        <HvTimeAgo timestamp={timestamp} />
+      </HvProvider>
+    );
+
+    const component = getByText("MOCK_TIME_AGO");
     expect(component).toBeVisible();
   });
 });
 
 describe("TimeAgo with custom Button element", () => {
   const timestamp = Date.now();
-  let wrapper;
 
-  beforeEach(() => {
-    wrapper = render(
+  it("should be defined", () => {
+    const { container } = render(
       <HvProvider>
         <HvTimeAgo timestamp={timestamp} component={HvButton} />
       </HvProvider>
     );
-  });
 
-  it("should be defined", () => {
-    expect(wrapper.container).toBeDefined();
+    expect(container).toBeDefined();
   });
 
   it("should render the Button", () => {
-    const component = wrapper.getByRole("button");
+    const { getByRole } = render(
+      <HvProvider>
+        <HvTimeAgo timestamp={timestamp} component={HvButton} />
+      </HvProvider>
+    );
+
+    const component = getByRole("button");
     expect(component).toBeVisible();
   });
 });

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import capitalize from "lodash/capitalize";
@@ -43,7 +43,10 @@ const HvBanner = (props) => {
 
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
-  const SlideTransition = (properties) => <Slide {...properties} direction={transitionDirection} />;
+  const SlideTransition = useCallback(
+    (properties) => <Slide {...properties} direction={transitionDirection} />,
+    [transitionDirection]
+  );
 
   return (
     <Snackbar

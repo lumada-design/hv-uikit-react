@@ -48,17 +48,17 @@ describe("Accordion", () => {
       userEvent.click(analyticsItem); // open
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
-        userEvent.tab();
-        expect(analyticsContent).toHaveFocus();
-        userEvent.click(analyticsItem); // close
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
+      userEvent.tab();
+      expect(analyticsContent).toHaveFocus();
+      userEvent.click(analyticsItem); // close
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-        userEvent.tab();
-        expect(analyticsContent).not.toHaveFocus();
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
+      userEvent.tab();
+      expect(analyticsContent).not.toHaveFocus();
     });
     it("opens and closes the content using the keyboard", async () => {
       render(<Main />);
@@ -72,17 +72,17 @@ describe("Accordion", () => {
       fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 }); // open
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
-        userEvent.tab();
-        expect(analyticsContent).toHaveFocus();
-        fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 });
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
+      userEvent.tab();
+      expect(analyticsContent).toHaveFocus();
+      fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 });
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-        userEvent.tab();
-        expect(analyticsContent).not.toHaveFocus();
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
+      userEvent.tab();
+      expect(analyticsContent).not.toHaveFocus();
     });
     it("cannot open a disabled accordion", async () => {
       render(<Disabled />);
@@ -96,11 +96,11 @@ describe("Accordion", () => {
       userEvent.click(analyticsItem); // try to open
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-        expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-        userEvent.tab();
-        expect(analyticsContent).not.toHaveFocus();
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
+      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
+      userEvent.tab();
+      expect(analyticsContent).not.toHaveFocus();
     });
     it("cannot open a disabled accordion with keyboard", async () => {
       render(<Disabled />);
@@ -114,11 +114,11 @@ describe("Accordion", () => {
       fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 }); // try to open
       await waitFor(() => {
         expect(analyticsItem).toBeInTheDocument();
-        expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
-        expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
-        userEvent.tab();
-        expect(analyticsContent).not.toHaveFocus();
       });
+      expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
+      expect(analyticsItem).toHaveAttribute("aria-disabled", "true");
+      userEvent.tab();
+      expect(analyticsContent).not.toHaveFocus();
     });
   });
 });

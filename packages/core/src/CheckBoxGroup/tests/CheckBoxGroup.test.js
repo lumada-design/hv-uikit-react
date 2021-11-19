@@ -257,6 +257,9 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxGroup = getByRole("group");
       const labelId = checkboxGroup.getAttribute("aria-labelledby");
+
+      // direct node access is intentional
+      // eslint-disable-next-line testing-library/no-node-access
       const label = document.getElementById(labelId);
       expect(label).toHaveTextContent("Favorite Pet*");
     });
@@ -537,11 +540,7 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxGroup = getByRole("group");
       expect(checkboxGroup).toBeInvalid();
-
-      const errorId = checkboxGroup.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("The error message");
+      expect(checkboxGroup).toHaveErrorMessage("The error message");
     });
 
     it("doesn't display the statusMessage when the status is valid", () => {
@@ -594,11 +593,7 @@ describe("HvCheckBoxGroup", () => {
       userEvent.click(dragons);
 
       expect(checkboxGroup).toBeInvalid();
-
-      const errorId = checkboxGroup.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("Required");
+      expect(checkboxGroup).toHaveErrorMessage("Required");
     });
 
     it("built-in validation: displays error when required and select all is unchecked", () => {
@@ -617,11 +612,7 @@ describe("HvCheckBoxGroup", () => {
       userEvent.click(selectAll);
 
       expect(checkboxGroup).toBeInvalid();
-
-      const errorId = checkboxGroup.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("Required");
+      expect(checkboxGroup).toHaveErrorMessage("Required");
     });
 
     it("built-in validation: doesn't display error before user interaction", () => {
@@ -642,11 +633,7 @@ describe("HvCheckBoxGroup", () => {
       userEvent.click(dragons);
 
       expect(checkboxGroup).toBeInvalid();
-
-      const errorId = checkboxGroup.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("Required");
+      expect(checkboxGroup).toHaveErrorMessage("Required");
     });
   });
 

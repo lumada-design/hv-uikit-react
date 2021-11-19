@@ -20,17 +20,17 @@ import {
 
 import { makeData, getColumns } from "./utils";
 
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell colSpan="100%" style={{ height: 100 }}>
+      <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
+    </HvTableCell>
+  </HvTableRow>
+);
+
 const KitchenSink = () => {
   const columns = useMemo(() => getColumns(), []);
   const [data, setData] = useState(makeData(64));
-
-  const EmptyRow = () => (
-    <HvTableRow>
-      <HvTableCell colSpan="100%" style={{ height: 100 }}>
-        <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
-      </HvTableCell>
-    </HvTableRow>
-  );
 
   const instance = useHvTable(
     { columns, data, autoResetSelectedRows: false },

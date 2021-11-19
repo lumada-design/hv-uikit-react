@@ -21,6 +21,7 @@ describe("HvFileUploaderPreview", () => {
 
       expect(button).not.toBeInTheDocument();
       expect(child).toBeInTheDocument();
+      // eslint-disable-next-line testing-library/no-node-access
       expect(container.firstChild).toBe(child);
     });
 
@@ -38,6 +39,7 @@ describe("HvFileUploaderPreview", () => {
 
       expect(button).toBeInTheDocument();
       expect(child).toBeInTheDocument();
+      // eslint-disable-next-line testing-library/no-node-access
       expect(container.firstChild).toBe(button);
     });
 

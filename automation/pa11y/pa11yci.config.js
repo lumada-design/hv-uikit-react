@@ -62,6 +62,9 @@ module.exports = (async () => {
         // https://github.com/pa11y/pa11y/issues/422
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast",
+        // Incorrect Reporting of: This element's role is "presentation" but contains child elements with semantic meaning.
+        // https://github.com/squizlabs/HTML_CodeSniffer/issues/274
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4",
       ],
       runners: ["htmlcs", "axe"],
       standard: "WCAG2AA",

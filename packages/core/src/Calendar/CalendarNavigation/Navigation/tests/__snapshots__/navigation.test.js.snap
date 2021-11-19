@@ -116,14 +116,14 @@ exports[`<Navigation /> should render correctly 1`] = `
         </WithStyles(ForwardRef)>
       </div>
       <DropRightXS
-        className="HvCalendarNavigation-icon"
+        className="HvCalendarNavigation-icon "
         id="id1-right"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
         <HvIconBase
-          className="HvCalendarNavigation-icon"
+          className="HvCalendarNavigation-icon "
           iconSize="XS"
           id="id1-right"
           name="DropRightXS"
@@ -132,7 +132,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           tabIndex={0}
         >
           <div
-            className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
+            className="HvCalendarNavigation-icon  HvIconBase-root HvIconBase-xs"
             id="id1-right"
             name="DropRightXS"
             onClick={[Function]}

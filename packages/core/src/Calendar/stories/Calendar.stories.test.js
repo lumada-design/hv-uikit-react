@@ -197,34 +197,32 @@ export const Localized = () => {
   };
 
   return (
-    <>
-      <div style={{ display: "flex", justifyContent: "space-around", width: "650px" }}>
-        <HvDropdown
-          id="dropdown7"
-          onChange={(item) => setLocale(item.id)}
-          values={[
-            { id: "pt", label: "Portuguese" },
-            { id: "en", label: "English" },
-          ]}
-          label="Select language"
-        />
-        <HvFormElement value={selectionDate} locale={locale}>
-          <HvLabel id="locale-label" label="Calendar that changes location">
-            <HvCalendar
-              id="locale-calendar"
-              onChange={onChangeHandler}
-              onInputChange={onChangeHandler}
-              onVisibleDateChange={visibleDateChangeHandler}
-              visibleMonth={visibleMonth}
-              visibleYear={visibleYear}
-              minimumDate={new Date(2020, 5, 1)}
-              maximumDate={new Date(2020, 11, 10)}
-              locale={locale}
-            />
-          </HvLabel>
-        </HvFormElement>
-      </div>
-    </>
+    <div style={{ display: "flex", justifyContent: "space-around", width: "650px" }}>
+      <HvDropdown
+        id="dropdown7"
+        onChange={(item) => setLocale(item.id)}
+        values={[
+          { id: "pt", label: "Portuguese" },
+          { id: "en", label: "English" },
+        ]}
+        label="Select language"
+      />
+      <HvFormElement value={selectionDate} locale={locale}>
+        <HvLabel id="locale-label" label="Calendar that changes location">
+          <HvCalendar
+            id="locale-calendar"
+            onChange={onChangeHandler}
+            onInputChange={onChangeHandler}
+            onVisibleDateChange={visibleDateChangeHandler}
+            visibleMonth={visibleMonth}
+            visibleYear={visibleYear}
+            minimumDate={new Date(2020, 5, 1)}
+            maximumDate={new Date(2020, 11, 10)}
+            locale={locale}
+          />
+        </HvLabel>
+      </HvFormElement>
+    </div>
   );
 };
 

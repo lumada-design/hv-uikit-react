@@ -57,13 +57,13 @@ describe("DropDownMenu", () => {
     fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "true");
-      const option = getByRole("menuitem", { name: "Label 1" });
-      expect(option).toBeInTheDocument();
-      const option2 = getByRole("menuitem", { name: "Label 2" });
-      expect(option2).toBeInTheDocument();
-      const option3 = getByRole("menuitem", { name: "Label 3" });
-      expect(option3).toBeInTheDocument();
     });
+    const option = getByRole("menuitem", { name: "Label 1" });
+    expect(option).toBeInTheDocument();
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
   });
 
   it("closes on enter", async () => {
@@ -74,13 +74,13 @@ describe("DropDownMenu", () => {
     fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "true");
-      const option = getByRole("menuitem", { name: "Label 1" });
-      expect(option).toBeInTheDocument();
-      const option2 = getByRole("menuitem", { name: "Label 2" });
-      expect(option2).toBeInTheDocument();
-      const option3 = getByRole("menuitem", { name: "Label 3" });
-      expect(option3).toBeInTheDocument();
     });
+    const option = getByRole("menuitem", { name: "Label 1" });
+    expect(option).toBeInTheDocument();
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
     fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "false");
@@ -95,13 +95,13 @@ describe("DropDownMenu", () => {
     fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "true");
-      const option = getByRole("menuitem", { name: "Label 1" });
-      expect(option).toBeInTheDocument();
-      const option2 = getByRole("menuitem", { name: "Label 2" });
-      expect(option2).toBeInTheDocument();
-      const option3 = getByRole("menuitem", { name: "Label 3" });
-      expect(option3).toBeInTheDocument();
     });
+    const option = getByRole("menuitem", { name: "Label 1" });
+    expect(option).toBeInTheDocument();
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
   });
 
   it("closes on space", async () => {
@@ -112,13 +112,13 @@ describe("DropDownMenu", () => {
     fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "true");
-      const option = getByRole("menuitem", { name: "Label 1" });
-      expect(option).toBeInTheDocument();
-      const option2 = getByRole("menuitem", { name: "Label 2" });
-      expect(option2).toBeInTheDocument();
-      const option3 = getByRole("menuitem", { name: "Label 3" });
-      expect(option3).toBeInTheDocument();
     });
+    const option = getByRole("menuitem", { name: "Label 1" });
+    expect(option).toBeInTheDocument();
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
     fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
     await waitFor(() => {
       expect(openButton).toHaveAttribute("aria-expanded", "false");
