@@ -13,6 +13,7 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { page: DocsPage, container: DocsContainer, extractArgTypes },
   options: {
+    isToolshown: true,
     storySort: storySort({
       method: "alphabetical",
       order: [
