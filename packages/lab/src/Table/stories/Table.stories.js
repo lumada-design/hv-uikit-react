@@ -580,7 +580,7 @@ TableWithIncludedChart.parameters = {
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    waitBeforeCapture: "[id|=reactgooglegraph]",
   },
 };
 
