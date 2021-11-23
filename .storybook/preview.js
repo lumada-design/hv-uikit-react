@@ -17,7 +17,7 @@ export const parameters = {
       method: "alphabetical",
       order: [
         "Get Started",
-        ["Introduction", "Installation", "Component List"],
+        ["Introduction", "Installation", "Component List", "Styling"],
         "Foundation",
         ["Grid", "Container", "Provider", "Theming", "Typography", "Colors", "Icons"],
         "Components",
