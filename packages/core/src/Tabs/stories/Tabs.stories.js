@@ -28,7 +28,7 @@ export const Main = () => {
 };
 
 Main.parameters = {
-  eyes: { waitBeforeScreenshot: "#tabs-main" },
+  eyes: { waitBeforeCapture: "#tabs-main" },
 };
 
 export const FullWidth = () => {
@@ -78,7 +78,7 @@ ContentChanging.parameters = {
   docs: {
     description: { story: "Tabs changing the content to display according to the selected tab" },
   },
-  eyes: { waitBeforeScreenshot: "#tabs-content-change" },
+  eyes: { waitBeforeCapture: "#tabs-content-change" },
 };
 
 export const TextSize = () => {
@@ -102,7 +102,7 @@ export const TextSize = () => {
 };
 
 TextSize.parameters = {
-  eyes: { waitBeforeScreenshot: "#tabs-text-size" },
+  eyes: { waitBeforeCapture: "#tabs-text-size" },
 };
 
 export const CenteredTabs = () => {
@@ -127,7 +127,7 @@ export const CenteredTabs = () => {
 };
 
 CenteredTabs.parameters = {
-  eyes: { waitBeforeScreenshot: "#tabs-centered" },
+  eyes: { waitBeforeCapture: "#tabs-centered" },
 };
 
 export const WithBadges = () => {
@@ -161,5 +161,5 @@ WithBadges.parameters = {
   docs: {
     description: { story: "Badges applied to Tabs component." },
   },
-  eyes: { waitBeforeScreenshot: "#tabs-with-badge" },
+  eyes: { waitBeforeCapture: "#tabs-with-badge" },
 };

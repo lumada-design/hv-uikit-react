@@ -322,3 +322,10 @@ export const BulkActionsInFilteredTable = () => {
     </>
   );
 };
+
+BulkActionsInFilteredTable.parameters = {
+  eyes: {
+    // excluded due to dynamic data
+    include: false,
+  },
+};

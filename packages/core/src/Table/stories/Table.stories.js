@@ -1383,7 +1383,7 @@ WithCheckboxCustomContent.parameters = {
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    waitBeforeCapture: "[id|=reactgooglegraph]",
   },
 };
 
@@ -2257,7 +2257,7 @@ ServerSidePagination.parameters = {
     },
   },
   eyes: {
-    waitBeforeScreenshot: "div[role=cell][id*='createdDate']",
+    waitBeforeCapture: "div[role=cell][id*='createdDate']",
   },
 };
 

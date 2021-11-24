@@ -139,7 +139,7 @@ IOPS.parameters = {
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    waitBeforeCapture: "[id|=reactgooglegraph]",
   },
 };
 
@@ -235,7 +235,7 @@ Selectable.parameters = {
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    waitBeforeCapture: "[id|=reactgooglegraph]",
   },
 };
 
@@ -317,6 +317,6 @@ SelectableSemantic.parameters = {
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    waitBeforeCapture: "[id|=reactgooglegraph]",
   },
 };
