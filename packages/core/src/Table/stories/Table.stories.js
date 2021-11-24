@@ -1,7 +1,7 @@
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
 import { makeStyles } from "@material-ui/core/styles";
 import orderBy from "lodash/orderBy";
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Chart from "react-google-charts";
 
 import { HvEmptyState, HvTable, HvButton } from "../..";
@@ -2526,4 +2526,157 @@ TableDataDeletion.parameters = {
   docs: {
     description: { story: "Sample showcasing data deletion with transition to empty state." },
   },
+};
+
+export const BulkReset = () => {
+  const columns = useMemo(
+    () => [
+      {
+        headerText: "Customer",
+        accessor: "customer",
+        cellType: "alpha-numeric",
+      },
+      {
+        headerText: "Dealsize",
+        accessor: "dealSize",
+        cellType: "numeric",
+      },
+      {
+        headerText: "Sales",
+        accessor: "sales",
+        cellType: "numeric",
+      },
+      {
+        headerText: "Order Number",
+        accessor: "orderNumber",
+        cellType: "numeric",
+      },
+    ],
+    []
+  );
+
+  const defaultSorted = useMemo(() => [{ id: "sales", desc: true }], []);
+
+  const [data, setData] = useState([
+    {
+      id: 1,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Small",
+      sales: "2871.0",
+      salesGrowth: "925.7",
+      orderNumber: "10100",
+      color: "red",
+    },
+    {
+      id: 2,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Small",
+      sales: "2765.9",
+      salesGrowth: "119.3",
+      orderNumber: "10100",
+      color: "orange",
+    },
+    {
+      id: 3,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Medium",
+      sales: "3884.3",
+      salesGrowth: "94.7",
+      orderNumber: "10101",
+      color: "blue",
+    },
+    {
+      id: 4,
+      customer: "Online Diecast Creation",
+      dealSize: "Medium",
+      sales: "3746.7",
+      salesGrowth: "30.2",
+      orderNumber: "10102",
+      color: "yellow",
+    },
+    {
+      id: 5,
+      customer: "Vitachrome Inc.",
+      dealSize: "Small",
+      sales: "5205.3",
+      salesGrowth: "1000.6",
+      orderNumber: "10102",
+      color: "green",
+    },
+    {
+      id: 6,
+      customer: "Quartz co.",
+      dealSize: "Big",
+      sales: "7205.3",
+      salesGrowth: "21670.6",
+      orderNumber: "11234",
+      color: "cyan",
+    },
+    {
+      id: 7,
+      customer: "Plumb inc.",
+      dealSize: "Small",
+      sales: "105.3",
+      salesGrowth: "1370.6",
+      orderNumber: "114",
+      color: "yellow",
+    },
+  ]);
+
+  const [pageSize, setPageSize] = useState(5);
+  const onPageSizeChange = (newPageSize) => {
+    setPageSize(newPageSize);
+  };
+
+  const [selections, setSelections] = useState([]);
+  const onSelection = useCallback((event, selection) => {
+    setSelections(selection);
+  }, []);
+
+  const bulkActions = useMemo(
+    () => [
+      { id: "delete", label: "Delete", icon: <Delete /> },
+      { id: "countAndReset", label: "Count and reset" },
+      { id: "countAndKeep", label: "Just count" },
+    ],
+    []
+  );
+  const handleBulk = useCallback(
+    (event, id, action, selection = []) => {
+      switch (action.id) {
+        case "delete":
+          setData(data.filter((el) => !selection.includes(el.id)));
+          setSelections([]);
+          break;
+        case "countAndReset":
+          alert(`You selected ${selection.length} items`);
+          setSelections([]);
+          break;
+        case "countAndKeep":
+          alert(`You selected ${selection.length} items`);
+          break;
+        default:
+          break;
+      }
+    },
+    [data]
+  );
+
+  return (
+    <div>
+      <HvTable
+        columns={columns}
+        defaultSorted={defaultSorted}
+        data={data}
+        defaultPageSize={5}
+        pageSize={pageSize}
+        onPageSizeChange={onPageSizeChange}
+        actions={bulkActions}
+        actionsCallback={handleBulk}
+        selections={selections}
+        onSelection={onSelection}
+        idForCheckbox="id"
+      />
+    </div>
+  );
 };
