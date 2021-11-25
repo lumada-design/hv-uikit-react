@@ -97,6 +97,7 @@ const HvAssetInventory = (props) => {
   }, [valuesProp, pageProp, innerPageSize, hasPagination, paginationServerSide]);
 
   useEffect(() => {
+    if (pageSizeProp === undefined) return;
     setPageSize(pageSizeProp);
   }, [pageSizeProp]);
 
