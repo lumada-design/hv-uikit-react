@@ -61,7 +61,6 @@ export const HvTag = (props) => {
       )}
       style={inlineStyle}
       disabled={isDisabled}
-      showCancelIcon={showcancelicon}
       {...others}
     >
       <span className={classes.label}>{children}</span>
