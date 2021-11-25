@@ -294,7 +294,7 @@ const HvDatePicker = (props) => {
 
   const renderInput = (dateString) => (
     <HvTypography variant={dateString ? "normalText" : "placeholderText"}>
-      {dateString || placeholder}
+      {(dateString || placeholder) === undefined ? "" : dateString || placeholder}
     </HvTypography>
   );
 
