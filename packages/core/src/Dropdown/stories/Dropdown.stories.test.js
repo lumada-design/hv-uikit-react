@@ -196,7 +196,6 @@ export const SingleSelectionNoDefault = () => (
     <HvDropdown
       expanded
       id="dropdown8"
-      selectDefault={false}
       disablePortal
       hasTooltips
       values={[

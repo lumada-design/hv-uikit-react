@@ -69,9 +69,9 @@ describe("<Tag />", () => {
           }}
         >
           <HvTag label={textElement("Informational")} onDelete={onClickSpy} />
-          <HvTag label={textElement("Success")} backgroundColor="sema8" onDelete={onClickSpy} />
-          <HvTag label={textElement("Warning")} backgroundColor="sema9" onDelete={onClickSpy} />
-          <HvTag label={textElement("Error")} backgroundColor="sema20" onDelete={onClickSpy} />
+          <HvTag label={textElement("Success")} color="sema8" onDelete={onClickSpy} />
+          <HvTag label={textElement("Warning")} color="sema9" onDelete={onClickSpy} />
+          <HvTag label={textElement("Error")} color="sema20" onDelete={onClickSpy} />
         </div>
       );
 
@@ -112,24 +112,9 @@ describe("<Tag />", () => {
           }}
         >
           <HvTag label={textElement("Informational")} onDelete={onClickSpy} disabled />
-          <HvTag
-            label={textElement("Success")}
-            backgroundColor="sema8"
-            onDelete={onClickSpy}
-            disabled
-          />
-          <HvTag
-            label={textElement("Warning")}
-            backgroundColor="sema9"
-            onDelete={onClickSpy}
-            disabled
-          />
-          <HvTag
-            label={textElement("Error")}
-            backgroundColor="sema20"
-            onDelete={onClickSpy}
-            disabled
-          />
+          <HvTag label={textElement("Success")} color="sema8" onDelete={onClickSpy} disabled />
+          <HvTag label={textElement("Warning")} color="sema9" onDelete={onClickSpy} disabled />
+          <HvTag label={textElement("Error")} color="sema20" onDelete={onClickSpy} disabled />
         </div>
       );
 
@@ -193,25 +178,25 @@ describe("<Tag />", () => {
               label={textElement("Docs")}
               onClick={onClickSpy}
               type="categorical"
-              backgroundColor="cviz2"
+              color="cviz2"
             />
             <HvTag
               label={textElement("Fix")}
               onClick={onClickSpy}
               type="categorical"
-              backgroundColor="cviz3"
+              color="cviz3"
             />
             <HvTag
               label={textElement("New")}
               onClick={onClickSpy}
               type="categorical"
-              backgroundColor="cviz4"
+              color="cviz4"
             />
             <HvTag
               label={textElement("Deprecated")}
               onClick={onClickSpy}
               type="categorical"
-              backgroundColor="cviz5"
+              color="cviz5"
             />
           </>
         );

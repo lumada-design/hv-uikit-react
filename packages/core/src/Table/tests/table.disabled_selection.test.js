@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+/* eslint-disable no-console */
 import React from "react";
 
 import userEvent from "@testing-library/user-event";
@@ -11,6 +11,8 @@ import { WithCheckboxCustomContent } from "../stories/Table.stories";
 describe("Hv Table with disabled checkbox", () => {
   // https://github.com/maslianok/react-resize-detector#testing-with-enzyme-and-jest
   const { ResizeObserver } = window;
+  const consoleSpy = jest.fn();
+  const originalWarn = console.warn;
 
   beforeEach(() => {
     delete window.ResizeObserver;
@@ -24,9 +26,12 @@ describe("Hv Table with disabled checkbox", () => {
   afterEach(() => {
     window.ResizeObserver = ResizeObserver;
     jest.restoreAllMocks();
+    console.warn = originalWarn;
   });
 
   it("should deselect the page except the selected disabled checkbox", () => {
+    consoleSpy.mockReset();
+    console.warn = consoleSpy;
     const { getByRole } = render(<WithCheckboxCustomContent />);
     let bulkSelector = getByRole("checkbox", { name: "2 / 7" });
     expect(bulkSelector).toBeInTheDocument();
@@ -34,6 +39,12 @@ describe("Hv Table with disabled checkbox", () => {
     expect(bulkSelector).toBeChecked();
     bulkSelector = getByRole("checkbox", { name: "1 / 7" });
     expect(bulkSelector).toBeInTheDocument();
+
+    expect(console.warn).toHaveBeenCalledTimes(2);
+    expect(consoleSpy.mock.calls[0][0].includes("componentWillMount has been renamed")).toBe(true);
+    expect(consoleSpy.mock.calls[1][0].includes("componentWillReceiveProps has been renamed")).toBe(
+      true
+    );
   });
 
   it("should select the page except the disabled checkbox", () => {

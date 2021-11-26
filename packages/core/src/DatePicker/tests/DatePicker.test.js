@@ -1,191 +1,305 @@
-import React from "react";
-import { mount } from "enzyme";
-import userEvent from "@testing-library/user-event";
-import { render, waitFor } from "testing-utils";
-import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
-import { HvActionBar, HvProvider, HvCalendar, HvDatePicker } from "../..";
-import SingleCalendar from "../../Calendar/SingleCalendar";
-import { isSameDay, makeUTCDate } from "../../Calendar/utils";
+/* eslint-env jest */
 
+import React from "react";
+
+import userEvent from "@testing-library/user-event";
+
+import { render } from "testing-utils";
+import { HvDatePicker } from "../..";
+import { makeUTCDate } from "../../Calendar/utils";
 import { Main } from "../stories/Datepicker.stories";
 
-describe("<DatePicker /> with minimum configuration", () => {
-  let wrapper;
-  let DatePickerComponent;
+describe("HvDatepicker", () => {
+  jest.setTimeout(30000);
+  describe("sample snapshot testing", () => {
+    it("Main", () => {
+      const { container } = render(<Main />);
+      expect(container).toMatchSnapshot();
+    });
+  });
 
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
+  describe("with minimum configuration", () => {
+    it("should render correctly", () => {
+      const { container } = render(<HvDatePicker />);
+      expect(container).toMatchSnapshot();
+    });
+    it("should not be open", () => {
+      const { queryAllByRole, queryAllByText, getByRole } = render(<HvDatePicker />);
+      const calendarButtons = queryAllByRole("button");
+      const firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+    });
+    it("should render a calendar component", async () => {
+      const { queryAllByRole, queryAllByText, getByRole, findAllByRole, findAllByText } = render(
         <HvDatePicker />
-      </HvProvider>
-    );
-    DatePickerComponent = wrapper.find(HvDatePicker);
+      );
+      let calendarButtons = queryAllByRole("button");
+      let firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+
+      userEvent.click(datePickerDropdown);
+
+      calendarButtons = await findAllByRole("button");
+      firstDayOfTheMonth = await findAllByText("1");
+      expect(calendarButtons.length).toBe(42);
+      expect(firstDayOfTheMonth.length).toBe(2);
+    });
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
-  });
-
-  it("should not render an actions component", () => {
-    expect(DatePickerComponent.find(HvActionBar).length).toBe(0);
-  });
-
-  it("should not render any Calendar component", () => {
-    expect(wrapper.find(HvCalendar).length).toBe(0);
-  });
-
-  it("should add a <Calendar /> component to the container when clicking on the calendar icon", () => {
-    DatePickerComponent.find(CalendarIcon).simulate("click");
-    expect(wrapper.find(HvCalendar).length).toBe(1);
-  });
-
-  it("should open the calendar when clicking the calendar icon", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(HvCalendar).length).toBe(1);
-  });
-
-  it("should not show an Actions component when opening the calendar", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(HvActionBar).length).toBe(0);
-  });
-});
-
-describe("<DatePicker /> with Single Calendar mode", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    // use UTC 12:00 date to minimize issues for snapshots created in different timezones
-    wrapper = mount(
-      <HvProvider>
+  describe("single calendar", () => {
+    it("should render correctly", () => {
+      const { container } = render(
         <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
-      </HvProvider>
-    );
+      );
+      expect(container).toMatchSnapshot();
+    });
+    it("should have a value and not be open", () => {
+      const { queryAllByRole, queryAllByText, getByRole, getByText, queryByDisplayValue } = render(
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
+      );
+      const calendarButtons = queryAllByRole("button");
+      const firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      const datepickerDropdownValue = getByText("1 Jan 2019");
+      const dateInput = queryByDisplayValue("1 Jan 2019");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(datepickerDropdownValue).toBeInTheDocument();
+      expect(dateInput).not.toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+    });
+    it("should render a calendar component with a value", async () => {
+      const {
+        queryAllByRole,
+        queryAllByText,
+        getByRole,
+        findAllByRole,
+        findAllByText,
+        getByText,
+        queryByDisplayValue,
+        findByDisplayValue,
+      } = render(<HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />);
+      let calendarButtons = queryAllByRole("button");
+      let firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      let datepickerDropdownValue = getByText("1 Jan 2019");
+      let dateInput = queryByDisplayValue("1 Jan 2019");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(datepickerDropdownValue).toBeInTheDocument();
+      expect(dateInput).not.toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+
+      userEvent.click(datePickerDropdown);
+
+      calendarButtons = await findAllByRole("button");
+      firstDayOfTheMonth = await findAllByText("1");
+      datepickerDropdownValue = await findAllByText("1 Jan 2019");
+      dateInput = await findByDisplayValue("1 Jan 2019");
+      expect(calendarButtons.length).toBe(42);
+      expect(firstDayOfTheMonth.length).toBe(2);
+      expect(datepickerDropdownValue.length).toBe(1);
+      expect(dateInput).toBeInTheDocument();
+    });
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
-  });
-
-  it("should not render any Calendar component", () => {
-    expect(wrapper.find(HvCalendar).length).toBe(0);
-  });
-
-  it("should open the calendar when clicking the calendar icon", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(HvCalendar).length).toBe(1);
-  });
-
-  it("should not show an Actions component when opening the calendar", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(HvActionBar).length).toBe(0);
-  });
-
-  it("should have the Calendar component with the same selected date as the received value property", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-    const calendarInstance = wrapper.find(HvDatePicker);
-
-    const sameDay = isSameDay(calendarInstance.prop("value"), new Date(2019, 0, 1, 12));
-    expect(sameDay).toEqual(true);
-  });
-});
-
-describe("<DatePicker /> with Range Calendar mode", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
+  describe("ranged calendar", () => {
+    it("should render correctly", () => {
+      const { container } = render(
         <HvDatePicker
           rangeMode
           locale="en-US"
           startValue={new Date(2019, 0, 5, 12)}
           endValue={new Date(2019, 0, 10, 12)}
         />
-      </HvProvider>
-    );
+      );
+      expect(container).toMatchSnapshot();
+    });
+    it("should have a value and not be open", () => {
+      const { queryAllByRole, queryAllByText, getByRole, getByText, queryByDisplayValue } = render(
+        <HvDatePicker
+          rangeMode
+          locale="en-US"
+          startValue={new Date(2019, 0, 5, 12)}
+          endValue={new Date(2019, 0, 10, 12)}
+        />
+      );
+      const calendarButtons = queryAllByRole("button");
+      const firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      const datepickerDropdownValue = getByText("5 - 10 Jan 2019");
+      const dateInputLeft = queryByDisplayValue("5 Jan 2019");
+      const dateInputRight = queryByDisplayValue("10 Jan 2019");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(datepickerDropdownValue).toBeInTheDocument();
+      expect(dateInputLeft).not.toBeInTheDocument();
+      expect(dateInputRight).not.toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+    });
+    it("should render a calendar component with a value", async () => {
+      const {
+        queryAllByRole,
+        queryAllByText,
+        getByRole,
+        findAllByRole,
+        findAllByText,
+        getByText,
+        queryByDisplayValue,
+        findByDisplayValue,
+      } = render(
+        <HvDatePicker
+          rangeMode
+          locale="en-US"
+          startValue={new Date(2019, 0, 5, 12)}
+          endValue={new Date(2019, 0, 10, 12)}
+        />
+      );
+      let calendarButtons = queryAllByRole("button");
+      let firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      let datepickerDropdownValue = getByText("5 - 10 Jan 2019");
+      let dateInputLeft = queryByDisplayValue("5 Jan 2019");
+      let dateInputRight = queryByDisplayValue("10 Jan 2019");
+
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(datepickerDropdownValue).toBeInTheDocument();
+      expect(dateInputLeft).not.toBeInTheDocument();
+      expect(dateInputRight).not.toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+
+      userEvent.click(datePickerDropdown);
+
+      calendarButtons = await findAllByRole("button");
+      firstDayOfTheMonth = await findAllByText("1");
+      datepickerDropdownValue = await findAllByText("5 - 10 Jan 2019");
+      dateInputLeft = await findByDisplayValue("5 Jan 2019");
+      dateInputRight = await findByDisplayValue("10 Jan 2019");
+      expect(calendarButtons.length).toBe(86);
+      expect(firstDayOfTheMonth.length).toBe(4);
+      expect(datepickerDropdownValue.length).toBe(1);
+      expect(dateInputLeft).toBeInTheDocument();
+      expect(dateInputRight).toBeInTheDocument();
+    });
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
+  describe("calendar custom properties", () => {
+    const labels = {
+      applyLabel: "OK",
+      cancelLabel: "GO BACK",
+      title: "TESTING LABEL",
+      placeholder: "I'M THE PLACEHOLDER",
+    };
 
-  it("should not render any Calendar component", () => {
-    expect(wrapper.find(HvCalendar).length).toBe(0);
-  });
-
-  it("should open two calendars when clicking the calendar icon", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(SingleCalendar).length).toBe(2);
-  });
-
-  it("should show an Actions component when opening the calendars", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-
-    expect(wrapper.find(HvActionBar).length).toBe(1);
-  });
-});
-
-describe("<DatePicker /> with custom properties", () => {
-  let wrapper;
-  const labels = {
-    applyLabel: "OK",
-    cancelLabel: "GO BACK",
-    title: "TESTING LABEL",
-    placeholder: "I'M THE PLACEHOLDER",
-  };
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
+    it("should render correctly", () => {
+      const { container } = render(
         <HvDatePicker
           locale="en-US"
-          // use UTC 12:00 date to minimize issues for snapshots created in different timezones
-          value={makeUTCDate(2019, 0, 5, 12)}
           labels={labels}
+          placeholder={labels.placeholder}
           horizontalPlacement="left"
           showActions
           id="testingDatePicker"
         />
-      </HvProvider>
-    );
-  });
+      );
+      expect(container).toMatchSnapshot();
+    });
+    it("should have a value and not be open", () => {
+      const {
+        queryAllByRole,
+        queryAllByText,
+        getByRole,
+        getByText,
+        queryByDisplayValue,
+        queryByText,
+      } = render(
+        <HvDatePicker
+          locale="en-US"
+          labels={labels}
+          placeholder={labels.placeholder}
+          horizontalPlacement="left"
+          showActions
+          id="testingDatePicker"
+        />
+      );
+      const calendarButtons = queryAllByRole("button");
+      const firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      const datepickerPlaceholder = getByText(labels.placeholder);
+      const dateInput = queryByDisplayValue("MM/DD/YYYY");
+      const applyButton = queryByText(labels.applyLabel);
+      const cancelButton = queryByText(labels.cancelLabel);
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(dateInput).not.toBeInTheDocument();
+      expect(applyButton).not.toBeInTheDocument();
+      expect(cancelButton).not.toBeInTheDocument();
+      expect(datepickerPlaceholder).toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
+    });
+    it("should render a calendar component with a value", async () => {
+      const {
+        queryAllByRole,
+        queryAllByText,
+        queryByText,
+        getByRole,
+        findAllByRole,
+        findAllByText,
+        findByText,
+        getByText,
+        queryByDisplayValue,
+        findByPlaceholderText,
+      } = render(
+        <HvDatePicker
+          locale="en-US"
+          labels={labels}
+          placeholder={labels.placeholder}
+          horizontalPlacement="left"
+          showActions
+          id="testingDatePicker"
+        />
+      );
+      let calendarButtons = queryAllByRole("button");
+      let firstDayOfTheMonth = queryAllByText("1");
+      const datePickerDropdown = getByRole("combobox");
+      const datepickerPlaceholder = getByText(labels.placeholder);
+      let dateInput = queryByDisplayValue("MM/DD/YYYY");
+      let applyButton = queryByText(labels.applyLabel);
+      let cancelButton = queryByText(labels.cancelLabel);
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
-  });
+      expect(datePickerDropdown).toBeInTheDocument();
+      expect(dateInput).not.toBeInTheDocument();
+      expect(applyButton).not.toBeInTheDocument();
+      expect(cancelButton).not.toBeInTheDocument();
+      expect(datepickerPlaceholder).toBeInTheDocument();
+      expect(calendarButtons.length).toBe(0);
+      expect(firstDayOfTheMonth.length).toBe(0);
 
-  it("should show an Actions component when opening the calendar", () => {
-    wrapper.find(CalendarIcon).simulate("click");
-    expect(wrapper.find(HvActionBar).length).toBe(1);
-  });
-});
+      userEvent.click(datePickerDropdown);
 
-xit("should focus input on open", async () => {
-  /**
-   *  TODO: The focus should be on the input
-   *  https://insightgroup.atlassian.net/browse/HVUIKIT-5680
-   */
-  const { getByRole, getByPlaceholderText } = render(<Main />);
-  const dropdownElement = getByRole("combobox");
-  userEvent.click(dropdownElement); // open
-  expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
-  const datepickerInput = getByPlaceholderText("MM/DD/YYYY");
-  await waitFor(() => expect(datepickerInput).toHaveFocus());
+      calendarButtons = await findAllByRole("button");
+      firstDayOfTheMonth = await findAllByText("1");
+      dateInput = await findByPlaceholderText("MM/DD/YYYY");
+      applyButton = await findByText(labels.applyLabel);
+      cancelButton = await findByText(labels.cancelLabel);
+      expect(calendarButtons.length).toBe(44);
+      expect(firstDayOfTheMonth.length).toBe(2);
+      expect(dateInput).toBeInTheDocument();
+      expect(applyButton).toBeInTheDocument();
+      expect(cancelButton).toBeInTheDocument();
+    });
+  });
 });

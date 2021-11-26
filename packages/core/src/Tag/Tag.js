@@ -60,23 +60,22 @@ const HvTag = (props) => {
 
     return (
       <HvButton
-        startIcon={
-          <CloseXS
-            iconSize="XS"
-            style={{
-              ...(disabled ? { cursor: "not-allowed" } : undefined),
-              height: 16,
-            }}
-            color={disabled ? disabledSemanticColor : "base2"}
-          />
-        }
         classes={{
           startIcon: classes.tagButton,
           focusVisible: classes.focusVisible,
           primary: classes.primaryButton,
         }}
         aria-label={deleteButtonArialLabel}
-      />
+      >
+        <CloseXS
+          iconSize="XS"
+          style={{
+            ...(disabled ? { cursor: "not-allowed" } : undefined),
+            height: 16,
+          }}
+          color={disabled ? disabledSemanticColor : "base2"}
+        />
+      </HvButton>
     );
   };
 

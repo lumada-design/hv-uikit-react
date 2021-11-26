@@ -558,8 +558,17 @@ exports[`Chart withStyles should render correctly 1`] = `
 
 exports[`Tooltip withStyles should render correctly 1`] = `
 <WithStyles(MainToolTip)
-  coordinates={Object {}}
-  data={Object {}}
+  coordinates={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+  data={
+    Object {
+      "title": "",
+    }
+  }
 >
   <MainToolTip
     classes={
@@ -567,22 +576,35 @@ exports[`Tooltip withStyles should render correctly 1`] = `
         "root": "HvChartTooltip-root",
       }
     }
-    coordinates={Object {}}
-    data={Object {}}
+    coordinates={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    data={
+      Object {
+        "title": "",
+      }
+    }
     useSingle={false}
   >
     <div
       className="HvChartTooltip-root"
       style={
         Object {
-          "left": undefined,
-          "top": undefined,
+          "left": 0,
+          "top": 0,
           "visibility": "hidden",
         }
       }
     >
       <WithStyles(memo(MultiTooltip))
-        data={Object {}}
+        data={
+          Object {
+            "title": "",
+          }
+        }
       >
         <MultiTooltip
           classes={
@@ -597,7 +619,11 @@ exports[`Tooltip withStyles should render correctly 1`] = `
               "valuesContainer": "HvChartMultiTooltip-valuesContainer",
             }
           }
-          data={Object {}}
+          data={
+            Object {
+              "title": "",
+            }
+          }
         >
           <div
             className="HvChartMultiTooltip-root"

@@ -2,6 +2,7 @@
 
 exports[`<Navigation /> navigation should render correctly 1`] = `
 <WithStyles(Navigation)
+  aria-label="Example 1 navigation"
   data={
     Array [
       Object {
@@ -42,11 +43,11 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
       },
     ]
   }
-  label="Example 1 navigation"
   onChange={[MockFunction]}
   selected="01-01"
 >
   <Navigation
+    aria-label="Example 1 navigation"
     classes={
       Object {
         "list": "HvVerticalNavigationNavigation-list",
@@ -94,7 +95,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         },
       ]
     }
-    label="Example 1 navigation"
     onChange={[MockFunction]}
     selected="01-01"
   >

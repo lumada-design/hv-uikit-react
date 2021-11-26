@@ -14,12 +14,7 @@ export default {
 };
 
 export const Main = () => (
-  <HvSelectionList
-    id="main"
-    label="Choose your favorite items"
-    name="favorite"
-    onChange={console.log}
-  >
+  <HvSelectionList id="main" label="Choose your favorite items" name="favorite">
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2" selected>
       ListItem 2
@@ -111,7 +106,6 @@ export const Controlled = () => {
   const [status, setStatus] = useState("standBy");
 
   const handleOnChange = (_evt, newValue) => {
-    console.log(newValue);
     setValue(newValue);
 
     if (newValue === "0") {
@@ -165,13 +159,7 @@ ErrorMessage.parameters = {
 };
 
 export const MultiSelection = () => (
-  <HvSelectionList
-    id="main"
-    label="Choose your favorite items"
-    name="favorite"
-    onChange={console.log}
-    multiple
-  >
+  <HvSelectionList id="main" label="Choose your favorite items" name="favorite" multiple>
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2" selected>
       ListItem 2
@@ -184,13 +172,7 @@ export const MultiSelection = () => (
 );
 
 export const CleanMultiSelection = () => (
-  <HvSelectionList
-    id="main"
-    label="Choose your favorite items"
-    name="favorite"
-    onChange={console.log}
-    multiple
-  >
+  <HvSelectionList id="main" label="Choose your favorite items" name="favorite" multiple>
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2">ListItem 2</HvListItem>
     <HvListItem value="3">ListItem 3</HvListItem>

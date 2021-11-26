@@ -60,7 +60,7 @@ describe("HvRadio", () => {
       expect(radioBtn).not.toHaveAttribute("readonly");
       expect(radioBtn).not.toHaveAttribute("data-indeterminate", "true");
       expect(radioBtn).toBeValid();
-      expect(radioBtn).not.toHaveDescription();
+      expect(radioBtn).not.toHaveAccessibleDescription();
     });
 
     it("supports custom input props", () => {
@@ -305,7 +305,7 @@ describe("HvRadio", () => {
       expect(radioBtn).toHaveAttribute("aria-label", "Radio 1");
       expect(radioBtn).toHaveAttribute("aria-labelledby", "radioDescriptor");
       expect(radioBtn).toHaveAttribute("aria-describedby", "radioDescriptor");
-      expect(radioBtn).toHaveDescription("Radio button description");
+      expect(radioBtn).toHaveAccessibleDescription("Radio button description");
     });
   });
 

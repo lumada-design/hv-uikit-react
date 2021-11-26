@@ -7,7 +7,7 @@ import styles from "./styles";
 
 const renderNode = (node, className, variant) =>
   node && (
-    <HvTypography className={className} variant={variant}>
+    <HvTypography component="div" className={className} variant={variant}>
       {node}
     </HvTypography>
   );

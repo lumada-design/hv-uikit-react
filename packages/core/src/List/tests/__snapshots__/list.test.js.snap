@@ -1351,7 +1351,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
 
 exports[`<List /> Single selection with selectors should render correctly 1`] = `
 <WithStyles(HvList)
-  selectDefault={true}
   useSelector={true}
   values={
     Array [
@@ -1381,7 +1380,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         "virtualizedRoot": "HvList-virtualizedRoot",
       }
     }
-    selectDefault={true}
     useSelector={true}
     values={
       Array [
@@ -1403,7 +1401,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
       disableGutters={true}
       interactive={true}
       role="listbox"
-      selectDefault={true}
     >
       <ForwardRef
         className="HvList-root"
@@ -1416,12 +1413,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         disableGutters={true}
         interactive={true}
         role="listbox"
-        selectDefault={true}
       >
         <ul
           className="HvList-root HvListContainer-root"
           role="listbox"
-          selectDefault={true}
         >
           <WithStyles(HvListItem)
             classes={

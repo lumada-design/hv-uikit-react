@@ -42,7 +42,7 @@ describe("HvCheckBox", () => {
       expect(checkbox).not.toHaveAttribute("readonly");
       expect(checkbox).not.toHaveAttribute("data-indeterminate", "true");
       expect(checkbox).toBeValid();
-      expect(checkbox).not.toHaveDescription();
+      expect(checkbox).not.toHaveAccessibleDescription();
     });
 
     it("supports custom input props", () => {
@@ -273,7 +273,7 @@ describe("HvCheckBox", () => {
       );
 
       const checkbox = getByRole("checkbox");
-      expect(checkbox).toHaveDescription("An external description");
+      expect(checkbox).toHaveAccessibleDescription("An external description");
     });
   });
 

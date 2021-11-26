@@ -64,8 +64,8 @@ describe("Chart withStyles", () => {
 
 describe("Tooltip withStyles", () => {
   let wrapper;
-  const data = {};
-  const coordinates = {};
+  const data = { title: "" };
+  const coordinates = { x: 0, y: 0 };
 
   beforeEach(() => {
     wrapper = mount(

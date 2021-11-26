@@ -52,7 +52,7 @@ describe("<Navigation />", () => {
       wrapper = mount(
         <HvProvider>
           <Navigation
-            label="Example 1 navigation"
+            aria-label="Example 1 navigation"
             selected={value}
             onChange={onChangeMock}
             data={navigationData}

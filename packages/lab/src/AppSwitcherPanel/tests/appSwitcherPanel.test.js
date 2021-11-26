@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable no-console */
+
 import React from "react";
 import { mount } from "enzyme";
 
@@ -24,6 +26,9 @@ import Action from "../Action";
 
 import AppSwitcherPanelWithStyles from "../index";
 import AppSwitcherPanel from "../AppSwitcherPanel";
+
+const consoleSpy = jest.fn();
+const originalError = console.error;
 
 describe("<AppSwitcherPanel /> with minimum configuration", () => {
   let wrapper;
@@ -60,6 +65,7 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   };
 
   beforeEach(async () => {
+    console.error = consoleSpy;
     wrapper = mount(
       <HvProvider>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
@@ -68,20 +74,32 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
     appSwitcherPanelComponent = wrapper.find(AppSwitcherPanel);
   });
 
+  afterEach(async () => {
+    console.error = originalError;
+  });
+
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render 3 action components", () => {
     expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should have 2 Info icons rendered", () => {
     expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 });
 
@@ -130,6 +148,7 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
   };
 
   beforeEach(async () => {
+    console.error = consoleSpy;
     wrapper = mount(
       <HvProvider>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
@@ -138,19 +157,31 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
     appSwitcherPanelComponent = wrapper.find(AppSwitcherPanel);
   });
 
+  afterEach(async () => {
+    console.error = originalError;
+  });
+
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
+    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render 3 action components", () => {
     expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
+    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should have 2 Info icons rendered", () => {
     expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
+    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 });
