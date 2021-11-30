@@ -89,7 +89,7 @@
     "fs-readdir-recursive": "^1.1.0",
     "html-react-parser": "^1.4.0",
     "husky": "^7.0.0",
-    "lerna": "^4.0.0",
+    "lerna": "^3.22.1",
     "license-checker": "^25.0.1",
     "monaco-editor": "0.20.0",
     "monaco-editor-webpack-plugin": "1.9.1",
