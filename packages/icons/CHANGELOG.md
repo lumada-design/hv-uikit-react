@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.7.0 (2021-11-30)
+
+**Note:** Version bump only for package @hv/uikit-react-icons
+
+
+
+
+
 # 3.6.0 (2021-10-28)
 
 

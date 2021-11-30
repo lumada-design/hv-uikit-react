@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.33.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.32.1...@hv/uikit-react-lab@3.33.0) (2021-11-30)
+
+
+### Bug Fixes
+
+* **tag:** eliminating superfluous prop.HVUIKIT-5776 ([3a5151f](https://github.com/lumada-design/hv-uikit-react/commit/3a5151f81c7e9fc5e9e0138f90d424ab6fcd43f7))
+* unstable nested components HVUIKIT-6277 ([9fcb68f](https://github.com/lumada-design/hv-uikit-react/commit/9fcb68f2041e090b1e948b6833bdcc54d9a4fabd))
+
+
+
+
+
 ## [3.32.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.32.0...@hv/uikit-react-lab@3.32.1) (2021-11-05)
 
 
