@@ -118,9 +118,6 @@ export * from "./Pagination";
 export { default as HvPanel } from "./Panel";
 export * from "./Panel";
 
-export { default as HvProvider } from "./Provider";
-export * from "./Provider";
-
 export { default as HvBaseCheckBox } from "./BaseCheckBox";
 export * from "./BaseCheckBox";
 
@@ -141,6 +138,9 @@ export * from "./RadioGroup";
 
 export { default as HvBaseSwitch } from "./BaseSwitch";
 export * from "./BaseSwitch";
+
+export { default as HvSelectionList } from "./SelectionList";
+export * from "./SelectionList";
 
 export { default as HvSwitch } from "./Switch";
 export * from "./Switch";
@@ -208,9 +208,20 @@ export * from "./ScrollTo/Vertical";
 
 export { default as useScrollTo } from "./ScrollTo/useScrollTo";
 
-// utils
-export * from "./utils";
+// HOCs
+export { default as withId } from "./withId";
+export { default as withTooltip } from "./withTooltip";
+
+// Hooks
+export { default as useUniqueId } from "./useUniqueId";
 
 // theme
 export { default as hvTheme } from "./theme";
 export * from "./theme";
+
+// provider
+export { default as HvProvider } from "./Provider";
+export * from "./Provider";
+
+// utils
+export * from "./utils";

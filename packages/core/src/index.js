@@ -111,7 +111,6 @@ export { default as withTooltip } from "./withTooltip";
 
 // Hooks
 export { default as useUniqueId } from "./useUniqueId";
-export { default as useLocale } from "./Provider/useLocale";
 
 // theme
 export { default as hvTheme } from "./theme";
@@ -119,6 +118,7 @@ export { themeBuilder, getTheme } from "./theme";
 
 // provider
 export { default as HvProvider } from "./Provider";
+export * from "./Provider";
 
 // utils
 export * from "./utils";
