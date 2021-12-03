@@ -40,6 +40,7 @@ const controlledSelectedEntry = (i) => {
 };
 
 export const makeData = (len = 10) => range(len).map(newEntry);
+
 export const makeSelectedData = (len = 10) => range(len).map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
