@@ -12,12 +12,11 @@ import * as stories from "./TableHooks.stories.js";
 
 # Table hooks
 
-[React Table](https://react-table.tanstack.com) is an "headless" UI utility library that allows to build data tables while retaining control over markup and styles.
+[React Table](https://react-table.tanstack.com) is an "headless" UI utility library that allows to build data tables while retaining control over markup and styles.  
+It consists of a collection of, lightweight, composable and extensible,  custom React hooks.  
 
-It consists of a collection of custom React hooks. These hooks are lightweight, composable and extensible.
-The UI Kit library provides some custom hooks that ease the integration with the <LinkTo kind="Lab/Table" story="Main" className="sbdocs-a">Table component</LinkTo>.
-
-Together is easier to build powerful experiences and extend the features offered.
+The UI Kit library provides a collection of **custom hooks** that ease the integration with the <LinkTo kind="Lab/Table" story="Main" className="sbdocs-a">Table component</LinkTo>.  
+Together it will be easier to build powerful experiences and extend the features offered.
 
 <Usage>{'import { useTable } from "react-table";'}</Usage>
 
@@ -27,12 +26,6 @@ Together is easier to build powerful experiences and extend the features offered
 
 ## The `useHv*` hooks
 
-<Usage>{'import { useHvTable } from "react-table";'}</Usage>
-
-<Preview withToolbar>
-  <Story inline story={stories.UseHvTable} />
-</Preview>
-
 For further ease, you can use the provided `useHvTable` hook that wraps the [React Table's `useTable` hook](https://react-table.tanstack.com/docs/api/useTable) and
 provides the following functionality:
 
@@ -40,6 +33,12 @@ provides the following functionality:
 - Automatically installs the `useHvTableStyles` hook.
 - Generates default column metadata from the data fields, if the `columns` option is missing.
 - Defaults to an empty array if no `data` is provided.
+
+<Usage>{'import { useHvTable } from "react-table";'}</Usage>
+
+<Preview withToolbar>
+  <Story inline story={stories.UseHvTable} />
+</Preview>
 
 The following plugin hooks are available:
 
@@ -53,7 +52,17 @@ The following plugin hooks are available:
 - `useHvTableSticky`: allows defining sticky headers and columns. See <a href="#sticky-headers-and-columns" className="sbdocs-a">Sticky Headers And Columns</a>.
 - `useHvHeaderGroups`: allows defining grouped headers. See <a href="#grouped-headers" className="sbdocs-a">Grouped Headers</a>.
 
-## Pagination
+## KitchenSink
+
+Complete sample table that uses most of the plugin hooks provided. 
+
+<Preview withToolbar>
+  <Story inline story={stories.KitchenSink} />
+</Preview>
+
+# Hooks usage
+
+## useHvPagination
 
 Data can be paginated. Optionally, empty lines can be added to the last page to avoid changes in height.
 
@@ -67,7 +76,7 @@ _Note: This hook depends on the `usePagination` hook from `react-table`, but whe
   <Story inline story={stories.Pagination} />
 </Preview>
 
-## Selection
+## useHvRowSelection
 
 Rows can be selected individually.
 
@@ -81,15 +90,15 @@ This hook is originally based on the code `useRowSelect` hook from `react-table`
   <Story inline story={stories.Selection} />
 </Preview>
 
-## Controlled selection
+## useHvRowSelection controlled 
 
-a selection state can also be included in the data and toggled externally.
+A selection state can also be included in the data and toggled externally.
 
 <Preview withToolbar>
   <Story inline story={stories.ControlledSelection} />
 </Preview>
 
-## Bulk selection and actions
+## useHvBulkActions
 
 Rows can also be selected in bulk and actions can be performed on the current selection.
 
@@ -101,7 +110,7 @@ _Note: This hook depends on the `useRowSelect` hook from `react-table`, but when
   <Story inline story={stories.BulkActions} />
 </Preview>
 
-## Sorting
+## useHvSortBy
 
 Tables can have the capability of sorting the data by column.
 Clicking a sortable column header toggles between ascending or descending. Multiple sorting criteria is enabled through holding shift while clicking.
@@ -116,7 +125,7 @@ _Note: This hook depends on the `useSortBy` hook from `react-table`, but when us
   <Story inline story={stories.Sortable} />
 </Preview>
 
-## Row expanding
+## useHvRowExpand
 
 Tables rows can have the capability of being expanded to show more details.
 
@@ -130,7 +139,7 @@ _Note: This hook depends on the `useExpanded` hook from `react-table`, but when 
   <Story inline story={stories.Expandable} />
 </Preview>
 
-## Sticky Headers And Columns
+## useHvTableSticky
 
 The table headers can be fixed at the top, allowing it to keep always visible when table has vertical scrolling enabled.
 
@@ -166,7 +175,7 @@ The `getTableProps`, `getTableHeadProps`, `getHeaderGroupProps`, `getHeaderProps
   <Story inline story={stories.StickyHeadersAndColumns} />
 </Preview>
 
-## Grouped Headers
+## useHvHeaderGroups
 
 The table columns can be grouped, allowing it to have header groups.
 
@@ -191,6 +200,7 @@ The `getTableProps`, `getHeaderGroupProps`, `getHeaderProps`, `getTableBodyProps
   <Story inline story={stories.GroupedHeaders} />
 </Preview>
 
+# Other use cases
 
 ## Empty Cells
 
@@ -231,8 +241,6 @@ Elements can be changed (to `div` or any other apropriate html element) by using
 <Preview withToolbar>
   <Story inline story={stories.AlternativeLayout} />
 </Preview>
-
-# Stuff still to be documented
 
 ## Server Side
 

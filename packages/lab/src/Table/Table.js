@@ -35,13 +35,14 @@ const computeTablePartComponents = (rootComponent) => {
  * A Table gathers relational data, it displays values arranged to allow quick numerical analysis
  * like comparison and sorting.
  *
- * HvTable component offers a set of HTML-equivalent elements, styled to Design System's specification,
- * for building tables.
- *
- * For better data handling and advanced features we recommend the use of a collection of utility hooks.
+ * **HvTable** component offers a set of HTML-equivalent elements, **styled to Design System's specification**,
+ * for building tables.  
+ * You can rely on these **elements** when your table doesn’t have many interactions or you need it to be very lightweight.
+ * 
+ * For better data handling and **advanced features** we recommend the use of the utility hooks collection .  
  * See the <a href="?id=lab-table-hooks--main&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
  *
- * PLEASE NOTE: This Table implementation is still a WIP. There might be breaking changes.
+ * **PLEASE NOTE**: This Table implementation is still a WIP. There might be breaking changes.
  */
 const HvTable = forwardRef(function HvTable(props, ref) {
   const {

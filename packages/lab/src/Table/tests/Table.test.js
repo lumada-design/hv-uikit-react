@@ -5,8 +5,15 @@ import range from "lodash/range";
 import userEvent from "@testing-library/user-event";
 import { render, within, fireEvent, waitFor, screen } from "testing-utils";
 
-import { Main, EmptyCells, NonTableLayout, KitchenSinkSample } from "../stories/Table.stories";
-import { Pagination, Sortable, BulkActions } from "../stories/TableHooks.stories";
+import { Main } from "../stories/Table.stories";
+import {
+  Pagination,
+  Sortable,
+  BulkActions,
+  KitchenSink,
+  AlternativeLayout,
+  EmptyCells,
+} from "../stories/TableHooks.stories";
 
 import {
   HvTable,
@@ -80,7 +87,7 @@ describe("Table", () => {
     });
 
     it("can render a different component and sets roles", () => {
-      const { getByRole, getAllByRole } = render(<NonTableLayout />);
+      const { getByRole, getAllByRole } = render(<AlternativeLayout />);
 
       const table = getByRole("table");
       expect(table).toBeInTheDocument();
@@ -193,7 +200,7 @@ describe("Table", () => {
     });
   });
 
-  describe("EmptyCells Story", () => {
+  describe("No Data Story", () => {
     it("should be defined", () => {
       const { container } = render(<EmptyCells />);
       expect(container).toBeDefined();
@@ -451,9 +458,7 @@ describe("Table", () => {
     });
 
     it("navigate to last page and delete rows should render previous page", () => {
-      const { getByLabelText, getAllByRole, queryAllByRole, getByRole } = render(
-        <KitchenSinkSample />
-      );
+      const { getByLabelText, getAllByRole, queryAllByRole, getByRole } = render(<KitchenSink />);
 
       const bulkCheckbox = getAllByRole("checkbox")[0];
 
@@ -472,7 +477,7 @@ describe("Table", () => {
     });
 
     it("selections are retained when changing  number of rows in page", async () => {
-      const { getByLabelText, getAllByRole, getByRole } = render(<KitchenSinkSample />);
+      const { getByLabelText, getAllByRole, getByRole } = render(<KitchenSink />);
 
       expect(getByLabelText("All (64)")).toBeInTheDocument();
       // select all rows in first page

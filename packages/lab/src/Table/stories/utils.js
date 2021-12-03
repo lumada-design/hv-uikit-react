@@ -39,7 +39,20 @@ const controlledSelectedEntry = (i) => {
   };
 };
 
+export const sortSeverity = () => {
+  const levels = ["minor", "average", "major", "critical"];
+
+  return (rowA, rowB, columnId) => {
+    const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
+    const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
+
+    // eslint-disable-next-line no-nested-ternary
+    return a === b ? 0 : a > b ? 1 : -1;
+  };
+};
+
 export const makeData = (len = 10) => range(len).map(newEntry);
+
 export const makeSelectedData = (len = 10) => range(len).map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
