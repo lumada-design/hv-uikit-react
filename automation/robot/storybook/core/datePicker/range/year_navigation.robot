@@ -26,14 +26,21 @@ navigate to next year by months and then click next year on left calendar
 
 click previous and next year on right calendar
     [Documentation]   when dates are empty
-    ${yearL}   Get Time             year
-    Element Text Should Be          ${calendarleft} ${year}    ${yearL}
-    ${yearL}   Convert To String    ${${yearL}-1}
+    ${currentYear}   Get Time             year
+    ${previousYear}   Convert To String    ${${currentYear}-1}
+    ${currentRightCalendarYear}    get elements text    ${calendarRight} ${year}
+    ${previousRightCalendarYear}   Convert To String    ${${currentRightCalendarYear}-1}
+    ${nextRightCalendarYear}       Convert To String    ${${currentRightCalendarYear}+1}
+    Element Text Should Be          ${calendarleft} ${year}    ${currentYear}
     Click Element                   ${calendarRight} ${year-}
-    Element Text Should Be          ${calendarRight} ${year}    ${yearL}
+    Element Text Should Be          ${calendarleft} ${year}    ${previousYear}
+    Element Text Should Be          ${calendarRight} ${year}    ${previousRightCalendarYear}
     Click Element                   ${calendarRight} ${year+}
-    ${yearL}   Convert To String    ${${yearL}+1}
-    Element Text Should Be          ${calendarRight} ${year}    ${yearL}
+    Element Text Should Be          ${calendarRight} ${year}    ${currentRightCalendarYear}
+    Element Text Should Be          ${calendarleft} ${year}    ${previousYear}
+    Click Element                   ${calendarRight} ${year+}
+    Element Text Should Be          ${calendarRight} ${year}    ${nextRightCalendarYear}
+    Element Text Should Be          ${calendarleft} ${year}    ${previousYear}
 
 
 *** Variables ***
