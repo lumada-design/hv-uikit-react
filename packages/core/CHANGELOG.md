@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.48.0...@hv/uikit-react-core@3.48.1) (2021-12-04)
+
+
+### Bug Fixes
+
+* **assetinventory:** pagesize should not be set if undefined.#HVUIKIT-5776 ([940a73e](https://github.com/lumada-design/hv-uikit-react/commit/940a73ee0821d9f934fd4d3abc2f22e17a377c9b)), closes [undefined.#HVUIKIT-5776](https://github.com/undefined./issues/HVUIKIT-5776)
+* **datepicker:** placeholder should not be undefined.#HVUIKIT-5776 ([e5dd223](https://github.com/lumada-design/hv-uikit-react/commit/e5dd2239311daa67367cb82b5bb56008454e0d55)), closes [undefined.#HVUIKIT-5776](https://github.com/undefined./issues/HVUIKIT-5776)
+* **emptystate:** p cannot be parent of div.HVUIKIT-5776 ([a4f34b2](https://github.com/lumada-design/hv-uikit-react/commit/a4f34b23237fac2edf20edf26d1ad90855d7731d))
+* **Provider:** expose UI Kit context and hooks ([86cf448](https://github.com/lumada-design/hv-uikit-react/commit/86cf4485c085086d3acbfd50a17d012b19ec78d3))
+* **tag:** button must have a child.HVUIKIT-5776 ([f31f643](https://github.com/lumada-design/hv-uikit-react/commit/f31f643ebc45a59a4c2feadaa8ae2b14f65cfed4))
+* contexts' non-stable values HVUIKIT-6277 ([5e22f27](https://github.com/lumada-design/hv-uikit-react/commit/5e22f279a921361ac79543abdb11d17b56228199))
+* unguarded potential spread of undefined values HVUIKIT-6277 ([bf58e79](https://github.com/lumada-design/hv-uikit-react/commit/bf58e795fe53287bd59ffa9f17f6c0136f896a1e))
+* unstable nested components HVUIKIT-6277 ([9fcb68f](https://github.com/lumada-design/hv-uikit-react/commit/9fcb68f2041e090b1e948b6833bdcc54d9a4fabd))
+
+
+
+
+
 # 3.48.0 (2021-11-30)
 
 
