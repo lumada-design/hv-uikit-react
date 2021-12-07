@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _table.resource
-Test Setup    open table sample    ${lab}    kitchen-sink-sample
+Test Setup    open table sample    ${lab}    kitchen-sink
 Force Tags       wai-aria-practices
 Documentation    https://www.w3.org/TR/wai-aria-practices/#table
 
@@ -16,7 +16,7 @@ table contain a single table caption
 
 columnheader role is correctly applied when table is rendered
     Element Attribute Value Should Be    ${headers}    role    columnheader
-    Page Should Contain Element          css:[role=columnheader]    limit=8
+    Page Should Contain Element          css:[role=columnheader]    limit=10
 
 aria-rowcount as total number of table rows on correct tag when a paginated table is rendered
     Element Attribute Value Should Be    ${table}    aria-rowcount    64
@@ -32,11 +32,11 @@ rows contain the correct a11y when a paginated table is rendered
 
 cells contain the correct a11y role when a paginated table is rendered
     Element Attribute Value Should Be    ${cells}    role    cell
-    Page Should Contain Element          css:[role=cell]    limit=80
+    Page Should Contain Element          css:[role=cell]    limit=100
     Click Button                         ${nav_next_page}
-    Page Should Contain Element          css:[role=cell]    limit=80
+    Page Should Contain Element          css:[role=cell]    limit=100
     Select Dropdown Value                ${rows_per_page}    5
-    Page Should Contain Element          css:[role=cell]    limit=40
+    Page Should Contain Element          css:[role=cell]    limit=50
 
 aria-sort property is correctly applied when a column is sorted
     Element Attribute Value Should Be    ${header}(8)    aria-sort    none

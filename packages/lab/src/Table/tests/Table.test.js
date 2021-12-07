@@ -5,8 +5,14 @@ import range from "lodash/range";
 import userEvent from "@testing-library/user-event";
 import { render, within, fireEvent, waitFor, screen } from "testing-utils";
 
-import { Main, EmptyCells, NonTableLayout, KitchenSinkSample } from "../stories/Table.stories";
-import { Pagination, Sortable, BulkActions } from "../stories/TableHooks.stories";
+import { Main, ResponsiveTable } from "../stories/Table.stories";
+import {
+  Pagination,
+  Sortable,
+  BulkActions,
+  KitchenSink,
+  EmptyCells,
+} from "../stories/TableHooks.stories";
 
 import {
   HvTable,
@@ -80,7 +86,7 @@ describe("Table", () => {
     });
 
     it("can render a different component and sets roles", () => {
-      const { getByRole, getAllByRole } = render(<NonTableLayout />);
+      const { getByRole, getAllByRole } = render(<ResponsiveTable />);
 
       const table = getByRole("table");
       expect(table).toBeInTheDocument();
@@ -110,7 +116,7 @@ describe("Table", () => {
       expect(headerCells[0]).toHaveAttribute("role", "columnheader");
 
       const bodyRows = within(rowgroups[1]).getAllByRole("row");
-      expect(bodyRows.length).toBe(6);
+      expect(bodyRows.length).toBe(20);
 
       expect(bodyRows[0].nodeName).toEqual("DIV");
       expect(bodyRows[0]).toHaveAttribute("role", "row");
@@ -193,7 +199,7 @@ describe("Table", () => {
     });
   });
 
-  describe("EmptyCells Story", () => {
+  describe("No Data Story", () => {
     it("should be defined", () => {
       const { container } = render(<EmptyCells />);
       expect(container).toBeDefined();
@@ -451,15 +457,13 @@ describe("Table", () => {
     });
 
     it("navigate to last page and delete rows should render previous page", () => {
-      const { getByLabelText, getAllByRole, queryAllByRole, getByRole } = render(
-        <KitchenSinkSample />
-      );
+      const { getByLabelText, getAllByRole, queryAllByRole, getByRole } = render(<KitchenSink />);
 
       const bulkCheckbox = getAllByRole("checkbox")[0];
 
       const [lastPage] = ["Last Page"].map(getByLabelText);
 
-      expect(getByLabelText("All (64)")).toBeInTheDocument();
+      expect(getByLabelText("1 / 64")).toBeInTheDocument();
       userEvent.click(lastPage);
       userEvent.click(bulkCheckbox);
       expect(queryAllByRole("checkbox", { checked: true }).length).toBe(4 + 1);
@@ -468,18 +472,18 @@ describe("Table", () => {
       expect(deleteButton).toBeInTheDocument();
       userEvent.click(deleteButton);
       expect(queryAllByRole("checkbox", { checked: true }).length).toBe(0);
-      expect(getByLabelText("All (60)")).toBeInTheDocument();
+      expect(getByLabelText("All (59)")).toBeInTheDocument();
     });
 
     it("selections are retained when changing  number of rows in page", async () => {
-      const { getByLabelText, getAllByRole, getByRole } = render(<KitchenSinkSample />);
+      const { getByLabelText, getAllByRole, getByRole } = render(<KitchenSink />);
 
-      expect(getByLabelText("All (64)")).toBeInTheDocument();
+      expect(getByLabelText("1 / 64")).toBeInTheDocument();
       // select all rows in first page
       const bulkCheckbox = getAllByRole("checkbox")[0];
       fireEvent.click(bulkCheckbox);
       const selectedCheckboxes = screen.queryAllByRole("checkbox", { checked: true });
-      expect(selectedCheckboxes.length).toBe(10 + 1);
+      expect(selectedCheckboxes.length).toBe(9);
 
       const numberOfRowsSelector = getByRole("textbox", { name: "Select how many to display" });
       expect(numberOfRowsSelector).toBeInTheDocument();
@@ -503,10 +507,10 @@ describe("Table", () => {
 
       const visibleCheckboxes = screen.queryAllByRole("checkbox", { checked: false });
 
-      expect(visibleCheckboxes.length).toBe(54);
+      expect(visibleCheckboxes.length).toBe(56);
 
       const selectedVisibleCheckboxes = screen.queryAllByRole("checkbox", { checked: true });
-      expect(selectedVisibleCheckboxes.length).toBe(10 + 1);
+      expect(selectedVisibleCheckboxes.length).toBe(9);
     });
   });
 

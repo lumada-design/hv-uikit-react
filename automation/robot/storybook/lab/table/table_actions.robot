@@ -1,20 +1,22 @@
 *** Setting ***
 Resource      _table.resource
-Test Setup    open table sample    ${lab}    kitchen-sink-sample
+Test Setup    open table sample    ${lab}    kitchen-sink
 
 
 *** Test Cases ***
 enable actions when any row is selected
     Wait Until Page Contains Element    ${bulkAction} button
-    Wait Until Element Is Enabled       ${row}(2) ${checkBox}
-    Element Should Be Disabled          ${bulkAction} button
-    Select Checkbox                     ${row}(2) ${checkBox}
     Element Should Be Enabled           ${bulkAction} button
+    Page Should Contain                 1 / 64
 
-disable actions when all selections are removed
+select all available when no rows selected
     Wait Until Page Contains Element    ${bulkAction} button
-    Wait Until Element Is Enabled       ${row}(2) ${checkBox}
-    Select Checkbox                     ${row}(2) ${checkBox}
-    Unselect Checkbox                   ${bulkAction} ${checkBox}
-    Element Should Be Disabled          ${bulkAction} button
+    Select Checkbox                     ${row}(3) ${checkBox}
+    Page Should Contain                 All
 
+delete all unlocked rows 
+    Select Checkbox                    ${row}(1) ${checkBox}
+    Wait Until Page Contains           Select all
+    Click Button                       Select all 64 items across all pages
+    Click Button                       Delete
+    Page Should Contain                All (2)

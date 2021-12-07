@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
-
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout, useTable } from "react-table";
-
 import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
 
 import {
@@ -14,6 +12,7 @@ import {
   HvDropdown,
   HvTypography,
   HvSwitch,
+  HvDropDownMenu,
 } from "@hv/uikit-react-core";
 
 import {
@@ -269,7 +268,6 @@ export const BulkActions = () => {
   const handleAction = useCallback(
     (_evt, id, action) => {
       const selected = selectedFlatRows.map((el) => el.original);
-      console.log(id, action);
 
       switch (action.id) {
         case "duplicate": {
@@ -354,7 +352,7 @@ export const BulkActions = () => {
 };
 
 export const Sortable = () => {
-  const sortSeverity = useMemo(() => {
+  const colSort = useMemo(() => {
     const levels = ["minor", "average", "major", "critical"];
 
     return (rowA, rowB, columnId) => {
@@ -368,9 +366,10 @@ export const Sortable = () => {
 
   const columns = useMemo(() => {
     const cols = getColumns();
-    cols[5].sortType = sortSeverity;
+    cols[2].disableSortBy = true;
+    cols[5].sortType = colSort;
     return cols;
-  }, [sortSeverity]);
+  }, [colSort]);
 
   const data = useMemo(() => makeData(5), []);
 
@@ -447,10 +446,10 @@ export const Expandable = () => {
                 </HvTableRow>
                 <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
                   <HvTableCell
-                    style={{ paddingBottom: 0, paddingTop: 0, textAlign: "center" }}
+                    style={{ paddingBottom: 0, paddingTop: 0, textAlign: "center", height: 100 }}
                     colSpan="100%"
                   >
-                    <code>{JSON.stringify(row.values, null, 2)}</code>
+                    <HvTypography>Expanded content for: {row.values.name}</HvTypography>
                   </HvTableCell>
                 </HvTableRow>
               </React.Fragment>
@@ -521,6 +520,54 @@ export const StickyHeadersAndColumns = () => {
       </HvTable>
     </HvTableContainer>
   );
+};
+
+export const GroupedHeaders = () => {
+  const columns = useMemo(() => getGroupedColumns(), []);
+  const data = useMemo(() => makeData(), []);
+
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+    {
+      columns,
+      data,
+    },
+    useHvHeaderGroups
+  );
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+GroupedHeaders.parameters = {
+  docs: {
+    description: { story: "A table example with grouped headers." },
+  },
 };
 
 export const EmptyCells = () => {
@@ -895,50 +942,210 @@ ServerSide.parameters = {
   },
 };
 
-export const GroupedHeaders = () => {
-  const columns = useMemo(() => getGroupedColumns(), []);
-  const data = useMemo(() => makeData(), []);
+export const KitchenSink = () => {
+  const colSort = useMemo(() => {
+    const levels = ["minor", "average", "major", "critical"];
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+    return (rowA, rowB, columnId) => {
+      const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
+      const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
+
+      // eslint-disable-next-line no-nested-ternary
+      return a === b ? 0 : a > b ? 1 : -1;
+    };
+  }, []);
+
+  const columns = useMemo(() => {
+    const cols = [
+      ...getColumns(),
+      {
+        id: "actions",
+        variant: "actions",
+        Cell: ({ row }) => {
+          return (
+            <HvToggleButton
+              aria-label="Lock"
+              notSelectedIcon={<Unlock />}
+              selectedIcon={<Lock />}
+              selected={row.isSelectionLocked}
+              onClick={() => row.toggleRowLockedSelection()}
+            />
+          );
+        },
+      },
+      {
+        id: "secundaryActions",
+        variant: "actions",
+        width: 32,
+        Cell: () => {
+          return (
+            <HvDropDownMenu
+              keepOpened={false}
+              placement="left"
+              onClick={(e, item) => alert(item.label)}
+              dataList={[
+                {
+                  label: "Share",
+                },
+                {
+                  label: "Hide",
+                },
+                {
+                  label: "Remove",
+                },
+              ]}
+            />
+          );
+        },
+      },
+    ];
+    cols[2].disableSortBy = true;
+    cols[5].sortType = colSort;
+    return cols;
+  }, [colSort]);
+
+  const initialData = useMemo(
+    () =>
+      makeSelectedData(64).map((entry) => ({
+        ...entry,
+        // make some entries empty
+        status: entry.status === "Closed" ? null : entry.status,
+      })),
+    []
+  );
+  const [data, setData] = useState(initialData);
+
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan="100%" style={{ height: 100 }}>
+        <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
+      </HvTableCell>
+    </HvTableRow>
+  );
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    selectedFlatRows,
+    toggleAllRowsSelected,
+    getHvBulkActionsProps,
+    getHvPaginationProps,
+  } = useHvTable(
     {
       columns,
       data,
+      autoResetSelectedRows: false,
+      aditivePageBulkSelection: true,
+      subtractivePageBulkDeselection: false,
+      initialState: {
+        selectedRowIds: { 2: true },
+        lockedSelectionRowIds: { 1: true, 6: true },
+      },
+      defaultColumn: {
+        Cell: ({ value }) => value ?? "—",
+      },
     },
-    useHvHeaderGroups
+    useHvSortBy,
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions
   );
 
+  const handleAction = (evt, id, action) => {
+    const selected = selectedFlatRows.map((el) => el.original);
+
+    switch (action.id) {
+      case "duplicate": {
+        const newEls = selected.map((el) => ({
+          ...el,
+          id: `${el.id}-copy`,
+          name: `${el.name}-copy`,
+        }));
+        setData([...data, ...newEls]);
+        break;
+      }
+      case "delete": {
+        const selectedIds = selected.map((el) => el.id);
+        toggleAllRowsSelected(false);
+        setData(data.filter((el) => !selectedIds.includes(el.id)));
+        break;
+      }
+      case "lock":
+      case "preview":
+      default:
+        break;
+    }
+  };
+
+  const rowRenderer = (pages) => {
+    return pages.map((row, index) => {
+      prepareRow(row);
+
+      return (
+        <HvTableRow
+          key={row.Header}
+          {...row.getRowProps({
+            "aria-rowindex": index,
+          })}
+        >
+          {row.cells.map((cell) => (
+            <HvTableCell key={cell.Header} {...cell.getCellProps()}>
+              {cell.render("Cell")}
+            </HvTableCell>
+          ))}
+        </HvTableRow>
+      );
+    });
+  };
   return (
-    <HvTableContainer>
-      <HvTable {...getTableProps()}>
-        <HvTableHead>
-          {headerGroups.map((headerGroup) => (
-            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+    <>
+      <HvBulkActions
+        {...getHvBulkActionsProps()}
+        maxVisibleActions={1}
+        actionsCallback={handleAction}
+        actions={[
+          { id: "delete", label: "Delete", icon: <Delete /> },
+          { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+          { id: "lock", label: "Lock", icon: <Lock /> },
+          { id: "preview", label: "Preview", icon: <Preview /> },
+        ]}
+      />
+
+      <HvTableContainer>
+        <HvTable
+          {...getTableProps({
+            "aria-rowcount": data.length,
+            caption: "Table Caption",
+          })}
+        >
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableHeader>
               ))}
             </HvTableRow>
-          ))}
-        </HvTableHead>
-        <HvTableBody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
 
-            return (
-              <HvTableRow {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
-                ))}
-              </HvTableRow>
-            );
-          })}
-        </HvTableBody>
-      </HvTable>
-    </HvTableContainer>
+      <HvPagination {...getHvPaginationProps()} />
+    </>
   );
 };
 
-GroupedHeaders.parameters = {
+KitchenSink.parameters = {
   docs: {
-    description: { story: "A table example with grouped headers." },
+    description: {
+      story:
+        "A table with sorting and pagination handled server-side, using React Table. Set `manualPagination` and `manualSortBy` to have manual control over pagination and sorting.",
+    },
   },
 };
