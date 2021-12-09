@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.48.2 (2021-12-09)
+
+
+### Bug Fixes
+
+* **input:** email regex validation,  fixes issue [#2608](https://github.com/lumada-design/hv-uikit-react/issues/2608) ([#2609](https://github.com/lumada-design/hv-uikit-react/issues/2609)) ([81e276a](https://github.com/lumada-design/hv-uikit-react/commit/81e276ae1369a1c78e842b52419ee319da10dca4))
+
+
+
+
+
 ## [3.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.48.0...@hv/uikit-react-core@3.48.1) (2021-12-04)
 
 
