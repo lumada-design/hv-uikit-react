@@ -16,14 +16,12 @@ const styles = (theme) => ({
   },
   message: {
     padding: 0,
+    width: "100%",
   },
   messageSpan: {
-    display: "table",
+    display: "flex",
+    alignItems: "center",
     minHeight: "32px",
-    "& > *": {
-      display: "table-cell",
-      verticalAlign: "middle",
-    },
   },
   messageText: {
     ...theme.hv.typography.normalText,
