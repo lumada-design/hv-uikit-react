@@ -41,7 +41,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
 
 HvSnackbarContentWrapper.propTypes = {
   /**
-   * A Jss Object used to override or extend the styles applied to the button.
+   * A Jss Object used to override or extend the styles applied to the HvSnackbarContent.
    */
   classes: PropTypes.instanceOf(Object).isRequired,
   /**

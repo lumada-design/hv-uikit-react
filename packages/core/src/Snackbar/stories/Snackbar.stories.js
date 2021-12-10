@@ -14,6 +14,7 @@ export default {
     dsVersion: "3.4.0",
   },
   component: HvSnackbar,
+  subcomponents: { HvSnackbarContent },
 };
 
 const styles = {
