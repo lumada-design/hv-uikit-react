@@ -113,7 +113,7 @@ const CardView = ({
     <div className={classes.root} ref={containerRef}>
       <div className={classes.elements}>
         <HvGrid
-          className={clsx(className, classes.root)}
+          className={clsx(className)}
           id={id}
           container
           justifyContent="flex-start"
