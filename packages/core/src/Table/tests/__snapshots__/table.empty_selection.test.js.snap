@@ -1226,15 +1226,6 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               class="HvPagination-pageSizeOptions"
             >
               <div
-                class="HvPagination-pageSizeTextContainer"
-              >
-                <span
-                  class="HvTypography-root HvTypography-normalText"
-                >
-                  Show
-                </span>
-              </div>
-              <div
                 class="HvBaseDropdown-root HvSelect-base HvSelect-root"
               >
                 <div
@@ -1281,15 +1272,6 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="HvPagination-pageSizeTextContainer"
-              >
-                <span
-                  class="HvTypography-root HvTypography-normalText"
-                >
-                  rows
-                </span>
               </div>
             </div>
             <div
