@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import {
   HvActionBar,
@@ -113,7 +112,7 @@ const CardView = ({
     <div className={classes.root} ref={containerRef}>
       <div className={classes.elements}>
         <HvGrid
-          className={clsx(className)}
+          className={className}
           id={id}
           container
           justifyContent="flex-start"
