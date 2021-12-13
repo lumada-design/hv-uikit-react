@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Info } from "@hv/uikit-react-icons";
-import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography } from "../..";
+import { makeStyles } from "@material-ui/core";
+import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography, HvTooltip } from "../..";
 
 /* eslint-disable react/prop-types */
 
@@ -13,6 +14,7 @@ export default {
     dsVersion: "3.4.0",
   },
   component: HvSnackbar,
+  subcomponents: { HvSnackbarContent },
 };
 
 const styles = {
@@ -121,45 +123,80 @@ CustomAction.parameters = {
   },
 };
 
-export const SnackbarVariations = () => (
-  <div>
-    <HvTypography variant="xsTitle">Semantics</HvTypography>
-    <p />
-    <HvSnackbarContent label="This is a snackbar." variant="default" />
-    <p />
-    <HvSnackbarContent label="This is a success message." variant="success" showIcon />
-    <p />
-    <HvSnackbarContent label="This is an error message." variant="error" showIcon />
-    <p />
+export const SnackbarVariations = () => {
+  const useStyles = makeStyles(() => ({
+    messageText: {
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
+    },
+  }));
 
-    <HvTypography variant="xsTitle">Action</HvTypography>
-    <p />
-    <HvSnackbarContent
-      label="This is a snackbar."
-      variant="default"
-      action={{ id: "post", label: "Action", disabled: false }}
-      actionCallback={(id, action) => alert(`clicked ${action.label}`)}
-    />
-    <p />
+  const classes = useStyles();
 
-    <HvTypography variant="xsTitle">Custom icon</HvTypography>
-    <p />
-    <HvSnackbarContent
-      variant="default"
-      label="This is a snackbar."
-      customIcon={<Info color="base2" />}
-    />
-    <p />
-    <HvSnackbarContent
-      variant="success"
-      label="This is a success message."
-      customIcon={<Info color="base2" />}
-    />
-    <p />
-    <HvSnackbarContent
-      variant="error"
-      label="This is an error message."
-      customIcon={<Info color="base2" />}
-    />
-  </div>
-);
+  return (
+    <div>
+      <HvTypography variant="xsTitle">Semantics</HvTypography>
+      <p />
+      <HvSnackbarContent label="This is a snackbar." variant="default" />
+      <p />
+      <HvSnackbarContent label="This is a success message." variant="success" showIcon />
+      <p />
+      <HvSnackbarContent label="This is an error message." variant="error" showIcon />
+      <p />
+
+      <HvTypography variant="xsTitle">Action</HvTypography>
+      <p />
+      <HvSnackbarContent
+        label="This is a snackbar."
+        variant="default"
+        action={{ id: "post", label: "Action", disabled: false }}
+        actionCallback={(id, action) => alert(`clicked ${action.label}`)}
+      />
+      <p />
+
+      <HvTypography variant="xsTitle">Custom icon</HvTypography>
+      <p />
+      <HvSnackbarContent
+        variant="default"
+        label="This is a snackbar."
+        customIcon={<Info color="base2" />}
+      />
+      <p />
+      <HvSnackbarContent
+        variant="success"
+        label="This is a success message."
+        customIcon={<Info color="base2" />}
+      />
+      <p />
+      <HvSnackbarContent
+        variant="error"
+        label="This is an error message."
+        customIcon={<Info color="base2" />}
+      />
+
+      <p />
+      <HvTypography variant="xsTitle">Custom content</HvTypography>
+      <p />
+
+      <HvTooltip
+        title={
+          <HvTypography>
+            This is an very very very very long long long long error message.
+          </HvTypography>
+        }
+      >
+        <div>
+          <HvSnackbarContent
+            variant="error"
+            label="This is an very very very very long long long long error message."
+            customIcon={<Info color="base2" />}
+            classes={{
+              messageText: classes.messageText,
+            }}
+          />
+        </div>
+      </HvTooltip>
+    </div>
+  );
+};
