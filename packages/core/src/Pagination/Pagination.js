@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles, Hidden } from "@material-ui/core";
 import { Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import { HvInput, HvTypography } from "..";
@@ -117,9 +117,11 @@ const Pagination = ({
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
-            <div className={classes.pageSizeTextContainer}>
-              <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
-            </div>
+            <Hidden xsDown>
+              <div className={classes.pageSizeTextContainer}>
+                <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
+              </div>
+            </Hidden>
             <Select
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
@@ -134,9 +136,11 @@ const Pagination = ({
                 </Option>
               ))}
             </Select>
-            <div className={classes.pageSizeTextContainer}>
-              <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
-            </div>
+            <Hidden xsDown>
+              <div className={classes.pageSizeTextContainer}>
+                <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
+              </div>
+            </Hidden>
           </>
         )}
       </div>
