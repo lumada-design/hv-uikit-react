@@ -39,7 +39,7 @@ const styles = (theme) => ({
   },
   titleContainer: {
     marginTop: 2,
-    marginBottom: 25,
+    marginBottom: theme.hv.spacing.sm,
   },
   messageContainer: {},
   actionContainer: {
