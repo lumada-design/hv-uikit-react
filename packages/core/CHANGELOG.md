@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.48.2...@hv/uikit-react-core@3.49.0) (2021-12-14)
+
+
+### Bug Fixes
+
+* **asset-inventory:** update bulk actions spacings. HVUIKIT-5960 ([#2613](https://github.com/lumada-design/hv-uikit-react/issues/2613)) ([3c9b13d](https://github.com/lumada-design/hv-uikit-react/commit/3c9b13d13186997e22330efd607f3faee1e1063b))
+* **empty-state:** title bottom margin. HVUIKIT-5961 ([9574b51](https://github.com/lumada-design/hv-uikit-react/commit/9574b517da9595cce38da625470689aa0c245172))
+* **snackbar:** allow content style customization. HVUIKIT-6306 ([d3cf937](https://github.com/lumada-design/hv-uikit-react/commit/d3cf937da05fa81d7e2a3ceb26194dda159bb3cf))
+
+
+### Features
+
+* **pagination:** hide page size labels in xs screens. HVUIKIT-5742 ([f967063](https://github.com/lumada-design/hv-uikit-react/commit/f9670632bca9e220d10b98a2fa9817eb715a6520))
+
+
+
+
+
 ## 3.48.2 (2021-12-09)
 
 
