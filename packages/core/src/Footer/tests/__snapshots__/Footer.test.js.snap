@@ -96,7 +96,7 @@ exports[`Footer should render correctly 1`] = `
             <p
               className="HvFooter-copyright HvTypography-root HvTypography-normalText"
             >
-              © Hitachi Vantara Corporation 2021. All Rights Reserved.
+              © Hitachi Vantara Corporation 2022. All Rights Reserved.
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
