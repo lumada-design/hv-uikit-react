@@ -1,6 +1,7 @@
 import { StandardProps, SnackbarProps } from "@material-ui/core";
 import { ActionGeneric } from "../ActionsGeneric";
 import { NotificationsCommonProps } from "../Banner";
+import { HvSnackbarContentProps } from "./SnackbarContentWrapper";
 
 export type HvSnackbarClassKey =
   // | "root"
@@ -10,7 +11,7 @@ export type HvSnackbarClassKey =
   | "anchorOriginBottomCenter"
   | "anchorOriginBottomLeft"
   | "anchorOriginBottomRight";
-  
+
 export interface HvSnackbarProps
   extends StandardProps<SnackbarProps, HvSnackbarClassKey, "action">,
     NotificationsCommonProps {
@@ -22,6 +23,10 @@ export interface HvSnackbarProps
    * The callback function ran when an action is triggered, receiving `action` as param
    */
   actionCallback?: (id: string, action: ActionGeneric) => void;
+  /**
+   * Exposes the SnackbarContentProps so they can overriden from the outside.
+   */
+  snackbarContentProps?: HvSnackbarContentProps
 }
 
 
