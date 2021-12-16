@@ -82,7 +82,7 @@ export const NoData = () => (
       </HvTableHead>
       <HvTableBody>
         <HvTableRow>
-          <HvTableCell colSpan="100%" style={{ height: 96 }}>
+          <HvTableCell colSpan={100} style={{ height: 96 }}>
             <HvEmptyState message="No data to display." icon={<Ban role="presentation" />} />
           </HvTableCell>
         </HvTableRow>

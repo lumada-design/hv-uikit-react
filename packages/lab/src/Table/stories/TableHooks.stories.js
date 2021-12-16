@@ -128,7 +128,7 @@ export const Pagination = () => {
 
   const EmptyRow = () => (
     <HvTableRow>
-      <HvTableCell colSpan="100%" />
+      <HvTableCell colSpan={100} />
     </HvTableRow>
   );
 
@@ -297,7 +297,7 @@ export const BulkActions = () => {
   const EmptyStateRow = useCallback(
     () => (
       <HvTableRow>
-        <HvTableCell colSpan="100%" style={{ height: 96 }}>
+        <HvTableCell colSpan={100} style={{ height: 96 }}>
           <HvEmptyState message="No data to display." icon={<Ban role="presentation" />} />
         </HvTableCell>
       </HvTableRow>
@@ -894,7 +894,7 @@ export const ServerSide = () => {
 
   const EmptyRow = () => (
     <HvTableRow>
-      <HvTableCell colSpan="100%" />
+      <HvTableCell colSpan={100} />
     </HvTableRow>
   );
 
@@ -1017,7 +1017,7 @@ export const KitchenSink = () => {
 
   const EmptyRow = () => (
     <HvTableRow>
-      <HvTableCell colSpan="100%" style={{ height: 100 }}>
+      <HvTableCell colSpan={100} style={{ height: 100 }}>
         <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
       </HvTableCell>
     </HvTableRow>

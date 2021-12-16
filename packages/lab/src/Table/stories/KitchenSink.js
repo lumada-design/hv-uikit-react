@@ -22,7 +22,7 @@ import { makeData, getColumns } from "./utils";
 
 const EmptyRow = () => (
   <HvTableRow>
-    <HvTableCell colSpan="100%" style={{ height: 100 }}>
+    <HvTableCell colSpan={100} style={{ height: 100 }}>
       <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
     </HvTableCell>
   </HvTableRow>
