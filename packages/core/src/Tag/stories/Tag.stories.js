@@ -116,12 +116,18 @@ export const WithDeleteAction = () => {
         onDelete={() => {
           alert("On Delete Action");
         }}
+        deleteButtonProps={{
+          tabIndex: -1, // tab navigation should skip this tag
+        }}
       />
       <HvTag
         label={textElement("Warning")}
         color="sema9"
         onDelete={() => {
           alert("On Delete Action");
+        }}
+        deleteButtonProps={{
+          tabIndex: -1, // tab navigation should skip this tag
         }}
       />
       <HvTag

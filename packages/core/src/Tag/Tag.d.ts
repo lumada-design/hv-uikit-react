@@ -1,4 +1,9 @@
 import { StandardProps } from "@material-ui/core";
+import { HvButtonProps } from "../Button";
+
+export type HvTagButtonClassKey = "";
+
+export type HvTagButtonProps = StandardProps<HvButtonProps, HvTagButtonClassKey>;
 
 export type HvTagClassKey =
   | "root"
@@ -61,9 +66,13 @@ export interface HvTagProps
    */
   role?: string;
   /**
+   * Aria properties to apply to delete button in tag
+   */
+  deleteButtonArialLabel?: string;
+  /**
    * Props to apply to delete button
    */
-  deleteButtonProps?: string;
+  deleteButtonProps?: HvTagButtonProps;
 }
 
 export default function HvTag(props: HvTagProps): JSX.Element | null;

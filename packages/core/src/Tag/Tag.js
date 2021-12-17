@@ -52,11 +52,13 @@ const HvTag = (props) => {
     onClick,
     role,
     deleteButtonArialLabel = "Delete tag",
+    deleteButtonProps = {},
     ...others
   } = props;
 
   const getDeleteIcon = () => {
     const disabledSemanticColor = type === "semantic" ? "atmo5" : "base2";
+    const { tabIndex = 0 } = deleteButtonProps;
 
     return (
       <HvButton
@@ -66,6 +68,8 @@ const HvTag = (props) => {
           primary: classes.primaryButton,
         }}
         aria-label={deleteButtonArialLabel}
+        tabIndex={tabIndex}
+        {...deleteButtonProps}
       >
         <CloseXS
           iconSize="XS"
@@ -265,6 +269,10 @@ HvTag.propTypes = {
    * Aria properties to apply to delete button in tag
    */
   deleteButtonArialLabel: PropTypes.string,
+  /**
+   * Props to apply to delete button
+   */
+  deleteButtonProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvTag" })(HvTag);
