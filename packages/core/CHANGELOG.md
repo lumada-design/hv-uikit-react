@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.49.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.49.0...@hv/uikit-react-core@3.49.1) (2021-12-17)
+
+
+### Bug Fixes
+
+* **snackbar:** add snackbarcontentprops on snackbar.d.ts ([#2619](https://github.com/lumada-design/hv-uikit-react/issues/2619)) ([b13f238](https://github.com/lumada-design/hv-uikit-react/commit/b13f2388141954ca0e6aa7b309521e5f54c40e56))
+* **snackbar:** allow content style customization. HVUIKIT-6306 ([d3cf937](https://github.com/lumada-design/hv-uikit-react/commit/d3cf937da05fa81d7e2a3ceb26194dda159bb3cf))
+
+
+
+
+
 # [3.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.48.2...@hv/uikit-react-core@3.49.0) (2021-12-14)
 
 
