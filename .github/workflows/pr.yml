@@ -132,7 +132,7 @@ jobs:
   Applitools:
     name: Applitools Storybook Visual Testing
     needs: [Build-Documentation]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux]
 
     services:
       storybook:
