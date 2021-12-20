@@ -30,6 +30,7 @@ module.exports = {
 
   appName: "UI Kit v3.x",
   batchName: "UI Kit v3.x",
+  batchId: process.env.APPLITOOLS_BATCH_ID,
 
   browser: [
     { width: 1024, height: 768, name: "chrome" },
