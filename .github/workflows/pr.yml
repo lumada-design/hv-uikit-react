@@ -173,7 +173,7 @@ jobs:
           APPLITOOLS_BATCH_ID: ${{ github.sha }}
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
+          APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
 
       - name: Archive Logs
         uses: actions/upload-artifact@v1
