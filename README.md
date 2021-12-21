@@ -130,6 +130,8 @@ Features can be **new components** or changes to **existing**.
 
 This project is licensed under the terms of the [Apache 2.0 license](/LICENSE.md).
 
+Details for the required packages and their license can be obtained in https://knowledge.hitachivantara.com/Documents/Open_Source_Software.
+
 ## Team
 
 The UI Kit is maintained by a small group of invaluable core contributors, with the support and involvement of the Hitachi Vantara community. 😄
