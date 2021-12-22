@@ -18,13 +18,25 @@ const styles = (theme) => {
       marginRight: 0,
       width: 0,
       flex: "1 1 auto",
-      minWidth: 100,
+      minWidth: 48,
+      height: 24,
+      lineHeight: "24px",
+      padding: 0,
     },
     listItemGutters: {
-      padding: "0px 5px",
+      padding: "0 5px",
     },
     listItemRoot: {
-      marginBottom: 0,
+      marginBottom: 2,
+      height: 24,
+      lineHeight: "24px",
+      "&:not(:last-child)": {
+        marginBottom: 2,
+      },
+      "&$singleLine": {
+        display: "table-cell",
+        paddingTop: 2,
+      },
     },
     labelContainer: {
       float: "left",
@@ -56,6 +68,7 @@ const styles = (theme) => {
       height: "100%",
       padding: 5,
       overflow: "auto",
+      position: "relative",
 
       flexDirection: "row",
       flexWrap: "wrap",
@@ -63,6 +76,10 @@ const styles = (theme) => {
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       borderRadius: "2px",
+
+      "&:hover": {
+        cursor: "text",
+      },
 
       "&:focus": {
         outline: "none",
@@ -88,10 +105,28 @@ const styles = (theme) => {
           border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
         },
       },
+
+      "&$singleLine": {
+        overflowX: "hidden",
+        overflowY: "hidden",
+        height: 32,
+        display: "table-row",
+        paddingTop: 0,
+        paddingLeft: 4,
+      },
     },
     tagInputContainerRoot: {
       display: "flex",
       flexGrow: 1,
+      height: 24,
+      lineHeight: "24px",
+      "&$singleLine": {
+        display: "table-cell",
+        minWidth: 100,
+        width: "100%",
+        paddingTop: 3,
+        verticalAlign: "middle",
+      },
     },
     tagInputRoot: {
       width: "100%",
@@ -101,6 +136,7 @@ const styles = (theme) => {
       "&:focus-within $tagInputBorderContainer": {
         background: "none",
       },
+      "&$singleLine": {},
     },
     tagInputRootFocused: {
       outline: "none",
@@ -117,6 +153,7 @@ const styles = (theme) => {
       border: "none",
       background: "none",
     },
+    singleLine: {},
   };
 };
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useMemo } from "react";
+import React, { useRef, useState, useCallback, useMemo, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -20,7 +20,7 @@ import styles from "./styles";
 /**
  * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
-const HvTextAreaTags = (props) => {
+const HvTagsInput = (props) => {
   const {
     classes,
     className,
@@ -54,10 +54,12 @@ const HvTextAreaTags = (props) => {
     inputProps = {},
     countCharProps = {},
 
+    multiline = true,
+
     ...others
   } = props;
 
-  const elementId = useUniqueId(id, "hvtextareatags");
+  const elementId = useUniqueId(id, "hvTagsInput");
 
   const hasLabel = textAreaLabel != null;
   const hasDescription = description != null;
@@ -76,6 +78,7 @@ const HvTextAreaTags = (props) => {
   }, [hasCounter, maxTagsQuantity, value.length]);
 
   const inputRef = useRef();
+  const containerRef = useRef();
 
   /**
    * Handler for the `onChange` event on the tag input
@@ -83,6 +86,30 @@ const HvTextAreaTags = (props) => {
   const onChangeHandler = useCallback((event, input) => {
     setTagInput(input);
   }, []);
+
+  useEffect(() => {
+    // keep scroll focused on the input when the value changes
+    if (!multiline) {
+      const element = document.getElementById("tag-input");
+      const offset = element?.offsetWidth;
+      containerRef.current?.scrollBy(offset ?? 0, 0);
+    }
+  }, [multiline, value]);
+
+  useEffect(() => {
+    if (!multiline) {
+      const tagId = `tag-${tagCursorPos}`;
+      const element = document.getElementById(tagId);
+      // this setTimeout is a workaround for Firefox not properly dealing
+      // with setting the scrollLeft value.
+      setTimeout(() => {
+        containerRef.current.scrollLeft = element?.offsetLeft || 0;
+      }, 50);
+
+      element?.focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tagCursorPos]);
 
   /**
    * Handler for the `onEnter` event on the tag input
@@ -94,6 +121,7 @@ const HvTextAreaTags = (props) => {
         setValue(newTagsArr);
         setTagInput("");
         setTagCursorPos(newTagsArr.length);
+
         onChange?.(newTagsArr);
       }
     },
@@ -161,9 +189,13 @@ const HvTextAreaTags = (props) => {
     [value, setValue, onChange]
   );
 
-  const onClickHandler = useCallback(() => {
+  /**
+   * Handler for the `onClick` event on the list container
+   */
+  const onContainerClickHandler = useCallback(() => {
     inputRef.current?.focus();
-  }, []);
+    setTagCursorPos(value.length);
+  }, [value.length]);
 
   return (
     <HvFormElement
@@ -208,11 +240,13 @@ const HvTextAreaTags = (props) => {
       <HvListContainer
         className={clsx(
           classes.tagsList,
-          resizable && classes.resizable,
-          isStateInvalid && classes.invalid
+          resizable && multiline && classes.resizable,
+          isStateInvalid && classes.invalid,
+          !multiline && classes.singleLine
         )}
         onKeyDown={onKeyDownHandler}
-        onClick={onClickHandler}
+        onClick={onContainerClickHandler}
+        ref={containerRef}
       >
         {value &&
           value.map((t, i) => {
@@ -229,10 +263,12 @@ const HvTextAreaTags = (props) => {
                 // eslint-disable-next-line react/no-array-index-key
                 key={`${tag.label}-${i}`}
                 tabIndex={-1}
+                className={clsx(!multiline && classes.singleLine)}
                 classes={{
                   gutters: classes.listItemGutters,
                   root: classes.listItemRoot,
                 }}
+                id={`tag-${i}`}
               >
                 <HvTag
                   label={<HvTypography>{label}</HvTypography>}
@@ -251,10 +287,12 @@ const HvTextAreaTags = (props) => {
           })}
         {!(disabled || readOnly) && (
           <HvListItem
+            className={clsx(!multiline && classes.singleLine)}
             classes={{
               root: classes.tagInputContainerRoot,
               gutters: classes.listItemGutters,
             }}
+            id={`tag-${value.length}`}
           >
             <HvInput
               value={tagInput}
@@ -263,6 +301,7 @@ const HvTextAreaTags = (props) => {
               onEnter={onEnterHandler}
               placeholder={value.length === 0 ? placeholder : ""}
               autoFocus={autoFocus}
+              className={clsx(!multiline && classes.singleLine)}
               classes={{
                 root: classes.tagInputRoot,
                 input: classes.input,
@@ -291,7 +330,7 @@ const HvTextAreaTags = (props) => {
   );
 };
 
-HvTextAreaTags.propTypes = {
+HvTagsInput.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -368,6 +407,10 @@ HvTextAreaTags.propTypes = {
      * Styles applied to the input element when focused.
      */
     tagInputRootFocused: PropTypes.string,
+    /**
+     * Styles applied to the container when in single line mode§.
+     */
+    singleLine: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the form element root node.
@@ -453,6 +496,10 @@ HvTextAreaTags.propTypes = {
    * Props passed to the HvCharCount component.
    */
   countCharProps: PropTypes.instanceOf(Object),
+  /**
+   * If `true` the component is in multiline mode.
+   */
+  multiline: PropTypes.bool,
 };
 
-export default withStyles(styles, { name: "HvTextAreaTags" })(HvTextAreaTags);
+export default withStyles(styles, { name: "HvTagsInput" })(HvTagsInput);

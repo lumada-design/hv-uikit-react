@@ -166,8 +166,8 @@ export * from "./Tabs";
 export { default as HvTextArea } from "./TextArea";
 export * from "./TextArea";
 
-export { default as HvTextAreaTags } from "./TextAreaTags";
-export * from "./TextAreaTags";
+export { default as HvTagsInput } from "./TagsInput";
+export * from "./TagsInput";
 
 export { default as HvToggleButton } from "./ToggleButton";
 export * from "./ToggleButton";

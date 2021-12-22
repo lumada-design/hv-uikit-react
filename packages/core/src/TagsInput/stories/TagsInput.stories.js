@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
-import { HvTextAreaTags, HvTypography } from "../..";
+import { HvTagsInput, HvTypography } from "../..";
 
 export default {
-  title: "Forms/Text Area Tags",
+  title: "Forms/Tags Input",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTextAreaTags } from "@hv/uikit-react-core"',
+    usage: 'import { HvTagsInput } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },
-  component: HvTextAreaTags,
+  component: HvTagsInput,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
@@ -24,7 +24,7 @@ export const Main = () => {
   const classes = useStyles();
 
   return (
-    <HvTextAreaTags
+    <HvTagsInput
       id="tags-list-1"
       label="Main"
       aria-label="The label"
@@ -36,9 +36,35 @@ export const Main = () => {
   );
 };
 
-export const Controlled = () => {
+export const ControlledStringArray = () => {
   const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
 
+  return (
+    <>
+      <HvTagsInput
+        id="tags-list-2"
+        label="Controlled with array of strings"
+        aria-label="Controlled with array of string"
+        description="A list of strings will result in semantic tags"
+        placeholder="Enter value"
+        value={currValueStr}
+        onChange={(value) => {
+          setCurrValueStr(value);
+        }}
+      />
+      <HvTypography variant="highlightText">Current value:</HvTypography>
+      <HvTypography>{JSON.stringify(currValueStr)}</HvTypography>
+    </>
+  );
+};
+
+ControlledStringArray.parameters = {
+  docs: {
+    description: { story: "Controlled Tags Input with string array" },
+  },
+};
+
+export const ControlledTagArray = () => {
   const [currValueArr, setCurrValueArr] = useState([
     { label: "tag 1", color: "#7ed69e" },
     {
@@ -52,23 +78,8 @@ export const Controlled = () => {
 
   return (
     <>
-      <HvTextAreaTags
-        id="tags-list-2"
-        label="Controlled with array of strings"
-        aria-label="Controlled with array of string"
-        description="A list of strings will result in semantic tags"
-        placeholder="Enter value"
-        value={currValueStr}
-        onChange={(value) => {
-          setCurrValueStr(value);
-        }}
-      />
-      <HvTypography variant="highlightText">Current value:</HvTypography>
-      <HvTypography>{JSON.stringify(currValueStr)}</HvTypography>
-      <br />
-      <br />
-      <HvTextAreaTags
-        id="tags-list-3"
+      <HvTagsInput
+        id="tags-list-4"
         label="Controlled with array of tags"
         aria-label="Controlled with array of tags"
         placeholder="Enter value"
@@ -83,16 +94,16 @@ export const Controlled = () => {
   );
 };
 
-Controlled.parameters = {
+ControlledTagArray.parameters = {
   docs: {
-    description: { story: "Text area tags controlled" },
+    description: { story: "Controlled Tags Input with Tags array" },
   },
 };
 
 export const Disabled = () => {
   return (
-    <HvTextAreaTags
-      id="tags-list-4"
+    <HvTagsInput
+      id="tags-list-5"
       label="Disabled with disabled tags"
       aria-label="The label"
       placeholder="Enter value"
@@ -108,14 +119,14 @@ export const Disabled = () => {
 
 Disabled.parameters = {
   docs: {
-    description: { story: "Text area tags disabled" },
+    description: { story: "Disabled Tags Input" },
   },
 };
 
 export const Readonly = () => {
   return (
-    <HvTextAreaTags
-      id="tags-list-5"
+    <HvTagsInput
+      id="tags-list-6"
       label="Readonly"
       aria-label="The label"
       placeholder="Enter value"
@@ -127,7 +138,7 @@ export const Readonly = () => {
 
 Readonly.parameters = {
   docs: {
-    description: { story: "Text area tags readonly" },
+    description: { story: "Readonly Tags Input" },
   },
 };
 
@@ -143,8 +154,8 @@ export const NotResizable = () => {
     <>
       <br />
       <br />
-      <HvTextAreaTags
-        id="tags-list-6"
+      <HvTagsInput
+        id="tags-list-7"
         label="Fixed size not resizable"
         aria-label="The label"
         placeholder="Enter value"
@@ -159,7 +170,7 @@ export const NotResizable = () => {
 
 NotResizable.parameters = {
   docs: {
-    story: "Text area tags not resizable.",
+    story: "Not resizable.",
   },
 };
 
@@ -172,8 +183,8 @@ export const TagsCounterValidation = () => {
   };
 
   return (
-    <HvTextAreaTags
-      id="tags-list-4"
+    <HvTagsInput
+      id="tags-list-8"
       label="With tags counter validation"
       aria-label="The label"
       placeholder="Enter value"
@@ -186,6 +197,33 @@ export const TagsCounterValidation = () => {
 
 TagsCounterValidation.parameters = {
   docs: {
-    description: { story: "Text area tags with tags counter." },
+    description: { story: "Tags Input with tags counter." },
+  },
+};
+
+export const SingleLine = () => {
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: "350px",
+    },
+  }));
+  const classes = useStyles();
+  return (
+    <HvTagsInput
+      id="tags-list-9"
+      label="Single Line"
+      aria-label="The label"
+      placeholder="Enter value"
+      multiline={false}
+      classes={{
+        root: classes.root,
+      }}
+    />
+  );
+};
+
+SingleLine.parameters = {
+  docs: {
+    description: { story: "Tags Input in single line mode." },
   },
 };

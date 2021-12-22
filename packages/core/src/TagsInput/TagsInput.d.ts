@@ -2,11 +2,9 @@ import { StandardProps } from "@material-ui/core";
 import { HvTagProps } from "../Tag/Tag";
 import { HvCharCounterProps } from "../Forms/CharCounter";
 
-import { HvBaseInputProps, HvBaseInputValidationMessagesProps } from "../BaseInput";
+import { HvBaseInputProps } from "../BaseInput";
 
-import { HvFormStatus } from "../Forms/FormElement";
-
-export type HvTextAreaTagsClassKey =
+export type HvTagsInputClassKey =
   | "root"
   | "disabled"
   | "resizable"
@@ -16,8 +14,8 @@ export type HvTextAreaTagsClassKey =
   | "characterCounter"
   | "description";
 
-export interface HvTextAreaTagsProps
-  extends StandardProps<HvBaseInputProps, HvTextAreaTagsClassKey, "onChange" | "onBlur"> {
+export interface HvTagsInputProps
+  extends StandardProps<HvBaseInputProps, HvTagsInputClassKey, "onChange" | "onBlur"> {
   /**
    * The label of the form element.
    *
@@ -95,9 +93,14 @@ export interface HvTextAreaTagsProps
   countCharProps?: HvCharCounterProps;
 
   /**
+   * If `true` the component is in multiline mode.
+   */
+  multiline: boolean;
+
+  /**
    * Called back when the value is changed.
    */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
 }
 
-export default function HvTextAreaTags(props: HvTextAreaTagsProps): JSX.Element | null;
+export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;
