@@ -12,10 +12,12 @@ describe("TagsInput", () => {
   });
 });
 
-describe("TextArea Component", () => {
+describe("TagsInput Component", () => {
   const mockClasses = {
     tagInputContainerRoot: "tagInputContainerRoot",
   };
+
+  Element.prototype.scrollTo = () => {};
 
   it("should render the label correctly", () => {
     const { getByText } = render(

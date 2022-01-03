@@ -92,7 +92,7 @@ const HvTagsInput = (props) => {
     if (!multiline) {
       const element = document.getElementById("tag-input");
       const offset = element?.offsetWidth;
-      containerRef.current?.scrollBy(offset ?? 0, 0);
+      containerRef?.current?.scrollBy?.(offset ?? 0, 0);
     }
   }, [multiline, value]);
 
