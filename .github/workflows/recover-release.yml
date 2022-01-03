@@ -8,7 +8,7 @@ env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/master
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for ${{ github.repository }}/master"
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master of ${{ github.repository }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/master/
 
 jobs:
