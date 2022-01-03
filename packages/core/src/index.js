@@ -74,6 +74,7 @@ export { default as HvTag } from "./Tag";
 export { default as HvTable } from "./Table";
 export { default as HvTabs } from "./Tabs";
 export { default as HvTextArea } from "./TextArea";
+export { default as HvTagsInput } from "./TagsInput";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
