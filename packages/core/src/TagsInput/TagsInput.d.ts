@@ -95,7 +95,7 @@ export interface HvTagsInputProps
   /**
    * If `true` the component is in multiline mode.
    */
-  multiline: boolean;
+  multiline?: boolean;
 
   /**
    * Called back when the value is changed.

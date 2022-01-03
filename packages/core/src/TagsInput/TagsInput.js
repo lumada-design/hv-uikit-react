@@ -54,7 +54,7 @@ const HvTagsInput = (props) => {
     inputProps = {},
     countCharProps = {},
 
-    multiline = true,
+    multiline = false,
 
     ...others
   } = props;

@@ -8,7 +8,7 @@ export default {
     componentSubtitle: null,
     usage: 'import { HvTagsInput } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvTagsInput,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
@@ -142,29 +142,54 @@ Readonly.parameters = {
   },
 };
 
+export const Multiline = () => {
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 350,
+      height: 100,
+    },
+  }));
+  const classes = useStyles();
+  return (
+    <HvTagsInput
+      id="tags-list-9"
+      label="Single Line"
+      aria-label="The label"
+      placeholder="Enter value"
+      multiline
+      classes={{
+        root: classes.root,
+      }}
+    />
+  );
+};
+
+Multiline.parameters = {
+  docs: {
+    description: { story: "Tags Input in multi line mode." },
+  },
+};
+
 export const NotResizable = () => {
   const useStyles = makeStyles(() => ({
     root: {
-      height: 150,
+      height: 100,
       width: 400,
     },
   }));
   const classes = useStyles();
   return (
-    <>
-      <br />
-      <br />
-      <HvTagsInput
-        id="tags-list-7"
-        label="Fixed size not resizable"
-        aria-label="The label"
-        placeholder="Enter value"
-        classes={{
-          root: classes.root,
-        }}
-        resizable={false}
-      />
-    </>
+    <HvTagsInput
+      id="tags-list-7"
+      label="Fixed size not resizable"
+      aria-label="The label"
+      placeholder="Enter value"
+      classes={{
+        root: classes.root,
+      }}
+      multiline
+      resizable={false}
+    />
   );
 };
 
@@ -182,6 +207,15 @@ export const TagsCounterValidation = () => {
     return data;
   };
 
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 350,
+      height: 100,
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <HvTagsInput
       id="tags-list-8"
@@ -189,6 +223,10 @@ export const TagsCounterValidation = () => {
       aria-label="The label"
       placeholder="Enter value"
       onChange={(value) => setCounter(value)}
+      multiline
+      classes={{
+        root: classes.root,
+      }}
       maxTagsQuantity={3}
       countCharProps={{ "aria-label": `You have inserted ${tagsLength} tags` }}
     />
@@ -198,32 +236,5 @@ export const TagsCounterValidation = () => {
 TagsCounterValidation.parameters = {
   docs: {
     description: { story: "Tags Input with tags counter." },
-  },
-};
-
-export const SingleLine = () => {
-  const useStyles = makeStyles(() => ({
-    root: {
-      width: "350px",
-    },
-  }));
-  const classes = useStyles();
-  return (
-    <HvTagsInput
-      id="tags-list-9"
-      label="Single Line"
-      aria-label="The label"
-      placeholder="Enter value"
-      multiline={false}
-      classes={{
-        root: classes.root,
-      }}
-    />
-  );
-};
-
-SingleLine.parameters = {
-  docs: {
-    description: { story: "Tags Input in single line mode." },
   },
 };
