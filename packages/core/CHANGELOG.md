@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.50.0...@hv/uikit-react-core@3.51.0) (2022-01-04)
+
+
+### Features
+
+* **query-builder:** add initial version of the component. HVUIKIT-6287 ([414836e](https://github.com/lumada-design/hv-uikit-react/commit/414836e6213fcb467b86e86ff1a8c86b5ae77073))
+* **tags-input:** have multiline as false, update docs. HVUIKIT-5702 ([bb65755](https://github.com/lumada-design/hv-uikit-react/commit/bb65755ae99a8b718eb991dad590dd94cbcc8a3a))
+* **TagsInput:** add tags input component ([4ce7e9a](https://github.com/lumada-design/hv-uikit-react/commit/4ce7e9aa05d04967ef5e9f658522753b70363b8f))
+* **Textarea:** add tags list functionality ([80a04ae](https://github.com/lumada-design/hv-uikit-react/commit/80a04ae0242b562ae9571abf220b64802a03311b))
+
+
+
+
+
 # [3.50.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.49.1...@hv/uikit-react-core@3.50.0) (2021-12-21)
 
 

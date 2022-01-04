@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.33.6...@hv/uikit-react-lab@3.34.0) (2022-01-04)
+
+
+### Features
+
+* **query-builder:** add initial version of the component. HVUIKIT-6287 ([414836e](https://github.com/lumada-design/hv-uikit-react/commit/414836e6213fcb467b86e86ff1a8c86b5ae77073))
+
+
+
+
+
 ## [3.33.6](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.33.5...@hv/uikit-react-lab@3.33.6) (2021-12-21)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
