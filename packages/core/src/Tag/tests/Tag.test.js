@@ -4,7 +4,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 
 import { render } from "testing-utils";
-import { HvTag, HvTypography } from "../..";
+import { HvTag } from "../..";
 
 import { Main, WithDeleteAction, CategoricalTags } from "../stories/Tag.stories";
 
@@ -54,12 +54,6 @@ describe("<Tag />", () => {
     it("triggers the provided delete action", () => {
       const onClickSpy = jest.fn();
 
-      const textElement = (tagLabel) => {
-        const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-        return TagText;
-      };
-
       const TagsWithDeletion = () => (
         <div
           style={{
@@ -68,10 +62,10 @@ describe("<Tag />", () => {
             justifyContent: "space-between",
           }}
         >
-          <HvTag label={textElement("Informational")} onDelete={onClickSpy} />
-          <HvTag label={textElement("Success")} color="sema8" onDelete={onClickSpy} />
-          <HvTag label={textElement("Warning")} color="sema9" onDelete={onClickSpy} />
-          <HvTag label={textElement("Error")} color="sema20" onDelete={onClickSpy} />
+          <HvTag label="Informational" onDelete={onClickSpy} />
+          <HvTag label="Success" color="sema8" onDelete={onClickSpy} />
+          <HvTag label="Warning" color="sema9" onDelete={onClickSpy} />
+          <HvTag label="Error" color="sema20" onDelete={onClickSpy} />
         </div>
       );
 
@@ -97,12 +91,6 @@ describe("<Tag />", () => {
     it("does not trigger the provided delete action when disabled", () => {
       const onClickSpy = jest.fn();
 
-      const textElement = (tagLabel) => {
-        const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-        return TagText;
-      };
-
       const TagsWithDeletion = () => (
         <div
           style={{
@@ -111,10 +99,10 @@ describe("<Tag />", () => {
             justifyContent: "space-between",
           }}
         >
-          <HvTag label={textElement("Informational")} onDelete={onClickSpy} disabled />
-          <HvTag label={textElement("Success")} color="sema8" onDelete={onClickSpy} disabled />
-          <HvTag label={textElement("Warning")} color="sema9" onDelete={onClickSpy} disabled />
-          <HvTag label={textElement("Error")} color="sema20" onDelete={onClickSpy} disabled />
+          <HvTag label="Informational" onDelete={onClickSpy} disabled />
+          <HvTag label="Success" color="sema8" onDelete={onClickSpy} disabled />
+          <HvTag label="Warning" color="sema9" onDelete={onClickSpy} disabled />
+          <HvTag label="Error" color="sema20" onDelete={onClickSpy} disabled />
         </div>
       );
 
@@ -163,41 +151,15 @@ describe("<Tag />", () => {
 
     describe("Categorical Tags With Actions", () => {
       it("trigger the provided action", () => {
-        const textElement = (tagLabel) => {
-          const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-          return TagText;
-        };
-
         const onClickSpy = jest.fn();
 
         const CategoricalTagsWithAction = () => (
           <>
-            <HvTag label={textElement("Feat")} onClick={onClickSpy} type="categorical" />
-            <HvTag
-              label={textElement("Docs")}
-              onClick={onClickSpy}
-              type="categorical"
-              color="cviz2"
-            />
-            <HvTag
-              label={textElement("Fix")}
-              onClick={onClickSpy}
-              type="categorical"
-              color="cviz3"
-            />
-            <HvTag
-              label={textElement("New")}
-              onClick={onClickSpy}
-              type="categorical"
-              color="cviz4"
-            />
-            <HvTag
-              label={textElement("Deprecated")}
-              onClick={onClickSpy}
-              type="categorical"
-              color="cviz5"
-            />
+            <HvTag label="Feat" onClick={onClickSpy} type="categorical" />
+            <HvTag label="Docs" onClick={onClickSpy} type="categorical" color="cviz2" />
+            <HvTag label="Fix" onClick={onClickSpy} type="categorical" color="cviz3" />
+            <HvTag label="New" onClick={onClickSpy} type="categorical" color="cviz4" />
+            <HvTag label="Deprecated" onClick={onClickSpy} type="categorical" color="cviz5" />
           </>
         );
 

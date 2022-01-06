@@ -8,7 +8,6 @@ import {
   HvListContainer,
   HvListItem,
   HvTag,
-  HvTypography,
   HvInput,
   HvLabel,
   HvInfoMessage,
@@ -271,7 +270,7 @@ const HvTagsInput = (props) => {
                 id={`tag-${i}`}
               >
                 <HvTag
-                  label={<HvTypography>{label}</HvTypography>}
+                  label={label}
                   className={clsx(i === tagCursorPos && classes.tagSelected)}
                   type={type}
                   {...(!(readOnly || disabled || type === "categorical") && {
