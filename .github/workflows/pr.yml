@@ -30,6 +30,9 @@ env:
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
   PR_URL: https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
   RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+  APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+  APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+  APPLITOOLS_SERVER_URL: "https://eyesapi.applitools.com"
 
 jobs:
   Static-Checks:
@@ -95,6 +98,78 @@ jobs:
         if: always()
         run: |
           rm -rf ${{ github.workspace }}/dist
+
+  Applitools:
+    name: Applitools Storybook Visual Testing
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    services:
+      storybook:
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/Applitools
+        run: |
+          cd ${{ github.workspace }}/automation/applitools
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Run Applitools Storybook Visual Testing
+        env:
+          APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+          APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+        run: |
+          cd ${{ github.workspace }}/automation/applitools
+          npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
+
+      - name: Archive Logs
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  Applitools-Complete:
+    needs: [Applitools]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Applitools Finish
+        # repo scope personal token is required to generate a dispatch event
+        run: |
+          curl -X POST \
+            https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{env.APPLITOOLS_BATCH_ID}}/complete?apiKey=${{env.APPLITOOLS_API_KEY}} \
+            -H "accept:*/*" \
 
   Github-Deployment:
     name: Github Deployment
@@ -264,7 +339,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Github-Deployment, A11Y-Tests, Robot]
+    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot]
     if: always()
     runs-on: ubuntu-latest
 

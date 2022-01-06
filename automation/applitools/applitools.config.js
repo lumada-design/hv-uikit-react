@@ -28,8 +28,8 @@ module.exports = {
   runInDocker: true,
   variations: () => ["theme:wicked"],
 
-  appName: "UI Kit v3.x",
-  batchName: "UI Kit v3.x",
+  appName: "UIKit",
+  batchId: process.env.APPLITOOLS_BATCH_ID,
 
   browser: [
     { width: 1024, height: 768, name: "chrome" },
