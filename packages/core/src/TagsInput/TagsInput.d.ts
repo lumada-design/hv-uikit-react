@@ -43,11 +43,11 @@ export interface HvTagsInputProps
   /**
    * Indicates that the form element is disabled.
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Indicates that the form element is not editable.
    */
-  readOnly: boolean;
+  readOnly?: boolean;
 
   /**
    * If `true` it should autofocus.
@@ -58,11 +58,6 @@ export interface HvTagsInputProps
    * If `true` the component is resizable.
    */
   resizable?: boolean;
-
-  /**
-   * The placeholder value of the input.
-   */
-  placeholder: string;
 
   /**
    * If `true` the character counter isn't shown even if maxTagsQuantity is set.
@@ -81,11 +76,11 @@ export interface HvTagsInputProps
   /**
    * The value of the form element.
    */
-  value: string[] | HvTagProps[];
+  value?: string[] | HvTagProps[];
   /**
    *  When uncontrolled, defines the initial input value.
    */
-  defaultValue: string[] | HvTagProps[];
+  defaultValue?: string[] | HvTagProps[];
 
   /**
    * Props passed to the char count.
