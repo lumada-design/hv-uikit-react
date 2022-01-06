@@ -76,7 +76,7 @@ jobs:
           npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
-      - name: run Applitools Storybook Visual Testing
+      - name: Run Applitools Storybook Visual Testing
         env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
