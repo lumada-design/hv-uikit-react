@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import clsx from "clsx";
 
-import { HvTag, HvTypography, HvTooltip } from "../..";
+import { HvTag, HvTypography, HvTooltip, HvListContainer, HvListItem } from "../..";
 
 export default {
   title: "Components/Tag",
@@ -18,12 +18,6 @@ export default {
 };
 
 export const Main = () => {
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
-
   return (
     <div
       style={{
@@ -32,10 +26,10 @@ export const Main = () => {
         justifyContent: "space-between",
       }}
     >
-      <HvTag label={textElement("Informational")} />
-      <HvTag color="sema8" label={textElement("Success")} />
-      <HvTag color="sema9" label={textElement("Warning")} />
-      <HvTag color="sema20" label={textElement("Error")} />
+      <HvTag label="Informational" />
+      <HvTag color="sema8" label="Success" />
+      <HvTag color="sema9" label="Warning" />
+      <HvTag color="sema20" label="Error" />
     </div>
   );
 };
@@ -90,12 +84,6 @@ export const LongLabelText = () => {
 };
 
 export const WithDeleteAction = () => {
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
-
   return (
     <div
       style={{
@@ -105,13 +93,13 @@ export const WithDeleteAction = () => {
       }}
     >
       <HvTag
-        label={textElement("Informational")}
+        label="Informational"
         onDelete={() => {
           alert("On Delete Action");
         }}
       />
       <HvTag
-        label={textElement("Success")}
+        label="Success"
         color="sema8"
         onDelete={() => {
           alert("On Delete Action");
@@ -121,7 +109,7 @@ export const WithDeleteAction = () => {
         }}
       />
       <HvTag
-        label={textElement("Warning")}
+        label="Warning"
         color="sema9"
         onDelete={() => {
           alert("On Delete Action");
@@ -131,7 +119,7 @@ export const WithDeleteAction = () => {
         }}
       />
       <HvTag
-        label={textElement("Error")}
+        label="Error"
         color="sema20"
         onDelete={() => {
           alert("On Delete Action");
@@ -142,12 +130,6 @@ export const WithDeleteAction = () => {
 };
 
 export const DisabledTags = () => {
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
-
   return (
     <div
       style={{
@@ -156,13 +138,9 @@ export const DisabledTags = () => {
         justifyContent: "space-between",
       }}
     >
+      <HvTag label="Informational" disabled deleteButtonProps={{ "aria-label": "Disabled tag" }} />
       <HvTag
-        label={textElement("Informational")}
-        disabled
-        deleteButtonProps={{ "aria-label": "Disabled tag" }}
-      />
-      <HvTag
-        label={textElement("Success")}
+        label="Success"
         disabled
         onDelete={() => {
           alert("On Delete Action");
@@ -174,11 +152,6 @@ export const DisabledTags = () => {
 };
 
 export const CategoricalTags = () => {
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
   return (
     <div
       style={{
@@ -187,42 +160,17 @@ export const CategoricalTags = () => {
         justifyContent: "space-between",
       }}
     >
-      <HvTag label={textElement("Feat")} onClick={() => alert("Hello")} type="categorical" />
-      <HvTag
-        label={textElement("Docs")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz2"
-      />
-      <HvTag
-        label={textElement("Fix")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz3"
-      />
-      <HvTag
-        label={textElement("New")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz4"
-      />
-      <HvTag
-        label={textElement("Deprecated")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz5"
-      />
-      <HvTag label={textElement("No Click")} type="categorical" color="#22FF45" />
+      <HvTag label="Feat" onClick={() => alert("Hello")} type="categorical" />
+      <HvTag label="Docs" onClick={() => alert("Hello")} type="categorical" color="cviz2" />
+      <HvTag label="Fix" onClick={() => alert("Hello")} type="categorical" color="cviz3" />
+      <HvTag label="New" onClick={() => alert("Hello")} type="categorical" color="cviz4" />
+      <HvTag label="Deprecated" onClick={() => alert("Hello")} type="categorical" color="cviz5" />
+      <HvTag label="No Click" type="categorical" color="#22FF45" />
     </div>
   );
 };
 
 export const CategoricalTagsDisabled = () => {
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
   return (
     <div
       style={{
@@ -231,35 +179,18 @@ export const CategoricalTagsDisabled = () => {
         justifyContent: "space-between",
       }}
     >
+      <HvTag label="Feat" onClick={() => alert("Hello")} type="categorical" disabled />
       <HvTag
-        label={textElement("Feat")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        disabled
-      />
-      <HvTag
-        label={textElement("Docs")}
+        label="Docs"
         onClick={() => alert("Hello")}
         type="categorical"
         color="cviz2"
         disabled
       />
+      <HvTag label="Fix" onClick={() => alert("Hello")} type="categorical" color="cviz3" disabled />
+      <HvTag label="New" onClick={() => alert("Hello")} type="categorical" color="cviz4" disabled />
       <HvTag
-        label={textElement("Fix")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz3"
-        disabled
-      />
-      <HvTag
-        label={textElement("New")}
-        onClick={() => alert("Hello")}
-        type="categorical"
-        color="cviz4"
-        disabled
-      />
-      <HvTag
-        label={textElement("Deprecated")}
+        label="Deprecated"
         onClick={() => alert("Hello")}
         type="categorical"
         color="cviz5"
@@ -270,34 +201,41 @@ export const CategoricalTagsDisabled = () => {
 };
 
 export const TagArray = () => {
-  const useStyles = makeStyles(() => ({
-    tagsPlaceholder: {
-      width: "350px",
+  const useStyles = makeStyles((theme) => ({
+    tagList: {
       display: "flex",
-      padding: "10px 10px 0px 10px",
       flexWrap: "wrap",
-      "& > *": {
-        margin: "0 10px 10px 0",
-      },
+      alignContent: "flex-start",
+    },
+    tagListItem: {
+      padding: `0 ${theme.hv.spacing.xs}px ${theme.hv.spacing.xs}px 0`,
+      height: "auto",
+      lineHeight: "16px",
     },
   }));
 
   const classes = useStyles();
 
-  const textElement = (tagLabel) => {
-    const TagText = <HvTypography variant="normalText">{tagLabel}</HvTypography>;
-
-    return TagText;
-  };
-
   return (
-    <div className={classes.tagsPlaceholder}>
-      <HvTag label={textElement("In progress")} />
-      <HvTag label={textElement("To Do")} />
-      <HvTag label={textElement("New")} />
-      <HvTag label={textElement("Success")} />
-      <HvTag label={textElement("Fixed")} />
-      <HvTag label={textElement("Completed")} />
-    </div>
+    <HvListContainer condensed role="list" className={classes.tagList} style={{ maxWidth: 350 }}>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="In progress" />
+      </HvListItem>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="To Do" />
+      </HvListItem>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="New" />
+      </HvListItem>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="Success" />
+      </HvListItem>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="Fixed" />
+      </HvListItem>
+      <HvListItem className={classes.tagListItem}>
+        <HvTag label="Completed" />
+      </HvListItem>
+    </HvListContainer>
   );
 };
