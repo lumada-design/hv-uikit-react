@@ -1,12 +1,12 @@
-export * from "./KeyboardUtils";
+export { KeyboardCodes, getKeyCodeFromEvent, isKeycode, isKeypress } from "./KeyboardUtils";
 
 export { default as isBrowser } from "./browser";
 
-export * from "./setId";
+export { setId, setUid } from "./setId";
 
-export * from "./focusableElementFinder";
+export { getFocusableList, getFirstAndLastFocus, getPrevNextFocus } from "./focusableElementFinder";
 
-export * from "./sizes";
+export { decreaseSize, increaseSize } from "./sizes";
 
 export { default as Random } from "./Random";
 
