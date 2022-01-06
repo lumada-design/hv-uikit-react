@@ -102,7 +102,11 @@ const HvTagsInput = (props) => {
       // this setTimeout is a workaround for Firefox not properly dealing
       // with setting the scrollLeft value.
       setTimeout(() => {
-        containerRef.current.scrollLeft = element?.offsetLeft || 0;
+        containerRef.current.scrollLeft = element
+          ? element.offsetLeft -
+            containerRef.current.getBoundingClientRect().width / 2 +
+            element.getBoundingClientRect().width / 2
+          : 0;
       }, 50);
 
       element?.focus();
