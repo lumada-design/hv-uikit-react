@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.51.0...@hv/uikit-react-core@3.52.0) (2022-01-07)
+
+
+### Bug Fixes
+
+* **tags-input:** optional props not correct in typescript ([9a76ab8](https://github.com/lumada-design/hv-uikit-react/commit/9a76ab8637f61d7256ec59f42a9857aead48689c))
+* **utils:** utils functions not available in typescript. ([eecc3bc](https://github.com/lumada-design/hv-uikit-react/commit/eecc3bce07204ff907e840972da0a477ea46e2a3))
+
+
+### Features
+
+* **tag:** apply default typography ([2aa99c3](https://github.com/lumada-design/hv-uikit-react/commit/2aa99c3f98f8388edae6a110e77729fa3d6a244e))
+* **tags-input:** change selected element scroll position ([4facb69](https://github.com/lumada-design/hv-uikit-react/commit/4facb69ddd16c2aa6d08ba1be10ddbc86936194d))
+
+
+
+
+
 # [3.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.50.0...@hv/uikit-react-core@3.51.0) (2022-01-04)
 
 
