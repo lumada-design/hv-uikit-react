@@ -1,54 +1,15 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvTypographyKeys } from "..";
 
-export type HvTypographyClassKey =
-  | "5xlTitle"
-  | "4xlTitle"
-  | "3xlTitle"
-  | "xxlTitle"
-  | "xlTitle"
-  | "lTitle"
-  | "mTitle"
-  | "sTitle"
-  | "xsTitle"
-  | "xxsTitle"
-  | "sectionTitle"
-  | "highlightText"
-  | "normalText"
-  | "placeholderText"
-  | "link"
-  | "disabledText"
-  | "selectedNavText"
-  | "vizText"
-  | "vizTextDisabled"
-  | "xsInlineLink";
+export type HvTypographyClassKey = HvTypographyKeys | "root" | "noWrap";
 
 export interface HvTypographyProps
   extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, HvTypographyClassKey> {
   /**
    * The selected typography.
    */
-  variant?:
-    | "5xlTitle"
-    | "4xlTitle"
-    | "3xlTitle"
-    | "xxlTitle"
-    | "xlTitle"
-    | "lTitle"
-    | "mTitle"
-    | "sTitle"
-    | "xsTitle"
-    | "xxsTitle"
-    | "sectionTitle"
-    | "highlightText"
-    | "normalText"
-    | "placeholderText"
-    | "link"
-    | "disabledText"
-    | "selectedNavText"
-    | "vizText"
-    | "vizTextDisabled"
-    | "xsInlineLink";
+  variant?: HvTypographyKeys;
 
   /**
    * The component used for the root node.
