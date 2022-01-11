@@ -33,3 +33,6 @@ export * from "./ColorPicker";
 
 export { default as HvQueryBuilder } from "./QueryBuilder";
 export * from "./QueryBuilder";
+
+export { default as HvInlineEditor } from "./InlineEditor";
+export * from "./InlineEditor";
