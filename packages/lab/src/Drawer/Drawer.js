@@ -2,8 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { Drawer, withStyles } from "@material-ui/core";
-import { Close } from "@hv/uikit-react-icons";
-import { HvButton, withTooltip, setId } from "@hv/uikit-react-core";
+import { Close } from "@hitachivantara/uikit-react-icons";
+import { HvButton, withTooltip, setId } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 
 /**

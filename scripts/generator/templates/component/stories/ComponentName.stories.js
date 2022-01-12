@@ -6,7 +6,7 @@ export default {
   title: "Lab/ComponentName",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvComponentName } from '@hv/uikit-react-lab'",
+    usage: "import { HvComponentName } from '@hitachivantara/uikit-react-lab'",
   },
   component: HvComponentName,
 };

@@ -5,7 +5,7 @@ import { Global } from "@storybook/theming";
 import { getTheme, UIKIT_THEME } from "../theme";
 import { getDocsStyles } from "../theme/styles/docs";
 
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 export default ({ context, children }) => {
   const theme = getTheme();

@@ -13,8 +13,8 @@ import {
   HvTypography,
   useUniqueId,
   setId,
-} from "@hv/uikit-react-core";
-import { Checkbox } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Checkbox } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
 import Picker from "./Picker";

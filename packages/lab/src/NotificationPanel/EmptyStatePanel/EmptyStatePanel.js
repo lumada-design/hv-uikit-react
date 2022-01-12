@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { HvEmptyState } from "@hv/uikit-react-core";
-import { Alert } from "@hv/uikit-react-icons";
+import { HvEmptyState } from "@hitachivantara/uikit-react-core";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";

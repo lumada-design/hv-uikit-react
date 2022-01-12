@@ -19,8 +19,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { HvProvider } from "@hv/uikit-react-core";
-import { Info } from "@hv/uikit-react-icons";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 import Action from "../Action";
 

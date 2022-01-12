@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import * as color from "react-color/lib/helpers/color";
 
-import { HvInput } from "@hv/uikit-react-core";
+import { HvInput } from "@hitachivantara/uikit-react-core";
 
 import useStyles from "./styles";
 

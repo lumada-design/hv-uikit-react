@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Info } from "@hv/uikit-react-icons";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import { makeStyles } from "@material-ui/core";
 import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography, HvTooltip } from "../..";
 
@@ -9,7 +9,7 @@ export default {
   title: "Components/Snackbar",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvSnackbar } from "@hv/uikit-react-core"',
+    usage: 'import { HvSnackbar } from "@hitachivantara/uikit-react-core"',
 
     dsVersion: "3.4.0",
   },

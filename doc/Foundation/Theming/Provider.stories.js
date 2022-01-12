@@ -3,7 +3,13 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { useTheme } from "@material-ui/core";
 
-import { HvProvider, HvButton, useLocale, HvPanel, HvTypography } from "@hv/uikit-react-core";
+import {
+  HvProvider,
+  HvButton,
+  useLocale,
+  HvPanel,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
@@ -17,7 +23,7 @@ export default {
   title: "Foundation/Provider",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvProvider } from '@hv/uikit-react-core'",
+    usage: "import { HvProvider } from '@hitachivantara/uikit-react-core'",
     maturityStatus: componentDefinitions.dsClassification.stable,
     dsVersion: componentDefinitions.dsVersion.v3,
   },

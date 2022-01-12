@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { HvButton, HvCheckBox } from "@hv/uikit-react-core";
+import { HvButton, HvCheckBox } from "@hitachivantara/uikit-react-core";
 
 const SpacingUsage = () => {
   const useStyles = makeStyles((theme) => ({

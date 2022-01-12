@@ -1,6 +1,6 @@
 import React from "react";
 import { createTheme } from "@material-ui/core/styles";
-import { HvProvider, HvButton } from "@hv/uikit-react-core";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
 
 const theme = createTheme({
   hv: {

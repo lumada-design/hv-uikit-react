@@ -3,7 +3,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import { HvProvider, HvListItem } from "@hv/uikit-react-core";
+import { HvProvider, HvListItem } from "@hitachivantara/uikit-react-core";
 
 import NavigationAnchors from "..";
 

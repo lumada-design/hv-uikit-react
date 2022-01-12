@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import { Fail } from "@hv/uikit-react-icons";
+import { Fail } from "@hitachivantara/uikit-react-icons";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 import { HvButton, HvBanner, HvProvider } from "../..";
 

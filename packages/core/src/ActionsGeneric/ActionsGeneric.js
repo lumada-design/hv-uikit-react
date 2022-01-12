@@ -2,7 +2,7 @@ import React, { isValidElement } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
-import { MoreOptionsVertical } from "@hv/uikit-react-icons";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvDropDownMenu, setId } from "..";
 import styles from "./styles";
 

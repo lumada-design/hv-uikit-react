@@ -10,8 +10,8 @@ import {
   isKeypress,
   KeyboardCodes,
   useControlled,
-} from "@hv/uikit-react-core";
-import { Edit } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Edit } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
 

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 
-import { DropDownXS, DropUpXS } from "@hv/uikit-react-icons";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 
 import HvTypography from "../../Typography";
 

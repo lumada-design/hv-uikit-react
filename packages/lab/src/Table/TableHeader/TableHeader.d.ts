@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvTypographyProps } from "@hv/uikit-react-core";
+import { HvTypographyProps } from "@hitachivantara/uikit-react-core";
 
 export type HvTableHeaderClassKey =
   | "root"

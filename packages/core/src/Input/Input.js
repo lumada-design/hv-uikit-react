@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
-import { CloseXS, PreviewOff, Preview, Search, Success } from "@hv/uikit-react-icons";
+import { CloseXS, PreviewOff, Preview, Search, Success } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvTypography,

@@ -1,4 +1,4 @@
-import { withTooltip } from "@hv/uikit-react-core";
+import { withTooltip } from "@hitachivantara/uikit-react-core";
 
 const hideTooltip = (evt) => {
   const isOverFlow =

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HvTable } from "@hv/uikit-react-core";
+import { HvTable } from "@hitachivantara/uikit-react-core";
 
 const ComponentsTable = ({ tableData, tableColumnsConfig }) => {
   return (

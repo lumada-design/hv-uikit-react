@@ -3,7 +3,7 @@
 import React from "react";
 
 import { render } from "testing-utils";
-import { Backwards } from "@hv/uikit-react-icons";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
 import userEvent from "@testing-library/user-event";
 
 import { HvButton, HvGlobalActions } from "../..";

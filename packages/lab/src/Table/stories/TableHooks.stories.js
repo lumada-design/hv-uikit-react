@@ -14,7 +14,7 @@ import {
 import { useTheme, makeStyles } from "@material-ui/core";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
+import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvBulkActions,
@@ -26,7 +26,7 @@ import {
   HvTypography,
   HvSwitch,
   HvDropDownMenu,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 
 import {
   HvTable,

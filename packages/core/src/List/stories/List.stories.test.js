@@ -1,6 +1,6 @@
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
+import { Calendar, LineChart, Machine, Plane, User } from "@hitachivantara/uikit-react-icons";
 
 import React from "react";
 import { HvList, HvTypography } from "../..";

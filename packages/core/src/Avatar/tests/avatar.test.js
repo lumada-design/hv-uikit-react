@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { LogIn, User } from "@hv/uikit-react-icons";
+import { LogIn, User } from "@hitachivantara/uikit-react-icons";
 import { HvAvatar, HvButton, HvProvider } from "../..";
 
 import theme from "../../theme";

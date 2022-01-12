@@ -6,7 +6,7 @@ export default {
   title: "Components/Accordion",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAccordion } from '@hv/uikit-react-core'",
+    usage: "import { HvAccordion } from '@hitachivantara/uikit-react-core'",
   },
 
   component: HvAccordion,

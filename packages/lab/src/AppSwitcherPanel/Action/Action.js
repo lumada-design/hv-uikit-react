@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { useTheme, withStyles } from "@material-ui/core";
 
-import { HvTypography, HvAvatar, HvTooltip, HvListItem } from "@hv/uikit-react-core";
-import { Info } from "@hv/uikit-react-icons";
+import { HvTypography, HvAvatar, HvTooltip, HvListItem } from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import { DropLeftXS, DropRightXS } from "@hv/uikit-react-icons";
+import { DropLeftXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 import HvProvider from "../../../../Provider";
 
 import Navigation from "..";

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { HvButton, HvTypography } from "@hv/uikit-react-core";
+import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";

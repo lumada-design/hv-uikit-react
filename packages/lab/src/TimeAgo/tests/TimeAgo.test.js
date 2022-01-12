@@ -2,7 +2,7 @@
 
 import React from "react";
 import { render } from "@testing-library/react";
-import { HvButton, HvProvider } from "@hv/uikit-react-core";
+import { HvButton, HvProvider } from "@hitachivantara/uikit-react-core";
 import { HvTimeAgo } from "../..";
 
 const EM_DASH = "—";

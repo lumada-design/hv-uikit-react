@@ -3,7 +3,7 @@ import React from "react";
 
 import { render } from "@testing-library/react";
 
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { Default } from "../stories/Tag.stories";
 import "@testing-library/jest-dom/extend-expect";
 

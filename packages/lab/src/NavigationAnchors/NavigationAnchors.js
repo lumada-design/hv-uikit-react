@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
-import { HvListContainer, HvListItem } from "@hv/uikit-react-core";
+import { HvListContainer, HvListItem } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 import navigationOption from "./NavigationOption";
 

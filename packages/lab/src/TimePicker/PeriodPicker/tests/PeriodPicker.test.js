@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider } from "@hv/uikit-react-core";
-import { DropUpXS as AddIcon, DropDownXS as SubIcon } from "@hv/uikit-react-icons";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { DropUpXS as AddIcon, DropDownXS as SubIcon } from "@hitachivantara/uikit-react-icons";
 import PeriodPicker from "..";
 import { PeriodPickerOptions } from "../../enums";
 

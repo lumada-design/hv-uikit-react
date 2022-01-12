@@ -1,4 +1,4 @@
-# @hv/uikit-react-code-editor
+# @hitachivantara/uikit-react-code-editor
 
 The Code Editor provided as part of the Hitachi Vantara Design System.
 
@@ -7,7 +7,7 @@ The Code Editor provided as part of the Hitachi Vantara Design System.
 Install the package in your project directory with:
 
 ```sh
-npm install @hv/uikit-react-code-editor
+npm install @hitachivantara/uikit-react-code-editor
 ```
 
 ## Getting Started

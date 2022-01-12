@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvContainer, HvGrid, HvTextArea } from "@hv/uikit-react-core";
+import { HvContainer, HvGrid, HvTextArea } from "@hitachivantara/uikit-react-core";
 
 import { HvInlineEditor } from "../..";
 
@@ -7,7 +7,7 @@ export default {
   title: "Lab/Inline Editor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvInlineEditor } from '@hv/uikit-react-lab'",
+    usage: "import { HvInlineEditor } from '@hitachivantara/uikit-react-lab'",
   },
   component: HvInlineEditor,
 };

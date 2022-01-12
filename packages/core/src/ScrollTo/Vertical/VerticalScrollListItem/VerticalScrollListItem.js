@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { CurrentStep } from "@hv/uikit-react-icons";
+import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 import { setId } from "../../..";
 import styles from "./styles";
 

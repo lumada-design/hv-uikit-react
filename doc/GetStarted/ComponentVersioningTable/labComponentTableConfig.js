@@ -2,7 +2,7 @@ import React from "react";
 
 import LinkTo from "@storybook/addon-links/react";
 
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 const labComponentTableConfig = [
   {

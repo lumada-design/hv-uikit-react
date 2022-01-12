@@ -6,7 +6,7 @@ export default {
   title: "Components/Tabs",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTabs, HvTab } from "@hv/uikit-react-core"',
+    usage: 'import { HvTabs, HvTab } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@hv/uikit-react-applitools",
+  "name": "@hitachivantara/uikit-react-applitools",
   "version": "1.0.0",
   "description": "Visual Tests UI Kit components running Applitools tool.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",

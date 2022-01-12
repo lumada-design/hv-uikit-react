@@ -8,7 +8,7 @@ export default {
   title: "Foundation/Container",
   parameters: {
     componentSubtitle: null,
-    usage: 'import {HvContainer} from "@hv/uikit-react-core"',
+    usage: 'import {HvContainer} from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

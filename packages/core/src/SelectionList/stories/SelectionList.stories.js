@@ -6,7 +6,7 @@ export default {
   title: "Forms/Selection List",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvSelectionList } from "@hv/uikit-react-core"',
+    usage: 'import { HvSelectionList } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.2.0",
   },

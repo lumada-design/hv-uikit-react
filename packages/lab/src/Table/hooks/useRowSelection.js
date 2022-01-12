@@ -10,7 +10,7 @@ import {
   makePropGetter,
 } from "react-table";
 
-import { HvCheckBox, useLabels } from "@hv/uikit-react-core";
+import { HvCheckBox, useLabels } from "@hitachivantara/uikit-react-core";
 
 // Actions
 actions.resetSelectedRows = "resetSelectedRows";

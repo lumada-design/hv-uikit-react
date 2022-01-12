@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Preview, PreviewOff, Success, Fail } from "@hv/uikit-react-icons";
+import { Preview, PreviewOff, Success, Fail } from "@hitachivantara/uikit-react-icons";
 
 import { HvBaseInput, HvFormElement, HvLabel, HvAdornment, HvButton } from "../../..";
 
@@ -8,7 +8,7 @@ export default {
   title: "Forms/Form Element Blocks/Adornment",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvAdornment } from "@hv/uikit-react-core"',
+    usage: 'import { HvAdornment } from "@hitachivantara/uikit-react-core"',
   },
   component: HvAdornment,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HvProvider, HvTooltip, HvTypography } from "@hv/uikit-react-core";
+import { HvProvider, HvTooltip, HvTypography } from "@hitachivantara/uikit-react-core";
 
 const Stable = ({}) => {
   const data = (

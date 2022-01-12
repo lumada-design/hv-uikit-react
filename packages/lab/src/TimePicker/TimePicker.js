@@ -15,8 +15,8 @@ import {
   useLocale,
   HvTypography,
   useSavedState,
-} from "@hv/uikit-react-core";
-import { Time as TimeIcon } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 
 import { TimePickerUnits, TimeFormat, PeriodPickerOptions } from "./enums";
 import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";

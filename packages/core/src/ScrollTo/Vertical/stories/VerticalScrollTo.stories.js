@@ -6,7 +6,7 @@ export default {
   title: "Components/ScrollTo/Vertical",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvScrollToVertical } from '@hv/uikit-react-core'",
+    usage: "import { HvScrollToVertical } from '@hitachivantara/uikit-react-core'",
   },
   component: HvScrollToVertical,
 };

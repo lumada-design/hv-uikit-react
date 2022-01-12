@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useRef, useContext } from "react";
 import PropTypes from "prop-types";
-import { Filters } from "@hv/uikit-react-icons";
+import { Filters } from "@hitachivantara/uikit-react-icons";
 import { FilterGroupContext } from "../FilterGroupContext";
 import LeftPanel from "../LeftPanel";
 import RightPanel from "../RightPanel";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Code, DocWord } from "@hv/uikit-react-icons";
+import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvFileUploader,
@@ -18,7 +18,7 @@ export default {
   title: "Forms/File Uploader",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFileUploader } from "@hv/uikit-react-core"',
+    usage: 'import { HvFileUploader } from "@hitachivantara/uikit-react-core"',
 
     dsVersion: "3.4.0",
   },

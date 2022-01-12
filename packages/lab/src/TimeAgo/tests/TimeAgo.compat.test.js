@@ -3,7 +3,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider, HvTypography } from "@hv/uikit-react-core";
+import { HvProvider, HvTypography } from "@hitachivantara/uikit-react-core";
 import { formatTimeAgo } from "../formatUtils";
 import { HvTimeAgo } from "../..";
 

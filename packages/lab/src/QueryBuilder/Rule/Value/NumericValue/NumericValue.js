@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
 
-import { HvInput } from "@hv/uikit-react-core";
+import { HvInput } from "@hitachivantara/uikit-react-core";
 
 import Context from "../../../Context";
 import useStyles from "./styles";

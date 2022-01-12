@@ -2,7 +2,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { LogIn, Archives, Search, Bookmark } from "@hv/uikit-react-icons";
+import { LogIn, Archives, Search, Bookmark } from "@hitachivantara/uikit-react-icons";
 
 import man1 from "./resources/man-1.png";
 import man2 from "./resources/man-2.png";
@@ -33,7 +33,7 @@ export default {
   title: "Components/Avatar",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvAvatar } from "@hv/uikit-react-core"',
+    usage: 'import { HvAvatar } from "@hitachivantara/uikit-react-core"',
     dsVersion: "3.4.0",
   },
   component: HvAvatar,

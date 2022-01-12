@@ -16,8 +16,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider } from "@hv/uikit-react-core";
-import { Info, Tool } from "@hv/uikit-react-icons";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { Info, Tool } from "@hitachivantara/uikit-react-icons";
 
 import ActionWrapper from "../index";
 

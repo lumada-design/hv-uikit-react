@@ -1,13 +1,13 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Edit, Close } from "@hv/uikit-react-icons";
+import { Edit, Close } from "@hitachivantara/uikit-react-icons";
 import { HvPanel, HvButton, HvTypography } from "../..";
 
 export default {
   title: "Components/Panel",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvPanel } from "@hv/uikit-react-core"',
+    usage: 'import { HvPanel } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.2.0",
   },

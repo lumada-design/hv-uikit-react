@@ -1,7 +1,12 @@
 import React, { useMemo } from "react";
 import { makeStyles, useTheme } from "@material-ui/core";
-import { HvTypography, HvEmptyState, HvCheckBox, HvDropDownMenu } from "@hv/uikit-react-core";
-import { Ban } from "@hv/uikit-react-icons";
+import {
+  HvTypography,
+  HvEmptyState,
+  HvCheckBox,
+  HvDropDownMenu,
+} from "@hitachivantara/uikit-react-core";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvTable,
@@ -19,7 +24,7 @@ export default {
   title: "Lab/Table",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTable } from '@hv/uikit-react-lab'",
+    usage: "import { HvTable } from '@hitachivantara/uikit-react-lab'",
   },
   component: HvTable,
   subcomponents: {

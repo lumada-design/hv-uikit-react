@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import dayjs from "dayjs";
 
 import { makeStyles } from "@material-ui/core";
-import { HvRadio, HvRadioGroup, HvTypography } from "@hv/uikit-react-core";
+import { HvRadio, HvRadioGroup, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { HvTimeAgo, HvTimePicker } from "../..";
 
@@ -10,7 +10,7 @@ export default {
   title: "Lab/Time Ago",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTimeAgo } from "@hv/uikit-react-lab"',
+    usage: 'import { HvTimeAgo } from "@hitachivantara/uikit-react-lab"',
 
     dsVersion: "3.3.0",
   },

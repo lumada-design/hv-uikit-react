@@ -1,4 +1,4 @@
-import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { Delete, Fail, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 import { makeStyles } from "@material-ui/core/styles";
 import orderBy from "lodash/orderBy";
 import React, { useState } from "react";
@@ -12,7 +12,7 @@ export default {
   title: "Visualizations/Table",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTable } from "@hv/uikit-react-core"',
+    usage: 'import { HvTable } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.2.1",
   },

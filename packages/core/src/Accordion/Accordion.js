@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { DropDownXS, DropUpXS } from "@hv/uikit-react-icons";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import styles from "./styles";
 import { setId, useControlled } from "../utils";
 import { HvTypography } from "..";

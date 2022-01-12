@@ -4,7 +4,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import { Backdrop } from "@material-ui/core";
 
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import HvDrawer from "..";
 
 describe("HvDrawer withStyles", () => {

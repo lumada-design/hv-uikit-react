@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MoreOptionsVertical } from "@hv/uikit-react-icons";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { useTheme } from "@material-ui/core";
 import { HvBaseDropdown, HvButton, HvInput, HvPanel } from "../..";
 import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
@@ -8,7 +8,7 @@ export default {
   title: "Tests/Base Dropdown",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBaseDropdown } from "@hv/uikit-react-core"',
+    usage: 'import { HvBaseDropdown } from "@hitachivantara/uikit-react-core"',
     dsVersion: "3.4.0",
   },
   component: HvBaseDropdown,

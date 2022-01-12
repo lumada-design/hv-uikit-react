@@ -10,8 +10,8 @@ import {
   HvGrid,
   HvInput,
   HvPagination,
-} from "@hv/uikit-react-core";
-import { Ban, Delete } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Ban, Delete } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvTable,
