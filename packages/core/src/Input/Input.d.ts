@@ -56,7 +56,8 @@ export type HvInputClassKey =
   | "suggestionsContainer"
   | "suggestionList";
 
-export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputClassKey, "onChange"> {
+export interface HvInputProps
+  extends StandardProps<HvBaseInputProps, HvInputClassKey, "onChange" | "onBlur"> {
   /**
    * The label of the form element.
    *
@@ -166,6 +167,15 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
   onEnter?: (
     event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>,
     value: string
+  ) => void;
+
+  /**
+   * Called back when the value is changed.
+   */
+  onBlur?: (
+    event: React.FocusEvent<HTMLInputElement>,
+    value: string,
+    validationState: string
   ) => void;
 }
 

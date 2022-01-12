@@ -19,8 +19,6 @@ export type HvInlineEditorClassKey =
   | "iconVisible"
   | "largeText";
 
-type InputType = HTMLTextAreaElement | HTMLInputElement;
-
 export interface HvInlineEditorProps
   extends StandardProps<HvBaseInputProps, HvInlineEditorClassKey, "onBlur"> {
   /**
@@ -38,7 +36,7 @@ export interface HvInlineEditorProps
   /**
    * Called when the input is blurred.
    */
-  onBlur?: (event: React.FocusEventHandler<InputType>, value: string) => void;
+  onBlur?: (event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>, value: string) => void;
   /**
    * Props passed to the HvButton component
    */
