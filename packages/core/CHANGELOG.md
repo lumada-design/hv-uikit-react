@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.52.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.52.0...@hv/uikit-react-core@3.52.1) (2022-01-12)
+
+
+### Bug Fixes
+
+* **typography:** add missing classes ([66708f3](https://github.com/lumada-design/hv-uikit-react/commit/66708f3a2575db305980f2d5a05d705e934f918b))
+
+
+
+
+
 # [3.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.51.0...@hv/uikit-react-core@3.52.0) (2022-01-07)
 
 
