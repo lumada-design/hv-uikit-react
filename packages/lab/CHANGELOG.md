@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.35.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.35.0...@hv/uikit-react-lab@3.35.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* **inlineeditor:** onBlur typings ([16c2937](https://github.com/lumada-design/hv-uikit-react/commit/16c293705b86e48e6f247a678f9a845eb6e344a1))
+
+
+
+
+
 # [3.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.34.1...@hv/uikit-react-lab@3.35.0) (2022-01-12)
 
 
