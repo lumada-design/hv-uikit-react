@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core";
 import { HvTypography, HvEmptyState, HvCheckBox, HvDropDownMenu } from "@hv/uikit-react-core";
 import { Ban } from "@hv/uikit-react-icons";
 
@@ -13,7 +13,7 @@ import {
   HvTableCell,
 } from "../..";
 
-import { makeData, getColumns, useToggleIndex } from "./utils";
+import { makeData, getColumns, getGroupedRowsColumns, useToggleIndex } from "./utils";
 
 export default {
   title: "Lab/Table",
@@ -182,6 +182,61 @@ SimpleTable.parameters = {
       story:
         "Simple table that uses HvTable features in order to style checkbox and secondary actions columns.",
     },
+  },
+};
+
+export const GroupedRows = () => {
+  const theme = useTheme();
+  const columns = getGroupedRowsColumns();
+  const data = makeData(8);
+
+  const style = {
+    borderRight: `solid 1px ${theme.palette.atmo4}`,
+  };
+
+  return (
+    <HvTableContainer>
+      <HvTable>
+        <HvTableHead>
+          <HvTableRow>
+            {columns.map((el, index) => (
+              <HvTableHeader key={el.Header} {...(index === 0 && { ...style })}>
+                {el.Header}
+              </HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody>
+          {data.map((el, index) => (
+            <HvTableRow key={el.id}>
+              {index % 3 === 0 && (
+                <HvTableCell
+                  rowSpan={3}
+                  style={{
+                    verticalAlign: "top",
+                    ...style,
+                  }}
+                >
+                  {el.name}
+                </HvTableCell>
+              )}
+              <HvTableCell>{el.createdDate}</HvTableCell>
+              <HvTableCell>{el.eventType}</HvTableCell>
+              <HvTableCell>{el.status}</HvTableCell>
+              <HvTableCell>{el.riskScore}</HvTableCell>
+              <HvTableCell>{el.severity}</HvTableCell>
+              <HvTableCell>{el.priority}</HvTableCell>
+            </HvTableRow>
+          ))}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+GroupedRows.parameters = {
+  docs: {
+    description: { story: "A table example with grouped rows." },
   },
 };
 

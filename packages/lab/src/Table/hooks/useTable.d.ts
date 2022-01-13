@@ -88,7 +88,11 @@ import {
   UseHvBulkActionsTableInstanceProps,
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
-import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
+import {
+  UseHvRowExpandTableOptions,
+  UseHvRowExpandRowInstance,
+  UseHvRowExpandTableRowProps,
+} from "./useRowExpand";
 import {
   UseHvHeaderGroupsColumnProps,
   UseHvHeaderGroupsCellProps,
@@ -309,7 +313,8 @@ export interface HvTableFooterProps extends TableFooterProps, UseHvTableStylesTa
 export interface HvTableRowProps
   extends TableRowProps,
     UseHvTableStylesTableRowProps,
-    UseHvRowSelectionTableRowProps {}
+    UseHvRowSelectionTableRowProps,
+    UseHvRowExpandTableRowProps {}
 
 export interface HvTableCellProps
   extends TableCellProps,

@@ -61,6 +61,32 @@ export const getColumns = () => [
   { Header: "Priority", accessor: "priority" },
 ];
 
+export const getGroupedRowsColumns = () => [
+  {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 120 },
+  },
+  {
+    Header: "Time",
+    accessor: "createdDate",
+    style: { minWidth: 100 },
+  },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Status", accessor: "status", style: { width: 120 } },
+  // numeric values should be right-aligned
+  {
+    Header: "Probability",
+    accessor: "riskScore",
+    align: "right",
+    Cell: ({ value }) => `${value}%`,
+    aggregate: "average",
+    Aggregated: ({ value }) => `Avg. ${value}%`,
+  },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+];
+
 export const getLongNameColumns = () => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   {

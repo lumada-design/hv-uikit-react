@@ -1,6 +1,14 @@
+/* eslint-disable no-nested-ternary */
+
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
-import { useFlexLayout, useBlockLayout, useAbsoluteLayout, useTable } from "react-table";
+import {
+  useFlexLayout,
+  useBlockLayout,
+  useAbsoluteLayout,
+  useTable,
+  useGroupBy,
+} from "react-table";
 import { useTheme } from "@material-ui/core";
 
 import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
@@ -35,14 +43,21 @@ import {
   useHvHeaderGroups,
 } from "../..";
 
-import { makeData, makeSelectedData, getColumns, getGroupedColumns, useServerData } from "./utils";
+import {
+  makeData,
+  makeSelectedData,
+  getColumns,
+  getGroupedColumns,
+  getGroupedRowsColumns,
+  useServerData,
+} from "./utils";
 import LoadingContainer from "./LoadingContainer";
 
 export const Main = () => {
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useTable({
     columns,
     data,
   });
@@ -51,13 +66,15 @@ export const Main = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps({ align: col.align })}>
-                {col.render("Header")}
-              </HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps({ align: col.align })}>
+                  {col.render("Header")}
+                </HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -82,7 +99,7 @@ export const Main = () => {
 export const UseHvTable = () => {
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable({
     data,
   });
 
@@ -90,11 +107,13 @@ export const UseHvTable = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -122,7 +141,7 @@ export const Pagination = () => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    headers,
+    headerGroups,
     page,
     state: { pageSize },
     getHvPaginationProps,
@@ -139,11 +158,13 @@ export const Pagination = () => {
       <HvTableContainer style={{ maxHeight: 400 }}>
         <HvTable {...getTableProps()}>
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
             {range(pageSize).map((i) => {
@@ -173,7 +194,7 @@ export const Selection = () => {
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
     { columns, data },
     useHvRowSelection
   );
@@ -182,11 +203,13 @@ export const Selection = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -211,7 +234,7 @@ export const ControlledSelection = () => {
   const initialData = useMemo(() => makeSelectedData(6), []);
   const [data, setData] = useState(initialData);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
     { columns, data, manualRowSelectedKey: "selected" },
     useHvRowSelection
   );
@@ -220,11 +243,13 @@ export const ControlledSelection = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row, index) => {
@@ -259,7 +284,7 @@ export const BulkActions = () => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    headers,
+    headerGroups,
     page,
     selectedFlatRows,
     toggleAllRowsSelected,
@@ -323,11 +348,13 @@ export const BulkActions = () => {
       <HvTableContainer>
         <HvTable {...getTableProps()}>
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
             {page?.length ? (
@@ -375,7 +402,7 @@ export const Sortable = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
     { columns, data },
     useHvSortBy
   );
@@ -384,11 +411,13 @@ export const Sortable = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -420,7 +449,7 @@ export const Expandable = () => {
     []
   );
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
     { columns, data, labels: i18n },
     useHvRowExpand
   );
@@ -429,11 +458,13 @@ export const Expandable = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -459,6 +490,72 @@ export const Expandable = () => {
                   >
                     <HvTypography>Expanded content for: {row.values.name}</HvTypography>
                   </HvTableCell>
+                </HvTableRow>
+              </React.Fragment>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+export const GroupBy = () => {
+  const columns = useMemo(() => getGroupedRowsColumns(), []);
+  const data = useMemo(() => makeData(6), []);
+
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+    {
+      columns,
+      data,
+      initialState: {
+        groupBy: ["status"],
+        expanded: {
+          "status:Closed": true,
+          "status:Open": true,
+        },
+      },
+    },
+    useGroupBy,
+    useHvRowExpand
+  );
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <React.Fragment key={row.id}>
+                <HvTableRow {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell {...cell.getCellProps()}>
+                      {cell.isGrouped ? (
+                        // If it's a grouped cell, add an expander and row count
+                        <>
+                          {cell.render("Cell")} ({row.subRows.length})
+                        </>
+                      ) : cell.isAggregated ? (
+                        // If the cell is aggregated, use the Aggregated
+                        // renderer for cell
+                        cell.render("Aggregated")
+                      ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
+                        // Otherwise, just render the regular cell
+                        cell.render("Cell")
+                      )}
+                    </HvTableCell>
+                  ))}
                 </HvTableRow>
               </React.Fragment>
             );
@@ -586,7 +683,7 @@ export const EmptyCells = () => {
     status: entry.status === "Closed" ? null : entry.status,
   }));
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable({
     columns,
     data,
     defaultColumn: {
@@ -598,11 +695,13 @@ export const EmptyCells = () => {
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -651,7 +750,7 @@ export const LockedSelection = () => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    headers,
+    headerGroups,
     page,
     rows,
     selectedFlatRows,
@@ -684,11 +783,13 @@ export const LockedSelection = () => {
       <HvTableContainer>
         <HvTable {...getTableProps()}>
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
             {page.map((row) => {
@@ -871,7 +972,7 @@ export const ServerSide = () => {
   const {
     getTableProps,
     getTableBodyProps,
-    headers,
+    headerGroups,
     prepareRow,
     page,
     gotoPage,
@@ -911,11 +1012,13 @@ export const ServerSide = () => {
       <HvTableContainer>
         <HvTable {...getTableProps()}>
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps({ style: { position: "relative" } })}>
             {range(pageSize).map((i) => {
@@ -1035,7 +1138,7 @@ export const KitchenSink = () => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    headers,
+    headerGroups,
     page,
     selectedFlatRows,
     toggleAllRowsSelected,
@@ -1130,13 +1233,13 @@ export const KitchenSink = () => {
           })}
         >
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
             {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
