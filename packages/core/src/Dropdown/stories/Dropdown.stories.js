@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { useTheme, withStyles } from "@material-ui/core";
+import { useTheme, withStyles, makeStyles } from "@material-ui/core";
+import { Priority1, Priority2, Priority3, Priority4, Priority5 } from "@hv/uikit-react-icons";
 
-import { HvDropdown, HvGrid } from "../..";
+import { HvDropdown, HvGrid, HvTypography } from "../..";
 
 export default {
   title: "Forms/Dropdown",
@@ -38,6 +39,54 @@ export const Main = () => (
 );
 
 Main.parameters = {
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
+};
+
+export const WithIcons = () => {
+  const classes = makeStyles(() => ({
+    root: {
+      lineHeight: "32px",
+      display: "flex",
+      alignItems: "center",
+    },
+    icon: {
+      float: "left",
+      width: 22,
+      height: 22,
+      margin: "5px 5px 5px 0",
+    },
+  }))();
+
+  const PriorityIcon = ({ Icon, label }) => (
+    <span className={classes.root}>
+      <Icon className={classes.icon} />
+      <HvTypography>{label}</HvTypography>
+    </span>
+  );
+
+  return (
+    <div style={{ width: 310 }}>
+      <HvDropdown
+        aria-label="Dropdown With Icons"
+        values={[
+          { label: <PriorityIcon Icon={Priority1} label="Priority P1" /> },
+          { label: <PriorityIcon Icon={Priority2} label="Priority P2" />, selected: true },
+          { label: <PriorityIcon Icon={Priority3} label="Priority P3" /> },
+          { label: <PriorityIcon Icon={Priority4} label="Priority P4" /> },
+          { label: <PriorityIcon Icon={Priority5} label="Priority P5" /> },
+        ]}
+      />
+    </div>
+  );
+};
+
+WithIcons.parameters = {
+  docs: {
+    description: { story: "Dropdown with icons along with labels" },
+  },
   pa11y: {
     ignore: ["region"],
   },
