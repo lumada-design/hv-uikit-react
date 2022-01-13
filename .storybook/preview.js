@@ -28,7 +28,7 @@ export const parameters = {
         "Visualizations",
         "Widgets",
         "Lab",
-        ["Table", "Table Hooks"],
+        ["Table", "Table Hooks", "Table Column Renderers"],
         "Community",
         ["Overview", "Release Schedule", "Contributing"],
       ],

@@ -175,6 +175,9 @@ export * from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export * from "./Tooltip";
 
+export { default as HvOverflowTooltip } from "./OverflowTooltip";
+export * from "./OverflowTooltip";
+
 export { default as HvTypography } from "./Typography";
 export * from "./Typography";
 

@@ -9,9 +9,31 @@ const formatDate = (date) => date.toISOString().split("T")[0];
 
 const getOption = (opts, i) => opts[i % opts.length];
 
+const getTagColor = (status) => (status === "Closed" ? "sema9" : "sema8");
+
+const generateLongString = (value, i) =>
+  i === 6 ? "very long string that should be cut if it doesnt fit in the column" : value;
+
+const generateEmptyString = (value, i) => (i === 3 ? undefined : value);
+
+const generateLargeNumber = (i) => (i === 6 ? undefined : i);
+
+const generateBooleanState = (i) => i % 3 === 0;
+
+const getDropdownOptions = (options = [], selected = "") => {
+  return options.map((option, index) => {
+    return {
+      id: `${option}-${index}`,
+      label: option,
+      selected: selected === option,
+    };
+  });
+};
+
 const newEntry = (i) => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
+
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -21,6 +43,30 @@ const newEntry = (i) => {
     riskScore: rand.next(100, 10),
     severity: getOption(["Critical", "Major", "Average", "Minor"], i),
     priority: (r > 0.66 && "High") || (r > 0.33 && "Medium") || "Low",
+  };
+};
+
+const newRendererEntry = (i) => {
+  const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
+  let eventTypeText = generateEmptyString("Anomaly detection", i);
+  eventTypeText = generateLongString(eventTypeText, i);
+  return {
+    id: `${i + 1}`,
+    name: `Event ${i + 1}`,
+    createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
+    eventQuantity: generateLargeNumber(i),
+    eventType: eventTypeText,
+    status: {
+      status_name: getOption(["Closed", "Open"], i),
+      status_color: getTagColor(getOption(["Closed", "Open"], i)),
+      status_text_color: "black",
+    },
+    riskScore: rand.next(100, 10),
+    isDisabled: generateBooleanState(i),
+    severity: getDropdownOptions(
+      ["Critical", "Major", "Average", "Minor"],
+      getOption(["Critical", "Major", "Average", "Minor"], i)
+    ),
   };
 };
 
@@ -40,6 +86,8 @@ const controlledSelectedEntry = (i) => {
   };
 };
 
+export const makeRenderersData = (len = 10) => range(len).map(newRendererEntry);
+
 export const makeData = (len = 10) => range(len).map(newEntry);
 
 export const makeSelectedData = (len = 10) => range(len).map(controlledSelectedEntry);
@@ -47,7 +95,7 @@ export const makeSelectedData = (len = 10) => range(len).map(controlledSelectedE
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = () => [
-  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },
