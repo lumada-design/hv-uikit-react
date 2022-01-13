@@ -77,6 +77,7 @@ export { default as HvTextArea } from "./TextArea";
 export { default as HvTagsInput } from "./TagsInput";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
+export { default as HvOverflowTooltip } from "./OverflowTooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 // TODO refactor the HvUserPreferences subcomponents' names

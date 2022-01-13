@@ -20,3 +20,5 @@ export { default as HvTableRow } from "./TableRow";
 export * from "./TableRow";
 
 export * from "./hooks";
+export * from "./utils";
+export * from "./renderers";

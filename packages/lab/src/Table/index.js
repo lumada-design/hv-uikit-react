@@ -7,3 +7,5 @@ export { default as HvTableHeader } from "./TableHeader";
 export { default as HvTableRow } from "./TableRow";
 
 export * from "./hooks";
+export * from "./renderers";
+export * from "./utils";
