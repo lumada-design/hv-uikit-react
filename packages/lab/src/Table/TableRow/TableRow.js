@@ -14,7 +14,15 @@ const defaultComponent = "tr";
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
 const HvTableRow = forwardRef(function HvTableRow(props, ref) {
-  const { classes, className, component, hover = false, selected = false, ...others } = props;
+  const {
+    classes,
+    className,
+    component,
+    hover = false,
+    selected = false,
+    expanded = false,
+    ...others
+  } = props;
 
   const tableContext = useContext(TableContext);
   const tableSectionContext = useContext(TableSectionContext);
@@ -32,6 +40,7 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
         {
           [classes.hover]: hover,
           [classes.selected]: selected,
+          [classes.expanded]: expanded,
         },
         className
       )}
@@ -68,6 +77,11 @@ HvTableRow.propTypes = {
   selected: PropTypes.bool,
 
   /**
+   * Whether the table row is expanded.
+   */
+  expanded: PropTypes.bool,
+
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -79,6 +93,10 @@ HvTableRow.propTypes = {
      * Styles applied to the component root when selected.
      */
     selected: PropTypes.string,
+    /**
+     * Styles applied to the component root when expanded.
+     */
+    expanded: PropTypes.string,
     /**
      * Styles applied to the component root on hover.
      */

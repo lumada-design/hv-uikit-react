@@ -13,11 +13,13 @@ describe("useHvRowExpand", () => {
   it("registers hooks", () => {
     const hooks = {
       visibleColumns: { push: jest.fn() },
+      getRowProps: { push: jest.fn() },
     };
 
     useRowExpand(hooks);
 
     expect(hooks.visibleColumns.push).toHaveBeenCalledWith(useRowExpandHooks.visibleColumnsHook);
+    expect(hooks.getRowProps.push).toHaveBeenCalledWith(useRowExpandHooks.getRowPropsHook);
   });
 
   describe("visibleColumnsHook", () => {
@@ -93,6 +95,34 @@ describe("useHvRowExpand", () => {
       // aditional column added after the system columns
       expect(processed[2].id).toBe("_hv_expand");
       expect(processed[2].Cell).toBe(useRowExpandHooks.CellWithExpandButton);
+    });
+  });
+
+  describe("getRowPropsHook", () => {
+    it("adds expanded property (row.isExpanded = true)", () => {
+      const existingProps = {};
+
+      const [existing, props] = useRowExpandHooks.getRowPropsHook(existingProps, {
+        row: { isExpanded: true },
+      });
+
+      expect(props.expanded).toBe(true);
+
+      // should return the other properties
+      expect(existing).toBe(existingProps);
+    });
+
+    it("adds expanded property (row.isExpanded = false)", () => {
+      const existingProps = {};
+
+      const [existing, props] = useRowExpandHooks.getRowPropsHook(existingProps, {
+        row: { isExpanded: false },
+      });
+
+      expect(props.expanded).toBe(false);
+
+      // should return the other properties
+      expect(existing).toBe(existingProps);
     });
   });
 

@@ -23,6 +23,12 @@ const styles = (theme) => ({
   selected: {
     backgroundColor: theme.palette.atmo1,
   },
+  expanded: {
+    backgroundColor: theme.palette.atmo1,
+    "& > *[role=cell]": {
+      borderBottom: "none",
+    },
+  },
   hover: {
     transition: theme.transitions.create("background-color", {
       duration: theme.transitions.duration.shortest,

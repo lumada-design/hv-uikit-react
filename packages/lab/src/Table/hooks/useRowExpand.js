@@ -75,8 +75,17 @@ export const visibleColumnsHook = (columns, { instance }) => {
   return columnsCopy;
 };
 
+export const getRowPropsHook = (props, { row }) => {
+  const nextProps = {
+    expanded: row.isExpanded,
+  };
+
+  return [props, nextProps];
+};
+
 const useRowExpand = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
+  hooks.getRowProps.push(getRowPropsHook);
 };
 useRowExpand.pluginName = "useHvRowExpand";
 

@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
 import { useFlexLayout, useBlockLayout, useAbsoluteLayout, useTable } from "react-table";
+import { useTheme } from "@material-ui/core";
+
 import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
 
 import {
@@ -407,6 +409,7 @@ export const Sortable = () => {
 };
 
 export const Expandable = () => {
+  const theme = useTheme();
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
   const i18n = useMemo(
@@ -444,7 +447,12 @@ export const Expandable = () => {
                     <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                   ))}
                 </HvTableRow>
-                <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
+                <HvTableRow
+                  style={{
+                    display: row.isExpanded ? null : "none",
+                    background: theme.palette.atmo1,
+                  }}
+                >
                   <HvTableCell
                     style={{ paddingBottom: 0, paddingTop: 0, textAlign: "center", height: 100 }}
                     colSpan="100%"

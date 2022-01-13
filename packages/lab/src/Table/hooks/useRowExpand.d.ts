@@ -1,6 +1,10 @@
 import { MouseEventHandler } from "react";
 import { Hooks, TableExpandedToggleProps, UseExpandedRowProps } from "react-table";
 
+export interface UseHvRowExpandTableRowProps {
+  expanded?: boolean;
+}
+
 export type UseHvRowExpandTableOptions = {
   disableCreateExpandButton?: boolean;
 };
