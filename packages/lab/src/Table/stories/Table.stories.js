@@ -48,7 +48,7 @@ export const Main = () => {
         </HvTableHead>
         <HvTableBody>
           {data.map((el) => (
-            <HvTableRow key={el.id} hover>
+            <HvTableRow key={el.id} hover striped>
               <HvTableCell>{el.name}</HvTableCell>
               <HvTableCell>{el.createdDate}</HvTableCell>
               <HvTableCell>{el.eventType}</HvTableCell>

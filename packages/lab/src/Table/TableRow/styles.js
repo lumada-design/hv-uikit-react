@@ -1,3 +1,6 @@
+import { hexToRgb } from "@material-ui/core";
+import { alpha } from "@material-ui/core/styles";
+
 const styles = (theme) => ({
   root: {
     color: "inherit",
@@ -27,6 +30,11 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.atmo1,
     "& > *[role=cell]": {
       borderBottom: "none",
+    },
+  },
+  striped: {
+    "&:nth-child(even)": {
+      backgroundColor: alpha(hexToRgb(theme.palette.atmo1), 0.6),
     },
   },
   hover: {

@@ -21,6 +21,7 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
     hover = false,
     selected = false,
     expanded = false,
+    striped = false,
     ...others
   } = props;
 
@@ -41,6 +42,7 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
           [classes.hover]: hover,
           [classes.selected]: selected,
           [classes.expanded]: expanded,
+          [classes.striped]: striped,
         },
         className
       )}
@@ -82,6 +84,11 @@ HvTableRow.propTypes = {
   expanded: PropTypes.bool,
 
   /**
+   * Whether the table row background is striped.
+   */
+  striped: PropTypes.bool,
+
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -97,6 +104,10 @@ HvTableRow.propTypes = {
      * Styles applied to the component root when expanded.
      */
     expanded: PropTypes.string,
+    /**
+     * Styles applied to the component root when striped.
+     */
+    striped: PropTypes.string,
     /**
      * Styles applied to the component root on hover.
      */

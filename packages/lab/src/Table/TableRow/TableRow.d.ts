@@ -7,7 +7,8 @@ export type HvTableRowClassKey =
   | "footer"
   | "hover"
   | "selected"
-  | "expanded";
+  | "expanded"
+  | "striped";
 
 export interface HvTableRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableRowElement>, HvTableRowClassKey> {
@@ -29,6 +30,10 @@ export interface HvTableRowProps
    * Whether the table row is expanded.
    */
   expanded?: boolean;
+  /**
+   * Whether the table row background is striped.
+   */
+  striped?: boolean;
 }
 
 export default function HvTableRow(props: HvTableRowProps): JSX.Element | null;
