@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/core";
+import { Priority1, Priority2, Priority3, Priority4, Priority5 } from "@hv/uikit-react-icons";
 
-import { HvDropdown } from "../..";
+import { HvDropdown, HvTypography } from "../..";
 
 export default {
   title: "Tests/Dropdown",
@@ -329,6 +330,51 @@ export const DropdownWithScroll = () => {
 };
 
 DropdownWithScroll.parameters = {
+  docs: {
+    disable: true,
+  },
+};
+
+export const DropdownWithIcons = () => {
+  const classes = makeStyles(() => ({
+    root: {
+      lineHeight: "32px",
+      display: "flex",
+      alignItems: "center",
+    },
+    icon: {
+      float: "left",
+      width: 22,
+      height: 22,
+      margin: "5px 5px 5px 0",
+    },
+  }))();
+
+  const PriorityIcon = ({ Icon, label }) => (
+    <span className={classes.root}>
+      <Icon className={classes.icon} />
+      <HvTypography>{label}</HvTypography>
+    </span>
+  );
+
+  return (
+    <div style={{ width: 310 }}>
+      <HvDropdown
+        expanded
+        aria-label="Dropdown With Icons"
+        values={[
+          { label: <PriorityIcon Icon={Priority1} label="Priority P1" /> },
+          { label: <PriorityIcon Icon={Priority2} label="Priority P2" />, selected: true },
+          { label: <PriorityIcon Icon={Priority3} label="Priority P3" /> },
+          { label: <PriorityIcon Icon={Priority4} label="Priority P4" /> },
+          { label: <PriorityIcon Icon={Priority5} label="Priority P5" /> },
+        ]}
+      />
+    </div>
+  );
+};
+
+DropdownWithIcons.parameters = {
   docs: {
     disable: true,
   },
