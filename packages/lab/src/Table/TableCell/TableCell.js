@@ -188,6 +188,41 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's part of a sorted column.
      */
     sorted: PropTypes.string,
+
+    sortIcon: PropTypes.string,
+
+    /**
+     * Styles applied to the component root when it is left aligned
+     */
+    alignLeft: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is right aligned
+     */
+    alignRight: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is center aligned
+     */
+    alignCenter: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is justified
+     */
+    alignJustify: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is checkbox
+     */
+    variantCheckbox: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is expand
+     */
+    variantExpand: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is actions
+     */
+    variantActions: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is none
+     */
+    variantNone: PropTypes.string,
   }).isRequired,
 };
 

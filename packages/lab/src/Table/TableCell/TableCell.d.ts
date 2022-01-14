@@ -7,7 +7,15 @@ export type HvTableCellClassKey =
   | "footer"
   | "stickyColumn"
   | "stickyColumnMostLeft"
-  | "stickyColumnLeastRight";
+  | "stickyColumnLeastRight"
+  | "alignLeft"
+  | "alignRight"
+  | "alignCenter"
+  | "alignJustify"
+  | "variantCheckbox"
+  | "variantExpand"
+  | "variantActions"
+  | "variantNone";
 
 export interface HvTableCellProps
   extends StandardProps<
