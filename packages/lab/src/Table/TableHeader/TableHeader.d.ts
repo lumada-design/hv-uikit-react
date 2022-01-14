@@ -10,17 +10,27 @@ export type HvTableHeaderClassKey =
   | "headerText"
   | "headerParagraph"
   | "sortableHeaderText"
+  | "alignLeft"
+  | "alignRight"
+  | "alignCenter"
+  | "alignJustify"
   | "alignFlexLeft"
   | "alignFlexCenter"
   | "alignFlexRight"
   | "alignFlexJustify"
+  | "variantCheckbox"
+  | "variantExpand"
+  | "variantActions"
+  | "variantNone"
   | "sortable"
   | "sorted"
   | "sortButton"
   | "sortIcon"
   | "stickyColumn"
   | "stickyColumnMostLeft"
-  | "stickyColumnLeastRight";
+  | "stickyColumnLeastRight"
+  | "groupColumnMostLeft"
+  | "groupColumnMostRight";
 
 export interface HvTableHeaderProps
   extends StandardProps<

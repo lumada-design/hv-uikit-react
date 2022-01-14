@@ -3,7 +3,14 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles, useTheme } from "@material-ui/core";
-import { HvButton, HvInput, HvTypography, useControlled } from "@hv/uikit-react-core";
+import {
+  HvButton,
+  HvInput,
+  HvTypography,
+  isKeypress,
+  KeyboardCodes,
+  useControlled,
+} from "@hv/uikit-react-core";
 import { Edit } from "@hv/uikit-react-icons";
 
 import styles from "./styles";
@@ -60,7 +67,7 @@ const HvInlineEditor = (props) => {
   };
 
   const handleKeyDown = (event) => {
-    if (event.code === "Escape") {
+    if (isKeypress(event, KeyboardCodes.Esc)) {
       setEditMode(false);
       setValue(cachedValue);
     }

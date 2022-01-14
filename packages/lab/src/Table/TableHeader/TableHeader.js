@@ -274,6 +274,55 @@ HvTableHeader.propTypes = {
      * Styles applied to the sort icon component.
      */
     sortIcon: PropTypes.string,
+
+    /**
+     * Styles applied to the component root when it is left aligned
+     */
+    alignLeft: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is right aligned
+     */
+    alignRight: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is center aligned
+     */
+    alignCenter: PropTypes.string,
+    /**
+     * Styles applied to the component root when it is justified
+     */
+    alignJustify: PropTypes.string,
+    /**
+     * Styles applied to the header content when it is left aligned
+     */
+    alignFlexLeft: PropTypes.string,
+    /**
+     * Styles applied to the header content when it is right aligned
+     */
+    alignFlexRight: PropTypes.string,
+    /**
+     * Styles applied to the header content when it is center aligned
+     */
+    alignFlexCenter: PropTypes.string,
+    /**
+     * Styles applied to the header content when it is justified
+     */
+    alignFlexJustify: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is checkbox
+     */
+    variantCheckbox: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is expand
+     */
+    variantExpand: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is actions
+     */
+    variantActions: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is none
+     */
+    variantNone: PropTypes.string,
   }).isRequired,
 };
 
