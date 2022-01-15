@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.35.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.35.1...@hv/uikit-react-lab@3.35.2) (2022-01-15)
+
+
+### Bug Fixes
+
+* **table:** variant class typings ([3f6d712](https://github.com/lumada-design/hv-uikit-react/commit/3f6d712e44e4bfa14c02757522fd31b39c56d494))
+
+
+
+
+
 ## [3.35.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.35.0...@hv/uikit-react-lab@3.35.1) (2022-01-13)
 
 
