@@ -98,6 +98,7 @@ import {
   UseHvHeaderGroupsCellProps,
   UseHvHeaderGroupsInstance,
 } from "./useHeaderGroups";
+import { UseHvResizeColumnProps, UseHvResizeTableCellProps } from "./useResizeColumns";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -307,6 +308,7 @@ export interface HvTableHeaderProps
     UseHvTableStylesTableCellProps,
     UseHvTableStickyColumnProps,
     UseHvHeaderGroupsColumnProps,
+    UseHvResizeColumnProps,
     UseHvSortByColumnProps {}
 export interface HvTableFooterProps extends TableFooterProps, UseHvTableStylesTableCellProps {}
 
@@ -321,6 +323,7 @@ export interface HvTableCellProps
     UseHvTableStylesTableCellProps,
     UseHvTableStickyCellProps,
     UseHvHeaderGroupsCellProps,
+    UseHvResizeTableCellProps,
     UseHvSortByTableCellProps {}
 
 // #endregion

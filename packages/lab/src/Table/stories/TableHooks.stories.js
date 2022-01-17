@@ -44,6 +44,7 @@ import {
   useHvTableSticky,
   useHvRowExpand,
   useHvHeaderGroups,
+  useHvResizeColumns,
 } from "../..";
 
 import {
@@ -1345,6 +1346,85 @@ DragAndDrop.parameters = {
   docs: {
     description: {
       story: "A table with Drag and Drop, using React Dnd package. ",
+    },
+  },
+};
+
+export const ColumnResize = () => {
+  const columns = useMemo(
+    () => [
+      { Header: "Title", accessor: "name", minWidth: 120 },
+      { Header: "Time", accessor: "createdDate", minWidth: 100 },
+      { Header: "Status", accessor: "status", width: 120, disableResizing: true },
+      {
+        Header: "Probability",
+        accessor: "riskScore",
+        align: "right",
+        Cell: ({ value }) => `${value}%`,
+      },
+      { Header: "Priority", accessor: "priority" },
+    ],
+    []
+  );
+  const data = useMemo(() => makeData(6), []);
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      minWidth: 150,
+      width: 200,
+      maxWidth: 400,
+    }),
+    []
+  );
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
+    {
+      columns,
+      data,
+      defaultColumn,
+    },
+    useBlockLayout,
+    useHvResizeColumns
+  );
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps({ align: col.align })}>
+                  {col.render("Header")}
+                </HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow hover {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps({ align: cell.column.align })}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+ColumnResize.parameters = {
+  docs: {
+    description: {
+      story: "A table with column resize, using the useResizeColumns. ",
     },
   },
 };

@@ -15,7 +15,9 @@ export type HvTableCellClassKey =
   | "variantCheckbox"
   | "variantExpand"
   | "variantActions"
-  | "variantNone";
+  | "variantNone"
+  | "resizable"
+  | "resizing";
 
 export interface HvTableCellProps
   extends StandardProps<
@@ -56,6 +58,15 @@ export interface HvTableCellProps
    * The cell is part of the first sticky to the right column.
    */
   stickyColumnLeastRight?: boolean;
+
+  /**
+   * Whether or not the cell is resizable
+   */
+  resizable?: boolean;
+  /**
+   * Whether or not the cell is being resized
+   */
+  resizing?: boolean;
 }
 
 export default function HvTableCell(props: HvTableCellProps): JSX.Element | null;

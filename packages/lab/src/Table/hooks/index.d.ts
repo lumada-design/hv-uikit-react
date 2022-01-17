@@ -24,3 +24,6 @@ export * from "./useRowExpand";
 
 export { default as useHvHeaderGroups } from "./useHeaderGroups";
 export * from "./useHeaderGroups";
+
+export { default as useHvResizeColumns } from "./useResizeColumns";
+export * from "./useResizeColumns";

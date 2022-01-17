@@ -37,6 +37,9 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
 
     sorted = false,
 
+    resizable = false,
+    resizing = false,
+
     ...others
   } = props;
 
@@ -67,6 +70,9 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
 
           [classes.groupColumnMostLeft]: groupColumnMostLeft,
           [classes.groupColumnMostRight]: groupColumnMostRight,
+
+          [classes.resizable]: resizable,
+          [classes.resizing]: resizing,
         },
         className
       )}
@@ -139,6 +145,15 @@ HvTableCell.propTypes = {
    * The cell is part of the last column in the group.
    */
   groupColumnMostRight: PropTypes.bool,
+
+  /**
+   * Whether or not the cell is resizable
+   */
+  resizable: PropTypes.bool,
+  /**
+   * Whether or not the cell is being resized
+   */
+  resizing: PropTypes.bool,
 
   /**
    * A Jss Object used to override or extend the styles applied.
@@ -223,6 +238,15 @@ HvTableCell.propTypes = {
      * Styles applied to the component root when its variant is none
      */
     variantNone: PropTypes.string,
+
+    /**
+     * Styles applied to the cell when it's part of a resizable column.
+     */
+    resizable: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of a resizing column.
+     */
+    resizing: PropTypes.string,
   }).isRequired,
 };
 

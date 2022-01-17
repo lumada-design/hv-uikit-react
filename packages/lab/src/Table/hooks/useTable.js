@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useTable, usePagination, useExpanded, useSortBy } from "react-table";
+import { useTable, usePagination, useExpanded, useSortBy, useResizeColumns } from "react-table";
 
 import useHvTableStyles from "./useTableStyles";
 
@@ -33,7 +33,7 @@ const useDefaultColumns = (columns, data) =>
       }));
   }, [columns, data]);
 
-const ensureCorePluginInstalation = (plugins, hvPluginName, corePluginToInstall) => {
+const ensureCorePluginInstallation = (plugins, hvPluginName, corePluginToInstall) => {
   const indexOfCorePlugin = plugins.findIndex(
     (plugin) => plugin.pluginName === corePluginToInstall.pluginName
   );
@@ -68,9 +68,10 @@ const useHvTable = (props, ...plugins) => {
   const data = useDefaultData(dataProp);
   const columns = useDefaultColumns(columnsProp, data);
 
-  ensureCorePluginInstalation(plugins, "useHvPagination", usePagination);
-  ensureCorePluginInstalation(plugins, "useHvRowExpand", useExpanded);
-  ensureCorePluginInstalation(plugins, "useHvSortBy", useSortBy);
+  ensureCorePluginInstallation(plugins, "useHvPagination", usePagination);
+  ensureCorePluginInstallation(plugins, "useHvRowExpand", useExpanded);
+  ensureCorePluginInstallation(plugins, "useHvSortBy", useSortBy);
+  ensureCorePluginInstallation(plugins, "useHvResizeColumns", useResizeColumns);
 
   const indexOfHvTableStylesPlugin = plugins.findIndex(
     (plugin) => plugin.pluginName === "useHvTableStyles"

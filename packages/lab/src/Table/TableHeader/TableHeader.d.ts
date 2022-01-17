@@ -30,7 +30,10 @@ export type HvTableHeaderClassKey =
   | "stickyColumnMostLeft"
   | "stickyColumnLeastRight"
   | "groupColumnMostLeft"
-  | "groupColumnMostRight";
+  | "groupColumnMostRight"
+  | "resizable"
+  | "resizing"
+  | "resizer";
 
 export interface HvTableHeaderProps
   extends StandardProps<
@@ -93,6 +96,19 @@ export interface HvTableHeaderProps
    * Extra props to be passed onto the text in the header.
    */
   headerTextProps?: HvTypographyProps;
+  /**
+   * Whether or not the cell is resizable
+   */
+  resizable?: boolean;
+  /**
+   * Whether or not the cell is being resized
+   */
+  resizing?: boolean;
+
+  /**
+   * The resize props injected in the resize handler
+   */
+  resizerProps?: object;
 }
 
 export default function HvTableHeader(props: HvTableHeaderProps): JSX.Element | null;

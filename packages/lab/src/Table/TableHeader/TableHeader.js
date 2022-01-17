@@ -44,6 +44,10 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
     sortable,
     headerTextProps,
 
+    resizerProps = {},
+    resizable = false,
+    resizing = false,
+
     ...others
   } = props;
 
@@ -84,6 +88,8 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
 
           [classes.sortable]: sortable,
           [classes.sorted]: sorted,
+          [classes.resizable]: resizable,
+          [classes.resizing]: resizing,
         },
         className
       )}
@@ -112,6 +118,7 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
         >
           {children}
         </HvTypography>
+        {resizable && <div {...resizerProps} className={classes.resizer} />}
       </div>
     </Component>
   );
@@ -196,6 +203,20 @@ HvTableHeader.propTypes = {
    * Extra props to be passed onto the text in the header.
    */
   headerTextProps: PropTypes.instanceOf(object),
+
+  /**
+   * Whether or not the cell is resizable
+   */
+  resizable: PropTypes.bool,
+  /**
+   * Whether or not the cell is being resized
+   */
+  resizing: PropTypes.bool,
+
+  /**
+   * The resize props injected in the resize handler
+   */
+  resizerProps: PropTypes.instanceOf(object),
 
   /**
    * A Jss Object used to override or extend the styles applied.
@@ -323,6 +344,18 @@ HvTableHeader.propTypes = {
      * Styles applied to the component root when its variant is none
      */
     variantNone: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of a resizable column.
+     */
+    resizable: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of a resizing column.
+     */
+    resizing: PropTypes.string,
+    /**
+     * Styles applied to the resizer object when column is resizable.
+     */
+    resizer: PropTypes.string,
   }).isRequired,
 };
 
