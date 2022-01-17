@@ -1,7 +1,9 @@
 /* eslint-disable no-nested-ternary */
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import range from "lodash/range";
+import clsx from "clsx";
 import {
   useFlexLayout,
   useBlockLayout,
@@ -9,7 +11,8 @@ import {
   useTable,
   useGroupBy,
 } from "react-table";
-import { useTheme } from "@material-ui/core";
+import { useTheme, makeStyles } from "@material-ui/core";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
 
@@ -50,6 +53,7 @@ import {
   getGroupedColumns,
   getGroupedRowsColumns,
   useServerData,
+  getDragAndDropColumns,
 } from "./utils";
 import LoadingContainer from "./LoadingContainer";
 
@@ -1049,6 +1053,298 @@ ServerSide.parameters = {
     description: {
       story:
         "A table with sorting and pagination handled server-side, using React Table. Set `manualPagination` and `manualSortBy` to have manual control over pagination and sorting.",
+    },
+  },
+};
+
+const snapshotMap = {};
+
+// This class is required in order to maintain the layout of the line while dragging.
+// Please check https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/patterns/tables.md for more information.
+class TableCell extends React.Component {
+  ref;
+
+  componentDidMount() {
+    const { cellId } = this.props;
+    if (!snapshotMap[cellId]) {
+      return;
+    }
+
+    if (!this.props.isDragging) {
+      // cleanup the map if it is not being used
+      delete snapshotMap[cellId];
+      return;
+    }
+
+    this.applySnapshot(snapshotMap[cellId]);
+  }
+
+  getSnapshotBeforeUpdate(prevProps) {
+    // we will be locking the dimensions of the dragging item on mount
+    if (this.props.isDragging) {
+      return null;
+    }
+
+    const isDragStarting = this.props.isDragOccurring && !prevProps.isDragOccurring;
+
+    if (!isDragStarting) {
+      return null;
+    }
+
+    return this.getSnapshot();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { ref } = this;
+    if (!ref) {
+      return;
+    }
+
+    if (snapshot) {
+      this.applySnapshot(snapshot);
+      return;
+    }
+
+    if (this.props.isDragOccurring) {
+      return;
+    }
+
+    // inline styles not applied
+    if (ref.style.width == null) {
+      return;
+    }
+
+    // no snapshot and drag is finished - clear the inline styles
+    ref.style.removeProperty("height");
+    ref.style.removeProperty("width");
+    ref.style.removeProperty("max-width");
+  }
+
+  componentWillUnmount() {
+    const snapshot = this.getSnapshot();
+    if (!snapshot) {
+      return;
+    }
+    snapshotMap[this.props.cellId] = snapshot;
+  }
+
+  getSnapshot = () => {
+    if (!this.ref) {
+      return null;
+    }
+
+    const { width, height } = this.ref.getBoundingClientRect();
+
+    const snapshot = {
+      width,
+      height,
+    };
+
+    return snapshot;
+  };
+
+  applySnapshot = (snapshot) => {
+    const { ref } = this;
+
+    if (!ref) {
+      return;
+    }
+
+    if (ref.style.width === `${snapshot.width}px`) {
+      return;
+    }
+
+    ref.style.width = `${snapshot.width}px`;
+    ref.style.maxWidth = `${snapshot.width}px`;
+    ref.style.height = `${snapshot.height}px`;
+  };
+
+  setRef = (ref) => {
+    this.ref = ref;
+  };
+
+  render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { children, isDragOccurring, isDragging, cellId, ...others } = this.props;
+
+    return (
+      <HvTableCell {...others} ref={this.setRef}>
+        {children}
+      </HvTableCell>
+    );
+  }
+}
+
+export const DragAndDrop = () => {
+  const classes = makeStyles((theme) => {
+    // required because we need to style the element inside the table and the one created by react portal
+    const tableRow = {
+      "&:hover": {
+        outline: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+        "& td": {
+          borderBottom: "solid 1px transparent",
+        },
+      },
+      "&$tableRowDragging": {
+        background: theme.hv.palette.atmosphere.atmo3,
+        outline: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        boxShadow: theme.hv.shadows[1],
+        "& td": {
+          borderBottom: "solid 1px transparent",
+        },
+      },
+    };
+
+    return {
+      tableContainer: {
+        "& table$table": {},
+      },
+      table: {
+        tableLayout: "fixed",
+      },
+      tableBody: {
+        "& tr$tableRow": tableRow,
+      },
+      tableRow,
+      tableRowDragging: {},
+      tableCell: {
+        border: "none",
+      },
+    };
+  })();
+
+  const DraggableRow = React.forwardRef(({ row, rowProps, provided, snapshot }, ref) => {
+    const child = (
+      <HvTableRow
+        ref={provided.innerRef}
+        className={clsx(classes.tableRow, {
+          [classes.tableRowDragging]: snapshot.isDragging,
+        })}
+        {...rowProps}
+        {...provided.draggableProps}
+      >
+        {row.cells.map((cell) => (
+          <TableCell
+            cellId={cell.column.id}
+            {...cell.getCellProps()}
+            className={clsx({})}
+            isDragOccurring={snapshot.isDragging}
+            isDragging={snapshot.isDragging}
+          >
+            {cell.render("Cell", {
+              dragHandleProps: provided.dragHandleProps,
+              isSomethingDragging: snapshot.draggingOver,
+            })}
+          </TableCell>
+        ))}
+      </HvTableRow>
+    );
+
+    if (!snapshot.isDragging) {
+      return child;
+    }
+
+    return ReactDOM.createPortal(child, ref.current);
+  });
+
+  const theme = useTheme();
+  const columns = useMemo(() => getDragAndDropColumns(theme), [theme]);
+
+  const rowId = "name";
+
+  const getRowId = useCallback((v) => `${v[rowId]}`, [rowId]);
+  const [records, setRecords] = React.useState(makeData(10));
+
+  const table = useRef(document.createElement("table"));
+  const tbody = useRef(document.createElement("tbody"));
+
+  useEffect(() => {
+    // Using a table as the portal so that we do not get react
+    // warnings when mounting a tr element
+    Object.assign(table.current.style, {
+      margin: "0",
+      padding: "0",
+      border: "0",
+      height: "0",
+      width: "0",
+      borderSpacing: "0",
+    });
+    table.current.appendChild(tbody.current);
+    document.body.appendChild(table.current);
+  }, [table, tbody]);
+
+  const onDragEndHandler = (result) => {
+    const newResults = [...records];
+
+    const resultSource = records[result.source.index];
+    newResults.splice(result.source.index, 1);
+    newResults.splice(result.destination.index, 0, resultSource);
+    setRecords(newResults);
+  };
+
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+    columns,
+    data: records,
+    getRowId,
+  });
+
+  return (
+    <HvTableContainer className={classes.tableContainer} style={{ overflow: "visible" }}>
+      <HvTable {...getTableProps()} className={classes.table}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <DragDropContext onDragEnd={onDragEndHandler}>
+          <Droppable droppableId="table-body" direction="vertical">
+            {(droppableProvided) => (
+              <HvTableBody
+                {...getTableBodyProps()}
+                ref={droppableProvided.innerRef}
+                {...droppableProvided.droppableProps}
+                className={classes.tableBody}
+              >
+                {rows.map((row) => {
+                  prepareRow(row);
+
+                  const { key, ...rowProps } = row.getRowProps();
+
+                  return (
+                    <Draggable draggableId={row.original.id} key={key} index={row.index}>
+                      {(draggableProvided, draggableSnapshot) => {
+                        return (
+                          <DraggableRow
+                            ref={tbody}
+                            row={row}
+                            rowProps={rowProps}
+                            provided={draggableProvided}
+                            snapshot={draggableSnapshot}
+                          />
+                        );
+                      }}
+                    </Draggable>
+                  );
+                })}
+
+                {droppableProvided.placeholder}
+              </HvTableBody>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+DragAndDrop.parameters = {
+  docs: {
+    description: {
+      story: "A table with Drag and Drop, using React Dnd package. ",
     },
   },
 };

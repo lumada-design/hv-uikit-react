@@ -251,3 +251,19 @@ Elements can be changed (to `div` or any other apropriate html element) by using
 <Preview withToolbar>
   <Story inline story={stories.ServerSide} />
 </Preview>
+
+## Drag and Drop
+
+react-table has an example which integrates the react-dnd / react-beautiful-dnd libraries to provide drag and drop capability on lines.
+Please check the documentation of [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) in case you want to extend this example.
+
+This sample is not a clean react-beautiful-dnd implementation because it is applied to a table and requires some custom work to maintain the
+layout of the table line (and its cell contents) while dragging. Please check https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/patterns/tables.md
+for more information.
+
+This behavior does not match 100% the Design System guidelines, although it offers a solution which implements the behavior and adds an accessible way for
+doing the drag/drop operation via `SPACE + ARROW` Keys.
+
+<Preview withToolbar>
+  <Story inline story={stories.DragAndDrop} />
+</Preview>
