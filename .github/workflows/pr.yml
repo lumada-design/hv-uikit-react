@@ -92,7 +92,7 @@ jobs:
         with:
           server-url: ${{ secrets.CODEDX_SERVER_URL }}
           api-key: ${{ secrets.CODEDX_TOKEN }}
-          project-id: ${{ CODEDX_SERVER_PROJECT_ID }}
+          project-id: ${CODEDX_SERVER_PROJECT_ID}
           source-and-binaries-glob: "./packages/core/dist/**,./packages/code-editor/dist/**,./packages/icons/dist/**,./packages/lab/dist/**,./packages/themes/dist/**"
           wait-for-completion: true
 

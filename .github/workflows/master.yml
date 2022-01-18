@@ -90,14 +90,14 @@ jobs:
         run: npm run bootstrap
 
       - name: Build
-        run: npm run build 
+        run: npm run build
 
       - name: Code Dx Upload
         uses: "codedx/codedx-github-action@v1.0"
         with:
           server-url: ${{ secrets.CODEDX_SERVER_URL }}
           api-key: ${{ secrets.CODEDX_TOKEN }}
-          project-id: ${{ CODEDX_SERVER_PROJECT_ID }}
+          project-id: ${CODEDX_SERVER_PROJECT_ID}
           source-and-binaries-glob: "./packages/core/dist/**,./packages/code-editor/dist/**,./packages/icons/dist/**,./packages/lab/dist/**,./packages/themes/dist/**"
           wait-for-completion: true
 
