@@ -64,6 +64,37 @@ jobs:
       - name: Test
         run: npm run test
 
+  CodeDx-Analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Build
+        run: npm run build 
+
+      - name: Code Dx Upload
+        uses: "codedx/codedx-github-action@v1.0"
+        with:
+          server-url: ${{ secrets.CODEDX_SERVER_URL }}
+          api-key: ${{ secrets.CODEDX_TOKEN }}
+          project-id: ${{ secrets.CODEDX_SERVER_PROJECT_ID }}
+          source-and-binaries-glob: "./packages/core/dist/**,./packages/code-editor/dist/**,./packages/icons/dist/**,./packages/lab/dist/**,./packages/themes/dist/**"
+          wait-for-completion: true
+
   Build-Documentation:
     name: Build Documentation
     runs-on: [self-hosted, Linux]
