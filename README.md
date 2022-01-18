@@ -18,7 +18,7 @@ Quickly build apps that follow the HV Design System's patterns and specification
 
 ## Installation
 
-HV UI Kit is available as multiple npm packages. You can install them in any working **React v16.x or x17.x** project.
+HV UI Kit is composed of multiple mostly independent npm packages. You can install them in any working **React v16.x or x17.x** project.
 ### Package installation
 
 Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
