@@ -33,6 +33,8 @@ env:
   APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
   APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
   APPLITOOLS_SERVER_URL: "https://eyesapi.applitools.com"
+  CODEDX_SERVER_URL: http://svdrvw16codedx.pentaho.net
+  CODEDX_SERVER_PROJECT_ID: 120
 
 jobs:
   Static-Checks:
@@ -84,7 +86,7 @@ jobs:
         run: npm run bootstrap
 
       - name: Build
-        run: npm run build 
+        run: npm run build
 
       - name: Code Dx Upload
         uses: "codedx/codedx-github-action@v1.0"
