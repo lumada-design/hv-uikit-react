@@ -39,7 +39,6 @@ env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
   RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
-  CODEDX_SERVER_URL: http://svdrvw16codedx.pentaho.net
   CODEDX_SERVER_PROJECT_ID: 120
 
 jobs:
@@ -98,7 +97,7 @@ jobs:
         with:
           server-url: ${{ secrets.CODEDX_SERVER_URL }}
           api-key: ${{ secrets.CODEDX_TOKEN }}
-          project-id: ${{ secrets.CODEDX_SERVER_PROJECT_ID }}
+          project-id: ${{ CODEDX_SERVER_PROJECT_ID }}
           source-and-binaries-glob: "./packages/core/dist/**,./packages/code-editor/dist/**,./packages/icons/dist/**,./packages/lab/dist/**,./packages/themes/dist/**"
           wait-for-completion: true
 

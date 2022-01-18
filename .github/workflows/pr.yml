@@ -33,7 +33,6 @@ env:
   APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
   APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
   APPLITOOLS_SERVER_URL: "https://eyesapi.applitools.com"
-  CODEDX_SERVER_URL: http://svdrvw16codedx.pentaho.net
   CODEDX_SERVER_PROJECT_ID: 120
 
 jobs:
@@ -93,7 +92,7 @@ jobs:
         with:
           server-url: ${{ secrets.CODEDX_SERVER_URL }}
           api-key: ${{ secrets.CODEDX_TOKEN }}
-          project-id: ${{ secrets.CODEDX_SERVER_PROJECT_ID }}
+          project-id: ${{ CODEDX_SERVER_PROJECT_ID }}
           source-and-binaries-glob: "./packages/core/dist/**,./packages/code-editor/dist/**,./packages/icons/dist/**,./packages/lab/dist/**,./packages/themes/dist/**"
           wait-for-completion: true
 
