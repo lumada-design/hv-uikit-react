@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { FORCE_RE_RENDER } from "@storybook/core-events";
 import { Global } from "@storybook/theming";
 import { IconButton } from "@storybook/components";
@@ -27,9 +27,11 @@ const ThemeSelector = ({ api }) => {
     api.setOptions({ theme });
   }, [theme]);
 
+  const managerStyles = useMemo(() => getManagerStyles(theme), [theme]);
+
   return (
     <>
-      <Global styles={getManagerStyles(theme)} />
+      <Global styles={managerStyles} />
       <IconButton
         key="theme-switcher"
         title={themeName === "wicked" ? "Change theme to Dawn" : "Change theme to Wicked"}

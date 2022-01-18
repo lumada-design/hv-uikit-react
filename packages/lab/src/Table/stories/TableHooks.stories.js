@@ -58,6 +58,16 @@ import {
 } from "./utils";
 import LoadingContainer from "./LoadingContainer";
 
+export default {
+  title: "Lab/TableHooks",
+  parameters: {
+    docs: {
+      disable: true,
+      page: null,
+    },
+  },
+};
+
 export const Main = () => {
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);

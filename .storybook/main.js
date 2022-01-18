@@ -1,6 +1,8 @@
 const { resolve } = require("path");
 const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
+const defaultPropsHandler = require("react-docgen/dist/handlers/defaultPropsHandler");
+
 const { findByKey } = require("./utils");
 
 const storybookFolder = resolve(__dirname);
@@ -12,12 +14,22 @@ const labPackageSrc = resolve(__dirname, "../packages/lab/src");
 const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
 
 module.exports = {
+  core: {
+    builder: "webpack4",
+  },
+  framework: "@storybook/react",
+  features: {
+    babelModeV7: true,
+    buildStoriesJson: true,
+    storyStoreV7: !process.env.V2_COMPAT_STORY_STORE,
+  },
+
   stories: [
     "../doc/**/*.stories.@(js|mdx)",
-    "../packages/core/src/**/*.stories.@(js|mdx)",
-    "../packages/lab/src/**/*.stories.@(js|mdx)",
-    "../packages/code-editor/src/**/*.stories.@(js|mdx)",
-    !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx)",
+    "../packages/core/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    "../packages/lab/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    "../packages/code-editor/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx|jsx|ts|tsx)",
   ].filter(Boolean),
 
   addons: [
@@ -25,7 +37,6 @@ module.exports = {
     {
       name: "@storybook/addon-essentials",
       options: {
-        viewport: false,
         backgrounds: false,
       },
     },
@@ -34,26 +45,6 @@ module.exports = {
 
   webpackFinal: async (config) => {
     const rules = config.module.rules;
-
-    rules.push({
-      test: /\.js?$/,
-      include: /node_modules\/highlight.js/,
-      use: [
-        {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              [
-                require.resolve("@babel/preset-env"),
-                {
-                  modules: "commonjs",
-                },
-              ],
-            ],
-          },
-        },
-      ],
-    });
 
     const jsRule = rules.find((rule) => rule.test.test(".js"));
     jsRule.include = [
@@ -88,7 +79,7 @@ module.exports = {
     // patch Storybook's sortProps because it doesn't handle wrapped components
     config.plugins.push(
       new NormalModuleReplacementPlugin(
-        /(.*)addon-docs\/dist\/frameworks\/react\/propTypes\/sortProps(\.*)/,
+        /(.*)addon-docs\/(.*)\/frameworks\/react\/propTypes\/sortProps(\.*)/,
         function (resource) {
           resource.request = resolve(__dirname, "patches/sortProps.js");
           if (resource.resource) {
@@ -114,13 +105,8 @@ module.exports = {
   },
 
   babel: async (options) => {
-    const docgen = findByKey(options, "DOC_GEN_COLLECTION_NAME");
-
-    docgen.handlers = [
-      "react-docgen-deprecation-handler",
-      resolve(__dirname, "./docgen/defaultPropsHandler"),
-      // `${CONFIG_PATH}/docgen/defaultValuePropsHandler`
-    ];
+    const docgenConfig = findByKey(options, "DOC_GEN_COLLECTION_NAME");
+    docgenConfig.handlers = [defaultPropsHandler];
 
     return {
       ...options,

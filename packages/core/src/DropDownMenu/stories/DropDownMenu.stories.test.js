@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { makeStyles } from "@material-ui/core";
-import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { screen, fireEvent } from "@storybook/testing-library";
 import React, { useState } from "react";
 
 import { HvButton, HvDropDownMenu, HvDialog, HvDialogContent, HvDialogTitle } from "../..";

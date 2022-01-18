@@ -1,10 +1,15 @@
 const { resolve } = require("path");
 
 const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
-
 module.exports = {
   root: true,
-  extends: ["airbnb", "prettier", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
+  extends: [
+    "airbnb",
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:storybook/recommended",
+  ],
   plugins: ["prettier", "react-hooks", "@typescript-eslint", "testing-library", "jest-dom"],
   parser: "@babel/eslint-parser",
   parserOptions: {
@@ -13,8 +18,19 @@ module.exports = {
     },
   },
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: javascriptFileExtensions }],
-    "react/jsx-wrap-multilines": ["error", { declaration: false, assignment: false }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        extensions: javascriptFileExtensions,
+      },
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        declaration: false,
+        assignment: false,
+      },
+    ],
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
@@ -24,14 +40,29 @@ module.exports = {
     "react/jsx-fragments": "off",
     "react/destructuring-assignment": "off",
     "react/jsx-no-bind": "off",
-    "react/no-unstable-nested-components": ["warn", { allowAsProps: true }],
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        allowAsProps: true,
+      },
+    ],
     "arrow-body-style": "off",
     "default-param-last": "off",
     "react/function-component-definition": "off",
     "no-restricted-exports": "off",
     "testing-library/render-result-naming-convention": "off",
-    "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
-    "prefer-regex-literals": ["warn", { disallowRedundantWrapping: true }],
+    "react/jsx-no-useless-fragment": [
+      "warn",
+      {
+        allowExpressions: true,
+      },
+    ],
+    "prefer-regex-literals": [
+      "warn",
+      {
+        disallowRedundantWrapping: true,
+      },
+    ],
     "default-case-last": "off",
     "class-methods-use-this": "off",
     "prefer-arrow-callback": "off",
@@ -54,6 +85,7 @@ module.exports = {
         "no-alert": "off",
         "no-any": 0,
         "react/prop-types": "off",
+        "import/no-anonymous-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "react/jsx-no-bind": "off",
         "react/no-unstable-nested-components": "off",
@@ -62,9 +94,16 @@ module.exports = {
     },
     {
       files: ["*.test.js"],
-      env: { jest: true },
+      env: {
+        jest: true,
+      },
       rules: {
-        "import/no-unresolved": [2, { ignore: ["^testing-utils$"] }],
+        "import/no-unresolved": [
+          2,
+          {
+            ignore: ["^testing-utils$"],
+          },
+        ],
         "testing-library/prefer-screen-queries": "off",
         "testing-library/render-result-naming-convention": "warn",
         "testing-library/no-node-access": "warn",
@@ -73,7 +112,11 @@ module.exports = {
     },
     {
       files: ["*.ts", "*.tsx"],
-      env: { browser: true, es6: true, node: true },
+      env: {
+        browser: true,
+        es6: true,
+        node: true,
+      },
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-types": [
@@ -89,7 +132,9 @@ module.exports = {
       extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: {
+          jsx: true,
+        },
         ecmaVersion: 2020,
         sourceType: "module",
         tsconfigRootDir: __dirname,

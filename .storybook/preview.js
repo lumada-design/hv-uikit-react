@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import addons from "@storybook/addons";
+import { Global } from "@storybook/theming";
 import { HvProvider } from "@hv/uikit-react-core";
 import DocsPage from "./blocks/DocsPage";
 import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";
 import { extractArgTypes } from "./props/extractArgTypes";
-import storySort from "./story_store/storySort";
 import "./theme/fonts/font-faces.css";
+import { getStoryStyles } from "./theme/styles/story";
 
 export const parameters = {
   layout: "fullscreen",
@@ -14,7 +15,7 @@ export const parameters = {
   docs: { page: DocsPage, container: DocsContainer, extractArgTypes },
   options: {
     isToolshown: true,
-    storySort: storySort({
+    storySort: {
       method: "alphabetical",
       order: [
         "Get Started",
@@ -31,7 +32,7 @@ export const parameters = {
         "Community",
         ["Overview", "Release Schedule", "Contributing"],
       ],
-    }),
+    },
   },
 };
 
@@ -50,18 +51,24 @@ const App = ({ story: Story }) => {
   const instanceNumber = appCounter++;
   const isIsolatedSample = window.location === window.parent.location;
 
+  const storyStyles = useMemo(() => getStoryStyles(theme), [theme]);
+
   return (
-    <HvProvider
-      uiKitTheme={themeName}
-      // prevent the seed prefix for the first instance
-      // allows to keep the classnames clean and stable for E2E tests
-      // that access via /iframe.html?id=
-      generateClassNameOptions={
-        isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
-      }
-    >
-      <Story />
-    </HvProvider>
+    <>
+      <Global styles={storyStyles} />
+
+      <HvProvider
+        uiKitTheme={themeName}
+        // prevent the seed prefix for the first instance
+        // allows to keep the classnames clean and stable for E2E tests
+        // that access via /iframe.html?id=
+        generateClassNameOptions={
+          isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
+        }
+      >
+        <Story />
+      </HvProvider>
+    </>
   );
 };
 

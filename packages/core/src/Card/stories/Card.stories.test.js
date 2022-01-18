@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types, no-unused-vars */
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import React, { useState } from "react";
 
 import { HvActionBar, HvCard, HvCardHeader, HvCardMedia, HvCheckBox, HvSwitch } from "../..";
