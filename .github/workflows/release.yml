@@ -59,12 +59,12 @@ jobs:
 
       - name: Publish Setup
         run: |
-          npm config set _auth ${{ secrets.HV_NPM_AUTOMATION_TOKEN }}
-
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
 
       - name: Get Releases Commit Message
