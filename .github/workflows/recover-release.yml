@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 env:
-  PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/master
@@ -41,9 +40,7 @@ jobs:
 
       - name: Publish Setup
         run: |
-          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
-
-          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
+          npm config set _auth ${{ secrets.HV_NPM_AUTOMATION_TOKEN }}
           npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
           npm config set always-auth true
 
