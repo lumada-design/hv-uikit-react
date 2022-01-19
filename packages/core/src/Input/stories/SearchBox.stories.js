@@ -377,14 +377,6 @@ SearchAsYouType.parameters = {
     description:
       "Search-As-You-Type should be used to enable the user to narrow down a list according to the search query. The change is triggered on each keystroke.",
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // scrollable region should be focusable so the user can scroll with the keyboard
-      // however that's not the focus of this sample
-      "scrollable-region-focusable",
-    ],
-  },
 };
 
 SearchAsYouType.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];

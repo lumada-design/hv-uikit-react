@@ -353,14 +353,6 @@ SingleUpload.parameters = {
   docs: {
     description: { story: "FileUploader which permits the upload of a single file at a time" },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG When not provided with an ID the label isn't associated with the input
-      // https://github.com/lumada-design/hv-uikit-react/issues/1694
-      "label-title-only",
-    ],
-  },
 };
 
 export const CustomizedFileTypes = () => {
@@ -427,8 +419,5 @@ CustomizedFileTypes.parameters = {
     description: {
       story: "FileUploader which restricts the upload to xls and xlsx files.",
     },
-  },
-  pa11y: {
-    ignore: ["region"],
   },
 };

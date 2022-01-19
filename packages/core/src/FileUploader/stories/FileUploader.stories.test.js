@@ -105,15 +105,3 @@ export const AutomationSample = () => {
     />
   );
 };
-
-AutomationSample.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Upload failed error message color with insufficient contrast:
-      // https://github.com/lumada-design/hv-uikit-react/issues/1696
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
-};

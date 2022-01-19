@@ -63,13 +63,6 @@ export const A11YOpen = () => (
 );
 
 A11YOpen.parameters = {
-  pa11y: {
-    actions: [
-      // open menu before testing
-      "click element #dropdownmenu-open-icon-button",
-      "wait for element #dropdownmenu-open-list to be visible",
-    ],
-  },
   eyes: { include: false },
 };
 

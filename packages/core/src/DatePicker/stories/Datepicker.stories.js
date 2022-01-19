@@ -35,18 +35,6 @@ export const Main = () => (
   <HvDatePicker id="DatePicker" placeholder="Select date" aria-label="Date" />
 );
 
-Main.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
-};
-
 Main.decorators = [defaultDecorator];
 
 export const DefaultValue = () => (
@@ -61,15 +49,6 @@ export const DefaultValue = () => (
 DefaultValue.parameters = {
   docs: {
     description: { story: "Datepicker sample with a value already set." },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
   },
 };
 
@@ -110,15 +89,6 @@ Localized.parameters = {
   docs: {
     description: { story: "Datepicker sample with values localized." },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 Localized.decorators = [defaultDecorator];
@@ -136,15 +106,6 @@ export const WithActions = () => (
 WithActions.parameters = {
   docs: {
     description: { story: "Datepicker with action buttons at the bottom." },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
   },
 };
 
@@ -164,15 +125,6 @@ WithCustomLabels.parameters = {
     description: {
       story: "Datepicker with actions buttons at the bottom that have custom labels.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
   },
 };
 
@@ -198,16 +150,6 @@ RangeMode.parameters = {
       story: "Datepicker in range mode allowing the selection of more than one value.",
     },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Input has no label
-      // https://github.com/lumada-design/hv-uikit-react/issues/1692
-      "label",
-      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-    ],
-  },
 };
 
 RangeMode.decorators = [defaultDecorator];
@@ -229,15 +171,6 @@ RangeModeWithNoValues.parameters = {
     description: {
       story: "Datepicker in range mode allowing the selection of more than one value.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
   },
 };
 
@@ -266,15 +199,6 @@ RangeWithValues.parameters = {
   docs: {
     description: { story: "Datepicker in range mode with values already set." },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 RangeWithValues.decorators = [defaultDecorator];
@@ -286,15 +210,6 @@ export const NearInvalid = () => (
 NearInvalid.parameters = {
   docs: {
     description: { story: "Datepicker in range mode with invalid near invalid dates." },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
   },
 };
 
@@ -320,18 +235,6 @@ export const WithValueChange = () => {
       />
     </>
   );
-};
-
-WithValueChange.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 WithValueChange.decorators = [defaultDecorator];
@@ -429,18 +332,6 @@ export const Disabled = () => (
   />
 );
 
-Disabled.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
-};
-
 Disabled.decorators = [defaultDecorator];
 
 export const Invalid = () => (
@@ -459,19 +350,6 @@ Invalid.parameters = {
       story:
         "Datepicker sample with invalid status. It is a Form Element and it inherits all Form capabilities.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // placeholder text is failing contrast test
-      // TODO: check if that's acceptable
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
   },
 };
 
@@ -536,8 +414,16 @@ export const ExternalErrorMessage = () => {
       >
         <h4>Form errors:</h4>
         <ul>
-          {birthErrorMessage && <li id="birth-error">{birthErrorMessage}</li>}
-          {deathErrorMessage && <li id="death-error">{deathErrorMessage}</li>}
+          {birthErrorMessage && (
+            <li id="birth-error" aria-live="polite">
+              {birthErrorMessage}
+            </li>
+          )}
+          {deathErrorMessage && (
+            <li id="death-error" aria-live="polite">
+              {deathErrorMessage}
+            </li>
+          )}
         </ul>
       </HvGrid>
     </HvGrid>
@@ -550,19 +436,6 @@ ExternalErrorMessage.parameters = {
       story:
         "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // placeholder text is failing contrast test
-      // TODO: check if that's acceptable
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
   },
 };
 

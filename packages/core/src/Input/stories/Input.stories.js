@@ -56,15 +56,6 @@ Disabled.parameters = {
   docs: {
     description: { story: "Input sample that does not allow interactions." },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 Disabled.decorators = [defaultDecorator];
@@ -199,15 +190,6 @@ InvalidState.parameters = {
         "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
     },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
-  },
 };
 
 InvalidState.decorators = [defaultDecorator];
@@ -280,8 +262,16 @@ export const ExternalErrorMessage = () => {
       >
         <h4>Form errors:</h4>
         <ul>
-          {firstNameErrorMessage && <li id="firstName-error">{firstNameErrorMessage}</li>}
-          {lastNameErrorMessage && <li id="lastName-error">{lastNameErrorMessage}</li>}
+          {firstNameErrorMessage && (
+            <li id="firstName-error" aria-live="polite">
+              {firstNameErrorMessage}
+            </li>
+          )}
+          {lastNameErrorMessage && (
+            <li id="lastName-error" aria-live="polite">
+              {lastNameErrorMessage}
+            </li>
+          )}
         </ul>
       </HvGrid>
     </HvGrid>
@@ -294,15 +284,6 @@ ExternalErrorMessage.parameters = {
       story:
         "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
   },
 };
 

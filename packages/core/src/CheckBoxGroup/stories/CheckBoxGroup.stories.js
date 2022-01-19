@@ -56,15 +56,6 @@ Disabled.parameters = {
   docs: {
     description: { story: "Disabled checkbox group." },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 export const ReadOnly = () => (
@@ -148,17 +139,6 @@ export const ErrorMessage = () => (
   </HvCheckBoxGroup>
 );
 
-ErrorMessage.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
-  },
-};
 export const ShiftSelect = () => {
   return (
     <HvCheckBoxGroup label="Choose the best checkbox">

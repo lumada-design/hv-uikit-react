@@ -202,9 +202,6 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    pa11y: {
-      disable: true,
-    },
     eyes: { include: false },
   },
 };
@@ -230,9 +227,6 @@ YamlEditor.parameters = {
     description: {
       story: "Yaml editor",
     },
-  },
-  pa11y: {
-    disable: true,
   },
   eyes: { include: false },
 };

@@ -1,53 +1,136 @@
-const puppeteer = require("puppeteer");
+const fetch = require("node-fetch");
 
-const url = (process.env.STORYBOOK_URL || "http://localhost:9001") + "/iframe.html";
-const filter = process.env.STORY;
+const baseUrl = process.env.STORYBOOK_URL || "http://localhost:9001";
+const storiesUrl = baseUrl + "/stories.json";
+const iframeUrl = baseUrl + "/iframe.html";
 
-function getStories(url, filter) {
-  // only for storybook >= 5.2
-  // might need to be changed with storybook 6.x
-  const clientAPI = window.__STORYBOOK_CLIENT_API__;
-  const stories = clientAPI.raw();
-
-  const hasPa11ySet = (s) => s.parameters && s.parameters.pa11y != null;
-
-  const isCoreComponent = (s) => {
-    const includedPaths = ["Components/", "Forms/"];
-    return s.kind && includedPaths.some((p) => s.kind.startsWith(p));
-  };
-
-  const hasExplicitDisable = (s) =>
-    s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== true;
-
-  return Promise.resolve(
-    stories
-      .filter((s) => hasPa11ySet(s) || isCoreComponent(s))
-      .filter(hasExplicitDisable)
-      .filter((s) => filter == null || s.id.includes(filter.toLowerCase()))
-      .map((s) => ({
-        url: url + "?id=" + s.id,
-        ...s.parameters.pa11y,
-      }))
+const filterStories = (s, filter) => {
+  const includedPaths = ["Components/", "Forms/", "Visualizations/", "Tests/Dropdown Menu"];
+  return (
+    (filter == null || s.id.includes(filter)) &&
+    s.title &&
+    includedPaths.some((p) => s.title.startsWith(p))
   );
-}
+};
+
+const removeDisabled = (s) =>
+  s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== true;
+
+const defaultIgnores = [
+  "region",
+  // Disabling contrast tests due to inconsistent false positives
+  // https://github.com/pa11y/pa11y/issues/422
+  "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+  "color-contrast",
+];
+
+const overrides = {
+  "Components/Asset Inventory/List View": {
+    "*": {
+      // <div aria-label="selectable"></div> is a noop
+      // it won't be read by a screen reader as the element
+      // neither is a landmark nor an interactive element
+      // not worth fixing as all those fake column headers are
+      // not accessible anyway
+      disable: true,
+    },
+  },
+  "Components/Code Editor": {
+    "*": {
+      disable: true,
+    },
+  },
+  "Visualizations/Table": {
+    "*": {
+      // the HvTable that has several accessibility issues like
+      // the aria-rowindex attribute being improperly used
+      // the sort button having no aria-label
+      // the secondary actions button having no aria-label and an duplicate id
+      // the expand button having a static aria-label
+      // and so on...
+      disable: true,
+    },
+  },
+  "Components/Loading": {
+    "With Children": {
+      // Sample uses the HvTable, that has several accessibility issues
+      disable: true,
+    },
+  },
+  "Forms/File Uploader": {
+    "*": {
+      ignore: [
+        // interactive controls must not be nested, but currently
+        // dropZoneContainer with role button has an input as a child
+        "nested-interactive",
+      ],
+    },
+  },
+  "Forms/Search Box": {
+    "Search As You Type": {
+      ignore: [
+        // scrollable region should be focusable so the user can scroll with the keyboard
+        // however that's not the focus of this sample
+        "scrollable-region-focusable",
+      ],
+    },
+  },
+  "Components/Dropdown Menu": {
+    "With Icons And Actions": {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-with-icons-and-actions-icon-button",
+        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
+      ],
+    },
+  },
+  "Tests/Dropdown Menu": {
+    "A 11 Y Open": {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-open-icon-button",
+        "wait for element #dropdownmenu-open-list to be visible",
+      ],
+    },
+  },
+};
 
 module.exports = (async () => {
-  const browser = await puppeteer.launch({
-    ignoreHTTPSErrors: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const response = await fetch(storiesUrl);
+  const data = await response.json();
 
-  const page = await browser.newPage();
+  const filter = process.env.STORY?.toLocaleLowerCase();
 
-  const stories = await page
-    .goto(url)
-    .then(() => page.evaluate(getStories, url, filter))
-    .catch((error) => {
-      console.log(error.message);
+  const stories = Object.values(data.stories)
+    .filter((s) => filterStories(s, filter))
+    .map(({ parameters = {}, name, title, ...others }) => {
+      const pa11yComponentConfig = overrides[title]?.["*"];
+      const pa11yStoryConfig = overrides[title]?.[name];
+      let pa11y = undefined;
+      if (pa11yComponentConfig != null || pa11yStoryConfig != null) {
+        pa11y = {
+          ...(pa11yComponentConfig ?? {}),
+          ...(pa11yStoryConfig ?? {}),
+          ignore: [
+            ...defaultIgnores,
+            ...(pa11yComponentConfig?.ignore ?? []),
+            ...(pa11yStoryConfig?.ignore ?? []),
+          ],
+        };
+      }
+
+      return {
+        ...others,
+        name,
+        title,
+        parameters: { ...parameters, pa11y },
+      };
     })
-    .finally(() => {
-      browser.close();
-    });
+    .filter(removeDisabled)
+    .map((s) => ({
+      url: iframeUrl + "?id=" + s.id,
+      ...s.parameters.pa11y,
+    }));
 
   if (stories == null) {
     process.exit(1);
@@ -56,16 +139,7 @@ module.exports = (async () => {
   return {
     defaults: {
       timeout: 15000,
-      ignore: [
-        "region",
-        // Disabling contrast tests due to inconsistent false positives
-        // https://github.com/pa11y/pa11y/issues/422
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-        // Incorrect Reporting of: This element's role is "presentation" but contains child elements with semantic meaning.
-        // https://github.com/squizlabs/HTML_CodeSniffer/issues/274
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4",
-      ],
+      ignore: defaultIgnores,
       runners: ["htmlcs", "axe"],
       standard: "WCAG2AA",
       rootElement: "div[id=root]",
