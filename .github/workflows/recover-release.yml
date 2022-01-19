@@ -41,8 +41,6 @@ jobs:
       - name: Publish Setup
         run: |
           npm config set _auth ${{ secrets.HV_NPM_AUTOMATION_TOKEN }}
-          npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
-          npm config set always-auth true
 
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
