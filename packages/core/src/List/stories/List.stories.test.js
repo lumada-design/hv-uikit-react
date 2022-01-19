@@ -1,4 +1,4 @@
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
 

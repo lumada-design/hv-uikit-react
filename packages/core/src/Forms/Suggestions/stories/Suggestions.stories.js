@@ -77,6 +77,7 @@ export const Main = () => {
           inputRef={inputRef}
           placeholder="Insert country"
           onChange={handleChange}
+          inputProps={{ "aria-labelledby": "countries" }}
         />
         <HvSuggestions
           expanded={open}
@@ -89,19 +90,6 @@ export const Main = () => {
       </HvLabel>
     </HvFormElement>
   );
-};
-
-Main.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Properties missing on production:
-      // https://github.com/lumada-design/hv-uikit-react/issues/1703
-      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-      "label",
-    ],
-  },
 };
 
 export const ServerSideSuggestions = () => {
@@ -160,6 +148,7 @@ export const ServerSideSuggestions = () => {
           inputRef={inputRef}
           placeholder="Insert country"
           onChange={handleChange}
+          inputProps={{ "aria-labelledby": "countries" }}
         />
         <HvSuggestions
           expanded={open}
@@ -172,19 +161,6 @@ export const ServerSideSuggestions = () => {
       </HvLabel>
     </HvFormElement>
   );
-};
-
-ServerSideSuggestions.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Properties missing on production:
-      // https://github.com/lumada-design/hv-uikit-react/issues/1703
-      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-      "label",
-    ],
-  },
 };
 
 export const OpenWithDownArrow = () => {
@@ -240,6 +216,7 @@ export const OpenWithDownArrow = () => {
           placeholder="Insert country"
           onChange={handleChange}
           onKeyDown={handleKey}
+          inputProps={{ "aria-labelledby": "countries" }}
         />
         <HvSuggestions
           id="suggestions"
@@ -253,19 +230,6 @@ export const OpenWithDownArrow = () => {
       </HvLabel>
     </HvFormElement>
   );
-};
-
-OpenWithDownArrow.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Properties missing on production:
-      // https://github.com/lumada-design/hv-uikit-react/issues/1703
-      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-      "label",
-    ],
-  },
 };
 
 export const WithHighlighter = () => {
@@ -352,6 +316,7 @@ export const WithHighlighter = () => {
             inputRef={inputRef}
             placeholder="Insert country"
             onChange={handleChange}
+            inputProps={{ "aria-labelledby": "countries" }}
           />
           <HvSuggestions
             expanded={open}
@@ -365,17 +330,4 @@ export const WithHighlighter = () => {
       </HvFormElement>
     </>
   );
-};
-
-WithHighlighter.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // TODO: BUG Properties missing on production:
-      // https://github.com/lumada-design/hv-uikit-react/issues/1703
-      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-      "label",
-    ],
-  },
 };

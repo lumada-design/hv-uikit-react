@@ -25,10 +25,10 @@ export const Main = () => (
   <>
     <HvTypography variant="highlightText">Title</HvTypography>
     <div style={{ display: "inline-flex", alignItems: "flex-end" }}>
-      <HvTypography style={{ marginRight: 10 }} variant="lTitle">
+      <HvTypography style={{ marginRight: 10 }} variant="lTitle" component="span">
         9.99
       </HvTypography>
-      <HvTypography style={{ paddingBottom: 3 }} variant="sTitle">
+      <HvTypography style={{ paddingBottom: 3 }} variant="sTitle" component="span">
         Units
       </HvTypography>
     </div>

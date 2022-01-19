@@ -6,7 +6,7 @@ Resource    ../_keywords.resource
 open modal sample
     [Arguments]    ${dir}    ${sample}
     go to                            ${dir}dialog--${sample}
-    Wait Until Element Is Enabled    css:button
+    Wait Until Element Is Enabled    css:button.HvButton-root
 
 
 *** Variables ***

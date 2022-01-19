@@ -92,7 +92,9 @@ export const LocaleOverride = () => {
   };
 
   const handleLocaleChange = async (event, newLocale) => {
-    await import(`dayjs/locale/${newLocale}`);
+    // prevent bundling of unwanted non-js files
+    // by specifying the file extension in the dynamic import
+    await import(`dayjs/locale/${newLocale}.js`);
     setLocale(newLocale);
   };
 

@@ -27,12 +27,6 @@ export const Main = () => (
   </div>
 );
 
-Main.parameters = {
-  pa11y: {
-    ignore: ["region"],
-  },
-};
-
 export const WithContent = () => {
   const theme = useTheme();
 

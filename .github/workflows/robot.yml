@@ -28,16 +28,15 @@ jobs:
               ]
             }
 
-  Build-Documentation:
-    name: Build Documentation
-    runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
+  Build-Storybook-V3-Store:
+    name: Build Storybook (v3 store)
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
@@ -49,14 +48,14 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
+      - name: Build Storybook
         run: |
           npm run build-documentation
 
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: storybook-v3
           path: ${{ github.workspace }}/dist
 
       - name: Clean Folders
@@ -66,7 +65,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: [Build-Documentation]
+    needs: [Build-Storybook-V3-Store]
     runs-on: [self-hosted, Linux]
     timeout-minutes: 60
     strategy:
@@ -96,9 +95,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook-v3
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -110,7 +109,7 @@ jobs:
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
@@ -129,10 +128,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # delete artifact since it was published to gh-pages
+      # delete storybook artifact
       - uses: geekyeggo/delete-artifact@v1
         with:
-          name: documentation
+          name: storybook-v3
 
       - uses: technote-space/workflow-conclusion-action@v1
 

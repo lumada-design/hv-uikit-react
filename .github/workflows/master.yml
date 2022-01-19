@@ -19,9 +19,9 @@ on:
 # ref is not needed across checkouts because master is the default branch
 
 # flow:
-# +------------------------------------+          +-------------------+
-# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
-# +----------+-------------------------+          +---------+---------+
+# +------------------------------------+     +---------------------------------+
+# |Static-Checks (Licenses, Lint, Jest)|     |Build-Storybook (v2 and v3 store)|
+# +----------+-------------------------+     +--------------+------------------+
 #            |                                              |
 #            |                   +-----------+--------------+
 #            |                   |           |              |                        
@@ -48,7 +48,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
@@ -69,15 +69,15 @@ jobs:
       - name: Test
         run: npm run test
 
-  Build-Documentation:
-    name: Build Documentation
-    runs-on: [self-hosted, Linux]
+  Build-Storybook-V2-Store:
+    name: Build Storybook (v2 store)
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
@@ -89,14 +89,49 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
+      - name: Build Storybook
+        run: |
+          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
+
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-v2
+          path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  Build-Storybook-V3-Store:
+    name: Build Storybook (v3 store)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Build Storybook
         run: |
           npm run build-documentation
 
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: storybook-v3
           path: ${{ github.workspace }}/dist
 
       - name: Clean Folders
@@ -106,7 +141,7 @@ jobs:
 
   A11Y-Tests:
     name: Accessibility Tests
-    needs: [Build-Documentation]
+    needs: [Build-Storybook-V3-Store]
     runs-on: [self-hosted, Linux]
 
     services:
@@ -123,14 +158,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16" # npm 8.x needed for overrides
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook-v3
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -156,7 +191,7 @@ jobs:
 
   Applitools:
     name: Applitools Storybook Visual Testing
-    needs: [Build-Documentation]
+    needs: [Build-Storybook-V2-Store]
     runs-on: [self-hosted, Linux]
 
     services:
@@ -173,14 +208,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -202,7 +237,7 @@ jobs:
           npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
 
       - name: Archive Logs
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: applitools-logs
@@ -215,7 +250,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: [Build-Documentation]
+    needs: [Build-Storybook-V3-Store]
     runs-on: [self-hosted, Linux]
     timeout-minutes: 60
     strategy:
@@ -245,9 +280,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook-v3
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -259,7 +294,7 @@ jobs:
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports

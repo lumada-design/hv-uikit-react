@@ -94,15 +94,6 @@ Disabled.parameters = {
   docs: {
     description: { story: "Disabled radio buttons." },
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
 };
 
 export const ReadOnly = () => {
@@ -170,18 +161,6 @@ export const ErrorMessage = () => (
   <HvRadio status="invalid" statusMessage="No way for this to be valid!" label="Radio 1" />
 );
 
-ErrorMessage.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
-  },
-};
-
 export const ExternalErrorMessage = () => {
   const theme = useTheme();
 
@@ -232,8 +211,16 @@ export const ExternalErrorMessage = () => {
       >
         <h4>Form errors:</h4>
         <ul>
-          {firstRadioErrorMessage && <li id="firstRadio-error">{firstRadioErrorMessage}</li>}
-          {secondRadioErrorMessage && <li id="secondRadio-error">{secondRadioErrorMessage}</li>}
+          {firstRadioErrorMessage && (
+            <li id="firstRadio-error" aria-live="polite">
+              {firstRadioErrorMessage}
+            </li>
+          )}
+          {secondRadioErrorMessage && (
+            <li id="secondRadio-error" aria-live="polite">
+              {secondRadioErrorMessage}
+            </li>
+          )}
         </ul>
       </HvGrid>
     </HvGrid>
@@ -246,14 +233,5 @@ ExternalErrorMessage.parameters = {
       story:
         "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
     },
-  },
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid because axe-core forces
-      // the referenced error element to have aria-live="assertive", when the spec does not
-      // https://github.com/dequelabs/axe-core/pull/2590
-      "aria-valid-attr-value",
-    ],
   },
 };

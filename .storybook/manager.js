@@ -1,5 +1,6 @@
 import "./theme/fonts/font-faces.css";
 
+import { ActiveTabs } from "@storybook/api";
 import { addons } from "@storybook/addons";
 
 addons.setConfig({
@@ -8,6 +9,11 @@ addons.setConfig({
   showPanel: true,
   panelPosition: "bottom",
   sidebarAnimations: true,
+  previewTabs: {
+    "storybook/docs/panel": "Documentation",
+    canvas: { hidden: process.env.NODE_ENV === "production" },
+  },
+  initialActive: ActiveTabs.CANVAS,
   // enable keyboard shortcuts
   // (even thou we're hidding the button)
   enableShortcuts: true,

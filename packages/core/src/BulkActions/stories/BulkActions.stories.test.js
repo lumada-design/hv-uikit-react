@@ -1,4 +1,4 @@
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import React from "react";
 
 import { WithActions } from "./BulkActions.stories";

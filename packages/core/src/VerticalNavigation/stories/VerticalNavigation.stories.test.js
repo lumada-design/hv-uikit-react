@@ -1,4 +1,4 @@
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@storybook/testing-library";
 import { Collapsable, CollapseOnExit } from "./VerticalNavigation.stories";
 
 export default {

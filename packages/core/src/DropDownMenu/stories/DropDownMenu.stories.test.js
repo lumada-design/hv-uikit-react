@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { makeStyles } from "@material-ui/core";
-import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { screen, fireEvent } from "@storybook/testing-library";
 import React, { useState } from "react";
 
 import { HvButton, HvDropDownMenu, HvDialog, HvDialogContent, HvDialogTitle } from "../..";
@@ -63,13 +63,6 @@ export const A11YOpen = () => (
 );
 
 A11YOpen.parameters = {
-  pa11y: {
-    actions: [
-      // open menu before testing
-      "click element #dropdownmenu-open-icon-button",
-      "wait for element #dropdownmenu-open-list to be visible",
-    ],
-  },
   eyes: { include: false },
 };
 

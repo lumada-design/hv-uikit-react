@@ -18,21 +18,7 @@ export const getManagerStyles = (theme) => ({
     },
   },
 
-  ".simplebar-wrapper": {
-    backgroundColor: theme.hv.palette.atmosphere.atmo3,
-
-    ...(process.env.NODE_ENV !== "production"
-      ? {}
-      : {
-          // hide the Canvas tab when in production
-          ".simplebar-content > div > div > div > a:first-of-type": {
-            display: "none",
-
-            "& + a": {
-              // same margin than the separator
-              marginLeft: "15px",
-            },
-          },
-        }),
+  "button[title='Apply outlines to the preview']": {
+    display: "none",
   },
 });

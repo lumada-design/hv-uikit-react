@@ -6,15 +6,15 @@ env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
 jobs:
-  Build-Documentation:
-    name: Build Documentation
+  Build-Storybook-V2-Store:
+    name: Build Storybook (v2 store)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
@@ -26,19 +26,24 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
+      - name: Build Storybook
         run: |
-          npm run build-documentation
+          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
 
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
-    needs: [Build-Documentation]
+    needs: [Build-Storybook-V2-Store]
     runs-on: [self-hosted, Linux]
 
     services:
@@ -55,14 +60,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook-v2
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -85,7 +90,7 @@ jobs:
 
       - name: Archive Logs
         if: always()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: applitools-logs
           path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
@@ -102,10 +107,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # delete artifact since it was published to gh-pages
+      # delete storybook artifact
       - uses: geekyeggo/delete-artifact@v1
         with:
-          name: documentation
+          name: storybook-v2
 
       - uses: technote-space/workflow-conclusion-action@v1
 

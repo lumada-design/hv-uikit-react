@@ -130,13 +130,13 @@ export const CustomLinechartGrouped = () => {
             className={classes.selectorPadding}
             id="dropdown1"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
-            labels="Country"
+            aria-label="Country"
             values={countriesObject}
             placement="left"
           />
           <HvDropdown
             id="dropdown2"
-            labels="Time Period"
+            aria-label="Time Period"
             placement="left"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[

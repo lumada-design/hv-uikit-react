@@ -78,13 +78,6 @@ WithIconsAndActions.parameters = {
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected",
     },
   },
-  pa11y: {
-    actions: [
-      // open menu before testing
-      "click element #dropdownmenu-with-icons-and-actions-icon-button",
-      "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
-    ],
-  },
   eyes: { include: false },
 };
 

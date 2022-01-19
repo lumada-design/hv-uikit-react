@@ -1,6 +1,7 @@
 import { isForwardRef, isMemo } from "react-is";
 import { hasDocgen, extractComponentProps } from "@storybook/addon-docs/dist/esm/lib/docgen";
 import { enhancePropTypesProps } from "@storybook/addon-docs/dist/esm/frameworks/react/propTypes/handleProp";
+import { enhanceTypeScriptProps } from "@storybook/addon-docs/dist/esm/frameworks/react/typeScript/handleProp";
 
 import sortProps from "./sortProps";
 
@@ -49,6 +50,17 @@ const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
   }
 };
 
+const enhance = (extractedProps, component) => {
+  switch (extractedProps[0].typeSystem) {
+    case "JavaScript":
+      return enhancePropTypesProps(extractedProps, component);
+    case "TypeScript":
+      return enhanceTypeScriptProps(extractedProps);
+    default:
+      return extractedProps.map((x) => x.propDef);
+  }
+};
+
 export const extractProps = (component) => {
   // eslint-disable-next-line react/forbid-foreign-prop-types
   if (!hasDocgen(component)) {
@@ -70,7 +82,7 @@ export const extractProps = (component) => {
 
   const result = {
     sections: {
-      properties: sortProps(enhancePropTypesProps(extractedProps, component)),
+      properties: sortProps(enhance(extractedProps, component)),
       classes: sortProps(extractSubSection(extractedProps, "classes"), ["root"]),
       labels: sortProps(
         extractSubSection(

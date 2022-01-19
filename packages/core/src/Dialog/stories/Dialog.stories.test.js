@@ -1,4 +1,4 @@
-import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { screen, fireEvent } from "@storybook/testing-library";
 import {
   Main,
   CustomContent,
