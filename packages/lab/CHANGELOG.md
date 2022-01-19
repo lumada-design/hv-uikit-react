@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.35.2...@hv/uikit-react-lab@3.36.0) (2022-01-19)
+
+
+### Features
+
+* **table:** add ability to have striped lines ([9373614](https://github.com/lumada-design/hv-uikit-react/commit/93736142c900b5511290f99c3cd2bfed5e46943d))
+* **table:** add column resize capability ([15f0bda](https://github.com/lumada-design/hv-uikit-react/commit/15f0bda32388648911eccc70583485888520f38d))
+* **table:** update styles for expanded use-case ([cccc534](https://github.com/lumada-design/hv-uikit-react/commit/cccc534e477f67cb7dd9ad2a1131f3acc2e64e4d))
+
+
+
+
+
 ## [3.35.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.35.1...@hv/uikit-react-lab@3.35.2) (2022-01-15)
 
 
