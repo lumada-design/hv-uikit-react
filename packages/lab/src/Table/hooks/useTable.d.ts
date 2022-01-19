@@ -88,12 +88,17 @@ import {
   UseHvBulkActionsTableInstanceProps,
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
-import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
+import {
+  UseHvRowExpandTableOptions,
+  UseHvRowExpandRowInstance,
+  UseHvRowExpandTableRowProps,
+} from "./useRowExpand";
 import {
   UseHvHeaderGroupsColumnProps,
   UseHvHeaderGroupsCellProps,
   UseHvHeaderGroupsInstance,
 } from "./useHeaderGroups";
+import { UseHvResizeColumnProps, UseHvResizeTableCellProps } from "./useResizeColumns";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -303,19 +308,22 @@ export interface HvTableHeaderProps
     UseHvTableStylesTableCellProps,
     UseHvTableStickyColumnProps,
     UseHvHeaderGroupsColumnProps,
+    UseHvResizeColumnProps,
     UseHvSortByColumnProps {}
 export interface HvTableFooterProps extends TableFooterProps, UseHvTableStylesTableCellProps {}
 
 export interface HvTableRowProps
   extends TableRowProps,
     UseHvTableStylesTableRowProps,
-    UseHvRowSelectionTableRowProps {}
+    UseHvRowSelectionTableRowProps,
+    UseHvRowExpandTableRowProps {}
 
 export interface HvTableCellProps
   extends TableCellProps,
     UseHvTableStylesTableCellProps,
     UseHvTableStickyCellProps,
     UseHvHeaderGroupsCellProps,
+    UseHvResizeTableCellProps,
     UseHvSortByTableCellProps {}
 
 // #endregion

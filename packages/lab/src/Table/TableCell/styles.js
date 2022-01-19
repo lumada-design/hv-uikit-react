@@ -116,6 +116,14 @@ const styles = (theme) => {
         borderLeft: 0,
       },
     },
+
+    resizable: {
+      borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+    },
+
+    resizing: {
+      borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`,
+    },
   };
 };
 

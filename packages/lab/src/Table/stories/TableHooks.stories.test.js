@@ -61,7 +61,7 @@ export const SortFixedLayout = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
     { columns, data },
     useHvSortBy
   );
@@ -70,11 +70,13 @@ export const SortFixedLayout = () => {
     <HvTableContainer>
       <HvTable style={{ tableLayout: "fixed" }} {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -124,7 +126,7 @@ export const SortFixedLayoutSmall = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
     { columns, data },
     useHvSortBy
   );
@@ -133,11 +135,13 @@ export const SortFixedLayoutSmall = () => {
     <HvTableContainer style={{ width: "728px" }}>
       <HvTable style={{ tableLayout: "fixed" }} {...getTableProps()}>
         <HvTableHead>
-          <HvTableRow>
-            {headers.map((col) => (
-              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-            ))}
-          </HvTableRow>
+          {headerGroups.map((headerGroup) => (
+            <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -203,7 +207,7 @@ export const BulkActionsInFilteredTable = () => {
     getTableProps,
     getTableBodyProps,
     prepareRow,
-    headers,
+    headerGroups,
     page,
     selectedFlatRows,
     state: { selectedRowIds },
@@ -293,11 +297,13 @@ export const BulkActionsInFilteredTable = () => {
       <HvTableContainer>
         <HvTable {...getTableProps()}>
           <HvTableHead>
-            <HvTableRow>
-              {headers.map((col) => (
-                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
-              ))}
-            </HvTableRow>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
             {page?.length ? (

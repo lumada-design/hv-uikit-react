@@ -1,6 +1,14 @@
 import { StandardProps } from "@material-ui/core";
 
-export type HvTableRowClassKey = "root" | "head" | "body" | "footer" | "hover" | "selected";
+export type HvTableRowClassKey =
+  | "root"
+  | "head"
+  | "body"
+  | "footer"
+  | "hover"
+  | "selected"
+  | "expanded"
+  | "striped";
 
 export interface HvTableRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableRowElement>, HvTableRowClassKey> {
@@ -18,6 +26,14 @@ export interface HvTableRowProps
    * Whether the table row will have the selected shading.
    */
   selected?: boolean;
+  /**
+   * Whether the table row is expanded.
+   */
+  expanded?: boolean;
+  /**
+   * Whether the table row background is striped.
+   */
+  striped?: boolean;
 }
 
 export default function HvTableRow(props: HvTableRowProps): JSX.Element | null;

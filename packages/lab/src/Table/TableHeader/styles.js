@@ -188,6 +188,26 @@ const styles = (theme) => ({
     display: "inline-flex",
     visibility: "hidden",
   },
+
+  resizable: {
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+
+  resizing: {
+    borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`,
+  },
+
+  resizer: {
+    display: "inline-block",
+    width: 10,
+    height: "100%",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    transform: "translateX(50%)",
+    zIndex: 1,
+    touchAction: "none",
+  },
 });
 
 export default styles;

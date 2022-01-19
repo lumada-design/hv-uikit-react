@@ -1,6 +1,7 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
-import { Random } from "@hv/uikit-react-core";
+import { Random, HvButton } from "@hv/uikit-react-core";
+import { Delete, Drag } from "@hv/uikit-react-icons";
 
 const rand = new Random();
 
@@ -61,6 +62,32 @@ export const getColumns = () => [
   { Header: "Priority", accessor: "priority" },
 ];
 
+export const getGroupedRowsColumns = () => [
+  {
+    Header: "Title",
+    accessor: "name",
+    style: { minWidth: 120 },
+  },
+  {
+    Header: "Time",
+    accessor: "createdDate",
+    style: { minWidth: 100 },
+  },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Status", accessor: "status", style: { width: 120 } },
+  // numeric values should be right-aligned
+  {
+    Header: "Probability",
+    accessor: "riskScore",
+    align: "right",
+    Cell: ({ value }) => `${value}%`,
+    aggregate: "average",
+    Aggregated: ({ value }) => `Avg. ${value}%`,
+  },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+];
+
 export const getLongNameColumns = () => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   {
@@ -100,6 +127,55 @@ export const getGroupedColumns = () => [
     ],
   },
   { Header: "Priority", accessor: "priority" },
+];
+
+export const getDragAndDropColumns = (theme) => [
+  {
+    id: "dragAndDrop",
+    style: {
+      borderLeft: "none",
+      borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+      padding: 0,
+      width: 34,
+      maxWidth: 34,
+    },
+    // eslint-disable-next-line react/prop-types
+    Cell: ({ dragHandleProps }) => {
+      return (
+        <HvButton
+          icon
+          category="ghost"
+          aria-label="Drag"
+          {...{ component: "div" }}
+          {...dragHandleProps}
+        >
+          <Drag />
+        </HvButton>
+      );
+    },
+  },
+  { Header: "Title", accessor: "name", minWidth: 120 },
+  { Header: "Time", accessor: "createdDate", minWidth: 100 },
+  { Header: "Status", accessor: "status", width: 120 },
+  {
+    Header: "Probability",
+    accessor: "riskScore",
+    align: "right",
+    Cell: ({ value }) => `${value}%`,
+  },
+  { Header: "Priority", accessor: "priority" },
+  {
+    id: "actions",
+    variant: "actions",
+    width: 34,
+    Cell: () => {
+      return (
+        <HvButton aria-label="Delete" icon>
+          <Delete />
+        </HvButton>
+      );
+    },
+  },
 ];
 
 export const useToggleIndex = (initialState) => {
