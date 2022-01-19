@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core";
 
-import { Preview as PreviewIcon } from "@hv/uikit-react-icons";
+import { Preview as PreviewIcon } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../..";
 

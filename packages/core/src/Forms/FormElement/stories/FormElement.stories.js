@@ -1,4 +1,4 @@
-import { CloseXS, Success } from "@hv/uikit-react-icons";
+import { CloseXS, Success } from "@hitachivantara/uikit-react-icons";
 import React, { useRef, useState } from "react";
 
 import {
@@ -15,7 +15,7 @@ export default {
   title: "Forms/Form Element",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFormElement } from "@hv/uikit-react-core"',
+    usage: 'import { HvFormElement } from "@hitachivantara/uikit-react-core"',
   },
   component: HvFormElement,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

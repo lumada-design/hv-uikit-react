@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
-import { Backwards } from "@hv/uikit-react-icons";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
 import { withStyles } from "@material-ui/core";
 import isString from "lodash/isString";
 

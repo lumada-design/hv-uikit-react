@@ -7,7 +7,7 @@ export default {
   title: "Lab/QueryBuilder",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvQueryBuilder } from "@hv/uikit-react-lab"',
+    usage: 'import { HvQueryBuilder } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvQueryBuilder,
 };

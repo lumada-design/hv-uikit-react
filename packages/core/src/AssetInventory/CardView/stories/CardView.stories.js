@@ -1,5 +1,5 @@
 import React from "react";
-import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons";
+import { Add, Upload, Delete, Preview } from "@hitachivantara/uikit-react-icons";
 import {
   HvActionBar,
   HvActionsGeneric,
@@ -20,7 +20,7 @@ export default {
   title: "Components/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvCardView } from "@hv/uikit-react-core"',
+    usage: 'import { HvCardView } from "@hitachivantara/uikit-react-core"',
   },
   component: HvCardView,
   decorators: [

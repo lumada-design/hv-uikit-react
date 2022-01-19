@@ -4,7 +4,7 @@ import { Chip, withStyles, useTheme } from "@material-ui/core";
 
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { CloseXS } from "@hv/uikit-react-icons";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import fade from "../utils/hexToRgbA";
 
 import { HvButton, HvTypography } from "..";

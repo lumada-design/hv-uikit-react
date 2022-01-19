@@ -7,7 +7,7 @@ export default {
   title: "Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBarchart } from "@hv/uikit-react-core"',
+    usage: 'import { HvBarchart } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.2.1",
   },

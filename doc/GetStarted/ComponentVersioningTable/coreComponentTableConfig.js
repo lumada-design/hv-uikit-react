@@ -7,7 +7,7 @@ import DSVersion from "../../../.storybook/blocks/resources/DSVersion.js";
 
 import componentDefinitions from "../ComponentVersioningTable/versions";
 
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 const notAvailable = componentDefinitions.notAvailable;
 const statusClassification = componentDefinitions.dsClassification;

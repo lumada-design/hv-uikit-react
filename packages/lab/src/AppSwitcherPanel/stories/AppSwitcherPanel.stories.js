@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core";
 
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { Code, LeftAlign, Tool, Champion } from "@hv/uikit-react-icons";
+import { Code, LeftAlign, Tool, Champion } from "@hitachivantara/uikit-react-icons";
 
 import HvAppSwitcherPanel from "..";
 
@@ -13,7 +13,7 @@ export default {
   title: "Lab/AppSwitcherPanel",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvAppSwitcherPanel } from "@hv/uikit-react-lab"',
+    usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvAppSwitcherPanel,
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-import { HvTooltip, HvTypography } from "@hv/uikit-react-core";
+import { HvTooltip, HvTypography } from "@hitachivantara/uikit-react-core";
 
 const TitleWithTooltip = ({ className, title }) => {
   const [isOverflowed, setIsOverflowed] = useState(false);

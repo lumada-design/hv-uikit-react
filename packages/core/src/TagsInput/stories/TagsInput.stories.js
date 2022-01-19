@@ -6,7 +6,7 @@ export default {
   title: "Forms/Tags Input",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTagsInput } from "@hv/uikit-react-core"',
+    usage: 'import { HvTagsInput } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.6.0",
   },

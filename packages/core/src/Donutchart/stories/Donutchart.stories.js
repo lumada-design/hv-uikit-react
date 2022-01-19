@@ -7,7 +7,7 @@ export default {
   title: "Visualizations/Donut Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvDonutchart } from "@hv/uikit-react-core"',
+    usage: 'import { HvDonutchart } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

@@ -11,7 +11,7 @@ import {
   FavoriteSelected,
   Preview,
   Upload,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvActionBar,
   HvActionsGeneric,
@@ -32,7 +32,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from "@hv/uikit-react-core"',
+      'import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from "@hitachivantara/uikit-react-core"',
 
     dsVersion: "3.4.0",
   },

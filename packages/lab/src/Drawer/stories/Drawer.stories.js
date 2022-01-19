@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
-import { HvButton, HvDialogTitle, HvDialogContent, HvDialogActions } from "@hv/uikit-react-core";
+import {
+  HvButton,
+  HvDialogTitle,
+  HvDialogContent,
+  HvDialogActions,
+} from "@hitachivantara/uikit-react-core";
 import { HvDrawer } from "../..";
 
 export default {
   title: "Lab/Drawer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDrawer } from '@hv/uikit-react-lab'",
+    usage: "import { HvDrawer } from '@hitachivantara/uikit-react-lab'",
   },
   component: HvDrawer,
 };

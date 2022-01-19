@@ -1,6 +1,6 @@
 import { createTheme } from "@material-ui/core/styles";
-import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
-import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
+import dawnTheme from "@hitachivantara/uikit-common-themes/dist/dawn";
+import wickedTheme from "@hitachivantara/uikit-common-themes/dist/wicked";
 import muiAppBarOverrides from "./overrides/muiAppBar";
 import muiToolbarOverrides from "./overrides/muiToolbar";
 import muiIconButtonOverrides from "./overrides/muiIconButton";

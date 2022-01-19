@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Chart from "react-google-charts";
-import { TopXS, BottomXS, Level0Good, Level2Average } from "@hv/uikit-react-icons";
+import { TopXS, BottomXS, Level0Good, Level2Average } from "@hitachivantara/uikit-react-icons";
 import { HvKpi, HvTypography, HvCard } from "../..";
 
 export default {
   title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvKpi } from "@hv/uikit-react-core"',
+    usage: 'import { HvKpi } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

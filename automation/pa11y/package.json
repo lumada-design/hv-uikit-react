@@ -1,5 +1,5 @@
 {
-  "name": "@hv/uikit-react-pa11y",
+  "name": "@hitachivantara/uikit-react-pa11y",
   "version": "1.0.0",
   "description": "Test UI Kit components running pa11y tool.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",

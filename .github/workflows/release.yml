@@ -2,7 +2,6 @@
 #
 # A few optional parameters that can be passed to this workflow:
 #  - ref: specific branch to perform the release, defaults to 'master'.
-#  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
 #  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
 #
 # An example using curl:
@@ -20,8 +19,6 @@ on:
   workflow_dispatch:
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/master
@@ -55,7 +52,6 @@ jobs:
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -63,10 +59,7 @@ jobs:
 
       - name: Publish Setup
         run: |
-          npm config delete @hv:registry
-          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
-
-          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
+          npm config set _auth ${{ secrets.HV_NPM_AUTOMATION_TOKEN }}
           npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
           npm config set always-auth true
 
@@ -151,22 +144,22 @@ jobs:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
 
-      - name: Notify release
-        uses: hbfernandes/slack-action@1.0
-        if: success()
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available",
-                  "title": "More details https://github.com/${{github.repository}}/releases",
-                  "text": "${{env.SLACK_MESSAGE}}",
-                  "footer": "${{env.DOCUMENTATION_URL}}"
-                }
-              ]
-            }
+#      - name: Notify release
+#        uses: hbfernandes/slack-action@1.0
+#        if: success()
+#        env:
+#          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+#        with:
+#          args: |
+#            {
+#              "channel": "ui-kit",
+#              "attachments": [
+#                {
+#                  "mrkdwn_in": ["text"],
+#                  "author_name": "New UI-Kit artifacts are available",
+#                  "title": "More details https://github.com/${{github.repository}}/releases",
+#                  "text": "${{env.SLACK_MESSAGE}}",
+#                  "footer": "${{env.DOCUMENTATION_URL}}"
+#                }
+#              ]
+#            }

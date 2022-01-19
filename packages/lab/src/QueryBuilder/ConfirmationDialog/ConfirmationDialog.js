@@ -7,7 +7,7 @@ import {
   HvDialogTitle,
   HvDialogContent,
   HvDialogActions,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 
 import useStyles from "./styles";
 

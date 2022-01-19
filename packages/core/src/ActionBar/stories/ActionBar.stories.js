@@ -6,7 +6,7 @@ export default {
   title: "Components/Action Bar",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvActionBar } from "@hv/uikit-react-core"',
+    usage: 'import { HvActionBar } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

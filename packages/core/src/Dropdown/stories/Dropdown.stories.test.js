@@ -1,7 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { withStyles, makeStyles } from "@material-ui/core";
-import { Priority1, Priority2, Priority3, Priority4, Priority5 } from "@hv/uikit-react-icons";
+import {
+  Priority1,
+  Priority2,
+  Priority3,
+  Priority4,
+  Priority5,
+} from "@hitachivantara/uikit-react-icons";
 
 import { HvDropdown, HvTypography } from "../..";
 

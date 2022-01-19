@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
 
-import { HvButton, HvDropdown } from "@hv/uikit-react-core";
+import { HvButton, HvDropdown } from "@hitachivantara/uikit-react-core";
 import HvTimePicker from "../index";
 import { getFormattedTime } from "../timePickerFormatter";
 
@@ -9,7 +9,7 @@ export default {
   title: "Lab/Time Picker",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTimePicker } from "@hv/uikit-react-lab"',
+    usage: 'import { HvTimePicker } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvTimePicker,
   decorators: [(storyFn) => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>],

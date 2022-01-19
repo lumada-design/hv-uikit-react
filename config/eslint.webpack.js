@@ -14,17 +14,17 @@ module.exports = {
     modules: [resolve(__dirname, "../node_modules")],
     alias: {
       // package aliases for deep imports (/dist)
-      "@hv/uikit-react-core/dist": corePackageSrc,
-      "@hv/uikit-react-code-editor/dist": codeEditorPackageSrc,
-      "@hv/uikit-react-icons/dist": iconsPackageBin,
-      "@hv/uikit-react-lab/dist": labPackageSrc,
-      "@hv/uikit-common-themes/dist": commonThemesSrc,
+      "@hitachivantara/uikit-react-core/dist": corePackageSrc,
+      "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
+      "@hitachivantara/uikit-react-icons/dist": iconsPackageBin,
+      "@hitachivantara/uikit-react-lab/dist": labPackageSrc,
+      "@hitachivantara/uikit-common-themes/dist": commonThemesSrc,
 
       // package aliases for top-level imports
-      "@hv/uikit-react-core": corePackageSrc,
-      "@hv/uikit-react-code-editor": codeEditorPackageSrc,
-      "@hv/uikit-react-icons": iconsPackageBin,
-      "@hv/uikit-react-lab": labPackageSrc,
+      "@hitachivantara/uikit-react-core": corePackageSrc,
+      "@hitachivantara/uikit-react-code-editor": codeEditorPackageSrc,
+      "@hitachivantara/uikit-react-icons": iconsPackageBin,
+      "@hitachivantara/uikit-react-lab": labPackageSrc,
     },
     extensions: [".js", ".ts", ".tsx", ".d.ts", ".json"],
   },

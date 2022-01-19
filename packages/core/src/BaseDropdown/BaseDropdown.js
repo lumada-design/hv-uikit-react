@@ -6,7 +6,7 @@ import { ClickAwayListener, withStyles } from "@material-ui/core";
 import { usePopper } from "react-popper";
 import maxSize from "popper-max-size-modifier";
 import clsx from "clsx";
-import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
+import { DropUpXS, DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { HvTypography, useUniqueId } from "..";
 import {
   getFirstAndLastFocus,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Unlock, Lock } from "@hv/uikit-react-icons";
+import { Unlock, Lock } from "@hitachivantara/uikit-react-icons";
 
 import { HvToggleButton, HvButton } from "../..";
 

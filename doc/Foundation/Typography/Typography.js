@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvTypography } from "@hv/uikit-react-core";
-import { Code } from "@hv/uikit-react-icons";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { Code } from "@hitachivantara/uikit-react-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { useTheme } from "@material-ui/core";
 

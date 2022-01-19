@@ -1,14 +1,14 @@
 import React from "react";
 import uniqueId from "lodash/uniqueId";
 
-import { Backwards } from "@hv/uikit-react-icons";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
 import { HvContainer, HvGlobalActions, HvButton, HvDropDownMenu, HvTypography } from "../..";
 
 export default {
   title: "Components/Global Actions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvGlobalActions } from '@hv/uikit-react-core'",
+    usage: "import { HvGlobalActions } from '@hitachivantara/uikit-react-core'",
     maturityStatus: "stable",
     dsVersion: "3.6.0",
   },

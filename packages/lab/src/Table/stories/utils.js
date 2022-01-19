@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
-import { Random, HvButton } from "@hv/uikit-react-core";
-import { Delete, Drag } from "@hv/uikit-react-icons";
+import { Random, HvButton } from "@hitachivantara/uikit-react-core";
+import { Delete, Drag } from "@hitachivantara/uikit-react-icons";
 
 const rand = new Random();
 

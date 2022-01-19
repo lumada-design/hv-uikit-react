@@ -5,7 +5,11 @@ import clsx from "clsx";
 
 import { Checkbox, withStyles } from "@material-ui/core";
 
-import { Checkbox as CheckboxIcon, CheckboxCheck, CheckboxPartial } from "@hv/uikit-react-icons";
+import {
+  Checkbox as CheckboxIcon,
+  CheckboxCheck,
+  CheckboxPartial,
+} from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
 

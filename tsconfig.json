@@ -15,10 +15,10 @@
     "noErrorTruncation": true,
     "allowJs": true,
     "paths": {
-      "@hv/uikit-react-core": ["./packages/core/src"],
-      "@hv/uikit-react-core/dist/*": ["./packages/core/src/*"],
-      "@hv/uikit-react-icons": ["./packages/icons/bin"],
-      "@hv/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
+      "@hitachivantara/uikit-react-core": ["./packages/core/src"],
+      "@hitachivantara/uikit-react-core/dist/*": ["./packages/core/src/*"],
+      "@hitachivantara/uikit-react-icons": ["./packages/icons/bin"],
+      "@hitachivantara/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
     },
     "noUnusedLocals": true,
     "noImplicitAny": true,

@@ -10,7 +10,7 @@ import {
   setId,
   useLabels,
   useLocale,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 
 import styles from "./styles";
 

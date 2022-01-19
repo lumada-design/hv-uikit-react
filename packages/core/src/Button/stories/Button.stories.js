@@ -8,14 +8,14 @@ import {
   Refresh,
   Delete,
   MoreOptionsVertical,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "../..";
 
 export default {
   title: "Components/Button",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvButton } from "@hv/uikit-react-core"',
+    usage: 'import { HvButton } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

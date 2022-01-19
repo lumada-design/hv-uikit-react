@@ -1,5 +1,5 @@
 import React from "react";
-import { MoreOptionsVertical } from "@hv/uikit-react-icons";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import HvDropDownMenu from "../../DropDownMenu";
 
 // eslint-disable-next-line react/prop-types

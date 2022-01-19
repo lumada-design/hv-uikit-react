@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import { Radio, withStyles } from "@material-ui/core";
 
-import { RadioButtonUnselected, RadioButtonSelected } from "@hv/uikit-react-icons";
+import { RadioButtonUnselected, RadioButtonSelected } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
 

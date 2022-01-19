@@ -3,8 +3,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "npmClient": "npm",
-      "registry": "https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/"
+      "npmClient": "npm"
     },
     "version": {
       "allowBranch": ["master", "feat/*", "bug/*"],

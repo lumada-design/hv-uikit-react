@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
-import { Email, Energy, Ghost, WhiteBoard } from "@hv/uikit-react-icons";
+import { Email, Energy, Ghost, WhiteBoard } from "@hitachivantara/uikit-react-icons";
 import HvButton from "../../Button";
 import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
 

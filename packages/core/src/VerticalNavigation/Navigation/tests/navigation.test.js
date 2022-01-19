@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Play } from "@hv/uikit-react-icons";
+import { Play } from "@hitachivantara/uikit-react-icons";
 import HvProvider from "../../../Provider";
 
 import Navigation from "../index";

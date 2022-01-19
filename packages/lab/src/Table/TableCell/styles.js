@@ -1,4 +1,4 @@
-import { hexToRgbA } from "@hv/uikit-react-core";
+import { hexToRgbA } from "@hitachivantara/uikit-react-core";
 
 const styles = (theme) => {
   const semiTransparentAtmo1 = hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4);

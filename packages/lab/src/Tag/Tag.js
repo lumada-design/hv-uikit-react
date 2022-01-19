@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Close } from "@hv/uikit-react-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 
-import { useDeprecated } from "@hv/uikit-react-core";
+import { useDeprecated } from "@hitachivantara/uikit-react-core";
 
 import clsx from "clsx";
 import { withStyles, makeStyles, useTheme } from "@material-ui/core";

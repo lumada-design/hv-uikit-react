@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { DropRightXS } from "@hv/uikit-react-icons";
+import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import { HvLink, HvTypography } from "..";

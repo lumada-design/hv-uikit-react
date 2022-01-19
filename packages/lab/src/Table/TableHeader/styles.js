@@ -1,4 +1,4 @@
-import { hexToRgbA } from "@hv/uikit-react-core";
+import { hexToRgbA } from "@hitachivantara/uikit-react-core";
 
 const styles = (theme) => ({
   root: {

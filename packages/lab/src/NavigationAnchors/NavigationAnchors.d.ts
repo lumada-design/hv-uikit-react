@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvListContainerProps } from "@hv/uikit-react-core";
+import { HvListContainerProps } from "@hitachivantara/uikit-react-core";
 
 interface Option {
   key?: string;

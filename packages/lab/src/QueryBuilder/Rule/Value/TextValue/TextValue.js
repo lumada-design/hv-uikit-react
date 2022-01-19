@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { HvInput } from "@hv/uikit-react-core";
+import { HvInput } from "@hitachivantara/uikit-react-core";
 
 import Context from "../../../Context";
 import useStyles from "./styles";

@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 
 import { withStyles } from "@material-ui/core";
 
-import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
+import {
+  DropRightXS,
+  Calendar,
+  LineChart,
+  Machine,
+  Plane,
+  User,
+} from "@hitachivantara/uikit-react-icons";
 
 import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, HvTooltip } from "../..";
 
@@ -10,7 +17,7 @@ export default {
   title: "Components/List",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvListContainer } from "@hv/uikit-react-core"',
+    usage: 'import { HvListContainer } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

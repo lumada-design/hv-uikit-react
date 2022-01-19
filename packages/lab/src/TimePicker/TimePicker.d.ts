@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvFormElementProps, HvBaseDropdownProps } from "@hv/uikit-react-core";
+import { HvFormElementProps, HvBaseDropdownProps } from "@hitachivantara/uikit-react-core";
 
 export type HvTimePickerClassKey =
   | "root"

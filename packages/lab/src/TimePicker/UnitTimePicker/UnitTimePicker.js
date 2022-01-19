@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { HvInput, isKeypress, KeyboardCodes } from "@hv/uikit-react-core";
-import { DropDownXS as SubtractTimeIcon, DropUpXS as AddTimeIcon } from "@hv/uikit-react-icons";
+import { HvInput, isKeypress, KeyboardCodes } from "@hitachivantara/uikit-react-core";
+import {
+  DropDownXS as SubtractTimeIcon,
+  DropUpXS as AddTimeIcon,
+} from "@hitachivantara/uikit-react-icons";
 import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";

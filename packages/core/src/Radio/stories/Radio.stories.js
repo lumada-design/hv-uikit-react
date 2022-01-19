@@ -27,7 +27,7 @@ export default {
   title: "Forms/Radio Button",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvRadio } from "@hv/uikit-react-core"',
+    usage: 'import { HvRadio } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

@@ -19,9 +19,6 @@ USER $UIKIT_USER:$UIKIT_GROUP
 RUN mkdir -p $UIKIT_FOLDER
 WORKDIR $UIKIT_FOLDER
 
-# set the npm registry
-RUN npm config set @hv:registry https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
-
 # copy miscellaneous resources (first because they're less likely to change)
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./.eslint* ./.gitignore ./CONTRIBUTING.md ./ROADMAP.md ./
 

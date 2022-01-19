@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
-import { Alert, Level5, User, Fail } from "@hv/uikit-react-icons";
+import { Alert, Level5, User, Fail } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core";
 import {
@@ -9,14 +9,14 @@ import {
   HvHeaderActions,
   HvBadge,
   HvHeaderNavigation,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 import HvNotificationPanel from "../NotificationPanel";
 
 export default {
   title: "Lab/Notification Panel",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvNotificationsPanel } from "@hv/uikit-react-lab"',
+    usage: 'import { HvNotificationsPanel } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvNotificationPanel,
   decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],

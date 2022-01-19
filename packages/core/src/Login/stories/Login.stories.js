@@ -9,7 +9,7 @@ export default {
   title: "Components/Login",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvLogin } from "@hv/uikit-react-core"',
+    usage: 'import { HvLogin } from "@hitachivantara/uikit-react-core"',
 
     dsVersion: "3.4.0",
   },

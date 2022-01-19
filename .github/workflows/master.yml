@@ -36,7 +36,6 @@ on:
 #                   +----------+                +-------+
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
   RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
@@ -54,7 +53,6 @@ jobs:
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -118,7 +116,6 @@ jobs:
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -176,7 +173,6 @@ jobs:
       - name: Install automation/pa11y
         run: |
           cd ${{ github.workspace }}/automation/pa11y
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Test A11Y
@@ -226,7 +222,6 @@ jobs:
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Run Applitools Storybook Visual Testing

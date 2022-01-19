@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { HvTypography, withTooltip } from "@hv/uikit-react-core";
+import { HvTypography, withTooltip } from "@hitachivantara/uikit-react-core";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 

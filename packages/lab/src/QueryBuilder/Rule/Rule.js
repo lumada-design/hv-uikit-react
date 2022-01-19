@@ -1,8 +1,8 @@
 import React, { useMemo, useContext } from "react";
 import PropTypes from "prop-types";
 
-import { HvGrid, HvButton, withTooltip } from "@hv/uikit-react-core";
-import { Delete } from "@hv/uikit-react-icons";
+import { HvGrid, HvButton, withTooltip } from "@hitachivantara/uikit-react-core";
+import { Delete } from "@hitachivantara/uikit-react-icons";
 
 import Context from "../Context";
 import Attribute from "./Attribute";

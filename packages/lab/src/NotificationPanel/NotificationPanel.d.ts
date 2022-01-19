@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvDropDownMenuProps } from "@hv/uikit-react-core";
+import { HvDropDownMenuProps } from "@hitachivantara/uikit-react-core";
 
 export interface Actions {
   values: string;
@@ -48,7 +48,7 @@ interface notification {
   icon?: React.ReactNode;
   onClick?: (event: Event, notificationId: string) => void;
   onKeyPress?: (event: Event, notificationId: string) => void;
-  onToggleOpen?: (open: boolean) => void; 
+  onToggleOpen?: (open: boolean) => void;
   actions?: actions;
 }
 

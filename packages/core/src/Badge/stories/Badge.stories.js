@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert } from "@hv/uikit-react-icons";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 import { HvBadge, HvButton } from "../..";
 
 const container = {
@@ -12,7 +12,7 @@ export default {
   title: "Components/Badge",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBadge } from "@hv/uikit-react-core"',
+    usage: 'import { HvBadge } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

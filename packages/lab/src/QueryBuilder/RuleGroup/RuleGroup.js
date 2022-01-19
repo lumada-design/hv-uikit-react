@@ -8,8 +8,8 @@ import {
   HvEmptyState,
   HvTypography,
   withTooltip,
-} from "@hv/uikit-react-core";
-import { Add, Delete, Info } from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import Context from "../Context";
 import Rule from "../Rule";

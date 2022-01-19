@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { FixedSizeList, areEqual } from "react-window";
 
 import { withStyles } from "@material-ui/core";
-import { DropRightXS } from "@hv/uikit-react-icons";
+import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { parseList, wrapperTooltip } from "./utils";
 import useSelectableList from "./useSelectableList";

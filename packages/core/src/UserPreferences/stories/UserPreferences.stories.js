@@ -11,7 +11,7 @@ import {
   Research,
   User,
   WhiteBoard,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
   HvUserPreferences,
@@ -28,7 +28,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import {\n  HvUserPreferences,\n  HvUserPreferencesActions,\n  HvUserPreferencesAction,\n  HvUserPreferencesOptions,\n  HvUserPreferencesOption,\n  HvUserPreferencesOptionsGroup,\n  HvUserPreferencesOptionsGroupLabel,\n} from "@hv/uikit-react-core";',
+      'import {\n  HvUserPreferences,\n  HvUserPreferencesActions,\n  HvUserPreferencesAction,\n  HvUserPreferencesOptions,\n  HvUserPreferencesOption,\n  HvUserPreferencesOptionsGroup,\n  HvUserPreferencesOptionsGroupLabel,\n} from "@hitachivantara/uikit-react-core";',
     subcomponents: {
       HvUserPreferencesActions,
       HvUserPreferencesAction,

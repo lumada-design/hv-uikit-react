@@ -5,7 +5,7 @@ import {
   HvButtonProps,
   HvTypographyKeys,
   HvTypographyProps,
-} from "@hv/uikit-react-core";
+} from "@hitachivantara/uikit-react-core";
 
 export type HvInlineEditorClassKey =
   | "root"

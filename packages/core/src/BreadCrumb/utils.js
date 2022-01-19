@@ -1,5 +1,5 @@
 import React from "react";
-import { MoreOptionsHorizontal } from "@hv/uikit-react-icons";
+import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
 import { HvDropDownMenu } from "..";
 import { setId } from "../utils";
 

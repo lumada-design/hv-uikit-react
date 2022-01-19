@@ -3,7 +3,7 @@ import parser from "html-react-parser";
 
 import { makeStyles } from "@material-ui/core";
 
-import { Fail } from "@hv/uikit-react-icons";
+import { Fail } from "@hitachivantara/uikit-react-icons";
 
 import DocsPage from "../../../../../.storybook/blocks/DocsPage";
 
@@ -14,7 +14,7 @@ import countryList, { continents, countries } from "./countries";
 export default {
   title: "Forms/Search Box",
   parameters: {
-    usage: 'import { HvInput } from "@hv/uikit-react-core"',
+    usage: 'import { HvInput } from "@hitachivantara/uikit-react-core"',
     componentSubtitle: (
       <small style={{ fontWeight: 600, fontSize: "12px", margin: 0 }}>
         Note: only the Basic Search variant is labelled Stable by Design System.

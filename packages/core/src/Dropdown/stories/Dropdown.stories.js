@@ -1,6 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { useTheme, withStyles, makeStyles } from "@material-ui/core";
-import { Priority1, Priority2, Priority3, Priority4, Priority5 } from "@hv/uikit-react-icons";
+import {
+  Priority1,
+  Priority2,
+  Priority3,
+  Priority4,
+  Priority5,
+} from "@hitachivantara/uikit-react-icons";
 
 import { HvDropdown, HvGrid, HvTypography } from "../..";
 
@@ -8,7 +14,7 @@ export default {
   title: "Forms/Dropdown",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvDropdown } from "@hv/uikit-react-core"',
+    usage: 'import { HvDropdown } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },

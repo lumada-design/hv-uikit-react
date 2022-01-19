@@ -4,7 +4,7 @@ import clsx from "clsx";
 import useResizeAware from "react-resize-aware";
 
 import { makeStyles } from "@material-ui/core";
-import { hexToRgbA, HvLoading } from "@hv/uikit-react-core";
+import { hexToRgbA, HvLoading } from "@hitachivantara/uikit-react-core";
 
 const useStyles = makeStyles((theme) => ({
   loading: {

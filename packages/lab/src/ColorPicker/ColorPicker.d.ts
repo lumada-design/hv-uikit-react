@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvFormElementProps } from "@hv/uikit-react-core";
+import { HvFormElementProps } from "@hitachivantara/uikit-react-core";
 
 export type HvColorPickerClassKey = "root";
 

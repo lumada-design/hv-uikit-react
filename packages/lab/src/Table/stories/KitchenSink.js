@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 
-import { Ban, Duplicate, Delete, Lock, Preview } from "@hv/uikit-react-icons";
-import { HvEmptyState, HvBulkActions, HvPagination } from "@hv/uikit-react-core";
+import { Ban, Duplicate, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
+import { HvEmptyState, HvBulkActions, HvPagination } from "@hitachivantara/uikit-react-core";
 
 import {
   HvTable,

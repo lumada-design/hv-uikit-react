@@ -1,4 +1,4 @@
-import { Ban } from "@hv/uikit-react-icons";
+import { Ban } from "@hitachivantara/uikit-react-icons";
 import React from "react";
 import HvEmptyState from "../../EmptyState";
 import useStyles from "./styles";

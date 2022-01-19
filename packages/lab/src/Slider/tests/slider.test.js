@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import HvSlider from "..";
 
 describe("Slider ", () => {

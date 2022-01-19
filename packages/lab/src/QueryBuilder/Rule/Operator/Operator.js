@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
-import { HvDropdown } from "@hv/uikit-react-core";
+import { HvDropdown } from "@hitachivantara/uikit-react-core";
 
 import Context from "../../Context";
 import { isBigList } from "../../utils";

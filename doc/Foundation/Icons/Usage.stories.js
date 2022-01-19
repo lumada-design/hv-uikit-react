@@ -1,9 +1,15 @@
 import React from "react";
-import { Bookmark, CheckboxCheck, Level4, Level5, Machine } from "@hv/uikit-react-icons";
+import {
+  Bookmark,
+  CheckboxCheck,
+  Level4,
+  Level5,
+  Machine,
+} from "@hitachivantara/uikit-react-icons";
 
 // HvIconBase isn't being exported, so we need to load it directly
 // only for API documentation purposes
-import HvIconBase from "@hv/uikit-react-icons/IconBase";
+import HvIconBase from "@hitachivantara/uikit-react-icons/IconBase";
 
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
@@ -11,7 +17,7 @@ export default {
   title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
-    usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons'",
+    usage: "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",
     maturityStatus: componentDefinitions.dsClassification.stable,
     dsVersion: "3.5.0",
   },

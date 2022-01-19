@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import { HvButton, HvTypography, useLabels } from "@hv/uikit-react-core";
-import { DropDownXS, DropRightXS } from "@hv/uikit-react-icons";
+import { HvButton, HvTypography, useLabels } from "@hitachivantara/uikit-react-core";
+import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 export const DEFAULT_LABELS = {
   expandRowButtonAriaLabel: "Expand this row",

@@ -22,7 +22,6 @@ on:
 #                                 +----------+
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
@@ -49,7 +48,6 @@ jobs:
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -113,7 +111,6 @@ jobs:
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -171,7 +168,6 @@ jobs:
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Run Applitools Storybook Visual Testing
@@ -302,7 +298,6 @@ jobs:
       - name: Install automation/pa11y
         run: |
           cd ${{ github.workspace }}/automation/pa11y
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Test A11Y

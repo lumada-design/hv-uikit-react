@@ -6,7 +6,7 @@ export default {
   title: "Lab/ColorPicker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvColorPicker } from '@hv/uikit-react-lab'",
+    usage: "import { HvColorPicker } from '@hitachivantara/uikit-react-lab'",
   },
   component: HvColorPicker,
 };

@@ -1,4 +1,4 @@
-import { SortXS, SortAscendingXS, SortDescendingXS } from "@hv/uikit-react-icons";
+import { SortXS, SortAscendingXS, SortDescendingXS } from "@hitachivantara/uikit-react-icons";
 
 export const getSortIcon = (dir) => {
   switch (dir) {

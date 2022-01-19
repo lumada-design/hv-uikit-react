@@ -5,7 +5,7 @@ export default {
   title: "Forms/Form Element Blocks/Char Counter",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvCharCounter } from "@hv/uikit-react-core"',
+    usage: 'import { HvCharCounter } from "@hitachivantara/uikit-react-core"',
   },
   component: HvCharCounter,
   decorators: [

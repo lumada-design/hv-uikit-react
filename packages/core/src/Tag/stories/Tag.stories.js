@@ -10,7 +10,7 @@ export default {
   title: "Components/Tag",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvTag } from "@hv/uikit-react-core"',
+    usage: 'import { HvTag } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.5.0",
   },

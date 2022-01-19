@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Lock, Unlock } from "@hv/uikit-react-icons";
+import { Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 import { HvProvider, HvToggleButton } from "../..";
 import { Main } from "../stories/ToggleButton.stories";
 

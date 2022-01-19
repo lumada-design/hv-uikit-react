@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvButton, HvDropdown, HvInput } from "@hv/uikit-react-core";
+import { HvButton, HvDropdown, HvInput } from "@hitachivantara/uikit-react-core";
 
 import HvFormComposer from "../FormComposer";
 
@@ -10,7 +10,7 @@ export default {
   title: "Lab/FormComposer",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvFormComposer } from "@hv/uikit-react-lab"',
+    usage: 'import { HvFormComposer } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvFormComposer,
 };

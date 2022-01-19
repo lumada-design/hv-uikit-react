@@ -13,7 +13,7 @@ import {
   List,
   Preview,
   Upload,
-} from "@hv/uikit-react-icons";
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvActionBar,
   HvActionsGeneric,
@@ -40,7 +40,7 @@ export default {
   title: "Components/Asset Inventory",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvAssetInventory } from "@hv/uikit-react-core"',
+    usage: 'import { HvAssetInventory } from "@hitachivantara/uikit-react-core"',
     dsVersion: "3.4.0",
   },
   component: HvAssetInventory,

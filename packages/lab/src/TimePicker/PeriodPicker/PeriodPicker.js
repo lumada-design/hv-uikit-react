@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { HvToggleButton } from "@hv/uikit-react-core";
-import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hv/uikit-react-icons";
+import { HvToggleButton } from "@hitachivantara/uikit-react-core";
+import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hitachivantara/uikit-react-icons";
 import { PeriodPickerOptions } from "../enums";
 
 class PeriodPicker extends React.Component {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { LineChart } from "@hv/uikit-react-icons";
+import { LineChart } from "@hitachivantara/uikit-react-icons";
 import { HvList, HvProvider } from "../..";
 
 const mockDataSingleSelection = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];

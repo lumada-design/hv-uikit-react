@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
 import { makeStyles, useTheme } from "@material-ui/core";
-import { Map } from "@hv/uikit-react-icons";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
   HvInput,
@@ -17,7 +17,7 @@ export default {
   title: "Forms/Input",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvInput } from "@hv/uikit-react-core"',
+    usage: 'import { HvInput } from "@hitachivantara/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.4.0",
   },
