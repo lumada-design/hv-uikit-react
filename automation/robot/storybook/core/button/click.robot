@@ -2,7 +2,7 @@
 Resource         ../_keywords.resource
 Suite Setup      Run Keywords
 ...              Go To    ${tests}button--smoke-tests
-...              AND    Wait Until Element Is Visible    css:button
+...              AND    Wait Until Element Is Visible    default
 Test Template    Activate and focus button when it is clicked
 
 
