@@ -49,7 +49,7 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npx lerna publish from-package --no-git-reset --yes --skip-npm 
-          npx lerna run publish-npm
+          npm run npm-publish
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3

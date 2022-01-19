@@ -68,6 +68,7 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
+          npm run npm-publish
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
