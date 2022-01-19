@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.52.5 (2022-01-19)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
 ## 3.52.4 (2022-01-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
