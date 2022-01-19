@@ -24,7 +24,8 @@
     "clean": "npx del-cli dist",
     "prepublishOnly": "npm run build",
     "link": "npm link",
-    "yalc-publish": "npx yalc publish --no-scripts"
+    "yalc-publish": "npx yalc publish --no-scripts",
+    "publish-npm": "npm publish --access public"
   },
   "devDependencies": {
     "cash-cp": "^0.2.0",

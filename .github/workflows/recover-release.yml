@@ -48,7 +48,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npx lerna publish from-package --no-git-reset --yes
+          npx lerna publish from-package --no-git-reset --yes --skip-npm 
+          npx lerna run publish-npm
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
