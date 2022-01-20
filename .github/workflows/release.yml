@@ -51,8 +51,7 @@ jobs:
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
@@ -144,22 +143,23 @@ jobs:
           status: ${{ job.status }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
-#      - name: Notify release
-#        uses: hbfernandes/slack-action@1.0
-#        if: success()
-#        env:
-#          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-#        with:
-#          args: |
-#            {
-#              "channel": "ui-kit",
-#              "attachments": [
-#                {
-#                  "mrkdwn_in": ["text"],
-#                  "author_name": "New UI-Kit artifacts are available",
-#                  "title": "More details https://github.com/${{github.repository}}/releases",
-#                  "text": "${{env.SLACK_MESSAGE}}",
-#                  "footer": "${{env.DOCUMENTATION_URL}}"
-#                }
-#              ]
-#            }
+
+      - name: Notify release
+        uses: hbfernandes/slack-action@1.0
+        if: success()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "author_name": "New UI-Kit artifacts are available",
+                  "title": "More details https://github.com/${{github.repository}}/releases",
+                  "text": "${{env.SLACK_MESSAGE}}",
+                  "footer": "${{env.DOCUMENTATION_URL}}"
+                }
+              ]
+            }
