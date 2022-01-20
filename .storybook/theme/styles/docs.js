@@ -6,6 +6,7 @@ export const getDocsStyles = (theme) => ({
       maxWidth: "inherit",
 
       ".sbdocs": {
+        fontFamily: theme.hv.typography.fontFamily.join(","),
         ...theme.hv.typography.normalText,
         fontSize: "14px",
         lineHeight: "24px",
@@ -66,8 +67,12 @@ export const getDocsStyles = (theme) => ({
         },
       },
 
+      "& .os-host": {
+        backgroundColor: "initial",
+      },
+
       "& .tabbutton": {
-        fontFamily: theme.hv.typography.fontFamily,
+        fontFamily: theme.hv.typography.fontFamily.join(","),
         ...theme.hv.typography.normalText,
       },
 

@@ -1,4 +1,9 @@
-/* eslint-disable no-nested-ternary */
+/* eslint-disable storybook/default-exports, no-nested-ternary */
+
+// build warning is expected:
+// Skipping packages/lab/src/Table/stories/TableHooks.stories.js: NoMetaError: CSF: missing default export
+// this .stories.js file is only intended to be parsed for retrieving the stories' source code,
+// but they are rendered by the TableHooks.stories.mdx file
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom";
@@ -57,16 +62,6 @@ import {
   getDragAndDropColumns,
 } from "./utils";
 import LoadingContainer from "./LoadingContainer";
-
-export default {
-  title: "Lab/TableHooks",
-  parameters: {
-    docs: {
-      disable: true,
-      page: null,
-    },
-  },
-};
 
 export const Main = () => {
   const columns = useMemo(() => getColumns(), []);
