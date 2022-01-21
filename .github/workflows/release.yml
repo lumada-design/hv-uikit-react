@@ -29,6 +29,7 @@ jobs:
   Release:
     runs-on: [self-hosted, Linux]
     env:
+      NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
