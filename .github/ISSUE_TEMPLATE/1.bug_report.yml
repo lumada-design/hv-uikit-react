@@ -32,7 +32,7 @@ body:
 
         You can use the official codesandbox template as a starting point: https://codesandbox.io/s/hv-ui-kit-bug-report-jkm4f.
 
-        If you have an issue concerning TypeScript please start from this TypeScript playground: https://mui.com/r/ts-issue-template.
+        If you have an issue concerning TypeScript please start from this TypeScript playground: https://codesandbox.io/s/hv-ui-kit-bug-report-typescript-uk2zs.
 
         Issues that we can't reproduce will be closed.
       value: |
