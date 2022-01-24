@@ -1,0 +1,58 @@
+name: Bug report 🐛
+description: Create a bug report for Hitachi Vantara UI-Kit.
+labels: ['status: needs triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide a searchable summary of the issue in the title above ⬆️.
+
+        Thanks for contributing by creating an issue! ❤️
+  - type: checkboxes
+    attributes:
+      label: Latest version
+      description: We roll bug fixes, performance enhancements, and other improvements into new releases.
+      options:
+        - label: I have tested the latest version
+          required: true
+  - type: textarea
+    attributes:
+      label: Current behavior 😯
+      description: Describe what happens instead of the expected behavior.
+  - type: textarea
+    attributes:
+      label: Expected behavior 🤔
+      description: Describe what should happen.
+  - type: textarea
+    attributes:
+      label: Steps to reproduce 🕹
+      description: |
+        Provide a link to a live example (you can use codesandbox.io) and an unambiguous set of steps to reproduce this bug.
+        Include code to reproduce, if relevant (which it most likely is).
+
+        You can use the official codesandbox template as a starting point: https://codesandbox.io/s/hv-ui-kit-bug-report-jkm4f.
+
+        If you have an issue concerning TypeScript please start from this TypeScript playground: https://codesandbox.io/s/hv-ui-kit-bug-report-typescript-uk2zs.
+
+        Issues that we can't reproduce will be closed.
+      value: |
+        Steps:
+
+        1.
+        2.
+        3.
+        4.
+  - type: textarea
+    attributes:
+      label: Context 🔦
+      description: What are you trying to accomplish? How has this issue affected you? Providing context helps us come up with a solution that is more useful in the real world.
+  - type: textarea
+    attributes:
+      label: Your Environment 🌎
+      description: Please complete the following information. If you encounter issues with TypeScript please include the used tsconfig.
+      value: |
+        Device: [e.g. Laptop, Mobile, ....]
+        OS: [e.g. iOS8.1]
+        Browser [e.g. stock browser, safari, chrome]
+        Version [e.g. 22]
+        Other details [e.g. screen resolution 1920x1080, ...]
