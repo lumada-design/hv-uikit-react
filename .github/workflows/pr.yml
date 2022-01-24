@@ -64,6 +64,7 @@ jobs:
 
   Build-Storybook-V2-Store:
     name: Build Storybook (v2 store)
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     steps:
@@ -133,6 +134,7 @@ jobs:
 
   Applitools:
     name: Applitools Storybook Visual Testing
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     needs: [Build-Storybook-V2-Store]
     runs-on: [self-hosted, Linux]
 
@@ -191,12 +193,12 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
 
   Applitools-Complete:
+    name: Applitools complete API call
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
     needs: [Applitools]
-    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Notify Applitools Finish
-        # repo scope personal token is required to generate a dispatch event
         run: |
           curl -X POST \
             https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{env.APPLITOOLS_BATCH_ID}}/complete?apiKey=${{env.APPLITOOLS_API_KEY}} \
@@ -204,6 +206,7 @@ jobs:
 
   Github-Deployment:
     name: Github Deployment
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     needs: [Build-Storybook-V3-Store]
     runs-on: ubuntu-latest
 
@@ -363,10 +366,10 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  Notify-End:
-    name: Notify End
-    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot]
+  Cleanup:
+    name: Cleanup test artifacts
     if: always()
+    needs: [Github-Deployment, Applitools, A11Y-Tests, Robot]
     runs-on: ubuntu-latest
 
     steps:
@@ -377,6 +380,13 @@ jobs:
             storybook-v2
             storybook-v3
 
+  Notify-End:
+    name: Notify End
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
+    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot]
+    runs-on: ubuntu-latest
+
+    steps:
       - uses: technote-space/workflow-conclusion-action@v1
 
       - name: generate conclusion color
