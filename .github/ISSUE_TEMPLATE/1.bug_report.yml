@@ -1,5 +1,5 @@
 name: Bug report 🐛
-description: Create a bug report for Hitachi Vantara UI-Kit.
+description: Create a bug report for Hitachi Vantara UI Kit.
 labels: ['status: needs triage']
 body:
   - type: markdown
