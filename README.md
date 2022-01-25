@@ -49,17 +49,7 @@ The above commands will install the latest version of **UI Kit 3.x**. It impleme
 
 Older v3.x packages use a different registry and import names. If needed, please follow the documentation at https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page.
 
-If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** release. Install it by suffixing "@2.\*" to the package names:
-
-```shell
-npm install @hitachivantara/uikit-react-core@2.*
-```
-
-The peer dependencies will also be different:
-
-```shell
-npm install @material-ui/core@~4.8.0 plotly.js@>1.34.0
-```
+If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** release. Check https://lumada-design.github.io/uikit/v2.x/?path=/docs/get-started-installation--page for instructions.
 
 ## Usage
 
