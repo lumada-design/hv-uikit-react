@@ -44,7 +44,7 @@
     "lint:root-prettier": "npx prettier --config ./prettier.config.js --check \"*.js\" \"(doc|.storybook|scripts|automation)/**/*.js\"",
     "license-check": "npx lerna run license-check",
     "ts-check": "npx lerna run ts-check --parallel",
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "npm-publish": "npx lerna run publish-npm"
   },
   "devDependencies": {
