@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.53.0 (2022-01-27)
+
+
+### Features
+
+* **table:** adding columns renderers.HVUIKIT-6288 ([fb958e8](https://github.com/lumada-design/hv-uikit-react/commit/fb958e84b144a954d57ff797249a6c70b3ef1c38))
+
+
+
+
+
 ## 3.52.5 (2022-01-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
