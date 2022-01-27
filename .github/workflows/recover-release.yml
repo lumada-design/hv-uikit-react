@@ -13,15 +13,16 @@ jobs:
   Release:
     runs-on: [self-hosted, Linux]
     env:
+      NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2
         with:
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
@@ -32,10 +33,16 @@ jobs:
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
         run: |
           npm ci
 
       - name: Bootstrap
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
         run: npm run bootstrap
 
       - name: Publish Setup
@@ -48,8 +55,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npx lerna publish from-package --no-git-reset --yes --skip-npm 
-          npm run npm-publish
+          npx lerna publish from-package --no-git-reset --yes --no-verify-access
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
