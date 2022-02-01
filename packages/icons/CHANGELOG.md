@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.7.3 (2022-02-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-icons
+
+
+
+
+
 ## 3.7.2 (2022-01-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
