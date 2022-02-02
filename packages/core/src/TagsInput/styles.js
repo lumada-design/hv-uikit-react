@@ -4,12 +4,18 @@ const styles = (theme) => {
       display: "inline-block",
       maxWidth: "100%",
     },
+    chipRoot: {
+      maxWidth: "none",
+    },
     resizable: {
       width: "auto",
       resize: "both",
       overflow: "auto",
     },
     disabled: {},
+    error: {
+      float: "left",
+    },
     invalid: {
       border: `1px solid ${theme.hv.palette.semantic.sema4}!important`,
     },
@@ -79,22 +85,15 @@ const styles = (theme) => {
 
       "&:hover": {
         cursor: "text",
+        border: `1px solid ${theme.hv.palette.accent.acce1}`,
       },
 
-      "&:focus": {
-        outline: "none",
-      },
-
-      "&:focus-visible": {
+      "&:focus, &:focus-within, &:focus-visible": {
         outlineColor: "#52A8EC",
         outlineStyle: "solid",
         outlineWidth: "0px",
         outlineOffset: "-1px",
         boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
-      },
-
-      "&:focus-within, &:hover": {
-        border: `1px solid ${theme.hv.palette.accent.acce1}`,
       },
 
       "&$disabled": {
@@ -113,6 +112,10 @@ const styles = (theme) => {
         display: "table-row",
         paddingTop: 0,
         paddingLeft: 4,
+      },
+
+      "&$error": {
+        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
       },
     },
     tagInputContainerRoot: {

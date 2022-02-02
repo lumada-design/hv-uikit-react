@@ -1,8 +1,9 @@
 import { StandardProps } from "@material-ui/core";
 import { HvTagProps } from "../Tag/Tag";
 import { HvCharCounterProps } from "../Forms/CharCounter";
+import { HvFormStatus } from "../Forms/FormElement";
 
-import { HvBaseInputProps } from "../BaseInput";
+import { HvInputProps } from "..";
 
 export type HvTagsInputClassKey =
   | "root"
@@ -12,10 +13,11 @@ export type HvTagsInputClassKey =
   | "labelContainer"
   | "label"
   | "characterCounter"
-  | "description";
+  | "description"
+  | "error";
 
 export interface HvTagsInputProps
-  extends StandardProps<HvBaseInputProps, HvTagsInputClassKey, "onChange" | "onBlur"> {
+  extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange" | "onBlur"> {
   /**
    * The label of the form element.
    *
@@ -48,6 +50,10 @@ export interface HvTagsInputProps
    * Indicates that the form element is not editable.
    */
   readOnly?: boolean;
+  /**
+   * Indicates that the form element is required.
+   */
+  required?: boolean;
 
   /**
    * If `true` it should autofocus.
@@ -95,7 +101,24 @@ export interface HvTagsInputProps
   /**
    * Called back when the value is changed.
    */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+  onChange?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps[]
+  ) => void;
+
+  /**
+   * The status of the form element.
+   */
+  status?: HvFormStatus;
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage?: React.ReactNode;
 }
 
 export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;

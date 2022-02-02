@@ -12,8 +12,10 @@ import {
   HvLabel,
   HvInfoMessage,
   HvCharCounter,
+  HvWarningText,
   useUniqueId,
 } from "..";
+import validationStates from "../Forms/FormElement/validationStates";
 import styles from "./styles";
 
 /**
@@ -32,6 +34,7 @@ const HvTagsInput = (props) => {
 
     readOnly = false,
     disabled = false,
+    required = false,
 
     label: textAreaLabel,
     "aria-label": ariaLabel,
@@ -55,9 +58,11 @@ const HvTagsInput = (props) => {
 
     multiline = false,
 
+    status,
+    statusMessage,
+
     ...others
   } = props;
-
   const elementId = useUniqueId(id, "hvTagsInput");
 
   const hasLabel = textAreaLabel != null;
@@ -67,6 +72,8 @@ const HvTagsInput = (props) => {
 
   const [tagInput, setTagInput] = useState("");
   const [tagCursorPos, setTagCursorPos] = useState(value.length);
+
+  const [validationState, setValidationState] = useControlled(status, validationStates.standBy);
 
   const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
 
@@ -78,6 +85,8 @@ const HvTagsInput = (props) => {
 
   const inputRef = useRef();
   const containerRef = useRef();
+
+  const canShowError = status !== undefined && status === "invalid" && statusMessage !== undefined;
 
   /**
    * Handler for the `onChange` event on the tag input
@@ -119,13 +128,14 @@ const HvTagsInput = (props) => {
    */
   const onEnterHandler = useCallback(
     (event, tag) => {
+      event.preventDefault();
       if (tag !== "") {
         const newTagsArr = [...value, { label: tag, type: "semantic" }];
         setValue(newTagsArr);
         setTagInput("");
         setTagCursorPos(newTagsArr.length);
 
-        onChange?.(newTagsArr);
+        onChange?.(event, newTagsArr);
       }
     },
     [onChange, setValue, value]
@@ -153,7 +163,7 @@ const HvTagsInput = (props) => {
               setValue(newTagsArr);
               setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
               inputRef.current?.focus();
-              onChange?.(newTagsArr);
+              onChange?.(event, newTagsArr);
             } else {
               setTagCursorPos(value.length - 1);
             }
@@ -167,7 +177,7 @@ const HvTagsInput = (props) => {
               setValue(newTagsArr);
               setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
               inputRef.current?.focus();
-              onChange?.(newTagsArr);
+              onChange?.(event, newTagsArr);
             }
             break;
           default:
@@ -182,14 +192,15 @@ const HvTagsInput = (props) => {
    * Handler for the `onDelete` event on the tag component
    */
   const onDeleteTagHandler = useCallback(
-    (i) => {
+    (event, i) => {
       const newTagsArr = [...value.slice(0, i), ...value.slice(i + 1)];
+      setValidationState(validationStates.standBy);
       setValue(newTagsArr);
       setTagCursorPos(newTagsArr.length);
       inputRef.current?.focus();
-      onChange?.(newTagsArr);
+      onChange?.(event, newTagsArr);
     },
-    [value, setValue, onChange]
+    [value, setValidationState, setValue, onChange]
   );
 
   /**
@@ -206,6 +217,8 @@ const HvTagsInput = (props) => {
       name={name}
       disabled={disabled}
       readOnly={readOnly}
+      status={validationState}
+      required={required}
       className={clsx(classes.root, className, {
         [classes.disabled]: disabled,
       })}
@@ -243,6 +256,7 @@ const HvTagsInput = (props) => {
       <HvListContainer
         className={clsx(
           classes.tagsList,
+          canShowError && classes.error,
           resizable && multiline && classes.resizable,
           isStateInvalid && classes.invalid,
           !multiline && classes.singleLine
@@ -276,9 +290,12 @@ const HvTagsInput = (props) => {
                 <HvTag
                   label={label}
                   className={clsx(i === tagCursorPos && classes.tagSelected)}
+                  classes={{
+                    chipRoot: classes.chipRoot,
+                  }}
                   type={type}
                   {...(!(readOnly || disabled || type === "categorical") && {
-                    onDelete: () => onDeleteTagHandler(i),
+                    onDelete: (event) => onDeleteTagHandler(event, i),
                   })}
                   deleteButtonProps={{
                     tabIndex: -1,
@@ -329,6 +346,11 @@ const HvTagsInput = (props) => {
           </HvListItem>
         )}
       </HvListContainer>
+      {canShowError && (
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
+          {statusMessage}
+        </HvWarningText>
+      )}
     </HvFormElement>
   );
 };
@@ -358,6 +380,10 @@ HvTagsInput.propTypes = {
      * Styles applied to the root container of the textarea.
      */
     root: PropTypes.string,
+    /**
+     *
+     */
+    chipRoot: PropTypes.string,
     /**
      * Style applied to the root when resizable is `true`.
      */
@@ -411,9 +437,13 @@ HvTagsInput.propTypes = {
      */
     tagInputRootFocused: PropTypes.string,
     /**
-     * Styles applied to the container when in single line mode§.
+     * Styles applied to the container when in single line mode.
      */
     singleLine: PropTypes.string,
+    /**
+     * Styles applied to the tags list when an error occurred.
+     */
+    error: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the form element root node.
@@ -463,6 +493,10 @@ HvTagsInput.propTypes = {
    */
   readOnly: PropTypes.bool,
   /**
+   * Indicates that the form element is required.
+   */
+  required: PropTypes.bool,
+  /**
    * The function that will be executed onChange.
    */
   onChange: PropTypes.func,
@@ -503,6 +537,14 @@ HvTagsInput.propTypes = {
    * If `true` the component is in multiline mode.
    */
   multiline: PropTypes.bool,
+  /**
+   * The status of the form element.
+   */
+  status: PropTypes.string,
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvTagsInput" })(HvTagsInput);

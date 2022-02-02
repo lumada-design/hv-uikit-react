@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
-import { HvTagsInput, HvTypography } from "../..";
+import { Formik } from "formik";
+import * as yup from "yup";
+import { HvTagsInput, HvTypography, HvInput, HvButton } from "../..";
 
 export default {
   title: "Forms/Tags Input",
@@ -236,5 +238,100 @@ export const TagsCounterValidation = () => {
 TagsCounterValidation.parameters = {
   docs: {
     description: { story: "Tags Input with tags counter." },
+  },
+};
+
+export const InAForm = () => {
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 350,
+      height: 100,
+    },
+  }));
+
+  const classes = useStyles();
+
+  const onSubmit = (value) => {
+    alert(JSON.stringify(value));
+  };
+
+  const validationSchema = yup.object({
+    name: yup.string().required("Name is required"),
+    tags: yup.array().required("Tags is required").min(3),
+  });
+
+  return (
+    <Formik
+      initialValues={{
+        name: "",
+        tags: undefined,
+      }}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+      validateOnChange={false}
+      validateOnBlur={false}
+    >
+      {(props) => {
+        const { values, errors, touched, handleSubmit, setFieldValue, setFieldTouched } = props;
+
+        const parseStatus = (name) => {
+          return errors[name] && touched[name] ? "invalid" : "valid";
+        };
+
+        const parseStatusMessage = (name) => {
+          return errors[name] && touched[name] ? errors[name] : "";
+        };
+        return (
+          <div style={{ width: 350 }}>
+            <form data-testid="create-project-form" onSubmit={handleSubmit} noValidate>
+              <HvInput
+                label="Name"
+                aria-label="Name"
+                value={values.name}
+                required
+                description="Required"
+                status={parseStatus("name")}
+                statusMessage={parseStatusMessage("name")}
+                placeholder="Enter Value"
+                onChange={(evt, value) => {
+                  setFieldTouched("name");
+                  setFieldValue("name", value);
+                }}
+              />
+              <br />
+              <HvTagsInput
+                id="tags-list-9"
+                label="Tags"
+                aria-label="Tags"
+                placeholder="Enter value"
+                description="Should have at least 3 tags"
+                required
+                classes={{
+                  root: classes.root,
+                }}
+                status={parseStatus("tags")}
+                statusMessage={parseStatusMessage("tags")}
+                onChange={(event, tagsValues) => {
+                  event?.preventDefault();
+                  const value = tagsValues;
+                  setFieldTouched("tags");
+                  setFieldValue("tags", value);
+                }}
+              />
+              <br />
+              <HvButton type="submit" category="secondary">
+                Submit
+              </HvButton>
+            </form>
+          </div>
+        );
+      }}
+    </Formik>
+  );
+};
+
+InAForm.parameters = {
+  docs: {
+    description: { story: "Tags Input in a form." },
   },
 };
