@@ -34,6 +34,7 @@ const HvTagsInput = (props) => {
 
     readOnly = false,
     disabled = false,
+    required = false,
 
     label: textAreaLabel,
     "aria-label": ariaLabel,
@@ -217,6 +218,7 @@ const HvTagsInput = (props) => {
       disabled={disabled}
       readOnly={readOnly}
       status={validationState}
+      required={required}
       className={clsx(classes.root, className, {
         [classes.disabled]: disabled,
       })}
@@ -490,6 +492,10 @@ HvTagsInput.propTypes = {
    * Indicates that the form element is not editable.
    */
   readOnly: PropTypes.bool,
+  /**
+   * Indicates that the form element is required.
+   */
+  required: PropTypes.bool,
   /**
    * The function that will be executed onChange.
    */

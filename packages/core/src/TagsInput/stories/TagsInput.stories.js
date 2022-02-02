@@ -257,14 +257,14 @@ export const InAForm = () => {
 
   const validationSchema = yup.object({
     name: yup.string().required("Name is required"),
-    tags: yup.array().min(3),
+    tags: yup.array().required("Tags is required").min(3),
   });
 
   return (
     <Formik
       initialValues={{
         name: "",
-        tags: [],
+        tags: undefined,
       }}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
@@ -288,6 +288,7 @@ export const InAForm = () => {
                 label="Name"
                 aria-label="Name"
                 value={values.name}
+                required
                 description="Required"
                 status={parseStatus("name")}
                 statusMessage={parseStatusMessage("name")}
@@ -304,6 +305,7 @@ export const InAForm = () => {
                 aria-label="Tags"
                 placeholder="Enter value"
                 description="Should have at least 3 tags"
+                required
                 classes={{
                   root: classes.root,
                 }}

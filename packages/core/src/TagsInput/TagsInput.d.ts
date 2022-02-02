@@ -50,6 +50,10 @@ export interface HvTagsInputProps
    * Indicates that the form element is not editable.
    */
   readOnly?: boolean;
+  /**
+   * Indicates that the form element is required.
+   */
+  required?: boolean;
 
   /**
    * If `true` it should autofocus.
