@@ -4,6 +4,7 @@ import { HvCharCounterProps } from "../Forms/CharCounter";
 import { HvFormStatus } from "../Forms/FormElement";
 
 import { HvInputProps } from "..";
+import { HvBaseInputValidationMessagesProps } from "../BaseInput";
 
 export type HvTagsInputClassKey =
   | "root"
@@ -119,6 +120,11 @@ export interface HvTagsInputProps
    * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+
+  /**
+   * An Object containing the various texts associated with the input.
+   */
+  validationMessages?: HvBaseInputValidationMessagesProps;
 }
 
 export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;

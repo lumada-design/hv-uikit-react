@@ -16,6 +16,7 @@ import {
   useUniqueId,
 } from "..";
 import validationStates from "../Forms/FormElement/validationStates";
+import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import styles from "./styles";
 
 /**
@@ -61,6 +62,8 @@ const HvTagsInput = (props) => {
     status,
     statusMessage,
 
+    validationMessages,
+
     ...others
   } = props;
   const elementId = useUniqueId(id, "hvTagsInput");
@@ -74,6 +77,9 @@ const HvTagsInput = (props) => {
   const [tagCursorPos, setTagCursorPos] = useState(value.length);
 
   const [validationState, setValidationState] = useControlled(status, validationStates.standBy);
+  const [validationMessage, setValidationMessage] = useControlled(statusMessage, "");
+
+  const [stateValid, setStateValid] = useState(true);
 
   const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
 
@@ -86,7 +92,34 @@ const HvTagsInput = (props) => {
   const inputRef = useRef();
   const containerRef = useRef();
 
-  const canShowError = status !== undefined && status === "invalid" && statusMessage !== undefined;
+  const errorMessages = useMemo(
+    () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      validationMessages?.error,
+      validationMessages?.requiredError,
+      validationMessages?.minCharError,
+      validationMessages?.maxCharError,
+    ]
+  );
+
+  const performValidation = useCallback(
+    (currValue) => {
+      if (maxTagsQuantity !== null && currValue.length > maxTagsQuantity) {
+        setValidationState(validationStates.invalid);
+        setValidationMessage(errorMessages.maxCharError);
+        setStateValid(false);
+      } else {
+        setValidationState(validationStates.valid);
+        setValidationMessage("");
+        setStateValid(true);
+      }
+    },
+    [errorMessages.maxCharError, maxTagsQuantity, setValidationMessage, setValidationState]
+  );
+
+  const canShowError =
+    (status !== undefined && status === "invalid" && statusMessage !== undefined) || !stateValid;
 
   /**
    * Handler for the `onChange` event on the tag input
@@ -134,11 +167,12 @@ const HvTagsInput = (props) => {
         setValue(newTagsArr);
         setTagInput("");
         setTagCursorPos(newTagsArr.length);
+        performValidation(newTagsArr);
 
         onChange?.(event, newTagsArr);
       }
     },
-    [onChange, setValue, value]
+    [onChange, performValidation, setValue, value]
   );
 
   /**
@@ -163,6 +197,7 @@ const HvTagsInput = (props) => {
               setValue(newTagsArr);
               setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
               inputRef.current?.focus();
+              performValidation(newTagsArr);
               onChange?.(event, newTagsArr);
             } else {
               setTagCursorPos(value.length - 1);
@@ -177,6 +212,7 @@ const HvTagsInput = (props) => {
               setValue(newTagsArr);
               setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
               inputRef.current?.focus();
+              performValidation(newTagsArr);
               onChange?.(event, newTagsArr);
             }
             break;
@@ -185,7 +221,7 @@ const HvTagsInput = (props) => {
         }
       }
     },
-    [isTagSelected, onChange, setValue, tagCursorPos, tagInput, value]
+    [isTagSelected, onChange, performValidation, setValue, tagCursorPos, tagInput, value]
   );
 
   /**
@@ -198,9 +234,10 @@ const HvTagsInput = (props) => {
       setValue(newTagsArr);
       setTagCursorPos(newTagsArr.length);
       inputRef.current?.focus();
+      performValidation(newTagsArr);
       onChange?.(event, newTagsArr);
     },
-    [value, setValidationState, setValue, onChange]
+    [value, setValidationState, setValue, performValidation, onChange]
   );
 
   /**
@@ -348,7 +385,7 @@ const HvTagsInput = (props) => {
       </HvListContainer>
       {canShowError && (
         <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
-          {statusMessage}
+          {validationMessage}
         </HvWarningText>
       )}
     </HvFormElement>
@@ -545,6 +582,28 @@ HvTagsInput.propTypes = {
    * The error message to show when `status` is "invalid".
    */
   statusMessage: PropTypes.string,
+
+  /**
+   * An Object containing the various texts associated with the input.
+   */
+  validationMessages: PropTypes.shape({
+    /**
+     * The value when a validation fails.
+     */
+    error: PropTypes.string,
+    /**
+     * The message that appears when there are too many characters.
+     */
+    maxCharError: PropTypes.string,
+    /**
+     * The message that appears when there are too few characters.
+     */
+    minCharError: PropTypes.string,
+    /**
+     * The message that appears when the input is empty and required.
+     */
+    requiredError: PropTypes.string,
+  }),
 };
 
 export default withStyles(styles, { name: "HvTagsInput" })(HvTagsInput);
