@@ -211,24 +211,27 @@ export const TagsCounterValidation = () => {
 
   const useStyles = makeStyles(() => ({
     root: {
-      width: 350,
-      height: 100,
+      width: 450,
     },
   }));
 
   const classes = useStyles();
+  const validationMessages = {
+    maxCharError: "Too many tags",
+  };
 
   return (
     <HvTagsInput
       id="tags-list-8"
-      label="With tags counter validation"
+      label="Tags"
+      description="Maximum 3 tags"
       aria-label="The label"
       placeholder="Enter value"
       onChange={(value) => setCounter(value)}
-      multiline
       classes={{
         root: classes.root,
       }}
+      validationMessages={validationMessages}
       maxTagsQuantity={3}
       countCharProps={{ "aria-label": `You have inserted ${tagsLength} tags` }}
     />
