@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { makeStyles } from "@material-ui/core";
-import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography, HvTooltip } from "../..";
+import {
+  HvButton,
+  HvSnackbar,
+  HvSnackbarContent,
+  HvTypography,
+  HvTooltip,
+  HvSnackbarProvider,
+} from "../..";
 
 /* eslint-disable react/prop-types */
 
@@ -14,7 +21,7 @@ export default {
     dsVersion: "3.4.0",
   },
   component: HvSnackbar,
-  subcomponents: { HvSnackbarContent },
+  subcomponents: { HvSnackbarContent, HvSnackbarProvider },
 };
 
 const styles = {

@@ -61,6 +61,7 @@
     "focus-within-polyfill": "5.1.0",
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
+    "notistack": "^1.0.10",
     "popper-max-size-modifier": "^0.2.0",
     "prop-types": "^15.7.2",
     "react-debounce-render": "^7.0.0",
