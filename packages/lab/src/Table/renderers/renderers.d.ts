@@ -10,7 +10,8 @@ export function hvNumberColumn<D extends Record<string, unknown>, C extends HvTa
 ): HvTableColumnConfig<D>;
 
 export function hvDateColumn<D extends Record<string, unknown>, C extends HvTableColumnConfig<D>>(
-  col: C
+  col: C,
+  dateFormat?: string
 ): HvTableColumnConfig<D>;
 
 export function hvExpandColumn<D extends Record<string, unknown>>(
@@ -26,7 +27,7 @@ export function hvTagColumn<D extends Record<string, unknown>, C extends HvTable
   colorDataKey: keyof D,
   textColorDataKey: keyof D,
   fromRowData: boolean,
-  tagProps?: HvTagProps,
+  tagProps?: HvTagProps
 ): HvTableColumnConfig<D>;
 
 export function hvSwitchColumn<D extends Record<string, unknown>, C extends HvTableColumnConfig<D>>(
@@ -37,7 +38,10 @@ export function hvSwitchColumn<D extends Record<string, unknown>, C extends HvTa
   switchProps?: HvBaseSwitchProps
 ): HvTableColumnConfig<D>;
 
-export function hvDropdownColumn<D extends Record<string, unknown>, C extends HvTableColumnConfig<D>>(
+export function hvDropdownColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(
   col: C,
   id: string,
   placeholder: string,
@@ -45,7 +49,10 @@ export function hvDropdownColumn<D extends Record<string, unknown>, C extends Hv
   onChange?: (identifier: string, value: ListValueProp) => void
 ): HvTableColumnConfig<D>;
 
-export function hvProgressColumn<D extends Record<string, unknown>, C extends HvTableColumnConfig<D>>(
+export function hvProgressColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(
   col: C,
   getPartial?: (row: HvRowInstance<D>) => number,
   getTotal?: (row: HvRowInstance<D>) => number,

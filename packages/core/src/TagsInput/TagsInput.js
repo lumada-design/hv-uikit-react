@@ -20,7 +20,7 @@ import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import styles from "./styles";
 
 /**
- * A text area is a multiline text input box, with an optional character counter when there is a length limit.
+ * A tags input is a single or multiline control that allows the input of tags.
  */
 const HvTagsInput = (props) => {
   const {
