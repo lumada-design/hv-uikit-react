@@ -3,12 +3,12 @@ import {
   ProviderContext,
   SnackbarKey,
   SnackbarMessage,
-  SnackbarProvider,
+  SnackbarProviderProps,
 } from "notistack";
 import { SemanticVariantTypes } from "../../Banner";
 import { HvSnackbarContentProps } from "../SnackbarContentWrapper";
 
-export interface HvSnackbarProviderProps extends SnackbarProvider {
+export interface HvSnackbarProviderProps extends SnackbarProviderProps {
   /**
    * Class object used to override notistack classes.
    */
