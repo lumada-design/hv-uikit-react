@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.54.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.53.1...@hitachivantara/uikit-react-core@3.54.0) (2022-02-04)
+
+
+### Bug Fixes
+
+* **TagsInput:** add max counter validation ([#2657](https://github.com/lumada-design/hv-uikit-react/issues/2657)) ([2d539e9](https://github.com/lumada-design/hv-uikit-react/commit/2d539e9f73a4f0ddc30486503a759f4d3e5cc38e))
+* **TagsInput:** add required property ([51bc3c8](https://github.com/lumada-design/hv-uikit-react/commit/51bc3c8f5fc184054596b6c3c2bc02fdf6dfcb7c))
+* **TagsInput:** add status validation and other fixes ([c791849](https://github.com/lumada-design/hv-uikit-react/commit/c7918490f5b6a84a1ba934a9464ba09e73a9e7e4))
+
+
+### Features
+
+* **snackbar:** adding stacked snackbar provider. ([a3d7ace](https://github.com/lumada-design/hv-uikit-react/commit/a3d7ace1a7cc4414ea679881898670379689d816))
+
+
+
+
+
 ## [3.53.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.53.0...@hitachivantara/uikit-react-core@3.53.1) (2022-02-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

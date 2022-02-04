@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@3.7.3...@hitachivantara/uikit-react-icons@3.8.0) (2022-02-04)
+
+
+### Features
+
+* **icons:** add new K8 icons from Design System library ([c493ed0](https://github.com/lumada-design/hv-uikit-react/commit/c493ed09f6283fe4deb447188660cd83a9d57897))
+
+
+
+
+
 ## 3.7.3 (2022-02-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
