@@ -155,7 +155,7 @@ export const Multiline = () => {
   return (
     <HvTagsInput
       id="tags-list-9"
-      label="Single Line"
+      label="MultiLine"
       aria-label="The label"
       placeholder="Enter value"
       multiline
