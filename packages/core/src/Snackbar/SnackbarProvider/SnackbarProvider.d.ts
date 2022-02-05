@@ -12,7 +12,7 @@ export interface HvSnackbarProviderProps extends SnackbarProviderProps {
   /**
    * Class object used to override notistack classes.
    */
-  notistackClassesOverride: Record<string, unknown>;
+  notistackClassesOverride?: Record<string, unknown>;
 }
 
 interface HvEnqueueOptions extends OptionsObject {
