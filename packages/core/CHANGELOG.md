@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.54.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.54.1...@hitachivantara/uikit-react-core@3.54.2) (2022-02-06)
+
+
+### Bug Fixes
+
+* **Snackbar:** fix extended interface on SnackbarProvider ([95f5a54](https://github.com/lumada-design/hv-uikit-react/commit/95f5a5447969156ef5c499dced115201014d2687))
+* **Snackbar:** make the notistackClassesOverride prop optional ([efcc54e](https://github.com/lumada-design/hv-uikit-react/commit/efcc54e61ad1a07bcc2304b02e22e50fd9dc74c4))
+
+
+
+
+
 ## [3.54.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.54.0...@hitachivantara/uikit-react-core@3.54.1) (2022-02-04)
 
 
