@@ -50,7 +50,7 @@ export const ControlledStringArray = () => {
         description="A list of strings will result in semantic tags"
         placeholder="Enter value"
         value={currValueStr}
-        onChange={(value) => {
+        onChange={(event, value) => {
           setCurrValueStr(value);
         }}
       />
@@ -86,7 +86,7 @@ export const ControlledTagArray = () => {
         aria-label="Controlled with array of tags"
         placeholder="Enter value"
         value={currValueArr}
-        onChange={(value) => {
+        onChange={(event, value) => {
           setCurrValueArr(value);
         }}
       />
@@ -227,7 +227,7 @@ export const TagsCounterValidation = () => {
       description="Maximum 3 tags"
       aria-label="The label"
       placeholder="Enter value"
-      onChange={(value) => setCounter(value)}
+      onChange={(event, value) => setCounter(value)}
       classes={{
         root: classes.root,
       }}
