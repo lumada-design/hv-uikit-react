@@ -134,7 +134,7 @@ const HvTagsInput = (props) => {
   useEffect(() => {
     // keep scroll focused on the input when the value changes
     if (!multiline) {
-      const element = document.getElementById("tag-input");
+      const element = containerRef?.current?.children[value.length];
       const offset = element?.offsetWidth;
       containerRef?.current?.scrollBy?.(offset ?? 0, 0);
     }
@@ -142,8 +142,7 @@ const HvTagsInput = (props) => {
 
   useEffect(() => {
     if (!multiline) {
-      const tagId = `tag-${tagCursorPos}`;
-      const element = document.getElementById(tagId);
+      const element = containerRef?.current?.children[tagCursorPos];
       // this setTimeout is a workaround for Firefox not properly dealing
       // with setting the scrollLeft value.
       setTimeout(() => {
