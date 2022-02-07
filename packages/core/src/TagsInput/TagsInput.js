@@ -1,6 +1,7 @@
 import React, { useRef, useState, useCallback, useMemo, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId, useControlled } from "../utils";
 import {
@@ -44,6 +45,8 @@ const HvTagsInput = (props) => {
     "aria-describedby": ariaDescribedBy,
 
     onChange,
+    onAdd,
+    onDelete,
 
     placeholder,
 
@@ -144,17 +147,18 @@ const HvTagsInput = (props) => {
       // this setTimeout is a workaround for Firefox not properly dealing
       // with setting the scrollLeft value.
       setTimeout(() => {
-        containerRef.current.scrollLeft = element
+        const container = containerRef.current;
+        if (isNil(container)) return;
+        container.scrollLeft = element
           ? element.offsetLeft -
-            containerRef.current.getBoundingClientRect().width / 2 +
+            container.getBoundingClientRect().width / 2 +
             element.getBoundingClientRect().width / 2
           : 0;
       }, 50);
 
       element?.focus();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tagCursorPos]);
+  }, [multiline, tagCursorPos]);
 
   /**
    * Handler for the `onEnter` event on the tag input
@@ -163,16 +167,17 @@ const HvTagsInput = (props) => {
     (event, tag) => {
       event.preventDefault();
       if (tag !== "") {
-        const newTagsArr = [...value, { label: tag, type: "semantic" }];
+        const newTag = { label: tag, type: "semantic" };
+        const newTagsArr = [...value, newTag];
         setValue(newTagsArr);
         setTagInput("");
         setTagCursorPos(newTagsArr.length);
         performValidation(newTagsArr);
-
+        onAdd?.(event, newTag, newTagsArr.length - 1);
         onChange?.(event, newTagsArr);
       }
     },
-    [onChange, performValidation, setValue, value]
+    [onAdd, onChange, performValidation, setValue, value]
   );
 
   /**
@@ -190,6 +195,7 @@ const HvTagsInput = (props) => {
             break;
           case "Backspace":
             if (isTagSelected) {
+              onDelete?.(event, value[tagCursorPos], tagCursorPos);
               const newTagsArr = [
                 ...value.slice(0, tagCursorPos),
                 ...value.slice(tagCursorPos + 1),
@@ -205,6 +211,7 @@ const HvTagsInput = (props) => {
             break;
           case "Delete":
             if (isTagSelected) {
+              onDelete?.(event, value[tagCursorPos], tagCursorPos);
               const newTagsArr = [
                 ...value.slice(0, tagCursorPos),
                 ...value.slice(tagCursorPos + 1),
@@ -221,7 +228,7 @@ const HvTagsInput = (props) => {
         }
       }
     },
-    [isTagSelected, onChange, performValidation, setValue, tagCursorPos, tagInput, value]
+    [isTagSelected, onChange, onDelete, performValidation, setValue, tagCursorPos, tagInput, value]
   );
 
   /**
@@ -229,6 +236,7 @@ const HvTagsInput = (props) => {
    */
   const onDeleteTagHandler = useCallback(
     (event, i) => {
+      onDelete?.(event, value[i], i);
       const newTagsArr = [...value.slice(0, i), ...value.slice(i + 1)];
       setValidationState(validationStates.standBy);
       setValue(newTagsArr);
@@ -237,7 +245,7 @@ const HvTagsInput = (props) => {
       performValidation(newTagsArr);
       onChange?.(event, newTagsArr);
     },
-    [value, setValidationState, setValue, performValidation, onChange]
+    [onDelete, value, setValidationState, setValue, performValidation, onChange]
   );
 
   /**
@@ -537,6 +545,14 @@ HvTagsInput.propTypes = {
    * The function that will be executed onChange.
    */
   onChange: PropTypes.func,
+  /**
+   * The function that will be executed when a tag is deleted.
+   */
+  onDelete: PropTypes.func,
+  /**
+   * The function that will be executed when a tag is added.
+   */
+  onAdd: PropTypes.func,
   /**
    * The placeholder value of the input.
    */
