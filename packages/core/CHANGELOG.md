@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.55.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.54.2...@hitachivantara/uikit-react-core@3.55.0) (2022-02-07)
+
+
+### Bug Fixes
+
+* **tagsInput:** example signature is wrong. ([e5aa005](https://github.com/lumada-design/hv-uikit-react/commit/e5aa005e125e9d64cd13e80d4e1c153437560050))
+* **tagsInput:** fixing tagInput id target. ([6de0e1b](https://github.com/lumada-design/hv-uikit-react/commit/6de0e1b085b63cb21af2b80af15c39ff5c42ee86))
+
+
+### Features
+
+* **tagsInput:** adding onadd and ondelete callbacks. ([33212c1](https://github.com/lumada-design/hv-uikit-react/commit/33212c19dc393370c7aac0a7c81bf433e5e37a3e))
+
+
+
+
+
 ## [3.54.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.54.1...@hitachivantara/uikit-react-core@3.54.2) (2022-02-06)
 
 
