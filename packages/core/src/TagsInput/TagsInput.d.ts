@@ -102,6 +102,34 @@ export interface HvTagsInputProps
   /**
    * Called back when the value is changed.
    */
+  onAdd?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps,
+    index: number
+  ) => void;
+
+  /**
+   * The function that will be executed when a tag is deleted.
+   */
+  onDelete?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps,
+    index: number
+  ) => void;
+
+  /**
+   * The function that will be executed when a tag is added.
+   */
   onChange?: (
     event:
       | React.ChangeEvent<HTMLInputElement>
