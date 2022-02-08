@@ -18,7 +18,7 @@ export type HvTagsInputClassKey =
   | "error";
 
 export interface HvTagsInputProps
-  extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange" | "onBlur"> {
+  extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange"> {
   /**
    * The label of the form element.
    *
