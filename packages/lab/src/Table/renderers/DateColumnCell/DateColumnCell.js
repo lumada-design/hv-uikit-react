@@ -16,9 +16,9 @@ HvDateColumnCell.propTypes = {
   /**
    * Date to render.
    */
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
   /**
-   * The timezone used to format the date.
+   * The date's text representation format.
    */
   dateFormat: PropTypes.string,
 };

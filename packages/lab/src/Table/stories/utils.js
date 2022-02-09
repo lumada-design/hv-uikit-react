@@ -14,6 +14,8 @@ const getTagColor = (status) => (status === "Closed" ? "sema9" : "sema8");
 const generateLongString = (value, i) =>
   i === 6 ? "very long string that should be cut if it doesnt fit in the column" : value;
 
+const generateEmptyDate = (value, i) => (i === 7 ? undefined : value);
+
 const generateEmptyString = (value, i) => (i === 3 ? undefined : value);
 
 const generateLargeNumber = (i) => (i === 6 ? undefined : i);
@@ -53,7 +55,7 @@ const newRendererEntry = (i) => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
-    createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
+    createdDate: generateEmptyDate(formatDate(new Date(rand.next(dateMax, dateMin))), i),
     eventQuantity: generateLargeNumber(i),
     eventType: eventTypeText,
     status: {
