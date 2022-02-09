@@ -186,7 +186,7 @@ describe("Table column renderers", () => {
       expect(getAllByRole("combobox").length).toBe(11);
       expect(getAllByText("Open").length).toBe(5);
       expect(getAllByText("Closed").length).toBe(5);
-      expect(getAllByText("—").length).toBe(2);
+      expect(getAllByText("—").length).toBe(3);
     });
 
     it("should open the expander column", async () => {

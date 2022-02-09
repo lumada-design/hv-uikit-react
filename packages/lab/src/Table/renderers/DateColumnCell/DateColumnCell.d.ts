@@ -1,12 +1,12 @@
 export interface HvDateColumnCellProp {
   /**
-   * Date to render.
+   * The date's text representation format.
    */
   dateFormat?: string;
   /**
-   * The timezone used to format the date.
+   * Date to render.
    */
-  date: string;
+  date?: string;
 }
 
 export default function HvDateColumnCellProp(props: HvDateColumnCellProp): JSX.Element | null;
