@@ -75,25 +75,23 @@ const HvTagsInput = (props) => {
   const hasDescription = description != null;
 
   const [value, setValue] = useControlled(valueProp, defaultValue);
-
-  const [tagInput, setTagInput] = useState("");
-  const [tagCursorPos, setTagCursorPos] = useState(value.length);
-
   const [validationState, setValidationState] = useControlled(status, validationStates.standBy);
   const [validationMessage, setValidationMessage] = useControlled(statusMessage, "");
 
+  const [tagInput, setTagInput] = useState("");
+  const [tagCursorPos, setTagCursorPos] = useState(value.length);
   const [stateValid, setStateValid] = useState(true);
 
-  const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
+  const inputRef = useRef();
+  const containerRef = useRef();
+  const resetInput = useRef(false);
 
+  const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
   const hasCounter = maxTagsQuantity != null && !hideCounter;
 
   const isStateInvalid = useMemo(() => {
     return hasCounter && value.length > maxTagsQuantity;
   }, [hasCounter, maxTagsQuantity, value.length]);
-
-  const inputRef = useRef();
-  const containerRef = useRef();
 
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
@@ -121,6 +119,28 @@ const HvTagsInput = (props) => {
     [errorMessages.maxCharError, maxTagsQuantity, setValidationMessage, setValidationState]
   );
 
+  /**
+   * Deletes a Tag from the array of tags and sets the new position for the tag cursor.
+   * Also executes the user provided onDelete and onChange events.
+   *
+   * @param {number}  tagPos - the position at which to remove the tag
+   * @param {Event}   event  - the event associated with the delete
+   * @param {boolean} end    - whether or not to set the cursor at the end of the array
+   */
+  const deleteTag = useCallback(
+    (tagPos, event, end) => {
+      const newTagsArr = [...value.slice(0, tagPos), ...value.slice(tagPos + 1)];
+      setValue(newTagsArr);
+      // eslint-disable-next-line no-nested-ternary
+      setTagCursorPos(end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0);
+      inputRef.current?.focus();
+      performValidation(newTagsArr);
+      onDelete?.(event, value[tagPos], tagPos);
+      onChange?.(event, newTagsArr);
+    },
+    [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
+  );
+
   const canShowError =
     (status !== undefined && status === "invalid" && statusMessage !== undefined) || !stateValid;
 
@@ -130,15 +150,6 @@ const HvTagsInput = (props) => {
   const onChangeHandler = useCallback((event, input) => {
     setTagInput(input);
   }, []);
-
-  useEffect(() => {
-    // keep scroll focused on the input when the value changes
-    if (!multiline) {
-      const element = containerRef?.current?.children[value.length];
-      const offset = element?.offsetWidth;
-      containerRef?.current?.scrollBy?.(offset ?? 0, 0);
-    }
-  }, [multiline, value]);
 
   useEffect(() => {
     if (!multiline) {
@@ -159,6 +170,14 @@ const HvTagsInput = (props) => {
     }
   }, [multiline, tagCursorPos]);
 
+  useEffect(() => {
+    if (resetInput.current) {
+      setTagInput("");
+      setTagCursorPos(value.length);
+      resetInput.current = false;
+    }
+  }, [value]);
+
   /**
    * Handler for the `onEnter` event on the tag input
    */
@@ -169,8 +188,7 @@ const HvTagsInput = (props) => {
         const newTag = { label: tag, type: "semantic" };
         const newTagsArr = [...value, newTag];
         setValue(newTagsArr);
-        setTagInput("");
-        setTagCursorPos(newTagsArr.length);
+        resetInput.current = true;
         performValidation(newTagsArr);
         onAdd?.(event, newTag, newTagsArr.length - 1);
         onChange?.(event, newTagsArr);
@@ -194,32 +212,14 @@ const HvTagsInput = (props) => {
             break;
           case "Backspace":
             if (isTagSelected) {
-              onDelete?.(event, value[tagCursorPos], tagCursorPos);
-              const newTagsArr = [
-                ...value.slice(0, tagCursorPos),
-                ...value.slice(tagCursorPos + 1),
-              ];
-              setValue(newTagsArr);
-              setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
-              inputRef.current?.focus();
-              performValidation(newTagsArr);
-              onChange?.(event, newTagsArr);
+              deleteTag(tagCursorPos, event, false);
             } else {
               setTagCursorPos(value.length - 1);
             }
             break;
           case "Delete":
             if (isTagSelected) {
-              onDelete?.(event, value[tagCursorPos], tagCursorPos);
-              const newTagsArr = [
-                ...value.slice(0, tagCursorPos),
-                ...value.slice(tagCursorPos + 1),
-              ];
-              setValue(newTagsArr);
-              setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
-              inputRef.current?.focus();
-              performValidation(newTagsArr);
-              onChange?.(event, newTagsArr);
+              deleteTag(tagCursorPos, event, false);
             }
             break;
           default:
@@ -227,7 +227,7 @@ const HvTagsInput = (props) => {
         }
       }
     },
-    [isTagSelected, onChange, onDelete, performValidation, setValue, tagCursorPos, tagInput, value]
+    [deleteTag, isTagSelected, tagCursorPos, tagInput, value.length]
   );
 
   /**
@@ -235,16 +235,10 @@ const HvTagsInput = (props) => {
    */
   const onDeleteTagHandler = useCallback(
     (event, i) => {
-      onDelete?.(event, value[i], i);
-      const newTagsArr = [...value.slice(0, i), ...value.slice(i + 1)];
+      deleteTag(i, event, true);
       setValidationState(validationStates.standBy);
-      setValue(newTagsArr);
-      setTagCursorPos(newTagsArr.length);
-      inputRef.current?.focus();
-      performValidation(newTagsArr);
-      onChange?.(event, newTagsArr);
     },
-    [onDelete, value, setValidationState, setValue, performValidation, onChange]
+    [deleteTag, setValidationState]
   );
 
   /**

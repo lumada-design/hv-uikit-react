@@ -102,6 +102,61 @@ ControlledTagArray.parameters = {
   },
 };
 
+export const ControlledWithValidation = () => {
+  const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
+  const [status, setStatus] = useState("valid");
+  const [statusMsg, setStatusMsg] = useState("");
+
+  const isInvalidTag = (tag) => tag?.includes("-");
+
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 500,
+    },
+  }));
+  const classes = useStyles();
+
+  return (
+    <>
+      <HvTagsInput
+        id="tags-list-10"
+        label="Controlled with validation"
+        aria-label="Controlled with validation"
+        description="A tag with a dash (-) will be invalid"
+        placeholder="Enter value"
+        value={currValueStr}
+        status={status}
+        statusMessage={statusMsg}
+        classes={{
+          root: classes.root,
+        }}
+        onAdd={(event, value) => {
+          if (value && isInvalidTag(value.label)) {
+            setStatus("invalid");
+            setStatusMsg("Oops, that tag has a dash (-)");
+          } else {
+            setStatus("valid");
+            setStatusMsg("");
+            setCurrValueStr([...currValueStr, value]);
+          }
+        }}
+        onDelete={(event, value) => {
+          const newArr = currValueStr.filter((t) => t !== value);
+          setCurrValueStr(newArr);
+        }}
+      />
+      <HvTypography variant="highlightText">Current value:</HvTypography>
+      <HvTypography>{JSON.stringify(currValueStr)}</HvTypography>
+    </>
+  );
+};
+
+ControlledWithValidation.parameters = {
+  docs: {
+    description: { story: "Controlled Tags Input with validation" },
+  },
+};
+
 export const Disabled = () => {
   return (
     <HvTagsInput
