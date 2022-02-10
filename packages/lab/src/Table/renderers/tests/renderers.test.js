@@ -53,7 +53,7 @@ describe("Table column renderers", () => {
       expect(typeof Cell === "function").toBe(true);
       expect(Header).toBe(headerText);
       expect(accessor).toBe(accessorText);
-      expect(sortType).toBe("string");
+      expect(sortType).toBe("alphanumeric");
       expect(sortDescFirst).toBe(true);
       expect(style).toBe(styling);
     });
