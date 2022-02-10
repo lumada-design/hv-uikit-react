@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.55.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.55.0...@hitachivantara/uikit-react-core@3.55.1) (2022-02-10)
+
+
+### Bug Fixes
+
+* **TagsInput:** fix reset input on value change ([d4f2df1](https://github.com/lumada-design/hv-uikit-react/commit/d4f2df1f83b6eb7aa2a22556c2a33001a667ab23))
+
+
+
+
+
 # [3.55.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.54.2...@hitachivantara/uikit-react-core@3.55.0) (2022-02-07)
 
 

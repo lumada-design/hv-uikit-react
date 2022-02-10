@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.5...@hitachivantara/uikit-react-lab@3.39.6) (2022-02-10)
+
+
+### Bug Fixes
+
+* **tablerenderers:** changing date value to be optional. ([aa109ad](https://github.com/lumada-design/hv-uikit-react/commit/aa109ad802304943c7d91583702bc1c236b6ff97))
+
+
+
+
+
 ## [3.39.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.4...@hitachivantara/uikit-react-lab@3.39.5) (2022-02-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
