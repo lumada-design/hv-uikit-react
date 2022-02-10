@@ -34,7 +34,7 @@ export const hvNumberColumn = (col) => {
 export const hvDateColumn = (col, dateFormat) => {
   return {
     Cell: (cellProps) => <DateColumnCell date={cellProps?.value} dateFormat={dateFormat} />,
-    sortType: "string",
+    sortType: "alphanumeric",
     sortDescFirst: true,
     ...col,
   };
