@@ -52,8 +52,11 @@ export const GroupedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 8400], name: "Cash" },
   ];
+  const layout = {
+    hovermode: "x",
+  };
 
-  return <HvBarchart data={data} />;
+  return <HvBarchart data={data} layout={layout} />;
 };
 
 GroupedVerticalBarchart.parameters = {
@@ -215,8 +218,11 @@ export const GroupedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 8400], name: "Cash" },
   ];
+  const layout = {
+    hovermode: "y",
+  };
 
-  return <HvBarchart horizontal data={data} />;
+  return <HvBarchart horizontal data={data} layout={layout} />;
 };
 
 GroupedHorizontalBarchart.parameters = {

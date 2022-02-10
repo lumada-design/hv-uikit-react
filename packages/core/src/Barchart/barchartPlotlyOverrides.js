@@ -12,6 +12,7 @@ export const applyLayoutDefaults = (inputLayout, stack, isHorizontal) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
   setterIfNil(layout, "bargap", 0.25);
   setterIfNil(layout, "bargroupgap", 0.25);
+  setterIfNil(layout, "hovermode", "closest");
   if (stack) setterIfNil(layout, "barmode", "stack");
 
   setterIfNil(layout, "yaxis", {});
