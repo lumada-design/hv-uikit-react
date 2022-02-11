@@ -139,6 +139,7 @@ export const Main = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -395,6 +396,7 @@ export const Configurations = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -678,6 +680,7 @@ export const ThreeViews = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -960,6 +963,7 @@ export const ServerSidePagination = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -1204,6 +1208,7 @@ export const Accessibility = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
