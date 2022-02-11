@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.6...@hitachivantara/uikit-react-lab@3.39.7) (2022-02-11)
+
+
+### Bug Fixes
+
+* **table:** change hvDateColumn default sort method to support null values ([301761f](https://github.com/lumada-design/hv-uikit-react/commit/301761f4c58e358383a8354b7b58f4c50860dd71))
+
+
+
+
+
 ## [3.39.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.5...@hitachivantara/uikit-react-lab@3.39.6) (2022-02-10)
 
 
