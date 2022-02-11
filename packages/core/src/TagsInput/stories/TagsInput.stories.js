@@ -78,8 +78,39 @@ export const ControlledTagArray = () => {
     { label: "tag 3", color: "#eba000" },
   ]);
 
+  const useStyles = makeStyles((theme) => ({
+    buttonWrapper: {
+      "& button": {
+        marginRight: theme.hvSpacing("xs"),
+        marginBottom: theme.hvSpacing("md"),
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <>
+      <div className={classes.buttonWrapper}>
+        <HvButton
+          category="secondary"
+          onClick={() => {
+            const newArray = [...currValueArr];
+            newArray.push({
+              label: `tag ${currValueArr.length + 1}`,
+              type: currValueArr.length % 2 === 0 ? "categorical" : "semantic",
+              color: currValueArr.length % 2 === 0 ? "#7eccd6" : "#eba000",
+            });
+            setCurrValueArr(newArray);
+          }}
+        >
+          Add tags
+        </HvButton>
+        <HvButton category="secondary" onClick={() => setCurrValueArr([])}>
+          Clear tags
+        </HvButton>
+      </div>
+
       <HvTagsInput
         id="tags-list-4"
         label="Controlled with array of tags"

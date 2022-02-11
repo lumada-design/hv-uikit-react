@@ -4,7 +4,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import { render, fireEvent } from "testing-utils";
 import { HvProvider, HvTagsInput } from "../..";
-import { Main } from "../stories/TagsInput.stories";
+import { Main, ControlledTagArray } from "../stories/TagsInput.stories";
 
 describe("TagsInput", () => {
   it("should render correctly", () => {
@@ -177,5 +177,40 @@ describe("TagsInput Component", () => {
 
     const clickableButtons = queryAllByRole("button");
     expect(clickableButtons.length).toBe(0);
+  });
+
+  it("should clear the input whenever a tags gets added", async () => {
+    const { getAllByRole, getByText, getByRole, findAllByRole } = render(<ControlledTagArray />);
+    const uncommittedText = "uncommitted text";
+    let clickableButtons = getAllByRole("button");
+    expect(clickableButtons.length).toBe(5);
+    const addTagButton = getByText("Add tags");
+    const tagsInput = getByRole("textbox");
+
+    fireEvent.change(tagsInput, { target: { value: uncommittedText } });
+    expect(tagsInput).toHaveValue(uncommittedText);
+    expect(clickableButtons.length).toBe(5);
+
+    userEvent.click(addTagButton);
+    clickableButtons = await findAllByRole("button");
+    expect(clickableButtons.length).toBe(6);
+    expect(tagsInput).not.toHaveValue(uncommittedText);
+  });
+
+  it("should retain uncommitted text when deleting tags", async () => {
+    const { getAllByRole, getByRole, findAllByRole } = render(<ControlledTagArray />);
+    const uncommittedText = "uncommitted text";
+    let clickableButtons = getAllByRole("button");
+    expect(clickableButtons.length).toBe(5);
+    const tagsInput = getByRole("textbox");
+
+    fireEvent.change(tagsInput, { target: { value: uncommittedText } });
+    expect(tagsInput).toHaveValue(uncommittedText);
+    expect(clickableButtons.length).toBe(5);
+
+    userEvent.click(clickableButtons[4]);
+    clickableButtons = await findAllByRole("button");
+    expect(clickableButtons.length).toBe(4);
+    expect(tagsInput).toHaveValue(uncommittedText);
   });
 });
