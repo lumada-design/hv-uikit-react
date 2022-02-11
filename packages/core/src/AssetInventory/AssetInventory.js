@@ -232,12 +232,18 @@ const HvAssetInventory = (props) => {
   };
 
   const handleSelectPage = (e, checked = false) => {
-    setSelectedValues(checked ? [] : pageValues.map((v) => v.id));
+    const selection = pageValues.map((v) => v.id);
+
+    setSelectedValues(checked ? selection : []);
+    onSelection?.(e, checked ? selection : []);
   };
 
-  const handleSelectAll = () => {
+  const handleSelectAll = (e) => {
     const allSelected = selectedValues.length === values.length;
-    setSelectedValues(allSelected ? [] : values.map((v) => v.id));
+    const selection = values.map((v) => v.id);
+
+    setSelectedValues(allSelected ? [] : selection);
+    onSelection?.(e, allSelected ? [] : selection);
   };
 
   const innerOnSelection = (onSelectionFn) => (event) => {
@@ -249,7 +255,7 @@ const HvAssetInventory = (props) => {
       [];
 
     setSelectedValues(list);
-    onSelectionFn?.(event);
+    onSelectionFn?.(event, list);
   };
 
   const propsFillerManager = (source, target, propObj) => {
@@ -479,7 +485,7 @@ HvAssetInventory.propTypes = {
     viewConfiguration: PropTypes.instanceOf(Object),
   }).isRequired,
   /**
-   * Callback evoked in the selection of the card.
+   * Callback evoked in the selection of the card. Receives the event and the current selection of the asset inventory
    */
   onSelection: PropTypes.func,
   /**

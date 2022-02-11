@@ -856,7 +856,7 @@ export const ThreeViews = () => {
       <HvAssetInventory
         values={values()}
         configuration={assetConfiguration}
-        onSelection={(event) => console.log(event.target.value)}
+        onSelection={(event, selection) => console.log(selection)}
         isSelectable
         hasBulkActions
         actions={myActions}
