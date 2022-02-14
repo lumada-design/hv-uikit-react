@@ -59,7 +59,7 @@ const CardView = ({
   viewConfiguration = DEFAULT_VIEW_CONFIGURATION,
   innerCardContent,
   metadata,
-  emptyComponent,
+  emptyComponent = null,
   ...others
 }) => {
   const containerRef = useRef(null);

@@ -122,14 +122,16 @@ const HvAssetInventory = (props) => {
   };
 
   const changePageValues = useCallback(
-    (returnedPageValues) => {
+    (returnedPageValues, p = page) => {
       setPageValues(
-        getPaginationData(hasPagination, paginationServerSide, returnedPageValues, pageSize, page)
+        getPaginationData(hasPagination, paginationServerSide, returnedPageValues, pageSize, p)
       );
     },
     [hasPagination, paginationServerSide, pageSize, page]
   );
 
+  // TODO: we must revisit this section in the future. Right now, sorting the results will
+  //       reset the array of values which means that we can't sort a filtered result set.
   useEffect(() => {
     if (!(selectedSort?.sortId && selectedSort?.sortFunc)) return;
     const sortedValues = [...valuesProp].sort(selectedSort.sortFunc);
@@ -141,7 +143,7 @@ const HvAssetInventory = (props) => {
     setValues(results);
     setPage(0);
     setSearchString(value);
-    changePageValues(results);
+    changePageValues(results, 0);
   };
 
   /**
