@@ -84,7 +84,7 @@ const HvTagsInput = (props) => {
 
   const inputRef = useRef();
   const containerRef = useRef();
-  const resetInput = useRef(false);
+  const skipReset = useRef(false);
 
   const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
   const hasCounter = maxTagsQuantity != null && !hideCounter;
@@ -137,6 +137,7 @@ const HvTagsInput = (props) => {
       performValidation(newTagsArr);
       onDelete?.(event, value[tagPos], tagPos);
       onChange?.(event, newTagsArr);
+      skipReset.current = true;
     },
     [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
   );
@@ -171,11 +172,11 @@ const HvTagsInput = (props) => {
   }, [multiline, tagCursorPos]);
 
   useEffect(() => {
-    if (resetInput.current) {
+    if (!skipReset.current) {
       setTagInput("");
       setTagCursorPos(value.length);
-      resetInput.current = false;
     }
+    skipReset.current = false;
   }, [value]);
 
   /**
@@ -188,7 +189,6 @@ const HvTagsInput = (props) => {
         const newTag = { label: tag, type: "semantic" };
         const newTagsArr = [...value, newTag];
         setValue(newTagsArr);
-        resetInput.current = true;
         performValidation(newTagsArr);
         onAdd?.(event, newTag, newTagsArr.length - 1);
         onChange?.(event, newTagsArr);
