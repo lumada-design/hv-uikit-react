@@ -18,7 +18,7 @@ export type HvTagsInputClassKey =
   | "error";
 
 export interface HvTagsInputProps
-  extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange"> {
+  extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange" | "onBlur" | "onFocus"> {
   /**
    * The label of the form element.
    *
@@ -138,6 +138,22 @@ export interface HvTagsInputProps
       | React.MouseEvent<HTMLElement, MouseEvent>
       | React.KeyboardEventHandler<HTMLElement>,
     value: HvTagProps[]
+  ) => void;
+
+  /**
+   * The function that will be executed when the input is blurred.
+   */
+   onBlur?: (
+    event: React.FocusEvent<HTMLInputElement>,
+    value: string
+  ) => void;
+
+  /**
+   * The function that will be executed when the input is focused.
+   */
+   onFocus?: (
+    event: React.FocusEvent<HTMLInputElement>,
+    value: string
   ) => void;
 
   /**
