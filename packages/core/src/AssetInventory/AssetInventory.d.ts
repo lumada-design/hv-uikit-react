@@ -104,7 +104,7 @@ export interface HvAssetInventoryProps
   /**
    * Callback evoked in the selection of the card.
    */
-  onSelection?: (event: React.FormEvent<HTMLDivElement>, payload: object) => void;
+  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: string[]) => void;
   /**
    * Extra filters
    */

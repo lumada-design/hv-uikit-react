@@ -139,6 +139,7 @@ export const Main = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -395,6 +396,7 @@ export const Configurations = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -678,6 +680,7 @@ export const ThreeViews = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -856,7 +859,7 @@ export const ThreeViews = () => {
       <HvAssetInventory
         values={values()}
         configuration={assetConfiguration}
-        onSelection={(event) => console.log(event.target.value)}
+        onSelection={(event, selection) => console.log(selection)}
         isSelectable
         hasBulkActions
         actions={myActions}
@@ -960,6 +963,7 @@ export const ServerSidePagination = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
@@ -1204,6 +1208,7 @@ export const Accessibility = () => {
           )}
           <div style={{ flex: 1 }} />
           <HvActionsGeneric
+            id={data.id}
             actions={viewConfiguration.actions}
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
