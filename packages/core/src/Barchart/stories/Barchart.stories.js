@@ -19,7 +19,7 @@ export const Main = () => (
     data={[
       {
         x: ["January", "February", "March"],
-        y: [2300, 1000, 8500],
+        y: [2300, 1000, 6700],
         name: "Sales Target",
       },
     ]}
@@ -29,7 +29,7 @@ export const Main = () => (
 export const VerticalWithSingleTooltip = () => {
   const trace1 = {
     x: ["January", "February", "March"],
-    y: [2300, 1000, 8500],
+    y: [2300, 1000, 6700],
     name: "Sales Target",
   };
 
@@ -46,11 +46,11 @@ VerticalWithSingleTooltip.parameters = {
 
 export const GroupedVerticalBarchart = () => {
   const data = [
-    { x: ["Group 1", "Group 2", "Group 3"], y: [2300, 1000, 8500], name: "Sales Target" },
+    { x: ["Group 1", "Group 2", "Group 3"], y: [2300, 1000, 7800], name: "Sales Target" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 3900, 1000], name: "Sales Per Rep" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 8400], name: "Cash" },
+    { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 6700, 1100], name: "Monthly Sales" },
+    { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 7700, 3000], name: "Target" },
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 7600, 7800], name: "Cash" },
   ];
   const layout = {
     hovermode: "x",
@@ -94,6 +94,9 @@ export const CustomStackedVerticalBarchart = () => {
   const layout = {
     yaxis: {
       ticksuffix: " Gb",
+      autorange: false,
+      range: [0, 850],
+      dtick: 100,
     },
   };
 
@@ -176,7 +179,7 @@ export const SimpleHorizontalBarchart = () => (
     horizontal
     data={[
       {
-        x: [2300, 1000, 8500],
+        x: [2300, 1000, 6700],
         y: ["January", "February", "March"],
         name: "Sales Target",
       },
@@ -196,7 +199,7 @@ export const HorizontalBarchartWithSingleTooltip = () => (
     tooltipType="single"
     data={[
       {
-        x: [2300, 1000, 8500],
+        x: [2300, 1000, 6700],
         y: ["January", "February", "March"],
         name: "Sales Target",
       },
@@ -212,11 +215,11 @@ HorizontalBarchartWithSingleTooltip.parameters = {
 
 export const GroupedHorizontalBarchart = () => {
   const data = [
-    { y: ["Group 1", "Group 2", "Group 3"], x: [2300, 1000, 8500], name: "Sales Target" },
+    { y: ["Group 1", "Group 2", "Group 3"], x: [2300, 1000, 7800], name: "Sales Target" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [6000, 3900, 1000], name: "Sales Per Rep" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 7500, 1100], name: "Monthly Sales" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 8400], name: "Cash" },
+    { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 6700, 1100], name: "Monthly Sales" },
+    { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 7700, 3000], name: "Target" },
+    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 7600, 7800], name: "Cash" },
   ];
   const layout = {
     hovermode: "y",
