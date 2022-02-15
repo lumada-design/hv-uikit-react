@@ -175,7 +175,7 @@ const HvTextArea = (props) => {
 
   const isScrolledDown = useCallback(() => {
     const el = inputRef.current;
-    return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
+    return el == null || el.offsetHeight + el.scrollTop >= el.scrollHeight;
   }, [inputRef]);
 
   const scrollDown = useCallback(() => {
@@ -241,12 +241,14 @@ const HvTextArea = (props) => {
   useEffect(() => {
     if (autoScroll) {
       addScrollListener();
-      scrollDown();
     }
+  }, [autoScroll, addScrollListener]);
+
+  useEffect(() => {
     if (autoScrolling) {
       scrollDown();
     }
-  }, [addScrollListener, autoScroll, autoScrolling, scrollDown]);
+  }, [valueProp, autoScrolling, scrollDown]);
 
   // run initial validation after first render
   // and also when any validation condition changes

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { HvTextArea } from "../..";
+import React, { useEffect, useState } from "react";
+import { HvTextArea, HvTypography } from "../..";
 
 export default {
   title: "Forms/Text Area",
@@ -164,4 +164,48 @@ CustomValidation.parameters = {
   docs: {
     description: { story: "Text area value that can't contain numbers." },
   },
+};
+
+export const AutoScroll = () => {
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    let idx = 1;
+    let newline;
+    const id = setInterval(() => {
+      newline = idx === 1 ? "" : "\n";
+      setValue((val) => `${val}${newline}${idx}: ${Math.random()}`);
+      idx += 1;
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <>
+      <HvTypography variant="xxsTitle">Description:</HvTypography>
+      <HvTypography>
+        Autoscrolling textarea. It should be automatically scrolled down until the user scrolls up
+        at which point the automatic scrolling stops. It will resume as soon as the user scrolls
+        fully to the bottom again.
+      </HvTypography>
+      <br />
+      <HvTypography variant="xxsTitle">Example:</HvTypography>
+      <br />
+      <HvTextArea
+        id="custom-validation"
+        rows={5}
+        label="Logs"
+        placeholder="Enter value"
+        autoScroll
+        value={value}
+      />
+    </>
+  );
+};
+
+AutoScroll.parameters = {
+  docs: {
+    description: { story: "Text area with autoscroll." },
+  },
+  eyes: { include: false },
 };
