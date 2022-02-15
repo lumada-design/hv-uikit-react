@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.55.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.55.2...@hitachivantara/uikit-react-core@3.55.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* **asset-inventory:** bulk actions triggering onSelection callback. HVUIKIT-6315 ([1f69da8](https://github.com/lumada-design/hv-uikit-react/commit/1f69da8829a38178264d57679db4d3281bbe7ed3))
+* **AssetInventory:** fixed undefined emptyComponent on the CardView causing app crash ([#2677](https://github.com/lumada-design/hv-uikit-react/issues/2677)) ([253c62f](https://github.com/lumada-design/hv-uikit-react/commit/253c62fadb385b41e7852915d2ccc0c8e8e827bd))
+* **BarChart:** fix tooltip displaying when hovering outside of the chart bars ([54a279a](https://github.com/lumada-design/hv-uikit-react/commit/54a279ac91c78ce4d55aeef5a9a51a23be337f50))
+* **tags-input:** input should be clean when tags change. ([#2672](https://github.com/lumada-design/hv-uikit-react/issues/2672)) ([2ffbbf2](https://github.com/lumada-design/hv-uikit-react/commit/2ffbbf25893a8b297a2ef89259e8a9fd92da7c13))
+* **TagsInput:** fix reset input on value change ([d4f2df1](https://github.com/lumada-design/hv-uikit-react/commit/d4f2df1f83b6eb7aa2a22556c2a33001a667ab23))
+
+
+
+
+
 ## [3.55.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.55.0...@hitachivantara/uikit-react-core@3.55.2) (2022-02-13)
 
 
