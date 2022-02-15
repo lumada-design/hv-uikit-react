@@ -47,6 +47,8 @@ const HvTagsInput = (props) => {
     onChange,
     onAdd,
     onDelete,
+    onBlur,
+    onFocus,
 
     placeholder,
 
@@ -85,6 +87,7 @@ const HvTagsInput = (props) => {
   const inputRef = useRef();
   const containerRef = useRef();
   const skipReset = useRef(false);
+  const blurTimeout = useRef();
 
   const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
   const hasCounter = maxTagsQuantity != null && !hideCounter;
@@ -246,8 +249,20 @@ const HvTagsInput = (props) => {
    */
   const onContainerClickHandler = useCallback(() => {
     inputRef.current?.focus();
+    clearTimeout(blurTimeout.current);
     setTagCursorPos(value.length);
   }, [value.length]);
+
+  const onBlurHandler = (evt) => {
+    blurTimeout.current = setTimeout(() => {
+      onBlur?.(evt, tagInput);
+    }, 250);
+  };
+
+  const onFocusHandler = (evt) => {
+    clearTimeout(blurTimeout.current);
+    onFocus?.(evt, tagInput);
+  };
 
   return (
     <HvFormElement
@@ -257,6 +272,8 @@ const HvTagsInput = (props) => {
       readOnly={readOnly}
       status={validationState}
       required={required}
+      onBlur={onBlurHandler}
+      onFocus={onFocusHandler}
       className={clsx(classes.root, className, {
         [classes.disabled]: disabled,
       })}
@@ -538,6 +555,14 @@ HvTagsInput.propTypes = {
    * The function that will be executed onChange.
    */
   onChange: PropTypes.func,
+  /**
+   * The function that will be executed when the element is focused.
+   */
+  onFocus: PropTypes.func,
+  /**
+   * The function that will be executed when the element is blurred.
+   */
+  onBlur: PropTypes.func,
   /**
    * The function that will be executed when a tag is deleted.
    */

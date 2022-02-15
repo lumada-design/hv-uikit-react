@@ -188,6 +188,42 @@ ControlledWithValidation.parameters = {
   },
 };
 
+export const AddTagOnBlur = () => {
+  const [currValueArr, setCurrValueArr] = useState([
+    { label: "tag 1", color: "#7ed69e" },
+    {
+      label: "tag 2 - click me!",
+      color: "#7eccd6",
+      type: "categorical",
+      onClick: () => alert("Hello"),
+    },
+    { label: "tag 3", color: "#eba000" },
+  ]);
+
+  return (
+    <HvTagsInput
+      id="tags-list-4"
+      label="Adding tags on blur"
+      aria-label="Adding tags on blur"
+      placeholder="Enter value"
+      value={currValueArr}
+      onChange={(event, value) => {
+        setCurrValueArr(value);
+      }}
+      onBlur={(event, value) => {
+        if (value === "") return;
+        setCurrValueArr([...currValueArr, { label: value }]);
+      }}
+    />
+  );
+};
+
+AddTagOnBlur.parameters = {
+  docs: {
+    description: { story: "Sample showcasing how to add tags when the input is blurred" },
+  },
+};
+
 export const Disabled = () => {
   return (
     <HvTagsInput
