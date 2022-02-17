@@ -27,6 +27,18 @@ export interface HvLoadingProps
    * Color applied to the bars.
    */
   color?: string;
+  /**
+   * Indicates if the component should be rendered as a progress bar.
+   */
+  progress?: boolean;
+  /**
+   * The value of the progress bar.
+   */
+  value?: number;
+  /**
+   * Indicates if there was an error while loading.
+   */
+  error?: boolean;
 }
 
 export default function HvLoading(props: HvLoadingProps): JSX.Element | null;
