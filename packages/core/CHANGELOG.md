@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.56.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.0...@hitachivantara/uikit-react-core@3.56.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* **TextArea:** fixed TextArea scrolling when it shouldn't ([11d8435](https://github.com/lumada-design/hv-uikit-react/commit/11d843593e47d82f3290f62f5527f01367a8632d))
+
+
+
+
+
 # [3.56.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.55.3...@hitachivantara/uikit-react-core@3.56.0) (2022-02-16)
 
 
