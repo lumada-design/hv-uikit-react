@@ -43,7 +43,7 @@ export const Main = () => {
         <HvOverflowTooltip data={shortText} />
       </div>
       <div style={styling.textContainer}>
-        <HvOverflowTooltip data={longText} tooltipsProps={{ open: true, placement: "top" }} />
+        <HvOverflowTooltip data={longText} placement="top" open />
       </div>
     </div>
   );

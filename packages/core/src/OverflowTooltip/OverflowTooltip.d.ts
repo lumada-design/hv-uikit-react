@@ -4,9 +4,9 @@ export type HvOverflowTooltipKey = "tooltipData" | "tooltipAnchor" | "tooltipAnc
 
 export interface HvOverflowTooltipProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvOverflowTooltipKey> {
-  /**
-   * Id to be applied to the tooltip.
-   */
+   /**
+    * Id to be applied to the tooltip.
+    */
    id?: string;
    /**
     * The node that will be rendered inside the tooltip.
@@ -20,9 +20,29 @@ export interface HvOverflowTooltipProps
     * If `true` the overflow tooltip will always use the paragraph overflow style.
     */
    paragraphOverflow?: boolean;
-  /**
-   * Extra properties to add to the tooltip.
-   */
+   /**
+    * If true, the tooltip is shown.
+    */
+   open?: boolean;
+   /**
+    * Tooltip placement.
+    */
+   placement?:
+   | 'bottom-end'
+   | 'bottom-start'
+   | 'bottom'
+   | 'left-end'
+   | 'left-start'
+   | 'left'
+   | 'right-end'
+   | 'right-start'
+   | 'right'
+   | 'top-end'
+   | 'top-start'
+   | 'top';
+   /**
+    * Extra properties to add to the tooltip.
+    */
    tooltipsProps?: TooltipProps;
 }
 
