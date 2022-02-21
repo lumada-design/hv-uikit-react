@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.56.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.1...@hitachivantara/uikit-react-core@3.56.2) (2022-02-21)
+
+
+### Bug Fixes
+
+* **overflow-tooltip:** tooltip is appearing when not needed ([9c92d8d](https://github.com/lumada-design/hv-uikit-react/commit/9c92d8d26ddbda7742c531d9977a25b8be91028d))
+* **tooltip:** proptype is node when should be enum of strings ([a7139ea](https://github.com/lumada-design/hv-uikit-react/commit/a7139ea2a35d5d4acd93a787ba237f06eb7b478e))
+
+
+
+
+
 ## [3.56.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.0...@hitachivantara/uikit-react-core@3.56.1) (2022-02-17)
 
 
