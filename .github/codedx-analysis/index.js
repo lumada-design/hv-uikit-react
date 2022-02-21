@@ -15,30 +15,36 @@ const key = core.getInput("key");
 const serverUrl = core.getInput("serverUrl");
 const projectId = core.getInput("projectId");
 
-const monitorAnalysis = async (analysisId) => {
-  const intervalId = setInterval(async () => {
-    core.info(`Checking Analysis ${analysisId}...`);
+const authorizationHeaders = {
+  headers: {
+    Authorization: `Bearer ${key}`,
+  },
+};
 
-    try {
-      const { data } = await axios.get(
-        `${serverUrl}/codedx/api/projects/${projectId}/analyses/${analysisId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${key}`,
-          },
+const monitorAnalysis = (analysisId) =>
+  new Promise((resolve, reject) => {
+    const intervalId = setInterval(async () => {
+      core.info(`Checking Analysis ${analysisId}...`);
+
+      try {
+        const { data } = await axios.get(
+          `${serverUrl}/codedx/api/projects/${projectId}/analyses/${analysisId}`,
+          authorizationHeaders
+        );
+
+        if (data.state === "complete") {
+          core.info(`CodeDx Analysis finished`);
+          resolve();
+          clearInterval(intervalId);
         }
-      );
-
-      if (data.state === "complete") {
-        core.info(`CodeDx Analysis finished`);
+      } catch (error) {
+        core.error(`Error checking analysis ${analysisId}`);
+        core.setFailed(error.message);
+        reject();
         clearInterval(intervalId);
       }
-    } catch (error) {
-      core.error(`Error checking analysis ${analysisId}`);
-      core.setFailed(error.message);
-    }
-  }, 1000);
-};
+    }, 1000);
+  });
 
 async function main() {
   let fileExists = false;
@@ -66,7 +72,7 @@ async function main() {
   axios
     .post(`${serverUrl}/codedx/api/projects/${projectId}/analysis`, form, {
       headers: {
-        Authorization: `Bearer ${key}`,
+        ...authorizationHeaders.headers,
         ...form.getHeaders(),
       },
       maxContentLength: Infinity,
@@ -80,15 +86,38 @@ async function main() {
         .put(
           `${serverUrl}/codedx/api/projects/${projectId}/analyses/${analysisId}`,
           projectNameJson,
-          {
-            headers: {
-              Authorization: `Bearer ${key}`,
-            },
-          }
+          authorizationHeaders
         )
         .then(async () => {
           core.info(`CodeDx Analysis labeled ${checkName}`);
-          monitorAnalysis(analysisId);
+
+          await monitorAnalysis(analysisId);
+          axios
+            .post(
+              `${serverUrl}/codedx/api/projects/${projectId}/findings/count`,
+              {
+                filter: {
+                  "status:filter": ["1", "6"], // new and unresolved states
+                },
+                globalConfig: {
+                  ignoreArchived: false,
+                },
+              },
+              authorizationHeaders
+            )
+            .then(({ data: { count } }) => {
+              if (count === 0) {
+                core.info(`CodeDx Analysis finished, no security vulnerabilities were found`);
+              } else {
+                core.setFailed(
+                  `CodeDx reports ${count} vulnerabilities not triaged, please triage them in first.`
+                );
+              }
+            })
+            .catch((error) => {
+              core.error(`Error identifying potential vulnerabilities`);
+              core.setFailed(error.message);
+            });
         })
         .catch((error) => {
           core.error(`Error labeling analysis ${analysisId}`);

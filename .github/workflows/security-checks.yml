@@ -1,4 +1,4 @@
-name: Security CodeDx Scans
+name: Security CodeDx and BlackDuck Scans
 on:
   workflow_dispatch:
   schedule:
@@ -60,8 +60,8 @@ jobs:
             --out .
         continue-on-error: true
 
-      - name: Trigger Analysis
-        uses: ./.github/codedx-upload
+      - name: Trigger Analysis and check results
+        uses: ./.github/codedx-analysis
         with:
           file: dependency-check-report.xml
           serverUrl: ${{ secrets.CODEDX_SERVER_URL }}
