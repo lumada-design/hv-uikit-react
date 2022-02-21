@@ -104,7 +104,20 @@ HvTooltip.propTypes = {
   /**
    * Tooltip placement.
    */
-  placement: PropTypes.node,
+  placement: PropTypes.oneOf([
+    "bottom-end",
+    "bottom-start",
+    "bottom",
+    "left-end",
+    "left-start",
+    "left",
+    "right-end",
+    "right-start",
+    "right",
+    "top-end",
+    "top-start",
+    "top",
+  ]),
   /**
    * The number of milliseconds to wait before showing the tooltip.
    * This property won't impact the enter touch delay (enterTouchDelay).

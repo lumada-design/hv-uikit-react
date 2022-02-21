@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { useResizeDetector } from "react-resize-detector";
@@ -27,7 +27,16 @@ const isParagraph = (children) => /\s/.test(children);
 /**
  * This component generates a tooltip whenever the text is overflowed.
  */
-const HvOverflowTooltip = ({ id, className, classes, data, paragraphOverflow, tooltipsProps }) => {
+const HvOverflowTooltip = ({
+  id,
+  className,
+  classes,
+  data,
+  open,
+  paragraphOverflow,
+  placement = "top-start",
+  tooltipsProps,
+}) => {
   const { width = 0, ref } = useResizeDetector({
     refreshMode: "debounce",
     refreshOptions: {
@@ -35,22 +44,17 @@ const HvOverflowTooltip = ({ id, className, classes, data, paragraphOverflow, to
     },
     handleHeight: false,
   });
+  const scrollWidth = ref.current?.scrollWidth || 0;
+  // The difference should be higher than a pixel to be considered as overflowing
+  const isOverflowing = scrollWidth - width >= 1;
 
-  const isOverflowing = ref.current?.scrollWidth > width;
+  const isParag = useMemo(
+    () => paragraphOverflow && isParagraph(data.toString()),
+    [data, paragraphOverflow]
+  );
 
-  const isParag = paragraphOverflow && isParagraph(data.toString());
-  return (
-    <HvTooltip
-      id={id}
-      disableHoverListener={!isOverflowing}
-      placement="top-start"
-      title={
-        <HvTypography className={classes.tooltipData} variant="normalText">
-          {data}
-        </HvTypography>
-      }
-      {...tooltipsProps}
-    >
+  const content = useMemo(
+    () => (
       <div
         ref={ref}
         className={clsx(className, {
@@ -60,7 +64,27 @@ const HvOverflowTooltip = ({ id, className, classes, data, paragraphOverflow, to
       >
         {data}
       </div>
+    ),
+    [className, classes.tooltipAnchor, classes.tooltipAnchorParagraph, data, isParag, ref]
+  );
+
+  return open || isOverflowing ? (
+    <HvTooltip
+      id={id}
+      disableHoverListener={!isOverflowing}
+      open={open}
+      placement={placement}
+      title={
+        <HvTypography className={classes.tooltipData} variant="normalText">
+          {data}
+        </HvTypography>
+      }
+      {...tooltipsProps}
+    >
+      {content}
     </HvTooltip>
+  ) : (
+    content
   );
 };
 
@@ -102,6 +126,27 @@ HvOverflowTooltip.propTypes = {
    * If `true` the overflow tooltip will always use the paragraph overflow style.
    */
   paragraphOverflow: PropTypes.bool,
+  /**
+   * Tooltip placement.
+   */
+  placement: PropTypes.oneOf([
+    "bottom-end",
+    "bottom-start",
+    "bottom",
+    "left-end",
+    "left-start",
+    "left",
+    "right-end",
+    "right-start",
+    "right",
+    "top-end",
+    "top-start",
+    "top",
+  ]),
+  /**
+   * If true, the tooltip is shown.
+   */
+  open: PropTypes.bool,
   /**
    * Extra properties to add to the tooltip.
    */
