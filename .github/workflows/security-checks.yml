@@ -5,6 +5,7 @@ on:
     - cron: "0 3 * * *" # daily at 03:00
   repository_dispatch:
     types: [master]
+  pull_request:
 
 env:
   CODEDX_SERVER_PROJECT_ID: 120
