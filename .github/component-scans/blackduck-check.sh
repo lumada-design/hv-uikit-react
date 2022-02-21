@@ -6,7 +6,7 @@ echo "DETECT_DIR - ${DETECT_DIR}"
 
 declare -a packages=("core" "lab" "icons" "themes" "code-editor")
 
-DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.included.detector.types={Lerna} --detect.project.version.name=master" 
+DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.included.detector.types=Lerna --detect.project.version.name=master" 
 
 for i in "${packages[@]}"
 do
