@@ -6,10 +6,9 @@ echo "DETECT_DIR - ${DETECT_DIR}"
 
 declare -a packages=("core" "lab" "icons" "themes" "code-editor")
 
-DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.project.version.name=master"
+DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.included.detector.types={Lerna} --detect.project.version.name=master" 
 
 for i in "${packages[@]}"
 do
-    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/packages/$i/dist 
-    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/packages/$i/src
+    ./detect.sh $DETECT_ARGS --detect.project.name=uikit --detect.source.path=${DETECT_DIR}/packages/$i
 done
