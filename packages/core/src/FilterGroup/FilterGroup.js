@@ -49,6 +49,7 @@ const HvFilterGroup = ({
 
   labels: labelsProp,
 
+  defaultValue,
   value,
   filters,
 
@@ -105,7 +106,7 @@ const HvFilterGroup = ({
           )}
         </div>
       )}
-      <FilterGroupProvider value={value} filters={filters}>
+      <FilterGroupProvider defaultValue={defaultValue} value={value} filters={filters}>
         <FilterContent
           id={elementId}
           disabled={disabled}
@@ -262,11 +263,20 @@ HvFilterGroup.propTypes = {
   ).isRequired,
 
   /**
+   * The default value of the filter group.
+   * If defined the clear action will reset to it.
+   */
+  defaultValue: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
+
+  /**
    * The value of the filter group.
    */
   value: PropTypes.arrayOf(
     PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
   ),
+
   /**
    * The placement where the filter group should be placed according to the input. Options are `left` or `right`.
    */

@@ -919,7 +919,7 @@ exports[`Changes are Committed on apply 2`] = `
 </div>
 `;
 
-exports[`Clear Filters Clears are option selections and reset counters 1`] = `
+exports[`Clear Filters Clears all option selections and reset counters 1`] = `
 <ul
   class="HvListContainer-root"
   id="example-leftPanel-list"
@@ -985,7 +985,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
 </ul>
 `;
 
-exports[`Clear Filters Clears are option selections and reset counters 2`] = `
+exports[`Clear Filters Clears all option selections and reset counters 2`] = `
 <ul
   aria-multiselectable="true"
   class="makeStyles-list-19 HvList-root HvListContainer-root"
@@ -1279,7 +1279,7 @@ exports[`Clear Filters Clears are option selections and reset counters 2`] = `
 </ul>
 `;
 
-exports[`Clear Filters Clears are option selections and reset counters 3`] = `
+exports[`Clear Filters Clears all option selections and reset counters 3`] = `
 <ul
   class="HvListContainer-root"
   id="example-leftPanel-list"
@@ -1341,7 +1341,7 @@ exports[`Clear Filters Clears are option selections and reset counters 3`] = `
 </ul>
 `;
 
-exports[`Clear Filters Clears are option selections and reset counters 4`] = `
+exports[`Clear Filters Clears all option selections and reset counters 4`] = `
 <ul
   aria-multiselectable="true"
   class="makeStyles-list-19 HvList-root HvListContainer-root"
@@ -2747,6 +2747,720 @@ exports[`Left side selection changes the Right side elements 2`] = `
             id="example-list-item-11-selector-label"
           >
             Sub sub Category 12
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Reset Filters Resets all option selections to default value provided 1`] = `
+<ul
+  class="HvListContainer-root"
+  id="example-leftPanel-list"
+>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    id="category"
+    tabindex="0"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      <b>
+        2
+      </b>
+       / 4
+    </div>
+  </li>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    id="subcategory"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Sub-Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      <b>
+        1
+      </b>
+       / 4
+    </div>
+  </li>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    id="subsubcategory"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Sub-Sub-Category Category Category Category Category Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      <b>
+        1
+      </b>
+       / 12
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Reset Filters Resets all option selections to default value provided 2`] = `
+<ul
+  aria-multiselectable="true"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
+  id="example-list"
+  role="listbox"
+>
+  <li
+    aria-selected="true"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    id="example-list-item-0"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-0-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                checked=""
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-0-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="CheckboxCheck"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color0"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color1"
+                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                    fill="#FBFCFC"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-0-selector-input"
+            id="example-list-item-0-selector-label"
+          >
+            Categoryyyyyyyyyyyyyyyyyyyyyyyyy is a very long string 1
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="true"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    id="example-list-item-1"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-1-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                checked=""
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-1-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="CheckboxCheck"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color0"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color1"
+                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                    fill="#FBFCFC"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-1-selector-input"
+            id="example-list-item-1-selector-label"
+          >
+            Category 2
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    id="example-list-item-2"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-2-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-2-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#FBFCFC"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-2-selector-input"
+            id="example-list-item-2-selector-label"
+          >
+            Category 3
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    id="example-list-item-3"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-3-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-3-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#FBFCFC"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-3-selector-input"
+            id="example-list-item-3-selector-label"
+          >
+            Category 4
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Reset Filters Resets all option selections to default value provided 3`] = `
+<ul
+  class="HvListContainer-root"
+  id="example-leftPanel-list"
+>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    id="category"
+    tabindex="0"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      <b>
+        1
+      </b>
+       / 4
+    </div>
+  </li>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    id="subcategory"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Sub-Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      0
+       / 4
+    </div>
+  </li>
+  <li
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    id="subsubcategory"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      Sub-Sub-Category Category Category Category Category Category
+    </div>
+    <div
+      class="makeStyles-root-13 HvListItem-endAdornment"
+    >
+      0
+       / 12
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Reset Filters Resets all option selections to default value provided 4`] = `
+<ul
+  aria-multiselectable="true"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
+  id="example-list"
+  role="listbox"
+>
+  <li
+    aria-selected="true"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    id="example-list-item-0"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-0-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                checked=""
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-0-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="CheckboxCheck"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color0"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color1"
+                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                    fill="#FBFCFC"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-0-selector-input"
+            id="example-list-item-0-selector-label"
+          >
+            Categoryyyyyyyyyyyyyyyyyyyyyyyyy is a very long string 1
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    id="example-list-item-1"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-1-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-1-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#FBFCFC"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-1-selector-input"
+            id="example-list-item-1-selector-label"
+          >
+            Category 2
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    id="example-list-item-2"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-2-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-2-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#FBFCFC"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-2-selector-input"
+            id="example-list-item-2-selector-label"
+          >
+            Category 3
+          </label>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    id="example-list-item-3"
+    role="option"
+    tabindex="-1"
+  >
+    <div
+      class=""
+      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+    >
+      <div
+        class="HvCheckBox-root HvList-selectorRoot HvFormElement-root"
+        id="example-list-item-3-selector"
+      >
+        <div
+          class="HvCheckBox-container HvList-selectorContainer"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-27"
+                data-indeterminate="false"
+                id="example-list-item-3-selector-input"
+                type="checkbox"
+                value="on"
+              />
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#FBFCFC"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </span>
+          <label
+            class="HvCheckBox-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="example-list-item-3-selector-input"
+            id="example-list-item-3-selector-label"
+          >
+            Category 4
           </label>
         </div>
       </div>

@@ -37,7 +37,7 @@ const FilterContent = ({
   const classes = useStyles();
   const [filterGroupOpen, setFilterGroupOpen] = useState(false);
 
-  const { filterValues, rollbackFilters, clearFilters, applyFilters, applyDisabled } =
+  const { defaultValue, filterValues, rollbackFilters, clearFilters, applyFilters, applyDisabled } =
     useContext(FilterGroupContext);
 
   const focusTarget = useRef();
@@ -123,7 +123,11 @@ const FilterContent = ({
       <HvActionBar className={classes.actionBar}>
         <HvButton
           id={setId(id, "clearFilters-button")}
-          disabled={filterValues.flat().length === 0}
+          disabled={
+            defaultValue
+              ? defaultValue.flat().length === filterValues.flat().length
+              : filterValues.flat().length === 0
+          }
           category="ghost"
           onClick={onClearHandler}
         >

@@ -9,7 +9,7 @@ import userEvent from "@testing-library/user-event";
 
 import { screen, render, within } from "testing-utils";
 
-import { Main } from "../stories/FilterGroup.stories.test";
+import { Main, ResetToDefault } from "../stories/FilterGroup.stories.test";
 
 describe("<FilterGroup />", () => {
   jest.setTimeout(30000);
@@ -71,7 +71,7 @@ describe("<FilterGroup />", () => {
 });
 
 describe("Clear Filters", () => {
-  it("Clears are option selections and reset counters", async () => {
+  it("Clears all option selections and reset counters", async () => {
     render(<Main />);
     let dropdownElement = screen.getByRole("combobox");
 
@@ -87,6 +87,30 @@ describe("Clear Filters", () => {
 
     const clearFiltersButton = screen.getByRole("button", { name: /clear filters/i });
     userEvent.click(clearFiltersButton);
+    leftSizeList = await screen.findByRole("list");
+    rightSizeList = screen.getByRole("listbox");
+    expect(leftSizeList).toMatchSnapshot();
+    expect(rightSizeList).toMatchSnapshot();
+  });
+});
+
+describe("Reset Filters", () => {
+  it("Resets all option selections to default value provided", async () => {
+    render(<ResetToDefault />);
+    let dropdownElement = screen.getByRole("combobox");
+
+    userEvent.click(dropdownElement);
+
+    dropdownElement = await screen.findByRole("combobox");
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+    let leftSizeList = screen.getByRole("list");
+    let rightSizeList = screen.getByRole("listbox");
+
+    expect(leftSizeList).toMatchSnapshot();
+    expect(rightSizeList).toMatchSnapshot();
+
+    const resetFiltersButton = screen.getByRole("button", { name: /reset/i });
+    userEvent.click(resetFiltersButton);
     leftSizeList = await screen.findByRole("list");
     rightSizeList = screen.getByRole("listbox");
     expect(leftSizeList).toMatchSnapshot();

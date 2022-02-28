@@ -18,7 +18,7 @@ export const FilterGroupContext = React.createContext({
 
 const groups = (filters) => filters.map(() => []);
 
-export const FilterGroupProvider = ({ value, filters, children }) => {
+export const FilterGroupProvider = ({ defaultValue, value, filters, children }) => {
   const [group, setActiveGroup] = useState(0);
   const [filterValues, setFilterValues, rollbackFilters, appliedFilters] = useSavedState(
     value || groups(filters)
@@ -26,12 +26,16 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
   const [applyDisabled, setApplyDisabled] = useState(false);
 
   useEffect(() => {
+    setFilterValues(value, true);
+  }, [value, setFilterValues]);
+
+  useEffect(() => {
     setApplyDisabled(isEqual(filterValues, appliedFilters));
   }, [filterValues, appliedFilters]);
 
   const clearFilters = useCallback(() => {
-    setFilterValues(groups(filters));
-  }, [filters, setFilterValues]);
+    setFilterValues(defaultValue || groups(filters));
+  }, [filters, setFilterValues, defaultValue]);
 
   const applyFilters = useCallback(() => {
     setFilterValues(filterValues, true);
@@ -49,6 +53,7 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
       clearFilters,
       applyFilters,
       applyDisabled,
+      defaultValue,
     }),
     [
       appliedFilters,
@@ -60,6 +65,7 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
       group,
       rollbackFilters,
       setFilterValues,
+      defaultValue,
     ]
   );
 
@@ -67,6 +73,9 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
 };
 
 FilterGroupProvider.propTypes = {
+  defaultValue: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
   value: PropTypes.arrayOf(
     PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
   ),
