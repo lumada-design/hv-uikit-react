@@ -77,6 +77,12 @@ export interface HvFilterGroupProps
   }[];
 
   /**
+   * The default value of the filter group.
+   * If defined the clear action will reset to it.
+   */
+  defaultValue?: FilterValue;
+
+  /**
    * The value of the filter group.
    */
   value?: FilterValue;
