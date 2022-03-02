@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.57.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.2...@hitachivantara/uikit-react-core@3.57.0) (2022-03-02)
+
+
+### Features
+
+* **filter-group:** add default and controlled values ([82236d0](https://github.com/lumada-design/hv-uikit-react/commit/82236d052262191db139cbf1f46886468c3bc1d6))
+
+
+
+
+
 ## [3.56.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.1...@hitachivantara/uikit-react-core@3.56.2) (2022-02-21)
 
 
