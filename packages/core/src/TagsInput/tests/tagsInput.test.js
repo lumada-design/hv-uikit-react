@@ -245,7 +245,7 @@ describe("TagsInput Component", () => {
     fireEvent.change(tagsInput, { target: { value: "tag3" } });
     expect(tagsInput).toHaveValue("tag3");
     expect(clickableButtons.length).toBe(2);
-    fireEvent.keyDown(tagsInput, { key: "Enter", keyCode: 13 });
+    fireEvent.keyDown(tagsInput, { code: "Enter", keyCode: 13 });
     const remainingButton = await findAllByRole("button");
     expect(onChangeSpy).toHaveBeenCalledWith(expect.any(Object), [
       { label: "tag1" },
