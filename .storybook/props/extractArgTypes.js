@@ -23,7 +23,7 @@ export const extractArgTypes = (component) => {
             // eslint-disable-next-line no-empty
           } catch {}
 
-          acc[row.name] = {
+          acc[`${section}_${row.name}`] = {
             ...row,
             defaultValue,
             type: { required, ...sbType },
