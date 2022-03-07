@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.58.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.57.0...@hitachivantara/uikit-react-core@3.58.0) (2022-03-07)
+
+
+### Features
+
+* **TagsInput:** allow commiting tags with other characters and on blur ([#2687](https://github.com/lumada-design/hv-uikit-react/issues/2687)) ([ee06336](https://github.com/lumada-design/hv-uikit-react/commit/ee063364f5f1f7464fc34fc61b26cf51e1795fcf))
+
+
+
+
+
 # [3.57.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.56.2...@hitachivantara/uikit-react-core@3.57.0) (2022-03-02)
 
 
