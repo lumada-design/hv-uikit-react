@@ -460,3 +460,34 @@ InAForm.parameters = {
     description: { story: "Tags Input in a form." },
   },
 };
+
+export const CustomCommitCharacter = () => {
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 550,
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <HvTagsInput
+      id="tags-list-11"
+      label="Custom commit character"
+      description="Will only add a tag when a space or comma is entered or when the user clicks outside the input box and there's text that's not been commited"
+      aria-label="Custom commit character"
+      placeholder="Enter value"
+      classes={{
+        root: classes.root,
+      }}
+      commitTagOn={["Space", "Comma"]}
+      commitOnBlur
+    />
+  );
+};
+
+CustomCommitCharacter.parameters = {
+  docs: {
+    story: "Custom commit character",
+  },
+};

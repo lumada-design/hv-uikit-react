@@ -69,6 +69,9 @@ const HvTagsInput = (props) => {
 
     validationMessages,
 
+    commitTagOn = ["Enter"],
+    commitOnBlur = false,
+
     ...others
   } = props;
   const elementId = useUniqueId(id, "hvTagsInput");
@@ -145,15 +148,23 @@ const HvTagsInput = (props) => {
     [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
   );
 
+  const addTag = useCallback(
+    (event, tag) => {
+      event.preventDefault();
+      if (tag !== "") {
+        const newTag = { label: tag, type: "semantic" };
+        const newTagsArr = [...value, newTag];
+        setValue(newTagsArr);
+        performValidation(newTagsArr);
+        onAdd?.(event, newTag, newTagsArr.length - 1);
+        onChange?.(event, newTagsArr);
+      }
+    },
+    [onAdd, onChange, performValidation, setValue, value]
+  );
+
   const canShowError =
     (status !== undefined && status === "invalid" && statusMessage !== undefined) || !stateValid;
-
-  /**
-   * Handler for the `onChange` event on the tag input
-   */
-  const onChangeHandler = useCallback((event, input) => {
-    setTagInput(input);
-  }, []);
 
   useEffect(() => {
     if (!multiline) {
@@ -183,21 +194,22 @@ const HvTagsInput = (props) => {
   }, [value]);
 
   /**
-   * Handler for the `onEnter` event on the tag input
+   * Handler for the `onChange` event on the tag input
    */
-  const onEnterHandler = useCallback(
-    (event, tag) => {
-      event.preventDefault();
-      if (tag !== "") {
-        const newTag = { label: tag, type: "semantic" };
-        const newTagsArr = [...value, newTag];
-        setValue(newTagsArr);
-        performValidation(newTagsArr);
-        onAdd?.(event, newTag, newTagsArr.length - 1);
-        onChange?.(event, newTagsArr);
+  const onChangeHandler = useCallback((event, input) => {
+    setTagInput(input);
+  }, []);
+
+  /**
+   * Handler for the `onKeyDown` event on the form element
+   */
+  const onInputKeyDownHandler = useCallback(
+    (event) => {
+      if (commitTagOn.includes(event.code)) {
+        addTag(event, tagInput);
       }
     },
-    [onAdd, onChange, performValidation, setValue, value]
+    [addTag, commitTagOn, tagInput]
   );
 
   /**
@@ -255,6 +267,9 @@ const HvTagsInput = (props) => {
 
   const onBlurHandler = (evt) => {
     blurTimeout.current = setTimeout(() => {
+      if (commitOnBlur) {
+        addTag(evt, tagInput);
+      }
       onBlur?.(evt, tagInput);
     }, 250);
   };
@@ -373,7 +388,7 @@ const HvTagsInput = (props) => {
               value={tagInput}
               disableClear
               onChange={onChangeHandler}
-              onEnter={onEnterHandler}
+              onKeyDown={onInputKeyDownHandler}
               placeholder={value.length === 0 ? placeholder : ""}
               autoFocus={autoFocus}
               className={clsx(!multiline && classes.singleLine)}
@@ -638,6 +653,15 @@ HvTagsInput.propTypes = {
      */
     requiredError: PropTypes.string,
   }),
+  /**
+   * An array of strings that represent the character used to input a tag.
+   * This character is the string representation of the event.code from the input event.
+   */
+  commitTagOn: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * If `true` the tag will be commited when the blur event occurs.
+   */
+  commitOnBlur: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvTagsInput" })(HvTagsInput);

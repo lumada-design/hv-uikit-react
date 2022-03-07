@@ -143,18 +143,12 @@ export interface HvTagsInputProps
   /**
    * The function that will be executed when the input is blurred.
    */
-   onBlur?: (
-    event: React.FocusEvent<HTMLInputElement>,
-    value: string
-  ) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
 
   /**
    * The function that will be executed when the input is focused.
    */
-   onFocus?: (
-    event: React.FocusEvent<HTMLInputElement>,
-    value: string
-  ) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
 
   /**
    * The status of the form element.
@@ -169,6 +163,16 @@ export interface HvTagsInputProps
    * An Object containing the various texts associated with the input.
    */
   validationMessages?: HvBaseInputValidationMessagesProps;
+
+  /**
+   * An array of strings that represent the character used to input a tag.
+   * This character is the string representation of the event.code from the input event.
+   */
+  commitTagOn?: string[];
+  /**
+   * If `true` the tag will be commited when the blur event occurs.
+   */
+  comminOnBlur?: boolean;
 }
 
 export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;
