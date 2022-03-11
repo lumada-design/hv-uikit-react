@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.15](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.14...@hitachivantara/uikit-react-lab@3.39.15) (2022-03-11)
+
+
+### Bug Fixes
+
+* **table-renderers:** rename index file. HVUIKIT-6319 ([a8bb26a](https://github.com/lumada-design/hv-uikit-react/commit/a8bb26a7ecfb4e7aa3bf44d13100f0e4bf72efd9))
+
+
+
+
+
 ## [3.39.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.13...@hitachivantara/uikit-react-lab@3.39.14) (2022-03-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
