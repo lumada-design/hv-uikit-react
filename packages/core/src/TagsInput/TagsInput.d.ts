@@ -172,7 +172,7 @@ export interface HvTagsInputProps
   /**
    * If `true` the tag will be commited when the blur event occurs.
    */
-  comminOnBlur?: boolean;
+  commitOnBlur?: boolean;
 }
 
 export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;
