@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.58.1 (2022-03-11)
+
+
+### Bug Fixes
+
+* **tags-input:** fix prop typo ([766c30b](https://github.com/lumada-design/hv-uikit-react/commit/766c30b81febabfa7d9af82ae1ba73bfecc7c759))
+
+
+
+
+
 # [3.58.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.57.0...@hitachivantara/uikit-react-core@3.58.0) (2022-03-07)
 
 
