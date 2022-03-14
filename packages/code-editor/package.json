@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@hitachivantara/uikit-react-core": "^3.52.1",
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^4.12.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-monaco-editor": "^0.36.0"
