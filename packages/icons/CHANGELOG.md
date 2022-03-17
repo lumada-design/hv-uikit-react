@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.8.1 (2022-03-17)
+
+
+### Bug Fixes
+
+* updated material-ui to 4.12.3 ([2649c1e](https://github.com/lumada-design/hv-uikit-react/commit/2649c1ea9d2fddacc5cf247465ae05d7aebef87b))
+
+
+
+
+
 # [3.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@3.7.3...@hitachivantara/uikit-react-icons@3.8.0) (2022-02-04)
 
 
