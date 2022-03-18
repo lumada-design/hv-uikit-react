@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import { Formik } from "formik";
+import isEmpty from "lodash/isEmpty";
 import * as yup from "yup";
 import { HvTagsInput, HvTypography, HvInput, HvButton } from "../..";
+import countryNamesArray from "./countries";
 
 export default {
   title: "Forms/Tags Input",
@@ -489,5 +491,62 @@ export const CustomCommitCharacter = () => {
 CustomCommitCharacter.parameters = {
   docs: {
     story: "Custom commit character",
+  },
+};
+
+export const Suggestions = () => {
+  const [currValueStr, setCurrValueStr] = useState([]);
+
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 550,
+      height: 400,
+    },
+    suggestionList: {
+      maxHeight: 350,
+      overflow: "auto",
+    },
+  }));
+
+  const classes = useStyles();
+  const countries = countryNamesArray;
+
+  const suggestionHandler = (val) => {
+    if (typeof val !== "string" || isEmpty(val)) return null;
+    const foundCountries = countries.filter((country) =>
+      country.toUpperCase().startsWith(val.toUpperCase())
+    );
+
+    if (isEmpty(foundCountries)) return null;
+
+    return foundCountries.map((country, idx) => ({
+      id: `c_${idx}`,
+      label: country,
+    }));
+  };
+
+  return (
+    <HvTagsInput
+      id="tags-list-12"
+      label="Suggestions"
+      description="A list of suggestions is presented when text is entered."
+      aria-label="Suggestions"
+      placeholder="Enter value"
+      classes={{
+        root: classes.root,
+        suggestionList: classes.suggestionList,
+      }}
+      onChange={(event, value) => {
+        setCurrValueStr(value);
+      }}
+      value={currValueStr}
+      suggestionListCallback={suggestionHandler}
+    />
+  );
+};
+
+Suggestions.parameters = {
+  docs: {
+    story: "Suggestions",
   },
 };

@@ -330,4 +330,25 @@ describe("TagsInput Component", () => {
     const clickableButtons = queryAllByRole("button");
     expect(clickableButtons.length).toBe(0);
   });
+
+  it("should call the suggestions callback when the input is changed", () => {
+    const suggestionHandler = jest.fn();
+
+    const { getByRole } = render(
+      <HvProvider>
+        <HvTagsInput
+          id="tags-list"
+          label="Custom label"
+          classes={mockClasses}
+          value={[{ label: "tag1" }, { label: "tag2" }]}
+          suggestionListCallback={suggestionHandler}
+        />
+      </HvProvider>
+    );
+
+    const tagsInput = getByRole("textbox");
+
+    fireEvent.change(tagsInput, { target: { value: "a" } });
+    expect(suggestionHandler).toHaveBeenCalled();
+  });
 });

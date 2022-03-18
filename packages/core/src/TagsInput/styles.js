@@ -157,6 +157,25 @@ const styles = (theme) => {
       background: "none",
     },
     singleLine: {},
+
+    // suggestions
+    suggestionsContainer: {
+      width: "100%",
+      position: "relative",
+      top: 45,
+    },
+    suggestionList: {
+      // ensure more specificity than .HvSuggestions-root .HvSuggestions-list
+      "$root $suggestionsContainer &": {
+        width: "100%",
+      },
+    },
+
+    inputExtension: {
+      height: theme.hv.spacing.xs,
+      backgroundColor: theme.hv.palette.atmosphere.atmo1,
+      boxShadow: `0px 8px 0px ${theme.hv.palette.atmosphere.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+    },
   };
 };
 
