@@ -6,6 +6,12 @@ import { HvFormStatus } from "../Forms/FormElement";
 import { HvInputProps } from "..";
 import { HvBaseInputValidationMessagesProps } from "../BaseInput";
 
+export interface TagSuggestion {
+  id: string;
+  label: string;
+  value: string;
+}
+
 export type HvTagsInputClassKey =
   | "root"
   | "disabled"
@@ -15,7 +21,10 @@ export type HvTagsInputClassKey =
   | "label"
   | "characterCounter"
   | "description"
-  | "error";
+  | "error"
+  | "inputExtension"
+  | "suggestionsContainer"
+  | "suggestionList";
 
 export interface HvTagsInputProps
   extends StandardProps<HvInputProps, HvTagsInputClassKey, "onChange" | "onBlur" | "onFocus"> {
@@ -173,6 +182,10 @@ export interface HvTagsInputProps
    * If `true` the tag will be commited when the blur event occurs.
    */
   commitOnBlur?: boolean;
+  /**
+   * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
+   */
+  suggestionListCallback?: (value: string) => TagSuggestion[];
 }
 
 export default function HvTagsInput(props: HvTagsInputProps): JSX.Element | null;

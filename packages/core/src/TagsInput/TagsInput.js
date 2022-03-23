@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import { setId, useControlled } from "../utils";
+import { setId, useControlled, isKeypress, KeyboardCodes } from "../utils";
 import {
   HvFormElement,
   HvListContainer,
@@ -13,8 +13,10 @@ import {
   HvLabel,
   HvInfoMessage,
   HvCharCounter,
+  HvSuggestions,
   HvWarningText,
   useUniqueId,
+  useIsMounted,
 } from "..";
 import validationStates from "../Forms/FormElement/validationStates";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
@@ -72,6 +74,8 @@ const HvTagsInput = (props) => {
     commitTagOn = ["Enter"],
     commitOnBlur = false,
 
+    suggestionListCallback,
+
     ...others
   } = props;
   const elementId = useUniqueId(id, "hvTagsInput");
@@ -91,13 +95,20 @@ const HvTagsInput = (props) => {
   const containerRef = useRef();
   const skipReset = useRef(false);
   const blurTimeout = useRef();
+  const materialInputRef = useRef(null);
 
   const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
   const hasCounter = maxTagsQuantity != null && !hideCounter;
 
+  // suggestions related state
+  const [suggestionValues, setSuggestionValues] = useState(null);
+
   const isStateInvalid = useMemo(() => {
     return hasCounter && value.length > maxTagsQuantity;
   }, [hasCounter, maxTagsQuantity, value.length]);
+
+  const canShowSuggestions = suggestionListCallback != null;
+  const hasSuggestions = !!suggestionValues;
 
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
@@ -148,6 +159,13 @@ const HvTagsInput = (props) => {
     [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
   );
 
+  /**
+   * Adds a Tag to the array of tags.
+   * Also executes the user provided onAdd and onDelete events.
+   *
+   * @param {Event}   event  - whatever event triggered adding a tag
+   * @param {string}  tag    - the string for the tag
+   */
   const addTag = useCallback(
     (event, tag) => {
       event.preventDefault();
@@ -193,23 +211,103 @@ const HvTagsInput = (props) => {
     skipReset.current = false;
   }, [value]);
 
+  const isMounted = useIsMounted();
+
+  /**
+   * Looks for the node that represent the input inside the material tree and focus it.
+   */
+  const focusInput = () => {
+    materialInputRef.current.focus();
+  };
+
+  const getSuggestions = useCallback(
+    (li) => {
+      // TODO Replace with ref
+      const listEl = document.getElementById(setId(elementId, "suggestions-list"));
+      return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
+    },
+    [elementId]
+  );
+
+  /**
+   * Clears the suggestion array.
+   */
+  const suggestionClearHandler = useCallback(() => {
+    if (isMounted.current) {
+      setSuggestionValues(null);
+    }
+  }, [isMounted]);
+
+  /**
+   * Fills of the suggestion array.
+   */
+  const suggestionHandler = useCallback(
+    (val) => {
+      const suggestionsArray = suggestionListCallback?.(val);
+      if (suggestionsArray?.[0]?.label) {
+        setSuggestionValues(suggestionsArray);
+      } else {
+        suggestionClearHandler();
+      }
+    },
+    [suggestionClearHandler, suggestionListCallback]
+  );
+
+  /**
+   * Executes the user callback adds the selection to the state and clears the suggestions.
+   */
+  const suggestionSelectedHandler = (event, item) => {
+    addTag(event, item.value || item.label);
+
+    // set the input value (only when value is uncontrolled)
+    setTagInput(item.value || item.label);
+
+    focusInput();
+    suggestionClearHandler();
+  };
+
+  /**
+   * Handler for the `onKeyDown` event on the suggestions component
+   */
+  const onSuggestionKeyDown = (event) => {
+    if (isKeypress(event, KeyboardCodes.Esc)) {
+      suggestionClearHandler();
+      focusInput();
+    } else if (isKeypress(event, KeyboardCodes.Tab)) {
+      suggestionClearHandler();
+    }
+  };
+
   /**
    * Handler for the `onChange` event on the tag input
    */
-  const onChangeHandler = useCallback((event, input) => {
-    setTagInput(input);
-  }, []);
+  const onChangeHandler = useCallback(
+    (event, input) => {
+      setTagInput(input);
+
+      if (canShowSuggestions) {
+        // an edge case might be a controlled input whose onChange callback
+        // doesn't change the value (or sets another): the suggestionListCallback
+        // callback will still receive the original rejected value.
+        // a refactor is needed so the suggestionListCallback might be called only
+        // when the input is uncontrolled, providing a way to externally control
+        // the suggestion values.
+        suggestionHandler(input);
+      }
+    },
+    [canShowSuggestions, suggestionHandler]
+  );
 
   /**
    * Handler for the `onKeyDown` event on the form element
    */
   const onInputKeyDownHandler = useCallback(
     (event) => {
-      if (commitTagOn.includes(event.code)) {
+      if (!canShowSuggestions && commitTagOn.includes(event.code)) {
         addTag(event, tagInput);
       }
     },
-    [addTag, commitTagOn, tagInput]
+    [addTag, canShowSuggestions, commitTagOn, tagInput]
   );
 
   /**
@@ -240,9 +338,17 @@ const HvTagsInput = (props) => {
           default:
             break;
         }
+      } else {
+        switch (event.code) {
+          case "ArrowDown":
+            getSuggestions(0)?.focus();
+            break;
+          default:
+            break;
+        }
       }
     },
-    [deleteTag, isTagSelected, tagCursorPos, tagInput, value.length]
+    [deleteTag, getSuggestions, isTagSelected, tagCursorPos, tagInput, value.length]
   );
 
   /**
@@ -401,6 +507,7 @@ const HvTagsInput = (props) => {
               disabled={disabled}
               readOnly={readOnly || isTagSelected}
               inputProps={{
+                ref: materialInputRef,
                 "aria-label": ariaLabel,
                 "aria-labelledby": ariaLabelledBy,
                 "aria-describedby":
@@ -416,6 +523,24 @@ const HvTagsInput = (props) => {
           </HvListItem>
         )}
       </HvListContainer>
+      {canShowSuggestions && (
+        <>
+          {hasSuggestions && <div role="presentation" className={classes.inputExtension} />}
+          <HvSuggestions
+            id={setId(elementId, "suggestions")}
+            classes={{
+              root: classes.suggestionsContainer,
+              list: classes.suggestionList,
+            }}
+            expanded={hasSuggestions}
+            anchorEl={containerRef?.current?.parentElement}
+            onClose={suggestionClearHandler}
+            onKeyDown={onSuggestionKeyDown}
+            onSuggestionSelected={suggestionSelectedHandler}
+            suggestionValues={suggestionValues}
+          />
+        </>
+      )}
       {canShowError && (
         <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
           {validationMessage}
@@ -514,6 +639,19 @@ HvTagsInput.propTypes = {
      * Styles applied to the tags list when an error occurred.
      */
     error: PropTypes.string,
+    /**
+     * Styles applied to the input extension shown when the suggestions list is visible.
+     */
+    inputExtension: PropTypes.string,
+
+    /**
+     * Styles applied to the container of the suggestions list.
+     */
+    suggestionsContainer: PropTypes.string,
+    /**
+     * Styles applied to the suggestions list.
+     */
+    suggestionList: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the form element root node.
@@ -662,6 +800,10 @@ HvTagsInput.propTypes = {
    * If `true` the tag will be commited when the blur event occurs.
    */
   commitOnBlur: PropTypes.bool,
+  /**
+   * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
+   */
+  suggestionListCallback: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvTagsInput" })(HvTagsInput);
