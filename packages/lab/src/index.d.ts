@@ -36,3 +36,6 @@ export * from "./QueryBuilder";
 
 export { default as HvInlineEditor } from "./InlineEditor";
 export * from "./InlineEditor";
+
+export { default as HvCookiesConsentDialog } from "./CookiesConsentDialog";
+export * from "./CookiesConsentDialog";
