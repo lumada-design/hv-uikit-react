@@ -53,3 +53,5 @@ bin/
 *.pyc
 report.*
 applitools.txt
+test-results/
+playwright-report/
