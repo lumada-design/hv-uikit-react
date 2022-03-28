@@ -93,6 +93,14 @@ const overrides = {
       ],
     },
   },
+  "Components/Avatar": {
+    Buttons: {
+      ignore: [
+        // interactive controls must not be nested but the avatar might have a button as child
+        "nested-interactive",
+      ],
+    },
+  },
 };
 
 module.exports = (async () => {

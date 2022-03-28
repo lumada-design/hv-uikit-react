@@ -12,6 +12,28 @@ import styles from "./styles";
 
 const getColor = (theme, color, defaultColor) => theme.palette[color] || color || defaultColor;
 
+const normalizeSize = (size) => {
+  if (size === "S" || size === "M" || size === "L") {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "`size` values S, M and L are deprecated. Please use XS, SM, MD, LG or XL instead"
+    );
+    switch (size) {
+      case "S":
+        return "SM";
+      case "M":
+        return "MD";
+      case "L":
+        // this is intentional. the old L corresponds to the new XL. should be
+        // removed once the old nomenclature is removed.
+        return "XL";
+      default:
+        break;
+    }
+  }
+  return size;
+};
+
 /**
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
@@ -23,7 +45,7 @@ const HvAvatar = (props) => {
     classes,
     children: childrenProp,
     component,
-    size = "S",
+    size = "SM",
     backgroundColor = "acce1",
     color = "atmo1",
     src,
@@ -31,8 +53,14 @@ const HvAvatar = (props) => {
     sizes,
     alt,
     imgProps,
+    status,
+    badge,
+    variant = "circular",
     ...others
   } = props;
+
+  // S, M and L are now deprecated, this intends to normalize the size to the new norm of XS, SM, MD, LG and XL
+  const normalizedSize = normalizeSize(size);
 
   let children = null;
 
@@ -57,7 +85,9 @@ const HvAvatar = (props) => {
   } else if (hasImg && alt) {
     [children] = alt;
   } else {
-    children = <User color={color} iconSize={decreaseSize(size)} className={classes.fallback} />;
+    children = (
+      <User color={color} iconSize={decreaseSize(normalizedSize)} className={classes.fallback} />
+    );
   }
 
   const inlineStyle = {
@@ -75,15 +105,34 @@ const HvAvatar = (props) => {
     inlineStyle.color = getColor(theme, color, theme.hv.palette.atmosphere.atmo1);
   }
 
+  const statusInlineStyle = {};
+  if (status) {
+    // set the status border. we're using the boxShadow property to set the border
+    // to be inside the container and not on its edge.
+    const statusColor = getColor(theme, status, theme.hv.palette.semantic.sema1);
+    statusInlineStyle.boxShadow = `inset 0px 0px 0px 2px ${statusColor}`;
+  }
+
+  const badgeColor = getColor(theme, badge, theme.hv.palette.semantic.sema1);
+
   return (
-    <Avatar
-      component={component}
-      className={clsx(className, classes.root, classes[size])}
-      style={inlineStyle}
-      {...others}
-    >
-      {children}
-    </Avatar>
+    <div className={classes.container} tabIndex={0} role="button" aria-label="avatar">
+      <div
+        className={clsx(classes.status, classes[variant], classes[normalizedSize])}
+        style={statusInlineStyle}
+      >
+        {badge && <div className={classes.badge} style={{ backgroundColor: badgeColor }} />}
+        <Avatar
+          component={component}
+          className={clsx(className, classes.root, classes.avatar, classes[normalizedSize])}
+          style={inlineStyle}
+          variant={variant}
+          {...others}
+        >
+          {children}
+        </Avatar>
+      </div>
+    </div>
   );
 };
 
@@ -110,17 +159,25 @@ HvAvatar.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the root element when size is S.
+     * Styles applied to the root element when size is XS.
      */
-    S: PropTypes.string,
+    XS: PropTypes.string,
     /**
-     * Styles applied to the root element when size is M.
+     * Styles applied to the root element when size is SM.
      */
-    M: PropTypes.string,
+    SM: PropTypes.string,
     /**
-     * Styles applied to the root element when size is L.
+     * Styles applied to the root element when size is MD.
      */
-    L: PropTypes.string,
+    MD: PropTypes.string,
+    /**
+     * Styles applied to the root element when size is LG.
+     */
+    LG: PropTypes.string,
+    /**
+     * Styles applied to the root element when size is XL.
+     */
+    XL: PropTypes.string,
     /**
      * Styles applied to the img element if either `src` or `srcSet` is defined.
      */
@@ -129,6 +186,22 @@ HvAvatar.propTypes = {
      * Styles applied to the fallback icon.
      */
     fallback: PropTypes.string,
+    /**
+     * Styles applied to the container element.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to the avatar element.
+     */
+    avatar: PropTypes.string,
+    /**
+     * Styles applied to the badge element.
+     */
+    badge: PropTypes.string,
+    /**
+     * Styles applied to the status element.
+     */
+    status: PropTypes.string,
   }).isRequired,
 
   /**
@@ -145,7 +218,7 @@ HvAvatar.propTypes = {
   /**
    * Sets one of the standard sizes of the icons
    */
-  size: PropTypes.oneOf(["S", "M", "L"]),
+  size: PropTypes.oneOf(["S", "M", "L", "XS", "SM", "MD", "LG", "XL"]),
 
   /**
    * A String representing the background color of the avatar.
@@ -182,6 +255,18 @@ HvAvatar.propTypes = {
    * It can be used to listen for the loading error event.
    */
   imgProps: PropTypes.instanceOf(Object),
+  /**
+   * A string representing the type of avatar to display, circular or square.
+   */
+  variant: PropTypes.oneOf(["circular", "square"]),
+  /**
+   * A string representing the color of the avatar border that represents its status.
+   */
+  status: PropTypes.string,
+  /**
+   * A string representing the color of the avatar badge.
+   */
+  badge: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvAvatar" })(HvAvatar);

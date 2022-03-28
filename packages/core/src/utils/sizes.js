@@ -4,12 +4,15 @@ export const decreaseSize = (size) => {
       return "L";
 
     case "L":
+    case "LG":
       return "M";
 
     case "M":
+    case "MD":
       return "S";
 
     case "S":
+    case "SM":
     default:
       return "XS";
   }

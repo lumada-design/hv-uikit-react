@@ -1,7 +1,20 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvSemanticColorKeys, HvAtmosphereColorKeys } from "..";
 
-export type HvAvatarClassKey = "root" | "S" | "M" | "L" | "img" | "fallback";
+export type HvAvatarClassKey =
+  | "root"
+  | "XS"
+  | "SM"
+  | "MD"
+  | "LG"
+  | "XL"
+  | "img"
+  | "fallback"
+  | "container"
+  | "status"
+  | "badge"
+  | "avatar";
 
 export interface HvAvatarProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAvatarClassKey> {
@@ -14,7 +27,7 @@ export interface HvAvatarProps
   /**
    * Sets one of the standard sizes of the icons.
    */
-  size?: "S" | "M" | "L";
+  size?: "S" | "M" | "L" | "XS" | "SM" | "MD" | "LG" | "XL";
 
   /**
    * A String representing the background color of the avatar.
@@ -51,6 +64,18 @@ export interface HvAvatarProps
    * It can be used to listen for the loading error event.
    */
   imgProps?: React.HTMLAttributes<HTMLImageElement>;
+  /**
+   * A string representing the type of avatar to display, circular or square.
+   */
+  variant: "circular" | "square";
+  /**
+   * A string representing the color of the avatar border that represents its status.
+   */
+  status?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  /**
+   * A string representing the color of the avatar badge.
+   */
+  badge?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
 }
 
 export default function HvAvatar(props: HvAvatarProps): JSX.Element | null;

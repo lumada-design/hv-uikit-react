@@ -33,7 +33,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const img = rootNode.childAt(0);
+      const img = rootNode.childAt(0).childAt(0).childAt(0);
 
       expect(img.name()).toEqual("img");
       expect(img.prop("src")).toBe("something.jpg");
@@ -49,7 +49,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const img = rootNode.childAt(0);
+      const img = rootNode.childAt(0).childAt(0).childAt(0);
       img.simulate("error");
 
       expect(onError).toHaveBeenCalled();
@@ -65,7 +65,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const children = rootNode.children();
+      const children = rootNode.children().childAt(0).childAt(0);
       expect(children.length).toBe(1);
       expect(rootNode.text()).toBe("");
     });
@@ -94,7 +94,7 @@ describe("Avatar ", () => {
     );
 
     it("should render a div containing an svg icon", () => {
-      const icon = rootNode.childAt(0);
+      const icon = rootNode.childAt(0).childAt(0).childAt(0);
       expect(icon.type()).toBe(LogIn);
     });
 
@@ -129,7 +129,7 @@ describe("Avatar ", () => {
     );
 
     it("should render a div containing the user icon", () => {
-      const icon = rootNode.childAt(0);
+      const icon = rootNode.childAt(0).childAt(0).childAt(0);
       expect(icon.type()).toBe(User);
     });
 
@@ -147,7 +147,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const inlineStyle = rootNode.prop("style");
+      const inlineStyle = rootNode.childAt(0).childAt(0).prop("style");
       expect(inlineStyle).toHaveProperty("backgroundColor", theme.hv.palette.accent.acce1);
       expect(inlineStyle).toHaveProperty("color", theme.hv.palette.atmosphere.atmo1);
     });
@@ -159,7 +159,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const inlineStyle = rootNode.prop("style");
+      const inlineStyle = rootNode.childAt(0).childAt(0).prop("style");
       expect(inlineStyle).toHaveProperty("backgroundColor", theme.hv.palette.semantic.sema1);
       expect(inlineStyle).toHaveProperty("color", theme.hv.palette.semantic.sema2);
     });
@@ -171,7 +171,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const icon = rootNode.childAt(0);
+      const icon = rootNode.childAt(0).childAt(0).childAt(0);
       expect(icon.prop("color")).toStrictEqual("sema2");
     });
 
@@ -182,14 +182,14 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const inlineStyle = rootNode.prop("style");
+      const inlineStyle = rootNode.childAt(0).childAt(0).prop("style");
       expect(inlineStyle).not.toHaveProperty("backgroundColor");
       expect(inlineStyle).not.toHaveProperty("color");
     });
   });
 
   describe("sizes", () => {
-    it("should set default user icon size to size bellow", () => {
+    it("should set default user icon size to size below", () => {
       const getDefaultUserIcon = (size) => {
         const [, , rootNode] = mountAndReturnAvatarAndRootNode(
           <HvProvider>
@@ -197,13 +197,13 @@ describe("Avatar ", () => {
           </HvProvider>
         );
 
-        const icon = rootNode.childAt(0);
+        const icon = rootNode.childAt(0).childAt(0).childAt(0);
         return icon;
       };
 
-      expect(getDefaultUserIcon("L").prop("iconSize")).toStrictEqual("M");
-      expect(getDefaultUserIcon("M").prop("iconSize")).toStrictEqual("S");
-      expect(getDefaultUserIcon("S").prop("iconSize")).toStrictEqual("XS");
+      expect(getDefaultUserIcon("LG").prop("iconSize")).toStrictEqual("M");
+      expect(getDefaultUserIcon("MD").prop("iconSize")).toStrictEqual("S");
+      expect(getDefaultUserIcon("SM").prop("iconSize")).toStrictEqual("XS");
     });
   });
 
@@ -215,7 +215,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      expect(rootNode.name()).toEqual("div");
+      expect(rootNode.childAt(0).childAt(0).name()).toEqual("div");
     });
 
     it("should support html tag", () => {
@@ -225,7 +225,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      expect(rootNode.name()).toEqual("span");
+      expect(rootNode.childAt(0).childAt(0).name()).toEqual("span");
     });
 
     it("should support custom tag", () => {
@@ -235,7 +235,7 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      expect(rootNode.name()).toEqual("not-standard");
+      expect(rootNode.childAt(0).childAt(0).name()).toEqual("not-standard");
     });
 
     it("should support react component", () => {
@@ -245,8 +245,8 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      expect(rootNode.type()).toBe(HvButton);
-      expect(rootNode.find(User)).toBeDefined();
+      expect(rootNode.childAt(0).childAt(0).type()).toBe(HvButton);
+      expect(rootNode.childAt(0).childAt(0).find(User)).toBeDefined();
     });
   });
 
@@ -261,8 +261,8 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      expect(rootNode.hasClass(className)).toBe(true);
-      expect(rootNode.prop("custom")).toBe(customValue);
+      expect(rootNode.childAt(0).childAt(0).hasClass(className)).toBe(true);
+      expect(rootNode.childAt(0).childAt(0).prop("custom")).toBe(customValue);
     });
   });
 });
