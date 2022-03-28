@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar General 1`] = `
+<div>
+  <div
+    style="display: flex:; flex-direction: column;"
+  >
+    <div
+      style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 400px; margin: 20px auto 40px auto;"
+    >
+      <p
+        class="HvTypography-root HvTypography-highlightText"
+        style="margin-bottom: 15px;"
+      >
+        Success Underterminate
+      </p>
+      <div
+        style="width: 400px;"
+      >
+        <div
+          aria-busy="true"
+          aria-label="Underterminate Progress Bar"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          class="HvProgressBar-root HvProgressBar-progress"
+          role="progressbar"
+        >
+          <div
+            class="HvProgressBar-progressContainer"
+          >
+            <div />
+            <div
+              class="HvProgressBar-progressBarContainer"
+            >
+              <div
+                class="HvProgressBar-progressBar"
+                style="width: 0%;"
+              />
+            </div>
+            <span
+              aria-live="polite"
+              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Start
+            </span>
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            style="margin-left: 10px;"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Reset
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 400px; margin: 20px auto 40px auto;"
+    >
+      <p
+        class="HvTypography-root HvTypography-highlightText"
+      >
+        Success
+      </p>
+      <div
+        style="width: 400px;"
+      >
+        <div
+          aria-busy="true"
+          aria-label="Determinate Progress Bar"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          class="HvProgressBar-root HvProgressBar-progress"
+          role="progressbar"
+        >
+          <div
+            class="HvProgressBar-progressContainer"
+          >
+            <div
+              class="HvProgressBar-progressBarLabel"
+              style="width: 0%;"
+            >
+              <p
+                class="HvTypography-root HvTypography-vizText"
+              >
+                0%
+              </p>
+            </div>
+            <div
+              class="HvProgressBar-progressBarContainer"
+            >
+              <div
+                class="HvProgressBar-progressBar"
+                style="width: 0%;"
+              />
+            </div>
+            <span
+              aria-live="polite"
+              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Start
+            </span>
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            style="margin-left: 10px;"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Reset
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 400px; margin: auto;"
+    >
+      <p
+        class="HvTypography-root HvTypography-highlightText"
+      >
+        Error
+      </p>
+      <div
+        style="width: 400px;"
+      >
+        <div
+          aria-busy="true"
+          aria-label="Determinate Progress Bar"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          class="HvProgressBar-root HvProgressBar-progress"
+          role="progressbar"
+        >
+          <div
+            class="HvProgressBar-progressContainer"
+          >
+            <div
+              class="HvProgressBar-progressBarLabel"
+              style="width: 0%;"
+            >
+              <p
+                class="HvTypography-root HvTypography-vizText"
+              >
+                0%
+              </p>
+            </div>
+            <div
+              class="HvProgressBar-progressBarContainer"
+            >
+              <div
+                class="HvProgressBar-progressBar"
+                style="width: 0%;"
+              />
+            </div>
+            <span
+              aria-live="polite"
+              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Start
+            </span>
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            style="margin-left: 10px;"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Reset
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

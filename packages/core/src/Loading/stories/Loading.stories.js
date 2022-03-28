@@ -6,8 +6,6 @@ import { HvButton, HvLoading, HvTypography } from "../..";
 import TableExample from "./TableExample";
 import hexToRgbA from "../../utils/hexToRgbA";
 
-/* eslint-disable react/prop-types */
-
 export default {
   title: "Components/Loading",
   parameters: {
@@ -158,61 +156,4 @@ WithChildren.parameters = {
     description:
       "If a children is passed the component wraps it, creating an overlay. You can control whether it's hidden with the `hidden` prop.",
   },
-};
-
-export const Progress = () => {
-  const ProgressBar = ({ inc, error }) => {
-    const [value, setValue] = useState(0);
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        if (value === 100 || (error && value === error)) {
-          clearInterval(interval);
-        } else {
-          setValue(inc);
-        }
-      }, 50);
-      return () => clearInterval(interval);
-    }, [inc, value, error]);
-
-    return <HvLoading progress value={value} error={value === error} />;
-  };
-
-  return (
-    <div
-      style={{
-        display: "flex:",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: 400,
-          margin: "auto",
-          marginTop: 20,
-          marginBottom: 40,
-        }}
-      >
-        <HvTypography variant="highlightText">Success</HvTypography>
-        <ProgressBar label={(v) => `${v}%`} inc={(v) => v + 15} />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: "400px",
-          margin: "auto",
-        }}
-      >
-        <HvTypography variant="highlightText">Error</HvTypography>
-        <ProgressBar label={(v) => `${v}%`} inc={(v) => v + 5} error={30} />
-      </div>
-    </div>
-  );
 };

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { IconButton, withStyles } from "@material-ui/core";
 import { Fail, Close, Success } from "@hitachivantara/uikit-react-icons";
 import HvTypography from "../../Typography";
-import HvLoading from "../../Loading";
 import { setId } from "../../utils/setId";
 import { convertUnits } from "../utils";
 import styles from "./styles";
@@ -58,7 +57,7 @@ const File = ({ id, classes, data, onFileRemoved, removeFileButtonLabel }) => {
 
   return (
     <li>
-      {!hasError && inProgress && <HvLoading progress value={currentProgress} error={hasError} />}
+      {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
         <progress
