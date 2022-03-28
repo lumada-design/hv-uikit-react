@@ -9,16 +9,16 @@ on:
 # |Static-Checks (Licenses, Lint, Jest)|     |Build-Storybook (v2 and v3 store)|
 # +----------+-------------------------+     +--------------+------------------+
 #            |                                              |
-#            |                   +-----------+----------------------------------------+
-#            |                   |           |              |                         |
-#            |             +-----v----+ +----v-----+ +------v----------------+ +------v----------+
-#            |             |A11Y-Tests| |Applitools| |    Robot (chrome)     | |Github-Deployment|
-#            |             +--------+-+ +--+-------+ +------+----------------+ +------+----------+
-#            |                      |      |                |                         |
-#            |                      |      |                |                         |
-#            |                      |      |                |                         |
-#            |                    +-v------v-+              |                         |
-#            +------------------->|Notify-End|<-------------+-------------------------+
+#            |                   +-----------+------------------------------------------------------------+
+#            |                   |           |              |                   |              |          |
+#            |             +-----v----+ +----v-----+ +------v-----------+ +-----v-----+ +------v----------+
+#            |             |A11Y-Tests| |Applitools| |  Robot (chrome)  | |Playwright | |Github-Deployment|
+#            |             +--------+-+ +--+-------+ +------+-----------+ +------+----+ +------+----------+
+#            |                      |      |                |                    |             |          
+#            |                      |      |                |                    |             |
+#            |                      |      |                |                    |             |
+#            |                    +-v------v-+              |                    |             |
+#            +------------------->|Notify-End|<-------------+--------------------+-------------+ 
 #                                 +----------+
 
 env:
@@ -313,6 +313,57 @@ jobs:
         run: |
           rm -rf ${{ github.workspace }}/dist
 
+  Playwright:
+    name: Playwright test
+    needs: [Build-Storybook-V3-Store]
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    services:
+      storybook:
+        image: nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook-v2
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: http://storybook
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
   Robot:
     name: Test Robot
     needs: [Build-Storybook-V3-Store]
@@ -383,7 +434,7 @@ jobs:
   Notify-End:
     name: Notify End
     if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
-    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot]
+    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot, Playwright]
     runs-on: ubuntu-latest
 
     steps:
