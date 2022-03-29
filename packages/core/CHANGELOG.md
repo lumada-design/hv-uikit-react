@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.60.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.59.0...@hitachivantara/uikit-react-core@3.60.0) (2022-03-29)
+
+
+### Features
+
+* **TagsInput:** add suggestions functionality ([#2694](https://github.com/lumada-design/hv-uikit-react/issues/2694)) ([fdfb00e](https://github.com/lumada-design/hv-uikit-react/commit/fdfb00ef4718eaf4c4b0242e590b6eb6c03affbc))
+
+
+
+
+
 # [3.59.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.58.2...@hitachivantara/uikit-react-core@3.59.0) (2022-03-25)
 
 
