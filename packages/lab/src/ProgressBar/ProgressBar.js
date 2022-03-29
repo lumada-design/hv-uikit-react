@@ -13,15 +13,7 @@ import styles from "./styles";
  * ProgressBar provides feedback about a process that is taking place in the application.
  */
 const HvProgressBar = (props) => {
-  const {
-    className,
-    classes,
-    value = 0,
-    error,
-    undeterminate = false,
-    "aria-label": ariaLabel,
-    ...others
-  } = props;
+  const { className, classes, value = 0, error, undeterminate = false, ...others } = props;
 
   const clampedValue = clamp(value, 0, 100);
 
@@ -33,7 +25,7 @@ const HvProgressBar = (props) => {
       aria-valuemin="0"
       aria-valuemax="100"
       aria-busy={clampedValue !== 100}
-      aria-label={ariaLabel}
+      {...(error && { "aria-invalid": true })}
       {...others}
     >
       <div className={classes.progressContainer}>
@@ -60,7 +52,6 @@ const HvProgressBar = (props) => {
         <span
           aria-live="polite"
           style={{ display: "inline-block", width: "1px", height: "1px", overflow: "hidden" }}
-          {...(error && { "aria-invalid": true })}
         >
           {clampedValue}
         </span>
