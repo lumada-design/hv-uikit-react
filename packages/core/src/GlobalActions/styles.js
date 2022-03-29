@@ -36,6 +36,7 @@ const styles = (theme) => ({
       background: theme.palette.atmo2,
       opacity: "75%",
     },
+    backdropFilter: "blur(1px)",
   },
   wrapper: {
     height: 52,
