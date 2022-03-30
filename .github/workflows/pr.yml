@@ -315,6 +315,7 @@ jobs:
 
   Playwright:
     name: Playwright test
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     needs: [Build-Storybook-V3-Store]
     timeout-minutes: 60
     runs-on: ubuntu-latest
