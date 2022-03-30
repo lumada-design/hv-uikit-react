@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-// eslint-disable-next-line import/no-unresolved
-import { Config, Layout, PlotData as PlotlyPlotData } from "plotly.js";
+import type { Config, Layout, PlotData as PlotlyPlotData } from "plotly.js";
 
 export type PlotData = PlotlyPlotData;
 export type PlotLayout = Layout;

@@ -2,7 +2,7 @@ import { StandardProps } from "@material-ui/core";
 import React from "react";
 import { HvScrollToTooltipPositions } from "../tooltipPositions";
 
-interface Option {
+interface HvScrollToVerticalOption {
   key?: string;
   label: string;
   value: string;
@@ -12,16 +12,16 @@ interface Option {
 export type HvScrollToVerticalClassKey = "root" | "positionSticky" | "positionFixed";
 export type HvScrollToVerticalPositions = "absolute" | "fixed" | "relative";
 
-type newStandardProps = Omit<
-  StandardProps<React.HTMLAttributes<HTMLDivElement>, HvScrollToVerticalClassKey>,
-  "onChange" | "onClick"
->;
-
-export interface HvScrollToVerticalProps extends newStandardProps {
+export interface HvScrollToVerticalProps
+  extends StandardProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HvScrollToVerticalClassKey,
+    "onChange" | "onClick"
+  > {
   /**
    * An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied
    */
-  options: Option[];
+  options: HvScrollToVerticalOption[];
   /**
    * True if the href location link should be applied. It will create an a element around every list item
    */
