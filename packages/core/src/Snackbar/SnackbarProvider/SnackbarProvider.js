@@ -52,6 +52,7 @@ const useHvSnackbar = () => {
 const useStyles = (notistackClassesOverride) =>
   makeStyles(() => ({
     containerRoot: {
+      pointerEvents: "all",
       "& > div > div": {
         // Overrides notistack extra padding
         padding: "0 !important",
