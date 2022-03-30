@@ -60,6 +60,9 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
 
+      // this is required due to the Node 16 upgrade, to guarantee only one material ui instance is used
+      "@material-ui": resolve("./node_modules/@material-ui"),
+
       // package aliases for deep imports (/dist)
       "@hitachivantara/uikit-react-core/dist": corePackageSrc,
       "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
