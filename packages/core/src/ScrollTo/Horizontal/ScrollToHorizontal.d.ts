@@ -2,7 +2,7 @@ import { StandardProps } from "@material-ui/core";
 import React from "react";
 import { HvScrollToTooltipPositions } from "../tooltipPositions";
 
-interface Option {
+interface HvScrollToHorizontalOption {
   key?: string;
   label: string;
   value: string;
@@ -11,17 +11,18 @@ interface Option {
 
 export type HvScrollToHorizontalClassKey = "root" | "positionSticky" | "positionFixed";
 export type HvScrollToHorizontalPositions = "sticky" | "fixed" | "relative";
-export type HvScrollToHorizontalTooltipPositions =  "left" | "right" | "top" | "bottom";
-type newStandardProps = Omit<
-  StandardProps<React.HTMLAttributes<HTMLDivElement>, HvScrollToHorizontalClassKey>,
-  "onChange" | "onClick"
->;
+export type HvScrollToHorizontalTooltipPositions = "left" | "right" | "top" | "bottom";
 
-export interface HvScrollToHorizontalProps extends newStandardProps {
+export interface HvScrollToHorizontalProps
+  extends StandardProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HvScrollToHorizontalClassKey,
+    "onChange" | "onClick"
+  > {
   /**
    * An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied
    */
-  options: Option[];
+  options: HvScrollToHorizontalOption[];
   /**
    * True if the href location link should be applied. It will create an a element around every list item
    */
@@ -51,7 +52,7 @@ export interface HvScrollToHorizontalProps extends newStandardProps {
   /**
    * Position of tooltip identifying the current item.
    */
-   tooltipPosition?: HvScrollToTooltipPositions;
+  tooltipPosition?: HvScrollToTooltipPositions;
   /**
    * A function called each time the selected index changes.
    */
