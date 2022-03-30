@@ -37,7 +37,7 @@ export interface HvSnackbarContentProps
   /**
    * The callback function ran when an action is triggered, receiving `action` as param
    */
-  actionCallback?: (id: string, action: ActionGeneric) => void;
+  actionCallback?: (event: Event, id: string, action: ActionGeneric) => void;
 }
 
 export default function HvSnackbarContent(props: HvSnackbarContentProps): JSX.Element | null;
