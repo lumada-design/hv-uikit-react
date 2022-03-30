@@ -19,11 +19,15 @@ export interface HvProgressBarProps
    */
   value?: number;
   /**
-   * Indicates if there was an error while loading.
+   * Indicates current status of the progress bar represented by the color.
    */
-  error?: boolean;
+  status?: boolean;
   /**
-   *
+   * If `true` the progress bar will not show the percentage label.
    */
   undeterminate?: boolean;
+  /**
+   * Aria Properties passed on to the progress bar.
+   */
+  valueProps?: object;
 }

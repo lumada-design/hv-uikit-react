@@ -18,18 +18,29 @@ exports[`ProgressBar General 1`] = `
         style="width: 400px;"
       >
         <div
-          aria-busy="true"
-          aria-label="Underterminate Progress Bar"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
+          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
           >
-            <div />
+            <div
+              aria-busy="false"
+              aria-label="Underterminate Progress Bar"
+              aria-live="polite"
+              class="HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+              style="width: 0%;"
+            >
+              <p
+                class="HvTypography-root HvTypography-vizText"
+              >
+                0%
+              </p>
+            </div>
             <div
               class="HvProgressBar-progressBarContainer"
             >
@@ -38,15 +49,11 @@ exports[`ProgressBar General 1`] = `
                 style="width: 0%;"
               />
             </div>
-            <span
-              aria-live="polite"
-              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
-            >
-              0
-            </span>
           </div>
         </div>
-        <div>
+        <div
+          style="margin-top: 10px;"
+        >
           <button
             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
             tabindex="0"
@@ -85,18 +92,20 @@ exports[`ProgressBar General 1`] = `
         style="width: 400px;"
       >
         <div
-          aria-busy="true"
-          aria-label="Determinate Progress Bar"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
+          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
           >
             <div
+              aria-busy="false"
+              aria-label="Determinate Progress Bar"
+              aria-live="assertive"
               class="HvProgressBar-progressBarLabel"
               style="width: 0%;"
             >
@@ -114,15 +123,11 @@ exports[`ProgressBar General 1`] = `
                 style="width: 0%;"
               />
             </div>
-            <span
-              aria-live="polite"
-              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
-            >
-              0
-            </span>
           </div>
         </div>
-        <div>
+        <div
+          style="margin-top: 10px;"
+        >
           <button
             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
             tabindex="0"
@@ -161,18 +166,19 @@ exports[`ProgressBar General 1`] = `
         style="width: 400px;"
       >
         <div
-          aria-busy="true"
-          aria-label="Determinate Progress Bar"
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
+          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
           >
             <div
+              aria-busy="false"
+              aria-label="Determinate Progress Bar"
               class="HvProgressBar-progressBarLabel"
               style="width: 0%;"
             >
@@ -190,15 +196,11 @@ exports[`ProgressBar General 1`] = `
                 style="width: 0%;"
               />
             </div>
-            <span
-              aria-live="polite"
-              style="display: inline-block; width: 1px; height: 1px; overflow: hidden;"
-            >
-              0
-            </span>
           </div>
         </div>
-        <div>
+        <div
+          style="margin-top: 10px;"
+        >
           <button
             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
             tabindex="0"

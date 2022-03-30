@@ -12,14 +12,20 @@ export default {
   },
   component: HvProgressBar,
 };
-const ProgressBarSimulator = ({ inc, error, undeterminate, arialabel }) => {
+const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ariaLive }) => {
+  const [status, setStatus] = useState("inProgress");
   const [value, setValue] = useState(0);
   const [run, setRun] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (value === 100 || (error && value === error)) {
+      if (value === 100) {
+        setRun(false);
         clearInterval(interval);
+        setStatus("completed");
+      } else if (error && value === error) {
+        clearInterval(interval);
+        setStatus("error");
       } else if (run) setValue(inc);
     }, 500);
     return () => clearInterval(interval);
@@ -27,7 +33,7 @@ const ProgressBarSimulator = ({ inc, error, undeterminate, arialabel }) => {
 
   const reset = () => {
     setValue(0);
-    setRun(false);
+    setStatus("inProgress");
   };
 
   const start = () => {
@@ -38,11 +44,15 @@ const ProgressBarSimulator = ({ inc, error, undeterminate, arialabel }) => {
     <div style={{ width: 400 }}>
       <HvProgressBar
         value={value}
-        error={value === error}
+        status={status}
         undeterminate={undeterminate}
-        aria-label={arialabel}
+        ariaProps={{
+          "aria-label": ariaLabel,
+          "aria-busy": false,
+          "aria-live": ariaLive,
+        }}
       />
-      <div>
+      <div style={{ marginTop: 10 }}>
         <HvButton onClick={start}>Start</HvButton>
         <HvButton style={{ marginLeft: 10 }} onClick={reset}>
           Reset
@@ -79,7 +89,8 @@ export const Main = () => {
           label={(v) => `${v}%`}
           inc={(v) => v + 5}
           undeterminate
-          arialabel="Underterminate Progress Bar"
+          ariaLabel="Underterminate Progress Bar"
+          ariaLive="polite"
         />
       </div>
       <div
@@ -98,7 +109,8 @@ export const Main = () => {
         <ProgressBarSimulator
           label={(v) => `${v}%`}
           inc={(v) => v + 10}
-          arialabel="Determinate Progress Bar"
+          ariaLabel="Determinate Progress Bar"
+          ariaLive="assertive"
         />
       </div>
       <div
@@ -116,7 +128,7 @@ export const Main = () => {
           label={(v) => `${v}%`}
           inc={(v) => v + 5}
           error={30}
-          arialabel="Determinate Progress Bar"
+          ariaLabel="Determinate Progress Bar"
         />
       </div>
     </div>
@@ -144,7 +156,15 @@ export const Determined = () => {
         }}
       >
         <HvTypography variant="highlightText">Success</HvTypography>
-        <HvProgressBar value={100} aria-label="Example Determined Progress Bar" />
+        <HvProgressBar
+          value={100}
+          status="completed"
+          ariaProps={{
+            "aria-label": "Example Determined Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
+        />
       </div>
       <div
         style={{
@@ -159,7 +179,14 @@ export const Determined = () => {
         }}
       >
         <HvTypography variant="highlightText">Loading</HvTypography>
-        <HvProgressBar value={40} aria-label="Example Determined Progress Bar" />
+        <HvProgressBar
+          value={40}
+          ariaProps={{
+            "aria-label": "Example Determined Loading Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
+        />
       </div>
       <div
         style={{
@@ -172,7 +199,15 @@ export const Determined = () => {
         }}
       >
         <HvTypography variant="highlightText">Error</HvTypography>
-        <HvProgressBar value={30} error={30} aria-label="Example Determined Error Progress Bar" />
+        <HvProgressBar
+          value={30}
+          status="error"
+          ariaProps={{
+            "aria-label": "Example Determined Error Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
+        />
       </div>
     </div>
   );
@@ -202,10 +237,19 @@ export const Undeterminate = () => {
           marginBottom: 40,
         }}
       >
-        <HvTypography style={{ marginBottom: 15 }} variant="highlightText">
+        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
           Success
         </HvTypography>
-        <HvProgressBar value={100} undeterminate aria-label="Example undeterminate Progress Bar" />
+        <HvProgressBar
+          status="completed"
+          value={100}
+          undeterminate
+          ariaProps={{
+            "aria-label": "Example Undetermined Completed Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
+        />
       </div>
       <div
         style={{
@@ -219,10 +263,18 @@ export const Undeterminate = () => {
           marginBottom: 40,
         }}
       >
-        <HvTypography style={{ marginBottom: 15 }} variant="highlightText">
+        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
           Loading
         </HvTypography>
-        <HvProgressBar value={40} undeterminate aria-label="Example undeterminate Progress Bar" />
+        <HvProgressBar
+          value={40}
+          undeterminate
+          ariaProps={{
+            "aria-label": "Example Undetermined Loading Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
+        />
       </div>
       <div
         style={{
@@ -234,14 +286,18 @@ export const Undeterminate = () => {
           margin: "auto",
         }}
       >
-        <HvTypography style={{ marginBottom: 15 }} variant="highlightText">
+        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
           Error
         </HvTypography>
         <HvProgressBar
           value={30}
           undeterminate
-          error={30}
-          aria-label="Example undeterminate Progress Bar Error"
+          status="error"
+          ariaProps={{
+            "aria-label": "Example Undetermined Error Progress Bar",
+            // "aria-busy":run,
+            "aria-live": "polite",
+          }}
         />
       </div>
     </div>

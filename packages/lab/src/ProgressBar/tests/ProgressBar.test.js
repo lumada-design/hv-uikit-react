@@ -11,21 +11,28 @@ import { HvProgressBar } from "../..";
 import { Main } from "../stories/ProgressBar.stories";
 
 // eslint-disable-next-line react/prop-types
-const ProgressBarSimulator = ({ inc, error, undeterminate, arialabel }) => {
+const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ariaLive }) => {
+  const [status, setStatus] = useState("inProgress");
   const [value, setValue] = useState(0);
   const [run, setRun] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (value === 100 || (error && value === error)) {
+      if (value === 100) {
+        setRun(false);
         clearInterval(interval);
+        setStatus("completed");
+      } else if (error && value === error) {
+        clearInterval(interval);
+        setStatus("error");
       } else if (run) setValue(inc);
-    }, 50);
+    }, 5);
     return () => clearInterval(interval);
   }, [inc, value, run, error]);
 
   const reset = () => {
     setValue(0);
+    setStatus("inProgress");
   };
 
   const start = () => {
@@ -36,11 +43,15 @@ const ProgressBarSimulator = ({ inc, error, undeterminate, arialabel }) => {
     <div style={{ width: 400 }}>
       <HvProgressBar
         value={value}
-        error={value === error}
+        status={status}
         undeterminate={undeterminate}
-        aria-label={arialabel}
+        ariaProps={{
+          "aria-label": ariaLabel,
+          "aria-busy": false,
+          "aria-live": ariaLive,
+        }}
       />
-      <div>
+      <div style={{ marginTop: 10 }}>
         <HvButton onClick={start}>Start</HvButton>
         <HvButton style={{ marginLeft: 10 }} onClick={reset}>
           Reset
@@ -60,55 +71,146 @@ describe("ProgressBar", () => {
 
   describe("Static Determinate Value Tests", () => {
     it("completed progress bar", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={100} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={100}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
 
       const progressBar = await findByRole("progressbar");
       await findByText("100%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "100");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
+
       expect(container).toBeInTheDocument();
     });
 
     it("zero progress bar", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={0} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={0}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
       await findByText("0%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("middle progress bar", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={50} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={50}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
       await findByText("50%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "50");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("out of bounds progress bar (up)", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={200} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={200}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
       await findByText("100%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "100");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("out of bounds progress bar (down)", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={-200} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={-200}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
       await findByText("0%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("error", async () => {
-      const { container, findByRole, findByText } = render(<HvProgressBar value={-200} />);
+      const { container, findByRole, findByText, getByLabelText } = render(
+        <HvProgressBar
+          value={-200}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
       await findByText("0%");
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).not.toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
@@ -116,60 +218,148 @@ describe("ProgressBar", () => {
 
   describe("Static Undeterminate Value Tests", () => {
     it("completed progress bar", async () => {
-      const { container, findByRole, getByText } = render(
-        <HvProgressBar value={100} undeterminate />
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={100}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
       );
 
       const progressBar = await findByRole("progressbar");
-
-      expect(() => getByText("100%")).toThrow("Unable to find an element");
-
       expect(progressBar).toHaveAttribute("aria-valuenow", "100");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("zero progress bar", async () => {
-      const { container, findByRole } = render(<HvProgressBar value={0} undeterminate />);
-      const progressBar = await findByRole("progressbar");
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={0}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
 
+      const progressBar = await findByRole("progressbar");
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("middle progress bar", async () => {
-      const { container, findByRole } = render(<HvProgressBar value={50} undeterminate />);
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={50}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
-
       expect(progressBar).toHaveAttribute("aria-valuenow", "50");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("out of bounds progress bar (up)", async () => {
-      const { container, findByRole } = render(<HvProgressBar value={200} undeterminate />);
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={200}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
-
       expect(progressBar).toHaveAttribute("aria-valuenow", "100");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("out of bounds progress bar (down)", async () => {
-      const { container, findByRole } = render(<HvProgressBar value={-200} undeterminate />);
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={-200}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
       const progressBar = await findByRole("progressbar");
-
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
 
     it("error", async () => {
-      const { container, findByRole } = render(<HvProgressBar value={-200} undeterminate />);
-      const progressBar = await findByRole("progressbar");
+      const { container, findByRole, getByLabelText } = render(
+        <HvProgressBar
+          value={-200}
+          undeterminate
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
+      );
 
+      const progressBar = await findByRole("progressbar");
       expect(progressBar).toHaveAttribute("aria-valuenow", "0");
+
+      const bar = getByLabelText("My Aria Label");
+      expect(bar).toBeInTheDocument();
+      expect(bar).toHaveClass(
+        "HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+      );
 
       expect(container).toBeInTheDocument();
     });
@@ -178,10 +368,17 @@ describe("ProgressBar", () => {
   describe("Aria Label", () => {
     it("check aria label", async () => {
       const { container, findByRole, getByLabelText } = render(
-        <HvProgressBar value={100} aria-label="My Aria Label" />
+        <HvProgressBar
+          value={100}
+          ariaProps={{
+            "aria-label": "My Aria Label",
+            "aria-busy": false,
+            "aria-live": "polite",
+          }}
+        />
       );
       await findByRole("progressbar");
-      // eslint-disable-next-line no-unused-vars
+
       const bar = getByLabelText("My Aria Label");
 
       expect(bar).toBeInTheDocument();

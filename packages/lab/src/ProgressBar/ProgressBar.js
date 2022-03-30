@@ -13,7 +13,15 @@ import styles from "./styles";
  * ProgressBar provides feedback about a process that is taking place in the application.
  */
 const HvProgressBar = (props) => {
-  const { className, classes, value = 0, error, undeterminate = false, ...others } = props;
+  const {
+    className,
+    classes,
+    value = 0,
+    status,
+    undeterminate = false,
+    ariaProps,
+    ...others
+  } = props;
 
   const clampedValue = clamp(value, 0, 100);
 
@@ -21,40 +29,34 @@ const HvProgressBar = (props) => {
     <div
       className={clsx(className, classes.root, classes.progress)}
       role="progressbar"
-      aria-valuenow={clampedValue}
+      status="inProgress"
+      aria-valuenow={clampedValue} // it only makes sense to put this in ariaProps if the min and max values of the progress bar are intended to be changed by the user
       aria-valuemin="0"
       aria-valuemax="100"
-      aria-busy={clampedValue !== 100}
-      {...(error && { "aria-invalid": true })}
       {...others}
     >
       <div className={classes.progressContainer}>
-        {undeterminate ? (
-          <div />
-        ) : (
-          <div
-            style={{ width: `${clampedValue}%` }}
-            className={clsx(classes.progressBarLabel, clampedValue === 100 && classes.progressDone)}
-          >
-            <HvTypography variant="vizText">{`${clampedValue}%`}</HvTypography>
-          </div>
-        )}
+        <div
+          {...ariaProps}
+          style={{ width: `${clampedValue}%` }}
+          className={clsx(
+            classes.progressBarLabel,
+            status === "completed" && classes.progressDone,
+            undeterminate && classes.progressBarLabelHidden
+          )}
+        >
+          <HvTypography variant="vizText">{`${clampedValue}%`}</HvTypography>
+        </div>
         <div className={classes.progressBarContainer}>
           <div
             style={{ width: `${clampedValue}%` }}
             className={clsx(
               classes.progressBar,
-              clampedValue === 100 && classes.progressDone,
-              error && classes.progressError
+              status === "completed" && classes.progressDone,
+              status === "error" && classes.progressError
             )}
           />
         </div>
-        <span
-          aria-live="polite"
-          style={{ display: "inline-block", width: "1px", height: "1px", overflow: "hidden" }}
-        >
-          {clampedValue}
-        </span>
       </div>
     </div>
   );
@@ -102,6 +104,10 @@ HvProgressBar.propTypes = {
      * Style applied to the progress bar label.
      */
     progressBarLabel: PropTypes.string,
+    /**
+     * Style applied to the progress bar label.
+     */
+    progressBarLabelHidden: PropTypes.string,
   }).isRequired,
 
   /**
@@ -109,17 +115,21 @@ HvProgressBar.propTypes = {
    */
   value: PropTypes.number,
   /**
-   * Indicates if there was an error while loading.
+   * The status of the progress bar.
+   *
+   * inProgress is black, error is red and completed is green.
+   *
+   * When uncontrolled and unspecified it will default to "inProgress".
    */
-  error: PropTypes.bool,
+  status: PropTypes.oneOf(["inProgress", "completed", "error"]),
   /**
-   * Indicates if it shows or not the value label
+   * If `true` the progress bar will not show the percentage label.
    */
   undeterminate: PropTypes.bool,
   /**
-   * @ignore
+   * Aria Properties passed on to the progress bar.
    */
-  "aria-label": PropTypes.string,
+  ariaProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvProgressBar" })(HvProgressBar);
