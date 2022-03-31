@@ -28,19 +28,15 @@ exports[`ProgressBar General 1`] = `
           <div
             class="HvProgressBar-progressContainer"
           >
-            <div
+            <p
               aria-busy="false"
               aria-label="Underterminate Progress Bar"
               aria-live="polite"
-              class="HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden"
+              class="HvProgressBar-progressBarLabel HvProgressBar-progressBarLabelHidden HvTypography-root HvTypography-vizText"
               style="width: 0%;"
             >
-              <p
-                class="HvTypography-root HvTypography-vizText"
-              >
-                0%
-              </p>
-            </div>
+              0%
+            </p>
             <div
               class="HvProgressBar-progressBarContainer"
             >
@@ -102,19 +98,15 @@ exports[`ProgressBar General 1`] = `
           <div
             class="HvProgressBar-progressContainer"
           >
-            <div
+            <p
               aria-busy="false"
               aria-label="Determinate Progress Bar"
               aria-live="assertive"
-              class="HvProgressBar-progressBarLabel"
+              class="HvProgressBar-progressBarLabel HvTypography-root HvTypography-vizText"
               style="width: 0%;"
             >
-              <p
-                class="HvTypography-root HvTypography-vizText"
-              >
-                0%
-              </p>
-            </div>
+              0%
+            </p>
             <div
               class="HvProgressBar-progressBarContainer"
             >
@@ -176,18 +168,14 @@ exports[`ProgressBar General 1`] = `
           <div
             class="HvProgressBar-progressContainer"
           >
-            <div
+            <p
               aria-busy="false"
               aria-label="Determinate Progress Bar"
-              class="HvProgressBar-progressBarLabel"
+              class="HvProgressBar-progressBarLabel HvTypography-root HvTypography-vizText"
               style="width: 0%;"
             >
-              <p
-                class="HvTypography-root HvTypography-vizText"
-              >
-                0%
-              </p>
-            </div>
+              0%
+            </p>
             <div
               class="HvProgressBar-progressBarContainer"
             >

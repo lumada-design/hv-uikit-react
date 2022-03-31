@@ -46,7 +46,7 @@ const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ariaLive }
         value={value}
         status={status}
         undeterminate={undeterminate}
-        ariaProps={{
+        labelProps={{
           "aria-label": ariaLabel,
           "aria-busy": false,
           "aria-live": ariaLive,
@@ -159,7 +159,7 @@ export const Determined = () => {
         <HvProgressBar
           value={100}
           status="completed"
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Determined Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",
@@ -181,7 +181,7 @@ export const Determined = () => {
         <HvTypography variant="highlightText">Loading</HvTypography>
         <HvProgressBar
           value={40}
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Determined Loading Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",
@@ -202,7 +202,7 @@ export const Determined = () => {
         <HvProgressBar
           value={30}
           status="error"
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Determined Error Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",
@@ -244,7 +244,7 @@ export const Undeterminate = () => {
           status="completed"
           value={100}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Undetermined Completed Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",
@@ -269,7 +269,7 @@ export const Undeterminate = () => {
         <HvProgressBar
           value={40}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Undetermined Loading Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",
@@ -293,7 +293,7 @@ export const Undeterminate = () => {
           value={30}
           undeterminate
           status="error"
-          ariaProps={{
+          labelProps={{
             "aria-label": "Example Undetermined Error Progress Bar",
             // "aria-busy":run,
             "aria-live": "polite",

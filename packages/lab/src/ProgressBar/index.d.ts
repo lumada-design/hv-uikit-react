@@ -29,5 +29,5 @@ export interface HvProgressBarProps
   /**
    * Aria Properties passed on to the progress bar.
    */
-  valueProps?: object;
+  labelProps?: object;
 }

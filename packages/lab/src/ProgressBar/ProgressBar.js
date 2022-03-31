@@ -19,7 +19,7 @@ const HvProgressBar = (props) => {
     value = 0,
     status,
     undeterminate = false,
-    ariaProps,
+    labelProps,
     ...others
   } = props;
 
@@ -36,17 +36,18 @@ const HvProgressBar = (props) => {
       {...others}
     >
       <div className={classes.progressContainer}>
-        <div
-          {...ariaProps}
+        <HvTypography
+          variant="vizText"
           style={{ width: `${clampedValue}%` }}
           className={clsx(
             classes.progressBarLabel,
             status === "completed" && classes.progressDone,
             undeterminate && classes.progressBarLabelHidden
           )}
+          {...labelProps}
         >
-          <HvTypography variant="vizText">{`${clampedValue}%`}</HvTypography>
-        </div>
+          {`${clampedValue}%`}
+        </HvTypography>
         <div className={classes.progressBarContainer}>
           <div
             style={{ width: `${clampedValue}%` }}
@@ -129,7 +130,7 @@ HvProgressBar.propTypes = {
   /**
    * Aria Properties passed on to the progress bar.
    */
-  ariaProps: PropTypes.instanceOf(Object),
+  labelProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvProgressBar" })(HvProgressBar);

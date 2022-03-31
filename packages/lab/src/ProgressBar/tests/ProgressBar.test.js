@@ -45,7 +45,7 @@ const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ariaLive }
         value={value}
         status={status}
         undeterminate={undeterminate}
-        ariaProps={{
+        labelProps={{
           "aria-label": ariaLabel,
           "aria-busy": false,
           "aria-live": ariaLive,
@@ -74,7 +74,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={100}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -99,7 +99,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={0}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -123,7 +123,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={50}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -147,7 +147,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={200}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -171,7 +171,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={-200}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -195,7 +195,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, findByText, getByLabelText } = render(
         <HvProgressBar
           value={-200}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -222,7 +222,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={100}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -247,7 +247,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={0}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -272,7 +272,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={50}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -296,7 +296,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={200}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -320,7 +320,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={-200}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -344,7 +344,7 @@ describe("ProgressBar", () => {
         <HvProgressBar
           value={-200}
           undeterminate
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
@@ -370,7 +370,7 @@ describe("ProgressBar", () => {
       const { container, findByRole, getByLabelText } = render(
         <HvProgressBar
           value={100}
-          ariaProps={{
+          labelProps={{
             "aria-label": "My Aria Label",
             "aria-busy": false,
             "aria-live": "polite",
