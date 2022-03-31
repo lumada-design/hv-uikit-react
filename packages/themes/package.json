@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "npx npm-run-all --npm-path npm clean -p dev:*",
     "dev:watch": "npx watch \"npm run build\" ./src/",
-    "build": "npx npm-run-all clean build:*",
+    "build": "npx npm-run-all --npm-path npm clean build:*",
     "build:to-scss": "json-to-scss \"src/*.*\" dist",
     "build:to-json": "npx cp -f src/*.json dist",
     "clean": "npx del-cli dist",
