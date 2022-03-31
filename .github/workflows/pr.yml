@@ -53,6 +53,9 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
+      - name: Build
+        run: npm run build
+
       - name: License Check
         run: npm run license-check
 
