@@ -7,18 +7,18 @@
 Quickly build apps that follow the HV Design System's patterns and specifications.
 
 ![React 16.13](https://img.shields.io/badge/react-^16.13.1-blue.svg)
-![Node 14](https://img.shields.io/badge/node-14.15-brightgreen.svg)
+![Node 16](https://img.shields.io/badge/node-16.13.1-brightgreen.svg)
 ![License Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
-![Supported browsers: Chrome, Firefox, Safari, Edge, Internet Explorer](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
+![Supported browsers: Chrome, Firefox, Safari, Edge](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge-blue.svg)
 <br>
 ![Master Nightly build status](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
-
 
 </div>
 
 ## Installation
 
 HV UI Kit is composed of multiple mostly independent npm packages. You can install them in any working **React v16.x or x17.x** project.
+
 ### Package installation
 
 Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
@@ -57,11 +57,11 @@ If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** rele
    `@hitachivantara/uikit-react-core`.
 
 ```jsx
-import { HvProvider } from "@hitachivantara/uikit-react-core"
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 // Do this at the root of your application
 function App({ children }) {
-  return <HvProvider>{children}</HvProvider>
+  return <HvProvider>{children}</HvProvider>;
 }
 ```
 
@@ -71,10 +71,10 @@ Check [the Provider's API documentation](https://lumada-design.github.io/uikit/m
 2. Now you can start using components:
 
 ```jsx
-import { HvButton } from "@hitachivantara/uikit-react-core"
+import { HvButton } from "@hitachivantara/uikit-react-core";
 
 function Example() {
-  return <HvButton>Hello from UI Kit!</HvButton>
+  return <HvButton>Hello from UI Kit!</HvButton>;
 }
 ```
 
