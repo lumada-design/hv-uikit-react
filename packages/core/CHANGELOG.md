@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.61.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.60.0...@hitachivantara/uikit-react-core@3.61.0) (2022-03-31)
+
+
+### Bug Fixes
+
+* added missing property to the SnackbarContentWrapper.d.ts file ([#2709](https://github.com/lumada-design/hv-uikit-react/issues/2709)) ([88bbf39](https://github.com/lumada-design/hv-uikit-react/commit/88bbf39d7d18565add7d58d1cb188f023a39bdc0))
+* **snackbar:** fix snackbar actions not clickable. HVUIKIT-6321 ([e4ab10b](https://github.com/lumada-design/hv-uikit-react/commit/e4ab10b452be784e4c85d4d59bfbf06be28daa46))
+
+
+### Features
+
+* **Avatar:** update component with 3.6.0 DS specification ([d57468e](https://github.com/lumada-design/hv-uikit-react/commit/d57468e037dcddcfe2700bbcb21de79c566d5a1d))
+* **Loading:** adding a progress bar mode ([#2679](https://github.com/lumada-design/hv-uikit-react/issues/2679)) ([032b23c](https://github.com/lumada-design/hv-uikit-react/commit/032b23c7416cd83d3d88575c2484471e62eed0b9))
+* **TagsInput:** add suggestions functionality ([#2694](https://github.com/lumada-design/hv-uikit-react/issues/2694)) ([fdfb00e](https://github.com/lumada-design/hv-uikit-react/commit/fdfb00ef4718eaf4c4b0242e590b6eb6c03affbc))
+
+
+
+
+
 # [3.60.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.59.0...@hitachivantara/uikit-react-core@3.60.0) (2022-03-29)
 
 
