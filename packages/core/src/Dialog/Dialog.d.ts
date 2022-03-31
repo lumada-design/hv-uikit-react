@@ -11,6 +11,10 @@ export interface HvDialogProps extends StandardProps<DialogProps, HvDialogClassK
    * Title for the button close.
    */
   buttonTitle?: string;
+  /**
+   * Set the dialog to fullscreen mode.
+   */
+  fullscreen?: boolean;
 }
 
 export default function HvDialog(props: HvDialogProps): JSX.Element | null;
