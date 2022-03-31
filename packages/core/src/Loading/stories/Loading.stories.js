@@ -6,8 +6,6 @@ import { HvButton, HvLoading, HvTypography } from "../..";
 import TableExample from "./TableExample";
 import hexToRgbA from "../../utils/hexToRgbA";
 
-/* eslint-disable react/prop-types */
-
 export default {
   title: "Components/Loading",
   parameters: {
