@@ -1,6 +1,17 @@
 {
-  "allowedLicenses": ["Apache-2.0", "ISC", "BSD-2-Clause", "BSD-3-Clause", "MIT", "W3C"],
-  "allowedPackages": [],
+  "allowedLicenses": ["Apache-2.0", "ISC", "BSD-2-Clause", "BSD-3-Clause", "MIT", "W3C", "Zlib"],
+  "allowedPackages": [
+    {
+      "name": "mumath",
+      "version": "3.3.4",
+      "reason": "Licensed using the Unlicense. Pretty much opensource"
+    },
+    {
+      "name": "@mapbox/jsonlint-lines-primitives",
+      "version": "2.0.2",
+      "reason": "License is not correctly configured. It is MIT and it is available in the README.md file"
+    }
+  ],
   "production": true,
   "allowUnknown": false
 }
