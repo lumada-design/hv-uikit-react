@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.19...@hitachivantara/uikit-react-lab@3.40.0) (2022-03-31)
+
+
+### Features
+
+* **Loading:** adding a progress bar mode ([#2679](https://github.com/lumada-design/hv-uikit-react/issues/2679)) ([032b23c](https://github.com/lumada-design/hv-uikit-react/commit/032b23c7416cd83d3d88575c2484471e62eed0b9))
+
+
+
+
+
 ## [3.39.19](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.39.18...@hitachivantara/uikit-react-lab@3.39.19) (2022-03-29)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
