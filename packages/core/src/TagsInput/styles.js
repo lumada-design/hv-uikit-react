@@ -129,6 +129,11 @@ const styles = (theme) => {
         width: "100%",
         paddingTop: 3,
         verticalAlign: "middle",
+        "&.empty": {
+          position: "absolute",
+          height: "100%",
+          paddingTop: 3,
+        },
       },
     },
     tagInputRoot: {
