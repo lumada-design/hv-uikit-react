@@ -16,6 +16,9 @@ const HvDialogTitle = ({
   ...others
 }) => {
   const isString = typeof children === "string";
+  // prevent the `fullscreen` prop from being passed to the `DialogTitle` component
+  // eslint-disable-next-line no-param-reassign
+  delete others.fullscreen;
 
   const icon = customIcon || (showIcon && iconVariant(variant));
 

@@ -9,6 +9,12 @@ const styles = (theme) => ({
       marginLeft: theme.hv.spacing.xs,
     },
   },
+  fullscreen: {
+    position: "fixed",
+    width: "100%",
+    bottom: 0,
+    left: 0,
+  },
 });
 
 export default styles;

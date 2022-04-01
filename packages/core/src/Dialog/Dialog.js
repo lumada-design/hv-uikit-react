@@ -23,6 +23,7 @@ const HvDialog = ({
   onClose,
   firstFocusable,
   buttonTitle = "Close",
+  fullscreen = false,
   ...others
 }) => {
   const [focusableQueue, setFocusableQueue] = useState(null);
@@ -92,9 +93,10 @@ const HvDialog = ({
       open={open}
       PaperProps={{
         classes: {
-          root: classes.paper,
+          root: clsx(classes.paper, fullscreen ? "fullscreen" : ""),
         },
       }}
+      fullScreen={fullscreen}
       BackdropProps={{
         classes: {
           root: classes.background,
@@ -114,7 +116,9 @@ const HvDialog = ({
         >
           <CloseButtonTooltipWrapper />
         </Button>
-        {children}
+        {children && typeof children === "object"
+          ? React.Children.map(children, (c) => React.cloneElement(c, { fullscreen }))
+          : children}
       </div>
     </Dialog>
   );
@@ -170,6 +174,10 @@ HvDialog.propTypes = {
    * Title for the button close.
    */
   buttonTitle: PropTypes.string,
+  /**
+   * Set the dialog to fullscreen mode.
+   */
+  fullscreen: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDialog" })(HvDialog);

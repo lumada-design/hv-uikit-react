@@ -9,6 +9,9 @@ const styles = (theme) => ({
     padding: "0px",
     overflow: "auto",
     boxShadow: theme.hv.shadows[1],
+    "&:not(.fullscreen)": {
+      maxHeight: "calc(100% - 200px)",
+    },
   },
   closeButton: {
     padding: 0,
