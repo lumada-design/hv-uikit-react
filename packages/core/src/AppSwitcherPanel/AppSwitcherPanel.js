@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
 
-import { HvListContainer, useDeprecated } from "@hitachivantara/uikit-react-core";
+import { HvListContainer } from "..";
 
 import styles from "./styles";
 
@@ -31,8 +31,6 @@ const AppSwitcherPanel = (props) => {
 
     isOpen,
   } = props;
-
-  useDeprecated("AppSwitcherPanel", "Please use the AppSwitcherPanel component in Core");
 
   const actionClicked = (event, application) => {
     onActionClickedCallback?.(event, application);
@@ -94,22 +92,69 @@ AppSwitcherPanel.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
     root: PropTypes.string,
+    /**
+     * Styles applied to the component root class when in single layout mode.
+     */
     single: PropTypes.string,
+    /**
+     * Styles applied to the component root class when in single dual mode.
+     */
     dual: PropTypes.string,
+    /**
+     * Styles applied to the component root class when in single fluid mode.
+     */
     fluid: PropTypes.string,
+    /**
+     * Styles applied to the title element.
+     */
     title: PropTypes.string,
+    /**
+     * Styles applied to the actions container.
+     */
     actionsContainer: PropTypes.string,
+    /**
+     * Styles applied to the footer container.
+     */
     footerContainer: PropTypes.string,
+    /**
+     * Styles applied to the panel when closed.
+     */
     closed: PropTypes.string,
+    /**
+     * Styles applied to the panel when open.
+     */
     open: PropTypes.string,
-
+    /**
+     * Styles applied to the action item root.
+     */
     item: PropTypes.string,
+    /**
+     * Styles applied to the action item when selected.
+     */
     itemSelected: PropTypes.string,
+    /**
+     * Styles applied to the action item when disabled.
+     */
     itemDisabled: PropTypes.string,
+    /**
+     * Styles applied to the action item typography.
+     */
     itemTrigger: PropTypes.string,
+    /**
+     * Styles applied to the action item icon.
+     */
     itemIcon: PropTypes.string,
+    /**
+     * Styles applied to the action item title.
+     */
     itemTitle: PropTypes.string,
+    /**
+     * Styles applied to the action item info icon.
+     */
     itemInfoIcon: PropTypes.string,
   }).isRequired,
 

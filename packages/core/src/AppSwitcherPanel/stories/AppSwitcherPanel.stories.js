@@ -3,17 +3,16 @@ import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core";
 
-import { HvTypography } from "@hitachivantara/uikit-react-core";
-
 import { Code, LeftAlign, Tool, Champion } from "@hitachivantara/uikit-react-icons";
+import { HvTypography } from "../..";
 
 import HvAppSwitcherPanel from "..";
 
 export default {
-  title: "Lab/AppSwitcherPanel",
+  title: "Components/App Switcher Panel",
   parameters: {
-    componentSubtitle: "This component is deprecated. Please use the one in Core.",
-    usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-lab"',
+    componentSubtitle: null,
+    usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-core"',
   },
   component: HvAppSwitcherPanel,
 };
@@ -217,16 +216,11 @@ export const Sample4 = () => {
   };
 
   const useStyles = makeStyles((theme) => ({
-    itemTrigger: {},
     itemIcon: {
       transition: "transform .8s ease-in-out",
     },
     itemSelected: {
       backgroundColor: theme.hv.palette.semantic.sema18,
-
-      "& $itemTrigger": {
-        cursor: "default",
-      },
 
       "& $itemIcon": {
         transform: "rotate(315deg)",

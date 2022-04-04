@@ -255,14 +255,14 @@ describe("Avatar ", () => {
       const className = "MyOwnClass";
       const customValue = "my value";
 
-      const [, , rootNode] = mountAndReturnAvatarAndRootNode(
+      const [, avatar] = mountAndReturnAvatarAndRootNode(
         <HvProvider>
           <HvAvatar className={className} custom={customValue} />
         </HvProvider>
       );
 
-      expect(rootNode.childAt(0).childAt(0).hasClass(className)).toBe(true);
-      expect(rootNode.childAt(0).childAt(0).prop("custom")).toBe(customValue);
+      expect(avatar.childAt(0).hasClass(className)).toBe(true);
+      expect(avatar.childAt(0).prop("custom")).toBe(customValue);
     });
   });
 });

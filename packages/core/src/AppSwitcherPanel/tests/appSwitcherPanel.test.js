@@ -17,25 +17,14 @@
 /* eslint-disable no-console */
 
 import React from "react";
-import { mount } from "enzyme";
-
-import { HvProvider } from "@hitachivantara/uikit-react-core";
-import { Info } from "@hitachivantara/uikit-react-icons";
-
-import Action from "../Action";
+import { render } from "testing-utils";
 
 import AppSwitcherPanelWithStyles from "../index";
-import AppSwitcherPanel from "../AppSwitcherPanel";
 
-const consoleErrorSpy = jest.fn();
-const consoleWarnSpy = jest.fn();
+const consoleSpy = jest.fn();
 const originalError = console.error;
-const originalWarn = console.warn;
 
 describe("<AppSwitcherPanel /> with minimum configuration", () => {
-  let wrapper;
-  let appSwitcherPanelComponent;
-
   const mockAppSwitcherPanelProps = {
     isOpen: true,
     title: "Mock title",
@@ -67,51 +56,34 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   };
 
   beforeEach(async () => {
-    console.error = consoleErrorSpy;
-    console.warn = consoleWarnSpy;
-
-    wrapper = mount(
-      <HvProvider>
-        <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
-      </HvProvider>
-    );
-    appSwitcherPanelComponent = wrapper.find(AppSwitcherPanel);
+    console.error = consoleSpy;
   });
 
   afterEach(async () => {
     console.error = originalError;
-    console.warn = originalWarn;
-  });
-
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { container } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    expect(container).toMatchSnapshot();
   });
 
   it("should render 3 action components", () => {
-    expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { getAllByRole } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const actions = getAllByRole("listitem");
+    expect(actions.length).toBe(3);
   });
 
   it("should have 2 Info icons rendered", () => {
-    expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { getAllByLabelText } = render(
+      <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
+    );
+    const images = getAllByLabelText("Description", { exact: false });
+    expect(images.length).toBe(2);
   });
 });
 
 describe("<AppSwitcherPanel /> Applications without a name should not be renderered", () => {
-  let wrapper;
-  let appSwitcherPanelComponent;
-
   const mockAppSwitcherPanelProps = {
     isOpen: true,
     title: "Mock title",
@@ -153,42 +125,29 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
   };
 
   beforeEach(async () => {
-    console.error = consoleErrorSpy;
-    console.warn = consoleWarnSpy;
-    wrapper = mount(
-      <HvProvider>
-        <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
-      </HvProvider>
-    );
-    appSwitcherPanelComponent = wrapper.find(AppSwitcherPanel);
+    console.error = consoleSpy;
   });
 
   afterEach(async () => {
     console.error = originalError;
-    console.warn = originalWarn;
-  });
-
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-    expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
-    expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { container } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    expect(container).toMatchSnapshot();
   });
 
   it("should render 3 action components", () => {
-    expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
-    expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { getAllByRole } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const actions = getAllByRole("listitem");
+    expect(actions.length).toBe(3);
   });
 
   it("should have 2 Info icons rendered", () => {
-    expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
-    expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    const { getAllByLabelText } = render(
+      <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
+    );
+    const images = getAllByLabelText("Description", { exact: false });
+    expect(images.length).toBe(2);
   });
 });

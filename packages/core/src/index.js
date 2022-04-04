@@ -2,6 +2,7 @@
 export { default as HvAccordion } from "./Accordion";
 export { default as HvActionsGeneric } from "./ActionsGeneric";
 export { default as HvActionBar } from "./ActionBar";
+export { default as HvAppSwitcherPanel } from "./AppSwitcherPanel";
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 export { default as HvAvatar } from "./Avatar";
