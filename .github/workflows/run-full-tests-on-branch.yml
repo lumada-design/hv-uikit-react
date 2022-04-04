@@ -100,6 +100,9 @@ jobs:
 
       - name: Bootstrap
         run: npm run bootstrap
+      
+      - name: Build
+        run: npm run build
 
       - name: Build Storybook
         run: |

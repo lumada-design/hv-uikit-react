@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.62.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.61.0...@hitachivantara/uikit-react-core@3.62.0) (2022-04-02)
+
+
+### Features
+
+* **Dialog:** update component with 3.6.0 DS specification ([#2721](https://github.com/lumada-design/hv-uikit-react/issues/2721)) ([fec9399](https://github.com/lumada-design/hv-uikit-react/commit/fec939938354e6b0c31bba3ac2dbfeefce484999))
+
+
+
+
+
 # [3.61.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.60.0...@hitachivantara/uikit-react-core@3.61.0) (2022-03-31)
 
 
