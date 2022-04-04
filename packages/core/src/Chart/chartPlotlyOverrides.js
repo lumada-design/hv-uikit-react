@@ -2,7 +2,7 @@ import styles from "./styles";
 
 const setterIfNil = (object, property, value) => {
   // eslint-disable-next-line no-param-reassign
-  object[property] = object[property] || value;
+  object[property] = object[property] ?? value;
 };
 
 /**
