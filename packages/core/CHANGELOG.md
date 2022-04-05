@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.62.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.0...@hitachivantara/uikit-react-core@3.62.1) (2022-04-05)
+
+
+### Bug Fixes
+
+* **chart:** prevent chart defaults for some falsy values. ([#2723](https://github.com/lumada-design/hv-uikit-react/issues/2723)) ([5f8c234](https://github.com/lumada-design/hv-uikit-react/commit/5f8c234afbcac058e2db5c4f743a26d713014505))
+* **HvCardMedia:** fixed props composition within the base component props ([#2724](https://github.com/lumada-design/hv-uikit-react/issues/2724)) ([a121143](https://github.com/lumada-design/hv-uikit-react/commit/a1211437ceca8b948e7618575b8cfbb3d4f272f3))
+
+
+
+
+
 # [3.62.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.61.0...@hitachivantara/uikit-react-core@3.62.0) (2022-04-02)
 
 
