@@ -45,6 +45,9 @@ const styles = (theme) => {
       width: "auto",
     },
     pageSizeTextContainer: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
       height: "32px",
       padding: "8px 0",
     },
