@@ -8,7 +8,7 @@ const styles = (theme) => ({
 
     background: theme.hv.palette.atmosphere.atmo1,
     boxShadow: theme.hv.shadows[1],
-    clipPath: 'inset(0px -12px 0px 0px)',
+    clipPath: "inset(0px -12px 0px 0px)",
 
     "& > :only-child": {
       padding: theme.hv.spacing.sm,
