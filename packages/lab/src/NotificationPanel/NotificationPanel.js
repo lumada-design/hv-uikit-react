@@ -111,7 +111,7 @@ const HvNotificationPanel = ({
         expanded={expand}
         onClick={(e, item) => {
           setHighlighted(undefined);
-          item?.callback?.(notificationId);
+          item?.callback?.(e, notificationId);
         }}
         dataList={dList}
         onToggle={(event, s) => {
