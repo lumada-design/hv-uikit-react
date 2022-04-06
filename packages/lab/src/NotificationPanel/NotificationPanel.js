@@ -109,9 +109,9 @@ const HvNotificationPanel = ({
     return (
       <HvDropDownMenu
         expanded={expand}
-        onClick={(e, item) => {
+        onClick={(event, item) => {
           setHighlighted(undefined);
-          item?.callback?.(e, notificationId);
+          item?.callback?.(event, notificationId);
         }}
         dataList={dList}
         onToggle={(event, s) => {
