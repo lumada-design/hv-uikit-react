@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.41.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.1...@hitachivantara/uikit-react-lab@3.41.2) (2022-04-07)
+
+
+### Bug Fixes
+
+* **NavigationComponent:** send event object to menu item click callback ([#2727](https://github.com/lumada-design/hv-uikit-react/issues/2727)) ([#2728](https://github.com/lumada-design/hv-uikit-react/issues/2728)) ([ba0ae57](https://github.com/lumada-design/hv-uikit-react/commit/ba0ae5755a82e57914898b1d921b2f59225c10c3))
+
+
+
+
+
 ## [3.41.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.0...@hitachivantara/uikit-react-lab@3.41.1) (2022-04-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
