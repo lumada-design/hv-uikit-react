@@ -38,6 +38,8 @@ export * from "./Header";
 export { default as HvBaseInput } from "./BaseInput";
 export { default as HvInput } from "./Input";
 
+export { default as HvSlider } from "./Slider";
+
 export { default as HvKpi } from "./Kpi";
 
 export { default as HvLinechart } from "./Linechart";
