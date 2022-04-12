@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.62.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.2...@hitachivantara/uikit-react-core@3.62.3) (2022-04-12)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+## 3.62.2 (2022-04-08)
+
+
+### Bug Fixes
+
+* **VerticalNavigation:** fixed component box shadow ([#2726](https://github.com/lumada-design/hv-uikit-react/issues/2726)) ([82c926a](https://github.com/lumada-design/hv-uikit-react/commit/82c926ac13da7e2729d5c97264dce003b6da0246))
+
+
+
+
+
 ## [3.62.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.0...@hitachivantara/uikit-react-core@3.62.1) (2022-04-05)
 
 
