@@ -32,7 +32,7 @@ interface Header {
 interface Value {
   label: string;
   action: string;
-  callback?: (notificationId: string) => void;
+  callback?: (event: Event, notificationId: string) => void;
 }
 
 interface actions {
