@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.62.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.3...@hitachivantara/uikit-react-core@3.62.4) (2022-04-13)
+
+
+### Bug Fixes
+
+* **TagsInput:** fix incorrect input width when no tags exist ([#2732](https://github.com/lumada-design/hv-uikit-react/issues/2732)) ([765ef07](https://github.com/lumada-design/hv-uikit-react/commit/765ef078fd821ce12fec954f367e7fd8ff2226d0))
+
+
+
+
+
 ## [3.62.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.2...@hitachivantara/uikit-react-core@3.62.3) (2022-04-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
