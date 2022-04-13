@@ -83,6 +83,7 @@ const styles = (theme) => ({
     lineClamp: 2,
     boxOrient: "vertical",
     overflow: "hidden",
+    wordBreak: "break-all",
   },
 
   title: {
