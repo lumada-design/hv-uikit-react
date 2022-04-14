@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.41.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.5...@hitachivantara/uikit-react-lab@3.41.6) (2022-04-14)
+
+
+### Bug Fixes
+
+* **NotificationPanel:** added css to break words to avoid text truncation ([#2735](https://github.com/lumada-design/hv-uikit-react/issues/2735)) ([7007235](https://github.com/lumada-design/hv-uikit-react/commit/7007235d6a2b98761c060d989a35db33f05f0c86))
+
+
+
+
+
 ## [3.41.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.4...@hitachivantara/uikit-react-lab@3.41.5) (2022-04-13)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
