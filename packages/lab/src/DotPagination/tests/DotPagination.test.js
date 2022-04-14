@@ -34,7 +34,6 @@ describe("DotPagination", () => {
                 return `${pageNumber + 1} page aria-label`;
             }
           }}
-          id={1}
           role="navigation"
         />
       );
@@ -71,7 +70,6 @@ describe("DotPagination", () => {
                 return `${pageNumber + 1} page aria-label`;
             }
           }}
-          id={1}
           role="navigation"
         />
       );
@@ -108,7 +106,6 @@ describe("DotPagination", () => {
                 return `${pageNumber + 1} page aria-label`;
             }
           }}
-          id={1}
           role="navigation"
         />
       );

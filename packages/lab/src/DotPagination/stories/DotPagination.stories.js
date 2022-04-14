@@ -31,7 +31,7 @@ export const Main = () => {
       <HvDotPagination
         page={page}
         pages={pages.length}
-        onPageChange={(value) => setPage(value)}
+        onPageChange={(event, value) => setPage(value)}
         getItemAriaLabel={(pageNumber) => {
           switch (pageNumber) {
             case 0:
@@ -42,7 +42,6 @@ export const Main = () => {
               return `${pageNumber + 1} page aria-label`;
           }
         }}
-        id={1}
         role="navigation"
         aria-label="Example Dot Navigation"
       />

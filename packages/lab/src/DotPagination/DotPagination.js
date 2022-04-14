@@ -19,7 +19,8 @@ export const getSelectorIcons = (classes, options) => {
 };
 
 /**
- * DotPagination description/documentation paragraph
+ * Pagination is the process of dividing a document into discrete pages. It relates to how users interact with structured content on a website or application.
+ * This component uses Radio Buttons to represent each page.
  */
 const HvDotPagination = (props) => {
   const {
@@ -29,7 +30,6 @@ const HvDotPagination = (props) => {
     page = 0,
     onPageChange,
     getItemAriaLabel,
-    id,
     ...others
   } = props;
 
@@ -38,22 +38,25 @@ const HvDotPagination = (props) => {
   const icons = getSelectorIcons(classes, {});
 
   return (
-    <div className={clsx(className, classes.root)} {...others}>
-      <HvRadioGroup classes={{ horizontal: classes.horizontal }} orientation="horizontal">
-        {range(pages).map((pg, i) => (
-          <HvRadio
-            classes={{ root: classes.radioRoot }}
-            key={`dot_navigation${id && id.toString()}_item${i.toString()}`}
-            value={i}
-            checked={page === i}
-            onChange={() => onPageChange(i)}
-            icon={icons.radio}
-            checkedIcon={icons.radioChecked}
-            aria-label={getItemAriaLabel(i)}
-          />
-        ))}
-      </HvRadioGroup>
-    </div>
+    <HvRadioGroup
+      className={clsx(className, classes.root)}
+      classes={{ horizontal: classes.horizontal }}
+      orientation="horizontal"
+      {...others}
+    >
+      {range(pages).map((i) => (
+        <HvRadio
+          classes={{ root: classes.radioRoot }}
+          key={i}
+          value={i}
+          checked={page === i}
+          onChange={(event) => onPageChange(event, i)}
+          icon={icons.radio}
+          checkedIcon={icons.radioChecked}
+          aria-label={getItemAriaLabel(i)}
+        />
+      ))}
+    </HvRadioGroup>
   );
 };
 
@@ -84,7 +87,7 @@ HvDotPagination.propTypes = {
    */
   pages: PropTypes.number,
   /**
-   * The currently selected page (0-indexed).
+   * The currently selected page.
    */
   page: PropTypes.number,
   /**
@@ -95,10 +98,6 @@ HvDotPagination.propTypes = {
    * Function called to get the respective aria label.
    */
   getItemAriaLabel: PropTypes.func,
-  /**
-   *  Component id used to generate unique radio keys ( to avoid repeated keys in case multiple dotPagination components are needed)
-   */
-  id: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvDotPagination" })(HvDotPagination);
