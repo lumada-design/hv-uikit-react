@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.41.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.7...@hitachivantara/uikit-react-lab@3.41.8) (2022-04-18)
+
+
+### Bug Fixes
+
+* **NotificationPanel:** toggles pointer cursor according to available onClick param. HVUIKIT-2740 ([9f7f1c2](https://github.com/lumada-design/hv-uikit-react/commit/9f7f1c264126fc29e961d4a21fab93e401a3d4ea))
+
+
+
+
+
 ## [3.41.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.6...@hitachivantara/uikit-react-lab@3.41.7) (2022-04-15)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
