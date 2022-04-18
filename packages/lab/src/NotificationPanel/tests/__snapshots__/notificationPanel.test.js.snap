@@ -156,7 +156,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
               class="HvNotificationPanelNotification-iconContainer"
@@ -265,7 +265,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
               class="HvNotificationPanelNotification-iconContainer"
@@ -350,7 +350,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
               class="HvNotificationPanelNotification-iconContainer"

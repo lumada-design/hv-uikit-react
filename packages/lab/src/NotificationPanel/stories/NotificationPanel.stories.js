@@ -97,9 +97,6 @@ export const Main = () => {
       isRead: true,
       date: new Date("6/19/2019"),
       icon: <Level5 semantic="sema4" />,
-      onClick: () => {
-        alert("Clicked");
-      },
       onKeyPress: () => {
         alert("Keypress Clicked");
       },
