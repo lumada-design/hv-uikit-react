@@ -54,8 +54,8 @@ const Notification = ({
 
   return (
     <div
-      onClick={(event) => onClick(event, notificationId)}
-      onKeyPress={(event) => onKeyPress(event, notificationId)}
+      onClick={(event) => onClick?.(event, notificationId)}
+      onKeyPress={(event) => onKeyPress?.(event, notificationId)}
       className={clsx(className, classes.root, {
         [classes.notificationWrapperDropdown]: isHighlighted,
         [classes.read]: isRead,
@@ -66,6 +66,7 @@ const Notification = ({
       <div
         className={clsx(classes.notificationWrapper, {
           [classes.notificationDropdownOpen]: isHighlighted,
+          [classes.clickable]: !!onClick,
         })}
       >
         <div className={classes.iconContainer}>{icon}</div>
@@ -147,6 +148,10 @@ Notification.propTypes = {
      * Styles applied to the notification message actions dropdown.
      */
     notificationActionWrapper: PropTypes.string,
+    /**
+     * Styles applied to the notification when clickable
+     */
+    clickable: PropTypes.string,
   }).isRequired,
 
   /**
