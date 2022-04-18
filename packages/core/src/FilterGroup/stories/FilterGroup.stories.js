@@ -4,8 +4,8 @@ import HvFilterGroup from "../FilterGroup";
 export default {
   title: "Widgets/Filter Group",
   parameters: {
-    componentSubtitle:
-      "This component implements one potential use-case of the Filter Group pattern Design System Specifies. Due to the enormous variety of capabilities required for this, we strongly recommend checking the code of the component and extend it yourself, while we do not provide a better approach for building this component with smaller and more composable parts.",
+    componentSubtitle: null,
+    usage: 'import { HvFilterGroup } from "@hitachivantara/uikit-react-core"',
     dsVersion: "3.6.0",
   },
   component: HvFilterGroup,
