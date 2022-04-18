@@ -29,6 +29,7 @@ const styles = (theme) => ({
     color: theme.hv.palette.base.base2,
     fontFamily: theme.hv.typography.fontFamily,
     maxHeight: "72px",
+    wordBreak: "break-word",
   },
   action: {
     textAlign: "right",
