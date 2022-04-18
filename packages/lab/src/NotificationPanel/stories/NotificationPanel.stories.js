@@ -104,6 +104,16 @@ export const Main = () => {
         alert("Keypress Clicked");
       },
     },
+    {
+      id: "5",
+      title: "Cabin door knob malfunction. Not clickable",
+      isRead: false,
+      date: new Date(),
+      icon: <Level5 semantic="sema4" />,
+      onClick: () => {},
+      onKeyPress: () => {},
+      isClickable: false,
+    },
   ];
 
   const [notifications, setNotifications] = useState(notificationSet);

@@ -137,6 +137,7 @@ const HvNotificationPanel = ({
           notificationId={notification.id}
           title={notification.title}
           isRead={notification.isRead}
+          isClickable={notification.isClickable}
           icon={notification.icon}
           date={notification.date}
           onClick={notification.onClick}
@@ -261,6 +262,7 @@ HvNotificationPanel.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       isRead: PropTypes.bool.isRequired,
+      isClickable: PropTypes.bool,
       date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
       icon: PropTypes.element,
       onClick: PropTypes.func,

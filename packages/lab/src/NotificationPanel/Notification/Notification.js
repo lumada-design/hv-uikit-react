@@ -29,6 +29,7 @@ const Notification = ({
   onKeyPress,
   rightContainer,
   isHighlighted,
+  isClickable = true,
 }) => {
   const getTime = () => {
     if (!isRead) {
@@ -66,6 +67,7 @@ const Notification = ({
       <div
         className={clsx(classes.notificationWrapper, {
           [classes.notificationDropdownOpen]: isHighlighted,
+          [classes.clickable]: isClickable,
         })}
       >
         <div className={classes.iconContainer}>{icon}</div>
@@ -147,6 +149,10 @@ Notification.propTypes = {
      * Styles applied to the notification message actions dropdown.
      */
     notificationActionWrapper: PropTypes.string,
+    /**
+     * Styles applied to the notification when clickable
+     */
+    clickable: PropTypes.string,
   }).isRequired,
 
   /**
@@ -189,6 +195,10 @@ Notification.propTypes = {
    * Denotes index of clicked notification
    */
   isHighlighted: PropTypes.bool,
+  /**
+   * States if the notification is clickable
+   */
+  isClickable: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanelNotification" })(Notification);
