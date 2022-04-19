@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.62.5 (2022-04-19)
+
+
+### Bug Fixes
+
+* **filtergroup:** enable typings ([#2743](https://github.com/lumada-design/hv-uikit-react/issues/2743)) ([aa09e97](https://github.com/lumada-design/hv-uikit-react/commit/aa09e9705905a2970e44c8f487f8688d2fc30f2c))
+* **Snackbar:** message overflow its content box when rendering long words. HVUIKIT-6344 ([#2745](https://github.com/lumada-design/hv-uikit-react/issues/2745)) ([7989b3d](https://github.com/lumada-design/hv-uikit-react/commit/7989b3db14e7f0afb5b11c5a6809fa72586a2746))
+
+
+
+
+
 ## [3.62.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.3...@hitachivantara/uikit-react-core@3.62.4) (2022-04-13)
 
 
