@@ -39,7 +39,7 @@
     "publish-premajor": "npx lerna changed && npx lerna publish premajor --yes",
     "publish-major": "npx lerna changed && npx lerna publish major --yes",
     "lint": "npx npm-run-all --npm-path npm --parallel lint:*",
-    "lint:eslint": "npx eslint ./ --cache --ignore-pattern .gitignore --ext .js,.jsx,.ts,.tsx",
+    "lint:eslint": "npx eslint ./ --cache --ext .js,.jsx,.ts,.tsx",
     "lint:prettier": "npx lerna run lint:prettier",
     "lint:root-prettier": "npx prettier --config ./prettier.config.js --check \"*.js\" \"(doc|.storybook|scripts|automation)/**/*.js\"",
     "license-check": "npx lerna run license-check",
