@@ -277,3 +277,54 @@ Badge.parameters = {
     },
   },
 };
+
+export const ContainerProps = () => {
+  return (
+    <>
+      <HvAvatar
+        id="props2"
+        size="SM"
+        containerProps={{
+          role: "button",
+          "aria-label": "Login",
+          tabIndex: 0,
+        }}
+      >
+        <LogIn color="atmo1" iconSize="XS" />
+      </HvAvatar>
+      <HvAvatar
+        id="props1"
+        size="MD"
+        status="sema1"
+        alt="Ben"
+        src={man1}
+        containerProps={{
+          role: "button",
+          "aria-label": "Ben - online",
+          tabIndex: 0,
+        }}
+      />
+      <HvAvatar
+        id="props3"
+        size="LG"
+        badge="sema4"
+        alt="Beatrice"
+        src={woman1}
+        containerProps={{
+          role: "button",
+          "aria-label": "Beatrice - offline",
+          tabIndex: 0,
+        }}
+      />
+    </>
+  );
+};
+
+ContainerProps.parameters = {
+  docs: {
+    description: {
+      story:
+        "The avatar container can receive a props object to allow for focusing and dynamically setting other props like the aria-label or the tabIndex.",
+    },
+  },
+};
