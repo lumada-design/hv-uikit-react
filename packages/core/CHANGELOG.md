@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.62.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.5...@hitachivantara/uikit-react-core@3.62.6) (2022-04-20)
+
+
+### Bug Fixes
+
+* **Avatar:** add containerProps ([#2747](https://github.com/lumada-design/hv-uikit-react/issues/2747)) ([872a22c](https://github.com/lumada-design/hv-uikit-react/commit/872a22c69083eda96ac02cd7c831b25c8153dac0))
+
+
+
+
+
 ## 3.62.5 (2022-04-19)
 
 
