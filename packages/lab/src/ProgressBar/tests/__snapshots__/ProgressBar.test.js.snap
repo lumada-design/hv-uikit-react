@@ -23,7 +23,6 @@ exports[`ProgressBar General 1`] = `
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
-          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
@@ -93,7 +92,6 @@ exports[`ProgressBar General 1`] = `
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
-          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
@@ -163,7 +161,6 @@ exports[`ProgressBar General 1`] = `
           aria-valuenow="0"
           class="HvProgressBar-root HvProgressBar-progress"
           role="progressbar"
-          status="inProgress"
         >
           <div
             class="HvProgressBar-progressContainer"
