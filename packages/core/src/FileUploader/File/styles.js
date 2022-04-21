@@ -18,6 +18,7 @@ const styles = (theme) => ({
   progressTextContainer: {
     display: "flex",
     flexGrow: 1,
+    alignItems: "center",
   },
   previewContainer: {
     display: "flex",
