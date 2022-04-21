@@ -174,35 +174,46 @@ Sizes.parameters = {
 
 // eslint-disable-next-line react/prop-types
 export const Buttons = () => {
-  const AvatarButton = ({ children, ...other }) => (
-    <HvButton
-      tabIndex={-1}
-      aria-label="Open the user profile"
-      icon
-      overrideIconColors={false}
-      {...other}
-    >
-      {children}
-    </HvButton>
-  );
-
   const doAlert = () => alert("Avatar clicked");
+
   return (
     <>
-      <HvAvatar id="default_icon" component={AvatarButton} onClick={doAlert} />
-      <HvAvatar id="letters" backgroundColor="sema19" component={AvatarButton} onClick={doAlert}>
-        BM
-      </HvAvatar>
-      <HvAvatar
-        id="image"
-        alt="Clara Soul"
-        src={woman2}
-        component={AvatarButton}
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
         onClick={doAlert}
-      />
-      <HvAvatar id="icon" backgroundColor="sema1" component={AvatarButton} onClick={doAlert}>
-        <LogIn semantic="sema8" iconSize="XS" />
-      </HvAvatar>
+      >
+        <HvAvatar id="icon" backgroundColor="sema1">
+          <LogIn semantic="sema8" iconSize="XS" />
+        </HvAvatar>
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="default_icon" />
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="letters" backgroundColor="sema19" size="MD" badge="sema4">
+          BM
+        </HvAvatar>
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="image" alt="Clara Soul" src={woman2} size="XL" status="sema1" />
+      </HvButton>
     </>
   );
 };
