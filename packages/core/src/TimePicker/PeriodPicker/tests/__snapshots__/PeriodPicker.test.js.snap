@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PeriodPicker should rednder correctly 1`] = `
+<div>
+  <div
+    class="HvTimePickerPeriodPicker-periodContainer"
+  >
+    <div
+      class="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
+      name="DropUpXS"
+    >
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
+    <button
+      aria-pressed="false"
+      class="MuiButtonBase-root-28 MuiButton-root-1 HvButton-root MuiButton-text-3 HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG MuiButton-textPrimary-4 HvButton-ghost"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label-2"
+      >
+        AM
+      </span>
+    </button>
+    <div
+      class="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon HvIconBase-root HvIconBase-xs"
+      name="DropDownXS"
+    >
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;

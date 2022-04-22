@@ -6,18 +6,7 @@ import userEvent from "@testing-library/user-event";
 import { Main, CustomDefault } from "../stories/TimePicker.stories";
 import HvTimePicker from "../TimePicker";
 
-const consoleWarnSpy = jest.fn();
-const originalWarn = console.warn;
-
 describe("Timepicker", () => {
-  beforeEach(() => {
-    console.warn = consoleWarnSpy;
-  });
-
-  afterEach(() => {
-    console.warn = originalWarn;
-  });
-
   describe("snapshot tests", () => {
     it("Main", () => {
       const { container } = render(<CustomDefault />);
