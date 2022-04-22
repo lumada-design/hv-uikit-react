@@ -820,7 +820,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
                                                           </p>
@@ -1042,7 +1041,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix now
                                                           </p>
@@ -1266,7 +1264,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
                                                           </p>
@@ -1668,7 +1665,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <p
                                                               class="HvTypography-root HvTypography-normalText"
-                                                              style="padding-top: 2px;"
                                                             >
                                                               Fix 3rd shift
                                                             </p>
@@ -1890,7 +1886,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <p
                                                               class="HvTypography-root HvTypography-normalText"
-                                                              style="padding-top: 2px;"
                                                             >
                                                               Fix now
                                                             </p>
@@ -2114,7 +2109,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <p
                                                               class="HvTypography-root HvTypography-normalText"
-                                                              style="padding-top: 2px;"
                                                             >
                                                               Fix 3rd shift
                                                             </p>
@@ -3615,7 +3609,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         />
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
-                                                          style="padding-top: 2px;"
                                                         >
                                                           Fix 3rd shift
                                                         </p>
@@ -3837,7 +3830,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         />
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
-                                                          style="padding-top: 2px;"
                                                         >
                                                           Fix now
                                                         </p>
@@ -4061,7 +4053,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         />
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
-                                                          style="padding-top: 2px;"
                                                         >
                                                           Fix 3rd shift
                                                         </p>
@@ -4495,7 +4486,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
                                                           </p>
@@ -4717,7 +4707,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix now
                                                           </p>
@@ -4941,7 +4930,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           />
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
-                                                            style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
                                                           </p>
@@ -5379,7 +5367,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -5601,7 +5588,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
                                                                     </p>
@@ -5825,7 +5811,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -6159,7 +6144,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -6381,7 +6365,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
                                                                       </p>
@@ -6605,7 +6588,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -7393,13 +7375,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <div
                                                               className="Row-columnSplitter-2"
                                                             />
-                                                            <WithStyles(ForwardRef)
-                                                              style={
-                                                                Object {
-                                                                  "paddingTop": "2px",
-                                                                }
-                                                              }
-                                                            >
+                                                            <WithStyles(ForwardRef)>
                                                               <ForwardRef
                                                                 classes={
                                                                   Object {
@@ -7427,19 +7403,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                style={
-                                                                  Object {
-                                                                    "paddingTop": "2px",
-                                                                  }
-                                                                }
                                                               >
                                                                 <p
                                                                   className="HvTypography-root HvTypography-normalText"
-                                                                  style={
-                                                                    Object {
-                                                                      "paddingTop": "2px",
-                                                                    }
-                                                                  }
                                                                 >
                                                                   Fix 3rd shift
                                                                 </p>
@@ -8917,7 +8883,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -9139,7 +9104,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
                                                                     </p>
@@ -9363,7 +9327,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -9697,7 +9660,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -9919,7 +9881,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
                                                                       </p>
@@ -10143,7 +10104,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -10931,13 +10891,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <div
                                                               className="Row-columnSplitter-2"
                                                             />
-                                                            <WithStyles(ForwardRef)
-                                                              style={
-                                                                Object {
-                                                                  "paddingTop": "2px",
-                                                                }
-                                                              }
-                                                            >
+                                                            <WithStyles(ForwardRef)>
                                                               <ForwardRef
                                                                 classes={
                                                                   Object {
@@ -10965,19 +10919,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                style={
-                                                                  Object {
-                                                                    "paddingTop": "2px",
-                                                                  }
-                                                                }
                                                               >
                                                                 <p
                                                                   className="HvTypography-root HvTypography-normalText"
-                                                                  style={
-                                                                    Object {
-                                                                      "paddingTop": "2px",
-                                                                    }
-                                                                  }
                                                                 >
                                                                   Fix now
                                                                 </p>
@@ -12455,7 +12399,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -12677,7 +12620,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
                                                                     </p>
@@ -12901,7 +12843,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     />
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
-                                                                      style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
                                                                     </p>
@@ -13235,7 +13176,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -13457,7 +13397,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
                                                                       </p>
@@ -13681,7 +13620,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       />
                                                                       <p
                                                                         class="HvTypography-root HvTypography-normalText"
-                                                                        style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
                                                                       </p>
@@ -14471,13 +14409,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <div
                                                               className="Row-columnSplitter-2"
                                                             />
-                                                            <WithStyles(ForwardRef)
-                                                              style={
-                                                                Object {
-                                                                  "paddingTop": "2px",
-                                                                }
-                                                              }
-                                                            >
+                                                            <WithStyles(ForwardRef)>
                                                               <ForwardRef
                                                                 classes={
                                                                   Object {
@@ -14505,19 +14437,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                style={
-                                                                  Object {
-                                                                    "paddingTop": "2px",
-                                                                  }
-                                                                }
                                                               >
                                                                 <p
                                                                   className="HvTypography-root HvTypography-normalText"
-                                                                  style={
-                                                                    Object {
-                                                                      "paddingTop": "2px",
-                                                                    }
-                                                                  }
                                                                 >
                                                                   Fix 3rd shift
                                                                 </p>

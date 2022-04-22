@@ -99,7 +99,7 @@ export const Main = () => {
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
             <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
+            <HvTypography>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
@@ -120,7 +120,7 @@ export const Main = () => {
 
   const styles = (theme) => ({
     timestamp: {
-      padding: theme.hvSpacing("2px", "xs", 0, "xs"),
+      padding: theme.hvSpacing(0, "xs", 0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
