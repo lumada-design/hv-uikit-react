@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.62.7 (2022-04-22)
+
+
+### Bug Fixes
+
+* **FileUploader:** realigned upload value HVUIKIT-6340 ([2e26913](https://github.com/lumada-design/hv-uikit-react/commit/2e26913c531175fcb3ad21cc911dac3326131411))
+
+
+
+
+
 ## [3.62.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.5...@hitachivantara/uikit-react-core@3.62.6) (2022-04-20)
 
 
