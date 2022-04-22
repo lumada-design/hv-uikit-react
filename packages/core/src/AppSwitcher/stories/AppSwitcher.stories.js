@@ -3,19 +3,18 @@ import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core";
 
-import { HvTypography } from "@hitachivantara/uikit-react-core";
-
 import { Code, LeftAlign, Tool, Champion } from "@hitachivantara/uikit-react-icons";
+import { HvTypography } from "../..";
 
-import HvAppSwitcherPanel from "..";
+import HvAppSwitcher from "..";
 
 export default {
-  title: "Lab/AppSwitcherPanel",
+  title: "Components/App Switcher",
   parameters: {
-    componentSubtitle: "This component is deprecated. Please use the one in Core.",
-    usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-lab"',
+    componentSubtitle: null,
+    usage: 'import { HvAppSwitcher } from "@hitachivantara/uikit-react-core"',
   },
-  component: HvAppSwitcherPanel,
+  component: HvAppSwitcher,
 };
 
 export const Main = () => {
@@ -46,7 +45,7 @@ export const Main = () => {
       target: "_blank",
     },
     {
-      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcher",
       color: "acce2",
       iconElement: <LeftAlign color="acce2" />,
       description: "App 1 description",
@@ -64,7 +63,7 @@ export const Main = () => {
   ];
 
   return (
-    <HvAppSwitcherPanel
+    <HvAppSwitcher
       title="My Apps"
       applications={applicationsList}
       isActionSelectedCallback={handlesActionSelectedCallback}
@@ -102,7 +101,7 @@ export const Sample2 = () => {
       target: "_blank",
     },
     {
-      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcher",
       color: "acce2",
       iconElement: <LeftAlign color="acce2" />,
       description: "App 1 description",
@@ -122,7 +121,7 @@ export const Sample2 = () => {
   ];
 
   return (
-    <HvAppSwitcherPanel
+    <HvAppSwitcher
       layout="dual"
       title="My Apps"
       applications={applicationsList}
@@ -168,7 +167,7 @@ export const Sample3 = () => {
 
   return (
     <div style={{ display: "flex", height: 370 }}>
-      <HvAppSwitcherPanel
+      <HvAppSwitcher
         layout="dual"
         title="Big list of applications"
         applications={getDummyApplicationsList()}
@@ -188,7 +187,7 @@ Sample3.parameters = {
 export const Sample4 = () => {
   const applicationsList = [
     {
-      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcher",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
     },
@@ -217,16 +216,11 @@ export const Sample4 = () => {
   };
 
   const useStyles = makeStyles((theme) => ({
-    itemTrigger: {},
     itemIcon: {
       transition: "transform .8s ease-in-out",
     },
     itemSelected: {
       backgroundColor: theme.hv.palette.semantic.sema18,
-
-      "& $itemTrigger": {
-        cursor: "default",
-      },
 
       "& $itemIcon": {
         transform: "rotate(315deg)",
@@ -237,7 +231,7 @@ export const Sample4 = () => {
   const classes = useStyles();
 
   return (
-    <HvAppSwitcherPanel
+    <HvAppSwitcher
       applications={applicationsList}
       isActionSelectedCallback={handleIsActionSelected}
       onActionClickedCallback={handleActionClicked}

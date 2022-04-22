@@ -27,8 +27,10 @@ import Action from "../Action";
 import AppSwitcherPanelWithStyles from "../index";
 import AppSwitcherPanel from "../AppSwitcherPanel";
 
-const consoleSpy = jest.fn();
+const consoleErrorSpy = jest.fn();
+const consoleWarnSpy = jest.fn();
 const originalError = console.error;
+const originalWarn = console.warn;
 
 describe("<AppSwitcherPanel /> with minimum configuration", () => {
   let wrapper;
@@ -65,7 +67,9 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   };
 
   beforeEach(async () => {
-    console.error = consoleSpy;
+    console.error = consoleErrorSpy;
+    console.warn = consoleWarnSpy;
+
     wrapper = mount(
       <HvProvider>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
@@ -76,30 +80,31 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
 
   afterEach(async () => {
     console.error = originalError;
+    console.warn = originalWarn;
   });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
     expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
     expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render 3 action components", () => {
     expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
     expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should have 2 Info icons rendered", () => {
     expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
     expect(console.error).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 });
 
@@ -148,7 +153,8 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
   };
 
   beforeEach(async () => {
-    console.error = consoleSpy;
+    console.error = consoleErrorSpy;
+    console.warn = consoleWarnSpy;
     wrapper = mount(
       <HvProvider>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
@@ -159,29 +165,30 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
 
   afterEach(async () => {
     console.error = originalError;
+    console.warn = originalWarn;
   });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
     expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
     expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should render 3 action components", () => {
     expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
     expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 
   it("should have 2 Info icons rendered", () => {
     expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
     expect(console.error).toHaveBeenCalledTimes(2);
-    expect(consoleSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
+    expect(consoleErrorSpy.mock.calls[0][2].includes("is deprecated")).toBe(true);
   });
 });

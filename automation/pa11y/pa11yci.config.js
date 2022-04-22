@@ -101,6 +101,14 @@ const overrides = {
       ],
     },
   },
+  "Components/App Switcher": {
+    "*": {
+      ignore: [
+        // interactive controls must not be nested but the app switcher panel might have a button as child
+        "nested-interactive",
+      ],
+    },
+  },
 };
 
 module.exports = (async () => {

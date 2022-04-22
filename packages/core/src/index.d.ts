@@ -7,6 +7,9 @@ export * from "./ActionBar";
 export { default as HvActionsGeneric } from "./ActionsGeneric";
 export * from "./ActionsGeneric";
 
+export { default as HvAppSwitcher } from "./AppSwitcher";
+export * from "./AppSwitcher";
+
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 
