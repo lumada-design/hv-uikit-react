@@ -1,9 +1,9 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-import { HvAppSwitcherPanelActionApplication } from "./Action";
+import { HvAppSwitcherActionApplication } from "./Action";
 
-export type HvAppSwitcherPanelClassKey =
+export type HvAppSwitcherClassKey =
   | "root"
   | "single"
   | "dual"
@@ -21,8 +21,8 @@ export type HvAppSwitcherPanelClassKey =
   | "itemTitle"
   | "itemInfoIcon";
 
-export interface HvAppSwitcherPanelProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelClassKey> {
+export interface HvAppSwitcherProps
+  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherClassKey> {
   /**
    * Number of columns to render. One, two, or whatever fits the component's width.
    */
@@ -35,19 +35,19 @@ export interface HvAppSwitcherPanelProps
   /**
    * The list of applications to be used to render the actions on the component.
    */
-  applications: HvAppSwitcherPanelActionApplication[];
+  applications: HvAppSwitcherActionApplication[];
 
   /**
    * Triggered when an action is clicked.
    */
   onActionClickedCallback?: (
     event: MouseEvent,
-    application?: HvAppSwitcherPanelActionApplication
+    application?: HvAppSwitcherActionApplication
   ) => void;
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isActionSelectedCallback?: (application?: HvAppSwitcherPanelActionApplication) => boolean;
+  isActionSelectedCallback?: (application?: HvAppSwitcherActionApplication) => boolean;
 
   /**
    * Element to be added to the header container, if none is provided a label with the title will be added.
@@ -64,4 +64,4 @@ export interface HvAppSwitcherPanelProps
   isOpen?: boolean;
 }
 
-export default function HvAppSwitcherPanel(props: HvAppSwitcherPanelProps): JSX.Element | null;
+export default function HvAppSwitcher(props: HvAppSwitcherProps): JSX.Element | null;

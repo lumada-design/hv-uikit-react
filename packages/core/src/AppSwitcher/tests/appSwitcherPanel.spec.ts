@@ -6,12 +6,12 @@ testingThemes.forEach(async (theme) => {
   test.describe(`AppSwitcher ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=components-app-switcher-panel--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=components-app-switcher--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 
     test(`Contains five items`, async ({ page }) => {
-      await expect(page.locator(`li.HvAppSwitcherPanel-item`)).toHaveCount(5);
+      await expect(page.locator(`li.HvAppSwitcher-item`)).toHaveCount(5);
     });
 
     test(`Redirects to link when an item has a link`, async ({ page }) => {

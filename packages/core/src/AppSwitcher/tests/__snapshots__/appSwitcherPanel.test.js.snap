@@ -1,40 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AppSwitcherPanel /> Applications without a name should not be renderered should render correctly 1`] = `
+exports[`<AppSwitcher /> Applications without a name should not be renderered should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcherPanel-root HvAppSwitcherPanel-single HvAppSwitcherPanel-open"
+    class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open"
   >
     <span
-      class="HvAppSwitcherPanel-title HvTypography-root HvTypography-highlightText"
+      class="HvAppSwitcher-title HvTypography-root HvTypography-highlightText"
     >
       Mock title
     </span>
     <ul
-      class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
+      class="HvAppSwitcher-actionsContainer HvListContainer-root"
     >
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp1/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 1 Description"
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp1/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 1 - VALID
           </span>
@@ -43,7 +43,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
           >
             <div
               aria-label="Mock App 1 Description"
-              class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -65,25 +65,25 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
         </a>
       </li>
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <button
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           style="border-color: #414141;"
           tabindex="0"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 3 Description"
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp3/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 3
           </span>
@@ -92,7 +92,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
           >
             <div
               aria-label="Mock App 3 Description"
-              class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -114,26 +114,26 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
         </button>
       </li>
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp5/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp5/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 5 - VALID without description
           </span>
@@ -144,67 +144,67 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
 </div>
 `;
 
-exports[`<AppSwitcherPanel /> with minimum configuration should render correctly 1`] = `
+exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcherPanel-root HvAppSwitcherPanel-single HvAppSwitcherPanel-open"
+    class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open"
   >
     <span
-      class="HvAppSwitcherPanel-title HvTypography-root HvTypography-highlightText"
+      class="HvAppSwitcher-title HvTypography-root HvTypography-highlightText"
     >
       Mock title
     </span>
     <ul
-      class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
+      class="HvAppSwitcher-actionsContainer HvListContainer-root"
     >
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp1/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp1/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 1
           </span>
         </a>
       </li>
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp2/"
           style="border-color: #414141;"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 2 Description"
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp2/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 2
           </span>
@@ -213,7 +213,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -235,27 +235,27 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
         </a>
       </li>
       <li
-        class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp2/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 2 Description"
-              class="HvAppSwitcherPanelAction-iconUrl"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp2/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
           >
             Mock App 3
           </span>
@@ -264,7 +264,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >

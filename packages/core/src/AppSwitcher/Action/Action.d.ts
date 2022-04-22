@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-export interface HvAppSwitcherPanelActionApplication {
+export interface HvAppSwitcherActionApplication {
   /**
    * Id of the application.
    */
@@ -47,7 +47,7 @@ export interface HvAppSwitcherPanelActionApplication {
   isSelected?: boolean;
 }
 
-export type HvAppSwitcherPanelActionClassKey =
+export type HvAppSwitcherActionClassKey =
   | "root"
   | "typography"
   | "selected"
@@ -56,22 +56,20 @@ export type HvAppSwitcherPanelActionClassKey =
   | "title"
   | "iconInfo";
 
-export interface HvAppSwitcherPanelActionProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelActionClassKey> {
+export interface HvAppSwitcherActionProps
+  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherActionClassKey> {
   /**
    * The application data to be used to render the Action object.
    */
-  application: HvAppSwitcherPanelActionApplication;
+  application: HvAppSwitcherActionApplication;
   /**
    * Callback triggered when the action is clicked.
    */
-  onClickCallback?: (event: MouseEvent, application?: HvAppSwitcherPanelActionApplication) => void;
+  onClickCallback?: (event: MouseEvent, application?: HvAppSwitcherActionApplication) => void;
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isSelectedCallback?: (application?: HvAppSwitcherPanelActionApplication) => boolean;
+  isSelectedCallback?: (application?: HvAppSwitcherActionApplication) => boolean;
 }
 
-export default function HvAppSwitcherPanelAction(
-  props: HvAppSwitcherPanelActionProps
-): JSX.Element | null;
+export default function HvAppSwitcherAction(props: HvAppSwitcherActionProps): JSX.Element | null;

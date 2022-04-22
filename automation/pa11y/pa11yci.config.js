@@ -101,7 +101,7 @@ const overrides = {
       ],
     },
   },
-  "Components/App Switcher Panel": {
+  "Components/App Switcher": {
     "*": {
       ignore: [
         // interactive controls must not be nested but the app switcher panel might have a button as child

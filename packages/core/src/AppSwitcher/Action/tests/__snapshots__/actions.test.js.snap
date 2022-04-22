@@ -3,18 +3,18 @@
 exports[`<Action /> with an element icon should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherPanelAction-icon"
+        class="HvAppSwitcherAction-icon"
       >
         <div
           class="HvIconBase-root HvIconBase-s"
@@ -37,7 +37,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         </div>
       </div>
       <span
-        class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
       >
         Mock App 1
       </span>
@@ -49,27 +49,27 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
 exports[`<Action /> with description should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherPanelAction-icon"
+        class="HvAppSwitcherAction-icon"
       >
         <img
           alt="Mock App 1 Description"
-          class="HvAppSwitcherPanelAction-iconUrl"
+          class="HvAppSwitcherAction-iconUrl"
           src="http://mockapp1/icon"
         />
       </div>
       <span
-        class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
       >
         Mock App 1
       </span>
@@ -78,7 +78,7 @@ exports[`<Action /> with description should render correctly 1`] = `
       >
         <div
           aria-label="Mock App 1 Description"
-          class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+          class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
           name="Info"
           role="img"
         >
@@ -105,26 +105,26 @@ exports[`<Action /> with description should render correctly 1`] = `
 exports[`<Action /> without description should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherPanelAction-icon"
+        class="HvAppSwitcherAction-icon"
       >
         <img
-          class="HvAppSwitcherPanelAction-iconUrl"
+          class="HvAppSwitcherAction-iconUrl"
           src="http://mockapp1/icon"
         />
       </div>
       <span
-        class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
       >
         Mock App 1
       </span>

@@ -224,4 +224,4 @@ Action.propTypes = {
   isSelectedCallback: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HvAppSwitcherPanelAction" })(Action);
+export default withStyles(styles, { name: "HvAppSwitcherAction" })(Action);

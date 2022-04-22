@@ -19,13 +19,13 @@
 import React from "react";
 import { render } from "testing-utils";
 
-import AppSwitcherPanelWithStyles from "../index";
+import AppSwitcherWithStyles from "../index";
 
 const consoleSpy = jest.fn();
 const originalError = console.error;
 
-describe("<AppSwitcherPanel /> with minimum configuration", () => {
-  const mockAppSwitcherPanelProps = {
+describe("<AppSwitcher /> with minimum configuration", () => {
+  const mockAppSwitcherProps = {
     isOpen: true,
     title: "Mock title",
     applications: [
@@ -64,27 +64,25 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   });
 
   it("should render correctly", () => {
-    const { container } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const { container } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     expect(container).toMatchSnapshot();
   });
 
   it("should render 3 action components", () => {
-    const { getAllByRole } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const { getAllByRole } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     const actions = getAllByRole("listitem");
     expect(actions.length).toBe(3);
   });
 
   it("should have 2 Info icons rendered", () => {
-    const { getAllByLabelText } = render(
-      <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
-    );
+    const { getAllByLabelText } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     const images = getAllByLabelText("Description", { exact: false });
     expect(images.length).toBe(2);
   });
 });
 
-describe("<AppSwitcherPanel /> Applications without a name should not be renderered", () => {
-  const mockAppSwitcherPanelProps = {
+describe("<AppSwitcher /> Applications without a name should not be renderered", () => {
+  const mockAppSwitcherProps = {
     isOpen: true,
     title: "Mock title",
     applications: [
@@ -133,20 +131,18 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
   });
 
   it("should render correctly", () => {
-    const { container } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const { container } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     expect(container).toMatchSnapshot();
   });
 
   it("should render 3 action components", () => {
-    const { getAllByRole } = render(<AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />);
+    const { getAllByRole } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     const actions = getAllByRole("listitem");
     expect(actions.length).toBe(3);
   });
 
   it("should have 2 Info icons rendered", () => {
-    const { getAllByLabelText } = render(
-      <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
-    );
+    const { getAllByLabelText } = render(<AppSwitcherWithStyles {...mockAppSwitcherProps} />);
     const images = getAllByLabelText("Description", { exact: false });
     expect(images.length).toBe(2);
   });

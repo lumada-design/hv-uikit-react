@@ -11,7 +11,7 @@ import styles from "./styles";
 import TitleWithTooltip from "./TitleWithTooltip";
 import Action from "./Action";
 
-const AppSwitcherPanel = (props) => {
+const AppSwitcher = (props) => {
   const {
     id,
 
@@ -78,7 +78,7 @@ const AppSwitcherPanel = (props) => {
   );
 };
 
-AppSwitcherPanel.propTypes = {
+AppSwitcher.propTypes = {
   /**
    * Identifier to be applied to the root element.
    */
@@ -234,9 +234,9 @@ AppSwitcherPanel.propTypes = {
   /**
    * Flag stating if the panel is opened or closed.
    *
-   * @deprecated This logic should be external, i.e. using the HvAppSwitcherPanel inside a Drawer component.
+   * @deprecated This logic should be external, i.e. using the HvAppSwitcher inside a Drawer component.
    */
   isOpen: deprecatedPropType(PropTypes.bool),
 };
 
-export default withStyles(styles, { name: "HvAppSwitcherPanel" })(AppSwitcherPanel);
+export default withStyles(styles, { name: "HvAppSwitcher" })(AppSwitcher);
