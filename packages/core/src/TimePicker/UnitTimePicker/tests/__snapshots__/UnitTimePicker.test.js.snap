@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitTimePicker should render correctly 1`] = `
+<div>
+  <div
+    class="HvTimePickerUnitTimePicker-unitTimeContainer"
+  >
+    <div
+      class="HvIconBase-root HvIconBase-xs"
+      name="DropUpXS"
+    >
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
+    <div
+      class="HvInput-root HvTimePickerUnitTimePicker-inputContainer HvFormElement-root"
+    >
+      <div
+        class="HvBaseInput-root"
+      >
+        <div
+          class="MuiInputBase-root-12 MuiInput-root-1 HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
+        >
+          <input
+            autocomplete="off"
+            class="MuiInputBase-input-20 MuiInput-input-8 HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+            max="59"
+            min="0"
+            required=""
+            rows="10"
+            type="number"
+            value="30"
+          />
+        </div>
+        <div
+          class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer"
+          role="presentation"
+        />
+      </div>
+    </div>
+    <div
+      class="HvTimePickerUnitTimePicker-subtractIcon HvIconBase-root HvIconBase-xs"
+      name="DropDownXS"
+    >
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;

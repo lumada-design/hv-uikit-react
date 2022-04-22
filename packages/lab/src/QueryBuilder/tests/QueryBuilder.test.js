@@ -6,7 +6,18 @@ import { render } from "testing-utils";
 
 import { Main, InitialQuery } from "../stories/QueryBuilder.stories";
 
+const consoleWarnSpy = jest.fn();
+const originalWarn = console.warn;
+
 describe("QueryBuilder", () => {
+  beforeEach(() => {
+    console.warn = consoleWarnSpy;
+  });
+
+  afterEach(() => {
+    console.warn = originalWarn;
+  });
+
   jest.setTimeout(30000);
   describe("snapshot", () => {
     it("matches snapshot", () => {
