@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.12...@hitachivantara/uikit-react-lab@3.42.0) (2022-04-24)
+
+
+### Features
+
+* **AppSwitcherPanel:** promote component to core ([#2729](https://github.com/lumada-design/hv-uikit-react/issues/2729)) ([4c27f28](https://github.com/lumada-design/hv-uikit-react/commit/4c27f28097fce81fc0b48b82aab093f7674a77f8))
+
+
+
+
+
 ## [3.41.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.11...@hitachivantara/uikit-react-lab@3.41.12) (2022-04-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

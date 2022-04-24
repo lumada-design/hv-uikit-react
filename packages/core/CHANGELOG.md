@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.63.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.7...@hitachivantara/uikit-react-core@3.63.0) (2022-04-24)
+
+
+### Bug Fixes
+
+* **AssetInventory:** realign List View Row values HVUIKIT-6343 ([#2753](https://github.com/lumada-design/hv-uikit-react/issues/2753)) ([a90219c](https://github.com/lumada-design/hv-uikit-react/commit/a90219cffdebeea8283f80bd7f6a060b035335fb))
+* **Avatar:** fix Avatar stories ([4fad9f5](https://github.com/lumada-design/hv-uikit-react/commit/4fad9f596c6f02c0abad324f59f16b7f42e9b84d))
+* **chart:** allow change bgcolor of charts. ([6ed5086](https://github.com/lumada-design/hv-uikit-react/commit/6ed50866f5cb70825427ccdd4bf750998c94e499))
+
+
+### Features
+
+* **AppSwitcherPanel:** promote component to core ([#2729](https://github.com/lumada-design/hv-uikit-react/issues/2729)) ([4c27f28](https://github.com/lumada-design/hv-uikit-react/commit/4c27f28097fce81fc0b48b82aab093f7674a77f8))
+
+
+
+
+
 ## 3.62.7 (2022-04-22)
 
 
