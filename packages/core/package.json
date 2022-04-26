@@ -82,7 +82,6 @@
     "@types/lodash": "^4.14.177",
     "@types/react-window": "^1.8.5",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
-    "cash-cp": "^0.2.0",
     "cross-env": "^7.0.3",
     "del-cli": "^4.0.1",
     "enzyme": "^3.11.0",

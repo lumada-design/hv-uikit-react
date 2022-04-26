@@ -22,7 +22,7 @@
   "scripts": {
     "build": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize build:*",
     "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
-    "build:copy": "npx cp src/IconBase.* bin/",
+    "build:copy": "npx cpx 'src/IconBase.*' bin/",
     "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
     "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward bin -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
@@ -51,7 +51,6 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "cash-cp": "^0.2.0",
     "del-cli": "^4.0.1",
     "htmltojsx": "^0.3.0",
     "jsdom-no-contextify": "^3.1.0",
