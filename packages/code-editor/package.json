@@ -60,7 +60,6 @@
   "devDependencies": {
     "@hitachivantara/uikit-react-icons": "^3.8.5",
     "@types/lodash": "^4.14.177",
-    "cash-cp": "^0.2.0",
     "cross-env": "^7.0.2",
     "del-cli": "^4.0.1",
     "nodemon": "^2.0.15",
