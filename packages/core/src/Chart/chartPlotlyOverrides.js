@@ -122,8 +122,8 @@ const applyLayoutRootDefaults = (inputLayout, layoutStyles) => {
     pad: 0,
   });
 
-  layout.plot_bgcolor = layoutStyles.plotColor;
-  layout.paper_bgcolor = layoutStyles.plotColor;
+  setterIfNil(layout, "plot_bgcolor", layoutStyles.plotColor);
+  setterIfNil(layout, "paper_bgcolor", layoutStyles.plotColor);
 };
 
 export const applyLayoutDefaults = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {

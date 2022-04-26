@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.63.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.7...@hitachivantara/uikit-react-core@3.63.0) (2022-04-24)
+
+
+### Bug Fixes
+
+* **AssetInventory:** realign List View Row values HVUIKIT-6343 ([#2753](https://github.com/lumada-design/hv-uikit-react/issues/2753)) ([a90219c](https://github.com/lumada-design/hv-uikit-react/commit/a90219cffdebeea8283f80bd7f6a060b035335fb))
+* **Avatar:** fix Avatar stories ([4fad9f5](https://github.com/lumada-design/hv-uikit-react/commit/4fad9f596c6f02c0abad324f59f16b7f42e9b84d))
+* **chart:** allow change bgcolor of charts. ([6ed5086](https://github.com/lumada-design/hv-uikit-react/commit/6ed50866f5cb70825427ccdd4bf750998c94e499))
+
+
+### Features
+
+* **AppSwitcherPanel:** promote component to core ([#2729](https://github.com/lumada-design/hv-uikit-react/issues/2729)) ([4c27f28](https://github.com/lumada-design/hv-uikit-react/commit/4c27f28097fce81fc0b48b82aab093f7674a77f8))
+
+
+
+
+
+## 3.62.7 (2022-04-22)
+
+
+### Bug Fixes
+
+* **FileUploader:** realigned upload value HVUIKIT-6340 ([2e26913](https://github.com/lumada-design/hv-uikit-react/commit/2e26913c531175fcb3ad21cc911dac3326131411))
+
+
+
+
+
+## [3.62.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.5...@hitachivantara/uikit-react-core@3.62.6) (2022-04-20)
+
+
+### Bug Fixes
+
+* **Avatar:** add containerProps ([#2747](https://github.com/lumada-design/hv-uikit-react/issues/2747)) ([872a22c](https://github.com/lumada-design/hv-uikit-react/commit/872a22c69083eda96ac02cd7c831b25c8153dac0))
+
+
+
+
+
+## 3.62.5 (2022-04-19)
+
+
+### Bug Fixes
+
+* **filtergroup:** enable typings ([#2743](https://github.com/lumada-design/hv-uikit-react/issues/2743)) ([aa09e97](https://github.com/lumada-design/hv-uikit-react/commit/aa09e9705905a2970e44c8f487f8688d2fc30f2c))
+* **Snackbar:** message overflow its content box when rendering long words. HVUIKIT-6344 ([#2745](https://github.com/lumada-design/hv-uikit-react/issues/2745)) ([7989b3d](https://github.com/lumada-design/hv-uikit-react/commit/7989b3db14e7f0afb5b11c5a6809fa72586a2746))
+
+
+
+
+
+## [3.62.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.3...@hitachivantara/uikit-react-core@3.62.4) (2022-04-13)
+
+
+### Bug Fixes
+
+* **TagsInput:** fix incorrect input width when no tags exist ([#2732](https://github.com/lumada-design/hv-uikit-react/issues/2732)) ([765ef07](https://github.com/lumada-design/hv-uikit-react/commit/765ef078fd821ce12fec954f367e7fd8ff2226d0))
+
+
+
+
+
+## [3.62.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.62.2...@hitachivantara/uikit-react-core@3.62.3) (2022-04-12)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
 ## 3.62.2 (2022-04-08)
 
 

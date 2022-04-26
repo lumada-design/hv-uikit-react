@@ -145,7 +145,7 @@ module.exports = {
       settings: {
         "import/resolver": {
           typescript: {
-            project: resolve(__dirname, "./packages/*/tsconfig.json"),
+            project: resolve(__dirname, "./packages/**/tsconfig.json"),
           },
         },
       },

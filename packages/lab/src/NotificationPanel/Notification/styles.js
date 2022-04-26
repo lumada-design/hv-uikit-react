@@ -50,7 +50,6 @@ const styles = (theme) => ({
     color: theme.hv.palette.accent.acce1,
     padding: "17px",
     paddingRight: 0,
-    cursor: "pointer",
 
     "&:focus": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
@@ -68,6 +67,10 @@ const styles = (theme) => ({
         display: "block",
       },
     },
+
+    "&$clickable": {
+      cursor: "pointer",
+    },
   },
 
   iconContainer: {
@@ -83,6 +86,7 @@ const styles = (theme) => ({
     lineClamp: 2,
     boxOrient: "vertical",
     overflow: "hidden",
+    wordBreak: "break-all",
   },
 
   title: {
@@ -107,6 +111,7 @@ const styles = (theme) => ({
   },
   hide: {},
   read: {},
+  clickable: {},
   notificationWrapperDropdown: {
     outline: `3px solid ${theme.hv.palette.atmosphere.atmo3}`,
     backgroundColor: theme.hv.palette.atmosphere.atmo3,

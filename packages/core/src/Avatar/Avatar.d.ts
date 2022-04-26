@@ -76,6 +76,10 @@ export interface HvAvatarProps
    * A string representing the color of the avatar badge.
    */
   badge?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  /**
+   * Attributes applied to the container element.
+   */
+  containerProps: object;
 }
 
 export default function HvAvatar(props: HvAvatarProps): JSX.Element | null;

@@ -174,35 +174,46 @@ Sizes.parameters = {
 
 // eslint-disable-next-line react/prop-types
 export const Buttons = () => {
-  const AvatarButton = ({ children, ...other }) => (
-    <HvButton
-      tabIndex={-1}
-      aria-label="Open the user profile"
-      icon
-      overrideIconColors={false}
-      {...other}
-    >
-      {children}
-    </HvButton>
-  );
-
   const doAlert = () => alert("Avatar clicked");
+
   return (
     <>
-      <HvAvatar id="default_icon" component={AvatarButton} onClick={doAlert} />
-      <HvAvatar id="letters" backgroundColor="sema19" component={AvatarButton} onClick={doAlert}>
-        BM
-      </HvAvatar>
-      <HvAvatar
-        id="image"
-        alt="Clara Soul"
-        src={woman2}
-        component={AvatarButton}
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
         onClick={doAlert}
-      />
-      <HvAvatar id="icon" backgroundColor="sema1" component={AvatarButton} onClick={doAlert}>
-        <LogIn semantic="sema8" iconSize="XS" />
-      </HvAvatar>
+      >
+        <HvAvatar id="icon" backgroundColor="sema1">
+          <LogIn semantic="sema8" iconSize="XS" />
+        </HvAvatar>
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="default_icon" />
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="letters" backgroundColor="sema19" size="MD" badge="sema4">
+          BM
+        </HvAvatar>
+      </HvButton>
+      <HvButton
+        aria-label="Open the user profile"
+        icon
+        overrideIconColors={false}
+        onClick={doAlert}
+      >
+        <HvAvatar id="image" alt="Clara Soul" src={woman2} size="XL" status="sema1" />
+      </HvButton>
     </>
   );
 };
@@ -274,6 +285,57 @@ Badge.parameters = {
     description: {
       story:
         "An avatar can have a badge that is represented by a colored dot on the upper right corner. The badge color can be from the HV theme palette or custom.",
+    },
+  },
+};
+
+export const ContainerProps = () => {
+  return (
+    <>
+      <HvAvatar
+        id="props2"
+        size="SM"
+        containerProps={{
+          role: "button",
+          "aria-label": "Login",
+          tabIndex: 0,
+        }}
+      >
+        <LogIn color="atmo1" iconSize="XS" />
+      </HvAvatar>
+      <HvAvatar
+        id="props1"
+        size="MD"
+        status="sema1"
+        alt="Ben"
+        src={man1}
+        containerProps={{
+          role: "button",
+          "aria-label": "Ben - online",
+          tabIndex: 0,
+        }}
+      />
+      <HvAvatar
+        id="props3"
+        size="LG"
+        badge="sema4"
+        alt="Beatrice"
+        src={woman1}
+        containerProps={{
+          role: "button",
+          "aria-label": "Beatrice - offline",
+          tabIndex: 0,
+        }}
+      />
+    </>
+  );
+};
+
+ContainerProps.parameters = {
+  docs: {
+    description: {
+      story:
+        "The avatar container can receive a props object to allow for focusing and dynamically setting other props like the aria-label or the tabIndex.",
     },
   },
 };

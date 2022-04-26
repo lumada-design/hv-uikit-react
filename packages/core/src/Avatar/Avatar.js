@@ -56,6 +56,7 @@ const HvAvatar = (props) => {
     status,
     badge,
     variant = "circular",
+    containerProps,
     ...others
   } = props;
 
@@ -115,8 +116,15 @@ const HvAvatar = (props) => {
 
   const badgeColor = getColor(theme, badge, theme.hv.palette.semantic.sema1);
 
+  /**
+   * Note: on the next major release this should be updated. the `others` prop should be
+   * used in the container instead of the `containerProps` and a new `avatarProps`
+   * should be created to pass on any props down to the avatar component. This wasn't
+   * done now in order to not break the current API. Also, consider using the `root` class
+   * on the container element as it makes more semantic sense.
+   */
   return (
-    <div className={classes.container} tabIndex={0} role="button" aria-label="avatar">
+    <div className={classes.container} {...containerProps}>
       <div
         className={clsx(classes.status, classes[variant], classes[normalizedSize])}
         style={statusInlineStyle}
@@ -267,6 +275,10 @@ HvAvatar.propTypes = {
    * A string representing the color of the avatar badge.
    */
   badge: PropTypes.string,
+  /**
+   * Attributes applied to the container element.
+   */
+  containerProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvAvatar" })(HvAvatar);

@@ -22,10 +22,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
     }
   >
     <div
-      aria-label="avatar"
       className="HvAvatar-container"
-      role="button"
-      tabIndex={0}
     >
       <div
         className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
@@ -133,10 +130,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
     }
   >
     <div
-      aria-label="avatar"
       className="HvAvatar-container"
-      role="button"
-      tabIndex={0}
     >
       <div
         className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
@@ -256,10 +250,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
     src="something.jpg"
   >
     <div
-      aria-label="avatar"
       className="HvAvatar-container"
-      role="button"
-      tabIndex={0}
     >
       <div
         className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
@@ -328,10 +319,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
     }
   >
     <div
-      aria-label="avatar"
       className="HvAvatar-container"
-      role="button"
-      tabIndex={0}
     >
       <div
         className="HvAvatar-status HvAvatar-circular HvAvatar-SM"

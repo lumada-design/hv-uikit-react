@@ -12,7 +12,7 @@ import HvAppSwitcherPanel from "..";
 export default {
   title: "Lab/AppSwitcherPanel",
   parameters: {
-    componentSubtitle: null,
+    componentSubtitle: "This component is deprecated. Please use the one in Core.",
     usage: 'import { HvAppSwitcherPanel } from "@hitachivantara/uikit-react-lab"',
   },
   component: HvAppSwitcherPanel,

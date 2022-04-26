@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
 
-import { HvListContainer } from "@hitachivantara/uikit-react-core";
+import { HvListContainer, useDeprecated } from "@hitachivantara/uikit-react-core";
 
 import styles from "./styles";
 
@@ -31,6 +31,8 @@ const AppSwitcherPanel = (props) => {
 
     isOpen,
   } = props;
+
+  useDeprecated("AppSwitcherPanel", "Please use the AppSwitcherPanel component in Core");
 
   const actionClicked = (event, application) => {
     onActionClickedCallback?.(event, application);

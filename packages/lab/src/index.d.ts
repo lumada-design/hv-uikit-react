@@ -39,3 +39,6 @@ export * from "./InlineEditor";
 
 export { default as HvProgressBar } from "./ProgressBar";
 export * from "./ProgressBar";
+
+export { default as HvDotPagination } from "./DotPagination";
+export * from "./DotPagination";

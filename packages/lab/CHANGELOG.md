@@ -3,6 +3,98 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.12...@hitachivantara/uikit-react-lab@3.42.0) (2022-04-24)
+
+
+### Features
+
+* **AppSwitcherPanel:** promote component to core ([#2729](https://github.com/lumada-design/hv-uikit-react/issues/2729)) ([4c27f28](https://github.com/lumada-design/hv-uikit-react/commit/4c27f28097fce81fc0b48b82aab093f7674a77f8))
+
+
+
+
+
+## [3.41.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.11...@hitachivantara/uikit-react-lab@3.41.12) (2022-04-22)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.41.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.10...@hitachivantara/uikit-react-lab@3.41.11) (2022-04-21)
+
+
+### Bug Fixes
+
+* **dotPagination:** added missing typescript definition and description ([38dcda3](https://github.com/lumada-design/hv-uikit-react/commit/38dcda3029c23fbb9ac95b62c02f7db66da16bef))
+
+
+
+
+
+## [3.41.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.9...@hitachivantara/uikit-react-lab@3.41.10) (2022-04-20)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.41.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.8...@hitachivantara/uikit-react-lab@3.41.9) (2022-04-19)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.41.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.7...@hitachivantara/uikit-react-lab@3.41.8) (2022-04-18)
+
+
+### Bug Fixes
+
+* **NotificationPanel:** toggles pointer cursor according to available onClick param. HVUIKIT-2740 ([9f7f1c2](https://github.com/lumada-design/hv-uikit-react/commit/9f7f1c264126fc29e961d4a21fab93e401a3d4ea))
+
+
+
+
+
+## [3.41.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.6...@hitachivantara/uikit-react-lab@3.41.7) (2022-04-15)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.41.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.5...@hitachivantara/uikit-react-lab@3.41.6) (2022-04-14)
+
+
+### Bug Fixes
+
+* **NotificationPanel:** added css to break words to avoid text truncation ([#2735](https://github.com/lumada-design/hv-uikit-react/issues/2735)) ([7007235](https://github.com/lumada-design/hv-uikit-react/commit/7007235d6a2b98761c060d989a35db33f05f0c86))
+
+
+
+
+
+## [3.41.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.4...@hitachivantara/uikit-react-lab@3.41.5) (2022-04-13)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.41.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.3...@hitachivantara/uikit-react-lab@3.41.4) (2022-04-12)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
 ## [3.41.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.2...@hitachivantara/uikit-react-lab@3.41.3) (2022-04-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

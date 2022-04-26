@@ -483,7 +483,7 @@ const HvTagsInput = (props) => {
           })}
         {!(disabled || readOnly) && (
           <HvListItem
-            className={clsx(!multiline && classes.singleLine)}
+            className={clsx(!multiline && classes.singleLine, value.length === 0 ? "empty" : "")}
             classes={{
               root: classes.tagInputContainerRoot,
               gutters: classes.listItemGutters,

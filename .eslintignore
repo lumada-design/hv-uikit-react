@@ -2,6 +2,8 @@
 
 # tests
 **/*/coverage
+playwright-report/
+test-results/
 
 # build folder
 dist/

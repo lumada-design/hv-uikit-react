@@ -1,7 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { test, expect } from "@playwright/test";
+import { testingThemes } from "../../../config/playwright-utils";
 
-["dawn", "wicked"].forEach(async (theme) => {
+testingThemes.forEach(async (theme: string) => {
   test.describe(`Banner ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
@@ -25,9 +26,9 @@ import { test, expect } from "@playwright/test";
     ];
 
     test(`Contains three different buttons`, async ({ page }) => {
-      banners.forEach(async ({ button }) => {
-        await expect(page.locator(`button:has-text("${button}")`)).toBeVisible();
-      });
+      await Promise.all(
+        banners.map((b) => expect(page.locator(`button:has-text("${b.button}")`)).toBeVisible())
+      );
     });
 
     banners.forEach(({ button, message }) => {
