@@ -320,7 +320,7 @@ describe("Table", () => {
       const { getByText, queryAllByText } = render(<Sortable />);
       const severityButton = getByText("Severity");
 
-      const getEvent = (i) => queryAllByText(/^Event \d+$/g)[i];
+      const getEvent = (i) => queryAllByText(/^Event \d+$/)[i];
 
       // Default sorting
       expect(getEvent(0)).toHaveTextContent("Event 1");
