@@ -18,7 +18,7 @@
     "clean:package_clean": "npx lerna run clean --parallel",
     "clean:lerna": "npx lerna clean --yes ",
     "clean:docs": "npx del-cli dist",
-    "bootstrap": "npx lerna bootstrap",
+    "bootstrap": "npx lerna bootstrap -- --force",
     "dev": "npx lerna run dev --parallel",
     "build": "npx lerna run build",
     "build-documentation": "npx npm-run-all --npm-path npm --serial clean:docs build-documentation:storybook",
