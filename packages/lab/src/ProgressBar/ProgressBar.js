@@ -9,6 +9,12 @@ import { withStyles } from "@material-ui/core";
 
 import styles from "./styles";
 
+const statusCategories = Object.freeze({
+  inProgress: "inProgress",
+  completed: "completed",
+  error: "error",
+});
+
 /**
  * ProgressBar provides feedback about a process that is taking place in the application.
  */
@@ -17,7 +23,7 @@ const HvProgressBar = (props) => {
     className,
     classes,
     value = 0,
-    status,
+    status = statusCategories.inProgress,
     undeterminate = false,
     labelProps,
     ...others
@@ -29,10 +35,9 @@ const HvProgressBar = (props) => {
     <div
       className={clsx(className, classes.root, classes.progress)}
       role="progressbar"
-      status="inProgress"
-      aria-valuenow={clampedValue} // it only makes sense to put this in ariaProps if the min and max values of the progress bar are intended to be changed by the user
       aria-valuemin="0"
       aria-valuemax="100"
+      aria-valuenow={clampedValue}
       {...others}
     >
       <div className={classes.progressContainer}>
@@ -41,7 +46,7 @@ const HvProgressBar = (props) => {
           style={{ width: `${clampedValue}%` }}
           className={clsx(
             classes.progressBarLabel,
-            status === "completed" && classes.progressDone,
+            status === statusCategories.completed && classes.progressDone,
             undeterminate && classes.progressBarLabelHidden
           )}
           {...labelProps}
@@ -53,8 +58,8 @@ const HvProgressBar = (props) => {
             style={{ width: `${clampedValue}%` }}
             className={clsx(
               classes.progressBar,
-              status === "completed" && classes.progressDone,
-              status === "error" && classes.progressError
+              status === statusCategories.completed && classes.progressDone,
+              status === statusCategories.error && classes.progressError
             )}
           />
         </div>
@@ -110,7 +115,6 @@ HvProgressBar.propTypes = {
      */
     progressBarLabelHidden: PropTypes.string,
   }).isRequired,
-
   /**
    * The value of the progress bar.
    */
@@ -122,7 +126,11 @@ HvProgressBar.propTypes = {
    *
    * When uncontrolled and unspecified it will default to "inProgress".
    */
-  status: PropTypes.oneOf(["inProgress", "completed", "error"]),
+  status: PropTypes.oneOf([
+    statusCategories.inProgress,
+    statusCategories.completed,
+    statusCategories.error,
+  ]),
   /**
    * If `true` the progress bar will not show the percentage label.
    */

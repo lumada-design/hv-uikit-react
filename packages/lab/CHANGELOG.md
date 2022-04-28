@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.42.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.42.0...@hitachivantara/uikit-react-lab@3.42.1) (2022-04-27)
+
+
+### Bug Fixes
+
+* **dotPagination:** added missing typescript definition and description ([38dcda3](https://github.com/lumada-design/hv-uikit-react/commit/38dcda3029c23fbb9ac95b62c02f7db66da16bef))
+* **ProgressBar:** corrected typescript definition HVUIKIT-5670 ([d5c0da0](https://github.com/lumada-design/hv-uikit-react/commit/d5c0da04a1b160cf283b7e4bf6644cf89d4f711f))
+
+
+
+
+
 # [3.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.41.12...@hitachivantara/uikit-react-lab@3.42.0) (2022-04-24)
 
 
