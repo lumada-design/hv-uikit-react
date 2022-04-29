@@ -1,21 +1,30 @@
 import React from "react";
-import { mount } from "enzyme";
+import { render } from "testing-utils";
 
 import { HvProvider } from "../..";
-import { SimpleGrid } from "../stories/SimpleGrid.stories";
+import SimpleGrid from "../SimpleGrid";
 
-describe("Grid", () => {
-  const wrapper = mount(
-    <HvProvider>
-      <SimpleGrid />
-    </HvProvider>
-  );
+export default {
+  title: "Tests/SimpleGrid",
+  parameters: {
+    docs: {
+      disable: true,
+      page: null,
+    },
+  },
+};
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+describe("SimplelGrid", () => {
+  it("correct render children", () => {
+    const { getByTestId } = render(
+      <HvProvider>
+        <SimpleGrid data-testid="ancestor">
+          <p data-testid="descendant">Hello world</p>
+        </SimpleGrid>
+      </HvProvider>
+    );
+    const ancestor = getByTestId("ancestor");
+    const descendant = getByTestId("descendant");
+    expect(ancestor).toContainElement(descendant);
   });
 });
