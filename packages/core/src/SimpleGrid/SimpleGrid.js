@@ -2,9 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import useStyles from "./styles";
 
-const SimpleGrid = ({ children, breakpoints, spacing, cols }) => {
+const SimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) => {
   const classes = useStyles({ breakpoints, cols, spacing })();
-  return <div className={classes.container}>{children}</div>;
+  return (
+    <div className={classes.container} {...others}>
+      {children}
+    </div>
+  );
 };
 
 SimpleGrid.propTypes = {
