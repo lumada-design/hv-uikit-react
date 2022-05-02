@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stack /> should be defined 1`] = `
+<div>
+  <div
+    class="HvStack-root HvStack-column HvStack-sm"
+  >
+    <div
+      data-testid="child"
+    >
+      1
+    </div>
+    <div
+      data-testid="child"
+    >
+      2
+    </div>
+    <div
+      data-testid="child"
+    >
+      3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Stack /> should match snapshot 1`] = `
+<div>
+  <div
+    class="HvStack-root HvStack-column HvStack-sm"
+  >
+    <div
+      data-testid="child"
+    >
+      1
+    </div>
+    <div
+      data-testid="child"
+    >
+      2
+    </div>
+    <div
+      data-testid="child"
+    >
+      3
+    </div>
+  </div>
+</div>
+`;

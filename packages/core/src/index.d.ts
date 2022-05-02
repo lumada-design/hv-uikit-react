@@ -157,6 +157,9 @@ export * from "./Snackbar/SnackbarContentWrapper";
 
 export { default as HvSnackbarProvider, useHvSnackbar } from "./Snackbar/SnackbarProvider";
 
+export { default as HvStack } from "./Stack";
+export * from "./Stack";
+
 export { default as HvTab } from "./Tab";
 export * from "./Tab";
 
