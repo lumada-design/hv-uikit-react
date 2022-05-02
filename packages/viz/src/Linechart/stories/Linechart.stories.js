@@ -1,14 +1,15 @@
 import { makeStyles } from "@material-ui/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 import React, { useState, useEffect, useRef } from "react";
-import { Random } from "../../utils";
-import { HvLinechart, HvDropDownMenu, HvTypography, HvDropdown } from "../..";
+import { HvDropDownMenu, HvTypography, HvDropdown, Random } from "@hitachivantara/uikit-react-core";
+
+import { HvLinechart } from "../..";
 
 export default {
   title: "Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvLinechart } from "@hitachivantara/uikit-react-core"',
+    usage: 'import { HvLinechart } from "@hitachivantara/uikit-react-viz"',
     maturityStatus: "stable",
     dsVersion: "3.2.1",
   },

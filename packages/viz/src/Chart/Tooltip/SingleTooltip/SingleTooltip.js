@@ -1,17 +1,17 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import Typography from "../../../Typography";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 
 const SingleTooltip = ({ classes, title, value }) => (
   <div className={classes.root}>
     <div>
-      <Typography variant="highlightText">{title}</Typography>
+      <HvTypography variant="highlightText">{title}</HvTypography>
     </div>
     <div className={classes.separator} />
     <div>
-      <Typography>{value}</Typography>
+      <HvTypography>{value}</HvTypography>
     </div>
   </div>
 );

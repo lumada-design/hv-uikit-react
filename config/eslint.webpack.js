@@ -6,6 +6,7 @@ const corePackageSrc = resolve(__dirname, "../packages/core/src");
 const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
 const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 const labPackageSrc = resolve(__dirname, "../packages/lab/src");
+const vizPackageSrc = resolve(__dirname, "../packages/viz/src");
 const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
       "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
       "@hitachivantara/uikit-react-icons/dist": iconsPackageBin,
       "@hitachivantara/uikit-react-lab/dist": labPackageSrc,
+      "@hitachivantara/uikit-react-viz/dist": vizPackageSrc,
       "@hitachivantara/uikit-common-themes/dist": commonThemesSrc,
 
       // package aliases for top-level imports
@@ -25,6 +27,7 @@ module.exports = {
       "@hitachivantara/uikit-react-code-editor": codeEditorPackageSrc,
       "@hitachivantara/uikit-react-icons": iconsPackageBin,
       "@hitachivantara/uikit-react-lab": labPackageSrc,
+      "@hitachivantara/uikit-react-viz": vizPackageSrc,
     },
     extensions: [".js", ".ts", ".tsx", ".d.ts", ".json"],
   },

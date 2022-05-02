@@ -1,13 +1,15 @@
 import { makeStyles } from "@material-ui/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 import React from "react";
-import { HvBarchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
+import { HvDropDownMenu, HvDropdown, HvTypography } from "@hitachivantara/uikit-react-core";
+
+import { HvBarchart } from "../..";
 
 export default {
   title: "Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvBarchart } from "@hitachivantara/uikit-react-core"',
+    usage: 'import { HvBarchart } from "@hitachivantara/uikit-react-viz"',
     maturityStatus: "stable",
     dsVersion: "3.2.1",
   },
