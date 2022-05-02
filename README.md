@@ -41,6 +41,7 @@ Also available:
 - visualizations - `npm install @hitachivantara/uikit-react-viz`
 - icons - `npm install @hitachivantara/uikit-react-icons`
 - themes - `npm install @hitachivantara/uikit-common-themes`
+- visualizations - `npm install @hitachivantara/uikit-viz`
 
 The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitachivantara/uikit-react-core` and the `@hitachivantara/uikit-common-themes` shouldn't be necessary out of a very specific use case.
 
