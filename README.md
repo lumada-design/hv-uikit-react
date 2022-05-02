@@ -24,7 +24,7 @@ HV UI Kit is composed of multiple mostly independent npm packages. You can insta
 Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
 
 ```shell
-npm install @hitachivantara/uikit-react-core @material-ui/core@^4.11.0 plotly.js-basic-dist@^1.55.2
+npm install @hitachivantara/uikit-react-core @material-ui/core@^4.11.0
 ```
 
 #### Other packages available
@@ -40,6 +40,7 @@ Also available:
 - code-editor - `npm install @hitachivantara/uikit-react-code-editor`
 - icons - `npm install @hitachivantara/uikit-react-icons`
 - themes - `npm install @hitachivantara/uikit-common-themes`
+- visualizations - `npm install @hitachivantara/uikit-viz`
 
 The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitachivantara/uikit-react-core` and the `@hitachivantara/uikit-common-themes` shouldn't be necessary out of a very specific use case.
 
@@ -84,7 +85,7 @@ Check out our [documentation website](https://lumada-design.github.io/uikit/mast
 
 ## Changelog
 
-Recently Updated? Please read the packages changelog: [core](/packages/core/CHANGELOG.md), [code-editor](/packages/code-editor/CHANGELOG.md), [icons](/packages/icons/CHANGELOG.md), [lab](/packages/lab/CHANGELOG.md), [themes](/packages/themes/CHANGELOG.md).
+Recently Updated? Please read the packages changelog: [core](/packages/core/CHANGELOG.md), [code-editor](/packages/code-editor/CHANGELOG.md), [icons](/packages/icons/CHANGELOG.md), [lab](/packages/lab/CHANGELOG.md), [themes](/packages/themes/CHANGELOG.md), [viz](/packages/viz/CHANGELOG.md).
 
 ## Contributing
 
