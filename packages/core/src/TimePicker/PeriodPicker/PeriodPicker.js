@@ -1,70 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hitachivantara/uikit-react-icons";
 import { HvToggleButton } from "../..";
 import { PeriodPickerOptions } from "../enums";
 
-class PeriodPicker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentPeriod: props.period ?? PeriodPickerOptions.AM,
-    };
-  }
-
-  /**
-   * Handles the period change
-   * @memberof PeriodPicker
-   */
-  handleChangePeriod = () => {
-    const { onChangePeriod } = this.props;
-    const period = this.selectDifferentPeriod();
-    this.setState({
-      currentPeriod: period,
-    });
-    onChangePeriod(period);
-  };
+const PeriodPicker = (props) => {
+  const { classes, period, onChangePeriod } = props;
+  const [currentPeriod, setCurrentPeriod] = useState(period ?? PeriodPickerOptions.AM);
 
   /**
    * Gets the new value for the period
    * @returns the new value for the period
    * @memberof UnitTimePicker
    */
-  selectDifferentPeriod = () => {
-    const { currentPeriod } = this.state;
+  const selectDifferentPeriod = () => {
     return currentPeriod === PeriodPickerOptions.AM
       ? PeriodPickerOptions.PM
       : PeriodPickerOptions.AM;
   };
 
   /**
+   * Handles the period change
+   * @memberof PeriodPicker
+   */
+  const handleChangePeriod = () => {
+    const newPeriod = selectDifferentPeriod();
+    setCurrentPeriod(newPeriod);
+    onChangePeriod(newPeriod);
+  };
+
+  /**
    * Renders the PeriodPicker
    * @memberof UnitTimePicker
    */
-  render() {
-    const { classes } = this.props;
-    const { currentPeriod } = this.state;
-
-    return (
-      <div className={classes.periodContainer}>
-        <UpIcon className={classes.icon} onClick={this.handleChangePeriod} />
-        <HvToggleButton
-          className={classes.periodToggle}
-          selected={currentPeriod === PeriodPickerOptions.PM}
-          onClick={this.handleChangePeriod}
-        >
-          {currentPeriod}
-        </HvToggleButton>
-        <DownIcon
-          className={clsx(classes.icon, classes.subtractIcon)}
-          onClick={this.handleChangePeriod}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes.periodContainer}>
+      <UpIcon className={classes.icon} onClick={handleChangePeriod} />
+      <HvToggleButton
+        className={classes.periodToggle}
+        selected={currentPeriod === PeriodPickerOptions.PM}
+        onClick={handleChangePeriod}
+      >
+        {currentPeriod}
+      </HvToggleButton>
+      <DownIcon className={clsx(classes.icon, classes.subtractIcon)} onClick={handleChangePeriod} />
+    </div>
+  );
+};
+// }
 
 PeriodPicker.propTypes = {
   /**
