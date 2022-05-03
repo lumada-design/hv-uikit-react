@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
+import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import {
   HvFormElement,
   HvBaseDropdown,
@@ -15,9 +16,7 @@ import {
   useLocale,
   HvTypography,
   useSavedState,
-  useDeprecated,
-} from "@hitachivantara/uikit-react-core";
-import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
+} from "..";
 
 import { TimePickerUnits, TimeFormat, PeriodPickerOptions } from "./enums";
 import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
@@ -60,7 +59,7 @@ const timeIsValid = (time, timeFormat) => {
 };
 
 /**
- * A TimePicker component used to choose the time, following specifications provided by Design System. Still in development.
+ * A TimePicker component used to choose the time.
  */
 
 const HvTimePicker = ({
@@ -112,8 +111,6 @@ const HvTimePicker = ({
   dropdownProps,
   ...others
 }) => {
-  useDeprecated("TimePicker", "Please use the TimePicker component in Core");
-
   // #region STATE
   const elementId = useUniqueId(id, "hvtimepicker");
 
