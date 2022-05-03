@@ -18,6 +18,7 @@ const getPeriodForDate = (date = new Date()) => {
  */
 const isUnitTimeInValidRange = (value, type) => {
   const timeUnit = TimePickerUnits[type];
+  console.log(`type = ${type}, timeUnit: ${timeUnit}`);
   return value !== "" && value >= timeUnit.min && value <= timeUnit.max;
 };
 

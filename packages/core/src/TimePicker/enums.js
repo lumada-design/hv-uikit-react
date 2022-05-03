@@ -1,4 +1,4 @@
-const TimePickerUnits = {
+const TimePickerUnits = Object.freeze({
   HOUR_24: {
     type: "HOUR_24",
     min: 0,
@@ -19,16 +19,16 @@ const TimePickerUnits = {
     min: 0,
     max: 59,
   },
-};
+});
 
-const PeriodPickerOptions = {
+const PeriodPickerOptions = Object.freeze({
   AM: "AM",
   PM: "PM",
-};
+});
 
-const TimeFormat = {
+const TimeFormat = Object.freeze({
   H12: "12",
   H24: "24",
-};
+});
 
 export { TimePickerUnits, PeriodPickerOptions, TimeFormat };

@@ -1,13 +1,6 @@
 import { TimePickerUnits, PeriodPickerOptions } from "../enums";
 import * as utils from "../timePickerUtils";
 
-const mockType = "MOCK_TYPE";
-TimePickerUnits.MOCK_TYPE = {
-  type: mockType,
-  min: 0,
-  max: 23,
-};
-
 describe("timePickerUtils", () => {
   it("getPeriodForDate - should return AM if hours are less than 12", () => {
     const date = new Date();
@@ -24,9 +17,24 @@ describe("timePickerUtils", () => {
     expect(utils.getPeriodForDate(date)).toBe(PeriodPickerOptions.PM);
   });
   it("isUnitTimeInValidRange - should return true if value is between min and max for a given type", () => {
-    expect(utils.isUnitTimeInValidRange(0, mockType)).toBe(true);
-    expect(utils.isUnitTimeInValidRange(23, mockType)).toBe(true);
-    expect(utils.isUnitTimeInValidRange(-1, mockType)).toBe(false);
-    expect(utils.isUnitTimeInValidRange(24, mockType)).toBe(false);
+    expect(utils.isUnitTimeInValidRange(0, TimePickerUnits.HOUR_24.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(23, TimePickerUnits.HOUR_24.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(-1, TimePickerUnits.HOUR_24.type)).toBe(false);
+    expect(utils.isUnitTimeInValidRange(24, TimePickerUnits.HOUR_24.type)).toBe(false);
+
+    expect(utils.isUnitTimeInValidRange(1, TimePickerUnits.HOUR_12.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(12, TimePickerUnits.HOUR_12.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(0, TimePickerUnits.HOUR_12.type)).toBe(false);
+    expect(utils.isUnitTimeInValidRange(13, TimePickerUnits.HOUR_12.type)).toBe(false);
+
+    expect(utils.isUnitTimeInValidRange(0, TimePickerUnits.MINUTE.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(59, TimePickerUnits.MINUTE.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(-1, TimePickerUnits.MINUTE.type)).toBe(false);
+    expect(utils.isUnitTimeInValidRange(60, TimePickerUnits.MINUTE.type)).toBe(false);
+
+    expect(utils.isUnitTimeInValidRange(0, TimePickerUnits.SECOND.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(59, TimePickerUnits.SECOND.type)).toBe(true);
+    expect(utils.isUnitTimeInValidRange(-1, TimePickerUnits.SECOND.type)).toBe(false);
+    expect(utils.isUnitTimeInValidRange(60, TimePickerUnits.SECOND.type)).toBe(false);
   });
 });
