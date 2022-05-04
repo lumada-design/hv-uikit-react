@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.3.0 (2022-05-04)
+
+
+### Features
+
+* **SimpleGrid:** created a new grid component to ease the development proccess ([8b55b64](https://github.com/lumada-design/hv-uikit-react/commit/8b55b642700d4fec864b1b196f0ae46e9b91dc6f))
+
+
+
+
+
 ## [3.2.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-common-themes@3.2.4...@hitachivantara/uikit-common-themes@3.2.6) (2022-04-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-common-themes
