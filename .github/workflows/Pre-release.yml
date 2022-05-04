@@ -13,10 +13,10 @@
 #  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: next Release
+name: Pre Release
 on:
   repository_dispatch:
-    types: [next-release]
+    types: [next]
   workflow_dispatch:
 
 env:
@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: "14"
+          node-version: "16"
 
       - name: Checkout
         uses: actions/checkout@v2.0.0
