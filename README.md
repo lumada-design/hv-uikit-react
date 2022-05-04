@@ -121,6 +121,8 @@ The UI Kit is maintained by a small group of invaluable core contributors, with 
 - Elio Freitas ([@eliofreitas](https://github.com/eliofreitas))
 - Nelson Antunes ([@nantunes](https://github.com/nantunes))
 - Jorge Fernandes ([@jorgefernandess](https://github.com/jorgefernandess))
+- Henrique Raposo ([@HQFOX](https://github.com/HQFOX))
+- Hyorran Preigschadt ([@hyorran](https://github.com/hyorran))
 
 Get involved with our development by opening an issue or submitting a pull request. Read the contributing guidelines for information on how we develop.
 
