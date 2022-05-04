@@ -116,7 +116,7 @@ Details for the required packages and their licenses can be obtained in https://
 The UI Kit is maintained by a small group of invaluable core contributors, with the support and involvement of the Hitachi Vantara community. 😄
 
 - Diogo Mariano ([@diogofscmariano](https://github.com/diogofscmariano))
-- Paulo Lagoa([@plagoa](https://github.com/plagoa))
+- Paulo Lagoá ([@plagoa](https://github.com/plagoa))
 - Francisco Guilherme ([@francisco-guilherme](https://github.com/frncisco-guilherme))
 - Elio Freitas ([@eliofreitas](https://github.com/eliofreitas))
 - Nelson Antunes ([@nantunes](https://github.com/nantunes))
