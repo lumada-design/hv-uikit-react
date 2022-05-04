@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-icons",
-  "version": "3.8.4",
+  "version": "3.8.5",
   "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
-    "@hitachivantara/uikit-common-themes": "^3.2.6",
+    "@hitachivantara/uikit-common-themes": "^3.3.0",
     "clsx": "^1.1.1",
     "core-js": "^3.19.1",
     "prop-types": "^15.7.2"
