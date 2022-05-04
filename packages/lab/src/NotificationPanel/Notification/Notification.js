@@ -4,7 +4,7 @@ import clsx from "clsx";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { HvTypography, withTooltip } from "@hitachivantara/uikit-react-core";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 dayjs.extend(relativeTime);

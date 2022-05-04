@@ -266,38 +266,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       id="hvtreeview1-01-button"
                       innerRef={
                         Object {
-                          "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                            id="hvtreeview1-01-button"
-                            role="button"
-                            style="padding-left: 0px;"
-                            tabindex="0"
-                          >
-                            <div
-                              class="HvIconBase-root HvIconBase-s"
-                              name="Play"
-                            >
-                              <svg
-                                focusable="false"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  class="color0"
-                                  d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                            <div
-                              class=""
-                              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                            >
-                              System
-                            </div>
-                          </div>,
+                          "current": null,
                         }
                       }
                       onClick={[Function]}
@@ -342,6 +311,11 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         }
                         component="div"
                         id="hvtreeview1-01-button"
+                        innerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -357,6 +331,11 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           id="hvtreeview1-01-button"
+                          innerRef={
+                            Object {
+                              "current": null,
+                            }
+                          }
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -447,13 +426,15 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                   </WithStyles(ForwardRef)>
                                 }
                               >
-                                <WithStyles(ForwardRef(Tooltip))
+                                <ForwardRef(Tooltip)
                                   TransitionComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
                                       "propTypes": Object {
+                                        "addEndListener": [Function],
+                                        "appear": [Function],
                                         "children": [Function],
-                                        "disableStrictModeCompat": [Function],
+                                        "easing": [Function],
                                         "in": [Function],
                                         "onEnter": [Function],
                                         "onEntered": [Function],
@@ -497,52 +478,15 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                     </WithStyles(ForwardRef)>
                                   }
                                 >
-                                  <ForwardRef(Tooltip)
-                                    TransitionComponent={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "propTypes": Object {
-                                          "children": [Function],
-                                          "disableStrictModeCompat": [Function],
-                                          "in": [Function],
-                                          "onEnter": [Function],
-                                          "onEntered": [Function],
-                                          "onEntering": [Function],
-                                          "onExit": [Function],
-                                          "onExited": [Function],
-                                          "onExiting": [Function],
-                                          "style": [Function],
-                                          "timeout": [Function],
-                                        },
-                                        "render": [Function],
-                                      }
-                                    }
-                                    TransitionProps={
-                                      Object {
-                                        "timeout": 400,
-                                      }
-                                    }
-                                    classes={
-                                      Object {
-                                        "arrow": "MuiTooltip-arrow",
-                                        "popper": "MuiTooltip-popper HvTooltip-popper",
-                                        "popperArrow": "MuiTooltip-popperArrow",
-                                        "popperInteractive": "MuiTooltip-popperInteractive",
-                                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
-                                        "tooltipArrow": "MuiTooltip-tooltipArrow",
-                                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                        "touch": "MuiTooltip-touch",
-                                      }
-                                    }
-                                    disableFocusListener={true}
-                                    disableHoverListener={false}
-                                    disableTouchListener={true}
-                                    enterDelay={300}
-                                    open={false}
-                                    placement="top"
+                                  <div
+                                    aria-label={null}
+                                    aria-labelledby={null}
+                                    className=""
+                                    data-mui-internal-clone-element={true}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseOver={[Function]}
+                                    onTouchStart={[Function]}
                                     style={
                                       Object {
                                         "overflow": "hidden",
@@ -550,59 +494,1417 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                         "whiteSpace": "nowrap",
                                       }
                                     }
-                                    title={
-                                      <WithStyles(ForwardRef)>
-                                        System
-                                      </WithStyles(ForwardRef)>
-                                    }
                                   >
-                                    <div
-                                      aria-describedby={null}
-                                      className=""
-                                      onMouseEnter={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseOver={[Function]}
-                                      onTouchStart={[Function]}
-                                      style={
-                                        Object {
+                                    <ComponentFunction>
+                                      System
+                                    </ComponentFunction>
+                                  </div>
+                                  <MuiTooltipPopper
+                                    anchorEl={
+                                      <div
+                                        class=""
+                                        data-mui-internal-clone-element="true"
+                                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                      >
+                                        System
+                                      </div>
+                                    }
+                                    as={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "propTypes": Object {
+                                          "anchorEl": [Function],
+                                          "children": [Function],
+                                          "container": [Function],
+                                          "disablePortal": [Function],
+                                          "keepMounted": [Function],
+                                          "modifiers": [Function],
+                                          "open": [Function],
+                                          "placement": [Function],
+                                          "popperOptions": [Function],
+                                          "popperRef": [Function],
+                                          "sx": [Function],
+                                          "transition": [Function],
+                                        },
+                                        "render": [Function],
+                                      }
+                                    }
+                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                    id="mui-1"
+                                    onMouseLeave={[Function]}
+                                    onMouseOver={[Function]}
+                                    open={false}
+                                    ownerState={
+                                      Object {
+                                        "PopperComponentProp": undefined,
+                                        "TransitionComponent": Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "propTypes": Object {
+                                            "addEndListener": [Function],
+                                            "appear": [Function],
+                                            "children": [Function],
+                                            "easing": [Function],
+                                            "in": [Function],
+                                            "onEnter": [Function],
+                                            "onEntered": [Function],
+                                            "onEntering": [Function],
+                                            "onExit": [Function],
+                                            "onExited": [Function],
+                                            "onExiting": [Function],
+                                            "style": [Function],
+                                            "timeout": [Function],
+                                          },
+                                          "render": [Function],
+                                        },
+                                        "TransitionProps": Object {
+                                          "timeout": 400,
+                                        },
+                                        "arrow": false,
+                                        "children": <div
+                                          onMouseEnter={[Function]}
+                                          onMouseLeave={[Function]}
+                                        >
+                                          <ComponentFunction />
+                                        </div>,
+                                        "className": undefined,
+                                        "classes": Object {
+                                          "popper": "HvTooltip-popper",
+                                          "tooltip": "HvTooltip-tooltip",
+                                        },
+                                        "disableFocusListener": true,
+                                        "disableHoverListener": false,
+                                        "disableInteractive": false,
+                                        "disableTouchListener": true,
+                                        "enterDelay": 300,
+                                        "isRtl": false,
+                                        "open": false,
+                                        "placement": "top",
+                                        "style": Object {
                                           "overflow": "hidden",
                                           "textOverflow": "ellipsis",
                                           "whiteSpace": "nowrap",
+                                        },
+                                        "title": <WithStyles(ForwardRef)>
+                                          System
+                                        </WithStyles(ForwardRef)>,
+                                        "touch": false,
+                                      }
+                                    }
+                                    placement="top"
+                                    popperOptions={
+                                      Object {
+                                        "modifiers": Array [
+                                          Object {
+                                            "enabled": false,
+                                            "name": "arrow",
+                                            "options": Object {
+                                              "element": null,
+                                              "padding": 4,
+                                            },
+                                          },
+                                        ],
+                                      }
+                                    }
+                                    popperRef={
+                                      Object {
+                                        "current": undefined,
+                                      }
+                                    }
+                                    transition={true}
+                                  >
+                                    <Insertion
+                                      cache={
+                                        Object {
+                                          "insert": [Function],
+                                          "inserted": Object {
+                                            "1433tg5-MuiTooltip-popper": true,
+                                            "179vq5o-MuiPopper-root-MuiTooltip-popper": true,
+                                          },
+                                          "key": "css",
+                                          "nonce": undefined,
+                                          "registered": Object {
+                                            "css-1433tg5-MuiTooltip-popper": "label:MuiTooltip-popper;z-index:1500;pointer-events:none;",
+                                            "css-179vq5o-MuiPopper-root-MuiTooltip-popper": "label:MuiPopper-root;label:MuiTooltip-popper;z-index:1500;pointer-events:none;;",
+                                          },
+                                          "sheet": StyleSheet {
+                                            "_alreadyInsertedOrderInsensitiveRule": true,
+                                            "_insertTag": [Function],
+                                            "before": null,
+                                            "container": <head>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvIconBase"
+                                              >
+                                                
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvTypography"
+                                              >
+                                                
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvVerticalNavigationTreeView"
+                                              >
+                                                
+.HvVerticalNavigationTreeView-root {
+  margin: 0;
+  display: block;
+  outline: none;
+  padding: 0px;
+  background: #FBFCFC;
+  list-style: none;
+}
+.HvVerticalNavigationTreeView-group {
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+.HvVerticalNavigationTreeView-node {
+  list-style: none;
+  min-height: 32px;
+}
+.HvVerticalNavigationTreeView-node:not(:last-child) {
+  margin-bottom: 8px;
+}
+.HvVerticalNavigationTreeView-collapsed&gt;.HvVerticalNavigationTreeView-group {
+  display: none;
+}
+.HvVerticalNavigationTreeView-expanded&gt;.HvVerticalNavigationTreeView-group {
+  display: block;
+}
+.HvVerticalNavigationTreeView-link {
+  text-decoration: none;
+}
+.HvVerticalNavigationTreeView-content {
+  width: 100%;
+  cursor: pointer;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid transparent;
+  padding-right: 10px;
+  justify-content: flex-start;
+}
+.HvVerticalNavigationTreeView-expandable&gt;.HvVerticalNavigationTreeView-content {
+  font-weight: 600;
+}
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content {
+  background: #E8E8E8;
+  border-left: 2px solid #CC0000;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible {
+  background: #E8E8E8;
+}
+*:focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeView-content[disabled], .HvVerticalNavigationTreeView-content:active {
+  outline: none;
+}
+.HvVerticalNavigationTreeView-content:focus {
+  outline: none;
+}
+.HvVerticalNavigationTreeView-content:focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-content.focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-content * {
+  cursor: pointer;
+}
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content * {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover * {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content * {
+  background: #E8E8E8;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvVerticalNavigationTreeViewItem"
+                                              >
+                                                
+.HvVerticalNavigationTreeViewItem-root {
+  margin: 0;
+  display: block;
+  outline: none;
+  padding: 0px;
+  background: #FBFCFC;
+  list-style: none;
+}
+.HvVerticalNavigationTreeViewItem-group {
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+.HvVerticalNavigationTreeViewItem-node {
+  list-style: none;
+  min-height: 32px;
+}
+.HvVerticalNavigationTreeViewItem-node:not(:last-child) {
+  margin-bottom: 8px;
+}
+.HvVerticalNavigationTreeViewItem-collapsed&gt;.HvVerticalNavigationTreeViewItem-group {
+  display: none;
+}
+.HvVerticalNavigationTreeViewItem-expanded&gt;.HvVerticalNavigationTreeViewItem-group {
+  display: block;
+}
+.HvVerticalNavigationTreeViewItem-link {
+  text-decoration: none;
+}
+.HvVerticalNavigationTreeViewItem-content {
+  width: 100%;
+  cursor: pointer;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid transparent;
+  padding-right: 10px;
+  justify-content: flex-start;
+}
+.HvVerticalNavigationTreeViewItem-expandable&gt;.HvVerticalNavigationTreeViewItem-content {
+  font-weight: 600;
+}
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content {
+  background: #E8E8E8;
+  border-left: 2px solid #CC0000;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible {
+  background: #E8E8E8;
+}
+*:focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeViewItem-content[disabled], .HvVerticalNavigationTreeViewItem-content:active {
+  outline: none;
+}
+.HvVerticalNavigationTreeViewItem-content:focus {
+  outline: none;
+}
+.HvVerticalNavigationTreeViewItem-content:focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-content.focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-content * {
+  cursor: pointer;
+}
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content * {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover * {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content * {
+  background: #E8E8E8;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvVerticalNavigationNavigation"
+                                              >
+                                                
+.HvVerticalNavigationNavigation-root {
+  display: block;
+  background: #FBFCFC;
+  overflow-y: auto;
+}
+
+                                              </style>
+                                              <style
+                                                data-emotion="css"
+                                                data-s=""
+                                              >
+                                                
+                                                .css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                              </style>
+                                              <style
+                                                data-emotion="css"
+                                                data-s=""
+                                              >
+                                                
+                                                .css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                              </style>
+                                            </head>,
+                                            "ctr": 2,
+                                            "insertionPoint": undefined,
+                                            "isSpeedy": false,
+                                            "key": "css",
+                                            "nonce": undefined,
+                                            "prepend": undefined,
+                                            "tags": Array [
+                                              <style
+                                                data-emotion="css"
+                                                data-s=""
+                                              >
+                                                
+                                                .css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                              </style>,
+                                              <style
+                                                data-emotion="css"
+                                                data-s=""
+                                              >
+                                                
+                                                .css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                              </style>,
+                                            ],
+                                          },
                                         }
                                       }
-                                      title={null}
-                                    >
-                                      <ComponentFunction>
-                                        System
-                                      </ComponentFunction>
-                                    </div>
+                                      isStringTag={false}
+                                      serialized={
+                                        Object {
+                                          "map": undefined,
+                                          "name": "1433tg5-MuiTooltip-popper",
+                                          "next": undefined,
+                                          "styles": "label:MuiTooltip-popper;z-index:1500;pointer-events:none;",
+                                          "toString": [Function],
+                                        }
+                                      }
+                                    />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <div
                                           class=""
+                                          data-mui-internal-clone-element="true"
                                           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
                                         >
                                           System
                                         </div>
                                       }
-                                      className="MuiTooltip-popper HvTooltip-popper"
-                                      id={null}
+                                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                      id="mui-1"
+                                      onMouseLeave={[Function]}
+                                      onMouseOver={[Function]}
                                       open={false}
                                       placement="top"
                                       popperOptions={
                                         Object {
-                                          "modifiers": Object {
-                                            "arrow": Object {
-                                              "element": null,
+                                          "modifiers": Array [
+                                            Object {
                                               "enabled": false,
+                                              "name": "arrow",
+                                              "options": Object {
+                                                "element": null,
+                                                "padding": 4,
+                                              },
                                             },
-                                          },
+                                          ],
+                                        }
+                                      }
+                                      popperRef={
+                                        Object {
+                                          "current": undefined,
                                         }
                                       }
                                       transition={true}
-                                    />
-                                  </ForwardRef(Tooltip)>
-                                </WithStyles(ForwardRef(Tooltip))>
+                                    >
+                                      <MuiPopperRoot
+                                        anchorEl={
+                                          <div
+                                            class=""
+                                            data-mui-internal-clone-element="true"
+                                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                          >
+                                            System
+                                          </div>
+                                        }
+                                        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="mui-1"
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="top"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      >
+                                        <Insertion
+                                          cache={
+                                            Object {
+                                              "insert": [Function],
+                                              "inserted": Object {
+                                                "1433tg5-MuiTooltip-popper": true,
+                                                "179vq5o-MuiPopper-root-MuiTooltip-popper": true,
+                                              },
+                                              "key": "css",
+                                              "nonce": undefined,
+                                              "registered": Object {
+                                                "css-1433tg5-MuiTooltip-popper": "label:MuiTooltip-popper;z-index:1500;pointer-events:none;",
+                                                "css-179vq5o-MuiPopper-root-MuiTooltip-popper": "label:MuiPopper-root;label:MuiTooltip-popper;z-index:1500;pointer-events:none;;",
+                                              },
+                                              "sheet": StyleSheet {
+                                                "_alreadyInsertedOrderInsensitiveRule": true,
+                                                "_insertTag": [Function],
+                                                "before": null,
+                                                "container": <head>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvIconBase"
+                                                  >
+                                                    
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvTypography"
+                                                  >
+                                                    
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvTooltip"
+                                                  >
+                                                    
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvVerticalNavigationTreeView"
+                                                  >
+                                                    
+.HvVerticalNavigationTreeView-root {
+  margin: 0;
+  display: block;
+  outline: none;
+  padding: 0px;
+  background: #FBFCFC;
+  list-style: none;
+}
+.HvVerticalNavigationTreeView-group {
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+.HvVerticalNavigationTreeView-node {
+  list-style: none;
+  min-height: 32px;
+}
+.HvVerticalNavigationTreeView-node:not(:last-child) {
+  margin-bottom: 8px;
+}
+.HvVerticalNavigationTreeView-collapsed&gt;.HvVerticalNavigationTreeView-group {
+  display: none;
+}
+.HvVerticalNavigationTreeView-expanded&gt;.HvVerticalNavigationTreeView-group {
+  display: block;
+}
+.HvVerticalNavigationTreeView-link {
+  text-decoration: none;
+}
+.HvVerticalNavigationTreeView-content {
+  width: 100%;
+  cursor: pointer;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid transparent;
+  padding-right: 10px;
+  justify-content: flex-start;
+}
+.HvVerticalNavigationTreeView-expandable&gt;.HvVerticalNavigationTreeView-content {
+  font-weight: 600;
+}
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content {
+  background: #E8E8E8;
+  border-left: 2px solid #CC0000;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible {
+  background: #E8E8E8;
+}
+*:focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeView-content[disabled], .HvVerticalNavigationTreeView-content:active {
+  outline: none;
+}
+.HvVerticalNavigationTreeView-content:focus {
+  outline: none;
+}
+.HvVerticalNavigationTreeView-content:focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-content.focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeView-content * {
+  cursor: pointer;
+}
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content * {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover * {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content * {
+  background: #E8E8E8;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvVerticalNavigationTreeViewItem"
+                                                  >
+                                                    
+.HvVerticalNavigationTreeViewItem-root {
+  margin: 0;
+  display: block;
+  outline: none;
+  padding: 0px;
+  background: #FBFCFC;
+  list-style: none;
+}
+.HvVerticalNavigationTreeViewItem-group {
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+.HvVerticalNavigationTreeViewItem-node {
+  list-style: none;
+  min-height: 32px;
+}
+.HvVerticalNavigationTreeViewItem-node:not(:last-child) {
+  margin-bottom: 8px;
+}
+.HvVerticalNavigationTreeViewItem-collapsed&gt;.HvVerticalNavigationTreeViewItem-group {
+  display: none;
+}
+.HvVerticalNavigationTreeViewItem-expanded&gt;.HvVerticalNavigationTreeViewItem-group {
+  display: block;
+}
+.HvVerticalNavigationTreeViewItem-link {
+  text-decoration: none;
+}
+.HvVerticalNavigationTreeViewItem-content {
+  width: 100%;
+  cursor: pointer;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid transparent;
+  padding-right: 10px;
+  justify-content: flex-start;
+}
+.HvVerticalNavigationTreeViewItem-expandable&gt;.HvVerticalNavigationTreeViewItem-content {
+  font-weight: 600;
+}
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content {
+  background: #E8E8E8;
+  border-left: 2px solid #CC0000;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible {
+  background: #E8E8E8;
+}
+*:focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeViewItem-content[disabled], .HvVerticalNavigationTreeViewItem-content:active {
+  outline: none;
+}
+.HvVerticalNavigationTreeViewItem-content:focus {
+  outline: none;
+}
+.HvVerticalNavigationTreeViewItem-content:focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-content.focus-visible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+.HvVerticalNavigationTreeViewItem-content * {
+  cursor: pointer;
+}
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content * {
+  cursor: not-allowed;
+}
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible * {
+  background: #E8E8E8;
+}
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover * {
+  background: #E8E8E8;
+}
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content * {
+  background: #E8E8E8;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-jss=""
+                                                    data-meta="HvVerticalNavigationNavigation"
+                                                  >
+                                                    
+.HvVerticalNavigationNavigation-root {
+  display: block;
+  background: #FBFCFC;
+  overflow-y: auto;
+}
+
+                                                  </style>
+                                                  <style
+                                                    data-emotion="css"
+                                                    data-s=""
+                                                  >
+                                                    
+                                                    .css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                                  </style>
+                                                  <style
+                                                    data-emotion="css"
+                                                    data-s=""
+                                                  >
+                                                    
+                                                    .css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                                  </style>
+                                                </head>,
+                                                "ctr": 2,
+                                                "insertionPoint": undefined,
+                                                "isSpeedy": false,
+                                                "key": "css",
+                                                "nonce": undefined,
+                                                "prepend": undefined,
+                                                "tags": Array [
+                                                  <style
+                                                    data-emotion="css"
+                                                    data-s=""
+                                                  >
+                                                    
+                                                    .css-1433tg5-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                                  </style>,
+                                                  <style
+                                                    data-emotion="css"
+                                                    data-s=""
+                                                  >
+                                                    
+                                                    .css-179vq5o-MuiPopper-root-MuiTooltip-popper{z-index:1500;pointer-events:none;}
+                                                  </style>,
+                                                ],
+                                              },
+                                            }
+                                          }
+                                          isStringTag={false}
+                                          serialized={
+                                            Object {
+                                              "map": undefined,
+                                              "name": "179vq5o-MuiPopper-root-MuiTooltip-popper",
+                                              "next": undefined,
+                                              "styles": "label:MuiPopper-root;label:MuiTooltip-popper;z-index:1500;pointer-events:none;;",
+                                              "toString": [Function],
+                                            }
+                                          }
+                                        />
+                                        <ForwardRef(PopperUnstyled)
+                                          anchorEl={
+                                            <div
+                                              class=""
+                                              data-mui-internal-clone-element="true"
+                                              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                            >
+                                              System
+                                            </div>
+                                          }
+                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                          direction="ltr"
+                                          id="mui-1"
+                                          onMouseLeave={[Function]}
+                                          onMouseOver={[Function]}
+                                          open={false}
+                                          placement="top"
+                                          popperOptions={
+                                            Object {
+                                              "modifiers": Array [
+                                                Object {
+                                                  "enabled": false,
+                                                  "name": "arrow",
+                                                  "options": Object {
+                                                    "element": null,
+                                                    "padding": 4,
+                                                  },
+                                                },
+                                              ],
+                                            }
+                                          }
+                                          popperRef={
+                                            Object {
+                                              "current": undefined,
+                                            }
+                                          }
+                                          transition={true}
+                                        />
+                                      </MuiPopperRoot>
+                                    </ForwardRef(Popper)>
+                                  </MuiTooltipPopper>
+                                </ForwardRef(Tooltip)>
                               </ForwardRef>
                             </WithStyles(ForwardRef)>
                           </Component>

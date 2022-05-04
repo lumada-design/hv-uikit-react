@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const PlotGraph = createPlotlyComponent(Plotly);

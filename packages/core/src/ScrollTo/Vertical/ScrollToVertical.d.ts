@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import React from "react";
 import { HvScrollToTooltipPositions } from "../tooltipPositions";
 

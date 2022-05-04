@@ -1,13 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import clsx from "clsx";
-import { deprecatedPropType, withStyles } from "@material-ui/core";
+import PropTypes from "prop-types";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 
 import { HvListContainer } from "..";
-
 import styles from "./styles";
-
 import TitleWithTooltip from "./TitleWithTooltip";
 import Action from "./Action";
 

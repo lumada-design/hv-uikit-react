@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps, SnackbarProps, SnackbarContentProps } from "@material-ui/core";
+import { StandardProps, SnackbarProps, SnackbarContentProps } from "@mui/material";
 import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export type TransitionDirectionProp = "up" | "down" | "left" | "right";

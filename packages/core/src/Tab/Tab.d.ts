@@ -1,4 +1,4 @@
-import { StandardProps, TabProps } from "@material-ui/core";
+import { StandardProps, TabProps } from "@mui/material";
 
 export type HvTabClassKey = "root" | "labelContainer" | "selected" | "disabled";
 

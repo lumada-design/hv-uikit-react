@@ -1,5 +1,4 @@
-import { hexToRgb } from "@material-ui/core";
-import { alpha } from "@material-ui/core/styles";
+import { hexToRgb, alpha } from "@mui/material";
 
 const styles = (theme) => ({
   background: {

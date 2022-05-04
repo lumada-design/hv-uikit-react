@@ -1,4 +1,4 @@
-import { CardContentProps, StandardProps } from "@material-ui/core";
+import { CardContentProps, StandardProps } from "@mui/material";
 
 export type HvCardContentClassKey = "content";
 

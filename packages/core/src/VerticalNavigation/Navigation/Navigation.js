@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import TreeView, { TreeViewItem } from "../TreeView";
 import { setId, useControlled } from "../../utils";

@@ -1,9 +1,8 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs";
-
 import LinkTo from "@storybook/addon-links/react";
 
 import { HvProvider, HvScopedCssBaseline } from "@hitachivantara/uikit-react-core";
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material";
 
 import SpacingUsage from "./SpacingUsage";
 import ThemePreviewMix from "./ThemePreviewMix";
@@ -61,7 +60,7 @@ The `createTheme` will output a Material-UI theme object with the required value
 The `HvProvider` will override the properties in the default theme applying the received definitions on top.
 
 ```jsx
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material";
 
 const myRawCustomTheme = {
   // Material-UI Theme
@@ -423,7 +422,7 @@ this can be seen in the example below.
 
 ```jsx
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import { HvButton, HvCheckBox } from "@hitachivantara/uikit-react-core";
 
 const SpacingUsage = () => {

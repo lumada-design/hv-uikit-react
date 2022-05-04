@@ -1,4 +1,4 @@
-import { StandardProps, AppBarProps } from "@material-ui/core";
+import { StandardProps, AppBarProps } from "@mui/material";
 
 export type HvHeaderClassKey = "root" | "header" | "backgroundColor";
 

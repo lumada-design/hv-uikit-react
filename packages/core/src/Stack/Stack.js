@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles, Divider, useTheme } from "@material-ui/core";
+import { withStyles, Divider, useTheme } from "@mui/styles";
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 import styles from "./styles";

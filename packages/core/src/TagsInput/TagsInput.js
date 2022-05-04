@@ -2,7 +2,7 @@ import React, { useRef, useState, useCallback, useMemo, useEffect } from "react"
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { setId, useControlled, isKeypress, KeyboardCodes } from "../utils";
 import {
   HvFormElement,

@@ -1,4 +1,4 @@
-import { StandardProps, CheckboxProps } from "@material-ui/core";
+import { StandardProps, CheckboxProps } from "@mui/material";
 
 export type HvBaseCheckBoxClassKey = "root" | "disabled" | "focusVisible";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@mui/styles";
 import { Edit, Close } from "@hitachivantara/uikit-react-icons";
 import { HvPanel, HvButton, HvTypography } from "../..";
 

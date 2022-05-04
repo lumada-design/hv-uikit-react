@@ -1,8 +1,8 @@
-import { Delete, Fail, Lock, Preview } from "@hitachivantara/uikit-react-icons";
-import { makeStyles } from "@material-ui/core/styles";
-import orderBy from "lodash/orderBy";
 import React, { useState } from "react";
+import orderBy from "lodash/orderBy";
 import Chart from "react-google-charts";
+import { makeStyles } from "@mui/styles";
+import { Delete, Fail, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 
 import { HvEmptyState, HvTable, HvButton } from "../..";
 

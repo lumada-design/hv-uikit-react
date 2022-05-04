@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import capitalize from "lodash/capitalize";
-import { Slide, Snackbar, withStyles } from "@material-ui/core";
+import { Slide, Snackbar } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import styles from "./styles";
 import { setId } from "../utils";

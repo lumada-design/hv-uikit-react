@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useReducer, useRef, useState, useContext } f
 import PropTypes from "prop-types";
 import isEqual from "lodash/isEqual";
 import cloneDeep from "lodash/cloneDeep";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import Context from "./Context";
 import RuleGroup from "./RuleGroup";

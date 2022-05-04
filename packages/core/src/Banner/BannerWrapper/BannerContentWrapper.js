@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
-import { SnackbarContent, withStyles } from "@material-ui/core";
+import { SnackbarContent } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import iconVariant from "../../utils/iconVariant";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";

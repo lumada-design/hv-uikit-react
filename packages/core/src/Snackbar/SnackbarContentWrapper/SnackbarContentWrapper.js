@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { SnackbarContent, withStyles } from "@material-ui/core";
+import { SnackbarContent } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import iconVariant from "../../utils/iconVariant";
 import { setId } from "../../utils";
 import ActionsGeneric from "../../ActionsGeneric";

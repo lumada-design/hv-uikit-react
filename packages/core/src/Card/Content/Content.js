@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { CardContent, withStyles } from "@material-ui/core";
+import { CardContent } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 /**

@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from "react";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import PropTypes from "prop-types";
 import {
   HvGrid,

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { HvEmptyState } from "@hitachivantara/uikit-react-core";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const EmptyStatePanel = ({ id, classes, className, title, message, icon }) => {

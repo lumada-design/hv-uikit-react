@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
+import { makeStyles, useTheme } from "@mui/styles";
+
 import { HvSwitch, HvBaseSwitch, HvLabel, HvInfoMessage } from "../..";
 import Typography from "../../Typography";
 import Button from "../../Button";

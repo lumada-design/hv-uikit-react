@@ -1,4 +1,4 @@
-import { TooltipProps, StandardProps } from "@material-ui/core";
+import { TooltipProps, StandardProps } from "@mui/material";
 
 export type HvTooltipClassKey =
   | "tooltip"

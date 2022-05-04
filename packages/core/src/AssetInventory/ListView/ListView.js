@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";

@@ -2,7 +2,7 @@ import React, { isValidElement, useCallback, useEffect, useMemo, useRef, useStat
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { CloseXS, PreviewOff, Preview, Search, Success } from "@hitachivantara/uikit-react-icons";
 

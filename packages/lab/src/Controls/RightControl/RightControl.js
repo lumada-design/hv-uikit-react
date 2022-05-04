@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvDropdown, setId } from "@hitachivantara/uikit-react-core";
 import styleCreator from "./styles";
 import { HvControlsContext } from "../context/ControlsContext";

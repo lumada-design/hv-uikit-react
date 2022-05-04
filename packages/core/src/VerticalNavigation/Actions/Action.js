@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { KeyboardCodes, isKeypress } from "../../utils/KeyboardUtils";
 import HvTypography from "../../Typography";
 import { setId } from "../../utils";

@@ -1,7 +1,5 @@
 import React from "react";
-
-import withStyles from "@material-ui/core/styles/withStyles";
-import { useTheme } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
 
 import {
   HvProvider,

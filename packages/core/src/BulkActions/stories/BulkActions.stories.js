@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 

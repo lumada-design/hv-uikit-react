@@ -1,4 +1,4 @@
-import { StandardProps, SwitchProps } from "@material-ui/core";
+import { StandardProps, SwitchProps } from "@mui/material";
 
 export type HvBaseSwitchClassKey = "root" | "disabled";
 

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvInput, setId } from "@hitachivantara/uikit-react-core";
 import { HvControlsContext } from "../context/ControlsContext";
 import styleCreator from "./styles";

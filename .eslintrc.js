@@ -31,6 +31,7 @@ module.exports = {
         assignment: false,
       },
     ],
+    "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
@@ -77,6 +78,7 @@ module.exports = {
         "": "never",
       },
     ],
+    "no-unused-vars": "warn",
   },
   overrides: [
     {

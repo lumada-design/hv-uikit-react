@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useCallback } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 import OptionsContext from "./OptionsContext";
 

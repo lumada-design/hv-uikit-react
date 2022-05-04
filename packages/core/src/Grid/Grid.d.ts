@@ -1,4 +1,4 @@
-import { GridProps, StandardProps } from "@material-ui/core";
+import { GridProps, StandardProps } from "@mui/material";
 
 export type Spacing = "xs" | "sm" | "md" | "lg" | "xl" | "auto";
 export type Columns = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import type { Config, Layout, Data as PlotlyPlotData } from "plotly.js";
 
 export type PlotData = PlotlyPlotData;

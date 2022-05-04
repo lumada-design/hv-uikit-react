@@ -3,48 +3,32 @@
 exports[`HvButton sample snapshot testing Main (Vertical) 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+    class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-c9ws1n-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
-    >
-      Primary
-    </span>
+    Primary
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+    class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
-    >
-      Secondary
-    </span>
+    Secondary
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
-    >
-      Ghost
-    </span>
+    Ghost
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-semanticSVG MuiButton-textPrimary HvButton-semantic"
+    class="HvButton-root MuiButton-root MuiButton-text HvButton-semantic MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-semanticSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
-    >
-      Semantic
-    </span>
+    Semantic
   </button>
 </div>
 `;

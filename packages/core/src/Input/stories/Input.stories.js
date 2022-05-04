@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
-import { makeStyles, useTheme } from "@material-ui/core";
+import { makeStyles, useTheme } from "@mui/styles";
 import { Map } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,

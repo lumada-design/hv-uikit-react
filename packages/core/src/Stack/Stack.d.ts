@@ -1,4 +1,4 @@
-import { StandardProps, DividerProps } from "@material-ui/core";
+import { StandardProps, DividerProps } from "@mui/material";
 import React from "react";
 import { HvThemeSpacing } from "../theme";
 

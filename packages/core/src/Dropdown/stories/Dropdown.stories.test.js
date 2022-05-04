@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { withStyles, makeStyles } from "@material-ui/core";
+import { makeStyles, withStyles } from "@mui/styles";
 import {
   Priority1,
   Priority2,

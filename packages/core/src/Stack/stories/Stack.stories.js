@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@mui/styles";
 
 import { Tool, FavoriteSelected, Favorite } from "@hitachivantara/uikit-react-icons";
 import {

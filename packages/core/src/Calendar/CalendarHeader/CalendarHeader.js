@@ -7,7 +7,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { setId, isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import styles from "./styles";

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { Fail } from "@hitachivantara/uikit-react-icons";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvFormElementContext } from "../FormElement";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";

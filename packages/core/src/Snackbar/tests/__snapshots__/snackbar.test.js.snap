@@ -17,7 +17,7 @@ exports[`Snackbar  should render correctly 1`] = `
     }
     id="Snackbar"
   >
-    <WithStyles(ForwardRef(Snackbar))
+    <ForwardRef(Snackbar)
       TransitionComponent={[Function]}
       anchorOrigin={
         Object {
@@ -44,37 +44,7 @@ exports[`Snackbar  should render correctly 1`] = `
         }
       }
       transitionDuration={300}
-    >
-      <ForwardRef(Snackbar)
-        TransitionComponent={[Function]}
-        anchorOrigin={
-          Object {
-            "horizontal": "right",
-            "vertical": "top",
-          }
-        }
-        autoHideDuration={5000}
-        classes={
-          Object {
-            "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter HvSnackbar-anchorOriginBottomCenter",
-            "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft HvSnackbar-anchorOriginBottomLeft",
-            "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight HvSnackbar-anchorOriginBottomRight",
-            "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter HvSnackbar-anchorOriginTopCenter",
-            "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft HvSnackbar-anchorOriginTopLeft",
-            "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight HvSnackbar-anchorOriginTopRight",
-            "root": "MuiSnackbar-root",
-          }
-        }
-        id="Snackbar"
-        open={false}
-        style={
-          Object {
-            "top": "60px",
-          }
-        }
-        transitionDuration={300}
-      />
-    </WithStyles(ForwardRef(Snackbar))>
+    />
   </HvSnackbar>
 </WithStyles(HvSnackbar)>
 `;

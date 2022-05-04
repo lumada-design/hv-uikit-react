@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-
 import clsx from "clsx";
-import { useTheme, withStyles } from "@material-ui/core";
-
+import PropTypes from "prop-types";
+import { withStyles, useTheme } from "@mui/styles";
 import { HvTypography, HvAvatar, HvTooltip, HvListItem } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
 import styles from "./styles";
-
 import TitleWithTooltip from "../TitleWithTooltip";
 
 const getColor = (theme, color, defaultColor) => theme.palette[color] || color || defaultColor;

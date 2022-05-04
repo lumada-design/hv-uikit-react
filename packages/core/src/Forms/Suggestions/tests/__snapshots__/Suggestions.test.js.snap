@@ -26,13 +26,7 @@ exports[`Suggestions should render correctly 1`] = `
       className="HvSuggestions-root"
       id="hvformelement1-suggestions"
       onKeyDown={[Function]}
-    >
-      <ForwardRef(Popper)
-        className="HvSuggestions-popper"
-        disablePortal={true}
-        open={false}
-      />
-    </div>
+    />
   </HvSuggestions>
 </WithStyles(HvSuggestions)>
 `;

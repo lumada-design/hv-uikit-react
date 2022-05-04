@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Grid, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
+import { Grid } from "@mui/material";
 import {
   Add,
   Delete,

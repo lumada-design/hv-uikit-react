@@ -2,7 +2,7 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { Backdrop } from "@material-ui/core";
+import { Backdrop } from "@mui/material";
 
 import HvProvider from "../../Provider";
 import Dialog from "..";

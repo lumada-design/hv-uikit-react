@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import { screen, fireEvent } from "@storybook/testing-library";
 import React, { useState } from "react";
 

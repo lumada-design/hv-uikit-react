@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import HvTypography from "../../../Typography";
 import ActionsGeneric from "../../../ActionsGeneric";
 import { setId } from "../../../utils";

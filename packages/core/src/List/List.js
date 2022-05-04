@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { FixedSizeList } from "react-window";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 
 import { parseList, wrapperTooltip } from "./utils";
 import useSelectableList from "./useSelectableList";
-
 import { HvLink, HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
-
 import styles from "./styles";
 
 const DEFAULT_LABELS = {

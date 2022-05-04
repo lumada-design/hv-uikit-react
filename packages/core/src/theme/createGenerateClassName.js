@@ -1,4 +1,4 @@
-import { createGenerateClassName as muiCreateGenerateClassName } from "@material-ui/core/styles";
+import { createGenerateClassName as muiCreateGenerateClassName } from "@mui/styles";
 
 export default function createGenerateClassName(options = {}) {
   const { disableGlobal = false, productionPrefix = "jss-uikit", seed = "" } = options;

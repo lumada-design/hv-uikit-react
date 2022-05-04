@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { isKeypress, KeyboardCodes } from "../../utils";
 import HorizontalScrollListItem from "./HorizontalScrollListItem";
 import styles from "./styles";

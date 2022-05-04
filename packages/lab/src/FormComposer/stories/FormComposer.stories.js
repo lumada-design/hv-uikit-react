@@ -1,7 +1,6 @@
 /* eslint-disable no-alert */
 import * as React from "react";
-
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@mui/styles";
 import { HvButton, HvDropdown, HvInput } from "@hitachivantara/uikit-react-core";
 
 import HvFormComposer from "../FormComposer";

@@ -3,7 +3,7 @@ import PropTypes, { object } from "prop-types";
 import clsx from "clsx";
 import capitalize from "lodash/capitalize";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvButton, HvTypography } from "@hitachivantara/uikit-react-core";
 import { getSortIcon, isParagraph } from "./utils";
 import styles from "./styles";

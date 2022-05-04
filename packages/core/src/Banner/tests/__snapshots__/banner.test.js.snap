@@ -21,7 +21,7 @@ exports[`Banner  should render correctly 1`] = `
     open={false}
     variant="default"
   >
-    <WithStyles(ForwardRef(Snackbar))
+    <ForwardRef(Snackbar)
       TransitionComponent={[Function]}
       anchorOrigin={
         Object {
@@ -44,36 +44,7 @@ exports[`Banner  should render correctly 1`] = `
         }
       }
       transitionDuration={300}
-    >
-      <ForwardRef(Snackbar)
-        TransitionComponent={[Function]}
-        anchorOrigin={
-          Object {
-            "horizontal": "center",
-            "vertical": "top",
-          }
-        }
-        classes={
-          Object {
-            "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter HvBanner-anchorOriginBottomCenter",
-            "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft",
-            "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight",
-            "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter",
-            "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft",
-            "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight",
-            "root": "MuiSnackbar-root HvBanner-rootClosed",
-          }
-        }
-        id="banner"
-        open={false}
-        style={
-          Object {
-            "top": "60px",
-          }
-        }
-        transitionDuration={300}
-      />
-    </WithStyles(ForwardRef(Snackbar))>
+    />
   </HvBanner>
 </WithStyles(HvBanner)>
 `;

@@ -3,7 +3,8 @@ import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { Radio, withStyles } from "@material-ui/core";
+import { Radio } from "@mui/material";
+import { withStyles } from "@mui/styles";
 
 import { RadioButtonUnselected, RadioButtonSelected } from "@hitachivantara/uikit-react-icons";
 

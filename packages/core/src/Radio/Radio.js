@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { HvBaseRadio, HvFormElement, HvLabel, HvWarningText, useUniqueId } from "..";
 import { isInvalid } from "../Forms/FormElement/validationStates";

@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvDropdownProps, ListValueProp } from "@hitachivantara/uikit-react-core";
 
 export type HvRightControlClassKey = "root" | "sortDropdown";

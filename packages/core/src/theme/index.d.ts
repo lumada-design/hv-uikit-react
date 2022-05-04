@@ -1,4 +1,4 @@
-import { Theme } from "@material-ui/core";
+import { Theme } from "@mui/material";
 
 export type HvAccentColorKeys = "acce1" | "acce2" | "acce2h" | "acce3";
 export type HvAtmosphereColorKeys = "atmo1" | "atmo2" | "atmo3" | "atmo4" | "atmo5";

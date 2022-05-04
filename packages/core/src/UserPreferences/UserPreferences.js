@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import PropTypes from "prop-types";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import PropTypes from "prop-types";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import { withStyles } from "@mui/styles";
+
 import { getFirstAndLastFocus, isKeypress, KeyboardCodes } from "../utils";
 import styles from "./styles";
 import Typography from "../Typography";

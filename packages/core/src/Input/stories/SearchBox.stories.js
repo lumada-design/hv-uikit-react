@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import parser from "html-react-parser";
 
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
 import { Fail } from "@hitachivantara/uikit-react-icons";
 

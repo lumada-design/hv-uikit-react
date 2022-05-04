@@ -2,7 +2,7 @@ import React, { forwardRef, useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvFocus, useForkRef } from "@hitachivantara/uikit-react-core";
 
 import TableContext from "../TableContext";

@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import * as React from "react";
 import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { ListValueProp } from "../List";

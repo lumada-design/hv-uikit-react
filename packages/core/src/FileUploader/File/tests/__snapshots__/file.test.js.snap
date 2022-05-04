@@ -159,64 +159,1489 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </span>
-      <WithStyles(ForwardRef(IconButton))
+      <ForwardRef(IconButton)
         aria-label="removeFileButtonLabel"
         category="ghost"
         className="HvFileUploaderFile-removeButton"
         onClick={[Function]}
       >
-        <ForwardRef(IconButton)
+        <MuiIconButtonRoot
           aria-label="removeFileButtonLabel"
           category="ghost"
-          className="HvFileUploaderFile-removeButton"
-          classes={
+          centerRipple={true}
+          className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
+          disabled={false}
+          focusRipple={true}
+          onClick={[Function]}
+          ownerState={
             Object {
-              "colorInherit": "MuiIconButton-colorInherit",
-              "colorPrimary": "MuiIconButton-colorPrimary",
-              "colorSecondary": "MuiIconButton-colorSecondary",
-              "disabled": "Mui-disabled",
-              "edgeEnd": "MuiIconButton-edgeEnd",
-              "edgeStart": "MuiIconButton-edgeStart",
-              "label": "MuiIconButton-label",
-              "root": "MuiIconButton-root",
-              "sizeSmall": "MuiIconButton-sizeSmall",
+              "aria-label": "removeFileButtonLabel",
+              "category": "ghost",
+              "children": <Close
+                iconSize="XS"
+              />,
+              "className": "HvFileUploaderFile-removeButton",
+              "color": "default",
+              "disableFocusRipple": false,
+              "disabled": false,
+              "edge": false,
+              "id": undefined,
+              "onClick": [Function],
+              "size": "medium",
             }
           }
-          onClick={[Function]}
         >
-          <WithStyles(ForwardRef(ButtonBase))
+          <Insertion
+            cache={
+              Object {
+                "insert": [Function],
+                "inserted": Object {
+                  "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                  "8je8zh-MuiTouchRipple-root": true,
+                  "da3c9u-MuiIconButton-root": true,
+                },
+                "key": "css",
+                "nonce": undefined,
+                "registered": Object {
+                  "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                },
+                "sheet": StyleSheet {
+                  "_alreadyInsertedOrderInsensitiveRule": true,
+                  "_insertTag": [Function],
+                  "before": null,
+                  "container": <head>
+                    <style
+                      data-jss=""
+                      data-meta="HvIconBase"
+                    >
+                      
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvIconBase"
+                    >
+                      
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvTypography"
+                    >
+                      
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvTypography"
+                    >
+                      
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvFileUploaderFile"
+                    >
+                      
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvFileUploaderFile"
+                    >
+                      
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                    </style>
+                  </head>,
+                  "ctr": 12,
+                  "insertionPoint": undefined,
+                  "isSpeedy": false,
+                  "key": "css",
+                  "nonce": undefined,
+                  "prepend": undefined,
+                  "tags": Array [
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                    </style>,
+                  ],
+                },
+              }
+            }
+            isStringTag={false}
+            serialized={
+              Object {
+                "map": undefined,
+                "name": "da3c9u-MuiIconButton-root",
+                "next": undefined,
+                "styles": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                "toString": [Function],
+              }
+            }
+          />
+          <ForwardRef(ButtonBase)
             aria-label="removeFileButtonLabel"
             category="ghost"
             centerRipple={true}
-            className="MuiIconButton-root HvFileUploaderFile-removeButton"
+            className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
             disabled={false}
             focusRipple={true}
             onClick={[Function]}
           >
-            <ForwardRef(ButtonBase)
+            <MuiButtonBaseRoot
               aria-label="removeFileButtonLabel"
+              as="button"
               category="ghost"
-              centerRipple={true}
-              className="MuiIconButton-root HvFileUploaderFile-removeButton"
-              classes={
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              ownerState={
                 Object {
-                  "disabled": "Mui-disabled",
-                  "focusVisible": "Mui-focusVisible",
-                  "root": "MuiButtonBase-root",
+                  "aria-label": "removeFileButtonLabel",
+                  "category": "ghost",
+                  "centerRipple": true,
+                  "children": <Close
+                    iconSize="XS"
+                  />,
+                  "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root",
+                  "component": "button",
+                  "disableRipple": false,
+                  "disableTouchRipple": false,
+                  "disabled": false,
+                  "focusRipple": true,
+                  "focusVisible": false,
+                  "id": undefined,
+                  "onClick": [Function],
+                  "tabIndex": 0,
                 }
               }
-              disableRipple={true}
-              disabled={false}
-              focusRipple={true}
-              onClick={[Function]}
+              tabIndex={0}
+              type="button"
             >
+              <Insertion
+                cache={
+                  Object {
+                    "insert": [Function],
+                    "inserted": Object {
+                      "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                      "8je8zh-MuiTouchRipple-root": true,
+                      "da3c9u-MuiIconButton-root": true,
+                    },
+                    "key": "css",
+                    "nonce": undefined,
+                    "registered": Object {
+                      "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                    },
+                    "sheet": StyleSheet {
+                      "_alreadyInsertedOrderInsensitiveRule": true,
+                      "_insertTag": [Function],
+                      "before": null,
+                      "container": <head>
+                        <style
+                          data-jss=""
+                          data-meta="HvIconBase"
+                        >
+                          
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvIconBase"
+                        >
+                          
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvTypography"
+                        >
+                          
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvTypography"
+                        >
+                          
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvFileUploaderFile"
+                        >
+                          
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvFileUploaderFile"
+                        >
+                          
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                        </style>
+                      </head>,
+                      "ctr": 12,
+                      "insertionPoint": undefined,
+                      "isSpeedy": false,
+                      "key": "css",
+                      "nonce": undefined,
+                      "prepend": undefined,
+                      "tags": Array [
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                        </style>,
+                      ],
+                    },
+                  }
+                }
+                isStringTag={true}
+                serialized={
+                  Object {
+                    "map": undefined,
+                    "name": "78trlr-MuiButtonBase-root-MuiIconButton-root",
+                    "next": undefined,
+                    "styles": "label:MuiButtonBase-root;display:inline-flex;align-items:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;text-decoration:none;color:inherit;&::-moz-focus-inner{border-style:none;}&.Mui-disabled{pointer-events:none;cursor:default;}@media print{color-adjust:exact;}label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);};",
+                    "toString": [Function],
+                  }
+                }
+              />
               <button
                 aria-label="removeFileButtonLabel"
                 category="ghost"
-                className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+                className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -230,42 +1655,751 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 tabIndex={0}
                 type="button"
               >
-                <span
-                  className="MuiIconButton-label"
+                <Close
+                  iconSize="XS"
                 >
-                  <Close
+                  <HvIconBase
                     iconSize="XS"
+                    name="Close"
                   >
-                    <HvIconBase
-                      iconSize="XS"
+                    <div
+                      className="HvIconBase-root HvIconBase-xs"
                       name="Close"
                     >
-                      <div
-                        className="HvIconBase-root HvIconBase-xs"
-                        name="Close"
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 16 16"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          focusable={false}
-                          height={12}
-                          viewBox="0 0 16 16"
-                          width={12}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            className="color0"
-                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                    </HvIconBase>
-                  </Close>
-                </span>
+                        <path
+                          className="color0"
+                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </Close>
+                <ForwardRef(TouchRipple)
+                  center={true}
+                >
+                  <MuiTouchRippleRoot
+                    className="MuiTouchRipple-root"
+                  >
+                    <Insertion
+                      cache={
+                        Object {
+                          "insert": [Function],
+                          "inserted": Object {
+                            "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                            "8je8zh-MuiTouchRipple-root": true,
+                            "da3c9u-MuiIconButton-root": true,
+                          },
+                          "key": "css",
+                          "nonce": undefined,
+                          "registered": Object {
+                            "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                          },
+                          "sheet": StyleSheet {
+                            "_alreadyInsertedOrderInsensitiveRule": true,
+                            "_insertTag": [Function],
+                            "before": null,
+                            "container": <head>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                              </style>
+                            </head>,
+                            "ctr": 12,
+                            "insertionPoint": undefined,
+                            "isSpeedy": false,
+                            "key": "css",
+                            "nonce": undefined,
+                            "prepend": undefined,
+                            "tags": Array [
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                              </style>,
+                            ],
+                          },
+                        }
+                      }
+                      isStringTag={true}
+                      serialized={
+                        Object {
+                          "map": undefined,
+                          "name": "8je8zh-MuiTouchRipple-root",
+                          "next": undefined,
+                          "styles": "label:MuiTouchRipple-root;overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;",
+                          "toString": [Function],
+                        }
+                      }
+                    />
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component={null}
+                        exit={true}
+                      />
+                    </span>
+                  </MuiTouchRippleRoot>
+                </ForwardRef(TouchRipple)>
               </button>
-            </ForwardRef(ButtonBase)>
-          </WithStyles(ForwardRef(ButtonBase))>
-        </ForwardRef(IconButton)>
-      </WithStyles(ForwardRef(IconButton))>
+            </MuiButtonBaseRoot>
+          </ForwardRef(ButtonBase)>
+        </MuiIconButtonRoot>
+      </ForwardRef(IconButton)>
     </li>
   </File>
 </WithStyles(File)>
@@ -430,64 +2564,1489 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </span>
-      <WithStyles(ForwardRef(IconButton))
+      <ForwardRef(IconButton)
         aria-label="removeFileButtonLabel"
         category="ghost"
         className="HvFileUploaderFile-removeButton"
         onClick={[Function]}
       >
-        <ForwardRef(IconButton)
+        <MuiIconButtonRoot
           aria-label="removeFileButtonLabel"
           category="ghost"
-          className="HvFileUploaderFile-removeButton"
-          classes={
+          centerRipple={true}
+          className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
+          disabled={false}
+          focusRipple={true}
+          onClick={[Function]}
+          ownerState={
             Object {
-              "colorInherit": "MuiIconButton-colorInherit",
-              "colorPrimary": "MuiIconButton-colorPrimary",
-              "colorSecondary": "MuiIconButton-colorSecondary",
-              "disabled": "Mui-disabled",
-              "edgeEnd": "MuiIconButton-edgeEnd",
-              "edgeStart": "MuiIconButton-edgeStart",
-              "label": "MuiIconButton-label",
-              "root": "MuiIconButton-root",
-              "sizeSmall": "MuiIconButton-sizeSmall",
+              "aria-label": "removeFileButtonLabel",
+              "category": "ghost",
+              "children": <Close
+                iconSize="XS"
+              />,
+              "className": "HvFileUploaderFile-removeButton",
+              "color": "default",
+              "disableFocusRipple": false,
+              "disabled": false,
+              "edge": false,
+              "id": undefined,
+              "onClick": [Function],
+              "size": "medium",
             }
           }
-          onClick={[Function]}
         >
-          <WithStyles(ForwardRef(ButtonBase))
+          <Insertion
+            cache={
+              Object {
+                "insert": [Function],
+                "inserted": Object {
+                  "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                  "8je8zh-MuiTouchRipple-root": true,
+                  "da3c9u-MuiIconButton-root": true,
+                },
+                "key": "css",
+                "nonce": undefined,
+                "registered": Object {
+                  "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                },
+                "sheet": StyleSheet {
+                  "_alreadyInsertedOrderInsensitiveRule": true,
+                  "_insertTag": [Function],
+                  "before": null,
+                  "container": <head>
+                    <style
+                      data-jss=""
+                      data-meta="HvIconBase"
+                    >
+                      
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvIconBase"
+                    >
+                      
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvTypography"
+                    >
+                      
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvTypography"
+                    >
+                      
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvFileUploaderFile"
+                    >
+                      
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvFileUploaderFile"
+                    >
+                      
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                    </style>
+                  </head>,
+                  "ctr": 12,
+                  "insertionPoint": undefined,
+                  "isSpeedy": false,
+                  "key": "css",
+                  "nonce": undefined,
+                  "prepend": undefined,
+                  "tags": Array [
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                    </style>,
+                    <style
+                      data-emotion="css"
+                      data-s=""
+                    >
+                      
+                      .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                    </style>,
+                  ],
+                },
+              }
+            }
+            isStringTag={false}
+            serialized={
+              Object {
+                "map": undefined,
+                "name": "da3c9u-MuiIconButton-root",
+                "next": undefined,
+                "styles": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                "toString": [Function],
+              }
+            }
+          />
+          <ForwardRef(ButtonBase)
             aria-label="removeFileButtonLabel"
             category="ghost"
             centerRipple={true}
-            className="MuiIconButton-root HvFileUploaderFile-removeButton"
+            className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
             disabled={false}
             focusRipple={true}
             onClick={[Function]}
           >
-            <ForwardRef(ButtonBase)
+            <MuiButtonBaseRoot
               aria-label="removeFileButtonLabel"
+              as="button"
               category="ghost"
-              centerRipple={true}
-              className="MuiIconButton-root HvFileUploaderFile-removeButton"
-              classes={
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              ownerState={
                 Object {
-                  "disabled": "Mui-disabled",
-                  "focusVisible": "Mui-focusVisible",
-                  "root": "MuiButtonBase-root",
+                  "aria-label": "removeFileButtonLabel",
+                  "category": "ghost",
+                  "centerRipple": true,
+                  "children": <Close
+                    iconSize="XS"
+                  />,
+                  "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root",
+                  "component": "button",
+                  "disableRipple": false,
+                  "disableTouchRipple": false,
+                  "disabled": false,
+                  "focusRipple": true,
+                  "focusVisible": false,
+                  "id": undefined,
+                  "onClick": [Function],
+                  "tabIndex": 0,
                 }
               }
-              disableRipple={true}
-              disabled={false}
-              focusRipple={true}
-              onClick={[Function]}
+              tabIndex={0}
+              type="button"
             >
+              <Insertion
+                cache={
+                  Object {
+                    "insert": [Function],
+                    "inserted": Object {
+                      "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                      "8je8zh-MuiTouchRipple-root": true,
+                      "da3c9u-MuiIconButton-root": true,
+                    },
+                    "key": "css",
+                    "nonce": undefined,
+                    "registered": Object {
+                      "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                    },
+                    "sheet": StyleSheet {
+                      "_alreadyInsertedOrderInsensitiveRule": true,
+                      "_insertTag": [Function],
+                      "before": null,
+                      "container": <head>
+                        <style
+                          data-jss=""
+                          data-meta="HvIconBase"
+                        >
+                          
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvIconBase"
+                        >
+                          
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvTypography"
+                        >
+                          
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvTypography"
+                        >
+                          
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvFileUploaderFile"
+                        >
+                          
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                        </style>
+                        <style
+                          data-jss=""
+                          data-meta="HvFileUploaderFile"
+                        >
+                          
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                        </style>
+                      </head>,
+                      "ctr": 12,
+                      "insertionPoint": undefined,
+                      "isSpeedy": false,
+                      "key": "css",
+                      "nonce": undefined,
+                      "prepend": undefined,
+                      "tags": Array [
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                        </style>,
+                        <style
+                          data-emotion="css"
+                          data-s=""
+                        >
+                          
+                          .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                        </style>,
+                      ],
+                    },
+                  }
+                }
+                isStringTag={true}
+                serialized={
+                  Object {
+                    "map": undefined,
+                    "name": "78trlr-MuiButtonBase-root-MuiIconButton-root",
+                    "next": undefined,
+                    "styles": "label:MuiButtonBase-root;display:inline-flex;align-items:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;text-decoration:none;color:inherit;&::-moz-focus-inner{border-style:none;}&.Mui-disabled{pointer-events:none;cursor:default;}@media print{color-adjust:exact;}label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);};",
+                    "toString": [Function],
+                  }
+                }
+              />
               <button
                 aria-label="removeFileButtonLabel"
                 category="ghost"
-                className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+                className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onDragLeave={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
@@ -501,42 +4060,751 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 tabIndex={0}
                 type="button"
               >
-                <span
-                  className="MuiIconButton-label"
+                <Close
+                  iconSize="XS"
                 >
-                  <Close
+                  <HvIconBase
                     iconSize="XS"
+                    name="Close"
                   >
-                    <HvIconBase
-                      iconSize="XS"
+                    <div
+                      className="HvIconBase-root HvIconBase-xs"
                       name="Close"
                     >
-                      <div
-                        className="HvIconBase-root HvIconBase-xs"
-                        name="Close"
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 16 16"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          focusable={false}
-                          height={12}
-                          viewBox="0 0 16 16"
-                          width={12}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            className="color0"
-                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                    </HvIconBase>
-                  </Close>
-                </span>
+                        <path
+                          className="color0"
+                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </Close>
+                <ForwardRef(TouchRipple)
+                  center={true}
+                >
+                  <MuiTouchRippleRoot
+                    className="MuiTouchRipple-root"
+                  >
+                    <Insertion
+                      cache={
+                        Object {
+                          "insert": [Function],
+                          "inserted": Object {
+                            "78trlr-MuiButtonBase-root-MuiIconButton-root": true,
+                            "8je8zh-MuiTouchRipple-root": true,
+                            "da3c9u-MuiIconButton-root": true,
+                          },
+                          "key": "css",
+                          "nonce": undefined,
+                          "registered": Object {
+                            "css-da3c9u-MuiIconButton-root": "label:MuiIconButton-root;text-align:center;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&:hover{background-color:rgba(0, 0, 0, 0.04);@media (hover: none){background-color:transparent;}}&.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}",
+                          },
+                          "sheet": StyleSheet {
+                            "_alreadyInsertedOrderInsensitiveRule": true,
+                            "_insertTag": [Function],
+                            "before": null,
+                            "container": <head>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root {
+  display: flex;
+}
+.HvIconBase-root svg {
+  margin: auto;
+}
+.HvIconBase-xs {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                              </style>
+                            </head>,
+                            "ctr": 12,
+                            "insertionPoint": undefined,
+                            "isSpeedy": false,
+                            "key": "css",
+                            "nonce": undefined,
+                            "prepend": undefined,
+                            "tags": Array [
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-da3c9u-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-da3c9u-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media print{.css-78trlr-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:rgba(0, 0, 0, 0.04);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                @media (hover: none){.css-78trlr-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-78trlr-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}
+                              </style>,
+                              <style
+                                data-emotion="css"
+                                data-s=""
+                              >
+                                
+                                .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
+                              </style>,
+                            ],
+                          },
+                        }
+                      }
+                      isStringTag={true}
+                      serialized={
+                        Object {
+                          "map": undefined,
+                          "name": "8je8zh-MuiTouchRipple-root",
+                          "next": undefined,
+                          "styles": "label:MuiTouchRipple-root;overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;",
+                          "toString": [Function],
+                        }
+                      }
+                    />
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component={null}
+                        exit={true}
+                      />
+                    </span>
+                  </MuiTouchRippleRoot>
+                </ForwardRef(TouchRipple)>
               </button>
-            </ForwardRef(ButtonBase)>
-          </WithStyles(ForwardRef(ButtonBase))>
-        </ForwardRef(IconButton)>
-      </WithStyles(ForwardRef(IconButton))>
+            </MuiButtonBaseRoot>
+          </ForwardRef(ButtonBase)>
+        </MuiIconButtonRoot>
+      </ForwardRef(IconButton)>
     </li>
   </File>
 </WithStyles(File)>

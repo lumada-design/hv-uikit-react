@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
-import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 
 import { HvListContainer, useDeprecated } from "@hitachivantara/uikit-react-core";
 

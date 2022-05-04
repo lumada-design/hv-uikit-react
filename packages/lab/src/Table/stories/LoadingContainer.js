@@ -3,7 +3,7 @@ import clsx from "clsx";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import useResizeAware from "react-resize-aware";
 
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import { hexToRgbA, HvLoading } from "@hitachivantara/uikit-react-core";
 
 const useStyles = makeStyles((theme) => ({

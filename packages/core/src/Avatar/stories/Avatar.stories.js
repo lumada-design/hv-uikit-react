@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-
+import { makeStyles } from "@mui/styles";
 import { LogIn, Archives, Search, Bookmark } from "@hitachivantara/uikit-react-icons";
 
 import man1 from "./resources/man-1.png";

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
