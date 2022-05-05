@@ -1,14 +1,14 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import Typography from "../../../Typography";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 import styles from "./styles";
 
 const MultiTooltip = ({ classes, data }) => (
   <div className={classes.root}>
     <div className={classes.title}>
       <div>
-        <Typography variant="highlightText">{data.title}</Typography>
+        <HvTypography variant="highlightText">{data.title}</HvTypography>
       </div>
     </div>
     <div className={classes.valuesContainer}>
@@ -18,12 +18,12 @@ const MultiTooltip = ({ classes, data }) => (
             <div className={classes.color} style={{ backgroundColor: element.color }} />
             <div className={classes.separatorColor} />
             <div>
-              <Typography variant="highlightText">{element.name}</Typography>
+              <HvTypography variant="highlightText">{element.name}</HvTypography>
             </div>
             <div className={classes.separator} />
           </div>
           <div>
-            <Typography>{element.value}</Typography>
+            <HvTypography>{element.value}</HvTypography>
           </div>
         </div>
       ))}

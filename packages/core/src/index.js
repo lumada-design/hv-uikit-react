@@ -9,7 +9,6 @@ export { default as HvAvatar } from "./Avatar";
 export { default as HvBadge } from "./Badge";
 export { default as HvBanner } from "./Banner";
 export * from "./Banner";
-export { default as HvBarchart } from "./Barchart";
 export { default as HvBaseDropdown } from "./BaseDropdown";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvBulkActions } from "./BulkActions";
@@ -19,7 +18,6 @@ export * from "./Card";
 export * from "./Calendar";
 export { default as HvContainer } from "./Container";
 export { default as HvDatePicker } from "./DatePicker";
-export { default as HvDonutchart } from "./Donutchart";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
@@ -40,7 +38,6 @@ export { default as HvInput } from "./Input";
 
 export { default as HvKpi } from "./Kpi";
 
-export { default as HvLinechart } from "./Linechart";
 export { default as HvLink } from "./Link";
 export { default as HvListContainer } from "./ListContainer";
 export * from "./ListContainer";

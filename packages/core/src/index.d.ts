@@ -22,9 +22,6 @@ export * from "./Badge";
 export { default as HvBanner } from "./Banner";
 export * from "./Banner";
 
-export { default as HvBarchart } from "./Barchart";
-export * from "./Barchart";
-
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export * from "./BreadCrumb";
 
@@ -44,9 +41,6 @@ export * from "./Container";
 
 export { default as HvDatePicker } from "./DatePicker";
 export * from "./DatePicker";
-
-export { default as HvDonutchart } from "./Donutchart";
-export * from "./Donutchart";
 
 export { default as HvDropdown } from "./Dropdown";
 export * from "./Dropdown";
@@ -91,9 +85,6 @@ export * from "./Forms/Label";
 
 export { default as HvKpi } from "./Kpi";
 export * from "./Kpi";
-
-export { default as HvLinechart } from "./Linechart";
-export * from "./Linechart";
 
 export { default as HvLink } from "./Link";
 export * from "./Link";

@@ -11,7 +11,8 @@ const corePackageSrc = resolve(__dirname, "../packages/core/src");
 const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
 const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 const labPackageSrc = resolve(__dirname, "../packages/lab/src");
-const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
+const themesPackageSrc = resolve(__dirname, "../packages/themes/src");
+const vizPackagesSrc = resolve(__dirname, "../packages/viz/src");
 
 module.exports = {
   core: {
@@ -29,6 +30,7 @@ module.exports = {
     "../packages/core/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/lab/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/code-editor/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    "../packages/viz/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx|jsx|ts|tsx)",
   ].filter(Boolean),
 
@@ -54,6 +56,7 @@ module.exports = {
       labPackageSrc,
       iconsPackageBin,
       codeEditorPackageSrc,
+      vizPackagesSrc
     ];
     jsRule.exclude = [/node_modules/, /dist/];
 
@@ -68,13 +71,15 @@ module.exports = {
       "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
       "@hitachivantara/uikit-react-icons/dist": iconsPackageBin,
       "@hitachivantara/uikit-react-lab/dist": labPackageSrc,
-      "@hitachivantara/uikit-common-themes/dist": commonThemesSrc,
+      "@hitachivantara/uikit-common-themes/dist": themesPackageSrc,
+      "@hitachivantara/uikit-react-viz/dist": vizPackagesSrc,
 
       // package aliases for top-level imports
       "@hitachivantara/uikit-react-core": corePackageSrc,
       "@hitachivantara/uikit-react-code-editor": codeEditorPackageSrc,
       "@hitachivantara/uikit-react-icons": iconsPackageBin,
       "@hitachivantara/uikit-react-lab": labPackageSrc,
+      "@hitachivantara/uikit-react-viz": vizPackagesSrc,
 
       "storybook-root": storybookFolder,
     };
