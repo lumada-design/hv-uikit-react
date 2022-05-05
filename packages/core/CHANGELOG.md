@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.66.0 (2022-05-05)
+
+
+### Bug Fixes
+
+* **plot:** plotdata definition expected the whole value. ([#2765](https://github.com/lumada-design/hv-uikit-react/issues/2765)) ([5055f39](https://github.com/lumada-design/hv-uikit-react/commit/5055f3903c145e21ae0b4f39b9fb917e452cd24c))
+* **TimePicker:** remove console.log ([3707f9e](https://github.com/lumada-design/hv-uikit-react/commit/3707f9eb18de486e3e4caffd65959b507adbffd1))
+
+
+### Features
+
+* **SimpleGrid:** created a new grid component to ease the development proccess ([93bbf0c](https://github.com/lumada-design/hv-uikit-react/commit/93bbf0c1085047e888fbaf6be8f0ec95df1ef8f2))
+* **Stack:** create Stack component ([fd32f45](https://github.com/lumada-design/hv-uikit-react/commit/fd32f4575cb423f2b0c5ce1ae4f5fae7eda01262))
+* **TimePicker:** promote component to core ([7e881e8](https://github.com/lumada-design/hv-uikit-react/commit/7e881e81c3a9210d4c03d3b53072f1619e53b83e))
+* **TimePicker:** refactor PeriodPicker to a functional component ([043b15c](https://github.com/lumada-design/hv-uikit-react/commit/043b15c0ed842dd9578bcacdfd5bd4710ab4c7cc))
+
+
+
+
+
 # [3.64.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.63.0...@hitachivantara/uikit-react-core@3.64.0) (2022-05-04)
 
 
