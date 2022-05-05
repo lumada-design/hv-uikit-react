@@ -2,7 +2,6 @@
 #
 # A few optional parameters that can be passed to this workflow:
 #  - ref: specific branch to perform the release, defaults to 'master'.
-#  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
 #  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
 #
 # An example using curl:
@@ -20,8 +19,6 @@ on:
   workflow_dispatch:
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: next
   DOCUMENTATION_PUBLISH_FOLDER: uikit/next
@@ -34,19 +31,17 @@ jobs:
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "16"
 
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2
         with:
-          ref: next
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -56,27 +51,28 @@ jobs:
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
+        run: npm ci
 
       - name: Bootstrap
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
         run: npm run bootstrap
 
       - name: Publish Setup
         run: |
-          npm config delete @hv:registry
-          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
-
-          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
-          npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
-          npm config set always-auth true
-
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        run: npm run publish-premajor -- --no-git-reset
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset --no-verify-access
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
