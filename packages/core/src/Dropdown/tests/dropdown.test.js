@@ -2,8 +2,7 @@
 import React from "react";
 
 import userEvent from "@testing-library/user-event";
-
-import { render, waitFor } from "testing-utils";
+import { render, waitFor, fireEvent } from "testing-utils";
 
 import HvDropdown from "../Dropdown";
 
@@ -530,14 +529,11 @@ describe("callbacks", () => {
     expect(onFocusSpy).toHaveBeenCalledTimes(0);
     expect(onBlurSpy).toHaveBeenCalledTimes(0);
 
-    // close dropdown by clicking outside of it
-    const externalButton = getByRole("button", { name: /to click on/i });
-    userEvent.click(externalButton);
+    const externalButton = getByRole("button", { name: /To click on/i });
+    fireEvent.click(externalButton);
 
     expect(onClickOutsideSpy).toHaveBeenCalledTimes(1);
-
     expect(onCancelSpy).toHaveBeenCalledTimes(1);
-
     expect(onToggleSpy).toHaveBeenCalledTimes(1);
     expect(onToggleSpy).toHaveBeenCalledWith(expect.anything(), false);
 

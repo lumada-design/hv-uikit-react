@@ -109,7 +109,7 @@ ListView.propTypes = {
      */
     columnConfiguration: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.String,
+        title: PropTypes.string,
         style: PropTypes.instanceOf(Object),
       })
     ),
