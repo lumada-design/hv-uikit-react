@@ -13,10 +13,10 @@
 #  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Pre Release
+name: Pre Major
 on:
   repository_dispatch:
-    types: [next]
+    types: [premajor]
   workflow_dispatch:
 
 env:
@@ -76,7 +76,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        run: npm run publish-next -- --no-git-reset
+        run: npm run publish-premajor -- --no-git-reset
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
