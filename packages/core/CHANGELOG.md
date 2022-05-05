@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.65.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.64.0...@hitachivantara/uikit-react-core@3.65.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* **plot:** plotdata definition expected the whole value. ([#2765](https://github.com/lumada-design/hv-uikit-react/issues/2765)) ([1abd5dc](https://github.com/lumada-design/hv-uikit-react/commit/1abd5dc43266824e2dbcd84818da78a73da5c633))
+* ssr error, navigator reference on provider ([8d3c1af](https://github.com/lumada-design/hv-uikit-react/commit/8d3c1afcb728dee218bf4e4efef83734139868d9))
+* **TimePicker:** remove console.log ([705a8cf](https://github.com/lumada-design/hv-uikit-react/commit/705a8cfa804a42a5b6277a2e85f36c4c26c4c9d7))
+
+
+### Features
+
+* **Stack:** create Stack component ([87075e5](https://github.com/lumada-design/hv-uikit-react/commit/87075e55b61000b7a9d5be4a8826fdf41430d019))
+
+
+
+
+
 # [3.64.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.63.0...@hitachivantara/uikit-react-core@3.64.0) (2022-05-04)
 
 
