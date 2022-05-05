@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import type { Config, Layout, PlotData as PlotlyPlotData } from "plotly.js";
+import type { Config, Layout, Data as PlotlyPlotData } from "plotly.js";
 
 export type PlotData = PlotlyPlotData;
 export type PlotLayout = Layout;
@@ -17,11 +17,11 @@ export interface HvPlotProps
   /**
    * Plotly layout object.
    */
-  layout?: PlotLayout;
+  layout?: Partial<PlotLayout>;
   /**
    * Plotly config object.
    */
-  config?: PlotConfig;
+  config?: Partial<PlotConfig>;
   /**
    * OnHover function.
    */
