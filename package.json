@@ -38,7 +38,7 @@
     "publish-minor": "npx lerna changed && npx lerna publish minor --yes",
     "publish-premajor": "npx lerna changed && npx lerna publish premajor --yes",
     "publish-major": "npx lerna changed && npx lerna publish major --yes",
-    "publish-canary": "npx lerna publish prerelease --canary --exact --yes --dist-tag next --preid next",
+    "publish-canary": "npx lerna publish prerelease --canary --yes --preid canary",
     "lint": "npx npm-run-all --npm-path npm --parallel lint:*",
     "lint:eslint": "npx eslint ./ --cache --ext .js,.jsx,.ts,.tsx",
     "lint:prettier": "npx lerna run lint:prettier",

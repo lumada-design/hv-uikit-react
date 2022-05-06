@@ -1,156 +1,398 @@
-name: Canary
+# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
+#
+# An example using curl:
+# curl \
+#  -H "Accept: application/vnd.github.everest-preview+json" \
+#  -H "Authorization: token <user-token>" \
+#  --request POST \
+#  --data "{\"event_type\": \"v2x\"}" \
+#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
+
+name: Canary Nightly
 on:
+  # disable canary cron since no daily changes come in
+  #  schedule:
+  #    - cron: "0 3 * * *" # daily at 03:00
   repository_dispatch:
     types: [canary]
   workflow_dispatch:
 
+# flow:
+# +------------------------------------+          +-------------------+
+# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
+# +----------+-------------------------+          +---------+---------+
+#            |                                              |
+#            |                   +-----------+--------------+
+#            |                   |           |              |
+#            |             +-----v----+ +----v-----+ +------v----------------+
+#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)|
+#            |             +-----+----+ +----+-----+ +------+----------------+
+#            |                   |           |              |
+#            +-------------------+-----+-----+--------------+
+#                                      |
+#                   +----------+       |        +-------+
+#                   |Notify End|<------+------->|Release|
+#                   +----------+                +-------+
+
 env:
-  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: next
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/next
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for next of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/next/
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+  RELEASE_COMMIT_MESSAGE: "chore(release): publish"
+  RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
 jobs:
-  Release:
+  Static-Checks:
+    name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    env:
-      NODE_ENV: production
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CHECKOUT_REF: ${{ github.event.client_payload.ref }}
-      RELEASE_TYPE: ${{ github.event.client_payload.type }}
-
     steps:
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          # Pulls all commits (needed for semantic release to correctly version)
-          # See https://github.com/semantic-release/semantic-release/issues/1526
-          fetch-depth: "0"
+          ref: "canary"
 
-      # Pulls all tags (needed for semantic release to correctly version)
-      - name: Fetch git tags
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
 
       - name: Install
-        env:
-          # ensure dev dependencies are installed
-          NODE_ENV: development
-        run: npm ci
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
 
       - name: Bootstrap
-        env:
-          # ensure dev dependencies are installed
-          NODE_ENV: development
         run: npm run bootstrap
 
-      - name: Publish Setup
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: License Check
+        run: npm run license-check
 
-      - name: Publish (Lerna)
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+  Build-Documentation:
+    name: Build Documentation
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "canary"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Generate Documentation
+        run: |
+          npm run build-documentation
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  A11Y-Tests:
+    name: Accessibility Tests
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    services:
+      storybook:
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "canary"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/pa11y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Test A11Y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          STORYBOOK_URL=http://localhost:9001 npm run pa11y-ci
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  Applitools:
+    name: Applitools Storybook Visual Testing
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    services:
+      storybook:
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "canary"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/Applitools
+        run: |
+          cd ${{ github.workspace }}/automation/applitools
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: run Applitools Storybook Visual Testing
         env:
-          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+          APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm run publish-canary -- --no-git-reset --no-verify-access
+          cd ${{ github.workspace }}/automation/applitools
+          npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
 
-      - name: Get Releases Commit Message
+      - name: Archive Logs
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  Robot:
+    name: Test Robot
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [firefox, chrome]
+    container:
+      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
+      options: --shm-size=6g --cpus 4 -u 2501
+      env:
+        BROWSER: ${{ matrix.browser }}
+        ROBOT_TESTS_DIR: ./automation/robot/storybook/core
+        ROBOT_REPORTS_DIR: ./reports
+        ROBOT_THREADS: 4
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+
+    services:
+      storybook:
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "canary"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        with:
+          args: docker restart storybook
+
+      - name: Run Robot
+        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: ${{ github.workspace }}/reports
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
+
+  Notify-End:
+    name: Notify End
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      # delete artifact since it was published to gh-pages
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: documentation
+
+      - uses: technote-space/workflow-conclusion-action@v1
+
+      - name: generate conclusion color
+        id: conclusion_color
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const branch = await github.repos.getBranch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              branch: "next"
-            })
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
 
-            const commitMessage = branch.data.commit.commit.message
-            const slackMessage = commitMessage.replace('chore(release): publish', '')
-              .replace(/\n/g, "\\n")
-              .replace(/\r/g, "\\r")
-              .replace(/\t/g, "\\t")
-              .replace(/\f/g, "\\f")
-
-            core.exportVariable("SLACK_MESSAGE", slackMessage)
-
-      - name: Start Documentation Deployment
-        uses: bobheadxi/deployments@v0.4.3
-        id: deployment
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-
-      - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
-
-      - name: Checkout Documentation Repository
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
-          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
-          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          path: gh-docs
-          fetch-depth: 1
-
-      - name: Remove Previous Documentation
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
-
-      - name: Copy New Documentation
-        run: |
-          mkdir -p ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
-          cp -r dist/* ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
-
-      - name: Push Documentation
-        run: |
-          cd ${{ github.workspace }}/gh-docs
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
-          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
-          git push
-
-      - name: Cleanup Folder
-        if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
-
-      - name: Update Deployment Status
-        uses: bobheadxi/deployments@v0.4.3
-        if: always()
-        with:
-          step: finish
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: ${{ job.status }}
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: ${{env.DOCUMENTATION_URL}}
-
-      - name: Notify release
+      - name: Notify CI
         uses: hbfernandes/slack-action@1.0
-        if: success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
         with:
           args: |
             {
-              "channel": "ui-kit",
+              "channel": "ui-kit-eng-ci",
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available",
-                  "title": "More details https://github.com/${{github.repository}}/releases",
-                  "text": "${{env.SLACK_MESSAGE}}",
-                  "footer": "${{env.DOCUMENTATION_URL}}"
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
                 }
               ]
             }
+
+      - name: Notify Fail
+        if: failure()
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
+
+  Notify-End-Internal:
+    name: Notify End
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+      - name: generate conclusion color
+        id: conclusion_color
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
+
+      - name: Notify Fail
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
+
+  Release:
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Release
+        # repo scope personal token is required to generate a dispatch event
+        run: |
+          curl -X POST \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
+            -d '{"event_type": "v2-release"}'
