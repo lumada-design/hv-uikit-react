@@ -31,17 +31,16 @@ const getDirection = (direction, width, breakpoints) => {
  *
  * It also allows the specification of the spacing between the stack elements and the adition of a divider between the elements.
  */
-const HvStack = (props) => {
-  const {
-    classes,
-    children,
-    direction = "column",
-    spacing = "sm",
-    divider = false,
-    withNavigation = false,
-    dividerProps = {},
-    ...others
-  } = props;
+const HvStack = ({
+  classes,
+  children,
+  direction = "column",
+  spacing = "sm",
+  divider = false,
+  withNavigation = false,
+  dividerProps = {},
+  ...others
+}) => {
   const width = useWidth();
   const theme = useTheme();
   const containerRef = useRef(null);
