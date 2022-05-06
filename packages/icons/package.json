@@ -8,10 +8,6 @@
     "name": "Hitachi Vantara UI Kit Team"
   },
   "sideEffects": false,
-  "exports": {
-    ".": "./dist/modern/index.js",
-    "./dist/": "./dist/modern/"
-  },
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",

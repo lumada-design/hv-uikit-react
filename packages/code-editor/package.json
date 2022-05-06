@@ -5,10 +5,6 @@
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "exports": {
-    ".": "./dist/modern/index.js",
-    "./dist/": "./dist/modern/"
-  },
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",
