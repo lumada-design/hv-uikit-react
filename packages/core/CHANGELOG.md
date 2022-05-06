@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.66.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.66.0...@hitachivantara/uikit-react-core@3.66.2) (2022-05-06)
+
+
+### Bug Fixes
+
+* **Stack:** change props destructuring for Storybook to extract default values ([886932e](https://github.com/lumada-design/hv-uikit-react/commit/886932e79f58bf262133aaf8a9b189442764996f))
+
+
+
+
+
 # 3.66.0 (2022-05-05)
 
 
