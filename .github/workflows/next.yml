@@ -8,7 +8,7 @@
 #  --data "{\"event_type\": \"v2x\"}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Canary Nightly
+name: Next Nightly
 on:
   # disable canary cron since no daily changes come in
   #  schedule:
@@ -47,7 +47,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "canary"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -78,7 +78,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "canary"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -126,7 +126,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "canary"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -178,7 +178,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "canary"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -251,7 +251,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "canary"
+          ref: "next"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -395,4 +395,4 @@ jobs:
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
             -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
-            -d '{"event_type": "v2-release"}'
+            -d '{"event_type": "canary"}'

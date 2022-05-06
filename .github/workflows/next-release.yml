@@ -13,7 +13,7 @@
 #  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Canary Release
+name: Next Release
 on:
   repository_dispatch:
     types: [canary]
@@ -24,9 +24,9 @@ env:
   DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/canary
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for canary of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/canary/
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/next
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for next of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/next/
 
 jobs:
   Release:
@@ -46,7 +46,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.0.0
         with:
-          ref: canary
+          ref: next
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -76,7 +76,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        run: npm run publish-canary -- --no-git-reset
+        run: npm run publish-next -- --no-git-reset
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
@@ -86,7 +86,7 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: "canary"
+              branch: "next"
             })
 
             const commitMessage = branch.data.commit.commit.message
