@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import set from "lodash/set";
@@ -80,7 +80,12 @@ const HvProvider = ({
   injectStylesFirst = false,
   disableStylesGeneration = false,
 }) => {
-  const localeSetting = locale || (navigator?.language ?? "en-US");
+  const [localeSetting, setLocaleStting] = useState();
+
+  useEffect(() => {
+    // ssr - only runs at the rendering phase, so it won't run on the server
+    setLocaleStting(locale || (navigator?.language ?? "en-US"));
+  }, [locale]);
 
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
