@@ -84,6 +84,9 @@ export * from "./BaseInput";
 export { default as HvInput } from "./Input";
 export * from "./Input";
 
+export { default as HvSlider } from "./Slider";
+export * from "./Slider";
+
 export * from "./Forms";
 
 export { default as HvLabel } from "./Forms/Label";

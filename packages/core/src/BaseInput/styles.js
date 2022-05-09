@@ -175,6 +175,9 @@ const styles = (theme) => ({
     width: "initial",
     flexGrow: 1,
   },
+  inputDisabled: {
+    color: theme.hv.palette.atmosphere.atmo5,
+  },
   inputResizable: {
     resize: "both",
     width: "100%",

@@ -216,6 +216,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "disabled": "HvBaseInput-disabled",
                         "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
                         "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer",
+                        "inputDisabled": "HvBaseInput-inputDisabled",
                         "inputResizable": "HvBaseInput-inputResizable",
                         "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
                         "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",

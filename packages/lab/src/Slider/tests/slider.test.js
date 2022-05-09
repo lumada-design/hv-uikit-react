@@ -57,14 +57,10 @@ describe("Slider ", () => {
   ];
 
   const knobPropertiesScaledDefaults = [0.1, 0.2, 0.3, 0.4, 1];
-
-  const consoleSpy = jest.fn();
-  const originalWarn = console.warn;
   let wrapper;
   let myMock;
 
   beforeEach(async () => {
-    console.warn = consoleSpy;
     myMock = jest.fn(() => "mock");
     wrapper = mount(
       <HvProvider>
@@ -73,33 +69,17 @@ describe("Slider ", () => {
     );
   });
 
-  afterEach(() => {
-    console.warn = originalWarn;
-  });
-
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(HvSlider)).toMatchSnapshot();
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should render the Slider component", () => {
     const sliderComponent = wrapper.find(HvSlider);
     expect(sliderComponent.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call the format mark function", () => {
@@ -114,10 +94,6 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls.length).not.toBe(0);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   // TODO: Review test on calling formatMark function
@@ -134,10 +110,6 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls.length).toBe(5);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the start of the range with the passed value", () => {
@@ -153,10 +125,6 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls[0]).toEqual(["15"]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the end of the range with the passed value", () => {
@@ -172,10 +140,6 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls[myMock.mock.calls.length - 1]).toEqual(["87"]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the end of the range with the passed value", () => {
@@ -192,10 +156,6 @@ describe("Slider ", () => {
 
     // 93 = 87 points + 5 knobs
     expect(myMock.mock.calls.length).toEqual(88);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onBefore method just once", () => {
@@ -215,10 +175,6 @@ describe("Slider ", () => {
     instance.onBeforeChangeHandler(["10", "20", "30", "40", "50"]);
 
     expect(myMock.mock.calls.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onAfter method just once", () => {
@@ -238,10 +194,6 @@ describe("Slider ", () => {
     instance.onAfterChangeHandler(["10", "20", "30", "40", "50"]);
 
     expect(myMock.mock.calls.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onChange method just once, adjusting the values to the scale", () => {
@@ -267,10 +219,6 @@ describe("Slider ", () => {
     const instance = myMount.find("HvSlider").instance();
 
     instance.onChangeHandler([11, 25, 37, 48, 70]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("shouldn't allow overlap. The value 100 must pass to 99", () => {
@@ -298,9 +246,5 @@ describe("Slider ", () => {
         },
       ],
     ]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 });
