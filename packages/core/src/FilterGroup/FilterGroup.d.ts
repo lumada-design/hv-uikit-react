@@ -8,16 +8,16 @@ interface FilterValue {
 }
 
 export interface HvFilterGroupProps
-  extends StandardProps<HvFormElementProps, HvFilterGroupClassKey> {
+  extends StandardProps<HvFormElementProps, HvFilterGroupClassKey, "defaultValue"> {
   /**
    * The callback fired when the cancel button is clicked.
    */
-  onCancel: (event: Event) => void;
+  onCancel?: (event: Event) => void;
 
   /**
    * The callback fired when the clear filters button is clicked.
    */
-  onClear: (event: Event) => void;
+  onClear?: (event: Event) => void;
 
   /**
    * The callback fired when the value changes.
