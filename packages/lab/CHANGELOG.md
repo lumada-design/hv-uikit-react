@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.44.2...@hitachivantara/uikit-react-lab@3.45.0) (2022-05-10)
+
+
+### Features
+
+* **slider:** implement slider component.HVUIKIT-6327 ([6a82e5f](https://github.com/lumada-design/hv-uikit-react/commit/6a82e5f744e5562ce9dffe2dade55ab33403d13c))
+
+
+
+
+
 ## [3.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.44.0...@hitachivantara/uikit-react-lab@3.44.2) (2022-05-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

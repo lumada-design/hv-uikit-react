@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.67.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.66.2...@hitachivantara/uikit-react-core@3.67.0) (2022-05-10)
+
+
+### Bug Fixes
+
+* **filter-group:** filter group default value type doesn't match. ([#2769](https://github.com/lumada-design/hv-uikit-react/issues/2769)) ([a37d0a7](https://github.com/lumada-design/hv-uikit-react/commit/a37d0a7f6ed3f9ee46104fe052fad8179f122017))
+
+
+### Features
+
+* **slider:** implement slider component.HVUIKIT-6327 ([6a82e5f](https://github.com/lumada-design/hv-uikit-react/commit/6a82e5f744e5562ce9dffe2dade55ab33403d13c))
+
+
+
+
+
 ## [3.66.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.66.0...@hitachivantara/uikit-react-core@3.66.2) (2022-05-06)
 
 
