@@ -47,7 +47,7 @@
     "@babel/runtime": "^7.17.9",
     "@hitachivantara/uikit-common-themes": "^3.4.2",
     "clsx": "^1.1.1",
-    "core-js": "^3.22.3",
+    "core-js": "^3.22.5",
     "prop-types": "^15.8.1"
   },
   "devDependencies": {
