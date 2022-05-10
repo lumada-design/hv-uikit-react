@@ -100,3 +100,11 @@ export const ResetToDefault = () => {
     </div>
   );
 };
+
+export const Uncontrolled = () => {
+  return (
+    <div style={{ width: 180 }}>
+      <HvFilterGroup id="example" filters={filters} />
+    </div>
+  );
+};

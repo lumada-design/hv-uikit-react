@@ -72,7 +72,6 @@ export interface HvFilterGroupProps
     data: {
       id: string | number;
       name: string;
-      checked?: boolean;
     }[];
   }[];
 
@@ -80,12 +79,12 @@ export interface HvFilterGroupProps
    * The default value of the filter group.
    * If defined the clear action will reset to it.
    */
-  defaultValue?: FilterValue;
+  defaultValue?: FilterValue[];
 
   /**
    * The value of the filter group.
    */
-  value?: FilterValue;
+  value?: FilterValue[];
 
   /**
    * The placement where the filter group should be placed according to the input. Options are `left` or `right`.
