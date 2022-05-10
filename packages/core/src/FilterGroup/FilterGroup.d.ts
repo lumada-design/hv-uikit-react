@@ -3,9 +3,7 @@ import { HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
-interface FilterValue {
-  value: string | number[][];
-}
+export type FilterValue = (string | number)[][];
 
 export interface HvFilterGroupProps
   extends StandardProps<HvFormElementProps, HvFilterGroupClassKey, "defaultValue"> {
@@ -79,12 +77,12 @@ export interface HvFilterGroupProps
    * The default value of the filter group.
    * If defined the clear action will reset to it.
    */
-  defaultValue?: FilterValue[];
+  defaultValue?: FilterValue;
 
   /**
    * The value of the filter group.
    */
-  value?: FilterValue[];
+  value?: FilterValue;
 
   /**
    * The placement where the filter group should be placed according to the input. Options are `left` or `right`.
