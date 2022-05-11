@@ -113,6 +113,7 @@ const styles = (theme) => {
       "& .rc-slider-handle": {
         cursor: "not-allowed",
         marginTop: "-8px",
+        opacity: 1,
         "&:active": {
           cursor: "not-allowed",
         },
