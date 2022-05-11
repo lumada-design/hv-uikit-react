@@ -125,8 +125,8 @@ const FilterContent = ({
           id={setId(id, "clearFilters-button")}
           disabled={
             defaultValue
-              ? defaultValue.flat().length === filterValues.flat().length
-              : filterValues.flat().length === 0
+              ? defaultValue?.flat().length === filterValues?.flat().length
+              : filterValues?.flat().length === 0
           }
           category="ghost"
           onClick={onClearHandler}

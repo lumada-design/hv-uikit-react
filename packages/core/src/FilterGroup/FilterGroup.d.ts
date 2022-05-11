@@ -3,9 +3,7 @@ import { HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
-interface FilterValue {
-  value: string | number[][];
-}
+export type FilterValue = (string | number)[][];
 
 export interface HvFilterGroupProps
   extends StandardProps<HvFormElementProps, HvFilterGroupClassKey, "defaultValue"> {
@@ -72,7 +70,6 @@ export interface HvFilterGroupProps
     data: {
       id: string | number;
       name: string;
-      checked?: boolean;
     }[];
   }[];
 
