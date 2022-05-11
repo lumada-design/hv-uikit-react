@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.1...@hitachivantara/uikit-react-core@3.67.2) (2022-05-11)
+
+
+### Bug Fixes
+
+* **filter-group:** does not allow having minimum configurations ([#2771](https://github.com/lumada-design/hv-uikit-react/issues/2771)) ([36b6b9c](https://github.com/lumada-design/hv-uikit-react/commit/36b6b9cebe33e52819eacdc54d4fe25262f6501f))
+* **slider:** is seethrough while disabled ([#2773](https://github.com/lumada-design/hv-uikit-react/issues/2773)) ([e065d60](https://github.com/lumada-design/hv-uikit-react/commit/e065d604892904342906851de3ce227a9f61d83e))
+
+
+
+
+
 ## [3.67.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.0...@hitachivantara/uikit-react-core@3.67.1) (2022-05-11)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
