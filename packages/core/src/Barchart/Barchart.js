@@ -8,6 +8,7 @@ import styles from "./styles";
 const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
 const MIN_BAR_WIDTH = 3;
+const MIN_WIDTH = 75;
 
 /**
  * A Bar chart is a chart or graph that presents categorical data with rectangular bars.
@@ -70,7 +71,8 @@ const Barchart = ({
       const numberOfBarsByGroup = isStack ? 1 : plotData.length;
       const numberOfGroup = plotData[0].x.length;
 
-      const { width } = ref.current.el.getBoundingClientRect();
+      const { width: boundingRect } = ref.current.el.getBoundingClientRect();
+      const width = boundingRect < MIN_WIDTH ? MIN_WIDTH : boundingRect;
       const plotWidth = width - MARGIN;
       const groupWidth = plotWidth / numberOfGroup;
       const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
