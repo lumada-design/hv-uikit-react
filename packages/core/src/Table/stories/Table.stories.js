@@ -13,7 +13,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTable } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.2.1",
   },
   component: HvTable,

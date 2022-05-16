@@ -1,18 +1,30 @@
 import componentDefinitions from "../ComponentVersioningTable/versions";
 
 const notAvailable = componentDefinitions.notAvailable;
-const statusClassification = componentDefinitions.dsClassification;
 const dsVersion1 = componentDefinitions.dsVersion.v1;
 const dsVersion3 = componentDefinitions.dsVersion.v3;
 
 const CoreComponentData = [
+  {
+    dsPattern: "Accordion",
+    component: "Accordion",
+    path: "Components/Accordion",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: dsVersion1,
+  },
   {
     dsPattern: "Action Bar",
     component: "Action Bar",
     path: "Components/Action Bar",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
+  },
+  {
+    dsPattern: "App Switcher",
+    component: "App Switcher",
+    path: "Components/App Switcher",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: dsVersion1,
   },
   {
     dsPattern: "Asset Inventory",
@@ -20,7 +32,6 @@ const CoreComponentData = [
     path: "Components/Asset Inventory",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Avatar",
@@ -28,7 +39,6 @@ const CoreComponentData = [
     path: "Components/Avatar",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
-    status: notAvailable,
   },
   {
     dsPattern: "Badge",
@@ -36,7 +46,6 @@ const CoreComponentData = [
     path: "Components/Badge",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Notifications",
@@ -44,7 +53,6 @@ const CoreComponentData = [
     path: "Components/Banner",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Visualization > Bar Chart",
@@ -52,7 +60,6 @@ const CoreComponentData = [
     path: "Visualizations/Bar Chart",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Breadcrumb",
@@ -60,7 +67,6 @@ const CoreComponentData = [
     path: "Components/Breadcrumb",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Bulk Actions",
@@ -68,7 +74,6 @@ const CoreComponentData = [
     path: "Components/Bulk Actions",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Button",
@@ -76,7 +81,6 @@ const CoreComponentData = [
     path: "Components/Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Card",
@@ -84,7 +88,6 @@ const CoreComponentData = [
     path: "Components/Card",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Selection",
@@ -92,7 +95,6 @@ const CoreComponentData = [
     path: "Forms/Checkbox",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Selection",
@@ -100,7 +102,6 @@ const CoreComponentData = [
     path: "Forms/Checkbox Group",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Code Editor",
@@ -108,7 +109,6 @@ const CoreComponentData = [
     path: "Components/Code Editor",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Style Guide > Color",
@@ -116,7 +116,6 @@ const CoreComponentData = [
     path: "Foundation/Colors",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Style Guide > Layout",
@@ -124,7 +123,6 @@ const CoreComponentData = [
     path: "Foundation/Container",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Date Range",
@@ -132,7 +130,6 @@ const CoreComponentData = [
     path: "Forms/Date Picker",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Dialog",
@@ -140,7 +137,6 @@ const CoreComponentData = [
     path: "Components/Dialog",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Visualization > Donut Chart",
@@ -148,7 +144,6 @@ const CoreComponentData = [
     path: "Visualizations/Donut Chart",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Dropdown",
@@ -156,7 +151,6 @@ const CoreComponentData = [
     path: "Forms/Dropdown",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Dropdown",
@@ -164,7 +158,6 @@ const CoreComponentData = [
     path: "Components/Dropdown Menu",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Empty State",
@@ -172,7 +165,6 @@ const CoreComponentData = [
     path: "Components/Empty State",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "File Uploader",
@@ -180,7 +172,6 @@ const CoreComponentData = [
     path: "Forms/File Uploader",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Footer",
@@ -188,7 +179,6 @@ const CoreComponentData = [
     path: "Components/Footer",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Form",
@@ -197,7 +187,6 @@ const CoreComponentData = [
     story: "React Form",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Style Guide > Layout",
@@ -205,7 +194,6 @@ const CoreComponentData = [
     path: "Foundation/Grid",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Global Actions",
@@ -213,7 +201,6 @@ const CoreComponentData = [
     path: "Components/Global Actions",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Header",
@@ -221,7 +208,6 @@ const CoreComponentData = [
     path: "Components/Header",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Navigation System",
@@ -229,7 +215,6 @@ const CoreComponentData = [
     path: "Components/Header",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Iconography",
@@ -238,7 +223,6 @@ const CoreComponentData = [
     story: "Icons",
     uikitVersion3: "3.5.0",
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Input Box",
@@ -246,7 +230,6 @@ const CoreComponentData = [
     path: "Forms/Input",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Visualization > Kpi",
@@ -254,7 +237,6 @@ const CoreComponentData = [
     path: "Visualizations/Kpi",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Visualization > Line Chart",
@@ -262,7 +244,6 @@ const CoreComponentData = [
     path: "Visualizations/Line Chart",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "List",
@@ -270,7 +251,6 @@ const CoreComponentData = [
     path: "Components/List",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Loading",
@@ -278,7 +258,6 @@ const CoreComponentData = [
     path: "Components/Loading",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Login Page",
@@ -286,7 +265,6 @@ const CoreComponentData = [
     path: "Components/Login",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Multi Button",
@@ -294,7 +272,6 @@ const CoreComponentData = [
     path: "Components/Multi Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Pagination",
@@ -302,7 +279,6 @@ const CoreComponentData = [
     path: "Components/Pagination",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Panel",
@@ -310,7 +286,6 @@ const CoreComponentData = [
     path: "Components/Panel",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Selection",
@@ -318,7 +293,6 @@ const CoreComponentData = [
     path: "Forms/Radio Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Selection",
@@ -326,7 +300,6 @@ const CoreComponentData = [
     path: "Forms/Radio Button Group",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Selection",
@@ -334,7 +307,6 @@ const CoreComponentData = [
     path: "Forms/Selection List",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Search Box",
@@ -342,7 +314,13 @@ const CoreComponentData = [
     path: "Forms/Search Box",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
+  },
+  {
+    dsPattern: "Slider",
+    component: "Slider",
+    path: "Components/Slider",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: dsVersion1,
   },
   {
     dsPattern: "Notifications",
@@ -350,7 +328,6 @@ const CoreComponentData = [
     path: "Components/Snackbar",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
   {
     dsPattern: "Selection",
@@ -358,7 +335,6 @@ const CoreComponentData = [
     path: "Forms/Switch",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Visualization > Table",
@@ -366,7 +342,6 @@ const CoreComponentData = [
     path: "Visualizations/Table",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Tab",
@@ -374,15 +349,20 @@ const CoreComponentData = [
     path: "Components/Tabs",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Tag",
     component: "Tag",
     path: "Components/Tag",
-    uikitVersion3: "3.5.0",
+    uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
-    status: statusClassification.stable,
+  },
+  {
+    dsPattern: "Tag",
+    component: "Tags Input",
+    path: "Forms/Tags Input",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: notAvailable,
   },
   {
     dsPattern: "Text Area",
@@ -390,7 +370,13 @@ const CoreComponentData = [
     path: "Forms/Text Area",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
+  },
+  {
+    dsPattern: "Time Picker",
+    component: "Time Picker",
+    path: "Forms/Time Picker",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: dsVersion1,
   },
   {
     dsPattern: "Selection",
@@ -398,7 +384,6 @@ const CoreComponentData = [
     path: "Components/Toggle Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Tooltip",
@@ -406,7 +391,6 @@ const CoreComponentData = [
     path: "Components/Tooltip",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Style Guide > Typography",
@@ -414,7 +398,6 @@ const CoreComponentData = [
     path: "Foundation/Typography",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "User Preferences",
@@ -422,7 +405,6 @@ const CoreComponentData = [
     path: "Components/User Preferences",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.stable,
   },
   {
     dsPattern: "Navigation System",
@@ -430,7 +412,6 @@ const CoreComponentData = [
     path: "Components/Vertical Navigation",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
-    status: statusClassification.unstable,
   },
 ];
 
