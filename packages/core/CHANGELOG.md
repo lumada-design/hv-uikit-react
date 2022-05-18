@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.2...@hitachivantara/uikit-react-core@3.67.3) (2022-05-18)
+
+
+### Bug Fixes
+
+* **barchart:** barchart breaks when width is small.HVUIKIT-6348 ([#2775](https://github.com/lumada-design/hv-uikit-react/issues/2775)) ([ed69e92](https://github.com/lumada-design/hv-uikit-react/commit/ed69e92e48522eb23c3d2a8f6fc7f4487597a105))
+
+
+
+
+
 ## [3.67.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.1...@hitachivantara/uikit-react-core@3.67.2) (2022-05-11)
 
 
