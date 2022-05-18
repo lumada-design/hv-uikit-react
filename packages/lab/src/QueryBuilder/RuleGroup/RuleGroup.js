@@ -20,6 +20,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
   const context = useContext(Context);
 
   const { dispatchAction, askAction, maxDepth, combinators, labels } = context;
+  const normalizedMaxDepth = maxDepth - 1;
 
   const actionButtons = (
     <>
@@ -34,7 +35,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
           ? labels.query?.addRule?.label
           : labels.group.addRule.label}
       </HvButton>
-      {level < maxDepth && (
+      {level <= normalizedMaxDepth && (
         <HvButton
           category="secondary"
           onClick={() => {
@@ -171,7 +172,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
               >
                 {`${labels.empty?.createCondition}`}
               </HvTypography>
-              {level === 0 && (
+              {level <= normalizedMaxDepth && (
                 <>
                   {`${labels.empty?.spacer}`}
                   <HvTypography
