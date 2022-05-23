@@ -5,6 +5,9 @@ import { mount } from "enzyme";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import HvSlider from "..";
 
+const consoleWarnSpy = jest.fn();
+const originalWarn = console.warn;
+
 describe("Slider ", () => {
   const knobProperties = [
     {
@@ -62,11 +65,16 @@ describe("Slider ", () => {
 
   beforeEach(async () => {
     myMock = jest.fn(() => "mock");
+    console.warn = consoleWarnSpy;
     wrapper = mount(
       <HvProvider>
         <HvSlider knobProperties={knobProperties} defaultValues={knobPropertiesDefaults} />
       </HvProvider>
     );
+  });
+
+  afterEach(() => {
+    console.warn = originalWarn;
   });
 
   it("should be defined", () => {
