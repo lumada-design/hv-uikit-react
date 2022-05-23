@@ -25,6 +25,7 @@ const HvQueryBuilder = ({
   combinators,
   maxDepth = 1,
   labels,
+  classes,
 }) => {
   const [pendingAction, askAction] = useState();
   const currentAttributes = useRef();
@@ -96,7 +97,13 @@ const HvQueryBuilder = ({
 
   return (
     <Context.Provider value={context}>
-      <RuleGroup level={0} id={state.id} combinator={state.combinator} rules={state.rules} />
+      <RuleGroup
+        level={0}
+        id={state.id}
+        combinator={state.combinator}
+        rules={state.rules}
+        classes={classes}
+      />
       <ConfirmationDialog
         isOpen={pendingAction != null}
         onConfirm={onConfirmHandler}
@@ -113,8 +120,59 @@ const HvQueryBuilder = ({
 
 HvQueryBuilder.propTypes = {
   /**
-   * The query rules attributes.
+   * Override or extend the styles applied to the component.
+   * See CSS API tab for more details.
    */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the top group container.
+     */
+    topGroup: PropTypes.string,
+    /**
+     * Styles applied to the sub group containers.
+     */
+    subGroup: PropTypes.string,
+    /**
+     * Styles applied to the multi-button combinator container.
+     */
+    combinator: PropTypes.string,
+    /**
+     * Styles applied to the multi-button combinator container on the top group.
+     */
+    topCombinator: PropTypes.string,
+    /**
+     * Styles applied to each combinator button.
+     */
+    combinatorButton: PropTypes.string,
+    /**
+     * Styles applied to the remove button.
+     */
+    removeButton: PropTypes.string,
+    /**
+     * Styles applied to the remove button on the top group.
+     */
+    topRemoveButton: PropTypes.string,
+    /**
+     * Styles applied to the rules container.
+     */
+    rulesContainer: PropTypes.string,
+    /**
+     * Styles applied to the sub rules container.
+     */
+    subRulesContainer: PropTypes.string,
+    /**
+     * Styles applied to the action button container.
+     */
+    actionButtonContainer: PropTypes.string,
+    /**
+     * Styles applied to the top action button container.
+     */
+    topActionButtonContainer: PropTypes.string,
+  }),
   attributes: PropTypes.shape({
     key: PropTypes.shape({
       id: PropTypes.number,

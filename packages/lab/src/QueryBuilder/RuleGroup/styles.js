@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   root: {
     position: "relative",
     padding: theme.hv.spacing.sm,
@@ -100,6 +98,6 @@ const useStyles = makeStyles((theme) => ({
 
     width: "100%",
   },
-}));
+});
 
-export default useStyles;
+export default styles;

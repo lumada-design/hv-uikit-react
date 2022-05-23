@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from "react";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 import {
   HvGrid,
@@ -13,10 +14,9 @@ import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 
 import Context from "../Context";
 import Rule from "../Rule";
-import useStyles from "./styles";
+import styles from "./styles";
 
-const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
-  const classes = useStyles({ level });
+const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) => {
   const context = useContext(Context);
 
   const { dispatchAction, askAction, maxDepth, combinators, labels } = context;
@@ -130,6 +130,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
                   level={level + 1}
                   {...rule}
                   id={rule.id}
+                  classes={classes}
                 />
               );
             }
@@ -205,10 +206,64 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [] }) => {
 };
 
 RuleGroup.propTypes = {
+  /**
+   * Override or extend the styles applied to the component.
+   * See CSS API tab for more details.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the top group container.
+     */
+    topGroup: PropTypes.string,
+    /**
+     * Styles applied to the sub group containers.
+     */
+    subGroup: PropTypes.string,
+    /**
+     * Styles applied to the multi-button combinator container.
+     */
+    combinator: PropTypes.string,
+    /**
+     * Styles applied to the multi-button combinator container on the top group.
+     */
+    topCombinator: PropTypes.string,
+    /**
+     * Styles applied to each combinator button.
+     */
+    combinatorButton: PropTypes.string,
+    /**
+     * Styles applied to the remove button.
+     */
+    removeButton: PropTypes.string,
+    /**
+     * Styles applied to the remove button on the top group.
+     */
+    topRemoveButton: PropTypes.string,
+    /**
+     * Styles applied to the rules container.
+     */
+    rulesContainer: PropTypes.string,
+    /**
+     * Styles applied to the sub rules container.
+     */
+    subRulesContainer: PropTypes.string,
+    /**
+     * Styles applied to the action button container.
+     */
+    actionButtonContainer: PropTypes.string,
+    /**
+     * Styles applied to the top action button container.
+     */
+    topActionButtonContainer: PropTypes.string,
+  }),
   id: PropTypes.number,
   level: PropTypes.number,
   combinator: PropTypes.string,
   rules: PropTypes.array,
 };
 
-export default RuleGroup;
+export default withStyles(styles, { name: "RuleGroup" })(RuleGroup);
