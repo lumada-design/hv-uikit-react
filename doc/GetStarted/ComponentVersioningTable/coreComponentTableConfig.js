@@ -73,9 +73,6 @@ const coreComponentTableConfig = [
               }
             />
           </div>
-          <div style={{ alignSelf: "center", marginLeft: 10 }}>
-            {cellData.row._original.status === "stable" && <Stable />}
-          </div>
         </div>
       );
     },
