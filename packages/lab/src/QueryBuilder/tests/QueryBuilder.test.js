@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-env jest */
 import React from "react";
 

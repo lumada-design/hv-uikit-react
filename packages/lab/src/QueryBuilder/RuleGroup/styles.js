@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   subGroup: {
     margin: "40px 14px 32px 20px",
     minHeight: 120,
+    paddingBottom: 60,
 
     "&::before": {
       content: '""',
