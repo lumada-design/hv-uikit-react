@@ -18,8 +18,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",
-    maturityStatus: componentDefinitions.dsClassification.stable,
-    dsVersion: "3.5.0",
+    dsVersion: componentDefinitions.dsVersion.v3,
   },
   component: HvIconBase,
 };

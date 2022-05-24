@@ -24,7 +24,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvProvider } from '@hitachivantara/uikit-react-core'",
-    maturityStatus: componentDefinitions.dsClassification.stable,
     dsVersion: componentDefinitions.dsVersion.v3,
   },
   component: HvProvider,

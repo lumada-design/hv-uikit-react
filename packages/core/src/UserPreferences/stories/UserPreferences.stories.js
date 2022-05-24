@@ -37,8 +37,7 @@ export default {
       HvUserPreferencesOption,
       HvUserPreferencesOptionsGroupLabel,
     },
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvUserPreferences,
 };

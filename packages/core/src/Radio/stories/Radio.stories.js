@@ -28,8 +28,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvRadio } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvRadio,
   subcomponents: { HvBaseRadio },
