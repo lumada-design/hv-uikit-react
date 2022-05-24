@@ -17,7 +17,7 @@ const styles = (theme) => ({
     width: 320,
   },
   dual: {
-    width: 620,
+    width: 640,
   },
   fluid: {},
 
