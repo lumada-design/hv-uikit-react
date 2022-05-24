@@ -8,8 +8,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvPanel } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.6.0",
   },
   component: HvPanel,
 };

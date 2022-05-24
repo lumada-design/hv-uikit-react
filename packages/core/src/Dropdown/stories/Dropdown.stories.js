@@ -15,7 +15,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDropdown } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.4.0",
   },
   component: HvDropdown,

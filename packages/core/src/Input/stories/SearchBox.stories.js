@@ -15,13 +15,8 @@ export default {
   title: "Forms/Search Box",
   parameters: {
     usage: 'import { HvInput } from "@hitachivantara/uikit-react-core"',
-    componentSubtitle: (
-      <small style={{ fontWeight: 600, fontSize: "12px", margin: 0 }}>
-        Note: only the Basic Search variant is labelled Stable by Design System.
-      </small>
-    ),
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    componentSubtitle: null,
+    dsVersion: "3.6.0",
     docs: {
       page: () => (
         <DocsPage

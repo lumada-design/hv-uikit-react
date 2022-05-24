@@ -21,7 +21,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvStack } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.6.0",
   },
   component: HvStack,
