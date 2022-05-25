@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.4...@hitachivantara/uikit-react-core@3.67.5) (2022-05-25)
+
+
+### Bug Fixes
+
+* **AppSwitcher:** adjust dual mode width ([0e7e14c](https://github.com/lumada-design/hv-uikit-react/commit/0e7e14c58519426c21fd1ee8be80d13e90c9319e))
+
+
+
+
+
 ## [3.67.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.3...@hitachivantara/uikit-react-core@3.67.4) (2022-05-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
