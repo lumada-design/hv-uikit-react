@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.5...@hitachivantara/uikit-react-lab@3.45.6) (2022-05-25)
+
+
+### Bug Fixes
+
+* **QueryBuilder:** allow configuring styles via classes object ([06ea6a8](https://github.com/lumada-design/hv-uikit-react/commit/06ea6a8f78b1888c1f04350d71b28c31809033c1))
+* **QueryBuilder:** don't allow adding groups when maxDepth is 0 ([#2778](https://github.com/lumada-design/hv-uikit-react/issues/2778)) ([41d6cc1](https://github.com/lumada-design/hv-uikit-react/commit/41d6cc14fd15ec63f39360db24e8a7d6fc92d313))
+* **QueryBuilder:** styles breaking when maxDepth is 2 or bigger ([#2780](https://github.com/lumada-design/hv-uikit-react/issues/2780)) ([94e4e3c](https://github.com/lumada-design/hv-uikit-react/commit/94e4e3cb7753dcf290c671415f532ed79b29f7f4))
+
+
+
+
+
 ## [3.45.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.4...@hitachivantara/uikit-react-lab@3.45.5) (2022-05-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
