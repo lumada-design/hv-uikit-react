@@ -105,21 +105,20 @@ const HvDialog = ({
       onClose={(event, reason) => onClose(event, reason)}
       onKeyDown={keyDownHandler}
       {...others}
+      aria-modal
     >
-      <div aria-modal>
-        <Button
-          id={setId(id, "close")}
-          className={classes.closeButton}
-          category="ghost"
-          onClick={(event) => onClose(event)}
-          aria-label={buttonTitle}
-        >
-          <CloseButtonTooltipWrapper />
-        </Button>
-        {children && typeof children === "object"
-          ? React.Children.map(children, (c) => React.cloneElement(c, { fullscreen }))
-          : children}
-      </div>
+      <Button
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        category="ghost"
+        onClick={(event) => onClose(event)}
+        aria-label={buttonTitle}
+      >
+        <CloseButtonTooltipWrapper />
+      </Button>
+      {children && typeof children === "object"
+        ? React.Children.map(children, (c) => React.cloneElement(c, { fullscreen }))
+        : children}
     </Dialog>
   );
 };
