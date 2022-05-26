@@ -4,7 +4,7 @@ import React from "react";
 import { HvBarchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
 
 export default {
-  title: "Visualizations/Bar Chart",
+  title: "Components/Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBarchart } from "@hitachivantara/uikit-react-core"',

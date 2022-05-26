@@ -17,7 +17,7 @@ import {
 } from "../..";
 
 export default {
-  title: "Components/Stack",
+  title: "Components/Layout/Stack",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvStack } from "@hitachivantara/uikit-react-core"',

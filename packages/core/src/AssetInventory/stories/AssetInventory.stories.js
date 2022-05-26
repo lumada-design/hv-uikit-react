@@ -37,7 +37,7 @@ import { doSearch, doSort, fetchData, getPages } from "./ServerSideTester";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Asset Inventory",
+  title: "Templates/Asset Inventory",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvAssetInventory } from "@hitachivantara/uikit-react-core"',

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HvTextArea, HvTypography } from "../..";
 
 export default {
-  title: "Forms/Text Area",
+  title: "Components/Inputs/Text Area",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTextArea } from "@hitachivantara/uikit-react-core"',

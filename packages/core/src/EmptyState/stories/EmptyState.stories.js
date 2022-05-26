@@ -3,7 +3,7 @@ import { BarChart, Fail, Info, Ghost } from "@hitachivantara/uikit-react-icons";
 import { HvEmptyState, HvLink, HvTypography } from "../..";
 
 export default {
-  title: "Components/Empty State",
+  title: "Components/Feedback/Empty State",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvEmptyState } from "@hitachivantara/uikit-react-core"',

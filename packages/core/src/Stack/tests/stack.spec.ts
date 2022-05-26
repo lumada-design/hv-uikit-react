@@ -6,7 +6,7 @@ testingThemes.forEach(async (theme) => {
   test.describe(`Stack ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=components-stack--spacing&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=components-layout-stack--spacing&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 

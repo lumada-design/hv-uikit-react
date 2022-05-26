@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvActionsGeneric, HvActionBar, HvButton, HvDropDownMenu } from "../..";
 
 export default {
-  title: "Components/Action Bar",
+  title: "Components/Structure/Action Bar",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvActionBar } from "@hitachivantara/uikit-react-core"',

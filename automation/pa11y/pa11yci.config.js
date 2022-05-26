@@ -5,7 +5,7 @@ const storiesUrl = baseUrl + "/stories.json";
 const iframeUrl = baseUrl + "/iframe.html";
 
 const filterStories = (s, filter) => {
-  const includedPaths = ["Components/", "Forms/", "Visualizations/", "Tests/Dropdown Menu"];
+  const includedPaths = ["Components/", "Tests/Dropdown Menu"];
   return (
     (filter == null || s.id.includes(filter)) &&
     s.title &&
@@ -25,7 +25,7 @@ const defaultIgnores = [
 ];
 
 const overrides = {
-  "Components/Asset Inventory/List View": {
+  "Templates/Asset Inventory/List View": {
     "*": {
       // <div aria-label="selectable"></div> is a noop
       // it won't be read by a screen reader as the element
@@ -35,12 +35,17 @@ const overrides = {
       disable: true,
     },
   },
-  "Components/Code Editor": {
+  "Components/Inputs/Code Editor": {
     "*": {
       disable: true,
     },
   },
-  "Visualizations/Table": {
+  "Widgets/Filter Group": {
+    "*": {
+      disable: true,
+    },
+  },
+  "Components/Display/Table": {
     "*": {
       // the HvTable that has several accessibility issues like
       // the aria-rowindex attribute being improperly used
@@ -51,13 +56,13 @@ const overrides = {
       disable: true,
     },
   },
-  "Components/Loading": {
+  "Components/Feedback/Loading": {
     "With Children": {
       // Sample uses the HvTable, that has several accessibility issues
       disable: true,
     },
   },
-  "Forms/File Uploader": {
+  "Components/Inputs/File Uploader": {
     "*": {
       ignore: [
         // interactive controls must not be nested, but currently
@@ -66,7 +71,7 @@ const overrides = {
       ],
     },
   },
-  "Forms/Search Box": {
+  "Components/Inputs/Search Box": {
     "Search As You Type": {
       ignore: [
         // scrollable region should be focusable so the user can scroll with the keyboard
@@ -75,7 +80,7 @@ const overrides = {
       ],
     },
   },
-  "Components/Dropdown Menu": {
+  "Components/Inputs/Dropdown Menu": {
     "With Icons And Actions": {
       actions: [
         // open menu before testing
@@ -93,7 +98,7 @@ const overrides = {
       ],
     },
   },
-  "Components/Avatar": {
+  "Components/Display/Avatar": {
     Buttons: {
       ignore: [
         // interactive controls must not be nested but the avatar might have a button as child
@@ -101,7 +106,7 @@ const overrides = {
       ],
     },
   },
-  "Components/App Switcher": {
+  "Widgets/App Switcher": {
     "*": {
       ignore: [
         // interactive controls must not be nested but the app switcher panel might have a button as child

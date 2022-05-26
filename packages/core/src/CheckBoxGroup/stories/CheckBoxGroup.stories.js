@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HvCheckBoxGroup, HvCheckBox } from "../..";
 
 export default {
-  title: "Forms/Checkbox Group",
+  title: "Components/Inputs/Checkbox Group",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvCheckBoxGroup } from "@hitachivantara/uikit-react-core"',

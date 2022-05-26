@@ -4,7 +4,7 @@ import { HvOverflowTooltip } from "../..";
 import { RawOverflowTooltip } from "../OverflowTooltip";
 
 export default {
-  title: "Components/Overflow Tooltip",
+  title: "Components/Overlay/Overflow Tooltip",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvOverflowTooltip } from "@hitachivantara/uikit-react-core"',

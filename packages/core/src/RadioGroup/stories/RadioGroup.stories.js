@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HvRadioGroup, HvRadio } from "../..";
 
 export default {
-  title: "Forms/Radio Button Group",
+  title: "Components/Inputs/Radio Button Group",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvRadioGroup } from "@hitachivantara/uikit-react-core"',

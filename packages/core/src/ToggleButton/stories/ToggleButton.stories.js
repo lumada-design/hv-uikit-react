@@ -45,7 +45,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Components/Toggle Button",
+  title: "Components/Inputs/Toggle Button",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvToggleButton } from "@hitachivantara/uikit-react-core"',

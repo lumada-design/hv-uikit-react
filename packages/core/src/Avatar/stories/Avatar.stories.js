@@ -30,7 +30,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Components/Avatar",
+  title: "Components/Display/Avatar",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvAvatar } from "@hitachivantara/uikit-react-core"',

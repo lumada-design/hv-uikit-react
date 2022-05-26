@@ -14,7 +14,7 @@ import {
 import countryNamesArray from "./countries";
 
 export default {
-  title: "Forms/Input",
+  title: "Components/Inputs/Input",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvInput } from "@hitachivantara/uikit-react-core"',
