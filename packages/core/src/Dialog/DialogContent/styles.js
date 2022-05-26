@@ -5,7 +5,9 @@ const styles = (theme) => ({
   },
   textContent: {
     marginLeft: "42px",
-    marginRight: "42px",
+    paddingRight: "62px",
+    flex: 1,
+    overflowY: "auto",
   },
 });
 

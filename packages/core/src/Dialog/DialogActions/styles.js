@@ -3,6 +3,8 @@ const styles = (theme) => ({
     margin: "0",
     padding: theme.hv.spacing.sm,
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
+    height: 100,
+    flex: 1,
   },
   spacing: {
     "& > :not(:first-child)": {

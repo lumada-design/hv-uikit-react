@@ -11,6 +11,9 @@ const styles = (theme) => ({
     boxShadow: theme.hv.shadows[1],
     "&:not(.fullscreen)": {
       maxHeight: "calc(100% - 200px)",
+      display: "flex",
+      flex: 1,
+      flexDirection: "column",
     },
   },
   closeButton: {
