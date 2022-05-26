@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HvSelectionList, HvListItem } from "../..";
 
 export default {
-  title: "Forms/Selection List",
+  title: "Components/Inputs/Selection List",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvSelectionList } from "@hitachivantara/uikit-react-core"',

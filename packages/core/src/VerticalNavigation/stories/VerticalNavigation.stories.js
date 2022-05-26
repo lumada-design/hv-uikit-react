@@ -10,7 +10,7 @@ import {
 } from "../..";
 
 export default {
-  title: "Components/Vertical Navigation",
+  title: "Components/Structure/Vertical Navigation",
   parameters: {
     componentSubtitle: null,
     usage:

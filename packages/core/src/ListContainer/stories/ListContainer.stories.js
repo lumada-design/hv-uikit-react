@@ -14,7 +14,7 @@ import {
 import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, HvTooltip } from "../..";
 
 export default {
-  title: "Components/List",
+  title: "Components/Display/List",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvListContainer } from "@hitachivantara/uikit-react-core"',

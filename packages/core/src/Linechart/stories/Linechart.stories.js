@@ -5,7 +5,7 @@ import { Random } from "../../utils";
 import { HvLinechart, HvDropDownMenu, HvTypography, HvDropdown } from "../..";
 
 export default {
-  title: "Visualizations/Line Chart",
+  title: "Components/Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvLinechart } from "@hitachivantara/uikit-react-core"',

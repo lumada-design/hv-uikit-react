@@ -1,22 +1,22 @@
 const isIncludedPath = (kind) => {
-  const includedPaths = ["Components/", "Forms/", "Visualizations/", "Tests/"];
+  const includedPaths = ["Components/", "Widgets/", "Templates/"];
   return includedPaths.some((p) => kind.startsWith(p));
 };
 
 const isExcludedSample = (kind) => {
   const excludedSamples = [
     // asset inventory stories excluded due inconsistent view port (applitools ticket)
-    "Components/Asset Inventory",
+    "Templates/Asset Inventory",
     // dialog is opened and tested via Tests/Dialog
-    "Components/Dialog",
+    "Components/Overlay/Dialog",
 
     // no way to take a stable screenshot of a loading animation
-    "Components/Loading",
+    "Components/Feedback/Loading",
 
     // plotly visualizations with axis rendering appear to produce small variations
     // https://insightgroup.atlassian.net/browse/HVUIKIT-5448
-    "Visualizations/Bar Chart",
-    "Visualizations/Line Chart",
+    "Components/Visualizations/Bar Chart",
+    "Components/Visualizations/Line Chart",
   ];
 
   return excludedSamples.some((p) => kind.includes(p));

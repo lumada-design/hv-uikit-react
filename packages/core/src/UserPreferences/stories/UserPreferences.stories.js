@@ -24,7 +24,7 @@ import {
 } from "../..";
 
 export default {
-  title: "Components/User Preferences",
+  title: "Widgets/User Preferences",
   parameters: {
     componentSubtitle: null,
     usage:

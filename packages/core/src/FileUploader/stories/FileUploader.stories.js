@@ -15,7 +15,7 @@ import { simulateUpload, cancelUpload } from "./simulator";
 import rainbow from "./rainbow.jpg";
 
 export default {
-  title: "Forms/File Uploader",
+  title: "Components/Inputs/File Uploader",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvFileUploader } from "@hitachivantara/uikit-react-core"',

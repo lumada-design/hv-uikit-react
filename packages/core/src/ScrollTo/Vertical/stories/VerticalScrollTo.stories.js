@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvScrollToVertical, HvContainer, HvInput, HvTypography } from "../../..";
 
 export default {
-  title: "Components/ScrollTo/Vertical",
+  title: "Components/Navigation/ScrollTo/Vertical",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvScrollToVertical } from '@hitachivantara/uikit-react-core'",

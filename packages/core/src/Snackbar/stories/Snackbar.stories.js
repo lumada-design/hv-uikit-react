@@ -13,7 +13,7 @@ import {
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Snackbar",
+  title: "Components/Feedback/Snackbar",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvSnackbar } from "@hitachivantara/uikit-react-core"',

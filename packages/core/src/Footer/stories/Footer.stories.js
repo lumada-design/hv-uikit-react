@@ -2,7 +2,7 @@ import React from "react";
 import { HvFooter, HvLink, HvTypography } from "../..";
 
 export default {
-  title: "Components/Footer",
+  title: "Components/Structure/Footer",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvFooter } from "@hitachivantara/uikit-react-core"',

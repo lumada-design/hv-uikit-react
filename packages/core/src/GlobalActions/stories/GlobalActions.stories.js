@@ -5,7 +5,7 @@ import { Backwards } from "@hitachivantara/uikit-react-icons";
 import { HvContainer, HvGlobalActions, HvButton, HvDropDownMenu, HvTypography } from "../..";
 
 export default {
-  title: "Components/Global Actions",
+  title: "Components/Structure/Global Actions",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvGlobalActions } from '@hitachivantara/uikit-react-core'",
