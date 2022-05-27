@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _dropDown.resource
-Test Setup    open dropdown sample    ${forms}    multi-selection
+Test Setup    open dropdown sample    ${components}    multi-selection
 
 
 *** Test Cases ***

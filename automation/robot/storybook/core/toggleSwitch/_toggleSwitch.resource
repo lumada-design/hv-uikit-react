@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open toggle switch sample
     [Arguments]     ${sample}
-    go to                            ${forms}switch--${sample}
+    go to                            ${components}inputs-switch--${sample}
     Wait Until Element Is Visible    ${switches}
 
 

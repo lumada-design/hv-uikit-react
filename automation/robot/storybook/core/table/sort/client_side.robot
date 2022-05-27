@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _keywords.resource
-Test Setup       open table sample    ${visualizations}    main
+Test Setup       open table sample    ${components}    main
 Test Template    Run Keyword
 
 

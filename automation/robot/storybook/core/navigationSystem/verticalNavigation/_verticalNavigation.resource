@@ -5,7 +5,7 @@ Resource    ../../_keywords.resource
 *** Keywords ***
 open vertical navigation sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}vertical-navigation--${sample}
+    Go To                            ${dir}structure-vertical-navigation--${sample}
     Wait Until Element Is Visible    ${burger}
     Click Element                    ${burger}
     Wait Until Element Is Visible    ${items}

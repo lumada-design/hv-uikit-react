@@ -5,7 +5,7 @@ Resource      ../_keywords.resource
 *** Keywords ***
 open searchBox sample
     [Arguments]    ${sample}
-    Go To     ${forms}search-box--${sample}
+    Go To     ${components}inputs-search-box--${sample}
     Wait Until Element Is Enabled      ${searchBox}
 
 

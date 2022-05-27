@@ -6,7 +6,7 @@ Library     String
 *** Keywords ***
 Open multiButton sample
     [Arguments]    ${sample}
-    Go To                            ${components}multi-button--${sample}
+    Go To                            ${components}inputs-multi-button--${sample}
     Wait Until Element Is Enabled    ${multiButton}
 
 multiButton selection should be

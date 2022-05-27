@@ -1,18 +1,20 @@
 *** Setting ***
 Resource         _input.resource
-Test Setup       open input sample    ${forms}    suggestion
+Test Setup       open input sample    ${components}    suggestion
 Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
 
 
 *** Test Cases ***
 focus first suggestion option when input is focused and is pressed TAB
+    Wait Until Element Is Visible    ${input}
     Press Keys                       ${input}    po
     Wait Until Element Is Visible    ${suggestion_list}
     Press Keys                       NONE    TAB
     Wait Until Element Is Visible    ${suggestion_options}:first-child:focus
 
 close suggestions list when focus is on list and is pressed TAB
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Press Keys                           NONE    TAB
@@ -21,6 +23,7 @@ close suggestions list when focus is on list and is pressed TAB
     Wait Until Element Is Not Visible    ${suggestion_list}
 
 return focus to input when is pressed SHIFT TAB
+    Wait Until Element Is Visible    ${input}
     Press Keys                       ${input}    po
     Wait Until Element Is Visible    ${suggestion_list}
     Press Keys                       NONE    TAB
@@ -29,6 +32,7 @@ return focus to input when is pressed SHIFT TAB
     Wait Until Element Is Visible    ${input}:focus
 
 select an option list when is pressed SPACE
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    por
     Wait Until Element Is Visible        ${suggestion_list}
     Press Keys                           NONE    TAB    SPACE
@@ -37,6 +41,7 @@ select an option list when is pressed SPACE
     Wait Until Element Is Visible        ${input}:focus
 
 select an option list when is pressed ENTER
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Press Keys                           ${suggestion_Portugal}    ENTER
@@ -45,6 +50,7 @@ select an option list when is pressed ENTER
     Wait Until Element Is Visible        ${input}:focus
 
 focus options suggestions when pressed UP or DOWM
+    Wait Until Element Is Visible    ${input}
     Press Keys                       ${input}    J
     Wait Until Element Is Visible    ${suggestion_list}
     Press Keys                       NONE    TAB

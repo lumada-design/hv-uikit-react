@@ -20,7 +20,7 @@ change input limit with another component
     Wait Until Element Contains      ${textarea}    Second valu
 
 unable to insert text
-    [Setup]    go to    ${forms}text-area--disabled
+    [Setup]    go to    ${components}inputs-text-area--disabled
     Wait Until Page Contains Element    ${textarea}
     Element Should Be Disabled          ${textarea}
 
