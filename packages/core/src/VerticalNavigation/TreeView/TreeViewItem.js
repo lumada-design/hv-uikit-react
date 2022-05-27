@@ -134,7 +134,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     if (mapFirstChar && unMapFirstChar && label) {
-      mapFirstChar(nodeId, contentRef.current.textContent.substring(0, 1).toLowerCase());
+      mapFirstChar(nodeId, contentRef.current?.textContent.substring(0, 1).toLowerCase());
 
       return () => {
         unMapFirstChar(nodeId);
