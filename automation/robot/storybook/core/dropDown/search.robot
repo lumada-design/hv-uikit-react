@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _dropDown.resource
-Test Setup       open dropdown sample    ${forms}     multi-selection
+Test Setup       open dropdown sample    ${components}     multi-selection
 Documentation    A search can be used to filter the available options
 
 
@@ -11,7 +11,7 @@ filter options for multi selection
     Page Should Contain Element    ${options}    limit=1
 
 filter options for single selection
-    [Setup]    open dropdown sample    ${forms}     single-selection-with-search    
+    [Setup]    open dropdown sample    ${components}     single-selection-with-search    
     Page Should Contain Element      ${options}    limit=4
     Input Text                       ${searchInput}    2
     Page Should Contain Element      ${options}    limit=1

@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open bulk action sample
     [Arguments]    ${sample}
-    Go To    ${components}bulk-actions--${sample}
+    Go To    ${components}structure-bulk-actions--${sample}
     Wait Until Page Contains Element    ${parentCheckbox}
 
 

@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _dropDown.resource
-Test Setup    open dropdown sample    ${forms}    single-selection
+Test Setup    open dropdown sample    ${components}    single-selection
 
 
 *** Test Cases ***
@@ -17,7 +17,7 @@ Close dropdown when is clicked out of dropdown area
     Wait Until Element Is Not Visible    ${listBox}
 
 Dropdown does not open when it is disable
-    [Setup]    Go To    ${forms}dropdown--disabled
+    [Setup]    Go To    ${components}inputs-dropdown--disabled
     Wait Until Element Is Visible      ${dropdown}
     mouses does not open dropdown      ${dropdown}
     mouses does not open dropdown      ${dropdownHeader}

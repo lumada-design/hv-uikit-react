@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open radioButton sample
     [Arguments]     ${sample}
-    go to                            ${forms}radio-button--${sample}
+    go to                            ${components}inputs-radio-button--${sample}
     Wait Until Element Is Enabled    ${radioButtons}
 
 radioButton should be selected

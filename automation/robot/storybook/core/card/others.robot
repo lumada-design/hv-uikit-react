@@ -5,7 +5,8 @@ Test Setup    open card sample    ${components}    all-components
 
 *** Test Cases ***
 controlled card selection by switch
-  [Setup]    open card sample    ${tests}    controlled
+  [Setup]    Go To    ${tests}card--controlled
+  Wait Until Page Contains Element    ${checkbox}
   Checkbox Should Not Be Selected    ${checkbox}
   click Element                      ${externalCheckbox}
   Checkbox Should Be Selected        ${checkbox}

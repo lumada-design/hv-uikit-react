@@ -6,7 +6,7 @@ Test Setup    open dropdownmenu sample    ${components}    disabled-items
 *** Test Cases ***
 open dropdown menu when click dropdown button
     [Setup]    NONE
-    Go To                               ${components}dropdown-menu--disabled-items
+    Go To                               ${components}inputs-dropdown-menu--disabled-items
     Wait Until Element Is Enabled       ${dropDownMenu}
     Click Element                       ${dropDownMenu}
     Wait Until Page Contains Element    ${menuList}

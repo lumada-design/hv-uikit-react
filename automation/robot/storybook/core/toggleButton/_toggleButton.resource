@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open toggle button sample
     [Arguments]     ${sample}
-    go to                            ${components}toggle-button--${sample}
+    go to                            ${components}inputs-toggle-button--${sample}
     Wait Until Element Is Visible    ${buttons}
 
 toggle button should be selected

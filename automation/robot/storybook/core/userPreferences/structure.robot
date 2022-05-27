@@ -1,6 +1,6 @@
 *** Setting ***
 Resource       _userPreferences.resource
-Suite Setup    open userPreferences sample    ${components}    with-open-control
+Suite Setup    open userPreferences sample    ${widgets}    with-open-control
 
 
 *** Test Cases ***

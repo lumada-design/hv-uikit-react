@@ -41,7 +41,7 @@ open datePicker sample
     [Documentation]     Open the sample and then open the calendar
     [Arguments]    ${sample}
     Set Browser Implicit Wait         30s
-    Go To                             ${forms}date-picker--${sample}
+    Go To                             ${components}inputs-date-picker--${sample}
     Wait Until Element Is Visible     ${datePickerHeader}
     Click Element                     ${datePickerHeader}
     Wait Until Element Is Visible     ${calendar}
