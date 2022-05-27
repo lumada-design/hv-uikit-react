@@ -8,7 +8,9 @@ export type HvTableRowClassKey =
   | "hover"
   | "selected"
   | "expanded"
-  | "striped";
+  | "striped"
+  | "variantList"
+  | "variantListHead";
 
 export interface HvTableRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableRowElement>, HvTableRowClassKey> {

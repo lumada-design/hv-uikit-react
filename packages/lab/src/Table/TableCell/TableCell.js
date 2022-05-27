@@ -61,7 +61,8 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
         {
           [classes[`align${capitalize(align)}`]]: align !== "inherit",
           [classes[`variant${capitalize(variant)}`]]: variant !== "default",
-
+          [classes.variantList]: tableContext.variant === "listrow",
+          [classes.variantListHead]: tableContext.variant === "listrow" && type !== "body",
           [classes.sorted]: sorted,
 
           [classes.stickyColumn]: stickyColumn,
@@ -89,12 +90,10 @@ HvTableCell.propTypes = {
    * Defaults to td.
    */
   component: PropTypes.elementType,
-
   /**
    * Content to be rendered
    */
   children: PropTypes.node,
-
   /**
    * Class names to be applied.
    */
@@ -103,7 +102,6 @@ HvTableCell.propTypes = {
    * Inline styles to be applied to the root element.
    */
   style: PropTypes.instanceOf(Object),
-
   /**
    * Set the text-align on the table cell content.
    */
@@ -111,19 +109,24 @@ HvTableCell.propTypes = {
   /**
    * Sets the cell's variant.
    */
-  variant: PropTypes.oneOf(["checkbox", "expand", "actions", "default", "none"]),
-
+  variant: PropTypes.oneOf([
+    "checkbox",
+    "expand",
+    "actions",
+    "default",
+    "listcheckbox",
+    "listactions",
+    "none",
+  ]),
   /**
    * Specify the cell's type.
    * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
    */
   type: PropTypes.oneOf(["body", "footer", "head"]),
-
   /**
    * Whether or not the cell is part of a sorted column.
    */
   sorted: PropTypes.bool,
-
   /**
    * The cell is part of a sticky column.
    */
@@ -136,7 +139,6 @@ HvTableCell.propTypes = {
    * The cell is part of the first sticky to the right column.
    */
   stickyColumnLeastRight: PropTypes.bool,
-
   /**
    * The cell is part of the first column in the group.
    */
@@ -145,7 +147,6 @@ HvTableCell.propTypes = {
    * The cell is part of the last column in the group.
    */
   groupColumnMostRight: PropTypes.bool,
-
   /**
    * Whether or not the cell is resizable
    */
@@ -154,7 +155,6 @@ HvTableCell.propTypes = {
    * Whether or not the cell is being resized
    */
   resizing: PropTypes.bool,
-
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -163,7 +163,6 @@ HvTableCell.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
-
     /**
      * Styles applied to the cell when it's in the table head.
      */
@@ -176,7 +175,6 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's in the table footer.
      */
     footer: PropTypes.string,
-
     /**
      * Styles applied to the cell when it's part of a sticky column.
      */
@@ -189,7 +187,6 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's part of the first right sticky column.
      */
     stickyColumnLeastRight: PropTypes.string,
-
     /**
      * Styles applied to the cell when it's part of the first column in the group.
      */
@@ -198,14 +195,12 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's part of the last column in the group.
      */
     groupColumnMostRight: PropTypes.string,
-
     /**
      * Styles applied to the cell when it's part of a sorted column.
      */
     sorted: PropTypes.string,
 
     sortIcon: PropTypes.string,
-
     /**
      * Styles applied to the component root when it is left aligned
      */
@@ -238,7 +233,22 @@ HvTableCell.propTypes = {
      * Styles applied to the component root when its variant is none
      */
     variantNone: PropTypes.string,
-
+    /**
+     * Styles applied to the component root when its variant is list
+     */
+    variantList: PropTypes.string,
+    /**
+     * Styles applied to the cell when its variant is list and actions.
+     */
+    variantListactions: PropTypes.string,
+    /**
+     * Styles applied to the cell when its variant is list and checkbox.
+     */
+    variantListcheckbox: PropTypes.string,
+    /**
+     * Styles applied to the cell when its variant is list and the type is head .
+     */
+    variantListHead: PropTypes.string,
     /**
      * Styles applied to the cell when it's part of a resizable column.
      */

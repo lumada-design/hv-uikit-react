@@ -23,9 +23,7 @@ const styles = (theme) => ({
   },
   body: {},
   footer: {},
-  selected: {
-    backgroundColor: theme.palette.atmo1,
-  },
+  selected: {},
   expanded: {
     backgroundColor: theme.palette.atmo1,
     "& > *[role=cell]": {
@@ -44,6 +42,34 @@ const styles = (theme) => ({
 
     "&:hover": {
       backgroundColor: theme.palette.atmo3,
+    },
+  },
+  variantList: {
+    borderBottom: 0,
+    backgroundColor: theme.palette.atmo1,
+    height: 52,
+    "&$selected": {
+      boxShadow: `1px 1px ${theme.hv.palette.accent.acce1}, -1px -1px ${theme.hv.palette.accent.acce1}, -1px 1px ${theme.hv.palette.accent.acce1}, 1px -1px ${theme.hv.palette.accent.acce1}`,
+
+      "&:hover": {
+        boxShadow: `1px 1px ${theme.hv.palette.accent.acce1}, -1px -1px ${theme.hv.palette.accent.acce1}, -1px 1px ${theme.hv.palette.accent.acce1}, 1px -1px ${theme.hv.palette.accent.acce1}`,
+        background: theme.hv.palette.atmosphere.atmo1,
+      },
+    },
+
+    "&:hover": {
+      boxShadow: `1px 1px ${theme.hv.palette.atmosphere.atmo4}, -1px -1px ${theme.hv.palette.atmosphere.atmo4}, -1px 1px ${theme.hv.palette.atmosphere.atmo4}, 1px -1px ${theme.hv.palette.atmosphere.atmo4}`,
+      background: theme.hv.palette.atmosphere.atmo1,
+    },
+  },
+  variantListHead: {
+    height: 16,
+    "&:first-child": {
+      height: 16,
+    },
+
+    "tr&:first-child": {
+      height: 16,
     },
   },
 });
