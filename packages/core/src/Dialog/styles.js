@@ -12,7 +12,6 @@ const styles = (theme) => ({
     "&:not(.fullscreen)": {
       maxHeight: "calc(100% - 200px)",
       display: "flex",
-      flex: 1,
       flexDirection: "column",
     },
   },
