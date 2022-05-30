@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.6...@hitachivantara/uikit-react-lab@3.45.7) (2022-05-30)
+
+
+### Bug Fixes
+
+* **QueryBuild:** add classes type definition ([a075ca8](https://github.com/lumada-design/hv-uikit-react/commit/a075ca8d88a4392abf46f4679f9bc02a1f7b949e))
+
+
+
+
+
 ## [3.45.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.5...@hitachivantara/uikit-react-lab@3.45.6) (2022-05-25)
 
 

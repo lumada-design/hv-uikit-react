@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.67.6 (2022-05-30)
+
+
+### Bug Fixes
+
+* **dialog:** dialog is growing more than required ([c5ecbda](https://github.com/lumada-design/hv-uikit-react/commit/c5ecbdade130b504bf0ff595bc1bb2f17ea45ad2))
+* **Dialog:** have header and footer of the Dialog be fixed on top and bottom of the dialog ([9e84cd6](https://github.com/lumada-design/hv-uikit-react/commit/9e84cd61d12ead7988d26ac88d6e5aeeaf3b6469))
+* **TreeViewItem:** added a null validation to ref ([a6f3428](https://github.com/lumada-design/hv-uikit-react/commit/a6f342875b3850c7ca2c9441deb88ad7c2c8fe43))
+
+
+
+
+
 ## [3.67.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.4...@hitachivantara/uikit-react-core@3.67.5) (2022-05-25)
 
 
