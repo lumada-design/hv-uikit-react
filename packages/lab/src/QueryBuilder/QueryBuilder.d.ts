@@ -50,4 +50,4 @@ export interface HvQueryBuilderProps
   labels?: QueryBuilderLabels;
 }
 
-export default function HvSlider(props: HvQueryBuilderProps): JSX.Element | null;
+export default function HvQueryBuilder(props: HvQueryBuilderProps): JSX.Element | null;
