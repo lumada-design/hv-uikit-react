@@ -11,7 +11,7 @@ describe("DialogActions withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <DialogActions>Dialog Content</DialogActions>
       </HvProvider>
     );
@@ -27,7 +27,7 @@ describe("DialogActions Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <DialogActions>Dialog Content</DialogActions>
       </HvProvider>
     );
@@ -39,7 +39,7 @@ describe("DialogActions Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <DialogActions disableActionSpacing>Dialog Content</DialogActions>
       </HvProvider>
     );
@@ -48,7 +48,7 @@ describe("DialogActions Component", () => {
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <DialogActions
           classes={{
             root: "testClassRoot",

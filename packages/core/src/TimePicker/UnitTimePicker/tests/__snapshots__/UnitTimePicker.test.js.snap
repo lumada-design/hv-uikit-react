@@ -30,11 +30,11 @@ exports[`UnitTimePicker should render correctly 1`] = `
         class="HvBaseInput-root"
       >
         <div
-          class="MuiInputBase-root-12 MuiInput-root-1 HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
+          class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
         >
           <input
             autocomplete="off"
-            class="MuiInputBase-input-20 MuiInput-input-8 HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
             max="59"
             min="0"
             required=""

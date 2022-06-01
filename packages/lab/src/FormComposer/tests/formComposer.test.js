@@ -17,7 +17,7 @@ describe("FormComposer", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <FormComposer groups={groups} />
       </HvProvider>
     );

@@ -21,7 +21,7 @@ describe("Actions with array", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <ActionsGeneric
           id="actions"
           actions={actions}
@@ -70,7 +70,7 @@ describe("Actions with custom actions", () => {
   it("should render if React element", () => {
     const label = "Test";
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <ActionsGeneric actions={<HvButton>{label}</HvButton>} />
       </HvProvider>
     );

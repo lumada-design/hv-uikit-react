@@ -10,7 +10,7 @@ describe("Panel", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Main />
       </HvProvider>
     );

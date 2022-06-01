@@ -16,7 +16,7 @@ describe("UnitTimePicker", () => {
   beforeEach(async () => {
     mockOnChangeUnitTimeValue = jest.fn();
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <UnitTimePicker
           unit={TimePickerUnits.MINUTE.type}
           unitValue={defaultUnitValue}

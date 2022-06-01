@@ -10,6 +10,9 @@ import { CustomEmpty } from "../stories/Table.stories";
 
 /* eslint-disable no-console */
 
+// eslint-disable-next-line react/prop-types
+const HvProviderWrapper = ({ children }) => <HvProvider disableCssBaseline>{children}</HvProvider>;
+
 describe("Hv Table", () => {
   let wrapper;
 
@@ -38,7 +41,7 @@ describe("Hv Table", () => {
       console.warn = jest.fn();
 
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
@@ -80,7 +83,7 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is available it is rendered", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
@@ -94,7 +97,7 @@ describe("Hv Table", () => {
 
     it("and if 'columns' is not empty, columns are displayed", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             columns={[
               { id: 1, Header: "column 1" },
@@ -112,7 +115,7 @@ describe("Hv Table", () => {
 
     it("and if 'data' is provided, rows are the same length of 'data'", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
@@ -126,7 +129,7 @@ describe("Hv Table", () => {
 
     it("and if 'pageSize' is provided and showPagination is true, defaultPageSize is set", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             columns={[]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
@@ -148,7 +151,7 @@ describe("Hv Table", () => {
           showPagination={false}
         />,
         {
-          wrappingComponent: HvProvider,
+          wrappingComponent: HvProviderWrapper,
         }
       );
 
@@ -172,7 +175,7 @@ describe("Hv Table", () => {
           showPagination={false}
         />,
         {
-          wrappingComponent: HvProvider,
+          wrappingComponent: HvProviderWrapper,
         }
       );
 
@@ -203,7 +206,7 @@ describe("Hv Table", () => {
             onPageSizeChange={onPageSizeChange}
           />,
           {
-            wrappingComponent: HvProvider,
+            wrappingComponent: HvProviderWrapper,
           }
         );
 
@@ -216,7 +219,7 @@ describe("Hv Table", () => {
 
     it("and if 'data' is empty, don't render pagination", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable columns={[]} data={[]} pageSize={5} />
         </HvProvider>
       );
@@ -226,7 +229,7 @@ describe("Hv Table", () => {
 
     it("should render no data component if no data exists", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable columns={[]} data={[]} pageSize={5} />
         </HvProvider>
       );
@@ -236,7 +239,7 @@ describe("Hv Table", () => {
 
     it("should render a custom no data component when passed and no data exists", () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <CustomEmpty />
         </HvProvider>
       );
@@ -247,7 +250,7 @@ describe("Hv Table", () => {
     it("should add an expander if the subElementTemplate is defined", () => {
       const subElementTemplate = () => <div />;
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             classes={{}}
             columns={column}
@@ -277,7 +280,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" },
       ];
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             classes={classesToApply}
             columns={columns}
@@ -313,7 +316,7 @@ describe("Hv Table", () => {
         { id: 3, Header: "column 3" },
       ];
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvTable
             classes={classesToApply}
             columns={columns}

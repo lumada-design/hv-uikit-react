@@ -9,7 +9,7 @@ import { HvProvider, HvButton } from "../..";
 describe("HvProvider", () => {
   it("should generate global classnames by default", () => {
     const { getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -25,7 +25,7 @@ describe("HvProvider", () => {
     mockGenerateClassName.mockReturnValue("SameClassName");
 
     const { getByRole } = render(
-      <HvProvider generateClassName={mockGenerateClassName}>
+      <HvProvider disableCssBaseline generateClassName={mockGenerateClassName}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -38,7 +38,7 @@ describe("HvProvider", () => {
 
   it("should use a seed", () => {
     const { getByRole } = render(
-      <HvProvider generateClassNameOptions={{ seed: "test" }}>
+      <HvProvider disableCssBaseline generateClassNameOptions={{ seed: "test" }}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -50,7 +50,7 @@ describe("HvProvider", () => {
 
   it("should disable global classnames", () => {
     const { getByRole } = render(
-      <HvProvider generateClassNameOptions={{ disableGlobal: true }}>
+      <HvProvider disableCssBaseline generateClassNameOptions={{ disableGlobal: true }}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -65,7 +65,10 @@ describe("HvProvider", () => {
 
   it("should disable global classnames and use a seed", () => {
     const { getByRole } = render(
-      <HvProvider generateClassNameOptions={{ seed: "test", disableGlobal: true }}>
+      <HvProvider
+        disableCssBaseline
+        generateClassNameOptions={{ seed: "test", disableGlobal: true }}
+      >
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -80,7 +83,7 @@ describe("HvProvider", () => {
 
   it("should disable classnames generation", () => {
     const { getByRole } = render(
-      <HvProvider disableStylesGeneration>
+      <HvProvider disableCssBaseline disableStylesGeneration>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );

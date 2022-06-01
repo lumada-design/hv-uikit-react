@@ -8,7 +8,7 @@ import { Main, OnlyIcons, OnlyLabels } from "../stories/MultiButton.stories";
 
 describe("Multibutton withStyles - Icons Only", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <OnlyIcons />
     </HvProvider>
   );
@@ -30,7 +30,7 @@ describe("Multibutton withStyles - Icons Only", () => {
 
 describe("Multibutton - Text Only", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <OnlyLabels />
     </HvProvider>
   );
@@ -47,7 +47,7 @@ describe("Multibutton - Text Only", () => {
 
 describe("Multibutton - Text and Icons", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <Main />
     </HvProvider>
   );

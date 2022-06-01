@@ -10,7 +10,7 @@ describe("Badge ", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={0} />
       </HvProvider>
     );
@@ -26,7 +26,7 @@ describe("Badge ", () => {
 
   it("should render a small dot when count>0 without showCount", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={12} />
       </HvProvider>
     );
@@ -41,7 +41,7 @@ describe("Badge ", () => {
 
   it("should render correctly with showCount", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={12} showCount />
       </HvProvider>
     );
@@ -56,7 +56,7 @@ describe("Badge ", () => {
 
   it("should render correctly with showCount and one-digit count", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={9} showCount />
       </HvProvider>
     );
@@ -71,7 +71,7 @@ describe("Badge ", () => {
 
   it("should render nothing when count is 0 even with showCount", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={0} showCount />
       </HvProvider>
     );
@@ -86,7 +86,7 @@ describe("Badge ", () => {
 
   it("should render correctly with maxCount", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={100} showCount />
       </HvProvider>
     );
@@ -97,7 +97,7 @@ describe("Badge ", () => {
 
   it("should render correctly with text", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={100} showCount text="hello" textVariant="sTitle" />
       </HvProvider>
     );
@@ -111,7 +111,7 @@ describe("Badge ", () => {
 
   it("should render correctly with svg", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge count={100} showCount icon={<Alert />} />
       </HvProvider>
     );
@@ -125,7 +125,7 @@ describe("Badge ", () => {
 
   it("should render correctly with custom label", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge label="New!" />
       </HvProvider>
     );
@@ -140,7 +140,7 @@ describe("Badge ", () => {
 
   it("should render correctly with custom one-character label", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge label="!" />
       </HvProvider>
     );
@@ -155,7 +155,7 @@ describe("Badge ", () => {
 
   it("should render custom label but not count when both are specified", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Badge label="New!" count={23} showCount />
       </HvProvider>
     );

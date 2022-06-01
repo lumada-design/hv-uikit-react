@@ -19,7 +19,7 @@ describe("Actions withStyles", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Actions />
       </HvProvider>
     );

@@ -71,7 +71,7 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
     console.warn = consoleWarnSpy;
 
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
       </HvProvider>
     );
@@ -156,7 +156,7 @@ describe("<AppSwitcherPanel /> Applications without a name should not be rendere
     console.error = consoleErrorSpy;
     console.warn = consoleWarnSpy;
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <AppSwitcherPanelWithStyles {...mockAppSwitcherPanelProps} />
       </HvProvider>
     );

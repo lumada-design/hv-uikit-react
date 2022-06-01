@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Provider should render correctly 1`] = `
-<HvProvider>
+<HvProvider
+  disableCssBaseline={true}
+>
   <StylesProvider
     disableGeneration={false}
     generateClassName={[Function]}
@@ -762,7 +764,6 @@ exports[`Provider should render correctly 1`] = `
         }
       }
     >
-      <CssBaseline />
        Mock 
     </ThemeProvider>
   </StylesProvider>

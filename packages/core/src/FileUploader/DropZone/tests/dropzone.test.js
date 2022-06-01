@@ -38,7 +38,7 @@ const onClickCallback = jest.fn();
 
 const setupComponent = (props = {}) =>
   mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <DropZone id="dropzone1" {...props} />
     </HvProvider>
   );

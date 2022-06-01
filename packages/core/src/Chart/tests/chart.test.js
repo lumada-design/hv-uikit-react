@@ -27,7 +27,7 @@ describe("Chart withStyles", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Chart data={data} layout={layout} />
       </HvProvider>
     );
@@ -43,7 +43,7 @@ describe("Chart withStyles", () => {
 
   it("should render the Chart", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Chart data={data} layout={layout} />
       </HvProvider>
     );
@@ -53,7 +53,7 @@ describe("Chart withStyles", () => {
 
   it("should render the Plot", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Chart data={data} layout={layout} />
       </HvProvider>
     );
@@ -69,7 +69,7 @@ describe("Tooltip withStyles", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Tooltip data={data} coordinates={coordinates} />
       </HvProvider>
     );
@@ -88,7 +88,7 @@ describe("Tooltip withStyles", () => {
     const singleData = { title: "title", elements: [{ value: 22 }] };
 
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Tooltip data={singleData} coordinates={coord} useSingle />
       </HvProvider>
     );
@@ -102,7 +102,7 @@ describe("Tooltip withStyles", () => {
     const singleData = { title: "title", elements: [{ name: "name", value: 22 }] };
 
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Tooltip data={singleData} coordinates={coord} />
       </HvProvider>
     );
