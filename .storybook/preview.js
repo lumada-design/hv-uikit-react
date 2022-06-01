@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import addons from "@storybook/addons";
 import { Global } from "@storybook/theming";
-import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvCssBaseline } from "@hitachivantara/uikit-react-core";
 import DocsPage from "./blocks/DocsPage";
 import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";
@@ -21,7 +21,16 @@ export const parameters = {
         "Get Started",
         ["Introduction", "Installation", "Component List", "Styling"],
         "Foundation",
-        ["Grid", "Container", "Provider", "Theming", "Typography", "Colors", "Icons"],
+        [
+          "Grid",
+          "Container",
+          "Provider",
+          "CSS Baseline",
+          "Theming",
+          "Typography",
+          "Colors",
+          "Icons",
+        ],
         "Components",
         "Forms",
         ["Main", "Form Element", "Form Element Blocks"],
