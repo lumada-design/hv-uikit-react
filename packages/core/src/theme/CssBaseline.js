@@ -16,7 +16,12 @@ export const html = {
 export const body = (theme) => ({
   fontFamily: theme.hv.typography.fontFamily,
   ...theme.hv.typography.normalText,
+
+  color: theme.hv.palette.accent.acce1,
   backgroundColor: theme.hv.palette.atmosphere.atmo2,
+
+  colorScheme: theme.hv.type,
+  accentColor: theme.hv.palette.accent.acce1,
 
   "@media print": {
     backgroundColor: "white",
