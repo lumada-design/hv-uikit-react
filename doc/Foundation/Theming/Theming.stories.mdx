@@ -25,12 +25,18 @@ import componentDefinitions from "../../GetStarted/ComponentVersioningTable/vers
 The UI Kit components provides the two Design System themes: **Dawn** and **Wicked**.
 
 <Story name="Main">
-  <HvProvider uikitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
-    <ThemePreviewMix />
-  </HvProvider>
-  <HvProvider uiKitTheme="wicked" generateClassNameOptions={{ seed: "wicked" }}>
-    <ThemePreviewMix />
-  </HvProvider>
+  <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <HvProvider uikitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }} disableCssBaseline>
+      <ThemePreviewMix />
+    </HvProvider>
+    <HvProvider
+      uiKitTheme="wicked"
+      generateClassNameOptions={{ seed: "wicked" }}
+      disableCssBaseline
+    >
+      <ThemePreviewMix />
+    </HvProvider>
+  </div>
 </Story>
 
 The active theme is configured through the `HvProvider`'s `uiKitTheme` property and defaults to the **Dawn** theme.
@@ -377,7 +383,12 @@ export const myRawCustomTheme = {
 export const myCustomTheme = createTheme(myRawCustomTheme);
 
 <Story name="Other">
-  <HvProvider uikitTheme="dawn" theme={myCustomTheme} generateClassNameOptions={{ seed: "custom" }}>
+  <HvProvider
+    uikitTheme="dawn"
+    theme={myCustomTheme}
+    generateClassNameOptions={{ seed: "custom" }}
+    disableCssBaseline
+  >
     <ThemePreviewMix />
   </HvProvider>
 </Story>

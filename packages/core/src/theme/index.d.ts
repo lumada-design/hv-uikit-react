@@ -149,4 +149,4 @@ export function getTheme(theme: string): object;
 export default Theme;
 
 export { default as createGenerateClassName } from "./createGenerateClassName";
-export { default as CssBaseline } from "./CssBaseline";
+export { default as HvCssBaseline } from "./CssBaseline";

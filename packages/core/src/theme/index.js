@@ -76,7 +76,7 @@ const themeBuilder = (theme) => {
 const defaultTheme = themeBuilder(getTheme("dawn"));
 
 export { default as createGenerateClassName } from "./createGenerateClassName";
-export { default as CssBaseline } from "./CssBaseline";
+export { default as HvCssBaseline } from "./CssBaseline";
 export { getTheme };
 
 export { themeBuilder };

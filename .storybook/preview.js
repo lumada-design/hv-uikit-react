@@ -65,7 +65,9 @@ const App = ({ story: Story }) => {
         generateClassNameOptions={
           isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
         }
+        disableCssBaseline
       >
+        <HvCssBaseline />
         <Story />
       </HvProvider>
     </>
