@@ -6,6 +6,11 @@ export const html = {
   // Change from `box-sizing: content-box` so that `width`
   // is not affected by `padding` or `border`.
   boxSizing: "border-box",
+
+  // Prevent adjustments of font size after orientation changes in iOS.
+  TextSizeAdjust: "none",
+  WebkitTextSizeAdjust: "none",
+  MozTextSizeAdjust: "none",
 };
 
 export const body = (theme) => ({
