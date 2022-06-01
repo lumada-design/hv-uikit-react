@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const html = {
+export const html = {
   WebkitFontSmoothing: "antialiased", // Antialiasing.
   MozOsxFontSmoothing: "grayscale", // Antialiasing.
   // Change from `box-sizing: content-box` so that `width`
@@ -8,7 +8,7 @@ const html = {
   boxSizing: "border-box",
 };
 
-const body = (theme) => ({
+export const body = (theme) => ({
   fontFamily: theme.hv.typography.fontFamily,
   ...theme.hv.typography.normalText,
   backgroundColor: theme.hv.palette.atmosphere.atmo2,

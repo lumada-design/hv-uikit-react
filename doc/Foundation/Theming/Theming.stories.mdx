@@ -2,7 +2,7 @@ import { Meta, Story, Preview } from "@storybook/addon-docs";
 
 import LinkTo from "@storybook/addon-links/react";
 
-import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvScopedCssBaseline } from "@hitachivantara/uikit-react-core";
 import { createTheme } from "@material-ui/core/styles";
 
 import SpacingUsage from "./SpacingUsage";
@@ -27,14 +27,18 @@ The UI Kit components provides the two Design System themes: **Dawn** and **Wick
 <Story name="Main">
   <div style={{ display: "flex", flexWrap: "wrap" }}>
     <HvProvider uikitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }} disableCssBaseline>
-      <ThemePreviewMix />
+      <HvScopedCssBaseline>
+        <ThemePreviewMix />
+      </HvScopedCssBaseline>
     </HvProvider>
     <HvProvider
       uiKitTheme="wicked"
       generateClassNameOptions={{ seed: "wicked" }}
       disableCssBaseline
     >
-      <ThemePreviewMix />
+      <HvScopedCssBaseline>
+        <ThemePreviewMix />
+      </HvScopedCssBaseline>
     </HvProvider>
   </div>
 </Story>

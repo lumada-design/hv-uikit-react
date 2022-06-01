@@ -150,3 +150,4 @@ export default Theme;
 
 export { default as createGenerateClassName } from "./createGenerateClassName";
 export { default as HvCssBaseline } from "./CssBaseline";
+export { default as HvScopedCssBaseline } from "./ScopedCssBaseline";
