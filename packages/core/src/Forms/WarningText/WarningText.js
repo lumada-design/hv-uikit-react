@@ -109,10 +109,6 @@ HvWarningText.propTypes = {
      * but the text is to be not visible.
      */
     hideText: PropTypes.string,
-    /**
-     * IE11 specific styling.
-     */
-    "@global": PropTypes.string,
   }).isRequired,
   /**
    * Icon to be rendered alongside the warning text.
