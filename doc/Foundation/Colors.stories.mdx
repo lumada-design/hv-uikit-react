@@ -36,7 +36,7 @@ If you require to override the default values of the palette, you will need to c
 the uikit theme is an extension of the Material-UI theme so to create a new theme object you will use Material-UI's
 theme generator
 
-```
+```jsx
 import { createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme({
@@ -51,77 +51,64 @@ const theme = createTheme({
     },
   },
 });
-
 ```
 
 The theme object must override one of the color values of the following object:
 
-```
-"hv": {
-  "palette": {
-    "accent": {
-      "acce1": "#414141",
-      .
-      .
-      .
-      "acce3": "#CC0000"
-    },
-    "atmosphere": {
-      "atmo1": "#FBFCFC",
-      .
-      .
-      .
-      "atmo5": "#999999"
-    },
-    "base": {
-      "base1": "#FBFCFC",
-      "base2": "#414141"
-    },
-    "semantic": {
-      "sema1": "#59941B",
-      .
-      .
-      .
-      "sema20": "#F9E3C5"
-    },
-    "support": {
-      "supp1": "#0F8B8D",
-      .
-      .
-      .
-      "supp5": "#546B6B"
-    },
-    "shadow": {
-      "shad1":"rgba(65,65,65,0.12)"
-    }
-  }
-"viz": {
+```json
+{
+  "hv": {
     "palette": {
-      "categorical": {
-        "cviz1": "#6EAFFF",
-        .
-        .
-        .
-        "cviz20": "#F7B552"
+      "accent": {
+        "acce1": "#414141",
+        ...
+        "acce3": "#CC0000"
       },
-      "undefinedState": {
-        "atmo4": "#CCCED0"
+      "atmosphere": {
+        "atmo1": "#FBFCFC",
+        ...
+        "atmo5": "#999999"
       },
-      "sequential": {
-        "cviz1": "#2DB3E0",
-        .
-        .
-        .
-        "cviz1_100": "#E3F1F6"
+      "base": {
+        "base1": "#FBFCFC",
+        "base2": "#414141"
       },
-      "polarized": {
+      "semantic": {
         "sema1": "#59941B",
-        "cviz21": "#869F1E",
-        .
-        .
-        .
-        "cviz28": "#D8265D",
-        "sema5": "#C51162"
+        ...
+        "sema20": "#F9E3C5"
+      },
+      "support": {
+        "supp1": "#0F8B8D",
+        ...
+        "supp5": "#546B6B"
+      },
+      "shadow": {
+        "shad1":"rgba(65,65,65,0.12)"
+      }
+    }
+  "viz": {
+      "palette": {
+        "categorical": {
+          "cviz1": "#6EAFFF",
+          ...
+          "cviz20": "#F7B552"
+        },
+        "undefinedState": {
+          "atmo4": "#CCCED0"
+        },
+        "sequential": {
+          "cviz1": "#2DB3E0",
+          ...
+          "cviz1_100": "#E3F1F6"
+        },
+        "polarized": {
+          "sema1": "#59941B",
+          "cviz21": "#869F1E",
+          ...
+          "cviz28": "#D8265D",
+          "sema5": "#C51162"
+        }
       }
     }
   }
@@ -136,7 +123,7 @@ Here is an example of a pair of buttons with overridden colors.
 
 ## Code
 
-```
+```jsx
 import React from "react";
 import { createTheme } from "@material-ui/core/styles";
 import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";

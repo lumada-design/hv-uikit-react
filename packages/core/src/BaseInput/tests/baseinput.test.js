@@ -17,7 +17,7 @@ describe("Input", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <BaseInput placeholder="test" inputProps={inputProps} />
       </HvProvider>
     );
@@ -38,7 +38,7 @@ describe("Input", () => {
 
   it("should disable the Base Input component", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <BaseInput placeholder="test" disabled />
       </HvProvider>
     );
@@ -50,7 +50,7 @@ describe("Input", () => {
 
   it("should render the Input component with the multiline style", () => {
     const wrapperTextArea = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <BaseInput placeholder="test" multiline />
       </HvProvider>
     );

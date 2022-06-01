@@ -7,7 +7,7 @@ import { Main } from "../stories/UserPreferences.stories";
 import UserPreferences, { Action, Actions, Options, Group, Option } from "..";
 
 const setupComponent = (
-  <HvProvider>
+  <HvProvider disableCssBaseline>
     <Main />
   </HvProvider>
 );

@@ -50,7 +50,7 @@ describe("<Navigation />", () => {
 
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <Navigation
             aria-label="Example 1 navigation"
             selected={value}

@@ -35,7 +35,7 @@ describe("<Action /> with description", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <ActionWrapper key="mockKey" application={mockApplications} />
       </HvProvider>
     );
@@ -71,7 +71,7 @@ describe("<Action /> without description", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <ActionWrapper key="mockKey" application={mockApplications} />
       </HvProvider>
     );
@@ -107,7 +107,7 @@ describe("<Action /> with an element icon", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <ActionWrapper key="mockKey" application={mockApplications} />
       </HvProvider>
     );

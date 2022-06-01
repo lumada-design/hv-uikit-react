@@ -12,7 +12,7 @@ describe("Login ", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Login>
           <MockFrom />
         </Login>

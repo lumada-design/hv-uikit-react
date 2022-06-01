@@ -31,10 +31,14 @@ export default {
 
 export const Main = () => (
   <>
-    <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
+    <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }} disableCssBaseline>
       <HvButtonWithMargin category="secondary">Dawn</HvButtonWithMargin>
     </HvProvider>
-    <HvProvider uiKitTheme="wicked" generateClassNameOptions={{ seed: "wicked" }}>
+    <HvProvider
+      uiKitTheme="wicked"
+      generateClassNameOptions={{ seed: "wicked" }}
+      disableCssBaseline
+    >
       <HvButtonWithMargin category="secondary">Wicked</HvButtonWithMargin>
     </HvProvider>
   </>
@@ -54,13 +58,13 @@ export const Locale = () => {
 
   return (
     <>
-      <HvProvider generateClassNameOptions={{ seed: "default" }}>
+      <HvProvider generateClassNameOptions={{ seed: "default" }} disableCssBaseline>
         <ShowLocale />
       </HvProvider>
-      <HvProvider locale="fr-FR" generateClassNameOptions={{ seed: "fr-FR" }}>
+      <HvProvider locale="fr-FR" generateClassNameOptions={{ seed: "fr-FR" }} disableCssBaseline>
         <ShowLocale />
       </HvProvider>
-      <HvProvider locale="it-IT" generateClassNameOptions={{ seed: "it-IT" }}>
+      <HvProvider locale="it-IT" generateClassNameOptions={{ seed: "it-IT" }} disableCssBaseline>
         <ShowLocale />
       </HvProvider>
     </>

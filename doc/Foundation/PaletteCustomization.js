@@ -17,7 +17,7 @@ const theme = createTheme({
 
 const Palette = () => {
   return (
-    <HvProvider theme={theme}>
+    <HvProvider theme={theme} disableCssBaseline>
       <HvButton category="primary">Primary</HvButton>
       <HvButton category="secondary">Secondary</HvButton>
     </HvProvider>

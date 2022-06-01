@@ -6,8 +6,7 @@ export type HvWarningTextClassKey =
   | "topBorder"
   | "topGutter"
   | "showText"
-  | "defaultIcon"
-  | "@global";
+  | "defaultIcon";
 
 export interface HvWarningTextProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvWarningTextClassKey> {

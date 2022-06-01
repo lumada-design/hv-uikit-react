@@ -17,7 +17,7 @@ const labComponentTableConfig = [
               <LinkTo
                 kind={cellData.row._original.path}
                 story={cellData.row._original.story || "Main"}
-                className="sbdocs-a"
+                className="sbdocs sbdocs-a"
               >
                 {cellData.row._original.component}
               </LinkTo>

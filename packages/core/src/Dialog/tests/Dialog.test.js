@@ -12,7 +12,7 @@ describe("Dialog withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog>Dialog Content</Dialog>
       </HvProvider>
     );
@@ -30,7 +30,7 @@ describe("Dialog Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog open={open} onClose={onCloseMock}>
           Dialog Content
         </Dialog>
@@ -45,7 +45,7 @@ describe("Dialog Component", () => {
 
   it("should render correctly if closed", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog open={false} onClose={onCloseMock}>
           Dialog Content
         </Dialog>
@@ -56,7 +56,7 @@ describe("Dialog Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog open={open} onClose={onCloseMock} disableBackdropClick disableEscapeKeyDown>
           Dialog Content
         </Dialog>
@@ -67,7 +67,7 @@ describe("Dialog Component", () => {
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog
           classes={{
             root: "testClassRoot",
@@ -86,7 +86,7 @@ describe("Dialog Component", () => {
 
   it("onClose should be called when close is triggered in the dialog", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Dialog classes={{}} open={open} onClose={onCloseMock}>
           Dialog Content
         </Dialog>

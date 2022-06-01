@@ -27,7 +27,7 @@ describe("User withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <NavigationAnchors options={options} />
       </HvProvider>
     );
@@ -43,7 +43,7 @@ describe("User withStyles", () => {
 
   it("should render correctly with props", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <NavigationAnchors options={options} />
       </HvProvider>
     );
@@ -55,7 +55,7 @@ describe("User withStyles", () => {
     const onClickCallback = () => onClick();
 
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <NavigationAnchors options={options} onClick={onClickCallback} />
       </HvProvider>
     );

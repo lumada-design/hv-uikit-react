@@ -6,7 +6,7 @@ import { Main } from "../stories/Grid.stories";
 
 describe("Grid", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <Main />
     </HvProvider>
   );

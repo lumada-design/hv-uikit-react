@@ -138,7 +138,7 @@ describe("TagsInput Component", () => {
 
   it("should render the label correctly", () => {
     const { getByText } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput id="tags-list" label="Custom label" classes={mockClasses} />
       </HvProvider>
     );
@@ -147,7 +147,7 @@ describe("TagsInput Component", () => {
 
   it("should render the text area with tags when controlled and input value is an array of strings", () => {
     const { getByText, getAllByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -166,7 +166,7 @@ describe("TagsInput Component", () => {
 
   it("should render the text area with tags when controlled and input value is an array of tags", () => {
     const { getByText, getAllByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -189,7 +189,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = jest.fn();
     const onDeleteSpy = jest.fn();
     const { getByText, getAllByRole, findAllByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -225,7 +225,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = jest.fn();
     const onAddSpy = jest.fn();
     const { getByText, getAllByRole, findAllByRole, getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -266,7 +266,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = jest.fn();
     const onBlurSpy = jest.fn();
     const { getByText, getAllByRole, findAllByRole, getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -299,7 +299,7 @@ describe("TagsInput Component", () => {
 
   it("should have a disabled tag if the `disabled` property is set to true", () => {
     const { queryAllByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -316,7 +316,7 @@ describe("TagsInput Component", () => {
 
   it("should not display close buttons on readOnly tags", () => {
     const { queryAllByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -335,7 +335,7 @@ describe("TagsInput Component", () => {
     const suggestionHandler = jest.fn();
 
     const { getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTagsInput
           id="tags-list"
           label="Custom label"

@@ -12,7 +12,7 @@ describe("HelperText", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvWarningText id="base">test</HvWarningText>
       </HvProvider>
     );

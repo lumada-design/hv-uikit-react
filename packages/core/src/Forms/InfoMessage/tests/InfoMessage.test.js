@@ -12,7 +12,7 @@ describe("InfoMessage", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvInfoMessage id="base">test</HvInfoMessage>
       </HvProvider>
     );

@@ -67,7 +67,7 @@ describe("Slider ", () => {
     myMock = jest.fn(() => "mock");
     console.warn = consoleWarnSpy;
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider knobProperties={knobProperties} defaultValues={knobPropertiesDefaults} />
       </HvProvider>
     );
@@ -92,7 +92,7 @@ describe("Slider ", () => {
 
   it("should call the format mark function", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -107,7 +107,7 @@ describe("Slider ", () => {
   // TODO: Review test on calling formatMark function
   it("shouldn't call the format mark function more than one time for each knob when the markProps exist", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           markProperties={[{ position: 2, label: "asd" }]}
           knobProperties={knobProperties}
@@ -122,7 +122,7 @@ describe("Slider ", () => {
 
   it("should define the start of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           minPointValue={15}
           knobProperties={knobProperties}
@@ -137,7 +137,7 @@ describe("Slider ", () => {
 
   it("should define the end of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           maxPointValue={87}
           knobProperties={knobProperties}
@@ -152,7 +152,7 @@ describe("Slider ", () => {
 
   it("should define the end of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -168,7 +168,7 @@ describe("Slider ", () => {
 
   it("should call onBefore method just once", () => {
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -187,7 +187,7 @@ describe("Slider ", () => {
 
   it("should call onAfter method just once", () => {
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -213,7 +213,7 @@ describe("Slider ", () => {
     };
 
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           maxPointValue={1}
           knobProperties={knobPropertiesScaled}
@@ -233,7 +233,7 @@ describe("Slider ", () => {
     const onChangeMock = jest.fn(() => "mock");
 
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}

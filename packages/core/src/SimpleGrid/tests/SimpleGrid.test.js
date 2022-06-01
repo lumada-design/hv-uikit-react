@@ -17,7 +17,7 @@ export default {
 describe("SimplelGrid", () => {
   it("correct render children", () => {
     const { getByTestId } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <SimpleGrid data-testid="ancestor">
           <p data-testid="descendant">Hello world</p>
         </SimpleGrid>
