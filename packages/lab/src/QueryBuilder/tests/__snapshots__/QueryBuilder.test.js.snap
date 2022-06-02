@@ -3,7 +3,7 @@
 exports[`QueryBuilder snapshot matches snapshot 1`] = `
 <div>
   <div
-    class="RuleGroup-root-1 RuleGroup-topGroup-3"
+    class="RuleGroup-root-1 HvQueryBuilder-root RuleGroup-topGroup-3 HvQueryBuilder-topGroup"
   >
     <div
       class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
@@ -12,11 +12,11 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <div
-          class="RuleGroup-combinator-4 RuleGroup-topCombinator-5 HvMultiButton-root"
+          class="RuleGroup-combinator-4 HvQueryBuilder-combinator RuleGroup-topCombinator-5 HvQueryBuilder-topCombinator HvMultiButton-root"
         >
           <button
             aria-pressed="true"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
             tabindex="0"
             type="button"
           >
@@ -28,7 +28,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
           </button>
           <button
             aria-pressed="false"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
             tabindex="0"
             type="button"
           >
@@ -45,7 +45,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
       >
         <button
           aria-label="Reset query"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-removeButton-9 RuleGroup-topRemoveButton-10 HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-removeButton-9 HvQueryBuilder-removeButton RuleGroup-topRemoveButton-10 HvQueryBuilder-topRemoveButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
           tabindex="0"
           type="button"
         >
@@ -139,7 +139,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
       class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
     >
       <div
-        class="MuiGrid-root RuleGroup-actionButtonContainer-7 RuleGroup-topActionButtonContainer-8 MuiGrid-item"
+        class="MuiGrid-root RuleGroup-actionButtonContainer-7 HvQueryBuilder-actionButtonContainer RuleGroup-topActionButtonContainer-8 HvQueryBuilder-topActionButtonContainer MuiGrid-item"
       >
         <button
           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
