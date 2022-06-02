@@ -73,7 +73,7 @@ jobs:
         with:
           file: dependency-check-report.xml
           serverUrl: ${{ secrets.CODEDX_SERVER_URL }}
-          projectId: ${{ env.CODEDX_SERVER_PROJECT_ID }};branch=${{ env.CURRENT_BRANCH }}
+          projectId: '${{ env.CODEDX_SERVER_PROJECT_ID }};branch=${{ env.CURRENT_BRANCH }}'
           key: ${{ secrets.CODEDX_TOKEN }}
 
   BlackDuckScan:
