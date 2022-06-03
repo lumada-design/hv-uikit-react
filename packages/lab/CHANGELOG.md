@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.8...@hitachivantara/uikit-react-lab@3.45.9) (2022-06-03)
+
+
+### Bug Fixes
+
+* **query-builder:** adding styles to the query builder to avoid material warning ([#2794](https://github.com/lumada-design/hv-uikit-react/issues/2794)) ([db7b205](https://github.com/lumada-design/hv-uikit-react/commit/db7b20587b5354cf241b1faddee1048ca1ef6899))
+
+
+
+
+
 ## [3.45.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.7...@hitachivantara/uikit-react-lab@3.45.8) (2022-06-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
