@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.67.8 (2022-06-06)
+
+
+### Bug Fixes
+
+* **vertical-navigation:** disabled item is not working. ([#2795](https://github.com/lumada-design/hv-uikit-react/issues/2795)) ([c9ce6a0](https://github.com/lumada-design/hv-uikit-react/commit/c9ce6a0e82f802c36c48ba81e2f6c33a0c7618a2))
+
+
+
+
+
 ## [3.67.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.6...@hitachivantara/uikit-react-core@3.67.7) (2022-06-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
