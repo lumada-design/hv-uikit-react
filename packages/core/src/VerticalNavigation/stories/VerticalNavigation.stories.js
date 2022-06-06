@@ -29,7 +29,7 @@ export const Main = () => {
   const navigationData = useMemo(
     () => [
       { id: "00", label: "Overview" },
-      { id: "01", label: "Analytics" },
+      { id: "01", label: "Analytics", selectable: false },
       {
         id: "02",
         label: "Storage",
@@ -49,6 +49,7 @@ export const Main = () => {
               {
                 id: "02-01-03",
                 label: "This Computer",
+                disabled: true,
               },
             ],
           },
