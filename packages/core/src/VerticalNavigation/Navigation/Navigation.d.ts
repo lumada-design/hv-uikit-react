@@ -21,11 +21,11 @@ export interface NavigationData {
   /**
    * if `true` the item is disabled and is not interactive.
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * if `true` the item doesn't have a selected state.
    */
-  selectable: boolean;
+  selectable?: boolean;
   /**
    * Any other properties.
    */
