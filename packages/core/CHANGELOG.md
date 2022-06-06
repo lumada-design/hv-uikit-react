@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.8...@hitachivantara/uikit-react-core@3.67.9) (2022-06-06)
+
+
+### Bug Fixes
+
+* **vertical-navigation:** fix typescript definition is not optional ([844ca11](https://github.com/lumada-design/hv-uikit-react/commit/844ca11d75b9ccdca33e80b5eb52cfd6687cffff))
+
+
+
+
+
 ## 3.67.8 (2022-06-06)
 
 
