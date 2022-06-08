@@ -62,6 +62,7 @@ export const Controls = () => {
         display: "grid",
         gap: 8,
       }}
+      data-testid="ancestor"
     >
       <ControlsRoot
         rightControlsProps={{
@@ -142,15 +143,17 @@ export const CustomControls = () => {
       }}
     >
       <ControlsRoot
+        leftControls={(props) => <div {...props}>{props?.placeholder}</div>}
+        leftControlsProps={{
+          placeholder: "Custom Left Controls",
+        }}
+        rightControls={(props) => <div {...props}>{props?.placeholder}</div>}
         rightControlsProps={{
+          placeholder: "Custom Right Controls",
           values: [
             { id: "age", label: "Age" },
             { id: "visits", label: "Visits" },
           ],
-        }}
-        leftControls={(props) => <div {...props}>{props?.placeholder}</div>}
-        leftControlsProps={{
-          placeholder: "Custom Left Controls",
         }}
         columns={columns}
         data={React.useMemo(() => makedata(5), [])}

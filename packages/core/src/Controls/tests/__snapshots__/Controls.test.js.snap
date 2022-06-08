@@ -1,0 +1,613 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls should render the component without customization 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      class="makeStyles-leftControl-2"
+    >
+      <div
+        class="HvInput-root HvFormElement-root"
+      >
+        <div
+          class="HvBaseInput-root"
+        >
+          <div
+            class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+          >
+            <input
+              aria-label="Search content"
+              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+              rows="10"
+              type="search"
+              value=""
+            />
+            <div
+              aria-hidden="true"
+              class="HvInput-adornmentsBox"
+            >
+              <div
+                aria-label="Search"
+                class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                role="presentation"
+              >
+                <div
+                  class="HvAdornment-icon"
+                >
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="Search"
+                  >
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+            role="presentation"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-rightControl-3"
+    >
+      <div
+        class="makeStyles-sortInput-4 HvDropdown-root HvFormElement-root"
+        id="sortByDropDown"
+      >
+        <div
+          class="HvDropdown-labelContainer"
+        >
+          <label
+            class="HvDropdown-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            id="sortByDropDown-label"
+          >
+            Sort by
+          </label>
+        </div>
+        <div
+          class="HvBaseDropdown-root HvDropdown-dropdown"
+        >
+          <div
+            aria-expanded="false"
+            aria-label="Sort by"
+            aria-labelledby="sortByDropDown-label"
+            class="HvBaseDropdown-anchor"
+            id="sortByDropDown-dropdown"
+            role="combobox"
+            tabindex="-1"
+          >
+            <div
+              aria-label="Sort by"
+              aria-labelledby="sortByDropDown-label"
+              class="HvBaseDropdown-header HvDropdown-dropdownHeader"
+              id="sortByDropDown-dropdown-header"
+              role="textbox"
+              tabindex="0"
+            >
+              <div
+                class="HvBaseDropdown-selection"
+              >
+                <div
+                  class="HvDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+                >
+                  Select...
+                </div>
+              </div>
+              <div
+                class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+                name="DropDownXS"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvMultiButton-root"
+      >
+        <button
+          aria-label="Select card view"
+          aria-pressed="true"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="card-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Cards"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+        <button
+          aria-label="Select list view"
+          aria-pressed="false"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="list-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="List"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls should render the component without left controls 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      class="makeStyles-leftControl-2"
+    >
+      <div
+        class="HvInput-root HvFormElement-root"
+      >
+        <div
+          class="HvBaseInput-root"
+        >
+          <div
+            class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+          >
+            <input
+              aria-label="Search content"
+              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+              rows="10"
+              type="search"
+              value=""
+            />
+            <div
+              aria-hidden="true"
+              class="HvInput-adornmentsBox"
+            >
+              <div
+                aria-label="Search"
+                class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                role="presentation"
+              >
+                <div
+                  class="HvAdornment-icon"
+                >
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="Search"
+                  >
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+            role="presentation"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-rightControl-3"
+    >
+      <div
+        class="makeStyles-sortInput-4 HvDropdown-root HvFormElement-root"
+        id="sortByDropDown"
+      >
+        <div
+          class="HvDropdown-labelContainer"
+        >
+          <label
+            class="HvDropdown-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            id="sortByDropDown-label"
+          >
+            Sort by
+          </label>
+        </div>
+        <div
+          class="HvBaseDropdown-root HvDropdown-dropdown"
+        >
+          <div
+            aria-expanded="false"
+            aria-label="Sort by"
+            aria-labelledby="sortByDropDown-label"
+            class="HvBaseDropdown-anchor"
+            id="sortByDropDown-dropdown"
+            role="combobox"
+            tabindex="-1"
+          >
+            <div
+              aria-label="Sort by"
+              aria-labelledby="sortByDropDown-label"
+              class="HvBaseDropdown-header HvDropdown-dropdownHeader"
+              id="sortByDropDown-dropdown-header"
+              role="textbox"
+              tabindex="0"
+            >
+              <div
+                class="HvBaseDropdown-selection"
+              >
+                <div
+                  class="HvDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+                >
+                  Select...
+                </div>
+              </div>
+              <div
+                class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+                name="DropDownXS"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvMultiButton-root"
+      >
+        <button
+          aria-label="Select card view"
+          aria-pressed="true"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="card-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Cards"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+        <button
+          aria-label="Select list view"
+          aria-pressed="false"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="list-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="List"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls should render the component without right controls 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      class="makeStyles-leftControl-2"
+    >
+      <div
+        class="HvInput-root HvFormElement-root"
+      >
+        <div
+          class="HvBaseInput-root"
+        >
+          <div
+            class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+          >
+            <input
+              aria-label="Search content"
+              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+              rows="10"
+              type="search"
+              value=""
+            />
+            <div
+              aria-hidden="true"
+              class="HvInput-adornmentsBox"
+            >
+              <div
+                aria-label="Search"
+                class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                role="presentation"
+              >
+                <div
+                  class="HvAdornment-icon"
+                >
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="Search"
+                  >
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+            role="presentation"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-rightControl-3"
+    >
+      <div
+        class="makeStyles-sortInput-4 HvDropdown-root HvFormElement-root"
+        id="sortByDropDown"
+      >
+        <div
+          class="HvDropdown-labelContainer"
+        >
+          <label
+            class="HvDropdown-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            id="sortByDropDown-label"
+          >
+            Sort by
+          </label>
+        </div>
+        <div
+          class="HvBaseDropdown-root HvDropdown-dropdown"
+        >
+          <div
+            aria-expanded="false"
+            aria-label="Sort by"
+            aria-labelledby="sortByDropDown-label"
+            class="HvBaseDropdown-anchor"
+            id="sortByDropDown-dropdown"
+            role="combobox"
+            tabindex="-1"
+          >
+            <div
+              aria-label="Sort by"
+              aria-labelledby="sortByDropDown-label"
+              class="HvBaseDropdown-header HvDropdown-dropdownHeader"
+              id="sortByDropDown-dropdown-header"
+              role="textbox"
+              tabindex="0"
+            >
+              <div
+                class="HvBaseDropdown-selection"
+              >
+                <div
+                  class="HvDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+                >
+                  Select...
+                </div>
+              </div>
+              <div
+                class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+                name="DropDownXS"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvMultiButton-root"
+      >
+        <button
+          aria-label="Select card view"
+          aria-pressed="true"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="card-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Cards"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+        <button
+          aria-label="Select list view"
+          aria-pressed="false"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="list-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="List"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

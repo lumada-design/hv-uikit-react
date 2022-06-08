@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Cards, List } from "@hitachivantara/uikit-react-icons";
-import { useTable, useSortBy, useAsyncDebounce, useGlobalFilter } from "react-table";
+import { useTable, useSortBy, useGlobalFilter } from "react-table";
 import HvInput from "../Input/Input";
 import MultiButton from "../AssetInventory/Multibutton/Multibutton";
 import HvDropdown from "../Dropdown/Dropdown";
@@ -18,6 +18,7 @@ const Controls = ({
   leftControlsProps,
   data,
   columns,
+  ...others
 }) => {
   const [selectedView, setSelectedView] = React.useState(0);
   // this should be changed when dropdown changes his "values" behaviour
@@ -37,9 +38,9 @@ const Controls = ({
     setSelectedView(viewIndex);
   };
 
-  const onChangeFilter = useAsyncDebounce((value) => {
+  const onChangeFilter = (value) => {
     setGlobalFilter(value || undefined);
-  }, 300);
+  };
 
   const onChangeSort = (value) => {
     setSortBy([{ id: value?.id }]);
@@ -49,7 +50,7 @@ const Controls = ({
     onSearchChange(rows);
   }, [onSearchChange, rows]);
 
-  const customLeftControls = (component, props) => {
+  const customControls = (component, props) => {
     if (component()) {
       return React.createElement(component, props);
     }
@@ -57,9 +58,9 @@ const Controls = ({
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} {...others}>
       <div className={styles.leftControl}>
-        {customLeftControls(leftControls, leftControlsProps) || (
+        {customControls(leftControls, leftControlsProps) || (
           <HvInput
             type="search"
             aria-label="Search content"
@@ -69,7 +70,7 @@ const Controls = ({
         )}
       </div>
       <div className={styles.rightControl}>
-        {rightControls && (
+        {customControls(rightControls, rightControlsProps) || (
           <>
             <HvDropdown
               id="sortByDropDown"
