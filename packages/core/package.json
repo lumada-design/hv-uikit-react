@@ -49,7 +49,6 @@
     "@babel/runtime": "^7.17.9",
     "@hitachivantara/uikit-common-themes": "^3.4.4",
     "@hitachivantara/uikit-react-icons": "^3.8.12",
-    "@hitachivantara/uikit-react-lab": "^3.45.7",
     "@popperjs/core": "2.11.5",
     "@types/plotly.js": "^1.54.20",
     "attr-accept": "^2.2.2",
