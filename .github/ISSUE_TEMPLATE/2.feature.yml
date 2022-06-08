@@ -15,7 +15,7 @@ body:
       options:
         - label: I have tested the latest version
           required: true
-   - type: checkboxes
+  - type: checkboxes
     attributes:
       label: No Hitachi Vantara confidential content
       description: Keep in mind this is a public repository. Do not share any information that you might even think is Hitachi Vantara confidential. Logos, references to work in progress projects, and of course, credentials. We will delete the issue immediately. 
