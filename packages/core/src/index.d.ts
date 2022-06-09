@@ -163,6 +163,9 @@ export { default as HvSnackbarProvider, useHvSnackbar } from "./Snackbar/Snackba
 export { default as HvStack } from "./Stack";
 export * from "./Stack";
 
+export { default as HvSimpleGrid } from "./SimpleGrid";
+export * from "./SimpleGrid";
+
 export { default as HvTab } from "./Tab";
 export * from "./Tab";
 

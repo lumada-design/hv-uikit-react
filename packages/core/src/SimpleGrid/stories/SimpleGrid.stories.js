@@ -1,14 +1,14 @@
 import React from "react";
-import SimpleGridRoot from "..";
+import HvSimpleGrid from "../SimpleGrid";
 
 export default {
   title: "Components/SimpleGrid",
   parameters: {
     componentSubtitle:
       "SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of space.",
-    usage: 'import { SimpleGrid } from "@hitachivantara/uikit-react-core"',
+    usage: 'import { HvSimpleGrid } from "@hitachivantara/uikit-react-core"',
   },
-  component: SimpleGridRoot,
+  component: HvSimpleGrid,
 };
 
 const style = {
@@ -20,17 +20,17 @@ const style = {
 };
 
 export const SimpleGrid = () => (
-  <SimpleGridRoot cols={2}>
+  <HvSimpleGrid cols={2}>
     <div style={style}>1</div>
     <div style={style}>2</div>
     <div style={style}>3</div>
     <div style={style}>4</div>
     <div style={style}>5</div>
-  </SimpleGridRoot>
+  </HvSimpleGrid>
 );
 
 export const BreakpointsGrid = () => (
-  <SimpleGridRoot
+  <HvSimpleGrid
     spacing="sm"
     breakpoints={[
       { minWidth: 980, cols: 3, spacing: "md" },
@@ -43,7 +43,7 @@ export const BreakpointsGrid = () => (
     <div style={style}>3</div>
     <div style={style}>4</div>
     <div style={style}>5</div>
-  </SimpleGridRoot>
+  </HvSimpleGrid>
 );
 
 BreakpointsGrid.parameters = {
