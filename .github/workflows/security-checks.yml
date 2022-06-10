@@ -20,7 +20,6 @@ jobs:
       - name: Discover current branch
         run: |
           REF=$( echo "${{ github.ref }}" ) # gets the branch or tag ref that triggered the workflow (something like 'refs/heads/branch-name')
-          REF=$( echo ${REF^^} ) # sets it to uppercase
           REF=$( echo ${REF##*/} ) # removes the 'refs/heads/' reference
           REF=$( echo ${REF//[_]/-} ) # replaces any '_' for a '-'
           echo "CURRENT_BRANCH=$REF" >> $GITHUB_ENV
