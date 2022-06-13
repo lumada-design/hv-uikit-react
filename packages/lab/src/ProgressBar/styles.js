@@ -39,12 +39,6 @@ const styles = (theme) => ({
     display: "flex",
     justifyContent: "end",
   },
-
-  progressBarLabelHidden: {
-    width: "1px",
-    height: "1px",
-    overflow: "hidden",
-  },
 });
 
 export default styles;

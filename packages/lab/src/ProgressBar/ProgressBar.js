@@ -24,7 +24,6 @@ const HvProgressBar = (props) => {
     classes,
     value = 0,
     status = statusCategories.inProgress,
-    undeterminate = false,
     labelProps,
     ...others
   } = props;
@@ -46,8 +45,7 @@ const HvProgressBar = (props) => {
           style={{ width: `${clampedValue}%` }}
           className={clsx(
             classes.progressBarLabel,
-            status === statusCategories.completed && classes.progressDone,
-            undeterminate && classes.progressBarLabelHidden
+            status === statusCategories.completed && classes.progressDone
           )}
           {...labelProps}
         >
@@ -110,10 +108,6 @@ HvProgressBar.propTypes = {
      * Style applied to the progress bar label.
      */
     progressBarLabel: PropTypes.string,
-    /**
-     * Style applied to the progress bar label.
-     */
-    progressBarLabelHidden: PropTypes.string,
   }).isRequired,
   /**
    * The value of the progress bar.
@@ -131,10 +125,6 @@ HvProgressBar.propTypes = {
     statusCategories.completed,
     statusCategories.error,
   ]),
-  /**
-   * If `true` the progress bar will not show the percentage label.
-   */
-  undeterminate: PropTypes.bool,
   /**
    * Aria Properties passed on to the progress bar.
    */

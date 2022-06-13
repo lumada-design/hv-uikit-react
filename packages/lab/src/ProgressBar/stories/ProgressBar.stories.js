@@ -35,29 +35,6 @@ export const Main = () => {
           marginBottom: 40,
         }}
       >
-        <HvTypography style={{ marginBottom: 15 }} variant="highlightText">
-          Success Underterminate
-        </HvTypography>
-        <ProgressBarSimulator
-          label={(v) => `${v}%`}
-          inc={(v) => v + 5}
-          undeterminate
-          ariaLabel="Underterminate Progress Bar"
-          ariaLive="polite"
-        />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: 400,
-          margin: "auto",
-          marginTop: 20,
-          marginBottom: 40,
-        }}
-      >
         <HvTypography variant="highlightText">Success</HvTypography>
         <ProgressBarSimulator
           label={(v) => `${v}%`}
@@ -167,96 +144,5 @@ export const Determined = () => {
 };
 
 Determined.parameters = {
-  docs: {},
-};
-
-export const Undeterminate = () => {
-  return (
-    <div
-      style={{
-        display: "flex:",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: 400,
-          margin: "auto",
-          marginTop: 20,
-          marginBottom: 40,
-        }}
-      >
-        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
-          Success
-        </HvTypography>
-        <HvProgressBar
-          status="completed"
-          value={100}
-          undeterminate
-          labelProps={{
-            "aria-label": "Example Undetermined Completed Progress Bar",
-            // "aria-busy":run,
-            "aria-live": "polite",
-          }}
-        />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: 400,
-          margin: "auto",
-          marginTop: 20,
-          marginBottom: 40,
-        }}
-      >
-        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
-          Loading
-        </HvTypography>
-        <HvProgressBar
-          value={40}
-          undeterminate
-          labelProps={{
-            "aria-label": "Example Undetermined Loading Progress Bar",
-            // "aria-busy":run,
-            "aria-live": "polite",
-          }}
-        />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: 400,
-          margin: "auto",
-        }}
-      >
-        <HvTypography style={{ marginBottom: 14 }} variant="highlightText">
-          Error
-        </HvTypography>
-        <HvProgressBar
-          value={30}
-          undeterminate
-          status="error"
-          labelProps={{
-            "aria-label": "Example Undetermined Error Progress Bar",
-            // "aria-busy":run,
-            "aria-live": "polite",
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-Undeterminate.parameters = {
   docs: {},
 };
