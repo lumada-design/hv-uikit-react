@@ -59,7 +59,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
               class="makeStyles-root-13"
             >
               <b>
-                5
+                4
               </b>
                / 20
             </div>
@@ -150,7 +150,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                         class="makeStyles-root-13 HvListItem-endAdornment"
                       >
                         <b>
-                          3
+                          2
                         </b>
                          / 12
                       </div>
@@ -691,7 +691,7 @@ exports[`<FilterGroup /> Main 1`] = `
               class="makeStyles-root-13"
             >
               <b>
-                5
+                4
               </b>
                / 20
             </div>
@@ -749,7 +749,7 @@ exports[`Changes are Canceled committed on cancel 1`] = `
       class="makeStyles-root-13"
     >
       <b>
-        5
+        4
       </b>
        / 20
     </div>
@@ -803,7 +803,7 @@ exports[`Changes are Canceled committed on cancel 2`] = `
       class="makeStyles-root-13"
     >
       <b>
-        5
+        4
       </b>
        / 20
     </div>
@@ -857,7 +857,7 @@ exports[`Changes are Committed on apply 1`] = `
       class="makeStyles-root-13"
     >
       <b>
-        5
+        4
       </b>
        / 20
     </div>
@@ -911,7 +911,7 @@ exports[`Changes are Committed on apply 2`] = `
       class="makeStyles-root-13"
     >
       <b>
-        4
+        3
       </b>
        / 20
     </div>
@@ -977,7 +977,7 @@ exports[`Clear Filters Clears all option selections and reset counters 1`] = `
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        3
+        2
       </b>
        / 12
     </div>
@@ -2814,9 +2814,7 @@ exports[`Reset Filters Resets all option selections to default value provided 1`
     <div
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
-      <b>
-        1
-      </b>
+      0
        / 12
     </div>
   </li>
@@ -3527,7 +3525,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        3
+        2
       </b>
        / 12
     </div>
@@ -3887,7 +3885,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        3
+        2
       </b>
        / 12
     </div>
