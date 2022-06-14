@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import useStyles from "./styles";
 
-const SimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) => {
+const HvSimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) => {
   const classes = useStyles({ breakpoints, cols, spacing })();
   return (
     <div className={classes.container} {...others}>
@@ -11,7 +12,7 @@ const SimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) 
   );
 };
 
-SimpleGrid.propTypes = {
+HvSimpleGrid.propTypes = {
   /**
    * -
    */
@@ -43,4 +44,4 @@ SimpleGrid.propTypes = {
   cols: PropTypes.number,
 };
 
-export default SimpleGrid;
+export default withStyles(useStyles, { name: "HvSimpleGrid" })(HvSimpleGrid);
