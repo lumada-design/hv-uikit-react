@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.9...@hitachivantara/uikit-react-core@3.67.10) (2022-06-15)
+
+
+### Bug Fixes
+
+* **SimpleGrid:** added simple grid to missing index files ([bccc483](https://github.com/lumada-design/hv-uikit-react/commit/bccc483f60d8790340d3d6e4892bd5c1c842ff6f))
+
+
+
+
+
 ## [3.67.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.8...@hitachivantara/uikit-react-core@3.67.9) (2022-06-06)
 
 

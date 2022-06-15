@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.11...@hitachivantara/uikit-react-lab@3.45.12) (2022-06-15)
+
+
+### Bug Fixes
+
+* **progress-bar:** remove indeterminate state ([b464afa](https://github.com/lumada-design/hv-uikit-react/commit/b464afa9820ec491c612457f45e8a462814e8115))
+
+
+
+
+
 ## [3.45.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.10...@hitachivantara/uikit-react-lab@3.45.11) (2022-06-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
