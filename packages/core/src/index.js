@@ -86,6 +86,10 @@ export { default as HvTooltip } from "./Tooltip";
 export { default as HvOverflowTooltip } from "./OverflowTooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
+export { default as HvSimpleGrid } from "./SimpleGrid";
+export { default as HvControls } from "./Controls";
+export { default as HvLeftControl } from "./Controls/LeftControl";
+export { default as HvRightControl } from "./Controls/RightControl";
 // TODO refactor the HvUserPreferences subcomponents' names
 export {
   Actions as HvUserPreferencesActions,

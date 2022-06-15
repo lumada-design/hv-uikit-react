@@ -1,28 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Cards, List } from "@hitachivantara/uikit-react-icons";
 import { useTable, useSortBy, useGlobalFilter } from "react-table";
-import HvInput from "../Input/Input";
-import MultiButton from "../AssetInventory/Multibutton/Multibutton";
-import HvDropdown from "../Dropdown/Dropdown";
+import RightControl from "./RightControl";
+import LeftControl from "./LeftControl";
 
 import useStyles from "./styles";
 
+// eslint-disable-next-line react/prop-types
+const LeftControls = ({ children, ...otherProps }) => (
+  <LeftControl {...otherProps}>{children}</LeftControl>
+);
+// eslint-disable-next-line react/prop-types
+const RightControls = ({ children, ...otherProps }) => (
+  <RightControl {...otherProps}>{children}</RightControl>
+);
+
 /** Controls it's a group of features used to control data that can be rendered using different views (table, cards, list). */
-const Controls = ({
-  onViewChange,
-  onSearchChange,
-  rightControls,
-  leftControls,
-  rightControlsProps,
-  leftControlsProps,
-  data,
-  columns,
-  ...others
-}) => {
-  const [selectedView, setSelectedView] = React.useState(0);
-  // this should be changed when dropdown changes his "values" behaviour
-  const [dropdDownValue] = React.useState(rightControlsProps?.values);
+const Controls = ({ onSearchChange, data, columns, children }) => {
   const styles = useStyles();
 
   const { rows, setGlobalFilter, setSortBy } = useTable(
@@ -34,95 +28,47 @@ const Controls = ({
     useSortBy
   );
 
-  const onChangeView = (_event, viewIndex) => {
-    setSelectedView(viewIndex);
-  };
-
-  const onChangeFilter = (value) => {
-    setGlobalFilter(value || undefined);
-  };
-
-  const onChangeSort = (value) => {
-    setSortBy([{ id: value?.id }]);
-  };
-
   React.useEffect(() => {
-    onSearchChange(rows);
+    onSearchChange?.(rows);
   }, [onSearchChange, rows]);
 
-  const customControls = (component, props) => {
-    if (component()) {
-      return React.createElement(component, props);
+  let rightControl;
+  let leftControl;
+
+  React.Children.forEach(children, (child) => {
+    if (child?.type === RightControls) {
+      rightControl = child;
     }
-    return null;
-  };
+
+    if (child?.type === LeftControls) {
+      leftControl = child;
+    }
+  });
 
   return (
-    <div className={styles.root} {...others}>
+    <div className={styles.root}>
       <div className={styles.leftControl}>
-        {customControls(leftControls, leftControlsProps) || (
-          <HvInput
-            type="search"
-            aria-label="Search content"
-            placeholder={leftControlsProps?.placeholder}
-            onChange={(e) => onChangeFilter(e.target.value)}
-          />
-        )}
+        {leftControl &&
+          React.cloneElement(leftControl, {
+            _setGlobalFilter: setGlobalFilter,
+            onSearchChange,
+          })}
       </div>
       <div className={styles.rightControl}>
-        {customControls(rightControls, rightControlsProps) || (
-          <>
-            <HvDropdown
-              id="sortByDropDown"
-              aria-label="Sort by"
-              label="Sort by"
-              values={dropdDownValue}
-              className={styles.sortInput}
-              onChange={onChangeSort}
-            />
-            <MultiButton
-              views={[
-                { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-                { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-              ]}
-              selectedView={selectedView}
-              changeView={onChangeView}
-              onViewChange={onViewChange}
-            />
-          </>
-        )}
+        {rightControl && React.cloneElement(rightControl, { _setSortBy: setSortBy })}
       </div>
     </div>
   );
 };
 
+Controls.LeftControls = LeftControls;
+Controls.RightControls = RightControls;
+
 Controls.propTypes = {
-  /** Callback fired when the view type is changed within the left controls. */
-  onViewChange: PropTypes.func,
+  /** Children to be rendered. */
+  children: PropTypes.node,
   /** Callback fired when the users starts typing in the input field field within the right controls. */
   onSearchChange: PropTypes.func,
-  /** Optional custom functional component to replace the left controls. */
-  leftControls: PropTypes.func,
-  /** Optional custom properties passed to the left controls.
-   * <i>If a custom component is implemented, this property will be forwarded to it. </i>
-   */
-  leftControlsProps: PropTypes.shape({
-    placeholder: PropTypes.string,
-  }),
-  /** Optional custom functional component to replace the right controls. */
-  rightControls: PropTypes.func,
-  /** Optional custom properties passed to the right controls.
-   * <i>If a custom component is implemented, this property will be forwarded to it. </i>
-   */
-  rightControlsProps: PropTypes.shape({
-    values: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        label: PropTypes.string,
-        selected: PropTypes.bool,
-      })
-    ),
-  }),
   /** The data array that you want to display on the table.
    * <b>Must be memoized</b>
    */
@@ -131,12 +77,6 @@ Controls.propTypes = {
    * <b>Must be memoized</b>
    */
   columns: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-Controls.defaultProps = {
-  onViewChange: () => null,
-  onSearchChange: () => null,
-  leftControls: () => null,
-  rightControls: () => null,
 };
 
 export default Controls;

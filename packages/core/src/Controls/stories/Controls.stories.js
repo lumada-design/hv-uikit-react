@@ -9,7 +9,7 @@ export default {
   title: "Components/Controls",
   parameters: {
     componentSubtitle: "",
-    usage: 'import { Controls } from "@hitachivantara/uikit-react-core"',
+    usage: 'import { HvControls } from "@hitachivantara/uikit-react-core"',
   },
   component: ControlsRoot,
 };
@@ -65,19 +65,18 @@ export const Controls = () => {
       data-testid="ancestor"
     >
       <ControlsRoot
-        rightControlsProps={{
-          values: [
-            { id: "age", label: "Age" },
-            { id: "visits", label: "Visits" },
-          ],
-        }}
-        leftControlsProps={{
-          placeholder: "Search",
-        }}
         columns={columns}
         data={React.useMemo(() => makedata(5), [])}
         onSearchChange={onSearchChange}
-      />
+      >
+        <ControlsRoot.LeftControls placeholder="Search" onSearchChange={onSearchChange} />
+        <ControlsRoot.RightControls
+          values={[
+            { id: "age", label: "Age" },
+            { id: "visits", label: "Visits" },
+          ]}
+        />
+      </ControlsRoot>
       <SimpleGrid cols={3}>
         {data?.map((row, index) => {
           return (
@@ -143,22 +142,27 @@ export const CustomControls = () => {
       }}
     >
       <ControlsRoot
-        leftControls={(props) => <div {...props}>{props?.placeholder}</div>}
-        leftControlsProps={{
-          placeholder: "Custom Left Controls",
-        }}
-        rightControls={(props) => <div {...props}>{props?.placeholder}</div>}
-        rightControlsProps={{
-          placeholder: "Custom Right Controls",
-          values: [
-            { id: "age", label: "Age" },
-            { id: "visits", label: "Visits" },
-          ],
-        }}
         columns={columns}
         data={React.useMemo(() => makedata(5), [])}
         onSearchChange={onSearchChange}
-      />
+      >
+        <ControlsRoot.LeftControls
+          placeholder="Search"
+          onSearchChange={onSearchChange}
+          search={false}
+        >
+          Custom left control
+        </ControlsRoot.LeftControls>
+        <ControlsRoot.RightControls
+          values={[
+            { id: "age", label: "Age" },
+            { id: "visits", label: "Visits" },
+          ]}
+          viewSelect={false}
+        >
+          Custom right control
+        </ControlsRoot.RightControls>
+      </ControlsRoot>
       <SimpleGrid cols={3}>
         {data?.map((row, index) => {
           return (

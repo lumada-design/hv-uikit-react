@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-env jest */
 
 import React from "react";
@@ -82,7 +83,19 @@ function App(props) {
     []
   );
 
-  return <HvControls columns={columns} data={data} {...props} />;
+  return (
+    <HvControls columns={columns} data={data} {...props}>
+      {props?.leftControl && <HvControls.LeftControls placeholder="Search" />}
+      {props?.rightControl && (
+        <HvControls.RightControls
+          values={[
+            { id: "age", label: "Age" },
+            { id: "visits", label: "Visits" },
+          ]}
+        />
+      )}
+    </HvControls>
+  );
 }
 
 describe("Controls", () => {
@@ -92,43 +105,13 @@ describe("Controls", () => {
     expect(container).toMatchSnapshot();
   });
   it("should render the component without left controls", () => {
-    const { container } = render(<App leftControls={() => null} />);
+    const { container } = render(<App leftControl={false} />);
 
     expect(container).toMatchSnapshot();
   });
   it("should render the component without right controls", () => {
-    const { container } = render(<App rightControls={() => null} />);
+    const { container } = render(<App rightControls={false} />);
 
     expect(container).toMatchSnapshot();
-  });
-
-  it("should render the component with the custom right controls", () => {
-    const { getByTestId } = render(
-      <App
-        rightControls={(props) => <div data-testid={props?.testid}>{props?.customProp}</div>}
-        rightControlsProps={{
-          testid: "custom-right",
-          customProp: "test",
-        }}
-      />
-    );
-
-    expect(getByTestId("custom-right")).toHaveTextContent("test");
-    expect(getByTestId("custom-right")).toHaveAttribute("data-testid");
-  });
-
-  it("should render the component with the custom left controls", () => {
-    const { getByTestId } = render(
-      <App
-        leftControls={(props) => <div data-testid={props?.testid}>{props?.customProp}</div>}
-        leftControlsProps={{
-          testid: "custom-left",
-          customProp: "test",
-        }}
-      />
-    );
-
-    expect(getByTestId("custom-left")).toHaveTextContent("test");
-    expect(getByTestId("custom-left")).toHaveAttribute("data-testid");
   });
 });
