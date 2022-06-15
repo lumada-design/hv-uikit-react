@@ -82,11 +82,18 @@ describe("Clear Filters", () => {
     let leftSizeList = screen.getByRole("list");
     let rightSizeList = screen.getByRole("listbox");
 
+    expect(screen.getAllByText("4").length).toBe(1);
+    expect(screen.getAllByText("2").length).toBe(3);
+
     expect(leftSizeList).toMatchSnapshot();
     expect(rightSizeList).toMatchSnapshot();
 
     const clearFiltersButton = screen.getByRole("button", { name: /clear filters/i });
     userEvent.click(clearFiltersButton);
+
+    expect(screen.queryAllByText("4").length).toBe(0);
+    expect(screen.queryAllByText("2").length).toBe(0);
+
     leftSizeList = await screen.findByRole("list");
     rightSizeList = screen.getByRole("listbox");
     expect(leftSizeList).toMatchSnapshot();
@@ -155,6 +162,9 @@ describe("Right side selection", () => {
     const leftSizeList = screen.getByRole("list");
     const rightSizeList = screen.getByRole("listbox");
 
+    expect(screen.getAllByText("4").length).toBe(1);
+    expect(screen.getAllByText("2").length).toBe(3);
+
     expect(leftSizeList).toMatchSnapshot();
     expect(rightSizeList).toMatchSnapshot();
     let checkBox1 = screen.getByRole("checkbox", { name: /category 3/i });
@@ -162,6 +172,11 @@ describe("Right side selection", () => {
     userEvent.click(checkBox1);
     checkBox1 = await screen.findByRole("checkbox", { name: /category 3/i });
     expect(checkBox1).toBeChecked();
+
+    expect(screen.getAllByText("5").length).toBe(1);
+    expect(screen.queryAllByText("2").length).toBe(1);
+    expect(screen.getAllByText("3").length).toBe(2);
+
     expect(leftSizeList).toMatchSnapshot();
     expect(rightSizeList).toMatchSnapshot();
   });
@@ -189,12 +204,18 @@ describe("Changes are", () => {
     userEvent.click(dropdownElement);
     dropdownElement = await screen.findByRole("combobox");
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+
+    expect(screen.getAllByText("4").length).toBe(1);
+
     let checkBox1 = screen.getByRole("checkbox", { name: /category 2/i });
     userEvent.click(checkBox1);
     checkBox1 = await screen.findByRole("checkbox", { name: /category 2/i });
 
     const applyButton = screen.getByRole("button", { name: /apply/i });
     userEvent.click(applyButton);
+
+    expect(screen.queryAllByText("3").length).toBe(1);
+
     dropdownElement = await screen.findByRole("combobox");
     expect(dropdownElement).toMatchSnapshot();
   });
