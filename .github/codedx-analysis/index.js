@@ -69,7 +69,7 @@ async function main() {
 
   const form = new FormData();
   form.append("file", fs.createReadStream(filePath));
-  form.append("includeGitSource", true);
+  form.append("includeGitSource", "true");
   form.append("gitBranchName", branchName);
   form.append("branchName", branchName);
 
