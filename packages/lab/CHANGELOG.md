@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.12...@hitachivantara/uikit-react-lab@3.46.0) (2022-06-20)
+
+
+### Features
+
+* **Table:** added list variant to table ([dc1139d](https://github.com/lumada-design/hv-uikit-react/commit/dc1139dad7aec354ff4aaebc01a6522d8f3263ec))
+
+
+
+
+
 ## [3.45.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.11...@hitachivantara/uikit-react-lab@3.45.12) (2022-06-15)
 
 

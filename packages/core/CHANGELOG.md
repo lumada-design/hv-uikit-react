@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.10...@hitachivantara/uikit-react-core@3.67.11) (2022-06-20)
+
+
+### Bug Fixes
+
+* **filter-group:** counter component was not counting correctly ([eb044d8](https://github.com/lumada-design/hv-uikit-react/commit/eb044d8dc2a0ec515ab142ece35763fb178d1351))
+
+
+
+
+
 ## [3.67.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.9...@hitachivantara/uikit-react-core@3.67.10) (2022-06-15)
 
 
