@@ -78,7 +78,7 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
         {
           [classes[`align${capitalize(align)}`]]: align !== "inherit",
           [classes[`variant${capitalize(variant)}`]]: variant !== "default",
-
+          [classes.variantList]: tableContext.variant === "listrow",
           [classes.stickyColumn]: stickyColumn,
           [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
           [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
@@ -344,6 +344,10 @@ HvTableHeader.propTypes = {
      * Styles applied to the component root when its variant is none
      */
     variantNone: PropTypes.string,
+    /**
+     * Styles applied to the component root when its variant is list row
+     */
+    variantList: PropTypes.string,
     /**
      * Styles applied to the cell when it's part of a resizable column.
      */

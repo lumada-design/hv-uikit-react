@@ -21,6 +21,7 @@ export type HvTableHeaderClassKey =
   | "variantCheckbox"
   | "variantExpand"
   | "variantActions"
+  | "variantList"
   | "variantNone"
   | "sortable"
   | "sorted"
