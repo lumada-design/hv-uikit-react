@@ -30,6 +30,8 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
 
   const type = tableSectionContext?.type || "body";
 
+  const isList = tableContext.variant === "listrow";
+
   const Component = component || tableContext?.components?.Tr || defaultComponent;
 
   return (
@@ -43,7 +45,10 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
           [classes.selected]: selected,
           [classes.expanded]: expanded,
           [classes.striped]: striped,
+          [classes.variantList]: isList && type === "body",
+          [classes.variantListHead]: isList && type === "head",
         },
+        tableSectionContext.filterClassName,
         className
       )}
       role={Component === defaultComponent ? null : "row"}
@@ -58,7 +63,6 @@ HvTableRow.propTypes = {
    * Defaults to tr.
    */
   component: PropTypes.elementType,
-
   /**
    * Content to be rendered
    */
@@ -77,17 +81,14 @@ HvTableRow.propTypes = {
    * Whether the table row will have the selected shading.
    */
   selected: PropTypes.bool,
-
   /**
    * Whether the table row is expanded.
    */
   expanded: PropTypes.bool,
-
   /**
    * Whether the table row background is striped.
    */
   striped: PropTypes.bool,
-
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -124,6 +125,14 @@ HvTableRow.propTypes = {
      * Styles applied to the component root when inside a `HvTableFooter`.
      */
     footer: PropTypes.string,
+    /**
+     * Styles applied to the component root when its table variant is list.
+     */
+    variantList: PropTypes.string,
+    /**
+     * Styles applied to the component root when its table variant is list.
+     */
+    variantListHead: PropTypes.string,
   }).isRequired,
 };
 

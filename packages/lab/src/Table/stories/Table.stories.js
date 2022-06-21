@@ -1,11 +1,13 @@
 import React, { useMemo } from "react";
 import { makeStyles, useTheme } from "@material-ui/core";
 import {
+  HvButton,
   HvTypography,
   HvEmptyState,
   HvCheckBox,
   HvDropDownMenu,
 } from "@hitachivantara/uikit-react-core";
+
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
 import {
@@ -353,6 +355,90 @@ ResponsiveTable.parameters = {
   docs: {
     description: {
       story: "A table with non-table elements and responsive layout (try resizing your browser).",
+    },
+  },
+};
+
+export const ListRow = () => {
+  const [checkedIdx, toggleChecked] = useToggleIndex(0);
+
+  const columns = useMemo(() => {
+    const initialColumns = getColumns();
+
+    initialColumns.push({
+      Header: "Details",
+      accessor: "link",
+    });
+
+    return initialColumns;
+  }, []);
+
+  const data = useMemo(
+    () =>
+      makeData(4).map((row) => ({
+        ...row,
+        link: "/details",
+      })),
+    []
+  );
+
+  return (
+    <HvTableContainer style={{ padding: "2px" }}>
+      <HvTable variant="listrow">
+        <HvTableHead>
+          <HvTableRow>
+            <HvTableCell variant="listcheckbox" />
+            {columns.map((el) => (
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody withNavigation>
+          {data.map((el, idx) => {
+            return (
+              <HvTableRow key={el.id} hover selected={checkedIdx === idx}>
+                <HvTableCell variant="listcheckbox">
+                  <HvCheckBox checked={checkedIdx === idx} onClick={toggleChecked(idx)} />
+                </HvTableCell>
+                <HvTableCell>{el.name}</HvTableCell>
+                <HvTableCell>{el.createdDate}</HvTableCell>
+                <HvTableCell>{el.eventType}</HvTableCell>
+                <HvTableCell>{el.status}</HvTableCell>
+                <HvTableCell align="center">{el.riskScore}</HvTableCell>
+                <HvTableCell>{el.severity}</HvTableCell>
+                <HvTableCell>{el.priority}</HvTableCell>
+                <HvTableCell variant="listactions">
+                  <HvButton category="ghost">View</HvButton>
+                  <HvDropDownMenu
+                    keepOpened={false}
+                    placement="left"
+                    onClick={(e, item) => alert(item.label)}
+                    dataList={[
+                      {
+                        label: "Share",
+                      },
+                      {
+                        label: "Hide",
+                      },
+                      {
+                        label: "Remove",
+                      },
+                    ]}
+                  />
+                </HvTableCell>
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+ListRow.parameters = {
+  docs: {
+    description: {
+      story: "List Row Variant of the table.",
     },
   },
 };

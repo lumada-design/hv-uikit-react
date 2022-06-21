@@ -1,5 +1,186 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Table List Row should be defined 1`] = `
+<div>
+  <div
+    class="HvTableContainer-root"
+  >
+    <table
+      class="HvTable-root HvTable-listRow"
+    >
+      <thead
+        class="HvTableHead-root"
+      >
+        <tr
+          class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead"
+        >
+          <th
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList"
+            scope="col"
+          >
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 0
+              </div>
+            </div>
+          </th>
+          <th
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList"
+            scope="col"
+          >
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 1
+              </div>
+            </div>
+          </th>
+          <th
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList"
+            scope="col"
+          >
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 2
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="HvTableBody-root"
+      >
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body HvTableCell-variantList"
+          >
+            Sample Cell 2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
 exports[`Table Simple Table should be defined 1`] = `
 <div>
   <div
@@ -62,7 +243,7 @@ exports[`Table Simple Table should be defined 1`] = `
         class="HvTableBody-root"
       >
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -81,7 +262,7 @@ exports[`Table Simple Table should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -100,7 +281,7 @@ exports[`Table Simple Table should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -119,7 +300,7 @@ exports[`Table Simple Table should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -138,7 +319,7 @@ exports[`Table Simple Table should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -157,7 +338,7 @@ exports[`Table Simple Table should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="HvTableRow-root HvTableRow-body"
+          class="HvTableRow-root HvTableRow-body grid"
         >
           <td
             class="HvTableCell-root HvTableCell-body"

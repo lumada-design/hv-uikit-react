@@ -72,7 +72,34 @@ const styles = (theme) => {
       paddingTop: 0,
       paddingBottom: 0,
     },
-
+    variantList: {
+      minHeight: 52,
+      "td&": {
+        height: 52,
+      },
+      padding: "0, 0, 0, 32px",
+      border: 0,
+    },
+    variantListHead: {
+      backgroundColor: "inherit",
+      "td&": {
+        height: 16,
+      },
+    },
+    variantListactions: {
+      borderLeft: `solid 2px ${theme.hv.palette.atmosphere.atmo2}`,
+      paddingLeft: "0",
+      textAlign: "center",
+      width: 130,
+      maxWidth: 130,
+    },
+    variantListcheckbox: {
+      borderRight: `solid 2px ${theme.hv.palette.atmosphere.atmo2}`,
+      padding: 0,
+      textAlign: "center",
+      width: 34,
+      maxWidth: 34,
+    },
     stickyColumn: {
       position: "sticky",
       zIndex: 2,

@@ -15,6 +15,8 @@ export type HvTableCellClassKey =
   | "variantCheckbox"
   | "variantExpand"
   | "variantActions"
+  | "variantListactions"
+  | "variantListcheckbox"
   | "variantNone"
   | "resizable"
   | "resizing";
@@ -38,7 +40,7 @@ export interface HvTableCellProps
   /**
    * Sets the cell's variant.
    */
-  variant?: "checkbox" | "expand" | "actions" | "default" | "none";
+  variant?: "checkbox" | "expand" | "actions" | "default" | "listcheckbox" | "listactions" | "none";
 
   /**
    * Specify the cell type.
