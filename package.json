@@ -115,5 +115,9 @@
     "webpack": "^4.46.0",
     "yalc": "^1.0.0-pre.53",
     "yup": "^0.32.11"
+  },
+  "dependencies": {
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1"
   }
 }

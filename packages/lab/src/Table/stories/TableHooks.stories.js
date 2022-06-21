@@ -4,10 +4,15 @@
 // Skipping packages/lab/src/Table/stories/TableHooks.stories.js: NoMetaError: CSF: missing default export
 // this .stories.js file is only intended to be parsed for retrieving the stories' source code,
 // but they are rendered by the TableHooks.stories.mdx file
-
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import range from "lodash/range";
+import debounce from "lodash/debounce";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import KeyboardBackend, { isKeyboardDragTrigger } from "react-dnd-accessible-backend";
+import { MultiBackend, createTransition } from "react-dnd-multi-backend";
+import { DndProvider, useDrag, useDrop } from "react-dnd";
+import update from "immutability-helper";
 import clsx from "clsx";
 import {
   useFlexLayout,
@@ -1348,6 +1353,230 @@ export const DragAndDrop = () => {
 };
 
 DragAndDrop.parameters = {
+  docs: {
+    description: {
+      story: "A table with Drag and Drop, using React Dnd package. ",
+    },
+  },
+};
+
+export const DungeonsAndDragons = () => {
+  const ItemTypes = {
+    ROW: "ROW",
+  };
+
+  const classes = makeStyles((theme) => {
+    // required because we need to style the element inside the table and the one created by react portal
+    const tableRow = {
+      "&:hover": {
+        outline: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+        "& td": {
+          borderBottom: "solid 1px transparent",
+        },
+      },
+      "&:focus": {
+        outlineColor: "#52A8EC",
+        outlineStyle: "solid",
+        outlineWidth: "0px",
+        outlineOffset: "-1px",
+        boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+        "& td": {
+          borderBottom: "solid 1px transparent",
+        },
+      },
+      "&$tableRowDragging": {
+        background: theme.hv.palette.atmosphere.atmo3,
+        outline: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        boxShadow: theme.hv.shadows[1],
+        "& td": {
+          borderBottom: "solid 1px transparent",
+        },
+      },
+    };
+
+    return {
+      tableContainer: {
+        "& table$table": {},
+      },
+      table: {
+        tableLayout: "fixed",
+      },
+      tableBody: {
+        "& tr$tableRow": tableRow,
+      },
+      tableRow,
+      tableRowDragging: {},
+      tableCell: {
+        border: "none",
+      },
+    };
+  })();
+
+  const dropTargetAboveStyle = {
+    position: "absolute",
+    top: -8,
+    left: -8,
+    right: -8,
+    border: "2px solid #00ff00",
+  };
+
+  const dropTargetBelowStyle = {
+    position: "absolute",
+    bottom: -8,
+    left: -8,
+    right: -8,
+    border: "2px solid #00ff00",
+  };
+
+  const DraggableRow = ({ id, row, rowProps, index, moveRow }) => {
+    const ref = useRef(null);
+
+    const [{ isOver, isAbove, isBelow }, drop] = useDrop({
+      accept: ItemTypes.ROW,
+      canDrop: () => true,
+      collect(monitor) {
+        const dragIndex = monitor.getItem()?.index ?? -1;
+        return {
+          isOver: monitor.isOver(),
+          isAbove: dragIndex > index,
+          isBelow: dragIndex < index,
+        };
+      },
+      drop: debounce((item) => {
+        moveRow(item.index, index);
+      }, 500),
+    });
+    const [{ isDragging }, drag] = useDrag({
+      type: ItemTypes.ROW,
+      item: () => {
+        return { id, index };
+      },
+      collect: (monitor) => ({
+        isDragging: monitor.isDragging(),
+      }),
+    });
+
+    const opacity = isDragging ? 0 : 1;
+    drag(drop(ref));
+
+    const content = (style = {}) => row.cells.map((cell) => (
+      <TableCell style={{...style}} cellId={cell.column.id} {...cell.getCellProps()} className={clsx({})}>
+        {cell.render("Cell")}
+      </TableCell>
+    ));
+    
+    const child = (
+      <HvTableRow
+        tabIndex={0}
+        ref={ref}
+        className={clsx(classes.tableRow, {
+          // [classes.tableRowDragging]: snapshot.isDragging,
+        })}
+        style={{ opacity }}
+        {...rowProps}
+      >
+        {content()}
+      </HvTableRow>
+    );
+    return child;
+  };
+
+  const theme = useTheme();
+  const columns = useMemo(() => getColumns(), []);
+
+  const rowId = "name";
+
+  const getRowId = useCallback((v) => `${v[rowId]}`, [rowId]);
+  const [records, setRecords] = React.useState(makeData(10));
+
+  const setMove = (dragIndex, hoverIndex) => {
+    console.log(`dragIndex: ${dragIndex}, hoverIndex: ${hoverIndex}`);
+    const newRecords = update(records, {
+      $splice: [
+        [dragIndex, 1],
+        [hoverIndex, 0, records[dragIndex]],
+      ],
+    });
+    setRecords([...newRecords]);
+  };
+
+  const moveRow = useCallback(setMove, [setMove]);
+
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+    columns,
+    data: records,
+    getRowId,
+  });
+
+  const KeyboardTransition = createTransition("keydown", (event) => {
+    if (!isKeyboardDragTrigger(event)) return false;
+    event.preventDefault();
+    return true;
+  });
+
+  const MouseTransition = createTransition("mousedown", (event) => {
+    if (event.type.indexOf("touch") !== -1 || event.type.indexOf("mouse") === -1) return false;
+    return true;
+  });
+
+  const DND_OPTIONS = {
+    backends: [
+      {
+        id: "html5",
+        backend: HTML5Backend,
+        transition: MouseTransition,
+      },
+      {
+        id: "keyboard",
+        backend: KeyboardBackend,
+        context: { window, document },
+        options: {
+          announcerClassName: "announcer",
+        },
+        preview: true,
+        transition: KeyboardTransition,
+      },
+    ],
+  };
+
+  return (
+    <DndProvider backend={MultiBackend} options={DND_OPTIONS}>
+      <HvTableContainer className={classes.tableContainer} style={{ overflow: "visible" }}>
+        <HvTable {...getTableProps()} className={classes.table}>
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()} className={classes.tableBody}>
+            {rows.map((row) => {
+              prepareRow(row);
+
+              const { key, ...rowProps } = row.getRowProps();
+
+              return (
+                <DraggableRow
+                  id={row.id}
+                  key={row.id}
+                  row={row}
+                  rowProps={rowProps}
+                  index={row.index}
+                  moveRow={moveRow}
+                />
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+    </DndProvider>
+  );
+};
+
+DungeonsAndDragons.parameters = {
   docs: {
     description: {
       story: "A table with Drag and Drop, using React Dnd package. ",
