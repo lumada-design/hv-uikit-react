@@ -332,6 +332,7 @@ const HvSlider = (props) => {
 
     const isEmpty = Number.isNaN(knobsPositions[index]) || knobsPositions[index] == null;
     const handleId = setId(elementId, "knob");
+    const indexedHandleId = setId(handleId, index);
     return (
       <div
         key={index}
@@ -347,9 +348,10 @@ const HvSlider = (props) => {
           visible={dragging}
           placement="top"
           overlayClassName={classes.sliderTooltip}
+          getTooltipContainer={() => document.getElementById(indexedHandleId)}
         >
           <div
-            id={setId(handleId, index)}
+            id={indexedHandleId}
             style={style}
             className={clsx(knobClassName, classes.handle)}
             {...restProps}
