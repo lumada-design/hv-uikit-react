@@ -27,7 +27,8 @@ const Value = ({ id, attribute, operator, value: valueProp }) => {
       );
     }
     case "text":
-    case "textarea": {
+    case "textarea":
+    default: {
       return <TextValue id={id} value={valueProp} initialTouched={initialTouched} />;
     }
     case "dateandtime": {
@@ -39,9 +40,6 @@ const Value = ({ id, attribute, operator, value: valueProp }) => {
           initialTouched={initialTouched}
         />
       );
-    }
-    default: {
-      return null;
     }
   }
 };

@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const defaultOperators = {
+export const defaultOperators = {
   numeric: [
     {
       operator: "greaterThan",
@@ -168,12 +168,12 @@ const defaultOperators = {
   ],
 };
 
-const defaultCombinators = [
+export const defaultCombinators = [
   { operand: "and", label: "AND" },
   { operand: "or", label: "OR" },
 ];
 
-const defaultLabels = {
+export const defaultLabels = {
   query: {
     delete: {
       ariaLabel: "Reset query",

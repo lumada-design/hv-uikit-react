@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 
 import queryToMongo from "./queryToMongo";
-import HvQueryBuilder from "..";
+import HvQueryBuilder, { defaultOperators } from "..";
 
 export default {
   title: "Lab/QueryBuilder",
@@ -34,9 +34,18 @@ export const Main = () => {
       label: "Date & Time",
       type: "dateandtime",
     },
+    key6: {
+      label: "Custom",
+      type: "customType",
+    },
   };
 
-  return <HvQueryBuilder attributes={attributes} />;
+  const operators = {
+    ...defaultOperators,
+    customType: [...defaultOperators.text],
+  };
+
+  return <HvQueryBuilder attributes={attributes} operators={operators} />;
 };
 
 export const InitialQuery = () => {
