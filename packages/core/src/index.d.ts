@@ -193,6 +193,9 @@ export * from "./Tooltip";
 export { default as HvOverflowTooltip } from "./OverflowTooltip";
 export * from "./OverflowTooltip";
 
+export { default as HvTimePicker } from "./TimePicker";
+export * from "./TimePicker";
+
 export { default as HvTypography } from "./Typography";
 export * from "./Typography";
 
