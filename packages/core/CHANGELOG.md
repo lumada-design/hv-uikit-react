@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.11...@hitachivantara/uikit-react-core@3.67.12) (2022-06-22)
+
+
+### Bug Fixes
+
+* **Slider:** update rc-tooltip version. [#2807](https://github.com/lumada-design/hv-uikit-react/issues/2807) ([4fc619f](https://github.com/lumada-design/hv-uikit-react/commit/4fc619f555a11c80db5f5085922bffc14b4b450e))
+
+
+
+
+
 ## [3.67.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.10...@hitachivantara/uikit-react-core@3.67.11) (2022-06-20)
 
 
