@@ -74,7 +74,7 @@ async function main() {
   form.append("branchName", branchName);
 
   axios
-    .post(`${serverUrl}/codedx/api/projects/${projectId}%3Bbranch%3Dmain/analysis`, form, {
+    .post(`${serverUrl}/codedx/api/projects/${projectId}%3Bbranch%3D${branchName}/analysis`, form, {
       headers: {
         ...authorizationHeaders.headers,
         ...form.getHeaders(),
