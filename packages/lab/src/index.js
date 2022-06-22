@@ -14,6 +14,7 @@ export { default as HvTag } from "./Tag";
 export { default as HvDrawer } from "./Drawer";
 export { default as HvColorPicker } from "./ColorPicker";
 export { default as HvQueryBuilder } from "./QueryBuilder";
+export * from "./QueryBuilder";
 export { default as HvInlineEditor } from "./InlineEditor";
 export { default as HvProgressBar } from "./ProgressBar";
 export { default as HvDotPagination } from "./DotPagination";
