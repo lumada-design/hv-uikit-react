@@ -84,6 +84,7 @@ export { default as HvTagsInput } from "./TagsInput";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export { default as HvOverflowTooltip } from "./OverflowTooltip";
+export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 // TODO refactor the HvUserPreferences subcomponents' names
