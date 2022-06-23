@@ -12,6 +12,9 @@ inputs:
   projectId:
     description: The ID of the CodeDx project
     required: true
+  branchName:
+    description: The name of the CodeDX project branch
+    required: true
   key:
     description: The API Key to authenticate the CodeDx calls
     required: true

@@ -14,6 +14,7 @@ const filePath = path.join(process.env.GITHUB_WORKSPACE, core.getInput("file"));
 const key = core.getInput("key");
 const serverUrl = core.getInput("serverUrl");
 const projectId = core.getInput("projectId");
+const branchName = core.getInput("branchName");
 
 const authorizationHeaders = {
   headers: {
@@ -68,9 +69,16 @@ async function main() {
 
   const form = new FormData();
   form.append("file", fs.createReadStream(filePath));
+  form.append("includeGitSource", "true");
+  form.append("gitBranchName", branchName);
+  form.append("branchName", branchName);
+  
+  const postUrl = `${serverUrl}/codedx/api/projects/${projectId}/analysis`
+  
+  core.info(`URL: ${postUrl}`);
 
   axios
-    .post(`${serverUrl}/codedx/api/projects/${projectId}/analysis`, form, {
+    .post(`${postUrl}`, form, {
       headers: {
         ...authorizationHeaders.headers,
         ...form.getHeaders(),
