@@ -1,16 +1,22 @@
 # JavaScript action
 name: Upload to CodeDx
-description: Uploads a result of Dependency Check to CodeDx
+description: Uploads a result of Dependency Check to CodeDx and checks for unresolved issues
 
 inputs:
   file:
     description: The file containing the dependencies to load
     required: true
   serverUrl:
-    description: The URL of the CodeDx serverUrl
+    description: The URL of the CodeDx server
     required: true
   projectId:
     description: The ID of the CodeDx project
+    required: true
+  projectName:
+    description: The Name of the project
+    required: true
+  branchName:
+    description: The name of the CodeDX project branch
     required: true
   key:
     description: The API Key to authenticate the CodeDx calls
