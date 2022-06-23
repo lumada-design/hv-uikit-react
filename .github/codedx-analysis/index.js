@@ -72,9 +72,13 @@ async function main() {
   form.append("includeGitSource", "true");
   form.append("gitBranchName", branchName);
   form.append("branchName", branchName);
-
+  
+  const postUrl = `${serverUrl}/codedx/api/projects/${projectId}/analysis`
+  
+  core.info(`URL: ${postUrl}`);
+  
   axios
-    .post(`${serverUrl}/codedx/api/projects/${projectId}/analysis`, form, {
+    .post(`${postUrl}`, form, {
       headers: {
         ...authorizationHeaders.headers,
         ...form.getHeaders(),
