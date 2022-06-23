@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open card sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}display-card--${sample}
+    Go To                            ${dir}card--${sample}
     Wait Until Element Is Enabled    ${card}
 
 

@@ -23,7 +23,7 @@ from first item focus last     move focus    ${item1}    ARROW_UP      ${item3}
 
 activates item and close menu when item is focused and is pressed ENTER
     [Template]    NONE
-    Go To                                ${components}inputs-dropdown-menu--controlled
+    Go To                                ${inputs}dropdown-menu--controlled
     Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
     Wait Until Element Is Visible        ${item1}
@@ -47,7 +47,7 @@ focus page elements with TAB
 open menu
     [Documentation]    drop menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    Go To                               ${components}inputs-dropdown-menu--disabled-items
+    Go To                               ${inputs}dropdown-menu--disabled-items
     Wait Until Element Is Enabled       ${dropDownMenu}
     set focus and press keys            ${dropDownMenu}    ${keyboard}
     Wait Until Element Is Visible       ${menuList}
@@ -56,14 +56,14 @@ open menu
 close menu
     [Documentation]    close menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    open dropdownmenu sample             ${components}    disabled-items
+    open dropdownmenu sample             ${inputs}    disabled-items
     Press Keys                           NONE     ${keyboard}
     Wait Until Element Is Not Visible    ${item1}
 
 move focus
     [Documentation]    move focus from item to other is pressed keyboard
     [Arguments]    ${previous}    ${keyboard}    ${next}
-    open dropdownmenu sample            ${components}    disabled-items
+    open dropdownmenu sample            ${inputs}    disabled-items
     Click Element                       ${previous}
     Press Keys                          NONE    ${keyboard}
     Wait Until Page Contains Element    ${next}:focus

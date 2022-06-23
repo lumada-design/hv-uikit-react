@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvAccordion, HvListContainer, HvListItem, HvInput, HvButton, HvTable } from "../..";
 
 export default {
-  title: "Components/Display/Accordion",
+  title: "Display/Accordion",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvAccordion } from '@hitachivantara/uikit-react-core'",

@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}navigation-pagination--main
+...           Go To    ${navigation}pagination--main
 ...           AND    Wait Until Element Is Visible    ${input}
 
 

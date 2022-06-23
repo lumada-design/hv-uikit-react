@@ -2,7 +2,7 @@ import React from "react";
 import HvSimpleGrid from "../SimpleGrid";
 
 export default {
-  title: "Components/Layout/SimpleGrid",
+  title: "Layout/SimpleGrid",
   parameters: {
     componentSubtitle:
       "SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of space.",

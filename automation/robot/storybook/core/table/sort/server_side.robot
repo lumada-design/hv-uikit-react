@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _keywords.resource
-Test Setup    open table sample    ${components}    server-side-pagination
+Test Setup    open table sample    ${display}    server-side-pagination
 
 
 *** Test Cases ***

@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _dropDown.resource
-Test Setup       open dropdown sample    ${components}    multi-selection
+Test Setup       open dropdown sample    ${inputs}    multi-selection
 Force Tags       keyboard
 Documentation    https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-6
 

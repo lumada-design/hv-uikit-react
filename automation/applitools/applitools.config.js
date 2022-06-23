@@ -6,7 +6,7 @@ const isIncludedPath = (kind) => {
 const isExcludedSample = (kind) => {
   const excludedSamples = [
     // asset inventory stories excluded due inconsistent view port (applitools ticket)
-    "Templates/Asset Inventory",
+    "Widgets/Asset Inventory",
     // dialog is opened and tested via Tests/Dialog
     "Components/Overlay/Dialog",
 

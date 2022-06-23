@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open tabs sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}navigation-tabs--${sample}
+    Go To                            ${dir}tabs--${sample}
     Wait Until Element Is Enabled    ${tabs}
 
 

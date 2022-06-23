@@ -4,7 +4,7 @@ Resource    ../_keywords.resource
 
 *** Test Cases ***
 drops links from level 2 to 7 when breadcrumb drop button is clicked
-    [setup]    Go To    ${components}navigation-breadcrumb--limited-to-two-paths
+    [setup]    Go To    ${navigation}breadcrumb--limited-to-two-paths
     Wait Until Element Is Visible    ${breadcrumb}
     Element Text Should Be           ${breadcrumb}           Label 1\nLabel 8
     Click Element                    ${breadcrumb} button
@@ -12,7 +12,7 @@ drops links from level 2 to 7 when breadcrumb drop button is clicked
     Element Text Should Be           ${dropDown}    ${label_text}
 
 show all links levels when breadcrumb is rendered
-    [setup]    Go To    ${components}navigation-breadcrumb--with-url
+    [setup]    Go To    ${navigation}breadcrumb--with-url
     Wait Until Element Is Visible    ${breadcrumb}
     Element Text Should Be           ${breadcrumb}    ${label_text2}
 

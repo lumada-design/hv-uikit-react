@@ -14,7 +14,7 @@ import {
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
-  title: "Components/Structure/Header",
+  title: "Structure/Header",
   parameters: {
     componentSubtitle: null,
     usage:

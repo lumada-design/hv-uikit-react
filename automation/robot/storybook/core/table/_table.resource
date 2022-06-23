@@ -5,7 +5,7 @@ Resource     ../_keywords.resource
 *** Keywords ***
 open table sample
     [Arguments]    ${dir}    ${sample}
-    go to                            ${dir}display-table--${sample}
+    go to                            ${dir}table--${sample}
     Wait Until Element Is Enabled    ${table}
 
 

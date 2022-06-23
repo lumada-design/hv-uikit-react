@@ -21,7 +21,7 @@ server side - 100 rows    server-side-pagination    100   100   6
 *** Keywords ***
 show correct rows and pages when rows per page is changed
     [Arguments]    ${sample}    ${per_page}    ${populated}    ${pages}
-    open table sample                    ${components}    ${sample}
+    open table sample                    ${display}    ${sample}
     Select Dropdown Value                ${rows_per_page}    ${per_page}
     Wait Until Page Contains Element     ${rows_populated}    timeout=5s    limit=${populated}
     Page Should Contain Element          ${rows}    limit=${per_page}

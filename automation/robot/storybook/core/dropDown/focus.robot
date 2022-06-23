@@ -6,10 +6,10 @@ Documentation    verify where is the focus when dropdown is opened
 
 
 *** Test Cases ***         where            story                           element
-Focus input on single      ${components}    single-selection-with-search    ${searchInput}
-Focus 1st list item        ${components}    single-selection-no-selection   ${option}(1)
-Focus input on multi       ${components}    main                            ${searchInput}
-Focus All                  ${components}    multi-selection-no-search       ${selectAll}
+Focus input on single      ${inputs}    single-selection-with-search    ${searchInput}
+Focus 1st list item        ${inputs}    single-selection-no-selection   ${option}(1)
+Focus input on multi       ${inputs}    main                            ${searchInput}
+Focus All                  ${inputs}    multi-selection-no-search       ${selectAll}
 
 
 *** Keywords ***

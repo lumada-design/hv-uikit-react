@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _dialog.resource
-Test Setup    open modal sample    ${components}    text-and-semantic
+Test Setup    open modal sample    ${overlay}    text-and-semantic
 Force Tags    keyboard
 
 

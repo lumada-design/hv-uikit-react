@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvScrollToHorizontal, HvContainer, HvInput, HvTypography } from "../../..";
 
 export default {
-  title: "Components/Navigation/ScrollTo/Horizontal",
+  title: "Navigation/ScrollTo/Horizontal",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvScrollToHorizontal } from '@hitachivantara/uikit-react-core'",

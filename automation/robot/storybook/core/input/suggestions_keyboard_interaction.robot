@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _input.resource
-Test Setup       open input sample    ${components}    suggestion
+Test Setup       open input sample    ${inputs}    suggestion
 Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
 

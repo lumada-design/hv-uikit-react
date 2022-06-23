@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         ../_table.resource
-Test Setup       open table sample    ${components}    table-with-changing-data
+Test Setup       open table sample    ${display}    table-with-changing-data
 Documentation    bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
 
 

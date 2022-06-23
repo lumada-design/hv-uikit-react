@@ -10,7 +10,7 @@ api select item
     Element Text Should Be     ${dropdownHeader}    Value 3    ignore_case=True
 
 select an item
-    [Setup]    open dropdown sample      ${components}    single-selection-no-selection
+    [Setup]    open dropdown sample      ${inputs}    single-selection-no-selection
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
     click Element                        ${option}(2)
     Wait Until Element Is Not Visible    ${listBox}
@@ -24,7 +24,7 @@ unselect an item
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
 
 multi selection is changed
-    [Setup]    open dropdown sample      ${components}    multi-selection
+    [Setup]    open dropdown sample      ${inputs}    multi-selection
     Element Text Should Be               ${dropdownHeader}    1 / 4
     click Element                        ${option}(3)
     Click Button                         Apply

@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _input.resource
-Test Setup    open input sample    ${components}    main
+Test Setup    open input sample    ${inputs}    main
 Documentation
 ...           complementary tests on:
 ...           Suite: ...\automation\robot\storybook\core\input\adornments.robot

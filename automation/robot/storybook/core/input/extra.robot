@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _input.resource
-Test Setup    open input sample    ${components}    password
+Test Setup    open input sample    ${inputs}    password
 
 
 *** Test Cases ***

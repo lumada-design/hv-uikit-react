@@ -4,7 +4,7 @@ import { TopXS, BottomXS, Level0Good, Level2Average } from "@hitachivantara/uiki
 import { HvKpi, HvTypography, HvCard } from "../..";
 
 export default {
-  title: "Components/Visualizations/KPI",
+  title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvKpi } from "@hitachivantara/uikit-react-core"',

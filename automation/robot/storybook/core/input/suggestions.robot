@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _input.resource
-Test Setup    open input sample    ${components}    suggestion
+Test Setup    open input sample    ${inputs}    suggestion
 
 
 *** Test Cases ***

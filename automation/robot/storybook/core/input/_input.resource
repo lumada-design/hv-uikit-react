@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open input sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}inputs-input--${sample}
+    Go To                            ${dir}input--${sample}
     Wait Until Element Is Enabled    ${input}
 
 

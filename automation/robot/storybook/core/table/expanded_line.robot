@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _table.resource
-Test Setup    open table sample    ${components}    with-expander-and-custom-content
+Test Setup    open table sample    ${display}    with-expander-and-custom-content
 
 
 *** Test Cases ***

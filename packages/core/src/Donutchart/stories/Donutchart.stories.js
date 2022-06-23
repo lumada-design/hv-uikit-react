@@ -4,7 +4,7 @@ import React from "react";
 import { HvDonutchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
 
 export default {
-  title: "Components/Visualizations/Donut Chart",
+  title: "Visualizations/Donut Chart",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDonutchart } from "@hitachivantara/uikit-react-core"',

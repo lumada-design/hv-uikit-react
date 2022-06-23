@@ -35,7 +35,7 @@ change locale result format
 mouse events does not open when it is disabled
     [Documentation]
     ...     use case: it can be disabled and if so not interactable
-    [Setup]   Go To     ${components}inputs-date-picker--disabled
+    [Setup]   Go To     ${inputs}date-picker--disabled
     Wait Until Element Is Visible      ${datePickerHeader}
     mouses does not open datepicker    ${datePickerRoot}
     mouses does not open datepicker    ${datePickerCombobox}
@@ -46,7 +46,7 @@ mouse events does not open when it is disabled
 keyboard events does not open when it is disabled
     [Documentation]
     ...     use case: it can be disabled and if so not interactable
-    [Setup]     Go To    ${components}inputs-date-picker--disabled
+    [Setup]     Go To    ${inputs}date-picker--disabled
     Wait Until Element Is Visible        ${datePickerHeader}
     keyboard does not open datepicker    ${datePickerRoot}
     keyboard does not open datepicker    ${datePickerCombobox}

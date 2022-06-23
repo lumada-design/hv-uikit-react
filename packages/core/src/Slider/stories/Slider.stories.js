@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvButton, HvSlider } from "../..";
 
 export default {
-  title: "Components/Inputs/Slider",
+  title: "Inputs/Slider",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvSlider } from "@hitachivantara/uikit-react-core"',

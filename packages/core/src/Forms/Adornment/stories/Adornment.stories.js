@@ -5,7 +5,7 @@ import { Preview, PreviewOff, Success, Fail } from "@hitachivantara/uikit-react-
 import { HvBaseInput, HvFormElement, HvLabel, HvAdornment, HvButton } from "../../..";
 
 export default {
-  title: "How to Guides/Forms/Form Element Blocks/Adornment",
+  title: "How To Guides/Forms/Form Element Blocks/Adornment",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvAdornment } from "@hitachivantara/uikit-react-core"',

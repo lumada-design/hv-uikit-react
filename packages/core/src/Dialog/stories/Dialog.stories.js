@@ -18,7 +18,7 @@ import {
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Overlay/Dialog",
+  title: "Overlay/Dialog",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDialog } from "@hitachivantara/uikit-react-core"',

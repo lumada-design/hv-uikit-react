@@ -12,7 +12,7 @@ import {
 } from "../../..";
 
 export default {
-  title: "How to Guides/Forms/Form Element",
+  title: "How To Guides/Forms/Form Element",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvFormElement } from "@hitachivantara/uikit-react-core"',

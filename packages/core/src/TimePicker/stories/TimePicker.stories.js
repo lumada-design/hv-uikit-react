@@ -6,7 +6,7 @@ import HvTimePicker from "../index";
 import { getFormattedTime } from "../timePickerFormatter";
 
 export default {
-  title: "Components/Inputs/Time Picker",
+  title: "Inputs/Time Picker",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTimePicker } from "@hitachivantara/uikit-react-core"',

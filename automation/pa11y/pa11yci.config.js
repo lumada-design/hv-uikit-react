@@ -25,7 +25,7 @@ const defaultIgnores = [
 ];
 
 const overrides = {
-  "Templates/Asset Inventory/List View": {
+  "Widgets/Asset Inventory/List View": {
     "*": {
       // <div aria-label="selectable"></div> is a noop
       // it won't be read by a screen reader as the element

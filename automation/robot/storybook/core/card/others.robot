@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _card.resource
-Test Setup    open card sample    ${components}    all-components
+Test Setup    open card sample    ${display}    all-components
 
 
 *** Test Cases ***

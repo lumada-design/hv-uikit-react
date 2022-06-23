@@ -5,7 +5,7 @@ Resource          ../_keywords.resource
 *** Keywords ***
 open dropdown sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}inputs-dropdown--${sample}
+    Go To                            ${dir}dropdown--${sample}
     Wait Until Element Is Enabled    ${dropdown}
     ${count}    Get Element Count	 ${listContainer}
     Run Keyword If                   ${count}==0

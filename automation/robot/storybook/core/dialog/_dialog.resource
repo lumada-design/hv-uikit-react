@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open modal sample
     [Arguments]    ${dir}    ${sample}
-    go to                            ${dir}overlay-dialog--${sample}
+    go to                            ${dir}dialog--${sample}
     Wait Until Element Is Enabled    css:button.HvButton-root
 
 

@@ -5,7 +5,7 @@ Resource     ../../_keywords.resource
 *** Keywords ***
 open header sample
     [Arguments]    ${dir}    ${sample}
-    Go To                            ${dir}structure-header--${sample}
+    Go To                            ${dir}header--${sample}
     Wait Until Element Is Visible    ${header}
 
 header item should be selected

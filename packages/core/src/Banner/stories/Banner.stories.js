@@ -5,7 +5,7 @@ import { HvButton, HvBanner, HvBannerContent, HvTypography } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Feedback/Banner",
+  title: "Feedback/Banner",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBanner } from "@hitachivantara/uikit-react-core"',

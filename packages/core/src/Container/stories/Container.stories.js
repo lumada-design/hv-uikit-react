@@ -5,7 +5,7 @@ import HvContainer from "../Container";
 import useWidth from "../../utils/useWidth";
 
 export default {
-  title: "Components/Layout/Container",
+  title: "Layout/Container",
   parameters: {
     componentSubtitle: null,
     usage: 'import {HvContainer} from "@hitachivantara/uikit-react-core"',

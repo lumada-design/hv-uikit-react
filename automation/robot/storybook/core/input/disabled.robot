@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       _input.resource
 Suite Setup    Run Keywords
-...            Go To    ${components}inputs-input--disabled
+...            Go To    ${inputs}input--disabled
 ...            AND    Wait Until Element Is Visible    ${input}
 
 

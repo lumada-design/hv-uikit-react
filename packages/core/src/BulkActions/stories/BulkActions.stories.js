@@ -7,7 +7,7 @@ import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 import { HvBulkActions, HvCheckBox, HvPagination } from "../..";
 
 export default {
-  title: "Components/Structure/Bulk Actions",
+  title: "Structure/Bulk Actions",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBulkActions } from "@hitachivantara/uikit-react-core"',

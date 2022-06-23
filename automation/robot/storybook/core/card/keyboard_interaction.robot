@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _card.resource
-Test Setup    open card sample    ${components}    selectable
+Test Setup    open card sample    ${display}    selectable
 Force Tags    keyboard
 
 

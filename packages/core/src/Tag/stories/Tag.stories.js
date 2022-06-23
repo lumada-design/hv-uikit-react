@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { HvTag, HvTypography, HvTooltip, HvListContainer, HvListItem } from "../..";
 
 export default {
-  title: "Components/Display/Tag",
+  title: "Display/Tag",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTag } from "@hitachivantara/uikit-react-core"',

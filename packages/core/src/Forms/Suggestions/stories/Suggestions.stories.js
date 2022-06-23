@@ -15,7 +15,7 @@ import { KeyboardCodes, isKeypress } from "../../../utils";
 import countryList from "../../../Input/stories/countries";
 
 export default {
-  title: "How to Guides/Forms/Form Element Blocks/Suggestions",
+  title: "How To Guides/Forms/Form Element Blocks/Suggestions",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvSuggestions } from "@hitachivantara/uikit-react-core"',

@@ -12,7 +12,7 @@ import { HvListView, HvListViewCell, HvListViewRow, HvTypography } from "../../.
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Templates/Asset Inventory/List View",
+  title: "Widgets/Asset Inventory/List View",
   parameters: {
     componentSubtitle: null,
     usage:
