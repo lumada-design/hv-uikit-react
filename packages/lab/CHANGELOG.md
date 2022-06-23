@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.47.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.46.1...@hitachivantara/uikit-react-lab@3.47.0) (2022-06-23)
+
+
+### Features
+
+* **querybuilder:** allow custom attribute types ([#2812](https://github.com/lumada-design/hv-uikit-react/issues/2812)) ([22d6eed](https://github.com/lumada-design/hv-uikit-react/commit/22d6eed6169285ecbfad5e957c0959ef79371b07))
+
+
+
+
+
 ## [3.46.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.46.0...@hitachivantara/uikit-react-lab@3.46.1) (2022-06-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
