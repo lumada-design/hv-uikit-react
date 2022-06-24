@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.13...@hitachivantara/uikit-react-core@3.67.14) (2022-06-24)
+
+
+### Bug Fixes
+
+* **actionbar:** export props ([a9a1f18](https://github.com/lumada-design/hv-uikit-react/commit/a9a1f184c9ad9d7bfb17b7169771571ee8a4ea7a))
+* **TimePicker:** export Time Picker component on the package root ([#2811](https://github.com/lumada-design/hv-uikit-react/issues/2811)) ([7d6d1c8](https://github.com/lumada-design/hv-uikit-react/commit/7d6d1c8844b698de75fa0baa2d78913cbabb4bf2))
+
+
+
+
+
 ## [3.67.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.12...@hitachivantara/uikit-react-core@3.67.13) (2022-06-23)
 
 
