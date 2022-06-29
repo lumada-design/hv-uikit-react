@@ -4,9 +4,8 @@ import uniqueId from "lodash/uniqueId";
 import dayjs from "dayjs";
 import clsx from "clsx";
 
-import { HvDatePicker, HvWarningText } from "@hitachivantara/uikit-react-core";
+import { HvDatePicker, HvWarningText, HvTimePicker } from "@hitachivantara/uikit-react-core";
 
-import HvTimePicker from "../../../../TimePicker";
 import Context from "../../../Context";
 import { padTime, parseDate, parseTime } from "./utils";
 
