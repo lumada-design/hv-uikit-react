@@ -1,3 +1,5 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = (theme) => {
   const ring = {
     width: "32px",
@@ -105,6 +107,14 @@ const styles = (theme) => {
           "&::after": {
             ...border,
           },
+        },
+        // Note about the usage of `!important below`: the way the rc-slider allows us to
+        // style the knobs is through inline styles. This means that the `box-shadow`, which
+        // is an inline style and is set to `none` to prevent the default rc-slider style to
+        // show, can't be overriden for the focus scenario unless we use the `!important` flag.
+        "&:focus-visible": {
+          ...outlineStyles,
+          boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)!important",
         },
       },
     },
