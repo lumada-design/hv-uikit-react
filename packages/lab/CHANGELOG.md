@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.47.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.1...@hitachivantara/uikit-react-lab@3.47.2) (2022-06-30)
+
+
+### Bug Fixes
+
+* **QueryBuilder:** use TimePicker in the core package. [#2810](https://github.com/lumada-design/hv-uikit-react/issues/2810) ([#2818](https://github.com/lumada-design/hv-uikit-react/issues/2818)) ([b3f3bee](https://github.com/lumada-design/hv-uikit-react/commit/b3f3bee35d09a9be2d55301875b91a8438b2785b))
+
+
+
+
+
 ## [3.47.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.0...@hitachivantara/uikit-react-lab@3.47.1) (2022-06-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
