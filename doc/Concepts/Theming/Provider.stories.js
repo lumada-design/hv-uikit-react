@@ -11,7 +11,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
+import componentDefinitions from "../../Introduction/ComponentVersioningTable/versions";
 
 const HvButtonWithMargin = withStyles({
   root: {
@@ -20,7 +20,7 @@ const HvButtonWithMargin = withStyles({
 })(HvButton);
 
 export default {
-  title: "Foundation/Provider",
+  title: "Concepts/Provider",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvProvider } from '@hitachivantara/uikit-react-core'",

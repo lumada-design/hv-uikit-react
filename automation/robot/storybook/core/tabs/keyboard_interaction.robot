@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _tabs.resource
-Test Setup    open tabs sample    ${components}    main
+Test Setup    open tabs sample    ${navigation}    main
 Force Tags    keyboard
 Documentation
 ...    We are using Material UI component which do not support w3c which uses arrows
@@ -14,7 +14,7 @@ Focus next element when TAB keyboard is pressed on focused tab
     Element Should Be Focused            ${tab}(2)
 
 Focus next enabled element and jumps disabled elements when TAB is pressed
-    [setup]    open tabs sample    ${components}    text-size
+    [setup]    open tabs sample    ${navigation}    text-size
     Wait Until Element Is Visible        ${tabs}
     Set Focus To Element                 ${tab}(1)
     Element Should Be Focused            ${tab}(1)
@@ -28,7 +28,7 @@ Focus previous element when using SHIFT+TAB on a focused element
     Element Should Be Focused            ${tab}(1)
 
 Focus previous element and jumps disabled elements when using SHIFT TAB on a focused element
-    [setup]    open tabs sample    ${components}    text-size
+    [setup]    open tabs sample    ${navigation}    text-size
     Wait Until Element Is Visible        ${tabs}
     Set Focus To Element                 ${tab}(3)
     Element Should Be Focused            ${tab}(3)

@@ -5,7 +5,7 @@ Resource    ../../_keywords.resource
 *** Keywords ***
 open radio button group sample
     [Arguments]    ${sample}
-    go to                            ${forms}radio-button-group--${sample}
+    go to                            ${inputs}radio-button-group--${sample}
     Wait Until Element Is Enabled    ${radioButtonGroup}
 
 radioButton should be selected

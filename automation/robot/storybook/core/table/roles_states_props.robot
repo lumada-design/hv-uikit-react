@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _table.resource
-Test Setup       open table sample    ${visualizations}    with-checkbox
+Test Setup       open table sample    ${display}    with-checkbox
 Force Tags       wai-aria-practices
 Documentation    https://www.w3.org/TR/wai-aria-practices/#table
 
@@ -48,7 +48,7 @@ aria-sort ascending or descending when a column is order by
     Element Attribute Value Should Be    ${header}(8)    aria-sort    ${None}
 
 aria-selected as boolean when a row is selected and unselected
-    [Setup]    open table sample    ${visualizations}    with-checkbox
+    [Setup]    open table sample    ${display}    with-checkbox
     Page Should Contain Element          ${rows} [aria-selected=false]    limit=10
     Page Should Contain Element          ${rows} [aria-selected=true]    limit=0
     Select Checkbox                      ${row}(1) ${checkBox}
@@ -57,7 +57,7 @@ aria-selected as boolean when a row is selected and unselected
     Wait Until Page Contains Element     ${row}(1) [aria-selected=false]
 
 aria-expanded as boolean when a row is expanded and shrink
-    [Setup]    open table sample    ${visualizations}    with-expander-and-custom-content
+    [Setup]    open table sample    ${display}    with-expander-and-custom-content
     Page Should Not Contain Element           ${rows} [aria-expanded=true]
     Click Element                             ${button_expand}
     Wait Until Page Contains Element          ${row}(1) [aria-expanded=true]

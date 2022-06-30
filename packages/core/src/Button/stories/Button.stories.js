@@ -12,7 +12,7 @@ import {
 import { HvButton } from "../..";
 
 export default {
-  title: "Components/Button",
+  title: "Inputs/Button",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvButton } from "@hitachivantara/uikit-react-core"',

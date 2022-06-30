@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _dropDownMenu.resource
-Suite Setup      open dropdownmenu sample    ${components}    disabled-items
+Suite Setup      open dropdownmenu sample    ${inputs}    disabled-items
 Test Template    Element Attribute Value Should Be
 Force Tags       wai-aria-practices
 Documentation    https://www.w3.org/TR/wai-aria-practices/#wai-aria-roles-states-and-properties-13

@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _adornments.resource
-Test Setup    open adornment sample    ${forms}    main
+Test Setup    open adornment sample    ${howto}    main
 
 
 *** Test Cases ***

@@ -1,10 +1,11 @@
 *** Setting ***
 Resource      _input.resource
-Test Setup    open input sample    ${forms}    suggestion
+Test Setup    open input sample    ${inputs}    suggestion
 
 
 *** Test Cases ***
 update suggestions when input is being changed
+    Wait Until Element Is Visible    ${input}
     Press Keys                          ${input}    p
     Wait Until Page Contains            Pakistan
     Press Keys                          NONE    o
@@ -13,6 +14,7 @@ update suggestions when input is being changed
     Page Should Contain Element         ${suggestion_options}    limit=2
 
 close suggestions list when a suggestion item is selected
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Click Element                        ${suggestion_Portugal}
@@ -21,6 +23,7 @@ close suggestions list when a suggestion item is selected
 
 select correctly suggestion when suggestion text area is pressed
     [Tags]     bug-ie-webdriver
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Click Element                        xpath://li[.='Portugal']
@@ -29,12 +32,14 @@ select correctly suggestion when suggestion text area is pressed
 
 
 close suggestions list when did not have related suggestions to display
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    Jo
     Wait Until Element Is Visible        ${suggestion_list}
     Press Keys                           NONE   ao
     Wait Until Element Is Not Visible    ${suggestion_list}
 
 close suggestions list when is clicked away
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Click Element                        ${label}
@@ -42,6 +47,7 @@ close suggestions list when is clicked away
     Textfield Value Should Be            ${input}    po
 
 close suggestions list when input is cleaned
+    Wait Until Element Is Visible    ${input}
     Press Keys                           ${input}    p
     Wait Until Element Is Visible        ${suggestion_list}
     Press Keys                           NONE    BACKSPACE

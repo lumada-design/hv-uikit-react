@@ -9,7 +9,7 @@ import { HvTypography } from "../..";
 import HvAppSwitcher from "..";
 
 export default {
-  title: "Components/App Switcher",
+  title: "Widgets/App Switcher",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvAppSwitcher } from "@hitachivantara/uikit-react-core"',

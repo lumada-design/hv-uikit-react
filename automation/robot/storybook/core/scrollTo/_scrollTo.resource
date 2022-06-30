@@ -4,12 +4,12 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open scroll to horizontal sample
     [Arguments]    ${sample}
-    Go To    ${components}scrollto-horizontal--${sample}
+    Go To    ${navigation}scrollto-horizontal--${sample}
     Wait Until Page Contains Element    ${scrollroot}
 
 open scroll to vertical sample
     [Arguments]    ${sample}
-    Go To    ${components}scrollto-vertical--${sample}
+    Go To    ${navigation}scrollto-vertical--${sample}
     Wait Until Page Contains Element    ${scrollroot}
 
 get current scroll position

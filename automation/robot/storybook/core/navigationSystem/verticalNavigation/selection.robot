@@ -1,6 +1,6 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
-Test Setup        open vertical navigation sample    ${components}    collapsable
+Test Setup        open vertical navigation sample    ${structure}    collapsable
 Documentation     Test Cases based on Design System Version 1.2.0
 
 

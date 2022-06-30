@@ -1,12 +1,12 @@
 *** Setting ***
 Resource      _dropDownMenu.resource
-Test Setup    open dropdownmenu sample    ${components}    disabled-items
+Test Setup    open dropdownmenu sample    ${inputs}    disabled-items
 
 
 *** Test Cases ***
 open dropdown menu when click dropdown button
     [Setup]    NONE
-    Go To                               ${components}dropdown-menu--disabled-items
+    Go To                               ${inputs}dropdown-menu--disabled-items
     Wait Until Element Is Enabled       ${dropDownMenu}
     Click Element                       ${dropDownMenu}
     Wait Until Page Contains Element    ${menuList}
@@ -20,7 +20,7 @@ close dropdow menu when is pressed right click out of list
     Wait Until Element Is Not Visible    ${menuList}
 
 close dropdown menu when item is selected
-    [Setup]    open dropdownmenu sample    ${components}    controlled
+    [Setup]    open dropdownmenu sample    ${inputs}    controlled
     Click Element                        ${item1}
     Wait Until Element Is Not Visible    ${menuList}
 

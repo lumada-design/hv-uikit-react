@@ -4,7 +4,7 @@ import { Hidden, Paper, withStyles, useTheme } from "@material-ui/core";
 import { HvGrid, HvContainer, HvTypography, useWidth } from "../..";
 
 export default {
-  title: "Foundation/Grid",
+  title: "Layout/Grid",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvGrid } from "@hitachivantara/uikit-react-core"',

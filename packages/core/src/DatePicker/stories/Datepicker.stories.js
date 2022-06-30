@@ -15,7 +15,7 @@ import "dayjs/locale/en";
 import "dayjs/locale/fr";
 
 export default {
-  title: "Forms/Date Picker",
+  title: "Inputs/Date Picker",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDatePicker } from "@hitachivantara/uikit-react-core"',

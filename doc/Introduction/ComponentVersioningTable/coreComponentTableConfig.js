@@ -5,7 +5,7 @@ import LinkTo from "@storybook/addon-links/react";
 import Stable from "../../../.storybook/blocks/resources/Stable";
 import DSVersion from "../../../.storybook/blocks/resources/DSVersion.js";
 
-import componentDefinitions from "../ComponentVersioningTable/versions";
+import componentDefinitions from "./versions";
 
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 

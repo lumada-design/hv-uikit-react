@@ -12,7 +12,7 @@ import { HvDropdown, HvInput, HvPanel, HvTypography, HvEmptyState } from "../.."
 import countryList, { continents, countries } from "./countries";
 
 export default {
-  title: "Forms/Search Box",
+  title: "Inputs/Search Box",
   parameters: {
     usage: 'import { HvInput } from "@hitachivantara/uikit-react-core"',
     componentSubtitle: null,

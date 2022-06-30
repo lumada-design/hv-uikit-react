@@ -6,7 +6,7 @@ import customBackground from "./background-custom.jpg";
 import useStyles from "./styles";
 
 export default {
-  title: "Components/Login",
+  title: "Widgets/Login",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvLogin } from "@hitachivantara/uikit-react-core"',

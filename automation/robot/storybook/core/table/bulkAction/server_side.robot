@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      ../_table.resource
-Test Setup    open table sample    ${visualizations}    server-side-pagination
+Test Setup    open table sample    ${display}    server-side-pagination
 
 
 *** Test Cases ***

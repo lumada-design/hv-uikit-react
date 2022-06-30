@@ -6,7 +6,7 @@ testingThemes.forEach(async (theme: string) => {
   test.describe(`Banner ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=components-banner--banner-controller&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=feedback-banner--banner-controller&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 

@@ -1,4 +1,4 @@
-import componentDefinitions from "../ComponentVersioningTable/versions";
+import componentDefinitions from "./versions";
 
 const notAvailable = componentDefinitions.notAvailable;
 const dsVersion1 = componentDefinitions.dsVersion.v1;

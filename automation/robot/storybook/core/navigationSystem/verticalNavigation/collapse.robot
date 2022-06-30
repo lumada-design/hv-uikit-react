@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _verticalNavigation.resource
-Test Setup    open vertical navigation sample    ${components}    collapsable
+Test Setup    open vertical navigation sample    ${structure}    collapsable
 Documentation
 ...    complementary test cases:
 ...    - Test Suite "verticalNavigation_keyboard_interaction.robot"
@@ -21,7 +21,7 @@ does not close vertical anchor bar when vertical navigation menu is closed
     Element Should Be Visible            ${anchorBar}
 
 closeOnExit property close menu when is clicked any area out of vertical navigation
-    [Setup]    open vertical navigation sample    ${components}    collapse-on-exit
+    [Setup]    open vertical navigation sample    ${structure}    collapse-on-exit
     Click Element                        css:body
     Wait Until Element Is Not Visible    ${items}
 

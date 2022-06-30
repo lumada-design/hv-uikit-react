@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Suite Setup   Run Keywords
-...           Go To    ${components}tooltip--long-text    AND
+...           Go To    ${overlay}tooltip--long-text    AND
 ...           Wait Until Element Is Visible    ${tooltipPlaceholder}
 Test Teardown     Double Click Element     css:body
 Force Tags    bug-ie-webdriver

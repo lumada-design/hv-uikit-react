@@ -6,7 +6,7 @@ testingThemes.forEach(async (theme) => {
   test.describe(`AppSwitcher ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=components-app-switcher--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=widgets-app-switcher--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 

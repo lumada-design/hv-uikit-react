@@ -7,7 +7,7 @@ const suffix = "&eyes-storybook=true&eyes-variation=theme:";
 testingThemes.forEach(async (theme) => {
   test.describe(`HvSlider ${theme}`, () => {
     test(`Single slider changes values when interacted`, async ({ page }) => {
-      await page.goto(`/iframe.html?id=forms-slider--main&args=&viewMode=story${suffix}${theme}`);
+      await page.goto(`/iframe.html?id=inputs-slider--main&args=&viewMode=story${suffix}${theme}`);
       await expect(page.locator('[aria-label="Failure Rate-0"]')).toHaveValue("10");
       await page.locator('[aria-label="Failure Rate-0"]').press("Tab");
       await page.locator('div[role="slider"]').press("ArrowRight");
@@ -24,7 +24,7 @@ testingThemes.forEach(async (theme) => {
     });
     test(`Range slider changes values when interacted`, async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=forms-slider--range-slider&args=&viewMode=story${suffix}${theme}`
+        `/iframe.html?id=inputs-slider--range-slider&args=&viewMode=story${suffix}${theme}`
       );
       await expect(page.locator('[aria-label="Failure Rate-0"]')).toHaveValue("10");
       await expect(page.locator('[aria-label="Failure Rate-1"]')).toHaveValue("40");
@@ -52,7 +52,7 @@ testingThemes.forEach(async (theme) => {
     });
     test(`Controlled range slider changes values when interacted`, async ({ page }) => {
       await page.goto(
-        `http://localhost:9001/iframe.html?id=forms-slider--range-slider-controlled&args=&viewMode=story${suffix}${theme}`
+        `http://localhost:9001/iframe.html?id=inputs-slider--range-slider-controlled&args=&viewMode=story${suffix}${theme}`
       );
       await expect(page.locator('[aria-label="Failure Rate-0"]')).toHaveValue("0.0");
       await expect(page.locator('[aria-label="Failure Rate-1"]')).toHaveValue("2.0");

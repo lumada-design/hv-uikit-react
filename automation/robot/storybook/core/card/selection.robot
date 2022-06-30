@@ -23,7 +23,7 @@ Verify selectable card behavior
     ...   | card       | url sample                            |
     ...   | locator    | where (area) should click on the card |
     ...   | isSelected | (true or false) if card is selected   |
-    open card sample                           ${components}    ${card}
+    open card sample                           ${display}    ${card}
     Click Element                              ${locator}
     Run Keyword If                             '${isSelected}'=='true'
     ...    Checkbox Should Be Selected         ${checkbox}

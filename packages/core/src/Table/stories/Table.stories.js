@@ -9,7 +9,7 @@ import { HvEmptyState, HvTable, HvButton } from "../..";
 /* eslint-disable no-underscore-dangle */
 
 export default {
-  title: "Visualizations/Table",
+  title: "Display/Table",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTable } from "@hitachivantara/uikit-react-core"',

@@ -7,7 +7,7 @@ import TableExample from "./TableExample";
 import hexToRgbA from "../../utils/hexToRgbA";
 
 export default {
-  title: "Components/Loading",
+  title: "Feedback/Loading",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvLoading } from "@hitachivantara/uikit-react-core"',
