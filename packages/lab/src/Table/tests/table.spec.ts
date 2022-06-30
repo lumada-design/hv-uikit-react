@@ -1,10 +1,23 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { test, expect } from "@playwright/test";
+import { test, expect, Locator } from "@playwright/test";
 // eslint-disable-next-line import/no-relative-packages
 import { testingThemes } from "../../../../core/config/playwright-utils";
 
 const NUM_ROWS = 5;
 const NUM_COLS = 9;
+
+// Note: at some point Safari's default behavior appears to have changed to not tab navigation
+// enabled by default, which broke this test because Playwright depends on the browser defaults.
+// Doing Alt+Tab seems to do the trick, but it doesn't work in the other browsers (at least Firefox),
+// so I added a browser check in the tests below. Reference:
+//   https://github.com/microsoft/playwright/issues/2114
+const pressTab = async (table: Locator, browserName: string) => {
+  if (browserName === "webkit") {
+    await table.press("Alt+Tab");
+  } else {
+    await table.press("Tab");
+  }
+};
 
 testingThemes.forEach(async (theme: string) => {
   test.describe(`Table ${theme}`, () => {
@@ -25,7 +38,7 @@ testingThemes.forEach(async (theme: string) => {
       }
     });
 
-    test(`List Row: check focus checkbox`, async ({ page }) => {
+    test(`List Row: check focus checkbox`, async ({ page, browserName }) => {
       const checks = await page.locator("input[type=checkbox]");
       expect(checks).toHaveCount(NUM_ROWS - 1);
 
@@ -36,12 +49,12 @@ testingThemes.forEach(async (theme: string) => {
       }
 
       const table = await page.locator(".HvTable-root");
-      await table.press("Tab");
+      pressTab(table, browserName);
       await table.press(" ");
       await table.press("ArrowDown");
       await table.press("ArrowDown");
       await table.press("ArrowDown");
-      await table.press("Tab");
+      pressTab(table, browserName);
       await table.press(" ");
 
       for (let i = 0; i < NUM_ROWS - 2; i += 1) {
@@ -51,13 +64,13 @@ testingThemes.forEach(async (theme: string) => {
       expect(await checks.nth(NUM_ROWS - 2).isChecked());
     });
 
-    test(`List Row: check focus actions`, async ({ page }) => {
+    test(`List Row: check focus actions`, async ({ page, browserName }) => {
       expect(await page.locator(".HvPanel-root")).toBeHidden();
 
       const table = await page.locator(".HvTable-root");
-      await table.press("Tab");
-      await table.press("Tab");
-      await table.press("Tab");
+      pressTab(table, browserName);
+      pressTab(table, browserName);
+      pressTab(table, browserName);
       await table.press("Enter");
 
       expect(await page.locator(".HvPanel-root")).toBeVisible();
