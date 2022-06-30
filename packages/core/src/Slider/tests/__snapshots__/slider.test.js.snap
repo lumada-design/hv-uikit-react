@@ -268,37 +268,37 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
         >
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             0
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             20
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             40
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             60
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             80
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             100
           </span>
@@ -453,37 +453,37 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
         >
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             0
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             20
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             40
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             60
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             80
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             100
           </span>
@@ -889,37 +889,37 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
         >
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             0
           </span>
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             20
           </span>
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             40
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             60
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             80
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             100
           </span>
@@ -1137,37 +1137,37 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
         >
           <span
             class="rc-slider-mark-text"
-            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             0
           </span>
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             20
           </span>
           <span
             class="rc-slider-mark-text rc-slider-mark-text-active"
-            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             40
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             60
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             80
           </span>
           <span
             class="rc-slider-mark-text"
-            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px;"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
           >
             100
           </span>

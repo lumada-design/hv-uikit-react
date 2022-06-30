@@ -196,6 +196,7 @@ const styles = (theme) => {
       ...theme.hv.typography.vizText,
       fontFamily: theme.hv.typography.fontFamily,
       top: "-2px",
+      zIndex: -1,
     },
     disabledMark: {
       ...theme.hv.typography.vizText,
