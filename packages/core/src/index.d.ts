@@ -66,6 +66,9 @@ export * from "./FileUploader";
 export { default as HvFilterGroup } from "./FilterGroup";
 export * from "./FilterGroup";
 
+export { default as HvFocus } from "./Focus";
+export * from "./Focus";
+
 export { default as HvFooter } from "./Footer";
 export * from "./Footer";
 

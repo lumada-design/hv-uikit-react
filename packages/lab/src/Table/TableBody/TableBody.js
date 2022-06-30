@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
-import { useForkRef } from "@hitachivantara/uikit-react-core";
+import { HvFocus, useForkRef } from "@hitachivantara/uikit-react-core";
 
-import Focus from "@hitachivantara/uikit-react-core/dist/Focus";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 import styles from "./styles";
@@ -43,7 +42,7 @@ const HvTableBody = forwardRef(function HvTableBody(props, externalRef) {
         {withNavigation
           ? children.map((element) => {
               return (
-                <Focus
+                <HvFocus
                   rootRef={bodyRef}
                   key={`row-${element.key}`}
                   strategy="grid"
@@ -54,7 +53,7 @@ const HvTableBody = forwardRef(function HvTableBody(props, externalRef) {
                   selected={element.props.selected}
                 >
                   {element}
-                </Focus>
+                </HvFocus>
               );
             })
           : children}
