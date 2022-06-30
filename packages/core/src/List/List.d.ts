@@ -2,7 +2,7 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface ListValueProp {
-  id?: string;
+  id?: string | number;
   label: React.ReactNode;
   searchValue?: string;
   selected?: boolean;

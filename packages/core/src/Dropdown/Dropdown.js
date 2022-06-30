@@ -482,7 +482,7 @@ HvDropdown.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       label: PropTypes.node.isRequired,
       searchValue: PropTypes.string,
       value: PropTypes.any,
