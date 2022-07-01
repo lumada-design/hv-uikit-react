@@ -42,3 +42,6 @@ export * from "./ProgressBar";
 
 export { default as HvDotPagination } from "./DotPagination";
 export * from "./DotPagination";
+
+export { default as HvControls } from "./Controls";
+export * from "./Controls";
