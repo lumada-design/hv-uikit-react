@@ -315,7 +315,7 @@ export const CustomControls = () => {
           <HvLabel id="temp-label" htmlFor="tempFilter" label="Temperature:" />
           <HvSlider
             style={{ width: "240px", zIndex: 40 }}
-            id="tempFilter"
+            id="tempFilter-controls"
             hideInput
             onChange={onSliderChange}
             defaultValues={[25]}
@@ -430,7 +430,7 @@ export const MixedControls = () => {
           <HvLabel id="temp-label" htmlFor="tempFilter" label="Temperature:" />
           <HvSlider
             style={{ width: "240px", zIndex: 40 }}
-            id="tempFilter"
+            id="tempFilter-mixed"
             hideInput
             onChange={onSliderChange}
             defaultValues={[25]}
