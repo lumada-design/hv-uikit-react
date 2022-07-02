@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.48.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.3...@hitachivantara/uikit-react-lab@3.48.0) (2022-07-02)
+
+
+### Features
+
+* **HvControls:** new component ([#2809](https://github.com/lumada-design/hv-uikit-react/issues/2809)) ([80cfdfd](https://github.com/lumada-design/hv-uikit-react/commit/80cfdfdcdc5616e4c22465f468935b7319dbf689))
+
+
+
+
+
 ## [3.47.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.2...@hitachivantara/uikit-react-lab@3.47.3) (2022-07-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

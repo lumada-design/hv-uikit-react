@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.17](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.16...@hitachivantara/uikit-react-core@3.67.17) (2022-07-02)
+
+
+### Bug Fixes
+
+* **Slider:** add focus styles to knob ([1f892cc](https://github.com/lumada-design/hv-uikit-react/commit/1f892cc0123f0c5ee25707471c420ae9014c81be))
+* **Slider:** mark text showing above tooltip ([91271b5](https://github.com/lumada-design/hv-uikit-react/commit/91271b56c004ea27579664bcafcf24d0f9e2175f))
+
+
+
+
+
 ## [3.67.16](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.15...@hitachivantara/uikit-react-core@3.67.16) (2022-07-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
