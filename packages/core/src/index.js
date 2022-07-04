@@ -26,6 +26,7 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFilterGroup } from "./FilterGroup";
 export { default as HvFileUploader } from "./FileUploader";
 export * from "./FileUploader";
+export { default as HvFocus } from "./Focus";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 
