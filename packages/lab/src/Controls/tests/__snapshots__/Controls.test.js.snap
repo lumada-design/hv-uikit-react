@@ -82,6 +82,7 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           theme="[object Object]"
         >
           <div
+            aria-controls="cardsGrid itemList"
             class="HvRightControl-sortDropdown HvDropdown-root HvFormElement-root"
           >
             <div
@@ -690,6 +691,7 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           theme="[object Object]"
         >
           <div
+            aria-controls="controlledCardsGrid controlledItemList"
             class="HvRightControl-sortDropdown HvDropdown-root HvFormElement-root"
           >
             <div
