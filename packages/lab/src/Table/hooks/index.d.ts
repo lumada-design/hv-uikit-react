@@ -27,3 +27,9 @@ export * from "./useHeaderGroups";
 
 export { default as useHvResizeColumns } from "./useResizeColumns";
 export * from "./useResizeColumns";
+
+export { default as useHvGlobalFilter } from "./useGlobalFilter";
+export * from "./useGlobalFilter";
+
+export { default as useHvFilters } from "./useFilters";
+export * from "./useFilters";

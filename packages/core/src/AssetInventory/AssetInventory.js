@@ -10,7 +10,7 @@ import HvGrid from "../Grid";
 import HvPagination from "../Pagination";
 import HvBulkActions from "../BulkActions";
 import styles from "./styles";
-import { setId, useLabels, useWidth } from "../utils";
+import { useDeprecated, setId, useLabels, useWidth } from "../utils";
 
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
@@ -65,6 +65,11 @@ const HvAssetInventory = (props) => {
     multibuttonProps = [],
     emptyComponent = null,
   } = props;
+
+  useDeprecated(
+    "AssetInventory",
+    "Please use the template available at https://lumada-design.github.io/uikit/master/"
+  );
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 

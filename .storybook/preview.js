@@ -34,6 +34,7 @@ export const parameters = {
         "Components",
         "Widgets",
         "Templates",
+        ["Overview"],
         "Lab",
       ],
     },
