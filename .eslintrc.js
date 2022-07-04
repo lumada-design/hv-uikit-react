@@ -50,17 +50,6 @@ module.exports = {
     "default-param-last": "off",
     "react/function-component-definition": "off",
     "no-restricted-exports": "off",
-    "no-restricted-imports": [
-      "error",
-      {
-        patterns: [
-          {
-            group: ["@hitachivantara/uikit-react-*/*"],
-            message: "Importing UI-Kit outside the root breaks ESM",
-          },
-        ],
-      },
-    ],
     "testing-library/render-result-naming-convention": "off",
     "react/jsx-no-useless-fragment": [
       "warn",
