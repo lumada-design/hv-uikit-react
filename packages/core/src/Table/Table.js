@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import PropTypes from "prop-types";
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
@@ -163,11 +163,8 @@ const HvTable = (props) => {
       return newEntry;
     });
 
-  /**
-   * Pagination customizations.
-   */
-  const getPaginationProps = () => {
-    const PaginationComponent = (tablePaginationProps) => {
+  const PaginationComponent = useCallback(
+    (tablePaginationProps) => {
       return (
         <HvPagination
           id={setId(id, "pagination")}
@@ -183,8 +180,14 @@ const HvTable = (props) => {
           {...paginationProps}
         />
       );
-    };
+    },
+    [id, paginationLabels, paginationProps]
+  );
 
+  /**
+   * Pagination customizations.
+   */
+  const getPaginationProps = () => {
     return {
       showPagination: data.length > 0 && showPagination,
       showPageSizeOptions: showPageSize,
@@ -244,11 +247,11 @@ const HvTable = (props) => {
    *
    * @param sortedColumn - the column representation from the user.
    */
-  const onSortChange = (sortedColumn) => {
+  const onSortChange = useCallback((sortedColumn) => {
     setSorted(sortedColumn);
     setCurrentPage(0);
     setExpanded({});
-  };
+  }, []);
 
   /**
    * Sort properties override to set onSortedChange
@@ -566,16 +569,19 @@ const HvTable = (props) => {
   // Creates the thead with the text and the sorted icon.
   ReactTableDefaults.expanderDefaults.show = false;
   // eslint-disable-next-line react/prop-types
-  ReactTableDefaults.column.Header = ({ column }) => (
-    <Header
-      id={id}
-      // eslint-disable-next-line react/prop-types
-      key={column.id}
-      column={column}
-      sort={sorted}
-      tableSortable={sortable}
-      onSortChange={onSortChange}
-    />
+  ReactTableDefaults.column.Header = useCallback(
+    ({ column }) => (
+      <Header
+        id={id}
+        // eslint-disable-next-line react/prop-types
+        key={column.id}
+        column={column}
+        sort={sorted}
+        tableSortable={sortable}
+        onSortChange={onSortChange}
+      />
+    ),
+    [id, onSortChange, sorted, sortable]
   );
 
   // add expander button

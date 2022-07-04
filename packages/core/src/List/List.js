@@ -1,7 +1,7 @@
-import React, { isValidElement, useEffect, memo } from "react";
+import React, { isValidElement, useEffect, useCallback, forwardRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { FixedSizeList, areEqual } from "react-window";
+import { FixedSizeList } from "react-window";
 
 import { withStyles } from "@material-ui/core";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
@@ -212,7 +212,7 @@ const HvList = (props) => {
     }
   }, [listRef, selectedItemIndex]);
 
-  const ListItem = memo(({ index, style }) => {
+  const ListItem = ({ index, style }) => {
     const item = filteredList[index];
     const tabIndex =
       item.tabIndex || (!anySelected && index === 0) || (item.selected && !item.disabled) ? 0 : -1;
@@ -229,15 +229,31 @@ const HvList = (props) => {
       condensed,
       disableGutters: useSelector,
     });
-  }, areEqual);
+  };
+
   ListItem.propTypes = {
-    index: PropTypes.number.isRequired,
     style: PropTypes.shape({
       top: PropTypes.number.isRequired,
       left: PropTypes.number.isRequired,
       width: PropTypes.number.isRequired,
     }).isRequired,
   };
+
+  const renderFixedList = useCallback(() => {
+    return forwardRef(({ ...rest }, ref) => (
+      <HvListContainer
+        id={id}
+        className={clsx(className, classes.root)}
+        role={selectable ? "listbox" : "menu"}
+        interactive
+        condensed={condensed}
+        disableGutters={useSelector}
+        aria-multiselectable={(selectable && multiSelect) || undefined}
+        ref={ref}
+        {...rest}
+      />
+    ));
+  }, [id, useSelector, className, classes, condensed, selectable, multiSelect]);
 
   return (
     <>
@@ -265,19 +281,7 @@ const HvList = (props) => {
           width="100%"
           itemCount={filteredList.length}
           itemSize={condensed ? 32 : 40}
-          innerElementType={React.forwardRef(({ ...rest }, ref) => (
-            <HvListContainer
-              id={id}
-              className={clsx(className, classes.root)}
-              role={selectable ? "listbox" : "menu"}
-              interactive
-              condensed={condensed}
-              disableGutters={useSelector}
-              aria-multiselectable={(selectable && multiSelect) || undefined}
-              ref={ref}
-              {...rest}
-            />
-          ))}
+          innerElementType={renderFixedList}
           {...others}
         >
           {ListItem}

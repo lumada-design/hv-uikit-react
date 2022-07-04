@@ -5,7 +5,7 @@ import React from "react";
 
 import { render } from "@testing-library/react";
 
-import { HvProvider } from "../../src";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 // eslint-disable-next-line react/prop-types
 const AllTheProviders = ({ children }) => <HvProvider disableCssBaseline>{children}</HvProvider>;
