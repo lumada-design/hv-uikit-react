@@ -1,5 +1,4 @@
 const { resolve } = require("path");
-const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const defaultPropsHandler = require("react-docgen/dist/handlers/defaultPropsHandler");
 
@@ -15,13 +14,14 @@ const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
 
 module.exports = {
   core: {
-    builder: "webpack4",
+    builder: "@storybook/builder-webpack5",
   },
   framework: "@storybook/react",
   features: {
     babelModeV7: true,
     buildStoriesJson: true,
     storyStoreV7: !process.env.V2_COMPAT_STORY_STORE,
+    postcss: false,
   },
 
   stories: [
@@ -78,19 +78,6 @@ module.exports = {
 
       "storybook-root": storybookFolder,
     };
-
-    // patch Storybook's sortProps because it doesn't handle wrapped components
-    config.plugins.push(
-      new NormalModuleReplacementPlugin(
-        /(.*)addon-docs\/(.*)\/frameworks\/react\/propTypes\/sortProps(\.*)/,
-        function (resource) {
-          resource.request = resolve(__dirname, "patches/sortProps.js");
-          if (resource.resource) {
-            resource.resource = resource.request;
-          }
-        }
-      )
-    );
 
     config.plugins.push(
       new MonacoWebpackPlugin({
