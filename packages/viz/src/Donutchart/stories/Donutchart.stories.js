@@ -1,14 +1,17 @@
 import { makeStyles } from "@material-ui/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 import React from "react";
-import { HvDonutchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
+import { HvDropDownMenu, HvDropdown, HvTypography } from "@hitachivantara/uikit-react-core";
+
+import { HvDonutchart } from "../..";
 
 export default {
   title: "Visualizations/Donut Chart",
   parameters: {
     componentSubtitle: null,
-    usage: 'import { HvDonutchart } from "@hitachivantara/uikit-react-core"',
-    dsVersion: "3.6.0",
+    usage: 'import { HvDonutchart } from "@hitachivantara/uikit-react-viz"',
+    maturityStatus: "stable",
+    dsVersion: "3.4.0",
   },
   component: HvDonutchart,
 };

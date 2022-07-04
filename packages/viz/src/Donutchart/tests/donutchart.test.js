@@ -2,8 +2,9 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-import { HvDonutchart, HvProvider } from "../..";
+import { HvDonutchart } from "../..";
 import { applyDataDefaults } from "../donutchartPlotlyOverrides";
 
 import { Main, DonutChartThin } from "../stories/Donutchart.stories";
