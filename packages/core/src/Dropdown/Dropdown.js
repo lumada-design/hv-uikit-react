@@ -77,6 +77,9 @@ const HvDropdown = (props) => {
     popperProps = {},
     height,
     virtualized = false,
+    baseDropdownProps = {},
+    listProps = {},
+    ...others
   } = props;
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
@@ -252,6 +255,7 @@ const HvDropdown = (props) => {
       disabled={disabled}
       required={required}
       className={clsx(className, classes.root)}
+      {...others}
     >
       {(hasLabel || hasDescription) && (
         <div className={classes.labelContainer}>
@@ -301,6 +305,7 @@ const HvDropdown = (props) => {
         onFocus={onFocus}
         onBlur={onBlur}
         dropdownHeaderRef={dropdownHeaderRef}
+        {...baseDropdownProps}
       >
         <List
           id={setId(elementId, "values")}
@@ -320,6 +325,7 @@ const HvDropdown = (props) => {
           aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
           height={height}
           virtualized={virtualized}
+          {...listProps}
         />
       </HvBaseDropdown>
       {canShowError && (
@@ -600,6 +606,14 @@ HvDropdown.propTypes = {
    * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
    */
   virtualized: PropTypes.bool,
+  /**
+   * Extra props passed to the dropdown.
+   */
+  baseDropdownProps: PropTypes.object,
+  /**
+   * Extra props passed to the list.
+   */
+  listProps: PropTypes.object,
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(HvDropdown);
