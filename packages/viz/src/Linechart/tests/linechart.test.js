@@ -2,8 +2,9 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-import { HvLinechart, HvProvider } from "../..";
+import { HvLinechart } from "../..";
 import { applyDataDefaults } from "../lineChartPlotlyOverrides";
 import { Main } from "../stories/Linechart.stories";
 
