@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.48.0...@hitachivantara/uikit-react-lab@3.48.1) (2022-07-05)
+
+
+### Bug Fixes
+
+* **dropdown:** adding extra props to help with acccessibility.HVUIKIT-6392 ([#2829](https://github.com/lumada-design/hv-uikit-react/issues/2829)) ([e40ac39](https://github.com/lumada-design/hv-uikit-react/commit/e40ac3987691fca6515e9d9f1d82a5c4f6d56e5e))
+* **table:** fix Focus import ([36cbb61](https://github.com/lumada-design/hv-uikit-react/commit/36cbb61e7c2e3937a781b41c488f9d3f85fd671b))
+
+
+
+
+
 # [3.48.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.3...@hitachivantara/uikit-react-lab@3.48.0) (2022-07-02)
 
 
