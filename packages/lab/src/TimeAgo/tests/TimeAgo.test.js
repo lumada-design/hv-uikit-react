@@ -19,7 +19,7 @@ describe("TimeAgo without timestamp", () => {
 
   it("should be defined", () => {
     wrapper = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo />
       </HvProvider>
     );
@@ -28,7 +28,7 @@ describe("TimeAgo without timestamp", () => {
 
   it("should render the emptyElement", () => {
     wrapper = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo />
       </HvProvider>
     );
@@ -40,7 +40,7 @@ describe("TimeAgo without timestamp", () => {
   it("should render the custom emptyElement", () => {
     const MOCK_EMPTY = "EMPTY";
     wrapper = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo emptyElement={MOCK_EMPTY} />
       </HvProvider>
     );
@@ -55,7 +55,7 @@ describe("TimeAgo with timestamp", () => {
 
   it("should be defined", () => {
     const { container } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={timestamp} />
       </HvProvider>
     );
@@ -65,7 +65,7 @@ describe("TimeAgo with timestamp", () => {
 
   it("should contain the relative time", () => {
     const { getByText } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={timestamp} />
       </HvProvider>
     );
@@ -80,7 +80,7 @@ describe("TimeAgo with custom Button element", () => {
 
   it("should be defined", () => {
     const { container } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={timestamp} component={HvButton} />
       </HvProvider>
     );
@@ -90,7 +90,7 @@ describe("TimeAgo with custom Button element", () => {
 
   it("should render the Button", () => {
     const { getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={timestamp} component={HvButton} />
       </HvProvider>
     );

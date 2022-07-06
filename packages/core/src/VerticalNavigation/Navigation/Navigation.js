@@ -9,7 +9,7 @@ import { wrapperTooltip } from "../../List/utils";
 
 const createListHierarchy = (items, id, classes) =>
   items.map((item) => {
-    const { id: itemId, label: itemLabel, icon, data: children, selectable } = item;
+    const { id: itemId, label: itemLabel, icon, data: children, selectable, disabled } = item;
 
     const ItemText = wrapperTooltip(true, itemLabel, itemLabel);
 
@@ -23,6 +23,7 @@ const createListHierarchy = (items, id, classes) =>
         icon={icon}
         payload={item}
         selectable={selectable}
+        disabled={disabled}
       >
         {children ? createListHierarchy(children, id, classes) : undefined}
       </TreeViewItem>

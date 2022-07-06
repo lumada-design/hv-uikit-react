@@ -9,12 +9,11 @@ const container = {
 };
 
 export default {
-  title: "Components/Badge",
+  title: "Display/Badge",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBadge } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvBadge,
 };

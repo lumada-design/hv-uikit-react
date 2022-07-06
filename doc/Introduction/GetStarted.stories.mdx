@@ -1,0 +1,49 @@
+import { Meta } from "@storybook/addon-docs";
+
+import themesPackage from "../../packages/themes/package.json";
+import corePackage from "../../packages/core/package.json";
+import labPackage from "../../packages/lab/package.json";
+import iconsPackage from "../../packages/icons/package.json";
+import codeEditor from "../../packages/code-editor/package.json";
+
+<Meta title="Introduction/Overview" />
+
+# The UI Kit initiative
+
+The **UI Kit initiative** is a collaboration with the Engineering group and the Design System team, that produces a world class **User Interface framework** for a rewarding, coherent and inclusive User Experience throughout the Hitachi portfolio.
+
+As a part of the Product Design group, the **Design System** team is responsible for collaborating with Product teams, in order to define and curate **reference Design patterns**, **guidelines**, and **methodologies**, producing **reusable patterns** that will reduce design and implementation effort, and stands as a catalyser for design alignment and governance across the organisation. This will generate a unique and characteristic **Design Language**, capable of positioning Hitachi as a worldwide design reference.
+
+The **UI Kit** applies those standards, creating and providing to the front-end developers & engineers a collection of **reusable React components** to build their applications, that guarantees the alignment with the Design System specifications. It will enable developers to use a consistent markup, styles, and behavior, both in prototype and production work.
+
+### The UI Kit structure
+
+The UI Kit can be used via the following **four packages**:
+
+<ul>
+  <li>
+    <b>Themes</b> - v{themesPackage.version} - Theme specifications according to the Design System
+    Style guides, which include Colors, Typography definitions and Spacings for the Grid elements.
+  </li>
+  <li>
+    <b>Icons</b> - v{iconsPackage.version} - The icon library provided by the Design System team,
+    wrapped in React Components.
+  </li>
+  <li>
+    <b>Core</b> - v{corePackage.version} - The main package, where the React components that are{" "}
+    <b>fully compliant</b> with Design system guidelines and UI Kit best practices reside.
+  </li>
+  <li>
+    <b>Lab</b> - v{labPackage.version} - React components <b>contributed by external teams</b> for
+    specific use cases and <b>not fully compliant</b> with the Design System guidelines.
+  </li>
+  <li>
+    <b>Code Editor</b> - v{codeEditor.version} - A wrapper to the <b>React Monaco editor</b>{" "}
+    (https://github.com/react-monaco-editor/react-monaco-editor) compliant with the Hitachi Vantara
+    Design System Style guidelines.
+  </li>
+</ul>
+
+### Design System Version
+
+As said, the **UI Kit** follows a specific Design System version, and all our Themes, Icons and components available in the Core package where validated against. Currently the **UI Kit** follows the **Design System Version 3.2.1**. For more details, please consult the <a href="https://lumada-design.github.io/uikit/master/?path=/docs/get-started-component-list--page">list of components</a> for a more detail view.

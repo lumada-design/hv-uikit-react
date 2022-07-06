@@ -1,16 +1,16 @@
 {
   "name": "@hitachivantara/uikit-react-lab",
-  "version": "3.44.2",
+  "version": "3.48.1",
   "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/legacy/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/legacy/index.js",
-  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
@@ -42,15 +42,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@hitachivantara/uikit-react-core": "^3.66.2",
-    "@hitachivantara/uikit-react-icons": "^3.8.10",
+    "@hitachivantara/uikit-react-core": "^3.67.18",
+    "@hitachivantara/uikit-react-icons": "^3.8.13",
     "@types/react-table": "^7.7.11",
     "clsx": "^1.1.1",
-    "core-js": "^3.22.3",
-    "dayjs": "^1.11.1",
+    "core-js": "^3.22.5",
+    "dayjs": "^1.11.2",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
-    "rc-slider": "8.6.3",
+    "rc-slider": "9.7.5",
     "rc-tooltip": "^3.7.3",
     "react-color": "^2.19.3",
     "react-table": "^7.7.0"

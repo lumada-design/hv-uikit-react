@@ -17,7 +17,7 @@ describe("<Navigation />", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Navigation
           id="id1"
           onNavigatePrevious={onNavigatePreviousMock}

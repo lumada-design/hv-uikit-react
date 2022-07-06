@@ -12,7 +12,7 @@ describe("HvDrawer withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer>Drawer Content</HvDrawer>
       </HvProvider>
     );
@@ -30,7 +30,7 @@ describe("HvDrawer Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer open={open} onClose={onCloseMock}>
           HvDrawer Content
         </HvDrawer>
@@ -45,7 +45,7 @@ describe("HvDrawer Component", () => {
 
   it("should render correctly if closed", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer open={false} onClose={onCloseMock}>
           HvDrawer Content
         </HvDrawer>
@@ -56,7 +56,7 @@ describe("HvDrawer Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer
           open={open}
           onClose={onCloseMock}
@@ -72,7 +72,7 @@ describe("HvDrawer Component", () => {
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer
           classes={{
             root: "testClassRoot",
@@ -91,7 +91,7 @@ describe("HvDrawer Component", () => {
 
   it("onClose should be called when close is triggered in the HvDrawer", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvDrawer classes={{}} open={open} onClose={onCloseMock}>
           HvDrawer Content
         </HvDrawer>

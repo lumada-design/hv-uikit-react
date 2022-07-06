@@ -3,12 +3,11 @@ import { withStyles, makeStyles } from "@material-ui/core/";
 import { HvBadge, HvTabs, HvTab, HvTypography } from "../..";
 
 export default {
-  title: "Components/Tabs",
+  title: "Navigation/Tabs",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTabs, HvTab } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvTabs,
   subcomponents: { HvTab },

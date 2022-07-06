@@ -133,7 +133,15 @@ const styles = (theme) => ({
     maxWidth: 32,
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
-
+  variantList: {
+    backgroundColor: "inherit",
+    borderBottom: 0,
+    height: 16,
+    ":first-child > &": {
+      borderTop: 0,
+      height: 16,
+    },
+  },
   stickyColumn: {
     position: "sticky",
     zIndex: 2,

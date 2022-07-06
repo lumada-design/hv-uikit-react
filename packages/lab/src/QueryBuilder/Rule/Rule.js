@@ -42,25 +42,13 @@ const Rule = ({ id, combinator, attribute, operator, value, disabled, isInvalid 
       </HvGrid>
       {attribute != null && availableOperators > 0 && (
         <HvGrid item xs={2} lg={3}>
-          <Operator
-            key={id + combinator + attribute + operator}
-            id={id}
-            combinator={combinator}
-            attribute={attribute}
-            operator={operator}
-          />
+          <Operator id={id} combinator={combinator} attribute={attribute} operator={operator} />
         </HvGrid>
       )}
       {attribute != null && (operator != null || availableOperators === 0) && (
         <HvGrid item xs>
           {shouldShowValueInput && (
-            <Value
-              key={id + combinator + attribute + operator}
-              attribute={attribute}
-              id={id}
-              operator={operator}
-              value={value}
-            />
+            <Value attribute={attribute} id={id} operator={operator} value={value} />
           )}
         </HvGrid>
       )}

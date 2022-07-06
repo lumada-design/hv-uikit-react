@@ -17,11 +17,10 @@ import {
 } from "../..";
 
 export default {
-  title: "Components/Stack",
+  title: "Layout/Stack",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvStack } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.6.0",
   },
   component: HvStack,

@@ -14,20 +14,18 @@ describe("UnitTimePicker", () => {
 
   it("should render correctly", () => {
     const { container } = render(
-      <HvProvider>
-        <UnitTimePicker
-          unit={TimePickerUnits.MINUTE.type}
-          unitValue={defaultUnitValue}
-          onChangeUnitTimeValue={mockOnChangeUnitTimeValue}
-        />
-      </HvProvider>
+      <UnitTimePicker
+        unit={TimePickerUnits.MINUTE.type}
+        unitValue={defaultUnitValue}
+        onChangeUnitTimeValue={mockOnChangeUnitTimeValue}
+      />
     );
     expect(container).toMatchSnapshot();
   });
 
   it("should render the input with the correct unit value", () => {
     const { getByRole } = render(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <UnitTimePicker
           id="unittimepicker"
           unit={TimePickerUnits.MINUTE.type}

@@ -5,7 +5,7 @@ Resource    ../../_keywords.resource
 *** keywords ***
 open adornment sample
     [Arguments]    ${dir}    ${sample}
-    Go To    ${dir}form-element--${sample}
+    Go To    ${dir}forms-form-element--${sample}
     Wait Until Element Is Enabled    ${input}
 
 

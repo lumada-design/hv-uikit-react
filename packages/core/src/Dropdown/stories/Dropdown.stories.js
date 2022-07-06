@@ -11,11 +11,10 @@ import {
 import { HvDropdown, HvGrid, HvTypography } from "../..";
 
 export default {
-  title: "Forms/Dropdown",
+  title: "Inputs/Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDropdown } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.4.0",
   },
   component: HvDropdown,

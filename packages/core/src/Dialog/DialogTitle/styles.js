@@ -2,8 +2,9 @@ const styles = (theme) => ({
   root: {
     padding: theme.hvSpacing("sm"),
     margin: 0,
-    display: "flex",
-    justifyContent: "space-between",
+    "&:not(.fullscreen)": {
+      flex: 1,
+    },
   },
   messageContainer: {
     display: "flex",

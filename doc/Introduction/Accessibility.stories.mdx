@@ -1,0 +1,27 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction/Accessibility" />
+
+# Accessibility
+
+The **UI kit** follows the two most commonly encountered conformance guidelines for accessibility. They are:
+
+<ul>
+  <li>
+    <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG</a> - Globally accepted
+    standard
+  </li>
+  <li>
+    <a href="https://www.section508.gov/">Section 508</a> - US federal agencies
+  </li>
+</ul>
+
+WCAG 2.0 has 3 levels of conformance; A, AA and AAA (in order of conformance). As meeting WCAG 2.0 level AA guidelines also meets the Section 508 standards, this is likely the standard that most organizations will want to target.
+
+Regarding the usage of the our components, the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/) provides valuable insight on how to make our components highly accessible.
+
+To make sure our developed components follow the recommendation in the WCAG 2.0 and Section 508 guidelines, we target our development and tests to meet these two standards. Since many of our components are custom built,
+there is always room for improvement or areas where the accessibility of a component can be improved. If there is any component where you think improvements can be made, please reach out to us.
+
+Even though we're focused on developing a component library that is compliant with these standards, the application in which the components are integrated into has the responsibility of ensuring that the individual components are configured correctly and that the integration of those components produce an accessible application.
+So it is very important to know that the **UI kit enables the development of standard compliant applications, nothing more**.

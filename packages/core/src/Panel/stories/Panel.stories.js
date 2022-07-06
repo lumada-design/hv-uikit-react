@@ -4,12 +4,11 @@ import { Edit, Close } from "@hitachivantara/uikit-react-icons";
 import { HvPanel, HvButton, HvTypography } from "../..";
 
 export default {
-  title: "Components/Panel",
+  title: "Layout/Panel",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvPanel } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.6.0",
   },
   component: HvPanel,
 };

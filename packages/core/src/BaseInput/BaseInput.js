@@ -90,6 +90,7 @@ const HvBaseInput = (props) => {
           multiline: classes.inputRootMultiline,
           input: clsx(classes.input, {
             [classes.inputResizable]: !formElementProps.disabled && resizable,
+            [classes.inputDisabled]: disabled,
           }),
         }}
         inputProps={{
@@ -157,6 +158,10 @@ HvBaseInput.propTypes = {
      * Styles applied to input html element.
      */
     input: PropTypes.string,
+    /**
+     * Styles applied to input html element when is disabled.
+     */
+    inputDisabled: PropTypes.string,
     /**
      * Styles applied to input html element when it is resizable.
      */

@@ -1,6 +1,6 @@
 import { StandardProps } from "@material-ui/core";
 
-export type HvTableClassKey = "root" | "stickyHeader" | "stickyColumns";
+export type HvTableClassKey = "root" | "stickyHeader" | "stickyColumns" | "listRow";
 
 export interface HvTableProps
   extends StandardProps<React.TableHTMLAttributes<HTMLTableElement>, HvTableClassKey> {
@@ -20,6 +20,10 @@ export interface HvTableProps
    * Whether the `HvTable` has sticky columns.
    */
   stickyColumns?: boolean;
+  /**
+   * Variant of table.
+   */
+  variant?: "listrow" | "default";
 }
 
 export default function HvTable(props: HvTableProps): JSX.Element | null;

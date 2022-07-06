@@ -11,7 +11,7 @@ describe("Card", () => {
 
   it("should be able to render with every property defined", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Main />
       </HvProvider>
     );
@@ -21,7 +21,7 @@ describe("Card", () => {
 
   it("should render all the card components", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <AllComponents />
       </HvProvider>
     );

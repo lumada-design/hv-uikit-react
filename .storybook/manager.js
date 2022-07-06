@@ -22,5 +22,6 @@ addons.setConfig({
   // display the top-level grouping as a "root" in the sidebar
   sidebar: {
     showRoots: true,
+    collapsedRoots: ["tests"],
   },
 });

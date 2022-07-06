@@ -856,6 +856,9 @@ exports[`Slider  should render correctly 1`] = `
     <ComponentEnhancer(Range)
       activeDotStyle={Object {}}
       allowCross={false}
+      ariaLabelGroupForHandles={Array []}
+      ariaLabelledByGroupForHandles={Array []}
+      ariaValueTextFormatterGroupForHandles={Array []}
       className="HvSlider-root"
       count={4}
       defaultValue={
@@ -884,6 +887,7 @@ exports[`Slider  should render correctly 1`] = `
         }
       }
       dots={false}
+      draggableTrack={false}
       handle={[Function]}
       handleStyle={
         Array [
@@ -2666,6 +2670,7 @@ exports[`Slider  should render correctly 1`] = `
           "zIndex": "-3",
         }
       }
+      reverse={false}
       step={1}
       tabIndex={Array []}
       trackStyle={
@@ -2738,6 +2743,7 @@ exports[`Slider  should render correctly 1`] = `
           key="1"
           length={10}
           offset={10}
+          reverse={false}
           style={
             Object {
               "backgroundColor": undefined,
@@ -2756,6 +2762,7 @@ exports[`Slider  should render correctly 1`] = `
                 "height": "3px",
                 "left": "10%",
                 "marginTop": "-1px",
+                "right": "auto",
                 "width": "10%",
                 "zIndex": "-1",
               }
@@ -2768,6 +2775,7 @@ exports[`Slider  should render correctly 1`] = `
           key="2"
           length={10}
           offset={20}
+          reverse={false}
           style={
             Object {
               "backgroundColor": undefined,
@@ -2786,6 +2794,7 @@ exports[`Slider  should render correctly 1`] = `
                 "height": "3px",
                 "left": "20%",
                 "marginTop": "-1px",
+                "right": "auto",
                 "width": "10%",
                 "zIndex": "-1",
               }
@@ -2798,6 +2807,7 @@ exports[`Slider  should render correctly 1`] = `
           key="3"
           length={10}
           offset={30}
+          reverse={false}
           style={
             Object {
               "backgroundColor": undefined,
@@ -2816,6 +2826,7 @@ exports[`Slider  should render correctly 1`] = `
                 "height": "3px",
                 "left": "30%",
                 "marginTop": "-1px",
+                "right": "auto",
                 "width": "10%",
                 "zIndex": "-1",
               }
@@ -2828,6 +2839,7 @@ exports[`Slider  should render correctly 1`] = `
           key="4"
           length={60}
           offset={40}
+          reverse={false}
           style={
             Object {
               "backgroundColor": undefined,
@@ -2846,6 +2858,7 @@ exports[`Slider  should render correctly 1`] = `
                 "height": "3px",
                 "left": "40%",
                 "marginTop": "-1px",
+                "right": "auto",
                 "width": "60%",
                 "zIndex": "-1",
               }
@@ -4596,6 +4609,7 @@ exports[`Slider  should render correctly 1`] = `
           max={100}
           min={0}
           prefixCls="rc-slider"
+          reverse={false}
           step={1}
           upperBound={100}
           vertical={false}
@@ -6905,6 +6919,7 @@ exports[`Slider  should render correctly 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               prefixCls="rc-slider"
+              reverse={false}
               style={
                 Object {
                   "backgroundColor": "#72cccb",
@@ -6926,6 +6941,7 @@ exports[`Slider  should render correctly 1`] = `
                 className="rc-slider-handle rc-slider-handle-1"
                 onBlur={[Function]}
                 onKeyDown={[Function]}
+                onMouseDown={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 role="slider"
@@ -6936,6 +6952,8 @@ exports[`Slider  should render correctly 1`] = `
                     "boxShadow": "none",
                     "height": "16px",
                     "left": "10%",
+                    "right": "auto",
+                    "transform": "translateX(-50%)",
                     "width": "16px",
                   }
                 }
@@ -7245,6 +7263,7 @@ exports[`Slider  should render correctly 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               prefixCls="rc-slider"
+              reverse={false}
               style={
                 Object {
                   "backgroundColor": "#f9dc37",
@@ -7266,6 +7285,7 @@ exports[`Slider  should render correctly 1`] = `
                 className="rc-slider-handle rc-slider-handle-2"
                 onBlur={[Function]}
                 onKeyDown={[Function]}
+                onMouseDown={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 role="slider"
@@ -7276,6 +7296,8 @@ exports[`Slider  should render correctly 1`] = `
                     "boxShadow": "none",
                     "height": "16px",
                     "left": "20%",
+                    "right": "auto",
+                    "transform": "translateX(-50%)",
                     "width": "16px",
                   }
                 }
@@ -7585,6 +7607,7 @@ exports[`Slider  should render correctly 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               prefixCls="rc-slider"
+              reverse={false}
               style={
                 Object {
                   "backgroundColor": "#ff9100",
@@ -7606,6 +7629,7 @@ exports[`Slider  should render correctly 1`] = `
                 className="rc-slider-handle rc-slider-handle-3"
                 onBlur={[Function]}
                 onKeyDown={[Function]}
+                onMouseDown={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 role="slider"
@@ -7616,6 +7640,8 @@ exports[`Slider  should render correctly 1`] = `
                     "boxShadow": "none",
                     "height": "16px",
                     "left": "30%",
+                    "right": "auto",
+                    "transform": "translateX(-50%)",
                     "width": "16px",
                   }
                 }
@@ -7925,6 +7951,7 @@ exports[`Slider  should render correctly 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               prefixCls="rc-slider"
+              reverse={false}
               style={
                 Object {
                   "backgroundColor": "#cc0000",
@@ -7946,6 +7973,7 @@ exports[`Slider  should render correctly 1`] = `
                 className="rc-slider-handle rc-slider-handle-4"
                 onBlur={[Function]}
                 onKeyDown={[Function]}
+                onMouseDown={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 role="slider"
@@ -7956,6 +7984,8 @@ exports[`Slider  should render correctly 1`] = `
                     "boxShadow": "none",
                     "height": "16px",
                     "left": "40%",
+                    "right": "auto",
+                    "transform": "translateX(-50%)",
                     "width": "16px",
                   }
                 }
@@ -8265,6 +8295,7 @@ exports[`Slider  should render correctly 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               prefixCls="rc-slider"
+              reverse={false}
               style={
                 Object {
                   "backgroundColor": "#cc0000",
@@ -8292,6 +8323,7 @@ exports[`Slider  should render correctly 1`] = `
                 className="rc-slider-handle rc-slider-handle-5"
                 onBlur={[Function]}
                 onKeyDown={[Function]}
+                onMouseDown={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 role="slider"
@@ -8306,7 +8338,9 @@ exports[`Slider  should render correctly 1`] = `
                     "left": "100%",
                     "marginLeft": "-1px",
                     "marginTop": "0px",
+                    "right": "auto",
                     "touchAction": "none",
+                    "transform": "translateX(-50%)",
                     "width": "2px",
                   }
                 }
@@ -10064,6 +10098,7 @@ exports[`Slider  should render correctly 1`] = `
           max={100}
           min={0}
           onClickLabel={[Function]}
+          reverse={false}
           upperBound={100}
           vertical={false}
         >
@@ -10089,9 +10124,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "0%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10116,9 +10151,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "1%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10143,9 +10178,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "2%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10170,9 +10205,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "3%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10197,9 +10232,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "4%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10224,9 +10259,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "5%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10251,9 +10286,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "6%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10278,9 +10313,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "7.000000000000001%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10305,9 +10340,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "8%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10332,9 +10367,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "9%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10359,9 +10394,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "10%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10386,9 +10421,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "11%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10413,9 +10448,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "12%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10440,9 +10475,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "13%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10467,9 +10502,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "14.000000000000002%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10494,9 +10529,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "15%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10521,9 +10556,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "16%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10548,9 +10583,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "17%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10575,9 +10610,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "18%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10602,9 +10637,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "19%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10629,9 +10664,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "20%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10656,9 +10691,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "21%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10683,9 +10718,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "22%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10710,9 +10745,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "23%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10737,9 +10772,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "24%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10764,9 +10799,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "25%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10791,9 +10826,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "26%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10818,9 +10853,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "27%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10845,9 +10880,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "28.000000000000004%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10872,9 +10907,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "28.999999999999996%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10899,9 +10934,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "30%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10926,9 +10961,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "31%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10953,9 +10988,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "32%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -10980,9 +11015,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "33%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11007,9 +11042,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "34%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11034,9 +11069,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "35%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11061,9 +11096,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "36%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11088,9 +11123,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "37%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11115,9 +11150,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "38%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11142,9 +11177,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "39%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11169,9 +11204,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "40%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11196,9 +11231,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "41%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11223,9 +11258,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "42%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11250,9 +11285,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "43%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11277,9 +11312,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "44%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11304,9 +11339,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "45%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11331,9 +11366,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "46%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11358,9 +11393,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "47%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11385,9 +11420,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "48%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11412,9 +11447,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "49%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11439,9 +11474,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "50%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11466,9 +11501,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "51%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11493,9 +11528,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "52%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11520,9 +11555,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "53%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11547,9 +11582,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "54%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11574,9 +11609,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "55.00000000000001%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11601,9 +11636,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "56.00000000000001%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11628,9 +11663,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "56.99999999999999%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11655,9 +11690,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "57.99999999999999%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11682,9 +11717,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "59%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11709,9 +11744,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "60%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11736,9 +11771,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "61%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11763,9 +11798,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "62%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11790,9 +11825,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "63%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11817,9 +11852,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "64%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11844,9 +11879,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "65%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11871,9 +11906,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "66%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11898,9 +11933,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "67%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11925,9 +11960,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "68%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11952,9 +11987,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "69%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -11979,9 +12014,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "70%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12006,9 +12041,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "71%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12033,9 +12068,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "72%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12060,9 +12095,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "73%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12087,9 +12122,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "74%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12114,9 +12149,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "75%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12141,9 +12176,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "76%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12168,9 +12203,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "77%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12195,9 +12230,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "78%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12222,9 +12257,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "79%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12249,9 +12284,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "80%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12276,9 +12311,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "81%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12303,9 +12338,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "82%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12330,9 +12365,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "83%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12357,9 +12392,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "84%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12384,9 +12419,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "85%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12411,9 +12446,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "86%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12438,9 +12473,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "87%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12465,9 +12500,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "88%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12492,9 +12527,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "89%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12519,9 +12554,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "90%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12546,9 +12581,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "91%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12573,9 +12608,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "92%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12600,9 +12635,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "93%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12627,9 +12662,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "94%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12654,9 +12689,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "95%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12681,9 +12716,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "96%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12708,9 +12743,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "97%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12735,9 +12770,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "98%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12762,9 +12797,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "99%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >
@@ -12789,9 +12824,9 @@ exports[`Slider  should render correctly 1`] = `
                   "left": "100%",
                   "letterSpacing": "0.02em",
                   "lineHeight": "15px",
-                  "marginLeft": "-0.45%",
+                  "msTransform": "translateX(-50%)",
                   "top": "-2px",
-                  "width": "0.9%",
+                  "transform": "translateX(-50%)",
                 }
               }
             >

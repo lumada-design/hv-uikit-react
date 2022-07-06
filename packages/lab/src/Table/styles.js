@@ -20,6 +20,11 @@ const styles = (theme) => ({
   stickyColumns: {
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
   },
+  listRow: {
+    "table&": {
+      borderSpacing: theme.hvSpacing(0, "xs"),
+    },
+  },
 });
 
 export default styles;

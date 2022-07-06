@@ -9,7 +9,7 @@ describe("Header", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Main />
       </HvProvider>
     );

@@ -44,7 +44,7 @@ describe("TimeAgo", () => {
 
     jest.useFakeTimers();
     const wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} />
       </HvProvider>
     );
@@ -70,7 +70,7 @@ describe("TimeAgo", () => {
     // eslint-disable-next-line react/prop-types
     const mockRenderComponent = ({ children }) => <div>{children}</div>;
     const wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} component={mockRenderComponent} />
       </HvProvider>
     );
@@ -94,7 +94,7 @@ describe("TimeAgo", () => {
 
     jest.useFakeTimers();
     const wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} />
       </HvProvider>
     );
@@ -122,7 +122,7 @@ describe("TimeAgo", () => {
     formatTimeAgo.mockImplementation(formatTimeAgoMockSeconds);
 
     const wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} showSeconds />
       </HvProvider>
     );
@@ -138,7 +138,7 @@ describe("TimeAgo", () => {
 
   it("should render a Typography with a dash when timestamp is not defined", () => {
     const wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvTimeAgo />
       </HvProvider>
     );

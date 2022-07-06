@@ -1,27 +1,10 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# A few optional parameters that can be passed to this workflow:
-#  - ref: specific branch to perform the release, defaults to 'master'.
-#  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
-#  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
 name: Next Release
 on:
   repository_dispatch:
-    types: [canary]
+    types: [next]
   workflow_dispatch:
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/next
@@ -34,19 +17,17 @@ jobs:
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16.15.0"
 
       - name: Checkout
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v2
         with:
-          ref: next
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -56,119 +37,120 @@ jobs:
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
+        run: npm ci
 
       - name: Bootstrap
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
         run: npm run bootstrap
 
       - name: Publish Setup
         run: |
-          npm config delete @hv:registry
-          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
-
-          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
-          npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
-          npm config set always-auth true
-
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        run: npm run publish-next -- --no-git-reset
-
-      - name: Get Releases Commit Message
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const branch = await github.repos.getBranch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              branch: "next"
-            })
-
-            const commitMessage = branch.data.commit.commit.message
-            const slackMessage = commitMessage.replace('chore(next-release): publish', '')
-              .replace(/\n/g, "\\n")
-              .replace(/\r/g, "\\r")
-              .replace(/\t/g, "\\t")
-              .replace(/\f/g, "\\f")
-
-            core.exportVariable("SLACK_MESSAGE", slackMessage)
-
-      - name: Start Documentation Deployment
-        uses: bobheadxi/deployments@v0.4.3
-        id: deployment
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-
-      - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
-
-      - name: Checkout Documentation Repository
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
-          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
-          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          path: gh-docs
-          fetch-depth: 1
-
-      - name: Remove Previous Documentation
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
-
-      - name: Copy New Documentation
-        run: |
-          mkdir -p ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
-          cp -r dist/* ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
-
-      - name: Push Documentation
-        run: |
-          cd ${{ github.workspace }}/gh-docs
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
-          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
-          git push
-
-      - name: Cleanup Folder
-        if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
-
-      - name: Update Deployment Status
-        uses: bobheadxi/deployments@v0.4.3
-        if: always()
-        with:
-          step: finish
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: ${{ job.status }}
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: ${{env.DOCUMENTATION_URL}}
-
-      - name: Notify release
-        uses: hbfernandes/slack-action@1.0
-        if: success()
         env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available",
-                  "title": "More details https://github.com/${{github.repository}}/releases",
-                  "text": "${{env.SLACK_MESSAGE}}",
-                  "footer": "${{env.DOCUMENTATION_URL}}"
-                }
-              ]
-            }
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npx lerna publish --canary --preid=next --dist-tag=next --yes  --no-git-reset --no-verify-access
+
+      # - name: Get Releases Commit Message
+      #   uses: actions/github-script@v3
+      #   with:
+      #     github-token: ${{secrets.GITHUB_TOKEN}}
+      #     script: |
+      #       const branch = await github.repos.getBranch({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         branch: "next"
+      #       })
+
+      #       const commitMessage = branch.data.commit.commit.message
+      #       const slackMessage = commitMessage.replace('chore(release): publish', '')
+      #         .replace(/\n/g, "\\n")
+      #         .replace(/\r/g, "\\r")
+      #         .replace(/\t/g, "\\t")
+      #         .replace(/\f/g, "\\f")
+
+      #       core.exportVariable("SLACK_MESSAGE", slackMessage)
+
+      # - name: Start Documentation Deployment
+      #   uses: bobheadxi/deployments@v0.4.3
+      #   id: deployment
+      #   with:
+      #     step: start
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+      #     desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+      # - name: Generate Documentation
+      #   run: |
+      #     EXCLUDE_TEST_STORIES=true npm run build-documentation
+
+      # - name: Checkout Documentation Repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+      #     ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+      #     token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+      #     path: gh-docs
+      #     fetch-depth: 1
+
+      # - name: Remove Previous Documentation
+      #   run: |
+      #     rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+
+      # - name: Copy New Documentation
+      #   run: |
+      #     mkdir -p ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
+      #     cp -r dist/* ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
+
+      # - name: Push Documentation
+      #   run: |
+      #     cd ${{ github.workspace }}/gh-docs
+      #     git config --global user.name 'github-actions[bot]'
+      #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      #     git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+      #     git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+      #     git push
+
+      # - name: Cleanup Folder
+      #   if: always()
+      #   run: |
+      #     rm -rf ${{ github.workspace }}/gh-docs
+
+      # - name: Update Deployment Status
+      #   uses: bobheadxi/deployments@v0.4.3
+      #   if: always()
+      #   with:
+      #     step: finish
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     status: ${{ job.status }}
+      #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      #     env_url: ${{env.DOCUMENTATION_URL}}
+
+      # - name: Notify release
+      #   uses: hbfernandes/slack-action@1.0
+      #   if: success()
+      #   env:
+      #     SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      #   with:
+      #     args: |
+      #       {
+      #         "channel": "ui-kit",
+      #         "attachments": [
+      #           {
+      #             "mrkdwn_in": ["text"],
+      #             "author_name": "New UI-Kit artifacts are available",
+      #             "title": "More details https://github.com/${{github.repository}}/releases",
+      #             "text": "${{env.SLACK_MESSAGE}}",
+      #             "footer": "${{env.DOCUMENTATION_URL}}"
+      #           }
+      #         ]
+      #       }

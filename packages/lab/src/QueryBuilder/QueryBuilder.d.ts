@@ -3,7 +3,19 @@ import { StandardProps } from "@material-ui/core";
 
 import { Attribute, Query, QueryBuilderLabels, QueryCombinator, QueryOperator } from "./types";
 
-export type HvQueryBuilderClassKey = "";
+export type HvQueryBuilderClassKey =
+  | "root"
+  | "topGroup"
+  | "subGroup"
+  | "combinator"
+  | "topCombinator"
+  | "combinatorButton"
+  | "removeButton"
+  | "topRemoveButton"
+  | "rulesContainer"
+  | "subRulesContainer"
+  | "actionButtonContainer"
+  | "topActionButtonContainer";
 
 export interface HvQueryBuilderProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvQueryBuilderClassKey, "onChange"> {
@@ -38,4 +50,4 @@ export interface HvQueryBuilderProps
   labels?: QueryBuilderLabels;
 }
 
-export default function HvSlider(props: HvQueryBuilderProps): JSX.Element | null;
+export default function HvQueryBuilder(props: HvQueryBuilderProps): JSX.Element | null;

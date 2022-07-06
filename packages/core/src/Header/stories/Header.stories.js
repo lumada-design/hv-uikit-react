@@ -14,15 +14,15 @@ import {
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
-  title: "Components/Header",
+  title: "Structure/Header",
   parameters: {
     componentSubtitle: null,
     usage:
       'import {\n  HvHeader,\n  HvHeaderBrand,\n  HvHeaderNavigation,\n  HvHeaderActions,\n} from "@hitachivantara/uikit-react-core";',
-    subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvHeader,
+  subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
   decorators: [(storyFn) => <div style={{ minHeight: 100 }}>{storyFn()}</div>],
 };
 

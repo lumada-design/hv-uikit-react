@@ -1,0 +1,1179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvSlider-rootDisabled HvFormElement-root"
+    id="SingleDisabled"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvLabel-labelDisabled HvTypography-root HvTypography-highlightText"
+        for="SingleDisabled-slider"
+        id="SingleDisabled-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="SingleDisabled-input-0"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-disabled"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+              >
+                <input
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+                  disabled=""
+                  id="SingleDisabled-input-0-input"
+                  rows="10"
+                  type="text"
+                  value="10"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track"
+          style="left: 0%; width: 10%; background-color: rgb(153, 153, 153); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainerDisabled"
+        >
+          <div
+            aria-disabled="true"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            class="rc-slider-handle HvSlider-handle"
+            id="SingleDisabled-knob-0"
+            role="slider"
+            style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 0%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 20%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 40%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvSlider> sample snapshot testing Error 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvFormElement-root"
+    id="ErrorSingleSlider"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        for="ErrorSingleSlider-slider"
+        id="ErrorSingleSlider-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="ErrorSingleSlider-input-0"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-invalid"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-invalid="true"
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="ErrorSingleSlider-input-0-input"
+                  rows="10"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track"
+          style="left: 0%; width: 0%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleHiddenContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="0"
+            class="rc-slider-handle HvSlider-handle"
+            id="ErrorSingleSlider-knob-0"
+            role="slider"
+            style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-error HvWarningText-root HvWarningText-show"
+    >
+      <div
+        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
+        name="Fail"
+      >
+        <svg
+          focusable="false"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+            fill="#C62828"
+          />
+        </svg>
+      </div>
+      <p
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
+        id="ErrorSingleSlider-error"
+      >
+        Invalid because i said so
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvSlider> sample snapshot testing Main 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvFormElement-root"
+    id="Main"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        for="Main-slider"
+        id="Main-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="Main-input-0"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="Main-input-0-input"
+                  rows="10"
+                  type="text"
+                  value="10"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track"
+          style="left: 0%; width: 10%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            class="rc-slider-handle HvSlider-handle"
+            id="Main-knob-0"
+            role="slider"
+            style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvSlider-rootDisabled HvFormElement-root"
+    id="RangeSliderDisabled"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvLabel-labelDisabled HvTypography-root HvTypography-highlightText"
+        for="RangeSliderDisabled-slider"
+        id="RangeSliderDisabled-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="RangeSliderDisabled-input-0"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-disabled"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+              >
+                <input
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+                  disabled=""
+                  id="RangeSliderDisabled-input-0-input"
+                  rows="10"
+                  type="text"
+                  value="10"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Remove"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M0 7.5h16v1H0z"
+                fill="#CCCED0"
+              />
+            </svg>
+          </div>
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="RangeSliderDisabled-input-1"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-disabled"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+              >
+                <input
+                  aria-label="Failure Rate-1"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled"
+                  disabled=""
+                  id="RangeSliderDisabled-input-1-input"
+                  rows="10"
+                  type="text"
+                  value="40"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track rc-slider-track-1"
+          style="left: 10%; width: 30%; background-color: rgb(153, 153, 153); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: not-allowed; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainerDisabled"
+        >
+          <div
+            aria-disabled="true"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
+            id="RangeSliderDisabled-knob-0"
+            role="slider"
+            style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainerDisabled"
+        >
+          <div
+            aria-disabled="true"
+            aria-label="Failure Rate-knob-1"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="40"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
+            id="RangeSliderDisabled-knob-1"
+            role="slider"
+            style="left: 40%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text"
+            style="left: 0%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 20%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 40%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(153, 153, 153); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; cursor: not-allowed; top: -2px;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvSlider-trackStandBy HvFormElement-root"
+    id="ErrorRangeSlider"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        for="ErrorRangeSlider-slider"
+        id="ErrorRangeSlider-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="ErrorRangeSlider-input-0"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-invalid"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-invalid="true"
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="ErrorRangeSlider-input-0-input"
+                  rows="10"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Remove"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M0 7.5h16v1H0z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="ErrorRangeSlider-input-1"
+          >
+            <div
+              class="HvBaseInput-root HvBaseInput-invalid"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-invalid="true"
+                  aria-label="Failure Rate-1"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="ErrorRangeSlider-input-1-input"
+                  rows="10"
+                  type="text"
+                  value="53"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track rc-slider-track-1"
+          style="left: 0%; width: 53%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleHiddenContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="0"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
+            id="ErrorRangeSlider-knob-0"
+            role="slider"
+            style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-1"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="53"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
+            id="ErrorRangeSlider-knob-1"
+            role="slider"
+            style="left: 53%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-error HvWarningText-root HvWarningText-show"
+    >
+      <div
+        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
+        name="Fail"
+      >
+        <svg
+          focusable="false"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+            fill="#C62828"
+          />
+        </svg>
+      </div>
+      <p
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
+        id="ErrorRangeSlider-error"
+      >
+        Invalid because i said so
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
+<div>
+  <div
+    class="HvSlider-root HvSlider-trackStandBy HvFormElement-root"
+    id="Range"
+  >
+    <div
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
+    >
+      <label
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        for="Range-slider"
+        id="Range-label"
+      >
+        Failure Rate
+      </label>
+      <div
+        class="HvSliderInput-inputRoot"
+      >
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="Range-input-0"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-label="Failure Rate-0"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="Range-input-0-input"
+                  rows="10"
+                  type="text"
+                  value="10"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvSliderInput-inputContainer"
+        >
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Remove"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M0 7.5h16v1H0z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+          <div
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
+            id="Range-input-1"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+              >
+                <input
+                  aria-label="Failure Rate-1"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
+                  id="Range-input-1-input"
+                  rows="10"
+                  type="text"
+                  value="40"
+                />
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvSlider-sliderContainer"
+    >
+      <div
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
+      >
+        <div
+          class="rc-slider-rail"
+          style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+        />
+        <div
+          class="rc-slider-track rc-slider-track-1"
+          style="left: 10%; width: 30%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+        />
+        <div
+          class="rc-slider-step"
+        >
+          <span
+            class="rc-slider-dot"
+            style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot rc-slider-dot-active"
+            style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+          <span
+            class="rc-slider-dot"
+            style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-0"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="10"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
+            id="Range-knob-0"
+            role="slider"
+            style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="HvSlider-handleContainer"
+        >
+          <div
+            aria-disabled="false"
+            aria-label="Failure Rate-knob-1"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="40"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
+            id="Range-knob-1"
+            role="slider"
+            style="left: 40%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="rc-slider-mark"
+        >
+          <span
+            class="rc-slider-mark-text"
+            style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            0
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            20
+          </span>
+          <span
+            class="rc-slider-mark-text rc-slider-mark-text-active"
+            style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            40
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            60
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            80
+          </span>
+          <span
+            class="rc-slider-mark-text"
+            style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+          >
+            100
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

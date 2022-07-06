@@ -89,7 +89,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
 
   const { index, parentId, level } = useDescendant(descendant);
 
-  const expandable = collapsible && Boolean(Array.isArray(children) ? children.length : children);
+  const expandable = collapsible && Array.isArray(children);
   const expanded = isExpanded ? isExpanded(nodeId) : false;
   const focused = isFocused ? isFocused(nodeId) : false;
   const selected = isSelected ? isSelected(nodeId) : false;
@@ -134,7 +134,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     if (mapFirstChar && unMapFirstChar && label) {
-      mapFirstChar(nodeId, contentRef.current.textContent.substring(0, 1).toLowerCase());
+      mapFirstChar(nodeId, contentRef.current?.textContent.substring(0, 1).toLowerCase());
 
       return () => {
         unMapFirstChar(nodeId);
@@ -299,6 +299,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
         component="div"
         innerRef={contentRef}
         className={classes.content}
+        variant={disabled ? "placeholderText" : "normalText"}
         onClick={handleClick}
         onMouseDown={handleMouseDown}
         style={{

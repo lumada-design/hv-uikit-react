@@ -3,21 +3,19 @@ import { HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
-interface FilterValue {
-  value: string | number[][];
-}
+export type FilterValue = (string | number)[][];
 
 export interface HvFilterGroupProps
-  extends StandardProps<HvFormElementProps, HvFilterGroupClassKey> {
+  extends StandardProps<HvFormElementProps, HvFilterGroupClassKey, "defaultValue"> {
   /**
    * The callback fired when the cancel button is clicked.
    */
-  onCancel: (event: Event) => void;
+  onCancel?: (event: Event) => void;
 
   /**
    * The callback fired when the clear filters button is clicked.
    */
-  onClear: (event: Event) => void;
+  onClear?: (event: Event) => void;
 
   /**
    * The callback fired when the value changes.
@@ -72,7 +70,6 @@ export interface HvFilterGroupProps
     data: {
       id: string | number;
       name: string;
-      checked?: boolean;
     }[];
   }[];
 

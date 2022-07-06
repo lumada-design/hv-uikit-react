@@ -29,6 +29,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
             Object {
               "id": "01",
               "label": "Analytics",
+              "selectable": false,
             },
             Object {
               "data": Array [
@@ -43,6 +44,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       "label": "HCP Anywhere",
                     },
                     Object {
+                      "disabled": true,
                       "id": "02-01-03",
                       "label": "This Computer",
                     },
@@ -93,6 +95,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
               Object {
                 "id": "01",
                 "label": "Analytics",
+                "selectable": false,
               },
               Object {
                 "data": Array [
@@ -107,6 +110,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         "label": "HCP Anywhere",
                       },
                       Object {
+                        "disabled": true,
                         "id": "02-01-03",
                         "label": "This Computer",
                       },
@@ -266,6 +270,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <ForwardRef
                               aria-current="page"
@@ -308,6 +313,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 }
                               }
                               tabIndex={0}
+                              variant="normalText"
                             >
                               <div
                                 aria-current="page"
@@ -556,8 +562,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         Object {
                           "id": "01",
                           "label": "Analytics",
+                          "selectable": false,
                         }
                       }
+                      selectable={false}
                     >
                       <ForwardRef
                         className="HvVerticalNavigationNavigation-listItem"
@@ -586,11 +594,13 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                           Object {
                             "id": "01",
                             "label": "Analytics",
+                            "selectable": false,
                           }
                         }
+                        selectable={false}
                       >
                         <li
-                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-unselectable"
                           id="hvtreeview1-01"
                         >
                           <WithStyles(ForwardRef)
@@ -604,7 +614,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   id="hvtreeview1-01-button"
                                   role="button"
                                   style="padding-left: 10px;"
-                                  tabindex="0"
+                                  tabindex="-1"
                                 >
                                   <div
                                     class=""
@@ -624,7 +634,8 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 "paddingLeft": 10,
                               }
                             }
-                            tabIndex={0}
+                            tabIndex={-1}
+                            variant="normalText"
                           >
                             <ForwardRef
                               className="HvVerticalNavigationTreeViewItem-content"
@@ -665,7 +676,8 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   "paddingLeft": 10,
                                 }
                               }
-                              tabIndex={0}
+                              tabIndex={-1}
+                              variant="normalText"
                             >
                               <div
                                 className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -679,7 +691,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     "paddingLeft": 10,
                                   }
                                 }
-                                tabIndex={0}
+                                tabIndex={-1}
                               >
                                 <Component>
                                   <WithStyles(ForwardRef)
@@ -923,6 +935,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   "label": "HCP Anywhere",
                                 },
                                 Object {
+                                  "disabled": true,
                                   "id": "02-01-03",
                                   "label": "This Computer",
                                 },
@@ -973,6 +986,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     "label": "HCP Anywhere",
                                   },
                                   Object {
+                                    "disabled": true,
                                     "id": "02-01-03",
                                     "label": "This Computer",
                                   },
@@ -1022,6 +1036,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <ForwardRef
                               className="HvVerticalNavigationTreeViewItem-content"
@@ -1063,6 +1078,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 }
                               }
                               tabIndex={0}
+                              variant="normalText"
                             >
                               <div
                                 className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1319,6 +1335,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         "label": "HCP Anywhere",
                                       },
                                       Object {
+                                        "disabled": true,
                                         "id": "02-01-03",
                                         "label": "This Computer",
                                       },
@@ -1363,6 +1380,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           "label": "HCP Anywhere",
                                         },
                                         Object {
+                                          "disabled": true,
                                           "id": "02-01-03",
                                           "label": "This Computer",
                                         },
@@ -1408,6 +1426,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         }
                                       }
                                       tabIndex={0}
+                                      variant="normalText"
                                     >
                                       <ForwardRef
                                         className="HvVerticalNavigationTreeViewItem-content"
@@ -1449,6 +1468,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         }
                                         tabIndex={0}
+                                        variant="normalText"
                                       >
                                         <div
                                           className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1766,6 +1786,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   }
                                                 }
                                                 tabIndex={0}
+                                                variant="normalText"
                                               >
                                                 <ForwardRef
                                                   className="HvVerticalNavigationTreeViewItem-content"
@@ -1807,6 +1828,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     }
                                                   }
                                                   tabIndex={0}
+                                                  variant="normalText"
                                                 >
                                                   <div
                                                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2123,6 +2145,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   }
                                                 }
                                                 tabIndex={0}
+                                                variant="normalText"
                                               >
                                                 <ForwardRef
                                                   className="HvVerticalNavigationTreeViewItem-content"
@@ -2164,6 +2187,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     }
                                                   }
                                                   tabIndex={0}
+                                                  variant="normalText"
                                                 >
                                                   <div
                                                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2404,11 +2428,13 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         </WithStyles(ForwardRef)>
                                         <WithStyles(ForwardRef)
                                           className="HvVerticalNavigationNavigation-listItem"
+                                          disabled={true}
                                           key="02-01-03"
                                           label={<Unknown />}
                                           nodeId="02-01-03"
                                           payload={
                                             Object {
+                                              "disabled": true,
                                               "id": "02-01-03",
                                               "label": "This Computer",
                                             }
@@ -2435,17 +2461,19 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                               }
                                             }
+                                            disabled={true}
                                             label={<Unknown />}
                                             nodeId="02-01-03"
                                             payload={
                                               Object {
+                                                "disabled": true,
                                                 "id": "02-01-03",
                                                 "label": "This Computer",
                                               }
                                             }
                                           >
                                             <li
-                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-disabled"
                                               id="hvtreeview1-02-01-03"
                                             >
                                               <WithStyles(ForwardRef)
@@ -2455,7 +2483,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 innerRef={
                                                   Object {
                                                     "current": <div
-                                                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                                       id="hvtreeview1-02-01-03-button"
                                                       role="button"
                                                       style="padding-left: 30px;"
@@ -2480,6 +2508,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   }
                                                 }
                                                 tabIndex={0}
+                                                variant="placeholderText"
                                               >
                                                 <ForwardRef
                                                   className="HvVerticalNavigationTreeViewItem-content"
@@ -2521,9 +2550,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     }
                                                   }
                                                   tabIndex={0}
+                                                  variant="placeholderText"
                                                 >
                                                   <div
-                                                    className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                    className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                                     id="hvtreeview1-02-01-03-button"
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
@@ -2871,6 +2901,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <ForwardRef
                               className="HvVerticalNavigationTreeViewItem-content"
@@ -2912,6 +2943,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 }
                               }
                               tabIndex={0}
+                              variant="normalText"
                             >
                               <div
                                 className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -3241,6 +3273,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         }
                                       }
                                       tabIndex={0}
+                                      variant="normalText"
                                     >
                                       <ForwardRef
                                         className="HvVerticalNavigationTreeViewItem-content"
@@ -3282,6 +3315,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         }
                                         tabIndex={0}
+                                        variant="normalText"
                                       >
                                         <div
                                           className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -3599,6 +3633,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   }
                                                 }
                                                 tabIndex={0}
+                                                variant="normalText"
                                               >
                                                 <ForwardRef
                                                   className="HvVerticalNavigationTreeViewItem-content"
@@ -3640,6 +3675,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     }
                                                   }
                                                   tabIndex={0}
+                                                  variant="normalText"
                                                 >
                                                   <div
                                                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"

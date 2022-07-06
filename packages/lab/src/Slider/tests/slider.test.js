@@ -5,6 +5,9 @@ import { mount } from "enzyme";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import HvSlider from "..";
 
+const consoleWarnSpy = jest.fn();
+const originalWarn = console.warn;
+
 describe("Slider ", () => {
   const knobProperties = [
     {
@@ -57,17 +60,14 @@ describe("Slider ", () => {
   ];
 
   const knobPropertiesScaledDefaults = [0.1, 0.2, 0.3, 0.4, 1];
-
-  const consoleSpy = jest.fn();
-  const originalWarn = console.warn;
   let wrapper;
   let myMock;
 
   beforeEach(async () => {
-    console.warn = consoleSpy;
     myMock = jest.fn(() => "mock");
+    console.warn = consoleWarnSpy;
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider knobProperties={knobProperties} defaultValues={knobPropertiesDefaults} />
       </HvProvider>
     );
@@ -79,32 +79,20 @@ describe("Slider ", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should render correctly", () => {
     expect(wrapper.find(HvSlider)).toMatchSnapshot();
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should render the Slider component", () => {
     const sliderComponent = wrapper.find(HvSlider);
     expect(sliderComponent.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call the format mark function", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -114,16 +102,12 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls.length).not.toBe(0);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   // TODO: Review test on calling formatMark function
   it("shouldn't call the format mark function more than one time for each knob when the markProps exist", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           markProperties={[{ position: 2, label: "asd" }]}
           knobProperties={knobProperties}
@@ -134,15 +118,11 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls.length).toBe(5);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the start of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           minPointValue={15}
           knobProperties={knobProperties}
@@ -153,15 +133,11 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls[0]).toEqual(["15"]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the end of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           maxPointValue={87}
           knobProperties={knobProperties}
@@ -172,15 +148,11 @@ describe("Slider ", () => {
     );
 
     expect(myMock.mock.calls[myMock.mock.calls.length - 1]).toEqual(["87"]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should define the end of the range with the passed value", () => {
     mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -192,15 +164,11 @@ describe("Slider ", () => {
 
     // 93 = 87 points + 5 knobs
     expect(myMock.mock.calls.length).toEqual(88);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onBefore method just once", () => {
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -215,15 +183,11 @@ describe("Slider ", () => {
     instance.onBeforeChangeHandler(["10", "20", "30", "40", "50"]);
 
     expect(myMock.mock.calls.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onAfter method just once", () => {
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
@@ -238,10 +202,6 @@ describe("Slider ", () => {
     instance.onAfterChangeHandler(["10", "20", "30", "40", "50"]);
 
     expect(myMock.mock.calls.length).toBe(1);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("should call onChange method just once, adjusting the values to the scale", () => {
@@ -253,7 +213,7 @@ describe("Slider ", () => {
     };
 
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           maxPointValue={1}
           knobProperties={knobPropertiesScaled}
@@ -267,17 +227,13 @@ describe("Slider ", () => {
     const instance = myMount.find("HvSlider").instance();
 
     instance.onChangeHandler([11, 25, 37, 48, 70]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 
   it("shouldn't allow overlap. The value 100 must pass to 99", () => {
     const onChangeMock = jest.fn(() => "mock");
 
     const myMount = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -298,9 +254,5 @@ describe("Slider ", () => {
         },
       ],
     ]);
-    expect(console.warn).toHaveBeenCalledTimes(1);
-    expect(consoleSpy.mock.calls[0][0].includes("componentWillReceiveProps has been renamed")).toBe(
-      true
-    );
   });
 });

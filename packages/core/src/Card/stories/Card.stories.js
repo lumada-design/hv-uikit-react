@@ -28,13 +28,13 @@ import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
 
 export default {
-  title: "Components/Card",
+  title: "Display/Card",
   parameters: {
     componentSubtitle: null,
     usage:
       'import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from "@hitachivantara/uikit-react-core"',
 
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardMedia, HvCardContent },

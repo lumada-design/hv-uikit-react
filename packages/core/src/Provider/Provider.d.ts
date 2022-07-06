@@ -63,6 +63,21 @@ export interface HvProviderProps {
    * Disables the generation of the styles.
    */
   disableStylesGeneration?: boolean;
+
+  /**
+   * Disables the generation of the baseline css styles.
+   *
+   * This will be the default behavior in the future.
+   *
+   * The application using UI Kit should be responsible for adding the baseline css styles, by
+   * either using the `<HvCssBaseline />` component, using the `<HvScopedCssBaseline />` component,
+   * or ensuring that the necessary base styles are applied.
+   *
+   * Defaults to `false`. Will be removed in the next major release.
+   *
+   * @see https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main
+   */
+  disableCssBaseline?: boolean;
 }
 
 export default function HvProvider(props: HvProviderProps): JSX.Element | null;

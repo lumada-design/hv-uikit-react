@@ -3,6 +3,212 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.18](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.17...@hitachivantara/uikit-react-core@3.67.18) (2022-07-05)
+
+
+### Bug Fixes
+
+* **dropdown:** adding extra props to help with acccessibility.HVUIKIT-6392 ([#2829](https://github.com/lumada-design/hv-uikit-react/issues/2829)) ([e40ac39](https://github.com/lumada-design/hv-uikit-react/commit/e40ac3987691fca6515e9d9f1d82a5c4f6d56e5e))
+* **dropdown:** allow number id ([2bd99fd](https://github.com/lumada-design/hv-uikit-react/commit/2bd99fdacb4b48178ea73df3c1302662298e03cd))
+* **table:** fix Focus import ([36cbb61](https://github.com/lumada-design/hv-uikit-react/commit/36cbb61e7c2e3937a781b41c488f9d3f85fd671b))
+
+
+
+
+
+## [3.67.17](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.16...@hitachivantara/uikit-react-core@3.67.17) (2022-07-02)
+
+
+### Bug Fixes
+
+* **Slider:** add focus styles to knob ([1f892cc](https://github.com/lumada-design/hv-uikit-react/commit/1f892cc0123f0c5ee25707471c420ae9014c81be))
+* **Slider:** mark text showing above tooltip ([91271b5](https://github.com/lumada-design/hv-uikit-react/commit/91271b56c004ea27579664bcafcf24d0f9e2175f))
+
+
+
+
+
+## [3.67.16](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.15...@hitachivantara/uikit-react-core@3.67.16) (2022-07-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+## [3.67.15](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.14...@hitachivantara/uikit-react-core@3.67.15) (2022-06-30)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+## [3.67.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.13...@hitachivantara/uikit-react-core@3.67.14) (2022-06-24)
+
+
+### Bug Fixes
+
+* **actionbar:** export props ([a9a1f18](https://github.com/lumada-design/hv-uikit-react/commit/a9a1f184c9ad9d7bfb17b7169771571ee8a4ea7a))
+* **TimePicker:** export Time Picker component on the package root ([#2811](https://github.com/lumada-design/hv-uikit-react/issues/2811)) ([7d6d1c8](https://github.com/lumada-design/hv-uikit-react/commit/7d6d1c8844b698de75fa0baa2d78913cbabb4bf2))
+
+
+
+
+
+## [3.67.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.12...@hitachivantara/uikit-react-core@3.67.13) (2022-06-23)
+
+
+### Bug Fixes
+
+* **TimePicker:** export Time Picker component on the package root ([#2811](https://github.com/lumada-design/hv-uikit-react/issues/2811)) ([7d6d1c8](https://github.com/lumada-design/hv-uikit-react/commit/7d6d1c8844b698de75fa0baa2d78913cbabb4bf2))
+
+
+
+
+
+## [3.67.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.11...@hitachivantara/uikit-react-core@3.67.12) (2022-06-22)
+
+
+### Bug Fixes
+
+* **Slider:** update rc-tooltip version. [#2807](https://github.com/lumada-design/hv-uikit-react/issues/2807) ([4fc619f](https://github.com/lumada-design/hv-uikit-react/commit/4fc619f555a11c80db5f5085922bffc14b4b450e))
+
+
+
+
+
+## [3.67.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.10...@hitachivantara/uikit-react-core@3.67.11) (2022-06-20)
+
+
+### Bug Fixes
+
+* **filter-group:** counter component was not counting correctly ([eb044d8](https://github.com/lumada-design/hv-uikit-react/commit/eb044d8dc2a0ec515ab142ece35763fb178d1351))
+
+
+
+
+
+## [3.67.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.9...@hitachivantara/uikit-react-core@3.67.10) (2022-06-15)
+
+
+### Bug Fixes
+
+* **SimpleGrid:** added simple grid to missing index files ([bccc483](https://github.com/lumada-design/hv-uikit-react/commit/bccc483f60d8790340d3d6e4892bd5c1c842ff6f))
+
+
+
+
+
+## [3.67.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.8...@hitachivantara/uikit-react-core@3.67.9) (2022-06-06)
+
+
+### Bug Fixes
+
+* **vertical-navigation:** fix typescript definition is not optional ([844ca11](https://github.com/lumada-design/hv-uikit-react/commit/844ca11d75b9ccdca33e80b5eb52cfd6687cffff))
+
+
+
+
+
+## 3.67.8 (2022-06-06)
+
+
+### Bug Fixes
+
+* **vertical-navigation:** disabled item is not working. ([#2795](https://github.com/lumada-design/hv-uikit-react/issues/2795)) ([c9ce6a0](https://github.com/lumada-design/hv-uikit-react/commit/c9ce6a0e82f802c36c48ba81e2f6c33a0c7618a2))
+
+
+
+
+
+## [3.67.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.6...@hitachivantara/uikit-react-core@3.67.7) (2022-06-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+## 3.67.6 (2022-05-30)
+
+
+### Bug Fixes
+
+* **dialog:** dialog is growing more than required ([c5ecbda](https://github.com/lumada-design/hv-uikit-react/commit/c5ecbdade130b504bf0ff595bc1bb2f17ea45ad2))
+* **Dialog:** have header and footer of the Dialog be fixed on top and bottom of the dialog ([9e84cd6](https://github.com/lumada-design/hv-uikit-react/commit/9e84cd61d12ead7988d26ac88d6e5aeeaf3b6469))
+* **TreeViewItem:** added a null validation to ref ([a6f3428](https://github.com/lumada-design/hv-uikit-react/commit/a6f342875b3850c7ca2c9441deb88ad7c2c8fe43))
+
+
+
+
+
+## [3.67.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.4...@hitachivantara/uikit-react-core@3.67.5) (2022-05-25)
+
+
+### Bug Fixes
+
+* **AppSwitcher:** adjust dual mode width ([0e7e14c](https://github.com/lumada-design/hv-uikit-react/commit/0e7e14c58519426c21fd1ee8be80d13e90c9319e))
+
+
+
+
+
+## [3.67.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.3...@hitachivantara/uikit-react-core@3.67.4) (2022-05-24)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+## [3.67.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.2...@hitachivantara/uikit-react-core@3.67.3) (2022-05-18)
+
+
+### Bug Fixes
+
+* **barchart:** barchart breaks when width is small.HVUIKIT-6348 ([#2775](https://github.com/lumada-design/hv-uikit-react/issues/2775)) ([ed69e92](https://github.com/lumada-design/hv-uikit-react/commit/ed69e92e48522eb23c3d2a8f6fc7f4487597a105))
+
+
+
+
+
+## [3.67.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.1...@hitachivantara/uikit-react-core@3.67.2) (2022-05-11)
+
+
+### Bug Fixes
+
+* **filter-group:** does not allow having minimum configurations ([#2771](https://github.com/lumada-design/hv-uikit-react/issues/2771)) ([36b6b9c](https://github.com/lumada-design/hv-uikit-react/commit/36b6b9cebe33e52819eacdc54d4fe25262f6501f))
+* **slider:** is seethrough while disabled ([#2773](https://github.com/lumada-design/hv-uikit-react/issues/2773)) ([e065d60](https://github.com/lumada-design/hv-uikit-react/commit/e065d604892904342906851de3ce227a9f61d83e))
+
+
+
+
+
+## [3.67.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.67.0...@hitachivantara/uikit-react-core@3.67.1) (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-core
+
+
+
+
+
+# [3.67.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.66.2...@hitachivantara/uikit-react-core@3.67.0) (2022-05-10)
+
+
+### Bug Fixes
+
+* **filter-group:** filter group default value type doesn't match. ([#2769](https://github.com/lumada-design/hv-uikit-react/issues/2769)) ([a37d0a7](https://github.com/lumada-design/hv-uikit-react/commit/a37d0a7f6ed3f9ee46104fe052fad8179f122017))
+
+
+### Features
+
+* **slider:** implement slider component.HVUIKIT-6327 ([6a82e5f](https://github.com/lumada-design/hv-uikit-react/commit/6a82e5f744e5562ce9dffe2dade55ab33403d13c))
+
+
+
+
+
 ## [3.66.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.66.0...@hitachivantara/uikit-react-core@3.66.2) (2022-05-06)
 
 

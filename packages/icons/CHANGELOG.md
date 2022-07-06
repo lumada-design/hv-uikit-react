@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.8.13 (2022-07-02)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-icons
+
+
+
+
+
+## [3.8.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@3.8.11...@hitachivantara/uikit-react-icons@3.8.12) (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-icons
+
+
+
+
+
+## 3.8.11 (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-icons
+
+
+
+
+
 ## [3.8.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@3.8.8...@hitachivantara/uikit-react-icons@3.8.10) (2022-05-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

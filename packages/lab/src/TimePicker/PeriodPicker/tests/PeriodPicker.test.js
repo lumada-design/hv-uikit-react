@@ -15,7 +15,7 @@ describe("PeriodPicker", () => {
   beforeEach(async () => {
     mockOnChangePeriod = jest.fn();
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <PeriodPicker period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
       </HvProvider>
     );

@@ -12,7 +12,7 @@ describe("<CalendarHeader />", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <CalendarHeader id="default" value={inputDate} locale={locale} />
       </HvProvider>
     );

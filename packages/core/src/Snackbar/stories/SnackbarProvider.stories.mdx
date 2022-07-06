@@ -4,36 +4,35 @@ import LinkTo from "@storybook/addon-links/react";
 
 import { Usage } from "storybook-root/blocks/Usage";
 
-import { 
-  SnackbarProvider, 
-} from "./SnackbarProvider.stories.js";
+import { SnackbarProvider } from "./SnackbarProvider.stories.js";
 
-<Meta title="Components/Snackbar/Provider" />
+<Meta title="Feedback/Snackbar/Provider" />
 
 # Snackbar Provider
 
-The UI Kit library provides a snackbar provider 
+The UI Kit library provides a snackbar provider
 to control the stacking of multiple snackbars in the app.
 
-The providers is not meant to be 100% feature complete, but instead, 
-ease the majority of use-cases we have been encountering. 
-If you need any customization or extension to the behavior, 
+The providers is not meant to be 100% feature complete, but instead,
+ease the majority of use-cases we have been encountering.
+If you need any customization or extension to the behavior,
 please feel free to copy and customize it.
 
-This feature needs both the *HvSnackbarProvider* provider and the hook *useHvSnackbar*.
+This feature needs both the _HvSnackbarProvider_ provider and the hook _useHvSnackbar_.
 The provider and the hook are wrappers of the [Notistack](https://github.com/iamhosseindhv/notistack) API.
 
 Ideally the `HvSnackbarProvider` should be at the top of the component tree of your application.
-This will allow the snackbar to be triggered in any page. 
+This will allow the snackbar to be triggered in any page.
 For more information of the provider API check the [notistack documentation](https://iamhosseindhv.com/notistack/api).
 
 <Usage>{'import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";'}</Usage>
 
-After adding the provider at the root of your app, you can call the ```useHvSnackbar``` at any
+After adding the provider at the root of your app, you can call the `useHvSnackbar` at any
 component inside your app. This hook will allow you to request the rendering of a snackbar through the use
-of the ```enqueueSnackbar``` function which follows the API bellow:
+of the `enqueueSnackbar` function which follows the API bellow:
 
 parameters:
+
 - `message: string | React.node`: The message to render inside the snackbar.
 - `options: HvEnqueueOptions`: The options to configure the snackbar.
   - `HvEnqueueOptions`:
@@ -42,6 +41,7 @@ parameters:
     - `snackbarContentProps?: HvSnackbarContentProps`: Extra properties to be passed onto the snackbar
 
 output:
+
 - `SnackbarKey: string | number`: How many snackbars to render.
 
 <Usage>{'import { useHvSnackbar } from "@hitachivantara/uikit-react-core";'}</Usage>

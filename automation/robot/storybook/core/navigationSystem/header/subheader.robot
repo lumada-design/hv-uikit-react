@@ -1,6 +1,6 @@
 *** Setting ***
 Resource          _header.resource
-Test Setup        open header sample    ${components}    main
+Test Setup        open header sample    ${structure}    main
 Force Tags        bug-infrastructure-ie
 Documentation     Test Cases based on Design System Version 1.2.0
 

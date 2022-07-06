@@ -7,11 +7,10 @@ import { HvTagsInput, HvTypography, HvInput, HvButton } from "../..";
 import countryNamesArray from "./countries";
 
 export default {
-  title: "Forms/Tags Input",
+  title: "Inputs/Tags Input",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTagsInput } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.6.0",
   },
   component: HvTagsInput,

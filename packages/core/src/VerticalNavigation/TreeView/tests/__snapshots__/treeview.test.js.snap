@@ -113,6 +113,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                 }
                 tabIndex={0}
+                variant="normalText"
               >
                 <ForwardRef
                   className="HvVerticalNavigationTreeViewItem-content"
@@ -154,6 +155,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     }
                   }
                   tabIndex={0}
+                  variant="normalText"
                 >
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -264,6 +266,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                           }
                           tabIndex={0}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -305,6 +308,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -372,7 +376,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     innerRef={
                                       Object {
                                         "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                           id="hvtreeview1-3-button"
                                           role="button"
                                           style="padding-left: 30px;"
@@ -392,6 +396,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={0}
+                                    variant="placeholderText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -433,9 +438,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={0}
+                                      variant="placeholderText"
                                     >
                                       <div
-                                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                         id="hvtreeview1-3-button"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
@@ -517,6 +523,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={0}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -558,6 +565,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={0}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -644,6 +652,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={-1}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -685,6 +694,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={-1}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -787,6 +797,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={0}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -828,6 +839,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={0}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -943,6 +955,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                 }
                 tabIndex={0}
+                variant="normalText"
               >
                 <ForwardRef
                   className="HvVerticalNavigationTreeViewItem-content"
@@ -984,6 +997,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     }
                   }
                   tabIndex={0}
+                  variant="normalText"
                 >
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1094,6 +1108,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                           }
                           tabIndex={0}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -1135,6 +1150,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1219,6 +1235,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                           }
                           tabIndex={0}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -1260,6 +1277,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1344,6 +1362,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                           }
                           tabIndex={0}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -1385,6 +1404,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               }
                             }
                             tabIndex={0}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1542,6 +1562,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                 }
                 tabIndex={-1}
+                variant="normalText"
               >
                 <ForwardRef
                   className="HvVerticalNavigationTreeViewItem-content"
@@ -1583,6 +1604,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     }
                   }
                   tabIndex={-1}
+                  variant="normalText"
                 >
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1695,6 +1717,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                           }
                           tabIndex={-1}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -1736,6 +1759,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -1806,7 +1830,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     innerRef={
                                       Object {
                                         "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                           id="hvtreeview3-3-button"
                                           role="button"
                                           style="padding-left: 30px;"
@@ -1826,6 +1850,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={-1}
+                                    variant="placeholderText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -1867,9 +1892,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={-1}
+                                      variant="placeholderText"
                                     >
                                       <div
-                                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                         id="hvtreeview3-3-button"
                                         onClick={[Function]}
                                         onFocus={[Function]}
@@ -1952,6 +1978,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={-1}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -1993,6 +2020,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={-1}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2080,6 +2108,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={-1}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -2121,6 +2150,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={-1}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2224,6 +2254,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                     }
                                     tabIndex={-1}
+                                    variant="normalText"
                                   >
                                     <ForwardRef
                                       className="HvVerticalNavigationTreeViewItem-content"
@@ -2265,6 +2296,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                         }
                                       }
                                       tabIndex={-1}
+                                      variant="normalText"
                                     >
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2381,6 +2413,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                 }
                 tabIndex={-1}
+                variant="normalText"
               >
                 <ForwardRef
                   className="HvVerticalNavigationTreeViewItem-content"
@@ -2422,6 +2455,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     }
                   }
                   tabIndex={-1}
+                  variant="normalText"
                 >
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2534,6 +2568,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                           }
                           tabIndex={-1}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -2575,6 +2610,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2660,6 +2696,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                           }
                           tabIndex={-1}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -2701,6 +2738,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
@@ -2786,6 +2824,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                           }
                           tabIndex={-1}
+                          variant="normalText"
                         >
                           <ForwardRef
                             className="HvVerticalNavigationTreeViewItem-content"
@@ -2827,6 +2866,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            variant="normalText"
                           >
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"

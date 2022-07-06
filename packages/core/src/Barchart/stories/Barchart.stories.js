@@ -8,7 +8,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBarchart } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
     dsVersion: "3.2.1",
   },
   component: HvBarchart,

@@ -16,9 +16,11 @@ import {
 } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 
-import { themeBuilder, createGenerateClassName, CssBaseline, getTheme } from "../theme";
+import { themeBuilder, createGenerateClassName, HvCssBaseline, getTheme } from "../theme";
 
 import ConfigContext from "./context";
+
+let warnedOnce = false;
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -58,8 +60,8 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
  * <HvProvider/>
  * ```
  *
- * If several `HvProvider`'s are used, either nested or in paralel, the `generateClassNameOptions`
- * must be tweaked to avoid CSS classnames colision. Or a custom JSS's class name generator can
+ * If several `HvProvider`'s are used, either nested or in parallel, the `generateClassNameOptions`
+ * must be tweaked to avoid CSS classnames collision. Or a custom JSS's class name generator can
  * be provided via the `generateClassName` property.
  *
  * **UI Kit components will not work at all if the `HvProvider` is not configured correctly**,
@@ -79,7 +81,21 @@ const HvProvider = ({
   generateClassNameOptions,
   injectStylesFirst = false,
   disableStylesGeneration = false,
+
+  disableCssBaseline = false,
 }) => {
+  if (process.env.NODE_ENV !== "production") {
+    if (!warnedOnce && !disableCssBaseline) {
+      warnedOnce = true;
+      // eslint-disable-next-line no-console
+      console.warn(
+        "UI Kit HvProvider's automatic definition of a css styles baseline will be removed in the next major version.\n" +
+          "You can use the `disableCssBaseline` property to disable it already.\n" +
+          "See https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main"
+      );
+    }
+  }
+
   const localeSetting = locale || (navigator?.language ?? "en-US");
 
   const rawUiKitTheme = getTheme(uiKitTheme);
@@ -100,7 +116,7 @@ const HvProvider = ({
       disableGeneration={disableStylesGeneration}
     >
       <MuiThemeProvider theme={customTheme}>
-        <CssBaseline />
+        {!disableCssBaseline && <HvCssBaseline />}
         <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
       </MuiThemeProvider>
     </MuiStylesProvider>
@@ -174,6 +190,21 @@ HvProvider.propTypes = {
    * Disables the generation of the styles.
    */
   disableStylesGeneration: PropTypes.bool,
+
+  /**
+   * Disables the generation of the baseline css styles.
+   *
+   * This will be the default behavior in the future.
+   *
+   * The application using UI Kit should be responsible for adding the baseline css styles, by
+   * either using the `<HvCssBaseline />` component, using the `<HvScopedCssBaseline />` component,
+   * or ensuring that the necessary base styles are applied.
+   *
+   * Defaults to `false`. Will be removed in the next major release.
+   *
+   * @see https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main
+   */
+  disableCssBaseline: PropTypes.bool,
 };
 
 export default HvProvider;

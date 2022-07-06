@@ -9,14 +9,14 @@ Force Tags       keyboard
 *** Test Cases ***
 open and focus inside calendar when is focused and is pressed SPACE
     [setup]   NONE
-    Go To                             ${forms}date-picker--range-mode
+    Go To                             ${inputs}date-picker--range-mode
     Wait Until Element Is Visible     ${datePickerHeader}
     Press Keys                        ${datePickerHeader}    SPACE
     Wait Until Element Is Visible     ${calendar}
 
 open and focus inside calendar when press ENTER
     [setup]   NONE
-    Go To                             ${forms}date-picker--range-mode
+    Go To                             ${inputs}date-picker--range-mode
     Wait Until Element Is Visible     ${datePickerHeader}
     Press Keys                        ${datePickerHeader}    ENTER
     Wait Until Element Is Visible     ${calendar}

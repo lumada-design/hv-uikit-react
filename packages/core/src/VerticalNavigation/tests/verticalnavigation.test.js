@@ -11,7 +11,7 @@ describe("<VerticalNavigation />", () => {
   let wrapper;
   describe("collapsable closed vertical navigation", () => {
     wrapper = mount(
-      <HvProvider>
+      <HvProvider disableCssBaseline>
         <Main />
       </HvProvider>
     );
@@ -27,7 +27,7 @@ describe("<VerticalNavigation />", () => {
       consoleSpy.mockReset();
       console.error = consoleSpy;
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <Collapsable />
         </HvProvider>
       );
@@ -55,7 +55,7 @@ describe("<VerticalNavigation />", () => {
       consoleSpy.mockReset();
       console.error = consoleSpy;
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvVerticalNavigation
             isOpen
             isCollapsable={false}
@@ -91,7 +91,7 @@ describe("<VerticalNavigation />", () => {
   describe("non-collapsable open vertical navigation", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <HvVerticalNavigation
             isOpen={false}
             isCollapsable={false}

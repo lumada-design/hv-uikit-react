@@ -4,12 +4,11 @@ import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvDropDownMenu } from "../..";
 
 export default {
-  title: "Components/Dropdown Menu",
+  title: "Inputs/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDropDownMenu } from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvDropDownMenu,
   decorators: [

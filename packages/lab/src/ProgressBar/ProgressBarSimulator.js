@@ -5,7 +5,7 @@ import { HvButton } from "@hitachivantara/uikit-react-core";
 import { HvProgressBar } from "..";
 
 // eslint-disable-next-line react/prop-types
-export const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ariaLive }) => {
+export const ProgressBarSimulator = ({ inc, error, ariaLabel, ariaLive }) => {
   const [status, setStatus] = useState("inProgress");
   const [value, setValue] = useState(0);
   const [run, setRun] = useState(false);
@@ -38,7 +38,6 @@ export const ProgressBarSimulator = ({ inc, error, undeterminate, ariaLabel, ari
       <HvProgressBar
         value={value}
         status={status}
-        undeterminate={undeterminate}
         labelProps={{
           "aria-label": ariaLabel,
           "aria-busy": false,

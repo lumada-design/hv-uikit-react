@@ -68,7 +68,6 @@ const styles = (theme) => ({
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
-    color: theme.hv.palette.accent.acce1,
     borderLeft: `2px solid transparent`,
     paddingRight: theme.hv.spacing.xs,
 

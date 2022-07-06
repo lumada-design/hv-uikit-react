@@ -5,12 +5,11 @@ import HvContainer from "../Container";
 import useWidth from "../../utils/useWidth";
 
 export default {
-  title: "Foundation/Container",
+  title: "Layout/Container",
   parameters: {
     componentSubtitle: null,
     usage: 'import {HvContainer} from "@hitachivantara/uikit-react-core"',
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvContainer,
 };

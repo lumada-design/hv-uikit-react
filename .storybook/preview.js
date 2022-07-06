@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import addons from "@storybook/addons";
 import { Global } from "@storybook/theming";
-import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvCssBaseline } from "@hitachivantara/uikit-react-core";
 import DocsPage from "./blocks/DocsPage";
 import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";
@@ -18,19 +18,23 @@ export const parameters = {
     storySort: {
       method: "alphabetical",
       order: [
-        "Get Started",
-        ["Introduction", "Installation", "Component List", "Styling"],
-        "Foundation",
-        ["Grid", "Container", "Provider", "Theming", "Typography", "Colors", "Icons"],
-        "Components",
-        "Forms",
-        ["Main", "Form Element", "Form Element Blocks"],
+        "Introduction",
+        ["Overview", "Installation", "Component List"],
+        "Concepts",
+        ["Provider", "Theming", "Typography", "Colors", "Icons"],
+        "How To Guides",
+        "Layout",
+        "Display",
+        "Feedback",
+        "Inputs",
+        "Navigation",
+        "Overlay",
+        "Structure",
         "Visualizations",
+        "Components",
         "Widgets",
+        "Templates",
         "Lab",
-        ["Table", "Table Hooks", "Table Column Renderers"],
-        "Community",
-        ["Overview", "Release Schedule", "Contributing"],
       ],
     },
   },
@@ -65,7 +69,9 @@ const App = ({ story: Story }) => {
         generateClassNameOptions={
           isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
         }
+        disableCssBaseline
       >
+        <HvCssBaseline />
         <Story />
       </HvProvider>
     </>

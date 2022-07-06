@@ -6,7 +6,7 @@ testingThemes.forEach(async (theme) => {
   test.describe(`TimePicker ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=forms-time-picker--externally-controlled&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=inputs-time-picker--externally-controlled&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 

@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: "16"
+          node-version: "16.15.0"
 
       - name: Checkout
         uses: actions/checkout@v2.0.0

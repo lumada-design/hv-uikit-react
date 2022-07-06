@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.5.0 (2022-07-02)
+
+
+### Features
+
+* **HvControls:** new component ([#2809](https://github.com/lumada-design/hv-uikit-react/issues/2809)) ([80cfdfd](https://github.com/lumada-design/hv-uikit-react/commit/80cfdfdcdc5616e4c22465f468935b7319dbf689))
+
+
+
+
+
+## [3.4.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-common-themes@3.4.3...@hitachivantara/uikit-common-themes@3.4.4) (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-common-themes
+
+
+
+
+
+## 3.4.3 (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-common-themes
+
+
+
+
+
 ## [3.4.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-common-themes@3.4.0...@hitachivantara/uikit-common-themes@3.4.2) (2022-05-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-common-themes

@@ -10,7 +10,7 @@ import Select from "../Select";
 
 describe("Default Pagination", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <Main />
     </HvProvider>
   );
@@ -37,7 +37,7 @@ describe("Default Pagination", () => {
 
 describe("Pagination without pageJump Input", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <HvPagination showPageJump={false} />
     </HvProvider>
   );
@@ -50,7 +50,7 @@ describe("Pagination without pageJump Input", () => {
 
 describe("Pagination without pageSize select", () => {
   const wrapper = mount(
-    <HvProvider>
+    <HvProvider disableCssBaseline>
       <HvPagination showPageSizeOptions={false} />
     </HvProvider>
   );

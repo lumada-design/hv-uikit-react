@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from "react";
+import React, { useRef, forwardRef, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
@@ -51,12 +51,18 @@ const HvTable = forwardRef(function HvTable(props, ref) {
     component = defaultComponent,
     stickyHeader = false,
     stickyColumns = false,
+    variant = "default",
     ...others
   } = props;
 
+  const containerRef = useRef(ref);
+
   const components = useMemo(() => computeTablePartComponents(component), [component]);
 
-  const tableContext = useMemo(() => ({ components }), [components]);
+  const tableContext = useMemo(
+    () => ({ components, variant, containerRef }),
+    [components, variant, containerRef]
+  );
 
   return (
     <TableContext.Provider value={tableContext}>
@@ -68,6 +74,7 @@ const HvTable = forwardRef(function HvTable(props, ref) {
           {
             [classes.stickyHeader]: stickyHeader,
             [classes.stickyColumns]: stickyColumns,
+            [classes.listRow]: variant === "listrow",
           },
           className
         )}
@@ -85,17 +92,14 @@ HvTable.propTypes = {
    * When using non-table elements, layout is up to the developer using the component.
    */
   component: PropTypes.elementType,
-
   /**
    * Content to be rendered
    */
   children: PropTypes.node.isRequired,
-
   /**
    * Class names to be applied.
    */
   className: PropTypes.string,
-
   /**
    * Whether the `HvTable` has a sticky header row.
    */
@@ -104,7 +108,10 @@ HvTable.propTypes = {
    * Whether the `HvTable` has sticky columns.
    */
   stickyColumns: PropTypes.bool,
-
+  /**
+   * Whether the `HvTable` has the list row styles or the default.
+   */
+  variant: PropTypes.oneOf(["listrow", "default"]),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -121,6 +128,10 @@ HvTable.propTypes = {
      * Styles applied to the component root class when it has sticky columns.
      */
     stickyColumns: PropTypes.string,
+    /**
+     * Styles applied to the component root class when it has sticky columns.
+     */
+    listRow: PropTypes.string,
   }).isRequired,
 };
 

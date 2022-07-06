@@ -3,6 +3,211 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.48.0...@hitachivantara/uikit-react-lab@3.48.1) (2022-07-05)
+
+
+### Bug Fixes
+
+* **dropdown:** adding extra props to help with acccessibility.HVUIKIT-6392 ([#2829](https://github.com/lumada-design/hv-uikit-react/issues/2829)) ([e40ac39](https://github.com/lumada-design/hv-uikit-react/commit/e40ac3987691fca6515e9d9f1d82a5c4f6d56e5e))
+* **table:** fix Focus import ([36cbb61](https://github.com/lumada-design/hv-uikit-react/commit/36cbb61e7c2e3937a781b41c488f9d3f85fd671b))
+
+
+
+
+
+# [3.48.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.3...@hitachivantara/uikit-react-lab@3.48.0) (2022-07-02)
+
+
+### Features
+
+* **HvControls:** new component ([#2809](https://github.com/lumada-design/hv-uikit-react/issues/2809)) ([80cfdfd](https://github.com/lumada-design/hv-uikit-react/commit/80cfdfdcdc5616e4c22465f468935b7319dbf689))
+
+
+
+
+
+## [3.47.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.2...@hitachivantara/uikit-react-lab@3.47.3) (2022-07-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.47.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.1...@hitachivantara/uikit-react-lab@3.47.2) (2022-06-30)
+
+
+### Bug Fixes
+
+* **QueryBuilder:** use TimePicker in the core package. [#2810](https://github.com/lumada-design/hv-uikit-react/issues/2810) ([#2818](https://github.com/lumada-design/hv-uikit-react/issues/2818)) ([b3f3bee](https://github.com/lumada-design/hv-uikit-react/commit/b3f3bee35d09a9be2d55301875b91a8438b2785b))
+
+
+
+
+
+## [3.47.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.47.0...@hitachivantara/uikit-react-lab@3.47.1) (2022-06-24)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+# [3.47.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.46.1...@hitachivantara/uikit-react-lab@3.47.0) (2022-06-23)
+
+
+### Features
+
+* **querybuilder:** allow custom attribute types ([#2812](https://github.com/lumada-design/hv-uikit-react/issues/2812)) ([22d6eed](https://github.com/lumada-design/hv-uikit-react/commit/22d6eed6169285ecbfad5e957c0959ef79371b07))
+
+
+
+
+
+## [3.46.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.46.0...@hitachivantara/uikit-react-lab@3.46.1) (2022-06-22)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+# [3.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.12...@hitachivantara/uikit-react-lab@3.46.0) (2022-06-20)
+
+
+### Features
+
+* **Table:** added list variant to table ([dc1139d](https://github.com/lumada-design/hv-uikit-react/commit/dc1139dad7aec354ff4aaebc01a6522d8f3263ec))
+
+
+
+
+
+## [3.45.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.11...@hitachivantara/uikit-react-lab@3.45.12) (2022-06-15)
+
+
+### Bug Fixes
+
+* **progress-bar:** remove indeterminate state ([b464afa](https://github.com/lumada-design/hv-uikit-react/commit/b464afa9820ec491c612457f45e8a462814e8115))
+
+
+
+
+
+## [3.45.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.10...@hitachivantara/uikit-react-lab@3.45.11) (2022-06-06)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.9...@hitachivantara/uikit-react-lab@3.45.10) (2022-06-06)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.8...@hitachivantara/uikit-react-lab@3.45.9) (2022-06-03)
+
+
+### Bug Fixes
+
+* **query-builder:** adding styles to the query builder to avoid material warning ([#2794](https://github.com/lumada-design/hv-uikit-react/issues/2794)) ([db7b205](https://github.com/lumada-design/hv-uikit-react/commit/db7b20587b5354cf241b1faddee1048ca1ef6899))
+
+
+
+
+
+## [3.45.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.7...@hitachivantara/uikit-react-lab@3.45.8) (2022-06-01)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.6...@hitachivantara/uikit-react-lab@3.45.7) (2022-05-30)
+
+
+### Bug Fixes
+
+* **QueryBuild:** add classes type definition ([a075ca8](https://github.com/lumada-design/hv-uikit-react/commit/a075ca8d88a4392abf46f4679f9bc02a1f7b949e))
+
+
+
+
+
+## [3.45.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.5...@hitachivantara/uikit-react-lab@3.45.6) (2022-05-25)
+
+
+### Bug Fixes
+
+* **QueryBuilder:** allow configuring styles via classes object ([06ea6a8](https://github.com/lumada-design/hv-uikit-react/commit/06ea6a8f78b1888c1f04350d71b28c31809033c1))
+* **QueryBuilder:** don't allow adding groups when maxDepth is 0 ([#2778](https://github.com/lumada-design/hv-uikit-react/issues/2778)) ([41d6cc1](https://github.com/lumada-design/hv-uikit-react/commit/41d6cc14fd15ec63f39360db24e8a7d6fc92d313))
+* **QueryBuilder:** styles breaking when maxDepth is 2 or bigger ([#2780](https://github.com/lumada-design/hv-uikit-react/issues/2780)) ([94e4e3c](https://github.com/lumada-design/hv-uikit-react/commit/94e4e3cb7753dcf290c671415f532ed79b29f7f4))
+
+
+
+
+
+## [3.45.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.4...@hitachivantara/uikit-react-lab@3.45.5) (2022-05-25)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.3...@hitachivantara/uikit-react-lab@3.45.4) (2022-05-24)
+
+
+### Bug Fixes
+
+* **QueryBuilder:** don't allow adding groups when maxDepth is 0 ([#2778](https://github.com/lumada-design/hv-uikit-react/issues/2778)) ([41d6cc1](https://github.com/lumada-design/hv-uikit-react/commit/41d6cc14fd15ec63f39360db24e8a7d6fc92d313))
+* **QueryBuilder:** styles breaking when maxDepth is 2 or bigger ([#2780](https://github.com/lumada-design/hv-uikit-react/issues/2780)) ([94e4e3c](https://github.com/lumada-design/hv-uikit-react/commit/94e4e3cb7753dcf290c671415f532ed79b29f7f4))
+
+
+
+
+
+## [3.45.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.2...@hitachivantara/uikit-react-lab@3.45.3) (2022-05-18)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.1...@hitachivantara/uikit-react-lab@3.45.2) (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+## [3.45.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.45.0...@hitachivantara/uikit-react-lab@3.45.1) (2022-05-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
+
+
+
+
+# [3.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.44.2...@hitachivantara/uikit-react-lab@3.45.0) (2022-05-10)
+
+
+### Features
+
+* **slider:** implement slider component.HVUIKIT-6327 ([6a82e5f](https://github.com/lumada-design/hv-uikit-react/commit/6a82e5f744e5562ce9dffe2dade55ab33403d13c))
+
+
+
+
+
 ## [3.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.44.0...@hitachivantara/uikit-react-lab@3.44.2) (2022-05-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

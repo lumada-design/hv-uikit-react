@@ -308,6 +308,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         }
                       }
                       tabIndex={0}
+                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content"
@@ -349,6 +350,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           }
                         }
                         tabIndex={0}
+                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"

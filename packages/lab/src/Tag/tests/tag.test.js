@@ -22,7 +22,7 @@ describe("HvTags", () => {
 
     it("Default", () => {
       const { container } = render(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <Default />
         </HvProvider>
       );
@@ -34,7 +34,7 @@ describe("HvTags", () => {
     });
     it("renders a tag as expected", () => {
       const { container, getByText } = render(
-        <HvProvider>
+        <HvProvider disableCssBaseline>
           <Default />
         </HvProvider>
       );

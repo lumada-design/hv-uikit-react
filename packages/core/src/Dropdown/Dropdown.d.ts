@@ -1,7 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 import { PopperProps } from "@material-ui/core/Popper";
-import { ListLabelsProp, ListValueProp } from "../List";
-import { HvFormElementProps } from "..";
+import { ListLabelsProp, ListValueProp, HvListProps } from "../List";
+import { HvFormElementProps, HvBaseDropdownProps } from "..";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
   /**
@@ -106,7 +106,14 @@ export interface HvDropdownProps
    * Properties passed to the underlying Popper component
    */
   popperProps?: Partial<PopperProps>;
-
+  /**
+   * Extra props passed to the list
+   */
+  listProps?: Partial<HvListProps>;
+  /**
+   * Extra props passed to the base dropdown
+   */
+  baseDropdownProps?: Partial<HvBaseDropdownProps>;
   /**
    * Callback called when the user cancels the changes.
    *

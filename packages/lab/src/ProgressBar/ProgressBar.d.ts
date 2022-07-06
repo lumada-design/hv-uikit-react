@@ -9,12 +9,10 @@ export type HvProgressBarClassKey =
   | "progressBar"
   | "progressDone"
   | "progressError"
-  | "progressBarLabel"
-  | "progressBarLabelHidden";
+  | "progressBarLabel";
 
 export interface HvProgressBarProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvProgressBarClassKey>,
-    HvProgressBarProps {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvProgressBarClassKey> {
   /**
    * The value of the progress bar.
    */
@@ -27,10 +25,6 @@ export interface HvProgressBarProps
    * When uncontrolled and unspecified it will default to "inProgress".
    */
   status?: string;
-  /**
-   * If `true` the progress bar will not show the percentage label.
-   */
-  undeterminate?: boolean;
   /**
    * Aria Properties passed on to the progress bar.
    */

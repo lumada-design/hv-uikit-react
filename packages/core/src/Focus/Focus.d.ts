@@ -3,7 +3,7 @@ import { StandardProps } from "@material-ui/core";
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
-export type ClassKey =
+export type HvFocusClassKey =
   | "root"
   | "selected"
   | "disabled"
@@ -15,7 +15,7 @@ export type ClassKey =
   | "focus";
 
 export interface HvFocusProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFocusClassKey> {
   /**
    * The reference to the root element to hold all Focus' context.
    */
@@ -39,7 +39,7 @@ export interface HvFocusProps
   /**
    * Child node to set the focus.
    */
-  children: HTMLElement;
+  children: React.ReactNode;
   /**
    * Focus and navigation strategy to be used.
    */

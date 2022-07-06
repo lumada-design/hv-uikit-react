@@ -1,0 +1,3050 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HvControls> sample snapshot testing Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection"
+      >
+        <div
+          class="HvLeftControl-root"
+          theme="[object Object]"
+        >
+          <div
+            class="HvInput-root HvFormElement-root"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+              >
+                <input
+                  aria-controls="cardsGrid itemList"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon"
+                    >
+                      <div
+                        class="HvIconBase-root HvIconBase-s"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection"
+      >
+        <div
+          class="HvRightControl-root"
+          theme="[object Object]"
+        >
+          <div
+            aria-controls="cardsGrid itemList"
+            class="HvRightControl-sortDropdown HvDropdown-root HvFormElement-root"
+          >
+            <div
+              class="HvBaseDropdown-root HvDropdown-dropdown"
+            >
+              <div
+                aria-expanded="false"
+                class="HvBaseDropdown-anchor"
+                role="combobox"
+                tabindex="-1"
+              >
+                <div
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <div
+                    class="HvBaseDropdown-selection"
+                  >
+                    <div
+                      class="HvDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+                    >
+                      Select...
+                    </div>
+                  </div>
+                  <div
+                    class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvMultiButton-root"
+        >
+          <button
+            aria-label="Select card view"
+            aria-pressed="true"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            id="card"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Cards"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </button>
+          <button
+            aria-label="Select list view"
+            aria-pressed="false"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            id="list"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="List"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-container-1"
+      classes="[object Object]"
+      id="cardsGrid"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-3 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-4 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-5 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-7 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-8 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-9 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-11 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection"
+      >
+        <div
+          class="HvLeftControl-root"
+          theme="[object Object]"
+        >
+          <div
+            class="HvInput-root HvFormElement-root"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+              >
+                <input
+                  aria-controls="controlledCardsGrid controlledItemList"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon"
+                    >
+                      <div
+                        class="HvIconBase-root HvIconBase-s"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection"
+      >
+        <div
+          class="HvRightControl-root"
+          theme="[object Object]"
+        >
+          <div
+            aria-controls="controlledCardsGrid controlledItemList"
+            class="HvRightControl-sortDropdown HvDropdown-root HvFormElement-root"
+          >
+            <div
+              class="HvBaseDropdown-root HvDropdown-dropdown"
+            >
+              <div
+                aria-expanded="false"
+                class="HvBaseDropdown-anchor"
+                role="combobox"
+                tabindex="-1"
+              >
+                <div
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <div
+                    class="HvBaseDropdown-selection"
+                  >
+                    <div
+                      class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+                    >
+                      Name Ascending
+                    </div>
+                  </div>
+                  <div
+                    class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvMultiButton-root"
+        >
+          <button
+            aria-label="Select card view"
+            aria-pressed="true"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            id="card"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Cards"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </button>
+          <button
+            aria-label="Select list view"
+            aria-pressed="false"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            id="list"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="List"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-container-1"
+      classes="[object Object]"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-3 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-4 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-5 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-7 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-8 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-9 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-11 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection"
+      >
+        <div
+          class="HvLeftControl-root"
+          id="MultibuttonFilter"
+          theme="[object Object]"
+        >
+          <div
+            class="HvMultiButton-root"
+            style="width: 350px;"
+          >
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="true"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="all"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                All
+              </span>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="critical"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Critical
+              </span>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="major"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Major
+              </span>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="average"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Average
+              </span>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="minor"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Minor
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection"
+      >
+        <div
+          class="HvRightControl-root"
+          theme="[object Object]"
+        >
+          <label
+            class="HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="tempFilter"
+            id="temp-label"
+          >
+            Temperature:
+          </label>
+          <div
+            class="HvSlider-root HvFormElement-root"
+            id="tempFilter-controls"
+            style="width: 240px; z-index: 40;"
+          >
+            <div
+              class="HvSlider-sliderContainer"
+            >
+              <div
+                class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
+              >
+                <div
+                  class="rc-slider-rail"
+                  style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+                />
+                <div
+                  class="rc-slider-track"
+                  style="left: 0%; width: 0%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+                />
+                <div
+                  class="rc-slider-step"
+                >
+                  <span
+                    class="rc-slider-dot rc-slider-dot-active"
+                    style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                </div>
+                <div
+                  class="HvSlider-handleContainer"
+                >
+                  <div
+                    aria-controls="CustomControlsCardsId"
+                    aria-disabled="false"
+                    aria-label="temp-slider"
+                    aria-valuemax="70"
+                    aria-valuemin="25"
+                    aria-valuenow="25"
+                    class="rc-slider-handle HvSlider-handle"
+                    id="tempFilter-controls-knob-0"
+                    role="slider"
+                    style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+                    tabindex="0"
+                  />
+                </div>
+                <div
+                  class="rc-slider-mark"
+                >
+                  <span
+                    class="rc-slider-mark-text rc-slider-mark-text-active"
+                    style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    25
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    34
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    43
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    52
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    61
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    70
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-container-1"
+      classes="[object Object]"
+      id="CustomControlsCardsId"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          35
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-3 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          36
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-4 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          37
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-5 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          38
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          39
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-7 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          40
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-8 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          41
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-9 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          42
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          43
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-11 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          44
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-12 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 11
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          45
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-13 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 12
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          46
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-14 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 13
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          47
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-15 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 14
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          48
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-16 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 15
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          49
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection"
+      >
+        <div
+          class="HvLeftControl-root"
+          id="MultibuttonFilter"
+          theme="[object Object]"
+        >
+          <div
+            class="HvInput-root HvFormElement-root"
+            id="MultibuttonFilter-search-input"
+          >
+            <div
+              class="HvBaseInput-root"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+              >
+                <input
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                  id="MultibuttonFilter-search-input-input"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon"
+                    >
+                      <div
+                        class="HvIconBase-root HvIconBase-s"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                role="presentation"
+              />
+            </div>
+          </div>
+          <div
+            class="HvMultiButton-root"
+            style="width: 350px;"
+          >
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="true"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="all"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                All
+              </span>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="critical"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Critical
+              </span>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="major"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Major
+              </span>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="average"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Average
+              </span>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              id="minor"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Minor
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection"
+      >
+        <div
+          class="HvRightControl-root"
+          theme="[object Object]"
+        >
+          <label
+            class="HvLabel-root HvTypography-root HvTypography-highlightText"
+            for="tempFilter"
+            id="temp-label"
+          >
+            Temperature:
+          </label>
+          <div
+            class="HvSlider-root HvFormElement-root"
+            id="tempFilter-mixed"
+            style="width: 240px; z-index: 40;"
+          >
+            <div
+              class="HvSlider-sliderContainer"
+            >
+              <div
+                class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
+              >
+                <div
+                  class="rc-slider-rail"
+                  style="background-color: rgb(204, 206, 208); height: 1px; z-index: -3;"
+                />
+                <div
+                  class="rc-slider-track"
+                  style="left: 0%; width: 0%; background-color: rgb(65, 65, 65); height: 3px; z-index: -1; margin-top: -1px;"
+                />
+                <div
+                  class="rc-slider-step"
+                >
+                  <span
+                    class="rc-slider-dot rc-slider-dot-active"
+                    style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; background-color: rgb(204, 206, 208); cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                </div>
+                <div
+                  class="HvSlider-handleContainer"
+                >
+                  <div
+                    aria-controls="mixedControlsCardsId"
+                    aria-disabled="false"
+                    aria-label="temp-slider"
+                    aria-valuemax="70"
+                    aria-valuemin="25"
+                    aria-valuenow="25"
+                    class="rc-slider-handle HvSlider-handle"
+                    id="tempFilter-mixed-knob-0"
+                    role="slider"
+                    style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
+                    tabindex="0"
+                  />
+                </div>
+                <div
+                  class="rc-slider-mark"
+                >
+                  <span
+                    class="rc-slider-mark-text rc-slider-mark-text-active"
+                    style="left: 0%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    25
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 20%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    34
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 40%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    43
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 60%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    52
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 80%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    61
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 100%; transform: translateX(-50%); color: rgb(65, 65, 65); font-size: 10px; letter-spacing: 0.02em; line-height: 15px; font-weight: 400; font-family: 'Open Sans',Arial,Helvetica,sans-serif; top: -2px; z-index: -1;"
+                  >
+                    70
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-container-1"
+      classes="[object Object]"
+      id="mixedControlsCardsId"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          35
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-3 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          36
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-4 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          37
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-5 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          38
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          39
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-7 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          40
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-8 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          41
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-9 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          42
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          43
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-11 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          44
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-12 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 11
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          45
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-13 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 12
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          46
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-14 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 13
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          47
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-15 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 14
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          48
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-16 HvIsCardGridElement HvCard-root"
+        style="width: 100%;"
+      >
+        <div
+          class="HvCard-semanticContainer"
+        >
+          <div
+            class="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            class="HvCard-icon"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content HvCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              Event 15
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCardContent-content"
+        >
+          Temperature: 
+          49
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

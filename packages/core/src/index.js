@@ -26,6 +26,7 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFilterGroup } from "./FilterGroup";
 export { default as HvFileUploader } from "./FileUploader";
 export * from "./FileUploader";
+export { default as HvFocus } from "./Focus";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 
@@ -37,6 +38,8 @@ export * from "./Header";
 
 export { default as HvBaseInput } from "./BaseInput";
 export { default as HvInput } from "./Input";
+
+export { default as HvSlider } from "./Slider";
 
 export { default as HvKpi } from "./Kpi";
 
@@ -71,6 +74,7 @@ export { default as HvSnackbar } from "./Snackbar";
 export { default as HvSnackbarContent } from "./Snackbar/SnackbarContentWrapper";
 export { default as HvSnackbarProvider, useHvSnackbar } from "./Snackbar/SnackbarProvider";
 export { default as HvStack } from "./Stack";
+export { default as HvSimpleGrid } from "./SimpleGrid";
 
 export { default as HvTab } from "./Tab";
 export { default as HvTag } from "./Tag";
@@ -81,6 +85,7 @@ export { default as HvTagsInput } from "./TagsInput";
 export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export { default as HvOverflowTooltip } from "./OverflowTooltip";
+export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 // TODO refactor the HvUserPreferences subcomponents' names
@@ -120,6 +125,7 @@ export { default as useUniqueId } from "./useUniqueId";
 // theme
 export { default as hvTheme } from "./theme";
 export { themeBuilder, getTheme } from "./theme";
+export { HvCssBaseline, HvScopedCssBaseline } from "./theme";
 
 // provider
 export { default as HvProvider } from "./Provider";

@@ -66,6 +66,9 @@ export * from "./FileUploader";
 export { default as HvFilterGroup } from "./FilterGroup";
 export * from "./FilterGroup";
 
+export { default as HvFocus } from "./Focus";
+export * from "./Focus";
+
 export { default as HvFooter } from "./Footer";
 export * from "./Footer";
 
@@ -83,6 +86,9 @@ export * from "./BaseInput";
 
 export { default as HvInput } from "./Input";
 export * from "./Input";
+
+export { default as HvSlider } from "./Slider";
+export * from "./Slider";
 
 export * from "./Forms";
 
@@ -160,6 +166,9 @@ export { default as HvSnackbarProvider, useHvSnackbar } from "./Snackbar/Snackba
 export { default as HvStack } from "./Stack";
 export * from "./Stack";
 
+export { default as HvSimpleGrid } from "./SimpleGrid";
+export * from "./SimpleGrid";
+
 export { default as HvTab } from "./Tab";
 export * from "./Tab";
 
@@ -186,6 +195,9 @@ export * from "./Tooltip";
 
 export { default as HvOverflowTooltip } from "./OverflowTooltip";
 export * from "./OverflowTooltip";
+
+export { default as HvTimePicker } from "./TimePicker";
+export * from "./TimePicker";
 
 export { default as HvTypography } from "./Typography";
 export * from "./Typography";
