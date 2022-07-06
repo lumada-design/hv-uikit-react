@@ -126,7 +126,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
             if ("combinator" in rule) {
               return (
                 <RuleGroup
-                  key={rule.id || Math.random()}
+                  key={rule.id ?? index}
                   level={level + 1}
                   {...rule}
                   id={rule.id}
@@ -148,7 +148,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
 
             return (
               <Rule
-                key={rule.id || Math.random()}
+                key={rule.id ?? index}
                 {...rule}
                 isInvalid={isInvalid}
                 id={rule.id}

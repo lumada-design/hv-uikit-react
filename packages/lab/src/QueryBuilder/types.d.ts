@@ -30,7 +30,7 @@ export type QueryRuleValue =
   | DateTimeRange;
 
 export interface QueryRule {
-  id?: number;
+  id?: number | string;
   attribute?: string;
   operator?: string;
   value?: QueryRuleValue;
