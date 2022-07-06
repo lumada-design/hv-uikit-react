@@ -4,14 +4,16 @@
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
-  "sideEffects": false,
-  "exports": {
-    ".": "./dist/modern/index.js",
-    "./dist/": "./dist/modern/"
-  },
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/modern/index.js"
+    }
+  },
+  "sideEffects": false,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
