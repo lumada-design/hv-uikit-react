@@ -32,9 +32,11 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/config/test-setup.js"],
   testRegex: "src/.*/tests/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
-  testURL: "http://localhost/",
   snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { rootMode: "upward" }],
+  },
+  testEnvironmentOptions: {
+    url: "http://localhost/",
   },
 };

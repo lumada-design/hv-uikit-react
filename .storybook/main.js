@@ -1,5 +1,4 @@
 const { resolve } = require("path");
-const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const defaultPropsHandler = require("react-docgen/dist/handlers/defaultPropsHandler");
 
@@ -8,9 +7,10 @@ const { findByKey } = require("./utils");
 const storybookFolder = resolve(__dirname);
 const docFolder = resolve(__dirname, "../doc");
 const corePackageSrc = resolve(__dirname, "../packages/core/src");
-const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
-const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 const labPackageSrc = resolve(__dirname, "../packages/lab/src");
+const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
+const vizPackagesSrc = resolve(__dirname, "../packages/viz/src");
+const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
 
 module.exports = {
@@ -22,6 +22,7 @@ module.exports = {
     babelModeV7: true,
     buildStoriesJson: true,
     storyStoreV7: !process.env.V2_COMPAT_STORY_STORE,
+    postcss: false,
   },
 
   stories: [
@@ -29,6 +30,7 @@ module.exports = {
     "../packages/core/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/lab/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/code-editor/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    "../packages/viz/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx|jsx|ts|tsx)",
   ].filter(Boolean),
 
@@ -52,8 +54,9 @@ module.exports = {
       docFolder,
       corePackageSrc,
       labPackageSrc,
-      iconsPackageBin,
       codeEditorPackageSrc,
+      vizPackagesSrc,
+      iconsPackageBin,
     ];
     jsRule.exclude = [/node_modules/, /dist/];
 
@@ -65,32 +68,21 @@ module.exports = {
 
       // package aliases for deep imports (/dist)
       "@hitachivantara/uikit-react-core/dist": corePackageSrc,
-      "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
-      "@hitachivantara/uikit-react-icons/dist": iconsPackageBin,
       "@hitachivantara/uikit-react-lab/dist": labPackageSrc,
+      "@hitachivantara/uikit-react-code-editor/dist": codeEditorPackageSrc,
+      "@hitachivantara/uikit-react-viz/dist": vizPackagesSrc,
+      "@hitachivantara/uikit-react-icons/dist": iconsPackageBin,
       "@hitachivantara/uikit-common-themes/dist": commonThemesSrc,
 
       // package aliases for top-level imports
       "@hitachivantara/uikit-react-core": corePackageSrc,
-      "@hitachivantara/uikit-react-code-editor": codeEditorPackageSrc,
-      "@hitachivantara/uikit-react-icons": iconsPackageBin,
       "@hitachivantara/uikit-react-lab": labPackageSrc,
+      "@hitachivantara/uikit-react-code-editor": codeEditorPackageSrc,
+      "@hitachivantara/uikit-react-viz": vizPackagesSrc,
+      "@hitachivantara/uikit-react-icons": iconsPackageBin,
 
       "storybook-root": storybookFolder,
     };
-
-    // patch Storybook's sortProps because it doesn't handle wrapped components
-    config.plugins.push(
-      new NormalModuleReplacementPlugin(
-        /(.*)addon-docs\/(.*)\/frameworks\/react\/propTypes\/sortProps(\.*)/,
-        function (resource) {
-          resource.request = resolve(__dirname, "patches/sortProps.js");
-          if (resource.resource) {
-            resource.resource = resource.request;
-          }
-        }
-      )
-    );
 
     config.plugins.push(
       new MonacoWebpackPlugin({

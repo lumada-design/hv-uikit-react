@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import set from "lodash/set";
@@ -75,7 +75,7 @@ const HvProvider = ({
   theme = null,
   changeTheme = () => {},
 
-  locale,
+  locale = "en-US",
 
   generateClassName: generateClassNameProp,
   generateClassNameOptions,
@@ -96,7 +96,12 @@ const HvProvider = ({
     }
   }
 
-  const localeSetting = locale || (navigator?.language ?? "en-US");
+  const [localeSetting, setLocaleStting] = useState(locale);
+
+  useEffect(() => {
+    // ssr - only runs at the rendering phase, so it won't run on the server
+    setLocaleStting(locale || navigator?.language);
+  }, [locale]);
 
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
