@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.48.1...@hitachivantara/uikit-react-lab@3.49.0) (2022-07-06)
+
+
+### Bug Fixes
+
+* **querybuilder:** stable id/key ([#2836](https://github.com/lumada-design/hv-uikit-react/issues/2836)) ([fe4ce2a](https://github.com/lumada-design/hv-uikit-react/commit/fe4ce2a9fbc80aba277db6bf8f18aea5ddfa9db2))
+
+
+### Features
+
+* **visualisations:** create new viz package. HVUIKIT-6390 ([#2835](https://github.com/lumada-design/hv-uikit-react/issues/2835)) ([cc901df](https://github.com/lumada-design/hv-uikit-react/commit/cc901dff23857b157e18dc46892061602f3f1767))
+
+
+
+
+
 ## [3.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.48.0...@hitachivantara/uikit-react-lab@3.48.1) (2022-07-05)
 
 
