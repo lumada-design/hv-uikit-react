@@ -2,8 +2,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-import HvProvider from "../../Provider";
 import Chart from "..";
 import Plot from "../Plot";
 import Tooltip from "../Tooltip";

@@ -42,7 +42,6 @@ describe("TimeAgo", () => {
       }
     };
 
-    jest.useFakeTimers();
     const wrapper = mount(
       <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} />
@@ -66,7 +65,6 @@ describe("TimeAgo", () => {
       }
     };
 
-    jest.useFakeTimers();
     // eslint-disable-next-line react/prop-types
     const mockRenderComponent = ({ children }) => <div>{children}</div>;
     const wrapper = mount(
@@ -92,7 +90,6 @@ describe("TimeAgo", () => {
       }
     };
 
-    jest.useFakeTimers();
     const wrapper = mount(
       <HvProvider disableCssBaseline>
         <HvTimeAgo timestamp={dateNow} />
@@ -116,7 +113,6 @@ describe("TimeAgo", () => {
       }
     };
 
-    jest.useFakeTimers();
     const formatTimeAgoMockSeconds = jest.fn();
     formatTimeAgoMockSeconds.mockImplementation(() => mockDateToTimeAgo);
     formatTimeAgo.mockImplementation(formatTimeAgoMockSeconds);
@@ -129,7 +125,7 @@ describe("TimeAgo", () => {
     expect(wrapper.find(HvTypography).length).toEqual(1);
     expect(wrapper.find(HvTypography).props().children).toEqual(mockDateToTimeAgo.timeAgo);
     expect(formatTimeAgoMockSeconds).toHaveBeenNthCalledWith(
-      1,
+      2,
       expect.anything(),
       expect.anything(),
       true

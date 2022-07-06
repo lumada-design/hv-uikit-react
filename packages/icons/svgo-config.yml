@@ -3,51 +3,51 @@ multipass: true
 quiet: true
 
 plugins:
-  - prefixIds: true
-  - addAttributesToSVGElement: false
-  - addClassesToSVGElement: false
-  - cleanupAttrs: true
-  - cleanupEnableBackground: true
-  - cleanupIDs: true
-  - cleanupListOfValues: true
-  - cleanupNumericValues:
-      floatPrecision: 2
-  - collapseGroups: true
-  - convertColors: true
-  - convertPathData:
-      floatPrecision: 10
-  - convertShapeToPath: true
-  - convertStyleToAttrs: true
-  - convertTransform: true
-  - mergePaths: true
-  - minifyStyles: true
-  - moveElemsAttrsToGroup: true
-  - moveGroupAttrsToElems: true
-  - removeAttrs: true
-  - removeComments: true
-  - removeDesc: true
-  - removeDimensions: true
-  - removeDoctype: true
-  - removeEditorsNSData: true
-  - removeElementsByAttr: true
-  - removeEmptyAttrs: true
-  - removeEmptyContainers: true
-  - removeEmptyText: true
-  - removeHiddenElems: true
-  - removeMetadata: true
-  - removeNonInheritableGroupAttrs: true
-  - removeRasterImages: false
-  - removeStyleElement: false
-  - inlineStyles:
-      onlyMatchedOnce: false
-  - removeTitle: true
-  - removeUnknownsAndDefaults:
-      keepDataAttrs: false
-  - removeUnusedNS: true
-  - removeUselessDefs: true
-  - removeUselessStrokeAndFill: true
-  - removeViewBox: false
-  - removeXMLNS: false
-  - removeXMLProcInst: true
-  - sortAttrs: true
-  - transformsWithOnePath: true
+      - prefixIds: true
+      - addAttributesToSVGElement: false
+      - addClassesToSVGElement: false
+      - cleanupAttrs: true
+      - cleanupEnableBackground: true
+      - cleanupIDs: true
+      - cleanupListOfValues: true
+      - cleanupNumericValues:
+              floatPrecision: 2
+      - collapseGroups: true
+      - convertColors: true
+      - convertPathData:
+              floatPrecision: 10
+      - convertShapeToPath: true
+      - convertStyleToAttrs: true
+      - convertTransform: true
+      - mergePaths: true
+      - minifyStyles: true
+      - moveElemsAttrsToGroup: true
+      - moveGroupAttrsToElems: true
+      - removeAttrs: true
+      - removeComments: true
+      - removeDesc: true
+      - removeDimensions: true
+      - removeDoctype: true
+      - removeEditorsNSData: true
+      - removeElementsByAttr: true
+      - removeEmptyAttrs: true
+      - removeEmptyContainers: true
+      - removeEmptyText: true
+      - removeHiddenElems: true
+      - removeMetadata: true
+      - removeNonInheritableGroupAttrs: true
+      - removeRasterImages: false
+      - removeStyleElement: false
+      - inlineStyles:
+              onlyMatchedOnce: false
+      - removeTitle: true
+      - removeUnknownsAndDefaults:
+              keepDataAttrs: false
+      - removeUnusedNS: true
+      - removeUselessDefs: true
+      - removeUselessStrokeAndFill: true
+      - removeViewBox: false
+      - removeXMLNS: false
+      - removeXMLProcInst: true
+      - sortAttrs: true
+      - transformsWithOnePath: true
