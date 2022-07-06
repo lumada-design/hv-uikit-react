@@ -23,8 +23,6 @@ module.exports = {
       "<rootDir>/config/jest-mocks/image.js",
     "^react($|/.+)": "<rootDir>/../../node_modules/react$1",
     "^@material-ui($|/.+)": "<rootDir>/../../node_modules/@material-ui$1",
-    "^@hitachivantara/uikit-react-core$": "<rootDir>/../core/src",
-    "^@hitachivantara/uikit-react-core/dist/(.*)$": "<rootDir>/../core/src/$1",
     "^@hitachivantara/uikit-react-icons$": "<rootDir>/../icons/bin",
     "^@hitachivantara/uikit-react-icons/dist/(.*)$": "<rootDir>/../icons/bin/$1",
     "^@hitachivantara/uikit-common-themes/dist/(.*)$": "<rootDir>/../themes/src/$1",

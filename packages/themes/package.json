@@ -12,9 +12,6 @@
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
-  "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
-  },
   "scripts": {
     "dev": "npx npm-run-all --npm-path npm clean -p dev:*",
     "dev:watch": "npx watch \"npm run build\" ./src/",
@@ -31,8 +28,8 @@
     "del-cli": "^4.0.1",
     "json-to-scss": "file:lib/json-to-scss.tgz",
     "npm-run-all": "^4.1.5",
-    "watch": "^1.0.2",
-    "yargs": "^17.4.1"
+    "watch": "^0.13.0",
+    "yargs": "^17.5.1"
   },
   "files": [
     "dist"

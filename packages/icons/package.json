@@ -4,17 +4,15 @@
   "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
-  "author": {
-    "name": "Hitachi Vantara UI Kit Team"
-  },
-  "sideEffects": false,
-  "exports": {
-    ".": "./dist/modern/index.js",
-    "./dist/": "./dist/modern/"
-  },
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/modern/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
@@ -27,7 +25,7 @@
     "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward bin -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward bin -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
-    "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
+    "svg-optimize": "npx svgo@1.3.2 --config=./svgo-config.yml -r -f assets assets",
     "clean": "npx del-cli dist",
     "clean:all": "npx del-cli dist bin",
     "prepare": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize --parallel build:convert build:copy",
@@ -40,25 +38,24 @@
   },
   "peerDependencies": {
     "@material-ui/core": "^4.12.3",
-    "react": "^16.13.1 || ^17.0.0",
-    "react-dom": "^16.13.1 || ^17.0.0"
+    "react": "^16.13.1 || ^17.0.2",
+    "react-dom": "^16.13.1 || ^17.0.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.9",
     "@hitachivantara/uikit-common-themes": "^3.5.0",
     "clsx": "^1.1.1",
-    "core-js": "^3.22.5",
-    "prop-types": "^15.8.1"
-  },
-  "devDependencies": {
-    "cpy-cli": "^4.1.0",
-    "del-cli": "^4.0.1",
     "htmltojsx": "^0.3.0",
     "jsdom-no-contextify": "^3.1.0",
-    "npm-run-all": "^4.1.5",
+    "prop-types": "^15.8.1",
     "recursive-readdir": "^2.2.2",
-    "svgo": "^1.3.2",
     "yargs": "^17.4.1"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.17.9",
+    "core-js": "^3.22.4",
+    "cpy-cli": "^4.1.0",
+    "del-cli": "^4.0.1",
+    "npm-run-all": "^4.1.5"
   },
   "files": [
     "dist"
