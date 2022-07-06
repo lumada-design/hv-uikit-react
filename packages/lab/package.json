@@ -7,12 +7,6 @@
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/modern/index.js"
-    }
-  },
   "sideEffects": false,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
