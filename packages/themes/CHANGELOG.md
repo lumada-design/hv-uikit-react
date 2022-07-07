@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-common-themes@3.6.0...@hitachivantara/uikit-common-themes@3.6.1) (2022-07-07)
+
+
+### Bug Fixes
+
+* **themes:** remove index exports ([#2837](https://github.com/lumada-design/hv-uikit-react/issues/2837)) ([38ca812](https://github.com/lumada-design/hv-uikit-react/commit/38ca81214088bf817a57b2cc6824ac60813dd8a4))
+
+
+
+
+
 # 3.6.0 (2022-07-06)
 
 
