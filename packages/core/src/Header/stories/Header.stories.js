@@ -131,3 +131,122 @@ Main.parameters = {
     waitBeforeCapture: 1000,
   },
 };
+
+const navigationDataWithLink = [
+  {
+    id: "1",
+    label: "Overview",
+    data: [
+      {
+        id: "1-1",
+        label: "Model Effectiveness 1",
+      },
+      {
+        id: "1-2",
+        label: "Trend Analysis 1-2",
+      },
+    ],
+  },
+  {
+    id: "2",
+    label: "Events",
+    href: "https://www.hitachivantara.com/en-us/news.html",
+  },
+  {
+    id: "3",
+    label: "Work Orders",
+    data: [
+      {
+        id: "3-1",
+        label: "Model Effectiveness 3-1",
+      },
+      {
+        id: "3-2",
+        label: "Trend Analysis 3-2",
+      },
+    ],
+  },
+  {
+    id: "4",
+    label: "Asset",
+    href: "/?path=/story/structure-header--main",
+  },
+  {
+    id: "5",
+    label: "Analytics",
+    data: [
+      {
+        id: "5-1",
+        label: "Model Effectiveness 5-1",
+      },
+      {
+        id: "5-2",
+        label: "Trend Analysis 5-2",
+      },
+    ],
+  },
+];
+
+export const HeaderLink = () => {
+  const useStyles = makeStyles((theme) => ({
+    brand: {
+      [theme.breakpoints.down("sm")]: {
+        position: "absolute",
+        left: "50%",
+        transform: "translate(-50%, 0)",
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
+  const theme = useTheme();
+  const [selected, setSelected] = useState("3-2");
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+
+  const handleChange = (e, selectedItem) => {
+    if (selectedItem.id === "2") {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setSelected(selectedItem.id);
+  };
+
+  return (
+    <HvHeader position="relative">
+      {!isMdUp && (
+        <HvButton style={{ width: 32, height: 32 }} icon onClick={() => console.log("menu")}>
+          <Menu />
+        </HvButton>
+      )}
+      <HvHeaderBrand className={classes.brand} logo={<HitachiLogo />} name="Lumada App" />
+      {isMdUp && (
+        <HvHeaderNavigation
+          data={navigationDataWithLink}
+          selected={selected}
+          onClick={handleChange}
+        />
+      )}
+      <HvHeaderActions>
+        <HvButton icon onClick={() => console.log("alerts")} aria-label="Open Notifications panel">
+          <HvBadge count={1} icon={<Alert />} />
+        </HvButton>
+        {isMdUp && (
+          <HvButton icon onClick={() => console.log("user")} aria-label="Open User panel">
+            <User />
+          </HvButton>
+        )}
+      </HvHeaderActions>
+    </HvHeader>
+  );
+};
+
+HeaderLink.parameters = {
+  eyes: {
+    // waiting until all elements are rendered (issue #1794)
+    waitBeforeCapture: 1000,
+  },
+  docs: {
+    description: "Header with links included in the buttons allowing navigation",
+  },
+};

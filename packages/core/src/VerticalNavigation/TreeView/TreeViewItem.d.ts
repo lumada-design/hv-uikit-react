@@ -41,6 +41,14 @@ export interface HvVerticalNavigationTreeViewItemProps
    */
   label: React.ReactNode;
   /**
+   * The url for the link.
+   */
+  href: string;
+  /**
+   * The behavior when opening a link.
+   */
+  target: string;
+  /**
    * The node payload.
    */
   // eslint-disable-next-line

@@ -36,10 +36,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                 Object {
                   "data": Array [
                     Object {
+                      "href": "https://www.hitachivantara.com/en-us/news.html",
                       "id": "02-01-01",
                       "label": "Servers",
                     },
                     Object {
+                      "href": "/?path=/story/structure-vertical-navigation--main",
                       "id": "02-01-02",
                       "label": "HCP Anywhere",
                     },
@@ -102,10 +104,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                   Object {
                     "data": Array [
                       Object {
+                        "href": "https://www.hitachivantara.com/en-us/news.html",
                         "id": "02-01-01",
                         "label": "Servers",
                       },
                       Object {
+                        "href": "/?path=/story/structure-vertical-navigation--main",
                         "id": "02-01-02",
                         "label": "HCP Anywhere",
                       },
@@ -168,6 +172,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                     "expanded": "HvVerticalNavigationTreeView-expanded",
                     "focused": "HvVerticalNavigationTreeView-focused",
                     "group": "HvVerticalNavigationTreeView-group",
+                    "link": "HvVerticalNavigationTreeView-link",
                     "noIcon": "HvVerticalNavigationTreeView-noIcon",
                     "node": "HvVerticalNavigationTreeView-node",
                     "root": "HvVerticalNavigationTreeView-root",
@@ -213,6 +218,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                             "focused": "HvVerticalNavigationTreeViewItem-focused",
                             "group": "HvVerticalNavigationTreeViewItem-group",
+                            "link": "HvVerticalNavigationTreeViewItem-link",
                             "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                             "node": "HvVerticalNavigationTreeViewItem-node",
                             "root": "HvVerticalNavigationTreeViewItem-root",
@@ -578,6 +584,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                             "focused": "HvVerticalNavigationTreeViewItem-focused",
                             "group": "HvVerticalNavigationTreeViewItem-group",
+                            "link": "HvVerticalNavigationTreeViewItem-link",
                             "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                             "node": "HvVerticalNavigationTreeViewItem-node",
                             "root": "HvVerticalNavigationTreeViewItem-root",
@@ -927,10 +934,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             Object {
                               "data": Array [
                                 Object {
+                                  "href": "https://www.hitachivantara.com/en-us/news.html",
                                   "id": "02-01-01",
                                   "label": "Servers",
                                 },
                                 Object {
+                                  "href": "/?path=/story/structure-vertical-navigation--main",
                                   "id": "02-01-02",
                                   "label": "HCP Anywhere",
                                 },
@@ -960,6 +969,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                             "focused": "HvVerticalNavigationTreeViewItem-focused",
                             "group": "HvVerticalNavigationTreeViewItem-group",
+                            "link": "HvVerticalNavigationTreeViewItem-link",
                             "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                             "node": "HvVerticalNavigationTreeViewItem-node",
                             "root": "HvVerticalNavigationTreeViewItem-root",
@@ -978,10 +988,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               Object {
                                 "data": Array [
                                   Object {
+                                    "href": "https://www.hitachivantara.com/en-us/news.html",
                                     "id": "02-01-01",
                                     "label": "Servers",
                                   },
                                   Object {
+                                    "href": "/?path=/story/structure-vertical-navigation--main",
                                     "id": "02-01-02",
                                     "label": "HCP Anywhere",
                                   },
@@ -1327,10 +1339,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   Object {
                                     "data": Array [
                                       Object {
+                                        "href": "https://www.hitachivantara.com/en-us/news.html",
                                         "id": "02-01-01",
                                         "label": "Servers",
                                       },
                                       Object {
+                                        "href": "/?path=/story/structure-vertical-navigation--main",
                                         "id": "02-01-02",
                                         "label": "HCP Anywhere",
                                       },
@@ -1356,6 +1370,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                       "focused": "HvVerticalNavigationTreeViewItem-focused",
                                       "group": "HvVerticalNavigationTreeViewItem-group",
+                                      "link": "HvVerticalNavigationTreeViewItem-link",
                                       "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                       "node": "HvVerticalNavigationTreeViewItem-node",
                                       "root": "HvVerticalNavigationTreeViewItem-root",
@@ -1372,10 +1387,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     Object {
                                       "data": Array [
                                         Object {
+                                          "href": "https://www.hitachivantara.com/en-us/news.html",
                                           "id": "02-01-01",
                                           "label": "Servers",
                                         },
                                         Object {
+                                          "href": "/?path=/story/structure-vertical-navigation--main",
                                           "id": "02-01-02",
                                           "label": "HCP Anywhere",
                                         },
@@ -1710,11 +1727,13 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       >
                                         <WithStyles(ForwardRef)
                                           className="HvVerticalNavigationNavigation-listItem"
+                                          href="https://www.hitachivantara.com/en-us/news.html"
                                           key="02-01-01"
                                           label={<Unknown />}
                                           nodeId="02-01-01"
                                           payload={
                                             Object {
+                                              "href": "https://www.hitachivantara.com/en-us/news.html",
                                               "id": "02-01-01",
                                               "label": "Servers",
                                             }
@@ -1731,6 +1750,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                                 "focused": "HvVerticalNavigationTreeViewItem-focused",
                                                 "group": "HvVerticalNavigationTreeViewItem-group",
+                                                "link": "HvVerticalNavigationTreeViewItem-link",
                                                 "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                                 "node": "HvVerticalNavigationTreeViewItem-node",
                                                 "root": "HvVerticalNavigationTreeViewItem-root",
@@ -1741,10 +1761,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                               }
                                             }
+                                            href="https://www.hitachivantara.com/en-us/news.html"
                                             label={<Unknown />}
                                             nodeId="02-01-01"
                                             payload={
                                               Object {
+                                                "href": "https://www.hitachivantara.com/en-us/news.html",
                                                 "id": "02-01-01",
                                                 "label": "Servers",
                                               }
@@ -1755,13 +1777,15 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               id="hvtreeview1-02-01-01"
                                             >
                                               <WithStyles(ForwardRef)
-                                                className="HvVerticalNavigationTreeViewItem-content"
-                                                component="div"
+                                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link"
+                                                component="a"
+                                                href="https://www.hitachivantara.com/en-us/news.html"
                                                 id="hvtreeview1-02-01-01-button"
                                                 innerRef={
                                                   Object {
-                                                    "current": <div
-                                                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                    "current": <a
+                                                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link HvTypography-root HvTypography-normalText"
+                                                      href="https://www.hitachivantara.com/en-us/news.html"
                                                       id="hvtreeview1-02-01-01-button"
                                                       role="button"
                                                       style="padding-left: 30px;"
@@ -1773,7 +1797,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                       >
                                                         Servers
                                                       </div>
-                                                    </div>,
+                                                    </a>,
                                                   }
                                                 }
                                                 onClick={[Function]}
@@ -1789,7 +1813,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 variant="normalText"
                                               >
                                                 <ForwardRef
-                                                  className="HvVerticalNavigationTreeViewItem-content"
+                                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link"
                                                   classes={
                                                     Object {
                                                       "3xlTitle": "HvTypography-3xlTitle",
@@ -1816,7 +1840,8 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                       "xxsTitle": "HvTypography-xxsTitle",
                                                     }
                                                   }
-                                                  component="div"
+                                                  component="a"
+                                                  href="https://www.hitachivantara.com/en-us/news.html"
                                                   id="hvtreeview1-02-01-01-button"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
@@ -1830,8 +1855,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   tabIndex={0}
                                                   variant="normalText"
                                                 >
-                                                  <div
-                                                    className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                  <a
+                                                    className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link HvTypography-root HvTypography-normalText"
+                                                    href="https://www.hitachivantara.com/en-us/news.html"
                                                     id="hvtreeview1-02-01-01-button"
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
@@ -2057,7 +2083,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </ForwardRef>
                                                       </WithStyles(ForwardRef)>
                                                     </Component>
-                                                  </div>
+                                                  </a>
                                                 </ForwardRef>
                                               </WithStyles(ForwardRef)>
                                               <DescendantProvider
@@ -2069,11 +2095,13 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         </WithStyles(ForwardRef)>
                                         <WithStyles(ForwardRef)
                                           className="HvVerticalNavigationNavigation-listItem"
+                                          href="/?path=/story/structure-vertical-navigation--main"
                                           key="02-01-02"
                                           label={<Unknown />}
                                           nodeId="02-01-02"
                                           payload={
                                             Object {
+                                              "href": "/?path=/story/structure-vertical-navigation--main",
                                               "id": "02-01-02",
                                               "label": "HCP Anywhere",
                                             }
@@ -2090,6 +2118,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                                 "focused": "HvVerticalNavigationTreeViewItem-focused",
                                                 "group": "HvVerticalNavigationTreeViewItem-group",
+                                                "link": "HvVerticalNavigationTreeViewItem-link",
                                                 "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                                 "node": "HvVerticalNavigationTreeViewItem-node",
                                                 "root": "HvVerticalNavigationTreeViewItem-root",
@@ -2100,10 +2129,12 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                               }
                                             }
+                                            href="/?path=/story/structure-vertical-navigation--main"
                                             label={<Unknown />}
                                             nodeId="02-01-02"
                                             payload={
                                               Object {
+                                                "href": "/?path=/story/structure-vertical-navigation--main",
                                                 "id": "02-01-02",
                                                 "label": "HCP Anywhere",
                                               }
@@ -2114,13 +2145,15 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               id="hvtreeview1-02-01-02"
                                             >
                                               <WithStyles(ForwardRef)
-                                                className="HvVerticalNavigationTreeViewItem-content"
-                                                component="div"
+                                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link"
+                                                component="a"
+                                                href="/?path=/story/structure-vertical-navigation--main"
                                                 id="hvtreeview1-02-01-02-button"
                                                 innerRef={
                                                   Object {
-                                                    "current": <div
-                                                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                    "current": <a
+                                                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link HvTypography-root HvTypography-normalText"
+                                                      href="/?path=/story/structure-vertical-navigation--main"
                                                       id="hvtreeview1-02-01-02-button"
                                                       role="button"
                                                       style="padding-left: 30px;"
@@ -2132,7 +2165,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                       >
                                                         HCP Anywhere
                                                       </div>
-                                                    </div>,
+                                                    </a>,
                                                   }
                                                 }
                                                 onClick={[Function]}
@@ -2148,7 +2181,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 variant="normalText"
                                               >
                                                 <ForwardRef
-                                                  className="HvVerticalNavigationTreeViewItem-content"
+                                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link"
                                                   classes={
                                                     Object {
                                                       "3xlTitle": "HvTypography-3xlTitle",
@@ -2175,7 +2208,8 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                       "xxsTitle": "HvTypography-xxsTitle",
                                                     }
                                                   }
-                                                  component="div"
+                                                  component="a"
+                                                  href="/?path=/story/structure-vertical-navigation--main"
                                                   id="hvtreeview1-02-01-02-button"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
@@ -2189,8 +2223,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   tabIndex={0}
                                                   variant="normalText"
                                                 >
-                                                  <div
-                                                    className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                                  <a
+                                                    className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link HvTypography-root HvTypography-normalText"
+                                                    href="/?path=/story/structure-vertical-navigation--main"
                                                     id="hvtreeview1-02-01-02-button"
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
@@ -2416,7 +2451,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </ForwardRef>
                                                       </WithStyles(ForwardRef)>
                                                     </Component>
-                                                  </div>
+                                                  </a>
                                                 </ForwardRef>
                                               </WithStyles(ForwardRef)>
                                               <DescendantProvider
@@ -2451,6 +2486,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                                 "focused": "HvVerticalNavigationTreeViewItem-focused",
                                                 "group": "HvVerticalNavigationTreeViewItem-group",
+                                                "link": "HvVerticalNavigationTreeViewItem-link",
                                                 "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                                 "node": "HvVerticalNavigationTreeViewItem-node",
                                                 "root": "HvVerticalNavigationTreeViewItem-root",
@@ -2834,6 +2870,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                             "focused": "HvVerticalNavigationTreeViewItem-focused",
                             "group": "HvVerticalNavigationTreeViewItem-group",
+                            "link": "HvVerticalNavigationTreeViewItem-link",
                             "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                             "node": "HvVerticalNavigationTreeViewItem-node",
                             "root": "HvVerticalNavigationTreeViewItem-root",
@@ -3212,6 +3249,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                       "focused": "HvVerticalNavigationTreeViewItem-focused",
                                       "group": "HvVerticalNavigationTreeViewItem-group",
+                                      "link": "HvVerticalNavigationTreeViewItem-link",
                                       "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                       "node": "HvVerticalNavigationTreeViewItem-node",
                                       "root": "HvVerticalNavigationTreeViewItem-root",
@@ -3578,6 +3616,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                                                 "focused": "HvVerticalNavigationTreeViewItem-focused",
                                                 "group": "HvVerticalNavigationTreeViewItem-group",
+                                                "link": "HvVerticalNavigationTreeViewItem-link",
                                                 "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
                                                 "node": "HvVerticalNavigationTreeViewItem-node",
                                                 "root": "HvVerticalNavigationTreeViewItem-root",

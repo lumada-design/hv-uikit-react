@@ -48,6 +48,10 @@ const styles = (theme) => {
         ...outlineStyles,
       },
     },
+    link: {
+      display: "block",
+      textDecoration: "none",
+    },
     externalReference: {
       ...externalReference,
     },

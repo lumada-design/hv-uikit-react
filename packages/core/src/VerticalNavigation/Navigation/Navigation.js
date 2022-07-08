@@ -9,7 +9,16 @@ import { wrapperTooltip } from "../../List/utils";
 
 const createListHierarchy = (items, id, classes) =>
   items.map((item) => {
-    const { id: itemId, label: itemLabel, icon, data: children, selectable, disabled } = item;
+    const {
+      id: itemId,
+      label: itemLabel,
+      icon,
+      data: children,
+      selectable,
+      disabled,
+      href,
+      target,
+    } = item;
 
     const ItemText = wrapperTooltip(true, itemLabel, itemLabel);
 
@@ -17,6 +26,8 @@ const createListHierarchy = (items, id, classes) =>
       <TreeViewItem
         id={setId(id, itemId)}
         className={classes.listItem}
+        href={href}
+        target={target}
         key={itemId}
         nodeId={itemId}
         label={<ItemText />}
@@ -247,6 +258,8 @@ Navigation.propTypes = {
    * id - the id to be applied to the root element.
    * label - the label to be rendered on the menu item.
    * data - sub-menu items
+   * href - the url used for navigation.
+   * target - the behavior when opening an url.
    */
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -254,6 +267,8 @@ Navigation.propTypes = {
       label: PropTypes.string.isRequired,
       icon: PropTypes.node,
       data: PropTypes.array,
+      href: PropTypes.string,
+      target: PropTypes.string,
     })
   ).isRequired,
 
