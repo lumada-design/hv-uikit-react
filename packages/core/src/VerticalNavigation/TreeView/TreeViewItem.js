@@ -341,6 +341,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
       expanded,
       icon,
       label,
+      disabled,
     ]
   );
 

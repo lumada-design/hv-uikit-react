@@ -45,7 +45,7 @@
     "@hitachivantara/uikit-react-core": "^3.68.1",
     "@hitachivantara/uikit-react-icons": "^3.9.1",
     "@types/react-table": "^7.7.12",
-    "clsx": "^1.2.0",
+    "clsx": "^1.2.1",
     "core-js": "^3.23.3",
     "dayjs": "^1.11.3",
     "lodash": "^4.17.21",
