@@ -1,7 +1,4 @@
-import { isForwardRef, isMemo } from "react-is";
-import { hasDocgen, extractComponentProps } from "@storybook/addon-docs/dist/esm/lib/docgen";
-import { enhancePropTypesProps } from "@storybook/addon-docs/dist/esm/frameworks/react/propTypes/handleProp";
-import { enhanceTypeScriptProps } from "@storybook/addon-docs/dist/esm/frameworks/react/typeScript/handleProp";
+import { extractComponentProps } from "@storybook/docs-tools/dist/esm";
 
 import sortProps from "./sortProps";
 
@@ -51,30 +48,10 @@ const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
 };
 
 const enhance = (extractedProps, component) => {
-  switch (extractedProps[0].typeSystem) {
-    case "JavaScript":
-      return enhancePropTypesProps(extractedProps, component);
-    case "TypeScript":
-      return enhanceTypeScriptProps(extractedProps);
-    default:
-      return extractedProps.map((x) => x.propDef);
-  }
+  return extractedProps.map((x) => x.propDef);
 };
 
 export const extractProps = (component) => {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
-  if (!hasDocgen(component)) {
-    if (component.Naked) {
-      // wrapped withStyles or withLabels or withId
-      // shouldn't be needed because we are https://reactjs.org/docs/higher-order-components.html#static-methods-must-be-copied-over
-      return extractProps(component.Naked);
-    } else if (isForwardRef(component) || component.render) {
-      return extractProps(component.render().type);
-    } else if (isMemo(component)) {
-      return extractProps(component.type().type);
-    }
-  }
-
   const extractedProps = extractComponentProps(component, "props");
   if (extractedProps.length === 0) {
     return [];
