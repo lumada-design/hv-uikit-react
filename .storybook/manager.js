@@ -7,6 +7,7 @@ addons.setConfig({
   isFullscreen: false,
   showNav: true,
   showPanel: true,
+  showToolbar: true,
   panelPosition: "bottom",
   sidebarAnimations: true,
   previewTabs: {
@@ -17,8 +18,6 @@ addons.setConfig({
   // enable keyboard shortcuts
   // (even thou we're hidding the button)
   enableShortcuts: true,
-  // show tool bar
-  isToolshown: true,
   // display the top-level grouping as a "root" in the sidebar
   sidebar: {
     showRoots: true,

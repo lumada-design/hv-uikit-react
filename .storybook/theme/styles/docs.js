@@ -64,6 +64,7 @@ export const getDocsStyles = (theme) => ({
         "& .os-content>pre": {
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
           borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+          color: theme.hv.palette.accent.acce1,
         },
       },
 
