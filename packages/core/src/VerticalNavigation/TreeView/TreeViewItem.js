@@ -35,6 +35,8 @@ const TreeViewItem = React.forwardRef((props, ref) => {
     nodeId,
     icon = null,
     label,
+    href,
+    target,
     payload,
 
     onClick,
@@ -296,9 +298,11 @@ const TreeViewItem = React.forwardRef((props, ref) => {
     () => (
       <HvTypography
         id={setId(id, "button")}
-        component="div"
+        component={href ? "a" : "div"}
+        href={href}
+        target={target}
         innerRef={contentRef}
-        className={classes.content}
+        className={clsx(classes.content, { [classes.link]: href != null })}
         variant={disabled ? "placeholderText" : "normalText"}
         onClick={handleClick}
         onMouseDown={handleMouseDown}
@@ -327,21 +331,24 @@ const TreeViewItem = React.forwardRef((props, ref) => {
     ),
     [
       id,
+      href,
+      target,
       classes.content,
+      classes.link,
+      disabled,
       handleClick,
       handleMouseDown,
       expandable,
+      icon,
       level,
       collapsible,
       treeviewMode,
       handleFocus,
-      handleKeyDown,
       selectable,
+      handleKeyDown,
       selected,
       expanded,
-      icon,
       label,
-      disabled,
     ]
   );
 
@@ -413,6 +420,10 @@ TreeViewItem.propTypes = {
      */
     content: PropTypes.string,
     /**
+     * Style applied to the content when it is a link.
+     */
+    link: PropTypes.string,
+    /**
      * Style applied to the group.
      */
     group: PropTypes.string,
@@ -473,6 +484,14 @@ TreeViewItem.propTypes = {
    * The item label.
    */
   label: PropTypes.node.isRequired,
+  /**
+   * The url for the link.
+   */
+  href: PropTypes.string,
+  /**
+   * The behavior when opening a link.
+   */
+  target: PropTypes.string,
   /**
    * The node payload.
    */

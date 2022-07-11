@@ -88,6 +88,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                         "button": "HvHeaderMenuItem-button",
                         "externalReference": "HvHeaderMenuItem-externalReference",
                         "falseFocus": "HvHeaderMenuItem-falseFocus",
+                        "link": "HvHeaderMenuItem-link",
                         "notSelectedItem": "HvHeaderMenuItem-notSelectedItem",
                         "root": "HvHeaderMenuItem-root",
                         "selectedItem": "HvHeaderMenuItem-selectedItem",

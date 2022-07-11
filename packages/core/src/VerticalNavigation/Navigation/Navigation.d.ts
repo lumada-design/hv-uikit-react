@@ -11,6 +11,14 @@ export interface NavigationData {
    */
   label: string;
   /**
+   * The url for the link.
+   */
+  href?: string;
+  /**
+   * The behavior when opening a link.
+   */
+  target?: string;
+  /**
    * Icon to be render.
    */
   icon?: React.ReactNode;

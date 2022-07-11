@@ -42,6 +42,17 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
     <div className={classes.externalReference}>{childrenToWrap}</div>
   );
   const isIe = isBrowser(["ie", "edge"]);
+  const label = (
+    <HvTypography variant={isSelected ? "selectedNavText" : "normalText"}>
+      {item.label}
+    </HvTypography>
+  );
+  const itemProps = {
+    onClick: actionHandler,
+    onKeyDown: actionHandler,
+    tabIndex: 0,
+    onFocus: handleFocus,
+  };
   return (
     <li
       id={id}
@@ -52,18 +63,20 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       })}
     >
       <ConditionalWrapper condition={isIe} wrapper={focusWrapper}>
-        <div
-          role="button"
-          className={clsx(classes.button)}
-          onClick={actionHandler}
-          onKeyDown={actionHandler}
-          tabIndex={0}
-          onFocus={handleFocus}
-        >
-          <HvTypography variant={isSelected ? "selectedNavText" : "normalText"}>
-            {item.label}
-          </HvTypography>
-        </div>
+        {item?.href ? (
+          <a
+            className={clsx(classes.button, classes.link)}
+            href={item?.href}
+            target={item?.target}
+            {...itemProps}
+          >
+            {label}
+          </a>
+        ) : (
+          <div className={clsx(classes.button)} role="button" {...itemProps}>
+            {label}
+          </div>
+        )}
       </ConditionalWrapper>
       {hasSubLevel && <MenuBar data={data} onClick={onClick} type="menu" />}
     </li>
@@ -92,6 +105,10 @@ MenuItem.propTypes = {
      */
     button: PropTypes.string,
     /**
+     * Style applied to each item button when it is behaving as a.
+     */
+    link: PropTypes.string,
+    /**
      * Style applied to the reference element used for ie focus.
      */
     externalReference: PropTypes.string,
@@ -113,6 +130,8 @@ MenuItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    target: PropTypes.string,
     data: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,

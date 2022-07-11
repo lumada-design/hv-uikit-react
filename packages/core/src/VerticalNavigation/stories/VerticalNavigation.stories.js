@@ -41,10 +41,12 @@ export const Main = () => {
               {
                 id: "02-01-01",
                 label: "Servers",
+                href: "https://www.hitachivantara.com/en-us/news.html",
               },
               {
                 id: "02-01-02",
                 label: "HCP Anywhere",
+                href: "/?path=/story/structure-vertical-navigation--main",
               },
               {
                 id: "02-01-03",
@@ -85,6 +87,10 @@ export const Main = () => {
           selected={value}
           onChange={(event, data) => {
             console.log(data);
+            if (data.id === "02-01-01") {
+              event.preventDefault();
+              event.stopPropagation();
+            }
             setValue(data.id);
           }}
           data={navigationData}

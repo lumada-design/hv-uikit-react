@@ -661,3 +661,665 @@ exports[`Header should be able to render 1`] = `
   </HvHeader>
 </WithStyles(HvHeader)>
 `;
+
+exports[`Header should be able to render the header with links 1`] = `
+<WithStyles(HvHeader)
+  position="relative"
+>
+  <HvHeader
+    classes={
+      Object {
+        "backgroundColor": "HvHeader-backgroundColor",
+        "header": "HvHeader-header",
+        "root": "HvHeader-root",
+      }
+    }
+    position="relative"
+  >
+    <WithStyles(ForwardRef(AppBar))
+      classes={
+        Object {
+          "colorPrimary": "HvHeader-backgroundColor",
+          "root": "HvHeader-root",
+        }
+      }
+      position="relative"
+    >
+      <ForwardRef(AppBar)
+        classes={
+          Object {
+            "colorDefault": "MuiAppBar-colorDefault",
+            "colorInherit": "MuiAppBar-colorInherit",
+            "colorPrimary": "MuiAppBar-colorPrimary HvHeader-backgroundColor",
+            "colorSecondary": "MuiAppBar-colorSecondary",
+            "colorTransparent": "MuiAppBar-colorTransparent",
+            "positionAbsolute": "MuiAppBar-positionAbsolute",
+            "positionFixed": "MuiAppBar-positionFixed",
+            "positionRelative": "MuiAppBar-positionRelative",
+            "positionStatic": "MuiAppBar-positionStatic",
+            "positionSticky": "MuiAppBar-positionSticky",
+            "root": "MuiAppBar-root HvHeader-root",
+          }
+        }
+        position="relative"
+      >
+        <WithStyles(ForwardRef(Paper))
+          className="MuiAppBar-root HvHeader-root MuiAppBar-positionRelative MuiAppBar-colorPrimary HvHeader-backgroundColor"
+          component="header"
+          elevation={4}
+          square={true}
+        >
+          <ForwardRef(Paper)
+            className="MuiAppBar-root HvHeader-root MuiAppBar-positionRelative MuiAppBar-colorPrimary HvHeader-backgroundColor"
+            classes={
+              Object {
+                "elevation0": "MuiPaper-elevation0",
+                "elevation1": "MuiPaper-elevation1",
+                "elevation10": "MuiPaper-elevation10",
+                "elevation11": "MuiPaper-elevation11",
+                "elevation12": "MuiPaper-elevation12",
+                "elevation13": "MuiPaper-elevation13",
+                "elevation14": "MuiPaper-elevation14",
+                "elevation15": "MuiPaper-elevation15",
+                "elevation16": "MuiPaper-elevation16",
+                "elevation17": "MuiPaper-elevation17",
+                "elevation18": "MuiPaper-elevation18",
+                "elevation19": "MuiPaper-elevation19",
+                "elevation2": "MuiPaper-elevation2",
+                "elevation20": "MuiPaper-elevation20",
+                "elevation21": "MuiPaper-elevation21",
+                "elevation22": "MuiPaper-elevation22",
+                "elevation23": "MuiPaper-elevation23",
+                "elevation24": "MuiPaper-elevation24",
+                "elevation3": "MuiPaper-elevation3",
+                "elevation4": "MuiPaper-elevation4",
+                "elevation5": "MuiPaper-elevation5",
+                "elevation6": "MuiPaper-elevation6",
+                "elevation7": "MuiPaper-elevation7",
+                "elevation8": "MuiPaper-elevation8",
+                "elevation9": "MuiPaper-elevation9",
+                "outlined": "MuiPaper-outlined",
+                "root": "MuiPaper-root",
+                "rounded": "MuiPaper-rounded",
+              }
+            }
+            component="header"
+            elevation={4}
+            square={true}
+          >
+            <header
+              className="MuiPaper-root MuiAppBar-root HvHeader-root MuiAppBar-positionRelative MuiAppBar-colorPrimary HvHeader-backgroundColor MuiPaper-elevation4"
+            >
+              <div
+                className="HvHeader-header"
+              >
+                <WithStyles(ForwardRef)
+                  icon={true}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "height": 32,
+                      "width": 32,
+                    }
+                  }
+                >
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "focusVisible": "HvButton-focusVisible",
+                        "ghost": "HvButton-ghost",
+                        "ghostDisabled": "HvButton-ghostDisabled",
+                        "ghostSVG": "HvButton-ghostSVG",
+                        "icon": "HvButton-icon",
+                        "iconSVG": "HvButton-iconSVG",
+                        "primary": "HvButton-primary",
+                        "primaryDisabled": "HvButton-primaryDisabled",
+                        "primarySVG": "HvButton-primarySVG",
+                        "root": "HvButton-root",
+                        "secondary": "HvButton-secondary",
+                        "secondaryDisabled": "HvButton-secondaryDisabled",
+                        "secondarySVG": "HvButton-secondarySVG",
+                        "semantic": "HvButton-semantic",
+                        "semanticDisabled": "HvButton-semanticDisabled",
+                        "semanticSVG": "HvButton-semanticSVG",
+                        "startIcon": "HvButton-startIcon",
+                      }
+                    }
+                    icon={true}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "height": 32,
+                        "width": 32,
+                      }
+                    }
+                  >
+                    <WithStyles(ForwardRef(Button))
+                      className="HvButton-icon HvButton-ghostSVG"
+                      classes={
+                        Object {
+                          "containedPrimary": "HvButton-primary",
+                          "disabled": "HvButton-ghostDisabled",
+                          "outlinedPrimary": "HvButton-secondary",
+                          "root": "HvButton-root",
+                          "startIcon": "HvButton-startIcon",
+                          "textPrimary": "HvButton-ghost",
+                        }
+                      }
+                      color="primary"
+                      disableRipple={true}
+                      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "height": 32,
+                          "width": 32,
+                        }
+                      }
+                      variant="text"
+                    >
+                      <ForwardRef(Button)
+                        className="HvButton-icon HvButton-ghostSVG"
+                        classes={
+                          Object {
+                            "colorInherit": "MuiButton-colorInherit",
+                            "contained": "MuiButton-contained",
+                            "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                            "containedSecondary": "MuiButton-containedSecondary",
+                            "containedSizeLarge": "MuiButton-containedSizeLarge",
+                            "containedSizeSmall": "MuiButton-containedSizeSmall",
+                            "disableElevation": "MuiButton-disableElevation",
+                            "disabled": "Mui-disabled HvButton-ghostDisabled",
+                            "endIcon": "MuiButton-endIcon",
+                            "focusVisible": "Mui-focusVisible",
+                            "fullWidth": "MuiButton-fullWidth",
+                            "iconSizeLarge": "MuiButton-iconSizeLarge",
+                            "iconSizeMedium": "MuiButton-iconSizeMedium",
+                            "iconSizeSmall": "MuiButton-iconSizeSmall",
+                            "label": "MuiButton-label",
+                            "outlined": "MuiButton-outlined",
+                            "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                            "outlinedSecondary": "MuiButton-outlinedSecondary",
+                            "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                            "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                            "root": "MuiButton-root HvButton-root",
+                            "sizeLarge": "MuiButton-sizeLarge",
+                            "sizeSmall": "MuiButton-sizeSmall",
+                            "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                            "text": "MuiButton-text",
+                            "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                            "textSecondary": "MuiButton-textSecondary",
+                            "textSizeLarge": "MuiButton-textSizeLarge",
+                            "textSizeSmall": "MuiButton-textSizeSmall",
+                          }
+                        }
+                        color="primary"
+                        disableRipple={true}
+                        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "height": 32,
+                            "width": 32,
+                          }
+                        }
+                        variant="text"
+                      >
+                        <WithStyles(ForwardRef(ButtonBase))
+                          className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                          component="button"
+                          disableRipple={true}
+                          disabled={false}
+                          focusRipple={true}
+                          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "height": 32,
+                              "width": 32,
+                            }
+                          }
+                          type="button"
+                        >
+                          <ForwardRef(ButtonBase)
+                            className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                            classes={
+                              Object {
+                                "disabled": "Mui-disabled",
+                                "focusVisible": "Mui-focusVisible",
+                                "root": "MuiButtonBase-root",
+                              }
+                            }
+                            component="button"
+                            disableRipple={true}
+                            disabled={false}
+                            focusRipple={true}
+                            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "height": 32,
+                                "width": 32,
+                              }
+                            }
+                            type="button"
+                          >
+                            <button
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onDragLeave={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchEnd={[Function]}
+                              onTouchMove={[Function]}
+                              onTouchStart={[Function]}
+                              style={
+                                Object {
+                                  "height": 32,
+                                  "width": 32,
+                                }
+                              }
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButton-label"
+                              >
+                                <Menu>
+                                  <HvIconBase
+                                    iconSize="S"
+                                    name="Menu"
+                                  >
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Menu"
+                                    >
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </Menu>
+                              </span>
+                            </button>
+                          </ForwardRef(ButtonBase)>
+                        </WithStyles(ForwardRef(ButtonBase))>
+                      </ForwardRef(Button)>
+                    </WithStyles(ForwardRef(Button))>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+                <WithStyles(Brand)
+                  className="makeStyles-brand-1"
+                  logo={<_default />}
+                  name="Lumada App"
+                >
+                  <Brand
+                    className="makeStyles-brand-1"
+                    classes={
+                      Object {
+                        "root": "HvHeaderBrand-root",
+                        "separator": "HvHeaderBrand-separator",
+                      }
+                    }
+                    logo={<_default />}
+                    name="Lumada App"
+                  >
+                    <div
+                      className="makeStyles-brand-1 HvHeaderBrand-root"
+                    >
+                      <_default>
+                        <HitachiLogo
+                          style={
+                            Object {
+                              "height": 20,
+                              "width": 72,
+                            }
+                          }
+                        >
+                          <svg
+                            height={16}
+                            style={
+                              Object {
+                                "height": 20,
+                                "width": 72,
+                              }
+                            }
+                            version="1.1"
+                            viewBox="0 0 80 16"
+                            width={80}
+                            x="0px"
+                            xmlSpace="preserve"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            y="0px"
+                          >
+                            <path
+                              d="M63.6,2.5c0,0,0,4.8,0,4.7H70c0,0,0-4.7,0-4.7s3.1,0,3.1,0c0,0,0,11.8,0,11.9H70c0,0,0-5.2,0-5.2c0,0-6.3,0-6.3,0c0,0,0,5.2,0,5.2h-3.1c0,0,0-11.9,0-11.9C60.5,2.5,63.6,2.5,63.6,2.5z"
+                              fill="#414141"
+                            />
+                            <path
+                              d="M33.9,2.5c0,0,0,2,0,2h-4.8v9.8h-3.1V4.5h-4.8v-2C21.1,2.5,33.9,2.5,33.9,2.5z"
+                              fill="#414141"
+                            />
+                            <path
+                              d="M46,14.3c0,0-3.5,0-3.5,0l-1-2.6h-5.9c0,0-1,2.6-1,2.6h-3.5l5.5-11.9h3.8L46,14.3z M38.6,4.5l-2.2,5.4h4.4L38.6,4.5"
+                              fill="#414141"
+                            />
+                            <rect
+                              fill="#414141"
+                              height="11.9"
+                              width="3.1"
+                              x="75.6"
+                              y="2.5"
+                            />
+                            <path
+                              d="M4.9,2.5c0,0,0,4.8,0,4.7h6.3c0,0,0-4.7,0-4.7s3.1,0,3.1,0c0,0,0,11.8,0,11.9h-3.1c0,0,0-5.2,0-5.2c0,0-6.3,0-6.3,0c0,0,0,5.2,0,5.2H1.7c0,0,0-11.9,0-11.9C1.7,2.5,4.9,2.5,4.9,2.5z"
+                              fill="#414141"
+                            />
+                            <rect
+                              fill="#414141"
+                              height="11.9"
+                              width="3.1"
+                              x="16.9"
+                              y="2.5"
+                            />
+                            <path
+                              d="M45.9,11c-0.3-0.8-0.4-1.6-0.4-2.5c0-1.2,0.2-2.4,0.8-3.4c0.6-1,1.5-1.8,2.7-2.2 c1.1-0.4,2.2-0.6,3.5-0.6c1.4,0,2.7,0.3,4,0.8c1.1,0.5,2,1.5,2.2,2.7c0.1,0.3,0.1,0.5,0.1,0.8h-3.3c0-0.3-0.1-0.6-0.2-0.9 c-0.3-0.6-0.8-1.2-1.5-1.4c-0.4-0.1-0.9-0.2-1.4-0.2c-0.5,0-1.1,0.1-1.5,0.3c-0.8,0.3-1.4,0.9-1.7,1.7 c-0.3,0.8-0.4,1.6-0.4,2.5c0,0.7,0.1,1.4,0.3,2.1c0.2,0.9,0.9,1.6,1.7,1.9c0.5,0.2,1.1,0.3,1.7,0.3c0.5,0,1-0.1,1.5-0.2 c0.6-0.2,1.1-0.6,1.4-1.2c0.2-0.4,0.3-0.8,0.3-1.3h3.3c0,0.4-0.1,0.8-0.2,1.1c-0.3,1.2-1.1,2.2-2.2,2.6 c-1.2,0.5-2.6,0.8-4,0.8c-1.1,0-2.2-0.2-3.2-0.5C47.8,13.6,46.5,12.5,45.9,11z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </HitachiLogo>
+                      </_default>
+                      <div
+                        className="HvHeaderBrand-separator"
+                      />
+                      <WithStyles(ForwardRef)
+                        variant="highlightText"
+                      >
+                        <ForwardRef
+                          classes={
+                            Object {
+                              "3xlTitle": "HvTypography-3xlTitle",
+                              "4xlTitle": "HvTypography-4xlTitle",
+                              "5xlTitle": "HvTypography-5xlTitle",
+                              "disabledText": "HvTypography-disabledText",
+                              "highlightText": "HvTypography-highlightText",
+                              "lTitle": "HvTypography-lTitle",
+                              "link": "HvTypography-link",
+                              "mTitle": "HvTypography-mTitle",
+                              "noWrap": "HvTypography-noWrap",
+                              "normalText": "HvTypography-normalText",
+                              "placeholderText": "HvTypography-placeholderText",
+                              "root": "HvTypography-root",
+                              "sTitle": "HvTypography-sTitle",
+                              "sectionTitle": "HvTypography-sectionTitle",
+                              "selectedNavText": "HvTypography-selectedNavText",
+                              "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
+                              "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
+                              "xsTitle": "HvTypography-xsTitle",
+                              "xxlTitle": "HvTypography-xxlTitle",
+                              "xxsTitle": "HvTypography-xxsTitle",
+                            }
+                          }
+                          variant="highlightText"
+                        >
+                          <p
+                            className="HvTypography-root HvTypography-highlightText"
+                          >
+                            Lumada App
+                          </p>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
+                    </div>
+                  </Brand>
+                </WithStyles(Brand)>
+                <WithStyles(Actions)>
+                  <Actions
+                    classes={
+                      Object {
+                        "root": "HvHeaderActions-root",
+                      }
+                    }
+                  >
+                    <div
+                      className="HvHeaderActions-root"
+                    >
+                      <WithStyles(ForwardRef)
+                        aria-label="Open Notifications panel"
+                        icon={true}
+                        onClick={[Function]}
+                      >
+                        <ForwardRef
+                          aria-label="Open Notifications panel"
+                          classes={
+                            Object {
+                              "focusVisible": "HvButton-focusVisible",
+                              "ghost": "HvButton-ghost",
+                              "ghostDisabled": "HvButton-ghostDisabled",
+                              "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
+                              "iconSVG": "HvButton-iconSVG",
+                              "primary": "HvButton-primary",
+                              "primaryDisabled": "HvButton-primaryDisabled",
+                              "primarySVG": "HvButton-primarySVG",
+                              "root": "HvButton-root",
+                              "secondary": "HvButton-secondary",
+                              "secondaryDisabled": "HvButton-secondaryDisabled",
+                              "secondarySVG": "HvButton-secondarySVG",
+                              "semantic": "HvButton-semantic",
+                              "semanticDisabled": "HvButton-semanticDisabled",
+                              "semanticSVG": "HvButton-semanticSVG",
+                              "startIcon": "HvButton-startIcon",
+                            }
+                          }
+                          icon={true}
+                          onClick={[Function]}
+                        >
+                          <WithStyles(ForwardRef(Button))
+                            aria-label="Open Notifications panel"
+                            className="HvButton-icon HvButton-ghostSVG"
+                            classes={
+                              Object {
+                                "containedPrimary": "HvButton-primary",
+                                "disabled": "HvButton-ghostDisabled",
+                                "outlinedPrimary": "HvButton-secondary",
+                                "root": "HvButton-root",
+                                "startIcon": "HvButton-startIcon",
+                                "textPrimary": "HvButton-ghost",
+                              }
+                            }
+                            color="primary"
+                            disableRipple={true}
+                            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                            onClick={[Function]}
+                            variant="text"
+                          >
+                            <ForwardRef(Button)
+                              aria-label="Open Notifications panel"
+                              className="HvButton-icon HvButton-ghostSVG"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root HvButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
+                                }
+                              }
+                              color="primary"
+                              disableRipple={true}
+                              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                              onClick={[Function]}
+                              variant="text"
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                aria-label="Open Notifications panel"
+                                className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                component="button"
+                                disableRipple={true}
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <ForwardRef(ButtonBase)
+                                  aria-label="Open Notifications panel"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="button"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <button
+                                    aria-label="Open Notifications panel"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
+                                    >
+                                      <WithStyles(Badge)
+                                        count={1}
+                                        icon={<Alert />}
+                                      >
+                                        <Badge
+                                          classes={
+                                            Object {
+                                              "badge": "HvBadge-badge",
+                                              "badgeContainer": "HvBadge-badgeContainer",
+                                              "badgeIcon": "HvBadge-badgeIcon",
+                                              "badgeOneDigit": "HvBadge-badgeOneDigit",
+                                              "root": "HvBadge-root",
+                                              "showCount": "HvBadge-showCount",
+                                              "showLabel": "HvBadge-showLabel",
+                                            }
+                                          }
+                                          count={1}
+                                          icon={<Alert />}
+                                        >
+                                          <div
+                                            aria-label={null}
+                                            className="HvBadge-root"
+                                          >
+                                            <Alert>
+                                              <HvIconBase
+                                                iconSize="S"
+                                                name="Alert"
+                                              >
+                                                <div
+                                                  className="HvIconBase-root HvIconBase-s"
+                                                  name="Alert"
+                                                >
+                                                  <svg
+                                                    focusable={false}
+                                                    height={16}
+                                                    viewBox="0 0 16 16"
+                                                    width={16}
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  >
+                                                    <path
+                                                      className="color0"
+                                                      d="M14 12V8a5.884 5.884 0 00-4-5.666V2a2 2 0 00-4 0v.334A5.884 5.884 0 002 8v4H0v1h6v1a2 2 0 004 0v-1h6v-1zM7 2a1 1 0 012 0v.086a5.85679 5.85679 0 00-2 0zm2 12a1 1 0 01-2 0v-1h2zm-6-2V8a5 5 0 0110 0v4z"
+                                                      fill="#414141"
+                                                    />
+                                                  </svg>
+                                                </div>
+                                              </HvIconBase>
+                                            </Alert>
+                                            <div
+                                              className="HvBadge-badgeContainer"
+                                            >
+                                              <div
+                                                className="HvBadge-badge HvBadge-badgeIcon"
+                                              />
+                                            </div>
+                                          </div>
+                                        </Badge>
+                                      </WithStyles(Badge)>
+                                    </span>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
+                    </div>
+                  </Actions>
+                </WithStyles(Actions)>
+              </div>
+            </header>
+          </ForwardRef(Paper)>
+        </WithStyles(ForwardRef(Paper))>
+      </ForwardRef(AppBar)>
+    </WithStyles(ForwardRef(AppBar))>
+  </HvHeader>
+</WithStyles(HvHeader)>
+`;

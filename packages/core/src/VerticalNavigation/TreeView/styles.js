@@ -55,6 +55,9 @@ const styles = (theme) => ({
   },
   selected: {},
   unselected: {},
+  link: {
+    textDecoration: "none",
+  },
 
   focused: {},
 

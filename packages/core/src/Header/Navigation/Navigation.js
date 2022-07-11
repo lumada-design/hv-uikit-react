@@ -45,11 +45,15 @@ Navigation.propTypes = {
    *
    * id - the id to be applied to the root element.
    * label - the label to be rendered on the menu item.
+   * href - the url used for navigation.
+   * target - the behavior when opening an url.
    */
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      href: PropTypes.string,
+      target: PropTypes.string,
     })
   ).isRequired,
   /**

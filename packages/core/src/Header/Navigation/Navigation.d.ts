@@ -5,6 +5,8 @@ export interface NavigationItemProp {
   id: string;
   label: string;
   path?: string;
+  href?: string;
+  target?: string;
 }
 
 export type HvHeaderNavigationClassKey = "root";
@@ -20,6 +22,8 @@ export interface HvHeaderNavigationProps
    *
    * id - the id to be applied to the root element.
    * label - the label to be rendered on the menu item.
+   * href - the url for navigation.
+   * target - the behavior when opening a link.
    */
   data: NavigationItemProp[];
   /**
