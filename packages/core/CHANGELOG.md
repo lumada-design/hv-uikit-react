@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.3...@hitachivantara/uikit-react-core@3.68.4) (2022-07-12)
+
+
+### Bug Fixes
+
+* **navigation:** adding item as links ([#2843](https://github.com/lumada-design/hv-uikit-react/issues/2843)) ([d072a8c](https://github.com/lumada-design/hv-uikit-react/commit/d072a8c11d98338d0dd58a2c813bf2e6e0e1d7ce))
+
+
+
+
+
 ## [3.68.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.2...@hitachivantara/uikit-react-core@3.68.3) (2022-07-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
