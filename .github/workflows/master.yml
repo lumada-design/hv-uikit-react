@@ -49,7 +49,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0"
+          node-version: "16"
 
       - name: Install
         run: |
@@ -57,7 +57,7 @@ jobs:
 
       - name: Bootstrap
         run: npm run bootstrap
-      
+
       - name: Build
         run: npm run build
 
@@ -80,7 +80,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0"
+          node-version: "16"
 
       - name: Install
         run: |
@@ -115,7 +115,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0"
+          node-version: "16"
 
       - name: Install
         run: |
@@ -160,7 +160,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0" # npm 8.x needed for overrides
+          node-version: "16" # npm 8.x needed for overrides
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -209,7 +209,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0"
+          node-version: "16"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -267,7 +267,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.15.0"
+          node-version: "16"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
