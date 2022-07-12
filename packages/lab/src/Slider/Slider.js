@@ -9,7 +9,6 @@ import { Range, Handle } from "rc-slider";
 import Tooltip from "rc-tooltip";
 import { withStyles } from "@material-ui/core";
 import KnobRing from "./KnobRing";
-import "rc-slider/assets/index.css";
 import styleCreator from "./styles";
 
 /**
@@ -101,6 +100,8 @@ class HvSlider extends React.Component {
       stepValue,
       inverseStepValue,
     };
+
+    import("rc-slider/assets/index.css");
   }
 
   static getDerivedStateFromProps(props, state) {
