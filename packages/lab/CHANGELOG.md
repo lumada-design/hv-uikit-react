@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.49.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.4...@hitachivantara/uikit-react-lab@3.49.5) (2022-07-13)
+
+
+### Bug Fixes
+
+* build not working on windows ([47ce45d](https://github.com/lumada-design/hv-uikit-react/commit/47ce45d0cddb2328141223badabaebf755093fce))
+
+
+
+
+
 ## [3.49.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.3...@hitachivantara/uikit-react-lab@3.49.4) (2022-07-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
