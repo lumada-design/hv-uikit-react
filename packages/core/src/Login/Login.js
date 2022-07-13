@@ -3,7 +3,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
-import bg from "./resources/background.svg";
 
 /**
  * Container layout for the login form.
@@ -14,7 +13,7 @@ const HvLogin = ({ id, className, classes, children, background, ...others }) =>
       id={id}
       className={clsx(className, classes.root)}
       style={{
-        backgroundImage: `url(${background || bg})`,
+        backgroundImage: background && `url(${background})`,
       }}
       {...others}
     >

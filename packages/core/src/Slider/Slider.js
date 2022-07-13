@@ -3,7 +3,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import Slider from "rc-slider";
 import Tooltip from "rc-tooltip";
-import "rc-slider/assets/index.css";
 import { withStyles } from "@material-ui/core";
 import { HvFormElement, useControlled, useUniqueId, HvLabel, setId, HvWarningText } from "..";
 import validationStates from "../Forms/FormElement/validationStates";
@@ -158,6 +157,8 @@ const HvSlider = (props) => {
     }
     setValidationMessage("");
   }, [knobsPositions, requiredMessage, setValidationMessage, setValidationState]);
+
+  useEffect(() => import("rc-slider/assets/index.css"), []);
 
   useEffect(() => {
     const stepVl = calculateStepValue(maxPointValue, minPointValue, divisionQuantity);
