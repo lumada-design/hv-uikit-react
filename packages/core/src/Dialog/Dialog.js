@@ -72,9 +72,7 @@ const HvDialog = ({
         // Swallow the event, in case someone is listening for the escape key on the body.
         event.stopPropagation();
 
-        if (onClose) {
-          onClose(event, "escapeKeyDown");
-        }
+        onClose?.(event, "escapeKeyDown");
       }
     }
   };
@@ -102,7 +100,7 @@ const HvDialog = ({
           root: classes.background,
         },
       }}
-      onClose={(event, reason) => onClose(event, reason)}
+      onClose={(event, reason) => onClose?.(event, reason)}
       onKeyDown={keyDownHandler}
       {...others}
       aria-modal
@@ -111,7 +109,7 @@ const HvDialog = ({
         id={setId(id, "close")}
         className={classes.closeButton}
         category="ghost"
-        onClick={(event) => onClose(event)}
+        onClick={(event) => onClose?.(event)}
         aria-label={buttonTitle}
       >
         <CloseButtonTooltipWrapper />
@@ -164,7 +162,7 @@ HvDialog.propTypes = {
   /**
    * Function executed on close.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * Element id that should be focus when the Dialog opens.
    */
