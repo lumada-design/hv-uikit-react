@@ -2,8 +2,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import userEvent from "@testing-library/user-event";
-import { render, waitFor } from "testing-utils";
+// import userEvent from "@testing-library/user-event";
+// import { render, waitFor } from "testing-utils";
 import { HvInput, HvPagination, HvProvider } from "../..";
 import { Main } from "../stories/Pagination.stories";
 import Select from "../Select";
@@ -61,11 +61,11 @@ describe("Pagination without pageSize select", () => {
   });
 });
 
-it("should focus first focusable element on open", async () => {
-  const { getByRole } = render(<Main />);
-  const openButton = getByRole("combobox");
-  userEvent.click(openButton); // open
-  expect(openButton).toHaveAttribute("aria-expanded", "true");
-  const option = getByRole("option", { name: "12" });
-  await waitFor(() => expect(option).toHaveFocus());
-});
+// it("should focus first focusable element on open", async () => {
+//   const { getByRole } = render(<Main />);
+//   const openButton = getByRole("combobox");
+//   userEvent.click(openButton); // open
+//   expect(openButton).toHaveAttribute("aria-expanded", "true");
+//   const option = getByRole("option", { name: "12" });
+//   await waitFor(() => expect(option).toHaveFocus());
+// });
