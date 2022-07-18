@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { HvFormElement, HvLabel, HvInfoMessage, HvWarningText, useUniqueId } from "..";
 

@@ -7,7 +7,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Range, Handle } from "rc-slider";
 import Tooltip from "rc-tooltip";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import KnobRing from "./KnobRing";
 import styleCreator from "./styles";
 

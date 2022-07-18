@@ -1,4 +1,5 @@
-import { useMediaQuery, useTheme } from "@material-ui/core";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 const useWidth = () => {
   const theme = useTheme();

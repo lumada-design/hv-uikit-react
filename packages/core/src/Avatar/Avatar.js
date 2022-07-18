@@ -1,13 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-
-import { Avatar, withStyles, useTheme } from "@material-ui/core";
-
+import { Avatar } from "@mui/material";
+import { withStyles, useTheme } from "@mui/styles";
 import { User } from "@hitachivantara/uikit-react-icons";
 
 import { decreaseSize, useImageLoaded } from "../utils";
-
 import styles from "./styles";
 
 const getColor = (theme, color, defaultColor) => theme.palette[color] || color || defaultColor;
@@ -101,6 +99,7 @@ const HvAvatar = (props) => {
   }
 
   const theme = useTheme();
+
   if (!hasImgNotFailing) {
     inlineStyle.backgroundColor = getColor(theme, backgroundColor, theme.hv.palette.accent.acce1);
     inlineStyle.color = getColor(theme, color, theme.hv.palette.atmosphere.atmo1);

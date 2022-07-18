@@ -21,6 +21,7 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
       >
         <div
           class=""
+          data-mui-internal-clone-element="true"
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
@@ -64,6 +65,7 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
       >
         <div
           class=""
+          data-mui-internal-clone-element="true"
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
@@ -92,6 +94,7 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
       >
         <div
           class=""
+          data-mui-internal-clone-element="true"
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
@@ -120,6 +123,7 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
       >
         <div
           class=""
+          data-mui-internal-clone-element="true"
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div

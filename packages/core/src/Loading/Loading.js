@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import range from "lodash/range";
-import { useTheme, withStyles } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
+
 import { HvTypography } from "..";
 import styles from "./styles";
 

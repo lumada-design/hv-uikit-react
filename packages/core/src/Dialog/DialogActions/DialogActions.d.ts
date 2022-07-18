@@ -1,4 +1,4 @@
-import { DialogActionsProps, StandardProps } from "@material-ui/core";
+import { DialogActionsProps, StandardProps } from "@mui/material";
 
 export type HvDialogActionsClassKey = "root" | "spacing";
 

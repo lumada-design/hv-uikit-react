@@ -2,7 +2,7 @@ import React, { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import styles from "./styles";
 import TableContext from "../TableContext";

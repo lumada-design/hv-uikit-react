@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { deprecatedPropType } from "@mui/material";
 
 import { Backwards } from "@hitachivantara/uikit-react-icons";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import isString from "lodash/isString";
 
 import HvButton from "../Button";

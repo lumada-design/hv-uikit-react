@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles, Container } from "@material-ui/core";
-import { styles as containerStyles } from "@material-ui/core/Container/Container";
+import { Container } from "@mui/material";
+import { withStyles } from "@mui/styles";
+// import { styles as containerStyles } from "@mui/material/Container";
 
 // inherit material ui styles so people can override them too
 const styles = (theme) => ({
-  ...containerStyles(theme),
+  // ...containerStyles(theme),
   root: {
     paddingLeft: theme.hvSpacing(2),
     paddingRight: theme.hvSpacing(2),

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@mui/styles";
 import { HvBaseDropdown, HvButton, HvInput, HvPanel } from "../..";
 import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
 

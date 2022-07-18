@@ -1,5 +1,5 @@
 import React from "react";
-import { CardHeaderProps, StandardProps } from "@material-ui/core";
+import { CardHeaderProps, StandardProps } from "@mui/material";
 
 export type HvCardHeaderClassKey =
   | "root"

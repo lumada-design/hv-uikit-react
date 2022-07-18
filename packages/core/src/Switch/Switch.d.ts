@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvLabelProps } from "../Forms/Label";
 import { HvFormStatus } from "../Forms/FormElement";
 import { HvBaseSwitchProps } from "../BaseSwitch";

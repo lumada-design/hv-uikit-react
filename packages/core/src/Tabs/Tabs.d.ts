@@ -1,4 +1,4 @@
-import { StandardProps, TabsProps } from "@material-ui/core";
+import { StandardProps, TabsProps } from "@mui/material";
 
 export type HvTabsClassKey = "root" | "flexContainer" | "indicator" | "scroller";
 

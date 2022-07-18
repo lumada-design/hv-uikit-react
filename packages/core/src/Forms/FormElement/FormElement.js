@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import useUniqueId from "../../useUniqueId";
 

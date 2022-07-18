@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles, Hidden } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
+import { Hidden } from "@mui/material";
 import { Start, End, Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
+
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import { HvInput, HvTypography } from "..";
 import { setId, useLabels } from "../utils";

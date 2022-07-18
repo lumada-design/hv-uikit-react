@@ -25,43 +25,39 @@ exports[`HvRadioGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio19-input"
+              name="hvradiogroup17"
+              type="radio"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio19-input"
-                name="hvradiogroup17"
-                type="radio"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -79,49 +75,45 @@ exports[`HvRadioGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio21-input"
+              name="hvradiogroup17"
+              type="radio"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonSelected"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                id="hvradio21-input"
-                name="hvradiogroup17"
-                type="radio"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonSelected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -139,43 +131,39 @@ exports[`HvRadioGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio23-input"
+              name="hvradiogroup17"
+              type="radio"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio23-input"
-                name="hvradiogroup17"
-                type="radio"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -252,43 +240,39 @@ exports[`HvRadioGroup sample snapshot testing Horizontal 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio11-input"
+              name="hvradiogroup9"
+              type="radio"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio11-input"
-                name="hvradiogroup9"
-                type="radio"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -306,49 +290,45 @@ exports[`HvRadioGroup sample snapshot testing Horizontal 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio13-input"
+              name="hvradiogroup9"
+              type="radio"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonSelected"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                id="hvradio13-input"
-                name="hvradiogroup9"
-                type="radio"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonSelected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -366,43 +346,39 @@ exports[`HvRadioGroup sample snapshot testing Horizontal 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio15-input"
+              name="hvradiogroup9"
+              type="radio"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio15-input"
-                name="hvradiogroup9"
-                type="radio"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -441,43 +417,39 @@ exports[`HvRadioGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio3-input"
+              name="favorite"
+              type="radio"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio3-input"
-                name="favorite"
-                type="radio"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -495,49 +467,45 @@ exports[`HvRadioGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio5-input"
+              name="favorite"
+              type="radio"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonSelected"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                id="hvradio5-input"
-                name="favorite"
-                type="radio"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonSelected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -555,43 +523,39 @@ exports[`HvRadioGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvRadio-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              id="hvradio7-input"
+              name="favorite"
+              type="radio"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="RadioButtonUnselected"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                id="hvradio7-input"
-                name="favorite"
-                type="radio"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="RadioButtonUnselected"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"

@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Tab, withStyles } from "@material-ui/core";
+import { Tab } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const HvTab = (props) => {

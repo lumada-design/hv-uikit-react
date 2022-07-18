@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import OutsideClickHandler from "react-outside-click-handler";
-import { Popper, withStyles } from "@material-ui/core";
+import { Popper } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import { HvSelectionList, HvListItem } from "../..";
 import { setId } from "../../utils";
 import { HvFormElementContext } from "../FormElement";
@@ -27,9 +28,11 @@ const HvSuggestions = (props) => {
   const { elementId } = useContext(HvFormElementContext);
   const localId = id ?? setId(elementId, "suggestions");
 
+  console.log(classes.popper);
+
   return (
     <div id={localId} className={clsx(className, classes.root)} {...others}>
-      <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
+      {/* <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
         <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}>
           <HvSelectionList
             className={classes.list}
@@ -47,7 +50,7 @@ const HvSuggestions = (props) => {
             })}
           </HvSelectionList>
         </OutsideClickHandler>
-      </Popper>
+      </Popper> */}
     </div>
   );
 };

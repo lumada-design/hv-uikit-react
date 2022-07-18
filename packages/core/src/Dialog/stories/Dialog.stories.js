@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
-import { withStyles, useTheme } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
 import {

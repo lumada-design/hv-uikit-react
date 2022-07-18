@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvPlotProps } from "./Plot";
 
 export type HvChartClassKey = "root";

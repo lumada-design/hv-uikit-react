@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import { ClickAwayListener, withStyles } from "@material-ui/core";
+import { ClickAwayListener } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import { Menu } from "@hitachivantara/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";

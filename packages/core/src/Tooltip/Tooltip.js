@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Fade, Tooltip, withStyles } from "@material-ui/core";
+import { Fade, Tooltip } from "@mui/material";
+import { withStyles } from "@mui/styles";
+
 import styles from "./styles";
 
 /**

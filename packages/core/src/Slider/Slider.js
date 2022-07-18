@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import Slider from "rc-slider";
 import Tooltip from "rc-tooltip";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvFormElement, useControlled, useUniqueId, HvLabel, setId, HvWarningText } from "..";
 import validationStates from "../Forms/FormElement/validationStates";
 import {

@@ -17,7 +17,7 @@ exports[`Tab withStyles should render correctly 1`] = `
     icon={null}
     label="Clickable Tab"
   >
-    <WithStyles(ForwardRef(Tab))
+    <ForwardRef(Tab)
       classes={
         Object {
           "disabled": "HvTab-disabled",
@@ -32,30 +32,270 @@ exports[`Tab withStyles should render correctly 1`] = `
       icon={null}
       label="Clickable Tab"
     >
-      <ForwardRef(Tab)
+      <MuiTabRoot
+        className="HvTab-root MuiTab-root MuiTab-textColorInherit"
         classes={
           Object {
-            "disabled": "Mui-disabled HvTab-disabled",
-            "fullWidth": "MuiTab-fullWidth",
-            "labelIcon": "MuiTab-labelIcon",
-            "root": "MuiTab-root HvTab-root",
-            "selected": "Mui-selected HvTab-selected",
-            "textColorInherit": "MuiTab-textColorInherit",
-            "textColorPrimary": "MuiTab-textColorPrimary",
-            "textColorSecondary": "MuiTab-textColorSecondary",
-            "wrapped": "MuiTab-wrapped",
-            "wrapper": "MuiTab-wrapper",
+            "disabled": "HvTab-disabled",
+            "root": "HvTab-root",
+            "selected": "HvTab-selected",
           }
         }
         disableRipple={true}
         disableTouchRipple={true}
         disabled={false}
+        focusRipple={true}
         focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
-        icon={null}
-        label="Clickable Tab"
+        onClick={[Function]}
+        onFocus={[Function]}
+        ownerState={
+          Object {
+            "classes": Object {
+              "disabled": "HvTab-disabled",
+              "root": "HvTab-root",
+              "selected": "HvTab-selected",
+            },
+            "disableFocusRipple": false,
+            "disableRipple": true,
+            "disableTouchRipple": true,
+            "disabled": false,
+            "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
+            "fullWidth": undefined,
+            "icon": false,
+            "iconPosition": "top",
+            "label": true,
+            "selected": undefined,
+            "textColor": "inherit",
+            "wrapped": false,
+          }
+        }
+        role="tab"
+        tabIndex={-1}
       >
-        <WithStyles(ForwardRef(ButtonBase))
-          className="MuiTab-root HvTab-root MuiTab-textColorInherit"
+        <Insertion
+          cache={
+            Object {
+              "insert": [Function],
+              "inserted": Object {
+                "cjctlb-MuiButtonBase-root-MuiTab-root": true,
+                "qdh9lf-MuiTab-root": true,
+              },
+              "key": "css",
+              "nonce": undefined,
+              "registered": Object {
+                "css-qdh9lf-MuiTab-root": "label:MuiTab-root;font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;flex-direction:column;color:inherit;opacity:0.6;&.Mui-selected{opacity:1;}&.Mui-disabled{opacity:0.38;}",
+              },
+              "sheet": StyleSheet {
+                "_alreadyInsertedOrderInsensitiveRule": true,
+                "_insertTag": [Function],
+                "before": null,
+                "container": <head>
+                  <style
+                    data-jss=""
+                    data-meta="HvTab"
+                  >
+                    
+.HvTab-root {
+  color: #414141;
+  opacity: 1;
+  padding: 0 20px;
+  font-size: 12px;
+  min-width: 70px;
+  margin-top: 3px;
+  min-height: 32px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.HvTab-root.HvTab-selected {
+  color: #414141;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.HvTab-root.HvTab-disabled {
+  color: #999999;
+  cursor: not-allowed;
+  opacity: 1;
+  pointer-events: all;
+}
+.HvTab-root::after {
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: '';
+  position: absolute;
+  background-color: #CCCED0;
+}
+.HvTab-root.HvTab-disabled:hover {
+  background: none;
+}
+.HvTab-root:hover::after {
+  height: 1px;
+  background-color: #999999;
+}
+.HvTab-focusVisible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root.Mui-selected{opacity:1;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root.Mui-disabled{opacity:0.38;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root::-moz-focus-inner{border-style:none;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{pointer-events:none;cursor:default;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    @media print{.css-cjctlb-MuiButtonBase-root-MuiTab-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected{opacity:1;}
+                  </style>
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{opacity:0.38;}
+                  </style>
+                </head>,
+                "ctr": 9,
+                "insertionPoint": undefined,
+                "isSpeedy": false,
+                "key": "css",
+                "nonce": undefined,
+                "prepend": undefined,
+                "tags": Array [
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root.Mui-selected{opacity:1;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-qdh9lf-MuiTab-root.Mui-disabled{opacity:0.38;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root::-moz-focus-inner{border-style:none;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{pointer-events:none;cursor:default;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    @media print{.css-cjctlb-MuiButtonBase-root-MuiTab-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected{opacity:1;}
+                  </style>,
+                  <style
+                    data-emotion="css"
+                    data-s=""
+                  >
+                    
+                    .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{opacity:0.38;}
+                  </style>,
+                ],
+              },
+            }
+          }
+          isStringTag={false}
+          serialized={
+            Object {
+              "map": undefined,
+              "name": "qdh9lf-MuiTab-root",
+              "next": undefined,
+              "styles": "label:MuiTab-root;font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;flex-direction:column;color:inherit;opacity:0.6;&.Mui-selected{opacity:1;}&.Mui-disabled{opacity:0.38;}",
+              "toString": [Function],
+            }
+          }
+        />
+        <ForwardRef(ButtonBase)
+          className="HvTab-root MuiTab-root MuiTab-textColorInherit css-qdh9lf-MuiTab-root"
           disableRipple={true}
           disableTouchRipple={true}
           disabled={false}
@@ -66,30 +306,279 @@ exports[`Tab withStyles should render correctly 1`] = `
           role="tab"
           tabIndex={-1}
         >
-          <ForwardRef(ButtonBase)
-            className="MuiTab-root HvTab-root MuiTab-textColorInherit"
-            classes={
+          <MuiButtonBaseRoot
+            as="button"
+            className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-qdh9lf-MuiTab-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            ownerState={
               Object {
-                "disabled": "Mui-disabled",
-                "focusVisible": "Mui-focusVisible",
-                "root": "MuiButtonBase-root",
+                "aria-selected": undefined,
+                "centerRipple": false,
+                "children": Array [
+                  <React.Fragment>
+                    Clickable Tab
+                  </React.Fragment>,
+                  undefined,
+                ],
+                "className": "HvTab-root MuiTab-root MuiTab-textColorInherit css-qdh9lf-MuiTab-root",
+                "component": "button",
+                "disableRipple": true,
+                "disableTouchRipple": true,
+                "disabled": false,
+                "focusRipple": true,
+                "focusVisible": false,
+                "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
+                "onClick": [Function],
+                "onFocus": [Function],
+                "role": "tab",
+                "tabIndex": -1,
               }
             }
-            disableRipple={true}
-            disableTouchRipple={true}
-            disabled={false}
-            focusRipple={true}
-            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
-            onClick={[Function]}
-            onFocus={[Function]}
             role="tab"
             tabIndex={-1}
+            type="button"
           >
+            <Insertion
+              cache={
+                Object {
+                  "insert": [Function],
+                  "inserted": Object {
+                    "cjctlb-MuiButtonBase-root-MuiTab-root": true,
+                    "qdh9lf-MuiTab-root": true,
+                  },
+                  "key": "css",
+                  "nonce": undefined,
+                  "registered": Object {
+                    "css-qdh9lf-MuiTab-root": "label:MuiTab-root;font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;flex-direction:column;color:inherit;opacity:0.6;&.Mui-selected{opacity:1;}&.Mui-disabled{opacity:0.38;}",
+                  },
+                  "sheet": StyleSheet {
+                    "_alreadyInsertedOrderInsensitiveRule": true,
+                    "_insertTag": [Function],
+                    "before": null,
+                    "container": <head>
+                      <style
+                        data-jss=""
+                        data-meta="HvTab"
+                      >
+                        
+.HvTab-root {
+  color: #414141;
+  opacity: 1;
+  padding: 0 20px;
+  font-size: 12px;
+  min-width: 70px;
+  margin-top: 3px;
+  min-height: 32px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.HvTab-root.HvTab-selected {
+  color: #414141;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.HvTab-root.HvTab-disabled {
+  color: #999999;
+  cursor: not-allowed;
+  opacity: 1;
+  pointer-events: all;
+}
+.HvTab-root::after {
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: '';
+  position: absolute;
+  background-color: #CCCED0;
+}
+.HvTab-root.HvTab-disabled:hover {
+  background: none;
+}
+.HvTab-root:hover::after {
+  height: 1px;
+  background-color: #999999;
+}
+.HvTab-focusVisible {
+  box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
+  outline-color: #52A8EC;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+}
+
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root.Mui-selected{opacity:1;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root.Mui-disabled{opacity:0.38;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root::-moz-focus-inner{border-style:none;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{pointer-events:none;cursor:default;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        @media print{.css-cjctlb-MuiButtonBase-root-MuiTab-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected{opacity:1;}
+                      </style>
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{opacity:0.38;}
+                      </style>
+                    </head>,
+                    "ctr": 9,
+                    "insertionPoint": undefined,
+                    "isSpeedy": false,
+                    "key": "css",
+                    "nonce": undefined,
+                    "prepend": undefined,
+                    "tags": Array [
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root.Mui-selected{opacity:1;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-qdh9lf-MuiTab-root.Mui-disabled{opacity:0.38;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:inherit;opacity:0.6;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root::-moz-focus-inner{border-style:none;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{pointer-events:none;cursor:default;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        @media print{.css-cjctlb-MuiButtonBase-root-MuiTab-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected{opacity:1;}
+                      </style>,
+                      <style
+                        data-emotion="css"
+                        data-s=""
+                      >
+                        
+                        .css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-disabled{opacity:0.38;}
+                      </style>,
+                    ],
+                  },
+                }
+              }
+              isStringTag={true}
+              serialized={
+                Object {
+                  "map": undefined,
+                  "name": "cjctlb-MuiButtonBase-root-MuiTab-root",
+                  "next": undefined,
+                  "styles": "label:MuiButtonBase-root;display:inline-flex;align-items:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;text-decoration:none;color:inherit;&::-moz-focus-inner{border-style:none;}&.Mui-disabled{pointer-events:none;cursor:default;}@media print{color-adjust:exact;}label:MuiTab-root;font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:500;font-size:0.875rem;line-height:1.25;letter-spacing:0.02857em;text-transform:uppercase;max-width:360px;min-width:90px;position:relative;min-height:48px;flex-shrink:0;padding:12px 16px;overflow:hidden;white-space:normal;text-align:center;flex-direction:column;color:inherit;opacity:0.6;&.Mui-selected{opacity:1;}&.Mui-disabled{opacity:0.38;};",
+                  "toString": [Function],
+                }
+              }
+            />
             <button
-              className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-cjctlb-MuiButtonBase-root-MuiTab-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -104,16 +593,12 @@ exports[`Tab withStyles should render correctly 1`] = `
               tabIndex={-1}
               type="button"
             >
-              <span
-                className="MuiTab-wrapper"
-              >
-                Clickable Tab
-              </span>
+              Clickable Tab
             </button>
-          </ForwardRef(ButtonBase)>
-        </WithStyles(ForwardRef(ButtonBase))>
-      </ForwardRef(Tab)>
-    </WithStyles(ForwardRef(Tab))>
+          </MuiButtonBaseRoot>
+        </ForwardRef(ButtonBase)>
+      </MuiTabRoot>
+    </ForwardRef(Tab)>
   </HvTab>
 </WithStyles(HvTab)>
 `;

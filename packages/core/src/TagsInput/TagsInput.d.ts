@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvTagProps } from "../Tag/Tag";
 import { HvCharCounterProps } from "../Forms/CharCounter";
 import { HvFormStatus } from "../Forms/FormElement";

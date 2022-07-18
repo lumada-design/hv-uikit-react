@@ -1,8 +1,7 @@
 import { waitFor, screen, fireEvent } from "@storybook/testing-library";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@mui/styles";
 import { Calendar, LineChart, Machine, Plane, User } from "@hitachivantara/uikit-react-icons";
 
-import React from "react";
 import { HvList, HvTypography } from "../..";
 
 const styles = (theme) => ({

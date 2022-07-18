@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core";
-import withStyles from "@material-ui/core/styles/withStyles";
-import React from "react";
+import { makeStyles, withStyles } from "@mui/styles";
 import { HvDropDownMenu, HvDropdown, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { HvDonutchart } from "../..";

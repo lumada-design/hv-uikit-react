@@ -1,4 +1,4 @@
-import { ButtonProps, StandardProps } from "@material-ui/core";
+import { ButtonProps, StandardProps } from "@mui/material";
 
 export type HvButtonCategories = "primary" | "secondary" | "ghost" | "semantic";
 

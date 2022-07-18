@@ -2,7 +2,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { useResizeDetector } from "react-resize-detector";
 

@@ -1,4 +1,4 @@
-import { StandardProps, InputProps } from "@material-ui/core";
+import { StandardProps, InputProps } from "@mui/material";
 
 export type HvBaseInputClassKey =
   | "root"

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import dayjs from "dayjs";
 
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import { HvRadio, HvRadioGroup, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { HvTimeAgo, HvTimePicker } from "../..";

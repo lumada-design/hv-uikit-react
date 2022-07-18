@@ -1,5 +1,5 @@
-import { StandardProps } from "@material-ui/core";
-import { PopperProps } from "@material-ui/core/Popper";
+import { StandardProps } from "@mui/material";
+import { PopperProps } from "@mui/material/Popper";
 import { ListLabelsProp, ListValueProp, HvListProps } from "../List";
 import { HvFormElementProps, HvBaseDropdownProps } from "..";
 

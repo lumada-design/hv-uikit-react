@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { Remove } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
 import styles from "./styles";

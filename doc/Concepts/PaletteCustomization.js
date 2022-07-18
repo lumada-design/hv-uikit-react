@@ -1,5 +1,5 @@
 import React from "react";
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material";
 import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
 
 const theme = createTheme({

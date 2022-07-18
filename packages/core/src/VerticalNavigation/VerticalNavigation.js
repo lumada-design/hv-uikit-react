@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import VerticalContainer from "./VerticalContainer";
 import { setId } from "../utils";
 import styles from "./styles";

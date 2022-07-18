@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
 function size(props) {
   if (typeof props.size === "number") {

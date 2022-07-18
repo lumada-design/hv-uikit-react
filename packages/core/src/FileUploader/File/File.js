@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IconButton, withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
+import { IconButton } from "@mui/material";
 import { Fail, Close, Success } from "@hitachivantara/uikit-react-icons";
 import HvTypography from "../../Typography";
 import { setId } from "../../utils/setId";

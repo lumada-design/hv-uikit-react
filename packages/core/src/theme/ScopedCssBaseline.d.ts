@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 
 export interface HvScopedCssBaselineProps<D extends React.ElementType = "div">
   extends StandardProps<React.HTMLAttributes<D>, ""> {

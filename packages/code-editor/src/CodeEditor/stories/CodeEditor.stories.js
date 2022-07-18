@@ -1,10 +1,11 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
+import clsx from "clsx";
+import { Modal } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { Fullscreen, Duplicate, PopUp } from "@hitachivantara/uikit-react-icons";
 import { HvTypography, HvButton, HvTooltip } from "@hitachivantara/uikit-react-core";
-import { Modal } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
+
 import HvCodeEditor from "../CodeEditor";
 
 export default {

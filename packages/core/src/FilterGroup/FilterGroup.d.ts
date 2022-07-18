@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";

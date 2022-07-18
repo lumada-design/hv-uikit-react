@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { useResizeDetector } from "react-resize-detector";
 
-import { createStyles, withStyles } from "@material-ui/core";
+import { withStyles, createStyles } from "@mui/styles";
 
 import { HvTooltip, HvTypography } from "..";
 

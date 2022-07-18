@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import useStyles from "./styles";
 
 const HvSimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) => {

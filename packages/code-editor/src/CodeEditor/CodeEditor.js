@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles, withTheme } from "@material-ui/core";
-
 import MonacoEditor from "react-monaco-editor";
+import { withStyles, withTheme } from "@mui/styles";
 
 import styles from "./styles";
 

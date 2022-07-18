@@ -1,7 +1,7 @@
-import createPalette from "@material-ui/core/styles/createPalette";
+import { createTheme } from "@mui/material";
 
 const palette = (theme) =>
-  createPalette({
+  createTheme({
     primary: {
       main: theme.palette.accent.acce2,
       light: theme.palette.accent.acce2h,

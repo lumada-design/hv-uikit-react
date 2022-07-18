@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { withStyles, makeStyles } from "@material-ui/core/";
+import { makeStyles, withStyles } from "@mui/styles";
+
 import { HvBadge, HvTabs, HvTab, HvTypography } from "../..";
 
 export default {

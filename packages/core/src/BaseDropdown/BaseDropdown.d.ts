@@ -1,6 +1,6 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
-import { PopperProps } from "@material-ui/core/Popper";
+import { StandardProps } from "@mui/material";
+import { PopperProps } from "@mui/material/Popper";
 
 export type HvBaseDropdownClassKey =
   | "root"

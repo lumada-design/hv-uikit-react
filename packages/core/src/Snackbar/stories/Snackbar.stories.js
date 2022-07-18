@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Info } from "@hitachivantara/uikit-react-icons";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import {
   HvButton,
   HvSnackbar,

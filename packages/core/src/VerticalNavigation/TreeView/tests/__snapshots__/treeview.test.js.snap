@@ -76,33 +76,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                 id="hvtreeview1-1-button"
                 innerRef={
                   Object {
-                    "current": <div
-                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                      id="hvtreeview1-1-button"
-                      role="button"
-                      style="padding-left: 0px;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="HvIconBase-root HvIconBase-s"
-                        name="Play"
-                      >
-                        <svg
-                          focusable="false"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="color0"
-                            d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                      System
-                    </div>,
+                    "current": null,
                   }
                 }
                 onClick={[Function]}
@@ -147,6 +121,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                   component="div"
                   id="hvtreeview1-1-button"
+                  innerRef={
+                    Object {
+                      "current": null,
+                    }
+                  }
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onMouseDown={[Function]}
@@ -162,6 +141,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     id="hvtreeview1-1-button"
+                    innerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -248,15 +232,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           id="hvtreeview1-2-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview1-2-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="0"
-                              >
-                                SCPodF
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -301,6 +277,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview1-2-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -316,6 +297,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview1-2-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -379,15 +365,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hvtreeview1-3-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
-                                          id="hvtreeview1-3-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="0"
-                                        >
-                                          Compute
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -432,6 +410,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview1-3-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       onMouseDown={[Function]}
@@ -447,6 +430,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                         id="hvtreeview1-3-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         onMouseDown={[Function]}
@@ -507,15 +495,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hvtreeview1-4-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview1-4-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="0"
-                                        >
-                                          Storage
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -560,6 +540,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview1-4-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       onMouseDown={[Function]}
@@ -575,6 +560,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview1-4-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         onMouseDown={[Function]}
@@ -637,15 +627,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hvtreeview1-5-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview1-5-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="-1"
-                                        >
-                                          Ethernet
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -690,6 +672,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview1-5-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       onMouseDown={[Function]}
@@ -705,6 +692,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview1-5-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         onMouseDown={[Function]}
@@ -783,15 +775,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hvtreeview1-6-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview1-6-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="0"
-                                        >
-                                          Fiber Channel
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -836,6 +820,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview1-6-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       onMouseDown={[Function]}
@@ -851,6 +840,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview1-6-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         onMouseDown={[Function]}
@@ -924,33 +918,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                 id="hvtreeview1-7-button"
                 innerRef={
                   Object {
-                    "current": <div
-                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                      id="hvtreeview1-7-button"
-                      role="button"
-                      style="padding-left: 0px;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="HvIconBase-root HvIconBase-s"
-                        name="Stop"
-                      >
-                        <svg
-                          focusable="false"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="color0"
-                            d="M14 14H2V2h12zM3 13h10V3H3z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                      Administration
-                    </div>,
+                    "current": null,
                   }
                 }
                 onClick={[Function]}
@@ -995,6 +963,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                   component="div"
                   id="hvtreeview1-7-button"
+                  innerRef={
+                    Object {
+                      "current": null,
+                    }
+                  }
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onMouseDown={[Function]}
@@ -1010,6 +983,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     id="hvtreeview1-7-button"
+                    innerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -1096,15 +1074,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           id="hvtreeview1-8-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview1-8-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="0"
-                              >
-                                Rest API
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -1149,6 +1119,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview1-8-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -1164,6 +1139,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview1-8-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1224,15 +1204,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           id="hvtreeview1-9-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview1-9-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="0"
-                              >
-                                License
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -1277,6 +1249,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview1-9-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -1292,6 +1269,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview1-9-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1352,15 +1334,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           id="hvtreeview1-10-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview1-10-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="0"
-                              >
-                                Log Bundle
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -1405,6 +1379,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview1-10-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             onMouseDown={[Function]}
@@ -1420,6 +1399,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview1-10-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1536,33 +1520,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                 id="hvtreeview3-1-button"
                 innerRef={
                   Object {
-                    "current": <div
-                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                      id="hvtreeview3-1-button"
-                      role="button"
-                      style="padding-left: 0px;"
-                      tabindex="-1"
-                    >
-                      <div
-                        class="HvIconBase-root HvIconBase-s"
-                        name="Play"
-                      >
-                        <svg
-                          focusable="false"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="color0"
-                            d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                      System
-                    </div>,
+                    "current": null,
                   }
                 }
                 onClick={[Function]}
@@ -1607,6 +1565,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                   component="div"
                   id="hvtreeview3-1-button"
+                  innerRef={
+                    Object {
+                      "current": null,
+                    }
+                  }
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseDown={[Function]}
@@ -1622,6 +1585,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     id="hvtreeview3-1-button"
+                    innerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
                     onClick={[Function]}
                     onFocus={[Function]}
                     onMouseDown={[Function]}
@@ -1710,15 +1678,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           id="hvtreeview3-2-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview3-2-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="-1"
-                              >
-                                SCPodF
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -1763,6 +1723,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview3-2-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
@@ -1778,6 +1743,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview3-2-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onFocus={[Function]}
                               onMouseDown={[Function]}
@@ -1844,15 +1814,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hvtreeview3-3-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
-                                          id="hvtreeview3-3-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="-1"
-                                        >
-                                          Compute
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -1897,6 +1859,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview3-3-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onFocus={[Function]}
                                       onMouseDown={[Function]}
@@ -1912,6 +1879,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-placeholderText"
                                         id="hvtreeview3-3-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onFocus={[Function]}
                                         onMouseDown={[Function]}
@@ -1973,15 +1945,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hvtreeview3-4-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview3-4-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="-1"
-                                        >
-                                          Storage
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -2026,6 +1990,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview3-4-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onFocus={[Function]}
                                       onMouseDown={[Function]}
@@ -2041,6 +2010,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview3-4-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onFocus={[Function]}
                                         onMouseDown={[Function]}
@@ -2104,15 +2078,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hvtreeview3-5-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview3-5-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="-1"
-                                        >
-                                          Ethernet
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -2157,6 +2123,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview3-5-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onFocus={[Function]}
                                       onMouseDown={[Function]}
@@ -2172,6 +2143,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview3-5-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onFocus={[Function]}
                                         onMouseDown={[Function]}
@@ -2251,15 +2227,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hvtreeview3-6-button"
                                     innerRef={
                                       Object {
-                                        "current": <div
-                                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                          id="hvtreeview3-6-button"
-                                          role="button"
-                                          style="padding-left: 30px;"
-                                          tabindex="-1"
-                                        >
-                                          Fiber Channel
-                                        </div>,
+                                        "current": null,
                                       }
                                     }
                                     onClick={[Function]}
@@ -2304,6 +2272,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       }
                                       component="div"
                                       id="hvtreeview3-6-button"
+                                      innerRef={
+                                        Object {
+                                          "current": null,
+                                        }
+                                      }
                                       onClick={[Function]}
                                       onFocus={[Function]}
                                       onMouseDown={[Function]}
@@ -2319,6 +2292,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                       <div
                                         className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                         id="hvtreeview3-6-button"
+                                        innerRef={
+                                          Object {
+                                            "current": null,
+                                          }
+                                        }
                                         onClick={[Function]}
                                         onFocus={[Function]}
                                         onMouseDown={[Function]}
@@ -2393,33 +2371,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                 id="hvtreeview3-7-button"
                 innerRef={
                   Object {
-                    "current": <div
-                      class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                      id="hvtreeview3-7-button"
-                      role="button"
-                      style="padding-left: 0px;"
-                      tabindex="-1"
-                    >
-                      <div
-                        class="HvIconBase-root HvIconBase-s"
-                        name="Stop"
-                      >
-                        <svg
-                          focusable="false"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            class="color0"
-                            d="M14 14H2V2h12zM3 13h10V3H3z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                      Administration
-                    </div>,
+                    "current": null,
                   }
                 }
                 onClick={[Function]}
@@ -2464,6 +2416,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                   component="div"
                   id="hvtreeview3-7-button"
+                  innerRef={
+                    Object {
+                      "current": null,
+                    }
+                  }
                   onClick={[Function]}
                   onFocus={[Function]}
                   onMouseDown={[Function]}
@@ -2479,6 +2436,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   <div
                     className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     id="hvtreeview3-7-button"
+                    innerRef={
+                      Object {
+                        "current": null,
+                      }
+                    }
                     onClick={[Function]}
                     onFocus={[Function]}
                     onMouseDown={[Function]}
@@ -2567,15 +2529,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           id="hvtreeview3-8-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview3-8-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="-1"
-                              >
-                                Rest API
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -2620,6 +2574,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview3-8-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
@@ -2635,6 +2594,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview3-8-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onFocus={[Function]}
                               onMouseDown={[Function]}
@@ -2696,15 +2660,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           id="hvtreeview3-9-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview3-9-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="-1"
-                              >
-                                License
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -2749,6 +2705,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview3-9-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
@@ -2764,6 +2725,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview3-9-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onFocus={[Function]}
                               onMouseDown={[Function]}
@@ -2825,15 +2791,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           id="hvtreeview3-10-button"
                           innerRef={
                             Object {
-                              "current": <div
-                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                                id="hvtreeview3-10-button"
-                                role="button"
-                                style="padding-left: 20px;"
-                                tabindex="-1"
-                              >
-                                Log Bundle
-                              </div>,
+                              "current": null,
                             }
                           }
                           onClick={[Function]}
@@ -2878,6 +2836,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             }
                             component="div"
                             id="hvtreeview3-10-button"
+                            innerRef={
+                              Object {
+                                "current": null,
+                              }
+                            }
                             onClick={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
@@ -2893,6 +2856,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             <div
                               className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               id="hvtreeview3-10-button"
+                              innerRef={
+                                Object {
+                                  "current": null,
+                                }
+                              }
                               onClick={[Function]}
                               onFocus={[Function]}
                               onMouseDown={[Function]}

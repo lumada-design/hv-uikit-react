@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import Chart from "../Chart";
 import { applyLayoutDefaults, applyDataDefaults } from "./barchartPlotlyOverrides";
 import styles from "./styles";

@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import "jest-canvas-mock";
-import { Snackbar as MaterialSnackbar } from "@material-ui/core";
+import { Snackbar as MaterialSnackbar } from "@mui/material";
 
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvProvider, HvSnackbar, HvSnackbarContent } from "../..";

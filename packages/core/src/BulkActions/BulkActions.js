@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvActionsGeneric, HvButton, HvCheckBox, HvTypography } from "..";
 import styles from "./styles";
 import { setId } from "../utils";

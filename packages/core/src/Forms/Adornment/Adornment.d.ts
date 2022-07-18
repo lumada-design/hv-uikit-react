@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvFormStatus } from "../FormElement";
 
 export type HvAdornmentClassKey =

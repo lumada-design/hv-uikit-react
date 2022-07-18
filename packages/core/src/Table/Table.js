@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from "react"
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvBulkActions, HvPagination } from "..";
 import { setId, KeyboardCodes, isKeypress } from "../utils";
 import withId from "../withId";

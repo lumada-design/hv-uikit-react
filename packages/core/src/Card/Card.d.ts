@@ -1,5 +1,5 @@
 import React from "react";
-import { StandardProps, BoxProps } from "@material-ui/core";
+import { StandardProps, BoxProps } from "@mui/material";
 import { HvSemanticColorKeys, HvAtmosphereColorKeys } from "..";
 
 export type HvCardClassKey =

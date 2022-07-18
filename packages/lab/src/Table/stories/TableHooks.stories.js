@@ -16,11 +16,9 @@ import {
   useTable,
   useGroupBy,
 } from "react-table";
-import { useTheme, makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme } from "@mui/styles";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-
 import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hitachivantara/uikit-react-icons";
-
 import {
   HvBulkActions,
   HvEmptyState,

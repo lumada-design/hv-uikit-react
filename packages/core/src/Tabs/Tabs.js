@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tabs, withStyles } from "@material-ui/core";
+import { Tabs } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 /**

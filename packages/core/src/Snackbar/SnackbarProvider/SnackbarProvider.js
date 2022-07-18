@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback, useMemo } from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import PropTypes from "prop-types";
 import { SnackbarProvider, SnackbarContent, useSnackbar } from "notistack";
 

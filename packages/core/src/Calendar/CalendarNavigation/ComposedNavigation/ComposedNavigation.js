@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import Navigation from "../Navigation";
 import { setId } from "../../../utils";
 import { getMonthNamesList } from "../../utils";

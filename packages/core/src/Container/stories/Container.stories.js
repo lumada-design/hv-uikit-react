@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Paper, withStyles } from "@material-ui/core";
+import { Paper } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import HvContainer from "../Container";
 import useWidth from "../../utils/useWidth";
 
