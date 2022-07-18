@@ -3,7 +3,7 @@
 exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selection List Container 1`] = `
 <div>
   <div
-    class="MuiBox-root MuiBox-root-1 HvPanel-root"
+    class="HvPanel-root MuiBox-root css-eaeacs"
     style="float: left;"
   >
     <ul

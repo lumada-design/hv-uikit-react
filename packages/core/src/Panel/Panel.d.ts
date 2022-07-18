@@ -1,4 +1,4 @@
-import { BoxProps, StandardProps } from "@material-ui/core";
+import { BoxProps, StandardProps } from "@mui/material";
 
 export type HvPanelClassKey = "root";
 

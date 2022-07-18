@@ -1,4 +1,4 @@
-import { ContainerProps, StandardProps } from "@material-ui/core";
+import { ContainerProps, StandardProps } from "@mui/material";
 
 export type HvContainerClassKey =
   | "root"

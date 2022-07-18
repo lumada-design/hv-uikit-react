@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { refType, setId, useControlled } from "../utils";
 

@@ -1,4 +1,4 @@
-import { StandardProps, RadioProps } from "@material-ui/core";
+import { StandardProps, RadioProps } from "@mui/material";
 
 export type HvBaseRadioClassKey = "root" | "disabled" | "focusVisible";
 

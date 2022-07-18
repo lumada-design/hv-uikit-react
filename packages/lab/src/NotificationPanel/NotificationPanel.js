@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import dayjs from "dayjs";
-import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import {
   HvPanel,
   HvActionBar,

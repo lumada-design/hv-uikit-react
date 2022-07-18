@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 

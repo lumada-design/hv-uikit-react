@@ -2,7 +2,8 @@
 import ReactDOM from "react-dom";
 import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import { ClickAwayListener, withStyles } from "@material-ui/core";
+import { ClickAwayListener } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import { usePopper } from "react-popper";
 import maxSize from "popper-max-size-modifier";
 import clsx from "clsx";

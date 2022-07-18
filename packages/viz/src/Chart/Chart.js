@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import { useTheme, withStyles } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
+
 import Tooltip from "./Tooltip";
 import { applyLayoutDefaults, applyConfigDefaults } from "./chartPlotlyOverrides";
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
-import { useTheme, makeStyles } from "@material-ui/core";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme } from "@mui/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 import {
   HvBadge,

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { setUid } from "../..";
 import File from "../File";
 import styles from "./styles";

@@ -1,4 +1,4 @@
-import { CardMediaProps, StandardProps } from "@material-ui/core";
+import { CardMediaProps, StandardProps } from "@mui/material";
 
 export type HvCardMediaClassKey = "root" | "media";
 

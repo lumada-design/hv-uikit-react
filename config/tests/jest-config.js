@@ -15,7 +15,7 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `${CONFIG_PATH}/__mocks__/file-mock.js`,
     "\\.(css|less)$": `${CONFIG_PATH}/__mocks__/style-mock.js`,
     "^react($|/.+)": `${ROOT_PATH}/node_modules/react$1`,
-    "^@material-ui($|/.+)": `${ROOT_PATH}/node_modules/@material-ui$1`,
+    "^@mui($|/.+)": `${ROOT_PATH}/node_modules/@mui$1`,
     "^@hitachivantara/uikit-react-core$": `${ROOT_PATH}/packages/core/src`,
     "^@hitachivantara/uikit-react-icons$": `${ROOT_PATH}/packages/icons/bin`,
     "^@hitachivantara/uikit-common-themes/dist/(.*)$": `${ROOT_PATH}/packages/themes/src/$1`,

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import useForkRef from "../utils/useForkRef";
 
 import styles from "./styles";

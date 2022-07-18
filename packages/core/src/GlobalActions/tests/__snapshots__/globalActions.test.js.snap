@@ -17,15 +17,11 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
         class="HvGlobalActions-actions"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+          class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-c9ws1n-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
-          >
-            Primary
-          </span>
+          Primary
         </button>
         <div
           class="HvBaseDropdown-root HvDropDownMenu-root"
@@ -41,13 +37,118 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
             <button
               aria-expanded="false"
               aria-label="Dropdown menu"
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
               id="dropdownItem-5-icon-button"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="MoreOptionsVertical"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GlobalActions sample snapshot testing Main 1`] = `
+<div>
+  <div
+    class="HvContainer-root MuiContainer-root MuiContainer-maxWidthXl css-1d4akpq-MuiContainer-root"
+  >
+    <div
+      class="HvGlobalActions-root HvGlobalActions-positionSticky HvGlobalActions-global"
+    >
+      <div
+        class="HvGlobalActions-wrapper HvGlobalActions-globalWrapperComplement"
+      >
+        <div
+          class="HvGlobalActions-backButton"
+        >
+          <button
+            aria-label="Back"
+            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Backwards"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <h1
+          class="HvGlobalActions-name HvTypography-root HvTypography-xsTitle"
+        >
+          Detail Page Title
+        </h1>
+        <div
+          class="HvGlobalActions-actions"
+        >
+          <button
+            class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-c9ws1n-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            Approve & Share
+          </button>
+          <button
+            class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            Reset
+          </button>
+          <div
+            class="HvBaseDropdown-root HvDropDownMenu-root"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="dropdownMenu-Items"
+              class="HvDropDownMenu-container HvBaseDropdown-anchor"
+              id="dropdownItem-1"
+              tabindex="-1"
+            >
+              <button
+                aria-expanded="false"
+                aria-label="Dropdown menu"
+                class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+                id="dropdownItem-1-icon-button"
+                tabindex="0"
+                type="button"
               >
                 <div
                   class="HvIconBase-root HvIconBase-s"
@@ -67,131 +168,6 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
                     />
                   </svg>
                 </div>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`GlobalActions sample snapshot testing Main 1`] = `
-<div>
-  <div
-    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvContainer-maxWidthXl"
-  >
-    <div
-      class="HvGlobalActions-root HvGlobalActions-positionSticky HvGlobalActions-global"
-    >
-      <div
-        class="HvGlobalActions-wrapper HvGlobalActions-globalWrapperComplement"
-      >
-        <div
-          class="HvGlobalActions-backButton"
-        >
-          <button
-            aria-label="Back"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Backwards"
-              >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
-          </button>
-        </div>
-        <h1
-          class="HvGlobalActions-name HvTypography-root HvTypography-xsTitle"
-        >
-          Detail Page Title
-        </h1>
-        <div
-          class="HvGlobalActions-actions"
-        >
-          <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              Approve & Share
-            </span>
-          </button>
-          <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              Reset
-            </span>
-          </button>
-          <div
-            class="HvBaseDropdown-root HvDropDownMenu-root"
-          >
-            <div
-              aria-expanded="false"
-              aria-haspopup="menu"
-              aria-label="dropdownMenu-Items"
-              class="HvDropDownMenu-container HvBaseDropdown-anchor"
-              id="dropdownItem-1"
-              tabindex="-1"
-            >
-              <button
-                aria-expanded="false"
-                aria-label="Dropdown menu"
-                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                id="dropdownItem-1-icon-button"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiButton-label"
-                >
-                  <div
-                    class="HvIconBase-root HvIconBase-s"
-                    name="MoreOptionsVertical"
-                  >
-                    <svg
-                      focusable="false"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="color0"
-                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                        fill="#414141"
-                      />
-                    </svg>
-                  </div>
-                </span>
               </button>
             </div>
           </div>
@@ -216,26 +192,18 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Remove
-              </span>
+              Remove
             </button>
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Share
-              </span>
+              Share
             </button>
             <div
               class="HvBaseDropdown-root HvDropDownMenu-root"
@@ -251,33 +219,29 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-2-icon-button"
                   tabindex="0"
                   type="button"
                 >
-                  <span
-                    class="MuiButton-label"
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="MoreOptionsVertical"
                   >
-                    <div
-                      class="HvIconBase-root HvIconBase-s"
-                      name="MoreOptionsVertical"
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable="false"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          class="color0"
-                          d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
-                  </span>
+                      <path
+                        class="color0"
+                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
                 </button>
               </div>
             </div>
@@ -311,26 +275,18 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Remove
-              </span>
+              Remove
             </button>
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Share
-              </span>
+              Share
             </button>
             <div
               class="HvBaseDropdown-root HvDropDownMenu-root"
@@ -346,33 +302,29 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-3-icon-button"
                   tabindex="0"
                   type="button"
                 >
-                  <span
-                    class="MuiButton-label"
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="MoreOptionsVertical"
                   >
-                    <div
-                      class="HvIconBase-root HvIconBase-s"
-                      name="MoreOptionsVertical"
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable="false"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          class="color0"
-                          d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
-                  </span>
+                      <path
+                        class="color0"
+                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
                 </button>
               </div>
             </div>
@@ -406,26 +358,18 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Remove
-              </span>
+              Remove
             </button>
             <button
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-o8tfdu-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
-              <span
-                class="MuiButton-label"
-              >
-                Share
-              </span>
+              Share
             </button>
             <div
               class="HvBaseDropdown-root HvDropDownMenu-root"
@@ -441,33 +385,29 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-4-icon-button"
                   tabindex="0"
                   type="button"
                 >
-                  <span
-                    class="MuiButton-label"
+                  <div
+                    class="HvIconBase-root HvIconBase-s"
+                    name="MoreOptionsVertical"
                   >
-                    <div
-                      class="HvIconBase-root HvIconBase-s"
-                      name="MoreOptionsVertical"
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable="false"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          class="color0"
-                          d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
-                  </span>
+                      <path
+                        class="color0"
+                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
                 </button>
               </div>
             </div>

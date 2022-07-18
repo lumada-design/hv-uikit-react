@@ -1,4 +1,4 @@
-import { StandardProps, SnackbarProps } from "@material-ui/core";
+import { StandardProps, SnackbarProps } from "@mui/material";
 import { ActionGeneric } from "../ActionsGeneric";
 import { NotificationsCommonProps } from "../Banner";
 import { HvSnackbarContentProps } from "./SnackbarContentWrapper";

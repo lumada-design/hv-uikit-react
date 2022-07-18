@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
-import { useTheme, withStyles } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
 
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { HvTypography, HvAvatar, HvTooltip, HvListItem } from "../..";

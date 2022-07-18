@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvRadio, HvRadioGroup } from "@hitachivantara/uikit-react-core";
 import { CurrentStep, RadioButtonUnselected } from "@hitachivantara/uikit-react-icons";
 import styles from "./styles";

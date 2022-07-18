@@ -3,7 +3,8 @@ import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { Checkbox, withStyles } from "@material-ui/core";
+import { Checkbox } from "@mui/material";
+import { withStyles } from "@mui/styles";
 
 import {
   Checkbox as CheckboxIcon,

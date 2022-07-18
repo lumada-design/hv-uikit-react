@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvTypography } from "..";
 import styles from "./styles";
 

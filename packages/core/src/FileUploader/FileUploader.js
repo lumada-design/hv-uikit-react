@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { setId, useLabels } from "../utils";
 import DropZone from "./DropZone";
 import FileList from "./FileList";

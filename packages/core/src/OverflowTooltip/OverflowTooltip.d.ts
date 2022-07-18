@@ -1,4 +1,4 @@
-import { StandardProps, TooltipProps } from "@material-ui/core";
+import { StandardProps, TooltipProps } from "@mui/material";
 
 export type HvOverflowTooltipKey = "tooltipData" | "tooltipAnchor" | "tooltipAnchorParagraph";
 

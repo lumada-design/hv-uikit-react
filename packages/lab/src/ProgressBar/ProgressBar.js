@@ -5,7 +5,7 @@ import clsx from "clsx";
 import clamp from "lodash/clamp";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import styles from "./styles";
 

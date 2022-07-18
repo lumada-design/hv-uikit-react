@@ -1,9 +1,10 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import { withStyles, useTheme } from "@material-ui/core";
+import { deprecatedPropType } from "@mui/material";
+import { withStyles, useTheme } from "@mui/styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
+
 import { getPrevNextFocus, isKeypress, KeyboardCodes, useControlled } from "../utils";
 import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";

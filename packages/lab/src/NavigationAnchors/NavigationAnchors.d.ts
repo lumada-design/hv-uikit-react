@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvListContainerProps } from "@hitachivantara/uikit-react-core";
 
 interface Option {

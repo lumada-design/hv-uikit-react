@@ -1,4 +1,4 @@
-import { StandardProps, SnackbarContentProps } from "@material-ui/core";
+import { StandardProps, SnackbarContentProps } from "@mui/material";
 import { ActionGeneric } from "../../ActionsGeneric";
 import { SemanticVariantTypes } from "../../Banner";
 

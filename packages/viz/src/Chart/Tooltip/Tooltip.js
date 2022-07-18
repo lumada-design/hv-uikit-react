@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import SingleTooltip from "./SingleTooltip";
 import MultipleTooltip from "./MultiTooltip";
 import styles from "./styles";

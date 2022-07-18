@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@mui/styles";
+
 import { HvTooltip, HvTypography } from "../..";
 import tooltipStyling from "../styles";
 

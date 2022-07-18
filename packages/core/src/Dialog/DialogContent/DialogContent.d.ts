@@ -1,4 +1,4 @@
-import { DialogContentProps, StandardProps } from "@material-ui/core";
+import { DialogContentProps, StandardProps } from "@mui/material";
 
 export type HvDialogContentClassKey = "root" | "textContent";
 

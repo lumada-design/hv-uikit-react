@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvTooltipProps } from "../../Tooltip";
 import { AssetInventoryMetadata } from "..";
 import { ViewConfiguration } from "../ViewConfiguration";

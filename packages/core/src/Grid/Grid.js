@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isString from "lodash/isString";
-import { withStyles, Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import useWidth from "../utils/useWidth";
 
 const BREAKPOINT_GUTTERS = {

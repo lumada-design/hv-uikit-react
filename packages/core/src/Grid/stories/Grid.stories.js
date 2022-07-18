@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Hidden, Paper, withStyles, useTheme } from "@material-ui/core";
+import { withStyles, useTheme } from "@mui/styles";
+import { Hidden, Paper } from "@mui/material";
 import { HvGrid, HvContainer, HvTypography, useWidth } from "../..";
 
 export default {

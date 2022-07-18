@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { Preview as PreviewIcon } from "@hitachivantara/uikit-react-icons";
 

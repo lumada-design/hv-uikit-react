@@ -1,5 +1,5 @@
 import React from "react";
-import { DialogTitleProps, StandardProps } from "@material-ui/core";
+import { DialogTitleProps, StandardProps } from "@mui/material";
 
 export type HvDialogTitleClassKey = "root" | "messageContainer" | "textWithIcon" | "icon";
 

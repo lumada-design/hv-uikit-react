@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import ActionsGeneric from "../../../ActionsGeneric";
 import HvButton from "../../../Button";

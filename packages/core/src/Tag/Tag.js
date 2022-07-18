@@ -1,16 +1,13 @@
 import React, { useMemo, useState } from "react";
-
-import { Chip, withStyles, useTheme } from "@material-ui/core";
-
+import { Chip } from "@mui/material";
+import { withStyles, useTheme } from "@mui/styles";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
+
 import fade from "../utils/hexToRgbA";
-
 import { HvButton, HvTypography } from "..";
-
 import styles from "./styles";
-
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 
 const getColor = (theme, customColor, type) => {

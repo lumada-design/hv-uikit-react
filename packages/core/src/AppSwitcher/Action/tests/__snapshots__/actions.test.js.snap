@@ -38,6 +38,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
       </div>
       <span
         class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        data-mui-internal-clone-element="true"
       >
         Mock App 1
       </span>
@@ -70,11 +71,13 @@ exports[`<Action /> with description should render correctly 1`] = `
       </div>
       <span
         class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        data-mui-internal-clone-element="true"
       >
         Mock App 1
       </span>
       <div
         class=""
+        data-mui-internal-clone-element="true"
       >
         <div
           aria-label="Mock App 1 Description"
@@ -125,6 +128,7 @@ exports[`<Action /> without description should render correctly 1`] = `
       </div>
       <span
         class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        data-mui-internal-clone-element="true"
       >
         Mock App 1
       </span>

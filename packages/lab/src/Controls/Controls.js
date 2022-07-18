@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { useControlled, HvMultiButton, HvButton, setId } from "@hitachivantara/uikit-react-core";
 import { HvControlsContextProvider } from "./context/ControlsContext";
 import styleCreator from "./styles";

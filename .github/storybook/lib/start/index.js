@@ -42010,7 +42010,7 @@ function parse(str, options) {
   var cookie_avs = unparsed.split(';');
   while (cookie_avs.length) {
     var av = cookie_avs.shift().trim();
-    if (av.length === 0) { // happens if ";;" appears
+    if (av.length === 0) { // happens if ";" appears
       continue;
     }
     var av_sep = av.indexOf('=');
@@ -52361,7 +52361,7 @@ var decode = function decode(input) {
 		// if we increase `i` as we go, then subtract off its starting
 		// value at the end to obtain `delta`.
 		var oldi = i;
-		for (var w = 1, k = base;; /* no condition */k += base) {
+		for (var w = 1, k = base; /* no condition */k += base) {
 
 			if (index >= inputLength) {
 				error$1('invalid-input');
@@ -52525,7 +52525,7 @@ var encode = function encode(input) {
 				if (_currentValue == n) {
 					// Represent delta as a generalized variable-length integer.
 					var q = delta;
-					for (var k = base;; /* no condition */k += base) {
+					for (var k = base; /* no condition */k += base) {
 						var t = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
 						if (q < t) {
 							break;

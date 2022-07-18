@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Input, withStyles } from "@material-ui/core";
+import { Input } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import { refType } from "../utils";
 import styles from "./styles";
 

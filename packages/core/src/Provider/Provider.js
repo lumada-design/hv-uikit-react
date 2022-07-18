@@ -10,11 +10,8 @@ import diff from "deep-diff";
 import "focus-within-polyfill";
 import "focus-visible";
 
-import {
-  ThemeProvider as MuiThemeProvider,
-  StylesProvider as MuiStylesProvider,
-} from "@material-ui/core";
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { StylesProvider } from "@mui/styles";
 
 import { themeBuilder, createGenerateClassName, HvCssBaseline, getTheme } from "../theme";
 
@@ -115,16 +112,16 @@ const HvProvider = ({
   );
 
   return (
-    <MuiStylesProvider
+    <StylesProvider
       generateClassName={generateClassName}
       injectFirst={injectStylesFirst}
       disableGeneration={disableStylesGeneration}
     >
-      <MuiThemeProvider theme={customTheme}>
+      <ThemeProvider theme={customTheme}>
         {!disableCssBaseline && <HvCssBaseline />}
         <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
-      </MuiThemeProvider>
-    </MuiStylesProvider>
+      </ThemeProvider>
+    </StylesProvider>
   );
 };
 

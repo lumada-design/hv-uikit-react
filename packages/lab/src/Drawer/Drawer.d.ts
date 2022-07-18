@@ -1,4 +1,4 @@
-import { DrawerProps, StandardProps } from "@material-ui/core";
+import { DrawerProps, StandardProps } from "@mui/material";
 
 
 export type HvDrawerClassKey = "root" | "background" | "paper" | "closeButton";

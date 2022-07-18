@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvTypographyProps } from "../Typography";
 
 export type HvAccordionClassKey = "root" | "hidden" | "container" | "label" | "disabled";

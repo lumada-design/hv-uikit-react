@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 
 export interface NavigationData {
   /**

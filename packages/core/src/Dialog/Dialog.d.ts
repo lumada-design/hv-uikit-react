@@ -1,4 +1,4 @@
-import { DialogProps, StandardProps } from "@material-ui/core";
+import { DialogProps, StandardProps } from "@mui/material";
 
 export type HvDialogClassKey = "root" | "background" | "paper" | "closeButton";
 

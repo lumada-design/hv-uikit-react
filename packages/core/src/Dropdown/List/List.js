@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import { withStyles, makeStyles, useTheme } from "@material-ui/core";
+import { makeStyles, withStyles, useTheme } from "@mui/styles";
+
 import { setId } from "../../utils";
 import { HvActionBar, HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";

@@ -1,4 +1,4 @@
-import { StandardProps } from "@material-ui/core";
+import { StandardProps } from "@mui/material";
 import { HvCharCounterProps } from "../Forms/CharCounter";
 
 import { HvBaseInputProps, HvBaseInputValidationMessagesProps } from "../BaseInput";

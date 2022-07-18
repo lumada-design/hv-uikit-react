@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { withStyles, useTheme } from "@mui/styles";
 
-import { withStyles, useTheme } from "@material-ui/core";
 import {
   HvButton,
   HvInput,

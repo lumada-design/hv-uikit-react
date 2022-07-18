@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DialogContent, withStyles } from "@material-ui/core";
+import { DialogContent } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import HvTypography from "../../Typography";
 import styles from "./styles";

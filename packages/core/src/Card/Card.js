@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Box, withStyles, deprecatedPropType } from "@material-ui/core";
+import { Box, deprecatedPropType } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 /**

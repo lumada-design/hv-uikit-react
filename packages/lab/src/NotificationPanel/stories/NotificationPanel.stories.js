@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Alert, Level5, User, Fail } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import {
   HvHeader,
   HvButton,

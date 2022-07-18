@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel, HvTypography } from "..";
 
 const styles = (theme) => ({

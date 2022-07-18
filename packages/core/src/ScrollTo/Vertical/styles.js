@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 import fade from "../../utils/hexToRgbA";
 
 const styles = (theme) => ({

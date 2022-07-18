@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StandardProps, PopperProps } from "@material-ui/core";
+import { StandardProps, PopperProps } from "@mui/material";
 import { ListValueProp } from "../..";
 
 export type HvSuggestionsClassKey = "root" | "popper" | "list";

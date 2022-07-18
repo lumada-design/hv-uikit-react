@@ -25,43 +25,39 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox19-input"
+              type="checkbox"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox19-input"
-                type="checkbox"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -79,49 +75,45 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox21-input"
+              type="checkbox"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="CheckboxCheck"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox21-input"
-                type="checkbox"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="CheckboxCheck"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -139,43 +131,39 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox23-input"
+              type="checkbox"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox23-input"
-                type="checkbox"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -252,43 +240,39 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox11-input"
+              type="checkbox"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox11-input"
-                type="checkbox"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -306,49 +290,45 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox13-input"
+              type="checkbox"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="CheckboxCheck"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox13-input"
-                type="checkbox"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="CheckboxCheck"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -366,43 +346,39 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox15-input"
+              type="checkbox"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox15-input"
-                type="checkbox"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -442,43 +418,39 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="true"
+              id="hvcheckbox1-input"
+              type="checkbox"
+              value="on"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="CheckboxPartial"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="true"
-                id="hvcheckbox1-input"
-                type="checkbox"
-                value="on"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="CheckboxPartial"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -499,44 +471,40 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox3-input"
+              name="favorite"
+              type="checkbox"
+              value="1"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox3-input"
-                name="favorite"
-                type="checkbox"
-                value="1"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -554,50 +522,46 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              checked=""
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox5-input"
+              name="favorite"
+              type="checkbox"
+              value="2"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="CheckboxCheck"
             >
-              <input
-                checked=""
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox5-input"
-                name="favorite"
-                type="checkbox"
-                value="2"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="CheckboxCheck"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color1"
-                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#414141"
+                />
+                <path
+                  class="color0"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+                <path
+                  class="color1"
+                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                  fill="#FBFCFC"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
@@ -615,44 +579,40 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
           class="HvCheckBox-container"
         >
           <span
-            aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
-            <span
-              class="MuiIconButton-label"
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox7-input"
+              name="favorite"
+              type="checkbox"
+              value="3"
+            />
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              font-size="medium"
+              name="Checkbox"
             >
-              <input
-                class="PrivateSwitchBase-input-4"
-                data-indeterminate="false"
-                id="hvcheckbox7-input"
-                name="favorite"
-                type="checkbox"
-                value="3"
-              />
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
-                  />
-                  <path
-                    class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="#FBFCFC"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </span>
           <label
             class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"

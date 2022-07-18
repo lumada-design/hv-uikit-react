@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@mui/styles";
 
 import { HvCheckBox, HvBaseCheckBox, HvGrid } from "../..";
 

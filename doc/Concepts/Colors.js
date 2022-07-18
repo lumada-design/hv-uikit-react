@@ -2,7 +2,7 @@
 import React from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 const styles = (theme) => ({

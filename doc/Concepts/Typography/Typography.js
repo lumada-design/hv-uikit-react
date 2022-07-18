@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from "@mui/material/IconButton";
+import { withStyles, useTheme } from "@mui/styles";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 import { Code } from "@hitachivantara/uikit-react-icons";
-import IconButton from "@material-ui/core/IconButton";
-import { useTheme } from "@material-ui/core";
 
 const styles = (theme) => ({
   group: {
