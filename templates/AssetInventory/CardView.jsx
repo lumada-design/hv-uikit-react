@@ -15,7 +15,7 @@ import { makeIcon, idsToControl } from "./utils";
 /**
  * The card view of the Asset Inventory.
  *
- * @param {instance} Object the instance returned by the `useHvData` data.
+ * @param {Object} instance - the instance returned by the `useHvData` data.
  */
 const CardView = ({ instance }) => {
   return (
