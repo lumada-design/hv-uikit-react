@@ -258,7 +258,7 @@ exports[`Card should be able to render with every property defined 1`] = `
           alt="Compressor"
           component="img"
           height={140}
-          image="IMAGE_MOCK"
+          image="test-file-stub"
         >
           <Media
             alt="Compressor"
@@ -270,7 +270,7 @@ exports[`Card should be able to render with every property defined 1`] = `
             }
             component="img"
             height={140}
-            image="IMAGE_MOCK"
+            image="test-file-stub"
           >
             <WithStyles(ForwardRef(CardMedia))
               alt="Compressor"
@@ -282,7 +282,7 @@ exports[`Card should be able to render with every property defined 1`] = `
               }
               component="img"
               height={140}
-              image="IMAGE_MOCK"
+              image="test-file-stub"
               role="img"
             >
               <ForwardRef(CardMedia)
@@ -296,7 +296,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                 }
                 component="img"
                 height={140}
-                image="IMAGE_MOCK"
+                image="test-file-stub"
                 role="img"
               >
                 <img
@@ -304,7 +304,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                   className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img"
                   height={140}
                   role="img"
-                  src="IMAGE_MOCK"
+                  src="test-file-stub"
                 />
               </ForwardRef(CardMedia)>
             </WithStyles(ForwardRef(CardMedia))>

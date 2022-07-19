@@ -109,6 +109,7 @@ module.exports = {
         "testing-library/render-result-naming-convention": "warn",
         "testing-library/no-node-access": "warn",
         "no-promise-executor-return": "off",
+        "import/no-extraneous-dependencies": "off",
       },
     },
     {
