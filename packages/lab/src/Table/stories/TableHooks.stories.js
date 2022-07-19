@@ -41,7 +41,7 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  useHvTable,
+  useHvData,
   useHvPagination,
   useHvSortBy,
   useHvRowSelection,
@@ -106,10 +106,10 @@ export const Main = () => {
   );
 };
 
-export const UseHvTable = () => {
+export const UseHvData = () => {
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData({
     data,
   });
 
@@ -155,7 +155,7 @@ export const Pagination = () => {
     page,
     state: { pageSize },
     getHvPaginationProps,
-  } = useHvTable({ columns, data }, useHvPagination);
+  } = useHvData({ columns, data }, useHvPagination);
 
   const EmptyRow = () => (
     <HvTableRow>
@@ -204,7 +204,7 @@ export const Selection = () => {
   const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData(
     { columns, data },
     useHvRowSelection
   );
@@ -244,7 +244,7 @@ export const ControlledSelection = () => {
   const initialData = useMemo(() => makeSelectedData(6), []);
   const [data, setData] = useState(initialData);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData(
     { columns, data, manualRowSelectedKey: "selected" },
     useHvRowSelection
   );
@@ -300,7 +300,7 @@ export const BulkActions = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvTable({ columns, data }, useHvPagination, useHvRowSelection, useHvBulkActions);
+  } = useHvData({ columns, data }, useHvPagination, useHvRowSelection, useHvBulkActions);
 
   const handleAction = useCallback(
     (_evt, id, action) => {
@@ -412,7 +412,7 @@ export const Sortable = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvData(
     { columns, data },
     useHvSortBy
   );
@@ -459,7 +459,7 @@ export const Expandable = () => {
     []
   );
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData(
     { columns, data, labels: i18n },
     useHvRowExpand
   );
@@ -514,7 +514,7 @@ export const GroupBy = () => {
   const columns = useMemo(() => getGroupedRowsColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData(
     {
       columns,
       data,
@@ -598,7 +598,7 @@ export const StickyHeadersAndColumns = () => {
   const data = useMemo(() => makeData(100), []);
 
   const { getTableProps, getTableHeadProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -641,7 +641,7 @@ export const GroupedHeaders = () => {
   const columns = useMemo(() => getGroupedColumns(), []);
   const data = useMemo(() => makeData(), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData(
     {
       columns,
       data,
@@ -693,7 +693,7 @@ export const EmptyCells = () => {
     status: entry.status === "Closed" ? null : entry.status,
   }));
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvData({
     columns,
     data,
     defaultColumn: {
@@ -766,7 +766,7 @@ export const LockedSelection = () => {
     selectedFlatRows,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvTable(
+  } = useHvData(
     {
       columns,
       data,
@@ -831,7 +831,7 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
     selectedFlatRows,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvTable(
+  } = useHvData(
     {
       columns,
       data,
@@ -988,7 +988,7 @@ export const ServerSide = () => {
     gotoPage,
     state: { pageSize, pageIndex, sortBy },
     getHvPaginationProps,
-  } = useHvTable(
+  } = useHvData(
     {
       columns,
       data,
@@ -1290,7 +1290,7 @@ export const DragAndDrop = () => {
     setRecords(newResults);
   };
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvData({
     columns,
     data: records,
     getRowId,
@@ -1382,7 +1382,7 @@ export const ColumnResize = () => {
     []
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvData(
     {
       columns,
       data,
@@ -1525,7 +1525,7 @@ export const KitchenSink = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvTable(
+  } = useHvData(
     {
       columns,
       data,

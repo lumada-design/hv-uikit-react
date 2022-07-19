@@ -11,7 +11,7 @@ import {
   HvTableHead,
   HvTableRow,
   HvTableHeader,
-  useHvTable,
+  useHvData,
   useHvPagination,
   useHvSortBy,
   useHvRowSelection,
@@ -32,7 +32,7 @@ const KitchenSink = () => {
   const columns = useMemo(() => getColumns(), []);
   const [data, setData] = useState(makeData(64));
 
-  const instance = useHvTable(
+  const instance = useHvData(
     { columns, data, autoResetSelectedRows: false },
     useHvSortBy,
     useHvPagination,

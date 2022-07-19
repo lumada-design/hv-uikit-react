@@ -22,7 +22,7 @@ import {
   HvTableHeader,
   HvTableBody,
   HvTableCell,
-  useHvTable,
+  useHvData,
   useHvSortBy,
   useHvGlobalFilter,
   useHvRowSelection,
@@ -80,7 +80,7 @@ export const Main = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvTable(
+  const instance = useHvData(
     {
       data,
       columns,
@@ -126,7 +126,7 @@ export const Main = () => {
         them, according to your use case. You can access the code to this template{" "}
         <a
           target="_blank"
-          href="https://github.com/lumada-design/hv-uikit-react/tree/master/templates/AssetInventory/AssetInventory.stories.js"
+          href="https://github.com/lumada-design/hv-uikit-react/tree/master/templates/AssetInventory/"
           rel="noreferrer"
         >
           over at github

@@ -1,4 +1,4 @@
-export { default as useHvTable } from "./useTable";
+export { default as useHvData } from "./useTable";
 export { default as useHvTableStyles } from "./useTableStyles";
 export { default as useHvSortBy } from "./useSortBy";
 export { default as useHvTableSticky } from "./useSticky";
