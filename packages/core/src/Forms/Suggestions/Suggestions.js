@@ -28,11 +28,9 @@ const HvSuggestions = (props) => {
   const { elementId } = useContext(HvFormElementContext);
   const localId = id ?? setId(elementId, "suggestions");
 
-  console.log(classes.popper);
-
   return (
     <div id={localId} className={clsx(className, classes.root)} {...others}>
-      {/* <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
+      <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
         <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}>
           <HvSelectionList
             className={classes.list}
@@ -50,7 +48,7 @@ const HvSuggestions = (props) => {
             })}
           </HvSelectionList>
         </OutsideClickHandler>
-      </Popper> */}
+      </Popper>
     </div>
   );
 };
