@@ -21,7 +21,7 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  useHvTable,
+  useHvData,
   useHvSortBy,
   useHvBulkActions,
   useHvPagination,
@@ -61,7 +61,7 @@ export const SortFixedLayout = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvData(
     { columns, data },
     useHvSortBy
   );
@@ -126,7 +126,7 @@ export const SortFixedLayoutSmall = () => {
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useHvData(
     { columns, data },
     useHvSortBy
   );
@@ -216,7 +216,7 @@ export const BulkActionsInFilteredTable = () => {
     getHvPaginationProps,
     setGlobalFilter,
     setFilter,
-  } = useHvTable(
+  } = useHvData(
     {
       columns,
       getRowId,

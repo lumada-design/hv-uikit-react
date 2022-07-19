@@ -26,7 +26,7 @@ import {
   hvTagColumn,
   hvDropdownColumn,
   hvProgressColumn,
-  useHvTable,
+  useHvData,
   useHvPagination,
   useHvRowExpand,
 } from "../..";
@@ -103,7 +103,7 @@ export const AllColumnRenderers = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -197,7 +197,7 @@ export const TextColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -284,7 +284,7 @@ export const NumberColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -374,7 +374,7 @@ export const DateColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -467,7 +467,7 @@ export const ExpandColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -584,7 +584,7 @@ export const SwitchColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -679,7 +679,7 @@ export const TagColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -774,7 +774,7 @@ export const ProgressColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,
@@ -880,7 +880,7 @@ export const DropdownColumnRenderer = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-    useHvTable(
+    useHvData(
       {
         columns,
         data,

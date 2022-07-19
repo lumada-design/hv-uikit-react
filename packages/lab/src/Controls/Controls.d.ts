@@ -7,14 +7,14 @@ export interface HvControlsSortValue {
   desc: string;
 }
 export interface HvControlsViewConfiguration extends Record<string, unknown> {
-  setSortBy?: (v: HvControlsSortValue[]) => void;
-  setGlobalFilter?: (v: string) => void;
-}
-
-export interface HvControlsCallbacks extends Record<string, unknown> {
   id: string;
   label: string;
   icon: React.ReactNode;
+}
+
+export interface HvControlsCallbacks extends Record<string, unknown> {
+  setSortBy?: (v: HvControlsSortValue[]) => void;
+  setGlobalFilter?: (v: string) => void;
 }
 
 export interface HvControlsProps

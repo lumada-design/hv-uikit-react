@@ -18,7 +18,7 @@ Our custom hooks are built on top of [React Table](https://react-table.tanstack.
 
 ## `useHv*` hooks
 
-For further ease, you can use the provided `useHvTable` hook that wraps the [React Table's `useTable` hook](https://react-table.tanstack.com/docs/api/useTable) and
+For further ease, you can use the provided `useHvData` hook that wraps the [React Table's `useTable` hook](https://react-table.tanstack.com/docs/api/useTable) and
 provides the following functionality:
 
 - Ensures the use of the needed core and layout plugins when using any of the UI Kit custom hooks (e.g. adding `useHvPagination` implies the instalation of React Table's `usePagination` hook).
@@ -26,10 +26,10 @@ provides the following functionality:
 - Generates default column metadata from the data fields, if the `columns` option is missing.
 - Defaults to an empty array if no `data` is provided.
 
-<Usage>{'import { useHvTable } from "@hitachivantara/uikit-react-lab";'}</Usage>
+<Usage>{'import { useHvData } from "@hitachivantara/uikit-react-lab";'}</Usage>
 
 <Preview withToolbar>
-  <Story inline story={stories.UseHvTable} />
+  <Story inline story={stories.UseHvData} />
 </Preview>
 
 The following plugin hooks are available:
@@ -62,7 +62,7 @@ Check [React Table's `usePagination` documentation](https://react-table.tanstack
 
 The `useHvPagination` hook makes the `getHvPaginationProps` function available on the table instance returned that can be used to setup a `HvPagination` component.
 
-_Note: This hook depends on the `usePagination` hook from `react-table`, but when using `useHvTable` only `useHvPagination` needs to be installed._
+_Note: This hook depends on the `usePagination` hook from `react-table`, but when using `useHvData` only `useHvPagination` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.Pagination} />
@@ -96,7 +96,7 @@ Rows can also be selected in bulk and actions can be performed on the current se
 
 The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available on the table instance returned that can be used to setup a `HvBulkActions` component.
 
-_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvTable` only `useHvBulkActions` needs to be installed._
+_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvData` only `useHvBulkActions` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.BulkActions} />
@@ -111,7 +111,7 @@ Check [React Table's `useSortBy` documentation](https://react-table.tanstack.com
 
 The `useHvSortBy` hook ensures that the proper properties are injected in the `HvTableHeader` (including the on click sorting trigger) and `HvTableCell` (for styling).
 
-_Note: This hook depends on the `useSortBy` hook from `react-table`, but when using `useHvTable` only `useHvSortBy` needs to be installed._
+_Note: This hook depends on the `useSortBy` hook from `react-table`, but when using `useHvData` only `useHvSortBy` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.Sortable} />
@@ -125,7 +125,7 @@ Check [React Table's `useExpanded` documentation](https://react-table.tanstack.c
 
 The `useHvRowExpand` hook injects a `HvButton` into the first data column that toggles each row expansion. If the column has a custom renderer, an extra column is created instead.
 
-_Note: This hook depends on the `useExpanded` hook from `react-table`, but when using `useHvTable` only `useHvRowExpand` needs to be installed._
+_Note: This hook depends on the `useExpanded` hook from `react-table`, but when using `useHvData` only `useHvRowExpand` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.Expandable} />
@@ -270,7 +270,7 @@ doing the drag/drop operation via `SPACE + ARROW` Keys.
 
 ## Column Resize
 
-Columns can be resized using the useHvResizeColumn hook, which leverages the react-table capabilities. 
+Columns can be resized using the useHvResizeColumn hook, which leverages the react-table capabilities.
 Resize, although not an accessible functionality, it allows columns to be resizable via dragging column right border.
 
 <Preview withToolbar>

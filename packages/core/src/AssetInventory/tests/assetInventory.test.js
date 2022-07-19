@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { mount, shallow } from "enzyme";
 import { HvProvider, HvAssetInventory } from "../..";
@@ -5,6 +6,18 @@ import Search from "../Search/Search";
 
 describe("Asset Inventory ", () => {
   let wrapper;
+
+  const consoleSpy = jest.fn();
+  const originalWarn = console.warn;
+
+  beforeEach(() => {
+    consoleSpy.mockReset();
+    console.warn = consoleSpy;
+  });
+
+  afterEach(() => {
+    console.warn = originalWarn;
+  });
 
   const MockView = (id) => <div id={id} />;
 

@@ -12,6 +12,7 @@ const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
 const vizPackagesSrc = resolve(__dirname, "../packages/viz/src");
 const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
+const templatesSrc = resolve(__dirname, "../templates");
 
 module.exports = {
   core: {
@@ -31,6 +32,7 @@ module.exports = {
     "../packages/lab/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/code-editor/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     "../packages/viz/src/**/*.stories.@(js|mdx|jsx|ts|tsx)",
+    "../templates/**/*.stories.@(js|mdx|jsx|ts|tsx)",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx|jsx|ts|tsx)",
   ].filter(Boolean),
 
@@ -57,6 +59,7 @@ module.exports = {
       codeEditorPackageSrc,
       vizPackagesSrc,
       iconsPackageBin,
+      templatesSrc,
     ];
     jsRule.exclude = [/node_modules/, /dist/];
 
