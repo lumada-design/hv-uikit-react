@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.50.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.6...@hitachivantara/uikit-react-lab@3.50.0) (2022-07-20)
+
+
+### Features
+
+* rename useHvTable to useHvData ([eb036d7](https://github.com/lumada-design/hv-uikit-react/commit/eb036d73e36b9792e59c088b3cccf23bae9fa102))
+
+
+
+
+
 ## [3.49.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.5...@hitachivantara/uikit-react-lab@3.49.6) (2022-07-14)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
