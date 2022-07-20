@@ -1,4 +1,5 @@
 export { default as useHvData } from "./useTable";
+export { default as useHvTable } from "./useTable";
 export * from "./useTable";
 
 export { default as useHvTableStyles } from "./useTableStyles";
