@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.51.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.51.0...@hitachivantara/uikit-react-lab@3.51.1) (2022-07-21)
+
+
+### Bug Fixes
+
+* **slider:** add base slider styles to JSS to enable SSR support ([d721aa3](https://github.com/lumada-design/hv-uikit-react/commit/d721aa391778bc5198bd63c3fe86017d8dd78ad2))
+
+
+
+
+
 # [3.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.50.0...@hitachivantara/uikit-react-lab@3.51.0) (2022-07-20)
 
 
