@@ -1265,12 +1265,12 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             Temperature:
           </label>
           <div
-            class="HvSlider-root HvFormElement-root"
+            class="HvFormElement-root"
             id="tempFilter-controls"
             style="width: 240px; z-index: 40;"
           >
             <div
-              class="HvSlider-sliderContainer"
+              class="HvSlider-sliderBase HvSlider-sliderContainer"
             >
               <div
                 class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
@@ -2240,12 +2240,12 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             Temperature:
           </label>
           <div
-            class="HvSlider-root HvFormElement-root"
+            class="HvFormElement-root"
             id="tempFilter-mixed"
             style="width: 240px; z-index: 40;"
           >
             <div
-              class="HvSlider-sliderContainer"
+              class="HvSlider-sliderBase HvSlider-sliderContainer"
             >
               <div
                 class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"

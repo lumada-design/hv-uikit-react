@@ -158,8 +158,6 @@ const HvSlider = (props) => {
     setValidationMessage("");
   }, [knobsPositions, requiredMessage, setValidationMessage, setValidationState]);
 
-  useEffect(() => import("rc-slider/assets/index.css"), []);
-
   useEffect(() => {
     const stepVl = calculateStepValue(maxPointValue, minPointValue, divisionQuantity);
     const inverseStepVl = 1 / stepVl;
@@ -416,7 +414,7 @@ const HvSlider = (props) => {
           )}
         </div>
       )}
-      <div className={classes.sliderContainer}>
+      <div className={clsx(classes.sliderBase, classes.sliderContainer)}>
         {isSingle && (
           <Slider
             id={setId(elementId, "slider")}
@@ -643,6 +641,11 @@ HvSlider.propTypes = {
      * Style applied to the container that has the knob used to move.
      */
     handleContainer: PropTypes.string,
+    /**
+     * Base slider styles to avoid the css import from node_modules and enable SSR support.
+     * import("rc-slider/assets/index.css")
+     */
+    sliderBase: PropTypes.string,
     /**
      * Style applied to the div where the slider is placed.
      */

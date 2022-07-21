@@ -1,4 +1,5 @@
 import { outlineStyles } from "../Focus/styles";
+import base from "./base";
 
 const styles = (theme) => {
   const ring = {
@@ -50,7 +51,7 @@ const styles = (theme) => {
   };
 
   return {
-    root: {},
+    sliderBase: { ...base },
     rootDisabled: {
       cursor: "not-allowed",
       "& .rc-slider-disabled": {
