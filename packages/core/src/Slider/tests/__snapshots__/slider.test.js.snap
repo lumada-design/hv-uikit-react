@@ -3,7 +3,7 @@
 exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
 <div>
   <div
-    class="HvSlider-root HvSlider-rootDisabled HvFormElement-root"
+    class="HvSlider-rootDisabled HvFormElement-root"
     id="SingleDisabled"
   >
     <div
@@ -52,7 +52,7 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
@@ -157,7 +157,7 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
 exports[`<HvSlider> sample snapshot testing Error 1`] = `
 <div>
   <div
-    class="HvSlider-root HvFormElement-root"
+    class="HvFormElement-root"
     id="ErrorSingleSlider"
   >
     <div
@@ -206,7 +206,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
@@ -343,7 +343,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
 exports[`<HvSlider> sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvSlider-root HvFormElement-root"
+    class="HvFormElement-root"
     id="Main"
   >
     <div
@@ -391,7 +391,7 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
@@ -497,7 +497,7 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
 <div>
   <div
-    class="HvSlider-root HvSlider-rootDisabled HvFormElement-root"
+    class="HvSlider-rootDisabled HvFormElement-root"
     id="RangeSliderDisabled"
   >
     <div
@@ -594,7 +594,7 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
@@ -714,7 +714,7 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
 <div>
   <div
-    class="HvSlider-root HvSlider-trackStandBy HvFormElement-root"
+    class="HvSlider-trackStandBy HvFormElement-root"
     id="ErrorRangeSlider"
   >
     <div
@@ -811,7 +811,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
@@ -964,7 +964,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
 <div>
   <div
-    class="HvSlider-root HvSlider-trackStandBy HvFormElement-root"
+    class="HvSlider-trackStandBy HvFormElement-root"
     id="Range"
   >
     <div
@@ -1059,7 +1059,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderContainer"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
         class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
