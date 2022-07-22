@@ -62,7 +62,7 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@hookform/resolvers": "^2.9.5",
     "@material-ui/core": "^4.12.4",
-    "@playwright/test": "^1.23.2",
+    "@playwright/test": "^1.24.0",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
