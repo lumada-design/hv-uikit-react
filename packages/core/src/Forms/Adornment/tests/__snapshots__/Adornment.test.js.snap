@@ -2,7 +2,7 @@
 
 exports[`Adornment should render correctly 1`] = `
 <WithStyles(HvAdornment)
-  icon={<ForwardRef(WithStyles) />}
+  icon={<WithStyles(CloseXS) />}
 >
   <HvAdornment
     classes={
@@ -15,7 +15,7 @@ exports[`Adornment should render correctly 1`] = `
         "root": "HvAdornment-root",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
+    icon={<WithStyles(CloseXS) />}
   >
     <div
       className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"

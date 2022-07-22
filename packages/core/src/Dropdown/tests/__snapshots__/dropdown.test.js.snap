@@ -2167,7 +2167,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           autoFocus={false}
                                           className="HvSearchBox-root"
                                           customFixedIcon={
-                                            <ForwardRef(WithStyles)
+                                            <WithStyles(Search)
                                               boxStyles={
                                                 Object {
                                                   "height": "30px",
@@ -2238,7 +2238,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               }
                                             }
                                             customFixedIcon={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(Search)
                                                 boxStyles={
                                                   Object {
                                                     "height": "30px",
@@ -2309,7 +2309,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                               }
                                               customFixedIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(Search)
                                                   boxStyles={
                                                     Object {
                                                       "height": "30px",
@@ -2386,7 +2386,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   }
                                                 }
                                                 customFixedIcon={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(Search)
                                                     boxStyles={
                                                       Object {
                                                         "height": "30px",
@@ -2490,16 +2490,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               aria-hidden="true"
                                                               className="HvInput-adornmentsBox"
                                                             >
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(HvAdornment)
                                                                 aria-label="Clear the text"
                                                                 className="HvInput-adornmentButton HvInput-iconClear"
-                                                                icon={<ForwardRef(WithStyles) />}
+                                                                icon={<WithStyles(CloseXS) />}
                                                                 isVisible={false}
                                                                 onClick={[Function]}
                                                                 onMouseDown={[Function]}
                                                                 title="Clear the text"
                                                               />
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(Search)
                                                                 boxStyles={
                                                                   Object {
                                                                     "height": "30px",
@@ -2580,16 +2580,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 aria-hidden="true"
                                                                 className="HvInput-adornmentsBox"
                                                               >
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(HvAdornment)
                                                                   aria-label="Clear the text"
                                                                   className="HvInput-adornmentButton HvInput-iconClear"
-                                                                  icon={<ForwardRef(WithStyles) />}
+                                                                  icon={<WithStyles(CloseXS) />}
                                                                   isVisible={false}
                                                                   onClick={[Function]}
                                                                   onMouseDown={[Function]}
                                                                   title="Clear the text"
                                                                 />
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(Search)
                                                                   boxStyles={
                                                                     Object {
                                                                       "height": "30px",
@@ -2667,16 +2667,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   aria-hidden="true"
                                                                   className="HvInput-adornmentsBox"
                                                                 >
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(HvAdornment)
                                                                     aria-label="Clear the text"
                                                                     className="HvInput-adornmentButton HvInput-iconClear"
-                                                                    icon={<ForwardRef(WithStyles) />}
+                                                                    icon={<WithStyles(CloseXS) />}
                                                                     isVisible={false}
                                                                     onClick={[Function]}
                                                                     onMouseDown={[Function]}
                                                                     title="Clear the text"
                                                                   />
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Search)
                                                                     boxStyles={
                                                                       Object {
                                                                         "height": "30px",
@@ -2771,16 +2771,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     aria-hidden="true"
                                                                     className="HvInput-adornmentsBox"
                                                                   >
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(HvAdornment)
                                                                       aria-label="Clear the text"
                                                                       className="HvInput-adornmentButton HvInput-iconClear"
-                                                                      icon={<ForwardRef(WithStyles) />}
+                                                                      icon={<WithStyles(CloseXS) />}
                                                                       isVisible={false}
                                                                       onClick={[Function]}
                                                                       onMouseDown={[Function]}
                                                                       title="Clear the text"
                                                                     />
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Search)
                                                                       boxStyles={
                                                                         Object {
                                                                           "height": "30px",
@@ -2874,16 +2874,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       aria-hidden="true"
                                                                       className="HvInput-adornmentsBox"
                                                                     >
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(HvAdornment)
                                                                         aria-label="Clear the text"
                                                                         className="HvInput-adornmentButton HvInput-iconClear"
-                                                                        icon={<ForwardRef(WithStyles) />}
+                                                                        icon={<WithStyles(CloseXS) />}
                                                                         isVisible={false}
                                                                         onClick={[Function]}
                                                                         onMouseDown={[Function]}
                                                                         title="Clear the text"
                                                                       />
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Search)
                                                                         boxStyles={
                                                                           Object {
                                                                             "height": "30px",
@@ -2983,16 +2983,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         aria-hidden="true"
                                                                         className="HvInput-adornmentsBox"
                                                                       >
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(HvAdornment)
                                                                           aria-label="Clear the text"
                                                                           className="HvInput-adornmentButton HvInput-iconClear"
-                                                                          icon={<ForwardRef(WithStyles) />}
+                                                                          icon={<WithStyles(CloseXS) />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                           onMouseDown={[Function]}
                                                                           title="Clear the text"
                                                                         />
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Search)
                                                                           boxStyles={
                                                                             Object {
                                                                               "height": "30px",
@@ -3101,7 +3101,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         <WithStyles(HvAdornment)
                                                                           aria-label="Clear the text"
                                                                           className="HvInput-adornmentButton HvInput-iconClear"
-                                                                          icon={<ForwardRef(WithStyles) />}
+                                                                          icon={<WithStyles(CloseXS) />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                           onMouseDown={[Function]}
@@ -3120,7 +3120,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                 "root": "HvAdornment-root",
                                                                               }
                                                                             }
-                                                                            icon={<ForwardRef(WithStyles) />}
+                                                                            icon={<WithStyles(CloseXS) />}
                                                                             isVisible={false}
                                                                             onClick={[Function]}
                                                                             onMouseDown={[Function]}
@@ -3493,10 +3493,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           }
                                         }
                                         control={
-                                          <ForwardRef(WithStyles)
+                                          <WithStyles(ForwardRef(Checkbox))
                                             checked={false}
                                             checkedIcon={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(CheckboxCheck)
                                                 className="HvCheckBox-icon"
                                               />
                                             }
@@ -3505,14 +3505,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                             disableRipple={true}
                                             disabled={false}
                                             icon={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(Checkbox)
                                                 className="HvCheckBox-icon"
                                               />
                                             }
                                             id="test-dropdown-values-select-all-input"
                                             indeterminate={false}
                                             indeterminateIcon={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(CheckboxPartial)
                                                 className="HvCheckBox-icon"
                                               />
                                             }
@@ -3539,10 +3539,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                             }
                                           }
                                           control={
-                                            <ForwardRef(WithStyles)
+                                            <WithStyles(ForwardRef(Checkbox))
                                               checked={false}
                                               checkedIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(CheckboxCheck)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
@@ -3551,14 +3551,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               disableRipple={true}
                                               disabled={false}
                                               icon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(Checkbox)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
                                               id="test-dropdown-values-select-all-input"
                                               indeterminate={false}
                                               indeterminateIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(CheckboxPartial)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
@@ -3579,7 +3579,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                             <WithStyles(ForwardRef(Checkbox))
                                               checked={false}
                                               checkedIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(CheckboxCheck)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
@@ -3588,14 +3588,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               disableRipple={true}
                                               disabled={false}
                                               icon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(Checkbox)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
                                               id="test-dropdown-values-select-all-input"
                                               indeterminate={false}
                                               indeterminateIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(CheckboxPartial)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
@@ -3606,7 +3606,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               <ForwardRef(Checkbox)
                                                 checked={false}
                                                 checkedIcon={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(CheckboxCheck)
                                                     className="HvCheckBox-icon"
                                                   />
                                                 }
@@ -3625,14 +3625,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 disableRipple={true}
                                                 disabled={false}
                                                 icon={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(Checkbox)
                                                     className="HvCheckBox-icon"
                                                   />
                                                 }
                                                 id="test-dropdown-values-select-all-input"
                                                 indeterminate={false}
                                                 indeterminateIcon={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(CheckboxPartial)
                                                     className="HvCheckBox-icon"
                                                   />
                                                 }
@@ -3643,7 +3643,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 <WithStyles(ForwardRef(SwitchBase))
                                                   checked={false}
                                                   checkedIcon={
-                                                    <ForwardRef(WithStyles)
+                                                    <WithStyles(CheckboxCheck)
                                                       className="HvCheckBox-icon"
                                                       fontSize="default"
                                                     />
@@ -3660,7 +3660,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   disableRipple={true}
                                                   disabled={false}
                                                   icon={
-                                                    <ForwardRef(WithStyles)
+                                                    <WithStyles(Checkbox)
                                                       className="HvCheckBox-icon"
                                                       fontSize="default"
                                                     />
@@ -3679,7 +3679,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   <ForwardRef(SwitchBase)
                                                     checked={false}
                                                     checkedIcon={
-                                                      <ForwardRef(WithStyles)
+                                                      <WithStyles(CheckboxCheck)
                                                         className="HvCheckBox-icon"
                                                         fontSize="default"
                                                       />
@@ -3697,7 +3697,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     disableRipple={true}
                                                     disabled={false}
                                                     icon={
-                                                      <ForwardRef(WithStyles)
+                                                      <WithStyles(Checkbox)
                                                         className="HvCheckBox-icon"
                                                         fontSize="default"
                                                       />
@@ -4481,10 +4481,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             }
                                                           }
                                                           control={
-                                                            <ForwardRef(WithStyles)
+                                                            <WithStyles(ForwardRef(Checkbox))
                                                               checked={false}
                                                               checkedIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxCheck)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -4493,13 +4493,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               disableRipple={true}
                                                               disabled={false}
                                                               icon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(Checkbox)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
                                                               id="test-dropdown-values-list-item-0-selector-input"
                                                               indeterminateIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxPartial)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -4526,10 +4526,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -4538,13 +4538,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-0-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -4565,7 +4565,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -4574,13 +4574,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-0-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -4591,7 +4591,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 <ForwardRef(Checkbox)
                                                                   checked={false}
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -4610,13 +4610,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -4627,7 +4627,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   <WithStyles(ForwardRef(SwitchBase))
                                                                     checked={false}
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -4644,7 +4644,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -4663,7 +4663,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     <ForwardRef(SwitchBase)
                                                                       checked={false}
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -4681,7 +4681,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -5372,10 +5372,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             }
                                                           }
                                                           control={
-                                                            <ForwardRef(WithStyles)
+                                                            <WithStyles(ForwardRef(Checkbox))
                                                               checked={false}
                                                               checkedIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxCheck)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -5384,13 +5384,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               disableRipple={true}
                                                               disabled={false}
                                                               icon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(Checkbox)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
                                                               id="test-dropdown-values-list-item-1-selector-input"
                                                               indeterminateIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxPartial)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -5417,10 +5417,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -5429,13 +5429,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-1-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -5456,7 +5456,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -5465,13 +5465,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-1-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -5482,7 +5482,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 <ForwardRef(Checkbox)
                                                                   checked={false}
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -5501,13 +5501,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -5518,7 +5518,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   <WithStyles(ForwardRef(SwitchBase))
                                                                     checked={false}
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -5535,7 +5535,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -5554,7 +5554,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     <ForwardRef(SwitchBase)
                                                                       checked={false}
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -5572,7 +5572,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -6263,10 +6263,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             }
                                                           }
                                                           control={
-                                                            <ForwardRef(WithStyles)
+                                                            <WithStyles(ForwardRef(Checkbox))
                                                               checked={false}
                                                               checkedIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxCheck)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -6275,13 +6275,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               disableRipple={true}
                                                               disabled={false}
                                                               icon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(Checkbox)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
                                                               id="test-dropdown-values-list-item-2-selector-input"
                                                               indeterminateIcon={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(CheckboxPartial)
                                                                   className="HvCheckBox-icon HvList-icon"
                                                                 />
                                                               }
@@ -6308,10 +6308,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -6320,13 +6320,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-2-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -6347,7 +6347,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               <WithStyles(ForwardRef(Checkbox))
                                                                 checked={false}
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -6356,13 +6356,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-2-selector-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
@@ -6373,7 +6373,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 <ForwardRef(Checkbox)
                                                                   checked={false}
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -6392,13 +6392,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
@@ -6409,7 +6409,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   <WithStyles(ForwardRef(SwitchBase))
                                                                     checked={false}
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -6426,7 +6426,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon HvList-icon"
                                                                         fontSize="default"
                                                                       />
@@ -6445,7 +6445,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     <ForwardRef(SwitchBase)
                                                                       checked={false}
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -6463,7 +6463,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
@@ -10127,7 +10127,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                           autoFocus={false}
                                           className="HvSearchBox-root"
                                           customFixedIcon={
-                                            <ForwardRef(WithStyles)
+                                            <WithStyles(Search)
                                               boxStyles={
                                                 Object {
                                                   "height": "30px",
@@ -10198,7 +10198,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               }
                                             }
                                             customFixedIcon={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(Search)
                                                 boxStyles={
                                                   Object {
                                                     "height": "30px",
@@ -10269,7 +10269,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 }
                                               }
                                               customFixedIcon={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(Search)
                                                   boxStyles={
                                                     Object {
                                                       "height": "30px",
@@ -10346,7 +10346,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   }
                                                 }
                                                 customFixedIcon={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(Search)
                                                     boxStyles={
                                                       Object {
                                                         "height": "30px",
@@ -10450,16 +10450,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               aria-hidden="true"
                                                               className="HvInput-adornmentsBox"
                                                             >
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(HvAdornment)
                                                                 aria-label="Clear the text"
                                                                 className="HvInput-adornmentButton HvInput-iconClear"
-                                                                icon={<ForwardRef(WithStyles) />}
+                                                                icon={<WithStyles(CloseXS) />}
                                                                 isVisible={false}
                                                                 onClick={[Function]}
                                                                 onMouseDown={[Function]}
                                                                 title="Clear the text"
                                                               />
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(Search)
                                                                 boxStyles={
                                                                   Object {
                                                                     "height": "30px",
@@ -10540,16 +10540,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                 aria-hidden="true"
                                                                 className="HvInput-adornmentsBox"
                                                               >
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(HvAdornment)
                                                                   aria-label="Clear the text"
                                                                   className="HvInput-adornmentButton HvInput-iconClear"
-                                                                  icon={<ForwardRef(WithStyles) />}
+                                                                  icon={<WithStyles(CloseXS) />}
                                                                   isVisible={false}
                                                                   onClick={[Function]}
                                                                   onMouseDown={[Function]}
                                                                   title="Clear the text"
                                                                 />
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(Search)
                                                                   boxStyles={
                                                                     Object {
                                                                       "height": "30px",
@@ -10627,16 +10627,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                   aria-hidden="true"
                                                                   className="HvInput-adornmentsBox"
                                                                 >
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(HvAdornment)
                                                                     aria-label="Clear the text"
                                                                     className="HvInput-adornmentButton HvInput-iconClear"
-                                                                    icon={<ForwardRef(WithStyles) />}
+                                                                    icon={<WithStyles(CloseXS) />}
                                                                     isVisible={false}
                                                                     onClick={[Function]}
                                                                     onMouseDown={[Function]}
                                                                     title="Clear the text"
                                                                   />
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Search)
                                                                     boxStyles={
                                                                       Object {
                                                                         "height": "30px",
@@ -10731,16 +10731,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                     aria-hidden="true"
                                                                     className="HvInput-adornmentsBox"
                                                                   >
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(HvAdornment)
                                                                       aria-label="Clear the text"
                                                                       className="HvInput-adornmentButton HvInput-iconClear"
-                                                                      icon={<ForwardRef(WithStyles) />}
+                                                                      icon={<WithStyles(CloseXS) />}
                                                                       isVisible={false}
                                                                       onClick={[Function]}
                                                                       onMouseDown={[Function]}
                                                                       title="Clear the text"
                                                                     />
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Search)
                                                                       boxStyles={
                                                                         Object {
                                                                           "height": "30px",
@@ -10834,16 +10834,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                       aria-hidden="true"
                                                                       className="HvInput-adornmentsBox"
                                                                     >
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(HvAdornment)
                                                                         aria-label="Clear the text"
                                                                         className="HvInput-adornmentButton HvInput-iconClear"
-                                                                        icon={<ForwardRef(WithStyles) />}
+                                                                        icon={<WithStyles(CloseXS) />}
                                                                         isVisible={false}
                                                                         onClick={[Function]}
                                                                         onMouseDown={[Function]}
                                                                         title="Clear the text"
                                                                       />
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Search)
                                                                         boxStyles={
                                                                           Object {
                                                                             "height": "30px",
@@ -10943,16 +10943,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                         aria-hidden="true"
                                                                         className="HvInput-adornmentsBox"
                                                                       >
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(HvAdornment)
                                                                           aria-label="Clear the text"
                                                                           className="HvInput-adornmentButton HvInput-iconClear"
-                                                                          icon={<ForwardRef(WithStyles) />}
+                                                                          icon={<WithStyles(CloseXS) />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                           onMouseDown={[Function]}
                                                                           title="Clear the text"
                                                                         />
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Search)
                                                                           boxStyles={
                                                                             Object {
                                                                               "height": "30px",
@@ -11061,7 +11061,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                         <WithStyles(HvAdornment)
                                                                           aria-label="Clear the text"
                                                                           className="HvInput-adornmentButton HvInput-iconClear"
-                                                                          icon={<ForwardRef(WithStyles) />}
+                                                                          icon={<WithStyles(CloseXS) />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                           onMouseDown={[Function]}
@@ -11080,7 +11080,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                                 "root": "HvAdornment-root",
                                                                               }
                                                                             }
-                                                                            icon={<ForwardRef(WithStyles) />}
+                                                                            icon={<WithStyles(CloseXS) />}
                                                                             isVisible={false}
                                                                             onClick={[Function]}
                                                                             onMouseDown={[Function]}

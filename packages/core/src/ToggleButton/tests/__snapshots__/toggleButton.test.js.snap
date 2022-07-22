@@ -1856,11 +1856,11 @@ exports[`ToggleButton should render correctly 1`] = `
               }
             }
             title={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="infoText"
               >
                 Close lock
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
           >
             <HvTooltip
@@ -1890,11 +1890,11 @@ exports[`ToggleButton should render correctly 1`] = `
                 }
               }
               title={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   variant="infoText"
                 >
                   Close lock
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
             >
               <WithStyles(ForwardRef(Tooltip))
@@ -1936,11 +1936,11 @@ exports[`ToggleButton should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     variant="infoText"
                   >
                     Close lock
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef(Tooltip)
@@ -1991,11 +1991,11 @@ exports[`ToggleButton should render correctly 1`] = `
                     }
                   }
                   title={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       variant="infoText"
                     >
                       Close lock
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <div

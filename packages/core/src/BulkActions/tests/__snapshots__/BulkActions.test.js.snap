@@ -140,14 +140,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             id="bulkActions-select"
             indeterminate={false}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="normalText"
               >
                 <b>
                   All
                 </b>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={false}
@@ -170,14 +170,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               id="bulkActions-select"
               indeterminate={false}
               label={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="normalText"
                 >
                   <b>
                     All
                   </b>
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
               onChange={[Function]}
               semantic={false}
@@ -191,10 +191,10 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   }
                 }
                 control={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef(Checkbox))
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxCheck)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -203,14 +203,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(Checkbox)
                         className="HvCheckBox-icon"
                       />
                     }
                     id="bulkActions-select-input"
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxPartial)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -222,14 +222,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 disabled={false}
                 id="bulkActions-select"
                 label={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     component="span"
                     variant="normalText"
                   >
                     <b>
                       All
                     </b>
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
                 labelPlacement="end"
               >
@@ -246,10 +246,10 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     }
                   }
                   control={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -258,14 +258,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                         />
                       }
                       id="bulkActions-select-input"
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -277,14 +277,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   disabled={false}
                   id="bulkActions-select"
                   label={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       component="span"
                       variant="normalText"
                     >
                       <b>
                         All
                       </b>
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                   labelPlacement="end"
                 >
@@ -295,7 +295,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -304,14 +304,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                         />
                       }
                       id="bulkActions-select-input"
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -322,7 +322,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       <ForwardRef(Checkbox)
                         checked={false}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxCheck)
                             className="HvCheckBox-icon"
                           />
                         }
@@ -341,14 +341,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(Checkbox)
                             className="HvCheckBox-icon"
                           />
                         }
                         id="bulkActions-select-input"
                         indeterminate={false}
                         indeterminateIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                           />
                         }
@@ -359,7 +359,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxCheck)
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -376,7 +376,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(Checkbox)
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -395,7 +395,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           <ForwardRef(SwitchBase)
                             checked={false}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxCheck)
                                 className="HvCheckBox-icon"
                                 fontSize="default"
                               />
@@ -413,7 +413,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(Checkbox)
                                 className="HvCheckBox-icon"
                                 fontSize="default"
                               />
@@ -757,7 +757,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 id="add"
                 key="bulkActions-actions-0-action-add"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<WithStyles(Add) />}
               >
                 <HvButton
                   category="ghost"
@@ -788,7 +788,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   disabled={true}
                   id="add"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<WithStyles(Add) />}
                 >
                   <WithStyles(ForwardRef(Button))
                     className="HvActions-button HvButton-ghostSVG"
@@ -807,7 +807,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     disabled={true}
                     id="add"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<WithStyles(Add) />}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -850,7 +850,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       disabled={true}
                       id="add"
                       onClick={[Function]}
-                      startIcon={<ForwardRef(WithStyles) />}
+                      startIcon={<WithStyles(Add) />}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -955,7 +955,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 id="delete"
                 key="bulkActions-actions-1-action-delete"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<WithStyles(Delete) />}
               >
                 <HvButton
                   category="ghost"
@@ -986,7 +986,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   disabled={true}
                   id="delete"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<WithStyles(Delete) />}
                 >
                   <WithStyles(ForwardRef(Button))
                     className="HvActions-button HvButton-ghostSVG"
@@ -1005,7 +1005,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     disabled={true}
                     id="delete"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<WithStyles(Delete) />}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -1048,7 +1048,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       disabled={true}
                       id="delete"
                       onClick={[Function]}
-                      startIcon={<ForwardRef(WithStyles) />}
+                      startIcon={<WithStyles(Delete) />}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -1171,7 +1171,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 disablePortal={false}
                 disabled={true}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(MoreOptionsVertical)
                     color="atmo7"
                   />
                 }
@@ -1212,7 +1212,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   disablePortal={false}
                   disabled={true}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(MoreOptionsVertical)
                       color="atmo7"
                     />
                   }
@@ -1253,7 +1253,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     disablePortal={false}
                     disabled={true}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(MoreOptionsVertical)
                         color="atmo7"
                       />
                     }
@@ -1695,14 +1695,14 @@ exports[`BulkActions should render correctly 1`] = `
             className="HvBulkActions-selectAll"
             indeterminate={false}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="normalText"
               >
                 <b>
                   All
                 </b>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={false}
@@ -1724,14 +1724,14 @@ exports[`BulkActions should render correctly 1`] = `
               }
               indeterminate={false}
               label={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="normalText"
                 >
                   <b>
                     All
                   </b>
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
               onChange={[Function]}
               semantic={false}
@@ -1745,10 +1745,10 @@ exports[`BulkActions should render correctly 1`] = `
                   }
                 }
                 control={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef(Checkbox))
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxCheck)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1757,13 +1757,13 @@ exports[`BulkActions should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(Checkbox)
                         className="HvCheckBox-icon"
                       />
                     }
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxPartial)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1774,14 +1774,14 @@ exports[`BulkActions should render correctly 1`] = `
                 }
                 disabled={false}
                 label={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     component="span"
                     variant="normalText"
                   >
                     <b>
                       All
                     </b>
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
                 labelPlacement="end"
               >
@@ -1798,10 +1798,10 @@ exports[`BulkActions should render correctly 1`] = `
                     }
                   }
                   control={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1810,13 +1810,13 @@ exports[`BulkActions should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                         />
                       }
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1827,14 +1827,14 @@ exports[`BulkActions should render correctly 1`] = `
                   }
                   disabled={false}
                   label={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       component="span"
                       variant="normalText"
                     >
                       <b>
                         All
                       </b>
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                   labelPlacement="end"
                 >
@@ -1844,7 +1844,7 @@ exports[`BulkActions should render correctly 1`] = `
                     <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1853,13 +1853,13 @@ exports[`BulkActions should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                         />
                       }
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1870,7 +1870,7 @@ exports[`BulkActions should render correctly 1`] = `
                       <ForwardRef(Checkbox)
                         checked={false}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxCheck)
                             className="HvCheckBox-icon"
                           />
                         }
@@ -1889,13 +1889,13 @@ exports[`BulkActions should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(Checkbox)
                             className="HvCheckBox-icon"
                           />
                         }
                         indeterminate={false}
                         indeterminateIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                           />
                         }
@@ -1906,7 +1906,7 @@ exports[`BulkActions should render correctly 1`] = `
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxCheck)
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -1923,7 +1923,7 @@ exports[`BulkActions should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(Checkbox)
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -1941,7 +1941,7 @@ exports[`BulkActions should render correctly 1`] = `
                           <ForwardRef(SwitchBase)
                             checked={false}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxCheck)
                                 className="HvCheckBox-icon"
                                 fontSize="default"
                               />
@@ -1959,7 +1959,7 @@ exports[`BulkActions should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(Checkbox)
                                 className="HvCheckBox-icon"
                                 fontSize="default"
                               />
@@ -2309,7 +2309,7 @@ exports[`BulkActions should render correctly 1`] = `
                 id="get"
                 key="0"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<WithStyles(Upload) />}
               >
                 <HvButton
                   category="ghost"
@@ -2340,7 +2340,7 @@ exports[`BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="get"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<WithStyles(Upload) />}
                 >
                   <WithStyles(ForwardRef(Button))
                     className="HvActions-button HvButton-ghostSVG"
@@ -2359,7 +2359,7 @@ exports[`BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="get"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<WithStyles(Upload) />}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -2402,7 +2402,7 @@ exports[`BulkActions should render correctly 1`] = `
                       disabled={true}
                       id="get"
                       onClick={[Function]}
-                      startIcon={<ForwardRef(WithStyles) />}
+                      startIcon={<WithStyles(Upload) />}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -2513,7 +2513,7 @@ exports[`BulkActions should render correctly 1`] = `
                 id="lock"
                 key="1"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<WithStyles(Lock) />}
               >
                 <HvButton
                   category="ghost"
@@ -2544,7 +2544,7 @@ exports[`BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="lock"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<WithStyles(Lock) />}
                 >
                   <WithStyles(ForwardRef(Button))
                     className="HvActions-button HvButton-ghostSVG"
@@ -2563,7 +2563,7 @@ exports[`BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="lock"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<WithStyles(Lock) />}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -2606,7 +2606,7 @@ exports[`BulkActions should render correctly 1`] = `
                       disabled={true}
                       id="lock"
                       onClick={[Function]}
-                      startIcon={<ForwardRef(WithStyles) />}
+                      startIcon={<WithStyles(Lock) />}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -2716,7 +2716,7 @@ exports[`BulkActions should render correctly 1`] = `
                 id="delete"
                 key="2"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<WithStyles(Delete) />}
               >
                 <HvButton
                   category="ghost"
@@ -2747,7 +2747,7 @@ exports[`BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="delete"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<WithStyles(Delete) />}
                 >
                   <WithStyles(ForwardRef(Button))
                     className="HvActions-button HvButton-ghostSVG"
@@ -2766,7 +2766,7 @@ exports[`BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="delete"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<WithStyles(Delete) />}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -2809,7 +2809,7 @@ exports[`BulkActions should render correctly 1`] = `
                       disabled={true}
                       id="delete"
                       onClick={[Function]}
-                      startIcon={<ForwardRef(WithStyles) />}
+                      startIcon={<WithStyles(Delete) />}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -2932,7 +2932,7 @@ exports[`BulkActions should render correctly 1`] = `
                 disablePortal={false}
                 disabled={true}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(MoreOptionsVertical)
                     color="atmo7"
                   />
                 }
@@ -2972,7 +2972,7 @@ exports[`BulkActions should render correctly 1`] = `
                   disablePortal={false}
                   disabled={true}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(MoreOptionsVertical)
                       color="atmo7"
                     />
                   }
@@ -3012,7 +3012,7 @@ exports[`BulkActions should render correctly 1`] = `
                     disablePortal={false}
                     disabled={true}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(MoreOptionsVertical)
                         color="atmo7"
                       />
                     }
@@ -3402,10 +3402,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                   }
                 }
                 control={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef(Checkbox))
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxCheck)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3420,7 +3420,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(Checkbox)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3432,7 +3432,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxPartial)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3464,10 +3464,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     }
                   }
                   control={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef(Checkbox))
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3482,7 +3482,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3494,7 +3494,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3519,7 +3519,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     <WithStyles(ForwardRef(Checkbox))
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3534,7 +3534,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3546,7 +3546,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3563,7 +3563,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       <ForwardRef(Checkbox)
                         checked={true}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxCheck)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -3588,7 +3588,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(Checkbox)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -3600,7 +3600,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         }
                         indeterminate={true}
                         indeterminateIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -3617,7 +3617,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={true}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxPartial)
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -3640,7 +3640,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxPartial)
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -3664,7 +3664,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           <ForwardRef(SwitchBase)
                             checked={true}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon"
                                 color={
                                   Array [
@@ -3688,7 +3688,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon"
                                 color={
                                   Array [
@@ -4027,7 +4027,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
             className="HvBulkActions-selectAll"
             indeterminate={true}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="normalText"
               >
@@ -4037,7 +4037,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   </b>
                    of 5 items
                 </React.Fragment>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={true}
@@ -4059,7 +4059,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
               }
               indeterminate={true}
               label={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="normalText"
                 >
@@ -4069,7 +4069,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     </b>
                      of 5 items
                   </React.Fragment>
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
               onChange={[Function]}
               semantic={true}
@@ -4083,10 +4083,10 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   }
                 }
                 control={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef(Checkbox))
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxCheck)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4101,7 +4101,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(Checkbox)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4113,7 +4113,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxPartial)
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4130,7 +4130,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                 }
                 disabled={false}
                 label={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     component="span"
                     variant="normalText"
                   >
@@ -4140,7 +4140,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       </b>
                        of 5 items
                     </React.Fragment>
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
                 labelPlacement="end"
               >
@@ -4157,10 +4157,10 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     }
                   }
                   control={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef(Checkbox))
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4175,7 +4175,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4187,7 +4187,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4204,7 +4204,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   }
                   disabled={false}
                   label={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       component="span"
                       variant="normalText"
                     >
@@ -4214,7 +4214,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         </b>
                          of 5 items
                       </React.Fragment>
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                   labelPlacement="end"
                 >
@@ -4224,7 +4224,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     <WithStyles(ForwardRef(Checkbox))
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxCheck)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4239,7 +4239,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(Checkbox)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4251,7 +4251,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4268,7 +4268,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       <ForwardRef(Checkbox)
                         checked={true}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxCheck)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -4293,7 +4293,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(Checkbox)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -4305,7 +4305,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         }
                         indeterminate={true}
                         indeterminateIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -4322,7 +4322,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={true}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxPartial)
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -4345,7 +4345,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(CheckboxPartial)
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -4369,7 +4369,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                           <ForwardRef(SwitchBase)
                             checked={true}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon"
                                 color={
                                   Array [
@@ -4393,7 +4393,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon"
                                 color={
                                   Array [

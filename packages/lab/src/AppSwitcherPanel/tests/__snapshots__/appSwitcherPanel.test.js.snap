@@ -1678,7 +1678,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="Action-typography-8 "
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -1686,7 +1686,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="Action-typography-8 "
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -1721,7 +1721,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8  HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
@@ -2584,7 +2584,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="Action-typography-8 "
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -2592,7 +2592,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="Action-typography-8 "
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -2627,7 +2627,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8  HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
@@ -4310,7 +4310,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="Action-typography-8 "
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -4318,7 +4318,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="Action-typography-8 "
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -4353,7 +4353,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8  HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
@@ -5178,7 +5178,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               target="_blank"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="Action-typography-8 "
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -5186,7 +5186,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="Action-typography-8 "
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -5221,7 +5221,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8  HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
@@ -6086,7 +6086,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="Action-typography-8 "
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -6094,7 +6094,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="Action-typography-8 "
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -6129,7 +6129,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8  HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}

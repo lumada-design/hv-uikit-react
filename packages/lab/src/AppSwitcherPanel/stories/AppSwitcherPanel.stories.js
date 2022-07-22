@@ -66,8 +66,7 @@ export const Main = () => {
       target: "_blank",
     },
     {
-      name:
-        "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
       iconElement: <Tool boxStyles={boxStyles} />,
       description: "App 1 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
@@ -108,8 +107,7 @@ export const sample2 = () => {
 
   const applicationsList = [
     {
-      name:
-        "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://lumada-design.github.io/uikit/v2.x/",
@@ -212,8 +210,7 @@ export const sample4 = () => {
 
   const applicationsList = [
     {
-      name:
-        "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://lumada-design.github.io/uikit/v2.x/",

@@ -36,7 +36,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             "label": "SCPodF",
           },
         ],
-        "icon": <ForwardRef(WithStyles) />,
+        "icon": <WithStyles(Play) />,
         "id": "01",
         "label": "System",
       },
@@ -86,7 +86,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
               "label": "SCPodF",
             },
           ],
-          "icon": <ForwardRef(WithStyles) />,
+          "icon": <WithStyles(Play) />,
           "id": "01",
           "label": "System",
         },
@@ -134,7 +134,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             className="HvVerticalNavigationTreeView-root"
           >
             <WithStyles(TreeViewItem)
-              icon={<ForwardRef(WithStyles) />}
+              icon={<WithStyles(Play) />}
               key="01"
               label="System"
               nodeId="01"
@@ -171,7 +171,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       "label": "SCPodF",
                     },
                   ],
-                  "icon": <ForwardRef(WithStyles) />,
+                  "icon": <WithStyles(Play) />,
                   "id": "01",
                   "label": "System",
                 }
@@ -197,7 +197,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                icon={<ForwardRef(WithStyles) />}
+                icon={<WithStyles(Play) />}
                 label="System"
                 nodeId="01"
                 payload={
@@ -233,7 +233,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         "label": "SCPodF",
                       },
                     ],
-                    "icon": <ForwardRef(WithStyles) />,
+                    "icon": <WithStyles(Play) />,
                     "id": "01",
                     "label": "System",
                   }

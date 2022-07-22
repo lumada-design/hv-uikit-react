@@ -23,26 +23,25 @@ const DEFAULT_VIEW_CONFIGURATION = {
   actions: null,
 };
 
-const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => (
-  data
-) => {
-  const actions = setActionsId(viewConfiguration.actions, data.id);
+const CardRenderChooser =
+  (viewConfiguration, render, cardContent, metadata, cardProps) => (data) => {
+    const actions = setActionsId(viewConfiguration.actions, data.id);
 
-  return render ? (
-    render(data, { ...viewConfiguration, actions }, metadata, cardProps)
-  ) : (
-    <Card
-      {...data}
-      onChange={viewConfiguration.onSelection}
-      actions={actions}
-      isSelectable={viewConfiguration.isSelectable}
-      actionsCallback={viewConfiguration.actionsCallback}
-      maxVisibleActions={viewConfiguration.maxVisibleActions}
-      innerCardContent={cardContent?.(data)}
-      {...cardProps}
-    />
-  );
-};
+    return render ? (
+      render(data, { ...viewConfiguration, actions }, metadata, cardProps)
+    ) : (
+      <Card
+        {...data}
+        onChange={viewConfiguration.onSelection}
+        actions={actions}
+        isSelectable={viewConfiguration.isSelectable}
+        actionsCallback={viewConfiguration.actionsCallback}
+        maxVisibleActions={viewConfiguration.maxVisibleActions}
+        innerCardContent={cardContent?.(data)}
+        {...cardProps}
+      />
+    );
+  };
 
 const CardView = ({
   id = "",
