@@ -26,17 +26,6 @@ If your project's design follows **DS 3.x** you must use the **UI Kit 3.x** rele
 
 HV UI Kit is available as multiple npm packages. You can install them in any working **React v16.x** project.
 
-### Configuring the npm registry
-
-The packages are being published to a corporate Hitachi Vantara npm registry.
-To be able to use them, you need to associate the `@hv` scope with that registry using `npm config`:
-
-```shell
-npm config set @hv:registry https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
-```
-
-You can check if your `~/.npmrc` is already configured by running `npm config ls`.
-
 ### Package installation
 
 Install the `@hv/uikit-react-core` package and its peer dependencies:
