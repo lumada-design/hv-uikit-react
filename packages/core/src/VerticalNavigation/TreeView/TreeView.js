@@ -38,10 +38,10 @@ const TreeView = (props) => {
     (nodeId) => !collapsible || NodeTreeExpandUtils.isExpanded(expanded, nodeId),
     [collapsible, expanded]
   );
-  const isTabbable = useCallback((nodeId) => !treeviewMode || tabable === nodeId, [
-    treeviewMode,
-    tabable,
-  ]);
+  const isTabbable = useCallback(
+    (nodeId) => !treeviewMode || tabable === nodeId,
+    [treeviewMode, tabable]
+  );
   const isSelected = useCallback(
     (nodeId) => selectable && selected != null && selected === nodeId,
     [selectable, selected]

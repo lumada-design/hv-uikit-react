@@ -76,21 +76,21 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
 exports[`<HvEmptyState /> with String title/message should render correctly 1`] = `
 <WithStyles(EmptyState)
   action={
-    <ForwardRef(WithStyles)
+    <WithStyles(ForwardRef)
       component="div"
     >
       <div>
         Here are some helpful links instead:
       </div>
-      <ForwardRef(WithStyles)
+      <WithStyles(HvLink)
         route="/"
       >
         Online Help
-      </ForwardRef(WithStyles)>
-    </ForwardRef(WithStyles)>
+      </WithStyles(HvLink)>
+    </WithStyles(ForwardRef)>
   }
   icon={
-    <ForwardRef(WithStyles)
+    <WithStyles(Ghost)
       color="atmo7"
       iconSize="L"
       role="presentation"
@@ -98,26 +98,26 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
   }
   id="empty-state-custom-message"
   message={
-    <ForwardRef(WithStyles)>
+    <WithStyles(ForwardRef)>
       404 Not Found
-    </ForwardRef(WithStyles)>
+    </WithStyles(ForwardRef)>
   }
   title="This page can't be displayed"
 >
   <EmptyState
     action={
-      <ForwardRef(WithStyles)
+      <WithStyles(ForwardRef)
         component="div"
       >
         <div>
           Here are some helpful links instead:
         </div>
-        <ForwardRef(WithStyles)
+        <WithStyles(HvLink)
           route="/"
         >
           Online Help
-        </ForwardRef(WithStyles)>
-      </ForwardRef(WithStyles)>
+        </WithStyles(HvLink)>
+      </WithStyles(ForwardRef)>
     }
     classes={
       Object {
@@ -132,7 +132,7 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
       }
     }
     icon={
-      <ForwardRef(WithStyles)
+      <WithStyles(Ghost)
         color="atmo7"
         iconSize="L"
         role="presentation"
@@ -140,9 +140,9 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
     }
     id="empty-state-custom-message"
     message={
-      <ForwardRef(WithStyles)>
+      <WithStyles(ForwardRef)>
         404 Not Found
-      </ForwardRef(WithStyles)>
+      </WithStyles(ForwardRef)>
     }
     title="This page can't be displayed"
   >

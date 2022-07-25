@@ -21,7 +21,7 @@ exports[`Card should be able to render with every property defined 1`] = `
   id="test"
   innerCardContent={<SingleContent />}
   mediaHeight={186}
-  mediaPath="IMAGE_MOCK"
+  mediaPath="test-file-stub"
   mediaTitle="Compressor"
   subheader="Compressor"
 >
@@ -79,7 +79,7 @@ exports[`Card should be able to render with every property defined 1`] = `
     id="test"
     innerCardContent={<SingleContent />}
     mediaHeight={186}
-    mediaPath="IMAGE_MOCK"
+    mediaPath="test-file-stub"
     mediaTitle="Compressor"
     subheader="Compressor"
   >
@@ -361,7 +361,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                       <WithStyles(Media)
                         id="test-media"
                         mediaHeight={186}
-                        mediaPath="IMAGE_MOCK"
+                        mediaPath="test-file-stub"
                         title="Compressor"
                       >
                         <Media
@@ -373,7 +373,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                           }
                           id="test-media"
                           mediaHeight={186}
-                          mediaPath="IMAGE_MOCK"
+                          mediaPath="test-file-stub"
                           title="Compressor"
                         >
                           <WithStyles(ForwardRef(CardMedia))
@@ -384,7 +384,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                               }
                             }
                             id="test-media"
-                            image="IMAGE_MOCK"
+                            image="test-file-stub"
                             role="img"
                             style={
                               Object {
@@ -402,7 +402,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                                 }
                               }
                               id="test-media"
-                              image="IMAGE_MOCK"
+                              image="test-file-stub"
                               role="img"
                               style={
                                 Object {
@@ -417,7 +417,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                                 role="img"
                                 style={
                                   Object {
-                                    "backgroundImage": "url(\\"IMAGE_MOCK\\")",
+                                    "backgroundImage": "url(\\"test-file-stub\\")",
                                     "height": "186px",
                                   }
                                 }

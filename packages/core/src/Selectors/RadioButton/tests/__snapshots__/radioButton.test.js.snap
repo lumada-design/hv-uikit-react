@@ -36,9 +36,9 @@ exports[`RadioButton should render correctly 1`] = `
         }
       }
       control={
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef(Radio))
           checkedIcon={
-            <ForwardRef(WithStyles)
+            <WithStyles(RadioButtonSelected)
               className="HvRadioButton-icon"
             />
           }
@@ -46,7 +46,7 @@ exports[`RadioButton should render correctly 1`] = `
           color="default"
           disableRipple={true}
           icon={
-            <ForwardRef(WithStyles)
+            <WithStyles(RadioButtonUnselected)
               className="HvRadioButton-icon"
             />
           }
@@ -76,9 +76,9 @@ exports[`RadioButton should render correctly 1`] = `
           }
         }
         control={
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef(Radio))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(RadioButtonSelected)
                 className="HvRadioButton-icon"
               />
             }
@@ -86,7 +86,7 @@ exports[`RadioButton should render correctly 1`] = `
             color="default"
             disableRipple={true}
             icon={
-              <ForwardRef(WithStyles)
+              <WithStyles(RadioButtonUnselected)
                 className="HvRadioButton-icon"
               />
             }
@@ -108,7 +108,7 @@ exports[`RadioButton should render correctly 1`] = `
         >
           <WithStyles(ForwardRef(Radio))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(RadioButtonSelected)
                 className="HvRadioButton-icon"
               />
             }
@@ -116,7 +116,7 @@ exports[`RadioButton should render correctly 1`] = `
             color="default"
             disableRipple={true}
             icon={
-              <ForwardRef(WithStyles)
+              <WithStyles(RadioButtonUnselected)
                 className="HvRadioButton-icon"
               />
             }
@@ -131,7 +131,7 @@ exports[`RadioButton should render correctly 1`] = `
           >
             <ForwardRef(Radio)
               checkedIcon={
-                <ForwardRef(WithStyles)
+                <WithStyles(RadioButtonSelected)
                   className="HvRadioButton-icon"
                 />
               }
@@ -148,7 +148,7 @@ exports[`RadioButton should render correctly 1`] = `
               color="default"
               disableRipple={true}
               icon={
-                <ForwardRef(WithStyles)
+                <WithStyles(RadioButtonUnselected)
                   className="HvRadioButton-icon"
                 />
               }
@@ -163,7 +163,7 @@ exports[`RadioButton should render correctly 1`] = `
             >
               <WithStyles(ForwardRef(SwitchBase))
                 checkedIcon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(RadioButtonSelected)
                     className="HvRadioButton-icon"
                   />
                 }
@@ -179,7 +179,7 @@ exports[`RadioButton should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(RadioButtonUnselected)
                     className="HvRadioButton-icon"
                   />
                 }
@@ -195,7 +195,7 @@ exports[`RadioButton should render correctly 1`] = `
               >
                 <ForwardRef(SwitchBase)
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(RadioButtonSelected)
                       className="HvRadioButton-icon"
                     />
                   }
@@ -212,7 +212,7 @@ exports[`RadioButton should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(RadioButtonUnselected)
                       className="HvRadioButton-icon"
                     />
                   }

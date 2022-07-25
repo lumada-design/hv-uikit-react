@@ -4,21 +4,60 @@ const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
 
 module.exports = {
   root: true,
-  extends: ["airbnb", "prettier", "prettier/@typescript-eslint"],
+  extends: ["airbnb", "prettier"],
   plugins: ["prettier", "react-hooks", "@typescript-eslint"],
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: javascriptFileExtensions }],
-    "react/jsx-wrap-multilines": ["error", { declaration: false, assignment: false }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        extensions: javascriptFileExtensions,
+      },
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        declaration: false,
+        assignment: false,
+      },
+    ],
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
-
-    // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
-    "no-unused-expressions": "off",
     "react/forbid-prop-types": "off",
+    "react/jsx-fragments": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-no-bind": "off",
+    "react/no-unstable-nested-components": [
+      "warn",
+      {
+        allowAsProps: true,
+      },
+    ],
+    "arrow-body-style": "off",
+    "default-param-last": "off",
+    "react/function-component-definition": "off",
+    "no-restricted-exports": "off",
+    "testing-library/prefer-screen-queries": "off",
+    "testing-library/render-result-naming-convention": "off",
+    "testing-library/no-node-access": "off",
+    "react/jsx-no-useless-fragment": [
+      "warn",
+      {
+        allowExpressions: true,
+      },
+    ],
+    "prefer-regex-literals": [
+      "warn",
+      {
+        disallowRedundantWrapping: true,
+      },
+    ],
+    "default-case-last": "off",
+    "class-methods-use-this": "off",
+    "prefer-arrow-callback": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -27,8 +66,16 @@ module.exports = {
         jsx: "never",
         ts: "never",
         tsx: "never",
+        json: "never",
+        "": "never",
       },
     ],
+    "react/no-unused-class-component-methods": "warn",
+    "react/prop-types": "warn",
+    "no-unused-expressions": "warn",
+    "no-promise-executor-return": "warn",
+    "react/jsx-no-constructed-context-values": "warn",
+    "no-constructor-return": "warn",
   },
   overrides: [
     {
@@ -37,14 +84,27 @@ module.exports = {
         "no-console": "off",
         "no-alert": "off",
         "no-any": 0,
-        "react/prop-types": "off",
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "react/jsx-no-bind": "off",
+        "react/no-unstable-nested-components": "off",
+        "import/no-relative-packages": "off",
       },
     },
     {
       files: ["*.test.js"],
-      env: { jest: true },
+      env: {
+        jest: true,
+      },
       rules: {
-        "import/no-unresolved": [2, { ignore: ["^testing-utils$"] }],
+        "import/no-unresolved": [
+          2,
+          {
+            ignore: ["^testing-utils$"],
+          },
+        ],
+        "no-promise-executor-return": "off",
+        "import/no-extraneous-dependencies": "off",
       },
     },
     {
@@ -65,12 +125,7 @@ module.exports = {
           },
         ],
       },
-      extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "prettier/@typescript-eslint",
-      ],
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },

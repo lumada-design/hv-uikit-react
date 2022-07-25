@@ -238,7 +238,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         }
         disablePortal={false}
         disabled={false}
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(MoreOptionsVertical) />}
         id="id-menu"
         keepOpened={false}
         onClick={[Function]}
@@ -274,7 +274,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           }
           disablePortal={false}
           disabled={false}
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(MoreOptionsVertical) />}
           id="id-menu"
           keepOpened={false}
           onClick={[Function]}
@@ -310,7 +310,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             }
             disablePortal={false}
             disabled={false}
-            icon={<ForwardRef(WithStyles) />}
+            icon={<WithStyles(MoreOptionsVertical) />}
             id="id-menu"
             keepOpened={false}
             onClick={[Function]}
@@ -683,7 +683,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         }
         disablePortal={false}
         disabled={false}
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(MoreOptionsVertical) />}
         id="id-menu"
         keepOpened={false}
         onClick={[Function]}
@@ -723,7 +723,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           }
           disablePortal={false}
           disabled={false}
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(MoreOptionsVertical) />}
           id="id-menu"
           keepOpened={false}
           onClick={[Function]}
@@ -763,7 +763,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
             }
             disablePortal={false}
             disabled={false}
-            icon={<ForwardRef(WithStyles) />}
+            icon={<WithStyles(MoreOptionsVertical) />}
             id="id-menu"
             keepOpened={false}
             onClick={[Function]}
@@ -1446,7 +1446,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         }
         disablePortal={false}
         disabled={false}
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(MoreOptionsVertical) />}
         id="id-menu"
         keepOpened={false}
         onClick={[Function]}
@@ -1478,7 +1478,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           }
           disablePortal={false}
           disabled={false}
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(MoreOptionsVertical) />}
           id="id-menu"
           keepOpened={false}
           onClick={[Function]}
@@ -1510,7 +1510,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             }
             disablePortal={false}
             disabled={false}
-            icon={<ForwardRef(WithStyles) />}
+            icon={<WithStyles(MoreOptionsVertical) />}
             id="id-menu"
             keepOpened={false}
             onClick={[Function]}

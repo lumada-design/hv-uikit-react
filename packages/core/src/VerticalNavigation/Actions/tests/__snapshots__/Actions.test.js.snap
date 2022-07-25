@@ -15,7 +15,7 @@ exports[`Actions should be able to render 1`] = `
       className="HvVerticalNavigationActions-root"
     >
       <WithStyles(Action)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Play) />}
         label="Action 1"
       >
         <Action
@@ -26,7 +26,7 @@ exports[`Actions should be able to render 1`] = `
               "root": "HvVerticalNavigationAction-root",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Play) />}
           label="Action 1"
         >
           <WithStyles(ForwardRef)
@@ -203,7 +203,7 @@ exports[`Actions should be able to render 1`] = `
         </Action>
       </WithStyles(Action)>
       <WithStyles(Action)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Stop) />}
         label="Action 3"
       >
         <Action
@@ -214,7 +214,7 @@ exports[`Actions should be able to render 1`] = `
               "root": "HvVerticalNavigationAction-root",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Stop) />}
           label="Action 3"
         >
           <WithStyles(ForwardRef)

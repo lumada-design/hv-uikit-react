@@ -1094,21 +1094,21 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
         }
         indeterminate={true}
         label={
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             component="span"
             variant="highlightText"
           >
             <React.Fragment>
               2
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="normalText"
               >
                  of 
                 3
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </React.Fragment>
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         }
         onChange={[Function]}
       >
@@ -1129,21 +1129,21 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           indeterminate={true}
           label={
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               component="span"
               variant="highlightText"
             >
               <React.Fragment>
                 2
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="normalText"
                 >
                    of 
                   3
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               </React.Fragment>
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
         >
@@ -1156,10 +1156,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               }
             }
             control={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef(Checkbox))
                 checked={false}
                 checkedIcon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(CheckboxCheck)
                     className="HvCheckBox-icon"
                   />
                 }
@@ -1168,13 +1168,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(Checkbox)
                     className="HvCheckBox-icon"
                   />
                 }
                 indeterminate={true}
                 indeterminateIcon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(CheckboxPartial)
                     className="HvCheckBox-icon"
                   />
                 }
@@ -1185,21 +1185,21 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             disabled={false}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="highlightText"
               >
                 <React.Fragment>
                   2
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     component="span"
                     variant="normalText"
                   >
                      of 
                     3
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 </React.Fragment>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             labelPlacement="end"
           >
@@ -1216,10 +1216,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 }
               }
               control={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef(Checkbox))
                   checked={false}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(CheckboxCheck)
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1228,13 +1228,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(Checkbox)
                       className="HvCheckBox-icon"
                     />
                   }
                   indeterminate={true}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(CheckboxPartial)
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1245,21 +1245,21 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               }
               disabled={false}
               label={
-                <ForwardRef(WithStyles)
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="highlightText"
                 >
                   <React.Fragment>
                     2
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       component="span"
                       variant="normalText"
                     >
                        of 
                       3
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   </React.Fragment>
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
               labelPlacement="end"
             >
@@ -1269,7 +1269,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 <WithStyles(ForwardRef(Checkbox))
                   checked={false}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(CheckboxCheck)
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1278,13 +1278,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(Checkbox)
                       className="HvCheckBox-icon"
                     />
                   }
                   indeterminate={true}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(CheckboxPartial)
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1295,7 +1295,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   <ForwardRef(Checkbox)
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxCheck)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1314,13 +1314,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(Checkbox)
                         className="HvCheckBox-icon"
                       />
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(CheckboxPartial)
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1331,7 +1331,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     <WithStyles(ForwardRef(SwitchBase))
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           fontSize="default"
                         />
@@ -1348,7 +1348,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(CheckboxPartial)
                           className="HvCheckBox-icon"
                           fontSize="default"
                         />
@@ -1366,7 +1366,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       <ForwardRef(SwitchBase)
                         checked={false}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -1384,7 +1384,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(CheckboxPartial)
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -2270,10 +2270,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Checkbox))
                             checked={true}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxCheck)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -2282,12 +2282,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(Checkbox)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -2313,10 +2313,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Checkbox))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -2325,12 +2325,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -2349,7 +2349,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <WithStyles(ForwardRef(Checkbox))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -2358,12 +2358,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -2374,7 +2374,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <ForwardRef(Checkbox)
                                 checked={true}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxCheck)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -2393,12 +2393,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(Checkbox)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
                                 indeterminateIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxPartial)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -2409,7 +2409,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={true}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(CheckboxCheck)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -2426,7 +2426,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(Checkbox)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -2444,7 +2444,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   <ForwardRef(SwitchBase)
                                     checked={true}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(CheckboxCheck)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -2462,7 +2462,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(Checkbox)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -3258,10 +3258,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Checkbox))
                             checked={false}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxCheck)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -3270,12 +3270,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(Checkbox)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -3301,10 +3301,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Checkbox))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -3313,12 +3313,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -3337,7 +3337,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <WithStyles(ForwardRef(Checkbox))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -3346,12 +3346,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -3362,7 +3362,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <ForwardRef(Checkbox)
                                 checked={false}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxCheck)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -3381,12 +3381,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(Checkbox)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
                                 indeterminateIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxPartial)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -3397,7 +3397,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={false}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(CheckboxCheck)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -3414,7 +3414,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(Checkbox)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -3432,7 +3432,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   <ForwardRef(SwitchBase)
                                     checked={false}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(CheckboxCheck)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -3450,7 +3450,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(Checkbox)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -4246,10 +4246,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Checkbox))
                             checked={true}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxCheck)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -4258,12 +4258,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disableRipple={true}
                             disabled={false}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(Checkbox)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(CheckboxPartial)
                                 className="HvCheckBox-icon HvList-icon"
                               />
                             }
@@ -4289,10 +4289,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Checkbox))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -4301,12 +4301,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -4325,7 +4325,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <WithStyles(ForwardRef(Checkbox))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxCheck)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -4334,12 +4334,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disableRipple={true}
                               disabled={false}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(Checkbox)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(CheckboxPartial)
                                   className="HvCheckBox-icon HvList-icon"
                                 />
                               }
@@ -4350,7 +4350,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <ForwardRef(Checkbox)
                                 checked={true}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxCheck)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -4369,12 +4369,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(Checkbox)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
                                 indeterminateIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(CheckboxPartial)
                                     className="HvCheckBox-icon HvList-icon"
                                   />
                                 }
@@ -4385,7 +4385,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={true}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(CheckboxCheck)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -4402,7 +4402,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(Checkbox)
                                       className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
@@ -4420,7 +4420,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   <ForwardRef(SwitchBase)
                                     checked={true}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(CheckboxCheck)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -4438,7 +4438,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(Checkbox)
                                         className="HvCheckBox-icon HvList-icon"
                                         fontSize="default"
                                       />
@@ -6778,10 +6778,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Radio))
                             checked={true}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonSelected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -6789,7 +6789,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             color="default"
                             disableRipple={true}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonUnselected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -6814,10 +6814,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Radio))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -6825,7 +6825,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -6843,7 +6843,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             <WithStyles(ForwardRef(Radio))
                               checked={true}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -6851,7 +6851,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -6862,7 +6862,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <ForwardRef(Radio)
                                 checked={true}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonSelected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -6879,7 +6879,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 color="default"
                                 disableRipple={true}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonUnselected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -6890,7 +6890,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={true}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonSelected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -6906,7 +6906,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonUnselected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -6918,7 +6918,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   <ForwardRef(SwitchBase)
                                     checked={true}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonSelected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }
@@ -6935,7 +6935,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonUnselected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }
@@ -7572,10 +7572,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Radio))
                             checked={false}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonSelected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -7583,7 +7583,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             color="default"
                             disableRipple={true}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonUnselected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -7608,10 +7608,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Radio))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -7619,7 +7619,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -7637,7 +7637,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             <WithStyles(ForwardRef(Radio))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -7645,7 +7645,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -7656,7 +7656,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <ForwardRef(Radio)
                                 checked={false}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonSelected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -7673,7 +7673,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 color="default"
                                 disableRipple={true}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonUnselected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -7684,7 +7684,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={false}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonSelected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -7700,7 +7700,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonUnselected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -7712,7 +7712,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   <ForwardRef(SwitchBase)
                                     checked={false}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonSelected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }
@@ -7729,7 +7729,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonUnselected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }
@@ -8366,10 +8366,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           }
                         }
                         control={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef(Radio))
                             checked={false}
                             checkedIcon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonSelected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -8377,7 +8377,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             color="default"
                             disableRipple={true}
                             icon={
-                              <ForwardRef(WithStyles)
+                              <WithStyles(RadioButtonUnselected)
                                 className="HvRadioButton-icon HvList-icon"
                               />
                             }
@@ -8402,10 +8402,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                           }
                           control={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef(Radio))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -8413,7 +8413,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -8431,7 +8431,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             <WithStyles(ForwardRef(Radio))
                               checked={false}
                               checkedIcon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonSelected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -8439,7 +8439,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               color="default"
                               disableRipple={true}
                               icon={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(RadioButtonUnselected)
                                   className="HvRadioButton-icon HvList-icon"
                                 />
                               }
@@ -8450,7 +8450,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <ForwardRef(Radio)
                                 checked={false}
                                 checkedIcon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonSelected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -8467,7 +8467,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 color="default"
                                 disableRipple={true}
                                 icon={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(RadioButtonUnselected)
                                     className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
@@ -8478,7 +8478,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <WithStyles(ForwardRef(SwitchBase))
                                   checked={false}
                                   checkedIcon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonSelected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -8494,7 +8494,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disableRipple={true}
                                   disabled={false}
                                   icon={
-                                    <ForwardRef(WithStyles)
+                                    <WithStyles(RadioButtonUnselected)
                                       className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
@@ -8506,7 +8506,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   <ForwardRef(SwitchBase)
                                     checked={false}
                                     checkedIcon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonSelected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }
@@ -8523,7 +8523,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     disableRipple={true}
                                     disabled={false}
                                     icon={
-                                      <ForwardRef(WithStyles)
+                                      <WithStyles(RadioButtonUnselected)
                                         className="HvRadioButton-icon HvList-icon"
                                       />
                                     }

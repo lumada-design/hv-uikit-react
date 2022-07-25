@@ -34,7 +34,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
       className="HvVerticalNavigationTreeView-root"
     >
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Play) />}
         label="System"
         nodeId="1"
       >
@@ -58,7 +58,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Play) />}
           label="System"
           nodeId="1"
         >
@@ -776,7 +776,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
         </TreeViewItem>
       </WithStyles(TreeViewItem)>
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Stop) />}
         label="Administration"
         nodeId="7"
       >
@@ -800,7 +800,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Stop) />}
           label="Administration"
           nodeId="7"
         >
@@ -1312,7 +1312,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
       role="tree"
     >
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Play) />}
         label="System"
         nodeId="1"
       >
@@ -1336,7 +1336,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Play) />}
           label="System"
           nodeId="1"
         >
@@ -2059,7 +2059,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
         </TreeViewItem>
       </WithStyles(TreeViewItem)>
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<WithStyles(Stop) />}
         label="Administration"
         nodeId="7"
       >
@@ -2083,7 +2083,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<WithStyles(Stop) />}
           label="Administration"
           nodeId="7"
         >

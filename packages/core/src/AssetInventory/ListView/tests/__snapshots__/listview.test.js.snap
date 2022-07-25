@@ -2,7 +2,7 @@
 
 exports[`AssetInventoryListView should render correctly 1`] = `
 <WithStyles(ListView)
-  icon={<ForwardRef(WithStyles) />}
+  icon={<WithStyles(Level1) />}
   id="list"
   renderer={[Function]}
   values={
@@ -117,7 +117,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         "tableHead": "HvListView-tableHead",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
+    icon={<WithStyles(Level1) />}
     id="list"
     renderer={[Function]}
     values={
@@ -1870,11 +1870,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         <WithStyles(HvTooltip)
                                           placement="top-start"
                                           title={
-                                            <ForwardRef(WithStyles)
+                                            <WithStyles(ForwardRef)
                                               variant="infoText"
                                             >
                                               The long status description
-                                            </ForwardRef(WithStyles)>
+                                            </WithStyles(ForwardRef)>
                                           }
                                         >
                                           <HvTooltip
@@ -1895,11 +1895,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                             }
                                             placement="top-start"
                                             title={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(ForwardRef)
                                                 variant="infoText"
                                               >
                                                 The long status description
-                                              </ForwardRef(WithStyles)>
+                                              </WithStyles(ForwardRef)>
                                             }
                                           >
                                             <WithStyles(ForwardRef(Tooltip))
@@ -1931,11 +1931,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               enterDelay={300}
                                               placement="top-start"
                                               title={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(ForwardRef)
                                                   variant="infoText"
                                                 >
                                                   The long status description
-                                                </ForwardRef(WithStyles)>
+                                                </WithStyles(ForwardRef)>
                                               }
                                             >
                                               <ForwardRef(Tooltip)
@@ -1976,11 +1976,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 enterDelay={300}
                                                 placement="top-start"
                                                 title={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(ForwardRef)
                                                     variant="infoText"
                                                   >
                                                     The long status description
-                                                  </ForwardRef(WithStyles)>
+                                                  </WithStyles(ForwardRef)>
                                                 }
                                               >
                                                 <WithStyles(ForwardRef)
@@ -2092,11 +2092,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         <WithStyles(HvTooltip)
                                           placement="top-start"
                                           title={
-                                            <ForwardRef(WithStyles)
+                                            <WithStyles(ForwardRef)
                                               variant="infoText"
                                             >
                                               The long event description
-                                            </ForwardRef(WithStyles)>
+                                            </WithStyles(ForwardRef)>
                                           }
                                         >
                                           <HvTooltip
@@ -2117,11 +2117,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                             }
                                             placement="top-start"
                                             title={
-                                              <ForwardRef(WithStyles)
+                                              <WithStyles(ForwardRef)
                                                 variant="infoText"
                                               >
                                                 The long event description
-                                              </ForwardRef(WithStyles)>
+                                              </WithStyles(ForwardRef)>
                                             }
                                           >
                                             <WithStyles(ForwardRef(Tooltip))
@@ -2153,11 +2153,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               enterDelay={300}
                                               placement="top-start"
                                               title={
-                                                <ForwardRef(WithStyles)
+                                                <WithStyles(ForwardRef)
                                                   variant="infoText"
                                                 >
                                                   The long event description
-                                                </ForwardRef(WithStyles)>
+                                                </WithStyles(ForwardRef)>
                                               }
                                             >
                                               <ForwardRef(Tooltip)
@@ -2198,11 +2198,11 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 enterDelay={300}
                                                 placement="top-start"
                                                 title={
-                                                  <ForwardRef(WithStyles)
+                                                  <WithStyles(ForwardRef)
                                                     variant="infoText"
                                                   >
                                                     The long event description
-                                                  </ForwardRef(WithStyles)>
+                                                  </WithStyles(ForwardRef)>
                                                 }
                                               >
                                                 <WithStyles(ForwardRef)
@@ -6233,9 +6233,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -6244,13 +6244,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
                                                                 id="checkbox-1-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -6281,9 +6281,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 }
                                                               }
                                                               control={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -6292,13 +6292,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-1-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -6322,7 +6322,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               >
                                                                 <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -6331,13 +6331,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-1-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -6352,7 +6352,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 >
                                                                   <ForwardRef(Checkbox)
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -6371,13 +6371,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
                                                                     id="checkbox-1-input"
                                                                     indeterminateIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxPartial)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -6392,7 +6392,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <WithStyles(ForwardRef(SwitchBase))
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -6409,7 +6409,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -6428,7 +6428,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <ForwardRef(SwitchBase)
                                                                         checkedIcon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(CheckboxCheck)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />
@@ -6446,7 +6446,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         disableRipple={true}
                                                                         disabled={false}
                                                                         icon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(Checkbox)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />
@@ -9559,9 +9559,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -9570,13 +9570,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
                                                                 id="checkbox-2-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -9607,9 +9607,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 }
                                                               }
                                                               control={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -9618,13 +9618,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-2-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -9648,7 +9648,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               >
                                                                 <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -9657,13 +9657,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-2-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -9678,7 +9678,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 >
                                                                   <ForwardRef(Checkbox)
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -9697,13 +9697,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
                                                                     id="checkbox-2-input"
                                                                     indeterminateIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxPartial)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -9718,7 +9718,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <WithStyles(ForwardRef(SwitchBase))
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -9735,7 +9735,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -9754,7 +9754,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <ForwardRef(SwitchBase)
                                                                         checkedIcon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(CheckboxCheck)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />
@@ -9772,7 +9772,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         disableRipple={true}
                                                                         disabled={false}
                                                                         icon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(Checkbox)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />
@@ -12885,9 +12885,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               }
                                                             }
                                                             control={
-                                                              <ForwardRef(WithStyles)
+                                                              <WithStyles(ForwardRef(Checkbox))
                                                                 checkedIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxCheck)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -12896,13 +12896,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 disableRipple={true}
                                                                 disabled={false}
                                                                 icon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(Checkbox)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
                                                                 id="checkbox-3-input"
                                                                 indeterminateIcon={
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(CheckboxPartial)
                                                                     className="HvCheckBox-icon"
                                                                   />
                                                                 }
@@ -12933,9 +12933,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 }
                                                               }
                                                               control={
-                                                                <ForwardRef(WithStyles)
+                                                                <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -12944,13 +12944,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-3-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -12974,7 +12974,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               >
                                                                 <WithStyles(ForwardRef(Checkbox))
                                                                   checkedIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxCheck)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -12983,13 +12983,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   disableRipple={true}
                                                                   disabled={false}
                                                                   icon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(Checkbox)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
                                                                   id="checkbox-3-input"
                                                                   indeterminateIcon={
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(CheckboxPartial)
                                                                       className="HvCheckBox-icon"
                                                                     />
                                                                   }
@@ -13004,7 +13004,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 >
                                                                   <ForwardRef(Checkbox)
                                                                     checkedIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxCheck)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -13023,13 +13023,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     disableRipple={true}
                                                                     disabled={false}
                                                                     icon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(Checkbox)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
                                                                     id="checkbox-3-input"
                                                                     indeterminateIcon={
-                                                                      <ForwardRef(WithStyles)
+                                                                      <WithStyles(CheckboxPartial)
                                                                         className="HvCheckBox-icon"
                                                                       />
                                                                     }
@@ -13044,7 +13044,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <WithStyles(ForwardRef(SwitchBase))
                                                                       checkedIcon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(CheckboxCheck)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -13061,7 +13061,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       disableRipple={true}
                                                                       disabled={false}
                                                                       icon={
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(Checkbox)
                                                                           className="HvCheckBox-icon"
                                                                           fontSize="default"
                                                                         />
@@ -13080,7 +13080,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <ForwardRef(SwitchBase)
                                                                         checkedIcon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(CheckboxCheck)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />
@@ -13098,7 +13098,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         disableRipple={true}
                                                                         disabled={false}
                                                                         icon={
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(Checkbox)
                                                                             className="HvCheckBox-icon"
                                                                             fontSize="default"
                                                                           />

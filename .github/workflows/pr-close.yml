@@ -9,12 +9,12 @@ env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.repository }}#${{ github.event.number }}"
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
 jobs:
   CleanupDeployment:
     name: Cleanup Deployment
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout

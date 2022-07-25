@@ -22,14 +22,14 @@
   "scripts": {
     "build": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize build:*",
     "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
-    "build:copy": "npx cp src/IconBase.* bin/",
+    "build:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
     "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward bin -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward bin -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
-    "clean": "npx del-cli dist hv-uikit-react-icons-*.tgz",
-    "clean:all": "npx del-cli dist bin hv-uikit-react-icons-*.tgz",
+    "clean": "npx rimraf dist hv-uikit-react-icons-*.tgz",
+    "clean:all": "npx rimraf dist bin hv-uikit-react-icons-*.tgz",
     "prepare": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize --parallel build:convert build:copy",
     "prepack": "npm run build",
     "pack": "npm pack",
@@ -43,21 +43,16 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
     "@hv/uikit-common-themes": "^2.0.7",
-    "clsx": "^1.1.0",
-    "core-js": "^3.8.1",
-    "prop-types": "^15.7.2"
+    "clsx": "^1.2.1",
+    "prop-types": "^15.8.1",
+    "yargs": "^17.4.1"
   },
   "devDependencies": {
-    "cash-cp": "^0.2.0",
-    "del-cli": "^3.0.1",
     "htmltojsx": "^0.3.0",
     "jsdom-no-contextify": "^3.1.0",
     "npm-run-all": "^4.1.5",
-    "recursive-readdir": "^2.2.2",
-    "svgo": "^1.3.2",
-    "yargs": "^15.3.0"
+    "svgo": "^1.3.2"
   },
   "files": [
     "dist"

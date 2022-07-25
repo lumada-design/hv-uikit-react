@@ -9,6 +9,17 @@ import { HvPaginationCommonProps } from "../Pagination";
 
 export interface AssetInventoryConfiguration extends ListViewConfiguration, CardViewConfiguration {}
 
+export type ClassKey =
+  | "root"
+  | "controlsContainer"
+  | "search"
+  | "rightControls"
+  | "multiButtons"
+  | "viewContainer"
+  | "sortContainer"
+  | "searchBoxContainer"
+  | "pagination";
+  
 export type AssetInventoryMetadata = {
   /**
    * id associated with data entry
@@ -162,16 +173,5 @@ export interface HvAssetInventoryProps
    */
   paginationProps?: HvPaginationCommonProps;
 }
-
-export type ClassKey =
-  | "root"
-  | "controlsContainer"
-  | "search"
-  | "rightControls"
-  | "multiButtons"
-  | "viewContainer"
-  | "sortContainer"
-  | "searchBoxContainer"
-  | "pagination";
 
 export default function HvAssetInventory(props: HvAssetInventoryProps): JSX.Element | null;

@@ -18,9 +18,8 @@ import { buildLink } from "./addins";
  * @param {Object} classes - The classes to be applied.
  * @returns {function(*): *} A container that has the row value formatted if required.
  */
-const wrapper = (format, id) => (data) => (
-  <CellWithTooltip data={format ? format(data) : data.row._original[id]} />
-);
+const wrapper = (format, id) => (data) =>
+  <CellWithTooltip data={format ? format(data) : data.row._original[id]} />;
 
 /**
  *  Set the class responsible for the alignment of the displayed text,

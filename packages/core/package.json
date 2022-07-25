@@ -5,10 +5,6 @@
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "exports": {
-    ".": "./dist/modern/index.js",
-    "./dist/": "./dist/modern/"
-  },
   "main": "./dist/index.js",
   "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",
@@ -25,14 +21,14 @@
     "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward src -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward src -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward src -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
-    "build:post:clean-snapshots": "npx del-cli **/dist/**/tests",
+    "build:post:clean-snapshots": "npx rimraf **/dist/**/tests",
     "dev": "npx npm-run-all --npm-path npm clean dev:babel:watch",
     "dev:babel:watch": "BABEL_ENV=commonjs npx babel --root-mode upward src -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored --watch",
-    "copy": "npx cp -f src/index.js dist/index.es.js",
-    "clean": "npx del-cli dist hv-uikit-react-core-*.tgz",
-    "test": "jest -c config/jest-config.js --coverage",
-    "test:watch": "jest -c config/jest-config.js --watch",
-    "test:update": "jest -c ./config/jest-config.js --u",
+    "copy": "npx cpy-cli -f src/index.js dist/index.es.js",
+    "clean": "npx rimraf dist hv-uikit-react-core-*.tgz",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:update": "jest --u",
     "prepack": "npm run build",
     "pack": "npm pack",
     "link": "npm link",
@@ -46,23 +42,21 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.5",
     "@hv/uikit-common-themes": "^2.0.7",
     "@hv/uikit-react-icons": "^2.3.5",
     "attr-accept": "^2.2.2",
-    "clsx": "^1.1.0",
-    "core-js": "^3.8.1",
+    "clsx": "^1.2.1",
     "deep-diff": "^1.0.2",
-    "detect-browser": "^5.1.0",
+    "detect-browser": "^5.3.0",
     "focus-trap-react": "^6.0.0",
-    "focus-within-polyfill": "5.1.0",
+    "focus-within-polyfill": "5.2.1",
     "hoist-non-react-statics": "^3.3.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "plotly.js-basic-dist": "^1.54.1",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react-google-charts": "^3.0.15",
-    "react-outside-click-handler": "^1.2.4",
+    "react-outside-click-handler": "^1.3.0",
     "react-plotly.js": "^2.4.0",
     "react-resize-aware": "^3.0.0",
     "react-reveal": "^1.2.2",
@@ -71,23 +65,10 @@
   },
   "devDependencies": {
     "@types/plotly.js": "^1.50.12",
-    "cash-cp": "^0.2.0",
-    "cross-env": "^7.0.0",
-    "del-cli": "^1.1.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.5.0",
-    "jest": "^24.9.0",
-    "jest-canvas-mock": "^2.2.0",
-    "jest-junit": "^6.3.0",
-    "jss-snapshot-serializer": "^1.0.0",
-    "nodemon": "^2.0.4",
-    "npm-run-all": "^4.1.5"
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.3"
   },
   "files": [
     "dist"
-  ],
-  "jest": {
-    "testEnvironment": "node"
-  }
+  ]
 }

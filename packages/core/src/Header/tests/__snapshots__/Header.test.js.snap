@@ -546,7 +546,7 @@ exports[`Header should be able to render 1`] = `
                                     >
                                       <WithStyles(Badge)
                                         count={1}
-                                        icon={<ForwardRef(WithStyles) />}
+                                        icon={<WithStyles(Alert) />}
                                       >
                                         <Badge
                                           classes={
@@ -561,7 +561,7 @@ exports[`Header should be able to render 1`] = `
                                             }
                                           }
                                           count={1}
-                                          icon={<ForwardRef(WithStyles) />}
+                                          icon={<WithStyles(Alert) />}
                                         >
                                           <div
                                             aria-label={null}

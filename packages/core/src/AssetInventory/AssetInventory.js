@@ -218,15 +218,8 @@ class AssetInventory extends React.Component {
   };
 
   renderSort = () => {
-    const {
-      id,
-      labels,
-      configuration,
-      classes,
-      onSortChange,
-      disablePortal,
-      sortProps,
-    } = this.props;
+    const { id, labels, configuration, classes, onSortChange, disablePortal, sortProps } =
+      this.props;
     const { selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy,

@@ -38,9 +38,9 @@ exports[`CheckBox should render correctly 1`] = `
         }
       }
       control={
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef(Checkbox))
           checkedIcon={
-            <ForwardRef(WithStyles)
+            <WithStyles(CheckboxCheck)
               className="HvCheckBox-icon"
             />
           }
@@ -49,13 +49,13 @@ exports[`CheckBox should render correctly 1`] = `
           disableRipple={true}
           disabled={false}
           icon={
-            <ForwardRef(WithStyles)
+            <WithStyles(Checkbox)
               className="HvCheckBox-icon"
             />
           }
           id="test-input"
           indeterminateIcon={
-            <ForwardRef(WithStyles)
+            <WithStyles(CheckboxPartial)
               className="HvCheckBox-icon"
             />
           }
@@ -86,9 +86,9 @@ exports[`CheckBox should render correctly 1`] = `
           }
         }
         control={
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef(Checkbox))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(CheckboxCheck)
                 className="HvCheckBox-icon"
               />
             }
@@ -97,13 +97,13 @@ exports[`CheckBox should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             icon={
-              <ForwardRef(WithStyles)
+              <WithStyles(Checkbox)
                 className="HvCheckBox-icon"
               />
             }
             id="test-input"
             indeterminateIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(CheckboxPartial)
                 className="HvCheckBox-icon"
               />
             }
@@ -127,7 +127,7 @@ exports[`CheckBox should render correctly 1`] = `
         >
           <WithStyles(ForwardRef(Checkbox))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(CheckboxCheck)
                 className="HvCheckBox-icon"
               />
             }
@@ -136,13 +136,13 @@ exports[`CheckBox should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             icon={
-              <ForwardRef(WithStyles)
+              <WithStyles(Checkbox)
                 className="HvCheckBox-icon"
               />
             }
             id="test-input"
             indeterminateIcon={
-              <ForwardRef(WithStyles)
+              <WithStyles(CheckboxPartial)
                 className="HvCheckBox-icon"
               />
             }
@@ -157,7 +157,7 @@ exports[`CheckBox should render correctly 1`] = `
           >
             <ForwardRef(Checkbox)
               checkedIcon={
-                <ForwardRef(WithStyles)
+                <WithStyles(CheckboxCheck)
                   className="HvCheckBox-icon"
                 />
               }
@@ -176,13 +176,13 @@ exports[`CheckBox should render correctly 1`] = `
               disableRipple={true}
               disabled={false}
               icon={
-                <ForwardRef(WithStyles)
+                <WithStyles(Checkbox)
                   className="HvCheckBox-icon"
                 />
               }
               id="test-input"
               indeterminateIcon={
-                <ForwardRef(WithStyles)
+                <WithStyles(CheckboxPartial)
                   className="HvCheckBox-icon"
                 />
               }
@@ -197,7 +197,7 @@ exports[`CheckBox should render correctly 1`] = `
             >
               <WithStyles(ForwardRef(SwitchBase))
                 checkedIcon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(CheckboxCheck)
                     className="HvCheckBox-icon"
                     fontSize="default"
                   />
@@ -214,7 +214,7 @@ exports[`CheckBox should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(Checkbox)
                     className="HvCheckBox-icon"
                     fontSize="default"
                   />
@@ -233,7 +233,7 @@ exports[`CheckBox should render correctly 1`] = `
               >
                 <ForwardRef(SwitchBase)
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(CheckboxCheck)
                       className="HvCheckBox-icon"
                       fontSize="default"
                     />
@@ -251,7 +251,7 @@ exports[`CheckBox should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(Checkbox)
                       className="HvCheckBox-icon"
                       fontSize="default"
                     />
