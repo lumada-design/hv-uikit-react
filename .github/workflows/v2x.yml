@@ -35,7 +35,6 @@ on:
 #                   +----------+                +-------+
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
   RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
@@ -49,13 +48,12 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -80,13 +78,12 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -97,7 +94,7 @@ jobs:
           npm run build-documentation
 
       - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -128,12 +125,12 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -180,12 +177,12 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -209,7 +206,7 @@ jobs:
           npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
 
       - name: Archive Logs
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: applitools-logs
@@ -254,7 +251,7 @@ jobs:
           ref: "v2.x"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -268,7 +265,7 @@ jobs:
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
@@ -288,11 +285,11 @@ jobs:
 
     steps:
       # delete artifact since it was published to gh-pages
-      - uses: geekyeggo/delete-artifact@v1
+      - uses: geekyeggo/delete-artifact@v2
         with:
           name: documentation
 
-      - uses: technote-space/workflow-conclusion-action@v1
+      - uses: technote-space/workflow-conclusion-action@v2
 
       - name: generate conclusion color
         id: conclusion_color
@@ -352,7 +349,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: technote-space/workflow-conclusion-action@v1
+      - uses: technote-space/workflow-conclusion-action@v2
       - name: generate conclusion color
         id: conclusion_color
         uses: actions/github-script@v3
