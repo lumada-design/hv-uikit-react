@@ -41,8 +41,8 @@ on:
 #                   +----------+                +-------+
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
+  RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
 jobs:
   Notify-Start:
@@ -61,7 +61,7 @@ jobs:
                 {
                   "mrkdwn_in": ["text"],
                   "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
+                  "text": "${{ env.RUN_URL }}",
                   "footer": "by ${{github.actor}}"
                 }
               ]
@@ -70,24 +70,22 @@ jobs:
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
-
       - name: Bootstrap
         run: npm run bootstrap
+
+      - name: Build
+        run: npm run build
 
       - name: License Check
         run: npm run license-check
@@ -109,7 +107,7 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
@@ -127,7 +125,7 @@ jobs:
 
       - name: Archive Documentation
         if: failure()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -158,12 +156,12 @@ jobs:
         with:
           ref: "v2.x"
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -215,7 +213,7 @@ jobs:
           node-version: "14"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -228,7 +226,6 @@ jobs:
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: run Applitools Storybook Visual Testing
@@ -277,7 +274,7 @@ jobs:
           ref: "v2.x"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -291,7 +288,7 @@ jobs:
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
@@ -320,7 +317,7 @@ jobs:
           ref: "v2.x"
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
@@ -394,7 +391,7 @@ jobs:
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
                   "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                  "text": "${{ env.RUN_URL }}"
                 }
               ]
             }
