@@ -22,7 +22,7 @@ const getTheme = (uiKitTheme) => {
 const themeBuilder = (theme) => {
   const themeSpacing = createSpacing(theme);
   const themePalette = createPalette(theme);
-  const themeTypography = createTypography(themePalette, theme);
+  const themeTypography = createTypography(theme);
 
   return createTheme({
     shadows: Array(25).fill("none"),
