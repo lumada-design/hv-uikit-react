@@ -13,7 +13,8 @@ const useScrollTo = (
   href,
   offset = 0,
   options,
-  onChange
+  onChange,
+  direction = "column"
 ) => {
   const RETRY_MAX = 5;
   const [selectedIndex, setSelectedIndex] = useState(selectedIndexProp);
@@ -142,7 +143,7 @@ const useScrollTo = (
     if (option) {
       const ele = document.getElementById(id);
       if (ele) {
-        scrollElement(ele, scrollEle.current, option.offset || offset);
+        scrollElement(ele, scrollEle.current, option.offset || offset, direction);
       }
 
       if (href) {
