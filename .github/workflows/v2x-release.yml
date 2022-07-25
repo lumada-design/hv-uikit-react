@@ -25,13 +25,14 @@ env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/v2.x
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for ${{ github.repository }}/v2.x"
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v2.x of ${{ github.repository }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v2.x/
 
 jobs:
   Release:
     runs-on: [self-hosted, Linux]
     env:
+      NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
@@ -115,7 +116,7 @@ jobs:
         with:
           repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
           ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
-          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           path: gh-docs
           fetch-depth: 1
 
