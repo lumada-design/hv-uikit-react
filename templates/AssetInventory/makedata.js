@@ -1,4 +1,5 @@
 const getOption = (opts, i) => opts[i % opts.length];
+
 const getTime = (priority, index) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;

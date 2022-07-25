@@ -82,7 +82,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.stories.js", "*.stories.test.js"],
+      files: ["*.stories.js", "*.stories.test.js", "templates/**/*.jsx"],
       rules: {
         "no-console": "off",
         "no-alert": "off",

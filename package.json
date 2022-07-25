@@ -65,7 +65,7 @@
     "@hookform/resolvers": "^2.9.5",
     "@mui/material": "^5.9.0",
     "@mui/styles": "^5.9.0",
-    "@playwright/test": "^1.23.2",
+    "@playwright/test": "^1.24.0",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
