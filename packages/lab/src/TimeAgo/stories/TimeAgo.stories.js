@@ -91,6 +91,9 @@ export const LocaleOverride = () => {
     setTime(newDate.getTime());
   };
 
+  // dynamically import locales
+  // if the supported locales are known beforehand, its preferable
+  // to import them statically, to avoid bundling unnecessary locales
   const handleLocaleChange = async (event, newLocale) => {
     // prevent bundling of unwanted non-js files
     // by specifying the file extension in the dynamic import
