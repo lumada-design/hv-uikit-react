@@ -3,7 +3,7 @@ import { testingThemes } from "../../config/playwright-utils";
 import { idsToControl } from "../utils";
 
 testingThemes.forEach(async (theme) => {
-  test.describe(`Banner dawn`, () => {
+  test.describe(`Asset Inventory ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
         `/iframe.html?args=&id=templates-asset-inventory--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
