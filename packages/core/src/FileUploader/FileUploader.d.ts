@@ -19,6 +19,10 @@ export type HvFileUploaderClassKey = "root";
 export interface FileUploaderProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileUploaderClassKey> {
   /**
+   * Id to be applied to the root node.
+   */
+  id: string;
+  /**
    * An object containing all the labels.
    */
   labels?: FileUploaderLabelsProp;

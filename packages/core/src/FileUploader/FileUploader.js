@@ -70,7 +70,7 @@ FileUploader.propTypes = {
   /**
    * Id to be applied to the root node.
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   /**
    * Class names to be applied.
    */
