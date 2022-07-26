@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.8...@hitachivantara/uikit-react-core@3.68.9) (2022-07-26)
+
+
+### Bug Fixes
+
+* **dialog:** onClose prop not required ([#2863](https://github.com/lumada-design/hv-uikit-react/issues/2863)) ([7dde94d](https://github.com/lumada-design/hv-uikit-react/commit/7dde94d265885071aeeea6b377a91bc2d9f22510))
+
+
+
+
+
 ## 3.68.8 (2022-07-21)
 
 
