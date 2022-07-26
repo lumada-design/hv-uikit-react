@@ -100,8 +100,6 @@ class HvSlider extends React.Component {
       stepValue,
       inverseStepValue,
     };
-
-    import("rc-slider/assets/index.css");
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -408,25 +406,27 @@ class HvSlider extends React.Component {
     } = this.state;
 
     return (
-      <Range
-        handle={this.createKnob}
-        className={classes.root}
-        min={0}
-        max={divisionQuantity}
-        step={1}
-        marks={marks}
-        dotStyle={styles.dot}
-        onChange={this.onChangeHandler}
-        onBeforeChange={this.onBeforeChangeHandler}
-        onAfterChange={this.onAfterChangeHandler}
-        value={knobsPositions.length > 0 ? knobsPositions : undefined}
-        allowCross={false}
-        defaultValue={defaultKnobsPositions}
-        count={rangesCount}
-        railStyle={styles.rail}
-        handleStyle={knobStyles.knobInner}
-        trackStyle={trackStyles}
-      />
+      <div className={classes.sliderBase}>
+        <Range
+          handle={this.createKnob}
+          className={classes.root}
+          min={0}
+          max={divisionQuantity}
+          step={1}
+          marks={marks}
+          dotStyle={styles.dot}
+          onChange={this.onChangeHandler}
+          onBeforeChange={this.onBeforeChangeHandler}
+          onAfterChange={this.onAfterChangeHandler}
+          value={knobsPositions.length > 0 ? knobsPositions : undefined}
+          allowCross={false}
+          defaultValue={defaultKnobsPositions}
+          count={rangesCount}
+          railStyle={styles.rail}
+          handleStyle={knobStyles.knobInner}
+          trackStyle={trackStyles}
+        />
+      </div>
     );
   }
 }
@@ -530,6 +530,12 @@ HvSlider.propTypes = {
    * the classes object to be applied into the root object.
    */
   classes: PropTypes.shape({
+    /**
+     * Base slider styles to avoid the css import from node_modules and enable SSR support.
+     * import("rc-slider/assets/index.css")
+     */
+    sliderBase: PropTypes.string,
+    tooltipBase: PropTypes.string,
     /**
      * Style applied to the root of the component.
      */
