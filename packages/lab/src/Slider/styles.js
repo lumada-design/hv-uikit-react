@@ -1,4 +1,8 @@
+import { sliderBase, tooltipBase } from "./base";
+
 const styles = (theme) => ({
+  ...tooltipBase,
+  sliderBase,
   root: {
     "& .rc-slider-handle": {
       cursor: "pointer",
