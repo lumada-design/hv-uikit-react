@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.51.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.51.2...@hitachivantara/uikit-react-lab@3.51.3) (2022-07-26)
+
+
+### Bug Fixes
+
+* **lab-slider:** add base slider styles to JSS to enable SSR support ([#2866](https://github.com/lumada-design/hv-uikit-react/issues/2866)) ([84fbcda](https://github.com/lumada-design/hv-uikit-react/commit/84fbcda49d40b193f4660bd5fc0dba8106466a8e))
+* **NotificationPanel:** remove locale logic app ([570ac7c](https://github.com/lumada-design/hv-uikit-react/commit/570ac7c18670c71225d3572f115a80c8aa031e82))
+
+
+
+
+
 ## [3.51.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.51.1...@hitachivantara/uikit-react-lab@3.51.2) (2022-07-26)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
