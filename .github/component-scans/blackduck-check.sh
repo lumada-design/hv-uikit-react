@@ -4,7 +4,7 @@ chmod 777 detect.sh
 DETECT_DIR=`pwd`
 echo "DETECT_DIR - ${DETECT_DIR}"
 
-declare -a packages=("core" "lab" "icons" "themes" "code-editor")
+declare -a packages=("core" "lab" "icons" "themes")
 
 DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.project.version.name=v2.x"
 
