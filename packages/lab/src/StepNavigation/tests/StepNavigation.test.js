@@ -274,57 +274,24 @@ const testCenario = async (
 jest.setTimeout(30000);
 
 describe("Step Navigation: render component with all of step states", () => {
-  // test breakpoints
-
-  it("'Default' layout | 'lg' breakpoint", testCenario);
-
-  it("'Simple' layout | 'lg' breakpoint", async () => {
-    await testCenario({ type: "Simple" });
-  });
-
-  it("'Default' layout | 'md' breakpoint", async () => {
-    await testCenario({ type: "Default" }, "md");
-  });
-
-  it("'Simple' layout | 'md' breakpoint", async () => {
-    await testCenario({ type: "Simple" }, "md");
-  });
-
-  it("'Default' layout | 'sm' breakpoint", async () => {
-    await testCenario({ type: "Default" }, "sm");
-  });
-
-  it("'Simple' layout | 'sm' breakpoint", async () => {
-    await testCenario({ type: "Simple" }, "sm");
-  });
-
-  // test showTitles
-
-  it("'Default' layout | 'lg' breakpoint | showTitles: false", async () => {
-    await testCenario({ type: "Default", showTitles: false });
-  });
-
-  it("'Simple' layout | 'lg' breakpoint | showTitles: false", async () => {
-    await testCenario({ type: "Simple", showTitles: false });
-  });
-
-  // test stepSize
-
-  it("'Default' layout | 'md' breakpoint | stepSize: 'XS'", async () => {
-    await testCenario({ type: "Default", stepSize: "XS" }, "sm");
-  });
-
-  it("'Simple' layout | 'md' breakpoint | stepSize: 'LG'", async () => {
-    await testCenario({ type: "Simple", stepSize: "LG" }, "sm");
-  });
-
-  // test width & showTitles
-
-  it("'Default' layout | 'sm' breakpoint | showTitles: true | width: 959", async () => {
-    await testCenario({ type: "Default", showTitles: true, width: 959 }, "sm");
-  });
-
-  it("'Simple' layout | 'sm' breakpoint | showTitles: true | width: 961", async () => {
-    await testCenario({ type: "Simple", showTitles: true, width: 961 }, "sm"); // max is 960px on 'sm' breakpoint
+  it.each([
+    // test breakpoints
+    [{ type: "Default" }, "lg"],
+    [{ type: "Simple" }, "lg"],
+    [{ type: "Default" }, "md"],
+    [{ type: "Simple" }, "md"],
+    [{ type: "Default" }, "sm"],
+    [{ type: "Simple" }, "sm"],
+    // test showTitles
+    [{ type: "Default", showTitles: false }, "lg"],
+    [{ type: "Simple", showTitles: false }, "lg"],
+    // test stepSize
+    [{ type: "Default", stepSize: "XS" }, "md"],
+    [{ type: "Simple", stepSize: "LG" }, "md"],
+    // test width & showTitles
+    [{ type: "Default", showTitles: true, width: 959 }, "sm"],
+    [{ type: "Simple", showTitles: true, width: 961 }, "sm"], // max is 960px on 'sm' breakpoint
+  ])("%p | '%s' breakpoint", async (componentProps, breakpoint) => {
+    await testCenario(componentProps, breakpoint);
   });
 });

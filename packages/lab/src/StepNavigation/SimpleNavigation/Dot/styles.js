@@ -6,9 +6,6 @@ const styles = {
   ghostDisabled: {},
   active: {},
   ghost: {
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
     "&$active": {
       cursor: "default",
     },
