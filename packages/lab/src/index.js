@@ -20,3 +20,4 @@ export * from "./QueryBuilder";
 export { default as HvInlineEditor } from "./InlineEditor";
 export { default as HvProgressBar } from "./ProgressBar";
 export { default as HvDotPagination } from "./DotPagination";
+export { default as HvStepNavigation } from "./StepNavigation";
