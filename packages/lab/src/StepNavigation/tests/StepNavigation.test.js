@@ -137,14 +137,14 @@ const testCenario = async (
 
   const hasTitles = showTitles ?? !["xs", "sm"].includes(breakpoint);
 
-  if (width) {
+  if (width?.[breakpoint]) {
     const container = screen.getByLabelText("test-component");
     const nav = within(container).getByRole("navigation");
     const next = hvTheme.breakpoints.keys.find((_, index, self) =>
       index - 1 >= 0 ? self[index - 1] === breakpoint : false
     );
     expect(nav).toHaveStyle({
-      width: `${Math.min(width, hvTheme.breakpoints.values?.[next] ?? width)}px`,
+      width: `${Math.min(width?.[breakpoint], hvTheme.breakpoints.values?.[next] ?? width)}px`,
     });
   }
 
@@ -290,8 +290,8 @@ describe("Step Navigation: render component with all of step states", () => {
     [{ type: "Default", stepSize: "XS" }, "md"],
     [{ type: "Simple", stepSize: "LG" }, "md"],
     // test width & showTitles
-    [{ type: "Default", showTitles: true, width: 959 }, "sm"],
-    [{ type: "Simple", showTitles: true, width: 961 }, "sm"], // max is 960px on 'sm' breakpoint
+    [{ type: "Default", showTitles: true, width: { sm: 959 } }, "sm"],
+    [{ type: "Simple", showTitles: true, width: { sm: 961 } }, "sm"], // max is 960px on 'sm' breakpoint
   ])("%p | '%s' breakpoint", async (componentProps, breakpoint) => {
     await testCenario(componentProps, breakpoint);
   });

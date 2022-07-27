@@ -13,7 +13,16 @@ import styles from "./styles";
 /**
  * Step element of "Default" Step Navigation root component
  */
-const HvStep = ({ className, classes, state, title, onClick, size = "SM", number = 1 }) => {
+const HvStep = ({
+  className,
+  classes,
+  state,
+  title,
+  onClick,
+  disabled,
+  size = "SM",
+  number = 1,
+}) => {
   const iconSize = {
     XS: "XS",
     SM: "XS",
@@ -59,7 +68,7 @@ const HvStep = ({ className, classes, state, title, onClick, size = "SM", number
         aria-label={`step-${title}`}
         icon
         overrideIconColors={false}
-        disabled={["Current", "Disabled"].includes(state)}
+        disabled={disabled ?? ["Current", "Disabled"].includes(state)}
         onClick={onClick}
       >
         <HvAvatar
@@ -159,6 +168,11 @@ HvStep.propTypes = {
    * Event onClick of the step.
    */
   onClick: PropTypes.func,
+  /**
+   * Define if a step is disabled/enabled.
+   * If this property is not defined and the step is on state "Disabled", the step component will be disabled
+   */
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvStep" })(HvStep);

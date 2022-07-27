@@ -22,6 +22,11 @@ export type HvStepProps = StandardProps<React.HTMLAttributes<HTMLDivElement>, Hv
      * Number of the step.
      */
     number?: number;
+    /**
+     * Define if a step is disabled/enabled.
+     * If this property is not defined and the step is on state "Disabled", the step component will be disabled
+     */
+    disabled?: boolean;
   };
 
 export default function HvStep(props: HvStepProps): JSX.Element | null;

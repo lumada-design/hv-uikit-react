@@ -11,7 +11,7 @@ import styles from "./styles";
 /**
  * Step element of "Simple" Step Navigation root component
  */
-const HvDot = ({ classes, className, state, title, size, onClick }) => {
+const HvDot = ({ classes, className, state, title, size, onClick, disabled }) => {
   const dotSize = dotSizes[size] * (state === "Current" ? 1.5 : 1);
   const getBackgroundColor = useCallback(
     (theme) => (state === "Disabled" ? disabledColor(theme) : defaultColor(theme)),
@@ -52,14 +52,14 @@ const HvDot = ({ classes, className, state, title, size, onClick }) => {
         customClasses.ghost,
         {
           [customClasses.active]: state === "Current",
-          [customClasses.ghostDisabled]: ["Current", "Disabled"].includes(state),
+          [customClasses.ghostDisabled]: disabled ?? ["Current", "Disabled"].includes(state),
         },
         className
       )}
       aria-label={`step-${title}`}
       icon
       overrideIconColors={false}
-      disabled={["Current", "Disabled"].includes(state)}
+      disabled={disabled ?? ["Current", "Disabled"].includes(state)}
       onClick={onClick}
     >
       {[]}
@@ -109,6 +109,11 @@ HvDot.propTypes = {
    * Event onClick of the step.
    */
   onClick: PropTypes.func,
+  /**
+   * Define if a step is disabled/enabled.
+   * If this property is not defined and the step is on state "Disabled", the step component will be disabled
+   */
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDot" })(HvDot);
