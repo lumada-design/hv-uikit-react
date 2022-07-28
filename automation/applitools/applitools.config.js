@@ -9,6 +9,7 @@ const isExcludedSample = (kind) => {
     "Widgets/Asset Inventory",
     "Templates/Asset Inventory",
     "Templates/Kpis List",
+    "Templates/Form",
     // dialog is opened and tested via Tests/Dialog
     "Components/Overlay/Dialog",
 
