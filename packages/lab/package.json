@@ -49,7 +49,7 @@
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
     "rc-slider": "9.7.5",
-    "rc-tooltip": "^3.7.3",
+    "rc-tooltip": "^5.1.1",
     "react-color": "^2.19.3",
     "react-table": "^7.8.0"
   },

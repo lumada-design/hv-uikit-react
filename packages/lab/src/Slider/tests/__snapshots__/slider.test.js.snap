@@ -6643,22 +6643,12 @@ exports[`Slider  should render correctly 1`] = `
               />
             </div>
           </Steps>
-          <Tooltip
-            align={Object {}}
-            arrowContent={null}
-            destroyTooltipOnHide={false}
+          <ForwardRef(Tooltip)
             key="0"
-            mouseEnterDelay={0}
-            mouseLeaveDelay={0.1}
             overlay="10"
             overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
             visible={false}
           >
             <Trigger
@@ -6668,7 +6658,7 @@ exports[`Slider  should render correctly 1`] = `
                 ]
               }
               afterPopupVisibleChange={[Function]}
-              arrowContent={null}
+              autoDestroy={false}
               blurDelay={0.15}
               builtinPlacements={
                 Object {
@@ -6902,7 +6892,6 @@ exports[`Slider  should render correctly 1`] = `
               mouseLeaveDelay={0.1}
               onPopupAlign={[Function]}
               onPopupVisibleChange={[Function]}
-              overlay="10"
               popup={[Function]}
               popupAlign={Object {}}
               popupClassName="HvSlider-sliderTooltip"
@@ -6986,23 +6975,13 @@ exports[`Slider  should render correctly 1`] = `
                 </div>
               </Handle>
             </Trigger>
-          </Tooltip>
-          <Tooltip
-            align={Object {}}
-            arrowContent={null}
-            destroyTooltipOnHide={false}
+          </ForwardRef(Tooltip)>
+          <ForwardRef(Tooltip)
             key="1"
-            mouseEnterDelay={0}
-            mouseLeaveDelay={0.1}
             overlay="20"
             overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
             visible={false}
           >
             <Trigger
@@ -7012,7 +6991,7 @@ exports[`Slider  should render correctly 1`] = `
                 ]
               }
               afterPopupVisibleChange={[Function]}
-              arrowContent={null}
+              autoDestroy={false}
               blurDelay={0.15}
               builtinPlacements={
                 Object {
@@ -7246,7 +7225,6 @@ exports[`Slider  should render correctly 1`] = `
               mouseLeaveDelay={0.1}
               onPopupAlign={[Function]}
               onPopupVisibleChange={[Function]}
-              overlay="20"
               popup={[Function]}
               popupAlign={Object {}}
               popupClassName="HvSlider-sliderTooltip"
@@ -7330,23 +7308,13 @@ exports[`Slider  should render correctly 1`] = `
                 </div>
               </Handle>
             </Trigger>
-          </Tooltip>
-          <Tooltip
-            align={Object {}}
-            arrowContent={null}
-            destroyTooltipOnHide={false}
+          </ForwardRef(Tooltip)>
+          <ForwardRef(Tooltip)
             key="2"
-            mouseEnterDelay={0}
-            mouseLeaveDelay={0.1}
             overlay="30"
             overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
             visible={false}
           >
             <Trigger
@@ -7356,7 +7324,7 @@ exports[`Slider  should render correctly 1`] = `
                 ]
               }
               afterPopupVisibleChange={[Function]}
-              arrowContent={null}
+              autoDestroy={false}
               blurDelay={0.15}
               builtinPlacements={
                 Object {
@@ -7590,7 +7558,6 @@ exports[`Slider  should render correctly 1`] = `
               mouseLeaveDelay={0.1}
               onPopupAlign={[Function]}
               onPopupVisibleChange={[Function]}
-              overlay="30"
               popup={[Function]}
               popupAlign={Object {}}
               popupClassName="HvSlider-sliderTooltip"
@@ -7674,23 +7641,13 @@ exports[`Slider  should render correctly 1`] = `
                 </div>
               </Handle>
             </Trigger>
-          </Tooltip>
-          <Tooltip
-            align={Object {}}
-            arrowContent={null}
-            destroyTooltipOnHide={false}
+          </ForwardRef(Tooltip)>
+          <ForwardRef(Tooltip)
             key="3"
-            mouseEnterDelay={0}
-            mouseLeaveDelay={0.1}
             overlay="40"
             overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
             visible={false}
           >
             <Trigger
@@ -7700,7 +7657,7 @@ exports[`Slider  should render correctly 1`] = `
                 ]
               }
               afterPopupVisibleChange={[Function]}
-              arrowContent={null}
+              autoDestroy={false}
               blurDelay={0.15}
               builtinPlacements={
                 Object {
@@ -7934,7 +7891,6 @@ exports[`Slider  should render correctly 1`] = `
               mouseLeaveDelay={0.1}
               onPopupAlign={[Function]}
               onPopupVisibleChange={[Function]}
-              overlay="40"
               popup={[Function]}
               popupAlign={Object {}}
               popupClassName="HvSlider-sliderTooltip"
@@ -8018,23 +7974,13 @@ exports[`Slider  should render correctly 1`] = `
                 </div>
               </Handle>
             </Trigger>
-          </Tooltip>
-          <Tooltip
-            align={Object {}}
-            arrowContent={null}
-            destroyTooltipOnHide={false}
+          </ForwardRef(Tooltip)>
+          <ForwardRef(Tooltip)
             key="4"
-            mouseEnterDelay={0}
-            mouseLeaveDelay={0.1}
             overlay="100"
             overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
-            trigger={
-              Array [
-                "hover",
-              ]
-            }
             visible={false}
           >
             <Trigger
@@ -8044,7 +7990,7 @@ exports[`Slider  should render correctly 1`] = `
                 ]
               }
               afterPopupVisibleChange={[Function]}
-              arrowContent={null}
+              autoDestroy={false}
               blurDelay={0.15}
               builtinPlacements={
                 Object {
@@ -8278,7 +8224,6 @@ exports[`Slider  should render correctly 1`] = `
               mouseLeaveDelay={0.1}
               onPopupAlign={[Function]}
               onPopupVisibleChange={[Function]}
-              overlay="100"
               popup={[Function]}
               popupAlign={Object {}}
               popupClassName="HvSlider-sliderTooltip"
@@ -8373,7 +8318,7 @@ exports[`Slider  should render correctly 1`] = `
                 </div>
               </Handle>
             </Trigger>
-          </Tooltip>
+          </ForwardRef(Tooltip)>
           <Marks
             className="rc-slider-mark"
             included={true}
