@@ -7,12 +7,12 @@ exports[`Snackbar  should render correctly 1`] = `
   <HvSnackbar
     classes={
       Object {
-        "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter",
-        "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft",
-        "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight",
-        "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter",
-        "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft",
-        "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
+        "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter-4",
+        "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft-5",
+        "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight-6",
+        "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter-3",
+        "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft-2",
+        "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight-1",
       }
     }
     id="Snackbar"
@@ -28,12 +28,12 @@ exports[`Snackbar  should render correctly 1`] = `
       autoHideDuration={5000}
       classes={
         Object {
-          "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter",
-          "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft",
-          "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight",
-          "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter",
-          "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft",
-          "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
+          "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter-4",
+          "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft-5",
+          "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight-6",
+          "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter-3",
+          "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft-2",
+          "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight-1",
         }
       }
       id="Snackbar"
