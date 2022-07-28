@@ -165,27 +165,42 @@ export const ExternalErrorMessage = () => {
           />
         </HvGrid>
       </HvGrid>
-      <HvGrid
-        item
-        xs={7}
-        style={{
-          backgroundColor: theme.hv.palette.semantic.sema9,
-          color: theme.hv.palette.base.base2,
-        }}
-      >
-        <h4>Form errors:</h4>
-        <ul>
-          {firstCheckboxErrorMessage && (
-            <li id="firstCheckbox-error" aria-live="polite">
-              {firstCheckboxErrorMessage}
-            </li>
-          )}
-          {secondCheckboxErrorMessage && (
-            <li id="secondCheckbox-error" aria-live="polite">
-              {secondCheckboxErrorMessage}
-            </li>
-          )}
-        </ul>
+      <HvGrid container item xs={7}>
+        <HvGrid
+          style={{
+            backgroundColor: theme.hv.palette.semantic.sema9,
+            color: theme.hv.palette.base.base2,
+          }}
+          item
+          xs={12}
+          alignItems="center"
+        >
+          <div
+            style={{
+              paddingBottom: "10px",
+            }}
+          >
+            <h4
+              style={{
+                marginTop: "0",
+              }}
+            >
+              Form errors:
+            </h4>
+            <ul>
+              {firstCheckboxErrorMessage && (
+                <li id="firstCheckbox-error" aria-live="polite">
+                  {firstCheckboxErrorMessage}
+                </li>
+              )}
+              {secondCheckboxErrorMessage && (
+                <li id="secondCheckbox-error" aria-live="polite">
+                  {secondCheckboxErrorMessage}
+                </li>
+              )}
+            </ul>
+          </div>
+        </HvGrid>
       </HvGrid>
     </HvGrid>
   );

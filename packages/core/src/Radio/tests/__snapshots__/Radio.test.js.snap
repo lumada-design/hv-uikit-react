@@ -3,13 +3,13 @@
 exports[`HvRadio sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvRadio-root HvFormElement-root"
+    class="HvRadio-root-1 HvFormElement-root-9"
   >
     <div
-      class="HvRadio-container"
+      class="HvRadio-container-2"
     >
       <span
-        class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+        class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-5 HvBaseRadio-root-10 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
       >
         <input
           class="PrivateSwitchBase-input css-1m9pwf3"
@@ -19,7 +19,7 @@ exports[`HvRadio sample snapshot testing Main 1`] = `
           value="1"
         />
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-13 HvIconBase-s-15"
           font-size="medium"
           name="RadioButtonUnselected"
         >
@@ -44,7 +44,7 @@ exports[`HvRadio sample snapshot testing Main 1`] = `
         </div>
       </span>
       <label
-        class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        class="HvRadio-label-7 HvLabel-root-18 HvTypography-root-21 HvTypography-highlightText-33"
         for="hvradio1-input"
         id="hvradio1-label"
       >
@@ -53,13 +53,13 @@ exports[`HvRadio sample snapshot testing Main 1`] = `
     </div>
   </div>
   <div
-    class="HvRadio-root HvFormElement-root"
+    class="HvRadio-root-1 HvFormElement-root-9"
   >
     <div
-      class="HvRadio-container"
+      class="HvRadio-container-2"
     >
       <span
-        class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+        class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-5 HvBaseRadio-root-10 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
       >
         <input
           class="PrivateSwitchBase-input css-1m9pwf3"
@@ -69,7 +69,7 @@ exports[`HvRadio sample snapshot testing Main 1`] = `
           value="2"
         />
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-13 HvIconBase-s-15"
           font-size="medium"
           name="RadioButtonUnselected"
         >
@@ -94,7 +94,7 @@ exports[`HvRadio sample snapshot testing Main 1`] = `
         </div>
       </span>
       <label
-        class="HvRadio-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        class="HvRadio-label-7 HvLabel-root-18 HvTypography-root-21 HvTypography-highlightText-33"
         for="hvradio3-input"
         id="hvradio3-label"
       >

@@ -3,27 +3,27 @@
 exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Container 1`] = `
 <div>
   <div
-    class="HvCheckBoxGroup-root HvFormElement-root"
+    class="HvCheckBoxGroup-root-1 HvFormElement-root-9"
   >
     <label
-      class="HvCheckBoxGroup-label HvLabel-root HvTypography-root HvTypography-highlightText"
+      class="HvCheckBoxGroup-label-2 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
       id="hvcheckboxgroup1-label"
     >
       Choose the best checkbox
     </label>
     <div
       aria-labelledby="hvcheckboxgroup1-label"
-      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical"
+      class="HvCheckBoxGroup-group-3 HvCheckBoxGroup-vertical-4"
       role="group"
     >
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -33,7 +33,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="1"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -58,7 +58,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
           >
@@ -67,13 +67,13 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
         </div>
       </div>
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -83,7 +83,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="2"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -108,7 +108,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox5-input"
             id="hvcheckbox5-label"
           >
@@ -117,13 +117,13 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
         </div>
       </div>
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -133,7 +133,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="3"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -158,7 +158,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox7-input"
             id="hvcheckbox7-label"
           >
@@ -167,13 +167,13 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
         </div>
       </div>
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -183,7 +183,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="4"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -208,7 +208,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox9-input"
             id="hvcheckbox9-label"
           >
@@ -217,13 +217,13 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
         </div>
       </div>
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -233,7 +233,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="5"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -258,7 +258,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox11-input"
             id="hvcheckbox11-label"
           >
@@ -267,13 +267,13 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
         </div>
       </div>
       <div
-        class="HvCheckBox-root HvFormElement-root"
+        class="HvCheckBox-root-35 HvFormElement-root-9"
       >
         <div
-          class="HvCheckBox-container"
+          class="HvCheckBox-container-36"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -283,7 +283,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
               value="6"
             />
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-46 HvIconBase-s-48"
               font-size="medium"
               name="Checkbox"
             >
@@ -308,7 +308,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
             </div>
           </span>
           <label
-            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
             for="hvcheckbox13-input"
             id="hvcheckbox13-label"
           >
