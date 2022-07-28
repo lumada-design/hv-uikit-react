@@ -30,13 +30,13 @@ describe("Badge ", () => {
         <Badge count={12} />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("");
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-badge"]`).text()).toEqual("");
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(0);
   });
 
   it("should render correctly with showCount", () => {
@@ -46,12 +46,12 @@ describe("Badge ", () => {
       </HvProvider>
     );
 
-    const divs = wrapper.find("div");
-    expect(divs.at(1).text()).toEqual("12");
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(0);
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).text()).toEqual("12");
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(0);
   });
 
   it("should render correctly with showCount and one-digit count", () => {
@@ -60,13 +60,13 @@ describe("Badge ", () => {
         <Badge count={9} showCount />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("9");
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).text()).toEqual("9");
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(1);
   });
 
   it("should render nothing when count is 0 even with showCount", () => {
@@ -75,13 +75,13 @@ describe("Badge ", () => {
         <Badge count={0} showCount />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("");
-    expect(divs.find("div.HvBadge-badge").length).toBe(0);
-    expect(divs.find("div.HvBadge-showCount").length).toBe(0);
-    expect(divs.find("div.HvBadge-showLabel").length).toBe(0);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badge"]`).length).toBe(0);
+    expect(divs.find(`div > div > div`).text()).toEqual("");
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).length).toBe(0);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`).length).toBe(0);
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(0);
   });
 
   it("should render correctly with maxCount", () => {
@@ -91,8 +91,8 @@ describe("Badge ", () => {
       </HvProvider>
     );
 
-    const divs = wrapper.find("div");
-    expect(divs.at(1).text()).toEqual("99+");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).text()).toEqual("99+");
   });
 
   it("should render correctly with text", () => {
@@ -105,8 +105,8 @@ describe("Badge ", () => {
     const text = wrapper.find(Typography);
     expect(text.length).toEqual(1);
 
-    const divs = wrapper.find("div");
-    expect(divs.at(1).text()).toEqual("99+");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).text()).toEqual("99+");
   });
 
   it("should render correctly with svg", () => {
@@ -119,8 +119,8 @@ describe("Badge ", () => {
     const icon = wrapper.find(Alert);
     expect(icon.length).toEqual(1);
 
-    const divs = wrapper.find("div");
-    expect(divs.at(2).text()).toEqual("99+");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`).text()).toEqual("99+");
   });
 
   it("should render correctly with custom label", () => {
@@ -129,13 +129,13 @@ describe("Badge ", () => {
         <Badge label="New!" />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("New!");
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`).text()).toEqual("New!");
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(0);
   });
 
   it("should render correctly with custom one-character label", () => {
@@ -144,13 +144,13 @@ describe("Badge ", () => {
         <Badge label="!" />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("!");
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(0);
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`).text()).toEqual("!");
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(1);
   });
 
   it("should render custom label but not count when both are specified", () => {
@@ -159,12 +159,12 @@ describe("Badge ", () => {
         <Badge label="New!" count={23} showCount />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
+    const divs = wrapper.find(`div[className^="HvBadge-root"]`);
 
-    expect(divs.at(1).text()).toEqual("New!"); // not to be "23"
-    expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-showCount")).toHaveLength(0); // not to exist
-    expect(divs.find("div.HvBadge-showLabel")).toHaveLength(1);
-    expect(divs.find("div.HvBadge-badgeOneDigit")).toHaveLength(0);
+    expect(divs.find(`div[className*="HvBadge-badge"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showCount"]`)).toHaveLength(0); // not to exist
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`)).toHaveLength(1);
+    expect(divs.find(`div[className*="HvBadge-showLabel"]`).text()).toEqual("New!"); // not to be "23"
+    expect(divs.find(`div[className*="HvBadge-badgeOneDigit"]`)).toHaveLength(0);
   });
 });
