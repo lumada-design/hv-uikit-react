@@ -251,27 +251,30 @@ export const ExternalErrorMessage = () => {
           />
         </HvGrid>
       </HvGrid>
-      <HvGrid
-        item
-        xs={7}
-        style={{
-          backgroundColor: theme.hv.palette.semantic.sema9,
-          color: theme.hv.palette.base.base2,
-        }}
-      >
-        <h4>Form errors:</h4>
-        <ul>
-          {firstNameErrorMessage && (
-            <li id="firstName-error" aria-live="polite">
-              {firstNameErrorMessage}
-            </li>
-          )}
-          {lastNameErrorMessage && (
-            <li id="lastName-error" aria-live="polite">
-              {lastNameErrorMessage}
-            </li>
-          )}
-        </ul>
+      <HvGrid item xs={7}>
+        <div
+          style={{
+            paddingTop: "10px",
+            paddingLeft: "10px",
+            backgroundColor: theme.hv.palette.semantic.sema9,
+            color: theme.hv.palette.base.base2,
+            height: "100%",
+          }}
+        >
+          <h4>Form errors:</h4>
+          <ul>
+            {firstNameErrorMessage && (
+              <li id="firstName-error" aria-live="polite">
+                {firstNameErrorMessage}
+              </li>
+            )}
+            {lastNameErrorMessage && (
+              <li id="lastName-error" aria-live="polite">
+                {lastNameErrorMessage}
+              </li>
+            )}
+          </ul>
+        </div>
       </HvGrid>
     </HvGrid>
   );

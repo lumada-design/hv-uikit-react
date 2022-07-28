@@ -141,6 +141,15 @@ const styles = (theme) => ({
     width: "100%",
     borderRadius: "2px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    "&:hover:not($inputRootDisabled)::before": {
+      borderBottom: "none",
+    },
+    "&::before": {
+      borderBottom: "none",
+    },
+    "&::after": {
+      borderBottom: "none",
+    },
   },
   inputRootFocused: {
     background: theme.hv.palette.atmosphere.atmo1,
