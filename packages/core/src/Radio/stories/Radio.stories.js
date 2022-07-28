@@ -199,27 +199,42 @@ export const ExternalErrorMessage = () => {
           />
         </HvGrid>
       </HvGrid>
-      <HvGrid
-        item
-        xs={7}
-        style={{
-          backgroundColor: theme.hv.palette.semantic.sema9,
-          color: theme.hv.palette.base.base2,
-        }}
-      >
-        <h4>Form errors:</h4>
-        <ul>
-          {firstRadioErrorMessage && (
-            <li id="firstRadio-error" aria-live="polite">
-              {firstRadioErrorMessage}
-            </li>
-          )}
-          {secondRadioErrorMessage && (
-            <li id="secondRadio-error" aria-live="polite">
-              {secondRadioErrorMessage}
-            </li>
-          )}
-        </ul>
+      <HvGrid container item xs={7}>
+        <HvGrid
+          style={{
+            backgroundColor: theme.hv.palette.semantic.sema9,
+            color: theme.hv.palette.base.base2,
+          }}
+          item
+          xs={12}
+          alignItems="center"
+        >
+          <div
+            style={{
+              paddingBottom: "10px",
+            }}
+          >
+            <h4
+              style={{
+                marginTop: "0",
+              }}
+            >
+              Form errors:
+            </h4>
+            <ul>
+              {firstRadioErrorMessage && (
+                <li id="firstRadio-error" aria-live="polite">
+                  {firstRadioErrorMessage}
+                </li>
+              )}
+              {secondRadioErrorMessage && (
+                <li id="secondRadio-error" aria-live="polite">
+                  {secondRadioErrorMessage}
+                </li>
+              )}
+            </ul>
+          </div>
+        </HvGrid>
       </HvGrid>
     </HvGrid>
   );

@@ -7,6 +7,7 @@ const styles = (theme) => ({
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
+    borderRadius: 0,
   },
   disabled: {
     // ensure more specificity than .MuiButtonBase-root.Mui-disabled and .MuiIconButton-root.Mui-disabled
