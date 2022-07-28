@@ -10,10 +10,10 @@ exports[`Banner  should render correctly 1`] = `
   <HvBanner
     classes={
       Object {
-        "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter",
-        "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter",
-        "root": "HvBanner-root",
-        "rootClosed": "HvBanner-rootClosed",
+        "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+        "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+        "root": "HvBanner-root-2",
+        "rootClosed": "HvBanner-rootClosed-1",
       }
     }
     id="banner"
@@ -31,9 +31,9 @@ exports[`Banner  should render correctly 1`] = `
       }
       classes={
         Object {
-          "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter",
-          "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter",
-          "root": "HvBanner-rootClosed",
+          "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter-4",
+          "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter-3",
+          "root": "HvBanner-rootClosed-1",
         }
       }
       id="banner"
