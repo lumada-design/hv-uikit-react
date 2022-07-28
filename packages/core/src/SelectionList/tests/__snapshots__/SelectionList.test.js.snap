@@ -3,11 +3,11 @@
 exports[`Selection List Multi Selection List testing Multi Selection Snapshot Multi Selection List Container Snapshot 1`] = `
 <div>
   <div
-    class="HvSelectionList-root HvFormElement-root"
+    class="HvSelectionList-root-166 HvFormElement-root-175"
     id="main"
   >
     <label
-      class="HvSelectionList-label HvLabel-root HvTypography-root HvTypography-highlightText"
+      class="HvSelectionList-label-167 HvLabel-root-176 HvTypography-root-179 HvTypography-highlightText-191"
       id="main-label"
     >
       Choose your favorite items
@@ -15,13 +15,13 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
     <ul
       aria-labelledby="main-label"
       aria-multiselectable="true"
-      class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+      class="HvSelectionList-listbox-169 HvSelectionList-vertical-170 HvListContainer-root-201"
       id="main-listbox"
       role="listbox"
     >
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvFocus-root-213 HvFocus-focusDisabled-216"
         role="option"
         tabindex="-1"
         value="1"
@@ -30,7 +30,7 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
       </li>
       <li
         aria-selected="true"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvListItem-selected-205 HvFocus-root-213 HvFocus-selected-214 HvFocus-focusDisabled-216"
         role="option"
         tabindex="0"
         value="2"
@@ -39,7 +39,7 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvFocus-root-213 HvFocus-focusDisabled-216"
         role="option"
         tabindex="-1"
         value="3"
@@ -48,7 +48,7 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvFocus-root-213 HvFocus-focusDisabled-216"
         role="option"
         tabindex="-1"
         value="4"
@@ -57,7 +57,7 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvFocus-root-213 HvFocus-focusDisabled-216"
         role="option"
         tabindex="-1"
         value="5"
@@ -66,7 +66,7 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-202 HvListItem-gutters-203 HvListItem-condensed-207 HvListItem-interactive-204 HvFocus-root-213 HvFocus-focusDisabled-216"
         role="option"
         tabindex="-1"
         value="6"
@@ -81,24 +81,24 @@ exports[`Selection List Multi Selection List testing Multi Selection Snapshot Mu
 exports[`Selection List Single Selection List testing Selection List Snapshot testing Selection List Container 1`] = `
 <div>
   <div
-    class="HvSelectionList-root HvFormElement-root"
+    class="HvSelectionList-root-1 HvFormElement-root-10"
     id="main"
   >
     <label
-      class="HvSelectionList-label HvLabel-root HvTypography-root HvTypography-highlightText"
+      class="HvSelectionList-label-2 HvLabel-root-11 HvTypography-root-14 HvTypography-highlightText-26"
       id="main-label"
     >
       Choose your favorite items
     </label>
     <ul
       aria-labelledby="main-label"
-      class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+      class="HvSelectionList-listbox-4 HvSelectionList-vertical-5 HvListContainer-root-36"
       id="main-listbox"
       role="listbox"
     >
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
         role="option"
         tabindex="-1"
         value="1"
@@ -107,7 +107,7 @@ exports[`Selection List Single Selection List testing Selection List Snapshot te
       </li>
       <li
         aria-selected="true"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+        class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvListItem-selected-40 HvFocus-root-48 HvFocus-selected-49 HvFocus-focusDisabled-51"
         role="option"
         tabindex="0"
         value="2"
@@ -116,7 +116,7 @@ exports[`Selection List Single Selection List testing Selection List Snapshot te
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+        class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
         role="option"
         tabindex="-1"
         value="3"
