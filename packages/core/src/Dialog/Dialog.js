@@ -25,9 +25,19 @@ const HvDialog = ({
   firstFocusable,
   buttonTitle = "Close",
   fullscreen = false,
+  disableBackdropClick = false,
   ...others
 }) => {
   const [focusableQueue, setFocusableQueue] = useState(null);
+
+  // Because the `disableBackdropClick` property was deprecated in MUI5
+  // and we want to maintain that funcionality to the user we're wrapping
+  // the onClose call here to make that check.
+  const wrappedClose = (event, reason) => {
+    if (!disableBackdropClick) {
+      onClose?.(event, reason);
+    }
+  };
 
   const measuredRef = useCallback(
     (node) => {
@@ -73,7 +83,7 @@ const HvDialog = ({
         // Swallow the event, in case someone is listening for the escape key on the body.
         event.stopPropagation();
 
-        onClose?.(event, "escapeKeyDown");
+        wrappedClose(event, "escapeKeyDown");
       }
     }
   };
@@ -101,7 +111,7 @@ const HvDialog = ({
           root: classes.background,
         },
       }}
-      onClose={(event, reason) => onClose?.(event, reason)}
+      onClose={(event, reason) => wrappedClose(event, reason)}
       onKeyDown={keyDownHandler}
       {...others}
       aria-modal
@@ -110,7 +120,7 @@ const HvDialog = ({
         id={setId(id, "close")}
         className={classes.closeButton}
         category="ghost"
-        onClick={(event) => onClose?.(event)}
+        onClick={(event) => wrappedClose(event)}
         aria-label={buttonTitle}
       >
         <CloseButtonTooltipWrapper />
@@ -176,6 +186,10 @@ HvDialog.propTypes = {
    * Set the dialog to fullscreen mode.
    */
   fullscreen: PropTypes.bool,
+  /**
+   * Prevent closing the dialog when clicking on the backdrop.
+   */
+  disableBackdropClick: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDialog" })(HvDialog);
