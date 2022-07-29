@@ -58,7 +58,7 @@ module.exports = ({
 
   return `
 import React from "react";
-import { useTheme } from "@mui/material";
+import { useTheme } from '@mui/styles';
 import HvIconBase from "${iconBasePath}";
 
 const sizeSelector = (iconSize, height, width) => {
