@@ -9,8 +9,18 @@ import TreeView, { TreeViewItem } from "../index";
 
 describe("<TreeView />", () => {
   const onChangeMock = jest.fn();
+  const consoleSpy = jest.fn();
+  const originalError = console.error;
 
   let wrapper;
+
+  beforeEach(async () => {
+    console.error = consoleSpy;
+  });
+
+  afterEach(async () => {
+    console.error = originalError;
+  });
 
   describe("navigation tree", () => {
     beforeEach(async () => {

@@ -63,7 +63,7 @@ describe("VerticalContainer", () => {
     let containerComponent = wrapper.find("#test-container");
     expect(containerComponent.length).toBe(0);
 
-    const button = wrapper.find("#test-hamburger-button");
+    const button = wrapper.find("button");
     button.at(0).simulate("click");
 
     containerComponent = wrapper.find("#test-container");
@@ -76,13 +76,13 @@ describe("VerticalContainer", () => {
     let containerComponent = wrapper.find("#test-container");
     expect(containerComponent.length).toBe(0);
 
-    let button = wrapper.find("#test-hamburger-button");
+    let button = wrapper.find("button");
     button.at(0).simulate("click");
 
     containerComponent = wrapper.find("#test-container");
     expect(containerComponent.length).toBe(1);
 
-    button = wrapper.find("#test-hamburger-button");
+    button = wrapper.find("button");
     button.at(0).simulate("click");
 
     containerComponent = wrapper.find("#test-container");
@@ -95,7 +95,7 @@ describe("VerticalContainer", () => {
     let containerComponent = wrapper.find("#test-container");
     expect(containerComponent.length).toBe(1);
 
-    const button = wrapper.find("#test-hamburger-button");
+    const button = wrapper.find("button");
     button.at(0).simulate("click");
 
     containerComponent = wrapper.find("#test-container");

@@ -9,6 +9,16 @@ import Navigation from "../index";
 
 describe("<Navigation />", () => {
   const onChangeMock = jest.fn();
+  const consoleSpy = jest.fn();
+  const originalError = console.error;
+
+  beforeEach(async () => {
+    console.error = consoleSpy;
+  });
+
+  afterEach(async () => {
+    console.error = originalError;
+  });
 
   let wrapper;
 
