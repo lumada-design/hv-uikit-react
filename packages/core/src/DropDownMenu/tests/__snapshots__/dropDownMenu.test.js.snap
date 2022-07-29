@@ -3,7 +3,7 @@
 exports[`<Dropdown /> Controlled 1`] = `
 <div>
   <button
-    class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+    class="HvButton-root-97 MuiButton-root MuiButton-text HvButton-ghost-104 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-111 css-fsero8-MuiButtonBase-root-MuiButton-root"
     style="width: 125px;"
     tabindex="0"
     type="button"
@@ -12,26 +12,26 @@ exports[`<Dropdown /> Controlled 1`] = `
     Open
   </button>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    class="HvBaseDropdown-root-120 HvDropDownMenu-root-114"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
       aria-label="dropdownMenu-1"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+      class="HvDropDownMenu-container-115 HvBaseDropdown-anchor-121"
       id="dropMenu"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+        class="HvButton-root-97 MuiButton-root MuiButton-text HvButton-ghost-104 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-117 HvButton-icon-98 HvButton-ghostSVG-111 css-fsero8-MuiButtonBase-root-MuiButton-root"
         id="dropMenu-icon-button"
         tabindex="0"
         type="button"
       >
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-140 HvIconBase-s-142"
           name="MoreOptionsVertical"
         >
           <svg
@@ -57,27 +57,27 @@ exports[`<Dropdown /> Controlled 1`] = `
 exports[`<Dropdown /> Disabled 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    class="HvBaseDropdown-root-55 HvDropDownMenu-root-49"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
       aria-label="dropdownMenu-4"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor HvBaseDropdown-rootDisabled"
+      class="HvDropDownMenu-container-50 HvBaseDropdown-anchor-56 HvBaseDropdown-rootDisabled-57"
       id="dropMenu"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+        class="HvButton-root-75 MuiButton-root MuiButton-text HvButton-ghost-82 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-83 Mui-disabled HvDropDownMenu-icon-52 HvButton-icon-76 HvButton-ghostSVG-89 css-fsero8-MuiButtonBase-root-MuiButton-root"
         disabled=""
         id="dropMenu-icon-button"
         tabindex="-1"
         type="button"
       >
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-92 HvIconBase-s-94"
           name="MoreOptionsVertical"
         >
           <svg
@@ -103,25 +103,25 @@ exports[`<Dropdown /> Disabled 1`] = `
 exports[`<Dropdown /> General 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    class="HvBaseDropdown-root-7 HvDropDownMenu-root-1"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+      class="HvDropDownMenu-container-2 HvBaseDropdown-anchor-8"
       id="drop-down-menu-1"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-1yryb8r-MuiButtonBase-root-MuiButton-root"
+        class="HvButton-root-27 MuiButton-root MuiButton-text HvButton-ghost-34 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-4 HvButton-icon-28 HvButton-ghostSVG-41 css-fsero8-MuiButtonBase-root-MuiButton-root"
         id="drop-down-menu-1-icon-button"
         tabindex="0"
         type="button"
       >
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-44 HvIconBase-s-46"
           name="MoreOptionsVertical"
         >
           <svg

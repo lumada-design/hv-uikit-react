@@ -6,32 +6,32 @@ exports[`BaseDropDown Selection List Snapshot testing Selection List Container 1
     style="width: 121px;"
   >
     <div
-      class="HvBaseDropdown-root"
+      class="HvBaseDropdown-root-1"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-anchor"
+        class="HvBaseDropdown-anchor-2"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header"
+          class="HvBaseDropdown-header-6"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection"
+            class="HvBaseDropdown-selection-12"
           >
             <p
-              class="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+              class="HvBaseDropdown-placeholder-13 HvTypography-root-21 HvTypography-placeholderText-35 HvTypography-noWrap-42"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+            class="HvBaseDropdown-arrow-11 HvIconBase-root-43 HvIconBase-xs-44"
             name="DropDownXS"
           >
             <svg

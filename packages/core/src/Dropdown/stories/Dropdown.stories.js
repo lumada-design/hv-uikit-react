@@ -390,27 +390,30 @@ export const ExternalErrorMessage = () => {
           />
         </HvGrid>
       </HvGrid>
-      <HvGrid
-        item
-        xs={7}
-        style={{
-          backgroundColor: theme.hv.palette.semantic.sema9,
-          color: theme.hv.palette.base.base2,
-        }}
-      >
-        <h4>Form errors:</h4>
-        <ul>
-          {birthErrorMessage && (
-            <li id="birth-error" aria-live="polite">
-              {birthErrorMessage}
-            </li>
-          )}
-          {deathErrorMessage && (
-            <li id="death-error" aria-live="polite">
-              {deathErrorMessage}
-            </li>
-          )}
-        </ul>
+      <HvGrid item xs={7}>
+        <div
+          style={{
+            paddingTop: "10px",
+            paddingLeft: "10px",
+            backgroundColor: theme.hv.palette.semantic.sema9,
+            color: theme.hv.palette.base.base2,
+            height: "100%",
+          }}
+        >
+          <h4>Form errors:</h4>
+          <ul>
+            {birthErrorMessage && (
+              <li id="birth-error" aria-live="polite">
+                {birthErrorMessage}
+              </li>
+            )}
+            {deathErrorMessage && (
+              <li id="death-error" aria-live="polite">
+                {deathErrorMessage}
+              </li>
+            )}
+          </ul>
+        </div>
       </HvGrid>
     </HvGrid>
   );

@@ -6,29 +6,29 @@ exports[`<Dropdown /> General 1`] = `
     style="width: 310px;"
   >
     <div
-      class="HvDropdown-root HvFormElement-root"
+      class="HvDropdown-root-1 HvFormElement-root-15"
     >
       <div
-        class="HvBaseDropdown-root HvDropdown-dropdown"
+        class="HvBaseDropdown-root-16 HvDropdown-dropdown-2"
       >
         <div
           aria-expanded="true"
           aria-owns="hvbasedropdown3-children-container"
-          class="HvBaseDropdown-anchor"
+          class="HvBaseDropdown-anchor-17"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown3-children-container"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header-21 HvDropdown-dropdownHeader-11 HvBaseDropdown-headerOpen-22 HvDropdown-dropdownHeaderOpen-13 HvBaseDropdown-headerOpenDown-24"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection"
+              class="HvBaseDropdown-selection-27"
             >
               <div
-                class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+                class="HvDropdown-placeholder-9 HvTypography-root-36 HvTypography-normalText-49 HvTypography-noWrap-57"
               >
                 <b>
                   1
@@ -37,7 +37,7 @@ exports[`<Dropdown /> General 1`] = `
               </div>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+              class="HvBaseDropdown-arrow-26 HvDropdown-arrow-4 HvIconBase-root-58 HvIconBase-xs-59"
               name="DropUpXS"
             >
               <svg
@@ -68,38 +68,38 @@ exports[`<Dropdown /> SingleSelection 1`] = `
     style="width: 310px;"
   >
     <div
-      class="HvDropdown-root HvFormElement-root"
+      class="HvDropdown-root-174 HvFormElement-root-188"
       id="dropdown7"
     >
       <div
-        class="HvBaseDropdown-root HvDropdown-dropdown"
+        class="HvBaseDropdown-root-189 HvDropdown-dropdown-175"
       >
         <div
           aria-expanded="true"
           aria-owns="dropdown7-dropdown-children-container"
-          class="HvBaseDropdown-anchor"
+          class="HvBaseDropdown-anchor-190"
           id="dropdown7-dropdown"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="dropdown7-dropdown-children-container"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header-194 HvDropdown-dropdownHeader-184 HvBaseDropdown-headerOpen-195 HvDropdown-dropdownHeaderOpen-186 HvBaseDropdown-headerOpenDown-197"
             id="dropdown7-dropdown-header"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection"
+              class="HvBaseDropdown-selection-200"
             >
               <div
-                class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+                class="HvDropdown-placeholder-182 HvTypography-root-209 HvTypography-normalText-222 HvTypography-noWrap-230"
               >
                 Select...
               </div>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+              class="HvBaseDropdown-arrow-199 HvDropdown-arrow-177 HvIconBase-root-231 HvIconBase-xs-232"
               name="DropUpXS"
             >
               <svg
@@ -130,38 +130,38 @@ exports[`<Dropdown /> SingleSelectionWithSearch 1`] = `
     style="width: 310px;"
   >
     <div
-      class="HvDropdown-root HvFormElement-root"
+      class="HvDropdown-root-277 HvFormElement-root-291"
       id="dropdown6"
     >
       <div
-        class="HvBaseDropdown-root HvDropdown-dropdown"
+        class="HvBaseDropdown-root-292 HvDropdown-dropdown-278"
       >
         <div
           aria-expanded="true"
           aria-owns="dropdown6-dropdown-children-container"
-          class="HvBaseDropdown-anchor"
+          class="HvBaseDropdown-anchor-293"
           id="dropdown6-dropdown"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="dropdown6-dropdown-children-container"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header-297 HvDropdown-dropdownHeader-287 HvBaseDropdown-headerOpen-298 HvDropdown-dropdownHeaderOpen-289 HvBaseDropdown-headerOpenDown-300"
             id="dropdown6-dropdown-header"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection"
+              class="HvBaseDropdown-selection-303"
             >
               <div
-                class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+                class="HvDropdown-placeholder-285 HvTypography-root-312 HvTypography-normalText-325 HvTypography-noWrap-333"
               >
                 value 2
               </div>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+              class="HvBaseDropdown-arrow-302 HvDropdown-arrow-280 HvIconBase-root-334 HvIconBase-xs-335"
               name="DropUpXS"
             >
               <svg
