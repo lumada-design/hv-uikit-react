@@ -35,9 +35,9 @@ const Header = (props) => {
 
       borderBottom: "none",
       background: theme.hv.palette.atmosphere.atmo1,
-      padding: `${theme.spacing("xs")}px ${theme.spacing("xs")}px ${theme.spacing(
+      padding: `${theme.spacing("xs")} ${theme.spacing("xs")} ${theme.spacing(
         "xs"
-      )}px ${theme.spacing("sm")}px`,
+      )} ${theme.spacing("sm")}`,
       display: "flex",
       justifyContent: "space-between",
     },
