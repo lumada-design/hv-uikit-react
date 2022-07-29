@@ -28,7 +28,6 @@ const HvDialogTitle = ({
   return (
     <DialogTitle
       className={clsx(classes.root, className, fullscreen ? "fullscreen" : "")}
-      disableTypography
       {...others}
     >
       <div className={classes.messageContainer}>
