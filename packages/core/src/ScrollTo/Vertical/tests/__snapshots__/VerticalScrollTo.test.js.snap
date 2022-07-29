@@ -3,18 +3,18 @@
 exports[`VerticalScrollTo Snapshot testing Main 1`] = `
 <div>
   <ol
-    class="HvScrollToVertical-root"
+    class="HvScrollToVertical-root-1"
     id="main"
   >
     <li
       aria-current="true"
-      class="HvVerticalScrollListItem-root"
+      class="HvVerticalScrollListItem-root-6"
       id="main-item-0"
     >
       <div
         aria-label="Server status summary"
         aria-labelledby="main-item-0-label"
-        class="HvVerticalScrollListItem-button"
+        class="HvVerticalScrollListItem-button-7"
         id="main-item-0-button"
         role="button"
         tabindex="0"
@@ -25,11 +25,11 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-highlightText"
+            class="HvVerticalScrollListItem-text-9 HvTypography-root-21 HvTypography-highlightText-33"
             id="main-item-0-label"
           >
             <div
-              class="HvIconBase-root HvIconBase-s"
+              class="HvIconBase-root-43 HvIconBase-s-45"
               name="CurrentStep"
             >
               <svg
@@ -52,13 +52,13 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root"
+      class="HvVerticalScrollListItem-root-6"
       id="main-item-1"
     >
       <div
         aria-label="Optimization"
         aria-labelledby="main-item-1-label"
-        class="HvVerticalScrollListItem-button"
+        class="HvVerticalScrollListItem-button-7"
         id="main-item-1-button"
         role="button"
         tabindex="0"
@@ -69,11 +69,11 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-normalText"
+            class="HvVerticalScrollListItem-text-9 HvTypography-root-21 HvTypography-normalText-34"
             id="main-item-1-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected"
+              class="HvVerticalScrollListItem-notSelected-8"
             />
           </div>
         </div>
@@ -81,13 +81,13 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root"
+      class="HvVerticalScrollListItem-root-6"
       id="main-item-2"
     >
       <div
         aria-label="Performance analysis"
         aria-labelledby="main-item-2-label"
-        class="HvVerticalScrollListItem-button"
+        class="HvVerticalScrollListItem-button-7"
         id="main-item-2-button"
         role="button"
         tabindex="0"
@@ -98,11 +98,11 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-normalText"
+            class="HvVerticalScrollListItem-text-9 HvTypography-root-21 HvTypography-normalText-34"
             id="main-item-2-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected"
+              class="HvVerticalScrollListItem-notSelected-8"
             />
           </div>
         </div>
@@ -110,13 +110,13 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvVerticalScrollListItem-root"
+      class="HvVerticalScrollListItem-root-6"
       id="main-item-3"
     >
       <div
         aria-label="Insights"
         aria-labelledby="main-item-3-label"
-        class="HvVerticalScrollListItem-button"
+        class="HvVerticalScrollListItem-button-7"
         id="main-item-3-button"
         role="button"
         tabindex="0"
@@ -127,11 +127,11 @@ exports[`VerticalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-normalText"
+            class="HvVerticalScrollListItem-text-9 HvTypography-root-21 HvTypography-normalText-34"
             id="main-item-3-label"
           >
             <div
-              class="HvVerticalScrollListItem-notSelected"
+              class="HvVerticalScrollListItem-notSelected-8"
             />
           </div>
         </div>
