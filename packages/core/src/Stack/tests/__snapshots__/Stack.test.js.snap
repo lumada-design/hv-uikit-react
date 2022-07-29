@@ -3,7 +3,7 @@
 exports[`<Stack /> should be defined 1`] = `
 <div>
   <div
-    class="HvStack-root HvStack-column HvStack-sm"
+    class="HvStack-root-1 HvStack-column-2 HvStack-sm-5"
   >
     <div
       data-testid="child"
@@ -27,7 +27,7 @@ exports[`<Stack /> should be defined 1`] = `
 exports[`<Stack /> should match snapshot 1`] = `
 <div>
   <div
-    class="HvStack-root HvStack-column HvStack-sm"
+    class="HvStack-root-9 HvStack-column-10 HvStack-sm-13"
   >
     <div
       data-testid="child"
