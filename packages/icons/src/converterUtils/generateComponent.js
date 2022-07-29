@@ -91,7 +91,7 @@ const ${componentName} = ({
   ...others
 }) => {
   const theme = useTheme();
-  const getColor = c => theme.palette?.[c] || c;
+  const getColor = c => theme?.palette?.[c] || c;
   const colorArray = 
     (typeof color === "string" && [getColor(color)]) ||
     (Array.isArray(color) && color.map?.(getColor)) ||
