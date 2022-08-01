@@ -224,9 +224,7 @@ const List = ({
         root: {
           ...(dropdownHeight && { height: dropdownHeight }),
           maxWidth: width,
-          maxHeight: `calc(${height}px - 32px - ${theme.spacing("xs")}px - ${theme.spacing(
-            "sm"
-          )}px)`,
+          maxHeight: `calc(${height}px - 32px - ${theme.spacing("xs")} - ${theme.spacing("sm")})`,
           overflow: "auto",
           padding: 5,
         },
