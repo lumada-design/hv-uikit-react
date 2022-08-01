@@ -524,7 +524,10 @@ HvSlider.propTypes = {
    * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
    * or "invalid" after any change to `checked`, depending of the values of both `required` and `checked`.
    */
-  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  status: PropTypes.oneOfType([
+    PropTypes.oneOf(["standBy", "valid", "invalid"]),
+    PropTypes.arrayOf(PropTypes.oneOf(["standBy", "valid", "invalid"])),
+  ]),
   /**
    * The error message to show when `status` is "invalid".
    */
