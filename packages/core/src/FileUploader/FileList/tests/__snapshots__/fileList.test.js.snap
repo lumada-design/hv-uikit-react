@@ -32,7 +32,7 @@ exports[`FileList withStyles should render correctly 1`] = `
   <FileList
     classes={
       Object {
-        "list": "HvFileUploaderFileList-list",
+        "list": "HvFileUploaderFileList-list-1",
       }
     }
     list={
@@ -63,7 +63,7 @@ exports[`FileList withStyles should render correctly 1`] = `
     removeFileButtonLabel="removeFileButtonLabel"
   >
     <ul
-      className="HvFileUploaderFileList-list"
+      className="HvFileUploaderFileList-list-1"
     >
       <WithStyles(File)
         data={
@@ -85,14 +85,14 @@ exports[`FileList withStyles should render correctly 1`] = `
         <File
           classes={
             Object {
-              "fail": "HvFileUploaderFile-fail",
-              "icon": "HvFileUploaderFile-icon",
-              "nameText": "HvFileUploaderFile-nameText",
-              "previewContainer": "HvFileUploaderFile-previewContainer",
-              "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-              "progressbar": "HvFileUploaderFile-progressbar",
-              "progressbarBack": "HvFileUploaderFile-progressbarBack",
-              "removeButton": "HvFileUploaderFile-removeButton",
+              "fail": "HvFileUploaderFile-fail-8",
+              "icon": "HvFileUploaderFile-icon-6",
+              "nameText": "HvFileUploaderFile-nameText-9",
+              "previewContainer": "HvFileUploaderFile-previewContainer-5",
+              "progressTextContainer": "HvFileUploaderFile-progressTextContainer-4",
+              "progressbar": "HvFileUploaderFile-progressbar-3",
+              "progressbarBack": "HvFileUploaderFile-progressbarBack-2",
+              "removeButton": "HvFileUploaderFile-removeButton-7",
             }
           }
           data={
@@ -112,16 +112,16 @@ exports[`FileList withStyles should render correctly 1`] = `
         >
           <li>
             <Fail
-              className="HvFileUploaderFile-icon"
+              className="HvFileUploaderFile-icon-6"
               color="sema4"
             >
               <HvIconBase
-                className="HvFileUploaderFile-icon"
+                className="HvFileUploaderFile-icon-6"
                 iconSize="S"
                 name="Fail"
               >
                 <div
-                  className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+                  className="HvFileUploaderFile-icon-6 HvIconBase-root-10 HvIconBase-s-12"
                   name="Fail"
                 >
                   <svg
@@ -141,86 +141,86 @@ exports[`FileList withStyles should render correctly 1`] = `
               </HvIconBase>
             </Fail>
             <WithStyles(ForwardRef)
-              className="HvFileUploaderFile-nameText"
+              className="HvFileUploaderFile-nameText-9"
               noWrap={true}
               variant="highlightText"
             >
               <ForwardRef
-                className="HvFileUploaderFile-nameText"
+                className="HvFileUploaderFile-nameText-9"
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle",
-                    "4xlTitle": "HvTypography-4xlTitle",
-                    "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledText": "HvTypography-disabledText",
-                    "highlightText": "HvTypography-highlightText",
-                    "lTitle": "HvTypography-lTitle",
-                    "link": "HvTypography-link",
-                    "mTitle": "HvTypography-mTitle",
-                    "noWrap": "HvTypography-noWrap",
-                    "normalText": "HvTypography-normalText",
-                    "placeholderText": "HvTypography-placeholderText",
-                    "root": "HvTypography-root",
-                    "sTitle": "HvTypography-sTitle",
-                    "sectionTitle": "HvTypography-sectionTitle",
-                    "selectedNavText": "HvTypography-selectedNavText",
-                    "vizText": "HvTypography-vizText",
-                    "vizTextDisabled": "HvTypography-vizTextDisabled",
-                    "xlTitle": "HvTypography-xlTitle",
-                    "xsInlineLink": "HvTypography-xsInlineLink",
-                    "xsTitle": "HvTypography-xsTitle",
-                    "xxlTitle": "HvTypography-xxlTitle",
-                    "xxsTitle": "HvTypography-xxsTitle",
+                    "3xlTitle": "HvTypography-3xlTitle-18",
+                    "4xlTitle": "HvTypography-4xlTitle-17",
+                    "5xlTitle": "HvTypography-5xlTitle-16",
+                    "disabledText": "HvTypography-disabledText-31",
+                    "highlightText": "HvTypography-highlightText-27",
+                    "lTitle": "HvTypography-lTitle-21",
+                    "link": "HvTypography-link-30",
+                    "mTitle": "HvTypography-mTitle-22",
+                    "noWrap": "HvTypography-noWrap-36",
+                    "normalText": "HvTypography-normalText-28",
+                    "placeholderText": "HvTypography-placeholderText-29",
+                    "root": "HvTypography-root-15",
+                    "sTitle": "HvTypography-sTitle-23",
+                    "sectionTitle": "HvTypography-sectionTitle-26",
+                    "selectedNavText": "HvTypography-selectedNavText-32",
+                    "vizText": "HvTypography-vizText-33",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled-34",
+                    "xlTitle": "HvTypography-xlTitle-20",
+                    "xsInlineLink": "HvTypography-xsInlineLink-35",
+                    "xsTitle": "HvTypography-xsTitle-24",
+                    "xxlTitle": "HvTypography-xxlTitle-19",
+                    "xxsTitle": "HvTypography-xxsTitle-25",
                   }
                 }
                 noWrap={true}
                 variant="highlightText"
               >
                 <p
-                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                  className="HvFileUploaderFile-nameText-9 HvTypography-root-15 HvTypography-highlightText-27 HvTypography-noWrap-36"
                 >
                   Screenshot 2019-12-05 at 17.15.43.png
                 </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <span
-              className="HvFileUploaderFile-progressTextContainer"
+              className="HvFileUploaderFile-progressTextContainer-4"
             >
                | 
               <WithStyles(ForwardRef)
-                className="HvFileUploaderFile-fail"
+                className="HvFileUploaderFile-fail-8"
               >
                 <ForwardRef
-                  className="HvFileUploaderFile-fail"
+                  className="HvFileUploaderFile-fail-8"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "disabledText": "HvTypography-disabledText",
-                      "highlightText": "HvTypography-highlightText",
-                      "lTitle": "HvTypography-lTitle",
-                      "link": "HvTypography-link",
-                      "mTitle": "HvTypography-mTitle",
-                      "noWrap": "HvTypography-noWrap",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "root": "HvTypography-root",
-                      "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "vizText": "HvTypography-vizText",
-                      "vizTextDisabled": "HvTypography-vizTextDisabled",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsInlineLink": "HvTypography-xsInlineLink",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
+                      "3xlTitle": "HvTypography-3xlTitle-18",
+                      "4xlTitle": "HvTypography-4xlTitle-17",
+                      "5xlTitle": "HvTypography-5xlTitle-16",
+                      "disabledText": "HvTypography-disabledText-31",
+                      "highlightText": "HvTypography-highlightText-27",
+                      "lTitle": "HvTypography-lTitle-21",
+                      "link": "HvTypography-link-30",
+                      "mTitle": "HvTypography-mTitle-22",
+                      "noWrap": "HvTypography-noWrap-36",
+                      "normalText": "HvTypography-normalText-28",
+                      "placeholderText": "HvTypography-placeholderText-29",
+                      "root": "HvTypography-root-15",
+                      "sTitle": "HvTypography-sTitle-23",
+                      "sectionTitle": "HvTypography-sectionTitle-26",
+                      "selectedNavText": "HvTypography-selectedNavText-32",
+                      "vizText": "HvTypography-vizText-33",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled-34",
+                      "xlTitle": "HvTypography-xlTitle-20",
+                      "xsInlineLink": "HvTypography-xsInlineLink-35",
+                      "xsTitle": "HvTypography-xsTitle-24",
+                      "xxlTitle": "HvTypography-xxlTitle-19",
+                      "xxsTitle": "HvTypography-xxsTitle-25",
                     }
                   }
                 >
                   <p
-                    className="HvFileUploaderFile-fail HvTypography-root HvTypography-normalText"
+                    className="HvFileUploaderFile-fail-8 HvTypography-root-15 HvTypography-normalText-28"
                   >
                     File type not allowed for upload
                   </p>
@@ -230,14 +230,14 @@ exports[`FileList withStyles should render correctly 1`] = `
             <ForwardRef(IconButton)
               aria-label="removeFileButtonLabel"
               category="ghost"
-              className="HvFileUploaderFile-removeButton"
+              className="HvFileUploaderFile-removeButton-7"
               onClick={[Function]}
             >
               <MuiIconButtonRoot
                 aria-label="removeFileButtonLabel"
                 category="ghost"
                 centerRipple={true}
-                className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
+                className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7"
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
@@ -248,7 +248,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "children": <Close
                       iconSize="XS"
                     />,
-                    "className": "HvFileUploaderFile-removeButton",
+                    "className": "HvFileUploaderFile-removeButton-7",
                     "color": "default",
                     "disableFocusRipple": false,
                     "disabled": false,
@@ -278,271 +278,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "_insertTag": [Function],
                         "before": null,
                         "container": <head>
-                          <style
-                            data-jss=""
-                            data-meta="HvIconBase"
-                          >
-                            
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvTypography"
-                          >
-                            
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvFileUploaderFile"
-                          >
-                            
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvFileUploaderFileList"
-                          >
-                            
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                          </style>
                           <style
                             data-emotion="css"
                             data-s=""
@@ -627,13 +362,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                             
                             .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                           </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvIconBase"
+                          >
+                            
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvTypography"
+                          >
+                            
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvFileUploaderFile"
+                          >
+                            
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvFileUploaderFileList"
+                          >
+                            
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                          </style>
                         </head>,
                         "ctr": 12,
                         "insertionPoint": undefined,
                         "isSpeedy": false,
                         "key": "css",
                         "nonce": undefined,
-                        "prepend": undefined,
+                        "prepend": true,
                         "tags": Array [
                           <style
                             data-emotion="css"
@@ -738,7 +738,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   aria-label="removeFileButtonLabel"
                   category="ghost"
                   centerRipple={true}
-                  className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+                  className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root"
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
@@ -747,7 +747,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     aria-label="removeFileButtonLabel"
                     as="button"
                     category="ghost"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -770,7 +770,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "children": <Close
                           iconSize="XS"
                         />,
-                        "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root",
+                        "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root",
                         "component": "button",
                         "disableRipple": false,
                         "disableTouchRipple": false,
@@ -804,271 +804,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                             "_insertTag": [Function],
                             "before": null,
                             "container": <head>
-                              <style
-                                data-jss=""
-                                data-meta="HvIconBase"
-                              >
-                                
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvTypography"
-                              >
-                                
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvFileUploaderFile"
-                              >
-                                
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvFileUploaderFileList"
-                              >
-                                
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                              </style>
                               <style
                                 data-emotion="css"
                                 data-s=""
@@ -1153,13 +888,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                                 
                                 .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                               </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFileList"
+                              >
+                                
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                              </style>
                             </head>,
                             "ctr": 12,
                             "insertionPoint": undefined,
                             "isSpeedy": false,
                             "key": "css",
                             "nonce": undefined,
-                            "prepend": undefined,
+                            "prepend": true,
                             "tags": Array [
                               <style
                                 data-emotion="css"
@@ -1263,7 +1263,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     <button
                       aria-label="removeFileButtonLabel"
                       category="ghost"
-                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -1289,7 +1289,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                           name="Close"
                         >
                           <div
-                            className="HvIconBase-root HvIconBase-xs"
+                            className="HvIconBase-root-10 HvIconBase-xs-11"
                             name="Close"
                           >
                             <svg
@@ -1333,271 +1333,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                                   "_insertTag": [Function],
                                   "before": null,
                                   "container": <head>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvIconBase"
-                                    >
-                                      
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvTypography"
-                                    >
-                                      
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvFileUploaderFile"
-                                    >
-                                      
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvFileUploaderFileList"
-                                    >
-                                      
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                                    </style>
                                     <style
                                       data-emotion="css"
                                       data-s=""
@@ -1682,13 +1417,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                                       
                                       .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                                     </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvIconBase"
+                                    >
+                                      
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvTypography"
+                                    >
+                                      
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvFileUploaderFile"
+                                    >
+                                      
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvFileUploaderFileList"
+                                    >
+                                      
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                                    </style>
                                   </head>,
                                   "ctr": 12,
                                   "insertionPoint": undefined,
                                   "isSpeedy": false,
                                   "key": "css",
                                   "nonce": undefined,
-                                  "prepend": undefined,
+                                  "prepend": true,
                                   "tags": Array [
                                     <style
                                       data-emotion="css"
@@ -1828,14 +1828,14 @@ exports[`FileList withStyles should render correctly 1`] = `
         <File
           classes={
             Object {
-              "fail": "HvFileUploaderFile-fail",
-              "icon": "HvFileUploaderFile-icon",
-              "nameText": "HvFileUploaderFile-nameText",
-              "previewContainer": "HvFileUploaderFile-previewContainer",
-              "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-              "progressbar": "HvFileUploaderFile-progressbar",
-              "progressbarBack": "HvFileUploaderFile-progressbarBack",
-              "removeButton": "HvFileUploaderFile-removeButton",
+              "fail": "HvFileUploaderFile-fail-8",
+              "icon": "HvFileUploaderFile-icon-6",
+              "nameText": "HvFileUploaderFile-nameText-9",
+              "previewContainer": "HvFileUploaderFile-previewContainer-5",
+              "progressTextContainer": "HvFileUploaderFile-progressTextContainer-4",
+              "progressbar": "HvFileUploaderFile-progressbar-3",
+              "progressbarBack": "HvFileUploaderFile-progressbarBack-2",
+              "removeButton": "HvFileUploaderFile-removeButton-7",
             }
           }
           data={
@@ -1855,16 +1855,16 @@ exports[`FileList withStyles should render correctly 1`] = `
         >
           <li>
             <Fail
-              className="HvFileUploaderFile-icon"
+              className="HvFileUploaderFile-icon-6"
               color="sema4"
             >
               <HvIconBase
-                className="HvFileUploaderFile-icon"
+                className="HvFileUploaderFile-icon-6"
                 iconSize="S"
                 name="Fail"
               >
                 <div
-                  className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+                  className="HvFileUploaderFile-icon-6 HvIconBase-root-10 HvIconBase-s-12"
                   name="Fail"
                 >
                   <svg
@@ -1884,86 +1884,86 @@ exports[`FileList withStyles should render correctly 1`] = `
               </HvIconBase>
             </Fail>
             <WithStyles(ForwardRef)
-              className="HvFileUploaderFile-nameText"
+              className="HvFileUploaderFile-nameText-9"
               noWrap={true}
               variant="highlightText"
             >
               <ForwardRef
-                className="HvFileUploaderFile-nameText"
+                className="HvFileUploaderFile-nameText-9"
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle",
-                    "4xlTitle": "HvTypography-4xlTitle",
-                    "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledText": "HvTypography-disabledText",
-                    "highlightText": "HvTypography-highlightText",
-                    "lTitle": "HvTypography-lTitle",
-                    "link": "HvTypography-link",
-                    "mTitle": "HvTypography-mTitle",
-                    "noWrap": "HvTypography-noWrap",
-                    "normalText": "HvTypography-normalText",
-                    "placeholderText": "HvTypography-placeholderText",
-                    "root": "HvTypography-root",
-                    "sTitle": "HvTypography-sTitle",
-                    "sectionTitle": "HvTypography-sectionTitle",
-                    "selectedNavText": "HvTypography-selectedNavText",
-                    "vizText": "HvTypography-vizText",
-                    "vizTextDisabled": "HvTypography-vizTextDisabled",
-                    "xlTitle": "HvTypography-xlTitle",
-                    "xsInlineLink": "HvTypography-xsInlineLink",
-                    "xsTitle": "HvTypography-xsTitle",
-                    "xxlTitle": "HvTypography-xxlTitle",
-                    "xxsTitle": "HvTypography-xxsTitle",
+                    "3xlTitle": "HvTypography-3xlTitle-18",
+                    "4xlTitle": "HvTypography-4xlTitle-17",
+                    "5xlTitle": "HvTypography-5xlTitle-16",
+                    "disabledText": "HvTypography-disabledText-31",
+                    "highlightText": "HvTypography-highlightText-27",
+                    "lTitle": "HvTypography-lTitle-21",
+                    "link": "HvTypography-link-30",
+                    "mTitle": "HvTypography-mTitle-22",
+                    "noWrap": "HvTypography-noWrap-36",
+                    "normalText": "HvTypography-normalText-28",
+                    "placeholderText": "HvTypography-placeholderText-29",
+                    "root": "HvTypography-root-15",
+                    "sTitle": "HvTypography-sTitle-23",
+                    "sectionTitle": "HvTypography-sectionTitle-26",
+                    "selectedNavText": "HvTypography-selectedNavText-32",
+                    "vizText": "HvTypography-vizText-33",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled-34",
+                    "xlTitle": "HvTypography-xlTitle-20",
+                    "xsInlineLink": "HvTypography-xsInlineLink-35",
+                    "xsTitle": "HvTypography-xsTitle-24",
+                    "xxlTitle": "HvTypography-xxlTitle-19",
+                    "xxsTitle": "HvTypography-xxsTitle-25",
                   }
                 }
                 noWrap={true}
                 variant="highlightText"
               >
                 <p
-                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                  className="HvFileUploaderFile-nameText-9 HvTypography-root-15 HvTypography-highlightText-27 HvTypography-noWrap-36"
                 >
                   Screenshot 2019-12-05 at 12.03.13.png
                 </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <span
-              className="HvFileUploaderFile-progressTextContainer"
+              className="HvFileUploaderFile-progressTextContainer-4"
             >
                | 
               <WithStyles(ForwardRef)
-                className="HvFileUploaderFile-fail"
+                className="HvFileUploaderFile-fail-8"
               >
                 <ForwardRef
-                  className="HvFileUploaderFile-fail"
+                  className="HvFileUploaderFile-fail-8"
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "disabledText": "HvTypography-disabledText",
-                      "highlightText": "HvTypography-highlightText",
-                      "lTitle": "HvTypography-lTitle",
-                      "link": "HvTypography-link",
-                      "mTitle": "HvTypography-mTitle",
-                      "noWrap": "HvTypography-noWrap",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "root": "HvTypography-root",
-                      "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "vizText": "HvTypography-vizText",
-                      "vizTextDisabled": "HvTypography-vizTextDisabled",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsInlineLink": "HvTypography-xsInlineLink",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
+                      "3xlTitle": "HvTypography-3xlTitle-18",
+                      "4xlTitle": "HvTypography-4xlTitle-17",
+                      "5xlTitle": "HvTypography-5xlTitle-16",
+                      "disabledText": "HvTypography-disabledText-31",
+                      "highlightText": "HvTypography-highlightText-27",
+                      "lTitle": "HvTypography-lTitle-21",
+                      "link": "HvTypography-link-30",
+                      "mTitle": "HvTypography-mTitle-22",
+                      "noWrap": "HvTypography-noWrap-36",
+                      "normalText": "HvTypography-normalText-28",
+                      "placeholderText": "HvTypography-placeholderText-29",
+                      "root": "HvTypography-root-15",
+                      "sTitle": "HvTypography-sTitle-23",
+                      "sectionTitle": "HvTypography-sectionTitle-26",
+                      "selectedNavText": "HvTypography-selectedNavText-32",
+                      "vizText": "HvTypography-vizText-33",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled-34",
+                      "xlTitle": "HvTypography-xlTitle-20",
+                      "xsInlineLink": "HvTypography-xsInlineLink-35",
+                      "xsTitle": "HvTypography-xsTitle-24",
+                      "xxlTitle": "HvTypography-xxlTitle-19",
+                      "xxsTitle": "HvTypography-xxsTitle-25",
                     }
                   }
                 >
                   <p
-                    className="HvFileUploaderFile-fail HvTypography-root HvTypography-normalText"
+                    className="HvFileUploaderFile-fail-8 HvTypography-root-15 HvTypography-normalText-28"
                   >
                     File type not allowed for upload
                   </p>
@@ -1973,14 +1973,14 @@ exports[`FileList withStyles should render correctly 1`] = `
             <ForwardRef(IconButton)
               aria-label="removeFileButtonLabel"
               category="ghost"
-              className="HvFileUploaderFile-removeButton"
+              className="HvFileUploaderFile-removeButton-7"
               onClick={[Function]}
             >
               <MuiIconButtonRoot
                 aria-label="removeFileButtonLabel"
                 category="ghost"
                 centerRipple={true}
-                className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
+                className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7"
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
@@ -1991,7 +1991,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "children": <Close
                       iconSize="XS"
                     />,
-                    "className": "HvFileUploaderFile-removeButton",
+                    "className": "HvFileUploaderFile-removeButton-7",
                     "color": "default",
                     "disableFocusRipple": false,
                     "disabled": false,
@@ -2021,271 +2021,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "_insertTag": [Function],
                         "before": null,
                         "container": <head>
-                          <style
-                            data-jss=""
-                            data-meta="HvIconBase"
-                          >
-                            
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvTypography"
-                          >
-                            
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvFileUploaderFile"
-                          >
-                            
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                          </style>
-                          <style
-                            data-jss=""
-                            data-meta="HvFileUploaderFileList"
-                          >
-                            
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                          </style>
                           <style
                             data-emotion="css"
                             data-s=""
@@ -2370,13 +2105,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                             
                             .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                           </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvIconBase"
+                          >
+                            
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvTypography"
+                          >
+                            
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvFileUploaderFile"
+                          >
+                            
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                          </style>
+                          <style
+                            data-jss=""
+                            data-meta="HvFileUploaderFileList"
+                          >
+                            
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                          </style>
                         </head>,
                         "ctr": 12,
                         "insertionPoint": undefined,
                         "isSpeedy": false,
                         "key": "css",
                         "nonce": undefined,
-                        "prepend": undefined,
+                        "prepend": true,
                         "tags": Array [
                           <style
                             data-emotion="css"
@@ -2481,7 +2481,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   aria-label="removeFileButtonLabel"
                   category="ghost"
                   centerRipple={true}
-                  className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+                  className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root"
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
@@ -2490,7 +2490,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     aria-label="removeFileButtonLabel"
                     as="button"
                     category="ghost"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -2513,7 +2513,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "children": <Close
                           iconSize="XS"
                         />,
-                        "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-da3c9u-MuiIconButton-root",
+                        "className": "MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-da3c9u-MuiIconButton-root",
                         "component": "button",
                         "disableRipple": false,
                         "disableTouchRipple": false,
@@ -2547,271 +2547,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                             "_insertTag": [Function],
                             "before": null,
                             "container": <head>
-                              <style
-                                data-jss=""
-                                data-meta="HvIconBase"
-                              >
-                                
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvTypography"
-                              >
-                                
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvFileUploaderFile"
-                              >
-                                
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                              </style>
-                              <style
-                                data-jss=""
-                                data-meta="HvFileUploaderFileList"
-                              >
-                                
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                              </style>
                               <style
                                 data-emotion="css"
                                 data-s=""
@@ -2896,13 +2631,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                                 
                                 .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                               </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvIconBase"
+                              >
+                                
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvTypography"
+                              >
+                                
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFile"
+                              >
+                                
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                              </style>
+                              <style
+                                data-jss=""
+                                data-meta="HvFileUploaderFileList"
+                              >
+                                
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                              </style>
                             </head>,
                             "ctr": 12,
                             "insertionPoint": undefined,
                             "isSpeedy": false,
                             "key": "css",
                             "nonce": undefined,
-                            "prepend": undefined,
+                            "prepend": true,
                             "tags": Array [
                               <style
                                 data-emotion="css"
@@ -3006,7 +3006,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     <button
                       aria-label="removeFileButtonLabel"
                       category="ghost"
-                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton-7 css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                       disabled={false}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -3032,7 +3032,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                           name="Close"
                         >
                           <div
-                            className="HvIconBase-root HvIconBase-xs"
+                            className="HvIconBase-root-10 HvIconBase-xs-11"
                             name="Close"
                           >
                             <svg
@@ -3076,271 +3076,6 @@ exports[`FileList withStyles should render correctly 1`] = `
                                   "_insertTag": [Function],
                                   "before": null,
                                   "container": <head>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvIconBase"
-                                    >
-                                      
-.HvIconBase-root {
-  display: flex;
-}
-.HvIconBase-root svg {
-  margin: auto;
-}
-.HvIconBase-xs {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-s {
-  width: 32px;
-  height: 32px;
-}
-.HvIconBase-m {
-  width: 48px;
-  height: 48px;
-}
-.HvIconBase-l {
-  width: 112px;
-  height: 112px;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvTypography"
-                                    >
-                                      
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvFileUploaderFile"
-                                    >
-                                      
-.HvFileUploaderFile-progressbarBack {
-  top: -1px;
-  width: 100%;
-  border: 1px solid #CCCED0;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar {
-  top: -1px;
-  width: 80%;
-  border: 1px solid #414141;
-  height: 2px;
-  position: absolute;
-}
-.HvFileUploaderFile-progressbar::-moz-progress-bar {
-  background: #414141;
-}
-.HvFileUploaderFile-progressTextContainer {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-}
-.HvFileUploaderFile-previewContainer {
-  width: 52px;
-  height: 52px;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.HvFileUploaderFile-previewContainer img {
-  width: 100%;
-  height: 100%;
-  max-width: 52px;
-  max-height: 52px;
-  object-fit: cover;
-  object-position: center;
-}
-.HvFileUploaderFile-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-removeButton {
-  margin: 0px 10px;
-}
-.HvFileUploaderFile-fail {
-  color: #C62828;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvFileUploaderFileList"
-                                    >
-                                      
-.HvFileUploaderFileList-list {
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-}
-.HvFileUploaderFileList-list li {
-  height: 72px;
-  display: flex;
-  position: relative;
-  background: #FBFCFC;
-  align-items: center;
-}
-.HvFileUploaderFileList-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-                                    </style>
                                     <style
                                       data-emotion="css"
                                       data-s=""
@@ -3425,13 +3160,278 @@ exports[`FileList withStyles should render correctly 1`] = `
                                       
                                       .css-8je8zh-MuiTouchRipple-root{overflow:hidden;pointer-events:none;position:absolute;z-index:0;top:0;right:0;bottom:0;left:0;border-radius:inherit;}
                                     </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvIconBase"
+                                    >
+                                      
+.HvIconBase-root-10 {
+  display: flex;
+}
+.HvIconBase-root-10 svg {
+  margin: auto;
+}
+.HvIconBase-xs-11 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-s-12 {
+  width: 32px;
+  height: 32px;
+}
+.HvIconBase-m-13 {
+  width: 48px;
+  height: 48px;
+}
+.HvIconBase-l-14 {
+  width: 112px;
+  height: 112px;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvTypography"
+                                    >
+                                      
+.HvTypography-root-15 {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle-16 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle-17 {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle-18 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle-19 {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle-20 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle-21 {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle-22 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle-23 {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle-24 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle-25 {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle-26 {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText-27 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText-28 {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText-29 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link-30 {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText-31 {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText-32 {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText-33 {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled-34 {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink-35 {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap-36 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvFileUploaderFile"
+                                    >
+                                      
+.HvFileUploaderFile-progressbarBack-2 {
+  top: -1px;
+  width: 100%;
+  border: 1px solid #CCCED0;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3 {
+  top: -1px;
+  width: 80%;
+  border: 1px solid #414141;
+  height: 2px;
+  position: absolute;
+}
+.HvFileUploaderFile-progressbar-3::-moz-progress-bar {
+  background: #414141;
+}
+.HvFileUploaderFile-progressTextContainer-4 {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.HvFileUploaderFile-previewContainer-5 {
+  width: 52px;
+  height: 52px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HvFileUploaderFile-previewContainer-5 img {
+  width: 100%;
+  height: 100%;
+  max-width: 52px;
+  max-height: 52px;
+  object-fit: cover;
+  object-position: center;
+}
+.HvFileUploaderFile-icon-6 {
+  width: 32px;
+  height: 32px;
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-removeButton-7 {
+  margin: 0px 10px;
+}
+.HvFileUploaderFile-fail-8 {
+  color: #C62828;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvFileUploaderFileList"
+                                    >
+                                      
+.HvFileUploaderFileList-list-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.HvFileUploaderFileList-list-1 li {
+  height: 72px;
+  display: flex;
+  position: relative;
+  background: #FBFCFC;
+  align-items: center;
+}
+.HvFileUploaderFileList-list-1 li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+                                    </style>
                                   </head>,
                                   "ctr": 12,
                                   "insertionPoint": undefined,
                                   "isSpeedy": false,
                                   "key": "css",
                                   "nonce": undefined,
-                                  "prepend": undefined,
+                                  "prepend": true,
                                   "tags": Array [
                                     <style
                                       data-emotion="css"
