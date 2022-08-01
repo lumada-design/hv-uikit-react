@@ -7,21 +7,21 @@ exports[`MenuBar withStyles should be able to render 1`] = `
   <MenuBar
     classes={
       Object {
-        "active": "HvHeaderMenuBar-active",
-        "hidden": "HvHeaderMenuBar-hidden",
-        "list": "HvHeaderMenuBar-list",
-        "menu": "HvHeaderMenuBar-menu",
-        "menubar": "HvHeaderMenuBar-menubar",
-        "root": "HvHeaderMenuBar-root",
+        "active": "HvHeaderMenuBar-active-5",
+        "hidden": "HvHeaderMenuBar-hidden-4",
+        "list": "HvHeaderMenuBar-list-6",
+        "menu": "HvHeaderMenuBar-menu-3",
+        "menubar": "HvHeaderMenuBar-menubar-2",
+        "root": "HvHeaderMenuBar-root-1",
       }
     }
     type="menubar"
   >
     <div
-      className="HvHeaderMenuBar-root HvHeaderMenuBar-menubar"
+      className="HvHeaderMenuBar-root-1 HvHeaderMenuBar-menubar-2"
     >
       <ul
-        className="HvHeaderMenuBar-list"
+        className="HvHeaderMenuBar-list-6"
         onFocus={[Function]}
       />
     </div>

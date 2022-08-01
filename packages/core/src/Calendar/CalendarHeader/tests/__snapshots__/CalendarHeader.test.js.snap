@@ -9,14 +9,14 @@ exports[`<CalendarHeader /> should render correctly 1`] = `
   <HvCalendarHeader
     classes={
       Object {
-        "headerDate": "HvCalendarHeader-headerDate",
-        "headerDayOfWeek": "HvCalendarHeader-headerDayOfWeek",
-        "input": "HvCalendarHeader-input",
-        "inputBorderContainer": "HvCalendarHeader-inputBorderContainer",
-        "invalid": "HvCalendarHeader-invalid",
-        "invalidMessageStyling": "HvCalendarHeader-invalidMessageStyling",
-        "rangeLabel": "HvCalendarHeader-rangeLabel",
-        "root": "HvCalendarHeader-root",
+        "headerDate": "HvCalendarHeader-headerDate-4",
+        "headerDayOfWeek": "HvCalendarHeader-headerDayOfWeek-3",
+        "input": "HvCalendarHeader-input-8",
+        "inputBorderContainer": "HvCalendarHeader-inputBorderContainer-6",
+        "invalid": "HvCalendarHeader-invalid-7",
+        "invalidMessageStyling": "HvCalendarHeader-invalidMessageStyling-5",
+        "rangeLabel": "HvCalendarHeader-rangeLabel-1",
+        "root": "HvCalendarHeader-root-2",
       }
     }
     id="default"
@@ -24,55 +24,55 @@ exports[`<CalendarHeader /> should render correctly 1`] = `
     value={2020-01-01T12:00:00.000Z}
   >
     <div
-      className="HvCalendarHeader-root"
+      className="HvCalendarHeader-root-2"
       id="default"
     >
       <WithStyles(ForwardRef)
-        className="HvCalendarHeader-headerDayOfWeek"
+        className="HvCalendarHeader-headerDayOfWeek-3"
         variant="normalText"
       >
         <ForwardRef
-          className="HvCalendarHeader-headerDayOfWeek"
+          className="HvCalendarHeader-headerDayOfWeek-3"
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "3xlTitle": "HvTypography-3xlTitle-12",
+              "4xlTitle": "HvTypography-4xlTitle-11",
+              "5xlTitle": "HvTypography-5xlTitle-10",
+              "disabledText": "HvTypography-disabledText-25",
+              "highlightText": "HvTypography-highlightText-21",
+              "lTitle": "HvTypography-lTitle-15",
+              "link": "HvTypography-link-24",
+              "mTitle": "HvTypography-mTitle-16",
+              "noWrap": "HvTypography-noWrap-30",
+              "normalText": "HvTypography-normalText-22",
+              "placeholderText": "HvTypography-placeholderText-23",
+              "root": "HvTypography-root-9",
+              "sTitle": "HvTypography-sTitle-17",
+              "sectionTitle": "HvTypography-sectionTitle-20",
+              "selectedNavText": "HvTypography-selectedNavText-26",
+              "vizText": "HvTypography-vizText-27",
+              "vizTextDisabled": "HvTypography-vizTextDisabled-28",
+              "xlTitle": "HvTypography-xlTitle-14",
+              "xsInlineLink": "HvTypography-xsInlineLink-29",
+              "xsTitle": "HvTypography-xsTitle-18",
+              "xxlTitle": "HvTypography-xxlTitle-13",
+              "xxsTitle": "HvTypography-xxsTitle-19",
             }
           }
           variant="normalText"
         >
           <p
-            className="HvCalendarHeader-headerDayOfWeek HvTypography-root HvTypography-normalText"
+            className="HvCalendarHeader-headerDayOfWeek-3 HvTypography-root-9 HvTypography-normalText-22"
           >
             Wed
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <div
-        className="HvCalendarHeader-headerDate"
+        className="HvCalendarHeader-headerDate-4"
       >
         <input
-          className="HvCalendarHeader-input"
+          className="HvCalendarHeader-input-8"
           id="default-header-input"
           onBlur={[Function]}
           onChange={[Function]}

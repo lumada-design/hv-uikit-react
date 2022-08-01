@@ -54,20 +54,28 @@ const themeBuilder = (theme) => {
         disableUnderline: true,
       },
     },
-    overrides: {
+    components: {
       MuiPaper: {
-        root: {
-          backgroundColor: theme.palette.atmosphere.atmo1,
+        styleOverrides: {
+          root: {
+            backgroundColor: theme.palette.atmosphere.atmo1,
+          },
         },
       },
       MuiAppBar: {
-        ...muiAppBarOverrides(theme),
+        styleOverrides: {
+          ...muiAppBarOverrides(theme),
+        },
       },
       MuiToolbar: {
-        ...muiToolbarOverrides(theme),
+        styleOverrides: {
+          ...muiToolbarOverrides(theme),
+        },
       },
       MuiIconButton: {
-        ...muiIconButtonOverrides(theme),
+        styleOverrides: {
+          ...muiIconButtonOverrides(theme),
+        },
       },
     },
     hv: theme,

@@ -7,14 +7,14 @@ exports[`Brand withStyles should be able to render 1`] = `
   <Brand
     classes={
       Object {
-        "root": "HvHeaderBrand-root",
-        "separator": "HvHeaderBrand-separator",
+        "root": "HvHeaderBrand-root-1",
+        "separator": "HvHeaderBrand-separator-2",
       }
     }
     name="test"
   >
     <div
-      className="HvHeaderBrand-root"
+      className="HvHeaderBrand-root-1"
     >
       <WithStyles(ForwardRef)
         variant="highlightText"
@@ -22,34 +22,34 @@ exports[`Brand withStyles should be able to render 1`] = `
         <ForwardRef
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "3xlTitle": "HvTypography-3xlTitle-6",
+              "4xlTitle": "HvTypography-4xlTitle-5",
+              "5xlTitle": "HvTypography-5xlTitle-4",
+              "disabledText": "HvTypography-disabledText-19",
+              "highlightText": "HvTypography-highlightText-15",
+              "lTitle": "HvTypography-lTitle-9",
+              "link": "HvTypography-link-18",
+              "mTitle": "HvTypography-mTitle-10",
+              "noWrap": "HvTypography-noWrap-24",
+              "normalText": "HvTypography-normalText-16",
+              "placeholderText": "HvTypography-placeholderText-17",
+              "root": "HvTypography-root-3",
+              "sTitle": "HvTypography-sTitle-11",
+              "sectionTitle": "HvTypography-sectionTitle-14",
+              "selectedNavText": "HvTypography-selectedNavText-20",
+              "vizText": "HvTypography-vizText-21",
+              "vizTextDisabled": "HvTypography-vizTextDisabled-22",
+              "xlTitle": "HvTypography-xlTitle-8",
+              "xsInlineLink": "HvTypography-xsInlineLink-23",
+              "xsTitle": "HvTypography-xsTitle-12",
+              "xxlTitle": "HvTypography-xxlTitle-7",
+              "xxsTitle": "HvTypography-xxsTitle-13",
             }
           }
           variant="highlightText"
         >
           <p
-            className="HvTypography-root HvTypography-highlightText"
+            className="HvTypography-root-3 HvTypography-highlightText-15"
           >
             test
           </p>
