@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@mui/material";
-import { SliderProps, RangeProps } from "rc-slider";
+import { SliderProps } from "rc-slider";
 import { HvFormStatus } from "../Forms/FormElement";
 import { HvInputProps } from "..";
 
@@ -63,7 +63,7 @@ export interface HvSliderProps
    * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
    * or "invalid" after any change to the state.
    */
-  status?: HvFormStatus;
+  status?: HvFormStatus | HvFormStatus[];
   /**
    * The error message to show when `status` is "invalid".
    */
@@ -179,7 +179,7 @@ export interface HvSliderProps
   /**
    * Attributes applied to the input element.
    */
-  sliderProps?: RangeProps | SliderProps;
+  sliderProps?: SliderProps;
 }
 
 export default function HvSlider(props: HvSliderProps): JSX.Element | null;
