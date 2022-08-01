@@ -20,13 +20,13 @@ const styles = (theme) => ({
   orderedList: {
     display: "flex",
     paddingLeft: 0,
-    marginLeft: `-${theme.spacing("xs")}px`,
+    marginLeft: `-${theme.spacing("xs")}`,
   },
   currentPage: {
-    padding: `8px ${theme.spacing("xs")}px`,
+    padding: `8px ${theme.spacing("xs")}`,
   },
   a: {
-    padding: `8px ${theme.spacing("xs")}px`,
+    padding: `8px ${theme.spacing("xs")}`,
     textDecoration: "none",
     borderRadius: "2px",
     "&:hover": {
