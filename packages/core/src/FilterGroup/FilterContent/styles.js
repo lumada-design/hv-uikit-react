@@ -8,13 +8,13 @@ const styles = makeStyles((theme) => ({
     minHeight: "calc(370px - 75px)",
     "& div$leftSidePanel": {
       display: "inline-block",
-      width: `calc(50% - ${theme.spacing("sm")}px - ${theme.spacing("sm")}px + 8px)`,
-      height: `calc(100% - ${theme.spacing("sm")}px - ${theme.spacing("sm")}px + 8px)`,
+      width: `calc(50% - ${theme.spacing("sm")} - ${theme.spacing("sm")} + 8px)`,
+      height: `calc(100% - ${theme.spacing("sm")} - ${theme.spacing("sm")} + 8px)`,
       verticalAlign: "top",
       maxHeight: "calc(500px - 75px)",
       minHeight: "calc(370px - 75px)",
       padding: 4,
-      margin: theme.spacing("sm") - 4,
+      margin: `calc(${theme.spacing("sm")} - 4px)`,
     },
     "& div$rightSidePanel": {
       display: "inline-block",
@@ -38,7 +38,7 @@ const styles = makeStyles((theme) => ({
     flex: 1,
   },
   baseDropdownSelection: {
-    padding: "0 30px 0 0",
+    padding: "0 30px 0 10px",
   },
   header: {
     display: "flex",
