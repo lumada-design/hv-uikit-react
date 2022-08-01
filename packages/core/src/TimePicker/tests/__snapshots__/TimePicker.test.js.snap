@@ -3,50 +3,50 @@
 exports[`Timepicker snapshot tests Main 1`] = `
 <div>
   <div
-    class="HvFormElement-root HvTimePicker-formElementRoot"
+    class="HvFormElement-root-19 HvTimePicker-formElementRoot-12"
     id="custom"
     locale="en-US"
   >
     <div
-      class="HvTimePicker-labelContainer"
+      class="HvTimePicker-labelContainer-6"
     >
       <label
-        class="HvTimePicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        class="HvTimePicker-label-9 HvLabel-root-20 HvTypography-root-23 HvTypography-highlightText-35"
         id="custom-label"
       >
         Time
       </label>
     </div>
     <div
-      class="HvBaseDropdown-root"
+      class="HvBaseDropdown-root-45"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
         aria-labelledby="custom-label"
-        class="HvBaseDropdown-anchor"
+        class="HvBaseDropdown-anchor-46"
         id="custom-timepicker-dropdown"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-labelledby="custom-label"
-          class="HvBaseDropdown-header"
+          class="HvBaseDropdown-header-50"
           id="custom-timepicker-dropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection"
+            class="HvBaseDropdown-selection-56"
           >
             <p
-              class="HvBaseDropdown-placeholder HvTimePicker-dropdownPlaceholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+              class="HvBaseDropdown-placeholder-57 HvTimePicker-dropdownPlaceholder-15 HvTypography-root-23 HvTypography-placeholderText-37 HvTypography-noWrap-44"
             >
               02:35:45 PM
             </p>
           </div>
           <div
-            class="HvTimePicker-iconBaseRoot HvIconBase-root HvIconBase-s"
+            class="HvTimePicker-iconBaseRoot-13 HvIconBase-root-65 HvIconBase-s-67"
             name="Time"
           >
             <svg

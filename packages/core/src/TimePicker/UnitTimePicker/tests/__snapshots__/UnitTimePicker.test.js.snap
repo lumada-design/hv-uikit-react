@@ -3,10 +3,10 @@
 exports[`UnitTimePicker should render correctly 1`] = `
 <div>
   <div
-    class="HvTimePickerUnitTimePicker-unitTimeContainer"
+    class="HvTimePickerUnitTimePicker-unitTimeContainer-1"
   >
     <div
-      class="HvIconBase-root HvIconBase-xs"
+      class="HvIconBase-root-7 HvIconBase-xs-8"
       name="DropUpXS"
     >
       <svg
@@ -24,17 +24,17 @@ exports[`UnitTimePicker should render correctly 1`] = `
       </svg>
     </div>
     <div
-      class="HvInput-root HvTimePickerUnitTimePicker-inputContainer HvFormElement-root"
+      class="HvInput-root-12 HvTimePickerUnitTimePicker-inputContainer-5 HvFormElement-root-31"
     >
       <div
-        class="HvBaseInput-root"
+        class="HvBaseInput-root-32"
       >
         <div
-          class="HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-loohag-MuiInputBase-root-MuiInput-root"
+          class="HvBaseInput-inputRoot-37 HvInput-inputRoot-14 HvTimePickerUnitTimePicker-unitTimeInputRoot-3 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
         >
           <input
             autocomplete="off"
-            class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+            class="HvBaseInput-input-41 HvInput-input-18 HvTimePickerUnitTimePicker-unitTimeInput-2 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
             max="59"
             min="0"
             required=""
@@ -44,13 +44,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
           />
         </div>
         <div
-          class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer"
+          class="HvBaseInput-inputBorderContainer-44 HvInput-inputBorderContainer-30 HvTimePickerUnitTimePicker-inputBorderContainer-6"
           role="presentation"
         />
       </div>
     </div>
     <div
-      class="HvTimePickerUnitTimePicker-subtractIcon HvIconBase-root HvIconBase-xs"
+      class="HvTimePickerUnitTimePicker-subtractIcon-4 HvIconBase-root-7 HvIconBase-xs-8"
       name="DropDownXS"
     >
       <svg
