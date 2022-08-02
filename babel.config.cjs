@@ -32,7 +32,7 @@ module.exports = (api) => {
         browserslistEnv: api != null && api.env(),
       },
     ],
-    "@babel/preset-react",
+    ["@babel/preset-react", { runtime: "automatic" }],
   ];
 
   const plugins = [
