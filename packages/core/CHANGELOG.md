@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.68.10 (2022-08-02)
+
+
+### Bug Fixes
+
+* **slider:** missing status array proptype definition ([9b1d8d3](https://github.com/lumada-design/hv-uikit-react/commit/9b1d8d34867f795c842edd834b06f44323dfca40))
+
+
+
+
+
 ## [3.68.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.8...@hitachivantara/uikit-react-core@3.68.9) (2022-07-26)
 
 
