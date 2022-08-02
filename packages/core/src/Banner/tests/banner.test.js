@@ -191,7 +191,9 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-    const error = mount(iconVariant("error")).find(Fail);
+    const error = mount(<HvProvider disableCssBaseline>{iconVariant("error")}</HvProvider>).find(
+      Fail
+    );
     expect(error.length).toBe(1);
     const invalid = iconVariant("test");
     expect(invalid).toBe(null);
