@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import { useTheme, makeStyles } from "@mui/material";
+import { useTheme } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import {
   HvButton,
   HvTypography,

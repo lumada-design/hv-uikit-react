@@ -304,8 +304,7 @@ describe("useHvRowExpand", () => {
         const span = getByText(cell.value);
 
         expect(span).toBeInTheDocument();
-
-        expect(span).toHaveClass("HvTypography-highlightText");
+        expect(span.className).toMatch(/HvTypography-highlightText/);
       });
     });
   });

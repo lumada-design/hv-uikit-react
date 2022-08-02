@@ -5,32 +5,28 @@ exports[`useHvRowExpand CellWithExpandButton snapshots as an additional system c
   <button
     aria-expanded="false"
     aria-label="expandRowButtonAriaLabel"
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    class="HvButton-root-45 MuiButton-root MuiButton-text HvButton-ghost-52 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-46 HvButton-ghostSVG-59 css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
+    <div
+      class="HvIconBase-root-62 HvIconBase-xs-63"
+      name="DropRightXS"
     >
-      <div
-        class="HvIconBase-root HvIconBase-xs"
-        name="DropRightXS"
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          focusable="false"
-          height="12"
-          viewBox="0 0 12 12"
-          width="12"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="color0"
-            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-            fill="#414141"
-          />
-        </svg>
-      </div>
-    </span>
+        <path
+          class="color0"
+          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
   </button>
 </div>
 `;
@@ -40,35 +36,31 @@ exports[`useHvRowExpand CellWithExpandButton snapshots as an augmented cell 1`] 
   <button
     aria-expanded="false"
     aria-label="expandRowButtonAriaLabel"
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    class="HvButton-root-1 MuiButton-root MuiButton-text HvButton-ghost-8 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-2 HvButton-ghostSVG-15 css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiButton-label"
+    <div
+      class="HvIconBase-root-18 HvIconBase-xs-19"
+      name="DropRightXS"
     >
-      <div
-        class="HvIconBase-root HvIconBase-xs"
-        name="DropRightXS"
+      <svg
+        focusable="false"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          focusable="false"
-          height="12"
-          viewBox="0 0 12 12"
-          width="12"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="color0"
-            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-            fill="#414141"
-          />
-        </svg>
-      </div>
-    </span>
+        <path
+          class="color0"
+          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+          fill="#414141"
+        />
+      </svg>
+    </div>
   </button>
   <span
-    class="HvTypography-root HvTypography-highlightText"
+    class="HvTypography-root-23 HvTypography-highlightText-35"
   >
     Text
   </span>

@@ -219,12 +219,8 @@ describe("Table", () => {
       const { getAllByRole } = render(<ListRow />);
       const rows = getAllByRole("row");
       rows.forEach((element, index) => {
-        if (index !== 0)
-          expect(element).toHaveClass(
-            "HvTableRow-root HvTableRow-body grid HvFocus-root grid HvTableRow-variantList"
-          );
-        else
-          expect(element).toHaveClass("HvTableRow-root HvTableRow-head HvTableRow-variantListHead");
+        if (index !== 0) expect(element.className).toMatch(/HvTableRow-variantList/);
+        else expect(element.className).toMatch(/HvTableRow-variantListHead/);
       });
     });
   });
