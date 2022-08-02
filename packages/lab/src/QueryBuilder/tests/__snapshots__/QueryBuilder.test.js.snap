@@ -3,93 +3,82 @@
 exports[`QueryBuilder snapshot matches snapshot 1`] = `
 <div>
   <div
-    class="RuleGroup-root-1 HvQueryBuilder-root RuleGroup-topGroup-3 HvQueryBuilder-topGroup"
+    class="RuleGroup-root-13 HvQueryBuilder-root-1 RuleGroup-topGroup-15 HvQueryBuilder-topGroup-2"
   >
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1yn1ecg-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <div
-          class="RuleGroup-combinator-4 HvQueryBuilder-combinator RuleGroup-topCombinator-5 HvQueryBuilder-topCombinator HvMultiButton-root"
+          class="RuleGroup-combinator-16 HvQueryBuilder-combinator-4 RuleGroup-topCombinator-17 HvQueryBuilder-topCombinator-5 HvMultiButton-root-25"
         >
           <button
             aria-pressed="true"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="HvButton-root-29 MuiButton-root MuiButton-text HvButton-ghost-36 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root RuleGroup-combinatorButton-18 HvQueryBuilder-combinatorButton-6 HvMultiButton-button-26 HvMultiButton-selected-27 HvButton-ghostSVG-43 css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              AND
-            </span>
+            AND
           </button>
           <button
             aria-pressed="false"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="HvButton-root-29 MuiButton-root MuiButton-text HvButton-ghost-36 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root RuleGroup-combinatorButton-18 HvQueryBuilder-combinatorButton-6 HvMultiButton-button-26 HvButton-ghostSVG-43 css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              OR
-            </span>
+            OR
           </button>
         </div>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           aria-label="Reset query"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text RuleGroup-removeButton-9 HvQueryBuilder-removeButton RuleGroup-topRemoveButton-10 HvQueryBuilder-topRemoveButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="HvButton-root-29 MuiButton-root MuiButton-text HvButton-ghost-36 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root RuleGroup-removeButton-21 HvQueryBuilder-removeButton-7 RuleGroup-topRemoveButton-22 HvQueryBuilder-topRemoveButton-8 HvButton-icon-30 HvButton-ghostSVG-43 css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class=""
+            data-mui-internal-clone-element="true"
+            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
           >
             <div
-              class=""
-              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+              class="HvIconBase-root-57 HvIconBase-s-59"
+              name="Delete"
             >
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Delete"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
+                <path
+                  class="color0"
+                  d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                  fill="#414141"
+                />
+              </svg>
             </div>
-          </span>
+          </div>
         </button>
       </div>
     </div>
     <div
-      class="HvEmptyState-root"
+      class="HvEmptyState-root-62"
     >
       <div
-        class="HvEmptyState-container"
+        class="HvEmptyState-container-63"
       >
         <div
-          class="HvEmptyState-iconContainer"
+          class="HvEmptyState-iconContainer-65"
         >
           <div
-            class="HvIconBase-root HvIconBase-s"
+            class="HvIconBase-root-57 HvIconBase-s-59"
             name="Info"
           >
             <svg
@@ -108,25 +97,25 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="HvEmptyState-textContainer"
+          class="HvEmptyState-textContainer-66"
         >
           <div
-            class="HvEmptyState-titleContainer HvTypography-root HvTypography-xxsTitle"
+            class="HvEmptyState-titleContainer-67 HvTypography-root-70 HvTypography-xxsTitle-80"
           >
             No conditions created yet
           </div>
           <div
-            class="HvEmptyState-messageContainer HvTypography-root HvTypography-normalText"
+            class="HvEmptyState-messageContainer-68 HvTypography-root-70 HvTypography-normalText-83"
           >
             <a
-              class="HvTypography-root HvTypography-link"
+              class="HvTypography-root-70 HvTypography-link-85"
               style="cursor: pointer; text-decoration: underline;"
             >
               Create a condition
             </a>
              or a 
             <a
-              class="HvTypography-root HvTypography-link"
+              class="HvTypography-root-70 HvTypography-link-85"
               style="cursor: pointer; text-decoration: underline;"
             >
               condition group
@@ -136,68 +125,60 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-1yn1ecg-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root RuleGroup-actionButtonContainer-7 HvQueryBuilder-actionButtonContainer RuleGroup-topActionButtonContainer-8 HvQueryBuilder-topActionButtonContainer MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item RuleGroup-actionButtonContainer-19 HvQueryBuilder-actionButtonContainer-11 RuleGroup-topActionButtonContainer-20 HvQueryBuilder-topActionButtonContainer-12 css-13i4rnv-MuiGrid-root"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+          class="HvButton-root-29 MuiButton-root MuiButton-outlined HvButton-secondary-34 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-42 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root-57 HvIconBase-s-59"
+            name="Add"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Add"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-            Add condition
-          </span>
+              <path
+                class="color0"
+                d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+          Add condition
         </button>
         <button
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+          class="HvButton-root-29 MuiButton-root MuiButton-outlined HvButton-secondary-34 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-42 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root-57 HvIconBase-s-59"
+            name="Add"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Add"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-            Add group
-          </span>
+              <path
+                class="color0"
+                d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+          Add group
         </button>
       </div>
     </div>

@@ -70,8 +70,8 @@ const styles = (theme) => ({
   },
   topActionButtonContainer: {
     position: "absolute",
-    bottom: -theme.hv.spacing.md,
-    right: theme.hv.spacing.sm,
+    bottom: -theme.hv.spacing.md * 0.5, // compensating for material grid new spacing
+    right: theme.hv.spacing.sm * 1.75, // compensating for material grid new spacing
   },
 
   removeButton: {},
