@@ -78,13 +78,13 @@ exports[`Donuchart Regular should render correctly 1`] = `
       <Chart
         classes={
           Object {
-            "defaultColors": "HvChart-defaultColors",
-            "gridColor": "HvChart-gridColor",
-            "legendText": "HvChart-legendText",
-            "lineColor": "HvChart-lineColor",
-            "plotColor": "HvChart-plotColor",
-            "root": "HvChart-root",
-            "vizText": "HvChart-vizText",
+            "defaultColors": "HvChart-defaultColors-2",
+            "gridColor": "HvChart-gridColor-6",
+            "legendText": "HvChart-legendText-4",
+            "lineColor": "HvChart-lineColor-5",
+            "plotColor": "HvChart-plotColor-7",
+            "root": "HvChart-root-1",
+            "vizText": "HvChart-vizText-3",
           }
         }
         data={
@@ -113,7 +113,7 @@ exports[`Donuchart Regular should render correctly 1`] = `
         type="regular"
       >
         <div
-          className="HvChart-root"
+          className="HvChart-root-1"
         >
           <div
             onMouseMove={[Function]}
@@ -662,13 +662,13 @@ exports[`Donuchart Thin should render correctly 1`] = `
       <Chart
         classes={
           Object {
-            "defaultColors": "HvChart-defaultColors",
-            "gridColor": "HvChart-gridColor",
-            "legendText": "HvChart-legendText",
-            "lineColor": "HvChart-lineColor",
-            "plotColor": "HvChart-plotColor",
-            "root": "HvChart-root",
-            "vizText": "HvChart-vizText",
+            "defaultColors": "HvChart-defaultColors-9",
+            "gridColor": "HvChart-gridColor-13",
+            "legendText": "HvChart-legendText-11",
+            "lineColor": "HvChart-lineColor-12",
+            "plotColor": "HvChart-plotColor-14",
+            "root": "HvChart-root-8",
+            "vizText": "HvChart-vizText-10",
           }
         }
         data={
@@ -697,7 +697,7 @@ exports[`Donuchart Thin should render correctly 1`] = `
         type="thin"
       >
         <div
-          className="HvChart-root"
+          className="HvChart-root-8"
         >
           <div
             onMouseMove={[Function]}

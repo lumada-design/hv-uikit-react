@@ -27,13 +27,13 @@ exports[`Chart withStyles should render correctly 1`] = `
   <Chart
     classes={
       Object {
-        "defaultColors": "HvChart-defaultColors",
-        "gridColor": "HvChart-gridColor",
-        "legendText": "HvChart-legendText",
-        "lineColor": "HvChart-lineColor",
-        "plotColor": "HvChart-plotColor",
-        "root": "HvChart-root",
-        "vizText": "HvChart-vizText",
+        "defaultColors": "HvChart-defaultColors-9",
+        "gridColor": "HvChart-gridColor-13",
+        "legendText": "HvChart-legendText-11",
+        "lineColor": "HvChart-lineColor-12",
+        "plotColor": "HvChart-plotColor-14",
+        "root": "HvChart-root-8",
+        "vizText": "HvChart-vizText-10",
       }
     }
     data={
@@ -59,7 +59,7 @@ exports[`Chart withStyles should render correctly 1`] = `
     layout={Object {}}
   >
     <div
-      className="HvChart-root"
+      className="HvChart-root-8"
     >
       <div
         onMouseMove={[Function]}
@@ -573,7 +573,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
   <MainToolTip
     classes={
       Object {
-        "root": "HvChartTooltip-root",
+        "root": "HvChartTooltip-root-74",
       }
     }
     coordinates={
@@ -590,7 +590,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
     useSingle={false}
   >
     <div
-      className="HvChartTooltip-root"
+      className="HvChartTooltip-root-74"
       style={
         Object {
           "left": 0,
@@ -609,14 +609,14 @@ exports[`Tooltip withStyles should render correctly 1`] = `
         <MultiTooltip
           classes={
             Object {
-              "color": "HvChartMultiTooltip-color",
-              "root": "HvChartMultiTooltip-root",
-              "separator": "HvChartMultiTooltip-separator",
-              "separatorColor": "HvChartMultiTooltip-separatorColor",
-              "title": "HvChartMultiTooltip-title",
-              "valueNameWrapper": "HvChartMultiTooltip-valueNameWrapper",
-              "values": "HvChartMultiTooltip-values",
-              "valuesContainer": "HvChartMultiTooltip-valuesContainer",
+              "color": "HvChartMultiTooltip-color-80",
+              "root": "HvChartMultiTooltip-root-75",
+              "separator": "HvChartMultiTooltip-separator-81",
+              "separatorColor": "HvChartMultiTooltip-separatorColor-82",
+              "title": "HvChartMultiTooltip-title-76",
+              "valueNameWrapper": "HvChartMultiTooltip-valueNameWrapper-79",
+              "values": "HvChartMultiTooltip-values-78",
+              "valuesContainer": "HvChartMultiTooltip-valuesContainer-77",
             }
           }
           data={
@@ -626,10 +626,10 @@ exports[`Tooltip withStyles should render correctly 1`] = `
           }
         >
           <div
-            className="HvChartMultiTooltip-root"
+            className="HvChartMultiTooltip-root-75"
           >
             <div
-              className="HvChartMultiTooltip-title"
+              className="HvChartMultiTooltip-title-76"
             >
               <div>
                 <WithStyles(ForwardRef)
@@ -638,41 +638,41 @@ exports[`Tooltip withStyles should render correctly 1`] = `
                   <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledText": "HvTypography-disabledText",
-                        "highlightText": "HvTypography-highlightText",
-                        "lTitle": "HvTypography-lTitle",
-                        "link": "HvTypography-link",
-                        "mTitle": "HvTypography-mTitle",
-                        "noWrap": "HvTypography-noWrap",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sTitle": "HvTypography-sTitle",
-                        "sectionTitle": "HvTypography-sectionTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "vizText": "HvTypography-vizText",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsInlineLink": "HvTypography-xsInlineLink",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
+                        "3xlTitle": "HvTypography-3xlTitle-86",
+                        "4xlTitle": "HvTypography-4xlTitle-85",
+                        "5xlTitle": "HvTypography-5xlTitle-84",
+                        "disabledText": "HvTypography-disabledText-99",
+                        "highlightText": "HvTypography-highlightText-95",
+                        "lTitle": "HvTypography-lTitle-89",
+                        "link": "HvTypography-link-98",
+                        "mTitle": "HvTypography-mTitle-90",
+                        "noWrap": "HvTypography-noWrap-104",
+                        "normalText": "HvTypography-normalText-96",
+                        "placeholderText": "HvTypography-placeholderText-97",
+                        "root": "HvTypography-root-83",
+                        "sTitle": "HvTypography-sTitle-91",
+                        "sectionTitle": "HvTypography-sectionTitle-94",
+                        "selectedNavText": "HvTypography-selectedNavText-100",
+                        "vizText": "HvTypography-vizText-101",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled-102",
+                        "xlTitle": "HvTypography-xlTitle-88",
+                        "xsInlineLink": "HvTypography-xsInlineLink-103",
+                        "xsTitle": "HvTypography-xsTitle-92",
+                        "xxlTitle": "HvTypography-xxlTitle-87",
+                        "xxsTitle": "HvTypography-xxsTitle-93",
                       }
                     }
                     variant="highlightText"
                   >
                     <p
-                      className="HvTypography-root HvTypography-highlightText"
+                      className="HvTypography-root-83 HvTypography-highlightText-95"
                     />
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
               </div>
             </div>
             <div
-              className="HvChartMultiTooltip-valuesContainer"
+              className="HvChartMultiTooltip-valuesContainer-77"
             />
           </div>
         </MultiTooltip>

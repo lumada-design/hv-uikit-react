@@ -37,7 +37,7 @@ export const Main = () => (
 export const AverageService = () => (
   <HvCard
     style={{ width: 320 }}
-    semantic="sema1"
+    statusColor="sema1"
     icon={<Level0Good title="Good" semantic="sema1" />}
   >
     <HvTypography style={{ padding: 15 }} variant="xsTitle">
@@ -111,7 +111,7 @@ export const IOPS = () => {
       onClick={() => setSelected(!selected)}
       bgcolor="atmo1"
       style={{ width: 320, cursor: "pointer" }}
-      semantic="sema4"
+      statusColor="sema4"
       icon={<Level2Average title="Bad" semantic="sema4" />}
     >
       <HvTypography style={{ padding: 15 }} variant="xsTitle">
@@ -205,7 +205,7 @@ export const Selectable = () => {
       selectable
       selected={selected}
       onClick={() => setSelected(!selected)}
-      semantic="sema0"
+      statusColor="sema0"
       style={{ width: 190, cursor: "pointer" }}
     >
       <div style={{ padding: 20 }}>
@@ -287,7 +287,7 @@ export const SelectableSemantic = () => {
       selectable
       selected={selected}
       onClick={() => setSelected(!selected)}
-      semantic="sema4"
+      statusColor="sema4"
       style={{ width: 190, cursor: "pointer" }}
     >
       <div style={{ padding: 20 }}>
