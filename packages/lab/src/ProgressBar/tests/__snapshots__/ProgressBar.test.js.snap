@@ -9,7 +9,7 @@ exports[`ProgressBar General 1`] = `
       style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 400px; margin: 20px auto 40px auto;"
     >
       <p
-        class="HvTypography-root HvTypography-highlightText"
+        class="HvTypography-root-1 HvTypography-highlightText-13"
       >
         Success
       </p>
@@ -20,26 +20,26 @@ exports[`ProgressBar General 1`] = `
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="HvProgressBar-root HvProgressBar-progress"
+          class="HvProgressBar-root-23 HvProgressBar-progress-24"
           role="progressbar"
         >
           <div
-            class="HvProgressBar-progressContainer"
+            class="HvProgressBar-progressContainer-25"
           >
             <p
               aria-busy="false"
               aria-label="Determinate Progress Bar"
               aria-live="assertive"
-              class="HvProgressBar-progressBarLabel HvTypography-root HvTypography-vizText"
+              class="HvProgressBar-progressBarLabel-30 HvTypography-root-1 HvTypography-vizText-19"
               style="width: 0%;"
             >
               0%
             </p>
             <div
-              class="HvProgressBar-progressBarContainer"
+              class="HvProgressBar-progressBarContainer-26"
             >
               <div
-                class="HvProgressBar-progressBar"
+                class="HvProgressBar-progressBar-27"
                 style="width: 0%;"
               />
             </div>
@@ -49,27 +49,19 @@ exports[`ProgressBar General 1`] = `
           style="margin-top: 10px;"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            class="HvButton-root-31 MuiButton-root MuiButton-contained HvButton-primary-33 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-43 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              Start
-            </span>
+            Start
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            class="HvButton-root-31 MuiButton-root MuiButton-contained HvButton-primary-33 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-43 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             style="margin-left: 10px;"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              Reset
-            </span>
+            Reset
           </button>
         </div>
       </div>
@@ -78,7 +70,7 @@ exports[`ProgressBar General 1`] = `
       style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 400px; margin: auto;"
     >
       <p
-        class="HvTypography-root HvTypography-highlightText"
+        class="HvTypography-root-1 HvTypography-highlightText-13"
       >
         Error
       </p>
@@ -89,25 +81,25 @@ exports[`ProgressBar General 1`] = `
           aria-valuemax="100"
           aria-valuemin="0"
           aria-valuenow="0"
-          class="HvProgressBar-root HvProgressBar-progress"
+          class="HvProgressBar-root-23 HvProgressBar-progress-24"
           role="progressbar"
         >
           <div
-            class="HvProgressBar-progressContainer"
+            class="HvProgressBar-progressContainer-25"
           >
             <p
               aria-busy="false"
               aria-label="Determinate Progress Bar"
-              class="HvProgressBar-progressBarLabel HvTypography-root HvTypography-vizText"
+              class="HvProgressBar-progressBarLabel-30 HvTypography-root-1 HvTypography-vizText-19"
               style="width: 0%;"
             >
               0%
             </p>
             <div
-              class="HvProgressBar-progressBarContainer"
+              class="HvProgressBar-progressBarContainer-26"
             >
               <div
-                class="HvProgressBar-progressBar"
+                class="HvProgressBar-progressBar-27"
                 style="width: 0%;"
               />
             </div>
@@ -117,27 +109,19 @@ exports[`ProgressBar General 1`] = `
           style="margin-top: 10px;"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            class="HvButton-root-31 MuiButton-root MuiButton-contained HvButton-primary-33 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-43 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              Start
-            </span>
+            Start
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+            class="HvButton-root-31 MuiButton-root MuiButton-contained HvButton-primary-33 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-43 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             style="margin-left: 10px;"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
-            >
-              Reset
-            </span>
+            Reset
           </button>
         </div>
       </div>
