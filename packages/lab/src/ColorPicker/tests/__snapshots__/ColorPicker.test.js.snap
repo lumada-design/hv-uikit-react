@@ -6,39 +6,39 @@ exports[`ColorPicker sample snapshot testing Main 1`] = `
     style="width: 240px;"
   >
     <div
-      class="HvFormElement-root"
+      class="HvFormElement-root-9"
     >
       <div
-        class="HvColorPicker-labelContainer"
+        class="HvColorPicker-labelContainer-6"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
+          class="HvColorPicker-label-7 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
           id="hvdropdown1-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root"
+        class="HvBaseDropdown-root-35"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown1-label"
-          class="HvBaseDropdown-anchor"
+          class="HvBaseDropdown-anchor-36"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown1-label"
-            class="HvBaseDropdown-header"
+            class="HvBaseDropdown-header-40"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection"
+              class="HvBaseDropdown-selection-46"
             >
               <div
-                class="HvColorPicker-headerColorIcon HvIconBase-root HvIconBase-s"
+                class="HvColorPicker-headerColorIcon-2 HvIconBase-root-55 HvIconBase-s-57"
                 name="Checkbox"
               >
                 <svg
@@ -60,13 +60,13 @@ exports[`ColorPicker sample snapshot testing Main 1`] = `
                 </svg>
               </div>
               <p
-                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-normalText"
+                class="HvColorPicker-headerColorValue-1 HvTypography-root-13 HvTypography-normalText-26"
               >
                 #414141
               </p>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+              class="HvBaseDropdown-arrow-45 HvIconBase-root-55 HvIconBase-xs-56"
               name="DropDownXS"
             >
               <svg

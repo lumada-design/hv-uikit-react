@@ -123,7 +123,68 @@ exports[`Slider  should render correctly 1`] = `
             "xs": 0,
           },
         },
-        "components": Object {},
+        "components": Object {
+          "MuiAppBar": Object {
+            "styleOverrides": Object {
+              "colorDefault": Object {
+                "backgroundColor": "#FBFCFC",
+                "contrastText": "#414141",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "height": "50px",
+                },
+                "borderTop": "4px solid #CC0000",
+              },
+            },
+          },
+          "MuiIconButton": Object {
+            "styleOverrides": Object {
+              "root": Object {
+                "&:focus": Object {
+                  "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                  "outlineColor": "#52A8EC",
+                  "outlineOffset": "-1px",
+                  "outlineStyle": "solid",
+                  "outlineWidth": "0px",
+                },
+                "&:hover": Object {
+                  "backgroundColor": "#E8E8E8",
+                },
+                "borderRadius": 0,
+                "padding": 0,
+              },
+            },
+          },
+          "MuiPaper": Object {
+            "styleOverrides": Object {
+              "root": Object {
+                "backgroundColor": "#FBFCFC",
+              },
+            },
+          },
+          "MuiToolbar": Object {
+            "styleOverrides": Object {
+              "dense": Object {
+                "minHeight": "46px",
+              },
+              "gutters": Object {
+                "@media (min-width:600px)": Object {
+                  "paddingLeft": "20px",
+                  "paddingRight": "20px",
+                },
+                "paddingLeft": "20px",
+                "paddingRight": "20px",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "minHeight": "46px",
+                },
+                "alignItems": "center",
+              },
+            },
+          },
+        },
         "direction": "ltr",
         "hv": Object {
           "deprecated": Object {
@@ -425,60 +486,6 @@ exports[`Slider  should render correctly 1`] = `
               "minHeight": 64,
             },
             "minHeight": 56,
-          },
-        },
-        "overrides": Object {
-          "MuiAppBar": Object {
-            "colorDefault": Object {
-              "backgroundColor": "#FBFCFC",
-              "contrastText": "#414141",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "height": "50px",
-              },
-              "borderTop": "4px solid #CC0000",
-            },
-          },
-          "MuiIconButton": Object {
-            "root": Object {
-              "&:focus": Object {
-                "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
-                "outlineColor": "#52A8EC",
-                "outlineOffset": "-1px",
-                "outlineStyle": "solid",
-                "outlineWidth": "0px",
-              },
-              "&:hover": Object {
-                "backgroundColor": "#E8E8E8",
-              },
-              "borderRadius": 0,
-              "padding": 0,
-            },
-          },
-          "MuiPaper": Object {
-            "root": Object {
-              "backgroundColor": "#FBFCFC",
-            },
-          },
-          "MuiToolbar": Object {
-            "dense": Object {
-              "minHeight": "46px",
-            },
-            "gutters": Object {
-              "@media (min-width:600px)": Object {
-                "paddingLeft": "20px",
-                "paddingRight": "20px",
-              },
-              "paddingLeft": "20px",
-              "paddingRight": "20px",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "minHeight": "46px",
-              },
-              "alignItems": "center",
-            },
           },
         },
         "palette": Object {
