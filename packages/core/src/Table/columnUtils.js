@@ -74,7 +74,7 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
           icon
           className={clsx(classes.iconContainer)}
           aria-label="row expander button"
-          tabIndex="0"
+          tabIndex={0}
           onClick={() => toggleExpand(rest.row._viewIndex)}
           aria-expanded={isExpanded}
         >
