@@ -52,13 +52,13 @@ describe("Actions with array", () => {
   });
 
   it("should not call actionsCallback on disabled button click", () => {
-    const button = wrapper.find(HvButton);
+    const button = wrapper.find("button");
     button.at(0).simulate("click");
     expect(actionsCallbackMock).toHaveBeenCalledTimes(0);
   });
 
   it("should call actionsCallback on button click", () => {
-    const button = wrapper.find(HvButton);
+    const button = wrapper.find("button");
     button.at(1).simulate("click");
     expect(actionsCallbackMock).toHaveBeenCalled();
   });
