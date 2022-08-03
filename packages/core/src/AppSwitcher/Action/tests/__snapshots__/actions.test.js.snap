@@ -3,21 +3,21 @@
 exports[`<Action /> with an element icon should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root-441 HvListItem-root-449 HvListItem-gutters-450 HvListItem-interactive-451 HvFocus-root-460 HvFocus-focusDisabled-463"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography-444 HvTypography-root-468 HvTypography-normalText-481"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherAction-icon"
+        class="HvAppSwitcherAction-icon-445"
       >
         <div
-          class="HvIconBase-root HvIconBase-s"
+          class="HvIconBase-root-490 HvIconBase-s-492"
           data-testid="tool-icon"
           name="Tool"
         >
@@ -37,7 +37,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         </div>
       </div>
       <span
-        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title-446 HvTypography-root-468 HvTypography-highlightText-480"
         data-mui-internal-clone-element="true"
       >
         Mock App 1
@@ -50,27 +50,27 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
 exports[`<Action /> with description should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root-1 HvListItem-root-9 HvListItem-gutters-10 HvListItem-interactive-11 HvFocus-root-20 HvFocus-focusDisabled-23"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography-4 HvTypography-root-28 HvTypography-normalText-41"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherAction-icon"
+        class="HvAppSwitcherAction-icon-5"
       >
         <img
           alt="Mock App 1 Description"
-          class="HvAppSwitcherAction-iconUrl"
+          class="HvAppSwitcherAction-iconUrl-8"
           src="http://mockapp1/icon"
         />
       </div>
       <span
-        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title-6 HvTypography-root-28 HvTypography-highlightText-40"
         data-mui-internal-clone-element="true"
       >
         Mock App 1
@@ -81,7 +81,7 @@ exports[`<Action /> with description should render correctly 1`] = `
       >
         <div
           aria-label="Mock App 1 Description"
-          class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
+          class="HvAppSwitcherAction-iconInfo-7 HvIconBase-root-61 HvIconBase-s-63"
           name="Info"
           role="img"
         >
@@ -108,26 +108,26 @@ exports[`<Action /> with description should render correctly 1`] = `
 exports[`<Action /> without description should render correctly 1`] = `
 <div>
   <li
-    class="HvAppSwitcherAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    class="HvAppSwitcherAction-root-261 HvListItem-root-269 HvListItem-gutters-270 HvListItem-interactive-271 HvFocus-root-280 HvFocus-focusDisabled-283"
     tabindex="-1"
   >
     <a
-      class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
+      class="HvAppSwitcherAction-typography-264 HvTypography-root-288 HvTypography-normalText-301"
       href="http://mockapp1/"
       style="border-color: #414141;"
       tabindex="0"
       target="_top"
     >
       <div
-        class="HvAppSwitcherAction-icon"
+        class="HvAppSwitcherAction-icon-265"
       >
         <img
-          class="HvAppSwitcherAction-iconUrl"
+          class="HvAppSwitcherAction-iconUrl-268"
           src="http://mockapp1/icon"
         />
       </div>
       <span
-        class="HvAppSwitcherAction-title HvTypography-root HvTypography-highlightText"
+        class="HvAppSwitcherAction-title-266 HvTypography-root-288 HvTypography-highlightText-300"
         data-mui-internal-clone-element="true"
       >
         Mock App 1
