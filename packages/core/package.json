@@ -52,7 +52,7 @@
     "focus-within-polyfill": "5.2.1",
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "plotly.js-basic-dist": "^1.54.1",
     "prop-types": "^15.8.1",
     "react-google-charts": "^3.0.15",
