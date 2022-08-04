@@ -7,51 +7,51 @@ exports[`Label should render correctly 1`] = `
   <HvLabel
     classes={
       Object {
-        "childGutter": "HvLabel-childGutter",
-        "labelDisabled": "HvLabel-labelDisabled",
-        "root": "HvLabel-root",
+        "childGutter": "HvLabel-childGutter-28",
+        "labelDisabled": "HvLabel-labelDisabled-27",
+        "root": "HvLabel-root-26",
       }
     }
     label="description"
   >
     <WithStyles(ForwardRef)
-      className="HvLabel-root"
+      className="HvLabel-root-26"
       component="label"
       variant="highlightText"
     >
       <ForwardRef
-        className="HvLabel-root"
+        className="HvLabel-root-26"
         classes={
           Object {
-            "3xlTitle": "HvTypography-3xlTitle",
-            "4xlTitle": "HvTypography-4xlTitle",
-            "5xlTitle": "HvTypography-5xlTitle",
-            "disabledText": "HvTypography-disabledText",
-            "highlightText": "HvTypography-highlightText",
-            "lTitle": "HvTypography-lTitle",
-            "link": "HvTypography-link",
-            "mTitle": "HvTypography-mTitle",
-            "noWrap": "HvTypography-noWrap",
-            "normalText": "HvTypography-normalText",
-            "placeholderText": "HvTypography-placeholderText",
-            "root": "HvTypography-root",
-            "sTitle": "HvTypography-sTitle",
-            "sectionTitle": "HvTypography-sectionTitle",
-            "selectedNavText": "HvTypography-selectedNavText",
-            "vizText": "HvTypography-vizText",
-            "vizTextDisabled": "HvTypography-vizTextDisabled",
-            "xlTitle": "HvTypography-xlTitle",
-            "xsInlineLink": "HvTypography-xsInlineLink",
-            "xsTitle": "HvTypography-xsTitle",
-            "xxlTitle": "HvTypography-xxlTitle",
-            "xxsTitle": "HvTypography-xxsTitle",
+            "3xlTitle": "HvTypography-3xlTitle-32",
+            "4xlTitle": "HvTypography-4xlTitle-31",
+            "5xlTitle": "HvTypography-5xlTitle-30",
+            "disabledText": "HvTypography-disabledText-45",
+            "highlightText": "HvTypography-highlightText-41",
+            "lTitle": "HvTypography-lTitle-35",
+            "link": "HvTypography-link-44",
+            "mTitle": "HvTypography-mTitle-36",
+            "noWrap": "HvTypography-noWrap-50",
+            "normalText": "HvTypography-normalText-42",
+            "placeholderText": "HvTypography-placeholderText-43",
+            "root": "HvTypography-root-29",
+            "sTitle": "HvTypography-sTitle-37",
+            "sectionTitle": "HvTypography-sectionTitle-40",
+            "selectedNavText": "HvTypography-selectedNavText-46",
+            "vizText": "HvTypography-vizText-47",
+            "vizTextDisabled": "HvTypography-vizTextDisabled-48",
+            "xlTitle": "HvTypography-xlTitle-34",
+            "xsInlineLink": "HvTypography-xsInlineLink-49",
+            "xsTitle": "HvTypography-xsTitle-38",
+            "xxlTitle": "HvTypography-xxlTitle-33",
+            "xxsTitle": "HvTypography-xxsTitle-39",
           }
         }
         component="label"
         variant="highlightText"
       >
         <label
-          className="HvLabel-root HvTypography-root HvTypography-highlightText"
+          className="HvLabel-root-26 HvTypography-root-29 HvTypography-highlightText-41"
         >
           description
         </label>

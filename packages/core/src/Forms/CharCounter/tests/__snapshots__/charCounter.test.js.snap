@@ -9,10 +9,10 @@ exports[`charCounter should render correctly 1`] = `
   <HvCharCounter
     classes={
       Object {
-        "counterDisabled": "HvCharCounter-counterDisabled",
-        "gutter": "HvCharCounter-gutter",
-        "overloaded": "HvCharCounter-overloaded",
-        "root": "HvCharCounter-root",
+        "counterDisabled": "HvCharCounter-counterDisabled-28",
+        "gutter": "HvCharCounter-gutter-30",
+        "overloaded": "HvCharCounter-overloaded-29",
+        "root": "HvCharCounter-root-27",
       }
     }
     currentCharQuantity={0}
@@ -21,7 +21,7 @@ exports[`charCounter should render correctly 1`] = `
   >
     <div
       aria-live="polite"
-      className="HvCharCounter-root HvCharCounter-gutter"
+      className="HvCharCounter-root-27 HvCharCounter-gutter-30"
       id="charCounter"
     >
       <WithStyles(ForwardRef)
@@ -34,28 +34,28 @@ exports[`charCounter should render correctly 1`] = `
           className=""
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "3xlTitle": "HvTypography-3xlTitle-34",
+              "4xlTitle": "HvTypography-4xlTitle-33",
+              "5xlTitle": "HvTypography-5xlTitle-32",
+              "disabledText": "HvTypography-disabledText-47",
+              "highlightText": "HvTypography-highlightText-43",
+              "lTitle": "HvTypography-lTitle-37",
+              "link": "HvTypography-link-46",
+              "mTitle": "HvTypography-mTitle-38",
+              "noWrap": "HvTypography-noWrap-52",
+              "normalText": "HvTypography-normalText-44",
+              "placeholderText": "HvTypography-placeholderText-45",
+              "root": "HvTypography-root-31",
+              "sTitle": "HvTypography-sTitle-39",
+              "sectionTitle": "HvTypography-sectionTitle-42",
+              "selectedNavText": "HvTypography-selectedNavText-48",
+              "vizText": "HvTypography-vizText-49",
+              "vizTextDisabled": "HvTypography-vizTextDisabled-50",
+              "xlTitle": "HvTypography-xlTitle-36",
+              "xsInlineLink": "HvTypography-xsInlineLink-51",
+              "xsTitle": "HvTypography-xsTitle-40",
+              "xxlTitle": "HvTypography-xxlTitle-35",
+              "xxsTitle": "HvTypography-xxsTitle-41",
             }
           }
           component="label"
@@ -63,7 +63,7 @@ exports[`charCounter should render correctly 1`] = `
           variant="highlightText"
         >
           <label
-            className="HvTypography-root HvTypography-highlightText"
+            className="HvTypography-root-31 HvTypography-highlightText-43"
             id="charCounter-currentQuantity"
           >
             0
@@ -80,28 +80,28 @@ exports[`charCounter should render correctly 1`] = `
           className=""
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "3xlTitle": "HvTypography-3xlTitle-34",
+              "4xlTitle": "HvTypography-4xlTitle-33",
+              "5xlTitle": "HvTypography-5xlTitle-32",
+              "disabledText": "HvTypography-disabledText-47",
+              "highlightText": "HvTypography-highlightText-43",
+              "lTitle": "HvTypography-lTitle-37",
+              "link": "HvTypography-link-46",
+              "mTitle": "HvTypography-mTitle-38",
+              "noWrap": "HvTypography-noWrap-52",
+              "normalText": "HvTypography-normalText-44",
+              "placeholderText": "HvTypography-placeholderText-45",
+              "root": "HvTypography-root-31",
+              "sTitle": "HvTypography-sTitle-39",
+              "sectionTitle": "HvTypography-sectionTitle-42",
+              "selectedNavText": "HvTypography-selectedNavText-48",
+              "vizText": "HvTypography-vizText-49",
+              "vizTextDisabled": "HvTypography-vizTextDisabled-50",
+              "xlTitle": "HvTypography-xlTitle-36",
+              "xsInlineLink": "HvTypography-xsInlineLink-51",
+              "xsTitle": "HvTypography-xsTitle-40",
+              "xxlTitle": "HvTypography-xxlTitle-35",
+              "xxsTitle": "HvTypography-xxsTitle-41",
             }
           }
           component="label"
@@ -109,7 +109,7 @@ exports[`charCounter should render correctly 1`] = `
           variant="normalText"
         >
           <label
-            className="HvTypography-root HvTypography-normalText"
+            className="HvTypography-root-31 HvTypography-normalText-44"
             id="charCounter-maxQuantity"
           >
              / 1500
