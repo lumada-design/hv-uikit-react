@@ -2,6 +2,9 @@ name: Run Applitools
 on:
   workflow_dispatch:
 
+env:
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+
 jobs:
   Build-Documentation:
     name: Build Documentation
@@ -17,6 +20,7 @@ jobs:
 
       - name: Install
         run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: Bootstrap
@@ -69,6 +73,7 @@ jobs:
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
       - name: run Applitools Storybook Visual Testing
