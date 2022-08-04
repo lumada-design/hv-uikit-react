@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.3.7...@hv/uikit-react-icons@2.3.8) (2022-08-04)
+
+
+### Reverts
+
+* Revert "chore: remove npm registry setup (#2864)" ([d0b48b0](https://github.com/pentaho/hv-uikit-react/commit/d0b48b0afd98ff024843b105abf7e2908199b245)), closes [#2864](https://github.com/pentaho/hv-uikit-react/issues/2864)
+
+
+
+
+
 ## [2.3.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.3.6...@hv/uikit-react-icons@2.3.7) (2022-07-25)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
