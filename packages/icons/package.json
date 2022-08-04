@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-icons",
-  "version": "2.3.9",
+  "version": "2.3.11",
   "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -22,7 +22,7 @@
   "scripts": {
     "build": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize build:*",
     "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
-    "build:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
+    "build:copy": "cpy \"src/IconBase*\" \"bin\"",
     "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
     "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward bin -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
@@ -46,9 +46,10 @@
     "@hv/uikit-common-themes": "^2.0.8",
     "clsx": "^1.2.1",
     "prop-types": "^15.8.1",
-    "yargs": "^17.4.1"
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
+    "cpy-cli": "^4.1.0",
     "htmltojsx": "^0.3.0",
     "jsdom-no-contextify": "^3.1.0",
     "npm-run-all": "^4.1.5",

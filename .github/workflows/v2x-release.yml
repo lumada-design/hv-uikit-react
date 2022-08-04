@@ -2,6 +2,7 @@
 #
 # A few optional parameters that can be passed to this workflow:
 #  - ref: specific branch to perform the release, defaults to 'master'.
+#  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
 #  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
 #
 # An example using curl:
@@ -19,6 +20,8 @@ on:
   workflow_dispatch:
 
 env:
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+  DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/v2.x
@@ -31,6 +34,7 @@ jobs:
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
@@ -42,6 +46,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          ref: v2.x
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -54,7 +59,8 @@ jobs:
         env:
           # ensure dev dependencies are installed
           NODE_ENV: development
-        run: npm ci
+        run: |
+          npm ci
 
       - name: Bootstrap
         env:
@@ -64,15 +70,18 @@ jobs:
 
       - name: Publish Setup
         run: |
+          npm config delete @hv:registry
+          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
+
+          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
+          npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
+          npm config set always-auth true
+
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset --no-verify-access
+        run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset --no-verify-access
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
@@ -161,7 +170,7 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available",
+                  "author_name": "New UI-Kit artifacts are available for v2",
                   "title": "More details https://github.com/${{github.repository}}/releases",
                   "text": "${{env.SLACK_MESSAGE}}",
                   "footer": "${{env.DOCUMENTATION_URL}}"
