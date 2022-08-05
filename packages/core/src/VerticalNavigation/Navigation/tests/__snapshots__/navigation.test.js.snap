@@ -50,9 +50,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
     aria-label="Example 1 navigation"
     classes={
       Object {
-        "list": "HvVerticalNavigationNavigation-list-2",
-        "listItem": "HvVerticalNavigationNavigation-listItem-3",
-        "root": "HvVerticalNavigationNavigation-root-1",
+        "list": "HvVerticalNavigationNavigation-list",
+        "listItem": "HvVerticalNavigationNavigation-listItem",
+        "root": "HvVerticalNavigationNavigation-root",
       }
     }
     data={
@@ -100,10 +100,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   >
     <nav
       aria-label="Example 1 navigation"
-      className="HvVerticalNavigationNavigation-root-1"
+      className="HvVerticalNavigationNavigation-root"
     >
       <WithStyles(ForwardRef)
-        className="HvVerticalNavigationNavigation-list-2"
+        className="HvVerticalNavigationNavigation-list"
         collapsible={false}
         expanded={Array []}
         mode="navigation"
@@ -113,25 +113,25 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         selected="01-01"
       >
         <ForwardRef
-          className="HvVerticalNavigationNavigation-list-2"
+          className="HvVerticalNavigationNavigation-list"
           classes={
             Object {
-              "collapsed": "HvVerticalNavigationTreeView-collapsed-11",
-              "content": "HvVerticalNavigationTreeView-content-19",
-              "disabled": "HvVerticalNavigationTreeView-disabled-7",
-              "expandable": "HvVerticalNavigationTreeView-expandable-10",
-              "expanded": "HvVerticalNavigationTreeView-expanded-12",
-              "focused": "HvVerticalNavigationTreeView-focused-16",
-              "group": "HvVerticalNavigationTreeView-group-5",
-              "link": "HvVerticalNavigationTreeView-link-15",
-              "noIcon": "HvVerticalNavigationTreeView-noIcon-17",
-              "node": "HvVerticalNavigationTreeView-node-6",
-              "root": "HvVerticalNavigationTreeView-root-4",
-              "selectable": "HvVerticalNavigationTreeView-selectable-8",
-              "selected": "HvVerticalNavigationTreeView-selected-13",
-              "unselectable": "HvVerticalNavigationTreeView-unselectable-9",
-              "unselected": "HvVerticalNavigationTreeView-unselected-14",
-              "withIcon": "HvVerticalNavigationTreeView-withIcon-18",
+              "collapsed": "HvVerticalNavigationTreeView-collapsed",
+              "content": "HvVerticalNavigationTreeView-content",
+              "disabled": "HvVerticalNavigationTreeView-disabled",
+              "expandable": "HvVerticalNavigationTreeView-expandable",
+              "expanded": "HvVerticalNavigationTreeView-expanded",
+              "focused": "HvVerticalNavigationTreeView-focused",
+              "group": "HvVerticalNavigationTreeView-group",
+              "link": "HvVerticalNavigationTreeView-link",
+              "noIcon": "HvVerticalNavigationTreeView-noIcon",
+              "node": "HvVerticalNavigationTreeView-node",
+              "root": "HvVerticalNavigationTreeView-root",
+              "selectable": "HvVerticalNavigationTreeView-selectable",
+              "selected": "HvVerticalNavigationTreeView-selected",
+              "unselectable": "HvVerticalNavigationTreeView-unselectable",
+              "unselected": "HvVerticalNavigationTreeView-unselected",
+              "withIcon": "HvVerticalNavigationTreeView-withIcon",
             }
           }
           collapsible={false}
@@ -144,10 +144,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         >
           <DescendantProvider>
             <ul
-              className="HvVerticalNavigationTreeView-root-4 HvVerticalNavigationNavigation-list-2"
+              className="HvVerticalNavigationTreeView-root HvVerticalNavigationNavigation-list"
             >
               <WithStyles(ForwardRef)
-                className="HvVerticalNavigationNavigation-listItem-3"
+                className="HvVerticalNavigationNavigation-listItem"
                 icon={<Play />}
                 key="01"
                 label={<Unknown />}
@@ -192,25 +192,25 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                 }
               >
                 <ForwardRef
-                  className="HvVerticalNavigationNavigation-listItem-3"
+                  className="HvVerticalNavigationNavigation-listItem"
                   classes={
                     Object {
-                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-27",
-                      "content": "HvVerticalNavigationTreeViewItem-content-35",
-                      "disabled": "HvVerticalNavigationTreeViewItem-disabled-23",
-                      "expandable": "HvVerticalNavigationTreeViewItem-expandable-26",
-                      "expanded": "HvVerticalNavigationTreeViewItem-expanded-28",
-                      "focused": "HvVerticalNavigationTreeViewItem-focused-32",
-                      "group": "HvVerticalNavigationTreeViewItem-group-21",
-                      "link": "HvVerticalNavigationTreeViewItem-link-31",
-                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-33",
-                      "node": "HvVerticalNavigationTreeViewItem-node-22",
-                      "root": "HvVerticalNavigationTreeViewItem-root-20",
-                      "selectable": "HvVerticalNavigationTreeViewItem-selectable-24",
-                      "selected": "HvVerticalNavigationTreeViewItem-selected-29",
-                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-25",
-                      "unselected": "HvVerticalNavigationTreeViewItem-unselected-30",
-                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-34",
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expandable": "HvVerticalNavigationTreeViewItem-expandable",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "focused": "HvVerticalNavigationTreeViewItem-focused",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "link": "HvVerticalNavigationTreeViewItem-link",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                     }
                   }
                   icon={<Play />}
@@ -256,19 +256,14 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   }
                 >
                   <li
-                    className="HvVerticalNavigationTreeViewItem-node-22 HvVerticalNavigationNavigation-listItem-3 HvVerticalNavigationTreeViewItem-selectable-24 HvVerticalNavigationTreeViewItem-unselected-30"
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                     data-hasicon={true}
                     id="hvtreeview1-01"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content-35"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       id="hvtreeview1-01-button"
-                      innerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -282,40 +277,35 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content-35"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
-                            "3xlTitle": "HvTypography-3xlTitle-39",
-                            "4xlTitle": "HvTypography-4xlTitle-38",
-                            "5xlTitle": "HvTypography-5xlTitle-37",
-                            "disabledText": "HvTypography-disabledText-52",
-                            "highlightText": "HvTypography-highlightText-48",
-                            "lTitle": "HvTypography-lTitle-42",
-                            "link": "HvTypography-link-51",
-                            "mTitle": "HvTypography-mTitle-43",
-                            "noWrap": "HvTypography-noWrap-57",
-                            "normalText": "HvTypography-normalText-49",
-                            "placeholderText": "HvTypography-placeholderText-50",
-                            "root": "HvTypography-root-36",
-                            "sTitle": "HvTypography-sTitle-44",
-                            "sectionTitle": "HvTypography-sectionTitle-47",
-                            "selectedNavText": "HvTypography-selectedNavText-53",
-                            "vizText": "HvTypography-vizText-54",
-                            "vizTextDisabled": "HvTypography-vizTextDisabled-55",
-                            "xlTitle": "HvTypography-xlTitle-41",
-                            "xsInlineLink": "HvTypography-xsInlineLink-56",
-                            "xsTitle": "HvTypography-xsTitle-45",
-                            "xxlTitle": "HvTypography-xxlTitle-40",
-                            "xxsTitle": "HvTypography-xxsTitle-46",
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
                         id="hvtreeview1-01-button"
-                        innerRef={
-                          Object {
-                            "current": null,
-                          }
-                        }
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -329,13 +319,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content-35 HvTypography-root-36 HvTypography-normalText-49"
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           id="hvtreeview1-01-button"
-                          innerRef={
-                            Object {
-                              "current": null,
-                            }
-                          }
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -353,7 +338,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                               name="Play"
                             >
                               <div
-                                className="HvIconBase-root-58 HvIconBase-s-60"
+                                className="HvIconBase-root HvIconBase-s"
                                 name="Play"
                               >
                                 <svg
@@ -395,17 +380,17 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                               <ForwardRef
                                 classes={
                                   Object {
-                                    "color": "HvTooltip-color-70",
-                                    "popper": "HvTooltip-popper-66",
-                                    "root": "HvTooltip-root-63",
-                                    "separator": "HvTooltip-separator-71",
-                                    "separatorColor": "HvTooltip-separatorColor-72",
-                                    "title": "HvTooltip-title-67",
-                                    "tooltip": "HvTooltip-tooltip-64",
-                                    "tooltipMulti": "HvTooltip-tooltipMulti-65",
-                                    "valueWrapper": "HvTooltip-valueWrapper-73",
-                                    "values": "HvTooltip-values-69",
-                                    "valuesContainer": "HvTooltip-valuesContainer-68",
+                                    "color": "HvTooltip-color",
+                                    "popper": "HvTooltip-popper",
+                                    "root": "HvTooltip-root",
+                                    "separator": "HvTooltip-separator",
+                                    "separatorColor": "HvTooltip-separatorColor",
+                                    "title": "HvTooltip-title",
+                                    "tooltip": "HvTooltip-tooltip",
+                                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                                    "valueWrapper": "HvTooltip-valueWrapper",
+                                    "values": "HvTooltip-values",
+                                    "valuesContainer": "HvTooltip-valuesContainer",
                                   }
                                 }
                                 disableFocusListener={true}
@@ -455,8 +440,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                   }
                                   classes={
                                     Object {
-                                      "popper": "HvTooltip-popper-66",
-                                      "tooltip": "HvTooltip-tooltip-64",
+                                      "popper": "HvTooltip-popper",
+                                      "tooltip": "HvTooltip-tooltip",
                                     }
                                   }
                                   disableFocusListener={true}
@@ -529,7 +514,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                         "render": [Function],
                                       }
                                     }
-                                    className="HvTooltip-popper-66 MuiTooltip-popper MuiTooltip-popperInteractive"
+                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
                                     id="mui-1"
                                     onMouseLeave={[Function]}
                                     onMouseOver={[Function]}
@@ -568,8 +553,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                         </div>,
                                         "className": undefined,
                                         "classes": Object {
-                                          "popper": "HvTooltip-popper-66",
-                                          "tooltip": "HvTooltip-tooltip-64",
+                                          "popper": "HvTooltip-popper",
+                                          "tooltip": "HvTooltip-tooltip",
                                         },
                                         "disableFocusListener": true,
                                         "disableHoverListener": false,
@@ -650,25 +635,25 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvIconBase"
                                               >
                                                 
-.HvIconBase-root-58 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-58 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-59 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-60 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-61 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-62 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -679,81 +664,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvTypography"
                                               >
                                                 
-.HvTypography-root-36 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-37 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-38 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-39 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-40 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-41 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-42 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-43 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-44 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-45 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-46 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-47 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -761,28 +746,28 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-48 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-49 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-50 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-51 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -790,35 +775,35 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-52 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-53 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-54 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-55 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-56 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -826,7 +811,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-57 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -838,10 +823,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvTooltip"
                                               >
                                                 
-.HvTooltip-root-63 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-64 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -849,7 +834,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-64 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -858,7 +843,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-65 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -866,7 +851,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-65 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -874,35 +859,35 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-66 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-67 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-68 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-69 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-69:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-70 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-71 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-72 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-73 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -912,7 +897,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvVerticalNavigationTreeView"
                                               >
                                                 
-.HvVerticalNavigationTreeView-root-4 {
+.HvVerticalNavigationTreeView-root {
   margin: 0;
   display: block;
   outline: none;
@@ -920,27 +905,27 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   background: #FBFCFC;
   list-style: none;
 }
-.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-group {
   margin: 8px 0 0 0;
   padding: 0;
 }
-.HvVerticalNavigationTreeView-node-6 {
+.HvVerticalNavigationTreeView-node {
   list-style: none;
   min-height: 32px;
 }
-.HvVerticalNavigationTreeView-node-6:not(:last-child) {
+.HvVerticalNavigationTreeView-node:not(:last-child) {
   margin-bottom: 8px;
 }
-.HvVerticalNavigationTreeView-collapsed-11&gt;.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-collapsed&gt;.HvVerticalNavigationTreeView-group {
   display: none;
 }
-.HvVerticalNavigationTreeView-expanded-12&gt;.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-expanded&gt;.HvVerticalNavigationTreeView-group {
   display: block;
 }
-.HvVerticalNavigationTreeView-link-15 {
+.HvVerticalNavigationTreeView-link {
   text-decoration: none;
 }
-.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-content {
   width: 100%;
   cursor: pointer;
   height: 32px;
@@ -950,81 +935,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   padding-right: 10px;
   justify-content: flex-start;
 }
-.HvVerticalNavigationTreeView-expandable-10&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-expandable&gt;.HvVerticalNavigationTreeView-content {
   font-weight: 600;
 }
-.HvVerticalNavigationTreeView-selected-13&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content {
   background: #E8E8E8;
   border-left: 2px solid #CC0000;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:hover {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:focus-visible {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19.focus-visible {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible {
   background: #E8E8E8;
 }
-*:focus-visible .HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+*:focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.focus-visible .HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+.focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeView-content-19[disabled], .HvVerticalNavigationTreeView-content-19:active {
+.HvVerticalNavigationTreeView-content[disabled], .HvVerticalNavigationTreeView-content:active {
   outline: none;
 }
-.HvVerticalNavigationTreeView-content-19:focus {
+.HvVerticalNavigationTreeView-content:focus {
   outline: none;
 }
-.HvVerticalNavigationTreeView-content-19:focus-visible {
+.HvVerticalNavigationTreeView-content:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-content-19.focus-visible {
+.HvVerticalNavigationTreeView-content.focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-content * {
   cursor: pointer;
 }
-.HvVerticalNavigationTreeView-disabled-7&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeView-disabled-7&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content * {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19.focus-visible * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:focus-visible * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:hover * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover * {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeView-selected-13&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content * {
   background: #E8E8E8;
 }
 
@@ -1034,7 +1019,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvVerticalNavigationTreeViewItem"
                                               >
                                                 
-.HvVerticalNavigationTreeViewItem-root-20 {
+.HvVerticalNavigationTreeViewItem-root {
   margin: 0;
   display: block;
   outline: none;
@@ -1042,27 +1027,27 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   background: #FBFCFC;
   list-style: none;
 }
-.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-group {
   margin: 8px 0 0 0;
   padding: 0;
 }
-.HvVerticalNavigationTreeViewItem-node-22 {
+.HvVerticalNavigationTreeViewItem-node {
   list-style: none;
   min-height: 32px;
 }
-.HvVerticalNavigationTreeViewItem-node-22:not(:last-child) {
+.HvVerticalNavigationTreeViewItem-node:not(:last-child) {
   margin-bottom: 8px;
 }
-.HvVerticalNavigationTreeViewItem-collapsed-27&gt;.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-collapsed&gt;.HvVerticalNavigationTreeViewItem-group {
   display: none;
 }
-.HvVerticalNavigationTreeViewItem-expanded-28&gt;.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-expanded&gt;.HvVerticalNavigationTreeViewItem-group {
   display: block;
 }
-.HvVerticalNavigationTreeViewItem-link-31 {
+.HvVerticalNavigationTreeViewItem-link {
   text-decoration: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-content {
   width: 100%;
   cursor: pointer;
   height: 32px;
@@ -1072,81 +1057,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   padding-right: 10px;
   justify-content: flex-start;
 }
-.HvVerticalNavigationTreeViewItem-expandable-26&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-expandable&gt;.HvVerticalNavigationTreeViewItem-content {
   font-weight: 600;
 }
-.HvVerticalNavigationTreeViewItem-selected-29&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content {
   background: #E8E8E8;
   border-left: 2px solid #CC0000;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:hover {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:focus-visible {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35.focus-visible {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible {
   background: #E8E8E8;
 }
-*:focus-visible .HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+*:focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.focus-visible .HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeViewItem-content-35[disabled], .HvVerticalNavigationTreeViewItem-content-35:active {
+.HvVerticalNavigationTreeViewItem-content[disabled], .HvVerticalNavigationTreeViewItem-content:active {
   outline: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35:focus {
+.HvVerticalNavigationTreeViewItem-content:focus {
   outline: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35:focus-visible {
+.HvVerticalNavigationTreeViewItem-content:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-content-35.focus-visible {
+.HvVerticalNavigationTreeViewItem-content.focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-content * {
   cursor: pointer;
 }
-.HvVerticalNavigationTreeViewItem-disabled-23&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeViewItem-disabled-23&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content * {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35.focus-visible * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:focus-visible * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:hover * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover * {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeViewItem-selected-29&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content * {
   background: #E8E8E8;
 }
 
@@ -1156,7 +1141,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                 data-meta="HvVerticalNavigationNavigation"
                                               >
                                                 
-.HvVerticalNavigationNavigation-root-1 {
+.HvVerticalNavigationNavigation-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -1210,7 +1195,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                           System
                                         </div>
                                       }
-                                      className="HvTooltip-popper-66 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                       id="mui-1"
                                       onMouseLeave={[Function]}
                                       onMouseOver={[Function]}
@@ -1247,7 +1232,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                             System
                                           </div>
                                         }
-                                        className="HvTooltip-popper-66 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                         direction="ltr"
                                         id="mui-1"
                                         onMouseLeave={[Function]}
@@ -1313,25 +1298,25 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvIconBase"
                                                   >
                                                     
-.HvIconBase-root-58 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-58 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-59 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-60 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-61 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-62 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -1342,81 +1327,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvTypography"
                                                   >
                                                     
-.HvTypography-root-36 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-37 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-38 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-39 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-40 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-41 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-42 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-43 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-44 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-45 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-46 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-47 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -1424,28 +1409,28 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-48 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-49 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-50 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-51 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -1453,35 +1438,35 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-52 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-53 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-54 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-55 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-56 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -1489,7 +1474,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-57 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1501,10 +1486,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvTooltip"
                                                   >
                                                     
-.HvTooltip-root-63 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-64 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1512,7 +1497,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-64 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1521,7 +1506,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-65 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1529,7 +1514,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-65 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1537,35 +1522,35 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-66 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-67 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-68 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-69 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-69:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-70 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-71 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-72 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-73 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1575,7 +1560,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvVerticalNavigationTreeView"
                                                   >
                                                     
-.HvVerticalNavigationTreeView-root-4 {
+.HvVerticalNavigationTreeView-root {
   margin: 0;
   display: block;
   outline: none;
@@ -1583,27 +1568,27 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   background: #FBFCFC;
   list-style: none;
 }
-.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-group {
   margin: 8px 0 0 0;
   padding: 0;
 }
-.HvVerticalNavigationTreeView-node-6 {
+.HvVerticalNavigationTreeView-node {
   list-style: none;
   min-height: 32px;
 }
-.HvVerticalNavigationTreeView-node-6:not(:last-child) {
+.HvVerticalNavigationTreeView-node:not(:last-child) {
   margin-bottom: 8px;
 }
-.HvVerticalNavigationTreeView-collapsed-11&gt;.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-collapsed&gt;.HvVerticalNavigationTreeView-group {
   display: none;
 }
-.HvVerticalNavigationTreeView-expanded-12&gt;.HvVerticalNavigationTreeView-group-5 {
+.HvVerticalNavigationTreeView-expanded&gt;.HvVerticalNavigationTreeView-group {
   display: block;
 }
-.HvVerticalNavigationTreeView-link-15 {
+.HvVerticalNavigationTreeView-link {
   text-decoration: none;
 }
-.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-content {
   width: 100%;
   cursor: pointer;
   height: 32px;
@@ -1613,81 +1598,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   padding-right: 10px;
   justify-content: flex-start;
 }
-.HvVerticalNavigationTreeView-expandable-10&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-expandable&gt;.HvVerticalNavigationTreeView-content {
   font-weight: 600;
 }
-.HvVerticalNavigationTreeView-selected-13&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content {
   background: #E8E8E8;
   border-left: 2px solid #CC0000;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:hover {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:focus-visible {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19.focus-visible {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible {
   background: #E8E8E8;
 }
-*:focus-visible .HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+*:focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.focus-visible .HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+.focus-visible .HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeView-content-19[disabled], .HvVerticalNavigationTreeView-content-19:active {
+.HvVerticalNavigationTreeView-content[disabled], .HvVerticalNavigationTreeView-content:active {
   outline: none;
 }
-.HvVerticalNavigationTreeView-content-19:focus {
+.HvVerticalNavigationTreeView-content:focus {
   outline: none;
 }
-.HvVerticalNavigationTreeView-content-19:focus-visible {
+.HvVerticalNavigationTreeView-content:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-content-19.focus-visible {
+.HvVerticalNavigationTreeView-content.focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-content * {
   cursor: pointer;
 }
-.HvVerticalNavigationTreeView-disabled-7&gt;.HvVerticalNavigationTreeView-content-19 {
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeView-disabled-7&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-disabled&gt;.HvVerticalNavigationTreeView-content * {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeView-focused-16&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-focused&gt;.HvVerticalNavigationTreeView-content * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19.focus-visible * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content.focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:focus-visible * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeView-disabled-7):not(.HvVerticalNavigationTreeView-selected-13)&gt;.HvVerticalNavigationTreeView-content-19:hover * {
+:not(.HvVerticalNavigationTreeView-disabled):not(.HvVerticalNavigationTreeView-selected)&gt;.HvVerticalNavigationTreeView-content:hover * {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeView-selected-13&gt;.HvVerticalNavigationTreeView-content-19 * {
+.HvVerticalNavigationTreeView-selected&gt;.HvVerticalNavigationTreeView-content * {
   background: #E8E8E8;
 }
 
@@ -1697,7 +1682,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvVerticalNavigationTreeViewItem"
                                                   >
                                                     
-.HvVerticalNavigationTreeViewItem-root-20 {
+.HvVerticalNavigationTreeViewItem-root {
   margin: 0;
   display: block;
   outline: none;
@@ -1705,27 +1690,27 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   background: #FBFCFC;
   list-style: none;
 }
-.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-group {
   margin: 8px 0 0 0;
   padding: 0;
 }
-.HvVerticalNavigationTreeViewItem-node-22 {
+.HvVerticalNavigationTreeViewItem-node {
   list-style: none;
   min-height: 32px;
 }
-.HvVerticalNavigationTreeViewItem-node-22:not(:last-child) {
+.HvVerticalNavigationTreeViewItem-node:not(:last-child) {
   margin-bottom: 8px;
 }
-.HvVerticalNavigationTreeViewItem-collapsed-27&gt;.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-collapsed&gt;.HvVerticalNavigationTreeViewItem-group {
   display: none;
 }
-.HvVerticalNavigationTreeViewItem-expanded-28&gt;.HvVerticalNavigationTreeViewItem-group-21 {
+.HvVerticalNavigationTreeViewItem-expanded&gt;.HvVerticalNavigationTreeViewItem-group {
   display: block;
 }
-.HvVerticalNavigationTreeViewItem-link-31 {
+.HvVerticalNavigationTreeViewItem-link {
   text-decoration: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-content {
   width: 100%;
   cursor: pointer;
   height: 32px;
@@ -1735,81 +1720,81 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   padding-right: 10px;
   justify-content: flex-start;
 }
-.HvVerticalNavigationTreeViewItem-expandable-26&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-expandable&gt;.HvVerticalNavigationTreeViewItem-content {
   font-weight: 600;
 }
-.HvVerticalNavigationTreeViewItem-selected-29&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content {
   background: #E8E8E8;
   border-left: 2px solid #CC0000;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:hover {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:focus-visible {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35.focus-visible {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible {
   background: #E8E8E8;
 }
-*:focus-visible .HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+*:focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.focus-visible .HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.focus-visible .HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeViewItem-content-35[disabled], .HvVerticalNavigationTreeViewItem-content-35:active {
+.HvVerticalNavigationTreeViewItem-content[disabled], .HvVerticalNavigationTreeViewItem-content:active {
   outline: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35:focus {
+.HvVerticalNavigationTreeViewItem-content:focus {
   outline: none;
 }
-.HvVerticalNavigationTreeViewItem-content-35:focus-visible {
+.HvVerticalNavigationTreeViewItem-content:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-content-35.focus-visible {
+.HvVerticalNavigationTreeViewItem-content.focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-content * {
   cursor: pointer;
 }
-.HvVerticalNavigationTreeViewItem-disabled-23&gt;.HvVerticalNavigationTreeViewItem-content-35 {
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeViewItem-disabled-23&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-disabled&gt;.HvVerticalNavigationTreeViewItem-content * {
   cursor: not-allowed;
 }
-.HvVerticalNavigationTreeViewItem-focused-32&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-focused&gt;.HvVerticalNavigationTreeViewItem-content * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35.focus-visible * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content.focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:focus-visible * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:focus-visible * {
   background: #E8E8E8;
 }
-:not(.HvVerticalNavigationTreeViewItem-disabled-23):not(.HvVerticalNavigationTreeViewItem-selected-29)&gt;.HvVerticalNavigationTreeViewItem-content-35:hover * {
+:not(.HvVerticalNavigationTreeViewItem-disabled):not(.HvVerticalNavigationTreeViewItem-selected)&gt;.HvVerticalNavigationTreeViewItem-content:hover * {
   background: #E8E8E8;
 }
-.HvVerticalNavigationTreeViewItem-selected-29&gt;.HvVerticalNavigationTreeViewItem-content-35 * {
+.HvVerticalNavigationTreeViewItem-selected&gt;.HvVerticalNavigationTreeViewItem-content * {
   background: #E8E8E8;
 }
 
@@ -1819,7 +1804,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                     data-meta="HvVerticalNavigationNavigation"
                                                   >
                                                     
-.HvVerticalNavigationNavigation-root-1 {
+.HvVerticalNavigationNavigation-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -1873,7 +1858,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                               System
                                             </div>
                                           }
-                                          className="HvTooltip-popper-66 MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                           direction="ltr"
                                           id="mui-1"
                                           onMouseLeave={[Function]}

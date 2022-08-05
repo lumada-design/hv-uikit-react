@@ -301,7 +301,7 @@ const TreeViewItem = React.forwardRef((props, ref) => {
         component={href ? "a" : "div"}
         href={href}
         target={target}
-        innerRef={contentRef}
+        ref={contentRef}
         className={clsx(classes.content, { [classes.link]: href != null })}
         variant={disabled ? "placeholderText" : "normalText"}
         onClick={handleClick}
