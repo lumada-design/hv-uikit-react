@@ -3,10 +3,10 @@
 exports[`PeriodPicker should rednder correctly 1`] = `
 <div>
   <div
-    class="HvTimePickerPeriodPicker-periodContainer-1"
+    class="HvTimePickerPeriodPicker-periodContainer"
   >
     <div
-      class="HvTimePickerPeriodPicker-icon-3 HvIconBase-root-5 HvIconBase-xs-6"
+      class="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
       name="DropUpXS"
     >
       <svg
@@ -25,14 +25,14 @@ exports[`PeriodPicker should rednder correctly 1`] = `
     </div>
     <button
       aria-pressed="false"
-      class="HvButton-root-10 MuiButton-root MuiButton-text HvButton-ghost-17 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle-2 HvButton-icon-11 HvButton-ghostSVG-24 css-fsero8-MuiButtonBase-root-MuiButton-root"
+      class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
       tabindex="0"
       type="button"
     >
       AM
     </button>
     <div
-      class="HvTimePickerPeriodPicker-icon-3 HvTimePickerPeriodPicker-subtractIcon-4 HvIconBase-root-5 HvIconBase-xs-6"
+      class="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon HvIconBase-root HvIconBase-xs"
       name="DropDownXS"
     >
       <svg

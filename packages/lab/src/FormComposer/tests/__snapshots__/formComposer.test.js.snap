@@ -22,12 +22,12 @@ exports[`FormComposer should render correctly 1`] = `
   <HvFormComposer
     classes={
       Object {
-        "componentContainer": "HvFormComposer-componentContainer-32",
-        "footer": "HvFormComposer-footer-34",
-        "mainContainer": "HvFormComposer-mainContainer-30",
-        "navContainer": "HvFormComposer-navContainer-31",
-        "root": "HvFormComposer-root-29",
-        "title": "HvFormComposer-title-33",
+        "componentContainer": "HvFormComposer-componentContainer",
+        "footer": "HvFormComposer-footer",
+        "mainContainer": "HvFormComposer-mainContainer",
+        "navContainer": "HvFormComposer-navContainer",
+        "root": "HvFormComposer-root",
+        "title": "HvFormComposer-title",
       }
     }
     footerContent={Array []}
@@ -52,52 +52,52 @@ exports[`FormComposer should render correctly 1`] = `
     mainTitle=""
   >
     <div
-      className="HvFormComposer-root-29"
+      className="HvFormComposer-root"
     >
       <WithStyles(ForwardRef)
-        className="HvFormComposer-title-33"
+        className="HvFormComposer-title"
         variant="xlTitle"
       >
         <ForwardRef
-          className="HvFormComposer-title-33"
+          className="HvFormComposer-title"
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle-38",
-              "4xlTitle": "HvTypography-4xlTitle-37",
-              "5xlTitle": "HvTypography-5xlTitle-36",
-              "disabledText": "HvTypography-disabledText-51",
-              "highlightText": "HvTypography-highlightText-47",
-              "lTitle": "HvTypography-lTitle-41",
-              "link": "HvTypography-link-50",
-              "mTitle": "HvTypography-mTitle-42",
-              "noWrap": "HvTypography-noWrap-56",
-              "normalText": "HvTypography-normalText-48",
-              "placeholderText": "HvTypography-placeholderText-49",
-              "root": "HvTypography-root-35",
-              "sTitle": "HvTypography-sTitle-43",
-              "sectionTitle": "HvTypography-sectionTitle-46",
-              "selectedNavText": "HvTypography-selectedNavText-52",
-              "vizText": "HvTypography-vizText-53",
-              "vizTextDisabled": "HvTypography-vizTextDisabled-54",
-              "xlTitle": "HvTypography-xlTitle-40",
-              "xsInlineLink": "HvTypography-xsInlineLink-55",
-              "xsTitle": "HvTypography-xsTitle-44",
-              "xxlTitle": "HvTypography-xxlTitle-39",
-              "xxsTitle": "HvTypography-xxsTitle-45",
+              "3xlTitle": "HvTypography-3xlTitle",
+              "4xlTitle": "HvTypography-4xlTitle",
+              "5xlTitle": "HvTypography-5xlTitle",
+              "disabledText": "HvTypography-disabledText",
+              "highlightText": "HvTypography-highlightText",
+              "lTitle": "HvTypography-lTitle",
+              "link": "HvTypography-link",
+              "mTitle": "HvTypography-mTitle",
+              "noWrap": "HvTypography-noWrap",
+              "normalText": "HvTypography-normalText",
+              "placeholderText": "HvTypography-placeholderText",
+              "root": "HvTypography-root",
+              "sTitle": "HvTypography-sTitle",
+              "sectionTitle": "HvTypography-sectionTitle",
+              "selectedNavText": "HvTypography-selectedNavText",
+              "vizText": "HvTypography-vizText",
+              "vizTextDisabled": "HvTypography-vizTextDisabled",
+              "xlTitle": "HvTypography-xlTitle",
+              "xsInlineLink": "HvTypography-xsInlineLink",
+              "xsTitle": "HvTypography-xsTitle",
+              "xxlTitle": "HvTypography-xxlTitle",
+              "xxsTitle": "HvTypography-xxsTitle",
             }
           }
           variant="xlTitle"
         >
           <h1
-            className="HvFormComposer-title-33 HvTypography-root-35 HvTypography-xlTitle-40"
+            className="HvFormComposer-title HvTypography-root HvTypography-xlTitle"
           />
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <div
-        className="HvFormComposer-mainContainer-30"
+        className="HvFormComposer-mainContainer"
       >
         <div
-          className="HvFormComposer-componentContainer-32"
+          className="HvFormComposer-componentContainer"
         >
           <div
             key="Group1"
@@ -109,35 +109,35 @@ exports[`FormComposer should render correctly 1`] = `
               <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-38",
-                    "4xlTitle": "HvTypography-4xlTitle-37",
-                    "5xlTitle": "HvTypography-5xlTitle-36",
-                    "disabledText": "HvTypography-disabledText-51",
-                    "highlightText": "HvTypography-highlightText-47",
-                    "lTitle": "HvTypography-lTitle-41",
-                    "link": "HvTypography-link-50",
-                    "mTitle": "HvTypography-mTitle-42",
-                    "noWrap": "HvTypography-noWrap-56",
-                    "normalText": "HvTypography-normalText-48",
-                    "placeholderText": "HvTypography-placeholderText-49",
-                    "root": "HvTypography-root-35",
-                    "sTitle": "HvTypography-sTitle-43",
-                    "sectionTitle": "HvTypography-sectionTitle-46",
-                    "selectedNavText": "HvTypography-selectedNavText-52",
-                    "vizText": "HvTypography-vizText-53",
-                    "vizTextDisabled": "HvTypography-vizTextDisabled-54",
-                    "xlTitle": "HvTypography-xlTitle-40",
-                    "xsInlineLink": "HvTypography-xsInlineLink-55",
-                    "xsTitle": "HvTypography-xsTitle-44",
-                    "xxlTitle": "HvTypography-xxlTitle-39",
-                    "xxsTitle": "HvTypography-xxsTitle-45",
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
                 id="Group1"
                 variant="mTitle"
               >
                 <h3
-                  className="HvTypography-root-35 HvTypography-mTitle-42"
+                  className="HvTypography-root HvTypography-mTitle"
                   id="Group1"
                 >
                   Group1

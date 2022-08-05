@@ -3,47 +3,47 @@
 exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 <div>
   <div
-    class="HvGlobalActions-root-83"
+    class="HvGlobalActions-root"
   >
     <div
-      class="HvGlobalActions-wrapper-87 HvGlobalActions-globalSectionArea-90"
+      class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
     >
       <h2
-        class="HvGlobalActions-name-92 HvTypography-root-94 HvTypography-sectionTitle-105"
+        class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
       >
         Section Title
       </h2>
       <div
-        class="HvGlobalActions-actions-93"
+        class="HvGlobalActions-actions"
       >
         <button
-          class="HvButton-root-116 MuiButton-root MuiButton-contained HvButton-primary-118 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-128 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+          class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
           Primary
         </button>
         <div
-          class="HvBaseDropdown-root-139 HvDropDownMenu-root-133"
+          class="HvBaseDropdown-root HvDropDownMenu-root"
         >
           <div
             aria-expanded="false"
             aria-haspopup="menu"
             aria-label="dropdownMenu-Items"
-            class="HvDropDownMenu-container-134 HvBaseDropdown-anchor-140"
+            class="HvDropDownMenu-container HvBaseDropdown-anchor"
             id="dropdownItem-5"
             tabindex="-1"
           >
             <button
               aria-expanded="false"
               aria-label="Dropdown menu"
-              class="HvButton-root-116 MuiButton-root MuiButton-text HvButton-ghost-123 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-136 HvButton-icon-117 HvButton-ghostSVG-130 css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="dropdownItem-5-icon-button"
               tabindex="0"
               type="button"
             >
               <div
-                class="HvIconBase-root-159 HvIconBase-s-161"
+                class="HvIconBase-root HvIconBase-s"
                 name="MoreOptionsVertical"
               >
                 <svg
@@ -72,25 +72,25 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 exports[`GlobalActions sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvContainer-root-1 MuiContainer-root MuiContainer-maxWidthXl css-1d4akpq-MuiContainer-root"
+    class="HvContainer-root MuiContainer-root MuiContainer-maxWidthXl css-1d4akpq-MuiContainer-root"
   >
     <div
-      class="HvGlobalActions-root-2 HvGlobalActions-positionSticky-3 HvGlobalActions-global-5"
+      class="HvGlobalActions-root HvGlobalActions-positionSticky HvGlobalActions-global"
     >
       <div
-        class="HvGlobalActions-wrapper-6 HvGlobalActions-globalWrapperComplement-7"
+        class="HvGlobalActions-wrapper HvGlobalActions-globalWrapperComplement"
       >
         <div
-          class="HvGlobalActions-backButton-10"
+          class="HvGlobalActions-backButton"
         >
           <button
             aria-label="Back"
-            class="HvButton-root-13 MuiButton-root MuiButton-text HvButton-ghost-20 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-14 HvButton-ghostSVG-27 css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             <div
-              class="HvIconBase-root-30 HvIconBase-s-32"
+              class="HvIconBase-root HvIconBase-s"
               name="Backwards"
             >
               <svg
@@ -110,48 +110,48 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
           </button>
         </div>
         <h1
-          class="HvGlobalActions-name-11 HvTypography-root-35 HvTypography-xsTitle-44"
+          class="HvGlobalActions-name HvTypography-root HvTypography-xsTitle"
         >
           Detail Page Title
         </h1>
         <div
-          class="HvGlobalActions-actions-12"
+          class="HvGlobalActions-actions"
         >
           <button
-            class="HvButton-root-13 MuiButton-root MuiButton-contained HvButton-primary-15 MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG-25 css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             Approve & Share
           </button>
           <button
-            class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             Reset
           </button>
           <div
-            class="HvBaseDropdown-root-63 HvDropDownMenu-root-57"
+            class="HvBaseDropdown-root HvDropDownMenu-root"
           >
             <div
               aria-expanded="false"
               aria-haspopup="menu"
               aria-label="dropdownMenu-Items"
-              class="HvDropDownMenu-container-58 HvBaseDropdown-anchor-64"
+              class="HvDropDownMenu-container HvBaseDropdown-anchor"
               id="dropdownItem-1"
               tabindex="-1"
             >
               <button
                 aria-expanded="false"
                 aria-label="Dropdown menu"
-                class="HvButton-root-13 MuiButton-root MuiButton-text HvButton-ghost-20 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-60 HvButton-icon-14 HvButton-ghostSVG-27 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 id="dropdownItem-1-icon-button"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="HvIconBase-root-30 HvIconBase-s-32"
+                  class="HvIconBase-root HvIconBase-s"
                   name="MoreOptionsVertical"
                 >
                   <svg
@@ -178,54 +178,54 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       style="padding-bottom: 60px;"
     >
       <div
-        class="HvGlobalActions-root-2"
+        class="HvGlobalActions-root"
       >
         <div
-          class="HvGlobalActions-wrapper-6 HvGlobalActions-globalSectionArea-9"
+          class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
           <h2
-            class="HvGlobalActions-name-11 HvTypography-root-35 HvTypography-sectionTitle-46"
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
             Section Title
           </h2>
           <div
-            class="HvGlobalActions-actions-12"
+            class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Share
             </button>
             <div
-              class="HvBaseDropdown-root-63 HvDropDownMenu-root-57"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
                 aria-label="dropdownMenu-Items"
-                class="HvDropDownMenu-container-58 HvBaseDropdown-anchor-64"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="dropdownItem-2"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-13 MuiButton-root MuiButton-text HvButton-ghost-20 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-60 HvButton-icon-14 HvButton-ghostSVG-27 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-2-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-30 HvIconBase-s-32"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -249,66 +249,66 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         </div>
       </div>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-bottom: 60px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root-2"
+        class="HvGlobalActions-root"
       >
         <div
-          class="HvGlobalActions-wrapper-6 HvGlobalActions-globalSectionArea-9"
+          class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
           <h2
-            class="HvGlobalActions-name-11 HvTypography-root-35 HvTypography-sectionTitle-46"
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
             Section Title
           </h2>
           <div
-            class="HvGlobalActions-actions-12"
+            class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Share
             </button>
             <div
-              class="HvBaseDropdown-root-63 HvDropDownMenu-root-57"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
                 aria-label="dropdownMenu-Items"
-                class="HvDropDownMenu-container-58 HvBaseDropdown-anchor-64"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="dropdownItem-3"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-13 MuiButton-root MuiButton-text HvButton-ghost-20 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-60 HvButton-icon-14 HvButton-ghostSVG-27 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-3-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-30 HvIconBase-s-32"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -332,66 +332,66 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         </div>
       </div>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-bottom: 60px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root-2"
+        class="HvGlobalActions-root"
       >
         <div
-          class="HvGlobalActions-wrapper-6 HvGlobalActions-globalSectionArea-9"
+          class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
           <h2
-            class="HvGlobalActions-name-11 HvTypography-root-35 HvTypography-sectionTitle-46"
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
             Section Title
           </h2>
           <div
-            class="HvGlobalActions-actions-12"
+            class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root-13 MuiButton-root MuiButton-outlined HvButton-secondary-18 MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG-26 css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Share
             </button>
             <div
-              class="HvBaseDropdown-root-63 HvDropDownMenu-root-57"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
                 aria-label="dropdownMenu-Items"
-                class="HvDropDownMenu-container-58 HvBaseDropdown-anchor-64"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="dropdownItem-4"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-13 MuiButton-root MuiButton-text HvButton-ghost-20 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-60 HvButton-icon-14 HvButton-ghostSVG-27 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-4-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-30 HvIconBase-s-32"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -415,13 +415,13 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         </div>
       </div>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
-        class="HvTypography-root-35 HvTypography-normalText-48"
+        class="HvTypography-root HvTypography-normalText"
         style="margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.

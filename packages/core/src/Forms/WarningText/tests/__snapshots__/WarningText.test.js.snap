@@ -7,31 +7,31 @@ exports[`HelperText should render correctly 1`] = `
   <HvWarningText
     classes={
       Object {
-        "defaultIcon": "HvWarningText-defaultIcon-39",
-        "hideText": "HvWarningText-hideText-41",
-        "root": "HvWarningText-root-35",
-        "show": "HvWarningText-show-40",
-        "topBorder": "HvWarningText-topBorder-36",
-        "topGutter": "HvWarningText-topGutter-37",
-        "warningText": "HvWarningText-warningText-38",
+        "defaultIcon": "HvWarningText-defaultIcon",
+        "hideText": "HvWarningText-hideText",
+        "root": "HvWarningText-root",
+        "show": "HvWarningText-show",
+        "topBorder": "HvWarningText-topBorder",
+        "topGutter": "HvWarningText-topGutter",
+        "warningText": "HvWarningText-warningText",
       }
     }
     id="base"
   >
     <div
-      className="HvWarningText-root-35 HvWarningText-topBorder-36"
+      className="HvWarningText-root HvWarningText-topBorder"
     >
       <Fail
-        className="HvWarningText-defaultIcon-39"
+        className="HvWarningText-defaultIcon"
         semantic="sema4"
       >
         <HvIconBase
-          className="HvWarningText-defaultIcon-39"
+          className="HvWarningText-defaultIcon"
           iconSize="S"
           name="Fail"
         >
           <div
-            className="HvWarningText-defaultIcon-39 HvIconBase-root-42 HvIconBase-s-44"
+            className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
             name="Fail"
           >
             <svg
@@ -54,38 +54,38 @@ exports[`HelperText should render correctly 1`] = `
         aria-atomic="true"
         aria-live="polite"
         aria-relevant="additions text"
-        className="HvWarningText-warningText-38 HvWarningText-topGutter-37"
+        className="HvWarningText-warningText HvWarningText-topGutter"
         id="base"
       >
         <ForwardRef
           aria-atomic="true"
           aria-live="polite"
           aria-relevant="additions text"
-          className="HvWarningText-warningText-38 HvWarningText-topGutter-37"
+          className="HvWarningText-warningText HvWarningText-topGutter"
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle-50",
-              "4xlTitle": "HvTypography-4xlTitle-49",
-              "5xlTitle": "HvTypography-5xlTitle-48",
-              "disabledText": "HvTypography-disabledText-63",
-              "highlightText": "HvTypography-highlightText-59",
-              "lTitle": "HvTypography-lTitle-53",
-              "link": "HvTypography-link-62",
-              "mTitle": "HvTypography-mTitle-54",
-              "noWrap": "HvTypography-noWrap-68",
-              "normalText": "HvTypography-normalText-60",
-              "placeholderText": "HvTypography-placeholderText-61",
-              "root": "HvTypography-root-47",
-              "sTitle": "HvTypography-sTitle-55",
-              "sectionTitle": "HvTypography-sectionTitle-58",
-              "selectedNavText": "HvTypography-selectedNavText-64",
-              "vizText": "HvTypography-vizText-65",
-              "vizTextDisabled": "HvTypography-vizTextDisabled-66",
-              "xlTitle": "HvTypography-xlTitle-52",
-              "xsInlineLink": "HvTypography-xsInlineLink-67",
-              "xsTitle": "HvTypography-xsTitle-56",
-              "xxlTitle": "HvTypography-xxlTitle-51",
-              "xxsTitle": "HvTypography-xxsTitle-57",
+              "3xlTitle": "HvTypography-3xlTitle",
+              "4xlTitle": "HvTypography-4xlTitle",
+              "5xlTitle": "HvTypography-5xlTitle",
+              "disabledText": "HvTypography-disabledText",
+              "highlightText": "HvTypography-highlightText",
+              "lTitle": "HvTypography-lTitle",
+              "link": "HvTypography-link",
+              "mTitle": "HvTypography-mTitle",
+              "noWrap": "HvTypography-noWrap",
+              "normalText": "HvTypography-normalText",
+              "placeholderText": "HvTypography-placeholderText",
+              "root": "HvTypography-root",
+              "sTitle": "HvTypography-sTitle",
+              "sectionTitle": "HvTypography-sectionTitle",
+              "selectedNavText": "HvTypography-selectedNavText",
+              "vizText": "HvTypography-vizText",
+              "vizTextDisabled": "HvTypography-vizTextDisabled",
+              "xlTitle": "HvTypography-xlTitle",
+              "xsInlineLink": "HvTypography-xsInlineLink",
+              "xsTitle": "HvTypography-xsTitle",
+              "xxlTitle": "HvTypography-xxlTitle",
+              "xxsTitle": "HvTypography-xxsTitle",
             }
           }
           id="base"
@@ -94,7 +94,7 @@ exports[`HelperText should render correctly 1`] = `
             aria-atomic="true"
             aria-live="polite"
             aria-relevant="additions text"
-            className="HvWarningText-warningText-38 HvWarningText-topGutter-37 HvTypography-root-47 HvTypography-normalText-60"
+            className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
             id="base"
           />
         </ForwardRef>

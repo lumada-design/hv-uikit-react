@@ -6,60 +6,60 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
     style="width: 100%;"
   >
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 HvHeader-root-2 MuiAppBar-root HvHeader-backgroundColor-3 MuiAppBar-colorPrimary MuiAppBar-positionRelative css-1j4xqc3-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 HvHeader-root MuiAppBar-root HvHeader-backgroundColor MuiAppBar-colorPrimary MuiAppBar-positionRelative css-1j4xqc3-MuiPaper-root-MuiAppBar-root"
     >
       <div
-        class="HvHeader-header-4"
+        class="HvHeader-header"
       >
         <nav
-          class="HvHeaderNavigation-root-5"
+          class="HvHeaderNavigation-root"
         >
           <div
-            class="HvHeaderMenuBar-root-6 HvHeaderMenuBar-menubar-7"
+            class="HvHeaderMenuBar-root HvHeaderMenuBar-menubar"
           >
             <ul
-              class="HvHeaderMenuBar-list-11"
+              class="HvHeaderMenuBar-list"
             >
               <li
-                class="HvHeaderMenuItem-root-12 HvHeaderMenuItem-notSelectedItem-14"
+                class="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
               >
                 <div
-                  class="HvHeaderMenuItem-button-15"
+                  class="HvHeaderMenuItem-button"
                   role="button"
                   tabindex="0"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-normalText-32"
+                    class="HvTypography-root HvTypography-normalText"
                   >
                     Overview
                   </p>
                 </div>
               </li>
               <li
-                class="HvHeaderMenuItem-root-12 HvHeaderMenuItem-notSelectedItem-14"
+                class="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
               >
                 <div
-                  class="HvHeaderMenuItem-button-15"
+                  class="HvHeaderMenuItem-button"
                   role="button"
                   tabindex="0"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-normalText-32"
+                    class="HvTypography-root HvTypography-normalText"
                   >
                     Events
                   </p>
                 </div>
               </li>
               <li
-                class="HvHeaderMenuItem-root-12 HvHeaderMenuItem-notSelectedItem-14"
+                class="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
               >
                 <div
-                  class="HvHeaderMenuItem-button-15"
+                  class="HvHeaderMenuItem-button"
                   role="button"
                   tabindex="0"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-normalText-32"
+                    class="HvTypography-root HvTypography-normalText"
                   >
                     Asset
                   </p>
@@ -69,19 +69,19 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           </div>
         </nav>
         <div
-          class="HvHeaderActions-root-41"
+          class="HvHeaderActions-root"
         >
           <button
             aria-label="Open Notifications panel"
-            class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-panelOpen-1 HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-panelOpen-1 HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             <div
-              class="HvBadge-root-59"
+              class="HvBadge-root"
             >
               <div
-                class="HvIconBase-root-66 HvIconBase-s-68"
+                class="HvIconBase-root HvIconBase-s"
                 name="Alert"
               >
                 <svg
@@ -99,22 +99,22 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 </svg>
               </div>
               <div
-                class="HvBadge-badgeContainer-60"
+                class="HvBadge-badgeContainer"
               >
                 <div
-                  class="HvBadge-badge-61 HvBadge-badgeIcon-62"
+                  class="HvBadge-badge HvBadge-badgeIcon"
                 />
               </div>
             </div>
           </button>
           <button
             aria-label="Open User panel"
-            class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             <div
-              class="HvIconBase-root-66 HvIconBase-s-68"
+              class="HvIconBase-root HvIconBase-s"
               name="User"
             >
               <svg
@@ -136,25 +136,25 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
       </div>
     </header>
     <div
-      class="HvNotificationPanel-root-71 HvNotificationPanel-open-73 HvPanel-root-78 MuiBox-root css-0"
+      class="HvNotificationPanel-root HvNotificationPanel-open HvPanel-root MuiBox-root css-0"
       style="right: 30px; height: calc(100% - 130px);"
     >
       <div
-        class="HvNotificationPanel-panel-75"
+        class="HvNotificationPanel-panel"
       >
         <div
-          class="HvNotificationPanelNotification-root-79"
+          class="HvNotificationPanelNotification-root"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper-80 HvNotificationPanelNotification-clickable-88"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
-              class="HvNotificationPanelNotification-iconContainer-81"
+              class="HvNotificationPanelNotification-iconContainer"
             >
               <div
-                class="HvIconBase-root-66 HvIconBase-s-68"
+                class="HvIconBase-root HvIconBase-s"
                 name="Level5"
               >
                 <svg
@@ -183,20 +183,20 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <div
-                  class="HvNotificationPanelNotification-messageContainer-82"
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-highlightText-31"
+                    class="HvTypography-root HvTypography-highlightText"
                   >
                     Cabin door knob malfunction. Super long test title, to test line break behavior.
                   </p>
                 </div>
               </div>
               <div
-                class="HvNotificationPanelNotification-timeContainer-84"
+                class="HvNotificationPanelNotification-timeContainer"
               >
                 <div
-                  class="HvNotificationPanelNotification-bullet-85"
+                  class="HvNotificationPanelNotification-bullet"
                 />
                 <div>
                   a few seconds ago
@@ -205,28 +205,28 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
           </div>
           <div
-            class="HvNotificationPanelNotification-notificationActionWrapper-91"
+            class="HvNotificationPanelNotification-notificationActionWrapper"
           >
             <div
-              class="HvBaseDropdown-root-109 HvDropDownMenu-root-103"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
-                class="HvDropDownMenu-container-104 HvBaseDropdown-anchor-110"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="drop-down-menu-1"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-106 HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-1-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-66 HvIconBase-s-68"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -249,15 +249,15 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           </div>
         </div>
         <div
-          class="HvNotificationPanelNotification-root-79"
+          class="HvNotificationPanelNotification-root"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper-80 HvNotificationPanelNotification-clickable-88"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
-              class="HvNotificationPanelNotification-iconContainer-81"
+              class="HvNotificationPanelNotification-iconContainer"
             />
             <div>
               <div
@@ -265,20 +265,20 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <div
-                  class="HvNotificationPanelNotification-messageContainer-82"
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-highlightText-31"
+                    class="HvTypography-root HvTypography-highlightText"
                   >
                     Cabin door knob malfunction to second line
                   </p>
                 </div>
               </div>
               <div
-                class="HvNotificationPanelNotification-timeContainer-84"
+                class="HvNotificationPanelNotification-timeContainer"
               >
                 <div
-                  class="HvNotificationPanelNotification-bullet-85"
+                  class="HvNotificationPanelNotification-bullet"
                 />
                 <div>
                   a few seconds ago
@@ -287,28 +287,28 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
           </div>
           <div
-            class="HvNotificationPanelNotification-notificationActionWrapper-91"
+            class="HvNotificationPanelNotification-notificationActionWrapper"
           >
             <div
-              class="HvBaseDropdown-root-109 HvDropDownMenu-root-103"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
-                class="HvDropDownMenu-container-104 HvBaseDropdown-anchor-110"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="drop-down-menu-2"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-106 HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-2-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-66 HvIconBase-s-68"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -331,18 +331,18 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           </div>
         </div>
         <div
-          class="HvNotificationPanelNotification-root-79 HvNotificationPanelNotification-read-87"
+          class="HvNotificationPanelNotification-root HvNotificationPanelNotification-read"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper-80 HvNotificationPanelNotification-clickable-88"
+            class="HvNotificationPanelNotification-notificationWrapper HvNotificationPanelNotification-clickable"
           >
             <div
-              class="HvNotificationPanelNotification-iconContainer-81"
+              class="HvNotificationPanelNotification-iconContainer"
             >
               <div
-                class="HvIconBase-root-66 HvIconBase-s-68"
+                class="HvIconBase-root HvIconBase-s"
                 name="Level5"
               >
                 <svg
@@ -371,20 +371,20 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <div
-                  class="HvNotificationPanelNotification-messageContainer-82"
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-normalText-32"
+                    class="HvTypography-root HvTypography-normalText"
                   >
                     Cabin door knob malfunction
                   </p>
                 </div>
               </div>
               <div
-                class="HvNotificationPanelNotification-timeContainer-84"
+                class="HvNotificationPanelNotification-timeContainer"
               >
                 <div
-                  class="HvNotificationPanelNotification-bullet-85 HvNotificationPanelNotification-hide-86"
+                  class="HvNotificationPanelNotification-bullet HvNotificationPanelNotification-hide"
                 />
                 <div>
                   19 June 2019, 12:00 AM
@@ -393,28 +393,28 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
           </div>
           <div
-            class="HvNotificationPanelNotification-notificationActionWrapper-91"
+            class="HvNotificationPanelNotification-notificationActionWrapper"
           >
             <div
-              class="HvBaseDropdown-root-109 HvDropDownMenu-root-103"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
-                class="HvDropDownMenu-container-104 HvBaseDropdown-anchor-110"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="drop-down-menu-3"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-106 HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-3-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-66 HvIconBase-s-68"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -437,18 +437,18 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           </div>
         </div>
         <div
-          class="HvNotificationPanelNotification-root-79 HvNotificationPanelNotification-read-87"
+          class="HvNotificationPanelNotification-root HvNotificationPanelNotification-read"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvNotificationPanelNotification-notificationWrapper-80"
+            class="HvNotificationPanelNotification-notificationWrapper"
           >
             <div
-              class="HvNotificationPanelNotification-iconContainer-81"
+              class="HvNotificationPanelNotification-iconContainer"
             >
               <div
-                class="HvIconBase-root-66 HvIconBase-s-68"
+                class="HvIconBase-root HvIconBase-s"
                 name="Level5"
               >
                 <svg
@@ -477,20 +477,20 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <div
-                  class="HvNotificationPanelNotification-messageContainer-82"
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
                   <p
-                    class="HvTypography-root-19 HvTypography-normalText-32"
+                    class="HvTypography-root HvTypography-normalText"
                   >
                     Cabin door knob malfunction
                   </p>
                 </div>
               </div>
               <div
-                class="HvNotificationPanelNotification-timeContainer-84"
+                class="HvNotificationPanelNotification-timeContainer"
               >
                 <div
-                  class="HvNotificationPanelNotification-bullet-85 HvNotificationPanelNotification-hide-86"
+                  class="HvNotificationPanelNotification-bullet HvNotificationPanelNotification-hide"
                 />
                 <div>
                   19 June 2019, 12:00 AM
@@ -499,28 +499,28 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
           </div>
           <div
-            class="HvNotificationPanelNotification-notificationActionWrapper-91"
+            class="HvNotificationPanelNotification-notificationActionWrapper"
           >
             <div
-              class="HvBaseDropdown-root-109 HvDropDownMenu-root-103"
+              class="HvBaseDropdown-root HvDropDownMenu-root"
             >
               <div
                 aria-expanded="false"
                 aria-haspopup="menu"
-                class="HvDropDownMenu-container-104 HvBaseDropdown-anchor-110"
+                class="HvDropDownMenu-container HvBaseDropdown-anchor"
                 id="drop-down-menu-4"
                 tabindex="-1"
               >
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-106 HvButton-icon-43 HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-4-icon-button"
                   tabindex="0"
                   type="button"
                 >
                   <div
-                    class="HvIconBase-root-66 HvIconBase-s-68"
+                    class="HvIconBase-root HvIconBase-s"
                     name="MoreOptionsVertical"
                   >
                     <svg
@@ -544,17 +544,17 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
         </div>
       </div>
       <div
-        class="HvActionBar-root-129 HvNotificationPanel-actionBarRoot-76 HvNotificationPanel-actionBar-74"
+        class="HvActionBar-root HvNotificationPanel-actionBarRoot HvNotificationPanel-actionBar"
       >
         <button
-          class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
           Mark All Read
         </button>
         <button
-          class="HvButton-root-42 MuiButton-root MuiButton-text HvButton-ghost-49 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-56 css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >

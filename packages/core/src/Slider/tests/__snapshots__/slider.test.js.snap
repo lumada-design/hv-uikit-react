@@ -3,38 +3,38 @@
 exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
 <div>
   <div
-    class="HvSlider-rootDisabled-183 HvFormElement-root-209"
+    class="HvSlider-rootDisabled HvFormElement-root"
     id="SingleDisabled"
   >
     <div
-      class="HvSlider-labelContainer-194 HvSlider-labelIncluded-195"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-197 HvLabel-root-210 HvLabel-labelDisabled-211 HvTypography-root-213 HvTypography-highlightText-225"
+        class="HvSlider-label HvLabel-root HvLabel-labelDisabled HvTypography-root HvTypography-highlightText"
         for="SingleDisabled-slider"
         id="SingleDisabled-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-235"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-237"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-238 HvSliderInput-input-236 HvFormElement-root-209"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="SingleDisabled-input-0"
           >
             <div
-              class="HvBaseInput-root-257 HvBaseInput-disabled-260"
+              class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot-262 HvInput-inputRoot-240 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled-264 HvInput-inputRootDisabled-242 Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-266 HvInput-input-244 HvBaseInput-inputDisabled-267 MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled-264 HvInput-inputRootDisabled-242 Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="SingleDisabled-input-0-input"
                   rows="10"
@@ -43,7 +43,7 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-269 HvInput-inputBorderContainer-256"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -52,10 +52,10 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-182 HvSlider-sliderContainer-184"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-188 rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -94,7 +94,7 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainerDisabled-192"
+          class="HvSlider-handleContainerDisabled"
         >
           <div
             aria-disabled="true"
@@ -102,7 +102,7 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="10"
-            class="rc-slider-handle HvSlider-handle-191"
+            class="rc-slider-handle HvSlider-handle"
             id="SingleDisabled-knob-0"
             role="slider"
             style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
@@ -157,39 +157,39 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
 exports[`<HvSlider> sample snapshot testing Error 1`] = `
 <div>
   <div
-    class="HvFormElement-root-390"
+    class="HvFormElement-root"
     id="ErrorSingleSlider"
   >
     <div
-      class="HvSlider-labelContainer-375 HvSlider-labelIncluded-376"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-378 HvLabel-root-391 HvTypography-root-394 HvTypography-highlightText-406"
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
         for="ErrorSingleSlider-slider"
         id="ErrorSingleSlider-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-416"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-418"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-419 HvSliderInput-input-417 HvFormElement-root-390"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="ErrorSingleSlider-input-0"
           >
             <div
-              class="HvBaseInput-root-438 HvBaseInput-invalid-442"
+              class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot-443 HvInput-inputRoot-421 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-447 HvInput-input-425 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorSingleSlider-input-0-input"
                   rows="10"
                   type="text"
@@ -197,7 +197,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-450 HvInput-inputBorderContainer-437"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -206,10 +206,10 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-363 HvSlider-sliderContainer-365"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-369 rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -248,7 +248,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleHiddenContainer-374"
+          class="HvSlider-handleHiddenContainer"
         >
           <div
             aria-disabled="false"
@@ -256,7 +256,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="0"
-            class="rc-slider-handle HvSlider-handle-372"
+            class="rc-slider-handle HvSlider-handle"
             id="ErrorSingleSlider-knob-0"
             role="slider"
             style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
@@ -306,10 +306,10 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-error-366 HvWarningText-root-451 HvWarningText-show-456"
+      class="HvSlider-error HvWarningText-root HvWarningText-show"
     >
       <div
-        class="HvWarningText-defaultIcon-455 HvIconBase-root-458 HvIconBase-s-460"
+        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
         name="Fail"
       >
         <svg
@@ -330,7 +330,7 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
         aria-atomic="true"
         aria-live="polite"
         aria-relevant="additions text"
-        class="HvWarningText-warningText-454 HvWarningText-topGutter-453 HvTypography-root-394 HvTypography-normalText-407"
+        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
         id="ErrorSingleSlider-error"
       >
         Invalid because i said so
@@ -343,38 +343,38 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
 exports[`<HvSlider> sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvFormElement-root-28"
+    class="HvFormElement-root"
     id="Main"
   >
     <div
-      class="HvSlider-labelContainer-13 HvSlider-labelIncluded-14"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-16 HvLabel-root-29 HvTypography-root-32 HvTypography-highlightText-44"
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
         for="Main-slider"
         id="Main-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-54"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-56"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-57 HvSliderInput-input-55 HvFormElement-root-28"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="Main-input-0"
           >
             <div
-              class="HvBaseInput-root-76"
+              class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot-81 HvInput-inputRoot-59 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-85 HvInput-input-63 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Main-input-0-input"
                   rows="10"
                   type="text"
@@ -382,7 +382,7 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-88 HvInput-inputBorderContainer-75"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -391,10 +391,10 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-1 HvSlider-sliderContainer-3"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-7 rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -433,7 +433,7 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainer-9"
+          class="HvSlider-handleContainer"
         >
           <div
             aria-disabled="false"
@@ -441,7 +441,7 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="10"
-            class="rc-slider-handle HvSlider-handle-10"
+            class="rc-slider-handle HvSlider-handle"
             id="Main-knob-0"
             role="slider"
             style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
@@ -497,38 +497,38 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
 <div>
   <div
-    class="HvSlider-rootDisabled-271 HvFormElement-root-297"
+    class="HvSlider-rootDisabled HvFormElement-root"
     id="RangeSliderDisabled"
   >
     <div
-      class="HvSlider-labelContainer-282 HvSlider-labelIncluded-283"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-285 HvLabel-root-298 HvLabel-labelDisabled-299 HvTypography-root-301 HvTypography-highlightText-313"
+        class="HvSlider-label HvLabel-root HvLabel-labelDisabled HvTypography-root HvTypography-highlightText"
         for="RangeSliderDisabled-slider"
         id="RangeSliderDisabled-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-323"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-325"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-326 HvSliderInput-input-324 HvFormElement-root-297"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="RangeSliderDisabled-input-0"
           >
             <div
-              class="HvBaseInput-root-345 HvBaseInput-disabled-348"
+              class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot-350 HvInput-inputRoot-328 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled-352 HvInput-inputRootDisabled-330 Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-354 HvInput-input-332 HvBaseInput-inputDisabled-355 MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled-352 HvInput-inputRootDisabled-330 Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="RangeSliderDisabled-input-0-input"
                   rows="10"
@@ -537,17 +537,17 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-357 HvInput-inputBorderContainer-344"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
           </div>
         </div>
         <div
-          class="HvSliderInput-inputContainer-325"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvIconBase-root-358 HvIconBase-s-360"
+            class="HvIconBase-root HvIconBase-s"
             name="Remove"
           >
             <svg
@@ -565,18 +565,18 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
             </svg>
           </div>
           <div
-            class="HvInput-root-326 HvSliderInput-input-324 HvFormElement-root-297"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="RangeSliderDisabled-input-1"
           >
             <div
-              class="HvBaseInput-root-345 HvBaseInput-disabled-348"
+              class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot-350 HvInput-inputRoot-328 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled-352 HvInput-inputRootDisabled-330 Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input-354 HvInput-input-332 HvBaseInput-inputDisabled-355 MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled-352 HvInput-inputRootDisabled-330 Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="RangeSliderDisabled-input-1-input"
                   rows="10"
@@ -585,7 +585,7 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-357 HvInput-inputBorderContainer-344"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -594,10 +594,10 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-270 HvSlider-sliderContainer-272"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-276 HvSlider-rootRange-277 rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-disabled rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -636,7 +636,7 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainerDisabled-280"
+          class="HvSlider-handleContainerDisabled"
         >
           <div
             aria-disabled="true"
@@ -644,14 +644,14 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="10"
-            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle-279"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
             id="RangeSliderDisabled-knob-0"
             role="slider"
             style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
           />
         </div>
         <div
-          class="HvSlider-handleContainerDisabled-280"
+          class="HvSlider-handleContainerDisabled"
         >
           <div
             aria-disabled="true"
@@ -659,7 +659,7 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="40"
-            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle-279"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
             id="RangeSliderDisabled-knob-1"
             role="slider"
             style="left: 40%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(153, 153, 153); width: 16px; height: 16px;"
@@ -714,39 +714,39 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
 <div>
   <div
-    class="HvSlider-trackStandBy-468 HvFormElement-root-490"
+    class="HvSlider-trackStandBy HvFormElement-root"
     id="ErrorRangeSlider"
   >
     <div
-      class="HvSlider-labelContainer-475 HvSlider-labelIncluded-476"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-478 HvLabel-root-491 HvTypography-root-494 HvTypography-highlightText-506"
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
         for="ErrorRangeSlider-slider"
         id="ErrorRangeSlider-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-516"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-518"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-519 HvSliderInput-input-517 HvFormElement-root-490"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="ErrorRangeSlider-input-0"
           >
             <div
-              class="HvBaseInput-root-538 HvBaseInput-invalid-542"
+              class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot-543 HvInput-inputRoot-521 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-547 HvInput-input-525 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorRangeSlider-input-0-input"
                   rows="10"
                   type="text"
@@ -754,17 +754,17 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-550 HvInput-inputBorderContainer-537"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
           </div>
         </div>
         <div
-          class="HvSliderInput-inputContainer-518"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvIconBase-root-551 HvIconBase-s-553"
+            class="HvIconBase-root HvIconBase-s"
             name="Remove"
           >
             <svg
@@ -782,19 +782,19 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
             </svg>
           </div>
           <div
-            class="HvInput-root-519 HvSliderInput-input-517 HvFormElement-root-490"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="ErrorRangeSlider-input-1"
           >
             <div
-              class="HvBaseInput-root-538 HvBaseInput-invalid-542"
+              class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot-543 HvInput-inputRoot-521 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input-547 HvInput-input-525 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorRangeSlider-input-1-input"
                   rows="10"
                   type="text"
@@ -802,7 +802,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-550 HvInput-inputBorderContainer-537"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -811,10 +811,10 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-463 HvSlider-sliderContainer-465"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-469 HvSlider-rootRange-470 rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -853,7 +853,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleHiddenContainer-474"
+          class="HvSlider-handleHiddenContainer"
         >
           <div
             aria-disabled="false"
@@ -861,7 +861,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="0"
-            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle-472"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
             id="ErrorRangeSlider-knob-0"
             role="slider"
             style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
@@ -869,7 +869,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainer-471"
+          class="HvSlider-handleContainer"
         >
           <div
             aria-disabled="false"
@@ -877,7 +877,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="53"
-            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle-472"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
             id="ErrorRangeSlider-knob-1"
             role="slider"
             style="left: 53%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
@@ -927,10 +927,10 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-error-466 HvWarningText-root-556 HvWarningText-show-561"
+      class="HvSlider-error HvWarningText-root HvWarningText-show"
     >
       <div
-        class="HvWarningText-defaultIcon-560 HvIconBase-root-551 HvIconBase-s-553"
+        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
         name="Fail"
       >
         <svg
@@ -951,7 +951,7 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
         aria-atomic="true"
         aria-live="polite"
         aria-relevant="additions text"
-        class="HvWarningText-warningText-559 HvWarningText-topGutter-558 HvTypography-root-494 HvTypography-normalText-507"
+        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
         id="ErrorRangeSlider-error"
       >
         Invalid because i said so
@@ -964,38 +964,38 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
 exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
 <div>
   <div
-    class="HvSlider-trackStandBy-94 HvFormElement-root-116"
+    class="HvSlider-trackStandBy HvFormElement-root"
     id="Range"
   >
     <div
-      class="HvSlider-labelContainer-101 HvSlider-labelIncluded-102"
+      class="HvSlider-labelContainer HvSlider-labelIncluded"
     >
       <label
-        class="HvSlider-label-104 HvLabel-root-117 HvTypography-root-120 HvTypography-highlightText-132"
+        class="HvSlider-label HvLabel-root HvTypography-root HvTypography-highlightText"
         for="Range-slider"
         id="Range-label"
       >
         Failure Rate
       </label>
       <div
-        class="HvSliderInput-inputRoot-142"
+        class="HvSliderInput-inputRoot"
       >
         <div
-          class="HvSliderInput-inputContainer-144"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvInput-root-145 HvSliderInput-input-143 HvFormElement-root-116"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="Range-input-0"
           >
             <div
-              class="HvBaseInput-root-164"
+              class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot-169 HvInput-inputRoot-147 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input-173 HvInput-input-151 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Range-input-0-input"
                   rows="10"
                   type="text"
@@ -1003,17 +1003,17 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-176 HvInput-inputBorderContainer-163"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
           </div>
         </div>
         <div
-          class="HvSliderInput-inputContainer-144"
+          class="HvSliderInput-inputContainer"
         >
           <div
-            class="HvIconBase-root-177 HvIconBase-s-179"
+            class="HvIconBase-root HvIconBase-s"
             name="Remove"
           >
             <svg
@@ -1031,18 +1031,18 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
             </svg>
           </div>
           <div
-            class="HvInput-root-145 HvSliderInput-input-143 HvFormElement-root-116"
+            class="HvInput-root HvSliderInput-input HvFormElement-root"
             id="Range-input-1"
           >
             <div
-              class="HvBaseInput-root-164"
+              class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot-169 HvInput-inputRoot-147 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input-173 HvInput-input-151 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Range-input-1-input"
                   rows="10"
                   type="text"
@@ -1050,7 +1050,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer-176 HvInput-inputBorderContainer-163"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                 role="presentation"
               />
             </div>
@@ -1059,10 +1059,10 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
       </div>
     </div>
     <div
-      class="HvSlider-sliderBase-89 HvSlider-sliderContainer-91"
+      class="HvSlider-sliderBase HvSlider-sliderContainer"
     >
       <div
-        class="rc-slider HvSlider-sliderRoot-95 HvSlider-rootRange-96 rc-slider-horizontal rc-slider-with-marks"
+        class="rc-slider HvSlider-sliderRoot HvSlider-rootRange rc-slider-horizontal rc-slider-with-marks"
       >
         <div
           class="rc-slider-rail"
@@ -1101,7 +1101,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainer-97"
+          class="HvSlider-handleContainer"
         >
           <div
             aria-disabled="false"
@@ -1109,7 +1109,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="10"
-            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle-98"
+            class="rc-slider-handle rc-slider-handle-1 HvSlider-handle"
             id="Range-knob-0"
             role="slider"
             style="left: 10%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"
@@ -1117,7 +1117,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
           />
         </div>
         <div
-          class="HvSlider-handleContainer-97"
+          class="HvSlider-handleContainer"
         >
           <div
             aria-disabled="false"
@@ -1125,7 +1125,7 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
             aria-valuemax="100"
             aria-valuemin="0"
             aria-valuenow="40"
-            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle-98"
+            class="rc-slider-handle rc-slider-handle-2 HvSlider-handle"
             id="Range-knob-1"
             role="slider"
             style="left: 40%; transform: translateX(-50%); border-color: transparent; box-shadow: none; background-color: rgb(65, 65, 65); width: 16px; height: 16px;"

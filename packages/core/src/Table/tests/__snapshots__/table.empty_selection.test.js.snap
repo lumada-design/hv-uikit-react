@@ -6,27 +6,27 @@ exports[`HvTable sample snapshot testing Main 1`] = `
     class="makeStyles-container-1"
   >
     <div
-      class="HvTable-tableContainer-29"
+      class="HvTable-tableContainer"
       id="table1"
     >
       <div
         aria-controls="table1-table"
-        class="HvBulkActions-root-47 HvTable-bulkActions-46"
+        class="HvBulkActions-root HvTable-bulkActions"
         id="table1-select-all"
         labels="[object Object]"
       >
         <div
-          class="HvBulkActions-selectAllContainer-49"
+          class="HvBulkActions-selectAllContainer"
         >
           <div
-            class="HvBulkActions-selectAll-50 HvCheckBox-root-53 HvFormElement-root-61"
+            class="HvBulkActions-selectAll HvCheckBox-root HvFormElement-root"
             id="table1-select-all-select"
           >
             <div
-              class="HvCheckBox-container-54"
+              class="HvCheckBox-container"
             >
               <span
-                class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
               >
                 <input
                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -36,7 +36,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   value="on"
                 />
                 <div
-                  class="HvIconBase-root-65 HvIconBase-s-67"
+                  class="HvIconBase-root HvIconBase-s"
                   font-size="medium"
                   name="Checkbox"
                 >
@@ -61,12 +61,12 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                 </div>
               </span>
               <label
-                class="HvCheckBox-label-59 HvLabel-root-70 HvTypography-root-73 HvTypography-highlightText-85"
+                class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
                 for="table1-select-all-select-input"
                 id="table1-select-all-select-label"
               >
                 <span
-                  class="HvTypography-root-73 HvTypography-normalText-86"
+                  class="HvTypography-root HvTypography-normalText"
                 >
                   <b>
                     All
@@ -78,10 +78,10 @@ exports[`HvTable sample snapshot testing Main 1`] = `
           </div>
         </div>
         <div
-          class="HvActionsGeneric-root-95 HvBulkActions-actions-52"
+          class="HvActionsGeneric-root HvBulkActions-actions"
         >
           <button
-            class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-109 Mui-disabled HvActionsGeneric-button-96 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             disabled=""
             id="disable"
             tabindex="-1"
@@ -92,17 +92,17 @@ exports[`HvTable sample snapshot testing Main 1`] = `
         </div>
       </div>
       <div
-        class="ReactTable -highlight HvTable-root-2"
+        class="ReactTable -highlight HvTable-root"
       >
         <div
           aria-rowcount="5"
           caption="Table Caption"
-          class="rt-table HvTable-table-3"
+          class="rt-table HvTable-table"
           id="table1-table"
           role="table"
         >
           <div
-            class="rt-thead -header HvTable-thead-7"
+            class="rt-thead -header HvTable-thead"
             style="min-width: 415px;"
           >
             <div
@@ -110,7 +110,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               role="row"
             >
               <div
-                class="rt-th checkBox HvTable-theadTh-8"
+                class="rt-th checkBox HvTable-theadTh"
                 id="table1-column-_selector"
                 role="columnheader"
                 scope="col"
@@ -127,7 +127,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
               <div
                 aria-sort="ascending"
-                class="rt-th HvTable-theadTh-8 sortable rt-resizable-header -sort-asc -cursor-pointer"
+                class="rt-th HvTable-theadTh sortable rt-resizable-header -sort-asc -cursor-pointer"
                 id="table1-column-id"
                 role="columnheader"
                 scope="col"
@@ -138,17 +138,17 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   class="rt-resizable-header-content"
                 >
                   <div
-                    class="HvTableHeader-headerContainer-118"
+                    class="HvTableHeader-headerContainer"
                   >
                     <div
                       aria-label="table1-column-id-sort-button"
-                      class="HvTableHeader-rtSortIcon-125"
+                      class="HvTableHeader-rtSortIcon"
                       id="table1-column-id-sort-button"
                       role="button"
                       tabindex="0"
                     >
                       <div
-                        class="HvIconBase-root-65 HvIconBase-xs-66"
+                        class="HvIconBase-root HvIconBase-xs"
                         name="SortAscendingXS"
                       >
                         <svg
@@ -172,10 +172,10 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       </div>
                     </div>
                     <div
-                      class="HvTableHeader-headerTextContainer-120 HvTableHeader-headerSortable-122"
+                      class="HvTableHeader-headerTextContainer HvTableHeader-headerSortable"
                     >
                       <p
-                        class="HvTableHeader-headerProps-119 HvTableHeader-headerAlphaNumeric-123 HvTypography-root-73 HvTypography-highlightText-85"
+                        class="HvTableHeader-headerProps HvTableHeader-headerAlphaNumeric HvTypography-root HvTypography-highlightText"
                         id="table1-column-id-label"
                       >
                         ID
@@ -184,11 +184,11 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-resizer HvTable-resizer-24"
+                  class="rt-resizer HvTable-resizer"
                 />
               </div>
               <div
-                class="rt-th HvTable-theadTh-8 sortable rt-resizable-header -cursor-pointer"
+                class="rt-th HvTable-theadTh sortable rt-resizable-header -cursor-pointer"
                 id="table1-column-name"
                 role="columnheader"
                 scope="col"
@@ -199,17 +199,17 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   class="rt-resizable-header-content"
                 >
                   <div
-                    class="HvTableHeader-headerContainer-118"
+                    class="HvTableHeader-headerContainer"
                   >
                     <div
                       aria-label="table1-column-name-sort-button"
-                      class="HvTableHeader-rtSortIcon-125"
+                      class="HvTableHeader-rtSortIcon"
                       id="table1-column-name-sort-button"
                       role="button"
                       tabindex="0"
                     >
                       <div
-                        class="HvIconBase-root-65 HvIconBase-xs-66"
+                        class="HvIconBase-root HvIconBase-xs"
                         name="SortXS"
                       >
                         <svg
@@ -228,10 +228,10 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       </div>
                     </div>
                     <div
-                      class="HvTableHeader-headerTextContainer-120 HvTableHeader-headerSortable-122"
+                      class="HvTableHeader-headerTextContainer HvTableHeader-headerSortable"
                     >
                       <p
-                        class="HvTableHeader-headerProps-119 HvTableHeader-headerAlphaNumeric-123 HvTypography-root-73 HvTypography-highlightText-85"
+                        class="HvTableHeader-headerProps HvTableHeader-headerAlphaNumeric HvTypography-root HvTypography-highlightText"
                         id="table1-column-name-label"
                       >
                         Name
@@ -240,11 +240,11 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-resizer HvTable-resizer-24"
+                  class="rt-resizer HvTable-resizer"
                 />
               </div>
               <div
-                class="rt-th HvTable-theadTh-8 sortable rt-resizable-header -cursor-pointer"
+                class="rt-th HvTable-theadTh sortable rt-resizable-header -cursor-pointer"
                 id="table1-column-surname"
                 role="columnheader"
                 scope="col"
@@ -255,17 +255,17 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   class="rt-resizable-header-content"
                 >
                   <div
-                    class="HvTableHeader-headerContainer-118"
+                    class="HvTableHeader-headerContainer"
                   >
                     <div
                       aria-label="table1-column-surname-sort-button"
-                      class="HvTableHeader-rtSortIcon-125"
+                      class="HvTableHeader-rtSortIcon"
                       id="table1-column-surname-sort-button"
                       role="button"
                       tabindex="0"
                     >
                       <div
-                        class="HvIconBase-root-65 HvIconBase-xs-66"
+                        class="HvIconBase-root HvIconBase-xs"
                         name="SortXS"
                       >
                         <svg
@@ -284,10 +284,10 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       </div>
                     </div>
                     <div
-                      class="HvTableHeader-headerTextContainer-120 HvTableHeader-headerSortable-122"
+                      class="HvTableHeader-headerTextContainer HvTableHeader-headerSortable"
                     >
                       <p
-                        class="HvTableHeader-headerProps-119 HvTableHeader-headerAlphaNumeric-123 HvTypography-root-73 HvTypography-highlightText-85"
+                        class="HvTableHeader-headerProps HvTableHeader-headerAlphaNumeric HvTypography-root HvTypography-highlightText"
                         id="table1-column-surname-label"
                       >
                         Surname
@@ -296,11 +296,11 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-resizer HvTable-resizer-24"
+                  class="rt-resizer HvTable-resizer"
                 />
               </div>
               <div
-                class="rt-th HvTable-theadTh-8 sortable rt-resizable-header -cursor-pointer"
+                class="rt-th HvTable-theadTh sortable rt-resizable-header -cursor-pointer"
                 id="table1-column-email"
                 role="columnheader"
                 scope="col"
@@ -311,17 +311,17 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   class="rt-resizable-header-content"
                 >
                   <div
-                    class="HvTableHeader-headerContainer-118"
+                    class="HvTableHeader-headerContainer"
                   >
                     <div
                       aria-label="table1-column-email-sort-button"
-                      class="HvTableHeader-rtSortIcon-125"
+                      class="HvTableHeader-rtSortIcon"
                       id="table1-column-email-sort-button"
                       role="button"
                       tabindex="0"
                     >
                       <div
-                        class="HvIconBase-root-65 HvIconBase-xs-66"
+                        class="HvIconBase-root HvIconBase-xs"
                         name="SortXS"
                       >
                         <svg
@@ -340,10 +340,10 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       </div>
                     </div>
                     <div
-                      class="HvTableHeader-headerTextContainer-120 HvTableHeader-headerSortable-122"
+                      class="HvTableHeader-headerTextContainer HvTableHeader-headerSortable"
                     >
                       <p
-                        class="HvTableHeader-headerProps-119 HvTableHeader-headerAlphaNumeric-123 HvTypography-root-73 HvTypography-highlightText-85"
+                        class="HvTableHeader-headerProps HvTableHeader-headerAlphaNumeric HvTypography-root HvTypography-highlightText"
                         id="table1-column-email-label"
                       >
                         Email
@@ -352,11 +352,11 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-resizer HvTable-resizer-24"
+                  class="rt-resizer HvTable-resizer"
                 />
               </div>
               <div
-                class="rt-th secondaryAction HvTable-theadTh-8 secondaryAction rt-resizable-header"
+                class="rt-th secondaryAction HvTable-theadTh secondaryAction rt-resizable-header"
                 id="table1-column-secondaryActions"
                 role="columnheader"
                 scope="col"
@@ -367,51 +367,51 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   class="rt-resizable-header-content"
                 >
                   <div
-                    class="HvTableHeader-headerContainer-118"
+                    class="HvTableHeader-headerContainer"
                   >
                     <div
-                      class="HvTableHeader-headerTextContainer-120 HvTableHeader-headerNotSortable-121"
+                      class="HvTableHeader-headerTextContainer HvTableHeader-headerNotSortable"
                     >
                       <p
-                        class="HvTableHeader-headerProps-119 HvTableHeader-headerAlphaNumeric-123 HvTypography-root-73 HvTypography-highlightText-85"
+                        class="HvTableHeader-headerProps HvTableHeader-headerAlphaNumeric HvTypography-root HvTypography-highlightText"
                         id="table1-column-secondaryActions-label"
                       />
                     </div>
                   </div>
                 </div>
                 <div
-                  class="rt-resizer HvTable-resizer-24"
+                  class="rt-resizer HvTable-resizer"
                 />
               </div>
             </div>
           </div>
           <div
-            class="rt-tbody HvTable-tbody-12"
+            class="rt-tbody HvTable-tbody"
             role="rowgroup"
             style="min-width: 415px;"
           >
             <div
-              class="rt-tr-group HvTable-trGroups-14"
+              class="rt-tr-group HvTable-trGroups"
             >
               <div
                 aria-rowindex="0"
                 aria-selected="false"
-                class="rt-tr HvTable-tr-15 -odd"
+                class="rt-tr HvTable-tr -odd"
                 id="table1-row-1"
                 role="row"
               >
                 <div
-                  class="rt-td HvTable-td-17 HvTable-centered-34 checkBox"
+                  class="rt-td HvTable-td HvTable-centered checkBox"
                   id="table1-row-1-column-_selector"
                   role="cell"
                   style="text-align: center; flex: 32 0 auto; width: 32px; max-width: 32px;"
                 >
                   <div
-                    class="HvCheckBox-root-53 HvFormElement-root-61"
+                    class="HvCheckBox-root HvFormElement-root"
                     id="select-1"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-1-select"
@@ -422,7 +422,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         value="on"
                       />
                       <div
-                        class="HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvIconBase-root HvIconBase-s"
                         font-size="medium"
                         name="Checkbox"
                       >
@@ -449,83 +449,83 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 sorted HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td sorted HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-1-column-id"
                   role="cell"
                   style="flex: 50 0 auto; width: 50px; max-width: 50px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     1
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-1-column-name"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Aaron
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-1-column-surname"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Melantha
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-1-column-email"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     melantha@mail.com
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric secondaryAction"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric secondaryAction"
                   id="table1-row-1-column-secondaryActions"
                   role="cell"
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    class="HvBaseDropdown-root-189 HvDropDownMenu-root-183"
+                    class="HvBaseDropdown-root HvDropDownMenu-root"
                   >
                     <div
                       aria-expanded="false"
                       aria-haspopup="menu"
-                      class="HvDropDownMenu-container-184 HvBaseDropdown-anchor-190"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
                       id="table1-row-1"
                       tabindex="-1"
                     >
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-186 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-1-icon-button"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="HvIconBase-root-65 HvIconBase-s-67"
+                          class="HvIconBase-root HvIconBase-s"
                           name="MoreOptionsVertical"
                           style="width: 30px; height: 30px;"
                         >
@@ -550,27 +550,27 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
             </div>
             <div
-              class="rt-tr-group HvTable-trGroups-14"
+              class="rt-tr-group HvTable-trGroups"
             >
               <div
                 aria-rowindex="1"
                 aria-selected="false"
-                class="rt-tr HvTable-tr-15 -even"
+                class="rt-tr HvTable-tr -even"
                 id="table1-row-2"
                 role="row"
               >
                 <div
-                  class="rt-td HvTable-td-17 HvTable-centered-34 checkBox"
+                  class="rt-td HvTable-td HvTable-centered checkBox"
                   id="table1-row-2-column-_selector"
                   role="cell"
                   style="text-align: center; flex: 32 0 auto; width: 32px; max-width: 32px;"
                 >
                   <div
-                    class="HvCheckBox-root-53 HvFormElement-root-61"
+                    class="HvCheckBox-root HvFormElement-root"
                     id="select-2"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-2-select"
@@ -581,7 +581,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         value="on"
                       />
                       <div
-                        class="HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvIconBase-root HvIconBase-s"
                         font-size="medium"
                         name="Checkbox"
                       >
@@ -608,83 +608,83 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 sorted HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td sorted HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-2-column-id"
                   role="cell"
                   style="flex: 50 0 auto; width: 50px; max-width: 50px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     2
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-2-column-name"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Jeanette
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-2-column-surname"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Gentle
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-2-column-email"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     gentle@mail.com
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric secondaryAction"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric secondaryAction"
                   id="table1-row-2-column-secondaryActions"
                   role="cell"
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    class="HvBaseDropdown-root-189 HvDropDownMenu-root-183"
+                    class="HvBaseDropdown-root HvDropDownMenu-root"
                   >
                     <div
                       aria-expanded="false"
                       aria-haspopup="menu"
-                      class="HvDropDownMenu-container-184 HvBaseDropdown-anchor-190"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
                       id="table1-row-2"
                       tabindex="-1"
                     >
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-186 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-2-icon-button"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="HvIconBase-root-65 HvIconBase-s-67"
+                          class="HvIconBase-root HvIconBase-s"
                           name="MoreOptionsVertical"
                           style="width: 30px; height: 30px;"
                         >
@@ -709,27 +709,27 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
             </div>
             <div
-              class="rt-tr-group HvTable-trGroups-14"
+              class="rt-tr-group HvTable-trGroups"
             >
               <div
                 aria-rowindex="2"
                 aria-selected="false"
-                class="rt-tr HvTable-tr-15 -odd"
+                class="rt-tr HvTable-tr -odd"
                 id="table1-row-3"
                 role="row"
               >
                 <div
-                  class="rt-td HvTable-td-17 HvTable-centered-34 checkBox"
+                  class="rt-td HvTable-td HvTable-centered checkBox"
                   id="table1-row-3-column-_selector"
                   role="cell"
                   style="text-align: center; flex: 32 0 auto; width: 32px; max-width: 32px;"
                 >
                   <div
-                    class="HvCheckBox-root-53 HvFormElement-root-61"
+                    class="HvCheckBox-root HvFormElement-root"
                     id="select-3"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-3-select"
@@ -740,7 +740,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         value="on"
                       />
                       <div
-                        class="HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvIconBase-root HvIconBase-s"
                         font-size="medium"
                         name="Checkbox"
                       >
@@ -767,83 +767,83 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 sorted HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td sorted HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-3-column-id"
                   role="cell"
                   style="flex: 50 0 auto; width: 50px; max-width: 50px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     3
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-3-column-name"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Michael
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-3-column-surname"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Neil
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-3-column-email"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     neil@mail.com
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric secondaryAction"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric secondaryAction"
                   id="table1-row-3-column-secondaryActions"
                   role="cell"
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    class="HvBaseDropdown-root-189 HvDropDownMenu-root-183"
+                    class="HvBaseDropdown-root HvDropDownMenu-root"
                   >
                     <div
                       aria-expanded="false"
                       aria-haspopup="menu"
-                      class="HvDropDownMenu-container-184 HvBaseDropdown-anchor-190"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
                       id="table1-row-3"
                       tabindex="-1"
                     >
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-186 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-3-icon-button"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="HvIconBase-root-65 HvIconBase-s-67"
+                          class="HvIconBase-root HvIconBase-s"
                           name="MoreOptionsVertical"
                           style="width: 30px; height: 30px;"
                         >
@@ -868,27 +868,27 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
             </div>
             <div
-              class="rt-tr-group HvTable-trGroups-14"
+              class="rt-tr-group HvTable-trGroups"
             >
               <div
                 aria-rowindex="3"
                 aria-selected="false"
-                class="rt-tr HvTable-tr-15 -even"
+                class="rt-tr HvTable-tr -even"
                 id="table1-row-4"
                 role="row"
               >
                 <div
-                  class="rt-td HvTable-td-17 HvTable-centered-34 checkBox"
+                  class="rt-td HvTable-td HvTable-centered checkBox"
                   id="table1-row-4-column-_selector"
                   role="cell"
                   style="text-align: center; flex: 32 0 auto; width: 32px; max-width: 32px;"
                 >
                   <div
-                    class="HvCheckBox-root-53 HvFormElement-root-61"
+                    class="HvCheckBox-root HvFormElement-root"
                     id="select-4"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-4-select"
@@ -899,7 +899,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         value="on"
                       />
                       <div
-                        class="HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvIconBase-root HvIconBase-s"
                         font-size="medium"
                         name="Checkbox"
                       >
@@ -926,83 +926,83 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 sorted HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td sorted HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-4-column-id"
                   role="cell"
                   style="flex: 50 0 auto; width: 50px; max-width: 50px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     4
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-4-column-name"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Walter
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-4-column-surname"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Allegro
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-4-column-email"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     allegro@mail.com
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric secondaryAction"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric secondaryAction"
                   id="table1-row-4-column-secondaryActions"
                   role="cell"
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    class="HvBaseDropdown-root-189 HvDropDownMenu-root-183"
+                    class="HvBaseDropdown-root HvDropDownMenu-root"
                   >
                     <div
                       aria-expanded="false"
                       aria-haspopup="menu"
-                      class="HvDropDownMenu-container-184 HvBaseDropdown-anchor-190"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
                       id="table1-row-4"
                       tabindex="-1"
                     >
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-186 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-4-icon-button"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="HvIconBase-root-65 HvIconBase-s-67"
+                          class="HvIconBase-root HvIconBase-s"
                           name="MoreOptionsVertical"
                           style="width: 30px; height: 30px;"
                         >
@@ -1027,27 +1027,27 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
             </div>
             <div
-              class="rt-tr-group HvTable-trGroups-14"
+              class="rt-tr-group HvTable-trGroups"
             >
               <div
                 aria-rowindex="4"
                 aria-selected="false"
-                class="rt-tr HvTable-tr-15 -odd"
+                class="rt-tr HvTable-tr -odd"
                 id="table1-row-5"
                 role="row"
               >
                 <div
-                  class="rt-td HvTable-td-17 HvTable-centered-34 checkBox"
+                  class="rt-td HvTable-td HvTable-centered checkBox"
                   id="table1-row-5-column-_selector"
                   role="cell"
                   style="text-align: center; flex: 32 0 auto; width: 32px; max-width: 32px;"
                 >
                   <div
-                    class="HvCheckBox-root-53 HvFormElement-root-61"
+                    class="HvCheckBox-root HvFormElement-root"
                     id="select-5"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-57 HvBaseCheckbox-root-62 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-5-select"
@@ -1058,7 +1058,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         value="on"
                       />
                       <div
-                        class="HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvIconBase-root HvIconBase-s"
                         font-size="medium"
                         name="Checkbox"
                       >
@@ -1085,83 +1085,83 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 sorted HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td sorted HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-5-column-id"
                   role="cell"
                   style="flex: 50 0 auto; width: 50px; max-width: 50px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     5
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-5-column-name"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     James
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-5-column-surname"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     Jonah
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric sortable"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric sortable"
                   id="table1-row-5-column-email"
                   role="cell"
                   style="flex: 100 0 auto; width: 100px;"
                 >
                   <div
-                    class="OverflowTooltip-tooltipAnchor-170 OverflowTooltip-textContainer-141"
+                    class="OverflowTooltip-tooltipAnchor-45 OverflowTooltip-textContainer-16"
                     data-mui-internal-clone-element="true"
                   >
                     allegro@mail.com
                   </div>
                 </div>
                 <div
-                  class="rt-td HvTable-td-17 HvTable-alphaNumeric-35 alphaNumeric secondaryAction"
+                  class="rt-td HvTable-td HvTable-alphaNumeric alphaNumeric secondaryAction"
                   id="table1-row-5-column-secondaryActions"
                   role="cell"
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    class="HvBaseDropdown-root-189 HvDropDownMenu-root-183"
+                    class="HvBaseDropdown-root HvDropDownMenu-root"
                   >
                     <div
                       aria-expanded="false"
                       aria-haspopup="menu"
-                      class="HvDropDownMenu-container-184 HvBaseDropdown-anchor-190"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
                       id="table1-row-5"
                       tabindex="-1"
                     >
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon-186 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-5-icon-button"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="HvIconBase-root-65 HvIconBase-s-67"
+                          class="HvIconBase-root HvIconBase-s"
                           name="MoreOptionsVertical"
                           style="width: 30px; height: 30px;"
                         >
@@ -1191,41 +1191,41 @@ exports[`HvTable sample snapshot testing Main 1`] = `
           class="pagination-bottom"
         >
           <div
-            class="HvPagination-root-209"
+            class="HvPagination-root"
             id="table1-pagination"
           >
             <div
-              class="HvPagination-pageSizeOptions-210"
+              class="HvPagination-pageSizeOptions"
             >
               <div
-                class="HvBaseDropdown-root-189 HvSelect-base-222 HvSelect-root-223"
+                class="HvBaseDropdown-root HvSelect-base HvSelect-root"
               >
                 <div
                   aria-expanded="false"
                   aria-label="Select how many to display"
-                  class="HvPagination-pageSizeOptionsSelect-211 HvBaseDropdown-anchor-190 HvSelect-anchor-224"
+                  class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-anchor HvSelect-anchor"
                   id="table1-pagination-pageSize"
                   role="combobox"
                   tabindex="-1"
                 >
                   <div
                     aria-label="Select how many to display"
-                    class="HvBaseDropdown-header-194 HvSelect-header-225"
+                    class="HvBaseDropdown-header HvSelect-header"
                     id="table1-pagination-pageSize-header"
                     role="textbox"
                     tabindex="0"
                   >
                     <div
-                      class="HvBaseDropdown-selection-200"
+                      class="HvBaseDropdown-selection"
                     >
                       <p
-                        class="HvTypography-root-73 HvTypography-normalText-86"
+                        class="HvTypography-root HvTypography-normalText"
                       >
                         5
                       </p>
                     </div>
                     <div
-                      class="HvBaseDropdown-arrow-199 HvIconBase-root-65 HvIconBase-xs-66"
+                      class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
                       name="DropDownXS"
                     >
                       <svg
@@ -1247,7 +1247,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               </div>
             </div>
             <div
-              class="HvPagination-pageNavigator-213"
+              class="HvPagination-pageNavigator"
             >
               <div
                 class=""
@@ -1255,14 +1255,14 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="First Page"
-                  class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-109 Mui-disabled HvPagination-iconContainer-219 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-firstPage-button"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="HvPagination-icon-220 HvIconBase-root-65 HvIconBase-s-67"
+                    class="HvPagination-icon HvIconBase-root HvIconBase-s"
                     name="Start"
                   >
                     <svg
@@ -1287,14 +1287,14 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Previous Page"
-                  class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-109 Mui-disabled HvPagination-iconContainer-219 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-previousPage-button"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="HvPagination-icon-220 HvIconBase-root-65 HvIconBase-s-67"
+                    class="HvPagination-icon HvIconBase-root HvIconBase-s"
                     name="Backwards"
                   >
                     <svg
@@ -1314,24 +1314,24 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                 </button>
               </div>
               <div
-                class="HvPagination-pageInfo-214"
+                class="HvPagination-pageInfo"
               >
                 <div
-                  class="HvPagination-pageJump-215"
+                  class="HvPagination-pageJump"
                 >
                   <div
-                    class="HvInput-root-227 HvPagination-pageSizeInputContainer-217 HvFormElement-root-61"
+                    class="HvInput-root HvPagination-pageSizeInputContainer HvFormElement-root"
                     id="table1-pagination-currentPage"
                   >
                     <div
-                      class="HvBaseInput-root-246"
+                      class="HvBaseInput-root"
                     >
                       <div
-                        class="HvBaseInput-inputRoot-251 HvInput-inputRoot-229 HvPagination-pageSizeInputRoot-218 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                        class="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
                       >
                         <input
                           aria-label="Current page"
-                          class="HvBaseInput-input-255 HvInput-input-233 HvPagination-pageSizeInput-216 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="HvBaseInput-input HvInput-input HvPagination-pageSizeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           id="table1-pagination-currentPage-input"
                           rows="10"
                           type="number"
@@ -1339,15 +1339,15 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         />
                       </div>
                       <div
-                        class="HvBaseInput-inputBorderContainer-258 HvInput-inputBorderContainer-245"
+                        class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                         role="presentation"
                       />
                     </div>
                     <div
-                      class="HvInput-error-237 HvWarningText-root-259"
+                      class="HvInput-error HvWarningText-root"
                     >
                       <div
-                        class="HvWarningText-defaultIcon-263 HvIconBase-root-65 HvIconBase-s-67"
+                        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                         name="Fail"
                       >
                         <svg
@@ -1368,19 +1368,19 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         aria-atomic="true"
                         aria-live="polite"
                         aria-relevant="additions text"
-                        class="HvWarningText-warningText-262 HvWarningText-topGutter-261 HvTypography-root-73 HvTypography-normalText-86"
+                        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                         id="table1-pagination-currentPage-error"
                       />
                     </div>
                   </div>
                 </div>
                 <span
-                  class="HvTypography-root-73 HvTypography-normalText-86"
+                  class="HvTypography-root HvTypography-normalText"
                 >
                   / 
                 </span>
                 <span
-                  class="HvTypography-root-73 HvTypography-normalText-86"
+                  class="HvTypography-root HvTypography-normalText"
                   id="table1-pagination-totalPages"
                 >
                   1
@@ -1392,14 +1392,14 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Next Page"
-                  class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-109 Mui-disabled HvPagination-iconContainer-219 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-nextPage-button"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="HvPagination-icon-220 HvIconBase-root-65 HvIconBase-s-67"
+                    class="HvPagination-icon HvIconBase-root HvIconBase-s"
                     name="Forwards"
                   >
                     <svg
@@ -1424,14 +1424,14 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Last Page"
-                  class="HvButton-root-101 MuiButton-root MuiButton-text HvButton-ghost-108 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled-109 Mui-disabled HvPagination-iconContainer-219 HvButton-icon-102 HvButton-ghostSVG-115 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-lastPage-button"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="HvPagination-icon-220 HvIconBase-root-65 HvIconBase-s-67"
+                    class="HvPagination-icon HvIconBase-root HvIconBase-s"
                     name="End"
                   >
                     <svg
@@ -1454,7 +1454,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
           </div>
         </div>
         <div
-          class="-loading HvTable-loading-22"
+          class="-loading HvTable-loading"
         >
           <div
             class="-loading-inner"

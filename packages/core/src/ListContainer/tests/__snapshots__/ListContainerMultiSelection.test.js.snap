@@ -3,17 +3,17 @@
 exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selection List Container 1`] = `
 <div>
   <div
-    class="HvPanel-root-1 MuiBox-root css-eaeacs"
+    class="HvPanel-root MuiBox-root css-eaeacs"
     style="float: left;"
   >
     <ul
       aria-label="Stores"
-      class="HvListContainer-root-2"
+      class="HvListContainer-root"
       role="listbox"
     >
       <li
         aria-selected="false"
-        class="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8 HvListItem-interactive-5 HvFocus-root-14 HvFocus-focusDisabled-17"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         role="option"
         style="user-select: none;"
         tabindex="0"
@@ -22,7 +22,7 @@ exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selectio
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8 HvListItem-interactive-5 HvFocus-root-14 HvFocus-focusDisabled-17"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         role="option"
         style="user-select: none;"
         tabindex="-1"
@@ -31,7 +31,7 @@ exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selectio
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8 HvListItem-interactive-5 HvFocus-root-14 HvFocus-focusDisabled-17"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         role="option"
         style="user-select: none;"
         tabindex="-1"
@@ -40,7 +40,7 @@ exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selectio
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8 HvListItem-interactive-5 HvFocus-root-14 HvFocus-focusDisabled-17"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         role="option"
         style="user-select: none;"
         tabindex="-1"
@@ -49,7 +49,7 @@ exports[`ListContainerMultiSelectionGroup sample snapshot testing Multi Selectio
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8 HvListItem-interactive-5 HvFocus-root-14 HvFocus-focusDisabled-17"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         role="option"
         style="user-select: none;"
         tabindex="-1"

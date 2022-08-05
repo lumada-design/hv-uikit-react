@@ -7,45 +7,45 @@ exports[`InfoMessage should render correctly 1`] = `
   <HvInfoMessage
     classes={
       Object {
-        "gutter": "HvInfoMessage-gutter-28",
-        "infoDisabled": "HvInfoMessage-infoDisabled-27",
-        "root": "HvInfoMessage-root-26",
+        "gutter": "HvInfoMessage-gutter",
+        "infoDisabled": "HvInfoMessage-infoDisabled",
+        "root": "HvInfoMessage-root",
       }
     }
     id="base"
   >
     <WithStyles(ForwardRef)
-      className="HvInfoMessage-root-26 HvInfoMessage-gutter-28"
+      className="HvInfoMessage-root HvInfoMessage-gutter"
       component="label"
       id="base"
       variant="normalText"
     >
       <ForwardRef
-        className="HvInfoMessage-root-26 HvInfoMessage-gutter-28"
+        className="HvInfoMessage-root HvInfoMessage-gutter"
         classes={
           Object {
-            "3xlTitle": "HvTypography-3xlTitle-32",
-            "4xlTitle": "HvTypography-4xlTitle-31",
-            "5xlTitle": "HvTypography-5xlTitle-30",
-            "disabledText": "HvTypography-disabledText-45",
-            "highlightText": "HvTypography-highlightText-41",
-            "lTitle": "HvTypography-lTitle-35",
-            "link": "HvTypography-link-44",
-            "mTitle": "HvTypography-mTitle-36",
-            "noWrap": "HvTypography-noWrap-50",
-            "normalText": "HvTypography-normalText-42",
-            "placeholderText": "HvTypography-placeholderText-43",
-            "root": "HvTypography-root-29",
-            "sTitle": "HvTypography-sTitle-37",
-            "sectionTitle": "HvTypography-sectionTitle-40",
-            "selectedNavText": "HvTypography-selectedNavText-46",
-            "vizText": "HvTypography-vizText-47",
-            "vizTextDisabled": "HvTypography-vizTextDisabled-48",
-            "xlTitle": "HvTypography-xlTitle-34",
-            "xsInlineLink": "HvTypography-xsInlineLink-49",
-            "xsTitle": "HvTypography-xsTitle-38",
-            "xxlTitle": "HvTypography-xxlTitle-33",
-            "xxsTitle": "HvTypography-xxsTitle-39",
+            "3xlTitle": "HvTypography-3xlTitle",
+            "4xlTitle": "HvTypography-4xlTitle",
+            "5xlTitle": "HvTypography-5xlTitle",
+            "disabledText": "HvTypography-disabledText",
+            "highlightText": "HvTypography-highlightText",
+            "lTitle": "HvTypography-lTitle",
+            "link": "HvTypography-link",
+            "mTitle": "HvTypography-mTitle",
+            "noWrap": "HvTypography-noWrap",
+            "normalText": "HvTypography-normalText",
+            "placeholderText": "HvTypography-placeholderText",
+            "root": "HvTypography-root",
+            "sTitle": "HvTypography-sTitle",
+            "sectionTitle": "HvTypography-sectionTitle",
+            "selectedNavText": "HvTypography-selectedNavText",
+            "vizText": "HvTypography-vizText",
+            "vizTextDisabled": "HvTypography-vizTextDisabled",
+            "xlTitle": "HvTypography-xlTitle",
+            "xsInlineLink": "HvTypography-xsInlineLink",
+            "xsTitle": "HvTypography-xsTitle",
+            "xxlTitle": "HvTypography-xxlTitle",
+            "xxsTitle": "HvTypography-xxsTitle",
           }
         }
         component="label"
@@ -53,7 +53,7 @@ exports[`InfoMessage should render correctly 1`] = `
         variant="normalText"
       >
         <label
-          className="HvInfoMessage-root-26 HvInfoMessage-gutter-28 HvTypography-root-29 HvTypography-normalText-42"
+          className="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
           id="base"
         >
           test

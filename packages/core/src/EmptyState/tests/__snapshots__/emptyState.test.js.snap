@@ -11,14 +11,14 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
     action={<MockAction />}
     classes={
       Object {
-        "actionContainer": "HvEmptyState-actionContainer-44",
-        "container": "HvEmptyState-container-38",
-        "containerMessageOnly": "HvEmptyState-containerMessageOnly-39",
-        "iconContainer": "HvEmptyState-iconContainer-40",
-        "messageContainer": "HvEmptyState-messageContainer-43",
-        "root": "HvEmptyState-root-37",
-        "textContainer": "HvEmptyState-textContainer-41",
-        "titleContainer": "HvEmptyState-titleContainer-42",
+        "actionContainer": "HvEmptyState-actionContainer",
+        "container": "HvEmptyState-container",
+        "containerMessageOnly": "HvEmptyState-containerMessageOnly",
+        "iconContainer": "HvEmptyState-iconContainer",
+        "messageContainer": "HvEmptyState-messageContainer",
+        "root": "HvEmptyState-root",
+        "textContainer": "HvEmptyState-textContainer",
+        "titleContainer": "HvEmptyState-titleContainer",
       }
     }
     icon={<div />}
@@ -26,57 +26,57 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
     title={<MockTitle />}
   >
     <div
-      className="HvEmptyState-root-37"
+      className="HvEmptyState-root"
     >
       <div
-        className="HvEmptyState-container-38"
+        className="HvEmptyState-container"
       >
         <div
-          className="HvEmptyState-iconContainer-40"
+          className="HvEmptyState-iconContainer"
         >
           <div />
         </div>
         <div
-          className="HvEmptyState-textContainer-41"
+          className="HvEmptyState-textContainer"
         >
           <WithStyles(ForwardRef)
-            className="HvEmptyState-titleContainer-42"
+            className="HvEmptyState-titleContainer"
             component="div"
             variant="xxsTitle"
           >
             <ForwardRef
-              className="HvEmptyState-titleContainer-42"
+              className="HvEmptyState-titleContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-48",
-                  "4xlTitle": "HvTypography-4xlTitle-47",
-                  "5xlTitle": "HvTypography-5xlTitle-46",
-                  "disabledText": "HvTypography-disabledText-61",
-                  "highlightText": "HvTypography-highlightText-57",
-                  "lTitle": "HvTypography-lTitle-51",
-                  "link": "HvTypography-link-60",
-                  "mTitle": "HvTypography-mTitle-52",
-                  "noWrap": "HvTypography-noWrap-66",
-                  "normalText": "HvTypography-normalText-58",
-                  "placeholderText": "HvTypography-placeholderText-59",
-                  "root": "HvTypography-root-45",
-                  "sTitle": "HvTypography-sTitle-53",
-                  "sectionTitle": "HvTypography-sectionTitle-56",
-                  "selectedNavText": "HvTypography-selectedNavText-62",
-                  "vizText": "HvTypography-vizText-63",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-64",
-                  "xlTitle": "HvTypography-xlTitle-50",
-                  "xsInlineLink": "HvTypography-xsInlineLink-65",
-                  "xsTitle": "HvTypography-xsTitle-54",
-                  "xxlTitle": "HvTypography-xxlTitle-49",
-                  "xxsTitle": "HvTypography-xxsTitle-55",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="xxsTitle"
             >
               <div
-                className="HvEmptyState-titleContainer-42 HvTypography-root-45 HvTypography-xxsTitle-55"
+                className="HvEmptyState-titleContainer HvTypography-root HvTypography-xxsTitle"
               >
                 <MockTitle>
                   <div>
@@ -87,43 +87,43 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            className="HvEmptyState-messageContainer-43"
+            className="HvEmptyState-messageContainer"
             component="div"
             variant="normalText"
           >
             <ForwardRef
-              className="HvEmptyState-messageContainer-43"
+              className="HvEmptyState-messageContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-48",
-                  "4xlTitle": "HvTypography-4xlTitle-47",
-                  "5xlTitle": "HvTypography-5xlTitle-46",
-                  "disabledText": "HvTypography-disabledText-61",
-                  "highlightText": "HvTypography-highlightText-57",
-                  "lTitle": "HvTypography-lTitle-51",
-                  "link": "HvTypography-link-60",
-                  "mTitle": "HvTypography-mTitle-52",
-                  "noWrap": "HvTypography-noWrap-66",
-                  "normalText": "HvTypography-normalText-58",
-                  "placeholderText": "HvTypography-placeholderText-59",
-                  "root": "HvTypography-root-45",
-                  "sTitle": "HvTypography-sTitle-53",
-                  "sectionTitle": "HvTypography-sectionTitle-56",
-                  "selectedNavText": "HvTypography-selectedNavText-62",
-                  "vizText": "HvTypography-vizText-63",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-64",
-                  "xlTitle": "HvTypography-xlTitle-50",
-                  "xsInlineLink": "HvTypography-xsInlineLink-65",
-                  "xsTitle": "HvTypography-xsTitle-54",
-                  "xxlTitle": "HvTypography-xxlTitle-49",
-                  "xxsTitle": "HvTypography-xxsTitle-55",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="normalText"
             >
               <div
-                className="HvEmptyState-messageContainer-43 HvTypography-root-45 HvTypography-normalText-58"
+                className="HvEmptyState-messageContainer HvTypography-root HvTypography-normalText"
               >
                 <MockMessage>
                   <div>
@@ -134,43 +134,43 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            className="HvEmptyState-actionContainer-44"
+            className="HvEmptyState-actionContainer"
             component="div"
             variant="normalText"
           >
             <ForwardRef
-              className="HvEmptyState-actionContainer-44"
+              className="HvEmptyState-actionContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-48",
-                  "4xlTitle": "HvTypography-4xlTitle-47",
-                  "5xlTitle": "HvTypography-5xlTitle-46",
-                  "disabledText": "HvTypography-disabledText-61",
-                  "highlightText": "HvTypography-highlightText-57",
-                  "lTitle": "HvTypography-lTitle-51",
-                  "link": "HvTypography-link-60",
-                  "mTitle": "HvTypography-mTitle-52",
-                  "noWrap": "HvTypography-noWrap-66",
-                  "normalText": "HvTypography-normalText-58",
-                  "placeholderText": "HvTypography-placeholderText-59",
-                  "root": "HvTypography-root-45",
-                  "sTitle": "HvTypography-sTitle-53",
-                  "sectionTitle": "HvTypography-sectionTitle-56",
-                  "selectedNavText": "HvTypography-selectedNavText-62",
-                  "vizText": "HvTypography-vizText-63",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-64",
-                  "xlTitle": "HvTypography-xlTitle-50",
-                  "xsInlineLink": "HvTypography-xsInlineLink-65",
-                  "xsTitle": "HvTypography-xsTitle-54",
-                  "xxlTitle": "HvTypography-xxlTitle-49",
-                  "xxsTitle": "HvTypography-xxsTitle-55",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="normalText"
             >
               <div
-                className="HvEmptyState-actionContainer-44 HvTypography-root-45 HvTypography-normalText-58"
+                className="HvEmptyState-actionContainer HvTypography-root HvTypography-normalText"
               >
                 <MockAction>
                   <div>
@@ -233,14 +233,14 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
     }
     classes={
       Object {
-        "actionContainer": "HvEmptyState-actionContainer-8",
-        "container": "HvEmptyState-container-2",
-        "containerMessageOnly": "HvEmptyState-containerMessageOnly-3",
-        "iconContainer": "HvEmptyState-iconContainer-4",
-        "messageContainer": "HvEmptyState-messageContainer-7",
-        "root": "HvEmptyState-root-1",
-        "textContainer": "HvEmptyState-textContainer-5",
-        "titleContainer": "HvEmptyState-titleContainer-6",
+        "actionContainer": "HvEmptyState-actionContainer",
+        "container": "HvEmptyState-container",
+        "containerMessageOnly": "HvEmptyState-containerMessageOnly",
+        "iconContainer": "HvEmptyState-iconContainer",
+        "messageContainer": "HvEmptyState-messageContainer",
+        "root": "HvEmptyState-root",
+        "textContainer": "HvEmptyState-textContainer",
+        "titleContainer": "HvEmptyState-titleContainer",
       }
     }
     icon={
@@ -257,14 +257,14 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
     title="This page can't be displayed"
   >
     <div
-      className="HvEmptyState-root-1"
+      className="HvEmptyState-root"
       id="empty-state-custom-message"
     >
       <div
-        className="HvEmptyState-container-2"
+        className="HvEmptyState-container"
       >
         <div
-          className="HvEmptyState-iconContainer-4"
+          className="HvEmptyState-iconContainer"
         >
           <Ghost
             role="presentation"
@@ -275,7 +275,7 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
               role="presentation"
             >
               <div
-                className="HvIconBase-root-9 HvIconBase-s-11"
+                className="HvIconBase-root HvIconBase-s"
                 name="Ghost"
                 role="presentation"
               >
@@ -297,121 +297,121 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
           </Ghost>
         </div>
         <div
-          className="HvEmptyState-textContainer-5"
+          className="HvEmptyState-textContainer"
         >
           <WithStyles(ForwardRef)
-            className="HvEmptyState-titleContainer-6"
+            className="HvEmptyState-titleContainer"
             component="div"
             variant="xxsTitle"
           >
             <ForwardRef
-              className="HvEmptyState-titleContainer-6"
+              className="HvEmptyState-titleContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-17",
-                  "4xlTitle": "HvTypography-4xlTitle-16",
-                  "5xlTitle": "HvTypography-5xlTitle-15",
-                  "disabledText": "HvTypography-disabledText-30",
-                  "highlightText": "HvTypography-highlightText-26",
-                  "lTitle": "HvTypography-lTitle-20",
-                  "link": "HvTypography-link-29",
-                  "mTitle": "HvTypography-mTitle-21",
-                  "noWrap": "HvTypography-noWrap-35",
-                  "normalText": "HvTypography-normalText-27",
-                  "placeholderText": "HvTypography-placeholderText-28",
-                  "root": "HvTypography-root-14",
-                  "sTitle": "HvTypography-sTitle-22",
-                  "sectionTitle": "HvTypography-sectionTitle-25",
-                  "selectedNavText": "HvTypography-selectedNavText-31",
-                  "vizText": "HvTypography-vizText-32",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-33",
-                  "xlTitle": "HvTypography-xlTitle-19",
-                  "xsInlineLink": "HvTypography-xsInlineLink-34",
-                  "xsTitle": "HvTypography-xsTitle-23",
-                  "xxlTitle": "HvTypography-xxlTitle-18",
-                  "xxsTitle": "HvTypography-xxsTitle-24",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="xxsTitle"
             >
               <div
-                className="HvEmptyState-titleContainer-6 HvTypography-root-14 HvTypography-xxsTitle-24"
+                className="HvEmptyState-titleContainer HvTypography-root HvTypography-xxsTitle"
               >
                 This page can't be displayed
               </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            className="HvEmptyState-messageContainer-7"
+            className="HvEmptyState-messageContainer"
             component="div"
             variant="normalText"
           >
             <ForwardRef
-              className="HvEmptyState-messageContainer-7"
+              className="HvEmptyState-messageContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-17",
-                  "4xlTitle": "HvTypography-4xlTitle-16",
-                  "5xlTitle": "HvTypography-5xlTitle-15",
-                  "disabledText": "HvTypography-disabledText-30",
-                  "highlightText": "HvTypography-highlightText-26",
-                  "lTitle": "HvTypography-lTitle-20",
-                  "link": "HvTypography-link-29",
-                  "mTitle": "HvTypography-mTitle-21",
-                  "noWrap": "HvTypography-noWrap-35",
-                  "normalText": "HvTypography-normalText-27",
-                  "placeholderText": "HvTypography-placeholderText-28",
-                  "root": "HvTypography-root-14",
-                  "sTitle": "HvTypography-sTitle-22",
-                  "sectionTitle": "HvTypography-sectionTitle-25",
-                  "selectedNavText": "HvTypography-selectedNavText-31",
-                  "vizText": "HvTypography-vizText-32",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-33",
-                  "xlTitle": "HvTypography-xlTitle-19",
-                  "xsInlineLink": "HvTypography-xsInlineLink-34",
-                  "xsTitle": "HvTypography-xsTitle-23",
-                  "xxlTitle": "HvTypography-xxlTitle-18",
-                  "xxsTitle": "HvTypography-xxsTitle-24",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="normalText"
             >
               <div
-                className="HvEmptyState-messageContainer-7 HvTypography-root-14 HvTypography-normalText-27"
+                className="HvEmptyState-messageContainer HvTypography-root HvTypography-normalText"
               >
                 <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-17",
-                        "4xlTitle": "HvTypography-4xlTitle-16",
-                        "5xlTitle": "HvTypography-5xlTitle-15",
-                        "disabledText": "HvTypography-disabledText-30",
-                        "highlightText": "HvTypography-highlightText-26",
-                        "lTitle": "HvTypography-lTitle-20",
-                        "link": "HvTypography-link-29",
-                        "mTitle": "HvTypography-mTitle-21",
-                        "noWrap": "HvTypography-noWrap-35",
-                        "normalText": "HvTypography-normalText-27",
-                        "placeholderText": "HvTypography-placeholderText-28",
-                        "root": "HvTypography-root-14",
-                        "sTitle": "HvTypography-sTitle-22",
-                        "sectionTitle": "HvTypography-sectionTitle-25",
-                        "selectedNavText": "HvTypography-selectedNavText-31",
-                        "vizText": "HvTypography-vizText-32",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled-33",
-                        "xlTitle": "HvTypography-xlTitle-19",
-                        "xsInlineLink": "HvTypography-xsInlineLink-34",
-                        "xsTitle": "HvTypography-xsTitle-23",
-                        "xxlTitle": "HvTypography-xxlTitle-18",
-                        "xxsTitle": "HvTypography-xxsTitle-24",
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
                   >
                     <p
-                      className="HvTypography-root-14 HvTypography-normalText-27"
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       404 Not Found
                     </p>
@@ -421,43 +421,43 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            className="HvEmptyState-actionContainer-8"
+            className="HvEmptyState-actionContainer"
             component="div"
             variant="normalText"
           >
             <ForwardRef
-              className="HvEmptyState-actionContainer-8"
+              className="HvEmptyState-actionContainer"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-17",
-                  "4xlTitle": "HvTypography-4xlTitle-16",
-                  "5xlTitle": "HvTypography-5xlTitle-15",
-                  "disabledText": "HvTypography-disabledText-30",
-                  "highlightText": "HvTypography-highlightText-26",
-                  "lTitle": "HvTypography-lTitle-20",
-                  "link": "HvTypography-link-29",
-                  "mTitle": "HvTypography-mTitle-21",
-                  "noWrap": "HvTypography-noWrap-35",
-                  "normalText": "HvTypography-normalText-27",
-                  "placeholderText": "HvTypography-placeholderText-28",
-                  "root": "HvTypography-root-14",
-                  "sTitle": "HvTypography-sTitle-22",
-                  "sectionTitle": "HvTypography-sectionTitle-25",
-                  "selectedNavText": "HvTypography-selectedNavText-31",
-                  "vizText": "HvTypography-vizText-32",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-33",
-                  "xlTitle": "HvTypography-xlTitle-19",
-                  "xsInlineLink": "HvTypography-xsInlineLink-34",
-                  "xsTitle": "HvTypography-xsTitle-23",
-                  "xxlTitle": "HvTypography-xxlTitle-18",
-                  "xxsTitle": "HvTypography-xxsTitle-24",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               component="div"
               variant="normalText"
             >
               <div
-                className="HvEmptyState-actionContainer-8 HvTypography-root-14 HvTypography-normalText-27"
+                className="HvEmptyState-actionContainer HvTypography-root HvTypography-normalText"
               >
                 <WithStyles(ForwardRef)
                   component="div"
@@ -465,34 +465,34 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                   <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-17",
-                        "4xlTitle": "HvTypography-4xlTitle-16",
-                        "5xlTitle": "HvTypography-5xlTitle-15",
-                        "disabledText": "HvTypography-disabledText-30",
-                        "highlightText": "HvTypography-highlightText-26",
-                        "lTitle": "HvTypography-lTitle-20",
-                        "link": "HvTypography-link-29",
-                        "mTitle": "HvTypography-mTitle-21",
-                        "noWrap": "HvTypography-noWrap-35",
-                        "normalText": "HvTypography-normalText-27",
-                        "placeholderText": "HvTypography-placeholderText-28",
-                        "root": "HvTypography-root-14",
-                        "sTitle": "HvTypography-sTitle-22",
-                        "sectionTitle": "HvTypography-sectionTitle-25",
-                        "selectedNavText": "HvTypography-selectedNavText-31",
-                        "vizText": "HvTypography-vizText-32",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled-33",
-                        "xlTitle": "HvTypography-xlTitle-19",
-                        "xsInlineLink": "HvTypography-xsInlineLink-34",
-                        "xsTitle": "HvTypography-xsTitle-23",
-                        "xxlTitle": "HvTypography-xxlTitle-18",
-                        "xxsTitle": "HvTypography-xxsTitle-24",
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
                     component="div"
                   >
                     <div
-                      className="HvTypography-root-14 HvTypography-normalText-27"
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       <div>
                         Here are some helpful links instead:
@@ -503,13 +503,13 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                         <HvLink
                           classes={
                             Object {
-                              "a": "HvLink-a-36",
+                              "a": "HvLink-a",
                             }
                           }
                           route="/"
                         >
                           <a
-                            className="HvLink-a-36"
+                            className="HvLink-a"
                             href="/"
                           >
                             Online Help

@@ -3,25 +3,25 @@
 exports[`Accordion sample snapshot testing Disabled 1`] = `
 <div>
   <div
-    class="makeStyles-accordionContainer-57"
+    class="makeStyles-accordionContainer-2"
   >
     <div
-      class="HvAccordion-root-58"
+      class="HvAccordion-root"
       id="disabled-item1"
     >
       <h3
-        class="HvTypography-root-64 HvTypography-normalText-77"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="true"
           aria-expanded="false"
-          class="HvAccordion-label-62 HvAccordion-disabled-63 HvTypography-root-64 HvTypography-highlightText-76"
+          class="HvAccordion-label HvAccordion-disabled HvTypography-root HvTypography-highlightText"
           id="disabled-item1-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-86 HvIconBase-xs-87"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -43,21 +43,21 @@ exports[`Accordion sample snapshot testing Disabled 1`] = `
       </h3>
       <div
         aria-labelledby="disabled-item1-button"
-        class="HvAccordion-container-60 HvAccordion-hidden-61"
+        class="HvAccordion-container HvAccordion-hidden"
         id="disabled-item1-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-56 HvListContainer-root-91"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Views
           </li>
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Parameters
@@ -66,22 +66,22 @@ exports[`Accordion sample snapshot testing Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvAccordion-root-58"
+      class="HvAccordion-root"
       id="disabled-item2"
     >
       <h3
-        class="HvTypography-root-64 HvTypography-normalText-77"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="false"
           aria-expanded="false"
-          class="HvAccordion-label-62 HvTypography-root-64 HvTypography-highlightText-76"
+          class="HvAccordion-label HvTypography-root HvTypography-highlightText"
           id="disabled-item2-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-86 HvIconBase-xs-87"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -103,21 +103,21 @@ exports[`Accordion sample snapshot testing Disabled 1`] = `
       </h3>
       <div
         aria-labelledby="disabled-item2-button"
-        class="HvAccordion-container-60 HvAccordion-hidden-61"
+        class="HvAccordion-container HvAccordion-hidden"
         id="disabled-item2-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-56 HvListContainer-root-91"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Settings
           </li>
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Network
@@ -126,22 +126,22 @@ exports[`Accordion sample snapshot testing Disabled 1`] = `
       </div>
     </div>
     <div
-      class="HvAccordion-root-58"
+      class="HvAccordion-root"
       id="disabled-item3"
     >
       <h3
-        class="HvTypography-root-64 HvTypography-normalText-77"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="true"
           aria-expanded="false"
-          class="HvAccordion-label-62 HvAccordion-disabled-63 HvTypography-root-64 HvTypography-highlightText-76"
+          class="HvAccordion-label HvAccordion-disabled HvTypography-root HvTypography-highlightText"
           id="disabled-item3-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-86 HvIconBase-xs-87"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -163,21 +163,21 @@ exports[`Accordion sample snapshot testing Disabled 1`] = `
       </h3>
       <div
         aria-labelledby="disabled-item3-button"
-        class="HvAccordion-container-60 HvAccordion-hidden-61"
+        class="HvAccordion-container HvAccordion-hidden"
         id="disabled-item3-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-56 HvListContainer-root-91"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Storage
           </li>
           <li
-            class="HvListItem-root-92 HvListItem-gutters-93 HvListItem-condensed-97 HvListItem-interactive-94 HvFocus-root-103 HvFocus-focusDisabled-106"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Memory
@@ -195,22 +195,22 @@ exports[`Accordion sample snapshot testing Main 1`] = `
     class="makeStyles-accordionContainer-2"
   >
     <div
-      class="HvAccordion-root-3"
+      class="HvAccordion-root"
       id="item1"
     >
       <h3
-        class="HvTypography-root-9 HvTypography-normalText-22"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="false"
           aria-expanded="false"
-          class="HvAccordion-label-7 HvTypography-root-9 HvTypography-highlightText-21"
+          class="HvAccordion-label HvTypography-root HvTypography-highlightText"
           id="item1-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-31 HvIconBase-xs-32"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -232,21 +232,21 @@ exports[`Accordion sample snapshot testing Main 1`] = `
       </h3>
       <div
         aria-labelledby="item1-button"
-        class="HvAccordion-container-5 HvAccordion-hidden-6"
+        class="HvAccordion-container HvAccordion-hidden"
         id="item1-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-1 HvListContainer-root-36"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Views
           </li>
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Parameters
@@ -255,22 +255,22 @@ exports[`Accordion sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="HvAccordion-root-3"
+      class="HvAccordion-root"
       id="item2"
     >
       <h3
-        class="HvTypography-root-9 HvTypography-normalText-22"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="false"
           aria-expanded="false"
-          class="HvAccordion-label-7 HvTypography-root-9 HvTypography-highlightText-21"
+          class="HvAccordion-label HvTypography-root HvTypography-highlightText"
           id="item2-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-31 HvIconBase-xs-32"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -292,21 +292,21 @@ exports[`Accordion sample snapshot testing Main 1`] = `
       </h3>
       <div
         aria-labelledby="item2-button"
-        class="HvAccordion-container-5 HvAccordion-hidden-6"
+        class="HvAccordion-container HvAccordion-hidden"
         id="item2-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-1 HvListContainer-root-36"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Settings
           </li>
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Network
@@ -315,22 +315,22 @@ exports[`Accordion sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="HvAccordion-root-3"
+      class="HvAccordion-root"
       id="item3"
     >
       <h3
-        class="HvTypography-root-9 HvTypography-normalText-22"
+        class="HvTypography-root HvTypography-normalText"
       >
         <div
           aria-disabled="false"
           aria-expanded="false"
-          class="HvAccordion-label-7 HvTypography-root-9 HvTypography-highlightText-21"
+          class="HvAccordion-label HvTypography-root HvTypography-highlightText"
           id="item3-button"
           role="button"
           tabindex="0"
         >
           <div
-            class="HvIconBase-root-31 HvIconBase-xs-32"
+            class="HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
           >
             <svg
@@ -352,21 +352,21 @@ exports[`Accordion sample snapshot testing Main 1`] = `
       </h3>
       <div
         aria-labelledby="item3-button"
-        class="HvAccordion-container-5 HvAccordion-hidden-6"
+        class="HvAccordion-container HvAccordion-hidden"
         id="item3-container"
         role="region"
       >
         <ul
-          class="makeStyles-accordionSpacing-1 HvListContainer-root-36"
+          class="makeStyles-accordionSpacing-1 HvListContainer-root"
         >
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="0"
           >
             Storage
           </li>
           <li
-            class="HvListItem-root-37 HvListItem-gutters-38 HvListItem-condensed-42 HvListItem-interactive-39 HvFocus-root-48 HvFocus-focusDisabled-51"
+            class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
             tabindex="-1"
           >
             Memory

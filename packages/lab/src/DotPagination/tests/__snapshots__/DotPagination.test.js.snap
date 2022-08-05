@@ -9,25 +9,25 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
       style="text-align: center;"
     >
       <p
-        class="HvTypography-root-1 HvTypography-normalText-14"
+        class="HvTypography-root HvTypography-normalText"
       >
         This is page 1
       </p>
     </div>
     <p />
     <div
-      class="HvDotPagination-root-23 HvRadioGroup-root-26 HvFormElement-root-33"
+      class="HvDotPagination-root HvRadioGroup-root HvFormElement-root"
     >
       <div
         aria-label="Example Dot Navigation"
-        class="HvRadioGroup-group-28 HvRadioGroup-horizontal-30 HvDotPagination-horizontal-24"
+        class="HvRadioGroup-group HvRadioGroup-horizontal HvDotPagination-horizontal"
         role="navigation"
       >
         <div
-          class="HvRadio-root-34 HvDotPagination-radioRoot-25 HvFormElement-root-33"
+          class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio-38 HvBaseRadio-root-42 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="first page button aria-label"
@@ -38,7 +38,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
               value="0"
             />
             <div
-              class="HvIconBase-root-45 HvIconBase-xs-46"
+              class="HvIconBase-root HvIconBase-xs"
               font-size="medium"
               name="CurrentStep"
             >
@@ -59,10 +59,10 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           </span>
         </div>
         <div
-          class="HvRadio-root-34 HvDotPagination-radioRoot-25 HvFormElement-root-33"
+          class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-38 HvBaseRadio-root-42 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="2 page aria-label"
@@ -72,7 +72,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
               value="1"
             />
             <div
-              class="HvIconBase-root-45 HvIconBase-xs-46"
+              class="HvIconBase-root HvIconBase-xs"
               font-size="medium"
               name="RadioButtonUnselected"
             >
@@ -98,10 +98,10 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           </span>
         </div>
         <div
-          class="HvRadio-root-34 HvDotPagination-radioRoot-25 HvFormElement-root-33"
+          class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-38 HvBaseRadio-root-42 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="3 page aria-label"
@@ -111,7 +111,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
               value="2"
             />
             <div
-              class="HvIconBase-root-45 HvIconBase-xs-46"
+              class="HvIconBase-root HvIconBase-xs"
               font-size="medium"
               name="RadioButtonUnselected"
             >
@@ -137,10 +137,10 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           </span>
         </div>
         <div
-          class="HvRadio-root-34 HvDotPagination-radioRoot-25 HvFormElement-root-33"
+          class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-38 HvBaseRadio-root-42 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="4 page aria-label"
@@ -150,7 +150,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
               value="3"
             />
             <div
-              class="HvIconBase-root-45 HvIconBase-xs-46"
+              class="HvIconBase-root HvIconBase-xs"
               font-size="medium"
               name="RadioButtonUnselected"
             >
@@ -176,10 +176,10 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           </span>
         </div>
         <div
-          class="HvRadio-root-34 HvDotPagination-radioRoot-25 HvFormElement-root-33"
+          class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio-38 HvBaseRadio-root-42 css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="last page button aria-label"
@@ -189,7 +189,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
               value="4"
             />
             <div
-              class="HvIconBase-root-45 HvIconBase-xs-46"
+              class="HvIconBase-root HvIconBase-xs"
               font-size="medium"
               name="RadioButtonUnselected"
             >

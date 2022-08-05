@@ -8,30 +8,30 @@ exports[`PeriodPicker should render correctly 1`] = `
   <PeriodPicker
     classes={
       Object {
-        "icon": "HvTimePickerPeriodPicker-icon-29",
-        "periodContainer": "HvTimePickerPeriodPicker-periodContainer-27",
-        "periodToggle": "HvTimePickerPeriodPicker-periodToggle-28",
-        "subtractIcon": "HvTimePickerPeriodPicker-subtractIcon-30",
+        "icon": "HvTimePickerPeriodPicker-icon",
+        "periodContainer": "HvTimePickerPeriodPicker-periodContainer",
+        "periodToggle": "HvTimePickerPeriodPicker-periodToggle",
+        "subtractIcon": "HvTimePickerPeriodPicker-subtractIcon",
       }
     }
     onChangePeriod={[MockFunction]}
     period="AM"
   >
     <div
-      className="HvTimePickerPeriodPicker-periodContainer-27"
+      className="HvTimePickerPeriodPicker-periodContainer"
     >
       <DropUpXS
-        className="HvTimePickerPeriodPicker-icon-29"
+        className="HvTimePickerPeriodPicker-icon"
         onClick={[Function]}
       >
         <HvIconBase
-          className="HvTimePickerPeriodPicker-icon-29"
+          className="HvTimePickerPeriodPicker-icon"
           iconSize="XS"
           name="DropUpXS"
           onClick={[Function]}
         >
           <div
-            className="HvTimePickerPeriodPicker-icon-29 HvIconBase-root-31 HvIconBase-xs-32"
+            className="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
             name="DropUpXS"
             onClick={[Function]}
           >
@@ -52,45 +52,45 @@ exports[`PeriodPicker should render correctly 1`] = `
         </HvIconBase>
       </DropUpXS>
       <WithStyles(ForwardRef)
-        className="HvTimePickerPeriodPicker-periodToggle-28"
+        className="HvTimePickerPeriodPicker-periodToggle"
         onClick={[Function]}
         selected={false}
       >
         <ForwardRef
-          className="HvTimePickerPeriodPicker-periodToggle-28"
+          className="HvTimePickerPeriodPicker-periodToggle"
           classes={Object {}}
           onClick={[Function]}
           selected={false}
         >
           <WithStyles(ForwardRef)
             aria-pressed={false}
-            className="HvTimePickerPeriodPicker-periodToggle-28"
+            className="HvTimePickerPeriodPicker-periodToggle"
             classes={Object {}}
             icon={true}
             onClick={[Function]}
           >
             <ForwardRef
               aria-pressed={false}
-              className="HvTimePickerPeriodPicker-periodToggle-28"
+              className="HvTimePickerPeriodPicker-periodToggle"
               classes={
                 Object {
-                  "focusVisible": "HvButton-focusVisible-39",
-                  "ghost": "HvButton-ghost-43",
-                  "ghostDisabled": "HvButton-ghostDisabled-44",
-                  "ghostSVG": "HvButton-ghostSVG-50",
-                  "icon": "HvButton-icon-37",
-                  "iconSVG": "HvButton-iconSVG-52",
-                  "primary": "HvButton-primary-38",
-                  "primaryDisabled": "HvButton-primaryDisabled-40",
-                  "primarySVG": "HvButton-primarySVG-48",
-                  "root": "HvButton-root-36",
-                  "secondary": "HvButton-secondary-41",
-                  "secondaryDisabled": "HvButton-secondaryDisabled-42",
-                  "secondarySVG": "HvButton-secondarySVG-49",
-                  "semantic": "HvButton-semantic-45",
-                  "semanticDisabled": "HvButton-semanticDisabled-46",
-                  "semanticSVG": "HvButton-semanticSVG-51",
-                  "startIcon": "HvButton-startIcon-47",
+                  "focusVisible": "HvButton-focusVisible",
+                  "ghost": "HvButton-ghost",
+                  "ghostDisabled": "HvButton-ghostDisabled",
+                  "ghostSVG": "HvButton-ghostSVG",
+                  "icon": "HvButton-icon",
+                  "iconSVG": "HvButton-iconSVG",
+                  "primary": "HvButton-primary",
+                  "primaryDisabled": "HvButton-primaryDisabled",
+                  "primarySVG": "HvButton-primarySVG",
+                  "root": "HvButton-root",
+                  "secondary": "HvButton-secondary",
+                  "secondaryDisabled": "HvButton-secondaryDisabled",
+                  "secondarySVG": "HvButton-secondarySVG",
+                  "semantic": "HvButton-semantic",
+                  "semanticDisabled": "HvButton-semanticDisabled",
+                  "semanticSVG": "HvButton-semanticSVG",
+                  "startIcon": "HvButton-startIcon",
                 }
               }
               icon={true}
@@ -98,56 +98,56 @@ exports[`PeriodPicker should render correctly 1`] = `
             >
               <ForwardRef(Button)
                 aria-pressed={false}
-                className="HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50"
+                className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-38",
-                    "disabled": "HvButton-ghostDisabled-44",
-                    "outlinedPrimary": "HvButton-secondary-41",
-                    "root": "HvButton-root-36",
-                    "startIcon": "HvButton-startIcon-47",
-                    "textPrimary": "HvButton-ghost-43",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root",
+                    "startIcon": "HvButton-startIcon",
+                    "textPrimary": "HvButton-ghost",
                   }
                 }
                 color="primary"
                 disableRipple={true}
-                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-39"
+                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                 onClick={[Function]}
                 variant="text"
               >
                 <MuiButtonRoot
                   aria-pressed={false}
-                  className="HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50"
+                  className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
                   classes={
                     Object {
-                      "containedPrimary": "HvButton-primary-38",
-                      "disabled": "HvButton-ghostDisabled-44",
+                      "containedPrimary": "HvButton-primary",
+                      "disabled": "HvButton-ghostDisabled",
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
-                      "outlinedPrimary": "HvButton-secondary-41",
-                      "root": "HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                      "startIcon": "HvButton-startIcon-47 MuiButton-startIcon MuiButton-iconSizeMedium",
-                      "textPrimary": "HvButton-ghost-43",
+                      "outlinedPrimary": "HvButton-secondary",
+                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                      "textPrimary": "HvButton-ghost",
                     }
                   }
                   component="button"
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-39"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   onClick={[Function]}
                   ownerState={
                     Object {
                       "aria-pressed": false,
                       "children": "AM",
-                      "className": "HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50",
+                      "className": "HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG",
                       "classes": Object {
-                        "containedPrimary": "HvButton-primary-38",
-                        "disabled": "HvButton-ghostDisabled-44",
-                        "outlinedPrimary": "HvButton-secondary-41",
-                        "root": "HvButton-root-36",
-                        "startIcon": "HvButton-startIcon-47",
-                        "textPrimary": "HvButton-ghost-43",
+                        "containedPrimary": "HvButton-primary",
+                        "disabled": "HvButton-ghostDisabled",
+                        "outlinedPrimary": "HvButton-secondary",
+                        "root": "HvButton-root",
+                        "startIcon": "HvButton-startIcon",
+                        "textPrimary": "HvButton-ghost",
                       },
                       "color": "primary",
                       "component": "button",
@@ -155,7 +155,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                       "disableFocusRipple": false,
                       "disableRipple": true,
                       "disabled": false,
-                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-39",
+                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                       "fullWidth": false,
                       "id": undefined,
                       "onClick": [Function],
@@ -294,25 +294,25 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvIconBase"
                             >
                               
-.HvIconBase-root-5 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-5 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-6 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-7 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-8 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-9 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -323,25 +323,25 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvIconBase"
                             >
                               
-.HvIconBase-root-31 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-31 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-32 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-33 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-34 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-35 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -352,7 +352,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvButton"
                             >
                               
-.HvButton-root-10 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -366,7 +366,7 @@ exports[`PeriodPicker should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-11 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -379,14 +379,14 @@ exports[`PeriodPicker should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-12 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-12:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-12.HvButton-focusVisible-13 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -394,31 +394,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-12:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-12.HvButton-primaryDisabled-14 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-12.HvButton-primaryDisabled-14.HvButton-primary-12:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-15:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15.HvButton-focusVisible-13 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -427,31 +427,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-15.HvButton-secondaryDisabled-16 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15.HvButton-secondaryDisabled-16.HvButton-secondary-15:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-17:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17.HvButton-focusVisible-13 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -459,31 +459,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-17.HvButton-ghostDisabled-18 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-17.HvButton-ghostDisabled-18.HvButton-ghost-17:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-19 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-19:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19.HvButton-focusVisible-13 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -491,52 +491,52 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19.HvButton-semanticDisabled-20 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-19.HvButton-semanticDisabled-20.HvButton-semantic-19:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-21 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-22.HvButton-primaryDisabled-14 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-23 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-23.HvButton-secondaryDisabled-16 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-24 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-24.HvButton-ghostDisabled-18 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-25 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-25.HvButton-semanticDisabled-20 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-26 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-26.HvButton-ghostDisabled-18 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -546,7 +546,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvButton"
                             >
                               
-.HvButton-root-36 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -560,7 +560,7 @@ exports[`PeriodPicker should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-37 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -573,14 +573,14 @@ exports[`PeriodPicker should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-38 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-38:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-38.HvButton-focusVisible-39 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -588,31 +588,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-38:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-38.HvButton-primaryDisabled-40 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-38.HvButton-primaryDisabled-40.HvButton-primary-38:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-41:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41.HvButton-focusVisible-39 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -621,31 +621,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-41.HvButton-secondaryDisabled-42 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41.HvButton-secondaryDisabled-42.HvButton-secondary-41:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-43:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43.HvButton-focusVisible-39 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -653,31 +653,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-43.HvButton-ghostDisabled-44 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-43.HvButton-ghostDisabled-44.HvButton-ghost-43:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-45 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-45:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45.HvButton-focusVisible-39 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -685,52 +685,52 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45.HvButton-semanticDisabled-46 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-45.HvButton-semanticDisabled-46.HvButton-semantic-45:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-47 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-48.HvButton-primaryDisabled-40 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-49 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-49.HvButton-secondaryDisabled-42 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-50 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-50.HvButton-ghostDisabled-44 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-51 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-51.HvButton-semanticDisabled-46 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-52 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-52.HvButton-ghostDisabled-44 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -756,21 +756,21 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvTimePickerPeriodPicker"
                             >
                               
-.HvTimePickerPeriodPicker-periodContainer-1 {
+.HvTimePickerPeriodPicker-periodContainer {
   display: flex;
   align-items: center;
   margin-left: 8px;
   flex-direction: column;
   justify-content: center;
 }
-.HvTimePickerPeriodPicker-periodToggle-2 {
+.HvTimePickerPeriodPicker-periodToggle {
   width: 40px;
   height: 40px;
 }
-.HvTimePickerPeriodPicker-icon-3 {
+.HvTimePickerPeriodPicker-icon {
   cursor: pointer;
 }
-.HvTimePickerPeriodPicker-subtractIcon-4 {
+.HvTimePickerPeriodPicker-subtractIcon {
   margin-top: 10px;
 }
 
@@ -780,21 +780,21 @@ exports[`PeriodPicker should render correctly 1`] = `
                               data-meta="HvTimePickerPeriodPicker"
                             >
                               
-.HvTimePickerPeriodPicker-periodContainer-27 {
+.HvTimePickerPeriodPicker-periodContainer {
   display: flex;
   align-items: center;
   margin-left: 8px;
   flex-direction: column;
   justify-content: center;
 }
-.HvTimePickerPeriodPicker-periodToggle-28 {
+.HvTimePickerPeriodPicker-periodToggle {
   width: 40px;
   height: 40px;
 }
-.HvTimePickerPeriodPicker-icon-29 {
+.HvTimePickerPeriodPicker-icon {
   cursor: pointer;
 }
-.HvTimePickerPeriodPicker-subtractIcon-30 {
+.HvTimePickerPeriodPicker-subtractIcon {
   margin-top: 10px;
 }
 
@@ -929,40 +929,40 @@ exports[`PeriodPicker should render correctly 1`] = `
                   />
                   <ForwardRef(ButtonBase)
                     aria-pressed={false}
-                    className="HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50 css-q8qr05-MuiButton-root"
+                    className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                     classes={
                       Object {
-                        "containedPrimary": "HvButton-primary-38",
-                        "disabled": "HvButton-ghostDisabled-44",
+                        "containedPrimary": "HvButton-primary",
+                        "disabled": "HvButton-ghostDisabled",
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
-                        "outlinedPrimary": "HvButton-secondary-41",
-                        "root": "HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon-47 MuiButton-startIcon MuiButton-iconSizeMedium",
-                        "textPrimary": "HvButton-ghost-43",
+                        "outlinedPrimary": "HvButton-secondary",
+                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "textPrimary": "HvButton-ghost",
                       }
                     }
                     component="button"
                     disableRipple={true}
                     disabled={false}
                     focusRipple={true}
-                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-39"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     onClick={[Function]}
                   >
                     <MuiButtonBaseRoot
                       aria-pressed={false}
                       as="button"
-                      className="HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50 css-q8qr05-MuiButton-root"
+                      className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                       classes={
                         Object {
-                          "containedPrimary": "HvButton-primary-38",
-                          "disabled": "HvButton-ghostDisabled-44",
+                          "containedPrimary": "HvButton-primary",
+                          "disabled": "HvButton-ghostDisabled",
                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                           "label": "MuiButton-label",
-                          "outlinedPrimary": "HvButton-secondary-41",
-                          "root": "HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                          "startIcon": "HvButton-startIcon-47 MuiButton-startIcon MuiButton-iconSizeMedium",
-                          "textPrimary": "HvButton-ghost-43",
+                          "outlinedPrimary": "HvButton-secondary",
+                          "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                          "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                          "textPrimary": "HvButton-ghost",
                         }
                       }
                       disabled={false}
@@ -988,16 +988,16 @@ exports[`PeriodPicker should render correctly 1`] = `
                             "AM",
                             undefined,
                           ],
-                          "className": "HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50 css-q8qr05-MuiButton-root",
+                          "className": "HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
                           "classes": Object {
-                            "containedPrimary": "HvButton-primary-38",
-                            "disabled": "HvButton-ghostDisabled-44",
+                            "containedPrimary": "HvButton-primary",
+                            "disabled": "HvButton-ghostDisabled",
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
-                            "outlinedPrimary": "HvButton-secondary-41",
-                            "root": "HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                            "startIcon": "HvButton-startIcon-47 MuiButton-startIcon MuiButton-iconSizeMedium",
-                            "textPrimary": "HvButton-ghost-43",
+                            "outlinedPrimary": "HvButton-secondary",
+                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                            "textPrimary": "HvButton-ghost",
                           },
                           "component": "button",
                           "disableRipple": true,
@@ -1005,7 +1005,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                           "disabled": false,
                           "focusRipple": true,
                           "focusVisible": false,
-                          "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-39",
+                          "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                           "id": undefined,
                           "onClick": [Function],
                           "tabIndex": 0,
@@ -1143,25 +1143,25 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvIconBase"
                                 >
                                   
-.HvIconBase-root-5 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-5 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-6 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-7 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-8 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-9 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -1172,25 +1172,25 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvIconBase"
                                 >
                                   
-.HvIconBase-root-31 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-31 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-32 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-33 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-34 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-35 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -1201,7 +1201,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvButton"
                                 >
                                   
-.HvButton-root-10 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -1215,7 +1215,7 @@ exports[`PeriodPicker should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-11 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -1228,14 +1228,14 @@ exports[`PeriodPicker should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-12 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-12:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-12.HvButton-focusVisible-13 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1243,31 +1243,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-12:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-12.HvButton-primaryDisabled-14 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-12.HvButton-primaryDisabled-14.HvButton-primary-12:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-15:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15.HvButton-focusVisible-13 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -1276,31 +1276,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-15.HvButton-secondaryDisabled-16 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-15.HvButton-secondaryDisabled-16.HvButton-secondary-15:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-17:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17.HvButton-focusVisible-13 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1308,31 +1308,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-17:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-17.HvButton-ghostDisabled-18 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-17.HvButton-ghostDisabled-18.HvButton-ghost-17:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-19 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-19:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19.HvButton-focusVisible-13 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1340,52 +1340,52 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-19.HvButton-semanticDisabled-20 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-19.HvButton-semanticDisabled-20.HvButton-semantic-19:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-21 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-22.HvButton-primaryDisabled-14 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-23 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-23.HvButton-secondaryDisabled-16 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-24 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-24.HvButton-ghostDisabled-18 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-25 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-25.HvButton-semanticDisabled-20 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-26 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-26.HvButton-ghostDisabled-18 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -1395,7 +1395,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvButton"
                                 >
                                   
-.HvButton-root-36 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -1409,7 +1409,7 @@ exports[`PeriodPicker should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-37 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -1422,14 +1422,14 @@ exports[`PeriodPicker should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-38 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-38:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-38.HvButton-focusVisible-39 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1437,31 +1437,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-38:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-38.HvButton-primaryDisabled-40 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-38.HvButton-primaryDisabled-40.HvButton-primary-38:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-41:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41.HvButton-focusVisible-39 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -1470,31 +1470,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-41.HvButton-secondaryDisabled-42 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-41.HvButton-secondaryDisabled-42.HvButton-secondary-41:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-43:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43.HvButton-focusVisible-39 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1502,31 +1502,31 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-43:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-43.HvButton-ghostDisabled-44 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-43.HvButton-ghostDisabled-44.HvButton-ghost-43:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-45 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-45:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45.HvButton-focusVisible-39 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1534,52 +1534,52 @@ exports[`PeriodPicker should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-45.HvButton-semanticDisabled-46 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-45.HvButton-semanticDisabled-46.HvButton-semantic-45:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-47 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-48.HvButton-primaryDisabled-40 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-49 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-49.HvButton-secondaryDisabled-42 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-50 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-50.HvButton-ghostDisabled-44 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-51 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-51.HvButton-semanticDisabled-46 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-52 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-52.HvButton-ghostDisabled-44 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -1605,21 +1605,21 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvTimePickerPeriodPicker"
                                 >
                                   
-.HvTimePickerPeriodPicker-periodContainer-1 {
+.HvTimePickerPeriodPicker-periodContainer {
   display: flex;
   align-items: center;
   margin-left: 8px;
   flex-direction: column;
   justify-content: center;
 }
-.HvTimePickerPeriodPicker-periodToggle-2 {
+.HvTimePickerPeriodPicker-periodToggle {
   width: 40px;
   height: 40px;
 }
-.HvTimePickerPeriodPicker-icon-3 {
+.HvTimePickerPeriodPicker-icon {
   cursor: pointer;
 }
-.HvTimePickerPeriodPicker-subtractIcon-4 {
+.HvTimePickerPeriodPicker-subtractIcon {
   margin-top: 10px;
 }
 
@@ -1629,21 +1629,21 @@ exports[`PeriodPicker should render correctly 1`] = `
                                   data-meta="HvTimePickerPeriodPicker"
                                 >
                                   
-.HvTimePickerPeriodPicker-periodContainer-27 {
+.HvTimePickerPeriodPicker-periodContainer {
   display: flex;
   align-items: center;
   margin-left: 8px;
   flex-direction: column;
   justify-content: center;
 }
-.HvTimePickerPeriodPicker-periodToggle-28 {
+.HvTimePickerPeriodPicker-periodToggle {
   width: 40px;
   height: 40px;
 }
-.HvTimePickerPeriodPicker-icon-29 {
+.HvTimePickerPeriodPicker-icon {
   cursor: pointer;
 }
-.HvTimePickerPeriodPicker-subtractIcon-30 {
+.HvTimePickerPeriodPicker-subtractIcon {
   margin-top: 10px;
 }
 
@@ -1778,7 +1778,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                       />
                       <button
                         aria-pressed={false}
-                        className="HvButton-root-36 MuiButton-root MuiButton-text HvButton-ghost-43 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle-28 HvButton-icon-37 HvButton-ghostSVG-50 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -1807,17 +1807,17 @@ exports[`PeriodPicker should render correctly 1`] = `
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <DropDownXS
-        className="HvTimePickerPeriodPicker-icon-29 HvTimePickerPeriodPicker-subtractIcon-30"
+        className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon"
         onClick={[Function]}
       >
         <HvIconBase
-          className="HvTimePickerPeriodPicker-icon-29 HvTimePickerPeriodPicker-subtractIcon-30"
+          className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon"
           iconSize="XS"
           name="DropDownXS"
           onClick={[Function]}
         >
           <div
-            className="HvTimePickerPeriodPicker-icon-29 HvTimePickerPeriodPicker-subtractIcon-30 HvIconBase-root-31 HvIconBase-xs-32"
+            className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
             onClick={[Function]}
           >

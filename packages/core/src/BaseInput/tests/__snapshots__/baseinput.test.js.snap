@@ -12,19 +12,19 @@ exports[`Input should render correctly 1`] = `
   <HvBaseInput
     classes={
       Object {
-        "disabled": "HvBaseInput-disabled-17",
-        "input": "HvBaseInput-input-23",
-        "inputBorderContainer": "HvBaseInput-inputBorderContainer-26",
-        "inputDisabled": "HvBaseInput-inputDisabled-24",
-        "inputResizable": "HvBaseInput-inputResizable-25",
-        "inputRoot": "HvBaseInput-inputRoot-19",
-        "inputRootDisabled": "HvBaseInput-inputRootDisabled-21",
-        "inputRootFocused": "HvBaseInput-inputRootFocused-20",
-        "inputRootMultiline": "HvBaseInput-inputRootMultiline-22",
-        "invalid": "HvBaseInput-invalid-18",
-        "readOnly": "HvBaseInput-readOnly-16",
-        "resizable": "HvBaseInput-resizable-15",
-        "root": "HvBaseInput-root-14",
+        "disabled": "HvBaseInput-disabled",
+        "input": "HvBaseInput-input",
+        "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+        "inputDisabled": "HvBaseInput-inputDisabled",
+        "inputResizable": "HvBaseInput-inputResizable",
+        "inputRoot": "HvBaseInput-inputRoot",
+        "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+        "inputRootFocused": "HvBaseInput-inputRootFocused",
+        "inputRootMultiline": "HvBaseInput-inputRootMultiline",
+        "invalid": "HvBaseInput-invalid",
+        "readOnly": "HvBaseInput-readOnly",
+        "resizable": "HvBaseInput-resizable",
+        "root": "HvBaseInput-root",
       }
     }
     inputProps={
@@ -35,16 +35,16 @@ exports[`Input should render correctly 1`] = `
     placeholder="test"
   >
     <div
-      className="HvBaseInput-root-14"
+      className="HvBaseInput-root"
     >
       <ForwardRef(Input)
         classes={
           Object {
-            "disabled": "HvBaseInput-inputRootDisabled-21",
-            "focused": "HvBaseInput-inputRootFocused-20",
-            "input": "HvBaseInput-input-23",
-            "multiline": "HvBaseInput-inputRootMultiline-22",
-            "root": "HvBaseInput-inputRoot-19",
+            "disabled": "HvBaseInput-inputRootDisabled",
+            "focused": "HvBaseInput-inputRootFocused",
+            "input": "HvBaseInput-input",
+            "multiline": "HvBaseInput-inputRootMultiline",
+            "root": "HvBaseInput-inputRoot",
           }
         }
         inputProps={
@@ -65,11 +65,11 @@ exports[`Input should render correctly 1`] = `
         <ForwardRef(InputBase)
           classes={
             Object {
-              "disabled": "HvBaseInput-inputRootDisabled-21",
-              "focused": "HvBaseInput-inputRootFocused-20",
-              "input": "HvBaseInput-input-23 MuiInput-input",
-              "multiline": "HvBaseInput-inputRootMultiline-22",
-              "root": "HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline",
+              "disabled": "HvBaseInput-inputRootDisabled",
+              "focused": "HvBaseInput-inputRootFocused",
+              "input": "HvBaseInput-input MuiInput-input",
+              "multiline": "HvBaseInput-inputRootMultiline",
+              "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
             }
           }
           components={
@@ -487,25 +487,25 @@ exports[`Input should render correctly 1`] = `
             </GlobalStyles>
           </GlobalStyles>
           <MuiInputRoot
-            className="HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
+            className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
             classes={
               Object {
-                "disabled": "HvBaseInput-inputRootDisabled-21",
-                "focused": "HvBaseInput-inputRootFocused-20",
-                "input": "HvBaseInput-input-23 MuiInput-input",
-                "multiline": "HvBaseInput-inputRootMultiline-22",
-                "root": "HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline",
+                "disabled": "HvBaseInput-inputRootDisabled",
+                "focused": "HvBaseInput-inputRootFocused",
+                "input": "HvBaseInput-input MuiInput-input",
+                "multiline": "HvBaseInput-inputRootMultiline",
+                "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
               }
             }
             onClick={[Function]}
             ownerState={
               Object {
                 "classes": Object {
-                  "disabled": "HvBaseInput-inputRootDisabled-21",
-                  "focused": "HvBaseInput-inputRootFocused-20",
-                  "input": "HvBaseInput-input-23 MuiInput-input",
-                  "multiline": "HvBaseInput-inputRootMultiline-22",
-                  "root": "HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline",
+                  "disabled": "HvBaseInput-inputRootDisabled",
+                  "focused": "HvBaseInput-inputRootFocused",
+                  "input": "HvBaseInput-input MuiInput-input",
+                  "multiline": "HvBaseInput-inputRootMultiline",
+                  "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
                 },
                 "color": "primary",
                 "components": Object {
@@ -862,102 +862,102 @@ exports[`Input should render correctly 1`] = `
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-1 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-1 .HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-2 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4).focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-6 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-6:hover:not(.HvBaseInput-inputRootDisabled-8)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-7 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -965,22 +965,22 @@ exports[`Input should render correctly 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-7:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-8 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-8:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -991,7 +991,7 @@ exports[`Input should render correctly 1`] = `
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-10 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -1007,7 +1007,7 @@ exports[`Input should render correctly 1`] = `
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -1015,17 +1015,17 @@ exports[`Input should render correctly 1`] = `
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-11 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-12 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -1033,30 +1033,30 @@ exports[`Input should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-1 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -1066,102 +1066,102 @@ exports[`Input should render correctly 1`] = `
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-14 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-14 .HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-15 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17).focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-19 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-19:hover:not(.HvBaseInput-inputRootDisabled-21)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-20 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -1169,22 +1169,22 @@ exports[`Input should render correctly 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-20:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-21 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-21:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -1195,7 +1195,7 @@ exports[`Input should render correctly 1`] = `
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-23 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -1211,7 +1211,7 @@ exports[`Input should render correctly 1`] = `
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -1219,17 +1219,17 @@ exports[`Input should render correctly 1`] = `
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-24 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-25 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -1237,30 +1237,30 @@ exports[`Input should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-14 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -1485,13 +1485,13 @@ exports[`Input should render correctly 1`] = `
               }
             />
             <div
-              className="HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+              className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               onClick={[Function]}
             >
               <MuiInputInput
                 aria-label="Input Label"
                 as="input"
-                className="HvBaseInput-input-23 MuiInput-input MuiInputBase-input"
+                className="HvBaseInput-input MuiInput-input MuiInputBase-input"
                 onAnimationStart={[Function]}
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -1499,11 +1499,11 @@ exports[`Input should render correctly 1`] = `
                 ownerState={
                   Object {
                     "classes": Object {
-                      "disabled": "HvBaseInput-inputRootDisabled-21",
-                      "focused": "HvBaseInput-inputRootFocused-20",
-                      "input": "HvBaseInput-input-23 MuiInput-input",
-                      "multiline": "HvBaseInput-inputRootMultiline-22",
-                      "root": "HvBaseInput-inputRoot-19 MuiInput-root MuiInput-underline",
+                      "disabled": "HvBaseInput-inputRootDisabled",
+                      "focused": "HvBaseInput-inputRootFocused",
+                      "input": "HvBaseInput-input MuiInput-input",
+                      "multiline": "HvBaseInput-inputRootMultiline",
+                      "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
                     },
                     "color": "primary",
                     "components": Object {
@@ -1862,102 +1862,102 @@ exports[`Input should render correctly 1`] = `
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-1 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-1 .HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-2 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4).focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-6 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-6:hover:not(.HvBaseInput-inputRootDisabled-8)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-7 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -1965,22 +1965,22 @@ exports[`Input should render correctly 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-7:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-8 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-8:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -1991,7 +1991,7 @@ exports[`Input should render correctly 1`] = `
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-10 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -2007,7 +2007,7 @@ exports[`Input should render correctly 1`] = `
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -2015,17 +2015,17 @@ exports[`Input should render correctly 1`] = `
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-11 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-12 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -2033,30 +2033,30 @@ exports[`Input should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-1 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -2066,102 +2066,102 @@ exports[`Input should render correctly 1`] = `
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-14 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-14 .HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-15 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17).focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-19 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-19:hover:not(.HvBaseInput-inputRootDisabled-21)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-20 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -2169,22 +2169,22 @@ exports[`Input should render correctly 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-20:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-21 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-21:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -2195,7 +2195,7 @@ exports[`Input should render correctly 1`] = `
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-23 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -2211,7 +2211,7 @@ exports[`Input should render correctly 1`] = `
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -2219,17 +2219,17 @@ exports[`Input should render correctly 1`] = `
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-24 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-25 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -2237,30 +2237,30 @@ exports[`Input should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-14 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -2486,7 +2486,7 @@ exports[`Input should render correctly 1`] = `
                 />
                 <input
                   aria-label="Input Label"
-                  className="HvBaseInput-input-23 MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  className="HvBaseInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -2501,7 +2501,7 @@ exports[`Input should render correctly 1`] = `
         </ForwardRef(InputBase)>
       </ForwardRef(Input)>
       <div
-        className="HvBaseInput-inputBorderContainer-26"
+        className="HvBaseInput-inputBorderContainer"
         role="presentation"
       />
     </div>
@@ -2517,35 +2517,35 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   <HvBaseInput
     classes={
       Object {
-        "disabled": "HvBaseInput-disabled-82",
-        "input": "HvBaseInput-input-88",
-        "inputBorderContainer": "HvBaseInput-inputBorderContainer-91",
-        "inputDisabled": "HvBaseInput-inputDisabled-89",
-        "inputResizable": "HvBaseInput-inputResizable-90",
-        "inputRoot": "HvBaseInput-inputRoot-84",
-        "inputRootDisabled": "HvBaseInput-inputRootDisabled-86",
-        "inputRootFocused": "HvBaseInput-inputRootFocused-85",
-        "inputRootMultiline": "HvBaseInput-inputRootMultiline-87",
-        "invalid": "HvBaseInput-invalid-83",
-        "readOnly": "HvBaseInput-readOnly-81",
-        "resizable": "HvBaseInput-resizable-80",
-        "root": "HvBaseInput-root-79",
+        "disabled": "HvBaseInput-disabled",
+        "input": "HvBaseInput-input",
+        "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+        "inputDisabled": "HvBaseInput-inputDisabled",
+        "inputResizable": "HvBaseInput-inputResizable",
+        "inputRoot": "HvBaseInput-inputRoot",
+        "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+        "inputRootFocused": "HvBaseInput-inputRootFocused",
+        "inputRootMultiline": "HvBaseInput-inputRootMultiline",
+        "invalid": "HvBaseInput-invalid",
+        "readOnly": "HvBaseInput-readOnly",
+        "resizable": "HvBaseInput-resizable",
+        "root": "HvBaseInput-root",
       }
     }
     multiline={true}
     placeholder="test"
   >
     <div
-      className="HvBaseInput-root-79"
+      className="HvBaseInput-root"
     >
       <ForwardRef(Input)
         classes={
           Object {
-            "disabled": "HvBaseInput-inputRootDisabled-86",
-            "focused": "HvBaseInput-inputRootFocused-85",
-            "input": "HvBaseInput-input-88",
-            "multiline": "HvBaseInput-inputRootMultiline-87",
-            "root": "HvBaseInput-inputRoot-84",
+            "disabled": "HvBaseInput-inputRootDisabled",
+            "focused": "HvBaseInput-inputRootFocused",
+            "input": "HvBaseInput-input",
+            "multiline": "HvBaseInput-inputRootMultiline",
+            "root": "HvBaseInput-inputRoot",
           }
         }
         inputProps={
@@ -2565,11 +2565,11 @@ exports[`Input should render the Input component with the multiline style 1`] = 
         <ForwardRef(InputBase)
           classes={
             Object {
-              "disabled": "HvBaseInput-inputRootDisabled-86",
-              "focused": "HvBaseInput-inputRootFocused-85",
-              "input": "HvBaseInput-input-88 MuiInput-input",
-              "multiline": "HvBaseInput-inputRootMultiline-87",
-              "root": "HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline",
+              "disabled": "HvBaseInput-inputRootDisabled",
+              "focused": "HvBaseInput-inputRootFocused",
+              "input": "HvBaseInput-input MuiInput-input",
+              "multiline": "HvBaseInput-inputRootMultiline",
+              "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
             }
           }
           components={
@@ -2986,25 +2986,25 @@ exports[`Input should render the Input component with the multiline style 1`] = 
             </GlobalStyles>
           </GlobalStyles>
           <MuiInputRoot
-            className="HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline-87 MuiInputBase-multiline"
+            className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline MuiInputBase-multiline"
             classes={
               Object {
-                "disabled": "HvBaseInput-inputRootDisabled-86",
-                "focused": "HvBaseInput-inputRootFocused-85",
-                "input": "HvBaseInput-input-88 MuiInput-input",
-                "multiline": "HvBaseInput-inputRootMultiline-87",
-                "root": "HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline",
+                "disabled": "HvBaseInput-inputRootDisabled",
+                "focused": "HvBaseInput-inputRootFocused",
+                "input": "HvBaseInput-input MuiInput-input",
+                "multiline": "HvBaseInput-inputRootMultiline",
+                "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
               }
             }
             onClick={[Function]}
             ownerState={
               Object {
                 "classes": Object {
-                  "disabled": "HvBaseInput-inputRootDisabled-86",
-                  "focused": "HvBaseInput-inputRootFocused-85",
-                  "input": "HvBaseInput-input-88 MuiInput-input",
-                  "multiline": "HvBaseInput-inputRootMultiline-87",
-                  "root": "HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline",
+                  "disabled": "HvBaseInput-inputRootDisabled",
+                  "focused": "HvBaseInput-inputRootFocused",
+                  "input": "HvBaseInput-input MuiInput-input",
+                  "multiline": "HvBaseInput-inputRootMultiline",
+                  "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
                 },
                 "color": "primary",
                 "components": Object {
@@ -3700,102 +3700,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-1 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-1 .HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-2 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4).focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-6 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-6:hover:not(.HvBaseInput-inputRootDisabled-8)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-7 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -3803,22 +3803,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-7:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-8 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-8:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -3829,7 +3829,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-10 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -3845,7 +3845,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -3853,17 +3853,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-11 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-12 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -3871,30 +3871,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-1 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -3904,102 +3904,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-14 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-14 .HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-15 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17).focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-19 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-19:hover:not(.HvBaseInput-inputRootDisabled-21)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-20 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -4007,22 +4007,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-20:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-21 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-21:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -4033,7 +4033,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-23 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -4049,7 +4049,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -4057,17 +4057,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-24 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-25 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -4075,30 +4075,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-14 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -4108,102 +4108,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-27 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-27 .HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-28 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30).focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-32 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-32:hover:not(.HvBaseInput-inputRootDisabled-34)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-33 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -4211,22 +4211,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-33:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-34 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-34:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -4237,7 +4237,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-36 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -4253,7 +4253,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -4261,17 +4261,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-37 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-38 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -4279,30 +4279,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-27 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -4312,102 +4312,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-40 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-40 .HvBaseInput-inputRootMultiline-48 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-40:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40:focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40.focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40.focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-40:focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-40:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-41 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-42 .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-42:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-42 .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-43 .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-43:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-43:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-43 .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43) .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43).focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43) .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-45 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-45:hover:not(.HvBaseInput-inputRootDisabled-47)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-45::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-45::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-46 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -4415,22 +4415,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-46:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-47 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-47:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-48 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -4441,7 +4441,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-49 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -4457,7 +4457,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-49::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -4465,17 +4465,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-49::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-50 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-51 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -4483,30 +4483,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-40 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-40 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -4516,102 +4516,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-53 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-53 .HvBaseInput-inputRootMultiline-61 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-53:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53:focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53.focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53.focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-53:focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-53:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-54 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-55 .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-55:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-55 .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-56 .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-56:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-56:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-56 .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56) .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56).focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56) .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-58 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-58:hover:not(.HvBaseInput-inputRootDisabled-60)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-58::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-58::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-59 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -4619,22 +4619,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-59:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-60 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-60:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-61 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -4645,7 +4645,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-62 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -4661,7 +4661,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-62::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -4669,17 +4669,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-62::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-63 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-64 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -4687,30 +4687,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-53 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-53 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -4720,102 +4720,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-66 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-66 .HvBaseInput-inputRootMultiline-74 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-66:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66:focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66.focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66.focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-66:focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-66:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-67 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-68 .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-68:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-68 .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-69 .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-69:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-69:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-69 .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69) .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69).focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69) .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-71 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-71:hover:not(.HvBaseInput-inputRootDisabled-73)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-71::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-71::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-72 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -4823,22 +4823,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-72:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-73 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-73:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-74 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -4849,7 +4849,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-75 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -4865,7 +4865,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-75::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -4873,17 +4873,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-75::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-76 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-77 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -4891,30 +4891,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-66 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-66 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -4924,102 +4924,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                         data-meta="HvBaseInput"
                       >
                         
-.HvBaseInput-root-79 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-79 .HvBaseInput-inputRootMultiline-87 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-79:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79:focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79.focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79.focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-79:focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-79:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-80 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-81 .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-81:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-81 .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-82 .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-82:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-82:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-82 .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82) .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82).focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82) .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-84 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-84:hover:not(.HvBaseInput-inputRootDisabled-86)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-84::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-84::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-85 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -5027,22 +5027,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-85:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-86 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-86:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-87 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -5053,7 +5053,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-88 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -5069,7 +5069,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-88::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -5077,17 +5077,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-88::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-89 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-90 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -5095,30 +5095,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-79 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-79 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -5539,7 +5539,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
               }
             />
             <div
-              className="HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline-87 MuiInputBase-multiline css-3t0p26-MuiInputBase-root-MuiInput-root"
+              className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline MuiInputBase-multiline css-3t0p26-MuiInputBase-root-MuiInput-root"
               onClick={[Function]}
             >
               <MuiInputInput
@@ -5558,7 +5558,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                     "render": [Function],
                   }
                 }
-                className="HvBaseInput-input-88 MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline"
+                className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline"
                 maxRows={10}
                 minRows={10}
                 onAnimationStart={[Function]}
@@ -5568,11 +5568,11 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                 ownerState={
                   Object {
                     "classes": Object {
-                      "disabled": "HvBaseInput-inputRootDisabled-86",
-                      "focused": "HvBaseInput-inputRootFocused-85",
-                      "input": "HvBaseInput-input-88 MuiInput-input",
-                      "multiline": "HvBaseInput-inputRootMultiline-87",
-                      "root": "HvBaseInput-inputRoot-84 MuiInput-root MuiInput-underline",
+                      "disabled": "HvBaseInput-inputRootDisabled",
+                      "focused": "HvBaseInput-inputRootFocused",
+                      "input": "HvBaseInput-input MuiInput-input",
+                      "multiline": "HvBaseInput-inputRootMultiline",
+                      "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
                     },
                     "color": "primary",
                     "components": Object {
@@ -6269,102 +6269,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-1 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-1 .HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-1.focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-1:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-2 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-3:focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-3 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-4:hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-4 .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4).focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):focus-within .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4):hover .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-5:not(.HvBaseInput-disabled-4) .HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-6 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-6:hover:not(.HvBaseInput-inputRootDisabled-8)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-6::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-7 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -6372,22 +6372,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-7:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-8 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-8:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-9 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-9 .HvBaseInput-input-10 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -6398,7 +6398,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-10 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -6414,7 +6414,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -6422,17 +6422,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-10::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-11 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-12 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-13 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -6440,30 +6440,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-1 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-1 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -6473,102 +6473,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-14 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-14 .HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-14.focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-14:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-15 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-16:focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-16 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-17:hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-17 .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17).focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):focus-within .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17):hover .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-18:not(.HvBaseInput-disabled-17) .HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-19 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-19:hover:not(.HvBaseInput-inputRootDisabled-21)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-19::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-20 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -6576,22 +6576,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-20:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-21 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-21:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-22 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-22 .HvBaseInput-input-23 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -6602,7 +6602,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-23 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -6618,7 +6618,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -6626,17 +6626,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-23::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-24 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-25 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-26 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -6644,30 +6644,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-14 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-14 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -6677,102 +6677,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-27 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-27 .HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-28 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30).focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-32 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-32:hover:not(.HvBaseInput-inputRootDisabled-34)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-33 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -6780,22 +6780,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-33:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-34 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-34:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -6806,7 +6806,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-36 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -6822,7 +6822,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -6830,17 +6830,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-37 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-38 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -6848,30 +6848,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-27 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -6881,102 +6881,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-40 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-40 .HvBaseInput-inputRootMultiline-48 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-40:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40:focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40.focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-40.focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-40:focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-40:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-41 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-42 .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:focus-within .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-42:focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-42:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-42 .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-43 .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-43:hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-43:hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-43 .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43) .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):hover .HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43).focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):focus-within .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43):hover .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-44:not(.HvBaseInput-disabled-43) .HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-45 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-45:hover:not(.HvBaseInput-inputRootDisabled-47)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-45::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-45::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-46 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -6984,22 +6984,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-46:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-47 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-47:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-48 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-48 .HvBaseInput-input-49 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -7010,7 +7010,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-49 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -7026,7 +7026,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-49::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -7034,17 +7034,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-49::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-50 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-51 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-52 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -7052,30 +7052,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-40 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-40 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-40 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -7085,102 +7085,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-53 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-53 .HvBaseInput-inputRootMultiline-61 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-53:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53:focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53.focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-53.focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-53:focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-53:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-54 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-55 .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:focus-within .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-55:focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-55:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-55 .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-56 .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-56:hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-56:hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-56 .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56) .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):hover .HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56).focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):focus-within .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56):hover .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-57:not(.HvBaseInput-disabled-56) .HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-58 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-58:hover:not(.HvBaseInput-inputRootDisabled-60)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-58::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-58::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-59 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -7188,22 +7188,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-59:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-60 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-60:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-61 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-61 .HvBaseInput-input-62 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -7214,7 +7214,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-62 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -7230,7 +7230,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-62::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -7238,17 +7238,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-62::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-63 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-64 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-65 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -7256,30 +7256,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-53 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-53 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-53 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -7289,102 +7289,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-66 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-66 .HvBaseInput-inputRootMultiline-74 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-66:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66:focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66.focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-66.focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-66:focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-66:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-67 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-68 .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:focus-within .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-68:focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-68:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-68 .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-69 .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-69:hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-69:hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-69 .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69) .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):hover .HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69).focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):focus-within .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69):hover .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-70:not(.HvBaseInput-disabled-69) .HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-71 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-71:hover:not(.HvBaseInput-inputRootDisabled-73)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-71::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-71::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-72 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -7392,22 +7392,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-72:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-73 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-73:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-74 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-74 .HvBaseInput-input-75 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -7418,7 +7418,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-75 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -7434,7 +7434,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-75::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -7442,17 +7442,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-75::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-76 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-77 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-78 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -7460,30 +7460,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-66 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-66 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-66 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -7493,102 +7493,102 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                             data-meta="HvBaseInput"
                           >
                             
-.HvBaseInput-root-79 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-79 .HvBaseInput-inputRootMultiline-87 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-79:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79:focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79.focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-79.focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-79:focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-79:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-80 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-81 .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:focus-within .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-81:focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-81:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-81 .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-82 .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-82:hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-82:hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-82 .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82) .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):hover .HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82).focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):focus-within .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82):hover .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-83:not(.HvBaseInput-disabled-82) .HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-84 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-84:hover:not(.HvBaseInput-inputRootDisabled-86)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-84::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-84::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-85 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -7596,22 +7596,22 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-85:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-86 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-86:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-87 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-87 .HvBaseInput-input-88 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -7622,7 +7622,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-88 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -7638,7 +7638,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-88::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -7646,17 +7646,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-88::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-89 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-90 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-91 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -7664,30 +7664,30 @@ exports[`Input should render the Input component with the multiline style 1`] = 
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-79 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-79 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-79 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -8108,7 +8108,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   }
                 />
                 <ForwardRef(TextareaAutosize)
-                  className="HvBaseInput-input-88 MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                  className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                   maxRows={10}
                   minRows={10}
                   onAnimationStart={[Function]}
@@ -8119,7 +8119,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   rows={10}
                 >
                   <textarea
-                    className="HvBaseInput-input-88 MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                    className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                     onAnimationStart={[Function]}
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -8135,7 +8135,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   />
                   <textarea
                     aria-hidden={true}
-                    className="HvBaseInput-input-88 MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                    className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                     readOnly={true}
                     style={
                       Object {

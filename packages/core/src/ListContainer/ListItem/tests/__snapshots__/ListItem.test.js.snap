@@ -5,22 +5,22 @@ exports[`ListItem should render correctly 1`] = `
   <HvListItem
     classes={
       Object {
-        "condensed": "HvListItem-condensed-6",
-        "disabled": "HvListItem-disabled-5",
-        "endAdornment": "HvListItem-endAdornment-10",
-        "focus": "HvListItem-focus-11",
-        "gutters": "HvListItem-gutters-2",
-        "interactive": "HvListItem-interactive-3",
-        "root": "HvListItem-root-1",
-        "selected": "HvListItem-selected-4",
-        "startAdornment": "HvListItem-startAdornment-9",
-        "withEndAdornment": "HvListItem-withEndAdornment-8",
-        "withStartAdornment": "HvListItem-withStartAdornment-7",
+        "condensed": "HvListItem-condensed",
+        "disabled": "HvListItem-disabled",
+        "endAdornment": "HvListItem-endAdornment",
+        "focus": "HvListItem-focus",
+        "gutters": "HvListItem-gutters",
+        "interactive": "HvListItem-interactive",
+        "root": "HvListItem-root",
+        "selected": "HvListItem-selected",
+        "startAdornment": "HvListItem-startAdornment",
+        "withEndAdornment": "HvListItem-withEndAdornment",
+        "withStartAdornment": "HvListItem-withStartAdornment",
       }
     }
   >
     <li
-      className="HvListItem-root-1 HvListItem-gutters-2"
+      className="HvListItem-root HvListItem-gutters"
       onClick={[Function]}
       onKeyDown={[Function]}
     />

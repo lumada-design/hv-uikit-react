@@ -11,11 +11,11 @@ exports[`<Navigation /> should render correctly 1`] = `
   <Navigation
     classes={
       Object {
-        "disabled": "HvCalendarNavigation-disabled-3",
-        "icon": "HvCalendarNavigation-icon-2",
-        "root": "HvCalendarNavigation-root-1",
-        "text": "HvCalendarNavigation-text-4",
-        "textWithoutHover": "HvCalendarNavigation-textWithoutHover-5",
+        "disabled": "HvCalendarNavigation-disabled",
+        "icon": "HvCalendarNavigation-icon",
+        "root": "HvCalendarNavigation-root",
+        "text": "HvCalendarNavigation-text",
+        "textWithoutHover": "HvCalendarNavigation-textWithoutHover",
       }
     }
     id="id1"
@@ -25,17 +25,17 @@ exports[`<Navigation /> should render correctly 1`] = `
     onTextClick={[MockFunction]}
   >
     <div
-      className="HvCalendarNavigation-root-1"
+      className="HvCalendarNavigation-root"
     >
       <DropLeftXS
-        className="HvCalendarNavigation-icon-2"
+        className="HvCalendarNavigation-icon"
         id="id1-left"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
         <HvIconBase
-          className="HvCalendarNavigation-icon-2"
+          className="HvCalendarNavigation-icon"
           iconSize="XS"
           id="id1-left"
           name="DropLeftXS"
@@ -44,7 +44,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           tabIndex={0}
         >
           <div
-            className="HvCalendarNavigation-icon-2 HvIconBase-root-6 HvIconBase-xs-7"
+            className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
             id="id1-left"
             name="DropLeftXS"
             onClick={[Function]}
@@ -68,7 +68,7 @@ exports[`<Navigation /> should render correctly 1`] = `
         </HvIconBase>
       </DropLeftXS>
       <div
-        className="HvCalendarNavigation-text-4"
+        className="HvCalendarNavigation-text"
         id="id1"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
@@ -81,34 +81,34 @@ exports[`<Navigation /> should render correctly 1`] = `
           <ForwardRef
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle-14",
-                "4xlTitle": "HvTypography-4xlTitle-13",
-                "5xlTitle": "HvTypography-5xlTitle-12",
-                "disabledText": "HvTypography-disabledText-27",
-                "highlightText": "HvTypography-highlightText-23",
-                "lTitle": "HvTypography-lTitle-17",
-                "link": "HvTypography-link-26",
-                "mTitle": "HvTypography-mTitle-18",
-                "noWrap": "HvTypography-noWrap-32",
-                "normalText": "HvTypography-normalText-24",
-                "placeholderText": "HvTypography-placeholderText-25",
-                "root": "HvTypography-root-11",
-                "sTitle": "HvTypography-sTitle-19",
-                "sectionTitle": "HvTypography-sectionTitle-22",
-                "selectedNavText": "HvTypography-selectedNavText-28",
-                "vizText": "HvTypography-vizText-29",
-                "vizTextDisabled": "HvTypography-vizTextDisabled-30",
-                "xlTitle": "HvTypography-xlTitle-16",
-                "xsInlineLink": "HvTypography-xsInlineLink-31",
-                "xsTitle": "HvTypography-xsTitle-20",
-                "xxlTitle": "HvTypography-xxlTitle-15",
-                "xxsTitle": "HvTypography-xxsTitle-21",
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
               }
             }
             variant="normalText"
           >
             <p
-              className="HvTypography-root-11 HvTypography-normalText-24"
+              className="HvTypography-root HvTypography-normalText"
             >
               Navigation text
             </p>
@@ -116,14 +116,14 @@ exports[`<Navigation /> should render correctly 1`] = `
         </WithStyles(ForwardRef)>
       </div>
       <DropRightXS
-        className="HvCalendarNavigation-icon-2 "
+        className="HvCalendarNavigation-icon "
         id="id1-right"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
         <HvIconBase
-          className="HvCalendarNavigation-icon-2 "
+          className="HvCalendarNavigation-icon "
           iconSize="XS"
           id="id1-right"
           name="DropRightXS"
@@ -132,7 +132,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           tabIndex={0}
         >
           <div
-            className="HvCalendarNavigation-icon-2  HvIconBase-root-6 HvIconBase-xs-7"
+            className="HvCalendarNavigation-icon  HvIconBase-root HvIconBase-xs"
             id="id1-right"
             name="DropRightXS"
             onClick={[Function]}

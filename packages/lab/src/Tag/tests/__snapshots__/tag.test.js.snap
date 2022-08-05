@@ -4,29 +4,29 @@ exports[`HvTags sample snapshot testing Default 1`] = `
 <div>
   <div
     category="informational"
-    class="HvTag-root-1 category"
+    class="HvTag-root category"
     id="Tag1"
     role="button"
   >
     <span
-      class="HvTag-label-2"
+      class="HvTag-label"
     >
       Hello
     </span>
   </div>
   <div
     category="informational"
-    class="HvTag-root-1 category"
+    class="HvTag-root category"
     id="Tag2"
     role="button"
   >
     <span
-      class="HvTag-label-2"
+      class="HvTag-label"
     >
       How
     </span>
     <div
-      class="HvTag-deleteIcon-5 HvIconBase-root-12 HvIconBase-s-14"
+      class="HvTag-deleteIcon HvIconBase-root HvIconBase-s"
       name="Close"
     >
       <svg
@@ -46,29 +46,29 @@ exports[`HvTags sample snapshot testing Default 1`] = `
   </div>
   <div
     category="informational"
-    class="HvTag-root-1 category HvTag-round-4"
+    class="HvTag-root category HvTag-round"
     id="Tag3"
     role="button"
   >
     <span
-      class="HvTag-label-2"
+      class="HvTag-label"
     >
       Are
     </span>
   </div>
   <div
     category="informational"
-    class="HvTag-root-1 category HvTag-round-4"
+    class="HvTag-root category HvTag-round"
     id="Tag4"
     role="button"
   >
     <span
-      class="HvTag-label-2"
+      class="HvTag-label"
     >
       You
     </span>
     <div
-      class="HvTag-deleteIcon-5 HvIconBase-root-12 HvIconBase-s-14"
+      class="HvTag-deleteIcon HvIconBase-root HvIconBase-s"
       name="Close"
     >
       <svg

@@ -8,12 +8,12 @@ exports[`Action Bar should render correctly 1`] = `
     className="makeStyles-actionBar-2"
     classes={
       Object {
-        "root": "HvActionBar-root-5",
+        "root": "HvActionBar-root",
       }
     }
   >
     <div
-      className="HvActionBar-root-5 makeStyles-actionBar-2"
+      className="HvActionBar-root makeStyles-actionBar-2"
     >
       <WithStyles(ForwardRef)
         category="ghost"
@@ -23,76 +23,76 @@ exports[`Action Bar should render correctly 1`] = `
           category="ghost"
           classes={
             Object {
-              "focusVisible": "HvButton-focusVisible-9",
-              "ghost": "HvButton-ghost-13",
-              "ghostDisabled": "HvButton-ghostDisabled-14",
-              "ghostSVG": "HvButton-ghostSVG-20",
-              "icon": "HvButton-icon-7",
-              "iconSVG": "HvButton-iconSVG-22",
-              "primary": "HvButton-primary-8",
-              "primaryDisabled": "HvButton-primaryDisabled-10",
-              "primarySVG": "HvButton-primarySVG-18",
-              "root": "HvButton-root-6",
-              "secondary": "HvButton-secondary-11",
-              "secondaryDisabled": "HvButton-secondaryDisabled-12",
-              "secondarySVG": "HvButton-secondarySVG-19",
-              "semantic": "HvButton-semantic-15",
-              "semanticDisabled": "HvButton-semanticDisabled-16",
-              "semanticSVG": "HvButton-semanticSVG-21",
-              "startIcon": "HvButton-startIcon-17",
+              "focusVisible": "HvButton-focusVisible",
+              "ghost": "HvButton-ghost",
+              "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
+              "icon": "HvButton-icon",
+              "iconSVG": "HvButton-iconSVG",
+              "primary": "HvButton-primary",
+              "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
+              "root": "HvButton-root",
+              "secondary": "HvButton-secondary",
+              "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
+              "semantic": "HvButton-semantic",
+              "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
+              "startIcon": "HvButton-startIcon",
             }
           }
           onClick={[Function]}
         >
           <ForwardRef(Button)
-            className="HvButton-ghostSVG-20"
+            className="HvButton-ghostSVG"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-8",
-                "disabled": "HvButton-ghostDisabled-14",
-                "outlinedPrimary": "HvButton-secondary-11",
-                "root": "HvButton-root-6",
-                "startIcon": "HvButton-startIcon-17",
-                "textPrimary": "HvButton-ghost-13",
+                "containedPrimary": "HvButton-primary",
+                "disabled": "HvButton-ghostDisabled",
+                "outlinedPrimary": "HvButton-secondary",
+                "root": "HvButton-root",
+                "startIcon": "HvButton-startIcon",
+                "textPrimary": "HvButton-ghost",
               }
             }
             color="primary"
             disableRipple={true}
-            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
             <MuiButtonRoot
-              className="HvButton-ghostSVG-20"
+              className="HvButton-ghostSVG"
               classes={
                 Object {
-                  "containedPrimary": "HvButton-primary-8",
-                  "disabled": "HvButton-ghostDisabled-14",
+                  "containedPrimary": "HvButton-primary",
+                  "disabled": "HvButton-ghostDisabled",
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
-                  "outlinedPrimary": "HvButton-secondary-11",
-                  "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                  "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                  "textPrimary": "HvButton-ghost-13",
+                  "outlinedPrimary": "HvButton-secondary",
+                  "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                  "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                  "textPrimary": "HvButton-ghost",
                 }
               }
               component="button"
               disableRipple={true}
               disabled={false}
               focusRipple={true}
-              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
               onClick={[Function]}
               ownerState={
                 Object {
                   "children": "Help",
-                  "className": "HvButton-ghostSVG-20",
+                  "className": "HvButton-ghostSVG",
                   "classes": Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6",
-                    "startIcon": "HvButton-startIcon-17",
-                    "textPrimary": "HvButton-ghost-13",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root",
+                    "startIcon": "HvButton-startIcon",
+                    "textPrimary": "HvButton-ghost",
                   },
                   "color": "primary",
                   "component": "button",
@@ -100,7 +100,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "disableFocusRipple": false,
                   "disableRipple": true,
                   "disabled": false,
-                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                   "fullWidth": false,
                   "id": undefined,
                   "onClick": [Function],
@@ -239,7 +239,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvActionBar"
                         >
                           
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -254,7 +254,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvButton"
                         >
                           
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -268,7 +268,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -281,14 +281,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -296,31 +296,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -329,31 +329,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -361,31 +361,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -393,52 +393,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -596,39 +596,39 @@ exports[`Action Bar should render correctly 1`] = `
                 }
               />
               <ForwardRef(ButtonBase)
-                className="HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                className="HvButton-ghostSVG css-q8qr05-MuiButton-root"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                    "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                    "textPrimary": "HvButton-ghost-13",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                    "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                    "textPrimary": "HvButton-ghost",
                   }
                 }
                 component="button"
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                 onClick={[Function]}
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                  className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
-                      "containedPrimary": "HvButton-primary-8",
-                      "disabled": "HvButton-ghostDisabled-14",
+                      "containedPrimary": "HvButton-primary",
+                      "disabled": "HvButton-ghostDisabled",
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
-                      "outlinedPrimary": "HvButton-secondary-11",
-                      "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                      "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                      "textPrimary": "HvButton-ghost-13",
+                      "outlinedPrimary": "HvButton-secondary",
+                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                      "textPrimary": "HvButton-ghost",
                     }
                   }
                   disabled={false}
@@ -653,16 +653,16 @@ exports[`Action Bar should render correctly 1`] = `
                         "Help",
                         undefined,
                       ],
-                      "className": "HvButton-ghostSVG-20 css-q8qr05-MuiButton-root",
+                      "className": "HvButton-ghostSVG css-q8qr05-MuiButton-root",
                       "classes": Object {
-                        "containedPrimary": "HvButton-primary-8",
-                        "disabled": "HvButton-ghostDisabled-14",
+                        "containedPrimary": "HvButton-primary",
+                        "disabled": "HvButton-ghostDisabled",
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
-                        "outlinedPrimary": "HvButton-secondary-11",
-                        "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                        "textPrimary": "HvButton-ghost-13",
+                        "outlinedPrimary": "HvButton-secondary",
+                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "textPrimary": "HvButton-ghost",
                       },
                       "component": "button",
                       "disableRipple": true,
@@ -670,7 +670,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "disabled": false,
                       "focusRipple": true,
                       "focusVisible": false,
-                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                       "id": undefined,
                       "onClick": [Function],
                       "tabIndex": 0,
@@ -808,7 +808,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvActionBar"
                             >
                               
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -823,7 +823,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvButton"
                             >
                               
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -837,7 +837,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -850,14 +850,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -865,31 +865,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -898,31 +898,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -930,31 +930,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -962,52 +962,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -1165,7 +1165,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-20 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -1207,76 +1207,76 @@ exports[`Action Bar should render correctly 1`] = `
           className="makeStyles-buttonSeparator-4"
           classes={
             Object {
-              "focusVisible": "HvButton-focusVisible-9",
-              "ghost": "HvButton-ghost-13",
-              "ghostDisabled": "HvButton-ghostDisabled-14",
-              "ghostSVG": "HvButton-ghostSVG-20",
-              "icon": "HvButton-icon-7",
-              "iconSVG": "HvButton-iconSVG-22",
-              "primary": "HvButton-primary-8",
-              "primaryDisabled": "HvButton-primaryDisabled-10",
-              "primarySVG": "HvButton-primarySVG-18",
-              "root": "HvButton-root-6",
-              "secondary": "HvButton-secondary-11",
-              "secondaryDisabled": "HvButton-secondaryDisabled-12",
-              "secondarySVG": "HvButton-secondarySVG-19",
-              "semantic": "HvButton-semantic-15",
-              "semanticDisabled": "HvButton-semanticDisabled-16",
-              "semanticSVG": "HvButton-semanticSVG-21",
-              "startIcon": "HvButton-startIcon-17",
+              "focusVisible": "HvButton-focusVisible",
+              "ghost": "HvButton-ghost",
+              "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
+              "icon": "HvButton-icon",
+              "iconSVG": "HvButton-iconSVG",
+              "primary": "HvButton-primary",
+              "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
+              "root": "HvButton-root",
+              "secondary": "HvButton-secondary",
+              "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
+              "semantic": "HvButton-semantic",
+              "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
+              "startIcon": "HvButton-startIcon",
             }
           }
           onClick={[Function]}
         >
           <ForwardRef(Button)
-            className="makeStyles-buttonSeparator-4 HvButton-ghostSVG-20"
+            className="makeStyles-buttonSeparator-4 HvButton-ghostSVG"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-8",
-                "disabled": "HvButton-ghostDisabled-14",
-                "outlinedPrimary": "HvButton-secondary-11",
-                "root": "HvButton-root-6",
-                "startIcon": "HvButton-startIcon-17",
-                "textPrimary": "HvButton-ghost-13",
+                "containedPrimary": "HvButton-primary",
+                "disabled": "HvButton-ghostDisabled",
+                "outlinedPrimary": "HvButton-secondary",
+                "root": "HvButton-root",
+                "startIcon": "HvButton-startIcon",
+                "textPrimary": "HvButton-ghost",
               }
             }
             color="primary"
             disableRipple={true}
-            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
             <MuiButtonRoot
-              className="makeStyles-buttonSeparator-4 HvButton-ghostSVG-20"
+              className="makeStyles-buttonSeparator-4 HvButton-ghostSVG"
               classes={
                 Object {
-                  "containedPrimary": "HvButton-primary-8",
-                  "disabled": "HvButton-ghostDisabled-14",
+                  "containedPrimary": "HvButton-primary",
+                  "disabled": "HvButton-ghostDisabled",
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
-                  "outlinedPrimary": "HvButton-secondary-11",
-                  "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                  "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                  "textPrimary": "HvButton-ghost-13",
+                  "outlinedPrimary": "HvButton-secondary",
+                  "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                  "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                  "textPrimary": "HvButton-ghost",
                 }
               }
               component="button"
               disableRipple={true}
               disabled={false}
               focusRipple={true}
-              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
               onClick={[Function]}
               ownerState={
                 Object {
                   "children": "Save",
-                  "className": "makeStyles-buttonSeparator-4 HvButton-ghostSVG-20",
+                  "className": "makeStyles-buttonSeparator-4 HvButton-ghostSVG",
                   "classes": Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6",
-                    "startIcon": "HvButton-startIcon-17",
-                    "textPrimary": "HvButton-ghost-13",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root",
+                    "startIcon": "HvButton-startIcon",
+                    "textPrimary": "HvButton-ghost",
                   },
                   "color": "primary",
                   "component": "button",
@@ -1284,7 +1284,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "disableFocusRipple": false,
                   "disableRipple": true,
                   "disabled": false,
-                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                   "fullWidth": false,
                   "id": undefined,
                   "onClick": [Function],
@@ -1423,7 +1423,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvActionBar"
                         >
                           
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -1438,7 +1438,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvButton"
                         >
                           
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -1452,7 +1452,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -1465,14 +1465,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1480,31 +1480,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -1513,31 +1513,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1545,31 +1545,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1577,52 +1577,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -1780,39 +1780,39 @@ exports[`Action Bar should render correctly 1`] = `
                 }
               />
               <ForwardRef(ButtonBase)
-                className="makeStyles-buttonSeparator-4 HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                className="makeStyles-buttonSeparator-4 HvButton-ghostSVG css-q8qr05-MuiButton-root"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                    "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                    "textPrimary": "HvButton-ghost-13",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                    "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                    "textPrimary": "HvButton-ghost",
                   }
                 }
                 component="button"
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                 onClick={[Function]}
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-buttonSeparator-4 HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                  className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-buttonSeparator-4 HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
-                      "containedPrimary": "HvButton-primary-8",
-                      "disabled": "HvButton-ghostDisabled-14",
+                      "containedPrimary": "HvButton-primary",
+                      "disabled": "HvButton-ghostDisabled",
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
-                      "outlinedPrimary": "HvButton-secondary-11",
-                      "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                      "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                      "textPrimary": "HvButton-ghost-13",
+                      "outlinedPrimary": "HvButton-secondary",
+                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                      "textPrimary": "HvButton-ghost",
                     }
                   }
                   disabled={false}
@@ -1837,16 +1837,16 @@ exports[`Action Bar should render correctly 1`] = `
                         "Save",
                         undefined,
                       ],
-                      "className": "makeStyles-buttonSeparator-4 HvButton-ghostSVG-20 css-q8qr05-MuiButton-root",
+                      "className": "makeStyles-buttonSeparator-4 HvButton-ghostSVG css-q8qr05-MuiButton-root",
                       "classes": Object {
-                        "containedPrimary": "HvButton-primary-8",
-                        "disabled": "HvButton-ghostDisabled-14",
+                        "containedPrimary": "HvButton-primary",
+                        "disabled": "HvButton-ghostDisabled",
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
-                        "outlinedPrimary": "HvButton-secondary-11",
-                        "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                        "textPrimary": "HvButton-ghost-13",
+                        "outlinedPrimary": "HvButton-secondary",
+                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "textPrimary": "HvButton-ghost",
                       },
                       "component": "button",
                       "disableRipple": true,
@@ -1854,7 +1854,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "disabled": false,
                       "focusRipple": true,
                       "focusVisible": false,
-                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                       "id": undefined,
                       "onClick": [Function],
                       "tabIndex": 0,
@@ -1992,7 +1992,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvActionBar"
                             >
                               
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -2007,7 +2007,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvButton"
                             >
                               
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -2021,7 +2021,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -2034,14 +2034,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2049,31 +2049,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -2082,31 +2082,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2114,31 +2114,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2146,52 +2146,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -2349,7 +2349,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-buttonSeparator-4 HvButton-ghostSVG-20 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-buttonSeparator-4 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -2383,76 +2383,76 @@ exports[`Action Bar should render correctly 1`] = `
           category="ghost"
           classes={
             Object {
-              "focusVisible": "HvButton-focusVisible-9",
-              "ghost": "HvButton-ghost-13",
-              "ghostDisabled": "HvButton-ghostDisabled-14",
-              "ghostSVG": "HvButton-ghostSVG-20",
-              "icon": "HvButton-icon-7",
-              "iconSVG": "HvButton-iconSVG-22",
-              "primary": "HvButton-primary-8",
-              "primaryDisabled": "HvButton-primaryDisabled-10",
-              "primarySVG": "HvButton-primarySVG-18",
-              "root": "HvButton-root-6",
-              "secondary": "HvButton-secondary-11",
-              "secondaryDisabled": "HvButton-secondaryDisabled-12",
-              "secondarySVG": "HvButton-secondarySVG-19",
-              "semantic": "HvButton-semantic-15",
-              "semanticDisabled": "HvButton-semanticDisabled-16",
-              "semanticSVG": "HvButton-semanticSVG-21",
-              "startIcon": "HvButton-startIcon-17",
+              "focusVisible": "HvButton-focusVisible",
+              "ghost": "HvButton-ghost",
+              "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
+              "icon": "HvButton-icon",
+              "iconSVG": "HvButton-iconSVG",
+              "primary": "HvButton-primary",
+              "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
+              "root": "HvButton-root",
+              "secondary": "HvButton-secondary",
+              "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
+              "semantic": "HvButton-semantic",
+              "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
+              "startIcon": "HvButton-startIcon",
             }
           }
           onClick={[Function]}
         >
           <ForwardRef(Button)
-            className="HvButton-ghostSVG-20"
+            className="HvButton-ghostSVG"
             classes={
               Object {
-                "containedPrimary": "HvButton-primary-8",
-                "disabled": "HvButton-ghostDisabled-14",
-                "outlinedPrimary": "HvButton-secondary-11",
-                "root": "HvButton-root-6",
-                "startIcon": "HvButton-startIcon-17",
-                "textPrimary": "HvButton-ghost-13",
+                "containedPrimary": "HvButton-primary",
+                "disabled": "HvButton-ghostDisabled",
+                "outlinedPrimary": "HvButton-secondary",
+                "root": "HvButton-root",
+                "startIcon": "HvButton-startIcon",
+                "textPrimary": "HvButton-ghost",
               }
             }
             color="primary"
             disableRipple={true}
-            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
             <MuiButtonRoot
-              className="HvButton-ghostSVG-20"
+              className="HvButton-ghostSVG"
               classes={
                 Object {
-                  "containedPrimary": "HvButton-primary-8",
-                  "disabled": "HvButton-ghostDisabled-14",
+                  "containedPrimary": "HvButton-primary",
+                  "disabled": "HvButton-ghostDisabled",
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
-                  "outlinedPrimary": "HvButton-secondary-11",
-                  "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                  "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                  "textPrimary": "HvButton-ghost-13",
+                  "outlinedPrimary": "HvButton-secondary",
+                  "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                  "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                  "textPrimary": "HvButton-ghost",
                 }
               }
               component="button"
               disableRipple={true}
               disabled={false}
               focusRipple={true}
-              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
               onClick={[Function]}
               ownerState={
                 Object {
                   "children": "Cancel",
-                  "className": "HvButton-ghostSVG-20",
+                  "className": "HvButton-ghostSVG",
                   "classes": Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6",
-                    "startIcon": "HvButton-startIcon-17",
-                    "textPrimary": "HvButton-ghost-13",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root",
+                    "startIcon": "HvButton-startIcon",
+                    "textPrimary": "HvButton-ghost",
                   },
                   "color": "primary",
                   "component": "button",
@@ -2460,7 +2460,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "disableFocusRipple": false,
                   "disableRipple": true,
                   "disabled": false,
-                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                  "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                   "fullWidth": false,
                   "id": undefined,
                   "onClick": [Function],
@@ -2599,7 +2599,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvActionBar"
                         >
                           
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -2614,7 +2614,7 @@ exports[`Action Bar should render correctly 1`] = `
                           data-meta="HvButton"
                         >
                           
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -2628,7 +2628,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -2641,14 +2641,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2656,31 +2656,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -2689,31 +2689,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2721,31 +2721,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2753,52 +2753,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -2956,39 +2956,39 @@ exports[`Action Bar should render correctly 1`] = `
                 }
               />
               <ForwardRef(ButtonBase)
-                className="HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                className="HvButton-ghostSVG css-q8qr05-MuiButton-root"
                 classes={
                   Object {
-                    "containedPrimary": "HvButton-primary-8",
-                    "disabled": "HvButton-ghostDisabled-14",
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
-                    "outlinedPrimary": "HvButton-secondary-11",
-                    "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                    "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                    "textPrimary": "HvButton-ghost-13",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                    "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                    "textPrimary": "HvButton-ghost",
                   }
                 }
                 component="button"
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible-9"
+                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                 onClick={[Function]}
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-20 css-q8qr05-MuiButton-root"
+                  className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
-                      "containedPrimary": "HvButton-primary-8",
-                      "disabled": "HvButton-ghostDisabled-14",
+                      "containedPrimary": "HvButton-primary",
+                      "disabled": "HvButton-ghostDisabled",
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
-                      "outlinedPrimary": "HvButton-secondary-11",
-                      "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                      "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                      "textPrimary": "HvButton-ghost-13",
+                      "outlinedPrimary": "HvButton-secondary",
+                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                      "textPrimary": "HvButton-ghost",
                     }
                   }
                   disabled={false}
@@ -3013,16 +3013,16 @@ exports[`Action Bar should render correctly 1`] = `
                         "Cancel",
                         undefined,
                       ],
-                      "className": "HvButton-ghostSVG-20 css-q8qr05-MuiButton-root",
+                      "className": "HvButton-ghostSVG css-q8qr05-MuiButton-root",
                       "classes": Object {
-                        "containedPrimary": "HvButton-primary-8",
-                        "disabled": "HvButton-ghostDisabled-14",
+                        "containedPrimary": "HvButton-primary",
+                        "disabled": "HvButton-ghostDisabled",
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
-                        "outlinedPrimary": "HvButton-secondary-11",
-                        "root": "HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon-17 MuiButton-startIcon MuiButton-iconSizeMedium",
-                        "textPrimary": "HvButton-ghost-13",
+                        "outlinedPrimary": "HvButton-secondary",
+                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
+                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "textPrimary": "HvButton-ghost",
                       },
                       "component": "button",
                       "disableRipple": true,
@@ -3030,7 +3030,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "disabled": false,
                       "focusRipple": true,
                       "focusVisible": false,
-                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible-9",
+                      "focusVisibleClassName": "HvIsFocusVisible HvButton-focusVisible",
                       "id": undefined,
                       "onClick": [Function],
                       "tabIndex": 0,
@@ -3168,7 +3168,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvActionBar"
                             >
                               
-.HvActionBar-root-5 {
+.HvActionBar-root {
   width: 100%;
   height: 75px;
   display: flex;
@@ -3183,7 +3183,7 @@ exports[`Action Bar should render correctly 1`] = `
                               data-meta="HvButton"
                             >
                               
-.HvButton-root-6 {
+.HvButton-root {
   color: #414141;
   cursor: pointer;
   height: 32px;
@@ -3197,7 +3197,7 @@ exports[`Action Bar should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvButton-icon-7 {
+.HvButton-icon {
   color: #414141;
   width: auto;
   height: auto;
@@ -3210,14 +3210,14 @@ exports[`Action Bar should render correctly 1`] = `
   border-radius: 0;
   letter-spacing: 0.02em;
 }
-.HvButton-primary-8 {
+.HvButton-primary {
   color: #FBFCFC;
   background-color: #2064B4;
 }
-.HvButton-primary-8:hover {
+.HvButton-primary:hover {
   background-color: #477DBD;
 }
-.HvButton-primary-8.HvButton-focusVisible-9 {
+.HvButton-primary.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -3225,31 +3225,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #477DBD;
 }
-.HvButton-primary-8:active {
+.HvButton-primary:active {
   background-color: #2064B4;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10 {
+.HvButton-primary.HvButton-primaryDisabled {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-primary-8.HvButton-primaryDisabled-10.HvButton-primary-8:hover {
+.HvButton-primary.HvButton-primaryDisabled.HvButton-primary:hover {
   color: #999999;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11 {
+.HvButton-secondary {
   color: #414141;
   border: 1px solid #CCCED0;
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11:hover {
+.HvButton-secondary:hover {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-focusVisible-9 {
+.HvButton-secondary.HvButton-focusVisible {
   border: 1px solid #CCCED0;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -3258,31 +3258,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11:active {
+.HvButton-secondary:active {
   background-color: #FBFCFC;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12 {
+.HvButton-secondary.HvButton-secondaryDisabled {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-secondary-11.HvButton-secondaryDisabled-12.HvButton-secondary-11:hover {
+.HvButton-secondary.HvButton-secondaryDisabled.HvButton-secondary:hover {
   color: #999999;
   border: 1px solid #CCCED0;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13 {
+.HvButton-ghost {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-ghost-13:hover {
+.HvButton-ghost:hover {
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13.HvButton-focusVisible-9 {
+.HvButton-ghost.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -3290,31 +3290,31 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: #E8E8E8;
 }
-.HvButton-ghost-13:active {
+.HvButton-ghost:active {
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14 {
+.HvButton-ghost.HvButton-ghostDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-ghost-13.HvButton-ghostDisabled-14.HvButton-ghost-13:hover {
+.HvButton-ghost.HvButton-ghostDisabled.HvButton-ghost:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: transparent;
 }
-.HvButton-semantic-15 {
+.HvButton-semantic {
   color: #414141;
   background-color: transparent;
 }
-.HvButton-semantic-15:hover {
+.HvButton-semantic:hover {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-focusVisible-9 {
+.HvButton-semantic.HvButton-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -3322,52 +3322,52 @@ exports[`Action Bar should render correctly 1`] = `
   outline-offset: -1px;
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15:active {
+.HvButton-semantic:active {
   background-color: rgba(251, 252, 252, 0.3);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16 {
+.HvButton-semantic.HvButton-semanticDisabled {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-semantic-15.HvButton-semanticDisabled-16.HvButton-semantic-15:hover {
+.HvButton-semantic.HvButton-semanticDisabled.HvButton-semantic:hover {
   color: #999999;
   border: none;
   cursor: not-allowed;
   pointer-events: auto;
   background-color: rgba(251, 252, 252, 0.1);
 }
-.HvButton-startIcon-17 {
+.HvButton-startIcon {
   margin-left: -8px;
   margin-right: 0;
 }
-.HvButton-primarySVG-18.HvButton-primaryDisabled-10 svg .color0 {
+.HvButton-primarySVG.HvButton-primaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-secondarySVG-19 svg .color0 {
+.HvButton-secondarySVG svg .color0 {
   fill: #414141;
 }
-.HvButton-secondarySVG-19.HvButton-secondaryDisabled-12 svg .color0 {
+.HvButton-secondarySVG.HvButton-secondaryDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-ghostSVG-20 svg .color0 {
+.HvButton-ghostSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-ghostSVG-20.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-ghostSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-semanticSVG-21 svg .color0 {
+.HvButton-semanticSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-semanticSVG-21.HvButton-semanticDisabled-16 svg .color0 {
+.HvButton-semanticSVG.HvButton-semanticDisabled svg .color0 {
   fill: #999999;
 }
-.HvButton-iconSVG-22 svg .color0 {
+.HvButton-iconSVG svg .color0 {
   fill: #414141;
 }
-.HvButton-iconSVG-22.HvButton-ghostDisabled-14 svg .color0 {
+.HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
 }
 
@@ -3525,7 +3525,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="HvButton-root-6 MuiButton-root MuiButton-text HvButton-ghost-13 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG-20 css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}

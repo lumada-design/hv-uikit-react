@@ -5,12 +5,12 @@ exports[`useHvRowExpand CellWithExpandButton snapshots as an additional system c
   <button
     aria-expanded="false"
     aria-label="expandRowButtonAriaLabel"
-    class="HvButton-root-45 MuiButton-root MuiButton-text HvButton-ghost-52 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-46 HvButton-ghostSVG-59 css-fsero8-MuiButtonBase-root-MuiButton-root"
+    class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
     <div
-      class="HvIconBase-root-62 HvIconBase-xs-63"
+      class="HvIconBase-root HvIconBase-xs"
       name="DropRightXS"
     >
       <svg
@@ -36,12 +36,12 @@ exports[`useHvRowExpand CellWithExpandButton snapshots as an augmented cell 1`] 
   <button
     aria-expanded="false"
     aria-label="expandRowButtonAriaLabel"
-    class="HvButton-root-1 MuiButton-root MuiButton-text HvButton-ghost-8 MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon-2 HvButton-ghostSVG-15 css-fsero8-MuiButtonBase-root-MuiButton-root"
+    class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
     <div
-      class="HvIconBase-root-18 HvIconBase-xs-19"
+      class="HvIconBase-root HvIconBase-xs"
       name="DropRightXS"
     >
       <svg
@@ -60,7 +60,7 @@ exports[`useHvRowExpand CellWithExpandButton snapshots as an augmented cell 1`] 
     </div>
   </button>
   <span
-    class="HvTypography-root-23 HvTypography-highlightText-35"
+    class="HvTypography-root HvTypography-highlightText"
   >
     Text
   </span>

@@ -3,17 +3,17 @@
 exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
 <div>
   <ol
-    class="HvScrollToHorizontal-root-1"
+    class="HvScrollToHorizontal-root"
     id="main"
   >
     <li
       aria-current="true"
-      class="HvHorizontalScrollListItem-root-4"
+      class="HvHorizontalScrollListItem-root"
       id="main-item-0"
     >
       <div
         aria-labelledby="main-item-0-label"
-        class="HvHorizontalScrollListItem-button-5"
+        class="HvHorizontalScrollListItem-button"
         id="main-item-0-button"
         role="button"
         tabindex="0"
@@ -24,7 +24,7 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <p
-            class="HvHorizontalScrollListItem-text-6 HvHorizontalScrollListItem-selected-7 HvTypography-root-19 HvTypography-highlightText-31"
+            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-highlightText"
             id="main-item-0-label"
           >
             Server status summary
@@ -34,12 +34,12 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root-4"
+      class="HvHorizontalScrollListItem-root"
       id="main-item-1"
     >
       <div
         aria-labelledby="main-item-1-label"
-        class="HvHorizontalScrollListItem-button-5"
+        class="HvHorizontalScrollListItem-button"
         id="main-item-1-button"
         role="button"
         tabindex="0"
@@ -50,7 +50,7 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <p
-            class="HvHorizontalScrollListItem-text-6 HvTypography-root-19 HvTypography-normalText-32"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-normalText"
             id="main-item-1-label"
           >
             Optimization
@@ -60,12 +60,12 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root-4"
+      class="HvHorizontalScrollListItem-root"
       id="main-item-2"
     >
       <div
         aria-labelledby="main-item-2-label"
-        class="HvHorizontalScrollListItem-button-5"
+        class="HvHorizontalScrollListItem-button"
         id="main-item-2-button"
         role="button"
         tabindex="0"
@@ -76,7 +76,7 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <p
-            class="HvHorizontalScrollListItem-text-6 HvTypography-root-19 HvTypography-normalText-32"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-normalText"
             id="main-item-2-label"
           >
             Performance analysis
@@ -86,12 +86,12 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
     </li>
     <li
       aria-current="false"
-      class="HvHorizontalScrollListItem-root-4"
+      class="HvHorizontalScrollListItem-root"
       id="main-item-3"
     >
       <div
         aria-labelledby="main-item-3-label"
-        class="HvHorizontalScrollListItem-button-5"
+        class="HvHorizontalScrollListItem-button"
         id="main-item-3-button"
         role="button"
         tabindex="0"
@@ -102,7 +102,7 @@ exports[`HorizontalScrollTo Snapshot testing Main 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <p
-            class="HvHorizontalScrollListItem-text-6 HvTypography-root-19 HvTypography-normalText-32"
+            class="HvHorizontalScrollListItem-text HvTypography-root HvTypography-normalText"
             id="main-item-3-label"
           >
             Insights

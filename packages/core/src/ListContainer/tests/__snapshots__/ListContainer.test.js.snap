@@ -7,34 +7,34 @@ exports[`ListContainer should render correctly 1`] = `
   <ForwardRef
     classes={
       Object {
-        "root": "HvListContainer-root-2",
+        "root": "HvListContainer-root",
       }
     }
     condensed={true}
   >
     <ul
-      className="HvListContainer-root-2"
+      className="HvListContainer-root"
     >
       <WithStyles(HvListItem)>
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -46,22 +46,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -73,22 +73,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -100,22 +100,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -127,22 +127,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -154,22 +154,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -181,22 +181,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >
@@ -208,22 +208,22 @@ exports[`ListContainer should render correctly 1`] = `
         <HvListItem
           classes={
             Object {
-              "condensed": "HvListItem-condensed-8",
-              "disabled": "HvListItem-disabled-7",
-              "endAdornment": "HvListItem-endAdornment-12",
-              "focus": "HvListItem-focus-13",
-              "gutters": "HvListItem-gutters-4",
-              "interactive": "HvListItem-interactive-5",
-              "root": "HvListItem-root-3",
-              "selected": "HvListItem-selected-6",
-              "startAdornment": "HvListItem-startAdornment-11",
-              "withEndAdornment": "HvListItem-withEndAdornment-10",
-              "withStartAdornment": "HvListItem-withStartAdornment-9",
+              "condensed": "HvListItem-condensed",
+              "disabled": "HvListItem-disabled",
+              "endAdornment": "HvListItem-endAdornment",
+              "focus": "HvListItem-focus",
+              "gutters": "HvListItem-gutters",
+              "interactive": "HvListItem-interactive",
+              "root": "HvListItem-root",
+              "selected": "HvListItem-selected",
+              "startAdornment": "HvListItem-startAdornment",
+              "withEndAdornment": "HvListItem-withEndAdornment",
+              "withStartAdornment": "HvListItem-withStartAdornment",
             }
           }
         >
           <li
-            className="HvListItem-root-3 HvListItem-gutters-4 HvListItem-condensed-8"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onClick={[Function]}
             onKeyDown={[Function]}
           >

@@ -7,22 +7,22 @@ exports[`Adornment should render correctly 1`] = `
   <ForwardRef
     classes={
       Object {
-        "adornment": "HvAdornment-adornment-14",
-        "adornmentButton": "HvAdornment-adornmentButton-15",
-        "adornmentIcon": "HvAdornment-adornmentIcon-16",
-        "hideIcon": "HvAdornment-hideIcon-17",
-        "icon": "HvAdornment-icon-13",
-        "root": "HvAdornment-root-12",
+        "adornment": "HvAdornment-adornment",
+        "adornmentButton": "HvAdornment-adornmentButton",
+        "adornmentIcon": "HvAdornment-adornmentIcon",
+        "hideIcon": "HvAdornment-hideIcon",
+        "icon": "HvAdornment-icon",
+        "root": "HvAdornment-root",
       }
     }
     icon={<CloseXS />}
   >
     <div
-      className="HvAdornment-root-12 HvAdornment-adornment-14 HvAdornment-adornmentIcon-16"
+      className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
       role="presentation"
     >
       <div
-        className="HvAdornment-icon-13"
+        className="HvAdornment-icon"
       >
         <CloseXS>
           <HvIconBase
@@ -30,7 +30,7 @@ exports[`Adornment should render correctly 1`] = `
             name="CloseXS"
           >
             <div
-              className="HvIconBase-root-18 HvIconBase-xs-19"
+              className="HvIconBase-root HvIconBase-xs"
               name="CloseXS"
             >
               <svg

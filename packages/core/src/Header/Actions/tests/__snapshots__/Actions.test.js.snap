@@ -5,12 +5,12 @@ exports[`Actions withStyles should be able to render 1`] = `
   <Actions
     classes={
       Object {
-        "root": "HvHeaderActions-root-1",
+        "root": "HvHeaderActions-root",
       }
     }
   >
     <div
-      className="HvHeaderActions-root-1"
+      className="HvHeaderActions-root"
     />
   </Actions>
 </WithStyles(Actions)>

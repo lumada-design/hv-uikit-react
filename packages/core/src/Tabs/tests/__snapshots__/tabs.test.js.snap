@@ -9,10 +9,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   <HvTabs
     classes={
       Object {
-        "flexContainer": "HvTabs-flexContainer-8",
-        "indicator": "HvTabs-indicator-6",
-        "root": "HvTabs-root-5",
-        "scroller": "HvTabs-scroller-7",
+        "flexContainer": "HvTabs-flexContainer",
+        "indicator": "HvTabs-indicator",
+        "root": "HvTabs-root",
+        "scroller": "HvTabs-scroller",
       }
     }
     id="tabs-main"
@@ -27,10 +27,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
       }
       classes={
         Object {
-          "flexContainer": "HvTabs-flexContainer-8",
-          "indicator": "HvTabs-indicator-6",
-          "root": "HvTabs-root-5",
-          "scroller": "HvTabs-scroller-7",
+          "flexContainer": "HvTabs-flexContainer",
+          "indicator": "HvTabs-indicator",
+          "root": "HvTabs-root",
+          "scroller": "HvTabs-scroller",
         }
       }
       id="tabs-main"
@@ -39,13 +39,13 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
     >
       <MuiTabsRoot
         as="div"
-        className="HvTabs-root-5 MuiTabs-root"
+        className="HvTabs-root MuiTabs-root"
         classes={
           Object {
-            "flexContainer": "HvTabs-flexContainer-8",
-            "indicator": "HvTabs-indicator-6",
-            "root": "HvTabs-root-5",
-            "scroller": "HvTabs-scroller-7",
+            "flexContainer": "HvTabs-flexContainer",
+            "indicator": "HvTabs-indicator",
+            "root": "HvTabs-root",
+            "scroller": "HvTabs-scroller",
           }
         }
         id="tabs-main"
@@ -71,10 +71,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
               />,
             ],
             "classes": Object {
-              "flexContainer": "HvTabs-flexContainer-8",
-              "indicator": "HvTabs-indicator-6",
-              "root": "HvTabs-root-5",
-              "scroller": "HvTabs-scroller-7",
+              "flexContainer": "HvTabs-flexContainer",
+              "indicator": "HvTabs-indicator",
+              "root": "HvTabs-root",
+              "scroller": "HvTabs-scroller",
             },
             "component": "div",
             "fixed": true,
@@ -227,7 +227,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     data-meta="HvTab"
                   >
                     
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -241,18 +241,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -261,14 +261,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -282,27 +282,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     data-meta="HvTabs"
                   >
                     
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -312,27 +312,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     data-meta="HvTabs"
                   >
                     
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -466,11 +466,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
           }
         />
         <div
-          className="HvTabs-root-5 MuiTabs-root css-1ujnqem-MuiTabs-root"
+          className="HvTabs-root MuiTabs-root css-1ujnqem-MuiTabs-root"
           id="tabs-main"
         >
           <MuiTabsScroller
-            className="HvTabs-scroller-7 MuiTabs-scroller MuiTabs-fixed"
+            className="HvTabs-scroller MuiTabs-scroller MuiTabs-fixed"
             onScroll={[Function]}
             ownerState={
               Object {
@@ -494,10 +494,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                   />,
                 ],
                 "classes": Object {
-                  "flexContainer": "HvTabs-flexContainer-8",
-                  "indicator": "HvTabs-indicator-6",
-                  "root": "HvTabs-root-5",
-                  "scroller": "HvTabs-scroller-7",
+                  "flexContainer": "HvTabs-flexContainer",
+                  "indicator": "HvTabs-indicator",
+                  "root": "HvTabs-root",
+                  "scroller": "HvTabs-scroller",
                 },
                 "component": "div",
                 "fixed": true,
@@ -656,7 +656,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         data-meta="HvTab"
                       >
                         
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -670,18 +670,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -690,14 +690,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -711,27 +711,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         data-meta="HvTabs"
                       >
                         
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -741,27 +741,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         data-meta="HvTabs"
                       >
                         
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -895,7 +895,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
               }
             />
             <div
-              className="HvTabs-scroller-7 MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+              className="HvTabs-scroller MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
               onScroll={[Function]}
               style={
                 Object {
@@ -906,7 +906,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
             >
               <MuiTabsFlexContainer
                 aria-orientation={null}
-                className="HvTabs-flexContainer-8 MuiTabs-flexContainer"
+                className="HvTabs-flexContainer MuiTabs-flexContainer"
                 onKeyDown={[Function]}
                 ownerState={
                   Object {
@@ -930,10 +930,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       />,
                     ],
                     "classes": Object {
-                      "flexContainer": "HvTabs-flexContainer-8",
-                      "indicator": "HvTabs-indicator-6",
-                      "root": "HvTabs-root-5",
-                      "scroller": "HvTabs-scroller-7",
+                      "flexContainer": "HvTabs-flexContainer",
+                      "indicator": "HvTabs-indicator",
+                      "root": "HvTabs-root",
+                      "scroller": "HvTabs-scroller",
                     },
                     "component": "div",
                     "fixed": true,
@@ -1087,7 +1087,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTab"
                           >
                             
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -1101,18 +1101,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -1121,14 +1121,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1142,27 +1142,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -1172,27 +1172,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -1327,7 +1327,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 />
                 <div
                   aria-orientation={null}
-                  className="HvTabs-flexContainer-8 MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+                  className="HvTabs-flexContainer MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
                   onKeyDown={[Function]}
                   role="tablist"
                 >
@@ -1345,10 +1345,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-12",
-                          "focusVisible": "HvTab-focusVisible-10",
-                          "root": "HvTab-root-9",
-                          "selected": "HvTab-selected-11",
+                          "disabled": "HvTab-disabled",
+                          "focusVisible": "HvTab-focusVisible",
+                          "root": "HvTab-root",
+                          "selected": "HvTab-selected",
                         }
                       }
                       disabled={false}
@@ -1365,15 +1365,15 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <ForwardRef(Tab)
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-12",
-                            "root": "HvTab-root-9",
-                            "selected": "HvTab-selected-11",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
-                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                         fullWidth={false}
                         icon={null}
                         id="tabs-tab1"
@@ -1386,34 +1386,34 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       >
                         <MuiTabRoot
                           aria-selected={true}
-                          className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary HvTab-selected-11 Mui-selected"
+                          className="HvTab-root MuiTab-root MuiTab-textColorPrimary HvTab-selected Mui-selected"
                           classes={
                             Object {
-                              "disabled": "HvTab-disabled-12",
-                              "root": "HvTab-root-9",
-                              "selected": "HvTab-selected-11",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                           id="tabs-tab1"
                           onClick={[Function]}
                           onFocus={[Function]}
                           ownerState={
                             Object {
                               "classes": Object {
-                                "disabled": "HvTab-disabled-12",
-                                "root": "HvTab-root-9",
-                                "selected": "HvTab-selected-11",
+                                "disabled": "HvTab-disabled",
+                                "root": "HvTab-root",
+                                "selected": "HvTab-selected",
                               },
                               "disableFocusRipple": false,
                               "disableRipple": true,
                               "disableTouchRipple": true,
                               "disabled": false,
-                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                               "fullWidth": false,
                               "icon": false,
                               "iconPosition": "top",
@@ -1563,7 +1563,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTab"
                                     >
                                       
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -1577,18 +1577,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -1597,14 +1597,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -1618,27 +1618,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -1648,27 +1648,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -1803,12 +1803,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           />
                           <ForwardRef(ButtonBase)
                             aria-selected={true}
-                            className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary HvTab-selected-11 Mui-selected css-1iaddba-MuiTab-root"
+                            className="HvTab-root MuiTab-root MuiTab-textColorPrimary HvTab-selected Mui-selected css-1iaddba-MuiTab-root"
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                             id="tabs-tab1"
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -1818,7 +1818,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             <MuiButtonBaseRoot
                               aria-selected={true}
                               as="button"
-                              className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary HvTab-selected-11 Mui-selected css-1iaddba-MuiTab-root"
+                              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary HvTab-selected Mui-selected css-1iaddba-MuiTab-root"
                               disabled={false}
                               id="tabs-tab1"
                               onBlur={[Function]}
@@ -1844,14 +1844,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                     </React.Fragment>,
                                     false,
                                   ],
-                                  "className": "HvTab-root-9 MuiTab-root MuiTab-textColorPrimary HvTab-selected-11 Mui-selected css-1iaddba-MuiTab-root",
+                                  "className": "HvTab-root MuiTab-root MuiTab-textColorPrimary HvTab-selected Mui-selected css-1iaddba-MuiTab-root",
                                   "component": "button",
                                   "disableRipple": true,
                                   "disableTouchRipple": true,
                                   "disabled": false,
                                   "focusRipple": true,
                                   "focusVisible": false,
-                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                                   "id": "tabs-tab1",
                                   "onClick": [Function],
                                   "onFocus": [Function],
@@ -1995,7 +1995,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTab"
                                         >
                                           
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -2009,18 +2009,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -2029,14 +2029,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2050,27 +2050,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -2080,27 +2080,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -2235,7 +2235,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               />
                               <button
                                 aria-selected={true}
-                                className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary HvTab-selected-11 Mui-selected css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
+                                className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary HvTab-selected Mui-selected css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
                                 disabled={false}
                                 id="tabs-tab1"
                                 onBlur={[Function]}
@@ -2277,10 +2277,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-12",
-                          "focusVisible": "HvTab-focusVisible-10",
-                          "root": "HvTab-root-9",
-                          "selected": "HvTab-selected-11",
+                          "disabled": "HvTab-disabled",
+                          "focusVisible": "HvTab-focusVisible",
+                          "root": "HvTab-root",
+                          "selected": "HvTab-selected",
                         }
                       }
                       disabled={false}
@@ -2297,15 +2297,15 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <ForwardRef(Tab)
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-12",
-                            "root": "HvTab-root-9",
-                            "selected": "HvTab-selected-11",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
-                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                         fullWidth={false}
                         icon={null}
                         id="tabs-tab2"
@@ -2318,34 +2318,34 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       >
                         <MuiTabRoot
                           aria-selected={false}
-                          className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary"
+                          className="HvTab-root MuiTab-root MuiTab-textColorPrimary"
                           classes={
                             Object {
-                              "disabled": "HvTab-disabled-12",
-                              "root": "HvTab-root-9",
-                              "selected": "HvTab-selected-11",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                           id="tabs-tab2"
                           onClick={[Function]}
                           onFocus={[Function]}
                           ownerState={
                             Object {
                               "classes": Object {
-                                "disabled": "HvTab-disabled-12",
-                                "root": "HvTab-root-9",
-                                "selected": "HvTab-selected-11",
+                                "disabled": "HvTab-disabled",
+                                "root": "HvTab-root",
+                                "selected": "HvTab-selected",
                               },
                               "disableFocusRipple": false,
                               "disableRipple": true,
                               "disableTouchRipple": true,
                               "disabled": false,
-                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                               "fullWidth": false,
                               "icon": false,
                               "iconPosition": "top",
@@ -2495,7 +2495,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTab"
                                     >
                                       
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -2509,18 +2509,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -2529,14 +2529,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2550,27 +2550,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -2580,27 +2580,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -2735,12 +2735,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           />
                           <ForwardRef(ButtonBase)
                             aria-selected={false}
-                            className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
+                            className="HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                             id="tabs-tab2"
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -2750,7 +2750,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             <MuiButtonBaseRoot
                               aria-selected={false}
                               as="button"
-                              className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
+                              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
                               disabled={false}
                               id="tabs-tab2"
                               onBlur={[Function]}
@@ -2776,14 +2776,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                     </React.Fragment>,
                                     false,
                                   ],
-                                  "className": "HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root",
+                                  "className": "HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root",
                                   "component": "button",
                                   "disableRipple": true,
                                   "disableTouchRipple": true,
                                   "disabled": false,
                                   "focusRipple": true,
                                   "focusVisible": false,
-                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                                   "id": "tabs-tab2",
                                   "onClick": [Function],
                                   "onFocus": [Function],
@@ -2927,7 +2927,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTab"
                                         >
                                           
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -2941,18 +2941,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -2961,14 +2961,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -2982,27 +2982,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -3012,27 +3012,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -3167,7 +3167,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               />
                               <button
                                 aria-selected={false}
-                                className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
+                                className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
                                 disabled={false}
                                 id="tabs-tab2"
                                 onBlur={[Function]}
@@ -3209,10 +3209,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     <HvTab
                       classes={
                         Object {
-                          "disabled": "HvTab-disabled-12",
-                          "focusVisible": "HvTab-focusVisible-10",
-                          "root": "HvTab-root-9",
-                          "selected": "HvTab-selected-11",
+                          "disabled": "HvTab-disabled",
+                          "focusVisible": "HvTab-focusVisible",
+                          "root": "HvTab-root",
+                          "selected": "HvTab-selected",
                         }
                       }
                       disabled={false}
@@ -3229,15 +3229,15 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <ForwardRef(Tab)
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-12",
-                            "root": "HvTab-root-9",
-                            "selected": "HvTab-selected-11",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
-                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                         fullWidth={false}
                         icon={null}
                         id="tabs-tab3"
@@ -3250,34 +3250,34 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       >
                         <MuiTabRoot
                           aria-selected={false}
-                          className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary"
+                          className="HvTab-root MuiTab-root MuiTab-textColorPrimary"
                           classes={
                             Object {
-                              "disabled": "HvTab-disabled-12",
-                              "root": "HvTab-root-9",
-                              "selected": "HvTab-selected-11",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                           id="tabs-tab3"
                           onClick={[Function]}
                           onFocus={[Function]}
                           ownerState={
                             Object {
                               "classes": Object {
-                                "disabled": "HvTab-disabled-12",
-                                "root": "HvTab-root-9",
-                                "selected": "HvTab-selected-11",
+                                "disabled": "HvTab-disabled",
+                                "root": "HvTab-root",
+                                "selected": "HvTab-selected",
                               },
                               "disableFocusRipple": false,
                               "disableRipple": true,
                               "disableTouchRipple": true,
                               "disabled": false,
-                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                              "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                               "fullWidth": false,
                               "icon": false,
                               "iconPosition": "top",
@@ -3427,7 +3427,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTab"
                                     >
                                       
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -3441,18 +3441,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -3461,14 +3461,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -3482,27 +3482,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -3512,27 +3512,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                       data-meta="HvTabs"
                                     >
                                       
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -3667,12 +3667,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           />
                           <ForwardRef(ButtonBase)
                             aria-selected={false}
-                            className="HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
+                            className="HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-10"
+                            focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
                             id="tabs-tab3"
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -3682,7 +3682,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             <MuiButtonBaseRoot
                               aria-selected={false}
                               as="button"
-                              className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
+                              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root"
                               disabled={false}
                               id="tabs-tab3"
                               onBlur={[Function]}
@@ -3708,14 +3708,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                     </React.Fragment>,
                                     false,
                                   ],
-                                  "className": "HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root",
+                                  "className": "HvTab-root MuiTab-root MuiTab-textColorPrimary css-1iaddba-MuiTab-root",
                                   "component": "button",
                                   "disableRipple": true,
                                   "disableTouchRipple": true,
                                   "disabled": false,
                                   "focusRipple": true,
                                   "focusVisible": false,
-                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-10",
+                                  "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                                   "id": "tabs-tab3",
                                   "onClick": [Function],
                                   "onFocus": [Function],
@@ -3859,7 +3859,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTab"
                                         >
                                           
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -3873,18 +3873,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -3893,14 +3893,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -3914,27 +3914,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -3944,27 +3944,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                                           data-meta="HvTabs"
                                         >
                                           
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -4099,7 +4099,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               />
                               <button
                                 aria-selected={false}
-                                className="MuiButtonBase-root HvTab-root-9 MuiTab-root MuiTab-textColorPrimary css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
+                                className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorPrimary css-1jbb3w4-MuiButtonBase-root-MuiTab-root"
                                 disabled={false}
                                 id="tabs-tab3"
                                 onBlur={[Function]}
@@ -4130,7 +4130,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 </div>
               </MuiTabsFlexContainer>
               <MuiTabsIndicator
-                className="HvTabs-indicator-6 MuiTabs-indicator"
+                className="HvTabs-indicator MuiTabs-indicator"
                 ownerState={
                   Object {
                     "TabIndicatorProps": Object {
@@ -4153,10 +4153,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       />,
                     ],
                     "classes": Object {
-                      "flexContainer": "HvTabs-flexContainer-8",
-                      "indicator": "HvTabs-indicator-6",
-                      "root": "HvTabs-root-5",
-                      "scroller": "HvTabs-scroller-7",
+                      "flexContainer": "HvTabs-flexContainer",
+                      "indicator": "HvTabs-indicator",
+                      "root": "HvTabs-root",
+                      "scroller": "HvTabs-scroller",
                     },
                     "component": "div",
                     "fixed": true,
@@ -4315,7 +4315,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTab"
                           >
                             
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -4329,18 +4329,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -4349,14 +4349,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -4370,27 +4370,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -4400,27 +4400,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -4554,7 +4554,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                   }
                 />
                 <span
-                  className="HvTabs-indicator-6 MuiTabs-indicator css-1sfitsu-MuiTabs-indicator"
+                  className="HvTabs-indicator MuiTabs-indicator css-1sfitsu-MuiTabs-indicator"
                   style={
                     Object {
                       "left": 0,
@@ -4579,10 +4579,10 @@ exports[`Tabs should render correctly 1`] = `
   <HvTabs
     classes={
       Object {
-        "flexContainer": "HvTabs-flexContainer-4",
-        "indicator": "HvTabs-indicator-2",
-        "root": "HvTabs-root-1",
-        "scroller": "HvTabs-scroller-3",
+        "flexContainer": "HvTabs-flexContainer",
+        "indicator": "HvTabs-indicator",
+        "root": "HvTabs-root",
+        "scroller": "HvTabs-scroller",
       }
     }
   >
@@ -4594,22 +4594,22 @@ exports[`Tabs should render correctly 1`] = `
       }
       classes={
         Object {
-          "flexContainer": "HvTabs-flexContainer-4",
-          "indicator": "HvTabs-indicator-2",
-          "root": "HvTabs-root-1",
-          "scroller": "HvTabs-scroller-3",
+          "flexContainer": "HvTabs-flexContainer",
+          "indicator": "HvTabs-indicator",
+          "root": "HvTabs-root",
+          "scroller": "HvTabs-scroller",
         }
       }
     >
       <MuiTabsRoot
         as="div"
-        className="HvTabs-root-1 MuiTabs-root"
+        className="HvTabs-root MuiTabs-root"
         classes={
           Object {
-            "flexContainer": "HvTabs-flexContainer-4",
-            "indicator": "HvTabs-indicator-2",
-            "root": "HvTabs-root-1",
-            "scroller": "HvTabs-scroller-3",
+            "flexContainer": "HvTabs-flexContainer",
+            "indicator": "HvTabs-indicator",
+            "root": "HvTabs-root",
+            "scroller": "HvTabs-scroller",
           }
         }
         ownerState={
@@ -4620,10 +4620,10 @@ exports[`Tabs should render correctly 1`] = `
             "allowScrollButtonsMobile": false,
             "centered": false,
             "classes": Object {
-              "flexContainer": "HvTabs-flexContainer-4",
-              "indicator": "HvTabs-indicator-2",
-              "root": "HvTabs-root-1",
-              "scroller": "HvTabs-scroller-3",
+              "flexContainer": "HvTabs-flexContainer",
+              "indicator": "HvTabs-indicator",
+              "root": "HvTabs-root",
+              "scroller": "HvTabs-scroller",
             },
             "component": "div",
             "fixed": true,
@@ -4773,7 +4773,7 @@ exports[`Tabs should render correctly 1`] = `
                     data-meta="HvTab"
                   >
                     
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -4787,18 +4787,18 @@ exports[`Tabs should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -4807,14 +4807,14 @@ exports[`Tabs should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -4828,27 +4828,27 @@ exports[`Tabs should render correctly 1`] = `
                     data-meta="HvTabs"
                   >
                     
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -4858,27 +4858,27 @@ exports[`Tabs should render correctly 1`] = `
                     data-meta="HvTabs"
                   >
                     
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -5012,10 +5012,10 @@ exports[`Tabs should render correctly 1`] = `
           }
         />
         <div
-          className="HvTabs-root-1 MuiTabs-root css-1ujnqem-MuiTabs-root"
+          className="HvTabs-root MuiTabs-root css-1ujnqem-MuiTabs-root"
         >
           <MuiTabsScroller
-            className="HvTabs-scroller-3 MuiTabs-scroller MuiTabs-fixed"
+            className="HvTabs-scroller MuiTabs-scroller MuiTabs-fixed"
             onScroll={[Function]}
             ownerState={
               Object {
@@ -5025,10 +5025,10 @@ exports[`Tabs should render correctly 1`] = `
                 "allowScrollButtonsMobile": false,
                 "centered": false,
                 "classes": Object {
-                  "flexContainer": "HvTabs-flexContainer-4",
-                  "indicator": "HvTabs-indicator-2",
-                  "root": "HvTabs-root-1",
-                  "scroller": "HvTabs-scroller-3",
+                  "flexContainer": "HvTabs-flexContainer",
+                  "indicator": "HvTabs-indicator",
+                  "root": "HvTabs-root",
+                  "scroller": "HvTabs-scroller",
                 },
                 "component": "div",
                 "fixed": true,
@@ -5184,7 +5184,7 @@ exports[`Tabs should render correctly 1`] = `
                         data-meta="HvTab"
                       >
                         
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -5198,18 +5198,18 @@ exports[`Tabs should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -5218,14 +5218,14 @@ exports[`Tabs should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -5239,27 +5239,27 @@ exports[`Tabs should render correctly 1`] = `
                         data-meta="HvTabs"
                       >
                         
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -5269,27 +5269,27 @@ exports[`Tabs should render correctly 1`] = `
                         data-meta="HvTabs"
                       >
                         
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -5423,7 +5423,7 @@ exports[`Tabs should render correctly 1`] = `
               }
             />
             <div
-              className="HvTabs-scroller-3 MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+              className="HvTabs-scroller MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
               onScroll={[Function]}
               style={
                 Object {
@@ -5434,7 +5434,7 @@ exports[`Tabs should render correctly 1`] = `
             >
               <MuiTabsFlexContainer
                 aria-orientation={null}
-                className="HvTabs-flexContainer-4 MuiTabs-flexContainer"
+                className="HvTabs-flexContainer MuiTabs-flexContainer"
                 onKeyDown={[Function]}
                 ownerState={
                   Object {
@@ -5444,10 +5444,10 @@ exports[`Tabs should render correctly 1`] = `
                     "allowScrollButtonsMobile": false,
                     "centered": false,
                     "classes": Object {
-                      "flexContainer": "HvTabs-flexContainer-4",
-                      "indicator": "HvTabs-indicator-2",
-                      "root": "HvTabs-root-1",
-                      "scroller": "HvTabs-scroller-3",
+                      "flexContainer": "HvTabs-flexContainer",
+                      "indicator": "HvTabs-indicator",
+                      "root": "HvTabs-root",
+                      "scroller": "HvTabs-scroller",
                     },
                     "component": "div",
                     "fixed": true,
@@ -5598,7 +5598,7 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTab"
                           >
                             
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -5612,18 +5612,18 @@ exports[`Tabs should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -5632,14 +5632,14 @@ exports[`Tabs should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -5653,27 +5653,27 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -5683,27 +5683,27 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -5838,13 +5838,13 @@ exports[`Tabs should render correctly 1`] = `
                 />
                 <div
                   aria-orientation={null}
-                  className="HvTabs-flexContainer-4 MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+                  className="HvTabs-flexContainer MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
                   onKeyDown={[Function]}
                   role="tablist"
                 />
               </MuiTabsFlexContainer>
               <MuiTabsIndicator
-                className="HvTabs-indicator-2 MuiTabs-indicator"
+                className="HvTabs-indicator MuiTabs-indicator"
                 ownerState={
                   Object {
                     "TabIndicatorProps": Object {
@@ -5853,10 +5853,10 @@ exports[`Tabs should render correctly 1`] = `
                     "allowScrollButtonsMobile": false,
                     "centered": false,
                     "classes": Object {
-                      "flexContainer": "HvTabs-flexContainer-4",
-                      "indicator": "HvTabs-indicator-2",
-                      "root": "HvTabs-root-1",
-                      "scroller": "HvTabs-scroller-3",
+                      "flexContainer": "HvTabs-flexContainer",
+                      "indicator": "HvTabs-indicator",
+                      "root": "HvTabs-root",
+                      "scroller": "HvTabs-scroller",
                     },
                     "component": "div",
                     "fixed": true,
@@ -6012,7 +6012,7 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTab"
                           >
                             
-.HvTab-root-9 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -6026,18 +6026,18 @@ exports[`Tabs should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-9.HvTab-selected-11 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-9.HvTab-disabled-12 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-9::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -6046,14 +6046,14 @@ exports[`Tabs should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-9.HvTab-disabled-12:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-9:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-10 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -6067,27 +6067,27 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-1 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-2 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-2 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-3 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-3 .HvTabs-flexContainer-4 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-4 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -6097,27 +6097,27 @@ exports[`Tabs should render correctly 1`] = `
                             data-meta="HvTabs"
                           >
                             
-.HvTabs-root-5 {
+.HvTabs-root {
   overflow: visible;
   min-height: 0;
 }
-.HvTabs-indicator-6 {
+.HvTabs-indicator {
   height: 2px;
   display: flex;
   justify-content: center;
   background-color: transparent;
 }
-.HvTabs-indicator-6 &gt; div {
+.HvTabs-indicator &gt; div {
   width: 100%;
   background-color: #414141;
 }
-.HvTabs-scroller-7 {
+.HvTabs-scroller {
   overflow: visible !important;
 }
-.HvTabs-scroller-7 .HvTabs-flexContainer-8 {
+.HvTabs-scroller .HvTabs-flexContainer {
   border-top: solid 1px undefined;
 }
-.HvTabs-flexContainer-8 button:first-child {
+.HvTabs-flexContainer button:first-child {
   margin-left: 3px;
 }
 
@@ -6251,7 +6251,7 @@ exports[`Tabs should render correctly 1`] = `
                   }
                 />
                 <span
-                  className="HvTabs-indicator-2 MuiTabs-indicator css-1sfitsu-MuiTabs-indicator"
+                  className="HvTabs-indicator MuiTabs-indicator css-1sfitsu-MuiTabs-indicator"
                   style={
                     Object {
                       "left": 0,

@@ -9,8 +9,8 @@ exports[`<Navigation /> should render correctly 1`] = `
   <HvComposedNavigation
     classes={
       Object {
-        "navigationContainer": "HvComposedNavigation-navigationContainer-1",
-        "navigationMonth": "HvComposedNavigation-navigationMonth-2",
+        "navigationContainer": "HvComposedNavigation-navigationContainer",
+        "navigationMonth": "HvComposedNavigation-navigationMonth",
       }
     }
     locale="en"
@@ -18,27 +18,27 @@ exports[`<Navigation /> should render correctly 1`] = `
     visibleYear={2020}
   >
     <div
-      className="HvComposedNavigation-navigationContainer-1"
+      className="HvComposedNavigation-navigationContainer"
     >
       <div
-        className="HvComposedNavigation-navigationMonth-2"
+        className="HvComposedNavigation-navigationMonth"
       >
         <WithStyles(Navigation)
-          className="HvComposedNavigation-navigationMonth-2"
+          className="HvComposedNavigation-navigationMonth"
           navigationText="April"
           onNavigateNext={[Function]}
           onNavigatePrevious={[Function]}
           onTextClick={[Function]}
         >
           <Navigation
-            className="HvComposedNavigation-navigationMonth-2"
+            className="HvComposedNavigation-navigationMonth"
             classes={
               Object {
-                "disabled": "HvCalendarNavigation-disabled-5",
-                "icon": "HvCalendarNavigation-icon-4",
-                "root": "HvCalendarNavigation-root-3",
-                "text": "HvCalendarNavigation-text-6",
-                "textWithoutHover": "HvCalendarNavigation-textWithoutHover-7",
+                "disabled": "HvCalendarNavigation-disabled",
+                "icon": "HvCalendarNavigation-icon",
+                "root": "HvCalendarNavigation-root",
+                "text": "HvCalendarNavigation-text",
+                "textWithoutHover": "HvCalendarNavigation-textWithoutHover",
               }
             }
             navigationText="April"
@@ -47,16 +47,16 @@ exports[`<Navigation /> should render correctly 1`] = `
             onTextClick={[Function]}
           >
             <div
-              className="HvCalendarNavigation-root-3"
+              className="HvCalendarNavigation-root"
             >
               <DropLeftXS
-                className="HvCalendarNavigation-icon-4"
+                className="HvCalendarNavigation-icon"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
               >
                 <HvIconBase
-                  className="HvCalendarNavigation-icon-4"
+                  className="HvCalendarNavigation-icon"
                   iconSize="XS"
                   name="DropLeftXS"
                   onClick={[Function]}
@@ -64,7 +64,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                   tabIndex={0}
                 >
                   <div
-                    className="HvCalendarNavigation-icon-4 HvIconBase-root-8 HvIconBase-xs-9"
+                    className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
                     name="DropLeftXS"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -87,7 +87,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 </HvIconBase>
               </DropLeftXS>
               <div
-                className="HvCalendarNavigation-text-6"
+                className="HvCalendarNavigation-text"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="presentation"
@@ -99,34 +99,34 @@ exports[`<Navigation /> should render correctly 1`] = `
                   <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-16",
-                        "4xlTitle": "HvTypography-4xlTitle-15",
-                        "5xlTitle": "HvTypography-5xlTitle-14",
-                        "disabledText": "HvTypography-disabledText-29",
-                        "highlightText": "HvTypography-highlightText-25",
-                        "lTitle": "HvTypography-lTitle-19",
-                        "link": "HvTypography-link-28",
-                        "mTitle": "HvTypography-mTitle-20",
-                        "noWrap": "HvTypography-noWrap-34",
-                        "normalText": "HvTypography-normalText-26",
-                        "placeholderText": "HvTypography-placeholderText-27",
-                        "root": "HvTypography-root-13",
-                        "sTitle": "HvTypography-sTitle-21",
-                        "sectionTitle": "HvTypography-sectionTitle-24",
-                        "selectedNavText": "HvTypography-selectedNavText-30",
-                        "vizText": "HvTypography-vizText-31",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled-32",
-                        "xlTitle": "HvTypography-xlTitle-18",
-                        "xsInlineLink": "HvTypography-xsInlineLink-33",
-                        "xsTitle": "HvTypography-xsTitle-22",
-                        "xxlTitle": "HvTypography-xxlTitle-17",
-                        "xxsTitle": "HvTypography-xxsTitle-23",
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-root-13 HvTypography-normalText-26"
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       April
                     </p>
@@ -134,13 +134,13 @@ exports[`<Navigation /> should render correctly 1`] = `
                 </WithStyles(ForwardRef)>
               </div>
               <DropRightXS
-                className="HvCalendarNavigation-icon-4 "
+                className="HvCalendarNavigation-icon "
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
               >
                 <HvIconBase
-                  className="HvCalendarNavigation-icon-4 "
+                  className="HvCalendarNavigation-icon "
                   iconSize="XS"
                   name="DropRightXS"
                   onClick={[Function]}
@@ -148,7 +148,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                   tabIndex={0}
                 >
                   <div
-                    className="HvCalendarNavigation-icon-4  HvIconBase-root-8 HvIconBase-xs-9"
+                    className="HvCalendarNavigation-icon  HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -182,11 +182,11 @@ exports[`<Navigation /> should render correctly 1`] = `
         <Navigation
           classes={
             Object {
-              "disabled": "HvCalendarNavigation-disabled-5",
-              "icon": "HvCalendarNavigation-icon-4",
-              "root": "HvCalendarNavigation-root-3",
-              "text": "HvCalendarNavigation-text-6",
-              "textWithoutHover": "HvCalendarNavigation-textWithoutHover-7",
+              "disabled": "HvCalendarNavigation-disabled",
+              "icon": "HvCalendarNavigation-icon",
+              "root": "HvCalendarNavigation-root",
+              "text": "HvCalendarNavigation-text",
+              "textWithoutHover": "HvCalendarNavigation-textWithoutHover",
             }
           }
           navigationText="2020"
@@ -194,16 +194,16 @@ exports[`<Navigation /> should render correctly 1`] = `
           onNavigatePrevious={[Function]}
         >
           <div
-            className="HvCalendarNavigation-root-3"
+            className="HvCalendarNavigation-root"
           >
             <DropLeftXS
-              className="HvCalendarNavigation-icon-4"
+              className="HvCalendarNavigation-icon"
               onClick={[Function]}
               onKeyDown={[Function]}
               tabIndex={0}
             >
               <HvIconBase
-                className="HvCalendarNavigation-icon-4"
+                className="HvCalendarNavigation-icon"
                 iconSize="XS"
                 name="DropLeftXS"
                 onClick={[Function]}
@@ -211,7 +211,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 tabIndex={0}
               >
                 <div
-                  className="HvCalendarNavigation-icon-4 HvIconBase-root-8 HvIconBase-xs-9"
+                  className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
                   name="DropLeftXS"
                   onClick={[Function]}
                   onKeyDown={[Function]}
@@ -234,7 +234,7 @@ exports[`<Navigation /> should render correctly 1`] = `
               </HvIconBase>
             </DropLeftXS>
             <div
-              className="HvCalendarNavigation-textWithoutHover-7"
+              className="HvCalendarNavigation-textWithoutHover"
               role="presentation"
               tabIndex={-1}
             >
@@ -244,34 +244,34 @@ exports[`<Navigation /> should render correctly 1`] = `
                 <ForwardRef
                   classes={
                     Object {
-                      "3xlTitle": "HvTypography-3xlTitle-16",
-                      "4xlTitle": "HvTypography-4xlTitle-15",
-                      "5xlTitle": "HvTypography-5xlTitle-14",
-                      "disabledText": "HvTypography-disabledText-29",
-                      "highlightText": "HvTypography-highlightText-25",
-                      "lTitle": "HvTypography-lTitle-19",
-                      "link": "HvTypography-link-28",
-                      "mTitle": "HvTypography-mTitle-20",
-                      "noWrap": "HvTypography-noWrap-34",
-                      "normalText": "HvTypography-normalText-26",
-                      "placeholderText": "HvTypography-placeholderText-27",
-                      "root": "HvTypography-root-13",
-                      "sTitle": "HvTypography-sTitle-21",
-                      "sectionTitle": "HvTypography-sectionTitle-24",
-                      "selectedNavText": "HvTypography-selectedNavText-30",
-                      "vizText": "HvTypography-vizText-31",
-                      "vizTextDisabled": "HvTypography-vizTextDisabled-32",
-                      "xlTitle": "HvTypography-xlTitle-18",
-                      "xsInlineLink": "HvTypography-xsInlineLink-33",
-                      "xsTitle": "HvTypography-xsTitle-22",
-                      "xxlTitle": "HvTypography-xxlTitle-17",
-                      "xxsTitle": "HvTypography-xxsTitle-23",
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledText": "HvTypography-disabledText",
+                      "highlightText": "HvTypography-highlightText",
+                      "lTitle": "HvTypography-lTitle",
+                      "link": "HvTypography-link",
+                      "mTitle": "HvTypography-mTitle",
+                      "noWrap": "HvTypography-noWrap",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "vizText": "HvTypography-vizText",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsInlineLink": "HvTypography-xsInlineLink",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
                   variant="normalText"
                 >
                   <p
-                    className="HvTypography-root-13 HvTypography-normalText-26"
+                    className="HvTypography-root HvTypography-normalText"
                   >
                     2020
                   </p>
@@ -279,13 +279,13 @@ exports[`<Navigation /> should render correctly 1`] = `
               </WithStyles(ForwardRef)>
             </div>
             <DropRightXS
-              className="HvCalendarNavigation-icon-4 "
+              className="HvCalendarNavigation-icon "
               onClick={[Function]}
               onKeyDown={[Function]}
               tabIndex={0}
             >
               <HvIconBase
-                className="HvCalendarNavigation-icon-4 "
+                className="HvCalendarNavigation-icon "
                 iconSize="XS"
                 name="DropRightXS"
                 onClick={[Function]}
@@ -293,7 +293,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 tabIndex={0}
               >
                 <div
-                  className="HvCalendarNavigation-icon-4  HvIconBase-root-8 HvIconBase-xs-9"
+                  className="HvCalendarNavigation-icon  HvIconBase-root HvIconBase-xs"
                   name="DropRightXS"
                   onClick={[Function]}
                   onKeyDown={[Function]}

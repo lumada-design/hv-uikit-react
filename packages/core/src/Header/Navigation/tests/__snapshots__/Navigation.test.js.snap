@@ -14,7 +14,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
   <Navigation
     classes={
       Object {
-        "root": "HvHeaderNavigation-root-1",
+        "root": "HvHeaderNavigation-root",
       }
     }
     data={
@@ -28,7 +28,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
   >
     <FocusProvider>
       <nav
-        className="HvHeaderNavigation-root-1"
+        className="HvHeaderNavigation-root"
       >
         <WithStyles(MenuBar)
           data={
@@ -45,12 +45,12 @@ exports[`Navigation withStyles should be able to render 1`] = `
           <MenuBar
             classes={
               Object {
-                "active": "HvHeaderMenuBar-active-6",
-                "hidden": "HvHeaderMenuBar-hidden-5",
-                "list": "HvHeaderMenuBar-list-7",
-                "menu": "HvHeaderMenuBar-menu-4",
-                "menubar": "HvHeaderMenuBar-menubar-3",
-                "root": "HvHeaderMenuBar-root-2",
+                "active": "HvHeaderMenuBar-active",
+                "hidden": "HvHeaderMenuBar-hidden",
+                "list": "HvHeaderMenuBar-list",
+                "menu": "HvHeaderMenuBar-menu",
+                "menubar": "HvHeaderMenuBar-menubar",
+                "root": "HvHeaderMenuBar-root",
               }
             }
             data={
@@ -65,10 +65,10 @@ exports[`Navigation withStyles should be able to render 1`] = `
             type="menubar"
           >
             <div
-              className="HvHeaderMenuBar-root-2 HvHeaderMenuBar-menubar-3"
+              className="HvHeaderMenuBar-root HvHeaderMenuBar-menubar"
             >
               <ul
-                className="HvHeaderMenuBar-list-7"
+                className="HvHeaderMenuBar-list"
                 onFocus={[Function]}
               >
                 <WithStyles(MenuItem)
@@ -85,13 +85,13 @@ exports[`Navigation withStyles should be able to render 1`] = `
                   <MenuItem
                     classes={
                       Object {
-                        "button": "HvHeaderMenuItem-button-11",
-                        "externalReference": "HvHeaderMenuItem-externalReference-13",
-                        "falseFocus": "HvHeaderMenuItem-falseFocus-14",
-                        "link": "HvHeaderMenuItem-link-12",
-                        "notSelectedItem": "HvHeaderMenuItem-notSelectedItem-10",
-                        "root": "HvHeaderMenuItem-root-8",
-                        "selectedItem": "HvHeaderMenuItem-selectedItem-9",
+                        "button": "HvHeaderMenuItem-button",
+                        "externalReference": "HvHeaderMenuItem-externalReference",
+                        "falseFocus": "HvHeaderMenuItem-falseFocus",
+                        "link": "HvHeaderMenuItem-link",
+                        "notSelectedItem": "HvHeaderMenuItem-notSelectedItem",
+                        "root": "HvHeaderMenuItem-root",
+                        "selectedItem": "HvHeaderMenuItem-selectedItem",
                       }
                     }
                     item={
@@ -104,7 +104,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                     type="menubar"
                   >
                     <li
-                      className="HvHeaderMenuItem-root-8 HvHeaderMenuItem-notSelectedItem-10"
+                      className="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
                       key="someLabel"
                     >
                       <ConditionalWrapper
@@ -112,7 +112,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                         wrapper={[Function]}
                       >
                         <div
-                          className="HvHeaderMenuItem-button-11"
+                          className="HvHeaderMenuItem-button"
                           onClick={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -125,34 +125,34 @@ exports[`Navigation withStyles should be able to render 1`] = `
                             <ForwardRef
                               classes={
                                 Object {
-                                  "3xlTitle": "HvTypography-3xlTitle-18",
-                                  "4xlTitle": "HvTypography-4xlTitle-17",
-                                  "5xlTitle": "HvTypography-5xlTitle-16",
-                                  "disabledText": "HvTypography-disabledText-31",
-                                  "highlightText": "HvTypography-highlightText-27",
-                                  "lTitle": "HvTypography-lTitle-21",
-                                  "link": "HvTypography-link-30",
-                                  "mTitle": "HvTypography-mTitle-22",
-                                  "noWrap": "HvTypography-noWrap-36",
-                                  "normalText": "HvTypography-normalText-28",
-                                  "placeholderText": "HvTypography-placeholderText-29",
-                                  "root": "HvTypography-root-15",
-                                  "sTitle": "HvTypography-sTitle-23",
-                                  "sectionTitle": "HvTypography-sectionTitle-26",
-                                  "selectedNavText": "HvTypography-selectedNavText-32",
-                                  "vizText": "HvTypography-vizText-33",
-                                  "vizTextDisabled": "HvTypography-vizTextDisabled-34",
-                                  "xlTitle": "HvTypography-xlTitle-20",
-                                  "xsInlineLink": "HvTypography-xsInlineLink-35",
-                                  "xsTitle": "HvTypography-xsTitle-24",
-                                  "xxlTitle": "HvTypography-xxlTitle-19",
-                                  "xxsTitle": "HvTypography-xxsTitle-25",
+                                  "3xlTitle": "HvTypography-3xlTitle",
+                                  "4xlTitle": "HvTypography-4xlTitle",
+                                  "5xlTitle": "HvTypography-5xlTitle",
+                                  "disabledText": "HvTypography-disabledText",
+                                  "highlightText": "HvTypography-highlightText",
+                                  "lTitle": "HvTypography-lTitle",
+                                  "link": "HvTypography-link",
+                                  "mTitle": "HvTypography-mTitle",
+                                  "noWrap": "HvTypography-noWrap",
+                                  "normalText": "HvTypography-normalText",
+                                  "placeholderText": "HvTypography-placeholderText",
+                                  "root": "HvTypography-root",
+                                  "sTitle": "HvTypography-sTitle",
+                                  "sectionTitle": "HvTypography-sectionTitle",
+                                  "selectedNavText": "HvTypography-selectedNavText",
+                                  "vizText": "HvTypography-vizText",
+                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                  "xlTitle": "HvTypography-xlTitle",
+                                  "xsInlineLink": "HvTypography-xsInlineLink",
+                                  "xsTitle": "HvTypography-xsTitle",
+                                  "xxlTitle": "HvTypography-xxlTitle",
+                                  "xxsTitle": "HvTypography-xxsTitle",
                                 }
                               }
                               variant="normalText"
                             >
                               <p
-                                className="HvTypography-root-15 HvTypography-normalText-28"
+                                className="HvTypography-root HvTypography-normalText"
                               >
                                 someLabel
                               </p>

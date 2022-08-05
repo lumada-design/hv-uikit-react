@@ -13,13 +13,13 @@ exports[`MenuItem withStyles should be able to render 1`] = `
   <MenuItem
     classes={
       Object {
-        "button": "HvHeaderMenuItem-button-4",
-        "externalReference": "HvHeaderMenuItem-externalReference-6",
-        "falseFocus": "HvHeaderMenuItem-falseFocus-7",
-        "link": "HvHeaderMenuItem-link-5",
-        "notSelectedItem": "HvHeaderMenuItem-notSelectedItem-3",
-        "root": "HvHeaderMenuItem-root-1",
-        "selectedItem": "HvHeaderMenuItem-selectedItem-2",
+        "button": "HvHeaderMenuItem-button",
+        "externalReference": "HvHeaderMenuItem-externalReference",
+        "falseFocus": "HvHeaderMenuItem-falseFocus",
+        "link": "HvHeaderMenuItem-link",
+        "notSelectedItem": "HvHeaderMenuItem-notSelectedItem",
+        "root": "HvHeaderMenuItem-root",
+        "selectedItem": "HvHeaderMenuItem-selectedItem",
       }
     }
     item={
@@ -31,7 +31,7 @@ exports[`MenuItem withStyles should be able to render 1`] = `
     type="menubar"
   >
     <li
-      className="HvHeaderMenuItem-root-1 HvHeaderMenuItem-notSelectedItem-3"
+      className="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
       key="someLabel"
     >
       <ConditionalWrapper
@@ -39,7 +39,7 @@ exports[`MenuItem withStyles should be able to render 1`] = `
         wrapper={[Function]}
       >
         <div
-          className="HvHeaderMenuItem-button-4"
+          className="HvHeaderMenuItem-button"
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -52,34 +52,34 @@ exports[`MenuItem withStyles should be able to render 1`] = `
             <ForwardRef
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-11",
-                  "4xlTitle": "HvTypography-4xlTitle-10",
-                  "5xlTitle": "HvTypography-5xlTitle-9",
-                  "disabledText": "HvTypography-disabledText-24",
-                  "highlightText": "HvTypography-highlightText-20",
-                  "lTitle": "HvTypography-lTitle-14",
-                  "link": "HvTypography-link-23",
-                  "mTitle": "HvTypography-mTitle-15",
-                  "noWrap": "HvTypography-noWrap-29",
-                  "normalText": "HvTypography-normalText-21",
-                  "placeholderText": "HvTypography-placeholderText-22",
-                  "root": "HvTypography-root-8",
-                  "sTitle": "HvTypography-sTitle-16",
-                  "sectionTitle": "HvTypography-sectionTitle-19",
-                  "selectedNavText": "HvTypography-selectedNavText-25",
-                  "vizText": "HvTypography-vizText-26",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled-27",
-                  "xlTitle": "HvTypography-xlTitle-13",
-                  "xsInlineLink": "HvTypography-xsInlineLink-28",
-                  "xsTitle": "HvTypography-xsTitle-17",
-                  "xxlTitle": "HvTypography-xxlTitle-12",
-                  "xxsTitle": "HvTypography-xxsTitle-18",
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "noWrap": "HvTypography-noWrap",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
               variant="normalText"
             >
               <p
-                className="HvTypography-root-8 HvTypography-normalText-21"
+                className="HvTypography-root HvTypography-normalText"
               >
                 someLabel
               </p>

@@ -3,36 +3,36 @@
 exports[`HvDatepicker calendar custom properties should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root-856 HvFormElement-root-877"
+    class="HvDatePicker-root HvFormElement-root"
     id="testingDatePicker"
     locale="en-US"
   >
     <div
-      class="HvBaseDropdown-root-878 HvDatePicker-dropdown-865"
+      class="HvBaseDropdown-root HvDatePicker-dropdown"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-        class="HvBaseDropdown-anchor-879"
+        class="HvBaseDropdown-anchor"
         role="combobox"
         tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-header-883"
+          class="HvBaseDropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection-889"
+            class="HvBaseDropdown-selection"
           >
             <p
-              class="HvTypography-root-898 HvTypography-placeholderText-912"
+              class="HvTypography-root HvTypography-placeholderText"
             >
               I'M THE PLACEHOLDER
             </p>
           </div>
           <div
-            class="HvDatePicker-icon-872 HvIconBase-root-920 HvIconBase-s-922"
+            class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
             name="Calendar"
           >
             <svg
@@ -59,35 +59,35 @@ exports[`HvDatepicker calendar custom properties should render correctly 1`] = `
 exports[`HvDatepicker ranged calendar should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root-582 HvFormElement-root-603"
+    class="HvDatePicker-root HvFormElement-root"
     locale="en-US"
   >
     <div
-      class="HvBaseDropdown-root-604 HvDatePicker-dropdown-591"
+      class="HvBaseDropdown-root HvDatePicker-dropdown"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-        class="HvBaseDropdown-anchor-605"
+        class="HvBaseDropdown-anchor"
         role="combobox"
         tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-header-609"
+          class="HvBaseDropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection-615"
+            class="HvBaseDropdown-selection"
           >
             <p
-              class="HvTypography-root-624 HvTypography-normalText-637"
+              class="HvTypography-root HvTypography-normalText"
             >
               5 - 10 Jan 2019
             </p>
           </div>
           <div
-            class="HvDatePicker-icon-598 HvIconBase-root-646 HvIconBase-s-648"
+            class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
             name="Calendar"
           >
             <svg
@@ -114,38 +114,38 @@ exports[`HvDatepicker ranged calendar should render correctly 1`] = `
 exports[`HvDatepicker sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvDatePicker-root-1 HvFormElement-root-22"
+    class="HvDatePicker-root HvFormElement-root"
     id="DatePicker"
     locale="en-US"
   >
     <div
-      class="HvBaseDropdown-root-23 HvDatePicker-dropdown-10"
+      class="HvBaseDropdown-root HvDatePicker-dropdown"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
         aria-label="Date"
-        class="HvBaseDropdown-anchor-24"
+        class="HvBaseDropdown-anchor"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Date"
-          class="HvBaseDropdown-header-28"
+          class="HvBaseDropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection-34"
+            class="HvBaseDropdown-selection"
           >
             <p
-              class="HvTypography-root-43 HvTypography-placeholderText-57"
+              class="HvTypography-root HvTypography-placeholderText"
             >
               Select date
             </p>
           </div>
           <div
-            class="HvDatePicker-icon-17 HvIconBase-root-65 HvIconBase-s-67"
+            class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
             name="Calendar"
           >
             <svg
@@ -172,35 +172,35 @@ exports[`HvDatepicker sample snapshot testing Main 1`] = `
 exports[`HvDatepicker single calendar should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root-326 HvFormElement-root-347"
+    class="HvDatePicker-root HvFormElement-root"
     locale="en-US"
   >
     <div
-      class="HvBaseDropdown-root-348 HvDatePicker-dropdown-335"
+      class="HvBaseDropdown-root HvDatePicker-dropdown"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-        class="HvBaseDropdown-anchor-349"
+        class="HvBaseDropdown-anchor"
         role="combobox"
         tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-header-353"
+          class="HvBaseDropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection-359"
+            class="HvBaseDropdown-selection"
           >
             <p
-              class="HvTypography-root-368 HvTypography-normalText-381"
+              class="HvTypography-root HvTypography-normalText"
             >
               1 Jan 2019
             </p>
           </div>
           <div
-            class="HvDatePicker-icon-342 HvIconBase-root-390 HvIconBase-s-392"
+            class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
             name="Calendar"
           >
             <svg
@@ -227,33 +227,33 @@ exports[`HvDatepicker single calendar should render correctly 1`] = `
 exports[`HvDatepicker with minimum configuration should render correctly 1`] = `
 <div>
   <div
-    class="HvDatePicker-root-70 HvFormElement-root-91"
+    class="HvDatePicker-root HvFormElement-root"
     locale="en-US"
   >
     <div
-      class="HvBaseDropdown-root-92 HvDatePicker-dropdown-79"
+      class="HvBaseDropdown-root HvDatePicker-dropdown"
     >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-        class="HvBaseDropdown-anchor-93"
+        class="HvBaseDropdown-anchor"
         role="combobox"
         tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-header-97"
+          class="HvBaseDropdown-header"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection-103"
+            class="HvBaseDropdown-selection"
           >
             <p
-              class="HvTypography-root-112 HvTypography-placeholderText-126"
+              class="HvTypography-root HvTypography-placeholderText"
             />
           </div>
           <div
-            class="HvDatePicker-icon-86 HvIconBase-root-134 HvIconBase-s-136"
+            class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
             name="Calendar"
           >
             <svg

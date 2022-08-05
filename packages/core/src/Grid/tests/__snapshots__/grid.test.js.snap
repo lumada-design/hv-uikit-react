@@ -315,81 +315,81 @@ Array [
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -397,28 +397,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -426,35 +426,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -462,7 +462,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -474,12 +474,12 @@ Array [
                       data-meta="HvContainer"
                     >
                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -807,81 +807,81 @@ Array [
                                 data-meta="HvTypography"
                               >
                                 
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -889,28 +889,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -918,35 +918,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -954,7 +954,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -966,12 +966,12 @@ Array [
                                 data-meta="HvContainer"
                               >
                                 
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -1252,81 +1252,81 @@ Array [
                                       data-meta="HvTypography"
                                     >
                                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -1334,28 +1334,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -1363,35 +1363,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -1399,7 +1399,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1411,12 +1411,12 @@ Array [
                                       data-meta="HvContainer"
                                     >
                                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -1753,81 +1753,81 @@ Array [
                                 data-meta="HvTypography"
                               >
                                 
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -1835,28 +1835,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -1864,35 +1864,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -1900,7 +1900,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1912,12 +1912,12 @@ Array [
                                 data-meta="HvContainer"
                               >
                                 
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -2198,81 +2198,81 @@ Array [
                                       data-meta="HvTypography"
                                     >
                                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -2280,28 +2280,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -2309,35 +2309,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -2345,7 +2345,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -2357,12 +2357,12 @@ Array [
                                       data-meta="HvContainer"
                                     >
                                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -2699,81 +2699,81 @@ Array [
                                 data-meta="HvTypography"
                               >
                                 
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -2781,28 +2781,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -2810,35 +2810,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -2846,7 +2846,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -2858,12 +2858,12 @@ Array [
                                 data-meta="HvContainer"
                               >
                                 
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -3144,81 +3144,81 @@ Array [
                                       data-meta="HvTypography"
                                     >
                                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -3226,28 +3226,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -3255,35 +3255,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -3291,7 +3291,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -3303,12 +3303,12 @@ Array [
                                       data-meta="HvContainer"
                                     >
                                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -3645,81 +3645,81 @@ Array [
                                 data-meta="HvTypography"
                               >
                                 
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -3727,28 +3727,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -3756,35 +3756,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -3792,7 +3792,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -3804,12 +3804,12 @@ Array [
                                 data-meta="HvContainer"
                               >
                                 
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -4090,81 +4090,81 @@ Array [
                                       data-meta="HvTypography"
                                     >
                                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -4172,28 +4172,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -4201,35 +4201,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -4237,7 +4237,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4249,12 +4249,12 @@ Array [
                                       data-meta="HvContainer"
                                     >
                                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -4612,81 +4612,81 @@ Array [
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -4694,28 +4694,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -4723,35 +4723,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -4759,7 +4759,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4771,12 +4771,12 @@ Array [
                       data-meta="HvContainer"
                     >
                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -5057,81 +5057,81 @@ Array [
                             data-meta="HvTypography"
                           >
                             
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -5139,28 +5139,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -5168,35 +5168,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -5204,7 +5204,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -5216,12 +5216,12 @@ Array [
                             data-meta="HvContainer"
                           >
                             
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -5558,81 +5558,81 @@ Array [
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -5640,28 +5640,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -5669,35 +5669,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -5705,7 +5705,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -5717,12 +5717,12 @@ Array [
                       data-meta="HvContainer"
                     >
                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -6003,81 +6003,81 @@ Array [
                             data-meta="HvTypography"
                           >
                             
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -6085,28 +6085,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -6114,35 +6114,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -6150,7 +6150,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -6162,12 +6162,12 @@ Array [
                             data-meta="HvContainer"
                           >
                             
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -6504,81 +6504,81 @@ Array [
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -6586,28 +6586,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -6615,35 +6615,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -6651,7 +6651,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -6663,12 +6663,12 @@ Array [
                       data-meta="HvContainer"
                     >
                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -6949,81 +6949,81 @@ Array [
                             data-meta="HvTypography"
                           >
                             
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -7031,28 +7031,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -7060,35 +7060,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -7096,7 +7096,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -7108,12 +7108,12 @@ Array [
                             data-meta="HvContainer"
                           >
                             
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -7450,81 +7450,81 @@ Array [
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -7532,28 +7532,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -7561,35 +7561,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -7597,7 +7597,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -7609,12 +7609,12 @@ Array [
                       data-meta="HvContainer"
                     >
                       
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -7895,81 +7895,81 @@ Array [
                             data-meta="HvTypography"
                           >
                             
-.HvTypography-root-3 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-4 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-5 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-6 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-7 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-8 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-9 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-10 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-11 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-12 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-13 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-14 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -7977,28 +7977,28 @@ Array [
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-15 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-16 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-17 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-18 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -8006,35 +8006,35 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-19 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-20 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-21 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-22 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-23 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -8042,7 +8042,7 @@ Array [
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-24 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -8054,12 +8054,12 @@ Array [
                             data-meta="HvContainer"
                           >
                             
-.HvContainer-root-25 {
+.HvContainer-root {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width:960px) {
-  .HvContainer-root-25 {
+  .HvContainer-root {
     padding-left: 30px;
     padding-right: 30px;
   }

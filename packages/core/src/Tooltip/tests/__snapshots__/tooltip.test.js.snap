@@ -60,17 +60,17 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   <ForwardRef
     classes={
       Object {
-        "color": "HvTooltip-color-52",
-        "popper": "HvTooltip-popper-48",
-        "root": "HvTooltip-root-45",
-        "separator": "HvTooltip-separator-53",
-        "separatorColor": "HvTooltip-separatorColor-54",
-        "title": "HvTooltip-title-49",
-        "tooltip": "HvTooltip-tooltip-46",
-        "tooltipMulti": "HvTooltip-tooltipMulti-47",
-        "valueWrapper": "HvTooltip-valueWrapper-55",
-        "values": "HvTooltip-values-51",
-        "valuesContainer": "HvTooltip-valuesContainer-50",
+        "color": "HvTooltip-color",
+        "popper": "HvTooltip-popper",
+        "root": "HvTooltip-root",
+        "separator": "HvTooltip-separator",
+        "separatorColor": "HvTooltip-separatorColor",
+        "title": "HvTooltip-title",
+        "tooltip": "HvTooltip-tooltip",
+        "tooltipMulti": "HvTooltip-tooltipMulti",
+        "valueWrapper": "HvTooltip-valueWrapper",
+        "values": "HvTooltip-values",
+        "valuesContainer": "HvTooltip-valuesContainer",
       }
     }
     title={
@@ -157,8 +157,8 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
       }
       classes={
         Object {
-          "popper": "HvTooltip-popper-48",
-          "tooltip": "HvTooltip-tooltipMulti-47",
+          "popper": "HvTooltip-popper",
+          "tooltip": "HvTooltip-tooltipMulti",
         }
       }
       enterDelay={300}
@@ -264,7 +264,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             "render": [Function],
           }
         }
-        className="HvTooltip-popper-48 MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
         id="mui-5"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -305,8 +305,8 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             </button>,
             "className": undefined,
             "classes": Object {
-              "popper": "HvTooltip-popper-48",
-              "tooltip": "HvTooltip-tooltipMulti-47",
+              "popper": "HvTooltip-popper",
+              "tooltip": "HvTooltip-tooltipMulti",
             },
             "disableInteractive": false,
             "enterDelay": 300,
@@ -427,10 +427,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -438,7 +438,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -447,7 +447,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -455,7 +455,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -463,35 +463,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -501,10 +501,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -512,7 +512,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -521,7 +521,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -529,7 +529,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -537,35 +537,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -575,10 +575,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-23 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-24 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -586,7 +586,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-24 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -595,7 +595,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-25 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -603,7 +603,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-25 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -611,35 +611,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-26 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-27 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-28 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-29 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-29:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-30 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-31 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-32 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-33 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -649,10 +649,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-34 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-35 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -660,7 +660,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-35 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -669,7 +669,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-36 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -677,7 +677,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-36 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -685,35 +685,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-37 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-38 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-39 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-40 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-40:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-41 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-42 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-43 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-44 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -723,10 +723,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-45 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-46 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -734,7 +734,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-46 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -743,7 +743,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-47 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -751,7 +751,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-47 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -759,35 +759,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-48 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-49 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-50 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-51 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-51:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-52 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-53 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-54 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-55 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -840,7 +840,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               Hello World
             </button>
           }
-          className="HvTooltip-popper-48 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-5"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -880,7 +880,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                 Hello World
               </button>
             }
-            className="HvTooltip-popper-48 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-5"
             onBlur={[Function]}
@@ -948,10 +948,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -959,7 +959,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -968,7 +968,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -976,7 +976,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -984,35 +984,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1022,10 +1022,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1033,7 +1033,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1042,7 +1042,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1050,7 +1050,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1058,35 +1058,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1096,10 +1096,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-23 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-24 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1107,7 +1107,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-24 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1116,7 +1116,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-25 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1124,7 +1124,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-25 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1132,35 +1132,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-26 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-27 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-28 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-29 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-29:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-30 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-31 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-32 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-33 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1170,10 +1170,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-34 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-35 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1181,7 +1181,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-35 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1190,7 +1190,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-36 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1198,7 +1198,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-36 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1206,35 +1206,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-37 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-38 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-39 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-40 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-40:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-41 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-42 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-43 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-44 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1244,10 +1244,10 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-45 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-46 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1255,7 +1255,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-46 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1264,7 +1264,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-47 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1272,7 +1272,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-47 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1280,35 +1280,35 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-48 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-49 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-50 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-51 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-51:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-52 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-53 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-54 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-55 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1361,7 +1361,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper-48 MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-5"
               onBlur={[Function]}
@@ -1437,17 +1437,17 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   <ForwardRef
     classes={
       Object {
-        "color": "HvTooltip-color-85",
-        "popper": "HvTooltip-popper-81",
-        "root": "HvTooltip-root-78",
-        "separator": "HvTooltip-separator-86",
-        "separatorColor": "HvTooltip-separatorColor-87",
-        "title": "HvTooltip-title-82",
-        "tooltip": "HvTooltip-tooltip-79",
-        "tooltipMulti": "HvTooltip-tooltipMulti-80",
-        "valueWrapper": "HvTooltip-valueWrapper-88",
-        "values": "HvTooltip-values-84",
-        "valuesContainer": "HvTooltip-valuesContainer-83",
+        "color": "HvTooltip-color",
+        "popper": "HvTooltip-popper",
+        "root": "HvTooltip-root",
+        "separator": "HvTooltip-separator",
+        "separatorColor": "HvTooltip-separatorColor",
+        "title": "HvTooltip-title",
+        "tooltip": "HvTooltip-tooltip",
+        "tooltipMulti": "HvTooltip-tooltipMulti",
+        "valueWrapper": "HvTooltip-valueWrapper",
+        "values": "HvTooltip-values",
+        "valuesContainer": "HvTooltip-valuesContainer",
       }
     }
     title={
@@ -1512,8 +1512,8 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
       }
       classes={
         Object {
-          "popper": "HvTooltip-popper-81",
-          "tooltip": "HvTooltip-tooltipMulti-80",
+          "popper": "HvTooltip-popper",
+          "tooltip": "HvTooltip-tooltipMulti",
         }
       }
       enterDelay={300}
@@ -1597,7 +1597,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             "render": [Function],
           }
         }
-        className="HvTooltip-popper-81 MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
         id="mui-8"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -1638,8 +1638,8 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             </button>,
             "className": undefined,
             "classes": Object {
-              "popper": "HvTooltip-popper-81",
-              "tooltip": "HvTooltip-tooltipMulti-80",
+              "popper": "HvTooltip-popper",
+              "tooltip": "HvTooltip-tooltipMulti",
             },
             "disableInteractive": false,
             "enterDelay": 300,
@@ -1738,10 +1738,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1749,7 +1749,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1758,7 +1758,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1766,7 +1766,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1774,35 +1774,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1812,10 +1812,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1823,7 +1823,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1832,7 +1832,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1840,7 +1840,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1848,35 +1848,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1886,10 +1886,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-23 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-24 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1897,7 +1897,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-24 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1906,7 +1906,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-25 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1914,7 +1914,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-25 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1922,35 +1922,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-26 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-27 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-28 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-29 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-29:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-30 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-31 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-32 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-33 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -1960,10 +1960,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-34 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-35 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -1971,7 +1971,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-35 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1980,7 +1980,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-36 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1988,7 +1988,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-36 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -1996,35 +1996,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-37 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-38 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-39 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-40 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-40:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-41 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-42 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-43 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-44 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2034,10 +2034,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-45 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-46 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2045,7 +2045,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-46 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2054,7 +2054,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-47 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2062,7 +2062,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-47 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2070,35 +2070,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-48 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-49 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-50 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-51 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-51:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-52 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-53 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-54 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-55 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2108,10 +2108,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-56 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-57 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2119,7 +2119,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-57 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2128,7 +2128,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-58 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2136,7 +2136,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-58 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2144,35 +2144,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-59 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-60 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-61 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-62 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-62:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-63 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-64 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-65 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-66 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2182,10 +2182,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-67 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-68 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2193,7 +2193,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-68 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2202,7 +2202,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-69 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2210,7 +2210,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-69 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2218,35 +2218,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-70 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-71 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-72 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-73 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-73:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-74 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-75 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-76 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-77 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2256,10 +2256,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-78 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-79 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2267,7 +2267,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-79 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2276,7 +2276,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-80 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2284,7 +2284,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-80 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2292,35 +2292,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-81 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-82 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-83 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-84 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-84:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-85 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-86 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-87 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-88 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2373,7 +2373,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               Hello World
             </button>
           }
-          className="HvTooltip-popper-81 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-8"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -2413,7 +2413,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                 Hello World
               </button>
             }
-            className="HvTooltip-popper-81 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-8"
             onBlur={[Function]}
@@ -2481,10 +2481,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2492,7 +2492,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2501,7 +2501,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2509,7 +2509,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2517,35 +2517,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2555,10 +2555,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2566,7 +2566,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2575,7 +2575,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2583,7 +2583,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2591,35 +2591,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2629,10 +2629,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-23 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-24 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2640,7 +2640,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-24 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2649,7 +2649,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-25 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2657,7 +2657,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-25 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2665,35 +2665,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-26 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-27 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-28 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-29 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-29:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-30 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-31 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-32 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-33 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2703,10 +2703,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-34 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-35 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2714,7 +2714,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-35 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2723,7 +2723,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-36 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2731,7 +2731,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-36 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2739,35 +2739,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-37 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-38 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-39 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-40 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-40:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-41 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-42 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-43 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-44 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2777,10 +2777,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-45 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-46 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2788,7 +2788,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-46 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2797,7 +2797,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-47 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2805,7 +2805,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-47 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2813,35 +2813,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-48 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-49 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-50 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-51 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-51:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-52 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-53 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-54 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-55 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2851,10 +2851,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-56 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-57 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2862,7 +2862,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-57 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2871,7 +2871,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-58 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2879,7 +2879,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-58 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2887,35 +2887,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-59 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-60 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-61 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-62 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-62:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-63 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-64 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-65 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-66 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2925,10 +2925,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-67 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-68 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -2936,7 +2936,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-68 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2945,7 +2945,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-69 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -2953,7 +2953,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-69 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -2961,35 +2961,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-70 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-71 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-72 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-73 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-73:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-74 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-75 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-76 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-77 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -2999,10 +2999,10 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-78 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-79 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -3010,7 +3010,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-79 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3019,7 +3019,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-80 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -3027,7 +3027,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-80 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3035,35 +3035,35 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-81 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-82 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-83 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-84 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-84:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-85 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-86 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-87 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-88 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -3116,7 +3116,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper-81 MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-8"
               onBlur={[Function]}
@@ -3167,17 +3167,17 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   <ForwardRef
     classes={
       Object {
-        "color": "HvTooltip-color-19",
-        "popper": "HvTooltip-popper-15",
-        "root": "HvTooltip-root-12",
-        "separator": "HvTooltip-separator-20",
-        "separatorColor": "HvTooltip-separatorColor-21",
-        "title": "HvTooltip-title-16",
-        "tooltip": "HvTooltip-tooltip-13",
-        "tooltipMulti": "HvTooltip-tooltipMulti-14",
-        "valueWrapper": "HvTooltip-valueWrapper-22",
-        "values": "HvTooltip-values-18",
-        "valuesContainer": "HvTooltip-valuesContainer-17",
+        "color": "HvTooltip-color",
+        "popper": "HvTooltip-popper",
+        "root": "HvTooltip-root",
+        "separator": "HvTooltip-separator",
+        "separatorColor": "HvTooltip-separatorColor",
+        "title": "HvTooltip-title",
+        "tooltip": "HvTooltip-tooltip",
+        "tooltipMulti": "HvTooltip-tooltipMulti",
+        "valueWrapper": "HvTooltip-valueWrapper",
+        "values": "HvTooltip-values",
+        "valuesContainer": "HvTooltip-valuesContainer",
       }
     }
     title={
@@ -3217,8 +3217,8 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
       }
       classes={
         Object {
-          "popper": "HvTooltip-popper-15",
-          "tooltip": "HvTooltip-tooltip-13",
+          "popper": "HvTooltip-popper",
+          "tooltip": "HvTooltip-tooltip",
         }
       }
       enterDelay={300}
@@ -3278,7 +3278,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             "render": [Function],
           }
         }
-        className="HvTooltip-popper-15 MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
         id="mui-2"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -3319,8 +3319,8 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             </button>,
             "className": undefined,
             "classes": Object {
-              "popper": "HvTooltip-popper-15",
-              "tooltip": "HvTooltip-tooltip-13",
+              "popper": "HvTooltip-popper",
+              "tooltip": "HvTooltip-tooltip",
             },
             "disableInteractive": false,
             "enterDelay": 300,
@@ -3395,10 +3395,10 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -3406,7 +3406,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3415,7 +3415,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -3423,7 +3423,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3431,35 +3431,35 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -3469,10 +3469,10 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                     data-meta="HvTooltip"
                   >
                     
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -3480,7 +3480,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3489,7 +3489,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -3497,7 +3497,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3505,35 +3505,35 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -3586,7 +3586,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               Hello World
             </button>
           }
-          className="HvTooltip-popper-15 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-2"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -3626,7 +3626,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                 Hello World
               </button>
             }
-            className="HvTooltip-popper-15 MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-2"
             onBlur={[Function]}
@@ -3694,10 +3694,10 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-1 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-2 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -3705,7 +3705,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-2 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3714,7 +3714,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-3 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -3722,7 +3722,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-3 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3730,35 +3730,35 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-4 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-5 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-6 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-7 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-7:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-8 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-9 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-10 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-11 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -3768,10 +3768,10 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                         data-meta="HvTooltip"
                       >
                         
-.HvTooltip-root-12 {
+.HvTooltip-root {
   pointer-events: none;
 }
-.HvTooltip-tooltip-13 {
+.HvTooltip-tooltip {
   width: fit-content;
   display: flex;
   padding: 15px 20px;
@@ -3779,7 +3779,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltip-13 p {
+.HvTooltip-tooltip p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3788,7 +3788,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   word-break: break-word;
   text-overflow: ellipsis;
 }
-.HvTooltip-tooltipMulti-14 {
+.HvTooltip-tooltipMulti {
   width: fit-content;
   display: flex;
   padding: 0;
@@ -3796,7 +3796,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvTooltip-tooltipMulti-14 p {
+.HvTooltip-tooltipMulti p {
   color: #414141;
   width: fit-content;
   display: -webkit-box;
@@ -3804,35 +3804,35 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
   box-orient: vertical;
   text-overflow: ellipsis;
 }
-.HvTooltip-popper-15 {
+.HvTooltip-popper {
   opacity: 1;
 }
-.HvTooltip-title-16 {
+.HvTooltip-title {
   padding: 15px 20px;
   border-bottom: 3px solid #F0F0F0;
 }
-.HvTooltip-valuesContainer-17 {
+.HvTooltip-valuesContainer {
   padding: 20px;
 }
-.HvTooltip-values-18 {
+.HvTooltip-values {
   display: flex;
   padding-bottom: 10px;
   justify-content: space-between;
 }
-.HvTooltip-values-18:last-child {
+.HvTooltip-values:last-child {
   padding-bottom: 0;
 }
-.HvTooltip-color-19 {
+.HvTooltip-color {
   width: 10px;
   height: 15px;
 }
-.HvTooltip-separator-20 {
+.HvTooltip-separator {
   width: 10px;
 }
-.HvTooltip-separatorColor-21 {
+.HvTooltip-separatorColor {
   width: 5px;
 }
-.HvTooltip-valueWrapper-22 {
+.HvTooltip-valueWrapper {
   padding: 20px;
 }
 
@@ -3885,7 +3885,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper-15 MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-2"
               onBlur={[Function]}

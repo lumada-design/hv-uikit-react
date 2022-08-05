@@ -3,10 +3,10 @@
 exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
 <div>
   <div
-    class="HvCheckBoxGroup-root-104 HvFormElement-root-112"
+    class="HvCheckBoxGroup-root HvFormElement-root"
   >
     <label
-      class="HvCheckBoxGroup-label-105 HvLabel-root-113 HvTypography-root-116 HvTypography-highlightText-128"
+      class="HvCheckBoxGroup-label HvLabel-root HvTypography-root HvTypography-highlightText"
       id="hvcheckboxgroup17-label"
     >
       Choose
@@ -15,17 +15,17 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
       aria-errormessage="hvcheckboxgroup17-error"
       aria-invalid="true"
       aria-labelledby="hvcheckboxgroup17-label"
-      class="HvCheckBoxGroup-group-106 HvCheckBoxGroup-vertical-107 HvCheckBoxGroup-invalid-109"
+      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical HvCheckBoxGroup-invalid"
       role="group"
     >
       <div
-        class="HvCheckBox-root-138 HvFormElement-root-112"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-139"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-142 HvBaseCheckbox-root-146 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -35,7 +35,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
               value="1"
             />
             <div
-              class="HvIconBase-root-149 HvIconBase-s-151"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -60,7 +60,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-144 HvLabel-root-113 HvTypography-root-116 HvTypography-highlightText-128"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox19-input"
             id="hvcheckbox19-label"
           >
@@ -69,13 +69,13 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-138 HvFormElement-root-112"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-139"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox-142 HvBaseCheckbox-root-146 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               checked=""
@@ -86,7 +86,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
               value="2"
             />
             <div
-              class="HvIconBase-root-149 HvIconBase-s-151"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="CheckboxCheck"
             >
@@ -116,7 +116,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-144 HvLabel-root-113 HvTypography-root-116 HvTypography-highlightText-128"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox21-input"
             id="hvcheckbox21-label"
           >
@@ -125,13 +125,13 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-138 HvFormElement-root-112"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-139"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-142 HvBaseCheckbox-root-146 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -141,7 +141,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
               value="3"
             />
             <div
-              class="HvIconBase-root-149 HvIconBase-s-151"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -166,7 +166,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-144 HvLabel-root-113 HvTypography-root-116 HvTypography-highlightText-128"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox23-input"
             id="hvcheckbox23-label"
           >
@@ -176,10 +176,10 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
       </div>
     </div>
     <div
-      class="HvCheckBoxGroup-error-111 HvWarningText-root-154 HvWarningText-show-159"
+      class="HvCheckBoxGroup-error HvWarningText-root HvWarningText-show"
     >
       <div
-        class="HvWarningText-defaultIcon-158 HvIconBase-root-149 HvIconBase-s-151"
+        class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
         name="Fail"
       >
         <svg
@@ -200,7 +200,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         aria-atomic="true"
         aria-live="polite"
         aria-relevant="additions text"
-        class="HvWarningText-warningText-157 HvWarningText-topGutter-156 HvTypography-root-116 HvTypography-normalText-129"
+        class="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
         id="hvcheckboxgroup17-error"
       >
         No way for this to be valid!
@@ -213,16 +213,16 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
 exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
 <div>
   <div
-    class="HvCheckBoxGroup-root-51 HvFormElement-root-59"
+    class="HvCheckBoxGroup-root HvFormElement-root"
   >
     <label
-      class="HvCheckBoxGroup-label-52 HvLabel-root-60 HvTypography-root-63 HvTypography-highlightText-75"
+      class="HvCheckBoxGroup-label HvLabel-root HvTypography-root HvTypography-highlightText"
       id="hvcheckboxgroup9-label"
     >
       Choose your favorite checkboxes
     </label>
     <label
-      class="HvInfoMessage-root-85 HvInfoMessage-gutter-87 HvTypography-root-63 HvTypography-normalText-76"
+      class="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
       id="hvcheckboxgroup9-description"
     >
       Horizontally, this time
@@ -230,17 +230,17 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
     <div
       aria-describedby="hvcheckboxgroup9-description"
       aria-labelledby="hvcheckboxgroup9-label"
-      class="HvCheckBoxGroup-group-53 HvCheckBoxGroup-horizontal-55"
+      class="HvCheckBoxGroup-group HvCheckBoxGroup-horizontal"
       role="group"
     >
       <div
-        class="HvCheckBox-root-88 HvFormElement-root-59"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-89"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-92 HvBaseCheckbox-root-96 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -250,7 +250,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
               value="1"
             />
             <div
-              class="HvIconBase-root-99 HvIconBase-s-101"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -275,7 +275,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-94 HvLabel-root-60 HvTypography-root-63 HvTypography-highlightText-75"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox11-input"
             id="hvcheckbox11-label"
           >
@@ -284,13 +284,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-88 HvFormElement-root-59"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-89"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox-92 HvBaseCheckbox-root-96 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               checked=""
@@ -301,7 +301,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
               value="2"
             />
             <div
-              class="HvIconBase-root-99 HvIconBase-s-101"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="CheckboxCheck"
             >
@@ -331,7 +331,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-94 HvLabel-root-60 HvTypography-root-63 HvTypography-highlightText-75"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox13-input"
             id="hvcheckbox13-label"
           >
@@ -340,13 +340,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-88 HvFormElement-root-59"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-89"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-92 HvBaseCheckbox-root-96 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -356,7 +356,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
               value="3"
             />
             <div
-              class="HvIconBase-root-99 HvIconBase-s-101"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -381,7 +381,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-94 HvLabel-root-60 HvTypography-root-63 HvTypography-highlightText-75"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox15-input"
             id="hvcheckbox15-label"
           >
@@ -397,28 +397,28 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
 exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
 <div>
   <div
-    class="HvCheckBoxGroup-root-1 HvFormElement-root-9"
+    class="HvCheckBoxGroup-root HvFormElement-root"
     id="main"
   >
     <label
-      class="HvCheckBoxGroup-label-2 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
+      class="HvCheckBoxGroup-label HvLabel-root HvTypography-root HvTypography-highlightText"
       id="main-label"
     >
       Choose your favorite checkboxes
     </label>
     <div
       aria-labelledby="main-label"
-      class="HvCheckBoxGroup-group-3 HvCheckBoxGroup-vertical-4"
+      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical"
       role="group"
     >
       <div
-        class="HvCheckBoxGroup-selectAll-7 HvCheckBox-root-35 HvFormElement-root-9"
+        class="HvCheckBoxGroup-selectAll HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-36"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -428,7 +428,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
               value="on"
             />
             <div
-              class="HvIconBase-root-46 HvIconBase-s-48"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="CheckboxPartial"
             >
@@ -453,7 +453,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox1-input"
             id="hvcheckbox1-label"
           >
@@ -465,13 +465,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-35 HvFormElement-root-9"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-36"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -482,7 +482,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
               value="1"
             />
             <div
-              class="HvIconBase-root-46 HvIconBase-s-48"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -507,7 +507,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
           >
@@ -516,13 +516,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-35 HvFormElement-root-9"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-36"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               checked=""
@@ -534,7 +534,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
               value="2"
             />
             <div
-              class="HvIconBase-root-46 HvIconBase-s-48"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="CheckboxCheck"
             >
@@ -564,7 +564,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox5-input"
             id="hvcheckbox5-label"
           >
@@ -573,13 +573,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
         </div>
       </div>
       <div
-        class="HvCheckBox-root-35 HvFormElement-root-9"
+        class="HvCheckBox-root HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container-36"
+          class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox-39 HvBaseCheckbox-root-43 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -590,7 +590,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
               value="3"
             />
             <div
-              class="HvIconBase-root-46 HvIconBase-s-48"
+              class="HvIconBase-root HvIconBase-s"
               font-size="medium"
               name="Checkbox"
             >
@@ -615,7 +615,7 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label-41 HvLabel-root-10 HvTypography-root-13 HvTypography-highlightText-25"
+            class="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
             for="hvcheckbox7-input"
             id="hvcheckbox7-label"
           >

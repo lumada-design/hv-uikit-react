@@ -3,39 +3,39 @@
 exports[`<AppSwitcher /> Applications without a name should not be renderered should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcher-root-247 HvAppSwitcher-single-248 HvAppSwitcher-open-252"
+    class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open"
   >
     <span
-      class="HvAppSwitcher-title-253 HvTypography-root-274 HvTypography-highlightText-286"
+      class="HvAppSwitcher-title HvTypography-root HvTypography-highlightText"
       data-mui-internal-clone-element="true"
     >
       Mock title
     </span>
     <ul
-      class="HvAppSwitcher-actionsContainer-254 HvListContainer-root-296"
+      class="HvAppSwitcher-actionsContainer HvListContainer-root"
     >
       <li
-        class="HvAppSwitcherAction-root-297 HvAppSwitcher-item-256 HvListItem-root-305 HvListItem-interactive-307 HvFocus-root-316 HvFocus-focusDisabled-319"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherAction-typography-300 HvTypography-root-274 HvTypography-normalText-287"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp1/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherAction-icon-301 HvAppSwitcher-itemIcon-260"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 1 Description"
-              class="HvAppSwitcherAction-iconUrl-304"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp1/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-302 HvAppSwitcher-itemTitle-261 HvTypography-root-274 HvTypography-highlightText-286"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 1 - VALID
@@ -46,7 +46,7 @@ exports[`<AppSwitcher /> Applications without a name should not be renderered sh
           >
             <div
               aria-label="Mock App 1 Description"
-              class="HvAppSwitcherAction-iconInfo-303 HvIconBase-root-324 HvIconBase-s-326"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -68,25 +68,25 @@ exports[`<AppSwitcher /> Applications without a name should not be renderered sh
         </a>
       </li>
       <li
-        class="HvAppSwitcherAction-root-297 HvAppSwitcher-item-256 HvListItem-root-305 HvListItem-interactive-307 HvFocus-root-316 HvFocus-focusDisabled-319"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <button
-          class="HvAppSwitcherAction-typography-300 HvTypography-root-274 HvTypography-normalText-287"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           style="border-color: #414141;"
           tabindex="0"
         >
           <div
-            class="HvAppSwitcherAction-icon-301 HvAppSwitcher-itemIcon-260"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 3 Description"
-              class="HvAppSwitcherAction-iconUrl-304"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp3/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-302 HvAppSwitcher-itemTitle-261 HvTypography-root-274 HvTypography-highlightText-286"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 3
@@ -97,7 +97,7 @@ exports[`<AppSwitcher /> Applications without a name should not be renderered sh
           >
             <div
               aria-label="Mock App 3 Description"
-              class="HvAppSwitcherAction-iconInfo-303 HvIconBase-root-324 HvIconBase-s-326"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -119,26 +119,26 @@ exports[`<AppSwitcher /> Applications without a name should not be renderered sh
         </button>
       </li>
       <li
-        class="HvAppSwitcherAction-root-297 HvAppSwitcher-item-256 HvListItem-root-305 HvListItem-interactive-307 HvFocus-root-316 HvFocus-focusDisabled-319"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherAction-typography-300 HvTypography-root-274 HvTypography-normalText-287"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp5/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherAction-icon-301 HvAppSwitcher-itemIcon-260"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
-              class="HvAppSwitcherAction-iconUrl-304"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp5/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-302 HvAppSwitcher-itemTitle-261 HvTypography-root-274 HvTypography-highlightText-286"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 5 - VALID without description
@@ -153,38 +153,38 @@ exports[`<AppSwitcher /> Applications without a name should not be renderered sh
 exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcher-root-1 HvAppSwitcher-single-2 HvAppSwitcher-open-6"
+    class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open"
   >
     <span
-      class="HvAppSwitcher-title-7 HvTypography-root-28 HvTypography-highlightText-40"
+      class="HvAppSwitcher-title HvTypography-root HvTypography-highlightText"
       data-mui-internal-clone-element="true"
     >
       Mock title
     </span>
     <ul
-      class="HvAppSwitcher-actionsContainer-8 HvListContainer-root-50"
+      class="HvAppSwitcher-actionsContainer HvListContainer-root"
     >
       <li
-        class="HvAppSwitcherAction-root-51 HvAppSwitcher-item-10 HvListItem-root-59 HvListItem-interactive-61 HvFocus-root-70 HvFocus-focusDisabled-73"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherAction-typography-54 HvTypography-root-28 HvTypography-normalText-41"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp1/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherAction-icon-55 HvAppSwitcher-itemIcon-14"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
-              class="HvAppSwitcherAction-iconUrl-58"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp1/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-56 HvAppSwitcher-itemTitle-15 HvTypography-root-28 HvTypography-highlightText-40"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 1
@@ -192,27 +192,27 @@ exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] 
         </a>
       </li>
       <li
-        class="HvAppSwitcherAction-root-51 HvAppSwitcher-item-10 HvListItem-root-59 HvListItem-interactive-61 HvFocus-root-70 HvFocus-focusDisabled-73"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherAction-typography-54 HvTypography-root-28 HvTypography-normalText-41"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp2/"
           style="border-color: #414141;"
           tabindex="0"
           target="_blank"
         >
           <div
-            class="HvAppSwitcherAction-icon-55 HvAppSwitcher-itemIcon-14"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 2 Description"
-              class="HvAppSwitcherAction-iconUrl-58"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp2/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-56 HvAppSwitcher-itemTitle-15 HvTypography-root-28 HvTypography-highlightText-40"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 2
@@ -223,7 +223,7 @@ exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] 
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcherAction-iconInfo-57 HvIconBase-root-78 HvIconBase-s-80"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >
@@ -245,27 +245,27 @@ exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] 
         </a>
       </li>
       <li
-        class="HvAppSwitcherAction-root-51 HvAppSwitcher-item-10 HvListItem-root-59 HvListItem-interactive-61 HvFocus-root-70 HvFocus-focusDisabled-73"
+        class="HvAppSwitcherAction-root HvAppSwitcher-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcherAction-typography-54 HvTypography-root-28 HvTypography-normalText-41"
+          class="HvAppSwitcherAction-typography HvTypography-root HvTypography-normalText"
           href="http://mockapp2/"
           style="border-color: #414141;"
           tabindex="0"
           target="_top"
         >
           <div
-            class="HvAppSwitcherAction-icon-55 HvAppSwitcher-itemIcon-14"
+            class="HvAppSwitcherAction-icon HvAppSwitcher-itemIcon"
           >
             <img
               alt="Mock App 2 Description"
-              class="HvAppSwitcherAction-iconUrl-58"
+              class="HvAppSwitcherAction-iconUrl"
               src="http://mockapp2/icon"
             />
           </div>
           <span
-            class="HvAppSwitcherAction-title-56 HvAppSwitcher-itemTitle-15 HvTypography-root-28 HvTypography-highlightText-40"
+            class="HvAppSwitcherAction-title HvAppSwitcher-itemTitle HvTypography-root HvTypography-highlightText"
             data-mui-internal-clone-element="true"
           >
             Mock App 3
@@ -276,7 +276,7 @@ exports[`<AppSwitcher /> with minimum configuration should render correctly 1`] 
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcherAction-iconInfo-57 HvIconBase-root-78 HvIconBase-s-80"
+              class="HvAppSwitcherAction-iconInfo HvIconBase-root HvIconBase-s"
               name="Info"
               role="img"
             >

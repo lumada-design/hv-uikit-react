@@ -5,31 +5,31 @@ exports[`Avatar  default avatar snapshot 1`] = `
   <HvAvatar
     classes={
       Object {
-        "LG": "HvAvatar-LG-42",
-        "MD": "HvAvatar-MD-41",
-        "SM": "HvAvatar-SM-40",
-        "XL": "HvAvatar-XL-43",
-        "XS": "HvAvatar-XS-39",
-        "avatar": "HvAvatar-avatar-37",
-        "badge": "HvAvatar-badge-38",
-        "circular": "HvAvatar-circular-44",
-        "container": "HvAvatar-container-35",
-        "fallback": "HvAvatar-fallback-34",
-        "img": "HvAvatar-img-33",
-        "root": "HvAvatar-root-32",
-        "status": "HvAvatar-status-36",
+        "LG": "HvAvatar-LG",
+        "MD": "HvAvatar-MD",
+        "SM": "HvAvatar-SM",
+        "XL": "HvAvatar-XL",
+        "XS": "HvAvatar-XS",
+        "avatar": "HvAvatar-avatar",
+        "badge": "HvAvatar-badge",
+        "circular": "HvAvatar-circular",
+        "container": "HvAvatar-container",
+        "fallback": "HvAvatar-fallback",
+        "img": "HvAvatar-img",
+        "root": "HvAvatar-root",
+        "status": "HvAvatar-status",
       }
     }
   >
     <div
-      className="HvAvatar-container-35"
+      className="HvAvatar-container"
     >
       <div
-        className="HvAvatar-status-36 HvAvatar-circular-44 HvAvatar-SM-40"
+        className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
         style={Object {}}
       >
         <ForwardRef(Avatar)
-          className="HvAvatar-root-32 HvAvatar-avatar-37 HvAvatar-SM-40"
+          className="HvAvatar-root HvAvatar-avatar HvAvatar-SM"
           style={
             Object {
               "backgroundColor": "#414141",
@@ -40,15 +40,15 @@ exports[`Avatar  default avatar snapshot 1`] = `
         >
           <MuiAvatarRoot
             as="div"
-            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-32 HvAvatar-avatar-37 HvAvatar-SM-40"
+            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM"
             ownerState={
               Object {
                 "children": <User
-                  className="HvAvatar-fallback-34"
+                  className="HvAvatar-fallback"
                   color="atmo1"
                   iconSize="XS"
                 />,
-                "className": "HvAvatar-root-32 HvAvatar-avatar-37 HvAvatar-SM-40",
+                "className": "HvAvatar-root HvAvatar-avatar HvAvatar-SM",
                 "colorDefault": true,
                 "component": "div",
                 "style": Object {
@@ -92,25 +92,25 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-14 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-14 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-15 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-16 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-17 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-18 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -121,25 +121,25 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-45 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-45 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-46 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-47 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-48 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-49 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -150,10 +150,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-1 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-2 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -161,7 +161,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-4:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -169,58 +169,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-5 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-5.HvAvatar-XS-8 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-5.HvAvatar-SM-9 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-5.HvAvatar-MD-10 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-5.HvAvatar-LG-11 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-5.HvAvatar-XL-12 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-6.HvAvatar-XS-8 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-SM-9 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-6.HvAvatar-MD-10 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-6.HvAvatar-LG-11 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-XL-12 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-7 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -229,7 +229,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-13 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -239,10 +239,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-19 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-20 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -250,7 +250,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-22:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -258,58 +258,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-23 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-23.HvAvatar-XS-26 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-23.HvAvatar-SM-27 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-23.HvAvatar-MD-28 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-23.HvAvatar-LG-29 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-23.HvAvatar-XL-30 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-24.HvAvatar-XS-26 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-SM-27 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-24.HvAvatar-MD-28 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-24.HvAvatar-LG-29 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-XL-30 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-25 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -318,7 +318,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-31 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -328,10 +328,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-32 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-33 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -339,7 +339,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-35:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -347,58 +347,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-36 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-36.HvAvatar-XS-39 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-36.HvAvatar-SM-40 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-36.HvAvatar-MD-41 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-36.HvAvatar-LG-42 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-36.HvAvatar-XL-43 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-37.HvAvatar-XS-39 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-SM-40 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-37.HvAvatar-MD-41 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-37.HvAvatar-LG-42 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-XL-43 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-38 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -407,7 +407,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-44 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -417,10 +417,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-50 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-51 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -428,7 +428,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-53:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -436,58 +436,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-54 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-54.HvAvatar-XS-57 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-54.HvAvatar-SM-58 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-54.HvAvatar-MD-59 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-54.HvAvatar-LG-60 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-54.HvAvatar-XL-61 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-55.HvAvatar-XS-57 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-SM-58 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-55.HvAvatar-MD-59 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-55.HvAvatar-LG-60 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-XL-61 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-56 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -496,7 +496,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-62 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -506,10 +506,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-63 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-64 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -517,7 +517,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-66:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -525,58 +525,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-67 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-67.HvAvatar-XS-70 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-67.HvAvatar-SM-71 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-67.HvAvatar-MD-72 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-67.HvAvatar-LG-73 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-67.HvAvatar-XL-74 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-68.HvAvatar-XS-70 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-SM-71 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-68.HvAvatar-MD-72 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-68.HvAvatar-LG-73 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-XL-74 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-69 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -585,7 +585,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-75 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -595,10 +595,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-76 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-77 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -606,7 +606,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-79:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -614,58 +614,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-80 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-80.HvAvatar-XS-83 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-80.HvAvatar-SM-84 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-80.HvAvatar-MD-85 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-80.HvAvatar-LG-86 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-80.HvAvatar-XL-87 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-81.HvAvatar-XS-83 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-SM-84 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-81.HvAvatar-MD-85 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-81.HvAvatar-LG-86 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-XL-87 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-82 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -674,7 +674,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-88 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -684,10 +684,10 @@ exports[`Avatar  default avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-89 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-90 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -695,7 +695,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-92:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -703,58 +703,58 @@ exports[`Avatar  default avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-93 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-93.HvAvatar-XS-96 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-93.HvAvatar-SM-97 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-93.HvAvatar-MD-98 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-93.HvAvatar-LG-99 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-93.HvAvatar-XL-100 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-94.HvAvatar-XS-96 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-SM-97 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-94.HvAvatar-MD-98 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-94.HvAvatar-LG-99 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-XL-100 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-95 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -763,7 +763,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-101 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -799,7 +799,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
               }
             />
             <div
-              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-32 HvAvatar-avatar-37 HvAvatar-SM-40 css-1mo7jmj-MuiAvatar-root"
+              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM css-1mo7jmj-MuiAvatar-root"
               style={
                 Object {
                   "backgroundColor": "#414141",
@@ -808,17 +808,17 @@ exports[`Avatar  default avatar snapshot 1`] = `
               }
             >
               <User
-                className="HvAvatar-fallback-34"
+                className="HvAvatar-fallback"
                 color="atmo1"
                 iconSize="XS"
               >
                 <HvIconBase
-                  className="HvAvatar-fallback-34"
+                  className="HvAvatar-fallback"
                   iconSize="XS"
                   name="User"
                 >
                   <div
-                    className="HvAvatar-fallback-34 HvIconBase-root-45 HvIconBase-xs-46"
+                    className="HvAvatar-fallback HvIconBase-root HvIconBase-xs"
                     name="User"
                   >
                     <svg
@@ -851,31 +851,31 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   <HvAvatar
     classes={
       Object {
-        "LG": "HvAvatar-LG-11",
-        "MD": "HvAvatar-MD-10",
-        "SM": "HvAvatar-SM-9",
-        "XL": "HvAvatar-XL-12",
-        "XS": "HvAvatar-XS-8",
-        "avatar": "HvAvatar-avatar-6",
-        "badge": "HvAvatar-badge-7",
-        "circular": "HvAvatar-circular-13",
-        "container": "HvAvatar-container-4",
-        "fallback": "HvAvatar-fallback-3",
-        "img": "HvAvatar-img-2",
-        "root": "HvAvatar-root-1",
-        "status": "HvAvatar-status-5",
+        "LG": "HvAvatar-LG",
+        "MD": "HvAvatar-MD",
+        "SM": "HvAvatar-SM",
+        "XL": "HvAvatar-XL",
+        "XS": "HvAvatar-XS",
+        "avatar": "HvAvatar-avatar",
+        "badge": "HvAvatar-badge",
+        "circular": "HvAvatar-circular",
+        "container": "HvAvatar-container",
+        "fallback": "HvAvatar-fallback",
+        "img": "HvAvatar-img",
+        "root": "HvAvatar-root",
+        "status": "HvAvatar-status",
       }
     }
   >
     <div
-      className="HvAvatar-container-4"
+      className="HvAvatar-container"
     >
       <div
-        className="HvAvatar-status-5 HvAvatar-circular-13 HvAvatar-SM-9"
+        className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
         style={Object {}}
       >
         <ForwardRef(Avatar)
-          className="HvAvatar-root-1 HvAvatar-avatar-6 HvAvatar-SM-9"
+          className="HvAvatar-root HvAvatar-avatar HvAvatar-SM"
           style={
             Object {
               "backgroundColor": "#414141",
@@ -886,13 +886,13 @@ exports[`Avatar  icon avatar snapshot 1`] = `
         >
           <MuiAvatarRoot
             as="div"
-            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-1 HvAvatar-avatar-6 HvAvatar-SM-9"
+            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM"
             ownerState={
               Object {
                 "children": <LogIn
                   iconSize="XS"
                 />,
-                "className": "HvAvatar-root-1 HvAvatar-avatar-6 HvAvatar-SM-9",
+                "className": "HvAvatar-root HvAvatar-avatar HvAvatar-SM",
                 "colorDefault": true,
                 "component": "div",
                 "style": Object {
@@ -936,25 +936,25 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-14 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-14 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-15 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-16 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-17 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-18 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -965,25 +965,25 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-45 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-45 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-46 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-47 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-48 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-49 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -994,10 +994,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-1 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-2 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1005,7 +1005,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-4:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1013,58 +1013,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-5 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-5.HvAvatar-XS-8 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-5.HvAvatar-SM-9 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-5.HvAvatar-MD-10 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-5.HvAvatar-LG-11 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-5.HvAvatar-XL-12 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-6.HvAvatar-XS-8 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-SM-9 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-6.HvAvatar-MD-10 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-6.HvAvatar-LG-11 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-XL-12 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-7 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1073,7 +1073,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-13 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1083,10 +1083,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-19 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-20 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1094,7 +1094,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-22:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1102,58 +1102,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-23 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-23.HvAvatar-XS-26 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-23.HvAvatar-SM-27 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-23.HvAvatar-MD-28 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-23.HvAvatar-LG-29 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-23.HvAvatar-XL-30 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-24.HvAvatar-XS-26 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-SM-27 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-24.HvAvatar-MD-28 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-24.HvAvatar-LG-29 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-XL-30 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-25 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1162,7 +1162,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-31 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1172,10 +1172,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-32 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-33 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1183,7 +1183,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-35:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1191,58 +1191,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-36 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-36.HvAvatar-XS-39 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-36.HvAvatar-SM-40 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-36.HvAvatar-MD-41 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-36.HvAvatar-LG-42 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-36.HvAvatar-XL-43 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-37.HvAvatar-XS-39 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-SM-40 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-37.HvAvatar-MD-41 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-37.HvAvatar-LG-42 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-XL-43 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-38 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1251,7 +1251,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-44 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1261,10 +1261,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-50 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-51 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1272,7 +1272,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-53:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1280,58 +1280,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-54 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-54.HvAvatar-XS-57 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-54.HvAvatar-SM-58 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-54.HvAvatar-MD-59 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-54.HvAvatar-LG-60 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-54.HvAvatar-XL-61 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-55.HvAvatar-XS-57 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-SM-58 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-55.HvAvatar-MD-59 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-55.HvAvatar-LG-60 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-XL-61 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-56 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1340,7 +1340,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-62 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1350,10 +1350,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-63 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-64 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1361,7 +1361,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-66:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1369,58 +1369,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-67 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-67.HvAvatar-XS-70 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-67.HvAvatar-SM-71 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-67.HvAvatar-MD-72 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-67.HvAvatar-LG-73 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-67.HvAvatar-XL-74 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-68.HvAvatar-XS-70 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-SM-71 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-68.HvAvatar-MD-72 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-68.HvAvatar-LG-73 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-XL-74 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-69 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1429,7 +1429,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-75 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1439,10 +1439,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-76 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-77 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1450,7 +1450,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-79:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1458,58 +1458,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-80 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-80.HvAvatar-XS-83 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-80.HvAvatar-SM-84 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-80.HvAvatar-MD-85 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-80.HvAvatar-LG-86 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-80.HvAvatar-XL-87 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-81.HvAvatar-XS-83 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-SM-84 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-81.HvAvatar-MD-85 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-81.HvAvatar-LG-86 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-XL-87 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-82 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1518,7 +1518,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-88 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1528,10 +1528,10 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-89 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-90 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1539,7 +1539,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-92:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1547,58 +1547,58 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-93 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-93.HvAvatar-XS-96 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-93.HvAvatar-SM-97 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-93.HvAvatar-MD-98 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-93.HvAvatar-LG-99 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-93.HvAvatar-XL-100 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-94.HvAvatar-XS-96 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-SM-97 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-94.HvAvatar-MD-98 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-94.HvAvatar-LG-99 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-XL-100 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-95 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1607,7 +1607,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-101 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1643,7 +1643,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
               }
             />
             <div
-              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-1 HvAvatar-avatar-6 HvAvatar-SM-9 css-1mo7jmj-MuiAvatar-root"
+              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM css-1mo7jmj-MuiAvatar-root"
               style={
                 Object {
                   "backgroundColor": "#414141",
@@ -1659,7 +1659,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
                   name="LogIn"
                 >
                   <div
-                    className="HvIconBase-root-14 HvIconBase-xs-15"
+                    className="HvIconBase-root HvIconBase-xs"
                     name="LogIn"
                   >
                     <svg
@@ -1700,19 +1700,19 @@ exports[`Avatar  image avatar snapshot 1`] = `
   <HvAvatar
     classes={
       Object {
-        "LG": "HvAvatar-LG-99",
-        "MD": "HvAvatar-MD-98",
-        "SM": "HvAvatar-SM-97",
-        "XL": "HvAvatar-XL-100",
-        "XS": "HvAvatar-XS-96",
-        "avatar": "HvAvatar-avatar-94",
-        "badge": "HvAvatar-badge-95",
-        "circular": "HvAvatar-circular-101",
-        "container": "HvAvatar-container-92",
-        "fallback": "HvAvatar-fallback-91",
-        "img": "HvAvatar-img-90",
-        "root": "HvAvatar-root-89",
-        "status": "HvAvatar-status-93",
+        "LG": "HvAvatar-LG",
+        "MD": "HvAvatar-MD",
+        "SM": "HvAvatar-SM",
+        "XL": "HvAvatar-XL",
+        "XS": "HvAvatar-XS",
+        "avatar": "HvAvatar-avatar",
+        "badge": "HvAvatar-badge",
+        "circular": "HvAvatar-circular",
+        "container": "HvAvatar-container",
+        "fallback": "HvAvatar-fallback",
+        "img": "HvAvatar-img",
+        "root": "HvAvatar-root",
+        "status": "HvAvatar-status",
       }
     }
     imgProps={
@@ -1724,29 +1724,29 @@ exports[`Avatar  image avatar snapshot 1`] = `
     src="something.jpg"
   >
     <div
-      className="HvAvatar-container-92"
+      className="HvAvatar-container"
     >
       <div
-        className="HvAvatar-status-93 HvAvatar-circular-101 HvAvatar-SM-97"
+        className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
         style={Object {}}
       >
         <ForwardRef(Avatar)
-          className="HvAvatar-root-89 HvAvatar-avatar-94 HvAvatar-SM-97"
+          className="HvAvatar-root HvAvatar-avatar HvAvatar-SM"
           style={Object {}}
           variant="circular"
         >
           <MuiAvatarRoot
             as="div"
-            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-89 HvAvatar-avatar-94 HvAvatar-SM-97"
+            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM"
             ownerState={
               Object {
                 "children": <img
-                  className="HvAvatar-img-90"
+                  className="HvAvatar-img"
                   onError={[Function]}
                   other="my value"
                   src="something.jpg"
                 />,
-                "className": "HvAvatar-root-89 HvAvatar-avatar-94 HvAvatar-SM-97",
+                "className": "HvAvatar-root HvAvatar-avatar HvAvatar-SM",
                 "colorDefault": true,
                 "component": "div",
                 "style": Object {},
@@ -1782,25 +1782,25 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-14 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-14 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-15 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-16 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-17 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-18 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -1811,25 +1811,25 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-45 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-45 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-46 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-47 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-48 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-49 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -1840,10 +1840,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-1 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-2 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1851,7 +1851,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-4:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1859,58 +1859,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-5 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-5.HvAvatar-XS-8 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-5.HvAvatar-SM-9 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-5.HvAvatar-MD-10 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-5.HvAvatar-LG-11 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-5.HvAvatar-XL-12 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-6.HvAvatar-XS-8 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-SM-9 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-6.HvAvatar-MD-10 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-6.HvAvatar-LG-11 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-XL-12 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-7 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -1919,7 +1919,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-13 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -1929,10 +1929,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-19 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-20 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -1940,7 +1940,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-22:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -1948,58 +1948,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-23 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-23.HvAvatar-XS-26 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-23.HvAvatar-SM-27 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-23.HvAvatar-MD-28 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-23.HvAvatar-LG-29 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-23.HvAvatar-XL-30 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-24.HvAvatar-XS-26 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-SM-27 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-24.HvAvatar-MD-28 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-24.HvAvatar-LG-29 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-XL-30 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-25 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2008,7 +2008,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-31 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2018,10 +2018,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-32 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-33 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2029,7 +2029,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-35:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2037,58 +2037,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-36 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-36.HvAvatar-XS-39 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-36.HvAvatar-SM-40 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-36.HvAvatar-MD-41 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-36.HvAvatar-LG-42 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-36.HvAvatar-XL-43 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-37.HvAvatar-XS-39 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-SM-40 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-37.HvAvatar-MD-41 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-37.HvAvatar-LG-42 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-XL-43 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-38 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2097,7 +2097,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-44 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2107,10 +2107,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-50 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-51 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2118,7 +2118,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-53:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2126,58 +2126,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-54 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-54.HvAvatar-XS-57 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-54.HvAvatar-SM-58 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-54.HvAvatar-MD-59 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-54.HvAvatar-LG-60 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-54.HvAvatar-XL-61 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-55.HvAvatar-XS-57 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-SM-58 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-55.HvAvatar-MD-59 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-55.HvAvatar-LG-60 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-XL-61 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-56 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2186,7 +2186,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-62 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2196,10 +2196,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-63 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-64 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2207,7 +2207,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-66:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2215,58 +2215,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-67 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-67.HvAvatar-XS-70 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-67.HvAvatar-SM-71 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-67.HvAvatar-MD-72 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-67.HvAvatar-LG-73 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-67.HvAvatar-XL-74 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-68.HvAvatar-XS-70 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-SM-71 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-68.HvAvatar-MD-72 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-68.HvAvatar-LG-73 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-XL-74 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-69 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2275,7 +2275,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-75 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2285,10 +2285,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-76 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-77 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2296,7 +2296,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-79:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2304,58 +2304,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-80 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-80.HvAvatar-XS-83 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-80.HvAvatar-SM-84 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-80.HvAvatar-MD-85 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-80.HvAvatar-LG-86 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-80.HvAvatar-XL-87 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-81.HvAvatar-XS-83 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-SM-84 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-81.HvAvatar-MD-85 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-81.HvAvatar-LG-86 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-XL-87 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-82 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2364,7 +2364,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-88 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2374,10 +2374,10 @@ exports[`Avatar  image avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-89 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-90 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2385,7 +2385,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-92:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2393,58 +2393,58 @@ exports[`Avatar  image avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-93 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-93.HvAvatar-XS-96 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-93.HvAvatar-SM-97 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-93.HvAvatar-MD-98 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-93.HvAvatar-LG-99 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-93.HvAvatar-XL-100 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-94.HvAvatar-XS-96 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-SM-97 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-94.HvAvatar-MD-98 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-94.HvAvatar-LG-99 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-XL-100 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-95 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2453,7 +2453,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-101 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2489,11 +2489,11 @@ exports[`Avatar  image avatar snapshot 1`] = `
               }
             />
             <div
-              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-89 HvAvatar-avatar-94 HvAvatar-SM-97 css-1mo7jmj-MuiAvatar-root"
+              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM css-1mo7jmj-MuiAvatar-root"
               style={Object {}}
             >
               <img
-                className="HvAvatar-img-90"
+                className="HvAvatar-img"
                 onError={[Function]}
                 other="my value"
                 src="something.jpg"
@@ -2512,31 +2512,31 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   <HvAvatar
     classes={
       Object {
-        "LG": "HvAvatar-LG-29",
-        "MD": "HvAvatar-MD-28",
-        "SM": "HvAvatar-SM-27",
-        "XL": "HvAvatar-XL-30",
-        "XS": "HvAvatar-XS-26",
-        "avatar": "HvAvatar-avatar-24",
-        "badge": "HvAvatar-badge-25",
-        "circular": "HvAvatar-circular-31",
-        "container": "HvAvatar-container-22",
-        "fallback": "HvAvatar-fallback-21",
-        "img": "HvAvatar-img-20",
-        "root": "HvAvatar-root-19",
-        "status": "HvAvatar-status-23",
+        "LG": "HvAvatar-LG",
+        "MD": "HvAvatar-MD",
+        "SM": "HvAvatar-SM",
+        "XL": "HvAvatar-XL",
+        "XS": "HvAvatar-XS",
+        "avatar": "HvAvatar-avatar",
+        "badge": "HvAvatar-badge",
+        "circular": "HvAvatar-circular",
+        "container": "HvAvatar-container",
+        "fallback": "HvAvatar-fallback",
+        "img": "HvAvatar-img",
+        "root": "HvAvatar-root",
+        "status": "HvAvatar-status",
       }
     }
   >
     <div
-      className="HvAvatar-container-22"
+      className="HvAvatar-container"
     >
       <div
-        className="HvAvatar-status-23 HvAvatar-circular-31 HvAvatar-SM-27"
+        className="HvAvatar-status HvAvatar-circular HvAvatar-SM"
         style={Object {}}
       >
         <ForwardRef(Avatar)
-          className="HvAvatar-root-19 HvAvatar-avatar-24 HvAvatar-SM-27"
+          className="HvAvatar-root HvAvatar-avatar HvAvatar-SM"
           style={
             Object {
               "backgroundColor": "#414141",
@@ -2547,11 +2547,11 @@ exports[`Avatar  letter avatar snapshot 1`] = `
         >
           <MuiAvatarRoot
             as="div"
-            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-19 HvAvatar-avatar-24 HvAvatar-SM-27"
+            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM"
             ownerState={
               Object {
                 "children": "OT",
-                "className": "HvAvatar-root-19 HvAvatar-avatar-24 HvAvatar-SM-27",
+                "className": "HvAvatar-root HvAvatar-avatar HvAvatar-SM",
                 "colorDefault": true,
                 "component": "div",
                 "style": Object {
@@ -2595,25 +2595,25 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-14 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-14 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-15 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-16 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-17 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-18 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -2624,25 +2624,25 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvIconBase"
                       >
                         
-.HvIconBase-root-45 {
+.HvIconBase-root {
   display: flex;
 }
-.HvIconBase-root-45 svg {
+.HvIconBase-root svg {
   margin: auto;
 }
-.HvIconBase-xs-46 {
+.HvIconBase-xs {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-s-47 {
+.HvIconBase-s {
   width: 32px;
   height: 32px;
 }
-.HvIconBase-m-48 {
+.HvIconBase-m {
   width: 48px;
   height: 48px;
 }
-.HvIconBase-l-49 {
+.HvIconBase-l {
   width: 112px;
   height: 112px;
 }
@@ -2653,10 +2653,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-1 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-2 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2664,7 +2664,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-4:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2672,58 +2672,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-5 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-5.HvAvatar-XS-8 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-5.HvAvatar-SM-9 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-5.HvAvatar-MD-10 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-5.HvAvatar-LG-11 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-5.HvAvatar-XL-12 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-6.HvAvatar-XS-8 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-SM-9 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-6.HvAvatar-MD-10 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-6.HvAvatar-LG-11 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-6.HvAvatar-XL-12 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-7 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2732,7 +2732,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-13 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2742,10 +2742,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-19 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-20 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2753,7 +2753,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-22:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2761,58 +2761,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-23 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-23.HvAvatar-XS-26 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-23.HvAvatar-SM-27 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-23.HvAvatar-MD-28 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-23.HvAvatar-LG-29 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-23.HvAvatar-XL-30 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-24.HvAvatar-XS-26 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-SM-27 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-24.HvAvatar-MD-28 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-24.HvAvatar-LG-29 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-24.HvAvatar-XL-30 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-25 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2821,7 +2821,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-31 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2831,10 +2831,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-32 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-33 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2842,7 +2842,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-35:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2850,58 +2850,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-36 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-36.HvAvatar-XS-39 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-36.HvAvatar-SM-40 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-36.HvAvatar-MD-41 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-36.HvAvatar-LG-42 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-36.HvAvatar-XL-43 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-37.HvAvatar-XS-39 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-SM-40 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-37.HvAvatar-MD-41 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-37.HvAvatar-LG-42 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-37.HvAvatar-XL-43 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-38 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2910,7 +2910,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-44 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -2920,10 +2920,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-50 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-51 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -2931,7 +2931,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-53:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -2939,58 +2939,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-54 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-54.HvAvatar-XS-57 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-54.HvAvatar-SM-58 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-54.HvAvatar-MD-59 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-54.HvAvatar-LG-60 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-54.HvAvatar-XL-61 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-55.HvAvatar-XS-57 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-SM-58 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-55.HvAvatar-MD-59 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-55.HvAvatar-LG-60 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-55.HvAvatar-XL-61 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-56 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -2999,7 +2999,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-62 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -3009,10 +3009,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-63 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-64 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -3020,7 +3020,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-66:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -3028,58 +3028,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-67 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-67.HvAvatar-XS-70 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-67.HvAvatar-SM-71 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-67.HvAvatar-MD-72 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-67.HvAvatar-LG-73 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-67.HvAvatar-XL-74 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-68.HvAvatar-XS-70 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-SM-71 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-68.HvAvatar-MD-72 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-68.HvAvatar-LG-73 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-68.HvAvatar-XL-74 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-69 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -3088,7 +3088,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-75 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -3098,10 +3098,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-76 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-77 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -3109,7 +3109,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-79:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -3117,58 +3117,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-80 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-80.HvAvatar-XS-83 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-80.HvAvatar-SM-84 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-80.HvAvatar-MD-85 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-80.HvAvatar-LG-86 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-80.HvAvatar-XL-87 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-81.HvAvatar-XS-83 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-SM-84 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-81.HvAvatar-MD-85 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-81.HvAvatar-LG-86 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-81.HvAvatar-XL-87 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-82 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -3177,7 +3177,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-88 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -3187,10 +3187,10 @@ exports[`Avatar  letter avatar snapshot 1`] = `
                         data-meta="HvAvatar"
                       >
                         
-.HvAvatar-root-89 {
+.HvAvatar-root {
   font-size: 1rem;
 }
-.HvAvatar-img-90 {
+.HvAvatar-img {
   color: transparent;
   width: 100%;
   height: 100%;
@@ -3198,7 +3198,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   text-align: center;
   text-indent: 10000px;
 }
-.HvAvatar-container-92:focus-visible {
+.HvAvatar-container:focus-visible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   border-radius: 0;
   outline-color: #52A8EC;
@@ -3206,58 +3206,58 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvAvatar-status-93 {
+.HvAvatar-status {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.HvAvatar-status-93.HvAvatar-XS-96 {
+.HvAvatar-status.HvAvatar-XS {
   width: 32px;
   height: 32px;
 }
-.HvAvatar-status-93.HvAvatar-SM-97 {
+.HvAvatar-status.HvAvatar-SM {
   width: 40px;
   height: 40px;
 }
-.HvAvatar-status-93.HvAvatar-MD-98 {
+.HvAvatar-status.HvAvatar-MD {
   width: 48px;
   height: 48px;
 }
-.HvAvatar-status-93.HvAvatar-LG-99 {
+.HvAvatar-status.HvAvatar-LG {
   width: 60px;
   height: 60px;
 }
-.HvAvatar-status-93.HvAvatar-XL-100 {
+.HvAvatar-status.HvAvatar-XL {
   width: 96px;
   height: 96px;
 }
-.HvAvatar-avatar-94.HvAvatar-XS-96 {
+.HvAvatar-avatar.HvAvatar-XS {
   width: 24px;
   height: 24px;
   font-size: 0.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-SM-97 {
+.HvAvatar-avatar.HvAvatar-SM {
   width: 32px;
   height: 32px;
   font-size: 0.625rem;
 }
-.HvAvatar-avatar-94.HvAvatar-MD-98 {
+.HvAvatar-avatar.HvAvatar-MD {
   width: 40px;
   height: 40px;
   font-size: 1rem;
 }
-.HvAvatar-avatar-94.HvAvatar-LG-99 {
+.HvAvatar-avatar.HvAvatar-LG {
   width: 52px;
   height: 52px;
   font-size: 1.5rem;
 }
-.HvAvatar-avatar-94.HvAvatar-XL-100 {
+.HvAvatar-avatar.HvAvatar-XL {
   width: 88px;
   height: 88px;
   font-size: 2rem;
 }
-.HvAvatar-badge-95 {
+.HvAvatar-badge {
   top: 0;
   right: 0;
   width: 8px;
@@ -3266,7 +3266,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
   position: absolute;
   border-radius: 50%;
 }
-.HvAvatar-circular-101 {
+.HvAvatar-circular {
   border-radius: 50%;
 }
 
@@ -3302,7 +3302,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
               }
             />
             <div
-              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root-19 HvAvatar-avatar-24 HvAvatar-SM-27 css-1mo7jmj-MuiAvatar-root"
+              className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM css-1mo7jmj-MuiAvatar-root"
               style={
                 Object {
                   "backgroundColor": "#414141",

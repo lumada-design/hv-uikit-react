@@ -11,9 +11,9 @@ exports[`Suggestions should render correctly 1`] = `
   <HvSuggestions
     classes={
       Object {
-        "list": "HvSuggestions-list-42",
-        "popper": "HvSuggestions-popper-41",
-        "root": "HvSuggestions-root-40",
+        "list": "HvSuggestions-list",
+        "popper": "HvSuggestions-popper",
+        "root": "HvSuggestions-root",
       }
     }
     expanded={false}
@@ -23,17 +23,17 @@ exports[`Suggestions should render correctly 1`] = `
     suggestionValues={Array []}
   >
     <div
-      className="HvSuggestions-root-40"
+      className="HvSuggestions-root"
       id="hvformelement1-suggestions"
       onKeyDown={[Function]}
     >
       <ForwardRef(Popper)
-        className="HvSuggestions-popper-41"
+        className="HvSuggestions-popper"
         disablePortal={true}
         open={false}
       >
         <MuiPopperRoot
-          className="HvSuggestions-popper-41"
+          className="HvSuggestions-popper"
           direction="ltr"
           disablePortal={true}
           open={false}
@@ -293,81 +293,81 @@ exports[`Suggestions should render correctly 1`] = `
                       data-meta="HvTypography"
                     >
                       
-.HvTypography-root-5 {
+.HvTypography-root {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-.HvTypography-5xlTitle-6 {
+.HvTypography-5xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 600;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-4xlTitle-7 {
+.HvTypography-4xlTitle {
   color: #414141;
   font-size: 52px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
-.HvTypography-3xlTitle-8 {
+.HvTypography-3xlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 600;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxlTitle-9 {
+.HvTypography-xxlTitle {
   color: #414141;
   font-size: 42px;
   font-weight: 400;
   line-height: 52px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xlTitle-10 {
+.HvTypography-xlTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-lTitle-11 {
+.HvTypography-lTitle {
   color: #414141;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.02em;
 }
-.HvTypography-mTitle-12 {
+.HvTypography-mTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sTitle-13 {
+.HvTypography-sTitle {
   color: #414141;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsTitle-14 {
+.HvTypography-xsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xxsTitle-15 {
+.HvTypography-xxsTitle {
   color: #414141;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.02em;
 }
-.HvTypography-sectionTitle-16 {
+.HvTypography-sectionTitle {
   color: #414141;
   font-size: 14px;
   font-weight: 400;
@@ -375,28 +375,28 @@ exports[`Suggestions should render correctly 1`] = `
   letter-spacing: 0.32em;
   text-transform: uppercase;
 }
-.HvTypography-highlightText-17 {
+.HvTypography-highlightText {
   color: #414141;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-normalText-18 {
+.HvTypography-normalText {
   color: #414141;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-placeholderText-19 {
+.HvTypography-placeholderText {
   color: #999999;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-link-20 {
+.HvTypography-link {
   color: #2064B4;
   font-size: 12px;
   font-weight: 600;
@@ -404,35 +404,35 @@ exports[`Suggestions should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-disabledText-21 {
+.HvTypography-disabledText {
   color: #999999;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-selectedNavText-22 {
+.HvTypography-selectedNavText {
   color: #CC0000;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizText-23 {
+.HvTypography-vizText {
   color: #414141;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-vizTextDisabled-24 {
+.HvTypography-vizTextDisabled {
   color: #999999;
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.02em;
 }
-.HvTypography-xsInlineLink-25 {
+.HvTypography-xsInlineLink {
   color: #2064B4;
   font-size: 10px;
   font-weight: 600;
@@ -440,7 +440,7 @@ exports[`Suggestions should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-decoration: underline;
 }
-.HvTypography-noWrap-26 {
+.HvTypography-noWrap {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -460,13 +460,13 @@ exports[`Suggestions should render correctly 1`] = `
                       data-meta="HvLabel"
                     >
                       
-.HvLabel-root-2 {
+.HvLabel-root {
   display: inline-block;
 }
-.HvLabel-labelDisabled-3 {
+.HvLabel-labelDisabled {
   color: #999999;
 }
-.HvLabel-childGutter-4 {
+.HvLabel-childGutter {
   padding-bottom: 6px;
 }
 
@@ -476,16 +476,16 @@ exports[`Suggestions should render correctly 1`] = `
                       data-meta="HvSuggestions"
                     >
                       
-.HvSuggestions-root-40 {
+.HvSuggestions-root {
   position: relative;
 }
-.HvSuggestions-root-40 .HvSuggestions-list-42 {
+.HvSuggestions-root .HvSuggestions-list {
   width: 100%;
   padding: 20px;
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   background-color: #FBFCFC;
 }
-.HvSuggestions-popper-41 {
+.HvSuggestions-popper {
   width: 100%;
   z-index: 1500;
   position: absolute;
@@ -498,102 +498,102 @@ exports[`Suggestions should render correctly 1`] = `
                       data-meta="HvBaseInput"
                     >
                       
-.HvBaseInput-root-27 {
+.HvBaseInput-root {
   width: 100%;
   display: inline-block;
   position: relative;
 }
-.HvBaseInput-root-27 .HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-root .HvBaseInput-inputRootMultiline {
   border: none;
   overflow: auto;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:hover .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputBorderContainer {
   background-color: #414141;
 }
-.HvBaseInput-root-27.focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root.focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-root-27:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-root:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #414141;
 }
-.HvBaseInput-resizable-28 {
+.HvBaseInput-resizable {
   width: auto;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputBorderContainer {
   background-color: transparent;
 }
-.HvBaseInput-readOnly-29:focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-readOnly-29 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-readOnly .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid transparent;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputBorderContainer {
   background-color: #CCCED0;
 }
-.HvBaseInput-disabled-30:hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled:hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-disabled-30 .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-disabled .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   background-color: #E8E8E8;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputBorderContainer {
   background-color: #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30).focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled).focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):focus-within .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):focus-within .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30):hover .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled):hover .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-invalid-31:not(.HvBaseInput-disabled-30) .HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-invalid:not(.HvBaseInput-disabled) .HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #C62828;
 }
-.HvBaseInput-inputRoot-32 {
+.HvBaseInput-inputRoot {
   width: 100%;
   margin: 0;
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-inputRoot-32:hover:not(.HvBaseInput-inputRootDisabled-34)::before {
+.HvBaseInput-inputRoot:hover:not(.HvBaseInput-inputRootDisabled)::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::before {
+.HvBaseInput-inputRoot::before {
   border-bottom: none;
 }
-.HvBaseInput-inputRoot-32::after {
+.HvBaseInput-inputRoot::after {
   border-bottom: none;
 }
-.HvBaseInput-inputRootFocused-33 {
+.HvBaseInput-inputRootFocused {
   background: #FBFCFC;
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
@@ -601,22 +601,22 @@ exports[`Suggestions should render correctly 1`] = `
   outline-width: 0px;
   outline-offset: -1px;
 }
-.HvBaseInput-inputRootFocused-33:hover {
+.HvBaseInput-inputRootFocused:hover {
   background: #FBFCFC;
 }
-.HvBaseInput-inputRootDisabled-34 {
+.HvBaseInput-inputRootDisabled {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootDisabled-34:hover {
+.HvBaseInput-inputRootDisabled:hover {
   cursor: not-allowed;
   background: #E8E8E8;
 }
-.HvBaseInput-inputRootMultiline-35 {
+.HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
 }
-.HvBaseInput-inputRootMultiline-35 .HvBaseInput-input-36 {
+.HvBaseInput-inputRootMultiline .HvBaseInput-input {
   border: 1px solid #CCCED0;
   height: auto;
   padding: 5px 10px;
@@ -627,7 +627,7 @@ exports[`Suggestions should render correctly 1`] = `
   border-radius: 2px;
   background-color: #FBFCFC;
 }
-.HvBaseInput-input-36 {
+.HvBaseInput-input {
   color: #414141;
   width: initial;
   height: 21px;
@@ -643,7 +643,7 @@ exports[`Suggestions should render correctly 1`] = `
   text-overflow: ellipsis;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::placeholder {
+.HvBaseInput-input::placeholder {
   color: #999999;
   opacity: 1;
   font-size: 12px;
@@ -651,17 +651,17 @@ exports[`Suggestions should render correctly 1`] = `
   line-height: 16px;
   letter-spacing: 0.02em;
 }
-.HvBaseInput-input-36::-ms-clear {
+.HvBaseInput-input::-ms-clear {
   display: none;
 }
-.HvBaseInput-inputDisabled-37 {
+.HvBaseInput-inputDisabled {
   color: #999999;
 }
-.HvBaseInput-inputResizable-38 {
+.HvBaseInput-inputResizable {
   width: 100%;
   resize: both;
 }
-.HvBaseInput-inputBorderContainer-39 {
+.HvBaseInput-inputBorderContainer {
   top: 31px;
   left: 2px;
   width: calc(100% - 4px);
@@ -669,30 +669,30 @@ exports[`Suggestions should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvBaseInput-root-27 input:-webkit-autofill {
+.HvBaseInput-root input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #FBFCFC inset;
   -webkit-text-fill-color: #414141;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-clear {
+.HvBaseInput-root input[type=search]::-ms-clear {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-ms-reveal {
+.HvBaseInput-root input[type=search]::-ms-reveal {
   width: 0;
   height: 0;
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-decoration {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-cancel-button {
+.HvBaseInput-root input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-button {
+.HvBaseInput-root input[type=search]::-webkit-search-results-button {
   display: none;
 }
-.HvBaseInput-root-27 input[type=search]::-webkit-search-results-decoration {
+.HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
@@ -924,7 +924,7 @@ exports[`Suggestions should render correctly 1`] = `
             }
           />
           <ForwardRef(PopperUnstyled)
-            className="HvSuggestions-popper-41 css-advny6-MuiPopper-root"
+            className="HvSuggestions-popper css-advny6-MuiPopper-root"
             direction="ltr"
             disablePortal={true}
             open={false}

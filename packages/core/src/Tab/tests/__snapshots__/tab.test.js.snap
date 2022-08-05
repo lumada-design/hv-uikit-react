@@ -7,10 +7,10 @@ exports[`Tab withStyles should render correctly 1`] = `
   <HvTab
     classes={
       Object {
-        "disabled": "HvTab-disabled-4",
-        "focusVisible": "HvTab-focusVisible-2",
-        "root": "HvTab-root-1",
-        "selected": "HvTab-selected-3",
+        "disabled": "HvTab-disabled",
+        "focusVisible": "HvTab-focusVisible",
+        "root": "HvTab-root",
+        "selected": "HvTab-selected",
       }
     }
     disabled={false}
@@ -20,46 +20,46 @@ exports[`Tab withStyles should render correctly 1`] = `
     <ForwardRef(Tab)
       classes={
         Object {
-          "disabled": "HvTab-disabled-4",
-          "root": "HvTab-root-1",
-          "selected": "HvTab-selected-3",
+          "disabled": "HvTab-disabled",
+          "root": "HvTab-root",
+          "selected": "HvTab-selected",
         }
       }
       disableRipple={true}
       disableTouchRipple={true}
       disabled={false}
-      focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-2"
+      focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
       icon={null}
       label="Clickable Tab"
     >
       <MuiTabRoot
-        className="HvTab-root-1 MuiTab-root MuiTab-textColorInherit"
+        className="HvTab-root MuiTab-root MuiTab-textColorInherit"
         classes={
           Object {
-            "disabled": "HvTab-disabled-4",
-            "root": "HvTab-root-1",
-            "selected": "HvTab-selected-3",
+            "disabled": "HvTab-disabled",
+            "root": "HvTab-root",
+            "selected": "HvTab-selected",
           }
         }
         disableRipple={true}
         disableTouchRipple={true}
         disabled={false}
         focusRipple={true}
-        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-2"
+        focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
         onClick={[Function]}
         onFocus={[Function]}
         ownerState={
           Object {
             "classes": Object {
-              "disabled": "HvTab-disabled-4",
-              "root": "HvTab-root-1",
-              "selected": "HvTab-selected-3",
+              "disabled": "HvTab-disabled",
+              "root": "HvTab-root",
+              "selected": "HvTab-selected",
             },
             "disableFocusRipple": false,
             "disableRipple": true,
             "disableTouchRipple": true,
             "disabled": false,
-            "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-2",
+            "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
             "fullWidth": undefined,
             "icon": false,
             "iconPosition": "top",
@@ -158,7 +158,7 @@ exports[`Tab withStyles should render correctly 1`] = `
                     data-meta="HvTab"
                   >
                     
-.HvTab-root-1 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -172,18 +172,18 @@ exports[`Tab withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-1.HvTab-selected-3 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-1.HvTab-disabled-4 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-1::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -192,14 +192,14 @@ exports[`Tab withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-1.HvTab-disabled-4:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-1:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-2 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -295,12 +295,12 @@ exports[`Tab withStyles should render correctly 1`] = `
           }
         />
         <ForwardRef(ButtonBase)
-          className="HvTab-root-1 MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
+          className="HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
           disableRipple={true}
           disableTouchRipple={true}
           disabled={false}
           focusRipple={true}
-          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible-2"
+          focusVisibleClassName="HvIsFocusVisible HvTab-focusVisible"
           onClick={[Function]}
           onFocus={[Function]}
           role="tab"
@@ -308,7 +308,7 @@ exports[`Tab withStyles should render correctly 1`] = `
         >
           <MuiButtonBaseRoot
             as="button"
-            className="MuiButtonBase-root HvTab-root-1 MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
+            className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -333,14 +333,14 @@ exports[`Tab withStyles should render correctly 1`] = `
                   </React.Fragment>,
                   undefined,
                 ],
-                "className": "HvTab-root-1 MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root",
+                "className": "HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root",
                 "component": "button",
                 "disableRipple": true,
                 "disableTouchRipple": true,
                 "disabled": false,
                 "focusRipple": true,
                 "focusVisible": false,
-                "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible-2",
+                "focusVisibleClassName": "HvIsFocusVisible HvTab-focusVisible",
                 "onClick": [Function],
                 "onFocus": [Function],
                 "role": "tab",
@@ -437,7 +437,7 @@ exports[`Tab withStyles should render correctly 1`] = `
                         data-meta="HvTab"
                       >
                         
-.HvTab-root-1 {
+.HvTab-root {
   color: #414141;
   opacity: 1;
   padding: 0 20px;
@@ -451,18 +451,18 @@ exports[`Tab withStyles should render correctly 1`] = `
   letter-spacing: 0.02em;
   text-transform: none;
 }
-.HvTab-root-1.HvTab-selected-3 {
+.HvTab-root.HvTab-selected {
   color: #414141;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.HvTab-root-1.HvTab-disabled-4 {
+.HvTab-root.HvTab-disabled {
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
   pointer-events: all;
 }
-.HvTab-root-1::after {
+.HvTab-root::after {
   top: calc(100% - 1px);
   left: 0;
   width: 100%;
@@ -471,14 +471,14 @@ exports[`Tab withStyles should render correctly 1`] = `
   position: absolute;
   background-color: #CCCED0;
 }
-.HvTab-root-1.HvTab-disabled-4:hover {
+.HvTab-root.HvTab-disabled:hover {
   background: none;
 }
-.HvTab-root-1:hover::after {
+.HvTab-root:hover::after {
   height: 1px;
   background-color: #999999;
 }
-.HvTab-focusVisible-2 {
+.HvTab-focusVisible {
   box-shadow: 0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3);
   outline-color: #52A8EC;
   outline-style: solid;
@@ -574,7 +574,7 @@ exports[`Tab withStyles should render correctly 1`] = `
               }
             />
             <button
-              className="MuiButtonBase-root HvTab-root-1 MuiTab-root MuiTab-textColorInherit css-qfuyq2-MuiButtonBase-root-MuiTab-root"
+              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-qfuyq2-MuiButtonBase-root-MuiTab-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}

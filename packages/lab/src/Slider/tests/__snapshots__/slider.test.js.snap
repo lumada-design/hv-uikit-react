@@ -40,17 +40,17 @@ exports[`Slider  should render correctly 1`] = `
   <HvSlider
     classes={
       Object {
-        "dot": "HvSlider-dot-19",
-        "knobHidden": "HvSlider-knobHidden-23",
-        "knobHiddenLast": "HvSlider-knobHiddenLast-24",
-        "knobInner": "HvSlider-knobInner-21",
-        "knobOuter": "HvSlider-knobOuter-22",
-        "mark": "HvSlider-mark-26",
-        "rail": "HvSlider-rail-20",
-        "root": "HvSlider-root-18",
-        "sliderBase": "HvSlider-sliderBase-17",
-        "sliderTooltip": "HvSlider-sliderTooltip-27",
-        "track": "HvSlider-track-25",
+        "dot": "HvSlider-dot",
+        "knobHidden": "HvSlider-knobHidden",
+        "knobHiddenLast": "HvSlider-knobHiddenLast",
+        "knobInner": "HvSlider-knobInner",
+        "knobOuter": "HvSlider-knobOuter",
+        "mark": "HvSlider-mark",
+        "rail": "HvSlider-rail",
+        "root": "HvSlider-root",
+        "sliderBase": "HvSlider-sliderBase",
+        "sliderTooltip": "HvSlider-sliderTooltip",
+        "track": "HvSlider-track",
       }
     }
     defaultValues={
@@ -1125,7 +1125,7 @@ exports[`Slider  should render correctly 1`] = `
     values={Array []}
   >
     <div
-      className="HvSlider-sliderBase-17"
+      className="HvSlider-sliderBase"
     >
       <ComponentEnhancer(Range)
         activeDotStyle={Object {}}
@@ -1133,7 +1133,7 @@ exports[`Slider  should render correctly 1`] = `
         ariaLabelGroupForHandles={Array []}
         ariaLabelledByGroupForHandles={Array []}
         ariaValueTextFormatterGroupForHandles={Array []}
-        className="HvSlider-root-18"
+        className="HvSlider-root"
         count={4}
         defaultValue={
           Array [
@@ -2993,7 +2993,7 @@ exports[`Slider  should render correctly 1`] = `
         vertical={false}
       >
         <div
-          className="rc-slider rc-slider-with-marks HvSlider-root-18"
+          className="rc-slider rc-slider-with-marks HvSlider-root"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -6916,7 +6916,7 @@ exports[`Slider  should render correctly 1`] = `
           <ForwardRef(Tooltip)
             key="0"
             overlay="10"
-            overlayClassName="HvSlider-sliderTooltip-27"
+            overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
             visible={false}
@@ -7164,7 +7164,7 @@ exports[`Slider  should render correctly 1`] = `
               onPopupVisibleChange={[Function]}
               popup={[Function]}
               popupAlign={Object {}}
-              popupClassName="HvSlider-sliderTooltip-27"
+              popupClassName="HvSlider-sliderTooltip"
               popupPlacement="top"
               popupStyle={Object {}}
               popupVisible={false}
@@ -7231,13 +7231,13 @@ exports[`Slider  should render correctly 1`] = `
                       <HvKnobRing
                         classes={
                           Object {
-                            "knobRing": "HvKnobRing-knobRing-28",
+                            "knobRing": "HvKnobRing-knobRing-1",
                           }
                         }
                         dragging={false}
                       >
                         <div
-                          className="HvKnobRing-knobRing-28"
+                          className="HvKnobRing-knobRing-1"
                         />
                       </HvKnobRing>
                     </WithStyles(HvKnobRing)>
@@ -7249,7 +7249,7 @@ exports[`Slider  should render correctly 1`] = `
           <ForwardRef(Tooltip)
             key="1"
             overlay="20"
-            overlayClassName="HvSlider-sliderTooltip-27"
+            overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
             visible={false}
@@ -7497,7 +7497,7 @@ exports[`Slider  should render correctly 1`] = `
               onPopupVisibleChange={[Function]}
               popup={[Function]}
               popupAlign={Object {}}
-              popupClassName="HvSlider-sliderTooltip-27"
+              popupClassName="HvSlider-sliderTooltip"
               popupPlacement="top"
               popupStyle={Object {}}
               popupVisible={false}
@@ -7564,13 +7564,13 @@ exports[`Slider  should render correctly 1`] = `
                       <HvKnobRing
                         classes={
                           Object {
-                            "knobRing": "HvKnobRing-knobRing-29",
+                            "knobRing": "HvKnobRing-knobRing-2",
                           }
                         }
                         dragging={false}
                       >
                         <div
-                          className="HvKnobRing-knobRing-29"
+                          className="HvKnobRing-knobRing-2"
                         />
                       </HvKnobRing>
                     </WithStyles(HvKnobRing)>
@@ -7582,7 +7582,7 @@ exports[`Slider  should render correctly 1`] = `
           <ForwardRef(Tooltip)
             key="2"
             overlay="30"
-            overlayClassName="HvSlider-sliderTooltip-27"
+            overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
             visible={false}
@@ -7830,7 +7830,7 @@ exports[`Slider  should render correctly 1`] = `
               onPopupVisibleChange={[Function]}
               popup={[Function]}
               popupAlign={Object {}}
-              popupClassName="HvSlider-sliderTooltip-27"
+              popupClassName="HvSlider-sliderTooltip"
               popupPlacement="top"
               popupStyle={Object {}}
               popupVisible={false}
@@ -7897,13 +7897,13 @@ exports[`Slider  should render correctly 1`] = `
                       <HvKnobRing
                         classes={
                           Object {
-                            "knobRing": "HvKnobRing-knobRing-30",
+                            "knobRing": "HvKnobRing-knobRing-3",
                           }
                         }
                         dragging={false}
                       >
                         <div
-                          className="HvKnobRing-knobRing-30"
+                          className="HvKnobRing-knobRing-3"
                         />
                       </HvKnobRing>
                     </WithStyles(HvKnobRing)>
@@ -7915,7 +7915,7 @@ exports[`Slider  should render correctly 1`] = `
           <ForwardRef(Tooltip)
             key="3"
             overlay="40"
-            overlayClassName="HvSlider-sliderTooltip-27"
+            overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
             visible={false}
@@ -8163,7 +8163,7 @@ exports[`Slider  should render correctly 1`] = `
               onPopupVisibleChange={[Function]}
               popup={[Function]}
               popupAlign={Object {}}
-              popupClassName="HvSlider-sliderTooltip-27"
+              popupClassName="HvSlider-sliderTooltip"
               popupPlacement="top"
               popupStyle={Object {}}
               popupVisible={false}
@@ -8230,13 +8230,13 @@ exports[`Slider  should render correctly 1`] = `
                       <HvKnobRing
                         classes={
                           Object {
-                            "knobRing": "HvKnobRing-knobRing-31",
+                            "knobRing": "HvKnobRing-knobRing-4",
                           }
                         }
                         dragging={false}
                       >
                         <div
-                          className="HvKnobRing-knobRing-31"
+                          className="HvKnobRing-knobRing-4"
                         />
                       </HvKnobRing>
                     </WithStyles(HvKnobRing)>
@@ -8248,7 +8248,7 @@ exports[`Slider  should render correctly 1`] = `
           <ForwardRef(Tooltip)
             key="4"
             overlay="100"
-            overlayClassName="HvSlider-sliderTooltip-27"
+            overlayClassName="HvSlider-sliderTooltip"
             placement="top"
             prefixCls="rc-slider-tooltip"
             visible={false}
@@ -8496,7 +8496,7 @@ exports[`Slider  should render correctly 1`] = `
               onPopupVisibleChange={[Function]}
               popup={[Function]}
               popupAlign={Object {}}
-              popupClassName="HvSlider-sliderTooltip-27"
+              popupClassName="HvSlider-sliderTooltip"
               popupPlacement="top"
               popupStyle={Object {}}
               popupVisible={false}
@@ -8574,13 +8574,13 @@ exports[`Slider  should render correctly 1`] = `
                       <HvKnobRing
                         classes={
                           Object {
-                            "knobRing": "HvKnobRing-knobRing-32",
+                            "knobRing": "HvKnobRing-knobRing-5",
                           }
                         }
                         dragging={false}
                       >
                         <div
-                          className="HvKnobRing-knobRing-32"
+                          className="HvKnobRing-knobRing-5"
                         />
                       </HvKnobRing>
                     </WithStyles(HvKnobRing)>

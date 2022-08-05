@@ -157,13 +157,13 @@ exports[`Barchart should render correctly 1`] = `
         afterPlot={[Function]}
         classes={
           Object {
-            "defaultColors": "HvChart-defaultColors-9",
-            "gridColor": "HvChart-gridColor-13",
-            "legendText": "HvChart-legendText-11",
-            "lineColor": "HvChart-lineColor-12",
-            "plotColor": "HvChart-plotColor-14",
-            "root": "HvChart-root-8",
-            "vizText": "HvChart-vizText-10",
+            "defaultColors": "HvChart-defaultColors",
+            "gridColor": "HvChart-gridColor",
+            "legendText": "HvChart-legendText",
+            "lineColor": "HvChart-lineColor",
+            "plotColor": "HvChart-plotColor",
+            "root": "HvChart-root",
+            "vizText": "HvChart-vizText",
           }
         }
         data={
@@ -273,7 +273,7 @@ exports[`Barchart should render correctly 1`] = `
         tooltipType="multiple"
       >
         <div
-          className="HvChart-root-8"
+          className="HvChart-root"
         >
           <div
             onMouseMove={[Function]}
