@@ -9,7 +9,9 @@ on:
 env:
   CODEDX_SERVER_PROJECT_ID: 120
   DEP_CHECK_TOOL_VERSION: 6.5.3
+  PROJECT_NAME: 'uikit'
   BLACKDUCK_VERSION: 7
+  BLACKDUCK_PACKAGES_PARAM: '[{"name":"uikit-core", "paths":[{"path":"/packages/core/dist"}, {"path": "/packages/core/src"}], "exceptions":[{"component":"@hitachivantara/uikit-react-core"}]},{"name":"uikit-lab", "paths":[{"path":"/packages/lab/dist"}, {"path": "/packages/lab/src"}], "exceptions":[{"component":"@hitachivantara/uikit-react-lab"}]},{"name":"uikit-icons", "paths":[{"path":"/packages/icons/dist"}, {"path": "/packages/icons/src"}], "exceptions":[{"component":"@hitachivantara/uikit-react-icons"}]},{"name":"uikit-themes", "paths":[{"path":"/packages/themes/dist"}, {"path": "/packages/themes/src"}], "exceptions":[{"component":"@hitachivantara/uikit-common-themes"}]},{"name":"uikit-code-editor", "paths":[{"path":"/packages/code-editor/dist"}, {"path": "/packages/code-editor/src"}], "exceptions":[{"component":"@hitachivantara/uikit-react-code-editor"}]}]'    
 
 jobs:
   CodeDxScan:
@@ -17,6 +19,11 @@ jobs:
     runs-on: [self-hosted, Linux]
 
     steps:
+      - name: Discover current branch
+        run: |
+          REF=$( echo "${{ github.ref }}" ) # gets the branch or tag ref that triggered the workflow (something like 'refs/heads/branch-name')
+          REF=$( echo ${REF##*/} ) # removes the 'refs/heads/' reference
+          echo "CURRENT_BRANCH=$REF" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -64,8 +71,10 @@ jobs:
         uses: ./.github/codedx-analysis
         with:
           file: dependency-check-report.xml
-          serverUrl: ${{ secrets.CODEDX_SERVER_URL }}
-          projectId: ${{ env.CODEDX_SERVER_PROJECT_ID }}
+          serverUrl: '${{ secrets.CODEDX_SERVER_URL }}'
+          projectId: '${{ env.CODEDX_SERVER_PROJECT_ID }}'
+          projectName: '${{ env.PROJECT_NAME }}'
+          branchName: '${{ env.CURRENT_BRANCH }}'
           key: ${{ secrets.CODEDX_TOKEN }}
 
   BlackDuckScan:
@@ -73,6 +82,11 @@ jobs:
     runs-on: [self-hosted, Linux]
 
     steps:
+      - name: Discover current branch
+        run: |
+          REF=$( echo "${{ github.ref }}" ) # gets the branch or tag ref that triggered the workflow (something like 'refs/heads/branch-name')
+          REF=$( echo ${REF##*/} ) # removes the 'refs/heads/' reference
+          echo "CURRENT_BRANCH=$REF" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -80,20 +94,16 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: "11"
-          distribution: "adopt"
-
       - name: Build uikit
         run: |
           npm ci
           npm run bootstrap
           npm run build
 
-      - name: Run BlackDuck Scan
-        env:
-          BLACKDUCK_URL: ${{ secrets.BLACKDUCK_SERVER_URL }}
-          BLACKDUCK_TOKEN: ${{ secrets.BLACKDUCK_TOKEN }}
-        run: ./.github/component-scans/blackduck-check.sh
+      - name: Run Blackduck Scan
+        uses: ./.github/blackduck-scan
+        with:
+          server-url: '${{ secrets.BLACKDUCK_SERVER_HOST_URL }}'
+          key: '${{ secrets.BLACKDUCK_TOKEN }}'
+          version: '${{ env.CURRENT_BRANCH }}'
+          packages: '${{ env.BLACKDUCK_PACKAGES_PARAM }}'

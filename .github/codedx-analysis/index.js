@@ -4,16 +4,18 @@ const fs = require("fs");
 const axios = require("axios");
 const FormData = require("form-data");
 
-const checkName = `OWASP Dep Check for uikit (${new Date().getTime()})`;
-
-const projectNameJson = {
-  name: checkName,
-};
-
 const filePath = path.join(process.env.GITHUB_WORKSPACE, core.getInput("file"));
 const key = core.getInput("key");
 const serverUrl = core.getInput("serverUrl");
 const projectId = core.getInput("projectId");
+const projectName = core.getInput("projectName");
+const branchName = core.getInput("branchName");
+
+const checkName = `OWASP Dep Check for ${projectName} (${new Date().getTime()})`;
+
+const projectNameJson = {
+  name: checkName,
+};
 
 const authorizationHeaders = {
   headers: {
@@ -68,9 +70,14 @@ async function main() {
 
   const form = new FormData();
   form.append("file", fs.createReadStream(filePath));
+  form.append("branchName", branchName);
+  
+  const postUrl = `${serverUrl}/codedx/api/projects/${projectId}/analysis`
+  
+  core.info(`URL: ${postUrl}`);
 
   axios
-    .post(`${serverUrl}/codedx/api/projects/${projectId}/analysis`, form, {
+    .post(`${postUrl}`, form, {
       headers: {
         ...authorizationHeaders.headers,
         ...form.getHeaders(),
@@ -78,9 +85,8 @@ async function main() {
       maxContentLength: Infinity,
       maxBodyLength: Infinity,
     })
-    .then(({ data: { analysisId } }) => {
+    .then(({ data: { analysisId, jobId } }) => {
       core.info(`Upload ${filePath} content finished`);
-      core.info(`Rename analysis ${analysisId}`);
 
       axios
         .put(
@@ -92,12 +98,13 @@ async function main() {
           core.info(`CodeDx Analysis labeled ${checkName}`);
 
           await monitorAnalysis(analysisId);
+          
           axios
             .post(
-              `${serverUrl}/codedx/api/projects/${projectId}/findings/count`,
+              `${serverUrl}/codedx/x/projects/${projectId};branch=${branchName}/findings/count`,
               {
                 filter: {
-                  "status:filter": ["1", "6"], // new and unresolved states
+                  "status:filter": ["1", "6", "10"], // new, unresolved and reopened states
                 },
                 globalConfig: {
                   ignoreArchived: false,
