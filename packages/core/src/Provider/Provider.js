@@ -10,9 +10,9 @@ import diff from "deep-diff";
 import "focus-within-polyfill";
 import "focus-visible";
 
-import { createTheme, ThemeProvider, adaptV4Theme } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 import { StylesProvider } from "@mui/styles";
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from "@mui/material/styles";
 import { themeBuilder, createGenerateClassName, HvCssBaseline, getTheme } from "../theme";
 
 import ConfigContext from "./context";
@@ -112,15 +112,16 @@ const HvProvider = ({
   );
 
   return (
-    <StyledEngineProvider
-      generateClassName={generateClassName}
-      injectFirst={injectStylesFirst}
-      disableGeneration={disableStylesGeneration}
-    >
-      <ThemeProvider theme={customTheme}>
-        {!disableCssBaseline && <HvCssBaseline />}
-        <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
-      </ThemeProvider>
+    <StyledEngineProvider injectFirst={injectStylesFirst}>
+      <StylesProvider
+        generateClassName={generateClassName}
+        disableGeneration={disableStylesGeneration}
+      >
+        <ThemeProvider theme={customTheme}>
+          {!disableCssBaseline && <HvCssBaseline />}
+          <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
+        </ThemeProvider>
+      </StylesProvider>
     </StyledEngineProvider>
   );
 };

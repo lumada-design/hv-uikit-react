@@ -82,14 +82,20 @@ describe("HvProvider", () => {
   });
 
   it("should disable classnames generation", () => {
-    const { getByRole } = render(
+    render(
       <HvProvider disableCssBaseline disableStylesGeneration>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
 
-    const button = getByRole("button");
+    const { getAllByRole } = render(
+      <HvProvider disableCssBaseline>
+        <HvButton>Hello</HvButton>
+      </HvProvider>
+    );
 
-    expect(button).not.toHaveClass();
+    const buttons = getAllByRole("button");
+    expect(buttons[0].className).not.toMatch(/HvButton/);
+    expect(buttons[1].className).toMatch(/HvButton/);
   });
 });
