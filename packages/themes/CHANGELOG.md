@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.11 (2022-08-05)
+
+**Note:** Version bump only for package @hv/uikit-common-themes
+
+
+
+
+
 ## 2.0.8 (2022-07-25)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
