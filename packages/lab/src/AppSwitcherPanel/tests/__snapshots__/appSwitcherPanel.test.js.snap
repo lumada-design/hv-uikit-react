@@ -262,6 +262,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                     "propTypes": Object {
                       "anchorEl": [Function],
                       "children": [Function],
+                      "component": [Function],
+                      "components": [Function],
+                      "componentsProps": [Function],
                       "container": [Function],
                       "disablePortal": [Function],
                       "keepMounted": [Function],
@@ -276,7 +279,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                     "render": [Function],
                   }
                 }
-                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                 id="mui-31"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -3522,7 +3525,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                       Mock title
                     </span>
                   }
-                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                   id="mui-31"
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -3558,7 +3561,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                         Mock title
                       </span>
                     }
-                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                     direction="ltr"
                     id="mui-31"
                     onBlur={[Function]}
@@ -6755,7 +6758,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                           Mock title
                         </span>
                       }
-                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                      className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                       direction="ltr"
                       id="mui-31"
                       onBlur={[Function]}
@@ -7428,6 +7431,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -7442,7 +7448,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-32"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -10688,7 +10694,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                   Mock App 1 - VALID
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-32"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -10724,7 +10730,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                     Mock App 1 - VALID
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-32"
                                                 onBlur={[Function]}
@@ -13921,7 +13927,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                       Mock App 1 - VALID
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-32"
                                                   onBlur={[Function]}
@@ -14102,6 +14108,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -14116,7 +14125,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-33"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -17378,7 +17387,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 </div>
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-33"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -17431,7 +17440,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                   </div>
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-33"
                                               onMouseLeave={[Function]}
@@ -20645,7 +20654,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                     </div>
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-33"
                                                 onMouseLeave={[Function]}
@@ -21302,6 +21311,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -21316,7 +21328,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-34"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -24562,7 +24574,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                   Mock App 3
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-34"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -24598,7 +24610,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                     Mock App 3
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-34"
                                                 onBlur={[Function]}
@@ -27795,7 +27807,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                       Mock App 3
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-34"
                                                   onBlur={[Function]}
@@ -27976,6 +27988,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -27990,7 +28005,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-35"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -31252,7 +31267,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 </div>
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-35"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -31305,7 +31320,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                   </div>
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-35"
                                               onMouseLeave={[Function]}
@@ -34519,7 +34534,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                     </div>
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-35"
                                                 onMouseLeave={[Function]}
@@ -35182,6 +35197,9 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -35196,7 +35214,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-36"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -38442,7 +38460,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                   Mock App 5 - VALID without description
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-36"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -38478,7 +38496,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                     Mock App 5 - VALID without description
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-36"
                                                 onBlur={[Function]}
@@ -41675,7 +41693,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                                       Mock App 5 - VALID without description
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-36"
                                                   onBlur={[Function]}
@@ -41971,6 +41989,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "propTypes": Object {
                       "anchorEl": [Function],
                       "children": [Function],
+                      "component": [Function],
+                      "components": [Function],
+                      "componentsProps": [Function],
                       "container": [Function],
                       "disablePortal": [Function],
                       "keepMounted": [Function],
@@ -41985,7 +42006,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "render": [Function],
                   }
                 }
-                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                 id="mui-7"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -43171,7 +43192,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       Mock title
                     </span>
                   }
-                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                   id="mui-7"
                   onBlur={[Function]}
                   onFocus={[Function]}
@@ -43207,7 +43228,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         Mock title
                       </span>
                     }
-                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                     direction="ltr"
                     id="mui-7"
                     onBlur={[Function]}
@@ -44344,7 +44365,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           Mock title
                         </span>
                       }
-                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                      className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                       direction="ltr"
                       id="mui-7"
                       onBlur={[Function]}
@@ -45019,6 +45040,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -45033,7 +45057,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-8"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -46219,7 +46243,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                   Mock App 1
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-8"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -46255,7 +46279,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                     Mock App 1
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-8"
                                                 onBlur={[Function]}
@@ -47392,7 +47416,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                       Mock App 1
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-8"
                                                   onBlur={[Function]}
@@ -48064,6 +48088,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -48078,7 +48105,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-9"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -49264,7 +49291,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                   Mock App 2
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-9"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -49300,7 +49327,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                     Mock App 2
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-9"
                                                 onBlur={[Function]}
@@ -50437,7 +50464,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                       Mock App 2
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-9"
                                                   onBlur={[Function]}
@@ -50618,6 +50645,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -50632,7 +50662,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-10"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -51834,7 +51864,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 </div>
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-10"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -51887,7 +51917,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                   </div>
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-10"
                                               onMouseLeave={[Function]}
@@ -53041,7 +53071,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                     </div>
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-10"
                                                 onMouseLeave={[Function]}
@@ -53710,6 +53740,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "propTypes": Object {
                                                   "anchorEl": [Function],
                                                   "children": [Function],
+                                                  "component": [Function],
+                                                  "components": [Function],
+                                                  "componentsProps": [Function],
                                                   "container": [Function],
                                                   "disablePortal": [Function],
                                                   "keepMounted": [Function],
@@ -53724,7 +53757,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 "render": [Function],
                                               }
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                             id="mui-11"
                                             onBlur={[Function]}
                                             onFocus={[Function]}
@@ -54910,7 +54943,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                   Mock App 3
                                                 </span>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               id="mui-11"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -54946,7 +54979,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                     Mock App 3
                                                   </span>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-11"
                                                 onBlur={[Function]}
@@ -56083,7 +56116,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                       Mock App 3
                                                     </span>
                                                   }
-                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                   direction="ltr"
                                                   id="mui-11"
                                                   onBlur={[Function]}
@@ -56264,6 +56297,9 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -56278,7 +56314,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-12"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -57480,7 +57516,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                 </div>
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-12"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -57533,7 +57569,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                   </div>
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-12"
                                               onMouseLeave={[Function]}
@@ -58687,7 +58723,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                                     </div>
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-12"
                                                 onMouseLeave={[Function]}

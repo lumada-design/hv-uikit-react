@@ -27,7 +27,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="first page button aria-label"
@@ -62,7 +62,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="2 page aria-label"
@@ -101,7 +101,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="3 page aria-label"
@@ -140,7 +140,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="4 page aria-label"
@@ -179,7 +179,7 @@ exports[`DotPagination sample snapshot testing Main 1`] = `
           class="HvRadio-root HvDotPagination-radioRoot HvFormElement-root"
         >
           <span
-            class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               aria-label="last page button aria-label"

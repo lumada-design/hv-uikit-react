@@ -117,7 +117,7 @@ exports[`PeriodPicker should render correctly 1`] = `
               >
                 <MuiButtonRoot
                   aria-pressed={false}
-                  className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
+                  className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
                   classes={
                     Object {
                       "containedPrimary": "HvButton-primary",
@@ -125,8 +125,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
                       "outlinedPrimary": "HvButton-secondary",
-                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                      "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                       "textPrimary": "HvButton-ghost",
                     }
                   }
@@ -929,7 +928,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                   />
                   <ForwardRef(ButtonBase)
                     aria-pressed={false}
-                    className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                    className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -937,8 +936,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
-                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       }
                     }
@@ -952,7 +950,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                     <MuiButtonBaseRoot
                       aria-pressed={false}
                       as="button"
-                      className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
@@ -960,8 +958,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                           "label": "MuiButton-label",
                           "outlinedPrimary": "HvButton-secondary",
-                          "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                          "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                          "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                           "textPrimary": "HvButton-ghost",
                         }
                       }
@@ -988,15 +985,14 @@ exports[`PeriodPicker should render correctly 1`] = `
                             "AM",
                             undefined,
                           ],
-                          "className": "HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
+                          "className": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
                           "classes": Object {
                             "containedPrimary": "HvButton-primary",
                             "disabled": "HvButton-ghostDisabled",
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
-                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                            "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           },
                           "component": "button",
@@ -1778,7 +1774,7 @@ exports[`PeriodPicker should render correctly 1`] = `
                       />
                       <button
                         aria-pressed={false}
-                        className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}

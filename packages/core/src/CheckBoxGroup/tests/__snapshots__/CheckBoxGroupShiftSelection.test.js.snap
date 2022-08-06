@@ -23,7 +23,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -73,7 +73,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -123,7 +123,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -173,7 +173,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -223,7 +223,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -273,7 +273,7 @@ exports[`CheckboxGroupSelection sample snapshot testing Multi Selection List Con
           class="HvCheckBox-container"
         >
           <span
-            class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"

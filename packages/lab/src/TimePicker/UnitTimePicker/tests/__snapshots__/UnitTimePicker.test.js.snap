@@ -173,7 +173,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       "ref": Object {
                         "current": <input
                           autocomplete="off"
-                          class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           max="59"
                           min="0"
                           required=""
@@ -189,7 +189,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     Object {
                       "current": <input
                         autocomplete="off"
-                        class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                         max="59"
                         min="0"
                         required=""
@@ -244,7 +244,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "ref": Object {
                           "current": <input
                             autocomplete="off"
-                            class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                             max="59"
                             min="0"
                             required=""
@@ -260,7 +260,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       Object {
                         "current": <input
                           autocomplete="off"
-                          class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           max="59"
                           min="0"
                           required=""
@@ -310,7 +310,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             "ref": Object {
                               "current": <input
                                 autocomplete="off"
-                                class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                 max="59"
                                 min="0"
                                 required=""
@@ -327,7 +327,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           Object {
                             "current": <input
                               autocomplete="off"
-                              class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                               max="59"
                               min="0"
                               required=""
@@ -353,9 +353,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             Object {
                               "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                               "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                              "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input",
+                              "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
                               "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                              "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline",
+                              "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline",
                             }
                           }
                           components={
@@ -429,7 +429,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "ref": Object {
                                 "current": <input
                                   autocomplete="off"
-                                  class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                   max="59"
                                   min="0"
                                   required=""
@@ -446,7 +446,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             Object {
                               "current": <input
                                 autocomplete="off"
-                                class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                 max="59"
                                 min="0"
                                 required=""
@@ -811,14 +811,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             </GlobalStyles>
                           </GlobalStyles>
                           <MuiInputRoot
-                            className="HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
+                            className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline MuiInputBase-colorPrimary"
                             classes={
                               Object {
                                 "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                                 "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input",
+                                "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
                                 "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline",
+                                "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline",
                               }
                             }
                             onClick={[Function]}
@@ -828,9 +828,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "classes": Object {
                                   "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                                   "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                  "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input",
+                                  "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
                                   "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                  "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline",
+                                  "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline",
                                 },
                                 "color": "primary",
                                 "components": Object {
@@ -906,7 +906,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "ref": Object {
                                     "current": <input
                                       autocomplete="off"
-                                      class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                       max="59"
                                       min="0"
                                       required=""
@@ -921,7 +921,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "inputRef": Object {
                                   "current": <input
                                     autocomplete="off"
-                                    class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                     max="59"
                                     min="0"
                                     required=""
@@ -2162,14 +2162,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               }
                             />
                             <div
-                              className="HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
                               onClick={[Function]}
                             >
                               <MuiInputInput
                                 as="input"
                                 autoComplete="off"
                                 autoFocus={false}
-                                className="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input"
+                                className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                 disabled={false}
                                 max={59}
                                 min={0}
@@ -2184,9 +2184,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                     "classes": Object {
                                       "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                                       "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                      "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input",
+                                      "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
                                       "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                      "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-root MuiInput-underline",
+                                      "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot MuiInput-underline",
                                     },
                                     "color": "primary",
                                     "components": Object {
@@ -2261,7 +2261,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                       "ref": Object {
                                         "current": <input
                                           autocomplete="off"
-                                          class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                           max="59"
                                           min="0"
                                           required=""
@@ -2276,7 +2276,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                     "inputRef": Object {
                                       "current": <input
                                         autocomplete="off"
-                                        class="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                         max="59"
                                         min="0"
                                         required=""
@@ -3524,7 +3524,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 <input
                                   autoComplete="off"
                                   autoFocus={false}
-                                  className="HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                  className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                   disabled={false}
                                   max={59}
                                   min={0}

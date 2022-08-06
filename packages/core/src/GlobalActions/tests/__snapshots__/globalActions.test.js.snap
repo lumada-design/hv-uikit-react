@@ -17,7 +17,7 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
         class="HvGlobalActions-actions"
       >
         <button
-          class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -37,7 +37,7 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
             <button
               aria-expanded="false"
               aria-label="Dropdown menu"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="dropdownItem-5-icon-button"
               tabindex="0"
               type="button"
@@ -72,7 +72,7 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 exports[`GlobalActions sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="HvContainer-root MuiContainer-root MuiContainer-maxWidthXl css-1d4akpq-MuiContainer-root"
+    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl css-1d4akpq-MuiContainer-root"
   >
     <div
       class="HvGlobalActions-root HvGlobalActions-positionSticky HvGlobalActions-global"
@@ -85,7 +85,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         >
           <button
             aria-label="Back"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -118,14 +118,14 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
           class="HvGlobalActions-actions"
         >
           <button
-            class="HvButton-root MuiButton-root MuiButton-contained HvButton-primary MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             Approve & Share
           </button>
           <button
-            class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -145,7 +145,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
               <button
                 aria-expanded="false"
                 aria-label="Dropdown menu"
-                class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 id="dropdownItem-1-icon-button"
                 tabindex="0"
                 type="button"
@@ -192,14 +192,14 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
@@ -219,7 +219,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-2-icon-button"
                   tabindex="0"
                   type="button"
@@ -275,14 +275,14 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
@@ -302,7 +302,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-3-icon-button"
                   tabindex="0"
                   type="button"
@@ -358,14 +358,14 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
             class="HvGlobalActions-actions"
           >
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
               Remove
             </button>
             <button
-              class="HvButton-root MuiButton-root MuiButton-outlined HvButton-secondary MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
@@ -385,7 +385,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="dropdownItem-4-icon-button"
                   tabindex="0"
                   type="button"

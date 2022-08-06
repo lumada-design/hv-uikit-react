@@ -25,7 +25,7 @@ exports[`PeriodPicker should rednder correctly 1`] = `
     </div>
     <button
       aria-pressed="false"
-      class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
       tabindex="0"
       type="button"
     >

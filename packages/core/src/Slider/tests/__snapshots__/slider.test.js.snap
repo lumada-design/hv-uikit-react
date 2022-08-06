@@ -30,11 +30,11 @@ exports[`<HvSlider> sample snapshot testing Disabled 1`] = `
               class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="SingleDisabled-input-0-input"
                   rows="10"
@@ -184,12 +184,12 @@ exports[`<HvSlider> sample snapshot testing Error 1`] = `
               class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorSingleSlider-input-0-input"
                   rows="10"
                   type="text"
@@ -370,11 +370,11 @@ exports[`<HvSlider> sample snapshot testing Main 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Main-input-0-input"
                   rows="10"
                   type="text"
@@ -524,11 +524,11 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
               class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="RangeSliderDisabled-input-0-input"
                   rows="10"
@@ -572,11 +572,11 @@ exports[`<HvSlider> sample snapshot testing Range Disabled 1`] = `
               class="HvBaseInput-root HvBaseInput-disabled"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input HvInput-input HvBaseInput-inputDisabled MuiInput-input MuiInputBase-input HvBaseInput-inputRootDisabled HvInput-inputRootDisabled Mui-disabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvBaseInput-inputDisabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   disabled=""
                   id="RangeSliderDisabled-input-1-input"
                   rows="10"
@@ -741,12 +741,12 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
               class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorRangeSlider-input-0-input"
                   rows="10"
                   type="text"
@@ -789,12 +789,12 @@ exports[`<HvSlider> sample snapshot testing Range Error 1`] = `
               class="HvBaseInput-root HvBaseInput-invalid"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-invalid="true"
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="ErrorRangeSlider-input-1-input"
                   rows="10"
                   type="text"
@@ -991,11 +991,11 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Range-input-0-input"
                   rows="10"
                   type="text"
@@ -1038,11 +1038,11 @@ exports[`<HvSlider> sample snapshot testing Range Slider 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-1"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   id="Range-input-1-input"
                   rows="10"
                   type="text"

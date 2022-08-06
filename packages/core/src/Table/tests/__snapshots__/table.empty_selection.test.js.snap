@@ -26,7 +26,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               class="HvCheckBox-container"
             >
               <span
-                class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
               >
                 <input
                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -81,7 +81,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
           class="HvActionsGeneric-root HvBulkActions-actions"
         >
           <button
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             disabled=""
             id="disable"
             tabindex="-1"
@@ -411,7 +411,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     id="select-1"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-1-select"
@@ -519,7 +519,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-1-icon-button"
                         tabindex="0"
                         type="button"
@@ -570,7 +570,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     id="select-2"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-2-select"
@@ -678,7 +678,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-2-icon-button"
                         tabindex="0"
                         type="button"
@@ -729,7 +729,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     id="select-3"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-3-select"
@@ -837,7 +837,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-3-icon-button"
                         tabindex="0"
                         type="button"
@@ -888,7 +888,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     id="select-4"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-4-select"
@@ -996,7 +996,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-4-icon-button"
                         tabindex="0"
                         type="button"
@@ -1047,7 +1047,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                     id="select-5"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         aria-label="select-5-select"
@@ -1155,7 +1155,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       <button
                         aria-expanded="false"
                         aria-label="Dropdown menu"
-                        class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                         id="table1-row-5-icon-button"
                         tabindex="0"
                         type="button"
@@ -1255,7 +1255,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="First Page"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-firstPage-button"
                   tabindex="-1"
@@ -1287,7 +1287,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Previous Page"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-previousPage-button"
                   tabindex="-1"
@@ -1327,11 +1327,11 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                       class="HvBaseInput-root"
                     >
                       <div
-                        class="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
                       >
                         <input
                           aria-label="Current page"
-                          class="HvBaseInput-input HvInput-input HvPagination-pageSizeInput MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           id="table1-pagination-currentPage-input"
                           rows="10"
                           type="number"
@@ -1392,7 +1392,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Next Page"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-nextPage-button"
                   tabindex="-1"
@@ -1424,7 +1424,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
               >
                 <button
                   aria-label="Last Page"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvPagination-iconContainer HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   disabled=""
                   id="table1-pagination-lastPage-button"
                   tabindex="-1"

@@ -67,9 +67,9 @@ exports[`Input should render correctly 1`] = `
             Object {
               "disabled": "HvBaseInput-inputRootDisabled",
               "focused": "HvBaseInput-inputRootFocused",
-              "input": "HvBaseInput-input MuiInput-input",
+              "input": "MuiInput-input HvBaseInput-input",
               "multiline": "HvBaseInput-inputRootMultiline",
-              "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+              "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
             }
           }
           components={
@@ -487,14 +487,14 @@ exports[`Input should render correctly 1`] = `
             </GlobalStyles>
           </GlobalStyles>
           <MuiInputRoot
-            className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
+            className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary"
             classes={
               Object {
                 "disabled": "HvBaseInput-inputRootDisabled",
                 "focused": "HvBaseInput-inputRootFocused",
-                "input": "HvBaseInput-input MuiInput-input",
+                "input": "MuiInput-input HvBaseInput-input",
                 "multiline": "HvBaseInput-inputRootMultiline",
-                "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
               }
             }
             onClick={[Function]}
@@ -503,9 +503,9 @@ exports[`Input should render correctly 1`] = `
                 "classes": Object {
                   "disabled": "HvBaseInput-inputRootDisabled",
                   "focused": "HvBaseInput-inputRootFocused",
-                  "input": "HvBaseInput-input MuiInput-input",
+                  "input": "MuiInput-input HvBaseInput-input",
                   "multiline": "HvBaseInput-inputRootMultiline",
-                  "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                  "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
                 },
                 "color": "primary",
                 "components": Object {
@@ -1485,13 +1485,13 @@ exports[`Input should render correctly 1`] = `
               }
             />
             <div
-              className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
               onClick={[Function]}
             >
               <MuiInputInput
                 aria-label="Input Label"
                 as="input"
-                className="HvBaseInput-input MuiInput-input MuiInputBase-input"
+                className="MuiInputBase-input MuiInput-input HvBaseInput-input"
                 onAnimationStart={[Function]}
                 onBlur={[Function]}
                 onChange={[Function]}
@@ -1501,9 +1501,9 @@ exports[`Input should render correctly 1`] = `
                     "classes": Object {
                       "disabled": "HvBaseInput-inputRootDisabled",
                       "focused": "HvBaseInput-inputRootFocused",
-                      "input": "HvBaseInput-input MuiInput-input",
+                      "input": "MuiInput-input HvBaseInput-input",
                       "multiline": "HvBaseInput-inputRootMultiline",
-                      "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                      "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
                     },
                     "color": "primary",
                     "components": Object {
@@ -2486,7 +2486,7 @@ exports[`Input should render correctly 1`] = `
                 />
                 <input
                   aria-label="Input Label"
-                  className="HvBaseInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  className="MuiInputBase-input MuiInput-input HvBaseInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -2567,9 +2567,9 @@ exports[`Input should render the Input component with the multiline style 1`] = 
             Object {
               "disabled": "HvBaseInput-inputRootDisabled",
               "focused": "HvBaseInput-inputRootFocused",
-              "input": "HvBaseInput-input MuiInput-input",
+              "input": "MuiInput-input HvBaseInput-input",
               "multiline": "HvBaseInput-inputRootMultiline",
-              "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+              "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
             }
           }
           components={
@@ -2986,14 +2986,14 @@ exports[`Input should render the Input component with the multiline style 1`] = 
             </GlobalStyles>
           </GlobalStyles>
           <MuiInputRoot
-            className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline MuiInputBase-multiline"
+            className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline"
             classes={
               Object {
                 "disabled": "HvBaseInput-inputRootDisabled",
                 "focused": "HvBaseInput-inputRootFocused",
-                "input": "HvBaseInput-input MuiInput-input",
+                "input": "MuiInput-input HvBaseInput-input",
                 "multiline": "HvBaseInput-inputRootMultiline",
-                "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
               }
             }
             onClick={[Function]}
@@ -3002,9 +3002,9 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                 "classes": Object {
                   "disabled": "HvBaseInput-inputRootDisabled",
                   "focused": "HvBaseInput-inputRootFocused",
-                  "input": "HvBaseInput-input MuiInput-input",
+                  "input": "MuiInput-input HvBaseInput-input",
                   "multiline": "HvBaseInput-inputRootMultiline",
-                  "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                  "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
                 },
                 "color": "primary",
                 "components": Object {
@@ -5539,7 +5539,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
               }
             />
             <div
-              className="HvBaseInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary HvBaseInput-inputRootMultiline MuiInputBase-multiline css-3t0p26-MuiInputBase-root-MuiInput-root"
+              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline css-3t0p26-MuiInputBase-root-MuiInput-root"
               onClick={[Function]}
             >
               <MuiInputInput
@@ -5558,7 +5558,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                     "render": [Function],
                   }
                 }
-                className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline"
+                className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline"
                 maxRows={10}
                 minRows={10}
                 onAnimationStart={[Function]}
@@ -5570,9 +5570,9 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                     "classes": Object {
                       "disabled": "HvBaseInput-inputRootDisabled",
                       "focused": "HvBaseInput-inputRootFocused",
-                      "input": "HvBaseInput-input MuiInput-input",
+                      "input": "MuiInput-input HvBaseInput-input",
                       "multiline": "HvBaseInput-inputRootMultiline",
-                      "root": "HvBaseInput-inputRoot MuiInput-root MuiInput-underline",
+                      "root": "MuiInput-root HvBaseInput-inputRoot MuiInput-underline",
                     },
                     "color": "primary",
                     "components": Object {
@@ -8108,7 +8108,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   }
                 />
                 <ForwardRef(TextareaAutosize)
-                  className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                  className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                   maxRows={10}
                   minRows={10}
                   onAnimationStart={[Function]}
@@ -8119,7 +8119,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   rows={10}
                 >
                   <textarea
-                    className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                    className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                     onAnimationStart={[Function]}
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -8135,7 +8135,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   />
                   <textarea
                     aria-hidden={true}
-                    className="HvBaseInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
+                    className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline css-1bbl97q-MuiInputBase-input-MuiInput-input"
                     readOnly={true}
                     style={
                       Object {

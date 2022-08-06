@@ -6,7 +6,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
     style="width: 100%;"
   >
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 HvHeader-root MuiAppBar-root HvHeader-backgroundColor MuiAppBar-colorPrimary MuiAppBar-positionRelative css-1j4xqc3-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root HvHeader-root MuiAppBar-colorPrimary HvHeader-backgroundColor MuiAppBar-positionRelative css-1j4xqc3-MuiPaper-root-MuiAppBar-root"
     >
       <div
         class="HvHeader-header"
@@ -73,7 +73,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
         >
           <button
             aria-label="Open Notifications panel"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-panelOpen-1 HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-panelOpen-1 HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -109,7 +109,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
           </button>
           <button
             aria-label="Open User panel"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -220,7 +220,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-1-icon-button"
                   tabindex="0"
                   type="button"
@@ -302,7 +302,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-2-icon-button"
                   tabindex="0"
                   type="button"
@@ -408,7 +408,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-3-icon-button"
                   tabindex="0"
                   type="button"
@@ -514,7 +514,7 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
                 <button
                   aria-expanded="false"
                   aria-label="Dropdown menu"
-                  class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                   id="drop-down-menu-4-icon-button"
                   tabindex="0"
                   type="button"
@@ -547,14 +547,14 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
         class="HvActionBar-root HvNotificationPanel-actionBarRoot HvNotificationPanel-actionBar"
       >
         <button
-          class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
           Mark All Read
         </button>
         <button
-          class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >

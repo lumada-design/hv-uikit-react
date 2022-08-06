@@ -1480,7 +1480,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1535,7 +1535,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1590,7 +1590,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1674,7 +1674,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1729,7 +1729,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -1784,7 +1784,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -3080,7 +3080,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <Styled(ForwardRef(ButtonBase))
                                                 centerRipple={true}
-                                                className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
+                                                className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
                                                 classes={
                                                   Object {
                                                     "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -4133,7 +4133,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 />
                                                 <ForwardRef(ButtonBase)
                                                   centerRipple={true}
-                                                  className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                  className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                   classes={
                                                     Object {
                                                       "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -4150,7 +4150,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 >
                                                   <MuiButtonBaseRoot
                                                     as="span"
-                                                    className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                    className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                     classes={
                                                       Object {
                                                         "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -4223,7 +4223,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                             fontSize="medium"
                                                           />,
                                                         ],
-                                                        "className": "MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
+                                                        "className": "PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
                                                         "classes": Object {
                                                           "root": "MuiRadio-root MuiRadio-colorDefault",
                                                         },
@@ -5243,7 +5243,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       }
                                                     />
                                                     <span
-                                                      className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                                      className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                                                       onBlur={[Function]}
                                                       onContextMenu={[Function]}
                                                       onDragLeave={[Function]}
@@ -6505,7 +6505,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -6560,7 +6560,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -6615,7 +6615,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -6699,7 +6699,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -6754,7 +6754,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -6809,7 +6809,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -8105,7 +8105,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <Styled(ForwardRef(ButtonBase))
                                                 centerRipple={true}
-                                                className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
+                                                className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
                                                 classes={
                                                   Object {
                                                     "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -9158,7 +9158,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 />
                                                 <ForwardRef(ButtonBase)
                                                   centerRipple={true}
-                                                  className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                  className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                   classes={
                                                     Object {
                                                       "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -9175,7 +9175,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 >
                                                   <MuiButtonBaseRoot
                                                     as="span"
-                                                    className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                    className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                     classes={
                                                       Object {
                                                         "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -9248,7 +9248,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                             fontSize="medium"
                                                           />,
                                                         ],
-                                                        "className": "MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
+                                                        "className": "PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
                                                         "classes": Object {
                                                           "root": "MuiRadio-root MuiRadio-colorDefault",
                                                         },
@@ -10268,7 +10268,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       }
                                                     />
                                                     <span
-                                                      className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                                      className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                                                       onBlur={[Function]}
                                                       onContextMenu={[Function]}
                                                       onDragLeave={[Function]}
@@ -11530,7 +11530,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -11585,7 +11585,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -11640,7 +11640,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             class="HvRadio-container HvList-selectorContainer"
                           >
                             <span
-                              class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                              class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                             >
                               <input
                                 class="PrivateSwitchBase-input css-1m9pwf3"
@@ -11724,7 +11724,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -11779,7 +11779,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -11834,7 +11834,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               class="HvRadio-container HvList-selectorContainer"
                             >
                               <span
-                                class="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                               >
                                 <input
                                   class="PrivateSwitchBase-input css-1m9pwf3"
@@ -13130,7 +13130,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <Styled(ForwardRef(ButtonBase))
                                                 centerRipple={true}
-                                                className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
+                                                className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1onfwp4-MuiRadio-root"
                                                 classes={
                                                   Object {
                                                     "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -14183,7 +14183,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 />
                                                 <ForwardRef(ButtonBase)
                                                   centerRipple={true}
-                                                  className="MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                  className="PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                   classes={
                                                     Object {
                                                       "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -14200,7 +14200,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 >
                                                   <MuiButtonBaseRoot
                                                     as="span"
-                                                    className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
+                                                    className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root"
                                                     classes={
                                                       Object {
                                                         "root": "MuiRadio-root MuiRadio-colorDefault",
@@ -14273,7 +14273,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                             fontSize="medium"
                                                           />,
                                                         ],
-                                                        "className": "MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
+                                                        "className": "PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-xlid7s-MuiRadio-root",
                                                         "classes": Object {
                                                           "root": "MuiRadio-root MuiRadio-colorDefault",
                                                         },
@@ -15293,7 +15293,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       }
                                                     />
                                                     <span
-                                                      className="MuiRadio-root MuiRadio-colorDefault MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
+                                                      className="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvBaseRadio-root css-1gu2tss-MuiButtonBase-root-MuiRadio-root"
                                                       onBlur={[Function]}
                                                       onContextMenu={[Function]}
                                                       onDragLeave={[Function]}

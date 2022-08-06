@@ -33,7 +33,7 @@ exports[`Tab withStyles should render correctly 1`] = `
       label="Clickable Tab"
     >
       <MuiTabRoot
-        className="HvTab-root MuiTab-root MuiTab-textColorInherit"
+        className="MuiTab-root HvTab-root MuiTab-textColorInherit"
         classes={
           Object {
             "disabled": "HvTab-disabled",
@@ -295,7 +295,7 @@ exports[`Tab withStyles should render correctly 1`] = `
           }
         />
         <ForwardRef(ButtonBase)
-          className="HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
+          className="MuiTab-root HvTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
           disableRipple={true}
           disableTouchRipple={true}
           disabled={false}
@@ -308,7 +308,7 @@ exports[`Tab withStyles should render correctly 1`] = `
         >
           <MuiButtonBaseRoot
             as="button"
-            className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
+            className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -333,7 +333,7 @@ exports[`Tab withStyles should render correctly 1`] = `
                   </React.Fragment>,
                   undefined,
                 ],
-                "className": "HvTab-root MuiTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root",
+                "className": "MuiTab-root HvTab-root MuiTab-textColorInherit css-ng5jps-MuiTab-root",
                 "component": "button",
                 "disableRipple": true,
                 "disableTouchRipple": true,
@@ -574,7 +574,7 @@ exports[`Tab withStyles should render correctly 1`] = `
               }
             />
             <button
-              className="MuiButtonBase-root HvTab-root MuiTab-root MuiTab-textColorInherit css-qfuyq2-MuiButtonBase-root-MuiTab-root"
+              className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit css-qfuyq2-MuiButtonBase-root-MuiTab-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}

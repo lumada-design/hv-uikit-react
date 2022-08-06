@@ -89,7 +89,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 "maxLength": 250,
                 "ref": Object {
                   "current": <input
-                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                     maxlength="250"
                     rows="10"
                     type="text"
@@ -101,7 +101,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             inputRef={
               Object {
                 "current": <input
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   maxlength="250"
                   rows="10"
                   type="text"
@@ -152,7 +152,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "maxLength": 250,
                   "ref": Object {
                     "current": <input
-                      class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                       maxlength="250"
                       rows="10"
                       type="text"
@@ -164,7 +164,7 @@ exports[`Input should pass other props to the child input component 1`] = `
               inputRef={
                 Object {
                   "current": <input
-                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                     maxlength="250"
                     rows="10"
                     type="text"
@@ -210,7 +210,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                       "maxLength": 250,
                       "ref": Object {
                         "current": <input
-                          class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           maxlength="250"
                           rows="10"
                           type="text"
@@ -223,7 +223,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                   inputRef={
                     Object {
                       "current": <input
-                        class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                         maxlength="250"
                         rows="10"
                         type="text"
@@ -247,9 +247,9 @@ exports[`Input should pass other props to the child input component 1`] = `
                       Object {
                         "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                         "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                        "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                        "input": "MuiInput-input HvBaseInput-input HvInput-input",
                         "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                        "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                        "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                       }
                     }
                     components={
@@ -321,7 +321,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                         "maxLength": 250,
                         "ref": Object {
                           "current": <input
-                            class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                             maxlength="250"
                             rows="10"
                             type="text"
@@ -334,7 +334,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                     inputRef={
                       Object {
                         "current": <input
-                          class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           maxlength="250"
                           rows="10"
                           type="text"
@@ -697,14 +697,14 @@ exports[`Input should pass other props to the child input component 1`] = `
                       </GlobalStyles>
                     </GlobalStyles>
                     <MuiInputRoot
-                      className="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
+                      className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary"
                       classes={
                         Object {
                           "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                           "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                          "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                          "input": "MuiInput-input HvBaseInput-input HvInput-input",
                           "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                          "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                          "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                         }
                       }
                       onClick={[Function]}
@@ -714,9 +714,9 @@ exports[`Input should pass other props to the child input component 1`] = `
                           "classes": Object {
                             "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                             "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                            "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                            "input": "MuiInput-input HvBaseInput-input HvInput-input",
                             "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                            "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                            "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                           },
                           "color": "primary",
                           "components": Object {
@@ -790,7 +790,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                             "maxLength": 250,
                             "ref": Object {
                               "current": <input
-                                class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                 maxlength="250"
                                 rows="10"
                                 type="text"
@@ -801,7 +801,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                           },
                           "inputRef": Object {
                             "current": <input
-                              class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                               maxlength="250"
                               rows="10"
                               type="text"
@@ -3685,13 +3685,13 @@ exports[`Input should pass other props to the child input component 1`] = `
                         }
                       />
                       <div
-                        className="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                        className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
                         onClick={[Function]}
                       >
                         <MuiInputInput
                           as="input"
                           autoFocus={false}
-                          className="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input"
+                          className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           disabled={false}
                           maxLength={250}
                           onAnimationStart={[Function]}
@@ -3705,9 +3705,9 @@ exports[`Input should pass other props to the child input component 1`] = `
                               "classes": Object {
                                 "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                                 "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                                "input": "MuiInput-input HvBaseInput-input HvInput-input",
                                 "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                                "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                               },
                               "color": "primary",
                               "components": Object {
@@ -3780,7 +3780,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                                 "maxLength": 250,
                                 "ref": Object {
                                   "current": <input
-                                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                     maxlength="250"
                                     rows="10"
                                     type="text"
@@ -3791,7 +3791,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                               },
                               "inputRef": Object {
                                 "current": <input
-                                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                   maxlength="250"
                                   rows="10"
                                   type="text"
@@ -6681,7 +6681,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                           />
                           <input
                             autoFocus={false}
-                            className="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                            className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                             disabled={false}
                             maxLength={250}
                             onAnimationStart={[Function]}
@@ -6896,7 +6896,7 @@ exports[`Input should render correctly 1`] = `
                 "autoComplete": undefined,
                 "ref": Object {
                   "current": <input
-                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                     rows="10"
                     type="text"
                     value=""
@@ -6907,7 +6907,7 @@ exports[`Input should render correctly 1`] = `
             inputRef={
               Object {
                 "current": <input
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                   rows="10"
                   type="text"
                   value=""
@@ -6956,7 +6956,7 @@ exports[`Input should render correctly 1`] = `
                   "autoComplete": undefined,
                   "ref": Object {
                     "current": <input
-                      class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                       rows="10"
                       type="text"
                       value=""
@@ -6967,7 +6967,7 @@ exports[`Input should render correctly 1`] = `
               inputRef={
                 Object {
                   "current": <input
-                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                     rows="10"
                     type="text"
                     value=""
@@ -7011,7 +7011,7 @@ exports[`Input should render correctly 1`] = `
                       "autoComplete": undefined,
                       "ref": Object {
                         "current": <input
-                          class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           rows="10"
                           type="text"
                           value=""
@@ -7023,7 +7023,7 @@ exports[`Input should render correctly 1`] = `
                   inputRef={
                     Object {
                       "current": <input
-                        class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                         rows="10"
                         type="text"
                         value=""
@@ -7046,9 +7046,9 @@ exports[`Input should render correctly 1`] = `
                       Object {
                         "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                         "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                        "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                        "input": "MuiInput-input HvBaseInput-input HvInput-input",
                         "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                        "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                        "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                       }
                     }
                     components={
@@ -7119,7 +7119,7 @@ exports[`Input should render correctly 1`] = `
                         "autoComplete": undefined,
                         "ref": Object {
                           "current": <input
-                            class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                             rows="10"
                             type="text"
                             value=""
@@ -7131,7 +7131,7 @@ exports[`Input should render correctly 1`] = `
                     inputRef={
                       Object {
                         "current": <input
-                          class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                           rows="10"
                           type="text"
                           value=""
@@ -7493,14 +7493,14 @@ exports[`Input should render correctly 1`] = `
                       </GlobalStyles>
                     </GlobalStyles>
                     <MuiInputRoot
-                      className="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary"
+                      className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary"
                       classes={
                         Object {
                           "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                           "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                          "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                          "input": "MuiInput-input HvBaseInput-input HvInput-input",
                           "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                          "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                          "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                         }
                       }
                       onClick={[Function]}
@@ -7510,9 +7510,9 @@ exports[`Input should render correctly 1`] = `
                           "classes": Object {
                             "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                             "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                            "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                            "input": "MuiInput-input HvBaseInput-input HvInput-input",
                             "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                            "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                            "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                           },
                           "color": "primary",
                           "components": Object {
@@ -7585,7 +7585,7 @@ exports[`Input should render correctly 1`] = `
                             "autoComplete": undefined,
                             "ref": Object {
                               "current": <input
-                                class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                 rows="10"
                                 type="text"
                                 value=""
@@ -7595,7 +7595,7 @@ exports[`Input should render correctly 1`] = `
                           },
                           "inputRef": Object {
                             "current": <input
-                              class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                               rows="10"
                               type="text"
                               value=""
@@ -8679,13 +8679,13 @@ exports[`Input should render correctly 1`] = `
                         }
                       />
                       <div
-                        className="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
+                        className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary css-12yeguk-MuiInputBase-root-MuiInput-root"
                         onClick={[Function]}
                       >
                         <MuiInputInput
                           as="input"
                           autoFocus={false}
-                          className="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input"
+                          className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           disabled={false}
                           onAnimationStart={[Function]}
                           onBlur={[Function]}
@@ -8698,9 +8698,9 @@ exports[`Input should render correctly 1`] = `
                               "classes": Object {
                                 "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
                                 "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                "input": "HvBaseInput-input HvInput-input MuiInput-input",
+                                "input": "MuiInput-input HvBaseInput-input HvInput-input",
                                 "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                "root": "HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline",
+                                "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline",
                               },
                               "color": "primary",
                               "components": Object {
@@ -8772,7 +8772,7 @@ exports[`Input should render correctly 1`] = `
                                 "autoComplete": undefined,
                                 "ref": Object {
                                   "current": <input
-                                    class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                     rows="10"
                                     type="text"
                                     value=""
@@ -8782,7 +8782,7 @@ exports[`Input should render correctly 1`] = `
                               },
                               "inputRef": Object {
                                 "current": <input
-                                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                                   rows="10"
                                   type="text"
                                   value=""
@@ -9872,7 +9872,7 @@ exports[`Input should render correctly 1`] = `
                           />
                           <input
                             autoFocus={false}
-                            className="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
+                            className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-16hxuvb-MuiInputBase-input-MuiInput-input"
                             disabled={false}
                             onAnimationStart={[Function]}
                             onBlur={[Function]}

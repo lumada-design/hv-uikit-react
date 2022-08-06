@@ -24,7 +24,7 @@ HV UI Kit is composed of multiple mostly independent npm packages. You can insta
 Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
 
 ```shell
-npm install @hitachivantara/uikit-react-core @material-ui/core@^4.12.3
+npm install @hitachivantara/uikit-react-core @mui/material @mui/styles
 ```
 
 #### Other packages available

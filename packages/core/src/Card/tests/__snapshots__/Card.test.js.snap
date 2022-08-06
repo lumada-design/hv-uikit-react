@@ -2256,7 +2256,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                     className="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
                   >
                     <MuiCardHeaderContent
-                      className="HvCardHeader-content MuiCardHeader-content"
+                      className="MuiCardHeader-content HvCardHeader-content"
                       ownerState={
                         Object {
                           "action": undefined,
@@ -2810,22 +2810,22 @@ exports[`Card should be able to render with every property defined 1`] = `
                         }
                       />
                       <div
-                        className="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+                        className="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
                       >
                         <ForwardRef(Typography)
-                          className="HvCardHeader-title MuiCardHeader-title"
+                          className="MuiCardHeader-title HvCardHeader-title"
                           component="span"
                           display="block"
                           variant="h5"
                         >
                           <MuiTypographyRoot
                             as="span"
-                            className="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title"
+                            className="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title"
                             ownerState={
                               Object {
                                 "align": "inherit",
                                 "children": "Asset Avatar L90",
-                                "className": "HvCardHeader-title MuiCardHeader-title",
+                                "className": "MuiCardHeader-title HvCardHeader-title",
                                 "color": undefined,
                                 "component": "span",
                                 "gutterBottom": false,
@@ -3392,14 +3392,14 @@ exports[`Card should be able to render with every property defined 1`] = `
                               }
                             />
                             <span
-                              className="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+                              className="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
                             >
                               Asset Avatar L90
                             </span>
                           </MuiTypographyRoot>
                         </ForwardRef(Typography)>
                         <ForwardRef(Typography)
-                          className="HvCardHeader-subheader MuiCardHeader-subheader"
+                          className="MuiCardHeader-subheader HvCardHeader-subheader"
                           color="text.secondary"
                           component="span"
                           display="block"
@@ -3407,12 +3407,12 @@ exports[`Card should be able to render with every property defined 1`] = `
                         >
                           <MuiTypographyRoot
                             as="span"
-                            className="MuiTypography-root MuiTypography-body1 HvCardHeader-subheader MuiCardHeader-subheader"
+                            className="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader HvCardHeader-subheader"
                             ownerState={
                               Object {
                                 "align": "inherit",
                                 "children": "Compressor",
-                                "className": "HvCardHeader-subheader MuiCardHeader-subheader",
+                                "className": "MuiCardHeader-subheader HvCardHeader-subheader",
                                 "color": "text.secondary",
                                 "component": "span",
                                 "gutterBottom": false,
@@ -3979,7 +3979,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                               }
                             />
                             <span
-                              className="MuiTypography-root MuiTypography-body1 HvCardHeader-subheader MuiCardHeader-subheader css-d9e6j6-MuiTypography-root"
+                              className="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader HvCardHeader-subheader css-d9e6j6-MuiTypography-root"
                             >
                               Compressor
                             </span>
@@ -4026,7 +4026,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                 <MuiCardMediaRoot
                   alt="Compressor"
                   as="img"
-                  className="HvCardMedia-root MuiCardMedia-root HvCardMedia-media MuiCardMedia-media MuiCardMedia-img"
+                  className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img"
                   classes={
                     Object {
                       "media": "HvCardMedia-media",
@@ -4591,7 +4591,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                   />
                   <img
                     alt="Compressor"
-                    className="HvCardMedia-root MuiCardMedia-root HvCardMedia-media MuiCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
+                    className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
                     height={140}
                     role="img"
                     src="test-file-stub"

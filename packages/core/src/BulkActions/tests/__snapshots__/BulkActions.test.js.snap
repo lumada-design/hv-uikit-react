@@ -1838,7 +1838,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             >
                               <Styled(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
+                                className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
                                 classes={
                                   Object {
                                     "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -3376,7 +3376,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 />
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                  className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                   classes={
                                     Object {
                                       "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -3393,7 +3393,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 >
                                   <MuiButtonBaseRoot
                                     as="span"
-                                    className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                     classes={
                                       Object {
                                         "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -3468,7 +3468,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                             fontSize="medium"
                                           />,
                                         ],
-                                        "className": "MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
+                                        "className": "PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
                                         "classes": Object {
                                           "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
                                         },
@@ -4972,7 +4972,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       }
                                     />
                                     <span
-                                      className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                                      className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                                       onBlur={[Function]}
                                       onContextMenu={[Function]}
                                       onDragLeave={[Function]}
@@ -6860,7 +6860,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   variant="text"
                 >
                   <MuiButtonRoot
-                    className="HvActionsGeneric-button HvButton-ghostSVG"
+                    className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -6868,8 +6868,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
-                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       }
                     }
@@ -8394,7 +8393,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       }
                     />
                     <ForwardRef(ButtonBase)
-                      className="HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                      className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
@@ -8402,8 +8401,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                           "label": "MuiButton-label",
                           "outlinedPrimary": "HvButton-secondary",
-                          "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                          "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                          "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                           "textPrimary": "HvButton-ghost",
                         }
                       }
@@ -8417,7 +8415,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     >
                       <MuiButtonBaseRoot
                         as="button"
-                        className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                        className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
                         classes={
                           Object {
                             "containedPrimary": "HvButton-primary",
@@ -8425,8 +8423,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
-                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                            "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
                         }
@@ -8450,7 +8447,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             "centerRipple": false,
                             "children": Array [
                               <MuiButtonStartIcon
-                                className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium"
+                                className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                                 ownerState={
                                   Object {
                                     "children": "Add",
@@ -8485,15 +8482,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               "Add",
                               undefined,
                             ],
-                            "className": "HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root",
+                            "className": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root",
                             "classes": Object {
                               "containedPrimary": "HvButton-primary",
                               "disabled": "HvButton-ghostDisabled",
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
-                              "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                              "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                              "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             },
                             "component": "button",
@@ -9997,7 +9993,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           }
                         />
                         <button
-                          className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                          className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                           disabled={true}
                           id="add"
                           onBlur={[Function]}
@@ -10017,7 +10013,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           type="button"
                         >
                           <MuiButtonStartIcon
-                            className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium"
+                            className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             ownerState={
                               Object {
                                 "children": "Add",
@@ -11532,7 +11528,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               }
                             />
                             <span
-                              className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+                              className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
                             >
                               <Add>
                                 <HvIconBase
@@ -11629,7 +11625,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   variant="text"
                 >
                   <MuiButtonRoot
-                    className="HvActionsGeneric-button HvButton-ghostSVG"
+                    className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -11637,8 +11633,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
-                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                        "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       }
                     }
@@ -13163,7 +13158,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       }
                     />
                     <ForwardRef(ButtonBase)
-                      className="HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                      className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
@@ -13171,8 +13166,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                           "label": "MuiButton-label",
                           "outlinedPrimary": "HvButton-secondary",
-                          "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                          "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                          "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                           "textPrimary": "HvButton-ghost",
                         }
                       }
@@ -13186,7 +13180,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     >
                       <MuiButtonBaseRoot
                         as="button"
-                        className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                        className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root"
                         classes={
                           Object {
                             "containedPrimary": "HvButton-primary",
@@ -13194,8 +13188,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
-                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                            "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
                         }
@@ -13219,7 +13212,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             "centerRipple": false,
                             "children": Array [
                               <MuiButtonStartIcon
-                                className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium"
+                                className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                                 ownerState={
                                   Object {
                                     "children": "Delete",
@@ -13254,15 +13247,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               "Delete",
                               undefined,
                             ],
-                            "className": "HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root",
+                            "className": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-q8qr05-MuiButton-root",
                             "classes": Object {
                               "containedPrimary": "HvButton-primary",
                               "disabled": "HvButton-ghostDisabled",
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
-                              "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                              "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                              "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             },
                             "component": "button",
@@ -14766,7 +14758,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           }
                         />
                         <button
-                          className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                          className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvActionsGeneric-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                           disabled={true}
                           id="delete"
                           onBlur={[Function]}
@@ -14786,7 +14778,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           type="button"
                         >
                           <MuiButtonStartIcon
-                            className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium"
+                            className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             ownerState={
                               Object {
                                 "children": "Delete",
@@ -16301,7 +16293,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               }
                             />
                             <span
-                              className="HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+                              className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
                             >
                               <Delete>
                                 <HvIconBase
@@ -16624,7 +16616,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 <MuiButtonRoot
                                   aria-expanded={false}
                                   aria-label="Dropdown menu"
-                                  className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
+                                  className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                   classes={
                                     Object {
                                       "containedPrimary": "HvButton-primary",
@@ -16632,8 +16624,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                       "label": "MuiButton-label",
                                       "outlinedPrimary": "HvButton-secondary",
-                                      "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                      "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                      "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                       "textPrimary": "HvButton-ghost",
                                     }
                                   }
@@ -18163,7 +18154,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   <ForwardRef(ButtonBase)
                                     aria-expanded={false}
                                     aria-label="Dropdown menu"
-                                    className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                                    className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                                     classes={
                                       Object {
                                         "containedPrimary": "HvButton-primary",
@@ -18171,8 +18162,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                         "label": "MuiButton-label",
                                         "outlinedPrimary": "HvButton-secondary",
-                                        "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                        "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                        "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                         "textPrimary": "HvButton-ghost",
                                       }
                                     }
@@ -18187,7 +18177,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       aria-expanded={false}
                                       aria-label="Dropdown menu"
                                       as="button"
-                                      className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                                      className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                                       classes={
                                         Object {
                                           "containedPrimary": "HvButton-primary",
@@ -18195,8 +18185,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                           "label": "MuiButton-label",
                                           "outlinedPrimary": "HvButton-secondary",
-                                          "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                          "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                          "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                           "textPrimary": "HvButton-ghost",
                                         }
                                       }
@@ -18226,15 +18215,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                             />,
                                             undefined,
                                           ],
-                                          "className": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
+                                          "className": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
                                           "classes": Object {
                                             "containedPrimary": "HvButton-primary",
                                             "disabled": "HvButton-ghostDisabled",
                                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                             "label": "MuiButton-label",
                                             "outlinedPrimary": "HvButton-secondary",
-                                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                            "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                             "textPrimary": "HvButton-ghost",
                                           },
                                           "component": "button",
@@ -19740,7 +19728,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       <button
                                         aria-expanded={false}
                                         aria-label="Dropdown menu"
-                                        className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvButton-ghostDisabled Mui-disabled HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                                        className="MuiButtonBase-root Mui-disabled HvButton-ghostDisabled MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                                         disabled={true}
                                         id="bulkActions-actions-menu-icon-button"
                                         onBlur={[Function]}
@@ -20624,7 +20612,7 @@ exports[`BulkActions should render correctly 1`] = `
                             >
                               <Styled(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
+                                className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
                                 classes={
                                   Object {
                                     "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -21197,7 +21185,7 @@ exports[`BulkActions should render correctly 1`] = `
                                 />
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                  className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                   classes={
                                     Object {
                                       "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -21214,7 +21202,7 @@ exports[`BulkActions should render correctly 1`] = `
                                 >
                                   <MuiButtonBaseRoot
                                     as="span"
-                                    className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                     classes={
                                       Object {
                                         "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -21289,7 +21277,7 @@ exports[`BulkActions should render correctly 1`] = `
                                             fontSize="medium"
                                           />,
                                         ],
-                                        "className": "MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
+                                        "className": "PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
                                         "classes": Object {
                                           "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
                                         },
@@ -21828,7 +21816,7 @@ exports[`BulkActions should render correctly 1`] = `
                                       }
                                     />
                                     <span
-                                      className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                                      className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                                       onBlur={[Function]}
                                       onContextMenu={[Function]}
                                       onDragLeave={[Function]}
@@ -25138,7 +25126,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             >
                               <Styled(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
+                                className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
                                 classes={
                                   Object {
                                     "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -27390,7 +27378,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 />
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                  className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                   classes={
                                     Object {
                                       "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -27407,7 +27395,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 >
                                   <MuiButtonBaseRoot
                                     as="span"
-                                    className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                     classes={
                                       Object {
                                         "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
@@ -27482,7 +27470,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                             fontSize="medium"
                                           />,
                                         ],
-                                        "className": "MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
+                                        "className": "PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
                                         "classes": Object {
                                           "root": "MuiCheckbox-root MuiCheckbox-colorDefault",
                                         },
@@ -29700,7 +29688,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                       }
                                     />
                                     <span
-                                      className="MuiCheckbox-root MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                                      className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                                       onBlur={[Function]}
                                       onContextMenu={[Function]}
                                       onDragLeave={[Function]}
@@ -34422,7 +34410,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             >
                               <Styled(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
+                                className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-28m8m0-MuiCheckbox-root"
                                 classes={
                                   Object {
                                     "root": "MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault",
@@ -36329,7 +36317,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 />
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                  className="PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                   classes={
                                     Object {
                                       "root": "MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault",
@@ -36346,7 +36334,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 >
                                   <MuiButtonBaseRoot
                                     as="span"
-                                    className="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
+                                    className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root"
                                     classes={
                                       Object {
                                         "root": "MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault",
@@ -36439,7 +36427,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                             fontSize="medium"
                                           />,
                                         ],
-                                        "className": "MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
+                                        "className": "PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-1v22yn0-MuiCheckbox-root",
                                         "classes": Object {
                                           "root": "MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault",
                                         },
@@ -38300,7 +38288,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                       }
                                     />
                                     <span
-                                      className="MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+                                      className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault Mui-checked HvCheckBox-checkbox HvBaseCheckbox-root css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
                                       onBlur={[Function]}
                                       onContextMenu={[Function]}
                                       onDragLeave={[Function]}

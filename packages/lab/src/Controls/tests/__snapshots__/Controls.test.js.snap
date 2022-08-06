@@ -22,11 +22,11 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
                   placeholder="Search"
                   rows="10"
                   type="search"
@@ -137,7 +137,7 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="card"
             tabindex="0"
             type="button"
@@ -164,7 +164,7 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="list"
             tabindex="0"
             type="button"
@@ -214,10 +214,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 1
             </span>
@@ -254,10 +254,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 2
             </span>
@@ -294,10 +294,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 3
             </span>
@@ -334,10 +334,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 4
             </span>
@@ -374,10 +374,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 5
             </span>
@@ -414,10 +414,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 6
             </span>
@@ -454,10 +454,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 7
             </span>
@@ -494,10 +494,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 8
             </span>
@@ -534,10 +534,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 9
             </span>
@@ -574,10 +574,10 @@ exports[`<HvControls> sample snapshot testing Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 10
             </span>
@@ -623,11 +623,11 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
                   placeholder="Search"
                   rows="10"
                   type="search"
@@ -738,7 +738,7 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvMultiButton-selected HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="card"
             tabindex="0"
             type="button"
@@ -765,7 +765,7 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="list"
             tabindex="0"
             type="button"
@@ -814,10 +814,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 1
             </span>
@@ -848,10 +848,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 2
             </span>
@@ -882,10 +882,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 3
             </span>
@@ -916,10 +916,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 4
             </span>
@@ -950,10 +950,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 5
             </span>
@@ -984,10 +984,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 6
             </span>
@@ -1018,10 +1018,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 7
             </span>
@@ -1052,10 +1052,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 8
             </span>
@@ -1086,10 +1086,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 9
             </span>
@@ -1120,10 +1120,10 @@ exports[`<HvControls> sample snapshot testing Controls Controlled 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 10
             </span>
@@ -1164,7 +1164,7 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="true"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="all"
               tabindex="0"
               type="button"
@@ -1174,7 +1174,7 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="critical"
               tabindex="0"
               type="button"
@@ -1184,7 +1184,7 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="major"
               tabindex="0"
               type="button"
@@ -1194,7 +1194,7 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="average"
               tabindex="0"
               type="button"
@@ -1204,7 +1204,7 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="minor"
               tabindex="0"
               type="button"
@@ -1361,10 +1361,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 1
             </span>
@@ -1407,10 +1407,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 2
             </span>
@@ -1453,10 +1453,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 3
             </span>
@@ -1499,10 +1499,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 4
             </span>
@@ -1545,10 +1545,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 5
             </span>
@@ -1591,10 +1591,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 6
             </span>
@@ -1637,10 +1637,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 7
             </span>
@@ -1683,10 +1683,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 8
             </span>
@@ -1729,10 +1729,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 9
             </span>
@@ -1775,10 +1775,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 10
             </span>
@@ -1821,10 +1821,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 11
             </span>
@@ -1867,10 +1867,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 12
             </span>
@@ -1913,10 +1913,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 13
             </span>
@@ -1959,10 +1959,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 14
             </span>
@@ -2005,10 +2005,10 @@ exports[`<HvControls> sample snapshot testing Custom Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 15
             </span>
@@ -2062,10 +2062,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
               class="HvBaseInput-root"
             >
               <div
-                class="HvBaseInput-inputRoot HvInput-inputRoot MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-12yeguk-MuiInputBase-root-MuiInput-root"
               >
                 <input
-                  class="HvBaseInput-input HvInput-input MuiInput-input MuiInputBase-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-z3gqro-MuiInputBase-input-MuiInput-input"
                   id="MultibuttonFilter-search-input-input"
                   placeholder="Search"
                   rows="10"
@@ -2119,7 +2119,7 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="true"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="all"
               tabindex="0"
               type="button"
@@ -2129,7 +2129,7 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="critical"
               tabindex="0"
               type="button"
@@ -2139,7 +2139,7 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="major"
               tabindex="0"
               type="button"
@@ -2149,7 +2149,7 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="average"
               tabindex="0"
               type="button"
@@ -2159,7 +2159,7 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
               id="minor"
               tabindex="0"
               type="button"
@@ -2316,10 +2316,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 1
             </span>
@@ -2362,10 +2362,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 2
             </span>
@@ -2408,10 +2408,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 3
             </span>
@@ -2454,10 +2454,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 4
             </span>
@@ -2500,10 +2500,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 5
             </span>
@@ -2546,10 +2546,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 6
             </span>
@@ -2592,10 +2592,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 7
             </span>
@@ -2638,10 +2638,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 8
             </span>
@@ -2684,10 +2684,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 9
             </span>
@@ -2730,10 +2730,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 10
             </span>
@@ -2776,10 +2776,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 11
             </span>
@@ -2822,10 +2822,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 12
             </span>
@@ -2868,10 +2868,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 13
             </span>
@@ -2914,10 +2914,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 14
             </span>
@@ -2960,10 +2960,10 @@ exports[`<HvControls> sample snapshot testing Mixed Controls 1`] = `
           class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
         >
           <div
-            class="HvCardHeader-content MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+            class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 HvCardHeader-title MuiCardHeader-title css-19er8pf-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
             >
               Event 15
             </span>

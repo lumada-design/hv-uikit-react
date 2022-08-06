@@ -460,6 +460,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -474,7 +477,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-1"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -1280,7 +1283,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 Overview
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-1"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -1317,7 +1320,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   Overview
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-1"
                                               onMouseLeave={[Function]}
@@ -2068,7 +2071,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     Overview
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-1"
                                                 onMouseLeave={[Function]}
@@ -2379,6 +2382,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -2393,7 +2399,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-2"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -3199,7 +3205,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 Analytics
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-2"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -3236,7 +3242,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   Analytics
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-2"
                                               onMouseLeave={[Function]}
@@ -3987,7 +3993,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     Analytics
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-2"
                                                 onMouseLeave={[Function]}
@@ -4340,6 +4346,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -4354,7 +4363,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-3"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -5160,7 +5169,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 Storage
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-3"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -5197,7 +5206,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   Storage
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-3"
                                               onMouseLeave={[Function]}
@@ -5948,7 +5957,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     Storage
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-3"
                                                 onMouseLeave={[Function]}
@@ -6290,6 +6299,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         "propTypes": Object {
                                                           "anchorEl": [Function],
                                                           "children": [Function],
+                                                          "component": [Function],
+                                                          "components": [Function],
+                                                          "componentsProps": [Function],
                                                           "container": [Function],
                                                           "disablePortal": [Function],
                                                           "keepMounted": [Function],
@@ -6304,7 +6316,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         "render": [Function],
                                                       }
                                                     }
-                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                     id="mui-4"
                                                     onMouseLeave={[Function]}
                                                     onMouseOver={[Function]}
@@ -7110,7 +7122,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                           Cloud
                                                         </div>
                                                       }
-                                                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                      className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                       id="mui-4"
                                                       onMouseLeave={[Function]}
                                                       onMouseOver={[Function]}
@@ -7147,7 +7159,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                             Cloud
                                                           </div>
                                                         }
-                                                        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                        className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                         direction="ltr"
                                                         id="mui-4"
                                                         onMouseLeave={[Function]}
@@ -7898,7 +7910,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                               Cloud
                                                             </div>
                                                           }
-                                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                           direction="ltr"
                                                           id="mui-4"
                                                           onMouseLeave={[Function]}
@@ -8213,6 +8225,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "propTypes": Object {
                                                                     "anchorEl": [Function],
                                                                     "children": [Function],
+                                                                    "component": [Function],
+                                                                    "components": [Function],
+                                                                    "componentsProps": [Function],
                                                                     "container": [Function],
                                                                     "disablePortal": [Function],
                                                                     "keepMounted": [Function],
@@ -8227,7 +8242,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "render": [Function],
                                                                 }
                                                               }
-                                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                               id="mui-5"
                                                               onMouseLeave={[Function]}
                                                               onMouseOver={[Function]}
@@ -9033,7 +9048,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                     Servers
                                                                   </div>
                                                                 }
-                                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                 id="mui-5"
                                                                 onMouseLeave={[Function]}
                                                                 onMouseOver={[Function]}
@@ -9070,7 +9085,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                       Servers
                                                                     </div>
                                                                   }
-                                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                   direction="ltr"
                                                                   id="mui-5"
                                                                   onMouseLeave={[Function]}
@@ -9821,7 +9836,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         Servers
                                                                       </div>
                                                                     }
-                                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                                     direction="ltr"
                                                                     id="mui-5"
                                                                     onMouseLeave={[Function]}
@@ -10135,6 +10150,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "propTypes": Object {
                                                                     "anchorEl": [Function],
                                                                     "children": [Function],
+                                                                    "component": [Function],
+                                                                    "components": [Function],
+                                                                    "componentsProps": [Function],
                                                                     "container": [Function],
                                                                     "disablePortal": [Function],
                                                                     "keepMounted": [Function],
@@ -10149,7 +10167,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "render": [Function],
                                                                 }
                                                               }
-                                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                               id="mui-6"
                                                               onMouseLeave={[Function]}
                                                               onMouseOver={[Function]}
@@ -10955,7 +10973,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                     HCP Anywhere
                                                                   </div>
                                                                 }
-                                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                 id="mui-6"
                                                                 onMouseLeave={[Function]}
                                                                 onMouseOver={[Function]}
@@ -10992,7 +11010,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                       HCP Anywhere
                                                                     </div>
                                                                   }
-                                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                   direction="ltr"
                                                                   id="mui-6"
                                                                   onMouseLeave={[Function]}
@@ -11743,7 +11761,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         HCP Anywhere
                                                                       </div>
                                                                     }
-                                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                                     direction="ltr"
                                                                     id="mui-6"
                                                                     onMouseLeave={[Function]}
@@ -12054,6 +12072,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "propTypes": Object {
                                                                     "anchorEl": [Function],
                                                                     "children": [Function],
+                                                                    "component": [Function],
+                                                                    "components": [Function],
+                                                                    "componentsProps": [Function],
                                                                     "container": [Function],
                                                                     "disablePortal": [Function],
                                                                     "keepMounted": [Function],
@@ -12068,7 +12089,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "render": [Function],
                                                                 }
                                                               }
-                                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                               id="mui-7"
                                                               onMouseLeave={[Function]}
                                                               onMouseOver={[Function]}
@@ -12874,7 +12895,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                     This Computer
                                                                   </div>
                                                                 }
-                                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                 id="mui-7"
                                                                 onMouseLeave={[Function]}
                                                                 onMouseOver={[Function]}
@@ -12911,7 +12932,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                       This Computer
                                                                     </div>
                                                                   }
-                                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                   direction="ltr"
                                                                   id="mui-7"
                                                                   onMouseLeave={[Function]}
@@ -13662,7 +13683,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         This Computer
                                                                       </div>
                                                                     }
-                                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                                     direction="ltr"
                                                                     id="mui-7"
                                                                     onMouseLeave={[Function]}
@@ -14003,6 +14024,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "propTypes": Object {
                                                 "anchorEl": [Function],
                                                 "children": [Function],
+                                                "component": [Function],
+                                                "components": [Function],
+                                                "componentsProps": [Function],
                                                 "container": [Function],
                                                 "disablePortal": [Function],
                                                 "keepMounted": [Function],
@@ -14017,7 +14041,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                               "render": [Function],
                                             }
                                           }
-                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                           id="mui-8"
                                           onMouseLeave={[Function]}
                                           onMouseOver={[Function]}
@@ -14823,7 +14847,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                 Administration
                                               </div>
                                             }
-                                            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                             id="mui-8"
                                             onMouseLeave={[Function]}
                                             onMouseOver={[Function]}
@@ -14860,7 +14884,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                   Administration
                                                 </div>
                                               }
-                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                               direction="ltr"
                                               id="mui-8"
                                               onMouseLeave={[Function]}
@@ -15611,7 +15635,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     Administration
                                                   </div>
                                                 }
-                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                 direction="ltr"
                                                 id="mui-8"
                                                 onMouseLeave={[Function]}
@@ -15931,6 +15955,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         "propTypes": Object {
                                                           "anchorEl": [Function],
                                                           "children": [Function],
+                                                          "component": [Function],
+                                                          "components": [Function],
+                                                          "componentsProps": [Function],
                                                           "container": [Function],
                                                           "disablePortal": [Function],
                                                           "keepMounted": [Function],
@@ -15945,7 +15972,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         "render": [Function],
                                                       }
                                                     }
-                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                     id="mui-9"
                                                     onMouseLeave={[Function]}
                                                     onMouseOver={[Function]}
@@ -16751,7 +16778,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                           Rest API
                                                         </div>
                                                       }
-                                                      className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                      className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                       id="mui-9"
                                                       onMouseLeave={[Function]}
                                                       onMouseOver={[Function]}
@@ -16788,7 +16815,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                             Rest API
                                                           </div>
                                                         }
-                                                        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                        className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                         direction="ltr"
                                                         id="mui-9"
                                                         onMouseLeave={[Function]}
@@ -17539,7 +17566,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                               Rest API
                                                             </div>
                                                           }
-                                                          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                           direction="ltr"
                                                           id="mui-9"
                                                           onMouseLeave={[Function]}
@@ -17847,6 +17874,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "propTypes": Object {
                                                                     "anchorEl": [Function],
                                                                     "children": [Function],
+                                                                    "component": [Function],
+                                                                    "components": [Function],
+                                                                    "componentsProps": [Function],
                                                                     "container": [Function],
                                                                     "disablePortal": [Function],
                                                                     "keepMounted": [Function],
@@ -17861,7 +17891,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   "render": [Function],
                                                                 }
                                                               }
-                                                              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+                                                              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
                                                               id="mui-10"
                                                               onMouseLeave={[Function]}
                                                               onMouseOver={[Function]}
@@ -18667,7 +18697,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                     Log Bundle
                                                                   </div>
                                                                 }
-                                                                className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                 id="mui-10"
                                                                 onMouseLeave={[Function]}
                                                                 onMouseOver={[Function]}
@@ -18704,7 +18734,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                       Log Bundle
                                                                     </div>
                                                                   }
-                                                                  className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                  className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                                                   direction="ltr"
                                                                   id="mui-10"
                                                                   onMouseLeave={[Function]}
@@ -19455,7 +19485,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         Log Bundle
                                                                       </div>
                                                                     }
-                                                                    className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+                                                                    className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
                                                                     direction="ltr"
                                                                     id="mui-10"
                                                                     onMouseLeave={[Function]}
@@ -19840,7 +19870,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                     >
                       <MuiButtonRoot
                         aria-label="open"
-                        className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
+                        className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
                             "containedPrimary": "HvButton-primary",
@@ -19848,8 +19878,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
-                            "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                            "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                            "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
                         }
@@ -21128,7 +21157,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                         />
                         <ForwardRef(ButtonBase)
                           aria-label="open"
-                          className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                          className="MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                           classes={
                             Object {
                               "containedPrimary": "HvButton-primary",
@@ -21136,8 +21165,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
-                              "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                              "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                              "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             }
                           }
@@ -21152,7 +21180,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                           <MuiButtonBaseRoot
                             aria-label="open"
                             as="button"
-                            className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
@@ -21160,8 +21188,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                 "label": "MuiButton-label",
                                 "outlinedPrimary": "HvButton-secondary",
-                                "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                 "textPrimary": "HvButton-ghost",
                               }
                             }
@@ -21189,15 +21216,14 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   <Menu />,
                                   undefined,
                                 ],
-                                "className": "HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
+                                "className": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root",
                                 "classes": Object {
                                   "containedPrimary": "HvButton-primary",
                                   "disabled": "HvButton-ghostDisabled",
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
-                                  "root": "HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium",
-                                  "startIcon": "HvButton-startIcon MuiButton-startIcon MuiButton-iconSizeMedium",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 },
                                 "component": "button",
@@ -22454,7 +22480,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             />
                             <button
                               aria-label="open"
-                              className="HvButton-root MuiButton-root MuiButton-text HvButton-ghost MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                               disabled={false}
                               id="sample3-container-hamburger-button"
                               onBlur={[Function]}

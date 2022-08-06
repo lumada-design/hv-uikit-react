@@ -250,6 +250,9 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             "propTypes": Object {
               "anchorEl": [Function],
               "children": [Function],
+              "component": [Function],
+              "components": [Function],
+              "componentsProps": [Function],
               "container": [Function],
               "disablePortal": [Function],
               "keepMounted": [Function],
@@ -264,7 +267,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             "render": [Function],
           }
         }
-        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
         id="mui-5"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -840,7 +843,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               Hello World
             </button>
           }
-          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-5"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -880,7 +883,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                 Hello World
               </button>
             }
-            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-5"
             onBlur={[Function]}
@@ -1361,7 +1364,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-5"
               onBlur={[Function]}
@@ -1583,6 +1586,9 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             "propTypes": Object {
               "anchorEl": [Function],
               "children": [Function],
+              "component": [Function],
+              "components": [Function],
+              "componentsProps": [Function],
               "container": [Function],
               "disablePortal": [Function],
               "keepMounted": [Function],
@@ -1597,7 +1603,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             "render": [Function],
           }
         }
-        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
         id="mui-8"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -2373,7 +2379,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               Hello World
             </button>
           }
-          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-8"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -2413,7 +2419,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                 Hello World
               </button>
             }
-            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-8"
             onBlur={[Function]}
@@ -3116,7 +3122,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-8"
               onBlur={[Function]}
@@ -3264,6 +3270,9 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             "propTypes": Object {
               "anchorEl": [Function],
               "children": [Function],
+              "component": [Function],
+              "components": [Function],
+              "componentsProps": [Function],
               "container": [Function],
               "disablePortal": [Function],
               "keepMounted": [Function],
@@ -3278,7 +3287,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             "render": [Function],
           }
         }
-        className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive"
+        className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive"
         id="mui-2"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -3586,7 +3595,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               Hello World
             </button>
           }
-          className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+          className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
           id="mui-2"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -3626,7 +3635,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                 Hello World
               </button>
             }
-            className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+            className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
             direction="ltr"
             id="mui-2"
             onBlur={[Function]}
@@ -3885,7 +3894,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
                   Hello World
                 </button>
               }
-              className="HvTooltip-popper MuiTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
+              className="MuiTooltip-popper HvTooltip-popper MuiTooltip-popperInteractive css-179vq5o-MuiPopper-root-MuiTooltip-popper"
               direction="ltr"
               id="mui-2"
               onBlur={[Function]}
