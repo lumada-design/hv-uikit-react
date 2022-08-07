@@ -1263,531 +1263,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                                 </style>
                                 <style
                                   data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
                                   data-meta="HvTypography"
                                 >
                                   
@@ -3465,6 +2940,531 @@ exports[`Input should pass other props to the child input component 1`] = `
 }
 
                                 </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
                               </head>,
                               "ctr": 28,
                               "insertionPoint": undefined,
@@ -4253,531 +4253,6 @@ exports[`Input should pass other props to the child input component 1`] = `
 .HvIconBase-l {
   width: 112px;
   height: 112px;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
 }
 
                                     </style>
@@ -6460,6 +5935,531 @@ exports[`Input should pass other props to the child input component 1`] = `
 }
 
                                     </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
                                   </head>,
                                   "ctr": 28,
                                   "insertionPoint": undefined,
@@ -7887,156 +7887,6 @@ exports[`Input should render correctly 1`] = `
                                 </style>
                                 <style
                                   data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
-                                  data-meta="HvInput"
-                                >
-                                  
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                </style>
-                                <style
-                                  data-jss=""
                                   data-meta="HvFormElement"
                                 >
                                   
@@ -8455,6 +8305,156 @@ exports[`Input should render correctly 1`] = `
   display: none;
 }
 .HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                </style>
+                                <style
+                                  data-jss=""
+                                  data-meta="HvInput"
+                                >
+                                  
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
   display: none;
 }
 
@@ -9079,156 +9079,6 @@ exports[`Input should render correctly 1`] = `
                                     </style>
                                     <style
                                       data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
-                                      data-meta="HvInput"
-                                    >
-                                      
-.HvInput-root {
-  display: block;
-}
-.HvInput-inputRoot:focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot.focus-within .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRoot:hover .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootFocused .HvInput-iconClear {
-  display: block;
-}
-.HvInput-inputRootDisabled {
-  cursor: not-allowed;
-}
-.HvInput-inputRootMultiline {
-  padding: 0;
-}
-.HvInput-input::-ms-clear {
-  display: none;
-}
-.HvInput-labelContainer {
-  display: flex;
-  align-items: flex-start;
-}
-.HvInput-label {
-  display: block;
-  padding-bottom: 6px;
-}
-.HvInput-adornmentsBox {
-  height: 30px;
-  display: flex;
-  margin-right: 1px;
-  flex-direction: row;
-  justify-content: center;
-}
-.HvInput-adornmentButton {
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-.HvInput-icon {
-  width: 30px;
-  height: 30px;
-}
-.HvInput-iconClear {
-  display: none;
-}
-.HvInput-suggestionsContainer {
-  width: 100%;
-  position: relative;
-}
-.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
-  width: 100%;
-}
-.HvInput-inputExtension {
-  height: 10px;
-  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
-  background-color: #FBFCFC;
-}
-.HvInput-hasSuggestions .HvInput-inputBorderContainer {
-  display: none;
-}
-
-                                    </style>
-                                    <style
-                                      data-jss=""
                                       data-meta="HvFormElement"
                                     >
                                       
@@ -9647,6 +9497,156 @@ exports[`Input should render correctly 1`] = `
   display: none;
 }
 .HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
+  display: none;
+}
+
+                                    </style>
+                                    <style
+                                      data-jss=""
+                                      data-meta="HvInput"
+                                    >
+                                      
+.HvInput-root {
+  display: block;
+}
+.HvInput-inputRoot:focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot.focus-within .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRoot:hover .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootFocused .HvInput-iconClear {
+  display: block;
+}
+.HvInput-inputRootDisabled {
+  cursor: not-allowed;
+}
+.HvInput-inputRootMultiline {
+  padding: 0;
+}
+.HvInput-input::-ms-clear {
+  display: none;
+}
+.HvInput-labelContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.HvInput-label {
+  display: block;
+  padding-bottom: 6px;
+}
+.HvInput-adornmentsBox {
+  height: 30px;
+  display: flex;
+  margin-right: 1px;
+  flex-direction: row;
+  justify-content: center;
+}
+.HvInput-adornmentButton {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.HvInput-icon {
+  width: 30px;
+  height: 30px;
+}
+.HvInput-iconClear {
+  display: none;
+}
+.HvInput-suggestionsContainer {
+  width: 100%;
+  position: relative;
+}
+.HvInput-root .HvInput-suggestionsContainer .HvInput-suggestionList {
+  width: 100%;
+}
+.HvInput-inputExtension {
+  height: 10px;
+  box-shadow: 0px 8px 0px #FBFCFC, 0px 0px 9px 0px rgba(65,65,65,.12);
+  background-color: #FBFCFC;
+}
+.HvInput-hasSuggestions .HvInput-inputBorderContainer {
   display: none;
 }
 

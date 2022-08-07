@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
-import { withStyles, useTheme } from "@mui/styles";
+// import { withStyles, useTheme } from "@mui/styles";
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
 import {
@@ -10,8 +10,8 @@ import {
   HvDialogActions,
   HvDialogContent,
   HvDialogTitle,
-  HvTable,
-  HvTextArea,
+  // HvTable,
+  // HvTextArea,
   HvTypography,
 } from "../..";
 
@@ -199,92 +199,92 @@ Accessibility.parameters = {
   },
 };
 
-export const CustomContent = () => {
-  const contentStyles = {
-    paper: {
-      width: "100%",
-    },
-  };
+// export const CustomContent = () => {
+//   const contentStyles = {
+//     paper: {
+//       width: "100%",
+//     },
+//   };
 
-  const DialogWithStyles = withStyles(contentStyles)(SimpleDialog);
-  const theme = useTheme();
+//   const DialogWithStyles = withStyles(contentStyles)(SimpleDialog);
+//   const theme = useTheme();
 
-  return (
-    <>
-      <DialogWithStyles
-        buttonMessage="Table"
-        disableBackdropClick
-        title={
-          <HvDialogTitle showIcon={false}>
-            <div>
-              <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
-              <HvTypography>HDI</HvTypography>
-            </div>
-          </HvDialogTitle>
-        }
-        content={
-          <HvDialogContent>
-            <HvTable
-              data={[
-                { id: 1, customer: "Blauer See Auto, Co.", dealSize: "Small" },
-                { id: 2, customer: "Blauer See Auto, Co.", dealSize: "Small" },
-                { id: 3, customer: "Blauer See Auto, Co.", dealSize: "Medium" },
-                { id: 4, customer: "Online Diecast Creation", dealSize: "Medium" },
-                { id: 5, customer: "Vitachrome Inc.", dealSize: "Small" },
-              ]}
-              columns={[
-                {
-                  headerText: "Customer",
-                  accessor: "customer",
-                  cellType: "alpha-numeric",
-                  sortable: false,
-                  width: "150px",
-                },
-                {
-                  headerText: "Dealsize",
-                  accessor: "dealSize",
-                  cellType: "alpha-numeric",
-                  sortable: false,
-                  width: "150px",
-                },
-              ]}
-              showPagination={false}
-            />
-          </HvDialogContent>
-        }
-      />
-      <p />
-      <SimpleDialog
-        buttonMessage="Inputs"
-        disableBackdropClick
-        title={<HvDialogTitle showIcon={false}>Work request</HvDialogTitle>}
-        content={
-          <HvDialogContent>
-            <HvInput
-              id="input-simple-sample"
-              label="Title"
-              placeholder="Enter text"
-              style={{ marginBottom: theme.hv.spacing.md }}
-            />
-            <HvTextArea
-              id="main"
-              label="Description"
-              placeholder="Enter text"
-              rows={3}
-              style={{ width: "560px" }}
-            />
-          </HvDialogContent>
-        }
-      />
-    </>
-  );
-};
+//   return (
+//     <>
+//       <DialogWithStyles
+//         buttonMessage="Table"
+//         disableBackdropClick
+//         title={
+//           <HvDialogTitle showIcon={false}>
+//             <div>
+//               <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
+//               <HvTypography>HDI</HvTypography>
+//             </div>
+//           </HvDialogTitle>
+//         }
+//         content={
+//           <HvDialogContent>
+//             <HvTable
+//               data={[
+//                 { id: 1, customer: "Blauer See Auto, Co.", dealSize: "Small" },
+//                 { id: 2, customer: "Blauer See Auto, Co.", dealSize: "Small" },
+//                 { id: 3, customer: "Blauer See Auto, Co.", dealSize: "Medium" },
+//                 { id: 4, customer: "Online Diecast Creation", dealSize: "Medium" },
+//                 { id: 5, customer: "Vitachrome Inc.", dealSize: "Small" },
+//               ]}
+//               columns={[
+//                 {
+//                   headerText: "Customer",
+//                   accessor: "customer",
+//                   cellType: "alpha-numeric",
+//                   sortable: false,
+//                   width: "150px",
+//                 },
+//                 {
+//                   headerText: "Dealsize",
+//                   accessor: "dealSize",
+//                   cellType: "alpha-numeric",
+//                   sortable: false,
+//                   width: "150px",
+//                 },
+//               ]}
+//               showPagination={false}
+//             />
+//           </HvDialogContent>
+//         }
+//       />
+//       <p />
+//       <SimpleDialog
+//         buttonMessage="Inputs"
+//         disableBackdropClick
+//         title={<HvDialogTitle showIcon={false}>Work request</HvDialogTitle>}
+//         content={
+//           <HvDialogContent>
+//             <HvInput
+//               id="input-simple-sample"
+//               label="Title"
+//               placeholder="Enter text"
+//               style={{ marginBottom: theme.hv.spacing.md }}
+//             />
+//             <HvTextArea
+//               id="main"
+//               label="Description"
+//               placeholder="Enter text"
+//               rows={3}
+//               style={{ width: "560px" }}
+//             />
+//           </HvDialogContent>
+//         }
+//       />
+//     </>
+//   );
+// };
 
-CustomContent.parameters = {
-  docs: {
-    description: { story: "It is possible to insert any component in the modal." },
-  },
-};
+// CustomContent.parameters = {
+//   docs: {
+//     description: { story: "It is possible to insert any component in the modal." },
+//   },
+// };
 
 export const RemoveSchedule = () => {
   const [open, setOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { screen, fireEvent } from "@storybook/testing-library";
 import {
   Main,
-  CustomContent,
+  // CustomContent,
   TextAndSemantic,
   CustomIcon,
   Accessibility,
@@ -43,27 +43,27 @@ DialogOpened.parameters = {
   },
 };
 
-// test scenario, dialog with table open
-export const TableOpened = () => CustomContent();
+// // test scenario, dialog with table open
+// export const TableOpened = () => CustomContent();
 
-TableOpened.parameters = {
-  eyes: {
-    runBefore() {
-      return openDialog(0);
-    },
-  },
-};
+// TableOpened.parameters = {
+//   eyes: {
+//     runBefore() {
+//       return openDialog(0);
+//     },
+//   },
+// };
 
-// test scenario, dialog with inputs opened
-export const inputsOpened = () => CustomContent();
+// // test scenario, dialog with inputs opened
+// export const inputsOpened = () => CustomContent();
 
-inputsOpened.parameters = {
-  eyes: {
-    runBefore() {
-      return openDialog(1);
-    },
-  },
-};
+// inputsOpened.parameters = {
+//   eyes: {
+//     runBefore() {
+//       return openDialog(1);
+//     },
+//   },
+// };
 
 // open No Rename Dialog
 export const sNoRename = () => NoRename();

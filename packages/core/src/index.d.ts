@@ -10,9 +10,6 @@ export * from "./ActionsGeneric";
 export { default as HvAppSwitcher } from "./AppSwitcher";
 export * from "./AppSwitcher";
 
-export { default as HvAssetInventory } from "./AssetInventory";
-export * from "./AssetInventory";
-
 export { default as HvAvatar } from "./Avatar";
 export * from "./Avatar";
 
@@ -165,9 +162,6 @@ export * from "./Tab";
 
 export { default as HvTag } from "./Tag";
 export * from "./Tag";
-
-export { default as HvTable } from "./Table";
-export * from "./Table";
 
 export { default as HvTabs } from "./Tabs";
 export * from "./Tabs";

@@ -3,8 +3,6 @@ export { default as HvAccordion } from "./Accordion";
 export { default as HvActionsGeneric } from "./ActionsGeneric";
 export { default as HvActionBar } from "./ActionBar";
 export { default as HvAppSwitcher } from "./AppSwitcher";
-export { default as HvAssetInventory } from "./AssetInventory";
-export * from "./AssetInventory";
 export { default as HvAvatar } from "./Avatar";
 export { default as HvBadge } from "./Badge";
 export { default as HvBanner } from "./Banner";
@@ -75,7 +73,6 @@ export { default as HvSimpleGrid } from "./SimpleGrid";
 
 export { default as HvTab } from "./Tab";
 export { default as HvTag } from "./Tag";
-export { default as HvTable } from "./Table";
 export { default as HvTabs } from "./Tabs";
 export { default as HvTextArea } from "./TextArea";
 export { default as HvTagsInput } from "./TagsInput";

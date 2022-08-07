@@ -20120,6 +20120,165 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   </style>
                                   <style
                                     data-jss=""
+                                    data-meta="HvTypography"
+                                  >
+                                    
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                  </style>
+                                  <style
+                                    data-jss=""
                                     data-meta="HvButton"
                                   >
                                     
@@ -20309,165 +20468,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
 }
 .HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
-}
-
-                                  </style>
-                                  <style
-                                    data-jss=""
-                                    data-meta="HvTypography"
-                                  >
-                                    
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
                                   </style>
@@ -21443,6 +21443,165 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       </style>
                                       <style
                                         data-jss=""
+                                        data-meta="HvTypography"
+                                      >
+                                        
+.HvTypography-root {
+  margin: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.HvTypography-5xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-4xlTitle {
+  color: #414141;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-3xlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxlTitle {
+  color: #414141;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xlTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-lTitle {
+  color: #414141;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-mTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sTitle {
+  color: #414141;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xxsTitle {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-sectionTitle {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.HvTypography-highlightText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-normalText {
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-placeholderText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-link {
+  color: #2064B4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-disabledText {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-selectedNavText {
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizText {
+  color: #414141;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-vizTextDisabled {
+  color: #999999;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+.HvTypography-xsInlineLink {
+  color: #2064B4;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+.HvTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+                                      </style>
+                                      <style
+                                        data-jss=""
                                         data-meta="HvButton"
                                       >
                                         
@@ -21632,165 +21791,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
 }
 .HvButton-iconSVG.HvButton-ghostDisabled svg .color0 {
   fill: #999999;
-}
-
-                                      </style>
-                                      <style
-                                        data-jss=""
-                                        data-meta="HvTypography"
-                                      >
-                                        
-.HvTypography-root {
-  margin: 0;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
-.HvTypography-5xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-4xlTitle {
-  color: #414141;
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-3xlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxlTitle {
-  color: #414141;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xlTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-lTitle {
-  color: #414141;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-mTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sTitle {
-  color: #414141;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xxsTitle {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-sectionTitle {
-  color: #414141;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-.HvTypography-highlightText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-normalText {
-  color: #414141;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-placeholderText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-link {
-  color: #2064B4;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-disabledText {
-  color: #999999;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-selectedNavText {
-  color: #CC0000;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizText {
-  color: #414141;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-vizTextDisabled {
-  color: #999999;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-}
-.HvTypography-xsInlineLink {
-  color: #2064B4;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
-}
-.HvTypography-noWrap {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
                                       </style>
