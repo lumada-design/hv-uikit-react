@@ -18,7 +18,7 @@ import leaf from "./resources/leaf.png";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Widgets/Asset Inventory/Card View",
+  title: "Compat/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvCardView } from "@hitachivantara/uikit-react-compat"',

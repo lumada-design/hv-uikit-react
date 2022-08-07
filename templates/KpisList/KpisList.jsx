@@ -7,8 +7,6 @@ import {
   HvButton,
   HvBulkActions,
   HvPagination,
-} from "@hitachivantara/uikit-react-core";
-import {
   HvControls,
   HvLeftControl,
   HvRightControl,
@@ -19,9 +17,10 @@ import {
   useHvBulkActions,
   useHvPagination,
   useHvFilters,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-core";
 import { Refresh } from "@hitachivantara/uikit-react-icons";
 import { withStyles } from "@mui/styles";
+
 import Kpi from "./Kpi";
 import List from "./List";
 import { getColumns, makeData } from "./makedata";

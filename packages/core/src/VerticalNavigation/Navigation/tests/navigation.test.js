@@ -3,9 +3,9 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Play } from "@hitachivantara/uikit-react-icons";
-import HvProvider from "../../../Provider";
 
-import Navigation from "../index";
+import HvProvider from "../../../Provider";
+import Navigation from "..";
 
 describe("<Navigation />", () => {
   const onChangeMock = jest.fn();

@@ -89,70 +89,70 @@ export const Determinate = () => {
   );
 };
 
-export const WithChildren = () => {
-  const [loading, setLoading] = useState(true);
+// export const WithChildren = () => {
+//   const [loading, setLoading] = useState(true);
 
-  const useStyles = makeStyles((theme) => ({
-    loading: {
-      width: "100%",
-      height: "100%",
-    },
-    overlay: {
-      position: "absolute",
-      transition: "background-Color .2s ease",
-      zIndex: -1,
-    },
-    blur: {
-      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo2),
-      zIndex: theme.zIndex.drawer,
-    },
-  }));
+//   const useStyles = makeStyles((theme) => ({
+//     loading: {
+//       width: "100%",
+//       height: "100%",
+//     },
+//     overlay: {
+//       position: "absolute",
+//       transition: "background-Color .2s ease",
+//       zIndex: -1,
+//     },
+//     blur: {
+//       backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo2),
+//       zIndex: theme.zIndex.drawer,
+//     },
+//   }));
 
-  const LoadingContainer = ({ children, hidden, ...others }) => {
-    const ref = useRef(null);
-    const classes = useStyles();
-    const [resizeListener, sizes] = useResizeAware();
-    const [overlayPosition, setOverlayPosition] = useState({});
+//   const LoadingContainer = ({ children, hidden, ...others }) => {
+//     const ref = useRef(null);
+//     const classes = useStyles();
+//     const [resizeListener, sizes] = useResizeAware();
+//     const [overlayPosition, setOverlayPosition] = useState({});
 
-    useEffect(() => {
-      if (children && ref.current) {
-        const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
-        setOverlayPosition({
-          top: offsetTop,
-          left: offsetLeft,
-          height: clientHeight,
-          width: clientWidth,
-        });
-      }
-    }, [children, sizes.width, sizes.height]);
+//     useEffect(() => {
+//       if (children && ref.current) {
+//         const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
+//         setOverlayPosition({
+//           top: offsetTop,
+//           left: offsetLeft,
+//           height: clientHeight,
+//           width: clientWidth,
+//         });
+//       }
+//     }, [children, sizes.width, sizes.height]);
 
-    return (
-      <>
-        <div
-          style={{ ...overlayPosition }}
-          className={clsx(classes.overlay, { [classes.blur]: !hidden })}
-        >
-          <HvLoading classes={{ root: classes.loading }} hidden={hidden} {...others} />
-        </div>
-        {resizeListener}
-        <div ref={ref}>{children}</div>
-      </>
-    );
-  };
+//     return (
+//       <>
+//         <div
+//           style={{ ...overlayPosition }}
+//           className={clsx(classes.overlay, { [classes.blur]: !hidden })}
+//         >
+//           <HvLoading classes={{ root: classes.loading }} hidden={hidden} {...others} />
+//         </div>
+//         {resizeListener}
+//         <div ref={ref}>{children}</div>
+//       </>
+//     );
+//   };
 
-  // return (
-  //   <>
-  //     <HvButton onClick={() => setLoading(!loading)}>{loading ? "Disable" : "Enable"}</HvButton>
-  //     <LoadingContainer hidden={!loading}>
-  //       <TableExample />
-  //     </LoadingContainer>
-  //   </>
-  // );
-};
+//   return (
+//     <>
+//       <HvButton onClick={() => setLoading(!loading)}>{loading ? "Disable" : "Enable"}</HvButton>
+//       <LoadingContainer hidden={!loading}>
+//         <TableExample />
+//       </LoadingContainer>
+//     </>
+//   );
+// };
 
-WithChildren.parameters = {
-  docs: {
-    description:
-      "If a children is passed the component wraps it, creating an overlay. You can control whether it's hidden with the `hidden` prop.",
-  },
-};
+// WithChildren.parameters = {
+//   docs: {
+//     description:
+//       "If a children is passed the component wraps it, creating an overlay. You can control whether it's hidden with the `hidden` prop.",
+//   },
+// };

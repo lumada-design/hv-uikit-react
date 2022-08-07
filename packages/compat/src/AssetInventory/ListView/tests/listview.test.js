@@ -19,7 +19,7 @@ describe(" AssetInventory ListView", () => {
     expect(wrapper).toBeDefined();
   });
 
-  // it("should render correctly", () => {
-  //   expect(wrapper.find(HvListView)).toMatchSnapshot();
-  // });
+  it("should render correctly", () => {
+    expect(wrapper.find(HvListView)).toMatchSnapshot();
+  });
 });

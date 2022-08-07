@@ -509,6 +509,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -798,154 +946,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -1132,6 +1132,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -1421,154 +1569,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>
@@ -2143,6 +2143,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -2432,154 +2580,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -2766,6 +2766,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -3055,154 +3203,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>
@@ -3777,6 +3777,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -4066,154 +4214,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -4400,6 +4400,154 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -4689,154 +4837,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>
@@ -5499,6 +5499,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -5641,80 +5715,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -5883,6 +5883,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -6025,80 +6099,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>
@@ -6655,6 +6655,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -6797,80 +6871,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -7039,6 +7039,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -7181,80 +7255,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>
@@ -7811,6 +7811,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           </style>
                                           <style
                                             data-jss=""
+                                            data-meta="HvTooltip"
+                                          >
+                                            
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                          </style>
+                                          <style
+                                            data-jss=""
                                             data-meta="HvFocus"
                                           >
                                             
@@ -7953,80 +8027,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                          </style>
-                                          <style
-                                            data-jss=""
-                                            data-meta="HvTooltip"
-                                          >
-                                            
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                           </style>
@@ -8195,6 +8195,80 @@ exports[`User withStyles should render correctly with props 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
+                                                data-meta="HvTooltip"
+                                              >
+                                                
+.HvTooltip-root {
+  pointer-events: none;
+}
+.HvTooltip-tooltip {
+  width: fit-content;
+  display: flex;
+  padding: 15px 20px;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltip p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  word-break: break-word;
+  text-overflow: ellipsis;
+}
+.HvTooltip-tooltipMulti {
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  max-width: 532px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvTooltip-tooltipMulti p {
+  color: #414141;
+  width: fit-content;
+  display: -webkit-box;
+  overflow: hidden;
+  box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.HvTooltip-popper {
+  opacity: 1;
+}
+.HvTooltip-title {
+  padding: 15px 20px;
+  border-bottom: 3px solid #F0F0F0;
+}
+.HvTooltip-valuesContainer {
+  padding: 20px;
+}
+.HvTooltip-values {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+.HvTooltip-values:last-child {
+  padding-bottom: 0;
+}
+.HvTooltip-color {
+  width: 10px;
+  height: 15px;
+}
+.HvTooltip-separator {
+  width: 10px;
+}
+.HvTooltip-separatorColor {
+  width: 5px;
+}
+.HvTooltip-valueWrapper {
+  padding: 20px;
+}
+
+                                              </style>
+                                              <style
+                                                data-jss=""
                                                 data-meta="HvFocus"
                                               >
                                                 
@@ -8337,80 +8411,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 .HvListItem-focus {
   z-index: 2;
   background-color: #E8E8E8;
-}
-
-                                              </style>
-                                              <style
-                                                data-jss=""
-                                                data-meta="HvTooltip"
-                                              >
-                                                
-.HvTooltip-root {
-  pointer-events: none;
-}
-.HvTooltip-tooltip {
-  width: fit-content;
-  display: flex;
-  padding: 15px 20px;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltip p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  word-break: break-word;
-  text-overflow: ellipsis;
-}
-.HvTooltip-tooltipMulti {
-  width: fit-content;
-  display: flex;
-  padding: 0;
-  max-width: 532px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvTooltip-tooltipMulti p {
-  color: #414141;
-  width: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-}
-.HvTooltip-popper {
-  opacity: 1;
-}
-.HvTooltip-title {
-  padding: 15px 20px;
-  border-bottom: 3px solid #F0F0F0;
-}
-.HvTooltip-valuesContainer {
-  padding: 20px;
-}
-.HvTooltip-values {
-  display: flex;
-  padding-bottom: 10px;
-  justify-content: space-between;
-}
-.HvTooltip-values:last-child {
-  padding-bottom: 0;
-}
-.HvTooltip-color {
-  width: 10px;
-  height: 15px;
-}
-.HvTooltip-separator {
-  width: 10px;
-}
-.HvTooltip-separatorColor {
-  width: 5px;
-}
-.HvTooltip-valueWrapper {
-  padding: 20px;
 }
 
                                               </style>

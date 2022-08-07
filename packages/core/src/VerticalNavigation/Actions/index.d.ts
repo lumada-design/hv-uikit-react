@@ -1,4 +1,4 @@
-export { default } from "./Actions";
+export { default as Actions } from "./Actions";
 export * from "./Actions";
 
 export { default as Action } from "./Action";

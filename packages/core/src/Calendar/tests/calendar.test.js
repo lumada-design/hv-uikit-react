@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../Provider";
 import { HvComposedNavigation } from "../CalendarNavigation";
-import { HvCalendar } from "..";
+import HvCalendar from "..";
 
 describe("<Calendar /> with minimum configuration", () => {
   let wrapper;

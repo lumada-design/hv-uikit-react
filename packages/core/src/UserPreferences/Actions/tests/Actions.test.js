@@ -3,8 +3,10 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
+
 import { HvProvider } from "../../..";
-import { Action, Actions } from "../..";
+import Action from "../../Action";
+import Actions from "../Actions";
 
 describe("Actions", () => {
   let wrapper;

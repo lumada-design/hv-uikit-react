@@ -63,7 +63,7 @@ const LabComponentData = [
   {
     component: "Table",
     dsPattern: "Table",
-    path: "Lab/Table",
+    path: "Display/Table",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Table",
     uikitVersion2: "--",

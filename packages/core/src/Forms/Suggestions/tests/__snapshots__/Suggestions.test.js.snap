@@ -457,44 +457,6 @@ exports[`Suggestions should render correctly 1`] = `
                     </style>
                     <style
                       data-jss=""
-                      data-meta="HvLabel"
-                    >
-                      
-.HvLabel-root {
-  display: inline-block;
-}
-.HvLabel-labelDisabled {
-  color: #999999;
-}
-.HvLabel-childGutter {
-  padding-bottom: 6px;
-}
-
-                    </style>
-                    <style
-                      data-jss=""
-                      data-meta="HvSuggestions"
-                    >
-                      
-.HvSuggestions-root {
-  position: relative;
-}
-.HvSuggestions-root .HvSuggestions-list {
-  width: 100%;
-  padding: 20px;
-  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-  background-color: #FBFCFC;
-}
-.HvSuggestions-popper {
-  width: 100%;
-  z-index: 1500;
-  position: absolute;
-  transform: translate3d(0, -1px, 0) !important;
-}
-
-                    </style>
-                    <style
-                      data-jss=""
                       data-meta="HvBaseInput"
                     >
                       
@@ -694,6 +656,44 @@ exports[`Suggestions should render correctly 1`] = `
 }
 .HvBaseInput-root input[type=search]::-webkit-search-results-decoration {
   display: none;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvLabel"
+                    >
+                      
+.HvLabel-root {
+  display: inline-block;
+}
+.HvLabel-labelDisabled {
+  color: #999999;
+}
+.HvLabel-childGutter {
+  padding-bottom: 6px;
+}
+
+                    </style>
+                    <style
+                      data-jss=""
+                      data-meta="HvSuggestions"
+                    >
+                      
+.HvSuggestions-root {
+  position: relative;
+}
+.HvSuggestions-root .HvSuggestions-list {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  background-color: #FBFCFC;
+}
+.HvSuggestions-popper {
+  width: 100%;
+  z-index: 1500;
+  position: absolute;
+  transform: translate3d(0, -1px, 0) !important;
 }
 
                     </style>

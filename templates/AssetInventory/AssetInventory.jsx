@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from "react";
-import { HvContainer, HvBulkActions, HvPagination } from "@hitachivantara/uikit-react-core";
 import {
+  HvContainer,
+  HvBulkActions,
+  HvPagination,
   HvControls,
   HvLeftControl,
   HvRightControl,
@@ -10,7 +12,8 @@ import {
   useHvRowSelection,
   useHvBulkActions,
   useHvPagination,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-core";
+
 import ListView from "./ListView";
 import CardView from "./CardView";
 import { getColumns, makeData } from "./makedata";
