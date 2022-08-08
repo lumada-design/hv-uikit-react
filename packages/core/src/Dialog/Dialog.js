@@ -33,8 +33,10 @@ const HvDialog = ({
   // Because the `disableBackdropClick` property was deprecated in MUI5
   // and we want to maintain that funcionality to the user we're wrapping
   // the onClose call here to make that check.
-  const wrappedClose = (event, reason) => {
-    if (!disableBackdropClick) {
+  const wrappedClose = (event, reason, bypassValidation = false) => {
+    if (bypassValidation) {
+      onClose?.(event, reason);
+    } else if (!disableBackdropClick) {
       onClose?.(event, reason);
     }
   };
@@ -83,7 +85,7 @@ const HvDialog = ({
         // Swallow the event, in case someone is listening for the escape key on the body.
         event.stopPropagation();
 
-        wrappedClose(event, "escapeKeyDown");
+        wrappedClose(event, "escapeKeyDown", true);
       }
     }
   };
@@ -120,7 +122,7 @@ const HvDialog = ({
         id={setId(id, "close")}
         className={classes.closeButton}
         category="ghost"
-        onClick={(event) => wrappedClose(event)}
+        onClick={(event) => wrappedClose(event, undefined, true)}
         aria-label={buttonTitle}
       >
         <CloseButtonTooltipWrapper />
