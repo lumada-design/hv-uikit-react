@@ -145,7 +145,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             }
             disabled={false}
             hideLabels={false}
-            id="drop-zone-2"
+            id="drop-zone-3"
             inputProps={Object {}}
             labels={
               Object {
@@ -166,12 +166,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             <div
               aria-label="File Dropzone"
               className="HvFileUploaderDropZone-dropZoneLabelsGroup"
-              id="drop-zone-2"
+              id="drop-zone-3"
             >
               <WithStyles(HvLabel)
                 className="HvFileUploaderDropZone-dropZoneLabel"
-                htmlFor="drop-zone-2-input-file"
-                id="drop-zone-2-input-file-label"
+                htmlFor="drop-zone-3-input-file"
+                id="drop-zone-3-input-file-label"
                 label="Label"
               >
                 <HvLabel
@@ -183,15 +183,15 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "root": "HvLabel-root",
                     }
                   }
-                  htmlFor="drop-zone-2-input-file"
-                  id="drop-zone-2-input-file-label"
+                  htmlFor="drop-zone-3-input-file"
+                  id="drop-zone-3-input-file-label"
                   label="Label"
                 >
                   <WithStyles(ForwardRef)
                     className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root"
                     component="label"
-                    htmlFor="drop-zone-2-input-file"
-                    id="drop-zone-2-input-file-label"
+                    htmlFor="drop-zone-3-input-file"
+                    id="drop-zone-3-input-file-label"
                     variant="highlightText"
                   >
                     <ForwardRef
@@ -223,14 +223,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         }
                       }
                       component="label"
-                      htmlFor="drop-zone-2-input-file"
-                      id="drop-zone-2-input-file-label"
+                      htmlFor="drop-zone-3-input-file"
+                      id="drop-zone-3-input-file-label"
                       variant="highlightText"
                     >
                       <label
                         className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root HvTypography-root HvTypography-highlightText"
-                        htmlFor="drop-zone-2-input-file"
-                        id="drop-zone-2-input-file-label"
+                        htmlFor="drop-zone-3-input-file"
+                        id="drop-zone-3-input-file-label"
                       >
                         Label
                       </label>
@@ -239,7 +239,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </HvLabel>
               </WithStyles(HvLabel)>
               <WithStyles(HvInfoMessage)
-                id="drop-zone-2-description"
+                id="drop-zone-3-description"
               >
                 <HvInfoMessage
                   classes={
@@ -249,12 +249,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "root": "HvInfoMessage-root",
                     }
                   }
-                  id="drop-zone-2-description"
+                  id="drop-zone-3-description"
                 >
                   <WithStyles(ForwardRef)
                     className="HvInfoMessage-root HvInfoMessage-gutter"
                     component="label"
-                    id="drop-zone-2-description"
+                    id="drop-zone-3-description"
                     variant="normalText"
                   >
                     <ForwardRef
@@ -286,12 +286,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         }
                       }
                       component="label"
-                      id="drop-zone-2-description"
+                      id="drop-zone-3-description"
                       variant="normalText"
                     >
                       <label
                         className="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
-                        id="drop-zone-2-description"
+                        id="drop-zone-3-description"
                       >
                         Max. file size: 12.00B
                          (jpeg)
@@ -303,7 +303,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             </div>
             <div
               className="HvFileUploaderDropZone-dropZoneContainer"
-              id="drop-zone-2-button"
+              id="drop-zone-3-button"
               onDragEnter={[Function]}
               onDragLeave={[Function]}
               onDragOver={[Function]}
@@ -317,7 +317,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 accept="jpeg"
                 className="HvFileUploaderDropZone-inputArea"
                 disabled={false}
-                id="drop-zone-2-input-file"
+                id="drop-zone-3-input-file"
                 multiple={true}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -468,6 +468,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   "type": "image/png",
                 }
               }
+              id="hvfilelist4-values"
               key="1"
               onFileRemoved={[MockFunction]}
               removeFileButtonLabel="Remove File"
@@ -493,6 +494,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     "type": "image/png",
                   }
                 }
+                id="hvfilelist4-values"
                 onFileRemoved={[MockFunction]}
                 removeFileButtonLabel="Remove File"
               >
@@ -588,6 +590,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     aria-label="Remove File"
                     category="ghost"
                     className="HvFileUploaderFile-removeButton"
+                    id="hvfilelist4-values-remove-button"
                     onClick={[Function]}
                   >
                     <MuiIconButtonRoot
@@ -597,6 +600,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
                       disabled={false}
                       focusRipple={true}
+                      id="hvfilelist4-values-remove-button"
                       onClick={[Function]}
                       ownerState={
                         Object {
@@ -610,7 +614,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           "disableFocusRipple": false,
                           "disabled": false,
                           "edge": false,
-                          "id": undefined,
+                          "id": "hvfilelist4-values-remove-button",
                           "onClick": [Function],
                           "size": "medium",
                         }
@@ -1681,6 +1685,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                         disabled={false}
                         focusRipple={true}
+                        id="hvfilelist4-values-remove-button"
                         onClick={[Function]}
                       >
                         <MuiButtonBaseRoot
@@ -1689,6 +1694,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           category="ghost"
                           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                           disabled={false}
+                          id="hvfilelist4-values-remove-button"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onContextMenu={[Function]}
@@ -1717,7 +1723,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "disabled": false,
                               "focusRipple": true,
                               "focusVisible": false,
-                              "id": undefined,
+                              "id": "hvfilelist4-values-remove-button",
                               "onClick": [Function],
                               "tabIndex": 0,
                             }
@@ -2788,6 +2794,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             category="ghost"
                             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-5xhalq-MuiButtonBase-root-MuiIconButton-root"
                             disabled={false}
+                            id="hvfilelist4-values-remove-button"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onContextMenu={[Function]}
@@ -3923,6 +3930,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   "type": "image/png",
                 }
               }
+              id="hvfilelist4-values"
               key="2"
               onFileRemoved={[MockFunction]}
               removeFileButtonLabel="Remove File"
@@ -3948,6 +3956,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     "type": "image/png",
                   }
                 }
+                id="hvfilelist4-values"
                 onFileRemoved={[MockFunction]}
                 removeFileButtonLabel="Remove File"
               >
@@ -4043,6 +4052,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     aria-label="Remove File"
                     category="ghost"
                     className="HvFileUploaderFile-removeButton"
+                    id="hvfilelist4-values-remove-button"
                     onClick={[Function]}
                   >
                     <MuiIconButtonRoot
@@ -4052,6 +4062,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
                       disabled={false}
                       focusRipple={true}
+                      id="hvfilelist4-values-remove-button"
                       onClick={[Function]}
                       ownerState={
                         Object {
@@ -4065,7 +4076,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           "disableFocusRipple": false,
                           "disabled": false,
                           "edge": false,
-                          "id": undefined,
+                          "id": "hvfilelist4-values-remove-button",
                           "onClick": [Function],
                           "size": "medium",
                         }
@@ -5136,6 +5147,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                         disabled={false}
                         focusRipple={true}
+                        id="hvfilelist4-values-remove-button"
                         onClick={[Function]}
                       >
                         <MuiButtonBaseRoot
@@ -5144,6 +5156,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           category="ghost"
                           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                           disabled={false}
+                          id="hvfilelist4-values-remove-button"
                           onBlur={[Function]}
                           onClick={[Function]}
                           onContextMenu={[Function]}
@@ -5172,7 +5185,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "disabled": false,
                               "focusRipple": true,
                               "focusVisible": false,
-                              "id": undefined,
+                              "id": "hvfilelist4-values-remove-button",
                               "onClick": [Function],
                               "tabIndex": 0,
                             }
@@ -6243,6 +6256,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             category="ghost"
                             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-5xhalq-MuiButtonBase-root-MuiIconButton-root"
                             disabled={false}
+                            id="hvfilelist4-values-remove-button"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onContextMenu={[Function]}

@@ -78,6 +78,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             "webkitRelativePath": "",
           }
         }
+        id="hvfilelist1-values"
         key="1"
         onFileRemoved={[Function]}
         removeFileButtonLabel="removeFileButtonLabel"
@@ -107,6 +108,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               "webkitRelativePath": "",
             }
           }
+          id="hvfilelist1-values"
           onFileRemoved={[Function]}
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -231,6 +233,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               aria-label="removeFileButtonLabel"
               category="ghost"
               className="HvFileUploaderFile-removeButton"
+              id="hvfilelist1-values-remove-button"
               onClick={[Function]}
             >
               <MuiIconButtonRoot
@@ -240,6 +243,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                 className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
                 disabled={false}
                 focusRipple={true}
+                id="hvfilelist1-values-remove-button"
                 onClick={[Function]}
                 ownerState={
                   Object {
@@ -253,7 +257,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "disableFocusRipple": false,
                     "disabled": false,
                     "edge": false,
-                    "id": undefined,
+                    "id": "hvfilelist1-values-remove-button",
                     "onClick": [Function],
                     "size": "medium",
                   }
@@ -797,6 +801,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                   disabled={false}
                   focusRipple={true}
+                  id="hvfilelist1-values-remove-button"
                   onClick={[Function]}
                 >
                   <MuiButtonBaseRoot
@@ -805,6 +810,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     category="ghost"
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                     disabled={false}
+                    id="hvfilelist1-values-remove-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -833,7 +839,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "disabled": false,
                         "focusRipple": true,
                         "focusVisible": false,
-                        "id": undefined,
+                        "id": "hvfilelist1-values-remove-button",
                         "onClick": [Function],
                         "tabIndex": 0,
                       }
@@ -1377,6 +1383,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       category="ghost"
                       className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-5xhalq-MuiButtonBase-root-MuiIconButton-root"
                       disabled={false}
+                      id="hvfilelist1-values-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
@@ -1989,6 +1996,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             "webkitRelativePath": "",
           }
         }
+        id="hvfilelist1-values"
         key="2"
         onFileRemoved={[Function]}
         removeFileButtonLabel="removeFileButtonLabel"
@@ -2018,6 +2026,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               "webkitRelativePath": "",
             }
           }
+          id="hvfilelist1-values"
           onFileRemoved={[Function]}
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -2142,6 +2151,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               aria-label="removeFileButtonLabel"
               category="ghost"
               className="HvFileUploaderFile-removeButton"
+              id="hvfilelist1-values-remove-button"
               onClick={[Function]}
             >
               <MuiIconButtonRoot
@@ -2151,6 +2161,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                 className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton"
                 disabled={false}
                 focusRipple={true}
+                id="hvfilelist1-values-remove-button"
                 onClick={[Function]}
                 ownerState={
                   Object {
@@ -2164,7 +2175,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "disableFocusRipple": false,
                     "disabled": false,
                     "edge": false,
-                    "id": undefined,
+                    "id": "hvfilelist1-values-remove-button",
                     "onClick": [Function],
                     "size": "medium",
                   }
@@ -2708,6 +2719,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   className="MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                   disabled={false}
                   focusRipple={true}
+                  id="hvfilelist1-values-remove-button"
                   onClick={[Function]}
                 >
                   <MuiButtonBaseRoot
@@ -2716,6 +2728,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     category="ghost"
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-1yfzffu-MuiIconButton-root"
                     disabled={false}
+                    id="hvfilelist1-values-remove-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -2744,7 +2757,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                         "disabled": false,
                         "focusRipple": true,
                         "focusVisible": false,
-                        "id": undefined,
+                        "id": "hvfilelist1-values-remove-button",
                         "onClick": [Function],
                         "tabIndex": 0,
                       }
@@ -3288,6 +3301,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       category="ghost"
                       className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium HvFileUploaderFile-removeButton css-5xhalq-MuiButtonBase-root-MuiIconButton-root"
                       disabled={false}
+                      id="hvfilelist1-values-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
