@@ -385,3 +385,25 @@ DropdownWithIcons.parameters = {
     disable: true,
   },
 };
+
+export const ReadOnly = () => (
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdownSelected"
+      readOnly
+      onChange={(item) => console.log(item)}
+      values={[
+        { id: "id-1", label: "value 1" },
+        { id: "id-2", label: "value 2" },
+        { id: "id-3", label: "value 3", selected: true },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
+);
+
+ReadOnly.parameters = {
+  docs: {
+    disable: true,
+  },
+};

@@ -62,6 +62,15 @@ const styles = (theme) => ({
     },
     cursor: "not-allowed",
   },
+  headerReadOnly: {
+    cursor: "not-allowed",
+    pointerEvents: "none",
+    border: "none",
+    "&:focus-visible": {
+      outline: "none",
+      border: "none",
+    },
+  },
   arrow: {
     position: "absolute",
     pointerEvents: "none",
