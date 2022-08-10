@@ -61,6 +61,10 @@ export interface HvDropdownProps
    */
   disabled?: boolean;
   /**
+   * Indicates that the form element is in read only mode.
+   */
+  readOnly?: boolean;
+  /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded?: boolean;

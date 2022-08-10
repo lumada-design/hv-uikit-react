@@ -31,6 +31,7 @@ const HvBaseDropdown = ({
   className,
   placeholder,
   disabled = false,
+  readOnly = false,
   expanded,
   defaultExpanded = false,
   placement = "right",
@@ -181,12 +182,13 @@ const HvBaseDropdown = ({
         id={setId(id, "header")}
         className={clsx(classes.header, {
           [classes.headerDisabled]: disabled,
+          [classes.headerReadOnly]: readOnly,
           [classes.headerOpen]: isOpen,
           [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
           [classes.headerOpenDown]: isOpen && popperPlacement.includes("bottom"),
         })}
         role={ariaRole === "combobox" ? "textbox" : undefined}
-        style={disabled ? { pointerEvents: "none" } : undefined}
+        style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
         aria-controls={isOpen ? setId(elementId, "children-container") : undefined}
         aria-label={others["aria-label"] ?? undefined}
         aria-labelledby={others["aria-labelledby"] ?? undefined}
@@ -303,8 +305,10 @@ const HvBaseDropdown = ({
         className={clsx(className, classes.anchor, {
           [classes.rootDisabled]: disabled,
         })}
-        onKeyDown={handleToggle}
-        onClick={handleToggle}
+        {...(!readOnly && {
+          onKeyDown: handleToggle,
+          onClick: handleToggle,
+        })}
         tabIndex={-1}
         {...others}
       >
@@ -368,9 +372,13 @@ HvBaseDropdown.propTypes = {
      */
     headerOpenDown: PropTypes.string,
     /**
-     * Styles applied to the header when is disable.
+     * Styles applied to the header when it's disabled.
      */
     headerDisabled: PropTypes.string,
+    /**
+     * Styles applied to the header when it's in read only mode.
+     */
+    headerReadOnly: PropTypes.string,
     /**
      * Styles applied to the arrow
      */
@@ -420,6 +428,10 @@ HvBaseDropdown.propTypes = {
    * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * If `true` the dropdown will be in read only mode, unable to be interacted.
+   */
+  readOnly: PropTypes.bool,
   /**
    * Disable the portal behavior.
    * The children stay within it's parent DOM hierarchy.

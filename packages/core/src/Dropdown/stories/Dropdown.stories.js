@@ -500,3 +500,24 @@ WithMoreThan1000Items.parameters = {
   },
   eyes: { include: false },
 };
+
+export const ReadOnly = () => (
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown10"
+      readOnly
+      aria-label="text"
+      disablePortal
+      values={[
+        { label: "value 1", selected: false },
+        { label: "value 2", selected: false },
+        { label: "value 3", selected: true },
+        { label: "value 4", selected: false },
+      ]}
+    />
+  </div>
+);
+
+ReadOnly.parameters = {
+  eyes: { include: false },
+};

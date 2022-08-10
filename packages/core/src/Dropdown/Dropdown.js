@@ -40,6 +40,7 @@ const HvDropdown = (props) => {
 
     required = false,
     disabled = false,
+    readOnly = false,
 
     label,
     "aria-label": ariaLabel,
@@ -253,6 +254,7 @@ const HvDropdown = (props) => {
       name={name}
       status={validationState}
       disabled={disabled}
+      readOnly={readOnly}
       required={required}
       className={clsx(className, classes.root)}
       {...others}
@@ -283,6 +285,7 @@ const HvDropdown = (props) => {
         }}
         expanded={isOpen}
         disabled={disabled}
+        readOnly={readOnly}
         disablePortal={disablePortal}
         placement={placement}
         popperProps={popperProps}
@@ -451,6 +454,10 @@ HvDropdown.propTypes = {
    * Indicates that the form element is disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * Indicates that the form element is in read only mode.
+   */
+  readOnly: PropTypes.bool,
   /**
    * Indicates that user input is required on the form element.
    */

@@ -11,6 +11,7 @@ import {
   SingleSelection,
   SingleSelectionWithSearch,
   MultiSelectionNoSearch,
+  ReadOnly,
 } from "../stories/Dropdown.stories.test";
 
 describe("<Dropdown />", () => {
@@ -541,5 +542,17 @@ describe("callbacks", () => {
     expect(onChangeSpy).toHaveBeenCalledTimes(0);
     expect(onFocusSpy).toHaveBeenCalledTimes(0);
     expect(onBlurSpy).toHaveBeenCalledTimes(0);
+  });
+});
+
+describe("Read only mode", () => {
+  it("should have a searchbox", async () => {
+    const { findByRole, queryByRole } = render(<ReadOnly />);
+    const combobox = await findByRole("combobox");
+
+    userEvent.click(combobox);
+
+    const tooltip = queryByRole("tooltip");
+    expect(tooltip).not.toBeInTheDocument();
   });
 });
