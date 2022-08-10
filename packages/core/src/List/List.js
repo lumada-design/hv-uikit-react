@@ -1,4 +1,4 @@
-import React, { isValidElement, useEffect, useCallback, forwardRef } from "react";
+import React, { isValidElement, useEffect, forwardRef, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { FixedSizeList } from "react-window";
@@ -239,7 +239,7 @@ const HvList = (props) => {
     }).isRequired,
   };
 
-  const renderFixedList = useCallback(() => {
+  const renderFixedList = useMemo(() => {
     return forwardRef(({ ...rest }, ref) => (
       <HvListContainer
         id={id}
