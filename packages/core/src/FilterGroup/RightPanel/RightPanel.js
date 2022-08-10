@@ -20,7 +20,7 @@ const RightPanel = ({ id, className, labels }) => {
   } = useContext(FilterGroupContext);
 
   const activeGroupOptions = useMemo(
-    () => filterOptions[activeGroup].data.map((option) => option.id),
+    () => (filterOptions[activeGroup]?.data || []).map((option) => option.id),
     [filterOptions, activeGroup]
   );
 
@@ -31,7 +31,7 @@ const RightPanel = ({ id, className, labels }) => {
 
   const listValues = useMemo(
     () =>
-      filterOptions[activeGroup].data.map((option) => ({
+      (filterOptions[activeGroup]?.data || []).map((option) => ({
         ...option,
         label: option.name,
         selected: filterValues[activeGroup]?.includes(option.id),
