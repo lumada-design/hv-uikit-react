@@ -71,6 +71,7 @@ const HvTimePicker = ({
 
   required = false,
   disabled = false,
+  readOnly = false,
 
   label,
   "aria-label": ariaLabel,
@@ -423,6 +424,7 @@ const HvTimePicker = ({
         }
         disablePortal={disablePortal}
         disabled={disabled}
+        readOnly={readOnly}
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
         {...dropdownProps}
       >
@@ -573,11 +575,14 @@ HvTimePicker.propTypes = {
    * Indicates that user input is required on the form element.
    */
   required: PropTypes.bool,
-
   /**
    * Indicates that the form element is disabled.
    */
   disabled: PropTypes.bool,
+  /**
+   * Indicates that the form element is in read only mode.
+   */
+  readOnly: PropTypes.bool,
 
   /**
    * The label of the form element.
