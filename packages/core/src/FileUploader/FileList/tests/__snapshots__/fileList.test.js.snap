@@ -78,6 +78,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             "webkitRelativePath": "",
           }
         }
+        id="hvfilelist1-values"
         key="1"
         onFileRemoved={[Function]}
         removeFileButtonLabel="removeFileButtonLabel"
@@ -107,6 +108,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               "webkitRelativePath": "",
             }
           }
+          id="hvfilelist1-values"
           onFileRemoved={[Function]}
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -231,6 +233,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               aria-label="removeFileButtonLabel"
               category="ghost"
               className="HvFileUploaderFile-removeButton"
+              id="hvfilelist1-values-remove-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
@@ -250,6 +253,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "sizeSmall": "MuiIconButton-sizeSmall",
                   }
                 }
+                id="hvfilelist1-values-remove-button"
                 onClick={[Function]}
               >
                 <WithStyles(ForwardRef(ButtonBase))
@@ -259,6 +263,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   className="MuiIconButton-root HvFileUploaderFile-removeButton"
                   disabled={false}
                   focusRipple={true}
+                  id="hvfilelist1-values-remove-button"
                   onClick={[Function]}
                 >
                   <ForwardRef(ButtonBase)
@@ -276,6 +281,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     focusRipple={true}
+                    id="hvfilelist1-values-remove-button"
                     onClick={[Function]}
                   >
                     <button
@@ -283,6 +289,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       category="ghost"
                       className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                       disabled={false}
+                      id="hvfilelist1-values-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onDragLeave={[Function]}
@@ -350,6 +357,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             "webkitRelativePath": "",
           }
         }
+        id="hvfilelist1-values"
         key="2"
         onFileRemoved={[Function]}
         removeFileButtonLabel="removeFileButtonLabel"
@@ -379,6 +387,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               "webkitRelativePath": "",
             }
           }
+          id="hvfilelist1-values"
           onFileRemoved={[Function]}
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -503,6 +512,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               aria-label="removeFileButtonLabel"
               category="ghost"
               className="HvFileUploaderFile-removeButton"
+              id="hvfilelist1-values-remove-button"
               onClick={[Function]}
             >
               <ForwardRef(IconButton)
@@ -522,6 +532,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "sizeSmall": "MuiIconButton-sizeSmall",
                   }
                 }
+                id="hvfilelist1-values-remove-button"
                 onClick={[Function]}
               >
                 <WithStyles(ForwardRef(ButtonBase))
@@ -531,6 +542,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                   className="MuiIconButton-root HvFileUploaderFile-removeButton"
                   disabled={false}
                   focusRipple={true}
+                  id="hvfilelist1-values-remove-button"
                   onClick={[Function]}
                 >
                   <ForwardRef(ButtonBase)
@@ -548,6 +560,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     focusRipple={true}
+                    id="hvfilelist1-values-remove-button"
                     onClick={[Function]}
                   >
                     <button
@@ -555,6 +568,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       category="ghost"
                       className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                       disabled={false}
+                      id="hvfilelist1-values-remove-button"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onDragLeave={[Function]}

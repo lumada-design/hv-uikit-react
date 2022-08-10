@@ -1,20 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { setUid } from "../..";
+import { setId, useUniqueId } from "../..";
 import File from "../File";
 import styles from "./styles";
 
 const FileList = ({ id, classes, list = [], removeFileButtonLabel, onFileRemoved }) => {
+  const elementId = useUniqueId(id, "hvfilelist");
+
   const hasFiles = list.length > 0;
   if (!hasFiles) return null;
 
   return (
-    <ul id={id} className={classes.list}>
+    <ul id={setId(id, "list")} className={classes.list}>
       {list.map((data) => (
         <File
           key={data.id}
-          id={setUid(id, data.id)}
+          id={setId(elementId, "values")}
           data={data}
           onFileRemoved={onFileRemoved}
           removeFileButtonLabel={removeFileButtonLabel}
