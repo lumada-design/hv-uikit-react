@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvFormElementProps } from "..";
+import { HvBaseDropdownProps, HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
@@ -103,9 +103,9 @@ export interface HvFilterGroupProps
   height?: number | string;
 
   /**
-   * The filter content props
+   * Other props, passed to `FilterContent` and `HvBaseDropdown` components
    */
-  filterContentProps?: object;
+  filterContentProps?: Record<string, unknown> & Partial<HvBaseDropdownProps>;
 }
 
 export default function HvFilterGroup(props: HvFilterGroupProps): JSX.Element | null;
