@@ -1263,6 +1263,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           "headerOpen": "HvBaseDropdown-headerOpen",
                           "headerOpenDown": "HvBaseDropdown-headerOpenDown",
                           "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+                          "headerReadOnly": "HvBaseDropdown-headerReadOnly",
                           "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
                           "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
                           "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",

@@ -11,6 +11,7 @@ export type HvBaseDropdownClassKey =
   | "headerOpenUp"
   | "headerOpenDown"
   | "headerDisabled"
+  | "headerReadOnly"
   | "arrow"
   | "selection"
   | "truncate"
@@ -43,6 +44,10 @@ export interface HvBaseDropdownProps
    * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled?: boolean;
+  /**
+   * If `true` the dropdown will be in read only mode, unable to be interacted.
+   */
+  readOnly?: boolean;
   /**
    * Disable the portal behavior.
    * The children stay within it's parent DOM hierarchy.
