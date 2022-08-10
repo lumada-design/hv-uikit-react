@@ -101,6 +101,10 @@ export interface HvDatePickerProps
    * An object containing props to be passed onto the baseDropdown.
    */
   dropdownProps?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * If `true` the DatePicker will be in read only mode, unable to be interacted.
+   */
+  readOnly?: boolean;
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

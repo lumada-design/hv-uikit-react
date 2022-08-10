@@ -7,7 +7,7 @@ import userEvent from "@testing-library/user-event";
 import { render } from "testing-utils";
 import { HvDatePicker } from "../..";
 import { makeUTCDate } from "../../Calendar/utils";
-import { Main } from "../stories/Datepicker.stories";
+import { Main, ReadOnly } from "../stories/Datepicker.stories";
 
 describe("HvDatepicker", () => {
   jest.setTimeout(30000);
@@ -300,6 +300,20 @@ describe("HvDatepicker", () => {
       expect(dateInput).toBeInTheDocument();
       expect(applyButton).toBeInTheDocument();
       expect(cancelButton).toBeInTheDocument();
+    });
+  });
+
+  describe("read only mode", () => {
+    it("When in read only mode it shouldn't open the calendar", async () => {
+      const { getByRole, queryByRole } = render(<ReadOnly />);
+
+      const timepickerDropdown = getByRole("combobox");
+      expect(timepickerDropdown).toBeInTheDocument();
+      expect(timepickerDropdown).toHaveAttribute("aria-expanded", "false");
+      userEvent.click(timepickerDropdown); // try to open
+
+      const pickerTooltip = queryByRole("tooltip");
+      expect(pickerTooltip).not.toBeInTheDocument();
     });
   });
 });

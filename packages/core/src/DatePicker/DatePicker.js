@@ -76,6 +76,7 @@ const HvDatePicker = (props) => {
     disablePortal = true,
     escapeWithReference = true,
     dropdownProps,
+    readOnly,
     ...others
   } = props;
 
@@ -328,6 +329,7 @@ const HvDatePicker = (props) => {
       required={required}
       className={clsx(className, classes.root)}
       locale={locale}
+      readOnly={readOnly}
       {...others}
     >
       {(hasLabel || hasDescription) && (
@@ -351,6 +353,7 @@ const HvDatePicker = (props) => {
           header: isStateInvalid ? classes.dropdownHeaderInvalid : undefined,
           headerOpen: classes.dropdownHeaderOpen,
         }}
+        readOnly={readOnly}
         disabled={disabled}
         disablePortal={disablePortal}
         variableWidth
@@ -614,6 +617,10 @@ HvDatePicker.propTypes = {
    * An object containing props to be passed onto the baseDropdown.
    */
   dropdownProps: PropTypes.instanceOf(Object),
+  /**
+   * If `true` the DatePicker will be in read only mode, unable to be interacted.
+   */
+  readOnly: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(HvDatePicker);
