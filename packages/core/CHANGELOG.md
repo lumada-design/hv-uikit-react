@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.69.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.11...@hitachivantara/uikit-react-core@3.69.0) (2022-08-11)
+
+
+### Bug Fixes
+
+* **dropdown:** fix virtualizes sample not working ([78379df](https://github.com/lumada-design/hv-uikit-react/commit/78379dfb072941c666e2e1fe3bade28cbb85069f))
+* **file-uploader:** fix undefined id's on file list ([0e430d9](https://github.com/lumada-design/hv-uikit-react/commit/0e430d95956e4a7b887aec5109712b0103126048))
+* **FilterGroup:** crash if no filters are passed ([#2886](https://github.com/lumada-design/hv-uikit-react/issues/2886)) ([2e741cf](https://github.com/lumada-design/hv-uikit-react/commit/2e741cf63699ac908f012f712a3891a14811ad3f))
+
+
+### Features
+
+* **dropdown:** add read only mode ([#2884](https://github.com/lumada-design/hv-uikit-react/issues/2884)) ([4a4d822](https://github.com/lumada-design/hv-uikit-react/commit/4a4d8222db6343d7605656372ffb1a5ee58074a3))
+
+
+
+
+
 ## [3.68.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.10...@hitachivantara/uikit-react-core@3.68.11) (2022-08-05)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
