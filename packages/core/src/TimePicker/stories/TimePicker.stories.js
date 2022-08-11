@@ -117,6 +117,17 @@ Disabled.parameters = {
   },
 };
 
+export const ReadOnly = () => <HvTimePicker id="readonly" readOnly label="Time" locale="pt-pt" />;
+
+ReadOnly.decorators = [(storyFn) => <div style={{ minHeight: 60 }}>{storyFn()}</div>];
+
+ReadOnly.parameters = {
+  eyes: {
+    // excluded due to dynamic date (which is the default that we intend to exemplify)
+    include: false,
+  },
+};
+
 export const WithoutLabel = () => (
   <HvTimePicker id="nolabel" aria-label="Timepicker" locale="pt-pt" />
 );

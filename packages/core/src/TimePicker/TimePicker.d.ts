@@ -45,6 +45,19 @@ export interface HvTimePickerProps
   defaultValue?: HvTimePickerValue | null | undefined;
 
   /**
+   * Indicates that user input is required on the form element.
+   */
+  required?: boolean;
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Indicates that the form element is in read only mode.
+   */
+  readOnly?: boolean;
+
+  /**
    * The placeholder value when no time is selected.
    */
   placeholder?: string;

@@ -3,7 +3,7 @@ import React from "react";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { Main, CustomDefault } from "../stories/TimePicker.stories";
+import { Main, CustomDefault, ReadOnly } from "../stories/TimePicker.stories";
 import HvTimePicker from "../TimePicker";
 
 describe("Timepicker", () => {
@@ -38,6 +38,18 @@ describe("Timepicker", () => {
 
       const [pickerTooltip] = getAllByRole("tooltip");
       expect(pickerTooltip).toBeInTheDocument();
+    });
+
+    it("When in read only mode it shouldn't open the tooltip", async () => {
+      const { getByRole, queryByRole } = render(<ReadOnly />);
+
+      const timepickerDropdown = getByRole("combobox");
+      expect(timepickerDropdown).toBeInTheDocument();
+      expect(timepickerDropdown).toHaveAttribute("aria-expanded", "false");
+      userEvent.click(timepickerDropdown); // try to open
+
+      const pickerTooltip = queryByRole("tooltip");
+      expect(pickerTooltip).not.toBeInTheDocument();
     });
   });
 });
