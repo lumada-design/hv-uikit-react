@@ -21,3 +21,6 @@ export * from "./ImageCarousel";
 
 export { default as HvStepNavigation } from "./StepNavigation";
 export * from "./StepNavigation";
+
+export { default as HvWizard } from "./Wizard";
+export * from "./Wizard";
