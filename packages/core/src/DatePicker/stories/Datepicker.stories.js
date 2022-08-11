@@ -429,6 +429,17 @@ export const ExternalErrorMessage = () => {
   );
 };
 
+export const ReadOnly = () => (
+  <HvDatePicker
+    id="DatePicker"
+    placeholder="Can't select a date now"
+    aria-label="Read only date picker"
+    readOnly
+  />
+);
+
+ReadOnly.decorators = [defaultDecorator];
+
 ExternalErrorMessage.parameters = {
   docs: {
     description: {
