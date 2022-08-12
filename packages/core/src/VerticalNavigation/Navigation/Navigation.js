@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { deprecatedPropType } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import clsx from "clsx";
-import TreeView, { TreeViewItem } from "../TreeView";
+import { TreeView, TreeViewItem } from "../TreeView";
 import { setId, useControlled } from "../../utils";
 import styles from "./styles";
 import { wrapperTooltip } from "../../List/utils";

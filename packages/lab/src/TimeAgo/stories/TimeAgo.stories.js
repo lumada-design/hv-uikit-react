@@ -2,9 +2,14 @@ import React, { useMemo, useState } from "react";
 import dayjs from "dayjs";
 
 import { makeStyles } from "@mui/styles";
-import { HvRadio, HvRadioGroup, HvTypography } from "@hitachivantara/uikit-react-core";
+import {
+  HvRadio,
+  HvRadioGroup,
+  HvTypography,
+  HvTimePicker,
+} from "@hitachivantara/uikit-react-core";
 
-import { HvTimeAgo, HvTimePicker } from "../..";
+import { HvTimeAgo } from "../..";
 
 export default {
   title: "Lab/Time Ago",

@@ -1,0 +1,194 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+
+import LinkTo from "@storybook/addon-links/react";
+
+import { Usage } from "storybook-root/blocks/Usage";
+
+import { HvTable } from "../..";
+
+import { 
+  AllColumnRenderers, 
+  TextColumnRenderer, 
+  NumberColumnRenderer, 
+  DateColumnRenderer,
+  ExpandColumnRenderer,
+  SwitchColumnRenderer,
+  TagColumnRenderer,
+  ProgressColumnRenderer,
+  DropdownColumnRenderer,
+} from "./TableColumnRenderers.stories.js";
+
+<Meta title="Display/Table Column Renderers" />
+
+# Table column renderers
+
+The UI Kit library provides a collection of utility functions that, together with the <LinkTo kind="Display/Table Hooks" story="Main" className="sbdocs sbdocs-a">Table Hooks</LinkTo>,
+ease the setup of common column configurations, including the render function, alignment, missing data fallbacks and cell overflow.
+
+They add a set of out of the box features, not meant to be 100% feature complete, but instead, ease the majority of use-cases we have been encountering. If you need any customization or extension to these renderers, please feel free to copy and customize them.
+
+They can be imported like this:
+
+<Usage>{'import { hvTextColumn } from "@hitachivantara/uikit-react-lab";'}</Usage>
+
+The following renderers are available:
+
+- `hvTextColumn`: Renders a string and includes an overflow tooltip.
+- `hvNumberColumn`: Renders a number aligning it correctly and includes an overflow tooltip.
+- `hvDateColumn`: Renders a date and formats it.
+- `hvExpandColumn`: Renders a column that includes an expand button.
+- `hvTagColumn`: Renders a column with a tag component inside the cell.
+- `hvSwitchColumn`: Renders a column that includes a switch to toggle between two values.
+- `hvDropdownColumn`: Renders a column that include a dropdown select between various values.
+- `hvProgressColumn`: Renders a progress bar to compare between a current value and max value.
+
+## All renderers table
+
+Complete sample table that uses most of the provided renderers.
+
+<Preview withToolbar>
+  <Story inline story={AllColumnRenderers} />
+</Preview>
+
+## Text column renderer
+
+This functions renders text in the table.
+The column generated will have the text truncated with a tooltip if too long or if missing it will be replaced with a long dash.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={TextColumnRenderer} />
+</Preview>
+
+## Number column renderer
+
+This functions renders numeric values in the table.
+The column generated will be *right* aligned and in case the value is missing it will be substituted by a long dash.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={NumberColumnRenderer} />
+</Preview>
+
+## Date column renderer
+
+This functions renders a string formatted as a date.
+in case the value is missing it will be substituted by a long dash.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `format: String`: the parameter used as a reference to format the value, the default value is `ISO8601`.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={DateColumnRenderer} />
+</Preview>
+
+## Expand column renderer
+
+This functions in conjunction with the `useHvRowExpand` hook renders a column with a button to open additional content in the table.
+Using the renderer allows the `useHvRowExpand` to render an expander in any column, instead of only in the first one.
+But the property `disableCreateExpandButton` must be true.
+The text rendered next to the expander button will have the same properties as the `hvTextColumn` column.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `expandRowButtonAriaLabel: String`: The aria label for the button when the expander is closed.
+- `collapseRowButtonAriaLabel: String`: The aria label for the button when the expander is open.
+- `getCanRowExpand: (row: HvRowInstance) => boolean`: The function executed to determine whether the expander button is able to be opened.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={ExpandColumnRenderer} />
+</Preview>
+
+## Switch column renderer
+
+This functions renders a column with a switch component embedded that follows the state of a `boolean` value.
+To change the value of the switch, the data in the table must be changed.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `switchLabel: String`: The aria label for the switch.
+- `falseLabel: String`: The label for the left side of the switch.
+- `trueLabel: String`: The label for the right side of the switch.
+- `switchProps: HvBaseSwitchProps`: extra props passed to the switch, these values correspond to the `HvBaseSwitch` props.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={SwitchColumnRenderer} />
+</Preview>
+
+## Tag column renderer
+
+This functions renders a column with a tag component embedded that follows the state of a `json` value.
+To change the value color and styles of the tag the data in the table must be changed.
+The function receives 3 key values that correspond to properties present in the table cell value or in the whole row.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `valueDataKey: String`: The property to use as text for the tag.
+- `colorDataKey: String`: The property to use as color for the tag this property.
+- `textColorDataKey: String`: The property to use as color for the text of the tag.
+- `fromRowData: Boolean`: if `true` it will extract the `valueDataKey` `colorDataKey` `textColorDataKey` from the row data, if `false` it will extract the aforementioned properties from the cell value.
+- `tagProps: HvTagProps`: extra props passed to the tag, these values correspond to the `HvTagProps` props.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={TagColumnRenderer} />
+</Preview>
+
+## Progress column renderer
+
+This functions renders a column with a progress bar embedded.
+The function receives a pair of callbacks to specify the status of the bar.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `getPartial: (row: HvRowInstance) => number`: a function that returns the current value of the bar.
+- `getTotal: (row: HvRowInstance) => number`: a function that returns the current max value of the bar.
+- `color: "primary" | "secondary"`: which color to use for the bar.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={ProgressColumnRenderer} />
+</Preview>
+
+## Dropdown column renderer
+
+This functions renders a dropdown component embedded into a column.
+The function receives an onChange callback to communicate the selected value of the dropdown.
+
+parameters:
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `id: string`: The dropdown id.
+- `placeholder: string`: The dropdown placeholder when nothing is selected.
+- `disabledPlaceholder: string`: The dropdown placeholder when is disabled.
+- `onChange: (identifier: string, value: ListValueProp) => void`: The function called when the dropdown value is changed.
+
+output:
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Preview withToolbar>
+  <Story inline story={DropdownColumnRenderer} />
+</Preview>

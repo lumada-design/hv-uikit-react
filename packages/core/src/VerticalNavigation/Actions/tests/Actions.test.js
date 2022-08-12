@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 import HvProvider from "../../../Provider";
-import Actions, { Action } from "../index";
+import { Actions, Action } from "..";
 
 describe("Actions", () => {
   let wrapper;

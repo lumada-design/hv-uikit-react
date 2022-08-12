@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 import HvProvider from "../../../Provider";
 
-import TreeView, { TreeViewItem } from "../index";
+import { TreeView, TreeViewItem } from "..";
 
 describe("<TreeView />", () => {
   const onChangeMock = jest.fn();

@@ -1,5 +1,5 @@
 import React from "react";
-import { HvTable } from "../..";
+// import { HvTable } from "../..";
 
 const Table = () => {
   const data = [
@@ -112,13 +112,13 @@ const Table = () => {
 
   return (
     <div style={{ padding: "10px" }}>
-      <HvTable
+      {/* <HvTable
         data={data}
         id="test"
         columns={getColumns()}
         defaultPageSize={10}
         resizable={false}
-      />
+      /> */}
     </div>
   );
 };

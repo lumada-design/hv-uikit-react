@@ -1,7 +1,11 @@
 export { default } from "./UserPreferences";
 
-export { default as Action } from "./Action";
-export { default as Actions } from "./Actions";
+export { default as HvUserPreferencesAction } from "./Action";
+export { default as HvUserPreferencesActions } from "./Actions";
 
-export { default as Options } from "./Options";
-export * from "./Options";
+export {
+  Options as HvUserPreferencesOptions,
+  Option as HvUserPreferencesOption,
+  Group as HvUserPreferencesOptionsGroup,
+  Label as HvUserPreferencesOptionsGroupLabel,
+} from "./Options";

@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 import { HvProvider } from "../../..";
-import { Option, Options } from "../..";
+import { Option, Options } from "..";
 
 describe("Options", () => {
   let wrapper;

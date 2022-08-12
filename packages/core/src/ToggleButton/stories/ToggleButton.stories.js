@@ -98,9 +98,11 @@ export const Main = () => (
 
 export const Disabled = () => (
   <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
-    <HvToggleButton disabled aria-label="Light">
-      <LightOff />
-    </HvToggleButton>
+    <span>
+      <HvToggleButton disabled aria-label="Light">
+        <LightOff />
+      </HvToggleButton>
+    </span>
   </HvTooltip>
 );
 

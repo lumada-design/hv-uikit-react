@@ -4,7 +4,13 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import HvProvider from "../../Provider";
 import { Main } from "../stories/UserPreferences.stories";
-import UserPreferences, { Action, Actions, Options, Group, Option } from "..";
+import UserPreferences, {
+  HvUserPreferencesAction,
+  HvUserPreferencesActions,
+  HvUserPreferencesOptions,
+  HvUserPreferencesOptionsGroup,
+  HvUserPreferencesOption,
+} from "..";
 
 const setupComponent = (
   <HvProvider disableCssBaseline>
@@ -25,10 +31,10 @@ describe("UserPreferences withStyles", () => {
   it("should render correctly", () => {
     wrapper = mount(setupComponent);
     expect(wrapper.find(UserPreferences).length).toBe(1);
-    expect(wrapper.find(Actions).length).toBe(1);
-    expect(wrapper.find(Action).length).toBe(1);
-    expect(wrapper.find(Options).length).toBe(1);
-    expect(wrapper.find(Group).length).toBe(4);
-    expect(wrapper.find(Option).length).toBe(11);
+    expect(wrapper.find(HvUserPreferencesActions).length).toBe(1);
+    expect(wrapper.find(HvUserPreferencesAction).length).toBe(1);
+    expect(wrapper.find(HvUserPreferencesOptions).length).toBe(1);
+    expect(wrapper.find(HvUserPreferencesOptionsGroup).length).toBe(4);
+    expect(wrapper.find(HvUserPreferencesOption).length).toBe(11);
   });
 });

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
-import { HvLoading } from "@hitachivantara/uikit-react-core";
 import {
+  HvLoading,
   HvTableContainer,
   HvTable,
   HvTableHead,
@@ -9,7 +9,8 @@ import {
   HvTableCell,
   HvTableHeader,
   HvTableBody,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-core";
+
 import { getColumns } from "./makedata";
 
 /**

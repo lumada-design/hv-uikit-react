@@ -1,4 +1,4 @@
-export { default as HvFormElement } from "./FormElement";
+export { default } from "./FormElement";
 export * from "./FormElement";
 
 export { default as HvWarningText } from "./WarningText";

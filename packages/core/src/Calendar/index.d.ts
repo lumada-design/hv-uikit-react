@@ -1,2 +1,2 @@
-export { default as HvCalendar } from "./Calendar";
+export { default } from "./Calendar";
 export { default as HvCalendarHeader } from "./Calendar";

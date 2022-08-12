@@ -1,11 +1,14 @@
-export { default } from "./VerticalNavigation";
-export * from "./VerticalNavigation";
-
-export { default as Actions } from "./Actions";
-export * from "./Actions";
-
-export { default as Navigation } from "./Navigation";
+export { default } from "./Navigation";
 export * from "./Navigation";
 
-export { default as TreeView } from "./TreeView";
+export {
+  TreeView as HvVerticalNavigationTreeView,
+  TreeViewItem as HvVerticalNavigationTreeViewItem,
+} from "./TreeView";
 export * from "./TreeView";
+
+export {
+  Actions as HvVerticalNavigationActions,
+  Action as HvVerticalNavigationAction,
+} from "./Actions";
+export * from "./Actions";

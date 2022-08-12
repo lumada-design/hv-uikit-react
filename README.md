@@ -39,6 +39,7 @@ Also available:
 
 - code-editor - `npm install @hitachivantara/uikit-react-code-editor`
 - visualizations - `npm install @hitachivantara/uikit-react-viz`
+- compat - `npm install @hitachivantara/uikit-react-compat
 - icons - `npm install @hitachivantara/uikit-react-icons`
 - themes - `npm install @hitachivantara/uikit-common-themes`
 

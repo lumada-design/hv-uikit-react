@@ -8,7 +8,8 @@ import {
   HvTableHeader,
   HvTableBody,
   HvTableCell,
-} from "@hitachivantara/uikit-react-lab";
+} from "@hitachivantara/uikit-react-core";
+
 import { getColumns } from "./makedata";
 import { idsToControl } from "./utils";
 
