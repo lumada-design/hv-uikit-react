@@ -12,7 +12,7 @@ const NumericValue = ({ id, value, operator, initialTouched = false }) => {
   const classes = useStyles();
   const isRange = operator === "range";
   const context = React.useContext(Context);
-  const { labels, dispatchAction } = context;
+  const { labels, dispatchAction, readOnly } = context;
 
   const onSingleValueChange = useCallback(
     (evt, data) => {
@@ -116,6 +116,7 @@ const NumericValue = ({ id, value, operator, initialTouched = false }) => {
             autoComplete: "off",
           }}
           placeholder={labels.rule.value.numeric.placeholder}
+          readOnly={readOnly}
         />
       </div>
       <div className={classes.inputContainer}>
@@ -141,6 +142,7 @@ const NumericValue = ({ id, value, operator, initialTouched = false }) => {
             autoComplete: "off",
           }}
           placeholder={labels.rule.value.numeric.placeholder}
+          readOnly={readOnly}
         />
       </div>
     </div>
@@ -173,6 +175,7 @@ const NumericValue = ({ id, value, operator, initialTouched = false }) => {
             }}
             placeholder={labels.rule.value.numeric.placeholder}
             statusMessage={labels.rule.value.numeric.validation[numericValidation] || ""}
+            readOnly={readOnly}
           />
         </div>
       )}

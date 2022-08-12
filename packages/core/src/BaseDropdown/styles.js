@@ -66,6 +66,7 @@ const styles = (theme) => ({
     cursor: "not-allowed",
     pointerEvents: "none",
     border: "none",
+    userSelect: "text",
     "&:focus-visible": {
       outline: "none",
       border: "none",

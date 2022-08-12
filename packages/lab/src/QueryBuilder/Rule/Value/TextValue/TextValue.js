@@ -8,7 +8,7 @@ import useStyles from "./styles";
 const TextValue = ({ id, value = "", initialTouched = false }) => {
   const classes = useStyles();
   const context = React.useContext(Context);
-  const { labels, dispatchAction } = context;
+  const { labels, dispatchAction, readOnly } = context;
   const [touched, setTouched] = useState(initialTouched);
   const isValid = value != null && value.toString().trim() !== "";
 
@@ -42,6 +42,7 @@ const TextValue = ({ id, value = "", initialTouched = false }) => {
         }
       }}
       placeholder="—"
+      readOnly={readOnly}
     />
   );
 };

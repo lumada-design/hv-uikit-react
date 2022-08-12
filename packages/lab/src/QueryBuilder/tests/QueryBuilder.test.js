@@ -5,7 +5,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import { render } from "testing-utils";
 
-import { Main, InitialQuery } from "../stories/QueryBuilder.stories";
+import { Main, InitialQuery, ReadOnly } from "../stories/QueryBuilder.stories";
 
 const consoleWarnSpy = jest.fn();
 const originalWarn = console.warn;
@@ -185,6 +185,15 @@ describe("QueryBuilder", () => {
       const { container } = render(<InitialQuery />);
 
       expect(container).toBeDefined();
+    });
+  });
+
+  describe("read only", () => {
+    it("should not be interactable", () => {
+      const { getAllByRole } = render(<ReadOnly />);
+
+      const buttons = getAllByRole("button");
+      buttons.map((b) => expect(b).toBeDisabled());
     });
   });
 });
