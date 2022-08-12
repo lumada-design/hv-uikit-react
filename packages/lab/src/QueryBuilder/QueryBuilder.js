@@ -25,6 +25,7 @@ const HvQueryBuilder = ({
   combinators,
   maxDepth = 1,
   labels,
+  readOnly = false,
   classes,
 }) => {
   const [pendingAction, askAction] = useState();
@@ -50,6 +51,7 @@ const HvQueryBuilder = ({
       maxDepth: maxDepth ?? defaultcontext.maxDepth,
       labels: labels ?? defaultcontext.labels,
       initialTouched: initialState,
+      readOnly,
     }),
     [
       attributes,
@@ -61,6 +63,7 @@ const HvQueryBuilder = ({
       combinators,
       maxDepth,
       labels,
+      readOnly,
       initialState,
     ]
   );
@@ -230,6 +233,10 @@ HvQueryBuilder.propTypes = {
    * An object containing all the labels.
    */
   labels: PropTypes.instanceOf(Object),
+  /**
+   * A flag indicating if the Query Builder is in read only mode.
+   */
+  readOnly: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvQueryBuilder" })(HvQueryBuilder);

@@ -48,6 +48,10 @@ export interface HvQueryBuilderProps
    * An object containing all the labels.
    */
   labels?: QueryBuilderLabels;
+  /**
+   * A flag indicating if the Query Builder is in read only mode.
+   */
+  readOnly?: boolean;
 }
 
 export default function HvQueryBuilder(props: HvQueryBuilderProps): JSX.Element | null;

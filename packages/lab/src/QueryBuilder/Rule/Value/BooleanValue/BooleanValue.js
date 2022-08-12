@@ -7,7 +7,7 @@ import { isBigList } from "../../../utils";
 
 const BooleanValue = ({ id, value = true }) => {
   const context = React.useContext(Context);
-  const { labels, dispatchAction } = context;
+  const { labels, dispatchAction, readOnly } = context;
 
   const values = ["true", "false"].map((v) => ({
     id: v,
@@ -23,6 +23,7 @@ const BooleanValue = ({ id, value = true }) => {
       label={labels.rule.value.boolean.label}
       placeholder={labels.rule.value.boolean.placeholder}
       values={values}
+      readOnly={readOnly}
       onChange={(selected) => {
         if (selected && !Array.isArray(selected) && selected.id) {
           dispatchAction({

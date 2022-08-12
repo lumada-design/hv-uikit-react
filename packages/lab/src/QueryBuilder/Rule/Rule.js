@@ -14,7 +14,7 @@ const Rule = ({ id, combinator, attribute, operator, value, disabled, isInvalid 
   const classes = useStyles();
   const context = useContext(Context);
 
-  const { askAction, attributes, operators, labels } = context;
+  const { askAction, attributes, operators, labels, readOnly } = context;
 
   const availableOperators = useMemo(() => {
     const attributeSpec = attribute != null ? attributes[attribute] : null;
@@ -33,7 +33,11 @@ const Rule = ({ id, combinator, attribute, operator, value, disabled, isInvalid 
 
   const shouldShowValueInput = operator !== "Empty" && operator !== "IsNotEmpty";
 
-  const DeleteIcon = withTooltip(() => <Delete />, labels.rule.delete.tooltip, "bottom");
+  const DeleteIcon = withTooltip(
+    () => <Delete disabled={readOnly} />,
+    labels.rule.delete.tooltip,
+    "bottom"
+  );
 
   return (
     <HvGrid container className={classes.root} spacing={0} wrap="nowrap">
@@ -62,6 +66,7 @@ const Rule = ({ id, combinator, attribute, operator, value, disabled, isInvalid 
               dialog: labels.rule.delete,
             });
           }}
+          disabled={readOnly}
         >
           <DeleteIcon />
         </HvButton>

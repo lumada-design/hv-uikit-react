@@ -21,7 +21,7 @@ const DateTimeValue = ({ id, operator, value: valueProp = {}, initialTouched = f
   const isRange = valueIsRange(operator, valueProp);
 
   const context = React.useContext(Context);
-  const { labels, dispatchAction } = context;
+  const { labels, dispatchAction, readOnly } = context;
 
   const elementId = uniqueId(`datetime${id}`);
 
@@ -220,6 +220,7 @@ const DateTimeValue = ({ id, operator, value: valueProp = {}, initialTouched = f
           }
           value={datePickerValue}
           onChange={onDateChange}
+          readOnly={readOnly}
         />
         <HvTimePicker
           className={classes.timePicker}
@@ -246,6 +247,7 @@ const DateTimeValue = ({ id, operator, value: valueProp = {}, initialTouched = f
               setTouchedTime(true);
             }
           }}
+          readOnly={readOnly}
         />
       </div>
       {isRange && (
@@ -262,6 +264,7 @@ const DateTimeValue = ({ id, operator, value: valueProp = {}, initialTouched = f
               placeholder={labels.rule.value.datetime.endDatePlaceholder}
               value={endDatePickerValue}
               onChange={onEndDateChange}
+              readOnly={readOnly}
             />
             <HvTimePicker
               className={classes.timePicker}
@@ -281,6 +284,7 @@ const DateTimeValue = ({ id, operator, value: valueProp = {}, initialTouched = f
                   setTouchedEndTime(true);
                 }
               }}
+              readOnly={readOnly}
             />
           </div>
           <HvWarningText
