@@ -12,7 +12,7 @@ import styles from "./styles";
 const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) => {
   const context = useContext(Context);
 
-  const { dispatchAction, askAction, maxDepth, combinators, labels } = context;
+  const { dispatchAction, askAction, maxDepth, combinators, labels, readOnly } = context;
   const normalizedMaxDepth = maxDepth - 1;
 
   const actionButtons = (
@@ -22,8 +22,9 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
         onClick={() => {
           dispatchAction({ type: "add-rule", id });
         }}
+        disabled={readOnly}
       >
-        <Add />
+        <Add disabled={readOnly} />
         {level === 0 && labels.query?.addRule?.label != null
           ? labels.query?.addRule?.label
           : labels.group.addRule.label}
@@ -34,8 +35,9 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
           onClick={() => {
             dispatchAction({ type: "add-group", id });
           }}
+          disabled={readOnly}
         >
-          <Add />
+          <Add disabled={readOnly} />
           {level === 0 && labels.query?.addGroup?.label != null
             ? labels.query?.addGroup?.label
             : labels.group.addGroup.label}
@@ -45,7 +47,9 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
   );
 
   const DeleteIcon = withTooltip(
-    () => <Delete />,
+    () => (
+      <Delete className={readOnly ? classes.topRemoveButtonDisabled : ""} disabled={readOnly} />
+    ),
     level === 0 && labels.query?.delete?.tooltip
       ? labels.query?.delete?.tooltip
       : labels.group.delete.tooltip,
@@ -72,13 +76,17 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
     >
       <HvGrid container>
         <HvGrid item>
-          <HvMultiButton className={clsx(classes.combinator, classes.topCombinator)}>
+          <HvMultiButton
+            className={clsx(classes.combinator, classes.topCombinator)}
+            disabled={readOnly}
+          >
             {combinators.map((item) => (
               <HvButton
                 key={item.operand}
                 className={classes.combinatorButton}
                 selected={item.operand === combinator}
                 onClick={() => item.operand && onClickCombinator(item)}
+                disabled={readOnly}
               >
                 {item.label}
               </HvButton>
@@ -103,6 +111,7 @@ const RuleGroup = ({ level = 0, id, combinator = "and", rules = [], classes }) =
                 ? labels.query?.delete?.ariaLabel
                 : labels.group.delete.ariaLabel
             }
+            disabled={readOnly}
           >
             <DeleteIcon />
           </HvButton>
@@ -236,6 +245,10 @@ RuleGroup.propTypes = {
      * Styles applied to the remove button on the top group.
      */
     topRemoveButton: PropTypes.string,
+    /**
+     * Styles applied to the remove button on the top group when disabled.
+     */
+    topRemoveButtonDisabled: PropTypes.string,
     /**
      * Styles applied to the rules container.
      */

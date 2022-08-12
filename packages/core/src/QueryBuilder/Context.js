@@ -310,4 +310,5 @@ export default createContext({
   maxDepth: 1,
   labels: defaultLabels,
   initialTouched: false,
+  readOnly: false,
 });

@@ -7,7 +7,7 @@ import { isBigList } from "../../utils";
 
 const Attribute = ({ id, attribute, disabled, isInvalid }) => {
   const context = useContext(Context);
-  const { dispatchAction, attributes, operators, labels } = context;
+  const { dispatchAction, attributes, operators, labels, readOnly } = context;
 
   const values = useMemo(
     () =>
@@ -28,6 +28,7 @@ const Attribute = ({ id, attribute, disabled, isInvalid }) => {
       placeholder={labels.rule.attribute.placeholder}
       values={values}
       disabled={disabled}
+      readOnly={readOnly}
       status={isInvalid ? "invalid" : "valid"}
       statusMessage={labels.rule.attribute.exists}
       onChange={(selected) => {

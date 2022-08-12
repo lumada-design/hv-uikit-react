@@ -8,7 +8,7 @@ import { isBigList } from "../../utils";
 const Operator = ({ id, combinator, attribute, operator }) => {
   const context = React.useContext(Context);
 
-  const { dispatchAction, attributes, operators, labels } = context;
+  const { dispatchAction, attributes, operators, labels, readOnly } = context;
 
   const value = operator ?? null;
 
@@ -33,6 +33,7 @@ const Operator = ({ id, combinator, attribute, operator }) => {
       placeholder={labels.rule.operator.placeholder}
       values={values}
       disabled={values.length === 0}
+      readOnly={readOnly}
       onChange={(selected) => {
         if (selected && !Array.isArray(selected) && selected.id) {
           dispatchAction({

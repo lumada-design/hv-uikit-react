@@ -82,6 +82,10 @@ const styles = (theme) => ({
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
   },
 
+  topRemoveButtonDisabled: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+  },
+
   rulesContainer: {},
 
   subRulesContainer: {
