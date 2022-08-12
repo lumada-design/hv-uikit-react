@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import HvFilterGroup from "../FilterGroup";
+import { Info } from "@hitachivantara/uikit-react-icons";
+import { HvLoading, HvEmptyState, HvSwitch, HvTypography } from "../..";
+import HvFilterGroup from "..";
 
 export default {
   title: "Widgets/Filter Group",
@@ -105,6 +107,45 @@ export const Uncontrolled = () => {
   return (
     <div style={{ width: 180 }}>
       <HvFilterGroup id="example" filters={filters} />
+    </div>
+  );
+};
+
+export const EmptyFilters = () => {
+  const [hasFilters, setHasFilters] = useState(true);
+
+  const myFilters = hasFilters
+    ? [
+        {
+          id: "1",
+          name: "Filter with data",
+          data: Array.from(Array(5), (el, i) => ({ id: `opt${i}`, name: `Option ${i}` })),
+        },
+        {
+          id: "2",
+          name: "Filter with no data",
+          data: [],
+        },
+      ]
+    : [];
+
+  const leftEmptyElement = <HvLoading label="Loading filters..." style={{ height: "100%" }} />;
+  const rightEmptyElement = (
+    <HvEmptyState icon={<Info />} message="No values found for the filter" />
+  );
+
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+      <div style={{ width: 180 }}>
+        <HvFilterGroup
+          filters={myFilters}
+          filterContentProps={{ leftEmptyElement, rightEmptyElement }}
+        />
+      </div>
+      <HvSwitch checked={hasFilters} onChange={(evt, checked) => setHasFilters(checked)} />
+      <HvTypography>
+        {hasFilters ? "Filters in loaded state" : "Filters in loading state"}
+      </HvTypography>
     </div>
   );
 };
