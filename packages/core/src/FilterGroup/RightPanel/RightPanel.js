@@ -6,7 +6,7 @@ import { FilterGroupContext } from "../FilterGroupContext";
 import useStyles from "./styles";
 import { setId, HvTypography, HvList, HvInput, HvPanel, HvCheckBox } from "../..";
 
-const RightPanel = ({ id, className, labels }) => {
+const RightPanel = ({ id, className, labels, emptyElement }) => {
   const classes = useStyles();
   const [searchStr, setSearchStr] = useState("");
   const [allSelected, setAllSelected] = useState(false);
@@ -124,30 +124,36 @@ const RightPanel = ({ id, className, labels }) => {
 
   return (
     <HvPanel id={setId(id, "rightPanel")} className={clsx(className, classes.root)}>
-      <HvInput
-        id={setId(id, "search")}
-        classes={{
-          root: classes.search,
-        }}
-        type="search"
-        placeholder={labels.searchBoxPlaceholder}
-        value={searchStr}
-        onChange={(event, str) => setSearchStr(str)}
-      />
-      <SelectAll />
-      <HvList
-        key={activeGroup}
-        id={setId(id, "list")}
-        className={classes.list}
-        values={listValues}
-        multiSelect
-        useSelector
-        showSelectAll={false}
-        onChange={onChangeHandler}
-        selectable
-        condensed
-        hasTooltips
-      />
+      {listValues.length > 0 ? (
+        <>
+          <HvInput
+            id={setId(id, "search")}
+            classes={{
+              root: classes.search,
+            }}
+            type="search"
+            placeholder={labels.searchBoxPlaceholder}
+            value={searchStr}
+            onChange={(event, str) => setSearchStr(str)}
+          />
+          <SelectAll />
+          <HvList
+            key={activeGroup}
+            id={setId(id, "list")}
+            className={classes.list}
+            values={listValues}
+            multiSelect
+            useSelector
+            showSelectAll={false}
+            onChange={onChangeHandler}
+            selectable
+            condensed
+            hasTooltips
+          />
+        </>
+      ) : (
+        emptyElement
+      )}
     </HvPanel>
   );
 };
@@ -160,6 +166,7 @@ RightPanel.propTypes = {
     selectAll: PropTypes.string,
     multiSelectionConjunction: PropTypes.string,
   }),
+  emptyElement: PropTypes.node,
 };
 
 export default RightPanel;

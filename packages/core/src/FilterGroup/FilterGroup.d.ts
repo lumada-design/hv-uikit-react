@@ -1,5 +1,6 @@
 import { StandardProps } from "@mui/material";
 import { HvFormElementProps } from "..";
+import { HvFilterContentProps } from "./FilterContent";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
@@ -105,7 +106,7 @@ export interface HvFilterGroupProps
   /**
    * The filter content props
    */
-  filterContentProps?: object;
+  filterContentProps?: Partial<HvFilterContentProps>;
 }
 
 export default function HvFilterGroup(props: HvFilterGroupProps): JSX.Element | null;

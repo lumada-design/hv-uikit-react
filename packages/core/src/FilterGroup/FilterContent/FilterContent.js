@@ -31,6 +31,8 @@ const FilterContent = ({
   escapeWithReference = true,
 
   height,
+  leftEmptyElement,
+  rightEmptyElement,
 
   ...others
 }) => {
@@ -117,8 +119,13 @@ const FilterContent = ({
     >
       <div ref={focusTarget} tabIndex={-1} />
       <div className={classes.root} style={{ height }}>
-        <LeftPanel id={id} className={classes.leftSidePanel} />
-        <RightPanel id={id} className={classes.rightSidePanel} labels={labels} />
+        <LeftPanel id={id} className={classes.leftSidePanel} emptyElement={leftEmptyElement} />
+        <RightPanel
+          id={id}
+          className={classes.rightSidePanel}
+          emptyElement={rightEmptyElement}
+          labels={labels}
+        />
       </div>
       <HvActionBar className={classes.actionBar}>
         <HvButton
@@ -180,6 +187,8 @@ FilterContent.propTypes = {
   disablePortal: PropTypes.bool,
   escapeWithReference: PropTypes.bool,
   height: PropTypes.any,
+  leftEmptyElement: PropTypes.node,
+  rightEmptyElement: PropTypes.node,
 };
 
 export default FilterContent;
