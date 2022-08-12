@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.70.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.69.0...@hitachivantara/uikit-react-core@3.70.0) (2022-08-12)
+
+
+### Bug Fixes
+
+* **dropdown:** fix virtualizes sample not working ([78379df](https://github.com/lumada-design/hv-uikit-react/commit/78379dfb072941c666e2e1fe3bade28cbb85069f))
+* **file-uploader:** fix undefined id's on file list ([0e430d9](https://github.com/lumada-design/hv-uikit-react/commit/0e430d95956e4a7b887aec5109712b0103126048))
+
+
+### Features
+
+* **DatePicker:** added read only mode for date picker ([#2888](https://github.com/lumada-design/hv-uikit-react/issues/2888)) ([00cd6df](https://github.com/lumada-design/hv-uikit-react/commit/00cd6dff0ffc7c5641cdf60d1ba343a2781b56d8))
+* **dropdown:** add read only mode ([#2884](https://github.com/lumada-design/hv-uikit-react/issues/2884)) ([4a4d822](https://github.com/lumada-design/hv-uikit-react/commit/4a4d8222db6343d7605656372ffb1a5ee58074a3))
+* **time-picker:** add read only mode ([e22ca09](https://github.com/lumada-design/hv-uikit-react/commit/e22ca0942c2f8771753813ed565d4095ed661b9f))
+
+
+
+
+
 # [3.69.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.11...@hitachivantara/uikit-react-core@3.69.0) (2022-08-11)
 
 
