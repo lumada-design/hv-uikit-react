@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.51.8...@hitachivantara/uikit-react-lab@3.52.0) (2022-08-13)
+
+
+### Features
+
+* **query-builder:** add read only mode ([3e971b6](https://github.com/lumada-design/hv-uikit-react/commit/3e971b6ba2717fe7fcce63bf27966e75cdd7133f))
+
+
+
+
+
 ## [3.51.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.51.7...@hitachivantara/uikit-react-lab@3.51.8) (2022-08-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

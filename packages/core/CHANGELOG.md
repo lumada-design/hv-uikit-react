@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.71.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.70.0...@hitachivantara/uikit-react-core@3.71.0) (2022-08-13)
+
+
+### Features
+
+* **query-builder:** add read only mode ([3e971b6](https://github.com/lumada-design/hv-uikit-react/commit/3e971b6ba2717fe7fcce63bf27966e75cdd7133f))
+
+
+
+
+
 # [3.70.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.69.0...@hitachivantara/uikit-react-core@3.70.0) (2022-08-12)
 
 
