@@ -3,7 +3,7 @@ import PropTypes, { oneOfType } from "prop-types";
 import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import capitalize from "lodash/capitalize";
 import { setId } from "../utils";
-import HvBannerContentWrapper from "./BannerWrapper";
+import HvBannerContent from "./BannerContent";
 import styles from "./styles";
 
 /**
@@ -64,7 +64,7 @@ const HvBanner = (props) => {
       transitionDuration={transitionDuration}
       {...others}
     >
-      <HvBannerContentWrapper
+      <HvBannerContent
         id={setId(id, "content")}
         content={label}
         variant={variant}
