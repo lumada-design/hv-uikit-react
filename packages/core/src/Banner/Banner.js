@@ -4,7 +4,7 @@ import { Slide, Snackbar } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import capitalize from "lodash/capitalize";
 import { setId } from "../utils";
-import HvBannerContentWrapper from "./BannerWrapper";
+import HvBannerContent from "./BannerContent";
 import styles from "./styles";
 
 /**
@@ -65,7 +65,7 @@ const HvBanner = (props) => {
       transitionDuration={transitionDuration}
       {...others}
     >
-      <HvBannerContentWrapper
+      <HvBannerContent
         id={setId(id, "content")}
         content={label}
         variant={variant}
