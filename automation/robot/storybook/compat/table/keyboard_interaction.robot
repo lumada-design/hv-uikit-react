@@ -1,6 +1,6 @@
 *** Setting ***
 Resource          _table.resource
-Test Setup        open table sample    ${display}    with-checkbox
+Test Setup        open table sample    ${compatibility}    with-checkbox
 Force Tags        keyboard
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
 ...               mouse vs keyboard problem

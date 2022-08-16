@@ -4,7 +4,7 @@ export { default as HvVerticalNavigationTree } from "./Navigation";
 
 export {
   TreeView as HvVerticalNavigationTreeView,
-  TreeViewItem as HvVerticalNavigationViewTree,
+  TreeViewItem as HvVerticalNavigationTreeViewItem,
 } from "./TreeView";
 
 export {

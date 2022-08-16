@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _pagination.resource
-Test Setup       open table sample    ${display}    server-side-pagination
+Test Setup       open table sample    ${compatibility}    server-side-pagination
 Test Template    Run Keyword
 Force Tags       bug-ie-webdriver
 Documentation    in all Test Cases was assumed the buttons are enabled

@@ -3,7 +3,7 @@ import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvVerticalNavigation,
-  HvVerticalNavigationTreeView,
+  HvVerticalNavigationTree,
   HvVerticalNavigationActions,
   HvVerticalNavigationAction,
 } from "../..";
@@ -13,13 +13,13 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      'import {\n  HvVerticalNavigation,\n  HvVerticalNavigationTreeView,\n  HvVerticalNavigationActions,\n  HvVerticalNavigationAction,\n} from "@hitachivantara/uikit-react-core";',
+      'import {\n  HvVerticalNavigation,\n  HvVerticalNavigationTree,\n  HvVerticalNavigationActions,\n  HvVerticalNavigationAction,\n} from "@hitachivantara/uikit-react-core";',
     subcomponents: {
-      HvVerticalNavigationTreeView,
+      HvVerticalNavigationTree,
       HvVerticalNavigationActions,
       HvVerticalNavigationAction,
     },
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvVerticalNavigation,
 };
@@ -81,7 +81,7 @@ export const Main = () => {
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
       <HvVerticalNavigation id="sample1">
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           aria-label="Example 1 navigation"
           selected={value}
           onChange={(event, data) => {
@@ -180,7 +180,7 @@ export const ExpandableList = () => {
   return (
     <div style={{ display: "flex", width: 220, height: 470 }}>
       <HvVerticalNavigation>
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           collapsible
           aria-label="Example 1 navigation"
           selected={value}
@@ -254,7 +254,7 @@ export const TreeviewMode = () => {
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
       <HvVerticalNavigation>
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           mode="treeview"
           collapsible
           defaultExpanded
@@ -358,7 +358,7 @@ export const WithoutActions = () => {
   return (
     <div style={{ display: "flex", width: 220 }}>
       <HvVerticalNavigation id="sample2">
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           aria-label="Example 1 navigation"
           selected={value}
           onChange={(event, data) => {
@@ -448,7 +448,7 @@ export const Collapsable = () => {
   return (
     <div style={sampleContainerStyle}>
       <HvVerticalNavigation id="sample3" isCollapsable>
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           aria-label="Example 2 navigation"
           selected={value}
           onChange={(event, data) => {
@@ -550,7 +550,7 @@ export const CollapseOnExit = () => {
         isCollapsable
         closeOnExit
       >
-        <HvVerticalNavigationTreeView
+        <HvVerticalNavigationTree
           arial-label="Example 2 navigation"
           selected={value}
           onChange={(event, data) => {

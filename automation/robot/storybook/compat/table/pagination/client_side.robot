@@ -1,6 +1,6 @@
 *** Setting ***
 Resource          _pagination.resource
-Test Setup        open table sample    ${display}    main
+Test Setup        open table sample    ${compatibility}    main
 Test Template     Run Keyword
 Documentation     in all Test Cases was assumed the buttons are enabled
 

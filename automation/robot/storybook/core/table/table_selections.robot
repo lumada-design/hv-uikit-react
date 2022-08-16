@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _table.resource
-Test Setup    open table sample    ${lab}    kitchen-sink
+Test Setup    open table sample    ${display}    kitchen-sink
 
 
 *** Test Cases ***

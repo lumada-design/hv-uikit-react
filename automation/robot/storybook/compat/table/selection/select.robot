@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      ../_table.resource
-Test Setup    open table sample    ${display}    with-checkbox
+Test Setup    open table sample    ${compatibility}    with-checkbox
 Force Tags    bug-infrastructure-ie
 
 
