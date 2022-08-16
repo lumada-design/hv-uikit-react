@@ -7,7 +7,7 @@ import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
 import styles from "./styles";
 
-const HvBannerContentWrapper = React.forwardRef((props, ref) => {
+const HvBannerContent = React.forwardRef((props, ref) => {
   const {
     id,
     classes,
@@ -70,7 +70,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
   );
 });
 
-HvBannerContentWrapper.propTypes = {
+HvBannerContent.propTypes = {
   /**
    * Identifier.
    */
@@ -127,4 +127,4 @@ HvBannerContentWrapper.propTypes = {
   actionProps: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles, { name: "HvBannerContentWrapper" })(HvBannerContentWrapper);
+export default withStyles(styles, { name: "HvBannerContent" })(HvBannerContent);
