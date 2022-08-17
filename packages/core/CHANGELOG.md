@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.72.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.71.0...@hitachivantara/uikit-react-core@3.72.0) (2022-08-17)
+
+
+### Features
+
+* **filtergroup:** add configurable empty elements ([8796827](https://github.com/lumada-design/hv-uikit-react/commit/8796827ee398fc3e1459bb96884f853fc1b61a0f))
+
+
+
+
+
 # [3.71.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.70.0...@hitachivantara/uikit-react-core@3.71.0) (2022-08-13)
 
 
