@@ -22,7 +22,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Inputs/Checkbox",
+  title: "Inputs/Checkbox/Checkbox",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvCheckBox } from "@hitachivantara/uikit-react-core"',

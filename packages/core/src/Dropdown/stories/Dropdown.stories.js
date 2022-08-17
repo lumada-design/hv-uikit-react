@@ -11,7 +11,7 @@ import {
 import { HvDropdown, HvGrid, HvTypography } from "../..";
 
 export default {
-  title: "Inputs/Dropdown",
+  title: "Inputs/Dropdown/Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvDropdown } from "@hitachivantara/uikit-react-core"',
