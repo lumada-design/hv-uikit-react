@@ -10,15 +10,18 @@ import { TreeView, TreeViewItem } from "..";
 describe("<TreeView />", () => {
   const onChangeMock = jest.fn();
   const consoleSpy = jest.fn();
+  // eslint-disable-next-line no-console
   const originalError = console.error;
 
   let wrapper;
 
   beforeEach(async () => {
+    // eslint-disable-next-line no-console
     console.error = consoleSpy;
   });
 
   afterEach(async () => {
+    // eslint-disable-next-line no-console
     console.error = originalError;
   });
 

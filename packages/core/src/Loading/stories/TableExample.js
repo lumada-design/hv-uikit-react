@@ -2,6 +2,7 @@ import React from "react";
 // import { HvTable } from "../..";
 
 const Table = () => {
+  /*
   const data = [
     {
       id: 14,
@@ -109,7 +110,7 @@ const Table = () => {
       cellType: "alpha-numeric",
     },
   ];
-
+  */
   return (
     <div style={{ padding: "10px" }}>
       {/* <HvTable

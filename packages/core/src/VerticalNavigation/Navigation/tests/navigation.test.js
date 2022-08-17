@@ -10,13 +10,16 @@ import Navigation from "..";
 describe("<Navigation />", () => {
   const onChangeMock = jest.fn();
   const consoleSpy = jest.fn();
+  // eslint-disable-next-line no-console
   const originalError = console.error;
 
   beforeEach(async () => {
+    // eslint-disable-next-line no-console
     console.error = consoleSpy;
   });
 
   afterEach(async () => {
+    // eslint-disable-next-line no-console
     console.error = originalError;
   });
 
