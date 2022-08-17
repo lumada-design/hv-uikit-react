@@ -38,7 +38,7 @@ const styles = makeStyles((theme) => ({
     flex: 1,
   },
   baseDropdownSelection: {
-    padding: "0 30px 0 10px",
+    padding: "0 30px 0 0",
   },
   header: {
     display: "flex",
