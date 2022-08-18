@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.22.7...@hv/uikit-react-core@2.23.0) (2022-08-18)
+
+
+### Features
+
+* **button:** shortening documentation ([abf5fe5](https://github.com/pentaho/hv-uikit-react/commit/abf5fe5201b0dd2e9bff9d7e66d878d75039c8ac))
+
+
+
+
+
 ## [2.22.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.22.4...@hv/uikit-react-core@2.22.7) (2022-08-05)
 
 **Note:** Version bump only for package @hv/uikit-react-core
