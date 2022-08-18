@@ -8,7 +8,7 @@ testingThemes.forEach(async (theme) => {
   test.describe(`HvControls ${theme}`, () => {
     test(`Controls changes values when interacted`, async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=lab-controls--controls&args=&viewMode=story${suffix}${theme}`
+        `/iframe.html?id=widgets-controls--controls&args=&viewMode=story${suffix}${theme}`
       );
       await page.locator('[placeholder="Search"]').click();
       await page.locator('[placeholder="Search"]').fill("Major");
@@ -22,7 +22,7 @@ testingThemes.forEach(async (theme) => {
     });
     test(`Controls Controlled changes values when interacted`, async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=lab-controls--controls-controlled&args=&viewMode=story${suffix}${theme}`
+        `/iframe.html?id=widgets-controls--controls-controlled&args=&viewMode=story${suffix}${theme}`
       );
       await page.locator('[placeholder="Search"]').click();
       await page.locator('[placeholder="Search"]').fill("Major");

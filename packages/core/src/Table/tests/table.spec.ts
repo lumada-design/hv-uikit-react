@@ -23,7 +23,7 @@ testingThemes.forEach(async (theme: string) => {
   test.describe(`Table ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=lab-table--list-row&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?id=display-table--list-row&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 
