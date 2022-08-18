@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.13 (2022-08-18)
+
+
+### Bug Fixes
+
+* **actions:** flatting theme imports after copy ([7e8dcc5](https://github.com/pentaho/hv-uikit-react/commit/7e8dcc5e34f6bc01a14c8fe3d6a258b5d01a646b))
+
+
+
+
+
 ## 2.0.11 (2022-08-05)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
