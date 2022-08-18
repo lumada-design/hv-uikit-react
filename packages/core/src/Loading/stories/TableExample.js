@@ -1,9 +1,22 @@
-import React from "react";
-// import { HvTable } from "../..";
+import React, { useMemo } from "react";
+import range from "lodash/range";
+import {
+  HvTableContainer,
+  HvTable,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
+  HvTableBody,
+  HvTableCell,
+  HvPagination,
+  useHvData,
+  useHvSortBy,
+  useHvPagination,
+  useHvTableSticky,
+} from "../..";
 
 const Table = () => {
-  /*
-  const data = [
+  const getData = () => [
     {
       id: 14,
       name: "Event 1",
@@ -85,41 +98,86 @@ const Table = () => {
 
   const getColumns = () => [
     {
-      headerText: "Title",
+      Header: "Title",
       accessor: "name",
-      cellType: "alpha-numeric",
-      fixed: "left",
+      sticky: "left",
+      width: 150,
     },
     {
-      headerText: "Time",
+      Header: "Time",
       accessor: "createdDate",
-      cellType: "numeric",
     },
     {
-      headerText: "Event Type",
+      Header: "Event Type",
       accessor: "eventType",
-      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
     },
     {
-      headerText: "Status",
+      Header: "Status",
       accessor: "status",
-      format: (value) => value.original.status.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
     },
   ];
-  */
+
+  const data = useMemo(() => getData(), []);
+  const columns = useMemo(() => getColumns(), []);
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headerGroups,
+    page,
+    state: { pageSize },
+    getHvPaginationProps,
+  } = useHvData(
+    { columns, data, stickyHeader: true },
+    useHvSortBy,
+    useHvPagination,
+    useHvTableSticky
+  );
+
+  const EmptyRow = () =>
+    useMemo(() => {
+      return (
+        <HvTableRow>
+          <HvTableCell colSpan={100} />
+        </HvTableRow>
+      );
+    }, []);
+
   return (
     <div style={{ padding: "10px" }}>
-      {/* <HvTable
-        data={data}
-        id="test"
-        columns={getColumns()}
-        defaultPageSize={10}
-        resizable={false}
-      /> */}
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {range(pageSize).map((i) => {
+              const row = page[i];
+
+              if (!row) return <EmptyRow key={i} />;
+
+              prepareRow(row);
+
+              return (
+                <HvTableRow {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
     </div>
   );
 };

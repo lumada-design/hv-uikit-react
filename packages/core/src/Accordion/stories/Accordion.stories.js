@@ -1,6 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { makeStyles } from "@mui/styles";
-import { HvAccordion, HvListContainer, HvListItem, HvInput, HvButton } from "../..";
+import {
+  HvAccordion,
+  HvListContainer,
+  HvListItem,
+  HvInput,
+  HvButton,
+  HvTable,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
+  HvTableBody,
+  HvTableCell,
+  useHvData,
+  useHvTableSticky,
+} from "../..";
 
 export default {
   title: "Display/Accordion",
@@ -234,96 +248,107 @@ Form.parameters = {
   },
 };
 
-// export const Typography = () => {
-//   const useStyles = makeStyles(() => ({
-//     accordionContainer: {
-//       width: "100%",
-//     },
-//     columnHeader: {
-//       "& > div": {
-//         paddingLeft: "22px",
-//       },
-//     },
-//   }));
-//   const classes = useStyles();
+export const Typography = () => {
+  const useStyles = makeStyles(() => ({
+    accordionContainer: {
+      width: "100%",
+    },
+  }));
+  const classes = useStyles();
 
-//   const data = [
-//     {
-//       id: 1,
-//       title: "A new hope",
-//       director: "George Lucas",
-//       producer: "Gary Kurzt",
-//       release: "1977-05-25",
-//     },
-//     {
-//       id: 2,
-//       title: "Empires strike back",
-//       director: "Irvin Kershner",
-//       producer: "Gary Kurzt",
-//       release: "1980-05-17",
-//     },
-//     {
-//       id: 3,
-//       title: "Return of the jedi",
-//       director: "Richard Marquand",
-//       producer: "Howard Kazanjian",
-//       release: "1983-05-25",
-//     },
-//   ];
+  const getData = () => [
+    {
+      id: 1,
+      title: "A new hope",
+      director: "George Lucas",
+      producer: "Gary Kurzt",
+      release: "1977-05-25",
+    },
+    {
+      id: 2,
+      title: "Empires strike back",
+      director: "Irvin Kershner",
+      producer: "Gary Kurzt",
+      release: "1980-05-17",
+    },
+    {
+      id: 3,
+      title: "Return of the jedi",
+      director: "Richard Marquand",
+      producer: "Howard Kazanjian",
+      release: "1983-05-25",
+    },
+  ];
 
-//   const getColumns = () => [
-//     {
-//       headerText: "Title",
-//       headerClassName: classes.columnHeader,
-//       accessor: "title",
-//       style: { textTransform: "capitalize", paddingLeft: "32px" },
-//       cellType: "alpha-numeric",
-//       sortable: false,
-//       fixed: "left",
-//     },
-//     {
-//       headerText: "Director",
-//       headerClassName: classes.columnHeader,
-//       accessor: "director",
-//       style: { textTransform: "capitalize", paddingLeft: "32px" },
-//       cellType: "alpha-numeric",
-//       sortable: false,
-//     },
-//     {
-//       headerText: "Producer",
-//       headerClassName: classes.columnHeader,
-//       accessor: "producer",
-//       style: { textTransform: "capitalize", paddingLeft: "32px" },
-//       cellType: "alpha-numeric",
-//       sortable: false,
-//     },
-//     {
-//       headerText: "Release Date",
-//       headerClassName: classes.columnHeader,
-//       accessor: "release",
-//       style: { textTransform: "capitalize", paddingLeft: "32px" },
-//       cellType: "alpha-numeric",
-//       sortable: false,
-//     },
-//   ];
+  const getColumns = () => [
+    {
+      Header: "Title",
+      accessor: "title",
+      sticky: "left",
+      width: 150,
+      style: { textTransform: "capitalize" },
+    },
+    {
+      Header: "Director",
+      accessor: "director",
+    },
+    {
+      Header: "Producer",
+      accessor: "producer",
+    },
+    {
+      Header: "Release Date",
+      accessor: "release",
+    },
+  ];
 
-//   return (
-//     <div className={classes.accordionContainer}>
-//       <HvAccordion id="film" label="Films" headingLevel={2}>
-//         <HvTable
-//           data={data}
-//           id="accordion-table"
-//           columns={getColumns()}
-//           resizable={false}
-//           showPagination={false}
-//         />
-//       </HvAccordion>
-//     </div>
-//   );
-// };
+  const data = useMemo(() => getData(), []);
+  const columns = useMemo(() => getColumns(), []);
 
-// Typography.parameters = {
-//   docs: {
-//     description: { story: "An accordion with a different button typography." },
-//   },
-// };
+  const { getTableProps, getTableHeadProps, getTableBodyProps, prepareRow, headerGroups, rows } =
+    useHvData(
+      {
+        columns,
+        data,
+        stickyHeader: true,
+      },
+      useHvTableSticky
+    );
+
+  return (
+    <div className={classes.accordionContainer}>
+      <HvAccordion id="film" label="Films" headingLevel={2}>
+        <HvTable id="accordion-table" {...getTableProps()}>
+          <HvTableHead {...getTableHeadProps()}>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+
+              return (
+                <HvTableRow {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvAccordion>
+    </div>
+  );
+};
+
+Typography.parameters = {
+  docs: {
+    description: { story: "An accordion with a different button typography." },
+  },
+};
