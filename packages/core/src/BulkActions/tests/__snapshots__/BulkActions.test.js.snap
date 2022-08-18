@@ -1235,6 +1235,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -2821,6 +2822,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -4427,6 +4429,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -5985,6 +5988,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -7866,6 +7870,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -9475,6 +9480,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -11019,6 +11025,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -12658,6 +12665,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -14267,6 +14275,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -15811,6 +15820,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -17680,6 +17690,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -19263,6 +19274,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -24380,6 +24392,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -26680,6 +26693,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -29000,6 +29014,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -31272,6 +31287,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -33814,6 +33830,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -35781,6 +35798,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -37762,6 +37780,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
@@ -39689,6 +39708,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
 .HvBaseDropdown-headerReadOnly {
   border: none;
   cursor: not-allowed;
+  user-select: text;
   pointer-events: none;
 }
 .HvBaseDropdown-headerReadOnly:focus-visible {
