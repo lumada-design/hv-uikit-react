@@ -6,7 +6,7 @@ import getMaterialConfiguration from "./materialConfigurarion";
 import styles from "./styles";
 
 /**
- * A button refers to a graphical control element that provides the user a simple way to trigger an event.
+ * A button refers to a graphical control element that provides the user a way to trigger an event.
  */
 const HvButton = (props) => {
   const {
