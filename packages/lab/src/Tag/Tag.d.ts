@@ -1,27 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvSemanticColorKeys } from "@hitachivantara/uikit-react-core";
 
-export type Semantic =
-  | "sema1"
-  | "sema2"
-  | "sema3"
-  | "sema4"
-  | "sema5"
-  | "sema6"
-  | "sema7"
-  | "sema8"
-  | "sema9"
-  | "sema10"
-  | "sema11"
-  | "sema12"
-  | "sema13"
-  | "sema14"
-  | "sema15"
-  | "sema16"
-  | "sema17"
-  | "sema18"
-  | "sema19"
-  | "sema20";
+export type Semantic = HvSemanticColorKeys;
 
   export type HvTagClassKey =
   | "label"
