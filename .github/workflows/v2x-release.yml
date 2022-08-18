@@ -61,7 +61,7 @@ jobs:
           NODE_ENV: development
         run: |
           npm ci
-
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
       - name: Bootstrap
         env:
           # ensure dev dependencies are installed
