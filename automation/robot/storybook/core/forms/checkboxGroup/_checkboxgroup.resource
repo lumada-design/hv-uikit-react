@@ -5,7 +5,7 @@ Resource    ../../_keywords.resource
 *** Keywords ***
 open checkbox group sample
     [Arguments]    ${sample}
-    go to                            ${inputs}checkbox-group--${sample}
+    go to                            ${inputs}checkbox-checkbox-group--${sample}
     Wait Until Element Is Enabled    ${checkboxGroup}
 
 
