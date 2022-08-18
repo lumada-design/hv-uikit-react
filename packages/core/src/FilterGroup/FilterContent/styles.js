@@ -37,13 +37,14 @@ const styles = makeStyles((theme) => ({
   space: {
     flex: 1,
   },
-  baseDropdownSelection: {
-    padding: "0 30px 0 0",
-  },
+  baseDropdownSelection: {},
   header: {
     display: "flex",
     justifyContent: "space-between",
     height: 32,
+    "& $baseDropdownSelection": {
+      padding: "0 30px 0 0",
+    },
   },
   leftSidePanel: {},
   rightSidePanel: {},
