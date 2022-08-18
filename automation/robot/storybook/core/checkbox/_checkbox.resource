@@ -10,5 +10,5 @@ ${checkbox}     css:.HvCheckBox-root:nth-child
 *** Keywords ***
 open checkbox sample
     [Arguments]    ${sample}
-    go to                            ${inputs}checkbox--${sample}
+    go to                            ${inputs}checkbox-checkbox--${sample}
     Wait Until Element Is Enabled    ${checkboxs}

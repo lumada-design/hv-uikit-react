@@ -5,7 +5,7 @@ Resource     ../_keywords.resource
 *** Keywords ***
 open dropdownmenu sample
     [Arguments]    ${dir}    ${sample}
-    Go To                               ${dir}dropdown-menu--${sample}
+    Go To                               ${dir}dropdown-dropdown-menu--${sample}
     Wait Until Element Is Enabled       ${dropDownMenu}
     Click Element                       ${dropDownMenu}
     Wait Until Page Contains Element    ${menuList}

@@ -25,6 +25,7 @@ module.exports = {
     buildStoriesJson: true,
     storyStoreV7: !process.env.V2_COMPAT_STORY_STORE,
     postcss: false,
+    emotionAlias: false,
   },
 
   stories: [
@@ -116,6 +117,4 @@ module.exports = {
       ...options,
     };
   },
-
-  features: { emotionAlias: false },
 };

@@ -17,7 +17,7 @@ Close dropdown when is clicked out of dropdown area
     Wait Until Element Is Not Visible    ${listBox}
 
 Dropdown does not open when it is disable
-    [Setup]    Go To    ${inputs}dropdown--disabled
+    [Setup]    Go To    ${inputs}dropdown-dropdown--disabled
     Wait Until Element Is Visible      ${dropdown}
     mouses does not open dropdown      ${dropdown}
     mouses does not open dropdown      ${dropdownHeader}
