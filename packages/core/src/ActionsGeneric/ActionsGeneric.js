@@ -15,6 +15,7 @@ const ActionsGeneric = ({
   actions = [],
   actionsCallback,
   maxVisibleActions = Infinity,
+  iconButtons,
   ...others
 }) => {
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
@@ -28,15 +29,17 @@ const ActionsGeneric = ({
     return (
       <HvButton
         id={actionId}
+        icon={iconButtons}
         key={actionId || idx}
         category={category}
         className={classes.button}
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id, action)}
-        startIcon={renderedIcon}
+        startIcon={iconButtons ? undefined : renderedIcon}
+        aria-label={iconButtons ? label : undefined}
         {...other}
       >
-        {label}
+        {iconButtons ? renderedIcon : label}
       </HvButton>
     );
   };
@@ -125,6 +128,10 @@ ActionsGeneric.propTypes = {
    * Component identifier.
    */
   id: PropTypes.string,
+  /**
+   * Whether the action buttons are of type `icon`.
+   */
+  iconButtons: PropTypes.bool,
   /**
    * Button category.
    */

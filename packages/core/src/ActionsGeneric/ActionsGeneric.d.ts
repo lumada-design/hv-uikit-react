@@ -11,6 +11,10 @@ export type ActionGeneric = {
 
 export interface HvActionsGenericCommonProps {
   /**
+   * Whether the action buttons are of type `icon`.
+   */
+  iconButtons?: boolean;
+  /**
    * Button category.
    */
   category?: HvButtonCategories;
