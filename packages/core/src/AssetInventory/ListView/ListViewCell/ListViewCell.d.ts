@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../..";
 
 export type HvListViewCellClassKey = "root" | "semanticBar";
 
@@ -17,33 +18,7 @@ export interface HvListViewCellProps
   /**
    *  The border color of the cell. Must be one of palette semantic colors.
    */
-  semantic?:
-    | "sema0"
-    | "sema1"
-    | "sema2"
-    | "sema3"
-    | "sema4"
-    | "sema5"
-    | "sema6"
-    | "sema7"
-    | "sema8"
-    | "sema9"
-    | "sema10"
-    | "sema11"
-    | "sema12"
-    | "sema13"
-    | "sema14"
-    | "sema15"
-    | "sema16"
-    | "sema17"
-    | "sema18"
-    | "sema19"
-    | "atmo1"
-    | "atmo2"
-    | "atmo3"
-    | "atmo4"
-    | "atmo5"
-    | "atmo6";
+  semantic?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
 }
 
 export default function HvListViewCell(props: HvListViewCellProps): JSX.Element | null;
