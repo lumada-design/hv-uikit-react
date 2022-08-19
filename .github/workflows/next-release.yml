@@ -58,7 +58,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npx lerna publish --canary --preid=next --dist-tag=next --yes  --no-git-reset --no-verify-access
+          npx lerna publish prerelease  --yes --no-git-reset --preid next --dist-tag next
 
       # - name: Get Releases Commit Message
       #   uses: actions/github-script@v3
