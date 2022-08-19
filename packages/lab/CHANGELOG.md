@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.6...@hitachivantara/uikit-react-lab@4.0.1-next.0) (2022-08-19)
+
+
+### Bug Fixes
+
+* **lab-slider:** add base slider styles to JSS to enable SSR support ([#2866](https://github.com/lumada-design/hv-uikit-react/issues/2866)) ([4f9b94b](https://github.com/lumada-design/hv-uikit-react/commit/4f9b94b63b6b56c0eb36180ae22d2371fc7b5ac8))
+* **notification-panel:** remove locale logic app ([28db8f8](https://github.com/lumada-design/hv-uikit-react/commit/28db8f8f901127277152775188c472839308d324))
+* **query-builder:** compensate spacing for new grid ([dd5d7af](https://github.com/lumada-design/hv-uikit-react/commit/dd5d7afff1d2312dca70e56b25ff3395e4e52e85))
+* **slider:** add base slider styles to JSS to enable SSR support ([a73d934](https://github.com/lumada-design/hv-uikit-react/commit/a73d9342a92537b6f291d82a27f8380858658683))
+* **slider:** update rc-tooltip version. [#2807](https://github.com/lumada-design/hv-uikit-react/issues/2807) ([824675c](https://github.com/lumada-design/hv-uikit-react/commit/824675c78e4bc49a92804b15bf668a56a0bcb0e9))
+
+
+### Features
+
+* rename useHvTable to useHvData ([eb036d7](https://github.com/lumada-design/hv-uikit-react/commit/eb036d73e36b9792e59c088b3cccf23bae9fa102))
+* **useTable:** export as useHvData and useHvTable ([e8c995e](https://github.com/lumada-design/hv-uikit-react/commit/e8c995e1a8799686fa8bb060f555d8b6b176f5d9))
+
+
+
+
+
 ## [3.49.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.49.5...@hitachivantara/uikit-react-lab@3.49.6) (2022-07-14)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

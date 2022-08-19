@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.1-next.0 (2022-08-19)
+
+**Note:** Version bump only for package @hitachivantara/uikit-common-themes
+
+
+
+
+
 ## [3.6.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-common-themes@3.6.1...@hitachivantara/uikit-common-themes@3.6.2) (2022-07-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-common-themes

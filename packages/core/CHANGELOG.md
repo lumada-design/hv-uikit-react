@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.6...@hitachivantara/uikit-react-core@4.0.1-next.0) (2022-08-19)
+
+
+### Bug Fixes
+
+* **actions-generic:** fixing actions generic not finding button ([7a15494](https://github.com/lumada-design/hv-uikit-react/commit/7a154945a83130ab3710e0f0f47539debc41b7a0))
+* **bread-crumb:** update spacing ([70753ba](https://github.com/lumada-design/hv-uikit-react/commit/70753ba420079d38e87a4c63d3a1d7afe9b42c9b))
+* **Dialog:** fix close dialog logic ([f759dcf](https://github.com/lumada-design/hv-uikit-react/commit/f759dcf6dab61fcd33166729bad206ac260ea718))
+* **dialog:** onClose prop not required ([#2863](https://github.com/lumada-design/hv-uikit-react/issues/2863)) ([d7e7d11](https://github.com/lumada-design/hv-uikit-react/commit/d7e7d11996400edd663d74a4c1194b05a33cf461))
+* **dialog:** removed deprecated props ([96c4de5](https://github.com/lumada-design/hv-uikit-react/commit/96c4de56569d02d1ecfd2667fd752979381830cb))
+* **dropdown:** fix virtualizes sample not working ([b311910](https://github.com/lumada-design/hv-uikit-react/commit/b3119106084082249c4f61312c3213d8b96a5fce))
+* **dropdown:** update spacing ([69e9e6a](https://github.com/lumada-design/hv-uikit-react/commit/69e9e6a14952456a9c7998d14933f099b7dc02ff))
+* **file-uploader:** fix undefined id's on file list ([5abd692](https://github.com/lumada-design/hv-uikit-react/commit/5abd69248ea016ce7edfef1cd2534cbdcf4c6045))
+* **filter-group:** icon is misaligned.HVUIKIT-6472 ([5aab29c](https://github.com/lumada-design/hv-uikit-react/commit/5aab29cb0b7175de0581fcf58269709ed170f948))
+* **filter-group:** update spacing margin and snapshot ([e757328](https://github.com/lumada-design/hv-uikit-react/commit/e757328d51da6cc28dadf9e3b16f8bce585c4d2e))
+* **header:** adjusting theme overrides ([6b2c008](https://github.com/lumada-design/hv-uikit-react/commit/6b2c008de9b8b0e36eb5822815023d1593ee7bfb))
+* **inputs:** override before and after ([b1b664d](https://github.com/lumada-design/hv-uikit-react/commit/b1b664d109e0e4f85e9c5c3b419ba1d1f27ed4cf))
+* **provider:** enabling generate classname feature ([efbe88f](https://github.com/lumada-design/hv-uikit-react/commit/efbe88f2642ff20cd075decfc7bf5f4a2e36f107))
+* **selectors:** ring around the selectors ([dc1fd47](https://github.com/lumada-design/hv-uikit-react/commit/dc1fd477986e32ef7e16bf29b8f66b6406039b19))
+* **slider:** add base slider styles to JSS to enable SSR support ([a73d934](https://github.com/lumada-design/hv-uikit-react/commit/a73d9342a92537b6f291d82a27f8380858658683))
+* **slider:** missing status array proptype definition ([ca131e6](https://github.com/lumada-design/hv-uikit-react/commit/ca131e6f82b5ba1ea364caab285ac5cbf47da67b))
+* **Stack:** fix stack component and update snapshots ([b7d80b3](https://github.com/lumada-design/hv-uikit-react/commit/b7d80b3730462082ba72cb5ecff18184b131e97d))
+* **table:** replaced tabindex with number, update snapshot ([a046fe5](https://github.com/lumada-design/hv-uikit-react/commit/a046fe59fa374d4518145d82590f08ea49705fa0))
+* **vertical-navigation:** inner ref is not available ([851c8e1](https://github.com/lumada-design/hv-uikit-react/commit/851c8e16492569f372617bbced4d8b66d7e0859c))
+
+
+### Features
+
+* **DatePicker:** added read only mode for date picker ([43aac0e](https://github.com/lumada-design/hv-uikit-react/commit/43aac0e3f496f5141e9b7294de971c3c0f656865))
+* **dropdown:** add read only mode ([495563c](https://github.com/lumada-design/hv-uikit-react/commit/495563cf1d75a350720fe2ca3dd502061b139b3a))
+* **filter-group:** add configurable empty elements ([f9a09e7](https://github.com/lumada-design/hv-uikit-react/commit/f9a09e7c1a7c1738bd7d576d7ba8f9fabaee29f2))
+* modifying provider to inject ui kit styles first ([12b5fdd](https://github.com/lumada-design/hv-uikit-react/commit/12b5fddc420d684b71d4cb20e8ff056dbf352d89))
+* **query-builder:** add read only mode ([29ea648](https://github.com/lumada-design/hv-uikit-react/commit/29ea648682d829d9b17f5b2cdfa62112271df4d2))
+* **time-picker:** add read only mode ([dbdf9cb](https://github.com/lumada-design/hv-uikit-react/commit/dbdf9cbdfba0989535a51f0f6318c8ff7cf5c16d))
+
+
+
+
+
 ## [3.68.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.68.5...@hitachivantara/uikit-react-core@3.68.6) (2022-07-14)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

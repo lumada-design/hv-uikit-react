@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.1-next.0 (2022-08-19)
+
+
+### Bug Fixes
+
+* **code-editor:** fix header spacing ([d79dbe6](https://github.com/lumada-design/hv-uikit-react/commit/d79dbe6fe4637c357f31c5c2dd9d8c455cac5a37))
+
+
+
+
+
 ## [3.6.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@3.6.1...@hitachivantara/uikit-react-code-editor@3.6.4) (2022-07-13)
 
 

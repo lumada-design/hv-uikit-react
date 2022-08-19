@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.1-next.0 (2022-08-19)
+
+
+### Bug Fixes
+
+* **icons:** fix hook import on icon component generator ([3d5c768](https://github.com/lumada-design/hv-uikit-react/commit/3d5c7688e6cd63539131a62bf1ff04fdd6f73232))
+* **icons:** fix icon component generator ([132ddc3](https://github.com/lumada-design/hv-uikit-react/commit/132ddc39b2383649720e6957428c744a43bfda24))
+
+
+
+
+
 ## [3.9.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@3.9.3...@hitachivantara/uikit-react-icons@3.9.4) (2022-07-13)
 
 
