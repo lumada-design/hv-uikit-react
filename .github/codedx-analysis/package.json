@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.8.0",
+    "@actions/core": "^1.9.1",
     "@actions/tool-cache": "^1.7.2",
     "axios": "^0.27.2",
     "form-data": "^4.0.0"
