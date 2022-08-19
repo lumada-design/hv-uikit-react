@@ -1,2 +1,2 @@
 export { default } from "./Banner";
-export { default as HvBannerContent } from "./BannerWrapper";
+export { default as HvBannerContent } from "./BannerContent";

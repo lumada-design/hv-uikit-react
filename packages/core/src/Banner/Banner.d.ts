@@ -1,6 +1,7 @@
 import * as React from "react";
-import { StandardProps, SnackbarProps, SnackbarContentProps } from "@material-ui/core";
+import { StandardProps, SnackbarProps } from "@material-ui/core";
 import { HvActionsGenericCommonProps } from "../ActionsGeneric";
+import { HvBannerContentProps } from "./BannerContent";
 
 export type TransitionDirectionProp = "up" | "down" | "left" | "right";
 
@@ -55,7 +56,7 @@ export interface HvBannerProps
   /**
    * Props to pass down to the Banner Wrapper.
    */
-  bannerContentProps?: SnackbarContentProps;
+  bannerContentProps?: Partial<HvBannerContentProps>;
 }
 
 export default function HvBanner(props: HvBannerProps): JSX.Element | null;
