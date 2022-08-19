@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.72.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.72.0...@hitachivantara/uikit-react-core@3.72.1) (2022-08-19)
+
+
+### Bug Fixes
+
+* **filter-group:** icon is misaligned. ([01f5c95](https://github.com/lumada-design/hv-uikit-react/commit/01f5c950a46dd7b8e0bfea497a85cf1f603446c1))
+
+
+
+
+
 # [3.72.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.71.0...@hitachivantara/uikit-react-core@3.72.0) (2022-08-17)
 
 
