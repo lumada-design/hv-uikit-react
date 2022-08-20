@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.73.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.72.1...@hitachivantara/uikit-react-core@3.73.0) (2022-08-20)
+
+
+### Bug Fixes
+
+* **filter-group:** icon is misaligned. ([01f5c95](https://github.com/lumada-design/hv-uikit-react/commit/01f5c950a46dd7b8e0bfea497a85cf1f603446c1))
+
+
+### Features
+
+* **bannercontent:** add ts declarations ([050ab54](https://github.com/lumada-design/hv-uikit-react/commit/050ab54dba02cd88a3d4b88929bb5fb0ad9b78ab))
+* **bannercontent:** uniformize name ([a648f17](https://github.com/lumada-design/hv-uikit-react/commit/a648f179ccfe4ddb1e58ebd570f6b4a2f1a234af))
+
+
+
+
+
 ## [3.72.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.72.0...@hitachivantara/uikit-react-core@3.72.1) (2022-08-19)
 
 
