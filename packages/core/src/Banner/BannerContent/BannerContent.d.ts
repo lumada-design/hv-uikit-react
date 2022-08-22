@@ -17,9 +17,9 @@ export type HvBannerContentClassKey =
   | SemanticVariantTypes;
 
 export interface HvBannerContentProps
-  extends StandardProps<SnackbarContentProps, HvBannerContentClassKey>,
+  extends StandardProps<SnackbarContentProps, HvBannerContentClassKey, "variant">,
     HvActionsGenericCommonProps,
-    Pick<NotificationsCommonProps, "showIcon" | "customIcon"> {
+    Pick<NotificationsCommonProps, "showIcon" | "customIcon" | "variant"> {
   /**
    * The position property of the header.
    */
