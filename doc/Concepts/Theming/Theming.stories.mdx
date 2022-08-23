@@ -8,16 +8,16 @@ import SpacingUsage from "./SpacingUsage";
 import ThemePreviewMix from "./ThemePreviewMix";
 
 import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
-import componentDefinitions from "../../Introduction/ComponentVersioningTable/versions";
+import componentDefinitions from "../../Concepts/versions";
 
 <Meta
-  title="Concepts/Theming"
+  title="Theming/Theme"
   parameters={{
     dsVersion: componentDefinitions.dsVersion.v3,
   }}
 />
 
-# Theming
+# Theme
 
 <MaturityStatus />
 
@@ -43,7 +43,7 @@ The UI Kit components provides the two Design System themes: **Dawn** and **Wick
 </Story>
 
 The active theme is configured through the `HvProvider`'s `uiKitTheme` property and defaults to the **Dawn** theme.
-Check <LinkTo kind="Concepts/Provider" story="Main" className="sbdocs-a">the Provider's API documentation</LinkTo> for more details.
+Check <LinkTo kind="Theming/Provider" story="Main" className="sbdocs-a">the Provider's API documentation</LinkTo> for more details.
 
 ## Custom themes
 
