@@ -1,6 +1,6 @@
 import { StandardProps, SwitchProps } from "@mui/material";
 
-export type HvBaseSwitchClassKey = "root" | "disabled";
+export type HvBaseSwitchClassKey = "root" | "disabled" | "readOnly";
 
 export interface HvBaseSwitchProps
   extends StandardProps<SwitchProps, HvBaseSwitchClassKey, "onChange"> {
