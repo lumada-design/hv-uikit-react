@@ -19,6 +19,10 @@ const styles = (theme) => ({
     padding: 0,
     width: switchWidth,
     height: 16,
+
+    "&$readOnly $switchBase": {
+      cursor: "default",
+    },
   },
 
   switchBase: {
@@ -79,6 +83,8 @@ const styles = (theme) => ({
       opacity: 1,
     },
   },
+
+  readOnly: {},
 
   focusVisible: {
     borderRadius: "8px",
