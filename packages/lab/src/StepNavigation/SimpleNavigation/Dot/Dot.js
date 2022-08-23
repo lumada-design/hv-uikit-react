@@ -29,6 +29,9 @@ const HvDot = ({ classes, className, state, title, size, onClick }) => {
             width: dotSize,
             height: dotSize,
             backgroundColor,
+            "&:hover": {
+              backgroundColor,
+            },
             "&$ghostDisabled": {
               ...styles.ghost["&$ghostDisabled"],
               backgroundColor,
