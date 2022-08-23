@@ -48,3 +48,6 @@ export * from "./Controls";
 
 export { default as HvStepNavigation } from "./StepNavigation";
 export * from "./StepNavigation";
+
+export { default as HvImageCarousel } from "./ImageCarousel";
+export * from "./ImageCarousel";

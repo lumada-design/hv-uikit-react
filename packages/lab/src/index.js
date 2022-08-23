@@ -21,3 +21,4 @@ export { default as HvInlineEditor } from "./InlineEditor";
 export { default as HvProgressBar } from "./ProgressBar";
 export { default as HvDotPagination } from "./DotPagination";
 export { default as HvStepNavigation } from "./StepNavigation";
+export { default as HvImageCarousel } from "./ImageCarousel";
