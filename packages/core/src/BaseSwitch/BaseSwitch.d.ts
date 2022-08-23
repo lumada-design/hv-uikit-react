@@ -1,6 +1,6 @@
 import { StandardProps, SwitchProps } from "@material-ui/core";
 
-export type HvBaseSwitchClassKey = "root" | "disabled";
+export type HvBaseSwitchClassKey = "root" | "disabled" | "readOnly";
 
 export interface HvBaseSwitchProps
   extends StandardProps<SwitchProps, HvBaseSwitchClassKey, "onChange"> {
