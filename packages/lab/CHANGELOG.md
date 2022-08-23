@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.53.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.52.3...@hitachivantara/uikit-react-lab@3.53.0) (2022-08-23)
+
+
+### Features
+
+* **step-navigation:** new horizontal navigation with steps. MLAAS-1494 ([511e028](https://github.com/lumada-design/hv-uikit-react/commit/511e02830895acfaecf597a512754be9ff57f6dc))
+
+
+
+
+
 ## [3.52.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.52.2...@hitachivantara/uikit-react-lab@3.52.3) (2022-08-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
