@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 
 import { Chip, withStyles, useTheme } from "@material-ui/core";
 
@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import fade from "../utils/hexToRgbA";
 
-import { HvButton, HvTypography } from "..";
+import { HvButton } from "..";
 
 import styles from "./styles";
 
@@ -101,21 +101,9 @@ const HvTag = (props) => {
 
   const [hover, setHover] = useState(false);
 
-  const chipLabel = useMemo(() => {
-    if (typeof label === "string") {
-      return (
-        <HvTypography noWrap variant="normalText">
-          {label}
-        </HvTypography>
-      );
-    }
-
-    return label;
-  }, [label]);
-
   return (
     <Chip
-      label={chipLabel}
+      label={label}
       className={clsx(classes.root, className)}
       onMouseEnter={() => {
         setHover(!!onClick);
