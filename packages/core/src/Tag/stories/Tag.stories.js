@@ -2,8 +2,6 @@ import React from "react";
 
 import { makeStyles } from "@mui/styles";
 
-import clsx from "clsx";
-
 import { HvTag, HvTypography, HvTooltip, HvListContainer, HvListItem } from "../..";
 
 export default {
@@ -34,15 +32,6 @@ export const Main = () => {
 };
 
 export const LongLabelText = () => {
-  const useStyles = makeStyles(() => ({
-    titleOverflow: {
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-    },
-  }));
-  const classes = useStyles();
-
   const tooltipWrapper = (tagLabel, textComponent) => {
     const tooltipText = <HvTypography>{tagLabel}</HvTypography>;
     return <HvTooltip title={tooltipText}>{textComponent}</HvTooltip>;
@@ -54,30 +43,20 @@ export const LongLabelText = () => {
     const isLongLabel = tagLabel.length > tagLength;
 
     const TagText = (
-      <HvTypography
-        className={clsx({
-          [classes.titleOverflow]: isLongLabel,
-        })}
-        variant="normalText"
-      >
+      <HvTypography variant="normalText" noWrap={isLongLabel}>
         {tagLabel}
       </HvTypography>
     );
 
-    return tagLabel.length > tagLength ? tooltipWrapper(tagLabel, TagText) : TagText;
+    return isLongLabel ? tooltipWrapper(tagLabel, TagText) : TagText;
   };
 
   const longText = "This is an example of a very long tag";
 
   return (
-    <div
-      style={{
-        width: "300px",
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
+    <div style={{ display: "flex", gap: 20 }}>
       <HvTag label={textElement(longText)} />
+      <HvTag label={`${longText} with default overflow`} />
     </div>
   );
 };
