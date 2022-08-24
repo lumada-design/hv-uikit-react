@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.74.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.73.1...@hitachivantara/uikit-react-core@3.74.0) (2022-08-24)
+
+
+### Bug Fixes
+
+* **switch:** change cursor when in read only mode ([d16b264](https://github.com/lumada-design/hv-uikit-react/commit/d16b26487596f6f418d4b96e592483e649426e18))
+
+
+### Features
+
+* **image-carousel:** add new image carousel component ([700d875](https://github.com/lumada-design/hv-uikit-react/commit/700d875d47e4e789ac347c899d99ec2bfd8d7697))
+
+
+
+
+
 ## [3.73.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.73.0...@hitachivantara/uikit-react-core@3.73.1) (2022-08-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

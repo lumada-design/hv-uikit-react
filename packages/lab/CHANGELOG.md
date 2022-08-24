@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.54.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.53.0...@hitachivantara/uikit-react-lab@3.54.0) (2022-08-24)
+
+
+### Features
+
+* **image-carousel:** add new image carousel component ([700d875](https://github.com/lumada-design/hv-uikit-react/commit/700d875d47e4e789ac347c899d99ec2bfd8d7697))
+* **step-navigation:** new horizontal navigation with steps. MLAAS-1494 ([56e8d12](https://github.com/lumada-design/hv-uikit-react/commit/56e8d12a1d6b519062ceb85d22c218b793dbfba7))
+
+
+
+
+
 # [3.53.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.52.3...@hitachivantara/uikit-react-lab@3.53.0) (2022-08-23)
 
 
