@@ -2,7 +2,7 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import { HvTag, HvTypography, HvTooltip, HvListContainer, HvListItem } from "../..";
+import { HvTag, HvListContainer, HvListItem, HvOverflowTooltip } from "../..";
 
 export default {
   title: "Display/Tag",
@@ -32,30 +32,11 @@ export const Main = () => {
 };
 
 export const LongLabelText = () => {
-  const tooltipWrapper = (tagLabel, textComponent) => {
-    const tooltipText = <HvTypography>{tagLabel}</HvTypography>;
-    return <HvTooltip title={tooltipText}>{textComponent}</HvTooltip>;
-  };
-
-  const tagLength = 30;
-
-  const textElement = (tagLabel) => {
-    const isLongLabel = tagLabel.length > tagLength;
-
-    const TagText = (
-      <HvTypography variant="normalText" noWrap={isLongLabel}>
-        {tagLabel}
-      </HvTypography>
-    );
-
-    return isLongLabel ? tooltipWrapper(tagLabel, TagText) : TagText;
-  };
-
   const longText = "This is an example of a very long tag";
 
   return (
     <div style={{ display: "flex", gap: 20 }}>
-      <HvTag label={textElement(longText)} />
+      <HvTag label={<HvOverflowTooltip data={longText} />} />
       <HvTag label={`${longText} with default overflow`} />
     </div>
   );
