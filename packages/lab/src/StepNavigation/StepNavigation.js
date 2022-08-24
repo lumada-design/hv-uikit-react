@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles, Typography, styled, useTheme } from "@material-ui/core";
+import { Typography, styled, useTheme } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import { HvTooltip, HvTypography, useWidth } from "@hitachivantara/uikit-react-core";
 
 import HvDefaultNavigation from "./DefaultNavigation";

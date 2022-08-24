@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { HvButton } from "@hitachivantara/uikit-react-core";
-import { makeStyles, withStyles } from "@material-ui/core";
+import { withStyles, makeStyles } from "@mui/styles";
 
 import { defaultColor, disabledColor, dotSizes } from "../utils";
 import styles from "./styles";

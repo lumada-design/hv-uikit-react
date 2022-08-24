@@ -13,7 +13,8 @@ import {
   useScrollTo,
 } from "@hitachivantara/uikit-react-core";
 
-import { Button, makeStyles, withStyles, Fade } from "@material-ui/core";
+import { Button, Fade } from "@mui/material";
+import { withStyles, makeStyles } from "@mui/styles";
 
 import { Backwards, Forwards, Close, Fullscreen } from "@hitachivantara/uikit-react-icons";
 

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 
 import { Level0Good, Level3Bad, HourGlass } from "@hitachivantara/uikit-react-icons";
 import { HvAvatar, HvButton } from "@hitachivantara/uikit-react-core";

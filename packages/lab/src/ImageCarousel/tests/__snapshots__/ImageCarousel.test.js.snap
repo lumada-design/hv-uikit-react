@@ -3,7 +3,7 @@
 exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
 <div>
   <div
-    class="MuiBox-root MuiBox-root-1 HvIsCardGridElement HvCard-root"
+    class="HvIsCardGridElement HvCard-root MuiBox-root css-8ud4em"
     style="width: 350px;"
   >
     <div
@@ -18,35 +18,35 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
     </div>
     <div
       aria-label="Compressor"
-      class="MuiCardHeader-root HvCardHeader-root"
+      class="MuiCardHeader-root HvCardHeader-root css-185gdzj-MuiCardHeader-root"
     >
       <div
-        class="MuiCardHeader-content HvCardHeader-content"
+        class="MuiCardHeader-content HvCardHeader-content css-1qbkelo-MuiCardHeader-content"
       >
         <span
-          class="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCardHeader-title css-19er8pf-MuiTypography-root"
         >
           Image Carousel
         </span>
       </div>
     </div>
     <div
-      class="MuiCardMedia-root HvCardMedia-root"
+      class="MuiCardMedia-root HvCardMedia-root css-16cvb1l-MuiCardMedia-root"
       role="img"
     >
       <div
-        class="MuiContainer-root HvContainer-root HvImageCarousel-root xs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+        class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-root xs css-1d4akpq-MuiContainer-root"
         id="hvcarousel4-container"
       >
         <div
-          class="MuiContainer-root HvContainer-root HvImageCarousel-imageContainer notFullscreen MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+          class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-imageContainer notFullscreen css-1d4akpq-MuiContainer-root"
         >
           <div
-            class="MuiBox-root MuiBox-root-5 HvImageCarousel-stack xs HvPanel-root"
+            class="HvImageCarousel-stack xs HvPanel-root MuiBox-root css-0"
             id="hvcarousel4-bigPanel"
           >
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-DarthVader4"
             >
               <img
@@ -57,7 +57,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-BobaFett4"
             >
               <img
@@ -68,7 +68,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-Revan4"
             >
               <img
@@ -79,7 +79,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-TheMandalorian4"
             >
               <img
@@ -90,7 +90,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-Anakin4"
             >
               <img
@@ -101,7 +101,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-Ahsoka4"
             >
               <img
@@ -112,7 +112,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-ObiWan4"
             >
               <img
@@ -123,7 +123,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-Mace4"
             >
               <img
@@ -134,7 +134,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
               />
             </div>
             <div
-              class="makeStyles-imageBox-3"
+              class="makeStyles-imageBox-2"
               id="hvcarousel4-Yoda4"
             >
               <img
@@ -151,65 +151,57 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
             <div>
               <button
                 aria-label="Backwards"
-                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvImageCarousel-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 style="opacity: 0; visibility: hidden;"
                 tabindex="0"
                 type="button"
               >
-                <span
-                  class="MuiButton-label"
+                <div
+                  class="HvIconBase-root HvIconBase-s"
+                  name="Backwards"
                 >
-                  <div
-                    class="HvIconBase-root HvIconBase-s"
-                    name="Backwards"
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      focusable="false"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="color0"
-                        d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                        fill="#414141"
-                      />
-                    </svg>
-                  </div>
-                </span>
+                    <path
+                      class="color0"
+                      d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                      fill="#414141"
+                    />
+                  </svg>
+                </div>
               </button>
             </div>
             <div>
               <button
                 aria-label="Forwards"
-                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvImageCarousel-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 style="opacity: 0; visibility: hidden;"
                 tabindex="0"
                 type="button"
               >
-                <span
-                  class="MuiButton-label"
+                <div
+                  class="HvIconBase-root HvIconBase-s"
+                  name="Forwards"
                 >
-                  <div
-                    class="HvIconBase-root HvIconBase-s"
-                    name="Forwards"
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      focusable="false"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="color0"
-                        d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                        fill="#414141"
-                      />
-                    </svg>
-                  </div>
-                </span>
+                    <path
+                      class="color0"
+                      d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                      fill="#414141"
+                    />
+                  </svg>
+                </div>
               </button>
             </div>
           </div>
@@ -255,7 +247,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
       </div>
     </div>
     <div
-      class="MuiCardContent-root HvCardContent-content"
+      class="MuiCardContent-root HvCardContent-content css-46bh2p-MuiCardContent-root"
     >
       <div
         style="padding-top: 20px;"
@@ -293,7 +285,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
 exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
 <div>
   <div
-    class="MuiContainer-root HvContainer-root HvImageCarousel-root nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-root nxs css-1d4akpq-MuiContainer-root"
     id="hvcarousel3-container"
   >
     <div
@@ -309,40 +301,36 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
       <div>
         <button
           aria-label="Fullscreen"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Fullscreen"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Fullscreen"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M16 .0022v4.49829l-1.00006-.00012-.00006-2.79309-4.6463 4.64624-.7071-.707L14.293 1h-2.7934V0h4.49817v.00208zM4.50049 1l-.00006-1H.00226l.00006.00208L0 .0022V.707l.00006 3.79349 1-.00012.00006-2.79309 4.64636 4.64624.7071-.707L1.707 1zm10.49939 13.29272l-4.6463-4.64624-.7071.707L14.293 15h-2.7934v1h4.49817v-.0022H16v-4.49829h-1.00006zm-9.3534-4.64624l-4.64636 4.64624-.00006-2.79321h-1L0 15.293v.70483h.00232L.00226 16h4.49817l.00006-1H1.707l4.64655-4.64648z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="M16 .0022v4.49829l-1.00006-.00012-.00006-2.79309-4.6463 4.64624-.7071-.707L14.293 1h-2.7934V0h4.49817v.00208zM4.50049 1l-.00006-1H.00226l.00006.00208L0 .0022V.707l.00006 3.79349 1-.00012.00006-2.79309 4.64636 4.64624.7071-.707L1.707 1zm10.49939 13.29272l-4.6463-4.64624-.7071.707L14.293 15h-2.7934v1h4.49817v-.0022H16v-4.49829h-1.00006zm-9.3534-4.64624l-4.64636 4.64624-.00006-2.79321h-1L0 15.293v.70483h.00232L.00226 16h4.49817l.00006-1H1.707l4.64655-4.64648z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </button>
       </div>
     </div>
     <div
-      class="MuiContainer-root HvContainer-root HvImageCarousel-imageContainer notFullscreen nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+      class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-imageContainer notFullscreen nxs css-1d4akpq-MuiContainer-root"
     >
       <div
-        class="MuiBox-root MuiBox-root-4 HvImageCarousel-stack nxs HvPanel-root"
+        class="HvImageCarousel-stack nxs HvPanel-root MuiBox-root css-0"
         id="hvcarousel3-bigPanel"
       >
         <div
@@ -462,65 +450,57 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
         <div>
           <button
             aria-label="Backwards"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvImageCarousel-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             style="opacity: 0; visibility: hidden;"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Backwards"
             >
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Backwards"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </button>
         </div>
         <div>
           <button
             aria-label="Forwards"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvImageCarousel-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             style="opacity: 0; visibility: hidden;"
             tabindex="0"
             type="button"
           >
-            <span
-              class="MuiButton-label"
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="Forwards"
             >
-              <div
-                class="HvIconBase-root HvIconBase-s"
-                name="Forwards"
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  focusable="false"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="color0"
-                    d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </span>
+                <path
+                  class="color0"
+                  d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
           </button>
         </div>
       </div>
@@ -570,7 +550,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
       />
     </div>
     <div
-      class="MuiBox-root MuiBox-root-5 HvImageCarousel-panel HvPanel-root"
+      class="HvImageCarousel-panel HvPanel-root MuiBox-root css-0"
       id="hvcarousel3-panel"
     >
       <div
@@ -580,200 +560,190 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape1"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape1"
+              class="HvImageCarousel-thumbnailSelected"
+              src="https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape1"
-                class="HvImageCarousel-thumbnailSelected"
-                src="https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape2"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape2"
+              class="HvImageCarousel-img"
+              src="https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg?ixlib=rb-1.1.0&rect=273%2C0%2C2639%2C1379&q=45&auto=format&w=926&fit=clip"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape2"
-                class="HvImageCarousel-img"
-                src="https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg?ixlib=rb-1.1.0&rect=273%2C0%2C2639%2C1379&q=45&auto=format&w=926&fit=clip"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape3"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape3"
+              class="HvImageCarousel-img"
+              src="https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape3"
-                class="HvImageCarousel-img"
-                src="https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape4"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape4"
+              class="HvImageCarousel-img"
+              src="https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape4"
-                class="HvImageCarousel-img"
-                src="https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape5"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape5"
+              class="HvImageCarousel-img"
+              src="https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape5"
-                class="HvImageCarousel-img"
-                src="https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape6"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape6"
+              class="HvImageCarousel-img"
+              src="https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape6"
-                class="HvImageCarousel-img"
-                src="https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape7"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape7"
+              class="HvImageCarousel-img"
+              src="https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape7"
-                class="HvImageCarousel-img"
-                src="https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape8"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape8"
+              class="HvImageCarousel-img"
+              src="https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape8"
-                class="HvImageCarousel-img"
-                src="https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape9"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape9"
+              class="HvImageCarousel-img"
+              src="https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape9"
-                class="HvImageCarousel-img"
-                src="https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape10"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Landscape10"
+              class="HvImageCarousel-img"
+              src="https://cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Landscape10"
-                class="HvImageCarousel-img"
-                src="https://cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
       </div>
@@ -785,7 +755,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
 exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
 <div>
   <div
-    class="MuiContainer-root HvContainer-root HvImageCarousel-root nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-root nxs css-1d4akpq-MuiContainer-root"
     id="hvcarousel1-container"
   >
     <div
@@ -800,10 +770,10 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="MuiContainer-root HvContainer-root HvImageCarousel-imageContainer notFullscreen nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+      class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-imageContainer notFullscreen nxs css-1d4akpq-MuiContainer-root"
     >
       <div
-        class="MuiBox-root MuiBox-root-4 HvImageCarousel-stack nxs HvPanel-root"
+        class="HvImageCarousel-stack nxs HvPanel-root MuiBox-root css-0"
         id="hvcarousel1-bigPanel"
       >
         <div
@@ -908,43 +878,39 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root HvImageCarousel-normalButtons MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-space-between"
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 HvImageCarousel-normalButtons css-1p4xkwb-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           aria-label="Backwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Backwards"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Backwards"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </button>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <a
           class="HvTypography-root HvTypography-highlightText"
@@ -958,41 +924,37 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
         </a>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           aria-label="Forwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Forwards"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Forwards"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </button>
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-5 HvImageCarousel-panel HvPanel-root"
+      class="HvImageCarousel-panel HvPanel-root MuiBox-root css-0"
       id="hvcarousel1-panel"
     >
       <div
@@ -1002,180 +964,171 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="DarthVader"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="DarthVader"
+              class="HvImageCarousel-thumbnailSelected"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="DarthVader"
-                class="HvImageCarousel-thumbnailSelected"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="BobaFett"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="BobaFett"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="BobaFett"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Revan"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Revan"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Revan"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="TheMandalorian"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="TheMandalorian"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="TheMandalorian"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Anakin"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Anakin"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Anakin"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Ahsoka"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Ahsoka"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Ahsoka"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="ObiWan"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="ObiWan"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="ObiWan"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Mace"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Mace"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Mace"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
         <div
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text HvImageCarousel-thumbnailButton"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Yoda"
             tabindex="0"
             type="button"
           >
+            <img
+              alt="Yoda"
+              class="HvImageCarousel-img"
+              src="test-file-stub"
+            />
             <span
-              class="MuiButton-label"
-            >
-              <img
-                alt="Yoda"
-                class="HvImageCarousel-img"
-                src="test-file-stub"
-              />
-            </span>
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
           </button>
         </div>
       </div>
@@ -1187,7 +1140,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
 exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
 <div>
   <div
-    class="MuiContainer-root HvContainer-root HvImageCarousel-root nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-root nxs css-1d4akpq-MuiContainer-root"
     id="hvcarousel2-container"
   >
     <div
@@ -1196,10 +1149,10 @@ exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
       <div />
     </div>
     <div
-      class="MuiContainer-root HvContainer-root HvImageCarousel-imageContainer notFullscreen nxs MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+      class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvImageCarousel-imageContainer notFullscreen nxs css-1d4akpq-MuiContainer-root"
     >
       <div
-        class="MuiBox-root MuiBox-root-4 HvImageCarousel-stack nxs HvPanel-root"
+        class="HvImageCarousel-stack nxs HvPanel-root MuiBox-root css-0"
         id="hvcarousel2-bigPanel"
       >
         <div
@@ -1304,43 +1257,39 @@ exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root HvImageCarousel-normalButtons MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-space-between"
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 HvImageCarousel-normalButtons css-1p4xkwb-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           aria-label="Backwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvImageCarousel-hidden HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-hidden HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Backwards"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Backwards"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </button>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <a
           class="HvTypography-root HvTypography-highlightText"
@@ -1354,36 +1303,32 @@ exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
         </a>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           aria-label="Forwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
-          <span
-            class="MuiButton-label"
+          <div
+            class="HvIconBase-root HvIconBase-s"
+            name="Forwards"
           >
-            <div
-              class="HvIconBase-root HvIconBase-s"
-              name="Forwards"
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable="false"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="color0"
-                  d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </span>
+              <path
+                class="color0"
+                d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </button>
       </div>
     </div>

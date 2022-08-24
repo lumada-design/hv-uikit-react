@@ -87,7 +87,8 @@ const testStepContainer = (type, stepElement, stepSize, breakpoint, state, color
       "background-color": color,
     });
   } else {
-    expect(stepElement).toHaveClass("HvDot-root");
+    const classAttr = stepElement.getAttribute("class");
+    expect(classAttr).toContain("HvDot-root");
     const expectedSize = dotSizes[stepSizeKey] * (state === "Current" ? 1.5 : 1);
     expect(stepElement).toHaveStyle({
       height: `${expectedSize}px`,

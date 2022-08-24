@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useTheme, withStyles } from "@material-ui/core";
+import { useTheme } from "@mui/material";
+import { withStyles } from "@mui/styles";
 
 import HvDot from "./Dot";
 import { defaultColor, disabledColor, dotSizes } from "./utils";
