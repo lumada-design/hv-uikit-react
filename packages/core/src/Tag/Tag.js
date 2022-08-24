@@ -103,7 +103,11 @@ const HvTag = (props) => {
 
   const chipLabel = useMemo(() => {
     if (typeof label === "string") {
-      return <HvTypography variant="normalText">{label}</HvTypography>;
+      return (
+        <HvTypography noWrap variant="normalText">
+          {label}
+        </HvTypography>
+      );
     }
 
     return label;
