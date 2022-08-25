@@ -30,7 +30,9 @@ const styles = (theme) => ({
     display: "flex",
   },
   selectAll: {},
-  selectAllPages: {},
+  selectAllPages: {
+    color: theme.hv.typography.link.color,
+  },
   actions: {
     display: "inline-flex",
     marginLeft: "auto",

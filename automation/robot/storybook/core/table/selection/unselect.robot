@@ -37,7 +37,7 @@ unselected state on parent checkbox when she is checked and is clicked
     [Documentation]    unselected - indeterminate - selected - unselected
     Select Checkbox                      ${row}(1) ${checkBox}
     Wait Until Page Contains             Select all
-    Click Button                         Select all 13 items across all pages
+    Click Button                         Select all 13 items
     Unselect Checkbox                    ${bulkAction} ${checkBox}
     Wait Until Page Contains             All
     Page Should Not Contain Element      ${rows_selected}
@@ -48,7 +48,7 @@ indeterminate state on parent checkbox when one of all selected checkboxes is un
     [Documentation]    unselected - indeterminate - selected - indeterminate
     Select Checkbox                      ${row}(1) ${checkBox}
     Wait Until Page Contains             Select all
-    Click Button                         Select all 13 items across all pages
+    Click Button                         Select all 13 items
     Unselect Checkbox                    ${row}(1) ${checkBox}
     Wait Until Page Contains             12 / 13
     Page Should Contain Element          ${rows_selected}    limit=9

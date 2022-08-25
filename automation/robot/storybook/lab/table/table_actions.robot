@@ -17,6 +17,6 @@ select all available when no rows selected
 delete all unlocked rows 
     Select Checkbox                    ${row}(1) ${checkBox}
     Wait Until Page Contains           Select all
-    Click Button                       Select all 64 items across all pages
+    Click Button                       Select all 64 items
     Click Button                       Delete
     Page Should Contain                All (2)

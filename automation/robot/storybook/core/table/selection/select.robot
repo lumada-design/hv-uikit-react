@@ -25,7 +25,7 @@ checkboxes are selected when select all button is clicked
     [Documentation]    unselected - indeterminate - selected
     Select Checkbox                ${row}(1) ${checkBox}
     Wait Until Page Contains       Select all
-    Click Button                   Select all 13 items across all pages
+    Click Button                   Select all 13 items
     Wait Until Page Contains       13 / 13
     Page Should Contain Element    ${rows_selected}    limit=10
     checkbox Should Be Selected    ${bulkAction} ${checkBox}

@@ -109,7 +109,7 @@ describe("Hv Table with disabled checkbox", () => {
     bulkSelector = getByRole("checkbox", { name: "4 / 7" });
     expect(bulkSelector).toBeInTheDocument();
 
-    const selectAllButton = getByRole("button", { name: "Select all 7 items across all pages" });
+    const selectAllButton = getByRole("button", { name: "Select all 7 items" });
     userEvent.click(selectAllButton);
     bulkSelector = getByRole("checkbox", { name: "6 / 7" });
     expect(bulkSelector).toBeInTheDocument();

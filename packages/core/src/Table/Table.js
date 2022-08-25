@@ -606,7 +606,7 @@ const HvTable = (props) => {
           onSelectAllPages={toggleAll}
           showSelectAllPages={showSelectAllPages}
           labels={{
-            selectAllPages: `Select all ${data.length} items across all pages`,
+            selectAllPages: `Select all ${data.length} items`,
           }}
           actions={actions}
           actionsCallback={(...args) => actionsCallback?.(...args, selection)}

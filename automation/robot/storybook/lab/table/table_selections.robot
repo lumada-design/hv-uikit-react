@@ -45,7 +45,7 @@ select all checkbox is in indeterminate state when any checkbox is selected
 
 checkboxes are selected when select all button is clicked
     Wait Until Page Contains       Select all
-    Click Button                   Select all 64 items across all pages
+    Click Button                   Select all 64 items
     Wait Until Page Contains       62 / 64
     Page Should Contain Element    ${rows_selected}    limit=8
     checkbox Should Be Selected    ${bulkAction} ${checkBox}

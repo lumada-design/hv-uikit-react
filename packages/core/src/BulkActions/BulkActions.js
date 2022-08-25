@@ -60,7 +60,7 @@ const HvBulkActions = (props) => {
 
   const defaultSelectAllPagesLabel = (
     <HvTypography style={{ color: "inherit" }} variant="highlightText" component="span">
-      {`Select all ${numTotal} items across all pages`}
+      {`Select all ${numTotal} items`}
     </HvTypography>
   );
 

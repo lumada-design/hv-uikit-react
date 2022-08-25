@@ -42,7 +42,7 @@ deselect all elements with multiple pages selected
 delete all rows when all rows are selected and is clicked delete bulk action
     Select Checkbox                    ${row}(1) ${checkBox}
     Wait Until Page Contains           Select all
-    Click Button                       Select all 13 items across all pages
+    Click Button                       Select all 13 items
     Click Button                       Delete
     wait until Page Contains           No data to display.
     Page Should Not Contain Element    ${rows_populated}
