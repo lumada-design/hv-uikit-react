@@ -149,11 +149,26 @@ WithTooltip.parameters = {
   },
 };
 
-export const Width = () => <HvStepNavigation steps={steps} id="Width" width={1000} />;
+export const Width = () => (
+  <HvStepNavigation
+    steps={steps}
+    id="Width"
+    width={{
+      xs: 200,
+      sm: 400,
+      md: 600,
+      lg: 800,
+      xl: 1000,
+    }}
+  />
+);
 
 Width.parameters = {
   docs: {
-    description: { story: "Example of a step navigation with a customized width ('1000px')." },
+    description: {
+      story:
+        "Example of a step navigation with a customized width for each breakpoint ('200px', '400px', '600px', '800px', '1000px').",
+    },
   },
 };
 

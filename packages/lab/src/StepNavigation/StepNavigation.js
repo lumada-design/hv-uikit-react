@@ -139,7 +139,7 @@ const HvStepNavigation = ({
 
   const getDynamicValues = (stepsWidth) => {
     const maxWidth =
-      width ??
+      width?.[breakpoint] ??
       Math.max(
         Number(hasTitles) * (TITLE_WIDTH + TITLE_MARGIN) * steps.length - TITLE_MARGIN,
         SEPARATOR_WIDTH * (steps.length - 1) + stepsWidth
@@ -278,6 +278,11 @@ HvStepNavigation.propTypes = {
        * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled"}.
        */
       state: PropTypes.oneOf(["Pending", "Failed", "Completed", "Current", "Disabled"]).isRequired,
+      /**
+       * Define if a step is disabled/enabled.
+       * If this property is not defined and the step is on state "Disabled", the step component will be disabled
+       */
+      disabled: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -285,9 +290,15 @@ HvStepNavigation.propTypes = {
    */
   stepSize: PropTypes.oneOf(["XS", "SM", "MD", "LG", "XL"]),
   /**
-   * Width of the component.
+   * Width of the component element on each breakpoint screen resolution.
    */
-  width: PropTypes.number,
+  width: PropTypes.shape({
+    xs: PropTypes.number,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+    xl: PropTypes.number,
+  }),
   /**
    * Defines either show a title or only a tooltip on each step component
    */

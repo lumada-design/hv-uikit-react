@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { Breakpoint } from "@material-ui/core/styles/createBreakpoints";
 import { HvStepProps } from "./DefaultNavigation/Step/Step";
 
 export type HvStepNavigationClassKey = "root";
@@ -15,7 +16,7 @@ export type HvStepNavigationProps = StandardProps<
   /**
    * Steps to show on the component.
    */
-  steps: Array<Pick<HvStepProps, "state" | "title" | "onClick" | "className">> & {
+  steps: Array<Pick<HvStepProps, "state" | "title" | "onClick" | "className" | "disabled">> & {
     /**
      * Class names to override styles on the separator component after the step.
      */
@@ -26,15 +27,15 @@ export type HvStepNavigationProps = StandardProps<
     titleClassName: string;
   };
   /**
-   * Sets one of the standard sizes of the steps
+   * Sets one of the standard sizes of the steps.
    */
   stepSize?: "XS" | "SM" | "MD" | "LG" | "XL";
   /**
-   * Width of the component element.
+   * Width of the component element on each breakpoint screen resolution.
    */
-  width?: number;
+  width?: { [breakpoint in Breakpoint]?: number };
   /**
-   * Defines either show a title or only a tooltip on each step component
+   * Defines either show a title or only a tooltip on each step component.
    */
   showTitles?: boolean;
 };
