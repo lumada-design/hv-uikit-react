@@ -10,3 +10,7 @@ export { default as HvNotificationPanel } from "./NotificationPanel";
 
 export { default as HvTimeAgo } from "./TimeAgo";
 export * from "./TimeAgo";
+
+export { default as HvImageCarousel } from "./ImageCarousel";
+
+export { default as HvStepNavigation } from "./StepNavigation";

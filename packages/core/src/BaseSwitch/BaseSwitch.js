@@ -75,6 +75,7 @@ const HvBaseSwitch = (props) => {
       name={name}
       className={clsx(className, classes.root, {
         [classes.disabled]: disabled,
+        [classes.readOnly]: readOnly,
         [classes.focusVisible]: focusVisible,
       })}
       color="default"
@@ -119,6 +120,10 @@ HvBaseSwitch.propTypes = {
      * Styles applied to the switch when it is disabled.
      */
     disabled: PropTypes.string,
+    /**
+     * Styles applied to the switch when it is in read only mode.
+     */
+    readOnly: PropTypes.string,
     /**
      * Styles applied to the internal Switch component's root class.
      */

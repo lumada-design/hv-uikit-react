@@ -22,12 +22,31 @@ export const verticalScrollOffset = (t, c = window) => {
   return t.offsetTop - c.offsetTop;
 };
 
-export const scrollElement = (element, container, offset = 0) => {
-  const elemTop = verticalScrollOffset(element, container);
-  container.scrollTo({
-    top: elemTop - offset,
-    behavior: "smooth",
-  });
+export const horizontalScrollOffset = (t, c = window) => {
+  if (c === window) {
+    return (t?.getBoundingClientRect?.().left || 0) + (window.scrollX || window.pageXOffset);
+  }
+  if (getComputedStyle(c).position !== "static") {
+    return t.offsetLeft;
+  }
+
+  return t.offsetLeft - c.offsetLeft;
+};
+
+export const scrollElement = (element, container, offset = 0, direction) => {
+  if (direction === "row") {
+    const elemLeft = horizontalScrollOffset(element, container);
+    container?.scrollTo?.({
+      left: elemLeft - offset,
+      behavior: "smooth",
+    });
+  } else {
+    const elemTop = verticalScrollOffset(element, container);
+    container?.scrollTo?.({
+      top: elemTop - offset,
+      behavior: "smooth",
+    });
+  }
   element.focus({ preventScroll: true });
 };
 

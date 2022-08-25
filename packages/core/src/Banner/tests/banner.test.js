@@ -4,8 +4,7 @@ import { Fail } from "@hitachivantara/uikit-react-icons";
 import { Snackbar as MaterialSnackbar } from "@mui/material";
 import { HvButton, HvBanner, HvProvider } from "../..";
 
-import Banner from "..";
-import HvBannerContentWrapper from "../BannerWrapper";
+import Banner, { HvBannerContent } from "..";
 import iconVariant from "../../utils/iconVariant";
 
 describe("Banner ", () => {
@@ -29,7 +28,7 @@ describe("Banner ", () => {
   });
 
   it("shouldn't render the BannerContentWrapper component", () => {
-    const bannerComponent = wrapper.find(HvBannerContentWrapper);
+    const bannerComponent = wrapper.find(HvBannerContent);
     expect(bannerComponent.length).toBe(0);
   });
 
@@ -38,7 +37,7 @@ describe("Banner ", () => {
       <HvProvider disableCssBaseline>
         <HvBanner id="banner" variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
-    ).find(HvBannerContentWrapper);
+    ).find(HvBannerContent);
     expect(bannerComponent.length).toBe(1);
   });
 
