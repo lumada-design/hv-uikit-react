@@ -1,5 +1,14 @@
 {
-  "allowedLicenses": ["Apache-2.0", "ISC", "BSD-2-Clause", "BSD-3-Clause", "MIT", "W3C", "Zlib"],
+  "allowedLicenses": [
+    "Apache-2.0",
+    "ISC",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "MIT",
+    "W3C",
+    "Zlib",
+    "CC-BY-4.0"
+  ],
   "allowedPackages": [
     {
       "name": "mumath",
