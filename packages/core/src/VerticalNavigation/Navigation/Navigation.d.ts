@@ -42,7 +42,7 @@ export interface NavigationData {
 
 export type HvNavigationClassKey = "root" | "list" | "listItem";
 
-export interface HvVerticalNavigationNavigationProps
+export interface HvVerticalNavigationTreeProps
   extends StandardProps<
     React.HTMLAttributes<HTMLElement>,
     HvNavigationClassKey,
@@ -118,6 +118,6 @@ export interface HvVerticalNavigationNavigationProps
   label?: string;
 }
 
-export default function HvVerticalNavigationNavigation(
-  props: HvVerticalNavigationNavigationProps
+export default function HvVerticalNavigationTree(
+  props: HvVerticalNavigationTreeProps
 ): JSX.Element | null;

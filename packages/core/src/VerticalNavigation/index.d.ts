@@ -1,4 +1,7 @@
-export { default } from "./Navigation";
+export { default } from "./VerticalNavigation";
+export * from "./VerticalNavigation";
+
+export { default as HvVerticalNavigationTree } from "./Navigation";
 export * from "./Navigation";
 
 export {
