@@ -13,31 +13,31 @@ import ProgressColumnCell from "./ProgressColumnCell";
 import DropdownColumnCell from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
 
-export const hvTextColumn = (col) => {
+export function hvTextColumn(col) {
   return {
     Cell: (cellProps) => <HvOverflowTooltip data={hvStringFallback(cellProps?.value)} />,
     sortType: "alphanumeric",
     ...col,
   };
-};
+}
 
-export const hvNumberColumn = (col) => {
+export function hvNumberColumn(col) {
   return {
     Cell: ({ value }) => hvNumberFallback(value),
     align: "right",
     sortType: "number",
     ...col,
   };
-};
+}
 
-export const hvDateColumn = (col, dateFormat) => {
+export function hvDateColumn(col, dateFormat) {
   return {
     Cell: (cellProps) => <DateColumnCell date={cellProps?.value} dateFormat={dateFormat} />,
     sortType: "alphanumeric",
     sortDescFirst: true,
     ...col,
   };
-};
+}
 
 export function hvExpandColumn(
   col,
