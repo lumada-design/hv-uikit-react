@@ -50,9 +50,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
     aria-label="Example 1 navigation"
     classes={
       Object {
-        "list": "HvVerticalNavigationNavigation-list",
-        "listItem": "HvVerticalNavigationNavigation-listItem",
-        "root": "HvVerticalNavigationNavigation-root",
+        "list": "HvVerticalNavigationTree-list",
+        "listItem": "HvVerticalNavigationTree-listItem",
+        "root": "HvVerticalNavigationTree-root",
       }
     }
     data={
@@ -100,10 +100,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   >
     <nav
       aria-label="Example 1 navigation"
-      className="HvVerticalNavigationNavigation-root"
+      className="HvVerticalNavigationTree-root"
     >
       <WithStyles(ForwardRef)
-        className="HvVerticalNavigationNavigation-list"
+        className="HvVerticalNavigationTree-list"
         collapsible={false}
         expanded={Array []}
         mode="navigation"
@@ -113,7 +113,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         selected="01-01"
       >
         <ForwardRef
-          className="HvVerticalNavigationNavigation-list"
+          className="HvVerticalNavigationTree-list"
           classes={
             Object {
               "collapsed": "HvVerticalNavigationTreeView-collapsed",
@@ -144,10 +144,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         >
           <DescendantProvider>
             <ul
-              className="HvVerticalNavigationTreeView-root HvVerticalNavigationNavigation-list"
+              className="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list"
             >
               <WithStyles(ForwardRef)
-                className="HvVerticalNavigationNavigation-listItem"
+                className="HvVerticalNavigationTree-listItem"
                 icon={<Play />}
                 key="01"
                 label={<Unknown />}
@@ -192,7 +192,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                 }
               >
                 <ForwardRef
-                  className="HvVerticalNavigationNavigation-listItem"
+                  className="HvVerticalNavigationTree-listItem"
                   classes={
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -256,7 +256,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   }
                 >
                   <li
-                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                     data-hasicon={true}
                     id="hvtreeview1-01"
                   >
@@ -1141,10 +1141,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                               </style>
                                               <style
                                                 data-jss=""
-                                                data-meta="HvVerticalNavigationNavigation"
+                                                data-meta="HvVerticalNavigationTree"
                                               >
                                                 
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -1804,10 +1804,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                                   </style>
                                                   <style
                                                     data-jss=""
-                                                    data-meta="HvVerticalNavigationNavigation"
+                                                    data-meta="HvVerticalNavigationTree"
                                                   >
                                                     
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
