@@ -287,4 +287,4 @@ Navigation.propTypes = {
   label: deprecatedPropType(PropTypes.string),
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(Navigation);
+export default withStyles(styles, { name: "HvVerticalNavigationTree" })(Navigation);
