@@ -47,6 +47,7 @@
     "@hitachivantara/uikit-common-themes": "^4.0.1-next.0",
     "@hitachivantara/uikit-react-icons": "^4.0.1-next.1",
     "@popperjs/core": "2.11.5",
+    "@types/react-table": "^7.7.12",
     "attr-accept": "^2.2.2",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.4",
@@ -73,7 +74,6 @@
   "devDependencies": {
     "@types/lodash": "^4.14.182",
     "@types/react": "^17.0.47",
-    "@types/react-table": "^7.7.12",
     "@types/react-window": "^1.8.5",
     "cross-env": "^7.0.3"
   },
