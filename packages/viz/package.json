@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-viz",
-  "version": "4.0.1-next.2",
+  "version": "4.0.1-next.3",
   "description": "A collection of React visualizations for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
@@ -45,7 +45,7 @@
     "react-dom": "^16.13.1 || ^17.0.2"
   },
   "dependencies": {
-    "@hitachivantara/uikit-react-core": "^4.0.1-next.2",
+    "@hitachivantara/uikit-react-core": "^4.0.1-next.3",
     "clsx": "^1.2.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",

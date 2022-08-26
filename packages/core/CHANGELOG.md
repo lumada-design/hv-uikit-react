@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.0.1-next.2...@hitachivantara/uikit-react-core@4.0.1-next.3) (2022-08-26)
+
+
+### Bug Fixes
+
+* **renderers:** missing exports ([f5a3c2f](https://github.com/lumada-design/hv-uikit-react/commit/f5a3c2f972f596a7873b1de01da1ec06c826fd18))
+* **switch:** change cursor when in read only mode ([312e9a9](https://github.com/lumada-design/hv-uikit-react/commit/312e9a9fd4116e8acf35f4c867265098b1ad9e7f))
+* **table:** types need to be included in the package ([e4c1071](https://github.com/lumada-design/hv-uikit-react/commit/e4c107157080fbd1cb82a88b4a96ce0fc61ee3a9))
+* **user-preference:** adding prefix to exports ([98772b2](https://github.com/lumada-design/hv-uikit-react/commit/98772b247ad88adecc3fc858fb9f63702b159c6e))
+* **vertical-navigation:** fix exports ([529991c](https://github.com/lumada-design/hv-uikit-react/commit/529991c0471ae23c0ca77169af5ea006d0e376f8))
+
+
+### Features
+
+* **bannercontent:** add ts declarations ([f20fca4](https://github.com/lumada-design/hv-uikit-react/commit/f20fca46b90b261ee91664131cc056692a6d92c6))
+* **bannercontent:** uniformize name ([af60d6c](https://github.com/lumada-design/hv-uikit-react/commit/af60d6cd42ba7a2ce18cb72201c8f01b1ee2437d))
+* **image-carousel:** add new image carousel component ([7ba9add](https://github.com/lumada-design/hv-uikit-react/commit/7ba9addb178f906daf9aa15dc2e65afe9953a865))
+
+
+
+
+
 ## [4.0.1-next.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.0.1-next.1...@hitachivantara/uikit-react-core@4.0.1-next.2) (2022-08-26)
 
 
