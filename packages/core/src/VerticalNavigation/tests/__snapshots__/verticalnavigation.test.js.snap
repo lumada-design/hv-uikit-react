@@ -83,9 +83,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
           aria-label="Example 1 navigation"
           classes={
             Object {
-              "list": "HvVerticalNavigationNavigation-list",
-              "listItem": "HvVerticalNavigationNavigation-listItem",
-              "root": "HvVerticalNavigationNavigation-root",
+              "list": "HvVerticalNavigationTree-list",
+              "listItem": "HvVerticalNavigationTree-listItem",
+              "root": "HvVerticalNavigationTree-root",
             }
           }
           data={
@@ -149,10 +149,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
         >
           <nav
             aria-label="Example 1 navigation"
-            className="HvVerticalNavigationNavigation-root"
+            className="HvVerticalNavigationTree-root"
           >
             <WithStyles(ForwardRef)
-              className="HvVerticalNavigationNavigation-list"
+              className="HvVerticalNavigationTree-list"
               collapsible={false}
               expanded={Array []}
               mode="navigation"
@@ -162,7 +162,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
               selected="00"
             >
               <ForwardRef
-                className="HvVerticalNavigationNavigation-list"
+                className="HvVerticalNavigationTree-list"
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeView-collapsed",
@@ -193,10 +193,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
               >
                 <DescendantProvider>
                   <ul
-                    className="HvVerticalNavigationTreeView-root HvVerticalNavigationNavigation-list"
+                    className="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationNavigation-listItem"
+                      className="HvVerticalNavigationTree-listItem"
                       key="00"
                       label={<Unknown />}
                       nodeId="00"
@@ -208,7 +208,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       }
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationNavigation-listItem"
+                        className="HvVerticalNavigationTree-listItem"
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -239,7 +239,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         }
                       >
                         <li
-                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected"
+                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected"
                           id="hvtreeview1-00"
                         >
                           <WithStyles(ForwardRef)
@@ -1130,10 +1130,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     </style>
                                                     <style
                                                       data-jss=""
-                                                      data-meta="HvVerticalNavigationNavigation"
+                                                      data-meta="HvVerticalNavigationTree"
                                                     >
                                                       
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -1918,10 +1918,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </style>
                                                         <style
                                                           data-jss=""
-                                                          data-meta="HvVerticalNavigationNavigation"
+                                                          data-meta="HvVerticalNavigationTree"
                                                         >
                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -2117,7 +2117,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationNavigation-listItem"
+                      className="HvVerticalNavigationTree-listItem"
                       key="01"
                       label={<Unknown />}
                       nodeId="01"
@@ -2131,7 +2131,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       selectable={false}
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationNavigation-listItem"
+                        className="HvVerticalNavigationTree-listItem"
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -2164,7 +2164,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         selectable={false}
                       >
                         <li
-                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-unselectable"
+                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-unselectable"
                           id="hvtreeview1-01"
                         >
                           <WithStyles(ForwardRef)
@@ -3052,10 +3052,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     </style>
                                                     <style
                                                       data-jss=""
-                                                      data-meta="HvVerticalNavigationNavigation"
+                                                      data-meta="HvVerticalNavigationTree"
                                                     >
                                                       
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -3840,10 +3840,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </style>
                                                         <style
                                                           data-jss=""
-                                                          data-meta="HvVerticalNavigationNavigation"
+                                                          data-meta="HvVerticalNavigationTree"
                                                         >
                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -4039,7 +4039,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationNavigation-listItem"
+                      className="HvVerticalNavigationTree-listItem"
                       key="02"
                       label={<Unknown />}
                       nodeId="02"
@@ -4074,7 +4074,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       }
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationNavigation-listItem"
+                        className="HvVerticalNavigationTree-listItem"
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -4128,7 +4128,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         }
                       >
                         <li
-                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                           id="hvtreeview1-02"
                         >
                           <WithStyles(ForwardRef)
@@ -5016,10 +5016,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     </style>
                                                     <style
                                                       data-jss=""
-                                                      data-meta="HvVerticalNavigationNavigation"
+                                                      data-meta="HvVerticalNavigationTree"
                                                     >
                                                       
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -5804,10 +5804,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </style>
                                                         <style
                                                           data-jss=""
-                                                          data-meta="HvVerticalNavigationNavigation"
+                                                          data-meta="HvVerticalNavigationTree"
                                                         >
                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -6004,7 +6004,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               id="hvtreeview1-02-group"
                             >
                               <WithStyles(ForwardRef)
-                                className="HvVerticalNavigationNavigation-listItem"
+                                className="HvVerticalNavigationTree-listItem"
                                 key="02-01"
                                 label={<Unknown />}
                                 nodeId="02-01"
@@ -6033,7 +6033,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 }
                               >
                                 <ForwardRef
-                                  className="HvVerticalNavigationNavigation-listItem"
+                                  className="HvVerticalNavigationTree-listItem"
                                   classes={
                                     Object {
                                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -6081,7 +6081,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   }
                                 >
                                   <li
-                                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                                     id="hvtreeview1-02-01"
                                   >
                                     <WithStyles(ForwardRef)
@@ -6969,10 +6969,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                               </style>
                                                               <style
                                                                 data-jss=""
-                                                                data-meta="HvVerticalNavigationNavigation"
+                                                                data-meta="HvVerticalNavigationTree"
                                                               >
                                                                 
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -7757,10 +7757,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   </style>
                                                                   <style
                                                                     data-jss=""
-                                                                    data-meta="HvVerticalNavigationNavigation"
+                                                                    data-meta="HvVerticalNavigationTree"
                                                                   >
                                                                     
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -7957,7 +7957,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         id="hvtreeview1-02-01-group"
                                       >
                                         <WithStyles(ForwardRef)
-                                          className="HvVerticalNavigationNavigation-listItem"
+                                          className="HvVerticalNavigationTree-listItem"
                                           href="https://www.hitachivantara.com/en-us/news.html"
                                           key="02-01-01"
                                           label={<Unknown />}
@@ -7971,7 +7971,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         >
                                           <ForwardRef
-                                            className="HvVerticalNavigationNavigation-listItem"
+                                            className="HvVerticalNavigationTree-listItem"
                                             classes={
                                               Object {
                                                 "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -8004,7 +8004,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                             }
                                           >
                                             <li
-                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                                               id="hvtreeview1-02-01-01"
                                             >
                                               <WithStyles(ForwardRef)
@@ -8895,10 +8895,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         </style>
                                                                         <style
                                                                           data-jss=""
-                                                                          data-meta="HvVerticalNavigationNavigation"
+                                                                          data-meta="HvVerticalNavigationTree"
                                                                         >
                                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -9683,10 +9683,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                             </style>
                                                                             <style
                                                                               data-jss=""
-                                                                              data-meta="HvVerticalNavigationNavigation"
+                                                                              data-meta="HvVerticalNavigationTree"
                                                                             >
                                                                               
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -9882,7 +9882,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                         <WithStyles(ForwardRef)
-                                          className="HvVerticalNavigationNavigation-listItem"
+                                          className="HvVerticalNavigationTree-listItem"
                                           href="/?path=/story/structure-vertical-navigation--main"
                                           key="02-01-02"
                                           label={<Unknown />}
@@ -9896,7 +9896,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         >
                                           <ForwardRef
-                                            className="HvVerticalNavigationNavigation-listItem"
+                                            className="HvVerticalNavigationTree-listItem"
                                             classes={
                                               Object {
                                                 "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -9929,7 +9929,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                             }
                                           >
                                             <li
-                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                                               id="hvtreeview1-02-01-02"
                                             >
                                               <WithStyles(ForwardRef)
@@ -10820,10 +10820,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         </style>
                                                                         <style
                                                                           data-jss=""
-                                                                          data-meta="HvVerticalNavigationNavigation"
+                                                                          data-meta="HvVerticalNavigationTree"
                                                                         >
                                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -11608,10 +11608,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                             </style>
                                                                             <style
                                                                               data-jss=""
-                                                                              data-meta="HvVerticalNavigationNavigation"
+                                                                              data-meta="HvVerticalNavigationTree"
                                                                             >
                                                                               
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -11807,7 +11807,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                         <WithStyles(ForwardRef)
-                                          className="HvVerticalNavigationNavigation-listItem"
+                                          className="HvVerticalNavigationTree-listItem"
                                           disabled={true}
                                           key="02-01-03"
                                           label={<Unknown />}
@@ -11821,7 +11821,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         >
                                           <ForwardRef
-                                            className="HvVerticalNavigationNavigation-listItem"
+                                            className="HvVerticalNavigationTree-listItem"
                                             classes={
                                               Object {
                                                 "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -11854,7 +11854,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                             }
                                           >
                                             <li
-                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-disabled"
+                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-disabled"
                                               id="hvtreeview1-02-01-03"
                                             >
                                               <WithStyles(ForwardRef)
@@ -12742,10 +12742,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         </style>
                                                                         <style
                                                                           data-jss=""
-                                                                          data-meta="HvVerticalNavigationNavigation"
+                                                                          data-meta="HvVerticalNavigationTree"
                                                                         >
                                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -13530,10 +13530,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                             </style>
                                                                             <style
                                                                               data-jss=""
-                                                                              data-meta="HvVerticalNavigationNavigation"
+                                                                              data-meta="HvVerticalNavigationTree"
                                                                             >
                                                                               
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -13739,7 +13739,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationNavigation-listItem"
+                      className="HvVerticalNavigationTree-listItem"
                       key="03"
                       label={<Unknown />}
                       nodeId="03"
@@ -13763,7 +13763,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       }
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationNavigation-listItem"
+                        className="HvVerticalNavigationTree-listItem"
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -13806,7 +13806,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         }
                       >
                         <li
-                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                          className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                           id="hvtreeview1-03"
                         >
                           <WithStyles(ForwardRef)
@@ -14694,10 +14694,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                     </style>
                                                     <style
                                                       data-jss=""
-                                                      data-meta="HvVerticalNavigationNavigation"
+                                                      data-meta="HvVerticalNavigationTree"
                                                     >
                                                       
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -15482,10 +15482,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                         </style>
                                                         <style
                                                           data-jss=""
-                                                          data-meta="HvVerticalNavigationNavigation"
+                                                          data-meta="HvVerticalNavigationTree"
                                                         >
                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -15682,7 +15682,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               id="hvtreeview1-03-group"
                             >
                               <WithStyles(ForwardRef)
-                                className="HvVerticalNavigationNavigation-listItem"
+                                className="HvVerticalNavigationTree-listItem"
                                 key="03-01"
                                 label={<Unknown />}
                                 nodeId="03-01"
@@ -15700,7 +15700,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 }
                               >
                                 <ForwardRef
-                                  className="HvVerticalNavigationNavigation-listItem"
+                                  className="HvVerticalNavigationTree-listItem"
                                   classes={
                                     Object {
                                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -15737,7 +15737,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   }
                                 >
                                   <li
-                                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                                     id="hvtreeview1-03-01"
                                   >
                                     <WithStyles(ForwardRef)
@@ -16625,10 +16625,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                               </style>
                                                               <style
                                                                 data-jss=""
-                                                                data-meta="HvVerticalNavigationNavigation"
+                                                                data-meta="HvVerticalNavigationTree"
                                                               >
                                                                 
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -17413,10 +17413,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                   </style>
                                                                   <style
                                                                     data-jss=""
-                                                                    data-meta="HvVerticalNavigationNavigation"
+                                                                    data-meta="HvVerticalNavigationTree"
                                                                   >
                                                                     
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -17613,7 +17613,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                         id="hvtreeview1-03-01-group"
                                       >
                                         <WithStyles(ForwardRef)
-                                          className="HvVerticalNavigationNavigation-listItem"
+                                          className="HvVerticalNavigationTree-listItem"
                                           key="03-01-01"
                                           label={<Unknown />}
                                           nodeId="03-01-01"
@@ -17625,7 +17625,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                           }
                                         >
                                           <ForwardRef
-                                            className="HvVerticalNavigationNavigation-listItem"
+                                            className="HvVerticalNavigationTree-listItem"
                                             classes={
                                               Object {
                                                 "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -17656,7 +17656,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                             }
                                           >
                                             <li
-                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                                              className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                                               id="hvtreeview1-03-01-01"
                                             >
                                               <WithStyles(ForwardRef)
@@ -18544,10 +18544,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                         </style>
                                                                         <style
                                                                           data-jss=""
-                                                                          data-meta="HvVerticalNavigationNavigation"
+                                                                          data-meta="HvVerticalNavigationTree"
                                                                         >
                                                                           
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -19332,10 +19332,10 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                                                             </style>
                                                                             <style
                                                                               data-jss=""
-                                                                              data-meta="HvVerticalNavigationNavigation"
+                                                                              data-meta="HvVerticalNavigationTree"
                                                                             >
                                                                               
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -20907,10 +20907,10 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   </style>
                                   <style
                                     data-jss=""
-                                    data-meta="HvVerticalNavigationNavigation"
+                                    data-meta="HvVerticalNavigationTree"
                                   >
                                     
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
@@ -22230,10 +22230,10 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       </style>
                                       <style
                                         data-jss=""
-                                        data-meta="HvVerticalNavigationNavigation"
+                                        data-meta="HvVerticalNavigationTree"
                                       >
                                         
-.HvVerticalNavigationNavigation-root {
+.HvVerticalNavigationTree-root {
   display: block;
   background: #FBFCFC;
   overflow-y: auto;
