@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.0.1-next.1...@hitachivantara/uikit-react-lab@4.0.1-next.2) (2022-08-26)
+
+
+### Bug Fixes
+
+* **table:** types need to be included in the package ([e4c1071](https://github.com/lumada-design/hv-uikit-react/commit/e4c107157080fbd1cb82a88b4a96ce0fc61ee3a9))
+
+
+### Features
+
+* **image-carousel:** add new image carousel component ([7ba9add](https://github.com/lumada-design/hv-uikit-react/commit/7ba9addb178f906daf9aa15dc2e65afe9953a865))
+* **step-navigation:** new horizontal navigation with steps. MLAAS-1494 ([8f885d8](https://github.com/lumada-design/hv-uikit-react/commit/8f885d860550f41b0ae16939a0682ebccbc30f90))
+* **step-navigation:** new horizontal navigation with steps. MLAAS-1494 ([e8a5c6f](https://github.com/lumada-design/hv-uikit-react/commit/e8a5c6ff0af0869f3f98f07dfcfd11c438d21957))
+* **step-navigation:** new horizontal navigation with steps. MLAAS-1494 ([71160b4](https://github.com/lumada-design/hv-uikit-react/commit/71160b4bef8150703031fc900d7b32d1fabb6770))
+
+
+
+
+
 ## [4.0.1-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.0.1-next.0...@hitachivantara/uikit-react-lab@4.0.1-next.1) (2022-08-19)
 
 

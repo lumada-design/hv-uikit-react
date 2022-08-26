@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.1-next.1...@hitachivantara/uikit-react-viz@4.0.1-next.2) (2022-08-26)
+
+
+### Bug Fixes
+
+* **table:** types need to be included in the package ([e4c1071](https://github.com/lumada-design/hv-uikit-react/commit/e4c107157080fbd1cb82a88b4a96ce0fc61ee3a9))
+
+
+
+
+
 ## [4.0.1-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.1-next.0...@hitachivantara/uikit-react-viz@4.0.1-next.1) (2022-08-19)
 
 
