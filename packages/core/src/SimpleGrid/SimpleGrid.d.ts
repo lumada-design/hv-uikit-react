@@ -1,17 +1,16 @@
-import { FunctionComponent } from "react";
-
 export type Spacing = "xs" | "sm" | "md" | "lg";
-export type Breakpoints = {
+export type Breakpoint = {
   cols?: number;
   maxWidth?: number;
   minWidth?: number;
   spacing?: Spacing;
 };
 
-export interface SimpleGridProps extends FunctionComponent {
+export interface SimpleGridProps {
+  children?: JSX.Element | JSX.Element[];
   spacing?: Spacing;
   cols?: number;
-  breakpoints?: Breakpoints;
+  breakpoints?: Breakpoint[];
 }
 
 export default function HvSimpleGrid(props: SimpleGridProps): JSX.Element | null;
