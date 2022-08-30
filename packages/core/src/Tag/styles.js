@@ -22,6 +22,8 @@ const styles = (theme) => ({
   label: {
     paddingLeft: theme.hv.spacing.xs,
     paddingRight: theme.hv.spacing.xs,
+    ...theme.hv.typography.normalText,
+    color: theme.palette.base2,
     "& p": {
       color: theme.hv.palette.base.base2,
     },
