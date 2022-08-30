@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.74.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.74.0...@hitachivantara/uikit-react-core@3.74.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **Tag:** add ellipsis on overflow ([f38fcc3](https://github.com/lumada-design/hv-uikit-react/commit/f38fcc332047ffbea834b5472b7216362c193682))
+
+
+
+
+
 # [3.74.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.73.1...@hitachivantara/uikit-react-core@3.74.0) (2022-08-24)
 
 
