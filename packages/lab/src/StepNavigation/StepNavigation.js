@@ -28,8 +28,8 @@ import styles from "./styles";
  * correspondent to the current media breakpoint;
  * * Choose either you want to <b>showTitles</b> near to each step component or a tootlip on hover;
  * * Define a <b>width</b> of the component. If you don't define any value and the step component has no title
- * displayed above, the width of the separator element;
- * will be 100px. If the step component has titles, each one will have 215px of width by default.
+ * displayed above, the width of the separator element will be 100px.
+ * If the step component has titles, each one will have 215px of width by default.
  */
 const HvStepNavigation = ({
   className,
@@ -127,7 +127,7 @@ const HvStepNavigation = ({
           separatorClassName,
           height,
           [steps[index + 1].state, state].includes("Current") ? minWidth : maxWidth,
-          getColor(state)
+          getColor(steps[index + 1].state === "Disabled" ? "Disabled" : state, theme)
         );
         return [...acc, stepElement, separatorElement];
       }
@@ -275,9 +275,10 @@ HvStepNavigation.propTypes = {
        */
       title: PropTypes.string.isRequired,
       /**
-       * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled"}.
+       * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled", "Enabled"}.
        */
-      state: PropTypes.oneOf(["Pending", "Failed", "Completed", "Current", "Disabled"]).isRequired,
+      state: PropTypes.oneOf(["Pending", "Failed", "Completed", "Current", "Disabled", "Enabled"])
+        .isRequired,
       /**
        * Define if a step is disabled/enabled.
        * If this property is not defined and the step is on state "Disabled", the step component will be disabled

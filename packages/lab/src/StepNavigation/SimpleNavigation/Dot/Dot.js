@@ -1,11 +1,11 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { makeStyles, withStyles } from "@material-ui/core";
 
-import { defaultColor, disabledColor, dotSizes } from "../utils";
+import { getColor, dotSizes } from "../utils";
 import styles from "./styles";
 
 /**
@@ -13,14 +13,10 @@ import styles from "./styles";
  */
 const HvDot = ({ classes, className, state, title, size, onClick, disabled }) => {
   const dotSize = dotSizes[size] * (state === "Current" ? 1.5 : 1);
-  const getBackgroundColor = useCallback(
-    (theme) => (state === "Disabled" ? disabledColor(theme) : defaultColor(theme)),
-    [state]
-  );
   const customClasses = useMemo(
     () =>
       makeStyles((theme) => {
-        const backgroundColor = getBackgroundColor(theme);
+        const backgroundColor = getColor(state, theme);
         return {
           ghostDisabled: {},
           active: {},
@@ -43,7 +39,7 @@ const HvDot = ({ classes, className, state, title, size, onClick, disabled }) =>
           },
         };
       }),
-    [dotSize, getBackgroundColor]
+    [dotSize, state]
   )();
   return (
     <HvButton

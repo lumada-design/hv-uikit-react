@@ -153,9 +153,10 @@ HvStep.propTypes = {
    */
   size: PropTypes.oneOf(["XS", "SM", "MD", "LG", "XL"]),
   /**
-   * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled"}
+   * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled", "Enabled"}
    */
-  state: PropTypes.oneOf(["Pending", "Failed", "Completed", "Current", "Disabled"]).isRequired,
+  state: PropTypes.oneOf(["Pending", "Failed", "Completed", "Current", "Disabled", "Enabled"])
+    .isRequired,
   /**
    * Title of the step.
    */

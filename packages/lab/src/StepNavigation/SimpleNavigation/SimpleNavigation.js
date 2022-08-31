@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useTheme, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 
 import HvDot from "./Dot";
-import { defaultColor, disabledColor, dotSizes } from "./utils";
+import { getColor, dotSizes } from "./utils";
 import styles from "./styles";
 
 /**
@@ -18,8 +18,6 @@ const HvSimpleNavigation = ({
   children,
   ...other
 }) => {
-  const theme = useTheme();
-
   // step values
   const dotSize = dotSizes[stepSize];
   const StepComponent = HvDot;
@@ -29,8 +27,6 @@ const HvSimpleNavigation = ({
   const { width, titleWidth, separatorWidth } = getDynamicValues(stepsWidth);
 
   // separator values
-  const getColor = (state) =>
-    ["Current", "Disabled"].includes(state) ? disabledColor(theme) : defaultColor(theme);
   const maxWidth = Math.max(titleWidth - dotSize, separatorWidth);
   const minWidth = Math.max(titleWidth - dotSize * 1.25, separatorWidth);
   //
