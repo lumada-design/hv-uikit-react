@@ -10,7 +10,7 @@ export interface HvControlsViewConfiguration extends Record<string, unknown> {
 }
 
 export interface RightListControls extends ListValueProp {
-  accesor: string;
+  accessor: string;
   desc: boolean;
 }
 
