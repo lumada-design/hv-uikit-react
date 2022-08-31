@@ -87,6 +87,13 @@ const steps = [
     },
   },
   {
+    title: "Enabled",
+    state: "Enabled",
+    onClick: () => {
+      alert("You clicked on 'Enabled' step");
+    },
+  },
+  {
     title: "Disabled",
     state: "Disabled",
     onClick: () => {
