@@ -6,7 +6,7 @@ const styles = (theme) => ({
     marginTop: theme.hv.spacing.md,
     paddingTop: theme.hv.spacing.xs,
     paddingBottom: theme.hv.spacing.sm,
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    borderTop: `1px solid red`,
   },
   footer: {
     width: "100%",
