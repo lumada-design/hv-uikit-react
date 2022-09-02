@@ -804,7 +804,7 @@ HvTable.propTypes = {
   }),
   /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
-   Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
+   Use the property "cellType" to define the different types of cell. Available values: "numeric" , "alpha-numeric" and "link.
    If the type is "link", in data use the structure {displayText: {text to display} ,url: {url} }.
    */
   columns: PropTypes.arrayOf(
@@ -812,7 +812,7 @@ HvTable.propTypes = {
       headerText: PropTypes.string,
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
       format: PropTypes.func,
-      cellType: PropTypes.string,
+      cellType: PropTypes.oneOf(["numeric", "alpha-numeric", "link"]),
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),

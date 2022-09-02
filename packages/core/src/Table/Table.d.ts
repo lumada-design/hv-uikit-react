@@ -25,7 +25,7 @@ export interface TableColumn {
   /**
    * Sets the column type
    */
-  cellType?: "numeric" | "alpha-numeric";
+  cellType?: "numeric" | "alpha-numeric" | "link";
   /**
    * Styles to apply to the column.
    */
