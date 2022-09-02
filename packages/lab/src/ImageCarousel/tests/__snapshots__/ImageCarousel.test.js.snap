@@ -47,100 +47,56 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
           >
             <div
               class="makeStyles-imageBox-2"
-              id="hvcarousel4-DarthVader4"
+              id="hvcarousel4-Landscape1"
             >
               <img
-                alt="hvcarousel4-DarthVader4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
+                alt="hvcarousel4-Landscape1"
+                class="HvImageCarousel-selectedImage xs notFullscreen cover"
+                src="https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg"
                 style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               />
             </div>
             <div
               class="makeStyles-imageBox-2"
-              id="hvcarousel4-BobaFett4"
+              id="hvcarousel4-Landscape2"
             >
               <img
-                alt="hvcarousel4-BobaFett4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
+                alt="hvcarousel4-Landscape2"
+                class="HvImageCarousel-selectedImage xs notFullscreen cover"
+                src="https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg?ixlib=rb-1.1.0&rect=273%2C0%2C2639%2C1379&q=45&auto=format&w=926&fit=clip"
                 style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               />
             </div>
             <div
               class="makeStyles-imageBox-2"
-              id="hvcarousel4-Revan4"
+              id="hvcarousel4-Landscape3"
             >
               <img
-                alt="hvcarousel4-Revan4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
+                alt="hvcarousel4-Landscape3"
+                class="HvImageCarousel-selectedImage xs notFullscreen cover"
+                src="https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
                 style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               />
             </div>
             <div
               class="makeStyles-imageBox-2"
-              id="hvcarousel4-TheMandalorian4"
+              id="hvcarousel4-Landscape4"
             >
               <img
-                alt="hvcarousel4-TheMandalorian4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
+                alt="hvcarousel4-Landscape4"
+                class="HvImageCarousel-selectedImage xs notFullscreen cover"
+                src="https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w"
                 style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               />
             </div>
             <div
               class="makeStyles-imageBox-2"
-              id="hvcarousel4-Anakin4"
+              id="hvcarousel4-Landscape5"
             >
               <img
-                alt="hvcarousel4-Anakin4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
-                style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              />
-            </div>
-            <div
-              class="makeStyles-imageBox-2"
-              id="hvcarousel4-Ahsoka4"
-            >
-              <img
-                alt="hvcarousel4-Ahsoka4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
-                style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              />
-            </div>
-            <div
-              class="makeStyles-imageBox-2"
-              id="hvcarousel4-ObiWan4"
-            >
-              <img
-                alt="hvcarousel4-ObiWan4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
-                style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              />
-            </div>
-            <div
-              class="makeStyles-imageBox-2"
-              id="hvcarousel4-Mace4"
-            >
-              <img
-                alt="hvcarousel4-Mace4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
-                style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              />
-            </div>
-            <div
-              class="makeStyles-imageBox-2"
-              id="hvcarousel4-Yoda4"
-            >
-              <img
-                alt="hvcarousel4-Yoda4"
-                class="HvImageCarousel-selectedImage xs notFullscreen contain"
-                src="test-file-stub"
+                alt="hvcarousel4-Landscape5"
+                class="HvImageCarousel-selectedImage xs notFullscreen cover"
+                src="https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg"
                 style="opacity: 1; webkit-transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               />
             </div>
@@ -239,7 +195,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
                 class="HvTypography-root HvTypography-normalText"
                 style="color: white;"
               >
-                1/9
+                1/5
               </p>
             </span>
           </div>

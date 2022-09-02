@@ -10,13 +10,13 @@ import {
 
 import { HvImageCarousel } from "../..";
 
-import DarthVader from "./resources/DarthVader.jpg";
+import DarthVader from "./resources/DarthVader.png";
 import BobaFett from "./resources/BobaFett.jpg";
-import Revan from "./resources/Revan.jpg";
+import Revan from "./resources/Revan.png";
 import TheMandalorian from "./resources/TheMandalorian.jpg";
 import Anakin from "./resources/AnakinSkywalker.jpg";
 import Ahsoka from "./resources/Ahsoka.jpg";
-import ObiWan from "./resources/ObiWan.png";
+import ObiWan from "./resources/Obiwan.webp";
 import Mace from "./resources/MaceWindu.jpg";
 import Yoda from "./resources/Yoda.jpg";
 
@@ -128,22 +128,33 @@ export const LowCardinality = () => {
 
 export const ImageCarouselXS = () => {
   const images = [
-    { src: DarthVader, value: "DarthVader4" },
-    { src: BobaFett, value: "BobaFett4" },
-    { src: Revan, value: "Revan4" },
-    { src: TheMandalorian, value: "TheMandalorian4" },
-    { src: Anakin, value: "Anakin4" },
-    { src: Ahsoka, value: "Ahsoka4" },
-    { src: ObiWan, value: "ObiWan4" },
-    { src: Mace, value: "Mace4" },
-    { src: Yoda, value: "Yoda4" },
+    {
+      src: "https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg",
+      value: "Landscape1",
+    },
+    {
+      src: "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg?ixlib=rb-1.1.0&rect=273%2C0%2C2639%2C1379&q=45&auto=format&w=926&fit=clip",
+      value: "Landscape2",
+    },
+    {
+      src: "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
+      value: "Landscape3",
+    },
+    {
+      src: "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
+      value: "Landscape4",
+    },
+    {
+      src: "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
+      value: "Landscape5",
+    },
   ];
 
   return (
     <HvCard bgcolor="atmo1" style={{ width: 350 }}>
       <HvCardHeader title="Image Carousel" aria-label="Compressor" />
       <HvCardMedia>
-        <HvImageCarousel documents={images} xs counter infiniteCarousel />
+        <HvImageCarousel documents={images} xs counter infiniteCarousel variant="cover" />
       </HvCardMedia>
       <HvCardContent>
         <div style={{ paddingTop: "20px" }}>

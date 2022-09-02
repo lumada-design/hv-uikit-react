@@ -56,12 +56,12 @@ testingThemes.forEach(async (theme) => {
       await page.goto(
         "http://localhost:9001/iframe.html?id=lab-imagecarousel--image-carousel-xs&viewMode=story"
       );
-      await expect(page.locator("text=1/9")).toHaveCount(1);
-      await expect(page.locator("text=2/9")).toHaveCount(0);
+      await expect(page.locator("text=1/5")).toHaveCount(1);
+      await expect(page.locator("text=2/5")).toHaveCount(0);
       await page.locator(".HvImageCarousel-lowButtons").click();
       await page.locator('[aria-label="Forwards"]').click();
-      await expect(page.locator("text=1/9")).toHaveCount(0);
-      await expect(page.locator("text=2/9")).toHaveCount(1);
+      await expect(page.locator("text=1/5")).toHaveCount(0);
+      await expect(page.locator("text=2/5")).toHaveCount(1);
     });
   });
 });

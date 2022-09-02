@@ -70,7 +70,7 @@ describe("<HvImageCarousel>", () => {
     it("renders image carousel xs", () => {
       render(<ImageCarouselXS />);
       const images = screen.getAllByRole("img");
-      expect(images.length).toBe(10);
+      expect(images.length).toBe(6);
     });
   });
 
