@@ -15,6 +15,7 @@ const Chart = ({
   layout,
   config,
   tooltipType = "multiple",
+  tooltip,
   afterPlot,
   xAxisTitle,
   yAxisTitle,
@@ -89,7 +90,14 @@ const Chart = ({
 
   return (
     <>
-      {isHover && <Tooltip coordinates={coordinates} data={dataTooltip} useSingle={useSingle} />}
+      {isHover && (
+        <Tooltip
+          coordinates={coordinates}
+          data={dataTooltip}
+          useSingle={useSingle}
+          tooltip={tooltip}
+        />
+      )}
       <div id={id} className={classes.root}>
         <div onMouseMove={onMouseMove}>
           <Plot
@@ -135,6 +143,10 @@ Chart.propTypes = {
    * Defines if should use a single or multiline tooltip.
    */
   tooltipType: PropTypes.oneOf(["single", "multiple"]),
+  /**
+   * Custom tooltip element to be displayed
+   */
+  tooltip: PropTypes.func,
   /**
    * Function to be called after plot render.
    */
