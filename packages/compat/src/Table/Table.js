@@ -817,7 +817,7 @@ HvTable.propTypes = {
       headerText: PropTypes.string,
       accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
       format: PropTypes.func,
-      cellType: PropTypes.string,
+      cellType: PropTypes.oneOf(["numeric", "alpha-numeric", "link"]),
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
