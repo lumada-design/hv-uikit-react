@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@mui/material";
 
+import { HvTheme } from "@hitachivantara/uikit-react-core";
+
 import { HvStepNavigationProps } from "../StepNavigation";
 import { HvStepProps } from "./Step";
 
@@ -12,7 +14,7 @@ export type ComponentChildProps = {
   separatorValues: {
     minWidth: number;
     maxWidth: number;
-    getColor: (state: HvStepProps["state"]) => any;
+    getColor: (state: HvStepProps["state"], theme: HvTheme) => any;
     height: number;
   };
   stepValues: {

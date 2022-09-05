@@ -9,7 +9,7 @@ import { HvProvider, hvTheme } from "@hitachivantara/uikit-react-core";
 
 import { HvStepNavigation } from "../..";
 import { getColor } from "../DefaultNavigation/utils";
-import { defaultColor, disabledColor, dotSizes } from "../SimpleNavigation/utils";
+import { getColor as getColorForSimple, dotSizes } from "../SimpleNavigation/utils";
 import { SEPARATOR_WIDTH, TITLE_WIDTH } from "../utils";
 
 const mockMedia = (breakpoint) => {
@@ -151,7 +151,7 @@ const testCenario = async (
   const getStateColor = (state) =>
     ({
       Default: getColor(state, hvTheme),
-      Simple: state === "Disabled" ? disabledColor(hvTheme) : defaultColor(hvTheme),
+      Simple: getColorForSimple(state, hvTheme),
     }[type]);
 
   // test every step of each state (colors, titles)
