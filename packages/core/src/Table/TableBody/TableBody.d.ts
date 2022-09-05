@@ -12,7 +12,7 @@ export interface HvTableBodyProps
   /**
    * Sets whether or not there should be arrow navigation between the table rows
    */
-  withNavigation: boolean;
+  withNavigation?: boolean;
 }
 
 export default function HvTableBody(props: HvTableBodyProps): JSX.Element | null;
