@@ -7,9 +7,9 @@ export type HvStepClassKey = "root";
 export type HvStepProps = StandardProps<React.HTMLAttributes<HTMLDivElement>, HvStepClassKey> &
   Pick<HvButtonProps, "onClick"> & {
     /**
-     * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled"}
+     * State of the step. Values = {"Pending", "Failed", "Completed", "Current", "Disabled", "Enabled"}
      */
-    state: "Pending" | "Failed" | "Completed" | "Current" | "Disabled";
+    state: "Pending" | "Failed" | "Completed" | "Current" | "Disabled" | "Enabled";
     /**
      * Title of the step.
      */

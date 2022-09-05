@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useTheme } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 import HvStep from "./Step";
-import { getColor as getStateColor, stepSizes } from "./utils";
+import { getColor, stepSizes } from "./utils";
 import styles from "./styles";
 
 /**
@@ -19,8 +18,6 @@ const HvDefaultNavigation = ({
   children,
   ...other
 }) => {
-  const theme = useTheme();
-
   // step values
   const { container: maxSize, avatar: minSize } = stepSizes[stepSize];
   const StepComponent = HvStep;
@@ -30,7 +27,6 @@ const HvDefaultNavigation = ({
   const { width, titleWidth, separatorWidth } = getDynamicValues(stepsWidth);
 
   // separator values
-  const getColor = (state) => getStateColor(state === "Current" ? "Disabled" : state, theme);
   const maxWidth = Math.max(titleWidth - minSize, separatorWidth);
   const minWidth = Math.max(titleWidth - (maxSize + minSize) * 0.5, separatorWidth);
   //
