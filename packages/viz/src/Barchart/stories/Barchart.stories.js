@@ -1,7 +1,9 @@
 import { makeStyles, withStyles } from "@mui/styles";
 import { HvDropDownMenu, HvDropdown, HvTypography } from "@hitachivantara/uikit-react-core";
+import HvCustomTooltip from "./CustomTooltip";
 
 import { HvBarchart } from "../..";
+import mockData from "./CustomTooltip/mockData";
 
 export default {
   title: "Visualizations/Bar Chart",
@@ -250,4 +252,19 @@ StackedHorizontalBarchart.parameters = {
   docs: {
     description: { story: "Groups in stack mode." },
   },
+};
+
+export const CustomTooltip = () => {
+  return (
+    <HvBarchart
+      data={[
+        {
+          x: ["precision", "recall", "f1-score"],
+          y: [2300, 1000, 6700],
+          name: "Sales Target",
+        },
+      ]}
+      tooltip={(data) => <HvCustomTooltip data={data} customData={mockData} />}
+    />
+  );
 };
