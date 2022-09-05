@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import SingleTooltip from "./SingleTooltip";
@@ -11,7 +11,7 @@ const offset = 20;
  * Component responsible for deciding which tooltip should be use and to calculate
  * the exact position where it should be render.
  */
-const MainToolTip = ({ classes, coordinates, data, useSingle }) => {
+const MainToolTip = ({ classes, coordinates, data, useSingle, tooltip }) => {
   const { x, y } = coordinates;
   const [style, setStyle] = useState({ left: x, top: y, visibility: "hidden" });
   const ref = useRef(null);
@@ -28,11 +28,18 @@ const MainToolTip = ({ classes, coordinates, data, useSingle }) => {
     setStyle({ left: x - width / 2, top: y - height - offset });
   }, [x, y]);
 
+  const renderTooltip = useCallback(
+    (CustomTooltip) => {
+      if (CustomTooltip) return CustomTooltip(data);
+      if (useSingle) return <SingleTooltip title={data.title} value={data.elements[0].value} />;
+      return <MultipleTooltip data={data} />;
+    },
+    [data, useSingle]
+  );
+
   return (
     <div ref={ref} className={classes.root} style={style}>
-      {(useSingle && <SingleTooltip title={data.title} value={data.elements[0].value} />) || (
-        <MultipleTooltip data={data} />
-      )}
+      {renderTooltip(tooltip)}
     </div>
   );
 };
@@ -92,6 +99,10 @@ MainToolTip.propTypes = {
    * Defines if should use a single or multiline tooltip.
    */
   useSingle: PropTypes.bool,
+  /**
+   * Custom tooltip element to be displayed
+   */
+  tooltip: PropTypes.func,
 };
 
 MainToolTip.defaultProps = {

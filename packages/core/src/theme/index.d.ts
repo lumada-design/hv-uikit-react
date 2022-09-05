@@ -139,8 +139,9 @@ export interface HvTheme {
   type: string;
   name: string;
   palette: HvThemePalette;
-  typography: HvThemeTypography;
+  shadows: string[];
   spacing: HvThemeSpacing;
+  typography: HvThemeTypography;
   viz: HvThemeVizPalette;
 }
 
