@@ -1,20 +1,12 @@
 import { StandardProps } from "@mui/material";
+import { HvTableInstance } from "../Table";
 
 export type HvControlsClassKey = "root" | "rightSection" | "leftSection";
 
-export interface HvControlsSortValue {
-  id: string;
-  desc: string;
-}
 export interface HvControlsViewConfiguration extends Record<string, unknown> {
   id: string;
   label: string;
   icon: React.ReactNode;
-}
-
-export interface HvControlsCallbacks extends Record<string, unknown> {
-  setSortBy?: (v: HvControlsSortValue[]) => void;
-  setGlobalFilter?: (v: string) => void;
 }
 
 export interface HvControlsProps
@@ -29,7 +21,7 @@ export interface HvControlsProps
    * An instance of useHvTable or useTable used to manage the data
    * if this is not provided data sorting and search must be handled externally
    */
-  callbacks?: HvControlsCallbacks;
+  callbacks?: Pick<HvTableInstance, "setSortBy" | "setGlobalFilter">;
   /**
    * Views configuration required for the view buttons
    */

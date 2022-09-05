@@ -5,9 +5,17 @@ export type HvChartClassKey = "root";
 
 export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey> {
   /**
+   * An Id passed on to the component
+   */
+  id?: string;
+  /**
    * Defines if should use a single or multiline tooltip.
    */
   tooltipType?: "single" | "multiple";
+  /**
+   * Custom tooltip element to be displayed
+   */
+  tooltip?: React.ReactNode;
   /**
    * Defines the X axis title.
    */

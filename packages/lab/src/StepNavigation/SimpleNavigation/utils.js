@@ -6,7 +6,10 @@ const dotSizes = {
   XL: 16,
 };
 
-const defaultColor = (theme) => theme?.hv?.palette?.accent?.acce1;
-const disabledColor = (theme) => theme?.hv?.palette?.atmosphere?.atmo5;
+const defaultColor = (theme) => theme?.hv?.palette?.accent?.acce1 ?? "acce1";
+const disabledColor = (theme) => theme?.hv?.palette?.atmosphere?.atmo5 ?? "atmo5";
 
-export { dotSizes, defaultColor, disabledColor };
+const getColor = (state, theme) =>
+  state === "Disabled" ? disabledColor(theme) : defaultColor(theme);
+
+export { dotSizes, getColor };

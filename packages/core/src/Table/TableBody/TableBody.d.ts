@@ -9,6 +9,10 @@ export interface HvTableBodyProps
    * Defaults to `thead`.
    */
   component?: React.ElementType<React.HTMLAttributes<HTMLElement>>;
+  /**
+   * Sets whether or not there should be arrow navigation between the table rows
+   */
+  withNavigation?: boolean;
 }
 
 export default function HvTableBody(props: HvTableBodyProps): JSX.Element | null;
