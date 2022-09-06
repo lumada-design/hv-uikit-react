@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@3.1.23...@hitachivantara/uikit-react-viz@3.2.0) (2022-09-06)
+
+
+### Features
+
+* **chart:** add custom tooltips to charts. MLAAS-1523 ([#2918](https://github.com/lumada-design/hv-uikit-react/issues/2918)) ([8e5c86a](https://github.com/lumada-design/hv-uikit-react/commit/8e5c86af6b6819163602bc4364adc1a06fd5dd44))
+
+
+
+
+
 ## [3.1.23](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@3.1.22...@hitachivantara/uikit-react-viz@3.1.23) (2022-09-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

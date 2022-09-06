@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.56.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.56.0...@hitachivantara/uikit-react-lab@3.56.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* **table:** fixed HvTable and HvTableBody type definition properties ([#2920](https://github.com/lumada-design/hv-uikit-react/issues/2920)) ([2459ecd](https://github.com/lumada-design/hv-uikit-react/commit/2459ecd17af5499cd645d24a16a1eedb793f5765))
+
+
+
+
+
 # [3.56.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@3.55.1...@hitachivantara/uikit-react-lab@3.56.0) (2022-09-01)
 
 

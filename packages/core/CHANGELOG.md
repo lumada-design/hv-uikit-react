@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.75.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.74.2...@hitachivantara/uikit-react-core@3.75.0) (2022-09-06)
+
+
+### Bug Fixes
+
+* **table:** fixed HvTable and HvTableBody type definition properties ([#2920](https://github.com/lumada-design/hv-uikit-react/issues/2920)) ([2459ecd](https://github.com/lumada-design/hv-uikit-react/commit/2459ecd17af5499cd645d24a16a1eedb793f5765))
+
+
+### Features
+
+* **chart:** add custom tooltips to charts. MLAAS-1523 ([#2918](https://github.com/lumada-design/hv-uikit-react/issues/2918)) ([8e5c86a](https://github.com/lumada-design/hv-uikit-react/commit/8e5c86af6b6819163602bc4364adc1a06fd5dd44))
+
+
+
+
+
 ## [3.74.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@3.74.1...@hitachivantara/uikit-react-core@3.74.2) (2022-09-01)
 
 
