@@ -3,6 +3,17 @@ import { HvPlotProps } from "./Plot";
 
 export type HvChartClassKey = "root";
 
+export type TooltipElementObject = {
+  color: string;
+  name: string;
+  value: number | string;
+};
+
+export type TooltipDataObject = {
+  title: string;
+  elements: TooltipElementObject[];
+};
+
 export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey> {
   /**
    * An Id passed on to the component
@@ -15,7 +26,7 @@ export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey
   /**
    * Custom tooltip element to be displayed
    */
-  tooltip?: React.ReactNode;
+  tooltip?: (data: TooltipDataObject) => Element;
   /**
    * Defines the X axis title.
    */
