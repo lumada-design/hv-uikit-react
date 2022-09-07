@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { HvLoading } from "@hitachivantara/uikit-react-core";
-import { makeStyles, alpha, hexToRgb } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
+import { hexToRgb, alpha } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   loading: {

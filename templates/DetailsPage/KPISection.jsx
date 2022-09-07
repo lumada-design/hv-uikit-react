@@ -8,7 +8,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import Kpi from "./Kpi";
 import styles from "./styles";
 

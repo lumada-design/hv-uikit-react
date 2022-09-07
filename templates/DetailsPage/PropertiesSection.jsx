@@ -9,7 +9,7 @@ import {
   HvCardContent,
   HvCardHeader,
 } from "@hitachivantara/uikit-react-core";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const PropertiesSection = ({ classes }) => {

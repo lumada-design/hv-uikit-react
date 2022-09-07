@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HvGrid, HvTable, HvTypography } from "@hitachivantara/uikit-react-core";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const TableSection = ({ classes }) => {

@@ -7,7 +7,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Top, Bottom } from "@hitachivantara/uikit-react-icons";
-import { useTheme, withStyles } from "@material-ui/core";
+import { useTheme, withStyles } from "@mui/styles";
 import styles from "./styles";
 
 const Kpi = ({ title, count, diff, classes }) => {

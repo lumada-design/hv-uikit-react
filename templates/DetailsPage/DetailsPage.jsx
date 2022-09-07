@@ -5,7 +5,7 @@ import {
   HvGrid,
 } from "@hitachivantara/uikit-react-core";
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from "@mui/styles";
 import KPISection from "./KPISection";
 import TableSection from "./TableSection";
 import PropertiesSection from "./PropertiesSection";
