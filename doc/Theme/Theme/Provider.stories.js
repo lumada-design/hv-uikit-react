@@ -9,7 +9,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import componentDefinitions from "../../Concepts/versions";
+import componentDefinitions from "../versions";
 
 const HvButtonWithMargin = withStyles({
   root: {
@@ -18,7 +18,7 @@ const HvButtonWithMargin = withStyles({
 })(HvButton);
 
 export default {
-  title: "Theming/Provider",
+  title: "Theme/Provider",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvProvider } from '@hitachivantara/uikit-react-core'",
@@ -29,14 +29,10 @@ export default {
 
 export const Main = () => (
   <>
-    <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }} disableCssBaseline>
+    <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
       <HvButtonWithMargin category="secondary">Dawn</HvButtonWithMargin>
     </HvProvider>
-    <HvProvider
-      uiKitTheme="wicked"
-      generateClassNameOptions={{ seed: "wicked" }}
-      disableCssBaseline
-    >
+    <HvProvider uiKitTheme="wicked" generateClassNameOptions={{ seed: "wicked" }}>
       <HvButtonWithMargin category="secondary">Wicked</HvButtonWithMargin>
     </HvProvider>
   </>
@@ -56,13 +52,13 @@ export const Locale = () => {
 
   return (
     <>
-      <HvProvider generateClassNameOptions={{ seed: "default" }} disableCssBaseline>
+      <HvProvider generateClassNameOptions={{ seed: "default" }}>
         <ShowLocale />
       </HvProvider>
-      <HvProvider locale="fr-FR" generateClassNameOptions={{ seed: "fr-FR" }} disableCssBaseline>
+      <HvProvider locale="fr-FR" generateClassNameOptions={{ seed: "fr-FR" }}>
         <ShowLocale />
       </HvProvider>
-      <HvProvider locale="it-IT" generateClassNameOptions={{ seed: "it-IT" }} disableCssBaseline>
+      <HvProvider locale="it-IT" generateClassNameOptions={{ seed: "it-IT" }}>
         <ShowLocale />
       </HvProvider>
     </>

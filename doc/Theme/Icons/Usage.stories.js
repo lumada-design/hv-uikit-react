@@ -14,7 +14,7 @@ import HvIconBase from "@hitachivantara/uikit-react-icons/IconBase";
 import componentDefinitions from "../versions";
 
 export default {
-  title: "Theming/Icons/Usage",
+  title: "Theme/Icons/Usage",
   parameters: {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",

@@ -8,16 +8,16 @@ import SpacingUsage from "./SpacingUsage";
 import ThemePreviewMix from "./ThemePreviewMix";
 
 import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
-import componentDefinitions from "../../Concepts/versions";
+import componentDefinitions from "../../Theme/versions";
 
 <Meta
-  title="Theming/Theme"
+  title="Theme/Theming"
   parameters={{
     dsVersion: componentDefinitions.dsVersion.v3,
   }}
 />
 
-# Theme
+# Theming
 
 <MaturityStatus />
 
@@ -25,7 +25,7 @@ The UI Kit components provides the two Design System themes: **Dawn** and **Wick
 
 <Story name="Main">
   <div style={{ display: "flex", flexWrap: "wrap" }}>
-    <HvProvider uikitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }} disableCssBaseline>
+    <HvProvider uikitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
       <HvScopedCssBaseline>
         <ThemePreviewMix />
       </HvScopedCssBaseline>
@@ -33,7 +33,6 @@ The UI Kit components provides the two Design System themes: **Dawn** and **Wick
     <HvProvider
       uiKitTheme="wicked"
       generateClassNameOptions={{ seed: "wicked" }}
-      disableCssBaseline
     >
       <HvScopedCssBaseline>
         <ThemePreviewMix />
@@ -43,7 +42,7 @@ The UI Kit components provides the two Design System themes: **Dawn** and **Wick
 </Story>
 
 The active theme is configured through the `HvProvider`'s `uiKitTheme` property and defaults to the **Dawn** theme.
-Check <LinkTo kind="Theming/Provider" story="Main" className="sbdocs-a">the Provider's API documentation</LinkTo> for more details.
+Check <LinkTo kind="Theme/Provider" story="Main" className="sbdocs-a">the Provider's API documentation</LinkTo> for more details.
 
 ## Custom themes
 
@@ -390,7 +389,6 @@ export const myCustomTheme = createTheme(myRawCustomTheme);
     uikitTheme="dawn"
     theme={myCustomTheme}
     generateClassNameOptions={{ seed: "custom" }}
-    disableCssBaseline
   >
     <ThemePreviewMix />
   </HvProvider>

@@ -12,24 +12,22 @@ import uikit_diagram from "../assets/uikit_diagram.png";
 
 # The UI Kit initiative
 
-The **UI Kit initiative** is a collaboration with the Engineering group and the Design System team, that produces a world class **User Interface framework** for a rewarding, coherent and inclusive User Experience throughout the Hitachi portfolio.
+The **UI Kit initiative** is a collaboration between the **Engineering** group and the **Design System** team.
 
-As a part of the Product Design group, the **Design System** team is responsible for collaborating with Product teams, in order to define and curate **reference Design patterns**, **guidelines**, and **methodologies**, producing **reusable patterns** that will reduce design and implementation effort, and stands as a catalyser for design alignment and governance across the organisation. This will generate a unique and characteristic **Design Language**, capable of positioning Hitachi as a worldwide design reference.
+As a part of the **Product Design** group, the **Design System** team is responsible, collaborating with **Product** teams, to define and curate **reference Design patterns**, **guidelines** and **methodologies**, producing **reusable patterns** that will reduce design and implementation effort and will generate a unique, coherent and inclusive **[Design System](https://designsystem.hitachivantara.com/)**.
 
-The **UI Kit** applies those standards, creating and providing to the front-end developers & engineers a collection of **reusable React components** to build their applications, that guarantees the alignment with the Design System specifications. It will enable developers to use a consistent markup, styles, and behavior, both in prototype and production work.
+The **UI Kit** provides a collection of **reusable React components**, that guarantees the alignment with the Design System specifications, and stands as a catalyser for a consistent overall User Experience across Hitachi Vantara portfolio.​
 
-Here's a diagram of where the UI Kit sits regarding the Design System, Design Delivery and Engineering teams:
+<div style={{ textAlign: "center", padding: "20px 0" }}>
+  <img src={uikit_diagram} alt="UI Kit organization" />
+</div>
 
-<img src={uikit_diagram} alt="UI Kit organization" />
-
-### The UI Kit structure
-
-The UI Kit can be used via the following **six packages**:
+## UI Kit Packages
 
 <ul>
   <li>
     <b>Themes</b> - v{themesPackage.version} - Theme specifications according to the Design System
-    Style guides, which include Colors, Typography definitions and Spacings for the Grid elements.
+    Style guides, which include Colors, Typography definitions and Spacings.
   </li>
   <li>
     <b>Icons</b> - v{iconsPackage.version} - The icon library provided by the Design System team,
@@ -40,8 +38,8 @@ The UI Kit can be used via the following **six packages**:
     <b>fully compliant</b> with Design system guidelines and UI Kit best practices reside.
   </li>
   <li>
-    <b>Lab</b> - v{labPackage.version} - React components <b>contributed by external teams</b> for
-    specific use cases and <b>not fully compliant</b> with the Design System guidelines.
+    <b>Lab</b> - v{labPackage.version} - React components <b>not fully compliant</b> with the Design
+    System guidelines or <b>contributed by external teams</b> for specific use cases.
   </li>
   <li>
     <b>Code Editor</b> - v{codeEditor.version} - A wrapper to the <b>React Monaco editor</b>{" "}
@@ -49,10 +47,9 @@ The UI Kit can be used via the following **six packages**:
     Design System Style guidelines.
   </li>
   <li>
-    <b>Compat</b> - v{compatPackage.version} - A compatibilituy package where components that are
+    <b>Compat</b> - v{compatPackage.version} - A compatibility package where components that are
     being removed from the library temporarily reside to allow the teams that are using them to plan
-    their substitution. Not for all components but those that might require more time to be replaced
-    and would cause more disruption to the teams' work.
+    their substitution. 
   </li>
 </ul>
 
@@ -64,19 +61,17 @@ While the UI Kit is a component library, we also provide Widgets and Templates. 
 
 <ul>
   <li>
-    <b>Components:</b> UI Kit components are the building blocks for creating your apps. They
-    correspond (in most cases) to Design System patterns.
+    <b>Components:</b> UI Kit building blocks for creating your apps.
   </li>
   <li>
-    <b>Widgets:</b> UI Kit widgets usually correspond to Design System patters but sit a level above
-    the components. A pattern might result in an infinity of possible configurations for the
+    <b>Widgets:</b> A Pattern might result in an infinity of possible configurations for a
     component. So much so that it would be impractical to develop a component that contemplated all
-    the possibilities. That's where widgets come in: we provide a set of widgets that the teams can
-    copy to their project and adapt as per their requirements.
+    the possibilities. That's where widgets come in: we provide a set of widgets that addresses specif use cases, but users can
+    copy them and adapt as per their requirements.
   </li>
   <li>
-    <b>Templates:</b> UI Kit provides a list of templates with common use cases found along Hitachi
-    Vantara's portfolio to help teams accelerate development of their apps. You can find a list of
+    <b>Templates:</b> UI Kit provides a set of templates with common use cases found along Hitachi
+    Vantara's portfolio to help teams accelerate the development of their apps. You can find a list of
     templates{" "}
     <a
       href="https://lumada-design.github.io/uikit/master/?path=/docs/templates-overview--page"
@@ -90,7 +85,7 @@ While the UI Kit is a component library, we also provide Widgets and Templates. 
 
 ## Accessibility
 
-The **UI kit** follows the two most commonly encountered conformance guidelines for accessibility. They are:
+The **UI kit** follows the two most commonly conformance guidelines for accessibility. They are:
 
 <ul>
   <li>

@@ -13,7 +13,7 @@ HV UI Kit is composed of multiple mostly independent npm packages. You can insta
 Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
 
 ```shell
-npm install @hitachivantara/uikit-react-core @mui/material
+npm install @hitachivantara/uikit-react-core @mui/material @mui/styles
 ```
 
 ### Other packages available
@@ -29,6 +29,7 @@ Also available:
 - code-editor - `npm install @hitachivantara/uikit-react-code-editor`
 - icons - `npm install @hitachivantara/uikit-react-icons`
 - themes - `npm install @hitachivantara/uikit-common-themes`
+- compat - `npm install @hitachivantara/uikit-react-compat`
 
 The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitachivantara/uikit-react-core` and the `@hitachivantara/uikit-common-themes` shouldn't be necessary out of a very specific use case.
 
@@ -54,7 +55,7 @@ function App({ children }) {
 ```
 
 Optionally, you can configure the active theme and locale, among others.
-Check <LinkTo kind="Foundation/Provider" story="Main" className="sbdocs sbdocs-a">the Provider's API documentation</LinkTo> for further details.
+Check <LinkTo kind="Theme/Provider" story="Main" className="sbdocs sbdocs-a">the Provider's API documentation</LinkTo> for further details.
 
 2. Now you can start using components:
 
@@ -66,5 +67,5 @@ function Example() {
 }
 ```
 
-3. For a fully functioning setup, you'll also need to setup a <LinkTo kind="Foundation/CSS Baseline" story="Page" className="sbdocs sbdocs-a">CSS Baseline</LinkTo>
-   and ensure <LinkTo kind="Foundation/Typography" story="Description" className="sbdocs sbdocs-a">the loading of the Open Sans font</LinkTo>.
+3. For a fully functioning setup, you'll also need to setup a <LinkTo kind="Theme/CSS Baseline" story="Page" className="sbdocs sbdocs-a">CSS Baseline</LinkTo>
+   and ensure <LinkTo kind="Theme/Typography" story="Description" className="sbdocs sbdocs-a">the loading of the Open Sans font</LinkTo>.

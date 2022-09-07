@@ -3,7 +3,7 @@ import LinkTo from "@storybook/addon-links/react";
 import { HvAvatar } from "@hitachivantara/uikit-react-core";
 import { Caution } from "@hitachivantara/uikit-react-icons";
 
-<Meta title="Theming/CSS Baseline" />
+<Meta title="Theme/CSS Baseline" />
 
 # CSS Baseline
 
@@ -14,27 +14,14 @@ including on `*::before` and `*::after` pseudo-elements, ensuring that the decla
 is never exceeded due to padding or border. Without it the layout of UI Kit elements might be broken.
 
 Also, the `font-family` should be set to use the Open Sans font. The font must be loaded by the application.
-See the <LinkTo kind="Foundation/Typography" story="Description" className="sbdocs sbdocs-a">Typography page</LinkTo> for more details.
+See the <LinkTo kind="Theme/Typography" story="Description" className="sbdocs sbdocs-a">Typography page</LinkTo> for more details.
 
-These base styles can be provided by the application or by using one of components UI Kit provides, described below.
-
-<div style={{ float: "left" }}>
-  <Caution
-    iconSize="M"
-    color="supp4"
-    style={{ display: "inline-block", textAlign: "center", verticalAlign: "top" }}
-  />
-</div>
-
-Currently the `HvProvider` automatically setups the CSS baseline globally, using the
-`HvCssBaseline` component. <strong>This will change in a future major version</strong>.
-You can disable the automatic setup by setting the `disableCssBaseline` prop in the `HvProvider` component.
-
-<span style={{ clear: "both" }}></span>
+The base styles can be provided by the application or by using one of components UI Kit provides:
 
 ## Applying the styles globally
 
-This component applies the baseline styles to the whole application, by targeting the `<html>` and `<body>` elements.
+By default the baseline styles are applied globally to the application.
+It will use the `HvCssBaseline` component and will target the `<html>` and `<body>` elements.
 
 ```jsx
 import * as React from "react";
@@ -42,7 +29,7 @@ import { HvProvider, HvCssBaseline } from "@hitachivantara/uikit-react-core";
 
 export default function MyApp() {
   return (
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="global">
       <HvCssBaseline />
       {/* The rest of your application */}
     </HvProvider>
@@ -63,7 +50,7 @@ import { HvProvider, HvScopedCssBaseline } from "@hitachivantara/uikit-react-cor
 
 export default function MyApp() {
   return (
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="scoped">
       <HvScopedCssBaseline>
         {/* The part of your application where the baseline applies */}
       </HvScopedCssBaseline>
