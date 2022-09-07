@@ -10,7 +10,7 @@ import { HvButton, HvProvider, HvSnackbar, HvSnackbarContent } from "../..";
 
 describe("Snackbar ", () => {
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline={false}>
       <HvSnackbar id="Snackbar" />
     </HvProvider>
   );
@@ -35,7 +35,7 @@ describe("Snackbar ", () => {
 
   it("should render the SnackbarComponent component as the Snackbar is open", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open transitionDirection="right" />
       </HvProvider>
     ).find(HvSnackbarContent);
@@ -44,7 +44,7 @@ describe("Snackbar ", () => {
 
   it("shouldn't render icon when default", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open showIcon transitionDirection="up" />
       </HvProvider>
     )
@@ -56,7 +56,7 @@ describe("Snackbar ", () => {
 
   it("shouldn't render the success icon", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open variant="success" showIcon={false} transitionDirection="down" />
       </HvProvider>
     )
@@ -68,7 +68,7 @@ describe("Snackbar ", () => {
 
   it("should render the success icon", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open variant="success" showIcon />
       </HvProvider>
     )
@@ -80,7 +80,7 @@ describe("Snackbar ", () => {
 
   it("should render the error icon", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open variant="error" showIcon />
       </HvProvider>
     )
@@ -92,7 +92,7 @@ describe("Snackbar ", () => {
 
   it("should render the custom icon", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open customIcon={<Add />} />
       </HvProvider>
     )
@@ -104,7 +104,7 @@ describe("Snackbar ", () => {
 
   it("should render the action when a component is passed", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open variant="success" action={<a href=" ">Event</a>} />
       </HvProvider>
     )
@@ -117,7 +117,7 @@ describe("Snackbar ", () => {
   it("should render with the correct offset", () => {
     const offset = 10;
     let component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar open offset={offset} />
       </HvProvider>
     ).find(MaterialSnackbar);
@@ -125,7 +125,7 @@ describe("Snackbar ", () => {
     expect(component.get(0).props.style).toEqual({ top: `${offset}px` });
 
     component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar
           open
           offset={offset}
@@ -142,7 +142,7 @@ describe("Snackbar ", () => {
 
   it("should render the action when a structure is passed", () => {
     const component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvSnackbar
           id="Snackbar"
           open

@@ -10,7 +10,7 @@ describe("Group withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Group>
           <div />
         </Group>
@@ -28,7 +28,7 @@ describe("Group withStyles", () => {
 
   it("should render the label", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Group id="test" label="hello">
           <div />
         </Group>

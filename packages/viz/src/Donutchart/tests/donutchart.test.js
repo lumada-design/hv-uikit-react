@@ -20,7 +20,7 @@ const data = [
 describe("Donuchart", () => {
   describe("Regular", () => {
     const wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Main />
       </HvProvider>
     );
@@ -55,7 +55,7 @@ describe("Donuchart", () => {
 
   describe("Thin", () => {
     const wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <DonutChartThin />
       </HvProvider>
     );

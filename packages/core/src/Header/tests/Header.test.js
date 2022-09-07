@@ -9,7 +9,7 @@ describe("Header", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Main />
       </HvProvider>
     );
@@ -18,7 +18,7 @@ describe("Header", () => {
   });
   it("should be able to render the header with links", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HeaderLink />
       </HvProvider>
     );

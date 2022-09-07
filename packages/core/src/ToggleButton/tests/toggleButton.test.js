@@ -10,7 +10,7 @@ let wrapper;
 
 describe("ToggleButton", () => {
   wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline={false}>
       <Main />
     </HvProvider>
   );
@@ -37,7 +37,7 @@ describe("ToggleButton", () => {
     const onClickMock = jest.fn(() => "mock");
 
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvToggleButton
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}

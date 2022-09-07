@@ -22,7 +22,7 @@ describe("Linechart", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Main />
       </HvProvider>
     );
@@ -38,7 +38,7 @@ describe("Linechart", () => {
 
   it("should render the Linechart", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvLinechart data={data} layout={layout} />
       </HvProvider>
     );

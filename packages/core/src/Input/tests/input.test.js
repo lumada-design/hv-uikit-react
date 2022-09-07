@@ -25,7 +25,7 @@ describe("Input", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvInput />
       </HvProvider>
     );
@@ -46,7 +46,7 @@ describe("Input", () => {
 
   it("should disable the Input component", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvInput disabled />
       </HvProvider>
     );
@@ -58,7 +58,7 @@ describe("Input", () => {
 
   it("should pass other props to the child input component", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvInput
           inputProps={{
             maxLength: 250,
@@ -71,7 +71,7 @@ describe("Input", () => {
 
   it("should show the custom map icon", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvInput labels={labels} endAdornment={<Map />} />
       </HvProvider>
     );

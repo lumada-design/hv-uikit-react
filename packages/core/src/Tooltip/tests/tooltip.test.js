@@ -28,7 +28,7 @@ describe("Single Line Tooltip", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvTooltip title={<HvTypography variant="highlightText">Grid View</HvTypography>}>
           {Anchor}
         </HvTooltip>
@@ -66,7 +66,7 @@ describe("Multi Line Tooltip - No Header", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
         </HvTooltip>
@@ -103,7 +103,7 @@ describe("Multi Line Tooltip - With Header", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvTooltip title={title} useSingle={false}>
           {Anchor}
         </HvTooltip>

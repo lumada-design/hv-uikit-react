@@ -5,7 +5,7 @@ import { HvActionBar, HvProvider } from "../..";
 
 describe("Action Bar", () => {
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline={false}>
       <Main />
     </HvProvider>
   );

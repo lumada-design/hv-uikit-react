@@ -12,7 +12,7 @@ describe("Label", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvLabel label="description" />
       </HvProvider>
     );

@@ -9,7 +9,7 @@ import { HvProvider, HvButton } from "../..";
 describe("HvProvider", () => {
   it("should generate global classnames by default", () => {
     const { getByRole } = render(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -25,7 +25,7 @@ describe("HvProvider", () => {
     mockGenerateClassName.mockReturnValue("SameClassName");
 
     const { getByRole } = render(
-      <HvProvider disableCssBaseline generateClassName={mockGenerateClassName}>
+      <HvProvider cssBaseline={false} generateClassName={mockGenerateClassName}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -38,7 +38,7 @@ describe("HvProvider", () => {
 
   it("should use a seed", () => {
     const { getByRole } = render(
-      <HvProvider disableCssBaseline generateClassNameOptions={{ seed: "test" }}>
+      <HvProvider cssBaseline={false} generateClassNameOptions={{ seed: "test" }}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -50,7 +50,7 @@ describe("HvProvider", () => {
 
   it("should disable global classnames", () => {
     const { getByRole } = render(
-      <HvProvider disableCssBaseline generateClassNameOptions={{ disableGlobal: true }}>
+      <HvProvider cssBaseline={false} generateClassNameOptions={{ disableGlobal: true }}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
@@ -66,7 +66,7 @@ describe("HvProvider", () => {
   it("should disable global classnames and use a seed", () => {
     const { getByRole } = render(
       <HvProvider
-        disableCssBaseline
+        cssBaseline={false}
         generateClassNameOptions={{ seed: "test", disableGlobal: true }}
       >
         <HvButton>Hello</HvButton>
@@ -83,13 +83,13 @@ describe("HvProvider", () => {
 
   it("should disable classnames generation", () => {
     render(
-      <HvProvider disableCssBaseline disableStylesGeneration>
+      <HvProvider cssBaseline={false} disableStylesGeneration>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );
 
     const { getAllByRole } = render(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvButton>Hello</HvButton>
       </HvProvider>
     );

@@ -12,7 +12,7 @@ describe("Adornment", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <HvAdornment icon={<CloseXS />} />
       </HvProvider>
     );

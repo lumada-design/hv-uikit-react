@@ -7,7 +7,7 @@ import { Main } from "../stories/CardView.stories";
 
 describe("CardView", () => {
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline={false}>
       <Main />
     </HvProvider>
   );

@@ -12,7 +12,7 @@ describe("MenuItem withStyles", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <SelectionContext.Provider value={contextValue}>
           <MenuItem item={{ id: "someId ", label: "someLabel" }} type="menubar" />
         </SelectionContext.Provider>

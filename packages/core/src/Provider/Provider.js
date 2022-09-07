@@ -13,11 +13,15 @@ import "focus-visible";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { StylesProvider } from "@mui/styles";
 import { StyledEngineProvider } from "@mui/material/styles";
-import { themeBuilder, createGenerateClassName, HvCssBaseline, getTheme } from "../theme";
+import {
+  themeBuilder,
+  createGenerateClassName,
+  HvCssBaseline,
+  getTheme,
+  HvScopedCssBaseline,
+} from "../theme";
 
 import ConfigContext from "./context";
-
-let warnedOnce = false;
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -76,28 +80,15 @@ const HvProvider = ({
 
   generateClassName: generateClassNameProp,
   generateClassNameOptions,
-  injectStylesFirst = true,
   disableStylesGeneration = false,
 
-  disableCssBaseline = false,
+  cssBaseline = "global",
 }) => {
-  if (process.env.NODE_ENV !== "production") {
-    if (!warnedOnce && !disableCssBaseline) {
-      warnedOnce = true;
-      // eslint-disable-next-line no-console
-      console.warn(
-        "UI Kit HvProvider's automatic definition of a css styles baseline will be removed in the next major version.\n" +
-          "You can use the `disableCssBaseline` property to disable it already.\n" +
-          "See https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main"
-      );
-    }
-  }
-
-  const [localeSetting, setLocaleStting] = useState(locale);
+  const [localeSetting, setLocaleSetting] = useState(locale);
 
   useEffect(() => {
     // ssr - only runs at the rendering phase, so it won't run on the server
-    setLocaleStting(locale || navigator?.language);
+    setLocaleSetting(locale || navigator?.language);
   }, [locale]);
 
   const rawUiKitTheme = getTheme(uiKitTheme);
@@ -111,14 +102,24 @@ const HvProvider = ({
     [changeTheme, localeSetting]
   );
 
+  const renderCssBaseline = () => {
+    if (cssBaseline === "global") {
+      return <HvCssBaseline />;
+    }
+    if (cssBaseline === "scoped") {
+      return <HvScopedCssBaseline />;
+    }
+    return null;
+  };
+
   return (
-    <StyledEngineProvider injectFirst={injectStylesFirst}>
+    <StyledEngineProvider injectFirst>
       <StylesProvider
         generateClassName={generateClassName}
         disableGeneration={disableStylesGeneration}
       >
         <ThemeProvider theme={customTheme}>
-          {!disableCssBaseline && <HvCssBaseline />}
+          {renderCssBaseline()}
           <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
         </ThemeProvider>
       </StylesProvider>
@@ -183,31 +184,17 @@ HvProvider.propTypes = {
     seed: PropTypes.string,
   }),
   /**
-   * Injects the generated stylesheets at the top of the `<head>` element of the page.
-   * This can ease the override of UI Kit components styles.
-   *
-   * By default, the styles are injected last in the `<head>` element of the page.
-   */
-  injectStylesFirst: PropTypes.bool,
-  /**
    * Disables the generation of the styles.
    */
   disableStylesGeneration: PropTypes.bool,
-
   /**
-   * Disables the generation of the baseline css styles.
+   * By default the baseline styles are applied globally to the application.
+   * If you need to scope the CSS to avoid styling conflicts, you can set this prop to `"scoped"`.
+   * If you are providing the baseline styles, you can set this prop to false.
    *
-   * This will be the default behavior in the future.
-   *
-   * The application using UI Kit should be responsible for adding the baseline css styles, by
-   * either using the `<HvCssBaseline />` component, using the `<HvScopedCssBaseline />` component,
-   * or ensuring that the necessary base styles are applied.
-   *
-   * Defaults to `false`. Will be removed in the next major release.
-   *
-   * @see https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main
+   * @see https://lumada-design.github.io/uikit/master/?path=/docs/theme-css-baseline--page
    */
-  disableCssBaseline: PropTypes.bool,
+  cssBaseline: PropTypes.oneOf(["global", "scoped", false]),
 };
 
 export default HvProvider;

@@ -9,7 +9,7 @@ const Content = <div id="test_div" />;
 
 const setupComponent = (props = {}) =>
   mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline={false}>
       <VerticalContainer id="test" {...props}>
         {Content}
       </VerticalContainer>
@@ -21,7 +21,7 @@ describe("VerticalContainer withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <VerticalContainer>{Content}</VerticalContainer>
       </HvProvider>
     );

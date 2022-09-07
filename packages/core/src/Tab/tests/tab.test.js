@@ -11,7 +11,7 @@ describe("Tab withStyles", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline={false}>
         <Tab label="Clickable Tab" />
       </HvProvider>
     );
