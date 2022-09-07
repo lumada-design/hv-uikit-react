@@ -107,23 +107,16 @@ Aligned with our stability strategy, there were no major breaking changes introd
 
 ### cssBaseline
 
-By default the baseline styles are **NOT** applied to the application anymore.  
-
-If you want the baseline to be applied to the whole application, set this prop to `global`.  
-
-```
-<HvProvider cssBaseline="global">
-  {/* The rest of your application */}
-</HvProvider>
-```
-
-If you want to scope the CSS to avoid styling conflicts, set this prop to `scoped`.
+The UI Kit components require a baseline of CSS styles to function properly. By default the baseline styles are applied globally to the application.  
+If you need to scope the CSS to avoid styling conflicts, you can set this prop to `scoped`.
 
 ```
 <HvProvider cssBaseline="scoped">
   {/* The rest of your application */}
 </HvProvider>
 ```
+
+If you are providing the baseline styles, you can set this prop to `false`.
 
 Check [CSS Baseline](http://localhost:9001/?path=/docs/theme-css-baseline--page) for more information.
 
