@@ -16,7 +16,7 @@ import {
 
 import ListView from "./ListView";
 import CardView from "./CardView";
-import { getColumns, makeData } from "./makedata";
+import { getColumns, makeData } from "./data";
 import { actions, views, idsToControl } from "./utils";
 
 const AssetInventory = () => {
@@ -66,6 +66,7 @@ const AssetInventory = () => {
             inputProps: { "aria-controls": `${idsToControl.cards} ${idsToControl.list}` },
           }}
         />
+
         <HvRightControl
           values={[
             { id: "nameAsc", accessor: "name", label: "Name Ascending", desc: false },
@@ -90,6 +91,7 @@ const AssetInventory = () => {
           }}
         />
       </HvControls>
+
       <HvBulkActions
         {...bulkActionProps}
         numTotal={data.length}
@@ -101,11 +103,13 @@ const AssetInventory = () => {
         actionsCallback={handleAction}
         checkboxProps={{ "aria-controls": `${idsToControl.cards} ${idsToControl.list}` }}
       />
+
       {currentView === "card" && <CardView instance={instance} />}
       {currentView === "list" && <ListView instance={instance} />}
-      {instance.page?.length ? (
+
+      {instance.page?.length && (
         <HvPagination {...instance.getHvPaginationProps()} pageSizeOptions={[8, 16, 32, 64]} />
-      ) : undefined}
+      )}
     </HvContainer>
   );
 };

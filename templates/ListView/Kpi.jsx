@@ -5,7 +5,7 @@ import { withStyles } from "@mui/styles";
 import { HvCard, HvTypography } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
 import styles from "./styles";
-import { getStatusIcon } from "./makedata";
+import { getStatusIcon } from "./data";
 import TrendIndicator from "./TrendIndicator";
 
 /**

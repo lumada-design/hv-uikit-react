@@ -10,7 +10,7 @@ import {
   HvTableCell,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns } from "./makedata";
+import { getColumns } from "./data";
 import { idsToControl } from "./utils";
 
 /**

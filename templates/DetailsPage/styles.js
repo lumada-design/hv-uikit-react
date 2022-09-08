@@ -1,39 +1,24 @@
 const styles = (theme) => ({
-  container: {
-    marginBottom: "20px",
-    padding: "20px",
-    outline: "none",
-  },
   section: {
-    marginTop: theme.hv.spacing.md,
-    paddingTop: theme.hv.spacing.xs,
-    paddingBottom: theme.hv.spacing.sm,
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    marginBottom: theme.hv.spacing.md,
   },
-  sectionItem: {
-    paddingLeft: "0",
-    paddingRight: "0",
-  },
-  sectionTitle: {
-    paddingBottom: "20px",
-  },
-  positionSticky: {
-    top: "7em",
+  scrollTo: {
+    marginBottom: theme.hv.spacing.md,
     justifyContent: "center",
   },
   titleRoot: {
     paddingBottom: 5,
   },
-  propertiesTitleRoot: {
+  headerRoot: {
     paddingLeft: 0,
     paddingRight: 0,
     paddingBottom: 5,
   },
-  propertiesContentRoot: {
+  cardContent: {
     paddingLeft: 0,
     paddingRight: 0,
   },
-  titleText: {
+  headerTitle: {
     ...theme.hv.typography.highlightText,
   },
   content: {

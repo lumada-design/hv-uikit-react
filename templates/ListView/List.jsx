@@ -11,7 +11,7 @@ import {
   HvTableBody,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns } from "./makedata";
+import { getColumns } from "./data";
 
 /**
  * The requests table.

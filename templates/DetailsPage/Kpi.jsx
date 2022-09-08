@@ -24,7 +24,7 @@ const Kpi = ({ title, count, diff, classes }) => {
         title={title}
         classes={{
           root: classes.titleRoot,
-          title: classes.titleText,
+          title: classes.headerTitle,
         }}
       />
       <HvCardContent className={classes.content}>
@@ -33,14 +33,14 @@ const Kpi = ({ title, count, diff, classes }) => {
           <>
             <Top color={hv.palette.semantic.sema1} className={classes.indicatorIcon} />
             <HvTypography variant="vizText">{`${diff.toFixed(2)}
-              more vs avg.`}</HvTypography>
+              more`}</HvTypography>
           </>
         )}
         {diff < 0 && (
           <>
             <Bottom color={hv.palette.semantic.sema3} className={classes.indicatorIcon} />
             <HvTypography variant="vizText">{`${Math.abs(diff).toFixed(2)}
-              less vs avg.`}</HvTypography>
+              less.`}</HvTypography>
           </>
         )}
       </HvCardContent>

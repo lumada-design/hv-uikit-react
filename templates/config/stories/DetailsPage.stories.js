@@ -1,5 +1,5 @@
 import React from "react";
-import DetailsPage from "../../DetailsPage/DetailsPage";
+import DetailsPage from "../../DetailsPage";
 
 export default {
   title: "Templates/Details Page",

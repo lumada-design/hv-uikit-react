@@ -16,8 +16,8 @@ testingThemes.forEach(async (theme) => {
       const properties = await page.locator('role=button[name="Properties"]');
       await properties.click();
 
-      const table = await page.locator('role=button[name="Table"]');
-      await table.click();
+      const events = await page.locator('role=button[name="Events"]');
+      await events.click();
     });
 
     test(`should alternate between sections keyboard`, async ({ page }) => {
@@ -27,8 +27,8 @@ testingThemes.forEach(async (theme) => {
       const properties = await page.locator('role=button[name="Properties"]');
       await properties.press("Enter");
 
-      const table = await page.locator('role=button[name="Table"]');
-      await table.press("Enter");
+      const events = await page.locator('role=button[name="Events"]');
+      await events.press("Enter");
     });
   });
 });

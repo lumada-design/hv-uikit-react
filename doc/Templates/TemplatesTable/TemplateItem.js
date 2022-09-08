@@ -20,7 +20,7 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
       }}
     >
       <HvCardHeader title={title} aria-label={title} />
-      <HvCardMedia component="img" alt={title} image={image} />
+      <HvCardMedia component="img" alt={title} image={image} style={{ padding: 10 }} />
       <HvActionBar>
         <HvButton
           category="secondary"

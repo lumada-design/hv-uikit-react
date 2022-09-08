@@ -1,8 +1,8 @@
 import React from "react";
-import KpisList from "../../KpisList/KpisList";
+import ListView from "../../ListView";
 
 export default {
-  title: "Templates/Kpis List",
+  title: "Templates/List View",
   parameters: {
     docs: {
       source: {
@@ -12,4 +12,4 @@ export default {
   },
 };
 
-export const Main = () => <KpisList />;
+export const Main = () => <ListView />;
