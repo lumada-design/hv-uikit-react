@@ -15,7 +15,7 @@ Having reached a point of stability and maturity we have approached v4 mostly as
 
 ## MUI 5 Migration
 
-We have been following [MUI](https://mui.com/) for a long time and using many of the solutions provided since day one. Our approach has always been to use what we find value and unlock the remaining features for our users. Following the same spirit we decided that it was important to upgrade to the latest MUI v5.
+We have been following [MUI](https://mui.com/) for a long time and using many of the solutions provided since day one. Our approach has always been to use what we find value and and enable access to the remaining features for our users. Continuing with this spirit we decided that it was important to upgrade to the latest MUI v5.
 
 - **Styling Solution** - This is our biggest coupling point with MUI today since we are leveraging entirely their [JSS styling system](https://mui.com/system/styles/basics/). For many reasons MUI 5 moved from [JSS to emotion](https://mui.com/blog/mui-core-v5/#migration-from-jss-to-emotion), but since we could keep using JSS, we thought it would be a perfect compromise for now, since it gives us the necessary time to do our own evaluation.
 
