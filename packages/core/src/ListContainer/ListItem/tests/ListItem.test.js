@@ -9,7 +9,7 @@ describe("ListItem", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvListItem />
       </HvProvider>
     );

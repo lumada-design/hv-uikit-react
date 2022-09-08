@@ -34,7 +34,7 @@ const files = [
 describe("FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <FileList
           list={files}
           removeFileButtonLabel="removeFileButtonLabel"

@@ -128,7 +128,7 @@ const testCenario = async (
 ) => {
   mockMedia(breakpoint);
   render(
-    <HvProvider cssBaseline={false}>
+    <HvProvider cssBaseline="none">
       <NavigationWithFeedback aria-label="test-component" {...componentProps} />
     </HvProvider>
   );

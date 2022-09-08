@@ -28,7 +28,7 @@ describe("<TreeView />", () => {
   describe("navigation tree", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider cssBaseline={false}>
+        <HvProvider cssBaseline="none">
           <TreeView selected="4" onChange={onChangeMock} mode="navigation">
             <TreeViewItem icon={<Play />} nodeId="1" label="System">
               <TreeViewItem nodeId="2" label="SCPodF">
@@ -65,7 +65,7 @@ describe("<TreeView />", () => {
   describe("treeview", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider cssBaseline={false}>
+        <HvProvider cssBaseline="none">
           <TreeView selected="4" onChange={onChangeMock}>
             <TreeViewItem icon={<Play />} nodeId="1" label="System">
               <TreeViewItem nodeId="2" label="SCPodF">

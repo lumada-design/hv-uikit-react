@@ -9,7 +9,7 @@ describe("Brand withStyles", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Brand name="test" />
       </HvProvider>
     );

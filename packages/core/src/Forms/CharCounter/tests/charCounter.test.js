@@ -12,7 +12,7 @@ describe("charCounter", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvCharCounter id="charCounter" currentCharQuantity={0} maxCharQuantity={1500} />
       </HvProvider>
     );
@@ -33,7 +33,7 @@ describe("charCounter", () => {
 
   it("should render the char counter component overloaded", () => {
     const wrapperOverloaded = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvCharCounter id="charCounter" currentCharQuantity={1600} maxCharQuantity={1500} />
       </HvProvider>
     );

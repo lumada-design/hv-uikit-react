@@ -9,7 +9,7 @@ describe("<Calendar /> with minimum configuration", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvCalendar id="calendar" locale="en-US" />
       </HvProvider>
     );
@@ -28,7 +28,7 @@ describe("<Calendar /> with configurations", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvCalendar
           id="default"
           value={selectedDate}

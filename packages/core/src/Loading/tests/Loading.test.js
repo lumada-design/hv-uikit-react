@@ -7,7 +7,7 @@ import { Main } from "../stories/Loading.stories";
 describe("Loading", () => {
   it("should show Loading ", () => {
     const wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );

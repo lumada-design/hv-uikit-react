@@ -6,7 +6,7 @@ import { render } from "@testing-library/react";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 // eslint-disable-next-line react/prop-types
-const AllTheProviders = ({ children }) => <HvProvider cssBaseline={false}>{children}</HvProvider>;
+const AllTheProviders = ({ children }) => <HvProvider cssBaseline="none">{children}</HvProvider>;
 
 const customRender = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
 

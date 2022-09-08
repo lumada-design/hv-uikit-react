@@ -10,7 +10,7 @@ describe("Label withStyles", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Label>Example</Label>
       </HvProvider>
     );

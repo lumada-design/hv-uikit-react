@@ -13,7 +13,7 @@ describe("Actions", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Actions>
           <Action label="Action 1" icon={<Play />} />
           <Action label="Action 2" />

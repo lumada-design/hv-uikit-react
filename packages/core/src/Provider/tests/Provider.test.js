@@ -21,7 +21,7 @@ describe("Provider", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider cssBaseline={false} theme={mockOverriden}>
+      <HvProvider cssBaseline="none" theme={mockOverriden}>
         Mock
       </HvProvider>
     );
@@ -32,7 +32,7 @@ describe("Provider", () => {
   });
 
   it("should render correctly", () => {
-    const mountedWrapper = mount(<HvProvider cssBaseline={false}> Mock </HvProvider>);
+    const mountedWrapper = mount(<HvProvider cssBaseline="none"> Mock </HvProvider>);
     expect(mountedWrapper).toMatchSnapshot();
   });
 
@@ -54,7 +54,7 @@ describe("Provider", () => {
   });
 
   it("should not override the hv-theme if there is no app theme defined", () => {
-    const wrapperNotOverriden = shallow(<HvProvider cssBaseline={false}> Mock </HvProvider>);
+    const wrapperNotOverriden = shallow(<HvProvider cssBaseline="none"> Mock </HvProvider>);
     const muiThemeProvider = wrapperNotOverriden.find(MuiThemeProvider);
     expect(muiThemeProvider.props().theme.typography.h1.fontSize).not.toEqual(
       mockOverriden.typography.h1.fontSize
@@ -67,7 +67,7 @@ describe("Provider with locale", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider cssBaseline={false} locale="en-UK">
+      <HvProvider cssBaseline="none" locale="en-UK">
         Mock
       </HvProvider>
     );
@@ -84,7 +84,7 @@ describe("Provider with locale", () => {
   });
 
   it("should apply en-US fallback, when locale is not configured", () => {
-    wrapper = shallow(<HvProvider cssBaseline={false}>Mock</HvProvider>);
+    wrapper = shallow(<HvProvider cssBaseline="none">Mock</HvProvider>);
     const provider = wrapper.find(ConfigContext.Provider);
     expect(provider.props().value.locale).toBeDefined();
     expect(provider.props().value.locale).toBe("en-US");
@@ -96,7 +96,7 @@ describe("Provider with locale", () => {
       return <div>{locale}</div>;
     };
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <MockComponent />
       </HvProvider>
     );
@@ -110,7 +110,7 @@ describe("Provider with locale", () => {
       return <div>{locale}</div>;
     };
     wrapper = mount(
-      <HvProvider cssBaseline={false} locale="fr_CA">
+      <HvProvider cssBaseline="none" locale="fr_CA">
         <MockComponent />
       </HvProvider>
     );

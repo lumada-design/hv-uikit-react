@@ -12,7 +12,7 @@ import {
 
 describe("Breadcrumb", () => {
   const wrapper = mount(
-    <HvProvider cssBaseline={false}>
+    <HvProvider cssBaseline="none">
       <Main />
     </HvProvider>
   );
@@ -37,7 +37,7 @@ describe("Breadcrumb", () => {
 
   it("should create a breadcrumb with submenu", () => {
     const existsDropdownMenu = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <LimitedToFivePaths />
       </HvProvider>
     ).exists("DropDownMenu");
@@ -47,7 +47,7 @@ describe("Breadcrumb", () => {
 
   it("should present always two paths", () => {
     const separatorList = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <LimitedToTwoPaths />
       </HvProvider>
     ).find(DropRightXS);
@@ -57,7 +57,7 @@ describe("Breadcrumb", () => {
 
   it("should create a breadcrumb with 4 pages from url", () => {
     const separatorList = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <WithURL />
       </HvProvider>
     ).find(DropRightXS);

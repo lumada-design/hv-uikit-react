@@ -2,7 +2,7 @@
 
 exports[`Provider should render correctly 1`] = `
 <HvProvider
-  cssBaseline={false}
+  cssBaseline="none"
 >
   <StyledEngineProvider
     injectFirst={true}

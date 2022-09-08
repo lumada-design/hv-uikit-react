@@ -8,7 +8,7 @@ import { Main } from "../stories/Tabs.stories";
 
 describe("Tabs", () => {
   const wrapper = mount(
-    <HvProvider cssBaseline={false}>
+    <HvProvider cssBaseline="none">
       <HvTabs />
     </HvProvider>
   );
@@ -20,7 +20,7 @@ describe("Tabs", () => {
 
 describe("Compose Tabs withStyles", () => {
   const wrapper = mount(
-    <HvProvider cssBaseline={false}>
+    <HvProvider cssBaseline="none">
       <Main />
     </HvProvider>
   );

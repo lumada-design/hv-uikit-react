@@ -28,7 +28,7 @@ const onClickCallback = jest.fn();
 
 const setupComponent = (props = {}) =>
   mount(
-    <HvProvider cssBaseline={false}>
+    <HvProvider cssBaseline="none">
       <FileUploader {...props} />
     </HvProvider>
   );

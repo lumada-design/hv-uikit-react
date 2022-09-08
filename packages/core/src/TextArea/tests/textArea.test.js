@@ -11,7 +11,7 @@ describe("TextArea", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );
@@ -27,7 +27,7 @@ describe("TextArea Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvTextArea rows={4} />
       </HvProvider>
     );
@@ -39,7 +39,7 @@ describe("TextArea Component", () => {
 
   it("should render the count label correctly", () => {
     const wrapperMount = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvTextArea rows={4} defaultValue="test" middleCountLabel="of" maxCharQuantity={10} />
       </HvProvider>
     );
@@ -49,7 +49,7 @@ describe("TextArea Component", () => {
 
   it("should render the count label correctly and show the warning", () => {
     const wrapperMount = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvTextArea rows={4} defaultValue="tests" middleCountLabel="of" maxCharQuantity={3} />
       </HvProvider>
     );
@@ -63,7 +63,7 @@ describe("TextArea Component", () => {
     expect(ref.current).toBe(null);
 
     mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvTextArea inputRef={ref} />
       </HvProvider>
     );

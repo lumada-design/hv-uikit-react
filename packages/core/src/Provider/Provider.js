@@ -194,7 +194,7 @@ HvProvider.propTypes = {
    *
    * @see https://lumada-design.github.io/uikit/master/?path=/docs/theme-css-baseline--page
    */
-  cssBaseline: PropTypes.oneOf(["global", "scoped", false]),
+  cssBaseline: PropTypes.oneOf(["global", "scoped", "none"]),
 };
 
 export default HvProvider;

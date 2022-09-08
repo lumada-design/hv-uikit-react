@@ -13,7 +13,7 @@ import UserPreferences, {
 } from "..";
 
 const setupComponent = (
-  <HvProvider cssBaseline={false}>
+  <HvProvider cssBaseline="none">
     <Main />
   </HvProvider>
 );

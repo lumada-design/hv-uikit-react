@@ -64,7 +64,7 @@ export interface HvProviderProps {
    *
    * @see https://lumada-design.github.io/uikit/master/?path=/docs/theme-css-baseline--page
    */
-  cssBaseline?: "global" | "scoped" | false;
+  cssBaseline?: "global" | "scoped" | "none";
 }
 
 export default function HvProvider(props: HvProviderProps): JSX.Element | null;

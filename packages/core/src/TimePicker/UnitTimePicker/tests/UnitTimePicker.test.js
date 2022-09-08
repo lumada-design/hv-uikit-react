@@ -25,7 +25,7 @@ describe("UnitTimePicker", () => {
 
   it("should render the input with the correct unit value", () => {
     const { getByRole } = render(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <UnitTimePicker
           id="unittimepicker"
           unit={TimePickerUnits.MINUTE.type}

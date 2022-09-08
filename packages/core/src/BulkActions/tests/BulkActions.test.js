@@ -10,7 +10,7 @@ describe("BulkActions", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );
@@ -42,7 +42,7 @@ describe("BulkActions controlled with actions", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <WithActions />
       </HvProvider>
     );
@@ -80,7 +80,7 @@ describe("BulkActions with selection", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvBulkActions
           numTotal={5}
           numSelected={3}
@@ -127,7 +127,7 @@ describe("BulkActions with custom label", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvBulkActions numTotal={5} numSelected={0} selectAllLabel={labelMock} />
       </HvProvider>
     );

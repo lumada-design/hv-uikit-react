@@ -9,7 +9,7 @@ describe("MenuBar withStyles", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <MenuBar type="menubar" />
       </HvProvider>
     );

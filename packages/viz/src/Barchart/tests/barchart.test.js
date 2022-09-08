@@ -20,7 +20,7 @@ describe("Barchart", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );

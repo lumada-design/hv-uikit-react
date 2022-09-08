@@ -10,7 +10,7 @@ describe("ListContainer", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider cssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );
