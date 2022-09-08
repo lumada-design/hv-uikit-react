@@ -13,7 +13,7 @@ const HvWizard = ({
   className,
   children,
   onClose,
-  onSubmit,
+  handleSubmit,
   title,
   open,
   skippable = true,
@@ -78,7 +78,7 @@ const HvWizard = ({
           tab={tab}
           changeTab={setTab}
           handleClose={handleClose}
-          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
         />
       </WizardContainer>
     </WizardContext.Provider>
@@ -101,7 +101,7 @@ HvWizard.propTypes = {
   /**
    * Function executed on submit.
    */
-  onSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   /**
    * Enables the skip button.
    */

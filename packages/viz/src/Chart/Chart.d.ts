@@ -26,7 +26,7 @@ export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey
   /**
    * Custom tooltip element to be displayed
    */
-  tooltip?: (data: TooltipDataObject) => Element;
+  tooltip?: (data: TooltipDataObject) => JSX.Element;
   /**
    * Defines the X axis title.
    */
