@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import { HvDialogContent } from "@hitachivantara/uikit-react-core";
-import { HvWizardContext } from "..";
+import HvWizardContext from "../WizardContext";
 import LoadingContainer from "./LoadingContainer";
 
 import styles from "./styles";

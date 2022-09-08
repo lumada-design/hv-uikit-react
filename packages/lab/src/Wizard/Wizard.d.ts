@@ -13,7 +13,7 @@ export type HvWizardProps = StandardProps<
   /**
    * Class names to be applied.
    */
-  className: string;
+  className?: string;
   /**
    * Current state of the Wizard.
    */
@@ -25,19 +25,19 @@ export type HvWizardProps = StandardProps<
   /**
    * Function executed on submit.
    */
-  onSubmit: any;
+  handleSubmit: any;
   /**
    * Title for the wizard.
    */
-  title: string;
+  title?: string;
   /**
    * The content of the component.
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * An object containing all the labels for the wizard.
    */
-  labels: HvWizardActionsProps["labels"] & HvWizardTitleProps["labels"];
+  labels?: HvWizardActionsProps["labels"] & HvWizardTitleProps["labels"];
   /**
    * Shows the summary button.
    */

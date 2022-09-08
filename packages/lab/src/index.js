@@ -8,3 +8,4 @@ export { default as HvStepNavigation } from "./StepNavigation";
 export { default as HvTimeAgo } from "./TimeAgo";
 export * from "./TimeAgo";
 export { default as HvWizard } from "./Wizard";
+export * from "./Wizard";
