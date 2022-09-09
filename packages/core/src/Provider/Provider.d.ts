@@ -53,31 +53,18 @@ export interface HvProviderProps {
    */
   generateClassNameOptions?: GenerateClassNameOptions;
   /**
-   * Injects the generated stylesheets at the top of the `<head>` element of the page.
-   * This can ease the override of UI Kit components styles.
-   *
-   * By default, the styles are injected last in the `<head>` element of the page.
-   */
-  injectStylesFirst?: boolean;
-  /**
    * Disables the generation of the styles.
    */
   disableStylesGeneration?: boolean;
 
   /**
-   * Disables the generation of the baseline css styles.
+   * By default the baseline styles are applied globally to the application.
+   * If you need to scope the CSS to avoid styling conflicts, you can set this prop to `"scoped"`.
+   * If you are providing the baseline styles, you can set this prop to false.
    *
-   * This will be the default behavior in the future.
-   *
-   * The application using UI Kit should be responsible for adding the baseline css styles, by
-   * either using the `<HvCssBaseline />` component, using the `<HvScopedCssBaseline />` component,
-   * or ensuring that the necessary base styles are applied.
-   *
-   * Defaults to `false`. Will be removed in the next major release.
-   *
-   * @see https://lumada-design.github.io/uikit/master/?path=/docs/foundation-css-baseline--main
+   * @see https://lumada-design.github.io/uikit/master/?path=/docs/theme-css-baseline--page
    */
-  disableCssBaseline?: boolean;
+  cssBaseline?: "global" | "scoped" | "none";
 }
 
 export default function HvProvider(props: HvProviderProps): JSX.Element | null;

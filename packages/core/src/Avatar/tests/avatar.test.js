@@ -28,7 +28,7 @@ describe("Avatar ", () => {
   describe("image avatar", () => {
     it("should render a div containing an img", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar src="something.jpg" alt="Hello World!" />
         </HvProvider>
       );
@@ -44,7 +44,7 @@ describe("Avatar ", () => {
       const onError = jest.fn();
 
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar src="something.jpg" imgProps={{ onError, other: "my value" }} />
         </HvProvider>
       );
@@ -60,7 +60,7 @@ describe("Avatar ", () => {
 
     it("should not render children", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar src="something.jpg">MB</HvAvatar>
         </HvProvider>
       );
@@ -72,7 +72,7 @@ describe("Avatar ", () => {
 
     it("snapshot", async () => {
       const [, avatar] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar src="something.jpg" imgProps={{ onError: () => 1, other: "my value" }}>
             MB
           </HvAvatar>
@@ -86,7 +86,7 @@ describe("Avatar ", () => {
 
   describe("icon avatar", () => {
     const [, avatar, rootNode] = mountAndReturnAvatarAndRootNode(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvAvatar>
           <LogIn iconSize="XS" />
         </HvAvatar>
@@ -106,7 +106,7 @@ describe("Avatar ", () => {
 
   describe("letter avatar", () => {
     const [, avatar, rootNode] = mountAndReturnAvatarAndRootNode(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvAvatar>OT</HvAvatar>
       </HvProvider>
     );
@@ -123,7 +123,7 @@ describe("Avatar ", () => {
 
   describe("default avatar", () => {
     const [, avatar, rootNode] = mountAndReturnAvatarAndRootNode(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvAvatar />
       </HvProvider>
     );
@@ -142,7 +142,7 @@ describe("Avatar ", () => {
   describe("colors", () => {
     it("should inline default colors", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar />
         </HvProvider>
       );
@@ -154,7 +154,7 @@ describe("Avatar ", () => {
 
     it("should inline custom colors", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar backgroundColor="sema1" color="sema2" />
         </HvProvider>
       );
@@ -166,7 +166,7 @@ describe("Avatar ", () => {
 
     it("should set default user icon color", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar backgroundColor="sema1" color="sema2" />
         </HvProvider>
       );
@@ -177,7 +177,7 @@ describe("Avatar ", () => {
 
     it("should not inline colors when displaying an image", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar src="something.jpg" backgroundColor="sema1" color="sema2" />
         </HvProvider>
       );
@@ -192,7 +192,7 @@ describe("Avatar ", () => {
     it("should set default user icon size to size below", () => {
       const getDefaultUserIcon = (size) => {
         const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-          <HvProvider disableCssBaseline>
+          <HvProvider cssBaseline="none">
             <HvAvatar size={size} />
           </HvProvider>
         );
@@ -210,7 +210,7 @@ describe("Avatar ", () => {
   describe("container", () => {
     it("should default to div", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar />
         </HvProvider>
       );
@@ -220,7 +220,7 @@ describe("Avatar ", () => {
 
     it("should support html tag", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar component="span" />
         </HvProvider>
       );
@@ -230,7 +230,7 @@ describe("Avatar ", () => {
 
     it("should support custom tag", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar component="not-standard" />
         </HvProvider>
       );
@@ -240,7 +240,7 @@ describe("Avatar ", () => {
 
     it("should support react component", () => {
       const [, , rootNode] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar component={HvButton} />
         </HvProvider>
       );
@@ -256,7 +256,7 @@ describe("Avatar ", () => {
       const customValue = "my value";
 
       const [, avatar] = mountAndReturnAvatarAndRootNode(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvAvatar className={className} custom={customValue} />
         </HvProvider>
       );

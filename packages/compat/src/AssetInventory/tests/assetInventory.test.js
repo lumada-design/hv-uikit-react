@@ -24,7 +24,7 @@ describe("Asset Inventory ", () => {
   const MockView = (id) => <div id={id} />;
 
   const setupComponent = (props, children = <MockView id="id" />) => (
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <HvAssetInventory {...props}>{children}</HvAssetInventory>
     </HvProvider>
   );

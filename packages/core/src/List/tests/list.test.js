@@ -34,7 +34,7 @@ describe("<List />", () => {
   describe("Single selection", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvList
             values={mockDataSingleSelection}
             onChange={onChangeMock}
@@ -53,7 +53,7 @@ describe("<List />", () => {
   describe("Single selection with selectors", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvList values={mockDataSingleSelection} useSelector />
         </HvProvider>
       );
@@ -67,7 +67,7 @@ describe("<List />", () => {
   describe("Single selection with icons", () => {
     beforeEach(async () => {
       wrapper = mount(
-        <HvProvider disableCssBaseline>
+        <HvProvider cssBaseline="none">
           <HvList values={mockDataSingleSelectionWithIcons} />
         </HvProvider>
       );

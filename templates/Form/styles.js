@@ -1,12 +1,10 @@
 const styles = (theme) => ({
-  formContainer: {
-    marginBottom: theme.hv.spacing.lg,
-  },
   section: {
-    marginTop: theme.hv.spacing.md,
-    paddingTop: theme.hv.spacing.xs,
-    paddingBottom: theme.hv.spacing.sm,
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    "&:nth-child(2)": {
+      marginBottom: theme.hv.spacing.xl,
+      marginTop: theme.hv.spacing.md,
+    },
+    marginTop: 0,
   },
   footer: {
     width: "100%",

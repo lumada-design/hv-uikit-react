@@ -7,7 +7,7 @@ import { CustomMessages } from "../stories/EmptyState.stories";
 
 describe("<HvEmptyState /> with String title/message", () => {
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <CustomMessages />
     </HvProvider>
   );
@@ -27,7 +27,7 @@ describe("<EmptyState /> with Element title/message/action", () => {
   const MockAction = () => <div>mockAction</div>;
 
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <HvEmptyState
         title={<MockTitle />}
         message={<MockMessage />}

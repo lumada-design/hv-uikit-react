@@ -30,7 +30,7 @@ const onClickCallback = jest.fn();
 
 describe("File withStyles - Invalid File", () => {
   wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <File
         data={dataFail}
         onFilesAdded={() => {}}
@@ -56,7 +56,7 @@ describe("File withStyles - Invalid File", () => {
 
 describe("File withStyles - Valid File", () => {
   wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <File
         data={dataSuccess}
         unit="mb"

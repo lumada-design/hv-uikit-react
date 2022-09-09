@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../../Form/Form";
+import Form from "../../Form";
 
 export default {
   title: "Templates/Form",

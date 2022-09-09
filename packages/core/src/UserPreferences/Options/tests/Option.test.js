@@ -11,7 +11,7 @@ describe("Options", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <Options>
           <Option label="Action 1" icon={<Play />} />
           <Option label="Action 2" />
@@ -28,7 +28,7 @@ describe("Options", () => {
     const mockFn = jest.fn();
 
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <Options onClick={mockFn}>
           <Option label="Action 1" id="a1" icon={<Play />} />
           <Option label="Action 2" id="a2" />

@@ -9,7 +9,7 @@ describe("<Navigation />", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvComposedNavigation locale="en" visibleYear={2020} visibleMonth={4} />
       </HvProvider>
     );

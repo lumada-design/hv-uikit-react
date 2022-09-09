@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _adornments.resource
 Suite Setup       Set Selenium Speed    0.1 seconds
-Test Setup        open adornment sample    ${howto}    main
+Test Setup        open adornment sample    ${guides}    main
 Suite Teardown    Set Selenium Speed    0 seconds
 Documentation
 ...    was verified a firefox webdriver error!!

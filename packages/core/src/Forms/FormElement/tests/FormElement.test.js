@@ -8,7 +8,7 @@ describe.only("FormElement ", () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvFormElement status="valid">
           <HvLabel key="1" id="test" label="First name">
             <HvBaseInput id="id-test" placeholder="Insert your name" defaultValue="George" />

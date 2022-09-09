@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import addons from "@storybook/addons";
 import { Global } from "@storybook/theming";
-import { HvProvider, HvCssBaseline } from "@hitachivantara/uikit-react-core";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 import DocsPage from "./blocks/DocsPage";
 import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";
@@ -20,9 +20,9 @@ export const parameters = {
       order: [
         "Introduction",
         ["Overview", "Installation"],
-        "Theming",
-        ["Provider", "Theme", "Typography", "Colors", "Icons"],
-        "How To Guides",
+        "Theme",
+        ["Provider", "Theming", "Typography", "Colors", "Icons"],
+        "Guides",
         "Layout",
         "Display",
         "Feedback",
@@ -70,9 +70,7 @@ const App = ({ story: Story }) => {
         generateClassNameOptions={
           isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
         }
-        disableCssBaseline
       >
-        <HvCssBaseline />
         <Story />
       </HvProvider>
     </>

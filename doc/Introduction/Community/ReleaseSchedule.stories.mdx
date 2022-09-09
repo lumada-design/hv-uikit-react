@@ -1,0 +1,31 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction/Community/Releases" />
+
+# Releases
+
+We want to make sure our release schedule is clear to everyone. We are aware of the needs of external teams to not be blocked by our releases, for instance, a bug fix or a component being available on our lab (incubation) section.
+
+<br />
+
+## Versions
+
+We follow the [Semantic Versioning Guidelines](https://semver.org/). This release breaks the version numbers in MAJOR.MINOR.PATCH, increment the:
+
+- <b>MAJOR</b> version when your changes are not compatible with the current API.
+- <b>MINOR</b> version when you add functionality in a backwards compatible manner.
+- <b>PATCH</b> version when you make backwards compatible bug fixes.
+- Additional labels for pre-release and build metadata are available as extensions to the <b>MAJOR.MINOR.PATCH</b> format.
+
+<br />
+
+## Scheduling
+
+We trigger a release build of all our active branches every day. This means that all code merged during that day will be validated against our tests and a new release will be made public.
+The release number will be automatically calculated, based on the commits pushed that day. In case nothing is changed, no release will happen.
+
+We know releasing something every sprint, mainly when working on a major, might not be possible. But even for those, we commit to release an preview build (alpha, beta or rc) for those who want to try it.
+
+Every release changelogs will be available in the [github releases section](https://github.com/lumada-design/hv-uikit-react/releases) and our [documentation](https://lumada-design.github.io/hv-uikit-react/) updated.
+
+Along with this information, we will always provide preview builds whenever we feel we have a good subset of things for teams to try out. And as always, feedback is very very welcome.

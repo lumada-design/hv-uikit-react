@@ -17,7 +17,7 @@ describe("Navigation withStyles", () => {
 
   it("should be able to render", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <Navigation data={[{ id: "someId", label: "someLabel" }]} />
       </HvProvider>
     );

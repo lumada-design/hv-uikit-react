@@ -15,7 +15,7 @@ describe("PeriodPicker", () => {
 
   it("should rednder correctly", () => {
     const { container } = render(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <PeriodPicker period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
       </HvProvider>
     );
@@ -24,7 +24,7 @@ describe("PeriodPicker", () => {
 
   it("should change the period after clicking the period selector", () => {
     const { getByRole, getByText, queryByText } = render(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <PeriodPicker period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
       </HvProvider>
     );

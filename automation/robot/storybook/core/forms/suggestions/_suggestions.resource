@@ -5,7 +5,7 @@ Resource      ../../_keywords.resource
 *** keywords ***
 open suggestion sample
     [Arguments]    ${sample}
-    go to                            ${howto}forms-form-element-blocks-suggestions--${sample}
+    go to                            ${guides}forms-form-element-blocks-suggestions--${sample}
     Wait Until Element Is Enabled    ${input}
 
 

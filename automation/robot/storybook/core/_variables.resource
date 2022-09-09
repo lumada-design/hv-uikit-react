@@ -9,7 +9,7 @@ ${overlay}           ${STORYBOOK_URL}/iframe.html?id=overlay-
 ${structure}         ${STORYBOOK_URL}/iframe.html?id=structure-
 ${widgets}           ${STORYBOOK_URL}/iframe.html?id=widgets-
 ${templates}         ${STORYBOOK_URL}/iframe.html?id=templates-
-${howto}             ${STORYBOOK_URL}/iframe.html?id=how-to-guides-
+${guides}             ${STORYBOOK_URL}/iframe.html?id=guides-
 ${forms}             ${STORYBOOK_URL}/iframe.html?id=forms-
 ${patterns}          ${STORYBOOK_URL}/iframe.html?id=patterns-
 ${STORYBOOK_URL}     http://localhost:9001

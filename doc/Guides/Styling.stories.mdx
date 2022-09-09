@@ -1,0 +1,239 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Guides/Styling" />
+
+# Styling
+
+In this section we'll go through a few ways to go on with styling your components.
+
+## Using inline styles
+
+You can style a component by applying inline styles using the `style` attribute on the element / component. The value passed must be a Javascript object:
+
+```jsx
+<HvButton
+  id=“button-id”
+  category="ghost"
+  onClick={() => onClickHandler()}
+  style={{ backgroundColor: "red” }}
+  >
+  {buttonLabel}
+</HvButton>
+```
+
+Since the value is a Javascript object, the properties must be in a camel case format.
+In the example above the CSS property `background-color` is renamed to `backgroundColor`.
+You can also extract the styling information to a separate object and use it in the `style` attribute:
+
+```jsx
+const buttonStyle = {
+	backgroundColor: “red”
+}
+
+<HvButton
+  id=“button-id”
+  category="ghost"
+  onClick={() => onClickHandler()}
+  style={buttonStyle}
+>
+  {buttonLabel}
+</HvButton>
+```
+
+## Styling patterns
+
+Styles should be defined per component and placed in separate files beside the corresponding component,
+which will then import and use them. This separation allows for code reuse and keeps components code much cleaner.
+
+### Hook pattern
+
+One of the ways you can style your components is to follow the hook pattern on React
+(note: since it's using hooks, this pattern can only be used on functional components).
+For that you can use the `makeStyles` hook on Material UI:
+
+```css
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  button: {
+    backgroundColor: "red"
+  },
+});
+
+export default styles
+```
+
+```jsx
+import * as React from "react";
+import useStyles from "./styles";
+
+export default function CustomButton() {
+  const classes = useStyles();
+
+  return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
+}
+```
+
+This pattern is also useful for creating CSS that requires some value to be dynamically calculated. For example:
+
+```css
+const HEADER_HEIGHT = 30;
+
+const useStyles = makeStyles({
+  content : {
+    height: `calc(100vh - ${HEADER_HEIGHT}px`)
+  },
+});
+```
+
+### Higher-Order Component pattern
+
+Another way to style your components is by using Material UI's `withStyles` on a **higher-order component** pattern
+to wrap your component and pass styling props to it. One significant difference for the Hook pattern is that since
+we're extending the original component with a `classes` object, anyone that wants to consume our component will have
+the ability to extend or override these classes with their own.
+
+Example:
+
+```css
+const styles = () => ({
+  button: {
+    backgroundColor: "red"
+  }
+})
+
+export default styles
+```
+
+```jsx
+import * as React from "react";
+import { withStyles } from "@mui/styles";
+import styles from "./styles";
+
+function CustomButton({ classes }) {
+  return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
+}
+
+export default withStyles(styles)(CustomButton);
+```
+
+## Overriding component classes on UI Kit components
+
+UI Kit components are built using the HOC pattern mentioned above and expose several classes that are
+used internally to the component and can be overridden from the outside (these classes are listed on each
+of the components props tables on this documentation).
+
+Lets look at a practical example:
+
+```css
+import { makeStyles } from "@mui/styles"
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
+  },
+  icon: {
+    border: "1px solid blue"
+  }
+}))
+
+export default styles
+```
+
+```jsx
+import * as React from 'react';
+import useStyles from "./styles";
+
+export default function CustomButton() {
+  const classes = useStyles();
+
+  return (
+    <HvButton
+      classes={{
+        root: classes.root,
+        icon: classes.icon
+    >
+      {buttonLabel}
+    </HvButton>
+  );
+}
+```
+
+Here we create styles for our button and use them to override specific classes on the UI Kit button that we're using.
+This even allows us to access classes of internal components that we otherwise wouldn't be able to style. For example,
+UI Kit's DropDownMenu component internally uses a UI Kit Button for an icon and exposes an `icon` class for it to be
+styled:
+
+```jsx
+<HvDropDownMenu
+  classes={{
+    root: classes.dropDownMenu,
+    icon: classes.dropDownMenuButton,
+    iconSelected: classes.dropDownMenuButtonSelected,
+  }}
+  (...)
+/>
+```
+
+## Accessing theme properties
+
+We can access the theme properties on our stylesheets, independently of the pattern we're using. Please take a look at the [Theming]()
+section for more details on the UI Kit theme and how you can use it on your app.
+
+If you're using the HOC pattern, you can access your theme like this:
+
+```css
+const styles = theme => ({
+  button: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
+  }
+})
+
+export default styles
+```
+
+If you're using the Hook pattern, it's very similar:
+
+```css
+import { makeStyles } from "@mui/styles"
+
+const styles = makeStyles(theme => ({
+  button: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
+  }
+}))
+
+export default styles
+```
+
+Notice that the theme is injected by the UI Kit Theme Provider in the styles allowing us to access its properties.
+
+## Using clsx
+
+**clsx** is a [small library](https://www.npmjs.com/package/clsx) that allows us to apply classnames to components on a conditional format. Lets look at a simple example:
+
+```jsx
+<HvButton className={classes.button}>{buttonLabel}</HvButton>
+```
+
+Here, we’re applying the button style to our Button component, but what if we want to add another class based on some condition? Maybe we want to style the button differently if there’s an error on the page. We can do this by applying a second class conditionally:
+
+```jsx
+<HvButton className={clsx(classes.button, error && classes.error, !error && classes.valid)}>
+  {buttonLabel}
+</HvButton>
+```
+
+Here `error` is just a state variable that indicates whether or not we have an error on our page. We can do this in a slightly different way also:
+
+```jsx
+<HvButton className={clsx(
+    classes.button,
+    [classes.error]: error,
+    [classes.valid]: !error
+  )}>
+  {buttonLabel}
+</HvButton>
+```
+
+This is basically the same thing as the example before. If `error` evaluates to `true` then `classes.error` is applied, otherwise `classes.valid` is used.

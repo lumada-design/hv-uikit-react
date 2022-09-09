@@ -9,7 +9,7 @@ import iconVariant from "../../utils/iconVariant";
 
 describe("Banner ", () => {
   const wrapper = mount(
-    <HvProvider disableCssBaseline>
+    <HvProvider cssBaseline="none">
       <HvBanner id="banner" variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
@@ -34,7 +34,7 @@ describe("Banner ", () => {
 
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner id="banner" variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContent);
@@ -43,7 +43,7 @@ describe("Banner ", () => {
 
   it("should render the icon in the component", () => {
     const iconComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner id="banner" variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
@@ -52,7 +52,7 @@ describe("Banner ", () => {
 
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="banner"
           variant="error"
@@ -68,7 +68,7 @@ describe("Banner ", () => {
 
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="banner"
           variant="default"
@@ -89,7 +89,7 @@ describe("Banner ", () => {
       </div>
     );
     const buttonComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="banner"
           label="label"
@@ -106,7 +106,7 @@ describe("Banner ", () => {
 
   it("should render a action by passing a structure on the message", () => {
     const buttonComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="banner1"
           variant="default"
@@ -133,7 +133,7 @@ describe("Banner ", () => {
       </div>
     );
     const buttonComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="banner"
           variant="default"
@@ -150,7 +150,7 @@ describe("Banner ", () => {
 
   it("should render a action by passing a structure on the action container", () => {
     const buttonComponent = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner
           id="Snackbar"
           variant="default"
@@ -173,7 +173,7 @@ describe("Banner ", () => {
   it("should render with the correct offset", () => {
     const offset = 10;
     let component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner open offset={offset} onClose={() => {}} label="label" />
       </HvProvider>
     ).find(MaterialSnackbar);
@@ -181,7 +181,7 @@ describe("Banner ", () => {
     expect(component.get(0).props.style).toEqual({ top: `${offset}px` });
 
     component = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <HvBanner open offset={offset} anchorOrigin="bottom" label="label" onClose={() => {}} />
       </HvProvider>
     ).find(MaterialSnackbar);
@@ -190,7 +190,7 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-    const error = mount(<HvProvider disableCssBaseline>{iconVariant("error")}</HvProvider>).find(
+    const error = mount(<HvProvider cssBaseline="none">{iconVariant("error")}</HvProvider>).find(
       Fail
     );
     expect(error.length).toBe(1);

@@ -12,7 +12,7 @@ describe(" AssetInventory ListView", () => {
 
   it("should be defined", () => {
     wrapper = mount(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <Main />
       </HvProvider>
     );

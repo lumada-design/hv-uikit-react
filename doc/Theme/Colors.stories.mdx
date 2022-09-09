@@ -1,0 +1,160 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+import Colors from "./Colors";
+import PaletteCustomization from "./PaletteCustomization";
+import { MaturityStatus } from "../../.storybook/blocks/MaturityStatus";
+
+import componentDefinitions from "../../doc/Theme/versions";
+
+<Meta
+  title="Theme/Colors"
+  parameters={{
+    dsVersion: componentDefinitions.dsVersion.v3,
+  }}
+/>
+
+# Color palette
+
+<MaturityStatus />
+
+The **Color Palette** was curated by the Design System team, providing a chromatic guidance for complex UIs in Data Analytics and IOT use cases.
+
+It produces positive and minimalistic work environments, leveraging an array of empathic gray shades. Each theme is able to produce high contrast when critical messaging is needed by combining light grays with contrasting status colors.
+
+Example of a color variable:
+
+```
+theme.hv.palette.atmosphere.atmo5
+```
+
+<Story name="Main">
+  <Colors />
+</Story>
+
+# Color palette customization
+
+If you require to override the default values of the palette, you will need to create a theme object,
+the uikit theme is an extension of the Material-UI theme so to create a new theme object you will use Material-UI's
+theme generator
+
+```jsx
+import { createTheme } from "@mui/material";
+
+const theme = createTheme({
+  hv: {
+    palette: {
+      accent: {
+        acce2: "red",
+      },
+      atmosphere: {
+        atmo1: "cyan",
+      },
+    },
+  },
+});
+```
+
+The theme object must override one of the color values of the following object:
+
+```json
+{
+  "hv": {
+    "palette": {
+      "accent": {
+        "acce1": "#414141",
+        ...
+        "acce3": "#CC0000"
+      },
+      "atmosphere": {
+        "atmo1": "#FBFCFC",
+        ...
+        "atmo5": "#999999"
+      },
+      "base": {
+        "base1": "#FBFCFC",
+        "base2": "#414141"
+      },
+      "semantic": {
+        "sema1": "#59941B",
+        ...
+        "sema20": "#F9E3C5"
+      },
+      "support": {
+        "supp1": "#0F8B8D",
+        ...
+        "supp5": "#546B6B"
+      },
+      "shadow": {
+        "shad1":"rgba(65,65,65,0.12)"
+      }
+    }
+  "viz": {
+      "palette": {
+        "categorical": {
+          "cviz1": "#6EAFFF",
+          ...
+          "cviz20": "#F7B552"
+        },
+        "undefinedState": {
+          "atmo4": "#CCCED0"
+        },
+        "sequential": {
+          "cviz1": "#2DB3E0",
+          ...
+          "cviz1_100": "#E3F1F6"
+        },
+        "polarized": {
+          "sema1": "#59941B",
+          "cviz21": "#869F1E",
+          ...
+          "cviz28": "#D8265D",
+          "sema5": "#C51162"
+        }
+      }
+    }
+  }
+}
+```
+
+The generated result is then passed to the UI KIT HvProvider that ideally should be at the top of your app.
+
+## Example
+
+Here is an example of a pair of buttons with overridden colors.
+
+## Code
+
+```jsx
+import React from "react";
+import { createTheme } from "@mui/material";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
+
+const theme = createTheme({
+  hv: {
+    palette: {
+      accent: {
+        acce2: "red",
+      },
+      atmosphere: {
+        atmo1: "cyan",
+      },
+    },
+  },
+});
+
+const Palette = () => {
+  return (
+    <HvProvider theme={theme}>
+      <HvButton category="primary">Primary</HvButton>
+      <HvButton category="secondary">Secondary</HvButton>
+    </HvProvider>
+  );
+};
+
+export default Palette;
+```
+
+## Result
+
+<Story name="customization">
+  <PaletteCustomization />
+</Story>

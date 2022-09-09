@@ -11,7 +11,7 @@ describe("DialogContent withStyles", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <DialogTitle>Dialog Content</DialogTitle>
       </HvProvider>
     );
@@ -27,7 +27,7 @@ describe("DialogTitle Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider disableCssBaseline>
+      <HvProvider cssBaseline="none">
         <DialogTitle>Dialog Content</DialogTitle>
       </HvProvider>
     );
