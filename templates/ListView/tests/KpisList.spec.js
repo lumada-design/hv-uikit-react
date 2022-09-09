@@ -2,10 +2,10 @@ import { test, expect } from "@playwright/test";
 import { testingThemes } from "../../config/playwright-utils";
 
 testingThemes.forEach(async (theme) => {
-  test.describe(`Kpis List ${theme}`, () => {
+  test.describe(`List View ${theme}`, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        `/iframe.html?args=&id=templates-kpis-list--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
+        `/iframe.html?args=&id=templates-list-view--main&viewMode=story&eyes-storybook=true&eyes-variation=theme:${theme}`
       );
     });
 
