@@ -47,6 +47,37 @@ With the release of v5, the names of all related packages were changed from @mat
 + import { MaterialComponents, MaterialProps } from "@mui/material";
 ```
 
+### Adjust theme definition.
+
+In v5 MUI altered the theme definition, meaning that if you have a theme definition you need to adjust it
+to include the ui kit theme, otherwise the typescript's checks are going to fail.
+
+```diff
+declare module "@mui/material/styles" {
+  interface Theme {
+    hv: HvTheme;
+    hvSpacing?: SpacingOptions;
+  }
+
+  interface ThemeOptions {
+    hv?: HvTheme;
+  }
+}
+
+declare module "@mui/styles" {
+  interface DefaultTheme {
+    hv: HvTheme;
+    hvSpacing?: SpacingOptions;
+  }
+
+  interface ThemeOptions {
+    hv?: HvTheme;
+  }
+}
+```
+
+check [MUI Theming](https://mui.com/material-ui/customization/theming/#custom-variables) for more information
+
 ### Remove old packages
 
 Once you've installed all the necessary packages and ensured that your app still runs, you can safely remove the old `@material-ui/*` packages by running `npm uninstall @material-ui/*`.
