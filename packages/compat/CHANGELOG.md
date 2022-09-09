@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.0.1-next.5...@hitachivantara/uikit-react-compat@4.0.2) (2022-09-09)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-compat
+
+
+
+
+
 ## [4.0.1-next.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.0.1-next.4...@hitachivantara/uikit-react-compat@4.0.1-next.5) (2022-09-09)
 
 
