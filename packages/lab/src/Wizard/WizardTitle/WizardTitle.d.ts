@@ -4,22 +4,20 @@ import { HvStepNavigationProps } from "../../StepNavigation";
 
 export type HvWizardTitleClassKey = "root";
 
-export type HvWizardTitleProps = StandardProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HvWizardTitleClassKey
-> & {
+export interface HvWizardTitleProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvWizardTitleClassKey> {
   /**
    * Title for the wizard.
    */
-  title: string;
+  title?: string;
   /**
    * Shows the summary button.
    */
-  hasSummary: boolean;
+  hasSummary?: boolean;
   /**
    * An object containing all the labels for the wizard header.
    */
-  labels: {
+  labels?: {
     /**
      * Summary button label.
      */
@@ -36,7 +34,7 @@ export type HvWizardTitleProps = StandardProps<
   /**
    * Custom object to define type, size and width of the StepNavigation component
    */
-   customStep?: Pick<HvStepNavigationProps, "type" | "stepSize" | "width">
-};
+  customStep?: Pick<HvStepNavigationProps, "type" | "stepSize" | "width">;
+}
 
 export default function HvWizardTitle(props: HvWizardTitleProps): JSX.Element | null;

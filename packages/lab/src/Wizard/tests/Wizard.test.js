@@ -8,7 +8,7 @@ describe("Wizard", () => {
   it("renders the component as expected", () => {
     const mockOnClose = jest.fn();
     render(
-      <HvWizard open onClose={mockOnClose} onSubmit={jest.fn()} title="Mock Wizard">
+      <HvWizard open onClose={mockOnClose} handleSubmit={jest.fn()} title="Mock Wizard">
         <div>First Component</div>
         <div>Second Component</div>
         <div>Third Component</div>
@@ -27,9 +27,9 @@ describe("Wizard", () => {
 
   it("should move across the pages when clicking the wizard actions", () => {
     const mockOnClose = jest.fn();
-    const mockOnSubmit = jest.fn();
+    const mockHandleSubmit = jest.fn();
     render(
-      <HvWizard open onClose={mockOnClose} onSubmit={mockOnSubmit} title="Mock Wizard">
+      <HvWizard open onClose={mockOnClose} handleSubmit={mockHandleSubmit} title="Mock Wizard">
         <div>First Component</div>
         <div>Second Component</div>
         <div>Third Component</div>
@@ -68,6 +68,6 @@ describe("Wizard", () => {
 
     const submitBtn = screen.getByRole("button", { name: "Submit" });
     fireEvent.click(submitBtn);
-    expect(mockOnSubmit).toHaveBeenCalledTimes(1);
+    expect(mockHandleSubmit).toHaveBeenCalledTimes(1);
   });
 });

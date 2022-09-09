@@ -159,7 +159,7 @@ export const Main = () => {
         labels={labels}
         fixedHeight
         loading={loading}
-        onSubmit={mockSubmit}
+        handleSubmit={mockSubmit}
       >
         <div name="Review Model">
           <HvTypography variant="mTitle" component="h2">
@@ -212,7 +212,7 @@ export const Skippable = () => {
         labels={labels}
         fixedHeight={false}
         loading={loading}
-        onSubmit={mockSubmit}
+        handleSubmit={mockSubmit}
       >
         <div name="Review Model">
           <HvTypography variant="mTitle" component="h2">
@@ -271,7 +271,7 @@ export const ComponentBreakDown = () => {
             tab={tab}
             changeTab={setTab}
             handleClose={handleClose}
-            onSubmit={handleClose}
+            handleSubmit={handleClose}
           />
         </HvWizardContainer>
       </HvWizardContext.Provider>

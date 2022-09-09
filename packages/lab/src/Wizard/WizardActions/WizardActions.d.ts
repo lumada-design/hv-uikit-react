@@ -22,11 +22,11 @@ export type HvWizardActionsProps = StandardProps<
   /**
    * Function to handle the submit button. Also sends the current context state.
    */
-  onSubmit: any;
+  handleSubmit: (context: any) => void;
   /**
    * An object containing all the labels for the wizard actions component.
    */
-  labels: {
+  labels?: {
     /**
      * Cancel button label.
      */

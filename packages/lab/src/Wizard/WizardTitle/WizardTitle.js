@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 import { HvButton, HvDialogTitle, HvGrid, HvTypography } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
 import { HvStepNavigation } from "@hitachivantara/uikit-react-lab";
-import { HvWizardContext } from "..";
+import HvWizardContext from "../WizardContext";
 
 import styles from "./styles";
 

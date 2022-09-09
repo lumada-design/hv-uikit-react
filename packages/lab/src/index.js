@@ -23,3 +23,4 @@ export { default as HvDotPagination } from "./DotPagination";
 export { default as HvStepNavigation } from "./StepNavigation";
 export { default as HvImageCarousel } from "./ImageCarousel";
 export { default as HvWizard } from "./Wizard";
+export * from "./Wizard";
