@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-compat",
-  "version": "4.0.1-next.5",
+  "version": "4.0.1",
   "description": "Compat package to ease interoperability between UI Kit versions.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",

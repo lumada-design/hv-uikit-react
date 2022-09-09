@@ -47,7 +47,7 @@ The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitach
 
 #### Installing an older version
 
-The above commands will install the latest version of **UI Kit 3.x**. It implements the **DS 3.x** specifications.
+The above commands will install the latest version of **UI Kit 4.x**. It implements the **DS 3.x** specifications.
 
 Older v3.x packages use a different registry and import names. If needed, please follow the documentation at https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page.
 
@@ -86,7 +86,7 @@ Check out our [documentation website](https://lumada-design.github.io/uikit/mast
 
 ## Changelog
 
-Recently Updated? Please read the packages changelog: [core](/packages/core/CHANGELOG.md), [lab](/packages/lab/CHANGELOG.md), [code-editor](/packages/code-editor/CHANGELOG.md), [viz](/packages/viz/CHANGELOG.md), [icons](/packages/icons/CHANGELOG.md), [themes](/packages/themes/CHANGELOG.md).
+Recently Updated? Please read the packages changelog: [core](/packages/core/CHANGELOG.md), [lab](/packages/lab/CHANGELOG.md), [compat](/packages/compat/CHANGELOG.md), [code-editor](/packages/code-editor/CHANGELOG.md), [viz](/packages/viz/CHANGELOG.md), [icons](/packages/icons/CHANGELOG.md), [themes](/packages/themes/CHANGELOG.md).
 
 ## Contributing
 
@@ -120,7 +120,6 @@ The UI Kit is maintained by a small group of invaluable core contributors, with 
 - Elio Freitas ([@eliofreitas](https://github.com/eliofreitas))
 - Francisco Guilherme ([@francisco-guilherme](https://github.com/frncisco-guilherme))
 - Henrique Raposo ([@HQFOX](https://github.com/HQFOX))
-- Hyorran Preigschadt ([@hyorran](https://github.com/hyorran))
 - Paulo Lagoá ([@plagoa](https://github.com/plagoa))
 
 Get involved with our development by opening an issue or submitting a pull request. Read the contributing guidelines for information on how we develop.

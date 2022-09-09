@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "4.0.1-next.5",
+  "version": "4.0.1",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
