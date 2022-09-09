@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/addon-docs";
+import Diagram from "../assets/Diagram";
 
 import themesPackage from "../../packages/themes/package.json";
 import corePackage from "../../packages/core/package.json";
@@ -19,7 +20,7 @@ As a part of the **Product Design** group, the **Design System** team is respons
 The **UI Kit** provides a collection of **reusable React components**, that guarantees the alignment with the Design System specifications, and stands as a catalyser for a consistent overall User Experience across Hitachi Vantara portfolio.​
 
 <div style={{ textAlign: "center", padding: "20px 0" }}>
-  <img src={uikit_diagram} alt="UI Kit organization" />
+  <Diagram />
 </div>
 
 ## UI Kit Packages
@@ -49,7 +50,7 @@ The **UI Kit** provides a collection of **reusable React components**, that guar
   <li>
     <b>Compat</b> - v{compatPackage.version} - A compatibility package where components that are
     being removed from the library temporarily reside to allow the teams that are using them to plan
-    their substitution. 
+    their substitution.
   </li>
 </ul>
 
@@ -66,13 +67,13 @@ While the UI Kit is a component library, we also provide Widgets and Templates. 
   <li>
     <b>Widgets:</b> A Pattern might result in an infinity of possible configurations for a
     component. So much so that it would be impractical to develop a component that contemplated all
-    the possibilities. That's where widgets come in: we provide a set of widgets that addresses specif use cases, but users can
-    copy them and adapt as per their requirements.
+    the possibilities. That's where widgets come in: we provide a set of widgets that addresses
+    specif use cases, but users can copy them and adapt as per their requirements.
   </li>
   <li>
     <b>Templates:</b> UI Kit provides a set of templates with common use cases found along Hitachi
-    Vantara's portfolio to help teams accelerate the development of their apps. You can find a list of
-    templates{" "}
+    Vantara's portfolio to help teams accelerate the development of their apps. You can find a list
+    of templates{" "}
     <a
       href="https://lumada-design.github.io/uikit/master/?path=/docs/templates-overview--page"
       target="_blank"
