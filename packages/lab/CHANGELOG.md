@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.0.1-next.4...@hitachivantara/uikit-react-lab@4.0.1-next.5) (2022-09-09)
+
+
+### Features
+
+* replace provider baseline ([e2d1a79](https://github.com/lumada-design/hv-uikit-react/commit/e2d1a79e953ccfd85beb68674e3ef53d07e630ba))
+* **step-navigation:** new horizontal navigation with steps ([06cfc5b](https://github.com/lumada-design/hv-uikit-react/commit/06cfc5bc4e3a87a2d2157fda1c8db2d8c0752bfd))
+* **wizard:** new wizard component. MLAAS-1550 ([c57c770](https://github.com/lumada-design/hv-uikit-react/commit/c57c77054ec5d84c4cef29417399f338d60f13fb))
+
+
+
+
+
 ## [4.0.1-next.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.0.1-next.3...@hitachivantara/uikit-react-lab@4.0.1-next.4) (2022-08-30)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.1-next.4...@hitachivantara/uikit-react-viz@4.0.1-next.5) (2022-09-09)
+
+
+### Bug Fixes
+
+* **chart:** fix custom tooltips ts definition. MLAAS-1523 ([#2927](https://github.com/lumada-design/hv-uikit-react/issues/2927)) ([4ea6e5d](https://github.com/lumada-design/hv-uikit-react/commit/4ea6e5d7d4f9fafed9a530052e686f6b5a92e9c4))
+
+
+### Features
+
+* **chart:** add custom tooltips to charts. MLAAS-1523 ([#2918](https://github.com/lumada-design/hv-uikit-react/issues/2918)) ([9fedb13](https://github.com/lumada-design/hv-uikit-react/commit/9fedb1393031d5c40207b0f874d755733edc5f2d))
+* replace provider baseline ([e2d1a79](https://github.com/lumada-design/hv-uikit-react/commit/e2d1a79e953ccfd85beb68674e3ef53d07e630ba))
+
+
+
+
+
 ## [4.0.1-next.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.1-next.3...@hitachivantara/uikit-react-viz@4.0.1-next.4) (2022-08-30)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

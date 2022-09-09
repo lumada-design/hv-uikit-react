@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1-next.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.0.1-next.4...@hitachivantara/uikit-react-compat@4.0.1-next.5) (2022-09-09)
+
+
+### Bug Fixes
+
+* **table:** fixed HvTable and HvTableBody type definition properties ([40ea773](https://github.com/lumada-design/hv-uikit-react/commit/40ea77326246eae1df675c4742e17b7e430406f1))
+
+
+### Features
+
+* replace provider baseline ([e2d1a79](https://github.com/lumada-design/hv-uikit-react/commit/e2d1a79e953ccfd85beb68674e3ef53d07e630ba))
+
+
+
+
+
 ## [4.0.1-next.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.0.1-next.3...@hitachivantara/uikit-react-compat@4.0.1-next.4) (2022-08-30)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-compat
