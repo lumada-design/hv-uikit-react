@@ -1,57 +1,41 @@
+# os
+.DS_Store
+
+# editor
+.idea/
+.vscode/
+.nova/
+
+# node
+node_modules/
+
 # Logs
 logs
 *.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 
-# Robot logs
-log.html
-report.html
-output.xml
-selenium-screenshot-*.png
+# env
+.env*
 
-# Dependency directories
-.yalc
-node_modules/
-
-# cache
-.cache
-.npm
-.eslintcache
-
-#Junit
-**/*/junit.xml
-eslint.xml
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# OSX
-.DS_Store
-
-# tests
-**/*/coverage
-
-# build folder
+# build
+lib/
+cjs/
+esm/
 dist/
-bin/
 
-.prettierrc*
-.npmrc
-.idea
-*.iml
-.history
-.vscode
-*.pyc
-report.*
-applitools.txt
-test-results/
-playwright-report/
+# typescript
+*.tsbuildinfo
+
+# project
+docs/.docusaurus
+storybook-static
+TODO.md
+
+.yalc
+.husky
+
+.eslintcache

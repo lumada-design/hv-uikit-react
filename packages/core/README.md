@@ -1,6 +1,6 @@
 # @hitachivantara/uikit-react-core
 
-A collection of React components for the Hitachi Vantara Design System.
+UI Kit core React components for the Hitachi Vantara Design System.
 
 ## Installation
 

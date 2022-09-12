@@ -1,0 +1,57 @@
+{
+  "name": "@hitachivantara/addon-theme-switcher",
+  "description": "Storybook addon Theme Switcher",
+  "license": "Apache-2.0",
+  "private": true,
+  "keywords": [
+    "hitachivantara",
+    "ui-kit",
+    "storybook",
+    "addon",
+    "theme-switcher",
+    "react",
+    "typescript"
+  ],
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc-watch --onSuccess 'pnpm build'",
+    "build": "npm-run-all clean build:*",
+    "build:esm": "tsc --module es2015 --outDir dist/esm && tsc-alias --dir dist/esm",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs && tsc-alias --dir dist/cjs",
+    "clean": "npx rimraf ./dist"
+  },
+  "peerDependencies": {
+    "@storybook/addons": "^6.4.20",
+    "@storybook/api": "^6.4.20",
+    "@storybook/components": "^6.4.20",
+    "@storybook/core-events": "^6.4.20",
+    "@storybook/theming": "^6.4.22",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "tsc-alias": "^1.6.11",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,29 +1,26 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["es6", "dom"],
-    "jsx": "react",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noEmit": true,
-    "experimentalDecorators": true,
-    "baseUrl": "./",
+    "target": "ES2015",
+    "lib": ["DOM", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "noErrorTruncation": true,
-    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-react-core": ["./packages/core/src"],
-      "@hitachivantara/uikit-react-core/dist/*": ["./packages/core/src/*"],
-      "@hitachivantara/uikit-react-icons": ["./packages/icons/bin"],
-      "@hitachivantara/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
+      "@hitachivantara/uikit-react-core": ["./packages/core/src"]
     },
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true
+    "preserveSymlinks": true,
+    "noImplicitAny": false
   },
-  "exclude": ["**/dist/"]
+  "exclude": ["node_modules"]
 }

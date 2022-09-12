@@ -1,18 +1,11 @@
-.github/
-
-# tests
-**/*/coverage
-playwright-report/
-test-results/
-
-# build folder
-dist/
-bin/
-
-# Dependency directories
 node_modules/
 
-automation/
+# Ignore artifacts:
+coverage/
+dist/
+public/
+__mocks__/
 
-# templates directory
-doc/
+commitlint.config.js
+jest.config.js
+*.d.ts

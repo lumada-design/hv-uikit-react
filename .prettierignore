@@ -1,0 +1,4 @@
+.github/*
+dist
+pnpm-lock.yaml
+storybook-static/

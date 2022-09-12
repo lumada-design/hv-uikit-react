@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TextArea Component should render correctly if opened 1`] = `
-<WithStyles(HvTextArea)
-  rows={4}
-/>
-`;
-
-exports[`TextArea should render correctly 1`] = `null`;
