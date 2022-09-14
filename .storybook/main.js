@@ -6,7 +6,7 @@ module.exports = {
     {
       name: "@storybook/addon-essentials",
     },
-    "../tools/theme-switcher/preset.js",
+    // "../tools/theme-switcher/preset.js",
   ],
   framework: "@storybook/react",
   core: {

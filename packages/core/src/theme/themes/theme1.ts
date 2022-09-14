@@ -1,6 +1,4 @@
-import { toVarNames } from "./utils";
-
-export const themes = {
+const theme = {
   light: {
     colors: {
       primary: "deeppink",
@@ -15,4 +13,4 @@ export const themes = {
   },
 };
 
-export const themeVars = toVarNames(themes.light);
+export default theme;

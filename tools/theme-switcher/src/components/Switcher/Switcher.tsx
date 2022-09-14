@@ -6,7 +6,7 @@ import SunIcon from "components/icons/SunIcon";
 import MoonIcon from "components/icons/MoonIcon";
 
 const Switcher: React.FC = () => {
-  const { isDarkMode, isToggleMode, toggleTheme } = useThemeSwitcher();
+  const { isDarkMode, isToggleMode, setColorMode } = useThemeSwitcher();
 
   const ModeIcon = () => (isDarkMode ? <SunIcon /> : <MoonIcon />);
 
@@ -15,7 +15,7 @@ const Switcher: React.FC = () => {
       key={ADDON_ID}
       active={false}
       title={`${isToggleMode ? "Toggle" : "Select"} theme`}
-      onClick={() => isToggleMode && toggleTheme()}
+      onClick={() => isToggleMode && setColorMode()}
     >
       {isToggleMode ? <ModeIcon /> : <Icons icon="lightning" />}
     </IconButton>

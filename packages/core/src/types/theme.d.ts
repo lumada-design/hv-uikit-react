@@ -1,6 +1,8 @@
-type Theme = "light" | "dark";
-
 interface ContextValue {
-  theme: Theme;
-  toggleTheme: () => void;
+  theme?: string;
+  setTheme: (theme: string) => void;
+  colorMode?: string;
+  setColorMode?: (mode: string) => void;
+  themes?: string[];
+  colorModes?: string[];
 }

@@ -14,7 +14,7 @@ interface ThemeLink {
 interface ThemeSwitcher {
   theme: string;
   setTheme: (value: string) => void;
-  toggleTheme: () => void;
+  setColorMode: () => void;
   isDarkMode: boolean;
   isToggleMode: boolean;
 }

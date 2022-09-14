@@ -39,11 +39,11 @@ const useThemeSwitcher = (): ThemeSwitcher => {
     });
   }, [isMounted]);
 
-  const toggleTheme = () => {
+  const setColorMode = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  return { theme, setTheme, toggleTheme, isDarkMode, isToggleMode };
+  return { theme, setTheme, setColorMode, isDarkMode, isToggleMode };
 };
 
 export default useThemeSwitcher;

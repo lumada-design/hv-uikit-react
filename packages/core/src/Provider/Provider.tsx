@@ -1,34 +1,56 @@
-import {
-  createContext,
-  useState,
-  useRef,
-  useMemo,
-  useLayoutEffect,
-} from "react";
-import { themes, toVars } from "theme";
+import { createContext, useState, useRef, useMemo, useEffect } from "react";
+import { localThemes, parseThemes, toVars } from "theme";
 
 export const Context = createContext<ContextValue>({
-  theme: "light",
-  toggleTheme: () => undefined,
+  theme: undefined,
+  setTheme: () => {},
+  colorMode: undefined,
+  setColorMode: () => {},
+  themes: undefined,
+  colorModes: undefined,
 });
 
 const Provider: React.FC = ({ children }) => {
-  const root = useRef<HTMLDivElement>(null);
-  const [theme, setTheme] = useState<Theme>("light");
+  const {
+    themes: themesList,
+    theme: initialTheme,
+    colorModes: colorModesList,
+    colorMode: initialColorMode,
+  } = parseThemes(localThemes);
 
-  useLayoutEffect(() => {
-    const vars = toVars(themes[theme]);
-    for (const [key, value] of Object.entries(vars)) {
-      root.current?.style.setProperty(key, value as Theme);
-    }
+  const [themes] = useState<string[]>(themesList);
+  const [theme, setTheme] = useState<string>(initialTheme);
+  const [colorModes, setColorModes] = useState<string[]>(colorModesList);
+  const [colorMode, setColorMode] = useState<string>(initialColorMode);
+
+  const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const { colorModes: updatedColorModes, colorMode: updatedColorMode } =
+      parseThemes(localThemes, theme, colorMode);
+
+    setColorModes(updatedColorModes);
+    setColorMode(updatedColorMode);
   }, [theme]);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
+  useEffect(() => {
+    const vars = toVars(localThemes[theme][colorMode]);
+    for (const [key, value] of Object.entries(vars)) {
+      root.current?.style.setProperty(key, value as string);
+    }
+  }, [colorMode]);
 
-  const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
+  const value = useMemo(
+    () => ({
+      theme,
+      setTheme,
+      colorMode,
+      setColorMode,
+      themes,
+      colorModes,
+    }),
+    [theme, colorMode]
+  );
 
   return (
     <Context.Provider value={value}>

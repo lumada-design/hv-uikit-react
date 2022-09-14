@@ -1,4 +1,21 @@
-const toVarNames = <T extends object>(obj: T, prefix: string = "-"): T => {
+export const parseThemes = (
+  themesData: object,
+  selectedTheme?: string,
+  selectedColorMode?: string
+) => {
+  const themes = Object.keys(themesData);
+  const theme = selectedTheme || themes[0];
+  const colorModes = Object.keys(themesData[theme]);
+  const colorMode =
+    (selectedColorMode && colorModes[selectedColorMode]) || colorModes[0];
+
+  return { themes, theme, colorModes, colorMode };
+};
+
+export const toVarNames = <T extends object>(
+  obj: T,
+  prefix: string = "-"
+): T => {
   const vars = {};
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -10,7 +27,7 @@ const toVarNames = <T extends object>(obj: T, prefix: string = "-"): T => {
   return vars as T;
 };
 
-const toVars = (obj: object, prefix = "-") => {
+export const toVars = (obj: object, prefix = "-") => {
   const vars = {};
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -24,5 +41,3 @@ const toVars = (obj: object, prefix = "-") => {
   }
   return vars;
 };
-
-export { toVarNames, toVars };
