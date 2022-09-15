@@ -6,15 +6,20 @@ import {
   themeVars,
 } from "@hitachivantara/uikit-react-core";
 
+type TextProps = {
+  variant: string;
+};
+
 const Demo = () => {
   const { theme, setTheme, colorMode, setColorMode, themes, colorModes } =
     useTheme();
 
-  const Text = styled.div({
+  const Text = styled.div<TextProps>((props) => ({
     padding: 20,
     color: themeVars.colors.primary,
     backgroundColor: themeVars.colors.background,
-  });
+    fontSize: themeVars.typography[props.variant],
+  }));
 
   const themeOptions: DropdownOption[] = themes.map((themeValue) => ({
     value: themeValue,
@@ -46,8 +51,8 @@ const Demo = () => {
         options={presetsOptions}
         onChange={onChangePreset}
       />
-      <Text>theme: {theme}</Text>
-      <Text>colorMode: {colorMode}</Text>
+      <Text variant="title">theme: {theme}</Text>
+      <Text variant="normal ">colorMode: {colorMode}</Text>
     </>
   );
 };

@@ -1,0 +1,3 @@
+interface ProviderProps {
+  enableCssReset: boolean;
+}

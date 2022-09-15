@@ -1,15 +1,13 @@
+import { baseThemeTokens } from "../tokens";
+
 const theme = {
   light: {
-    colors: {
-      primary: "deeppink",
-      background: "white",
-    },
+    colors: { ...baseThemeTokens.colors.light },
+    typography: { ...baseThemeTokens.typography },
   },
   dark: {
-    colors: {
-      primary: "lightpink",
-      background: "black",
-    },
+    colors: { ...baseThemeTokens.colors.dark },
+    typography: { ...baseThemeTokens.typography },
   },
 };
 

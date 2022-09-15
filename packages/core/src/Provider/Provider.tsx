@@ -1,5 +1,6 @@
 import { createContext, useState, useRef, useMemo, useEffect } from "react";
-import { localThemes, parseThemes, toVars } from "theme";
+import { Global } from "@emotion/react";
+import { localThemes, parseThemes, toVars, cssReset } from "theme";
 
 export const Context = createContext<ContextValue>({
   theme: undefined,
@@ -10,7 +11,10 @@ export const Context = createContext<ContextValue>({
   colorModes: undefined,
 });
 
-const Provider: React.FC = ({ children }) => {
+const Provider: React.FC<ProviderProps> = ({
+  enableCssReset = true,
+  children,
+}) => {
   const {
     themes: themesList,
     theme: initialTheme,
@@ -54,6 +58,7 @@ const Provider: React.FC = ({ children }) => {
 
   return (
     <Context.Provider value={value}>
+      {enableCssReset && <Global styles={cssReset} />}
       <div ref={root}>{children}</div>
     </Context.Provider>
   );
