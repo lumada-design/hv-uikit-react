@@ -26,8 +26,7 @@ export interface HvSnackbarProps
   /**
    * Exposes the SnackbarContentProps so they can overriden from the outside.
    */
-  snackbarContentProps?: HvSnackbarContentProps
+  snackbarContentProps?: HvSnackbarContentProps;
 }
-
 
 export default function HvSnackbar(props: HvSnackbarProps): JSX.Element | null;

@@ -2,6 +2,7 @@ import React, { forwardRef, useCallback, useMemo } from "react";
 import { makeStyles } from "@mui/styles";
 import PropTypes from "prop-types";
 import { SnackbarProvider, SnackbarContent, useSnackbar } from "notistack";
+import clsx from "clsx";
 
 import HvSnackbarContentWrapper from "../SnackbarContentWrapper";
 
@@ -21,12 +22,41 @@ const HvNotistackSnackMessage = forwardRef(
   }
 );
 
+const useStyles = (notistackClassesOverride) =>
+  makeStyles(() => ({
+    containerRoot: {
+      pointerEvents: "all",
+      "& > div > div": {
+        // Overrides notistack extra padding
+        padding: "0 !important",
+        transition: "all 0s ease 0s !important",
+      },
+    },
+    contentRoot: {
+      "&&": {
+        color: "inherit",
+        padding: "0",
+        fontSize: "inherit",
+        boxShadow: "none",
+        alignItems: "center",
+        fontFamily: "inherit",
+        fontWeight: "inherit",
+        lineHeight: "inherit",
+        borderRadius: "0",
+        letterSpacing: "inherit",
+        backgroundColor: "inherit",
+      },
+    },
+    ...notistackClassesOverride,
+  }))();
+
 // We override notistack hook to be able to customize the snackbar that should be called.
 const useHvSnackbar = () => {
+  const classes = useStyles();
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } = useSnackbar();
   const enqueueSnackbar = useCallback(
     (message, options) => {
-      const { id, variant = "success", snackbarContentProps, ...otherOptions } = options;
+      const { id, variant = "success", snackbarContentProps, className, ...otherOptions } = options;
 
       enqueueNotistackSnackbar(
         <HvNotistackSnackMessage
@@ -35,10 +65,10 @@ const useHvSnackbar = () => {
           variant={variant}
           snackbarContentProps={snackbarContentProps}
         />,
-        otherOptions
+        { ...otherOptions, className: clsx(className, classes.contentRoot) }
       );
     },
-    [enqueueNotistackSnackbar]
+    [classes.contentRoot, enqueueNotistackSnackbar]
   );
   return useMemo(
     () => ({
@@ -48,32 +78,6 @@ const useHvSnackbar = () => {
     [enqueueSnackbar, closeSnackbar]
   );
 };
-
-const useStyles = (notistackClassesOverride) =>
-  makeStyles(() => ({
-    containerRoot: {
-      pointerEvents: "all",
-      "& > div > div": {
-        // Overrides notistack extra padding
-        padding: "0 !important",
-        transition: "all 0s ease 0s !important",
-        "& > div > div > div": {
-          color: "inherit",
-          padding: "0",
-          fontSize: "inherit",
-          boxShadow: "none",
-          alignItems: "center",
-          fontFamily: "inherit",
-          fontWeight: "inherit",
-          lineHeight: "inherit",
-          borderRadius: "0",
-          letterSpacing: "inherit",
-          backgroundColor: "inherit",
-        },
-      },
-    },
-    ...notistackClassesOverride,
-  }))();
 
 const HvSnackbarProvider = ({
   children,
@@ -87,7 +91,6 @@ const HvSnackbarProvider = ({
   ...others
 }) => {
   const classes = useStyles(notistackClassesOverride);
-
   return (
     <SnackbarProvider
       classes={{
