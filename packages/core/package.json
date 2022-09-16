@@ -45,6 +45,7 @@
     "@emotion/styled": "^11.10.4",
     "@emotion/react": "^11.10.4",
     "@storybook/react": "^6.5.10",
+    "@styled-system/variant": "^5.1.5",
     "clsx": "^1.2.1",
     "vite": "^3.1.0",
     "@vitejs/plugin-react": "^2.1.0",
