@@ -165,6 +165,9 @@ const styles = (theme) => ({
       cursor: "not-allowed",
     },
     cursor: "not-allowed",
+    "&&::before": {
+      borderBottomStyle: "none",
+    },
   },
   inputRootMultiline: {
     padding: 0,

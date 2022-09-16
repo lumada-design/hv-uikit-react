@@ -574,6 +574,9 @@ exports[`Suggestions should render correctly 1`] = `
   cursor: not-allowed;
   background: #E8E8E8;
 }
+.HvBaseInput-inputRootDisabled.HvBaseInput-inputRootDisabled::before {
+  border-bottom-style: none;
+}
 .HvBaseInput-inputRootMultiline {
   padding: 0;
   background-color: transparent;
