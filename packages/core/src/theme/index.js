@@ -5,6 +5,7 @@ import wickedTheme from "@hitachivantara/uikit-common-themes/dist/wicked";
 import muiAppBarOverrides from "./overrides/muiAppBar";
 import muiToolbarOverrides from "./overrides/muiToolbar";
 import muiIconButtonOverrides from "./overrides/muiIconButton";
+import muiInputOverrides from "./overrides/muiInput";
 import createTypography from "./typography";
 import createPalette from "./palette";
 import createSpacing, { hvSpacing } from "./spacing";
@@ -75,6 +76,11 @@ const themeBuilder = (theme) => {
       MuiIconButton: {
         styleOverrides: {
           ...muiIconButtonOverrides(theme),
+        },
+      },
+      MuiInput: {
+        styleOverrides: {
+          ...muiInputOverrides,
         },
       },
     },
