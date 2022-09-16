@@ -4,14 +4,14 @@ import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import { HvButton, HvDialogActions, HvGrid } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
-import WizardContext from "../WizardContext";
+import HvWizardContext from "../WizardContext";
 
 import styles from "./styles";
 
 const HvWizardActions = ({
   classes,
   handleClose,
-  onSubmit,
+  handleSubmit,
   changeTab,
   tab,
   loading = false,
@@ -24,7 +24,7 @@ const HvWizardActions = ({
     submit: "Submit",
   },
 }) => {
-  const { context, setContext } = React.useContext(WizardContext);
+  const { context, setContext } = React.useContext(HvWizardContext);
   const [pages, setPages] = React.useState(0);
   const [canSubmit, setCanSubmit] = React.useState(false);
 
@@ -51,7 +51,10 @@ const HvWizardActions = ({
     setContext(skippedContext);
     changeTab(lastPage);
   }, [changeTab, context, lastPage, setContext]);
-  const handleSubmit = React.useCallback(() => onSubmit(context), [onSubmit, context]);
+  const handleSubmitInternal = React.useCallback(
+    () => handleSubmit(context),
+    [handleSubmit, context]
+  );
 
   return (
     <HvDialogActions className={classes.actionsContainer}>
@@ -84,7 +87,7 @@ const HvWizardActions = ({
             category="primary"
             className={classes.buttonWidth}
             disabled={loading || !canSubmit}
-            onClick={handleSubmit}
+            onClick={handleSubmitInternal}
           >
             {`${labels.submit ?? "Submit"}`}
           </HvButton>
@@ -141,7 +144,7 @@ HvWizardActions.propTypes = {
   /**
    * Function to handle the submit button. Also sends the current context state.
    */
-  onSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   /**
    * An object containing all the labels for the wizard actions component.
    */

@@ -4,3 +4,4 @@ export { default as HvWizardTitle } from "./WizardTitle";
 export { default as HvWizardContent } from "./WizardContent";
 export { default as HvWizardActions } from "./WizardActions";
 export { default as HvWizardContext } from "./WizardContext";
+export { default as HvWizardContextProvider } from "./WizardContext/WizardContextProvider";

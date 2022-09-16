@@ -10,7 +10,7 @@ export type HvWizardContentProps = StandardProps<
   /**
    * Tabs to show on the Wizard.
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * Current tab to show.
    */

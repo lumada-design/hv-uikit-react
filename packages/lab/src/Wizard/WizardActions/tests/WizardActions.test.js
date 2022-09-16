@@ -14,7 +14,7 @@ describe("WizardActions", () => {
           tab={0}
           changeTab={jest.fn()}
           handleClose={jest.fn()}
-          onSubmit={jest.fn()}
+          handleSubmit={jest.fn()}
         />
       </HvWizardContext.Provider>
     );
@@ -34,7 +34,7 @@ describe("WizardActions", () => {
           tab={1}
           changeTab={jest.fn()}
           handleClose={jest.fn()}
-          onSubmit={jest.fn()}
+          handleSubmit={jest.fn()}
         />
       </HvWizardContext.Provider>
     );
@@ -49,7 +49,7 @@ describe("WizardActions", () => {
   it("should go to the correct tab when clicking the buttons", () => {
     const mockOnClose = jest.fn();
     const mockChangeTab = jest.fn();
-    const mockOnSubmit = jest.fn();
+    const mockHandleSubmit = jest.fn();
     const { rerender } = render(
       <HvWizardContext.Provider
         // eslint-disable-next-line react/jsx-no-constructed-context-values
@@ -59,7 +59,7 @@ describe("WizardActions", () => {
           tab={0}
           changeTab={mockChangeTab}
           handleClose={mockOnClose}
-          onSubmit={mockOnSubmit}
+          handleSubmit={mockHandleSubmit}
         />
       </HvWizardContext.Provider>
     );
@@ -83,7 +83,7 @@ describe("WizardActions", () => {
           tab={1}
           changeTab={mockChangeTab}
           handleClose={mockOnClose}
-          onSubmit={mockOnSubmit}
+          handleSubmit={mockHandleSubmit}
         />
       </HvWizardContext.Provider>
     );
@@ -93,7 +93,7 @@ describe("WizardActions", () => {
 
     const submitBtn = screen.getByRole("button", { name: "Submit" });
     fireEvent.click(submitBtn);
-    expect(mockOnSubmit).toHaveBeenCalledTimes(1);
+    expect(mockHandleSubmit).toHaveBeenCalledTimes(1);
   });
 
   it("should have the skip button enabled", () => {
@@ -112,7 +112,7 @@ describe("WizardActions", () => {
           skippable
           changeTab={mockChangeTab}
           handleClose={jest.fn()}
-          onSubmit={jest.fn()}
+          handleSubmit={jest.fn()}
           labels={labels}
         />
       </HvWizardContext.Provider>
@@ -132,7 +132,7 @@ describe("WizardActions", () => {
           skippable
           changeTab={mockChangeTab}
           handleClose={jest.fn()}
-          onSubmit={jest.fn()}
+          handleSubmit={jest.fn()}
           labels={labels}
         />
       </HvWizardContext.Provider>
