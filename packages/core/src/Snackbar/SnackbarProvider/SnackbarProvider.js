@@ -22,8 +22,8 @@ const HvNotistackSnackMessage = forwardRef(
   }
 );
 
-const useStyles = (notistackClassesOverride) =>
-  makeStyles(() => ({
+const useProviderStyles = (notistackClassesOverride) =>
+  makeStyles({
     containerRoot: {
       pointerEvents: "all",
       "& > div > div": {
@@ -32,43 +32,47 @@ const useStyles = (notistackClassesOverride) =>
         transition: "all 0s ease 0s !important",
       },
     },
-    contentRoot: {
-      "&&": {
-        color: "inherit",
-        padding: "0",
-        fontSize: "inherit",
-        boxShadow: "none",
-        alignItems: "center",
-        fontFamily: "inherit",
-        fontWeight: "inherit",
-        lineHeight: "inherit",
-        borderRadius: "0",
-        letterSpacing: "inherit",
-        backgroundColor: "inherit",
-      },
-    },
     ...notistackClassesOverride,
-  }))();
+  })();
+
+const useStyles = makeStyles({
+  snackItemRoot: {
+    "&&": {
+      color: "inherit",
+      padding: "0",
+      fontSize: "inherit",
+      boxShadow: "none",
+      alignItems: "center",
+      fontFamily: "inherit",
+      fontWeight: "inherit",
+      lineHeight: "inherit",
+      borderRadius: "0",
+      letterSpacing: "inherit",
+      backgroundColor: "inherit",
+    },
+  },
+});
 
 // We override notistack hook to be able to customize the snackbar that should be called.
 const useHvSnackbar = () => {
   const classes = useStyles();
   const { enqueueSnackbar: enqueueNotistackSnackbar, closeSnackbar } = useSnackbar();
   const enqueueSnackbar = useCallback(
-    (message, options) => {
+    (message, options = {}) => {
       const { id, variant = "success", snackbarContentProps, className, ...otherOptions } = options;
 
-      enqueueNotistackSnackbar(
+      return enqueueNotistackSnackbar(
         <HvNotistackSnackMessage
           id={id}
           message={message}
           variant={variant}
           snackbarContentProps={snackbarContentProps}
         />,
-        { ...otherOptions, className: clsx(className, classes.contentRoot) }
+        { ...otherOptions, className: clsx(className, classes.snackItemRoot) }
       );
     },
-    [classes.contentRoot, enqueueNotistackSnackbar]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [enqueueNotistackSnackbar]
   );
   return useMemo(
     () => ({
@@ -90,12 +94,10 @@ const HvSnackbarProvider = ({
   },
   ...others
 }) => {
-  const classes = useStyles(notistackClassesOverride);
+  const classes = useProviderStyles(notistackClassesOverride);
   return (
     <SnackbarProvider
-      classes={{
-        ...classes,
-      }}
+      classes={classes}
       maxSnack={maxSnack}
       autoHideDuration={autoHideDuration}
       anchorOrigin={anchorOrigin}
