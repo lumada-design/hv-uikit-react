@@ -1,7 +1,14 @@
-import { colors } from "./colors";
-import { typography } from "./typography";
+import { commonColors, darkColors, lightColors } from "./colors";
+import { fontSizes } from "./typography";
 
-export const baseThemeTokens = {
-  colors,
-  typography,
+export const baseTokens = {
+  colors: {
+    ...commonColors,
+    ...lightColors,
+  },
+  fontSizes,
+};
+
+export const darkTokens = {
+  colors: darkColors,
 };
