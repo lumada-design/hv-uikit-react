@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.0.2...@hitachivantara/uikit-react-core@4.0.3) (2022-09-17)
+
+
+### Bug Fixes
+
+* **baseInput:** override default dotted border bottom when disabled. Closes [#2935](https://github.com/lumada-design/hv-uikit-react/issues/2935) ([#2936](https://github.com/lumada-design/hv-uikit-react/issues/2936)) ([29a7a41](https://github.com/lumada-design/hv-uikit-react/commit/29a7a419f1270dc611c2f3bee0e4f1a491042fff))
+* **snackbar:** fixed issue [#2934](https://github.com/lumada-design/hv-uikit-react/issues/2934). MLAAS-1629 ([#2938](https://github.com/lumada-design/hv-uikit-react/issues/2938)) ([183e9cb](https://github.com/lumada-design/hv-uikit-react/commit/183e9cb3fc0d371d73b186ff70827fda937fb6ed))
+
+
+
+
+
 ## [4.0.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.0.1-next.5...@hitachivantara/uikit-react-core@4.0.2) (2022-09-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
