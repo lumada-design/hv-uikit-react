@@ -1,22 +1,22 @@
 export const parseThemes = (
-  themesData: object,
-  selectedTheme?: string,
-  selectedColorMode?: string
+  themes: object,
+  theme?: string,
+  colorMode?: string
 ) => {
-  const themes = Object.keys(themesData);
-  const theme = selectedTheme || themes[0];
-  const colorModes = Object.keys(themesData[theme]);
-  const colorMode =
-    (selectedColorMode && colorModes[selectedColorMode]) || colorModes[0];
+  const themesList = Object.keys(themes);
+  const selectedTheme = theme || themesList[0];
+  const colorModesList = Object.keys(themes[selectedTheme].colors.modes);
+  const selectedColorMode =
+    (colorMode && colorModesList[colorMode]) || colorModesList[0];
 
-  return { themes, theme, colorModes, colorMode };
+  return { themesList, selectedTheme, colorModesList, selectedColorMode };
 };
 
 export const toVarNames = <T extends object>(
   obj: T,
   prefix: string = "-"
 ): T => {
-  const vars = {};
+  const vars = {} as T;
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
       vars[key] = toVarNames(value, `${prefix}-${key}`);
@@ -24,7 +24,7 @@ export const toVarNames = <T extends object>(
       vars[key] = `var(${prefix}-${key})`;
     }
   }
-  return vars as T;
+  return vars;
 };
 
 export const toVars = (obj: object, prefix = "-") => {

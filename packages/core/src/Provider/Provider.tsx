@@ -1,44 +1,45 @@
 import { createContext, useState, useRef, useMemo, useEffect } from "react";
 import { Global } from "@emotion/react";
-import { localThemes, parseThemes, toVars, cssReset } from "theme";
+import { themes as hvThemes, parseThemes, toVars, cssReset } from "theme";
 
-export const Context = createContext<ContextValue>({
-  theme: undefined,
+export const Context = createContext<ProviderContextValue>({
+  themes: [],
+  theme: "",
   setTheme: () => {},
-  colorMode: undefined,
+  colorModes: [],
+  colorMode: "",
   setColorMode: () => {},
-  themes: undefined,
-  colorModes: undefined,
 });
 
 const Provider: React.FC<ProviderProps> = ({
   enableCssReset = true,
   children,
 }) => {
-  const {
-    themes: themesList,
-    theme: initialTheme,
-    colorModes: colorModesList,
-    colorMode: initialColorMode,
-  } = parseThemes(localThemes);
+  const { themesList, selectedTheme, colorModesList, selectedColorMode } =
+    parseThemes(hvThemes);
 
   const [themes] = useState<string[]>(themesList);
-  const [theme, setTheme] = useState<string>(initialTheme);
+  const [theme, setTheme] = useState<string>(selectedTheme);
   const [colorModes, setColorModes] = useState<string[]>(colorModesList);
-  const [colorMode, setColorMode] = useState<string>(initialColorMode);
+  const [colorMode, setColorMode] = useState<string>(selectedColorMode);
 
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const { colorModes: updatedColorModes, colorMode: updatedColorMode } =
-      parseThemes(localThemes, theme, colorMode);
+    const {
+      colorModesList: colorModesListUpdated,
+      selectedColorMode: selectedColorModeUpdated,
+    } = parseThemes(hvThemes, theme, colorMode);
 
-    setColorModes(updatedColorModes);
-    setColorMode(updatedColorMode);
+    setColorModes(colorModesListUpdated);
+    setColorMode(selectedColorModeUpdated);
   }, [theme]);
 
   useEffect(() => {
-    const vars = toVars(localThemes[theme][colorMode]);
+    const vars = toVars({
+      colors: hvThemes[theme as string].colors.modes[colorMode],
+    });
+
     for (const [key, value] of Object.entries(vars)) {
       root.current?.style.setProperty(key, value as string);
     }
@@ -46,12 +47,12 @@ const Provider: React.FC<ProviderProps> = ({
 
   const value = useMemo(
     () => ({
+      themes,
       theme,
       setTheme,
+      colorModes,
       colorMode,
       setColorMode,
-      themes,
-      colorModes,
     }),
     [theme, colorMode]
   );

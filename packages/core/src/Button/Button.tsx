@@ -15,16 +15,16 @@ const Button: React.FC<ButtonProps> = ({
   const StyledButton = styled("button")<{ variant?: string }>(
     {
       padding: 20,
-      color: themeVars.colors.primary,
-      backgroundColor: themeVars.colors.background,
+      color: themeVars.colors.background,
+      backgroundColor: themeVars.colors.primary,
     },
     styledSystemVariant({
       variants: {
         big: {
-          fontSize: themeVars.typography.title,
+          fontSize: themeVars.fontSizes.title,
         },
         small: {
-          fontSize: themeVars.typography.normal,
+          fontSize: themeVars.fontSizes.normal,
         },
       },
     })

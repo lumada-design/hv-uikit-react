@@ -12,7 +12,7 @@ type TextProps = {
 };
 
 const Demo = () => {
-  const { theme, setTheme, colorMode, setColorMode, themes, colorModes } =
+  const { themes, theme, setTheme, colorModes, colorMode, setColorMode } =
     useTheme();
 
   const Text = styled.div<TextProps>(
@@ -26,8 +26,8 @@ const Demo = () => {
       backgroundColor: themeVars.colors.background,
       fontSize:
         props.variant === "title"
-          ? themeVars.typography.title
-          : themeVars.typography.normal,
+          ? themeVars.fontSizes.title
+          : themeVars.fontSizes.normal,
     })
   );
 

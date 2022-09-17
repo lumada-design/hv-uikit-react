@@ -1,13 +1,15 @@
-import { theme1 } from "./themes";
 import { toVarNames } from "./utils";
-
 import * as Themes from "./themes";
 
-export * from "./themes";
+export const themes = { ...Themes };
+
+const defaultTheme = Object.values(themes)[0];
+const defaultColorMode = Object.values(defaultTheme.colors.modes)[0];
+
+export const themeVars = toVarNames({
+  ...defaultTheme,
+  colors: defaultColorMode,
+});
+
 export * from "./utils";
 export * from "./cssReset";
-
-export const localThemes = { ...Themes };
-export const themeVars = toVarNames(theme1.light);
-
-export { default as useTheme } from "./useTheme";
