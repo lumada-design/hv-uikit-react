@@ -1,4 +1,11 @@
-import { createContext, useState, useRef, useMemo, useEffect } from "react";
+import {
+  createContext,
+  useState,
+  useRef,
+  useMemo,
+  useEffect,
+  useCallback,
+} from "react";
 import { Global } from "@emotion/react";
 import { themes as hvThemes, parseThemes, toVars, cssReset } from "theme";
 
@@ -9,6 +16,7 @@ export const Context = createContext<ProviderContextValue>({
   colorModes: [],
   colorMode: "",
   setColorMode: () => {},
+  spacingFn: () => 0,
 });
 
 const Provider: React.FC<ProviderProps> = ({
@@ -35,6 +43,13 @@ const Provider: React.FC<ProviderProps> = ({
     setColorMode(selectedColorModeUpdated);
   }, [theme]);
 
+  const spacingFn = useCallback(
+    (m: number) => {
+      return m * hvThemes[theme as string].spacing.base;
+    },
+    [theme]
+  );
+
   useEffect(() => {
     const vars = toVars({
       ...hvThemes[theme as string],
@@ -56,6 +71,7 @@ const Provider: React.FC<ProviderProps> = ({
       colorModes,
       colorMode,
       setColorMode,
+      spacingFn,
     }),
     [theme, colorMode]
   );

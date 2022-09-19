@@ -18,6 +18,7 @@ const theme = {
       },
     },
   },
+  spacing: baseTokens.spacing,
 };
 
 export default theme;

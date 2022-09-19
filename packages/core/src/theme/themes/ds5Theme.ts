@@ -9,12 +9,12 @@ const theme = {
     ...baseColors,
     modes: {
       dawn: {
-        primary: darkColors.accent.acce1,
-        background: darkColors.atmosphere.atmo1,
+        primary: darkColors.accent.acce2,
+        background: darkColors.atmosphere.atmo2,
       },
       wicked: {
-        primary: baseColors.accent.acce1,
-        background: baseColors.atmosphere.atmo1,
+        primary: baseColors.accent.acce2,
+        background: baseColors.atmosphere.atmo2,
       },
       soft: {
         primary: "orange",
@@ -22,6 +22,7 @@ const theme = {
       },
     },
   },
+  spacing: { base: 20 },
 };
 
 export default theme;
