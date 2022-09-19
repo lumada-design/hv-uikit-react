@@ -1,6 +1,7 @@
 import { toVarNames } from "./utils";
 import * as Themes from "./themes";
 
+export { variant as themeVariant } from "@styled-system/variant";
 export const themes = { ...Themes };
 
 const defaultTheme = Object.values(themes)[0];

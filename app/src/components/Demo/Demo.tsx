@@ -1,35 +1,14 @@
-import styled from "@emotion/styled";
 import {
   HvButton,
   HvDropdown,
+  HvTypography,
   DropdownOption,
   useTheme,
-  themeVars,
 } from "@hitachivantara/uikit-react-core";
-
-type TextProps = {
-  variant?: string;
-};
 
 const Demo = () => {
   const { themes, theme, setTheme, colorModes, colorMode, setColorMode } =
     useTheme();
-
-  const Text = styled.div<TextProps>(
-    {
-      // Default props go here. Ex:
-      // margin: 100,
-    },
-    (props) => ({
-      padding: 20,
-      color: themeVars.colors.primary,
-      backgroundColor: themeVars.colors.background,
-      fontSize:
-        props.variant === "title"
-          ? themeVars.fontSizes.title
-          : themeVars.fontSizes.normal,
-    })
-  );
 
   const themeOptions: DropdownOption[] = themes.map((themeValue) => ({
     value: themeValue,
@@ -70,8 +49,8 @@ const Demo = () => {
       <HvButton variant="small">Small</HvButton>
       <br />
       <br />
-      <Text variant="title">theme: {theme}</Text>
-      <Text variant="normal ">colorMode: {colorMode}</Text>
+      <HvTypography variant="title3">theme: {theme}</HvTypography>
+      <HvTypography variant="body">colorMode: {colorMode}</HvTypography>
     </>
   );
 };

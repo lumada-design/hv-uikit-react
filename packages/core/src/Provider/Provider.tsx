@@ -37,7 +37,10 @@ const Provider: React.FC<ProviderProps> = ({
 
   useEffect(() => {
     const vars = toVars({
-      colors: hvThemes[theme as string].colors.modes[colorMode],
+      ...hvThemes[theme as string],
+      colors: {
+        ...hvThemes[theme as string].colors.modes[colorMode],
+      },
     });
 
     for (const [key, value] of Object.entries(vars)) {

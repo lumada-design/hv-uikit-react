@@ -1,30 +1,30 @@
 import styled from "@emotion/styled";
-import { variant as styledSystemVariant } from "@styled-system/variant";
-import { themeVars } from "theme";
+import { themeVars, themeVariant } from "theme";
 
+type ButtonVariants = "big" | "small";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: string;
+  variant?: ButtonVariants;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  variant = "normal",
+  variant = "small",
   onClick,
 }) => {
   const StyledButton = styled("button")<{ variant?: string }>(
     {
-      padding: 20,
+      padding: 10,
       color: themeVars.colors.background,
       backgroundColor: themeVars.colors.primary,
     },
-    styledSystemVariant({
+    themeVariant({
       variants: {
         big: {
-          fontSize: themeVars.fontSizes.title,
+          fontSize: themeVars.fontSizes.lg,
         },
         small: {
-          fontSize: themeVars.fontSizes.normal,
+          fontSize: themeVars.fontSizes.sm,
         },
       },
     })

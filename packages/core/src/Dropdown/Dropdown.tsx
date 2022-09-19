@@ -6,32 +6,23 @@ export interface DropdownOption {
 }
 
 export interface DropdownProps {
-  label?: string;
   value?: string;
   options: DropdownOption[];
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  label,
-  value,
-  options,
-  onChange,
-}) => {
+const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange }) => {
   const StyledDropdown = styled.div({});
 
   return (
     <StyledDropdown>
-      <label>
-        {label && label}
-        <select value={value} onChange={onChange}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      <select value={value} onChange={onChange}>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
     </StyledDropdown>
   );
 };

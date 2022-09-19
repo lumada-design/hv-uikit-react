@@ -1,5 +1,5 @@
 import { commonColors, darkColors, lightColors } from "./colors";
-import { fontSizes } from "./typography";
+import { fontSizes, lineHeights } from "./typography";
 
 export const baseTokens = {
   colors: {
@@ -7,6 +7,7 @@ export const baseTokens = {
     ...lightColors,
   },
   fontSizes,
+  lineHeights,
 };
 
 export const darkTokens = {

@@ -1,10 +1,12 @@
 import { baseTokens, darkTokens } from "../tokens";
 
-const { colors: baseColors, fontSizes } = baseTokens;
+const { colors: baseColors } = baseTokens;
 const { colors: darkColors } = darkTokens;
 
 const theme = {
+  ...baseTokens,
   colors: {
+    ...baseColors,
     modes: {
       dawn: {
         primary: darkColors.accent.acce1,
@@ -20,7 +22,6 @@ const theme = {
       },
     },
   },
-  fontSizes,
 };
 
 export default theme;
