@@ -3,6 +3,7 @@ import { useTheme } from "hooks";
 import { themeVars, themeVariant } from "theme";
 
 type ButtonVariants = "big" | "small";
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
@@ -17,8 +18,8 @@ const Button: React.FC<ButtonProps> = ({
 
   const StyledButton = styled("button")<{ variant?: string }>(
     {
-      color: themeVars.colors.background,
-      backgroundColor: themeVars.colors.primary,
+      color: themeVars.colors.atmo1,
+      backgroundColor: themeVars.colors.acce1,
       padding: spacingFn(3),
       marginLeft: spacingFn(10),
       marginTop: themeVars.spacing[5],

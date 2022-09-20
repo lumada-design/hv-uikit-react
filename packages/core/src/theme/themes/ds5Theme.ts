@@ -6,19 +6,16 @@ const { colors: darkColors } = darkTokens;
 const theme = {
   ...baseTokens,
   colors: {
-    ...baseColors,
     modes: {
       dawn: {
-        primary: darkColors.accent.acce2,
-        background: darkColors.atmosphere.atmo2,
+        ...darkColors,
       },
       wicked: {
-        primary: baseColors.accent.acce2,
-        background: baseColors.atmosphere.atmo2,
+        ...baseColors,
       },
-      soft: {
-        primary: "orange",
-        background: "white",
+      wild: {
+        acce1: "orange",
+        atmo1: "white",
       },
     },
   },

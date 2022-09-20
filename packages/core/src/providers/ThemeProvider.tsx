@@ -1,28 +1,26 @@
 import {
   createContext,
-  useState,
   useRef,
-  useMemo,
+  useState,
   useEffect,
   useCallback,
+  useMemo,
 } from "react";
-import { Global } from "@emotion/react";
-import { themes as hvThemes, parseThemes, toVars, cssReset } from "theme";
+import { themes as hvThemes, parseThemes, toCSSVars } from "theme";
 
-export const Context = createContext<ProviderContextValue>({
-  themes: [],
-  theme: "",
+export const ThemeContext = createContext<ThemeContextValue>({
+  themes: undefined,
+  theme: undefined,
   setTheme: () => {},
   colorModes: [],
-  colorMode: "",
+  colorMode: undefined,
   setColorMode: () => {},
   spacingFn: () => 0,
 });
 
-const Provider: React.FC<ProviderProps> = ({
-  enableCssReset = true,
-  children,
-}) => {
+const ThemeProvider = ({ children }) => {
+  const root = useRef<HTMLDivElement>(null);
+
   const { themesList, selectedTheme, colorModesList, selectedColorMode } =
     parseThemes(hvThemes);
 
@@ -30,8 +28,6 @@ const Provider: React.FC<ProviderProps> = ({
   const [theme, setTheme] = useState<string>(selectedTheme);
   const [colorModes, setColorModes] = useState<string[]>(colorModesList);
   const [colorMode, setColorMode] = useState<string>(selectedColorMode);
-
-  const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const {
@@ -43,15 +39,8 @@ const Provider: React.FC<ProviderProps> = ({
     setColorMode(selectedColorModeUpdated);
   }, [theme]);
 
-  const spacingFn = useCallback(
-    (m: number) => {
-      return m * hvThemes[theme as string].spacing.base;
-    },
-    [theme]
-  );
-
   useEffect(() => {
-    const vars = toVars({
+    const vars = toCSSVars({
       ...hvThemes[theme as string],
       colors: {
         ...hvThemes[theme as string].colors.modes[colorMode],
@@ -62,6 +51,14 @@ const Provider: React.FC<ProviderProps> = ({
       root.current?.style.setProperty(key, value as string);
     }
   }, [colorMode]);
+
+  const spacingFn = useCallback(
+    (m: number) => {
+      console.log(hvThemes[theme as string].spacing.base);
+      return m * hvThemes[theme as string].spacing.base;
+    },
+    [theme]
+  );
 
   const value = useMemo(
     () => ({
@@ -77,11 +74,10 @@ const Provider: React.FC<ProviderProps> = ({
   );
 
   return (
-    <Context.Provider value={value}>
-      {enableCssReset && <Global styles={cssReset} />}
+    <ThemeContext.Provider value={value}>
       <div ref={root}>{children}</div>
-    </Context.Provider>
+    </ThemeContext.Provider>
   );
 };
 
-export default Provider;
+export default ThemeProvider;

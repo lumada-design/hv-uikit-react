@@ -1,8 +1,6 @@
 export const commonColors = {
-  base: {
-    base1: "#FBFCFC",
-    base2: "#414141",
-  },
+  base1: "#FBFCFC",
+  base2: "#414141",
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -56,10 +54,10 @@ const supportLight = {
 };
 
 export const lightColors = {
-  accent: accentLight,
-  atmosphere: atmosphereLight,
-  semantic: semanticLight,
-  support: supportLight,
+  ...accentLight,
+  ...atmosphereLight,
+  ...semanticLight,
+  ...supportLight,
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -113,8 +111,8 @@ const supportDark = {
 };
 
 export const darkColors = {
-  accent: accentDark,
-  atmosphere: atmosphereDark,
-  semantic: semanticDark,
-  support: supportDark,
+  ...accentDark,
+  ...atmosphereDark,
+  ...semanticDark,
+  ...supportDark,
 };

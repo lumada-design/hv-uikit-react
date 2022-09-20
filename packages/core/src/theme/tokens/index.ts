@@ -13,5 +13,5 @@ export const baseTokens = {
 };
 
 export const darkTokens = {
-  colors: darkColors,
+  colors: { ...darkColors },
 };

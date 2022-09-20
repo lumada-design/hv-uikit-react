@@ -6,19 +6,15 @@ const { colors: darkColors } = darkTokens;
 const theme = {
   ...baseTokens,
   colors: {
-    ...baseColors,
     modes: {
       light: {
-        primary: baseColors.accent.acce1,
-        background: baseColors.atmosphere.atmo1,
+        ...baseColors,
       },
       dark: {
-        primary: darkColors.accent.acce1,
-        background: darkColors.atmosphere.atmo1,
+        ...darkColors,
       },
     },
   },
-  spacing: baseTokens.spacing,
 };
 
 export default theme;

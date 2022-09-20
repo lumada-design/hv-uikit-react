@@ -12,26 +12,30 @@ export const parseThemes = (
   return { themesList, selectedTheme, colorModesList, selectedColorMode };
 };
 
-export const toVarNames = <T extends object>(
+export const toThemeVars = <T extends object>(
   obj: T,
   prefix: string = "-"
 ): T => {
   const vars = {} as T;
+
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
-      vars[key] = toVarNames(value, `${prefix}-${key}`);
+      vars[key] = toThemeVars(value, `${prefix}-${key}`);
     } else {
       vars[key] = `var(${prefix}-${key})`;
     }
   }
+
   return vars;
 };
 
-export const toVars = (obj: object, prefix = "-") => {
+export const toCSSVars = (obj: object, prefix = "-") => {
   const vars = {};
+
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
-      const nestedVars = toVars(value, `${prefix}-${key}`);
+      const nestedVars = toCSSVars(value, `${prefix}-${key}`);
+
       for (const [nestedKey, nestedValue] of Object.entries(nestedVars)) {
         vars[nestedKey] = nestedValue;
       }
@@ -39,5 +43,6 @@ export const toVars = (obj: object, prefix = "-") => {
       vars[`${prefix}-${key}`] = value;
     }
   }
+
   return vars;
 };
