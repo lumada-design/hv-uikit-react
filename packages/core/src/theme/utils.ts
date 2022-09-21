@@ -46,3 +46,17 @@ export const toCSSVars = (obj: object, prefix = "-") => {
 
   return vars;
 };
+
+export const getSpacings = (base) => {
+  const spacings = {};
+  for (let i = 1; i <= 10; ++i) {
+    spacings[i] = `${base * i}px`;
+  }
+  return spacings;
+};
+
+export const setSpacingVars = (base: number, elem) => {
+  for (let i = 1; i <= 10; ++i) {
+    elem?.style.setProperty(`--spacing-${i}`, `${i * base}px`);
+  }
+};
