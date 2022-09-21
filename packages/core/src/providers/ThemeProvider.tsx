@@ -1,17 +1,11 @@
+import { createContext, useRef, useState, useEffect, useMemo } from "react";
+import { hvThemes } from "theme";
 import {
-  createContext,
-  useRef,
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-} from "react";
-import {
-  themes as hvThemes,
-  parseThemes,
+  parseTheme,
   toCSSVars,
-  setSpacingVars,
-} from "theme";
+  setCSSVars,
+  getCSSVarsScale,
+} from "theme/utils";
 
 export const ThemeContext = createContext<ThemeContextValue>({
   themes: undefined,
@@ -20,7 +14,6 @@ export const ThemeContext = createContext<ThemeContextValue>({
   colorModes: [],
   colorMode: undefined,
   setColorMode: () => {},
-  // spacing: () => 0,
   themeFn: {
     spacing: () => 0,
   },
@@ -30,7 +23,7 @@ const ThemeProvider = ({ children }) => {
   const root = useRef<HTMLDivElement>(null);
 
   const { themesList, selectedTheme, colorModesList, selectedColorMode } =
-    parseThemes(hvThemes);
+    parseTheme(hvThemes);
 
   const [themes] = useState<string[]>(themesList);
   const [theme, setTheme] = useState<string>(selectedTheme);
@@ -41,15 +34,26 @@ const ThemeProvider = ({ children }) => {
     const {
       colorModesList: colorModesListUpdated,
       selectedColorMode: selectedColorModeUpdated,
-    } = parseThemes(hvThemes, theme, colorMode);
+    } = parseTheme(hvThemes, theme, colorMode);
 
-    setSpacingVars(hvThemes[theme as string].spacing.base, root.current);
     setColorModes(colorModesListUpdated);
     setColorMode(selectedColorModeUpdated);
   }, [theme]);
 
-  const spacing = useCallback(
-    (factor: number) => factor * hvThemes[theme as string].spacing.base,
+  useEffect(() => {
+    const spacingVars = getCSSVarsScale(
+      hvThemes[theme].spacing.base,
+      "spacing",
+      10
+    );
+    setCSSVars(root.current, spacingVars);
+  }, [theme]);
+
+  const themeFn = useMemo(
+    () => ({
+      spacing: (factor: number) =>
+        factor * hvThemes[theme as string].spacing.base,
+    }),
     [theme]
   );
 
@@ -61,9 +65,7 @@ const ThemeProvider = ({ children }) => {
       },
     });
 
-    for (const [key, value] of Object.entries(vars)) {
-      root.current?.style.setProperty(key, value as string);
-    }
+    setCSSVars(root.current, vars);
   }, [colorMode]);
 
   const value = useMemo(
@@ -74,10 +76,7 @@ const ThemeProvider = ({ children }) => {
       colorModes,
       colorMode,
       setColorMode,
-      // spacing,
-      themeFn: {
-        spacing,
-      },
+      themeFn,
     }),
     [theme, colorMode]
   );

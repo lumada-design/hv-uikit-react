@@ -1,4 +1,4 @@
-export const cssReset = {
+const cssReset = {
   /* 
     1. Use a more-intuitive box-sizing model. 
     2. Set default border width and style to apply border props easily. 
@@ -88,3 +88,5 @@ export const cssReset = {
     textDecoration: "inherit",
   },
 } as const;
+
+export { cssReset };

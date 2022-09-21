@@ -1,29 +1,14 @@
-import { toThemeVars, getSpacings } from "./utils";
-import * as Themes from "./themes";
+import { baseTheme } from "./base";
+import { toThemeVars } from "./utils";
 
 export { variant as themeVariant } from "@styled-system/variant";
-export const themes = { ...Themes };
 
-const defaultTheme = Object.values(themes)[0];
-const defaultColorMode = Object.values(defaultTheme.colors.modes)[0];
-
-// Redo these interfaces properly
-interface GenericProps {
-  [key: string]: any;
-}
-
-interface ThemeVars {
-  colors: GenericProps;
-  fontSizes: GenericProps;
-  lineHeights: GenericProps;
-  spacing: GenericProps;
-}
-
-export const themeVars: ThemeVars = toThemeVars({
-  ...defaultTheme,
-  colors: { ...defaultColorMode },
-  spacing: { ...getSpacings(defaultTheme.spacing.base) },
+export const themeVars = toThemeVars({
+  ...baseTheme,
+  colors: { ...Object.values(baseTheme.colors.modes)[0] },
 });
 
-export * from "./utils";
+export * as hvThemes from "./themes";
+export * from "./tokens";
+export * from "./base";
 export * from "./cssReset";

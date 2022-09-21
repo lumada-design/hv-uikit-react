@@ -1,6 +1,8 @@
-export const commonColors = {
-  base1: "#FBFCFC",
-  base2: "#414141",
+const common = {
+  base: {
+    base1: "#FBFCFC",
+    base2: "#414141",
+  },
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -53,13 +55,6 @@ const supportLight = {
   supp5: "#546B6B",
 };
 
-export const lightColors = {
-  ...accentLight,
-  ...atmosphereLight,
-  ...semanticLight,
-  ...supportLight,
-};
-
 /* -------------------------------------------------------------------------------------------------
  * Dark palette
  * -----------------------------------------------------------------------------------------------*/
@@ -110,9 +105,20 @@ const supportDark = {
   supp5: "#546B6B",
 };
 
-export const darkColors = {
-  ...accentDark,
-  ...atmosphereDark,
-  ...semanticDark,
-  ...supportDark,
+export const colors = {
+  common: {
+    ...common,
+  },
+  light: {
+    ...accentLight,
+    ...atmosphereLight,
+    ...semanticLight,
+    ...supportLight,
+  },
+  dark: {
+    ...accentDark,
+    ...atmosphereDark,
+    ...semanticDark,
+    ...supportDark,
+  },
 };

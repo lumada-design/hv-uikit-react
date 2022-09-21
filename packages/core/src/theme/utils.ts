@@ -1,4 +1,23 @@
-export const parseThemes = (
+export const mergeTheme = (...objects) => {
+  const isObject = (obj) => obj && typeof obj === "object";
+
+  return objects.reduce((prev, obj) => {
+    Object.keys(obj).forEach((key) => {
+      const pVal = prev[key];
+      const oVal = obj[key];
+
+      if (isObject(pVal) && isObject(oVal)) {
+        prev[key] = pVal ? oVal : mergeTheme(pVal, oVal);
+      } else {
+        prev[key] = oVal;
+      }
+    });
+
+    return prev;
+  }, {});
+};
+
+export const parseTheme = (
   themes: object,
   theme?: string,
   colorMode?: string
@@ -47,16 +66,18 @@ export const toCSSVars = (obj: object, prefix = "-") => {
   return vars;
 };
 
-export const getSpacings = (base) => {
-  const spacings = {};
-  for (let i = 1; i <= 10; ++i) {
-    spacings[i] = `${base * i}px`;
+export const setCSSVars = (elem, vars) => {
+  for (const [key, value] of Object.entries(vars)) {
+    elem?.style.setProperty(key, value as string);
   }
-  return spacings;
 };
 
-export const setSpacingVars = (base: number, elem) => {
-  for (let i = 1; i <= 10; ++i) {
-    elem?.style.setProperty(`--spacing-${i}`, `${i * base}px`);
+export const getCSSVarsScale = (base: number, name: string, size: number) => {
+  const vars = {};
+
+  for (let i = 1; i <= size; ++i) {
+    vars[`--${name}-${i}`] = `${i * base}px`;
   }
+
+  return vars;
 };

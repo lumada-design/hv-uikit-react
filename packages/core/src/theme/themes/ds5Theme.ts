@@ -1,17 +1,13 @@
-import { baseTokens, darkTokens } from "../tokens";
+import { makeTheme, colors } from "theme";
 
-const { colors: baseColors } = baseTokens;
-const { colors: darkColors } = darkTokens;
-
-const theme = {
-  ...baseTokens,
+const theme = makeTheme({
   colors: {
     modes: {
-      dawn: {
-        ...darkColors,
-      },
       wicked: {
-        ...baseColors,
+        ...colors.dark,
+      },
+      dawn: {
+        ...colors.light,
       },
       wild: {
         acce1: "orange",
@@ -19,7 +15,9 @@ const theme = {
       },
     },
   },
-  spacing: { base: 20 },
-};
+  spacing: {
+    base: 20,
+  },
+});
 
 export default theme;
