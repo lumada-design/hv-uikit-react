@@ -1,53 +1,27 @@
-import styled from "@emotion/styled";
-import { useTheme } from "hooks";
-import { themeVars, themeVariant } from "theme";
-
-type ButtonVariants = "big" | "small";
+import ButtonStyled from "./Button.styled";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariants;
+  /** Use the variant prop to change the visual style of the Button. */
+  variant?: "solid" | "subtle" | "outline" | "ghost";
+
+  /** Use the size prop to change the size of the Button. */
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
+/**
+ * The Button component is used to trigger an action or event.
+ */
 const Button: React.FC<ButtonProps> = ({
   children,
-  variant = "small",
+  variant = "default",
+  size = "md",
   onClick,
 }) => {
-  const { spacingFn } = useTheme();
-
-  const StyledButton = styled("button")<{ variant?: string }>(
-    {
-      color: themeVars.colors.atmo1,
-      backgroundColor: themeVars.colors.acce1,
-      padding: spacingFn(3),
-      marginLeft: spacingFn(10),
-      marginTop: themeVars.spacing[5],
-      outline: "1px solid black",
-    },
-    themeVariant({
-      variants: {
-        big: {
-          fontSize: themeVars.fontSizes.xl,
-        },
-        small: {
-          fontSize: themeVars.fontSizes.sm,
-        },
-      },
-    })
-  );
-
   return (
-    <StyledButton variant={variant} onClick={onClick}>
-      <span>
-        left margin and padding
-        <br />
-        should change with theme
-      </span>
-      <br />
-      <br />
+    <ButtonStyled variant={variant} size={size} onClick={onClick}>
       {children}
-    </StyledButton>
+    </ButtonStyled>
   );
 };
 

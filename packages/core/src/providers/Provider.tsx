@@ -7,7 +7,6 @@ import { cssReset } from "theme";
 interface ProviderProps {
   enableCssReset: boolean;
 }
-
 export const Context = createContext<ProviderContextValue>({});
 
 const Provider: React.FC<ProviderProps> = ({

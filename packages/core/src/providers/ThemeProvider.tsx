@@ -53,10 +53,7 @@ const ThemeProvider = ({ children }) => {
   }, [colorMode]);
 
   const spacingFn = useCallback(
-    (m: number) => {
-      console.log(hvThemes[theme as string].spacing.base);
-      return m * hvThemes[theme as string].spacing.base;
-    },
+    (m: number) => m * hvThemes[theme as string].spacing.base,
     [theme]
   );
 
