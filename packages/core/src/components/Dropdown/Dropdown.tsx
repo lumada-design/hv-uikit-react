@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { themeVars } from "theme";
 
 export interface DropdownOption {
   value: string;
@@ -12,7 +13,9 @@ export interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange }) => {
-  const StyledDropdown = styled.div({});
+  const StyledDropdown = styled.div({
+    border: `1px solid ${themeVars.colors.atmo4}`,
+  });
 
   return (
     <StyledDropdown>

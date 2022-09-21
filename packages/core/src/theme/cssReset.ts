@@ -33,7 +33,7 @@ export const cssReset = {
       1. Use theme colors for background and default color.
     */
   body: {
-    // backgroundColor: theme.colors.base1.
+    backgroundColor: "#E8E8E8", // theme.colors.base1.
     // colors: theme.colors.primary,
     fontFamily: "inherit",
     lineHeight: "inherit",

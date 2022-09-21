@@ -37,7 +37,9 @@ const Typography: React.FC<TypographyProps> = ({
   variant = "body",
 }) => {
   const StyledTypography = styled.span<{ variant: TypographyVariants }>(
-    {},
+    {
+      color: themeVars.colors.acce1,
+    },
     themeVariant({
       variants: {
         display: {

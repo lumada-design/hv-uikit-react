@@ -5,5 +5,7 @@ interface ThemeContextValue {
   colorModes?: string[];
   colorMode?: string;
   setColorMode?: (mode: string) => void;
-  spacing: (factor: number) => number;
+  themeFn: {
+    spacing: (factor: number) => number;
+  };
 }

@@ -20,7 +20,10 @@ export const ThemeContext = createContext<ThemeContextValue>({
   colorModes: [],
   colorMode: undefined,
   setColorMode: () => {},
-  spacing: () => 0,
+  // spacing: () => 0,
+  themeFn: {
+    spacing: () => 0,
+  },
 });
 
 const ThemeProvider = ({ children }) => {
@@ -71,7 +74,10 @@ const ThemeProvider = ({ children }) => {
       colorModes,
       colorMode,
       setColorMode,
-      spacing,
+      // spacing,
+      themeFn: {
+        spacing,
+      },
     }),
     [theme, colorMode]
   );

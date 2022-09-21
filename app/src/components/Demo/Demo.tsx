@@ -2,8 +2,10 @@ import {
   HvButton,
   HvDropdown,
   HvTypography,
+  HvHeader,
   DropdownOption,
   useTheme,
+  themeVars,
 } from "@hitachivantara/uikit-react-core";
 
 const Demo = () => {
@@ -30,27 +32,64 @@ const Demo = () => {
 
   return (
     <>
-      <HvDropdown
-        value={theme}
-        options={themeOptions}
-        onChange={onChangeTheme}
-      />
-      <HvDropdown
-        value={colorMode}
-        options={presetsOptions}
-        onChange={onChangePreset}
-      />
+      <HvHeader>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            gap: themeVars.spacing[2],
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <HvTypography variant="body">Theme: </HvTypography>
+            <HvDropdown
+              value={theme}
+              options={themeOptions}
+              onChange={onChangeTheme}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <HvTypography variant="body">Color Scheme: </HvTypography>
+            <HvDropdown
+              value={colorMode}
+              options={presetsOptions}
+              onChange={onChangePreset}
+            />
+          </div>
+        </div>
+      </HvHeader>
       <br />
       <br />
-      <HvButton variant="solid" size="xl">
-        Big
-      </HvButton>
-      <br />
-      <br />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <HvButton variant="solid" size="xl">
+          Big
+        </HvButton>
+        <br />
+        <br />
 
-      <HvButton variant="subtle" size="xs">
-        Small
-      </HvButton>
+        <HvButton variant="subtle" size="xs">
+          Small
+        </HvButton>
+      </div>
       <br />
       <br />
       <HvTypography variant="title3">theme: {theme}</HvTypography>

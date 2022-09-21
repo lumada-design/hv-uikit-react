@@ -20,13 +20,15 @@ const Button: React.FC<ButtonProps> = ({
   size = "md",
   onClick,
 }) => {
-  const { spacing } = useTheme();
+  const { themeFn } = useTheme();
 
   const ButtonStyled = styled("button")<{ variant: string; size: string }>(
     {
+      display: "flex",
+      alignItems: "center",
       color: themeVars.colors.atmo1,
       backgroundColor: themeVars.colors.acce1,
-      marginLeft: spacing(12),
+      marginLeft: themeFn.spacing(12),
       marginTop: themeVars.spacing[5],
       outline: "1px solid black",
     },
@@ -51,18 +53,23 @@ const Button: React.FC<ButtonProps> = ({
       variants: {
         xs: {
           padding: themeVars.spacing[1],
+          height: 20,
         },
         sm: {
           padding: themeVars.spacing[2],
+          height: 30,
         },
         md: {
           padding: themeVars.spacing[3],
+          height: 40,
         },
         lg: {
           padding: themeVars.spacing[4],
+          height: 60,
         },
         xl: {
           padding: themeVars.spacing[5],
+          height: 100,
         },
       },
     })
