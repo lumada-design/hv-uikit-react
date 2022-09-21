@@ -5,10 +5,10 @@ import { useTheme } from "hooks";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
-  variant?: "solid" | "subtle" | "outline" | "ghost";
+  variant: "solid" | "subtle" | "outline" | "ghost";
 
   /** Use the size prop to change the size of the Button. */
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 /**
@@ -16,7 +16,7 @@ export interface ButtonProps
  */
 const Button: React.FC<ButtonProps> = ({
   children,
-  variant = "default",
+  variant = "solid",
   size = "md",
   onClick,
 }) => {
@@ -33,24 +33,37 @@ const Button: React.FC<ButtonProps> = ({
     themeVariant({
       variants: {
         solid: {
-          fontSize: themeVars.fontSizes.base,
-        },
-        subtle: {
           fontSize: themeVars.fontSizes.lg,
         },
-        outline: {
+        subtle: {
           fontSize: themeVars.fontSizes.sm,
         },
-        ghost: {
+        outline: {
           fontSize: themeVars.fontSizes.xs,
         },
+        ghost: {
+          fontSize: themeVars.fontSizes.base,
+        },
       },
-      size: {
-        xs: {},
-        sm: {},
-        md: {},
-        lg: {},
-        xl: {},
+    }),
+    themeVariant({
+      prop: "size",
+      variants: {
+        xs: {
+          padding: themeVars.spacing[1],
+        },
+        sm: {
+          padding: themeVars.spacing[2],
+        },
+        md: {
+          padding: themeVars.spacing[3],
+        },
+        lg: {
+          padding: themeVars.spacing[4],
+        },
+        xl: {
+          padding: themeVars.spacing[5],
+        },
       },
     })
   );

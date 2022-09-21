@@ -42,11 +42,15 @@ const Demo = () => {
       />
       <br />
       <br />
-      <HvButton variant="solid">Big</HvButton>
+      <HvButton variant="solid" size="xl">
+        Big
+      </HvButton>
       <br />
       <br />
 
-      <HvButton variant="subtle">Small</HvButton>
+      <HvButton variant="subtle" size="xs">
+        Small
+      </HvButton>
       <br />
       <br />
       <HvTypography variant="title3">theme: {theme}</HvTypography>
