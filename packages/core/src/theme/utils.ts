@@ -72,11 +72,16 @@ export const setCSSVars = (elem, vars) => {
   }
 };
 
-export const getCSSVarsScale = (base: number, name: string, size: number) => {
+export const getCSSVarsScale = (
+  base: number,
+  name: string,
+  limit: number = 10,
+  unit: string = "px"
+) => {
   const vars = {};
 
-  for (let i = 1; i <= size; ++i) {
-    vars[`--${name}-${i}`] = `${i * base}px`;
+  for (let i = 1; i <= limit; ++i) {
+    vars[`--${name}-${i}`] = `${i * base}${unit}`;
   }
 
   return vars;

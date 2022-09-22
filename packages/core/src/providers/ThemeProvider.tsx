@@ -44,7 +44,8 @@ const ThemeProvider = ({ children }) => {
     const spacingVars = getCSSVarsScale(
       hvThemes[theme].spacing.base,
       "spacing",
-      10
+      10,
+      "px"
     );
     setCSSVars(root.current, spacingVars);
   }, [theme]);
