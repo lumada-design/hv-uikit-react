@@ -76,13 +76,16 @@ export const getCSSVarsScale = (
   base: number,
   name: string,
   limit: number = 10,
-  unit: string = "px"
+  unit: string = "px",
+  includeName: boolean = true
 ) => {
   const vars = {};
 
   for (let i = 1; i <= limit; ++i) {
-    vars[`--${name}-${i}`] = `${i * base}${unit}`;
+    if (includeName) vars[`--${name}-${i}`] = `${i * base}${unit}`;
+    else {
+      vars[`${i}`] = `${i * base}${unit}`;
+    }
   }
-
   return vars;
 };
