@@ -1,6 +1,3 @@
-interface ThemeFn {
-  spacing: (factor: number) => number;
-}
 interface ThemeContextValue {
   themes?: string[];
   theme?: string;
