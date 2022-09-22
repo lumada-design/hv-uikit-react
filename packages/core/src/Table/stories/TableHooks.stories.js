@@ -486,7 +486,7 @@ export const Expandable = () => {
                 </HvTableRow>
                 <HvTableRow
                   style={{
-                    display: row.isExpanded ? null : "none",
+                    display: row.isExpanded ? "contents" : "none",
                     background: theme.palette.atmo1,
                   }}
                 >
