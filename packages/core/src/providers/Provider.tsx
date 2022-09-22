@@ -5,7 +5,7 @@ import ThemeProvider from "./ThemeProvider";
 import { cssReset } from "theme";
 
 interface ProviderProps {
-  enableCssReset: boolean;
+  enableCssReset?: boolean;
 }
 export const Context = createContext<ProviderContextValue>({});
 

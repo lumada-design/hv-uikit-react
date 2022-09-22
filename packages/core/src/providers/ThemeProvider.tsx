@@ -1,11 +1,6 @@
 import { createContext, useRef, useState, useEffect, useMemo } from "react";
 import { hvThemes } from "theme";
-import {
-  parseTheme,
-  toCSSVars,
-  setCSSVars,
-  getCSSVarsScale,
-} from "theme/utils";
+import { parseTheme, toCSSVars, setCSSVars } from "theme/utils";
 
 export const ThemeContext = createContext<ThemeContextValue>({
   themes: undefined,
@@ -14,9 +9,6 @@ export const ThemeContext = createContext<ThemeContextValue>({
   colorModes: [],
   colorMode: undefined,
   setColorMode: () => {},
-  themeFn: {
-    spacing: () => 0,
-  },
 });
 
 const ThemeProvider = ({ children }) => {
@@ -41,25 +33,6 @@ const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
-    const spacingVars = getCSSVarsScale(
-      hvThemes[theme].spacing.base,
-      "spacing",
-      10,
-      "px",
-      true
-    );
-    setCSSVars(root.current, spacingVars);
-  }, [theme]);
-
-  const themeFn = useMemo(
-    () => ({
-      spacing: (factor: number) =>
-        factor * hvThemes[theme as string].spacing.base,
-    }),
-    [theme]
-  );
-
-  useEffect(() => {
     const vars = toCSSVars({
       ...hvThemes[theme as string],
       colors: {
@@ -78,7 +51,6 @@ const ThemeProvider = ({ children }) => {
       colorModes,
       colorMode,
       setColorMode,
-      themeFn,
     }),
     [theme, colorMode]
   );

@@ -8,5 +8,4 @@ interface ThemeContextValue {
   colorModes?: string[];
   colorMode?: string;
   setColorMode?: (mode: string) => void;
-  themeFn: ThemeFn;
 }
