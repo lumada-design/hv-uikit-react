@@ -5,7 +5,7 @@ import {
   HvHeader,
   DropdownOption,
   useTheme,
-  spacingFn,
+  themeUtils,
 } from "@hitachivantara/uikit-react-core";
 
 const Demo = () => {
@@ -38,7 +38,7 @@ const Demo = () => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-end",
-            gap: spacingFn(2),
+            gap: themeUtils.spacing(2),
           }}
         >
           <div

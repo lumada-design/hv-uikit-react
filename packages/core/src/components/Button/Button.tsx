@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { themeVars, themeVariant, spacingFn } from "theme";
+import { themeVars, themeVariant, themeUtils } from "theme";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,15 +20,13 @@ const Button: React.FC<ButtonProps> = ({
   size = "md",
   onClick,
 }) => {
-  console.log(themeVars);
-
   const ButtonStyled = styled("button")<{ variant: string; size: string }>(
     {
       display: "flex",
       alignItems: "center",
       color: themeVars.colors.atmo1,
       backgroundColor: themeVars.colors.acce1,
-      marginTop: spacingFn(10),
+      marginTop: themeUtils.spacing(10),
       outline: "1px solid black",
     },
     themeVariant({

@@ -1,65 +1,40 @@
-import { createContext, useRef, useState, useEffect, useMemo } from "react";
+import { useEffect, useRef } from "react";
+import { useTracked } from "store";
 import { hvThemes } from "theme";
 import { parseTheme, toCSSVars, setCSSVars } from "theme/utils";
 
-export const ThemeContext = createContext<ThemeContextValue>({
-  themes: undefined,
-  theme: undefined,
-  setTheme: () => {},
-  colorModes: [],
-  colorMode: undefined,
-  setColorMode: () => {},
-});
-
-const ThemeProvider = ({ children }) => {
+const ThemeProvider: React.FC = ({ children }) => {
   const root = useRef<HTMLDivElement>(null);
-
-  const { themesList, selectedTheme, colorModesList, selectedColorMode } =
-    parseTheme(hvThemes);
-
-  const [themes] = useState<string[]>(themesList);
-  const [theme, setTheme] = useState<string>(selectedTheme);
-  const [colorModes, setColorModes] = useState<string[]>(colorModesList);
-  const [colorMode, setColorMode] = useState<string>(selectedColorMode);
+  const [state, setState] = useTracked();
 
   useEffect(() => {
-    const {
-      colorModesList: colorModesListUpdated,
-      selectedColorMode: selectedColorModeUpdated,
-    } = parseTheme(hvThemes, theme, colorMode);
+    const { colorModesList, selectedColorMode } = parseTheme(
+      hvThemes,
+      state.theme,
+      state.colorMode
+    );
 
-    setColorModes(colorModesListUpdated);
-    setColorMode(selectedColorModeUpdated);
-  }, [theme]);
+    setState({
+      ...state,
+      colorModes: colorModesList,
+      colorMode: selectedColorMode,
+    });
+  }, [state.theme]);
 
   useEffect(() => {
+    const theme = hvThemes[state.theme];
+
     const vars = toCSSVars({
-      ...hvThemes[theme as string],
+      ...theme,
       colors: {
-        ...hvThemes[theme as string].colors.modes[colorMode],
+        ...theme.colors.modes[state.colorMode],
       },
     });
 
     setCSSVars(root.current, vars);
-  }, [colorMode]);
+  }, [state.colorMode]);
 
-  const value = useMemo(
-    () => ({
-      themes,
-      theme,
-      setTheme,
-      colorModes,
-      colorMode,
-      setColorMode,
-    }),
-    [theme, colorMode]
-  );
-
-  return (
-    <ThemeContext.Provider value={value}>
-      <div ref={root}>{children}</div>
-    </ThemeContext.Provider>
-  );
+  return <div ref={root}>{children}</div>;
 };
 
 export default ThemeProvider;

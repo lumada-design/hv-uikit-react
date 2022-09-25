@@ -9,8 +9,10 @@ export const themeVars = toThemeVars({
   spacing: baseTheme.spacing,
 });
 
-export const spacingFn = (factor: number): string =>
-  `calc(${themeVars.spacing.base} * ${factor}px)`;
+export const themeUtils = {
+  spacing: (factor: number): string =>
+    `calc(${themeVars.spacing.base} * ${factor}px)`,
+};
 
 export * as hvThemes from "./themes";
 export * from "./tokens";
