@@ -6,9 +6,10 @@ const styles = [
     "&:hover,&:focus": {},
     "&:active": {},
     minWidth: "70px",
-    padding: `0px ${themeUtils.spacing(1)}`,
+    padding: `${themeUtils.spacing(1)} ${themeUtils.spacing(
+      2
+    )} ${themeUtils.spacing(1)} ${themeUtils.spacing(2)}`,
     cursor: "pointer",
-    height: "32px",
     minHeight: "32px",
     borderRadius: themeVars.border.radius,
     fontSize: themeVars.fontSizes.base,
@@ -16,36 +17,20 @@ const styles = [
   },
   themeVariant({
     variants: {
-      ["primary" || "anotherPrimary"]: {
+      primary: {
         color: themeVars.colors.atmo1,
         backgroundColor: themeVars.colors.acce2,
         "&:hover": {
           backgroundColor: themeVars.colors.acce2h,
         },
       },
-      secondary: {
-        color: themeVars.colors.acce1,
-        backgroundColor: themeVars.colors.atmo1,
-        border: `1px solid ${themeVars.colors.atmo4}`,
-        "&:hover": {
-          backgroundColor: themeVars.colors.atmo3,
-          border: `1px solid ${themeVars.colors.atmo4}`,
-        },
-      },
       secondarySubtle: {
         color: themeVars.colors.acce1,
-        backgroundColor: themeVars.colors.atmo1,
+        backgroundColor: "transparent",
         border: `1px solid ${themeVars.colors.atmo4}`,
         "&:hover": {
           backgroundColor: themeVars.colors.atmo3,
           border: `1px solid ${themeVars.colors.atmo4}`,
-        },
-      },
-      ghost: {
-        color: themeVars.colors.acce2,
-        backgroundColor: "transparent",
-        "&:hover": {
-          backgroundColor: themeVars.colors.atmo3,
         },
       },
       primaryGhost: {

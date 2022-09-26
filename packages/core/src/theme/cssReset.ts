@@ -65,6 +65,13 @@ const cssReset = {
     fontSize: "100%",
   },
 
+  select: {
+    width: "100%",
+    height: "100%",
+    cursor: "pointer",
+    background: "transparent",
+  },
+
   /* Buttons have a default outline. */
   "button:focus": {
     outline: "5px auto -webkit-focus-ring-color",

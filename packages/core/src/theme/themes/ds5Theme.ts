@@ -16,7 +16,7 @@ const theme = makeTheme({
     },
   },
   spacing: {
-    base: 20,
+    base: 12,
   },
   border: {
     radius: "10px",

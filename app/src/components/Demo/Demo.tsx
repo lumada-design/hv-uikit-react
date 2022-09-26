@@ -50,7 +50,9 @@ const Demo = () => {
                 alignItems: "center",
               }}
             >
-              <HvTypography variant="body">Theme: </HvTypography>
+              <div style={{ width: 100 }}>
+                <HvTypography variant="body">Theme: </HvTypography>
+              </div>
               <HvDropdown
                 value={theme}
                 options={themeOptions}
@@ -64,7 +66,9 @@ const Demo = () => {
                 alignItems: "center",
               }}
             >
-              <HvTypography variant="body">Color Scheme: </HvTypography>
+              <div style={{ width: 200 }}>
+                <HvTypography variant="body">Color Scheme: </HvTypography>
+              </div>
               <HvDropdown
                 value={colorMode}
                 options={presetsOptions}
@@ -81,29 +85,22 @@ const Demo = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-evenly",
+          flexWrap: "wrap",
+          gap: themeUtils.spacing(5),
         }}
       >
-        {console.log(theme)}
         <HvButton variant="primary">primary</HvButton>
-        <HvButton
-          variant={theme === "ds5Theme" ? "secondarySubtle" : "secondary"}
-        >
-          {theme === "ds5Theme" ? "secondarySubtle" : "secondary"}
+        <HvButton variant="primarySubtle">primarySubtle</HvButton>
+        <HvButton variant="primaryGhost">primaryGhost</HvButton>
+        <HvButton variant="secondary">
+          secondary <em>(deprecated)</em>
         </HvButton>
-        <HvButton variant={theme === "ds5Theme" ? "primaryGhost" : "ghost"}>
-          {theme === "ds5Theme" ? "primaryGhost" : "ghost"}
+        <HvButton variant="secondarySubtle">secondarySubtle</HvButton>
+        <HvButton variant="secondaryGhost">secondaryGhost</HvButton>
+        <HvButton variant="ghost">
+          ghost <em>(deprecated)</em>
         </HvButton>
-        {theme === "ds5Theme" && (
-          <>
-            <HvButton variant="primarySubtle">primarySubtle</HvButton>
-            <HvButton variant="secondaryGhost">secondaryGhost</HvButton>
-          </>
-        )}
       </div>
-      <br />
-      <br />
-      <HvTypography variant="title3">theme: {theme}</HvTypography>
-      <HvTypography variant="body">colorMode: {colorMode}</HvTypography>
     </div>
   );
 };
