@@ -1,4 +1,4 @@
-import { colors, fontSizes, lineHeights, spacing } from "./tokens";
+import { colors, fontSizes, lineHeights, spacing, border } from "./tokens";
 import { mergeTheme } from "./utils";
 
 export const baseTheme = {
@@ -11,6 +11,7 @@ export const baseTheme = {
   },
   fontSizes,
   lineHeights,
+  border,
   spacing,
 };
 

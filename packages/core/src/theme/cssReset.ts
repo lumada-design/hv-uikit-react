@@ -26,14 +26,15 @@ const cssReset = {
   html: {
     // fontFamily: "$sans" /* 1 */,
     // lineHeight: "$base" /* 2 */,
-    fontSize: "16px",
+    fontSize: "12px",
+    fontFamily: "Open Sans",
   },
 
   /* 
       1. Use theme colors for background and default color.
     */
   body: {
-    backgroundColor: "#E8E8E8", // theme.colors.base1.
+    // backgroundColor: "#F0F0F0", // theme.colors.base1.
     // colors: theme.colors.primary,
     fontFamily: "inherit",
     lineHeight: "inherit",

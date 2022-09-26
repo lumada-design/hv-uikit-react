@@ -4,10 +4,10 @@ const theme = makeTheme({
   colors: {
     modes: {
       wicked: {
-        ...colors.dark,
+        ...colors.light,
       },
       dawn: {
-        ...colors.light,
+        ...colors.dark,
       },
       wild: {
         acce1: "orange",
@@ -17,6 +17,9 @@ const theme = makeTheme({
   },
   spacing: {
     base: 20,
+  },
+  border: {
+    radius: "10px",
   },
 });
 

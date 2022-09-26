@@ -6,6 +6,7 @@ import {
   DropdownOption,
   useTheme,
   themeUtils,
+  themeVars,
 } from "@hitachivantara/uikit-react-core";
 
 const Demo = () => {
@@ -31,46 +32,48 @@ const Demo = () => {
   };
 
   return (
-    <>
-      <HvHeader>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            gap: themeUtils.spacing(2),
-          }}
-        >
+    <div style={{ backgroundColor: themeVars.colors.atmo2, height: "100vh" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <HvHeader>
           <div
             style={{
               display: "flex",
               flexDirection: "row",
-              alignItems: "center",
+              justifyContent: "flex-end",
+              gap: themeUtils.spacing(2),
             }}
           >
-            <HvTypography variant="body">Theme: </HvTypography>
-            <HvDropdown
-              value={theme}
-              options={themeOptions}
-              onChange={onChangeTheme}
-            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <HvTypography variant="body">Theme: </HvTypography>
+              <HvDropdown
+                value={theme}
+                options={themeOptions}
+                onChange={onChangeTheme}
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <HvTypography variant="body">Color Scheme: </HvTypography>
+              <HvDropdown
+                value={colorMode}
+                options={presetsOptions}
+                onChange={onChangePreset}
+              />
+            </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <HvTypography variant="body">Color Scheme: </HvTypography>
-            <HvDropdown
-              value={colorMode}
-              options={presetsOptions}
-              onChange={onChangePreset}
-            />
-          </div>
-        </div>
-      </HvHeader>
+        </HvHeader>
+      </div>
       <br />
       <br />
       <div
@@ -80,21 +83,28 @@ const Demo = () => {
           justifyContent: "space-evenly",
         }}
       >
-        <HvButton variant="solid" size="xl">
-          Big
+        {console.log(theme)}
+        <HvButton variant="primary">primary</HvButton>
+        <HvButton
+          variant={theme === "ds5Theme" ? "secondarySubtle" : "secondary"}
+        >
+          {theme === "ds5Theme" ? "secondarySubtle" : "secondary"}
         </HvButton>
-        <br />
-        <br />
-
-        <HvButton variant="subtle" size="xs">
-          Small
+        <HvButton variant={theme === "ds5Theme" ? "primaryGhost" : "ghost"}>
+          {theme === "ds5Theme" ? "primaryGhost" : "ghost"}
         </HvButton>
+        {theme === "ds5Theme" && (
+          <>
+            <HvButton variant="primarySubtle">primarySubtle</HvButton>
+            <HvButton variant="secondaryGhost">secondaryGhost</HvButton>
+          </>
+        )}
       </div>
       <br />
       <br />
       <HvTypography variant="title3">theme: {theme}</HvTypography>
       <HvTypography variant="body">colorMode: {colorMode}</HvTypography>
-    </>
+    </div>
   );
 };
 
