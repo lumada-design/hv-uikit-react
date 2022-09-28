@@ -133,7 +133,9 @@ Barchart.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object),
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+  }),
   /**
    * Plotly data object (see https://plot.ly/javascript/reference/).
    */
@@ -150,6 +152,26 @@ Barchart.propTypes = {
    * Defines if should use a single or multiline tooltip.
    */
   tooltipType: PropTypes.oneOf(["single", "multiple"]),
+  /**
+   * Custom tooltip element to be displayed
+   */
+  tooltip: PropTypes.func,
+  /**
+   * Function to be called after plot render.
+   */
+  afterPlot: PropTypes.func,
+  /**
+   * Defines the X axis title.
+   */
+  xAxisTitle: PropTypes.string,
+  /**
+   * Defines the Y axis title.
+   */
+  yAxisTitle: PropTypes.string,
+  /**
+   * Defines the chart subtitle.
+   */
+  subtitle: PropTypes.string,
   /**
    * Sets is the chart is stack.
    */
