@@ -18,6 +18,7 @@
     "vite-tsconfig-paths": "^3.5.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.2",
     "@types/react": "^17.0.48",
     "@types/react-dom": "^17.0.17",
     "@vitejs/plugin-react": "^2.1.0",

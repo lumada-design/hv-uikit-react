@@ -4,16 +4,15 @@ import { themeVars, themeUtils } from "theme";
 export interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
-  const StyledContainer = styled("div")({
-    width: "100%",
-    height: "100%",
+  const Styled = styled("header")({
+    display: "flex",
     padding: themeUtils.spacing(2),
     borderTopWidth: 4,
     borderTopColor: themeVars.colors.sema4,
     backgroundColor: themeVars.colors.atmo1,
   });
 
-  return <StyledContainer>{children}</StyledContainer>;
+  return <Styled>{children}</Styled>;
 };
 
 export default Header;

@@ -10,6 +10,7 @@ const theme = makeTheme({
         ...colors.dark,
       },
       wild: {
+        ...colors.light,
         acce1: "orange",
         atmo1: "white",
       },
@@ -17,9 +18,6 @@ const theme = makeTheme({
   },
   spacing: {
     base: 12,
-  },
-  border: {
-    radius: "10px",
   },
 });
 

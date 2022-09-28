@@ -17,18 +17,18 @@ export const mergeTheme = (...objects) => {
   }, {});
 };
 
-export const parseTheme = (
+export const parseThemes = (
   themes: object,
   theme?: string,
   colorMode?: string
 ) => {
-  const themesList = Object.keys(themes);
-  const selectedTheme = theme || themesList[0];
-  const colorModesList = Object.keys(themes[selectedTheme].colors.modes);
+  const names = Object.keys(themes);
+  const selected = theme || names[0];
+  const colorModes = Object.keys(themes[selected].colors.modes);
   const selectedColorMode =
-    (colorMode && colorModesList[colorMode]) || colorModesList[0];
+    (colorMode && colorModes[colorMode]) || colorModes[0];
 
-  return { themesList, selectedTheme, colorModesList, selectedColorMode };
+  return { names, selected, colorModes, selectedColorMode };
 };
 
 export const toThemeVars = <T extends object>(
@@ -66,8 +66,24 @@ export const toCSSVars = (obj: object, prefix = "-") => {
   return vars;
 };
 
-export const setCSSVars = (elem, vars) => {
-  for (const [key, value] of Object.entries(vars)) {
-    elem?.style.setProperty(key, value as string);
-  }
+export const getStylesFromThemes = (themes) => {
+  const styles = {};
+
+  Object.keys(themes).forEach((themeName) => {
+    const theme = themes[themeName];
+    const colorModes = Object.keys(theme.colors.modes);
+
+    colorModes.forEach((colorMode) => {
+      const styleName = `body[data-theme="${themeName}"][data-color-mode="${colorMode}"]`;
+
+      styles[styleName] = toCSSVars({
+        ...theme,
+        colors: {
+          ...theme.colors.modes[colorMode],
+        },
+      });
+    });
+  });
+
+  return styles;
 };

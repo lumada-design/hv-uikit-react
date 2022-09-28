@@ -1,18 +1,15 @@
-import { colors, fontSizes, lineHeights, spacing, border } from "./tokens";
+import * as tokens from "./tokens";
 import { mergeTheme } from "./utils";
 
 export const baseTheme = {
+  ...tokens,
   colors: {
-    ...colors.common,
+    ...tokens.colors.common,
     modes: {
-      light: { ...colors.light },
-      dark: { ...colors.dark },
+      light: { ...tokens.colors.light },
+      dark: { ...tokens.colors.dark },
     },
   },
-  fontSizes,
-  lineHeights,
-  border,
-  spacing,
 };
 
 export const makeTheme = (obj = {}) => mergeTheme(baseTheme, obj);

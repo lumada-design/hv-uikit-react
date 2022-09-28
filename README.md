@@ -1,7 +1,7 @@
 <h1 align="center">Hitachi Vantara UI Kit</h1>
 
-<p align="center">Composable and themeable React components library for the Hitachi Vantara Design System. <br> 
-The foundation to build modern web apps with focus on usability and developer experience.</p>
+<p align="center">Composable and themeable React components library for the Hitachi Vantara Design System.
+</p>
 
 <div align="center">
 
