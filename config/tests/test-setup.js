@@ -8,3 +8,5 @@ import "@testing-library/jest-dom";
 failOnConsole();
 
 configure({ adapter: new Adapter() });
+
+window.URL.createObjectURL = jest.fn();

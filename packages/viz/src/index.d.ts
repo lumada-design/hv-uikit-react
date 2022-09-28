@@ -6,3 +6,6 @@ export * from "./Donutchart";
 
 export { default as HvLinechart } from "./Linechart";
 export * from "./Linechart";
+
+export { default as HvConfusionMatrix} from "./ConfusionMatrix";
+export * from "./ConfusionMatrix";

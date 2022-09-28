@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     width: "fit-content",
     minWidth: 220,
-    // @ts-ignore
     boxShadow: theme.hv.shadows[1],
     zIndex: 1000,
   },
