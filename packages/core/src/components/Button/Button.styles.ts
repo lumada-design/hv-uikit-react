@@ -26,15 +26,15 @@ export const sizeStyles: {
 } = {
   small: {
     minWidth: 80,
-    lineHeight: themeVars.lineHeight.sm,
+    lineHeight: themeVars.lineHeight.snug,
   },
   medium: {
     minWidth: 120,
-    lineHeight: themeVars.lineHeight.md,
+    lineHeight: themeVars.lineHeight.normal,
   },
   large: {
     minWidth: 148,
-    lineHeight: themeVars.lineHeight.lg,
+    lineHeight: themeVars.lineHeight.relaxed,
   },
 };
 
@@ -49,8 +49,8 @@ const baseStyles: CSSObject = {
   cursor: "pointer",
   minHeight: "32px",
   borderRadius: themeVars.radii.sm,
-  fontSize: themeVars.fontSize.md,
-  fontWeight: 600,
+  fontSize: themeVars.fontSize.base,
+  fontWeight: themeVars.fontWeight.normal,
 };
 
 export const getStyles = ({

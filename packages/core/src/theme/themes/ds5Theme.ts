@@ -16,7 +16,7 @@ const theme = makeTheme({
       },
     },
   },
-  spacing: {
+  space: {
     base: 12,
   },
 });

@@ -9,32 +9,32 @@ export const getTagStyles: {
 } = {
   h1: {
     color: themeVars.colors.acce1,
-    fontWeight: themeVars.fontWeight.xl,
+    fontWeight: themeVars.fontWeight.bold,
     fontSize: "4rem",
   },
   h2: {
     color: themeVars.colors.acce1,
-    lineHeight: themeVars.lineHeight.md,
-    fontWeight: themeVars.fontWeight.xl,
+    lineHeight: themeVars.lineHeight.normal,
+    fontWeight: themeVars.fontWeight.bold,
     fontSize: "2.5rem",
   },
   h3: {
     color: themeVars.colors.acce1,
-    lineHeight: themeVars.lineHeight.md,
-    fontWeight: themeVars.fontWeight.md,
+    lineHeight: themeVars.lineHeight.normal,
+    fontWeight: themeVars.fontWeight.semibold,
     fontSize: "1.75rem",
   },
   h4: {
     color: themeVars.colors.acce1,
-    lineHeight: themeVars.lineHeight.md,
-    fontWeight: themeVars.fontWeight.md,
+    lineHeight: themeVars.lineHeight.normal,
+    fontWeight: themeVars.fontWeight.semibold,
     fontSize: "1.25rem",
   },
   h5: {
     color: themeVars.colors.acce1,
-    lineHeight: themeVars.lineHeight.md,
-    fontWeight: themeVars.fontWeight.md,
-    fontSize: themeVars.fontSize.md,
+    lineHeight: themeVars.lineHeight.normal,
+    fontWeight: themeVars.fontWeight.semibold,
+    fontSize: themeVars.fontSize.base,
   },
   p: {
     margin: "1rem 0",
@@ -42,7 +42,7 @@ export const getTagStyles: {
 };
 
 const baseStyles: CSSObject = {
-  lineHeight: themeVars.lineHeight.md,
+  lineHeight: themeVars.lineHeight.normal,
   color: themeVars.colors.acce1,
 };
 

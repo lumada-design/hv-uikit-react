@@ -4,14 +4,9 @@ import { getStyles } from "./Text.styles";
 
 export type TextProps = {
   as: any;
-  color?: string;
 };
 
-const Text: React.FC<TextProps> = ({
-  as = "span",
-  color = "textBody",
-  ...props
-}) => {
+const Text: React.FC<TextProps> = ({ as = "span", ...props }) => {
   const styles = useMemo(() => {
     return getStyles({
       as,
@@ -19,7 +14,7 @@ const Text: React.FC<TextProps> = ({
   }, [as]);
 
   return (
-    <Box as={as} color={color} css={styles} {...props}>
+    <Box as={as} css={styles} {...props}>
       {props.children}
     </Box>
   );

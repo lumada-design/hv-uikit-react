@@ -1,9 +1,7 @@
 const fontSize = {
-  xs3: "0.5rem",
-  xs2: "0.625rem",
   xs: "0.75rem",
   sm: "0.875rem",
-  md: "1rem",
+  base: "1rem",
   lg: "1.125rem",
   xl: "1.25rem",
   xl2: "1.5rem",
@@ -12,26 +10,41 @@ const fontSize = {
   xl5: "3rem",
   xl6: "3.75rem",
   xl7: "4.5rem",
+  xl8: "6rem",
+  xl9: "8rem",
 };
 
 const fontWeight = {
-  xs: 200,
-  sm: 300,
-  md: 500,
-  lg: 600,
-  xl: 700,
-  xl2: 800,
-  xl3: 900,
+  thin: "100",
+  extralight: "200",
+  light: "300",
+  normal: "400",
+  medium: "500",
+  semibold: "600",
+  bold: "700",
+  extrabold: "800",
+  black: "900",
 };
 
 const fontFamily = {
-  body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  body: "Roboto, Helvetica, Arial, sans-serif",
 };
 
 const lineHeight = {
-  sm: 1.25,
-  md: 1.5,
-  lg: 1.7,
+  none: "1",
+  tight: "1.25",
+  snug: "1.375",
+  normal: "1.5",
+  relaxed: "1.625",
+  loose: "2",
+  3: ".75rem",
+  4: "1rem",
+  5: "1.25rem",
+  6: "1.5rem",
+  7: "1.75rem",
+  8: "2rem",
+  9: "2.25rem",
+  10: "2.5rem",
 };
 
 export { fontSize, fontWeight, fontFamily, lineHeight };

@@ -1,8 +1,4 @@
-const cssReset = {
-  /* 
-    1. Use a more-intuitive box-sizing model. 
-    2. Set default border width and style to apply border props easily. 
-  */
+export const CssBaseline = {
   "*, ::before, ::after": {
     boxSizing: "border-box",
     borderWidth: "0",
@@ -19,23 +15,11 @@ const cssReset = {
     height: "100%",
   },
 
-  /* 
-      1. Use theme `sans` font-family.
-      2. Use theme `base` line height.
-    */
   html: {
-    // fontFamily: "$sans" /* 1 */,
-    // lineHeight: "$base" /* 2 */,
-    fontSize: "12px",
-    fontFamily: "Open Sans",
+    fontFamily: "Roboto",
   },
 
-  /* 
-      1. Use theme colors for background and default color.
-    */
   body: {
-    // backgroundColor: "#F0F0F0", // theme.colors.base1.
-    // colors: theme.colors.primary,
     fontFamily: "inherit",
     lineHeight: "inherit",
     WebkitFontSmoothing: "antialiased",
@@ -96,5 +80,3 @@ const cssReset = {
     textDecoration: "inherit",
   },
 } as const;
-
-export { cssReset };

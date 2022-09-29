@@ -1,14 +1,13 @@
-import React from "react";
 import { Global, css } from "@emotion/react";
-import { hvThemes, themeVars, cssReset } from "theme";
+import { hvThemes, themeVars, CssBaseline } from "theme";
 import { parseThemes, getStylesFromThemes } from "theme/utils";
 
 interface ProviderProps {
-  enableCssReset?: boolean;
+  enableCssBaseline?: boolean;
 }
 
 const Provider: React.FC<ProviderProps> = ({
-  enableCssReset = true,
+  enableCssBaseline = true,
   children,
 }) => {
   const themes = parseThemes(hvThemes);
@@ -20,7 +19,7 @@ const Provider: React.FC<ProviderProps> = ({
     <>
       <Global
         styles={css`
-          ${enableCssReset && cssReset}
+          ${enableCssBaseline && CssBaseline}
           ${getStylesFromThemes(hvThemes)}
           body {
             background: ${themeVars.colors.atmo2};
