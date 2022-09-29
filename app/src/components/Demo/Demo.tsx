@@ -5,8 +5,8 @@ import {
   HvHeader,
   DropdownOption,
   useTheme,
-  themeUtils,
   themeVars,
+  HvBox,
 } from "@hitachivantara/uikit-react-core";
 
 const Demo = () => {
@@ -30,17 +30,17 @@ const Demo = () => {
   const onChangePreset = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setColorMode(event.target.value);
   };
+  
 
   return (
-    <div style={{ backgroundColor: themeVars.colors.atmo2, height: "100vh" }}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+    <HvBox as="main" sx={ (otherTheme) => ({ backgroundColor: otherTheme.colors.atmo2, height: "100vh" })} >
+      <HvBox as="nav" style={{ backgroundColor: themeVars.colors.atmo2, display: "flex", flexDirection: "column" }}>
         <HvHeader>
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-end",
-              gap: themeUtils.spacing(2),
             }}
           >
             <div
@@ -77,7 +77,7 @@ const Demo = () => {
             </div>
           </div>
         </HvHeader>
-      </div>
+      </HvBox>
       <br />
       <br />
       <div
@@ -86,22 +86,33 @@ const Demo = () => {
           flexDirection: "row",
           justifyContent: "space-evenly",
           flexWrap: "wrap",
-          gap: themeUtils.spacing(5),
         }}
       >
-        <HvButton variant="primary">primary</HvButton>
-        <HvButton variant="primarySubtle">primarySubtle</HvButton>
-        <HvButton variant="primaryGhost">primaryGhost</HvButton>
-        <HvButton variant="secondary">
+        <HvButton variant={"primary"}>primary</HvButton>
+        <HvButton variant={"primary"}>primarySubtle</HvButton>
+        <HvButton variant={"primary"}>primaryGhost</HvButton>
+        <HvButton variant={"primary"}>
           secondary <em>(deprecated)</em>
         </HvButton>
-        <HvButton variant="secondarySubtle">secondarySubtle</HvButton>
-        <HvButton variant="secondaryGhost">secondaryGhost</HvButton>
-        <HvButton variant="ghost">
+        <HvButton variant={"primary"}>secondarySubtle</HvButton>
+        <HvButton variant={"primary"}>secondaryGhost</HvButton>
+        <HvButton variant={"primary"}>
           ghost <em>(deprecated)</em>
         </HvButton>
       </div>
-    </div>
+      <br />
+      <br />
+      <HvTypography variant="title3">theme: {theme}</HvTypography>
+      <HvTypography variant="body">colorMode: {colorMode}</HvTypography>
+      <HvBox sx={{ backgroundColor: "red"}}>
+        <HvButton variant="primary">Big</HvButton>
+        <HvButton variant="primary">Small</HvButton>
+      </HvBox>
+      <HvBox sx={ (otherTheme) => ({ backgroundColor: otherTheme.colors.acce1, marginTop: otherTheme.spacing.base})}>
+        <HvButton variant="primary">Big</HvButton>
+        <HvButton variant="primary">Small</HvButton>
+      </HvBox>
+    </HvBox>
   );
 };
 
