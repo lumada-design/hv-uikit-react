@@ -1,23 +1,29 @@
-import { css } from "@emotion/react";
-import { HvProvider } from "@hitachivantara/uikit-react-core";
-import { Header, Components, ThemeSwitcher } from "./components";
+import {
+  HvProvider,
+  HvBox,
+  themeUtils,
+} from "@hitachivantara/uikit-react-core";
+import { Header, ThemeSwitcher } from "./layout";
+import { Typography, Buttons } from "./components";
+import { CSSProperties } from "react";
 
 const styles = {
-  content: css`
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  `,
-};
+  display: "flex",
+  flexDirection: "column",
+  gap: themeUtils.space(5),
+  maxWidth: "960px",
+  margin: `${themeUtils.space(5)} auto`,
+} as CSSProperties;
 
 const App = () => {
   return (
     <HvProvider>
       <Header />
-      <div css={styles.content}>
+      <HvBox sx={styles}>
         <ThemeSwitcher />
-        <Components />
-      </div>
+        <Typography />
+        <Buttons />
+      </HvBox>
     </HvProvider>
   );
 };

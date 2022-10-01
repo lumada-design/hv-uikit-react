@@ -1,11 +1,8 @@
 import {
   HvHeader,
   HvHeaderBrand,
-  HvHeaderActions,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
-// import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export const Header: React.FC = () => {
   return (
@@ -14,9 +11,6 @@ export const Header: React.FC = () => {
       <HvHeaderBrand>
         <HvTypography variant="label">Lumada App</HvTypography>
       </HvHeaderBrand>
-      <HvHeaderActions>
-        {/* <ThemeSwitcher /> */}
-      </HvHeaderActions>
     </HvHeader>
   );
 };

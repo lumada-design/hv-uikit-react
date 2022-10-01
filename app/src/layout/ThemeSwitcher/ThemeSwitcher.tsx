@@ -1,4 +1,4 @@
-import { HvDropdown, useTheme } from "@hitachivantara/uikit-react-core";
+import { HvBox, HvDropdown, useTheme } from "@hitachivantara/uikit-react-core";
 
 export const ThemeSwitcher: React.FC = () => {
   const {
@@ -11,7 +11,7 @@ export const ThemeSwitcher: React.FC = () => {
   } = useTheme();
 
   return (
-    <div css={{ display: "flex", margin: "20px 0", gap: 20 }}>
+    <HvBox sx={{ display: "flex", gap: 20 }}>
       <HvDropdown
         css={{ width: 150 }}
         value={selectedTheme}
@@ -30,7 +30,7 @@ export const ThemeSwitcher: React.FC = () => {
         }))}
         onChange={changeColorMode}
       />
-    </div>
+    </HvBox>
   );
 };
 

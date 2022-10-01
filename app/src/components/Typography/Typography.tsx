@@ -1,7 +1,9 @@
 import React from "react";
 import {
+  HvBox,
   HvTypography,
-  TypographyVariant,
+  TypographyVariants,
+  themeUtils,
 } from "@hitachivantara/uikit-react-core";
 
 const variants = [
@@ -14,27 +16,30 @@ const variants = [
   "label",
   "caption1",
   "caption2",
-] as TypographyVariant[];
+] as TypographyVariants[];
 
-export const Components: React.FC = () => {
+export const Typography: React.FC = () => {
   return (
-    <>
-      {variants.map((variant: TypographyVariant) => {
+    <HvBox>
+      {variants.map((variant: TypographyVariants) => {
         return (
-          <React.Fragment key={`key_${variant}`}>
+          <HvBox
+            key={`key_${variant}`}
+            sx={{ marginBottom: themeUtils.space(1) }}
+          >
             <HvTypography variant="label" key={`label_${variant}`}>
               {variant}
             </HvTypography>
             <HvTypography variant={variant} key={variant}>
               Welcome to NEXT Design System!
             </HvTypography>
-          </React.Fragment>
+          </HvBox>
         );
       })}
-    </>
+    </HvBox>
   );
 };
 
 if (process.env.NODE_ENV !== "production") {
-  Components.displayName = "Components";
+  Typography.displayName = "Typography";
 }
