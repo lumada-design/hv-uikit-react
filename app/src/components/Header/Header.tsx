@@ -2,26 +2,24 @@ import {
   HvHeader,
   HvHeaderBrand,
   HvHeaderActions,
-  HvText,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import ThemeSwitcher from "../ThemeSwitcher";
+// import { ThemeSwitcher } from "../ThemeSwitcher";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <HvHeader>
       <HvHeaderBrand />
       <HvHeaderBrand>
-        <HvText as="h4">Lumada App</HvText>
+        <HvTypography variant="label">Lumada App</HvTypography>
       </HvHeaderBrand>
       <HvHeaderActions>
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
       </HvHeaderActions>
     </HvHeader>
   );
 };
-
-export default Header;
 
 if (process.env.NODE_ENV !== "production") {
   Header.displayName = "Header";

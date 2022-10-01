@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
-import { Buttons, Header } from "./components";
+import { Header, Components, ThemeSwitcher } from "./components";
 
 const styles = {
   content: css`
@@ -15,7 +15,8 @@ const App = () => {
     <HvProvider>
       <Header />
       <div css={styles.content}>
-        <Buttons />
+        <ThemeSwitcher />
+        <Components />
       </div>
     </HvProvider>
   );
