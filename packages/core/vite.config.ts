@@ -23,6 +23,8 @@ export default defineConfig({
     }),
   ],
   build: {
+    sourcemap: true,
+    emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, "src", "index.ts"),
       formats: ["es", "cjs"],

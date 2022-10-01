@@ -12,7 +12,7 @@
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "pnpm --parallel --filter=!'./tools/**'  dev",
+    "dev": "pnpm --parallel -F=!'./tools/**' dev",
     "doc": "start-storybook -p 6006 --no-manager-cache",
     "build": "pnpm -r build",
     "build:storybook": "build-storybook",
@@ -23,6 +23,9 @@
     "lint-staged": "lint-staged",
     "clean": "npx rimraf ./**/node_modules ./**/dist",
     "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=16.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",

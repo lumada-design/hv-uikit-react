@@ -12,4 +12,7 @@ export default defineConfig({
     }),
     tsconfigPaths({ loose: true }),
   ],
+  build: {
+    sourcemap: true,
+  },
 });
