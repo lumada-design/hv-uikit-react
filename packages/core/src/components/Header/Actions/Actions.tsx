@@ -1,16 +1,18 @@
 import styled from "@emotion/styled";
 import { themeUtils } from "theme";
 
-export interface HeaderProps {}
+export interface HeaderActionsProps {}
 
-const Actions: React.FC<HeaderProps> = ({ children }) => {
-  const Styled = styled("header")({
+export const HeaderActions: React.FC<HeaderActionsProps> = ({ children }) => {
+  const Styled = styled("span")({
     marginLeft: "auto",
     display: "inline-flex",
-    gap: themeUtils.spacing(2),
+    gap: themeUtils.space(2),
   });
 
   return <Styled>{children}</Styled>;
 };
 
-export default Actions;
+if (process.env.NODE_ENV !== "production") {
+  HeaderActions.displayName = "HeaderActions";
+}

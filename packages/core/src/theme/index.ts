@@ -5,12 +5,15 @@ export { variant as themeVariant } from "@styled-system/variant";
 
 export const themeVars = toThemeVars({
   ...baseTheme,
-  colors: { ...Object.values(baseTheme.colors.modes)[0] },
+  colors: {
+    ...baseTheme.colors.common,
+    ...Object.values(baseTheme.colors.modes)[0],
+  },
   space: baseTheme.space,
 });
 
 export const themeUtils = {
-  spacing: (factor: number): string =>
+  space: (factor: number): string =>
     `calc(${themeVars.space.base} * ${factor}px)`,
 };
 

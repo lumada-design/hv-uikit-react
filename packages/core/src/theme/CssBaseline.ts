@@ -16,7 +16,8 @@ export const CssBaseline = {
   },
 
   html: {
-    fontFamily: "Roboto",
+    fontFamily:
+      "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
   },
 
   body: {

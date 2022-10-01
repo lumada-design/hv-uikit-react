@@ -1,22 +1,21 @@
-const fontSize = {
-  xs: "0.75rem",
-  sm: "0.875rem",
-  base: "1rem",
-  lg: "1.125rem",
-  xl: "1.25rem",
-  xl2: "1.5rem",
-  xl3: "1.875rem",
-  xl4: "2.25rem",
-  xl5: "3rem",
-  xl6: "3.75rem",
-  xl7: "4.5rem",
-  xl8: "6rem",
-  xl9: "8rem",
+export const fontFamily = {
+  body: "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
 };
 
-const fontWeight = {
-  thin: "100",
-  extralight: "200",
+export const fontSizes = {
+  xs: "0.625rem",
+  sm: "0.75rem",
+  base: "0.875rem",
+  lg: "1rem",
+  xl: "1.25rem",
+  xl2: "1.5rem",
+  xl3: "2rem",
+  xl4: "2.625rem",
+};
+
+export const fontWeights = {
+  hairline: "100",
+  thin: "200",
   light: "300",
   normal: "400",
   medium: "500",
@@ -26,25 +25,12 @@ const fontWeight = {
   black: "900",
 };
 
-const fontFamily = {
-  body: "Roboto, Helvetica, Arial, sans-serif",
+export const lineHeights = {
+  none: 1,
+  sm: "1rem",
+  base: "1.25rem",
+  lg: "1.5rem",
+  xl: "2rem",
+  xl2: "2.5rem",
+  xl3: "3rem",
 };
-
-const lineHeight = {
-  none: "1",
-  tight: "1.25",
-  snug: "1.375",
-  normal: "1.5",
-  relaxed: "1.625",
-  loose: "2",
-  3: ".75rem",
-  4: "1rem",
-  5: "1.25rem",
-  6: "1.5rem",
-  7: "1.75rem",
-  8: "2rem",
-  9: "2.25rem",
-  10: "2.5rem",
-};
-
-export { fontSize, fontWeight, fontFamily, lineHeight };

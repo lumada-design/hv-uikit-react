@@ -3,16 +3,21 @@ import { themeVars, themeUtils } from "theme";
 
 export interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({ children }) => {
+export const Header: React.FC<HeaderProps> = ({ children }) => {
   const Styled = styled("header")({
     display: "flex",
-    padding: themeUtils.spacing(2),
+    padding: `${themeUtils.space(1)} ${themeUtils.space(3)}`,
     borderTopWidth: 4,
     borderTopColor: themeVars.colors.sema4,
     backgroundColor: themeVars.colors.atmo1,
+    boxShadow: themeVars.shadows.md,
+    alignItems: "center",
+    height: "44px",
   });
 
   return <Styled>{children}</Styled>;
 };
 
-export default Header;
+if (process.env.NODE_ENV !== "production") {
+  Header.displayName = "Header";
+}

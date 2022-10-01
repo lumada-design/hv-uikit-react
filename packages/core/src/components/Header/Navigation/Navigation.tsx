@@ -1,11 +1,15 @@
 import styled from "@emotion/styled";
 
-export interface HeaderProps {}
+export interface HeaderNavigationProps {}
 
-const Navigation: React.FC<HeaderProps> = ({ children }) => {
-  const Styled = styled("header")({});
+export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
+  children,
+}) => {
+  const Styled = styled("span")({});
 
   return <Styled>{children}</Styled>;
 };
 
-export default Navigation;
+if (process.env.NODE_ENV !== "production") {
+  HeaderNavigation.displayName = "HeaderNavigation";
+}

@@ -79,6 +79,7 @@ export const getStylesFromThemes = (themes) => {
       styles[styleName] = toCSSVars({
         ...theme,
         colors: {
+          ...theme.colors.common,
           ...theme.colors.modes[colorMode],
         },
       });

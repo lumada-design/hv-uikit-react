@@ -1,8 +1,6 @@
 const common = {
-  base: {
-    base1: "#FBFCFC",
-    base2: "#414141",
-  },
+  base1: "#FBFCFC",
+  base2: "#414141",
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -12,8 +10,10 @@ const common = {
 const accentLight = {
   acce1: "#414141",
   acce2: "#2064B4",
-  acce2h: "#477DBD",
+  acce2h: "#1775E0",
+  acce2s: "#E4EEF9",
   acce3: "#CC0000",
+  acce4: "#6C6B6B",
 };
 
 const atmosphereLight = {
@@ -63,7 +63,9 @@ const accentDark = {
   acce1: "#CCCCCC",
   acce2: "#639FE3",
   acce2h: "#82B2E8",
+  acce2s: "#4C5767",
   acce3: "#CC0000",
+  acce4: "#9A9999",
 };
 
 const atmosphereDark = {
@@ -106,9 +108,7 @@ const supportDark = {
 };
 
 export const colors = {
-  common: {
-    ...common,
-  },
+  common,
   light: {
     ...accentLight,
     ...atmosphereLight,

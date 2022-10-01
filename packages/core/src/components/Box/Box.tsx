@@ -16,11 +16,11 @@ import {
 } from "styled-system";
 import { themeVars } from "theme";
 
-interface Props {
+export interface BoxProps {
   children: React.ReactNode;
 }
 
-const Box = styled("div")<Props>(
+export const Box = styled("div")<BoxProps>(
   border,
   color,
   display,
@@ -39,8 +39,6 @@ const Box = styled("div")<Props>(
     color: themeVars.colors.acce1,
   }
 );
-
-export default Box;
 
 if (process.env.NODE_ENV !== "production") {
   Box.displayName = "Box";
