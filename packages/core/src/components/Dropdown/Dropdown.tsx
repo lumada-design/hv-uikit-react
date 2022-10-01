@@ -43,6 +43,10 @@ const DropDownHeader = styled("div")<DropDownHeaderProps>`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-radius: ${(props) =>
+    props.isOpen
+      ? `${themeVars.radii.xs} ${themeVars.radii.xs} 0 0`
+      : `${themeVars.radii.xs} ${themeVars.radii.xs}`};
 `;
 
 const DropDownList = styled("ul")`
@@ -56,6 +60,7 @@ const DropDownList = styled("ul")`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-radius: 0 0 ${themeVars.radii.xs} ${themeVars.radii.xs};
 `;
 
 interface ListItemProps {
@@ -110,7 +115,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <DropDownWrapper ref={ref} className={className}>
       <DropDownHeader isOpen={isOpen} onClick={onToggleHandler}>
-        <Typography variant="label">{value}</Typography>
+        <Typography
+          variant="label"
+          css={{
+            color: themeVars.colors.acce4,
+          }}
+        >
+          {value}
+        </Typography>
         <DropDownIcon />
       </DropDownHeader>
       {isOpen && (

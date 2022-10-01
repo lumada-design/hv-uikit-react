@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import { StyledTypography } from "./styles";
 
 type TypographyVariants =
@@ -28,17 +29,20 @@ export interface TypographyProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   as?: keyof typeof TypographyMap;
   variant?: TypographyVariants;
+  css?: CSSProperties;
+  className?: string;
 }
 
 export const Typography: React.FC<TypographyProps> = ({
   children,
   as = "body",
   variant = "body",
+  className,
 }) => {
   const Component = TypographyMap[as];
 
   return (
-    <StyledTypography as={Component} variant={variant}>
+    <StyledTypography as={Component} variant={variant} className={className}>
       {children}
     </StyledTypography>
   );
