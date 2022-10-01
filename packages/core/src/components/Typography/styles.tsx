@@ -1,16 +1,6 @@
 import styled from "@emotion/styled";
 import { themeVars, themeVariant } from "theme";
-
-type TypographyVariants =
-  | "display"
-  | "title1"
-  | "title2"
-  | "title3"
-  | "title4"
-  | "body"
-  | "label"
-  | "caption1"
-  | "caption2";
+import { TypographyVariants } from "./Typography";
 
 export const StyledTypography = styled.p<{ variant: TypographyVariants }>(
   {

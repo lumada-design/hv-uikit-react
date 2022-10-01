@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { StyledTypography } from "./styles";
 
-type TypographyVariants =
+export type TypographyVariants =
   | "display"
   | "title1"
   | "title2"
@@ -25,8 +25,7 @@ const TypographyMap = {
   body2: "p",
 } as const;
 
-export interface TypographyProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface TypographyProps {
   as?: keyof typeof TypographyMap;
   variant?: TypographyVariants;
   css?: CSSProperties;
@@ -42,7 +41,7 @@ export const Typography: React.FC<TypographyProps> = ({
   const Component = TypographyMap[as];
 
   return (
-    <StyledTypography as={Component} variant={variant} className={className}>
+    <StyledTypography as={Component} className={className} variant={variant}>
       {children}
     </StyledTypography>
   );
