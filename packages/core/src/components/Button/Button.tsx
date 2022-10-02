@@ -10,11 +10,15 @@ export type ButtonVariants =
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Use the variant prop to change the visual style of the Button. */
   variant?: ButtonVariants;
   css?: CSSProperties;
   className?: string;
 }
 
+/**
+ * Button component is used to trigger an action or event.
+ */
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
