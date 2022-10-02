@@ -1,16 +1,9 @@
-import { baseTheme } from "./base";
-import { toThemeVars } from "./utils";
+import { baseComponentsVars, baseThemeVars } from "./base";
 
 export { variant as themeVariant } from "@styled-system/variant";
+export { makeTheme } from "./utils";
 
-export const themeVars = toThemeVars({
-  ...baseTheme,
-  colors: {
-    ...baseTheme.colors.common,
-    ...Object.values(baseTheme.colors.modes)[0],
-  },
-  space: baseTheme.space,
-});
+export const themeVars = { ...baseThemeVars, ...baseComponentsVars };
 
 export const themeUtils = {
   space: (factor: number): string =>
@@ -20,5 +13,4 @@ export const themeUtils = {
 export * as hvThemes from "./themes";
 
 export * from "./tokens";
-export * from "./base";
 export * from "./CssBaseline";

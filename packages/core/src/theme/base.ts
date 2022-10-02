@@ -1,5 +1,5 @@
 import * as tokens from "./tokens";
-import { mergeTheme } from "./utils";
+import { toThemeVars } from "./utils";
 
 export const baseTheme = {
   ...tokens,
@@ -12,4 +12,24 @@ export const baseTheme = {
   },
 };
 
-export const extendTheme = (obj = {}) => mergeTheme(baseTheme, obj);
+export const baseThemeVars = toThemeVars({
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors.common,
+    ...Object.values(baseTheme.colors.modes)[0],
+  },
+});
+
+export const baseComponents = {
+  dropdown: {
+    borderRadius: baseThemeVars.radii.xs,
+  },
+  header: {
+    height: 44,
+    borderTop: `4px solid ${baseThemeVars.colors.sema4}`,
+  },
+};
+
+export const baseComponentsVars = toThemeVars({
+  ...baseComponents,
+});

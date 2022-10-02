@@ -1,6 +1,6 @@
-import { extendTheme, colors } from "theme";
+import { makeTheme, colors } from "theme";
 
-const theme = extendTheme({
+const theme = makeTheme({
   colors: {
     modes: {
       wicked: {
@@ -14,6 +14,12 @@ const theme = extendTheme({
         acce1: "orange",
         atmo1: "white",
       },
+    },
+  },
+  components: {
+    header: {
+      height: "100px",
+      borderTop: "none",
     },
   },
 });

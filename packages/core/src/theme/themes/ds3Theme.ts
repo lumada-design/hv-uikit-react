@@ -1,5 +1,5 @@
-import { extendTheme } from "theme";
+import { makeTheme } from "theme";
 
-const theme = extendTheme();
+const theme = makeTheme();
 
 export default theme;

@@ -1,3 +1,5 @@
+import { baseTheme, baseComponents } from "./base";
+
 export const mergeTheme = (...objects) => {
   const isObject = (obj) => obj && typeof obj === "object";
 
@@ -15,6 +17,16 @@ export const mergeTheme = (...objects) => {
 
     return prev;
   }, {});
+};
+
+export const makeTheme = (overrides: any = {}) => {
+  const { components, ...theme } = mergeTheme(baseTheme, {
+    ...overrides,
+    ...baseComponents,
+    ...overrides.components,
+  });
+
+  return theme;
 };
 
 export const parseThemes = (
