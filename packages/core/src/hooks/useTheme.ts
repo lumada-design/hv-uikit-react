@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
-import { hvThemes } from "theme";
+import { themes } from "theme";
 import { parseThemes } from "theme/utils";
 
 export const useTheme = () => {
-  let themes = parseThemes(hvThemes);
+  let tParsed = parseThemes(themes);
 
-  const [selectedTheme, setSelectedTheme] = useState(themes.selected);
+  const [selectedTheme, setSelectedTheme] = useState(tParsed.selected);
   const [selectedColorMode, setSelectedColorMode] = useState(
-    themes.selectedColorMode
+    tParsed.selectedColorMode
   );
-  const [themeColorModes, setThemeColorModes] = useState(themes.colorModes);
+  const [themeColorModes, setThemeColorModes] = useState(tParsed.colorModes);
 
   useEffect(() => {
-    themes = parseThemes(hvThemes, selectedTheme, selectedColorMode);
+    tParsed = parseThemes(themes, selectedTheme, selectedColorMode);
 
-    document.body.setAttribute(`data-theme`, themes.selected);
-    document.body.setAttribute(`data-color-mode`, themes.selectedColorMode);
+    document.body.setAttribute(`data-theme`, tParsed.selected);
+    document.body.setAttribute(`data-color-mode`, tParsed.selectedColorMode);
 
-    setThemeColorModes(themes.colorModes);
-    setSelectedColorMode(themes.selectedColorMode);
+    setThemeColorModes(tParsed.colorModes);
+    setSelectedColorMode(tParsed.selectedColorMode);
   }, [selectedTheme]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const useTheme = () => {
   };
 
   return {
-    themesNames: themes.names,
+    themesNames: tParsed.names,
     selectedTheme,
     selectedColorMode,
     themeColorModes,

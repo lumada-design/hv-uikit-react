@@ -13,7 +13,7 @@ export const StyledButton = styled.button<{ variant: ButtonVariants }>(
     )} ${themeUtils.space(2)}`,
     cursor: "pointer",
     minHeight: "32px",
-    borderRadius: themeVars.radii.sm,
+    borderRadius: themeVars.dropdown.borderRadius,
     fontSize: themeVars.fontSizes.base,
     fontWeight: 600,
   },

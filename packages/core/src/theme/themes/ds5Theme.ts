@@ -9,7 +9,7 @@ const theme = makeTheme({
       dawn: {
         ...colors.dark,
       },
-      wild: {
+      orange: {
         ...colors.light,
         acce1: "orange",
         atmo1: "white",
@@ -17,6 +17,9 @@ const theme = makeTheme({
     },
   },
   components: {
+    dropdown: {
+      borderRadius: "0.25rem", // from vars
+    },
     header: {
       height: "100px",
       borderTop: "none",

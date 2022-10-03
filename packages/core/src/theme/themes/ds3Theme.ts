@@ -1,5 +1,5 @@
 import { makeTheme } from "theme";
 
-const theme = makeTheme();
+const theme = makeTheme({});
 
 export default theme;
