@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { themeVars, themeVariant, themeUtils } from "theme";
-import { ButtonVariants } from "./Button";
+import { ButtonVariant } from "./Button";
 
-export const StyledButton = styled.button<{ variant: ButtonVariants }>(
+export const StyledButton = styled.button<{ variant: ButtonVariant }>(
   {
     textTransform: "none",
     "&:hover,&:focus": {},

@@ -6,7 +6,7 @@ export const Buttons = () => {
       <HvButton variant="primary">Primary</HvButton>
       <HvButton variant="primarySubtle">Primary Subtle</HvButton>
       <HvButton variant="primaryGhost">Primary Ghost</HvButton>
-      <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
+      <HvButton variant="secondary">Secondary Subtle</HvButton>
       <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
     </HvBox>
   );
