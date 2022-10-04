@@ -15,7 +15,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
   variant?: ButtonVariant;
-  css?: CSSProperties;
+  sx?: CSSProperties;
   className?: string;
 }
 

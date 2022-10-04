@@ -1,12 +1,12 @@
-import { makeTheme, colors } from "theme";
+import { colors, makeTheme } from "theme";
 
-const theme = makeTheme({
+const theme = makeTheme((themeVars) => ({
   colors: {
     modes: {
-      wicked: {
+      light: {
         ...colors.light,
       },
-      dawn: {
+      dark: {
         ...colors.dark,
       },
       orange: {
@@ -18,13 +18,13 @@ const theme = makeTheme({
   },
   components: {
     dropdown: {
-      borderRadius: "0.25rem", // from vars
+      borderRadius: themeVars.radii.sm,
     },
     header: {
       height: "100px",
       borderTop: "none",
     },
   },
-});
+}));
 
 export default theme;

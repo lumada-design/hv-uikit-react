@@ -1,6 +1,6 @@
 import { Global, css } from "@emotion/react";
 import { themes, themeVars, CssBaseline } from "theme";
-import { parseThemes, getStylesFromThemes } from "theme/utils";
+import { parseThemes, getThemesCSSVars } from "theme/utils";
 
 interface ProviderProps {
   enableCssBaseline?: boolean;
@@ -10,17 +10,17 @@ const Provider: React.FC<ProviderProps> = ({
   enableCssBaseline = true,
   children,
 }) => {
-  const tParsed = parseThemes(themes);
+  const theme = parseThemes(themes);
 
-  document.body.setAttribute(`data-theme`, tParsed.selected);
-  document.body.setAttribute(`data-color-mode`, tParsed.selectedColorMode);
+  document.body.setAttribute(`data-theme`, theme.selected);
+  document.body.setAttribute(`data-color-mode`, theme.selectedColorMode);
 
   return (
     <>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}
-          ${getStylesFromThemes(themes)}
+          ${getThemesCSSVars(themes)}
           body {
             background: ${themeVars.colors.atmo2};
             transition: background 0.5s ease-out;

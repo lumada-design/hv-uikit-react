@@ -31,7 +31,7 @@ export const parseThemes = (
   return { names, selected, colorModes, selectedColorMode };
 };
 
-export const toThemeVars = <T extends object>(
+export const mapCSSVars = <T extends object>(
   obj: T,
   prefix: string = "-"
 ): T => {
@@ -39,7 +39,7 @@ export const toThemeVars = <T extends object>(
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
-      vars[key] = toThemeVars(value, `${prefix}-${key}`);
+      vars[key] = mapCSSVars(value, `${prefix}-${key}`);
     } else {
       vars[key] = `var(${prefix}-${key})`;
     }
@@ -66,8 +66,8 @@ export const toCSSVars = (obj: object, prefix = "-") => {
   return vars;
 };
 
-export const getStylesFromThemes = (themes) => {
-  const styles = {};
+export const getThemesCSSVars = (themes) => {
+  const vars = {};
 
   Object.keys(themes).forEach((themeName) => {
     const theme = themes[themeName];
@@ -76,7 +76,7 @@ export const getStylesFromThemes = (themes) => {
     colorModes.forEach((colorMode) => {
       const styleName = `body[data-theme="${themeName}"][data-color-mode="${colorMode}"]`;
 
-      styles[styleName] = toCSSVars({
+      vars[styleName] = toCSSVars({
         ...theme,
         colors: {
           ...theme.colors.common,
@@ -86,5 +86,5 @@ export const getStylesFromThemes = (themes) => {
     });
   });
 
-  return styles;
+  return vars;
 };

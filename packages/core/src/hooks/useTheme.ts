@@ -3,22 +3,23 @@ import { themes } from "theme";
 import { parseThemes } from "theme/utils";
 
 export const useTheme = () => {
-  let tParsed = parseThemes(themes);
+  const themesNames = Object.keys(themes);
+  let theme = parseThemes(themes);
 
-  const [selectedTheme, setSelectedTheme] = useState(tParsed.selected);
+  const [selectedTheme, setSelectedTheme] = useState(theme.selected);
   const [selectedColorMode, setSelectedColorMode] = useState(
-    tParsed.selectedColorMode
+    theme.selectedColorMode
   );
-  const [themeColorModes, setThemeColorModes] = useState(tParsed.colorModes);
+  const [themeColorModes, setThemeColorModes] = useState(theme.colorModes);
 
   useEffect(() => {
-    tParsed = parseThemes(themes, selectedTheme, selectedColorMode);
+    theme = parseThemes(themes, selectedTheme, selectedColorMode);
 
-    document.body.setAttribute(`data-theme`, tParsed.selected);
-    document.body.setAttribute(`data-color-mode`, tParsed.selectedColorMode);
+    document.body.setAttribute(`data-theme`, theme.selected);
+    document.body.setAttribute(`data-color-mode`, theme.selectedColorMode);
 
-    setThemeColorModes(tParsed.colorModes);
-    setSelectedColorMode(tParsed.selectedColorMode);
+    setThemeColorModes(theme.colorModes);
+    setSelectedColorMode(theme.selectedColorMode);
   }, [selectedTheme]);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export const useTheme = () => {
   };
 
   return {
-    themesNames: tParsed.names,
+    themesNames,
     selectedTheme,
     selectedColorMode,
     themeColorModes,
