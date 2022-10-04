@@ -13,14 +13,9 @@ import setActionsId from "../../setActionsId";
 const getValue = (checkboxProps) =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 
-const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
+const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, id) => {
   return (
-    <div
-      className={classes.selectCell}
-      semantic={semantic}
-      id={`checkbox-cell-${id}`}
-      key={`checkbox${id}`}
-    >
+    <div className={classes.selectCell} id={`checkbox-cell-${id}`} key={`checkbox${id}`}>
       <HvCheckBox
         className={classes.checkboxPlacement}
         onChange={onCheckboxSelected}
@@ -105,8 +100,7 @@ const row = (
         })}
         {...others}
       >
-        {renderSelectCell &&
-          selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
+        {renderSelectCell && selectCell(classes, onCheckboxSelected, checkboxProps, checked, id)}
         {clonedChildren}
         {renderActionsCell &&
           actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
