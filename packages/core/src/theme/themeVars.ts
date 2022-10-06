@@ -1,23 +1,18 @@
 import * as tokens from "./tokens";
 import { mapCSSVars } from "./utils";
 
-const componentsContract = {
+const componentsSpec = {
   dropdown: {
-    borderRadius: undefined,
+    borderRadius: "string",
   },
   header: {
-    height: undefined,
-    borderTop: undefined,
+    height: "string",
+    borderTop: "string",
   },
 };
 
-const componentsVars = mapCSSVars({
-  ...componentsContract,
-});
-
-const tokensVars = mapCSSVars({
+export const themeVars = mapCSSVars({
   ...tokens,
-  colors: { ...tokens.colors.common, ...tokens.colors.light },
+  colors: { ...tokens.colors.common, ...tokens.colors.light }, // flatten colors
+  ...componentsSpec,
 });
-
-export const themeVars = { ...tokensVars, ...componentsVars };
