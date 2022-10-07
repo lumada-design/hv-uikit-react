@@ -1,6 +1,12 @@
+<p align="center">
+  <a href="https://github.com/chakra-ui/chakra-ui">
+    <img src="https://user-images.githubusercontent.com/14975353/194580478-9d952473-7d06-4572-b5e4-232cb8f67cc2.png" alt="Hitach logo" width="100" />
+  </a>
+</p>
+
 <h1 align="center">Hitachi Vantara UI Kit</h1>
 
-<p align="center">Composable and themeable React components library for the Hitachi Vantara Design System.
+<p align="center">React UI library for the Hitachi Vantara Design System.
 </p>
 
 <div align="center">
@@ -18,10 +24,10 @@
 
 ## Why use the UI Kit?
 
-- **Ready to go**: Start your project with over 50 well designed React components.
+- **Ready to go**: Start your project with over 50 high-quality React components out of the box.
 - **Composable**: Compose your UI with reusable building blocks.
 - **Accessible**: UI Kit follows WAI-ARIA standards, helping you to reach the largest audience possible with less effort.
-- **Themeable**: Use Hitachi Vantara design system or customize it using the theming features.
+- **Themeable**: Use Hitachi Vantara Design System or customize it using the theming features.
 
 ## Packages
 
@@ -45,25 +51,44 @@ npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styles
 To start using the components, wrap your application with the `HvProvider`.
 
 ```jsx
-import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
 
-// Do this at the root of your application
-function App({ children }) {
-  return <HvProvider>{children}</HvProvider>;
-}
+const App = () => (
+  <HvProvider>
+    <HvButton>Hello from UI Kit!</HvButton>
+  </HvProvider>
+);
 ```
+
+## Documentation
+See our documentation site [here](https://lumada-design.github.io/uikit/master/?path=/docs) for full how-to docs and guidelines
+
 
 ## Team ✨
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/eliofreitas"><img src="https://avatars.githubusercontent.com/u/16538408?v=4" width="64px;" alt=""/><br /><sub><b>Elio Freitas</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/francisco-guilherme"><img src="https://avatars.githubusercontent.com/u/14975353?v=4" width="64px;" alt=""/><br /><sub><b>Francisco Guilherme</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/HQFOX"><img src="https://avatars.githubusercontent.com/u/19229133?v=4" width="64px;" alt=""/><br /><sub><b>Henrique Raposo</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/plagoa"><img src="https://avatars.githubusercontent.com/u/7498785?v=4" width="64px;" alt=""/><br /><sub><b>Paulo Lagoá</b></sub></a><br /></td>
   </tr>
 </table>
 
+## Contributing
+
+Please check out our [Contribution Guidelines](/CONTRIBUTING.md) and let's build a better UI Kit together.
+
+We welcome all contributions. You can help us fixing bugs or submit any new ideas, as [pull requests](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-a-pull-request) or as [GitHub issues](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-an-issue).
+
+Join and support the project!
+## Contributors 🤟
+
+<a href="https://github.com/lumada-design/hv-uikit-react/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lumada-design/hv-uikit-react" />
+</a>
+
 ## License
 
 This project is licensed under the terms of the [Apache 2.0 license](/LICENSE.md).
+
+Details for the required packages and their licenses can be obtained in https://knowledge.hitachivantara.com/Documents/Open_Source_Software.
