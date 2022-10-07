@@ -1,6 +1,6 @@
 import {
-  HvProvider,
   HvBox,
+  HvProvider,
   themeUtils,
 } from "@hitachivantara/uikit-react-core";
 import { Header, ThemeSwitcher } from "./layout";

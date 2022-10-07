@@ -1,16 +1,15 @@
 import { Meta } from "@storybook/react";
-import { Dropdown } from "./Dropdown";
-import { Box } from "../Box";
+import { HvBox, HvDropdown } from "components";
 
 export default {
-  component: Dropdown,
+  component: HvDropdown,
   title: "Dropdown",
 } as Meta;
 
 export const Primary = () => {
   return (
-    <Box sx={{ width: 200, height: 200, position: "relative" }}>
-      <Dropdown
+    <HvBox sx={{ width: 200, height: 200, position: "relative" }}>
+      <HvDropdown
         value="value1"
         options={[
           { label: "Label 1", value: "value1" },
@@ -18,6 +17,6 @@ export const Primary = () => {
           { label: "Label 3", value: "value3" },
         ]}
       />
-    </Box>
+    </HvBox>
   );
 };

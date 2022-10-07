@@ -1,52 +1,35 @@
-import React from "react";
+import { forwardRef } from "react";
 import { themeVars } from "theme";
+import { PolymorphicComponentRef, PolymorphicRef } from "./types";
 
-export interface BoxProps<C extends React.ElementType> {
-  as?: C;
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-  sx?: Sx;
-}
+type SxProps =
+  | React.CSSProperties
+  | ((themeVars: ThemeVars) => React.CSSProperties);
 
-type Sx = React.CSSProperties | ((themeVars) => React.CSSProperties);
+type BaseProps<C extends React.ElementType> = PolymorphicComponentRef<
+  C,
+  { style?: React.CSSProperties; sx?: SxProps }
+>;
 
-type UIkitTheme = {
-  primarycolor: string;
-  padding: string;
-};
+export type BoxProps = <C extends React.ElementType = "div">(
+  props: BaseProps<C>
+) => React.ReactElement | null;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const extractSx = (sx: Sx, theme: UIkitTheme) => {
+const useSx = (sx: SxProps) => {
   return typeof sx === "function" ? sx(themeVars) : sx;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const useSx = (sx: Sx, systemStyles: UIkitTheme, className: string) => {
-  return extractSx(sx, systemStyles);
-}; //transformar em css
+export const Box: BoxProps = forwardRef(
+  <C extends React.ElementType = "div">(
+    { style, as, sx, children, ...restProps }: BaseProps<C>,
+    ref?: PolymorphicRef<C>
+  ) => {
+    const Component = as || "div";
 
-export const Box: React.FC<BoxProps<any>> = <C extends React.ElementType>({
-  as,
-  children,
-  style,
-  sx,
-}: BoxProps<C>) => {
-  const Component = as || "div";
-
-  const systemStyles = {
-    primarycolor: "blue",
-    padding: "20px",
-  };
-
-  const className = "teste";
-
-  return (
-    <Component style={sx ? useSx(sx, systemStyles, className) : style}>
-      {children}
-    </Component>
-  );
-};
-
-if (process.env.NODE_ENV !== "production") {
-  Box.displayName = "Box";
-}
+    return (
+      <Component style={sx ? useSx(sx) : style} ref={ref} {...restProps}>
+        {children}
+      </Component>
+    );
+  }
+);

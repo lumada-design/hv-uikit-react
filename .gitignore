@@ -29,13 +29,3 @@ dist/
 
 # typescript
 *.tsbuildinfo
-
-# project
-docs/.docusaurus
-storybook-static
-TODO.md
-
-.yalc
-.husky
-
-.eslintcache

@@ -63,3 +63,7 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 export default Button;
+
+if (process.env.NODE_ENV !== "production") {
+  Button.displayName = "Button";
+}

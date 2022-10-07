@@ -8,13 +8,13 @@ interface DropdownHeaderProps {
 export const DropdownHeader = styled("div")<DropdownHeaderProps>`
   display: flex;
   align-items: center;
-  margin-left: auto;
   padding: 0 0 0 ${themeUtils.space(2)};
   border: 1px solid ${themeVars.colors.acce4};
   background-color: ${themeVars.colors.atmo1};
   & div:last-child {
     margin-left: auto;
-    transform: ${(props) => (props.isOpen ? "rotateX(180deg)" : null)};
+    transform: rotateX(180deg);
+    transform: ${(props) => (props.isOpen ? "rotateX(0deg)" : "null")};
   }
   white-space: nowrap;
   overflow: hidden;
