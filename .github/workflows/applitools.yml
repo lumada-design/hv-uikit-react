@@ -13,18 +13,16 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
+        run: V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -34,17 +32,16 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
     needs: [Build-Storybook-V2-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -58,7 +55,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 14
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -67,10 +64,15 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
-
+      
+      - name: Required Dependencies
+        run: |
+          sudo apt-get -y update 
+          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
+      
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
@@ -92,8 +94,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Notify-End:
     name: Notify End

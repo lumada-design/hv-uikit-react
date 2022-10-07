@@ -36,7 +36,7 @@ env:
 jobs:
   Static-Checks:
     name: Licenses, Lint, Jest
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -44,11 +44,10 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
@@ -76,7 +75,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Install
         run: |
@@ -87,8 +86,7 @@ jobs:
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
+        run: V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -98,8 +96,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Build-Storybook-V3-Store:
     name: Build Storybook (v3 store)
@@ -111,18 +108,16 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          npm run build-documentation
+        run: npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -132,18 +127,17 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
     if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     needs: [Build-Storybook-V2-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -157,7 +151,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -166,7 +160,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -192,8 +186,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools-Complete:
     name: Applitools complete API call
@@ -234,8 +227,7 @@ jobs:
           fetch-depth: 1
 
       - name: Remove Previous Documentation
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+        run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -254,8 +246,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3
@@ -270,11 +261,11 @@ jobs:
   A11Y-Tests:
     name: Accessibility Tests
     needs: [Build-Storybook-V3-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -288,7 +279,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -297,7 +288,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -313,8 +304,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Playwright:
     name: Playwright test
@@ -338,7 +328,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: 16
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -371,11 +361,11 @@ jobs:
   Robot:
     name: Test Robot
     needs: [Build-Storybook-V3-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
+      image: joaoeg/docker-robot-framework:0.1
+      options: --shm-size=6g -u 1001
       env:
         BROWSER: chrome
         ROBOT_TESTS_DIR: ./automation/robot/storybook
@@ -385,7 +375,7 @@ jobs:
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
@@ -401,7 +391,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -428,7 +418,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # delete storybook artifacts
       - uses: geekyeggo/delete-artifact@v1
         with:
           name: |

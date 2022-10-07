@@ -19,14 +19,13 @@ describe("<FilterGroup />", () => {
   });
 
   it("Can be opened", async () => {
-    const { container, getByRole, findByRole } = render(<Main />);
+    const { getByRole, findByRole } = render(<Main />);
     let dropdownElement = getByRole("combobox");
 
     userEvent.click(dropdownElement);
 
     dropdownElement = await findByRole("combobox");
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
-    expect(container).toMatchSnapshot();
   });
 
   it("Can be closed with click on header", async () => {
