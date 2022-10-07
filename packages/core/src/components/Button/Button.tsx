@@ -45,12 +45,12 @@ const mapVariant = (variant: ButtonVariant): ButtonVariant => {
 /**
  * Button component is used to trigger an action or event.
  */
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   children,
   variant = "primary",
   onClick,
   className,
-}) => {
+}: ButtonProps) => {
   return (
     <StyledButton
       className={className}

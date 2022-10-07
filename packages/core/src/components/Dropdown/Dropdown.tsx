@@ -22,12 +22,12 @@ export interface DropdownProps {
   className?: string;
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({
+export const Dropdown = ({
   value,
   options,
   onChange,
   className,
-}) => {
+}: DropdownProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 

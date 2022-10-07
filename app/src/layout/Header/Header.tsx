@@ -4,7 +4,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-export const Header: React.FC = () => {
+export const Header = () => {
   return (
     <HvHeader>
       <HvHeaderBrand />

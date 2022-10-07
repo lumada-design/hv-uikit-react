@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { themeUtils } from "theme";
 
-export interface HeaderActionsProps {}
+export interface HeaderActionsProps {
+  children?: React.ReactNode;
+}
 
-export const HeaderActions: React.FC<HeaderActionsProps> = ({ children }) => {
+export const HeaderActions = ({ children }: HeaderActionsProps) => {
   const Styled = styled("span")({
     marginLeft: "auto",
     display: "inline-flex",

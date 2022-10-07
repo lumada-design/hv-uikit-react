@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { themeVars, themeUtils } from "theme";
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  children?: React.ReactNode;
+}
 
-export const Header: React.FC<HeaderProps> = ({ children }) => {
+export const Header = ({ children }: HeaderProps) => {
   const Styled = styled("header")({
     display: "flex",
     padding: `${themeUtils.space(1)} ${themeUtils.space(3)}`,

@@ -3,13 +3,11 @@ import { themes, themeVars, CssBaseline } from "theme";
 import { parseThemes, getThemesCSSVars } from "theme/utils";
 
 interface ProviderProps {
+  children?: React.ReactNode;
   enableCssBaseline?: boolean;
 }
 
-const Provider: React.FC<ProviderProps> = ({
-  enableCssBaseline = true,
-  children,
-}) => {
+const Provider = ({ enableCssBaseline = true, children }: ProviderProps) => {
   const theme = parseThemes(themes);
 
   document.body.setAttribute(`data-theme`, theme.selected);

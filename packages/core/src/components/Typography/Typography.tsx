@@ -31,18 +31,18 @@ export interface TypographyProps {
   variant?: TypographyVariants;
   sx?: CSSProperties;
   className?: string;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 /**
  * Typography component is used to render text and paragraphs within an interface.
  */
-export const Typography: React.FC<TypographyProps> = ({
+export const Typography = ({
   children,
-  as = "body",
+  as = "body1",
   variant = "body",
   className,
-}) => {
+}: TypographyProps) => {
   const Component = TypographyMap[as];
 
   return (

@@ -1,6 +1,6 @@
 import { HvBox, HvDropdown, useTheme } from "@hitachivantara/uikit-react-core";
 
-export const ThemeSwitcher: React.FC = () => {
+export const ThemeSwitcher = () => {
   const {
     themesNames,
     selectedTheme,

@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import { themeVars } from "theme";
 
-export interface HeaderBrandProps {}
+export interface HeaderBrandProps {
+  children?: React.ReactNode;
+}
 
-export const HeaderBrand: React.FC<HeaderBrandProps> = ({ children }) => {
+export const HeaderBrand = ({ children }: HeaderBrandProps) => {
   const Styled = styled("span")({});
 
   return <Styled>{children}</Styled>;

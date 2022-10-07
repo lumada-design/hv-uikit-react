@@ -18,7 +18,7 @@ const variants = [
   "caption2",
 ] as TypographyVariants[];
 
-export const Typography: React.FC = () => {
+export const Typography = () => {
   return (
     <HvBox>
       {variants.map((variant: TypographyVariants) => {
