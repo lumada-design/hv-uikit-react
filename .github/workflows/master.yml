@@ -367,8 +367,8 @@ jobs:
       - name: Clean Folders
         if: always()
         run: |
-          sudo rm -rf ${{ github.workspace }}/dist
-          sudo rm -rf ${{ github.workspace }}/reports
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
 
   Notify-End-Internal:
     name: Notify End Internal
