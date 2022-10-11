@@ -57,7 +57,7 @@ jobs:
       - name: Clean Folders
         if: always()
         run: |
-          rm -rf ${{ github.workspace }}/dist
+          sudo rm -rf ${{ github.workspace }}/dist
 
   Robot:
     name: Test Robot
@@ -90,10 +90,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
@@ -104,7 +100,7 @@ jobs:
         uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
         with:
           args: docker restart storybook
-      
+
       - name: Run Robot
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
@@ -118,8 +114,8 @@ jobs:
       - name: Clean Folders
         if: always()
         run: |
-          sudo rm -rf ${{ github.workspace }}/dist
-          sudo rm -rf ${{ github.workspace }}/reports
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
 
   Notify-End:
     name: Notify End
