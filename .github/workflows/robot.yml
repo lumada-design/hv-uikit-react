@@ -67,7 +67,7 @@ jobs:
         browser: [firefox, chrome]
     container:
       image: joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
+      options: --shm-size=6g --cpus 4
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
@@ -77,7 +77,7 @@ jobs:
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
