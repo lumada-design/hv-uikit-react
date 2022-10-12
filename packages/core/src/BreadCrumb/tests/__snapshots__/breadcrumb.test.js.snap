@@ -180,6 +180,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -211,14 +212,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 1
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 1"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 1"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 1
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -328,6 +349,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -359,14 +381,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 2
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 2"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 2"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 2
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -476,6 +518,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -507,14 +550,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 3
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 3"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 3"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 3
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -624,6 +687,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -655,14 +719,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 4
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 4"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 4"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 4
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -772,6 +856,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -803,14 +888,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 5
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 5"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 5"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 5
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -920,6 +1025,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -951,14 +1057,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 6
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 6"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 6"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 6
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -1068,6 +1194,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -1099,14 +1226,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 7
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 7"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 7"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 7
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>
@@ -1216,6 +1363,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
+                      component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
@@ -1247,14 +1395,34 @@ exports[`Breadcrumb should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        component="div"
                         noWrap={true}
                         variant="highlightText"
                       >
-                        <p
+                        <div
                           className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
-                          Label 8
-                        </p>
+                          <WithStyles(memo(HvOverflowTooltip))
+                            data="Label 8"
+                          >
+                            <Memo(HvOverflowTooltip)
+                              classes={
+                                Object {
+                                  "tooltipAnchor": "HvOverflowTooltip-tooltipAnchor",
+                                  "tooltipAnchorParagraph": "HvOverflowTooltip-tooltipAnchorParagraph",
+                                  "tooltipData": "HvOverflowTooltip-tooltipData",
+                                }
+                              }
+                              data="Label 8"
+                            >
+                              <div
+                                className="HvOverflowTooltip-tooltipAnchor"
+                              >
+                                Label 8
+                              </div>
+                            </Memo(HvOverflowTooltip)>
+                          </WithStyles(memo(HvOverflowTooltip))>
+                        </div>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                   </a>

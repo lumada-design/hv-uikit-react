@@ -11,11 +11,28 @@ import {
 } from "../stories/BreadCrumb.stories";
 
 describe("Breadcrumb", () => {
-  const wrapper = mount(
-    <HvProvider cssBaseline="none">
-      <Main />
-    </HvProvider>
-  );
+  const { ResizeObserver } = window;
+  let wrapper;
+
+  beforeEach(() => {
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+
+    wrapper = mount(
+      <HvProvider cssBaseline="none">
+        <Main />
+      </HvProvider>
+    );
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();

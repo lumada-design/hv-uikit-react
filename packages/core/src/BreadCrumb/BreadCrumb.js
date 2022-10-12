@@ -5,7 +5,7 @@ import { withStyles } from "@mui/styles";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
-import { HvLink, HvTypography } from "..";
+import { HvLink, HvTypography, HvOverflowTooltip } from "..";
 import { pathWithSubMenu, removeExtension } from "./utils";
 import styles from "./styles";
 
@@ -17,8 +17,8 @@ const Page = ({ Component, onClick, elem, classes }) => (
     data={elem}
     classes={{ a: classes.a }}
   >
-    <HvTypography noWrap variant="highlightText" className={classes.link}>
-      {startCase(elem.label)}
+    <HvTypography noWrap component="div" variant="highlightText" className={classes.link}>
+      <HvOverflowTooltip data={startCase(elem.label)} />
     </HvTypography>
   </HvLink>
 );

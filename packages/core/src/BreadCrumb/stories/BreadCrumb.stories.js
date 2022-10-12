@@ -127,3 +127,21 @@ WithClickEvents.parameters = {
     description: { story: "Breadcrumb sample that has a onClick defined." },
   },
 };
+
+export const WithLongLabels = () => {
+  const data = [
+    { label: "Label 1 with some long text", path: "route1" },
+    { label: "Label 2 with some long text", path: "route2" },
+    { label: "Label 3 with some long text", path: "route3" },
+    { label: "Label 4 with some long text", path: "route4" },
+    { label: "Label 5 with some long text", path: "route5" },
+  ];
+
+  return <HvBreadCrumb listRoute={data} id="breadcrumb7" aria-label="Breadcrumb" />;
+};
+
+WithLongLabels.parameters = {
+  docs: {
+    description: { story: "Breadcrumb with long labels." },
+  },
+};
