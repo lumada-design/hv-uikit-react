@@ -74,7 +74,6 @@ jobs:
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
         ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
-        GECKO_DRIVER_VERSION: v0.31.0
 
     services:
       storybook:
