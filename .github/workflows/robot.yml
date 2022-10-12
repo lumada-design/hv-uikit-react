@@ -59,14 +59,14 @@ jobs:
   Robot:
     name: Test Robot
     needs: [Build-Storybook-V3-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         browser: [firefox, chrome]
     container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
+      image: joaoeg/docker-robot-framework:0.1
       options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
@@ -84,8 +84,8 @@ jobs:
           --name storybook
 
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -93,26 +93,26 @@ jobs:
           name: storybook-v3
           path: ${{ github.workspace }}/dist
 
-      # - name: Restart nginx
-      #   uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
-      #   with:
-      #     args: docker restart storybook
+      - name: Restart nginx
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        with:
+          args: docker restart storybook
 
-      # - name: Run Robot
-      #   run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+      - name: Run Robot
+        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
-      # - name: Save Reports
-      #   uses: actions/upload-artifact@v2
-      #   if: failure()
-      #   with:
-      #     name: ${{ matrix.browser }}-reports
-      #     path: ${{ github.workspace }}/reports
+      - name: Save Reports
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: ${{ github.workspace }}/reports
 
-      # - name: Clean Folders
-      #   if: always()
-      #   run: |
-      #     rm -rf ${{ github.workspace }}/dist
-      #     rm -rf ${{ github.workspace }}/reports
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
 
   # Notify-End:
   #   name: Notify End
