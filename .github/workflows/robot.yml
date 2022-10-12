@@ -3,27 +3,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Notify-Start:
-  #   name: Notify Start
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Notify
-  #       uses: hbfernandes/slack-action@1.0
-  #       env:
-  #         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-  #       with:
-  #         args: |
-  #           {
-  #             "channel": "ui-kit-eng-ci",
-  #             "attachments": [
-  #               {
-  #                 "mrkdwn_in": ["text"],
-  #                 "title": "${{ github.workflow }} on ${{github.ref}} started",
-  #                 "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-  #                 "footer": "by ${{github.actor}}"
-  #               }
-  #             ]
-  #           }
+  Notify-Start:
+    name: Notify Start
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "title": "${{ github.workflow }} on ${{github.ref}} started",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
+                  "footer": "by ${{github.actor}}"
+                }
+              ]
+            }
 
   Build-Storybook-V3-Store:
     name: Build Storybook (v3 store)
@@ -114,47 +114,46 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  # Notify-End:
-  #   name: Notify End
-  #   needs: [Robot]
-  #   if: always()
-  #   runs-on: ubuntu-latest
+  Notify-End:
+    name: Notify End
+    needs: [Robot]
+    if: always()
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     # delete storybook artifact
-  #     - uses: geekyeggo/delete-artifact@v1
-  #       with:
-  #         name: storybook-v3
+    steps:
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: storybook-v3
 
-  #     - uses: technote-space/workflow-conclusion-action@v1
+      - uses: technote-space/workflow-conclusion-action@v1
 
-  #     - name: generate conclusion color
-  #       id: conclusion_color
-  #       uses: actions/github-script@v3
-  #       with:
-  #         github-token: ${{secrets.GITHUB_TOKEN}}
-  #         script: |
-  #           if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
-  #           else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
-  #           else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
-  #           else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
-  #           else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
+      - name: generate conclusion color
+        id: conclusion_color
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
 
-  #     - name: Notify
-  #       uses: hbfernandes/slack-action@1.0
-  #       env:
-  #         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-  #         CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
-  #       with:
-  #         args: |
-  #           {
-  #             "channel": "ui-kit-eng-ci",
-  #             "attachments": [
-  #               {
-  #                 "mrkdwn_in": ["text"],
-  #                 "color": "${{env.COLOR}}",
-  #                 "title": "${{ github.workflow }} on ${{github.ref}} finished - ${{ env.CONCLUSION }}",
-  #                 "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-  #               }
-  #             ]
-  #           }
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} on ${{github.ref}} finished - ${{ env.CONCLUSION }}",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                }
+              ]
+            }
