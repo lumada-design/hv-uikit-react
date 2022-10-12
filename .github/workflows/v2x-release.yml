@@ -27,7 +27,7 @@ env:
 
 jobs:
   Release:
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -104,8 +104,7 @@ jobs:
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
+        run: EXCLUDE_TEST_STORIES=true npm run build-documentation
 
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
@@ -136,8 +135,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3

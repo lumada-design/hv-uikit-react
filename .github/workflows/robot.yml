@@ -38,15 +38,13 @@ jobs:
           node-version: "16"
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          npm run build-documentation
+        run: npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -56,21 +54,20 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Robot:
     name: Test Robot
     needs: [Build-Storybook-V3-Store]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         browser: [firefox, chrome]
     container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
+      image: joaoeg/docker-robot-framework:0.1
+      options: --shm-size=6g -u 1001
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
@@ -80,7 +77,7 @@ jobs:
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
@@ -97,7 +94,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -124,7 +121,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # delete storybook artifact
       - uses: geekyeggo/delete-artifact@v1
         with:
           name: storybook-v3
