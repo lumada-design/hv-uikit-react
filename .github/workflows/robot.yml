@@ -67,7 +67,6 @@ jobs:
         browser: [firefox, chrome]
     container:
       image: joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
