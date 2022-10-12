@@ -382,7 +382,6 @@ export const Selectable = () => {
     return (
       <button
         type="button"
-        category="semantic"
         className={classes.button}
         onClick={() => setChecked(!checked)}
         aria-label="Asset Avatar L90 press enter or space to select this card"

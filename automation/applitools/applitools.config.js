@@ -1,5 +1,5 @@
 const isIncludedPath = (kind) => {
-  const includedPaths = ["Components/", "Widgets/", "Templates/"];
+  const includedPaths = ["Components/", "Widgets/"];
   return includedPaths.some((p) => kind.startsWith(p));
 };
 
