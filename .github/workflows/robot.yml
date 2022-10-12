@@ -67,6 +67,7 @@ jobs:
         browser: [firefox, chrome]
     container:
       image: joaoeg/docker-robot-framework:0.1
+      options: -u root
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
