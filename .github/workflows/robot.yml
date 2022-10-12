@@ -38,15 +38,13 @@ jobs:
           node-version: "16"
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          npm run build-documentation
+        run: npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -56,66 +54,65 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
-  Robot:
-    name: Test Robot
-    needs: [Build-Storybook-V3-Store]
-    runs-on: [self-hosted, Linux]
-    timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [firefox, chrome]
-    container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
-      env:
-        BROWSER: ${{ matrix.browser }}
-        ROBOT_TESTS_DIR: ./automation/robot/storybook/core
-        ROBOT_REPORTS_DIR: ./reports
-        ROBOT_THREADS: 4
-        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+  # Robot:
+  #   name: Test Robot
+  #   needs: [Build-Storybook-V3-Store]
+  #   runs-on: [self-hosted, Linux]
+  #   timeout-minutes: 60
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       browser: [firefox, chrome]
+  #   container:
+  #     image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
+  #     options: --shm-size=6g --cpus 4 -u 2501
+  #     env:
+  #       BROWSER: ${{ matrix.browser }}
+  #       ROBOT_TESTS_DIR: ./automation/robot/storybook/core
+  #       ROBOT_REPORTS_DIR: ./reports
+  #       ROBOT_THREADS: 4
+  #       ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
 
-    services:
-      storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
-        volumes:
-          - ${{ github.workspace }}/dist:/usr/share/nginx/html
-        options: >-
-          --name storybook
+  #   services:
+  #     storybook:
+  #       image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+  #       volumes:
+  #         - ${{ github.workspace }}/dist:/usr/share/nginx/html
+  #       options: >-
+  #         --name storybook
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v2
-        with:
-          name: storybook-v3
-          path: ${{ github.workspace }}/dist
+  #     - name: Fetch Storybook
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: storybook-v3
+  #         path: ${{ github.workspace }}/dist
 
-      - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
-        with:
-          args: docker restart storybook
+  #     - name: Restart nginx
+  #       uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+  #       with:
+  #         args: docker restart storybook
 
-      - name: Run Robot
-        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+  #     - name: Run Robot
+  #       run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: ${{ github.workspace }}/reports
+  #     - name: Save Reports
+  #       uses: actions/upload-artifact@v2
+  #       if: failure()
+  #       with:
+  #         name: ${{ matrix.browser }}-reports
+  #         path: ${{ github.workspace }}/reports
 
-      - name: Clean Folders
-        if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
-          rm -rf ${{ github.workspace }}/reports
+  #     - name: Clean Folders
+  #       if: always()
+  #       run: |
+  #         rm -rf ${{ github.workspace }}/dist
+  #         rm -rf ${{ github.workspace }}/reports
 
   # Notify-End:
   #   name: Notify End
