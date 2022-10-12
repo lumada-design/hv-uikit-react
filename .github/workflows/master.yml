@@ -90,8 +90,7 @@ jobs:
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
+        run: V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
@@ -101,8 +100,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Build-Storybook-V3-Store:
     name: Build Storybook (v3 store)
@@ -133,8 +131,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   A11Y-Tests:
     name: Accessibility Tests
@@ -169,12 +166,12 @@ jobs:
         uses: docker://docker
         with:
           args: docker restart storybook
-      
+
       - name: Required Dependencies
         run: |
           sudo apt-get -y update 
           sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
-          
+
       - name: Install automation/pa11y
         run: |
           cd ${{ github.workspace }}/automation/pa11y
@@ -187,8 +184,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
@@ -223,7 +219,7 @@ jobs:
         uses: docker://docker
         with:
           args: docker restart storybook
-          
+
       - name: Required Dependencies
         run: |
           sudo apt-get -y update 
@@ -250,8 +246,7 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Playwright:
     name: Playwright test
@@ -346,7 +341,7 @@ jobs:
         uses: docker://docker
         with:
           args: docker restart storybook
-      
+
       - name: Run Robot
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 

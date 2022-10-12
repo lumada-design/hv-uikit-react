@@ -22,8 +22,7 @@ jobs:
         run: npm run bootstrap
 
       - name: Build Storybook
-        run: |
-          V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
+        run: V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
 
       - name: Archive Storybook
         uses: actions/upload-artifact@v2

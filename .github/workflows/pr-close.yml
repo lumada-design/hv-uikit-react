@@ -37,8 +37,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: mark environment as deactivated
         uses: bobheadxi/deployments@v0.4.3
