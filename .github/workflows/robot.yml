@@ -93,26 +93,26 @@ jobs:
           name: storybook-v3
           path: ${{ github.workspace }}/dist
 
-      - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
-        with:
-          args: docker restart storybook
+      # - name: Restart nginx
+      #   uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+      #   with:
+      #     args: docker restart storybook
 
-      - name: Run Robot
-        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+      # - name: Run Robot
+      #   run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: ${{ github.workspace }}/reports
+      # - name: Save Reports
+      #   uses: actions/upload-artifact@v2
+      #   if: failure()
+      #   with:
+      #     name: ${{ matrix.browser }}-reports
+      #     path: ${{ github.workspace }}/reports
 
-      - name: Clean Folders
-        if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
-          rm -rf ${{ github.workspace }}/reports
+      # - name: Clean Folders
+      #   if: always()
+      #   run: |
+      #     rm -rf ${{ github.workspace }}/dist
+      #     rm -rf ${{ github.workspace }}/reports
 
   # Notify-End:
   #   name: Notify End
