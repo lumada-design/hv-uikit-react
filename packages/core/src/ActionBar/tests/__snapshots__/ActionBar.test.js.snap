@@ -71,6 +71,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
                   "outlinedPrimary": "HvButton-secondary",
+                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                   "textPrimary": "HvButton-ghost",
                 }
@@ -603,6 +604,7 @@ exports[`Action Bar should render correctly 1`] = `
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
                     "outlinedPrimary": "HvButton-secondary",
+                    "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                     "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                     "textPrimary": "HvButton-ghost",
                   }
@@ -616,7 +618,7 @@ exports[`Action Bar should render correctly 1`] = `
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
                       "containedPrimary": "HvButton-primary",
@@ -624,6 +626,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
                       "outlinedPrimary": "HvButton-secondary",
+                      "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                       "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                       "textPrimary": "HvButton-ghost",
                     }
@@ -657,6 +660,7 @@ exports[`Action Bar should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
+                        "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                         "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       },
@@ -1161,7 +1165,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -1251,6 +1255,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
                   "outlinedPrimary": "HvButton-secondary",
+                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                   "textPrimary": "HvButton-ghost",
                 }
@@ -1783,6 +1788,7 @@ exports[`Action Bar should render correctly 1`] = `
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
                     "outlinedPrimary": "HvButton-secondary",
+                    "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                     "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                     "textPrimary": "HvButton-ghost",
                   }
@@ -1796,7 +1802,7 @@ exports[`Action Bar should render correctly 1`] = `
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-buttonSeparator-4 HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-buttonSeparator-4 HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
                       "containedPrimary": "HvButton-primary",
@@ -1804,6 +1810,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
                       "outlinedPrimary": "HvButton-secondary",
+                      "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                       "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                       "textPrimary": "HvButton-ghost",
                     }
@@ -1837,6 +1844,7 @@ exports[`Action Bar should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
+                        "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                         "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       },
@@ -2341,7 +2349,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-buttonSeparator-4 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-buttonSeparator-4 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -2423,6 +2431,7 @@ exports[`Action Bar should render correctly 1`] = `
                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                   "label": "MuiButton-label",
                   "outlinedPrimary": "HvButton-secondary",
+                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                   "textPrimary": "HvButton-ghost",
                 }
@@ -2955,6 +2964,7 @@ exports[`Action Bar should render correctly 1`] = `
                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                     "label": "MuiButton-label",
                     "outlinedPrimary": "HvButton-secondary",
+                    "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                     "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                     "textPrimary": "HvButton-ghost",
                   }
@@ -2968,7 +2978,7 @@ exports[`Action Bar should render correctly 1`] = `
               >
                 <MuiButtonBaseRoot
                   as="button"
-                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-q8qr05-MuiButton-root"
                   classes={
                     Object {
                       "containedPrimary": "HvButton-primary",
@@ -2976,6 +2986,7 @@ exports[`Action Bar should render correctly 1`] = `
                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                       "label": "MuiButton-label",
                       "outlinedPrimary": "HvButton-secondary",
+                      "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                       "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                       "textPrimary": "HvButton-ghost",
                     }
@@ -3009,6 +3020,7 @@ exports[`Action Bar should render correctly 1`] = `
                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                         "label": "MuiButton-label",
                         "outlinedPrimary": "HvButton-secondary",
+                        "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                         "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                         "textPrimary": "HvButton-ghost",
                       },
@@ -3513,7 +3525,7 @@ exports[`Action Bar should render correctly 1`] = `
                     }
                   />
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onClick={[Function]}

@@ -16,7 +16,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
         >
           <button
             aria-pressed="true"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvMultiButton-selected HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -24,7 +24,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
           </button>
           <button
             aria-pressed="false"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-combinatorButton-6 HvQueryBuilder-combinatorButton HvMultiButton-button HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -37,7 +37,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
       >
         <button
           aria-label="Reset query"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-removeButton-9 HvQueryBuilder-removeButton RuleGroup-topRemoveButton-10 HvQueryBuilder-topRemoveButton HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium RuleGroup-removeButton-9 HvQueryBuilder-removeButton RuleGroup-topRemoveButton-10 HvQueryBuilder-topRemoveButton HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -131,7 +131,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
         class="MuiGrid-root MuiGrid-item RuleGroup-actionButtonContainer-7 HvQueryBuilder-actionButtonContainer RuleGroup-topActionButtonContainer-8 HvQueryBuilder-topActionButtonContainer css-13i4rnv-MuiGrid-root"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -156,7 +156,7 @@ exports[`QueryBuilder snapshot matches snapshot 1`] = `
           Add condition
         </button>
         <button
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >

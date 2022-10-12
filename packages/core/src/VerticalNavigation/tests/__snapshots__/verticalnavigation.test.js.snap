@@ -19878,6 +19878,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
+                            "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                             "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
@@ -21165,6 +21166,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
+                              "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                               "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             }
@@ -21180,7 +21182,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                           <MuiButtonBaseRoot
                             aria-label="open"
                             as="button"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
@@ -21188,6 +21190,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                 "label": "MuiButton-label",
                                 "outlinedPrimary": "HvButton-secondary",
+                                "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                 "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                 "textPrimary": "HvButton-ghost",
                               }
@@ -21223,6 +21226,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
+                                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 },
@@ -22480,7 +22484,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             />
                             <button
                               aria-label="open"
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                               disabled={false}
                               id="sample3-container-hamburger-button"
                               onBlur={[Function]}

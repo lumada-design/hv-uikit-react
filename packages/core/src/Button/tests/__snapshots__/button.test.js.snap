@@ -3,28 +3,28 @@
 exports[`HvButton sample snapshot testing Main (Vertical) 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
     Primary
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root HvButton-root MuiButton-outlined MuiButton-outlinedPrimary HvButton-secondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium HvButton-secondarySVG css-ci0f3d-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
     Secondary
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >
     Ghost
   </button>
   <button
-    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-semantic MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-semanticSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-semantic MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-semantic MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-semanticSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
     tabindex="0"
     type="button"
   >

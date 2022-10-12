@@ -49,14 +49,14 @@ exports[`ProgressBar General 1`] = `
           style="margin-top: 10px;"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             Start
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             style="margin-left: 10px;"
             tabindex="0"
             type="button"
@@ -109,14 +109,14 @@ exports[`ProgressBar General 1`] = `
           style="margin-top: 10px;"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
             Start
           </button>
           <button
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary MuiButton-sizeMedium MuiButton-containedSizeMedium HvButton-primarySVG css-1gsq1hj-MuiButtonBase-root-MuiButton-root"
             style="margin-left: 10px;"
             tabindex="0"
             type="button"

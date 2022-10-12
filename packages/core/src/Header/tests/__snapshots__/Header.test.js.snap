@@ -1843,6 +1843,7 @@ exports[`Header should be able to render 1`] = `
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
+                            "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                             "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
@@ -2717,6 +2718,7 @@ exports[`Header should be able to render 1`] = `
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
+                              "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                               "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             }
@@ -2736,7 +2738,7 @@ exports[`Header should be able to render 1`] = `
                         >
                           <MuiButtonBaseRoot
                             as="button"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
@@ -2744,6 +2746,7 @@ exports[`Header should be able to render 1`] = `
                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                 "label": "MuiButton-label",
                                 "outlinedPrimary": "HvButton-secondary",
+                                "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                 "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                 "textPrimary": "HvButton-ghost",
                               }
@@ -2777,6 +2780,7 @@ exports[`Header should be able to render 1`] = `
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
+                                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 },
@@ -3623,7 +3627,7 @@ exports[`Header should be able to render 1`] = `
                               }
                             />
                             <button
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -3877,6 +3881,7 @@ exports[`Header should be able to render 1`] = `
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
+                                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 }
@@ -4746,6 +4751,7 @@ exports[`Header should be able to render 1`] = `
                                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                     "label": "MuiButton-label",
                                     "outlinedPrimary": "HvButton-secondary",
+                                    "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                     "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                     "textPrimary": "HvButton-ghost",
                                   }
@@ -4760,7 +4766,7 @@ exports[`Header should be able to render 1`] = `
                                 <MuiButtonBaseRoot
                                   aria-label="Open Notifications panel"
                                   as="button"
-                                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                                   classes={
                                     Object {
                                       "containedPrimary": "HvButton-primary",
@@ -4768,6 +4774,7 @@ exports[`Header should be able to render 1`] = `
                                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                       "label": "MuiButton-label",
                                       "outlinedPrimary": "HvButton-secondary",
+                                      "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                       "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                       "textPrimary": "HvButton-ghost",
                                     }
@@ -4805,6 +4812,7 @@ exports[`Header should be able to render 1`] = `
                                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                         "label": "MuiButton-label",
                                         "outlinedPrimary": "HvButton-secondary",
+                                        "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                         "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                         "textPrimary": "HvButton-ghost",
                                       },
@@ -5642,7 +5650,7 @@ exports[`Header should be able to render 1`] = `
                                   />
                                   <button
                                     aria-label="Open Notifications panel"
-                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -8593,6 +8601,7 @@ exports[`Header should be able to render the header with links 1`] = `
                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                             "label": "MuiButton-label",
                             "outlinedPrimary": "HvButton-secondary",
+                            "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                             "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                             "textPrimary": "HvButton-ghost",
                           }
@@ -9973,6 +9982,7 @@ exports[`Header should be able to render the header with links 1`] = `
                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                               "label": "MuiButton-label",
                               "outlinedPrimary": "HvButton-secondary",
+                              "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                               "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                               "textPrimary": "HvButton-ghost",
                             }
@@ -9992,7 +10002,7 @@ exports[`Header should be able to render the header with links 1`] = `
                         >
                           <MuiButtonBaseRoot
                             as="button"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
@@ -10000,6 +10010,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                 "label": "MuiButton-label",
                                 "outlinedPrimary": "HvButton-secondary",
+                                "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                 "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                 "textPrimary": "HvButton-ghost",
                               }
@@ -10033,6 +10044,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
+                                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 },
@@ -11385,7 +11397,7 @@ exports[`Header should be able to render the header with links 1`] = `
                               }
                             />
                             <button
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -11639,6 +11651,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                   "label": "MuiButton-label",
                                   "outlinedPrimary": "HvButton-secondary",
+                                  "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                   "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                   "textPrimary": "HvButton-ghost",
                                 }
@@ -13014,6 +13027,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                     "label": "MuiButton-label",
                                     "outlinedPrimary": "HvButton-secondary",
+                                    "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                     "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                     "textPrimary": "HvButton-ghost",
                                   }
@@ -13028,7 +13042,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                 <MuiButtonBaseRoot
                                   aria-label="Open Notifications panel"
                                   as="button"
-                                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
+                                  className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-q8qr05-MuiButton-root"
                                   classes={
                                     Object {
                                       "containedPrimary": "HvButton-primary",
@@ -13036,6 +13050,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                       "label": "MuiButton-label",
                                       "outlinedPrimary": "HvButton-secondary",
+                                      "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                       "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                       "textPrimary": "HvButton-ghost",
                                     }
@@ -13073,6 +13088,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                         "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                         "label": "MuiButton-label",
                                         "outlinedPrimary": "HvButton-secondary",
+                                        "root": "MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium",
                                         "startIcon": "MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium",
                                         "textPrimary": "HvButton-ghost",
                                       },
@@ -14416,7 +14432,7 @@ exports[`Header should be able to render the header with links 1`] = `
                                   />
                                   <button
                                     aria-label="Open Notifications panel"
-                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}

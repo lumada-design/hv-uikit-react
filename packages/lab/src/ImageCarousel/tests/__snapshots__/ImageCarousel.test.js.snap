@@ -151,7 +151,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
             <div>
               <button
                 aria-label="Backwards"
-                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 style="opacity: 0; visibility: hidden;"
                 tabindex="0"
                 type="button"
@@ -179,7 +179,7 @@ exports[`<HvImageCarousel> sample snapshot testing ImageCarouselXS 1`] = `
             <div>
               <button
                 aria-label="Forwards"
-                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
                 style="opacity: 0; visibility: hidden;"
                 tabindex="0"
                 type="button"
@@ -301,7 +301,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
       <div>
         <button
           aria-label="Fullscreen"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -450,7 +450,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
         <div>
           <button
             aria-label="Backwards"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             style="opacity: 0; visibility: hidden;"
             tabindex="0"
             type="button"
@@ -478,7 +478,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
         <div>
           <button
             aria-label="Forwards"
-            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-button HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
             style="opacity: 0; visibility: hidden;"
             tabindex="0"
             type="button"
@@ -560,7 +560,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape1"
             tabindex="0"
             type="button"
@@ -579,7 +579,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape2"
             tabindex="0"
             type="button"
@@ -598,7 +598,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape3"
             tabindex="0"
             type="button"
@@ -617,7 +617,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape4"
             tabindex="0"
             type="button"
@@ -636,7 +636,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape5"
             tabindex="0"
             type="button"
@@ -655,7 +655,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape6"
             tabindex="0"
             type="button"
@@ -674,7 +674,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape7"
             tabindex="0"
             type="button"
@@ -693,7 +693,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape8"
             tabindex="0"
             type="button"
@@ -712,7 +712,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape9"
             tabindex="0"
             type="button"
@@ -731,7 +731,7 @@ exports[`<HvImageCarousel> sample snapshot testing LowCardinality 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Landscape10"
             tabindex="0"
             type="button"
@@ -885,7 +885,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
       >
         <button
           aria-label="Backwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -928,7 +928,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
       >
         <button
           aria-label="Forwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -964,7 +964,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="DarthVader"
             tabindex="0"
             type="button"
@@ -983,7 +983,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="BobaFett"
             tabindex="0"
             type="button"
@@ -1002,7 +1002,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Revan"
             tabindex="0"
             type="button"
@@ -1021,7 +1021,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="TheMandalorian"
             tabindex="0"
             type="button"
@@ -1040,7 +1040,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Anakin"
             tabindex="0"
             type="button"
@@ -1059,7 +1059,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Ahsoka"
             tabindex="0"
             type="button"
@@ -1078,7 +1078,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="ObiWan"
             tabindex="0"
             type="button"
@@ -1097,7 +1097,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Mace"
             tabindex="0"
             type="button"
@@ -1116,7 +1116,7 @@ exports[`<HvImageCarousel> sample snapshot testing Main 1`] = `
           class="child HvFocus-root child"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-thumbnailButton css-fsero8-MuiButtonBase-root-MuiButton-root"
             id="Yoda"
             tabindex="0"
             type="button"
@@ -1264,7 +1264,7 @@ exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
       >
         <button
           aria-label="Backwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-hidden HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvImageCarousel-hidden HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
@@ -1307,7 +1307,7 @@ exports[`<HvImageCarousel> sample snapshot testing WithoutThumbnails 1`] = `
       >
         <button
           aria-label="Forwards"
-          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
