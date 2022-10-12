@@ -94,7 +94,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
