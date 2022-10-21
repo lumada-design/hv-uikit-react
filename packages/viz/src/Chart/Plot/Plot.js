@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
-import Plotly from "plotly.js-basic-dist";
+import Plotly from "plotly.js-dist-min";
 import createPlotlyComponent from "react-plotly.js/factory";
 import { withStyles } from "@mui/styles";
 import styles from "./styles";
