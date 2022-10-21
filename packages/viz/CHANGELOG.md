@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.4...@hitachivantara/uikit-react-viz@4.1.0) (2022-10-21)
+
+### Features
+
+- **confusionMatrix:** add confusion matrix to viz package ([#2945](https://github.com/lumada-design/hv-uikit-react/issues/2945)) ([63cf53e](https://github.com/lumada-design/hv-uikit-react/commit/63cf53e8697c64338ad6c9a5a8a5c919fd97c846))
+
 ## [4.0.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.0.3...@hitachivantara/uikit-react-viz@4.0.4) (2022-10-12)
 
 ### Bug Fixes
