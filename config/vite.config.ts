@@ -19,7 +19,6 @@ export default defineConfig({
       insertTypesEntry: true,
       noEmitOnError: true,
       skipDiagnostics: false,
-      logDiagnostics: true,
     }),
   ],
   build: {
