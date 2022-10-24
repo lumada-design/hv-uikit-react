@@ -15,6 +15,4 @@ export const DropdownList = styled("ul")`
   border-radius: 0 0 ${themeVars.radii.sm} ${themeVars.radii.sm};
 `;
 
-if (process.env.NODE_ENV !== "production") {
-  DropdownList.displayName = "DropdownList";
-}
+DropdownList.displayName = "DropdownList";

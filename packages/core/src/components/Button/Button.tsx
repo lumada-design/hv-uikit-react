@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { StyledButton } from "./styles";
+import { StyledButton } from "./Button.styles";
 
 export type ButtonVariant =
   | "primary"
@@ -62,8 +62,4 @@ export const Button = ({
   );
 };
 
-export default Button;
-
-if (process.env.NODE_ENV !== "production") {
-  Button.displayName = "Button";
-}
+Button.displayName = "Button";

@@ -15,6 +15,4 @@ export const DropdownListItem = styled("li")<DropdownListItemProps>`
     props.isSelected ? themeVars.colors.acce2s : null};
 `;
 
-if (process.env.NODE_ENV !== "production") {
-  DropdownListItem.displayName = "DropdownListItem";
-}
+DropdownListItem.displayName = "DropdownListItem";

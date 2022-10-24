@@ -1,4 +1,4 @@
 export * from "./Header";
-export * from "./Actions";
-export * from "./Brand";
-export * from "./Navigation";
+export * from "./HeaderActions";
+export * from "./HeaderBrand";
+export * from "./HeaderNavigation";

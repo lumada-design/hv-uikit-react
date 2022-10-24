@@ -61,8 +61,8 @@ const App = () => (
 ```
 
 ## Documentation
-See our documentation site [here](https://lumada-design.github.io/uikit/master/?path=/docs) for full how-to docs and guidelines
 
+See our documentation site [here](https://lumada-design.github.io/uikit/master/?path=/docs) for full how-to docs and guidelines
 
 ## Team ✨
 
@@ -81,6 +81,7 @@ Please check out our [Contribution Guidelines](/CONTRIBUTING.md) and let's build
 We welcome all contributions. You can help us fixing bugs or submit any new ideas, as [pull requests](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-a-pull-request) or as [GitHub issues](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-an-issue).
 
 Join and support the project!
+
 ## Contributors 🤟
 
 <a href="https://github.com/lumada-design/hv-uikit-react/graphs/contributors">

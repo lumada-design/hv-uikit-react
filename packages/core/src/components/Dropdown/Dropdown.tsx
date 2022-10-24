@@ -4,10 +4,10 @@ import { Typography } from "components";
 import { useClickOutside } from "hooks";
 import { themeVars } from "theme";
 
-import { DropdownHeader } from "./Header";
+import { DropdownHeader } from "./DropdownHeader";
 import { DropdownList } from "./List";
 import { DropdownListItem } from "./ListItem";
-import { DropdownIcon } from "./Icon";
+import { DropdownIcon } from "./DropdownIcon";
 
 export interface DropdownOption {
   value: string;
@@ -74,6 +74,4 @@ export const Dropdown = ({
   );
 };
 
-if (process.env.NODE_ENV !== "production") {
-  Dropdown.displayName = "Dropdown";
-}
+Dropdown.displayName = "Dropdown";

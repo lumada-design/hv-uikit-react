@@ -27,5 +27,11 @@ cjs/
 esm/
 dist/
 
+# tests
+.e2e
+
+# lint
+.eslintcache
+
 # typescript
 *.tsbuildinfo

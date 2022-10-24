@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { StyledTypography } from "./styles";
+import { StyledTypography } from "./Typography.styles";
 
 export type TypographyVariants =
   | "display"

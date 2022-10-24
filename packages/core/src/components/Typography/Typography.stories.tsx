@@ -1,16 +1,11 @@
-import { Story, Meta } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 import { Typography, TypographyProps } from "./Typography";
 
-export default {
-  component: Typography,
-  title: "Typography",
-} as Meta;
+export default { title: "Theme/Typography", component: Typography };
 
-const Template: Story<TypographyProps> = (args) => <Typography {...args} />;
-
-export const Primary = Template.bind({});
-
-Primary.args = {
-  variant: "body",
-  children: "Welcome to NEXT Design System!",
+export const Main: StoryObj<TypographyProps> = {
+  args: {
+    variant: "title1",
+    children: "Welcome to NEXT Design System!",
+  },
 };

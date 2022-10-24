@@ -19,6 +19,4 @@ export const Header = ({ children }: HeaderProps) => {
   return <Styled>{children}</Styled>;
 };
 
-if (process.env.NODE_ENV !== "production") {
-  Header.displayName = "Header";
-}
+Header.displayName = "Header";

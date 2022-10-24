@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`IconComponent > should match the snapshot for the given props 1`] = `
+<DocumentFragment>
+  <button
+    class="css-t79x31-StyledButton e138pvrm0"
+  />
+</DocumentFragment>
+`;
