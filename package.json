@@ -12,21 +12,18 @@
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "scripts": {
-    "prebuild": "npx rimraf ./**/dist",
     "dev": "pnpm --parallel -F=!'./tools/**' dev",
     "doc": "storybook dev -p 6006 --no-manager-cache",
     "build": "pnpm -r build",
-    "build:storybook": "storybook build",
-    "lint": "npx npm-run-all --parallel lint:*",
-    "lint:eslint": "eslint . --cache",
-    "lint:prettier": "prettier -c .",
+    "build:doc": "storybook build",
+    "lint": "eslint --ext .ts,.tsx --cache",
     "lint-staged": "lint-staged",
-    "type:check": "tsc --noEmit",
+    "format": "npx prettier -w .",
+    "type-check": "tsc --noEmit",
     "test": "pnpm --parallel -F=!'./tools/**' test",
     "test:e2e": "npx playwright test --config=config/playwright.config.ts",
     "clean": "npx rimraf ./**/node_modules ./**/dist",
-    "prepare": "npx husky install",
-    "prettier": "npx prettier -w ."
+    "prepare": "npx husky install"
   },
   "engines": {
     "node": ">=16.16.0"
@@ -44,7 +41,7 @@
     "@testing-library/react": "^13.4.0",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -56,7 +53,7 @@
     "storybook": "^7.0.0-alpha.41",
     "typescript": "^4.8.4",
     "vite": "^3.1.8",
-    "vite-tsconfig-paths": "^3.5.1"
+    "vite-tsconfig-paths": "^3.5.2"
   },
   "husky": {
     "hooks": {
@@ -66,7 +63,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --cache",
+      "eslint --ext .ts,.tsx --cache",
       "pretty-quick --staged"
     ]
   },
