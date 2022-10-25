@@ -7,8 +7,6 @@ import { render } from "testing-utils";
 
 import { HvRadioGroup, HvRadio } from "../..";
 
-import { Main, Horizontal, ErrorMessage } from "../stories/RadioGroup.stories";
-
 // eslint-disable-next-line react/prop-types
 const RadioGroupComp = ({ onChange = () => {}, defaultValue = "2" }) => {
   const [value, setValue] = useState(defaultValue);
@@ -43,23 +41,6 @@ const RadioGroupComp = ({ onChange = () => {}, defaultValue = "2" }) => {
 };
 
 describe("HvRadioGroup", () => {
-  describe("sample snapshot testing", () => {
-    it("Main (Vertical)", () => {
-      const { container } = render(<Main />);
-      expect(container).toMatchSnapshot();
-    });
-
-    it("Horizontal", () => {
-      const { container } = render(<Horizontal />);
-      expect(container).toMatchSnapshot();
-    });
-
-    it("ErrorMessage", () => {
-      const { container } = render(<ErrorMessage />);
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("general", () => {
     it("renders a group with radio buttons in the expected order", () => {
       const { getByRole, getAllByRole } = render(

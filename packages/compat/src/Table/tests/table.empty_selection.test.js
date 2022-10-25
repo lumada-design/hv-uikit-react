@@ -11,6 +11,8 @@ import { TableDataDeletion } from "../stories/Table.stories";
 describe("HvTable", () => {
   // https://github.com/maslianok/react-resize-detector#testing-with-enzyme-and-jest
   const { ResizeObserver } = window;
+  const consoleSpy = jest.fn();
+  const originalWarn = console.warn;
 
   beforeEach(() => {
     delete window.ResizeObserver;
@@ -19,36 +21,14 @@ describe("HvTable", () => {
       unobserve: jest.fn(),
       disconnect: jest.fn(),
     }));
+    consoleSpy.mockReset();
+    console.warn = consoleSpy;
   });
 
   afterEach(() => {
     window.ResizeObserver = ResizeObserver;
     jest.restoreAllMocks();
-  });
-
-  describe("sample snapshot testing", () => {
-    const consoleSpy = jest.fn();
-    const originalWarn = console.warn;
-
-    beforeEach(() => {
-      consoleSpy.mockReset();
-      console.warn = consoleSpy;
-    });
-    afterEach(() => {
-      console.warn = originalWarn;
-    });
-
-    it("Main", () => {
-      const { container } = render(<TableDataDeletion />);
-      expect(container).toMatchSnapshot();
-      expect(console.warn).toHaveBeenCalledTimes(2);
-      expect(consoleSpy.mock.calls[0][0].includes("componentWillMount has been renamed")).toBe(
-        true
-      );
-      expect(
-        consoleSpy.mock.calls[1][0].includes("componentWillReceiveProps has been renamed")
-      ).toBe(true);
-    });
+    console.warn = originalWarn;
   });
 
   describe("general", () => {

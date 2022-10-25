@@ -50,8 +50,7 @@ const HvWarningText = (props) => {
           [classes.topGutter]: !disableGutter,
           [classes.hideText]: hideText,
         })}
-        aria-live="polite"
-        aria-atomic="true"
+        role="status"
         aria-relevant="additions text"
         {...others}
       >

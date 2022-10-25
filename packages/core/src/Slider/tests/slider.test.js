@@ -18,33 +18,6 @@ import {
 } from "../stories/Slider.stories";
 
 describe("<HvSlider>", () => {
-  describe("sample snapshot testing", () => {
-    it("Main", () => {
-      const { container } = render(<Main />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Range Slider", () => {
-      const { container } = render(<RangeSlider />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Disabled", () => {
-      const { container } = render(<SingleDisabled />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Range Disabled", () => {
-      const { container } = render(<RangeSliderDisabled />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Error", () => {
-      const { container } = render(<ErrorSingleSlider />);
-      expect(container).toMatchSnapshot();
-    });
-    it("Range Error", () => {
-      const { container } = render(<ErrorRangeSlider />);
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("general structure", () => {
     it("renders the single slider as expected", () => {
       render(<Main />);

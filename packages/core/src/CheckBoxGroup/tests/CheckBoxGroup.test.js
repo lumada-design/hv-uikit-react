@@ -8,26 +8,7 @@ import { render } from "testing-utils";
 
 import { HvCheckBox, HvCheckBoxGroup } from "../..";
 
-import { Main, Horizontal, ErrorMessage } from "../stories/CheckBoxGroup.stories";
-
 describe("HvCheckBoxGroup", () => {
-  describe("sample snapshot testing", () => {
-    it("Main (Vertical)", () => {
-      const { container } = render(<Main />);
-      expect(container).toMatchSnapshot();
-    });
-
-    it("Horizontal", () => {
-      const { container } = render(<Horizontal />);
-      expect(container).toMatchSnapshot();
-    });
-
-    it("ErrorMessage", () => {
-      const { container } = render(<ErrorMessage />);
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("general", () => {
     it("renders a group with checkboxes in the expected order", () => {
       const { getByRole, getAllByRole } = render(

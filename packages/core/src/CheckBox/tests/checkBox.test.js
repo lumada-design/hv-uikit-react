@@ -7,21 +7,7 @@ import { render } from "testing-utils";
 
 import { HvCheckBox } from "../..";
 
-import { Main, ErrorMessage } from "../stories/CheckBox.stories";
-
 describe("HvCheckBox", () => {
-  describe("sample snapshot testing", () => {
-    it("Main", () => {
-      const { container } = render(<Main />);
-      expect(container).toMatchSnapshot();
-    });
-
-    it("ErrorMessage", () => {
-      const { container } = render(<ErrorMessage />);
-      expect(container).toMatchSnapshot();
-    });
-  });
-
   describe("general", () => {
     it("renders a checkbox as expected", () => {
       const { getByRole } = render(<HvCheckBox value="dogs" label="Dogs" />);
