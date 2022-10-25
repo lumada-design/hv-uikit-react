@@ -27,8 +27,14 @@ const HvWizardTitle = ({
   changeTab,
   customStep = {},
 }) => {
-  const { context } = React.useContext(HvWizardContext);
+  const { context, summary, setSummary } = React.useContext(HvWizardContext);
   const [steps, setSteps] = React.useState([]);
+
+  React.useEffect(() => {
+    if (summary === null && hasSummary) {
+      setSummary(false);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
     const contextArray = Object.entries(context);
@@ -42,6 +48,10 @@ const HvWizardTitle = ({
       setSteps(updatedSteps);
     }
   }, [context, tab, changeTab]);
+
+  const toggleSummary = () => {
+    setSummary((oldSummary) => !oldSummary);
+  };
 
   return (
     <HvDialogTitle
@@ -73,6 +83,7 @@ const HvWizardTitle = ({
             category="secondary"
             className={classes.buttonWidth}
             classes={{ root: classes.rootSummaryButton }}
+            onClick={toggleSummary}
           >
             <Report /> {`${labels.summary ?? "Summary"}`}
           </HvButton>

@@ -19,6 +19,7 @@ const HvWizard = ({
   skippable = true,
   loading = false,
   hasSummary = false,
+  summaryContent,
   labels = {
     cancel: "Cancel",
     next: "Next",
@@ -32,14 +33,17 @@ const HvWizard = ({
   ...others
 }) => {
   const [context, setContext] = React.useState({});
+  const [summary, setSummary] = React.useState(null);
   const [tab, setTab] = React.useState(0);
 
   const contextValue = React.useMemo(
     () => ({
       context,
       setContext,
+      summary,
+      setSummary,
     }),
-    [context, setContext]
+    [context, summary]
   );
 
   React.useEffect(() => {
@@ -68,7 +72,12 @@ const HvWizard = ({
           changeTab={setTab}
           customStep={customStep}
         />
-        <WizardContent loading={loading} fixedHeight={fixedHeight} tab={tab}>
+        <WizardContent
+          loading={loading}
+          fixedHeight={fixedHeight}
+          tab={tab}
+          summaryContent={summaryContent}
+        >
           {children}
         </WizardContent>
         <WizardActions
@@ -114,6 +123,10 @@ HvWizard.propTypes = {
    * Shows the summary button.
    */
   hasSummary: PropTypes.bool,
+  /**
+   * The content of the summary.
+   */
+  summaryContent: PropTypes.node,
   /**
    * The content of the component.
    */

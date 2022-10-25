@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@mui/styles";
+import useResizeAware from "react-resize-aware";
 import clsx from "clsx";
 import { HvDialogContent } from "@hitachivantara/uikit-react-core";
 import HvWizardContext from "../WizardContext";
@@ -8,7 +9,18 @@ import LoadingContainer from "./LoadingContainer";
 
 import styles from "./styles";
 
-const HvWizardContent = ({ classes, fixedHeight = false, loading = false, children, tab }) => {
+const DRAWER_PERCENTAGE = 0.3;
+const MODAL_MARGIN = 20;
+const DRAWER_MIN_WIDTH = 280;
+
+const HvWizardContent = ({
+  classes,
+  fixedHeight = false,
+  loading = false,
+  children,
+  tab,
+  summaryContent,
+}) => {
   const arrayChildren = React.Children.toArray(children);
   const initialContext = arrayChildren.reduce((acc, child, index) => {
     const invalid = child.props.mustValidate === true ? false : null;
@@ -19,7 +31,34 @@ const HvWizardContent = ({ classes, fixedHeight = false, loading = false, childr
     };
   }, {});
 
-  const { context, setContext } = React.useContext(HvWizardContext);
+  const { context, setContext, summary } = React.useContext(HvWizardContext);
+
+  const resizedRef = React.useRef({ width: 0, height: 0 });
+  const [resizeListener, sizes] = useResizeAware();
+
+  const [summaryHeight, setSummaryHeight] = React.useState(0);
+  const [summaryWidth, setSummaryWidth] = React.useState(0);
+  const [summaryLeft, setSummaryLeft] = React.useState(0);
+  const updateSummaryMeasures = React.useCallback((newSizes) => {
+    const modalWidth = newSizes.width;
+    const drawerWidth = modalWidth * DRAWER_PERCENTAGE;
+    setSummaryHeight(newSizes.height);
+    setSummaryWidth(Math.max(drawerWidth, DRAWER_MIN_WIDTH));
+    setSummaryLeft(modalWidth - Math.max(drawerWidth, DRAWER_MIN_WIDTH) - MODAL_MARGIN);
+  }, []);
+
+  React.useEffect(() => {
+    if (
+      (summary && sizes.height !== resizedRef.current.height) ||
+      sizes.width !== resizedRef.current.width
+    ) {
+      updateSummaryMeasures(sizes);
+      resizedRef.current = {
+        height: sizes.height,
+        width: sizes.width,
+      };
+    }
+  }, [sizes, summary, updateSummaryMeasures]);
 
   React.useEffect(() => {
     setContext(initialContext);
@@ -39,7 +78,10 @@ const HvWizardContent = ({ classes, fixedHeight = false, loading = false, childr
 
       setContext(updatedContext);
     }
+    updateSummaryMeasures(sizes);
   }, [tab]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const translateX = summaryWidth ? summaryWidth + 10 : 450;
 
   return (
     <HvDialogContent
@@ -48,6 +90,20 @@ const HvWizardContent = ({ classes, fixedHeight = false, loading = false, childr
       })}
       indentContent
     >
+      {resizeListener}
+      <div className={classes.summarySticky}>
+        <div
+          className={classes.summaryContainer}
+          style={{
+            left: summaryLeft,
+            width: summaryWidth,
+            height: summaryHeight,
+            transform: `translate(${summary ? 0 : translateX}px, 0)`,
+          }}
+        >
+          {summaryContent}
+        </div>
+      </div>
       <LoadingContainer hidden={!loading}>
         {React.Children.map(arrayChildren, (child, index) => {
           if (index === tab) {
@@ -74,13 +130,21 @@ HvWizardContent.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Style applied to the Wizard content container
+     * Style applied to the Wizard content container.
      */
     contentContainer: PropTypes.string,
     /**
      * Style applied to the Wizard to fix its height.
      */
     fixedHeight: PropTypes.string,
+    /**
+     * Style applied to the Summary container to stick it to the top.
+     */
+    summarySticky: PropTypes.string,
+    /**
+     * Style applied to the Summary container to position it on the right.
+     */
+    summaryContainer: PropTypes.string,
   }).isRequired,
   /**
    * Forces minimum height to the component.
@@ -90,6 +154,10 @@ HvWizardContent.propTypes = {
    * Whether the loading animation is shown.
    */
   loading: PropTypes.bool,
+  /**
+   * The content of the summary.
+   */
+  summaryContent: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvWizardContent" })(HvWizardContent);
