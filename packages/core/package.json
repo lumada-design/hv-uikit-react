@@ -47,7 +47,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.11",
     "@styled-system/variant": "^5.1.5",
+    "clsx": "^1.2.1",
     "styled-system": "^5.1.5",
     "vite": "^3.1.8",
     "vite-plugin-dts": "^1.6.6",

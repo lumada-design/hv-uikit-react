@@ -1,12 +1,15 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
+import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  esbuild: {
+    jsx: "automatic",
+  },
   plugins: [
     react({
       jsxImportSource: "@emotion/react",

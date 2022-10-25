@@ -8,6 +8,7 @@ const componentsSpec = {
   header: {
     height: "string",
     borderTop: "string",
+    shadow: "string",
   },
 };
 

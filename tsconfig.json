@@ -18,7 +18,8 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-react-core": ["./packages/core/src"]
+      "@hitachivantara/uikit-react-core": ["./packages/core/src"],
+      "@hitachivantara/uikit-react-types": ["./packages/types/build"]
     },
     "preserveSymlinks": true,
     "noImplicitAny": false

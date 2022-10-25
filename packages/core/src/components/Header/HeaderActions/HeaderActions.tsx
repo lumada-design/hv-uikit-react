@@ -1,18 +1,13 @@
-import styled from "@emotion/styled";
-import { themeUtils } from "theme";
+import { Div } from "./HeaderActions.styles";
 
-export interface HeaderActionsProps {
-  children?: React.ReactNode;
-}
+export const HeaderActions = (props: HeaderActionsProps) => {
+  const { children, className, ...others } = props;
 
-export const HeaderActions = ({ children }: HeaderActionsProps) => {
-  const Styled = styled("span")({
-    marginLeft: "auto",
-    display: "inline-flex",
-    gap: themeUtils.space(2),
-  });
-
-  return <Styled>{children}</Styled>;
+  return (
+    <Div className={className} {...others}>
+      {children}
+    </Div>
+  );
 };
 
 HeaderActions.displayName = "HeaderActions";

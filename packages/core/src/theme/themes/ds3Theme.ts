@@ -12,8 +12,9 @@ const theme = makeTheme((themeVars) => ({
       borderRadius: "none",
     },
     header: {
-      height: 44,
+      height: "44px",
       borderTop: `4px solid ${themeVars.colors.sema4}`,
+      shadow: themeVars.shadows.md,
     },
   },
 }));

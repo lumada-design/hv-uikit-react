@@ -2,10 +2,11 @@ import {
   HvBox,
   HvProvider,
   themeUtils,
+  themeVars,
 } from "@hitachivantara/uikit-react-core";
-import { Header, ThemeSwitcher } from "./layout";
-import { Typography, Buttons } from "./components";
 import { CSSProperties } from "react";
+import { Buttons, Typography } from "./components";
+import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
   display: "flex",
@@ -19,11 +20,13 @@ const App = () => {
   return (
     <HvProvider>
       <Header />
-      <HvBox sx={styles}>
-        <ThemeSwitcher />
-        <Typography />
-        <Buttons />
-      </HvBox>
+      <div style={{ marginTop: `calc(${themeVars.header.height} + 80px)` }}>
+        <HvBox sx={styles}>
+          <ThemeSwitcher />
+          <Typography />
+          <Buttons />
+        </HvBox>
+      </div>
     </HvProvider>
   );
 };

@@ -23,6 +23,7 @@ const theme = makeTheme((themeVars) => ({
     header: {
       height: "100px",
       borderTop: "none",
+      shadow: "none",
     },
   },
 }));

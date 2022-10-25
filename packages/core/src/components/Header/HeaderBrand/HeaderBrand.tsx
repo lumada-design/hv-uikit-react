@@ -1,13 +1,14 @@
-import styled from "@emotion/styled";
+import { Typography as HvTypography } from "../../Typography";
+import { HeaderBrandRoot, HeaderBrandSeparator } from "./HeaderBrand.styles";
 
-export interface HeaderBrandProps {
-  children?: React.ReactNode;
-}
-
-export const HeaderBrand = ({ children }: HeaderBrandProps) => {
-  const Styled = styled("span")({});
-
-  return <Styled>{children}</Styled>;
+export const HeaderBrand = ({ logo, name, className }: HeaderBrandProps) => {
+  return (
+    <HeaderBrandRoot className={className}>
+      {logo}
+      {logo && name && <HeaderBrandSeparator />}
+      {name && <HvTypography variant="label">{name}</HvTypography>}
+    </HeaderBrandRoot>
+  );
 };
 
 HeaderBrand.displayName = "HeaderBrand";
