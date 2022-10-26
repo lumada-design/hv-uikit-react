@@ -20,7 +20,7 @@ on:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_BRANCH: v3.x
   DOCUMENTATION_PUBLISH_FOLDER: uikit/v3.x
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v3.x of ${{ github.repository }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v3.x/
