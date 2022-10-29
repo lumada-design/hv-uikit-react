@@ -16,16 +16,18 @@ export type HvStepNavigationProps = StandardProps<
   /**
    * Steps to show on the component.
    */
-  steps: Array<Pick<HvStepProps, "state" | "title" | "onClick" | "className" | "disabled">> & {
-    /**
-     * Class names to override styles on the separator component after the step.
-     */
-    separatorClassName: string;
-    /**
-     * Class names to override styles on the title component above the step.
-     */
-    titleClassName: string;
-  };
+  steps: Array<
+    Pick<HvStepProps, "state" | "title" | "onClick" | "className" | "disabled"> & {
+      /**
+       * Class names to override styles on the separator component after the step.
+       */
+      separatorClassName?: string;
+      /**
+       * Class names to override styles on the title component above the step.
+       */
+      titleClassName?: string;
+    }
+  >;
   /**
    * Sets one of the standard sizes of the steps.
    */
