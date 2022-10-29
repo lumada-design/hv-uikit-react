@@ -1,12 +1,10 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import { Map } from "@hitachivantara/uikit-react-icons";
 import { HvInput, HvProvider } from "../..";
-
-/* eslint-disable no-console */
 
 const labels = {
   inputLabel: "inputLabel",
@@ -18,64 +16,40 @@ const labels = {
   requiredWarningText: "requiredWarningText",
 };
 
-const getInputProps = (ParentElement) => ParentElement.find(HvInput).props();
-
 describe("Input", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
+  it("renders the input element", () => {
+    render(
       <HvProvider cssBaseline="none">
         <HvInput />
       </HvProvider>
     );
+
+    const input = screen.getByRole("textbox");
+
+    expect(input).toBeVisible();
+    expect(input).toBeEnabled();
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvInput)).toMatchSnapshot();
-  });
-
-  it("should render the Input component", () => {
-    const inputComponent = wrapper.find("HvInput");
-    expect(inputComponent.length).toBe(1);
-  });
-
-  it("should disable the Input component", () => {
-    wrapper = mount(
+  it("renders the disabled input element", () => {
+    render(
       <HvProvider cssBaseline="none">
         <HvInput disabled />
       </HvProvider>
     );
 
-    // not using jest-dom yet
-    // eslint-disable-next-line jest-dom/prefer-enabled-disabled
-    expect(getInputProps(wrapper).disabled).toBe(true);
+    const input = screen.getByRole("textbox");
+
+    expect(input).toBeVisible();
+    expect(input).toBeDisabled();
   });
 
-  it("should pass other props to the child input component", () => {
-    wrapper = mount(
+  it("renders the custom icon", () => {
+    render(
       <HvProvider cssBaseline="none">
-        <HvInput
-          inputProps={{
-            maxLength: 250,
-          }}
-        />
+        <HvInput labels={labels} endAdornment={<Map role="presentation" />} />
       </HvProvider>
     );
-    expect(wrapper.find(HvInput)).toMatchSnapshot();
-  });
 
-  it("should show the custom map icon", () => {
-    wrapper = mount(
-      <HvProvider cssBaseline="none">
-        <HvInput labels={labels} endAdornment={<Map />} />
-      </HvProvider>
-    );
-    const inputComponent = wrapper.find(Map);
-    expect(inputComponent.length).toBe(1);
+    expect(screen.getByRole("presentation")).toBeVisible();
   });
 });

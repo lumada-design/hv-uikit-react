@@ -1,33 +1,36 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
 import { HvProvider, HvWarningText } from "../../..";
 
-/* eslint-disable no-console */
+const TEXT = "text-content";
+
+const setup = (props) =>
+  render(
+    <HvProvider cssBaseline="none">
+      <HvWarningText {...props}>{TEXT}</HvWarningText>
+    </HvProvider>
+  );
 
 describe("HelperText", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider cssBaseline="none">
-        <HvWarningText id="base">test</HvWarningText>
-      </HvProvider>
-    );
+  it("doesn't render component when not visible", () => {
+    setup({ isVisible: false });
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+    expect(screen.queryByText(TEXT)).not.toBeInTheDocument();
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
+  it("renders component and value when visible", () => {
+    setup({ isVisible: true });
+    const component = screen.getByRole("status");
+    const content = screen.getByText(TEXT);
+    expect(component).toBeVisible();
+    expect(content).toBeVisible();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvWarningText)).toMatchSnapshot();
-  });
-
-  it("should render the helper text component", () => {
-    const HvWarningTextComponent = wrapper.find(HvWarningText);
-    expect(HvWarningTextComponent.length).toBe(1);
+  it("renders custom adornment", () => {
+    setup({ isVisible: true, adornment: "FAKE-ICON" });
+    expect(screen.getByText("FAKE-ICON")).toBeVisible();
   });
 });
