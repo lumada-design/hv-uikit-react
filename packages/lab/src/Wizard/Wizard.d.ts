@@ -43,6 +43,10 @@ export type HvWizardProps = StandardProps<
    */
   hasSummary?: boolean;
   /**
+   * The content of the summary.
+   */
+  summaryContent?: React.ReactNode;
+  /**
    * Enables the skip button.
    */
   skippable?: boolean;

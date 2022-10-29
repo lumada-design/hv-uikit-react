@@ -1,12 +1,10 @@
 import React from "react";
 
-export type HvWizardContextClassKey = "root";
-
 export type HvWizardContextProps = {
   context: any;
-  setContext: () => void;
+  setContext: (values: any) => void;
 };
 
-export default function HvWizardContext(
-  props: HvWizardContextProps
-): React.Context<HvWizardContextProps>;
+declare const HvWizardContext: React.Context<HvWizardContextProps>;
+
+export default HvWizardContext;

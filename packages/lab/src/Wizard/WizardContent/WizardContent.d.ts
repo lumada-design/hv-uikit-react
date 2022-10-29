@@ -23,6 +23,10 @@ export type HvWizardContentProps = StandardProps<
    * Whether the loading animation is shown.
    */
   loading?: boolean;
+  /**
+   * The content of the summary.
+   */
+  summaryContent?: React.ReactNode;
 };
 
 export default function HvWizardContent(props: HvWizardContentProps): JSX.Element | null;
