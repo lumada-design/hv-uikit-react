@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.1.0 (2022-10-30)
+
+### Bug Fixes
+
+- **StepNavigation:** steps ts declaration ([#2951](https://github.com/lumada-design/hv-uikit-react/issues/2951)) ([e3fd4c2](https://github.com/lumada-design/hv-uikit-react/commit/e3fd4c210b374fe7c8db25b701b637c397584dfe))
+
+### Features
+
+- **wizard:** added summary functionality to the wizard ([#2952](https://github.com/lumada-design/hv-uikit-react/issues/2952)) ([51c0fa4](https://github.com/lumada-design/hv-uikit-react/commit/51c0fa4932a16afd447cdde857f91d4a0bcc3150))
+
 ## [4.0.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.0.3...@hitachivantara/uikit-react-lab@4.0.4) (2022-10-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

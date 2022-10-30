@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.1.0 (2022-10-30)
+
+### Features
+
+- **WarningText:** add aria role ([#2950](https://github.com/lumada-design/hv-uikit-react/issues/2950)) ([dd5dbc9](https://github.com/lumada-design/hv-uikit-react/commit/dd5dbc91da99f6e8a4bda5fadc011a28100d2a33))
+
 ## [4.0.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.0.3...@hitachivantara/uikit-react-compat@4.0.4) (2022-10-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-compat
