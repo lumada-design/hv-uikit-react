@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "@mui/styles";
 import useStyles from "./styles";
 
+/**
+ * SimpleGrid is a flexbox container where each child is treated as a column.
+ * Each column takes equal amount of space.
+ */
 const HvSimpleGrid = ({ children, breakpoints, spacing = "sm", cols, ...others }) => {
   const classes = useStyles({ breakpoints, cols, spacing })();
   return (
@@ -20,7 +24,7 @@ HvSimpleGrid.propTypes = {
   /**
    * Spacing with pre-defined values according the values defined in the theme
    */
-  spacing: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+  spacing: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
   /**
    * Provide an array to define responsive behavior:
    *
@@ -35,7 +39,7 @@ HvSimpleGrid.propTypes = {
       maxWidth: PropTypes.number,
       minWidth: PropTypes.number,
       cols: PropTypes.number,
-      spacing: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+      spacing: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
     })
   ),
   /**
