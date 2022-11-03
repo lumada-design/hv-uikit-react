@@ -1,33 +1,20 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# A few optional parameters that can be passed to this workflow:
-#  - ref: specific branch to perform the release, defaults to 'master'.
-#  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
 name: Release
+run-name: v3.x Release
 on:
   repository_dispatch:
-    types: [release]
+    types: [v3-release]
   workflow_dispatch:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/master
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/master/
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/v3.x
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v3.x of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v3.x/
 
 jobs:
   Release:
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -82,7 +69,7 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: "master"
+              branch: "v3.x"
             })
 
             const commitMessage = branch.data.commit.commit.message
@@ -104,8 +91,7 @@ jobs:
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
+        run: EXCLUDE_TEST_STORIES=true npm run build-documentation
 
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
@@ -136,8 +122,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3

@@ -1,17 +1,18 @@
-name: Regenerate Documentation
+name: Documentation
+run-name: v3.x Documentation
 on:
   workflow_dispatch:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ github.ref_name }}
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for ${{ github.ref_name }} of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/v3.x
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v3.x of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v3.x/
 
 jobs:
   Release:
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -39,8 +40,7 @@ jobs:
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
+        run: EXCLUDE_TEST_STORIES=true npm run build-documentation
 
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
@@ -52,8 +52,7 @@ jobs:
           fetch-depth: 1
 
       - name: Remove Previous Documentation
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+        run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
 
       - name: Copy New Documentation
         run: |
@@ -71,8 +70,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3
