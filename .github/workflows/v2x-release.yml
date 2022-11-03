@@ -1,17 +1,3 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# A few optional parameters that can be passed to this workflow:
-#  - ref: specific branch to perform the release, defaults to 'master'.
-#  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
 name: v2.x Release
 on:
   repository_dispatch:

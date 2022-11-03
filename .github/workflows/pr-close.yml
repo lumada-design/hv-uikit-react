@@ -2,12 +2,12 @@ name: Pull Request Close
 on:
   pull_request:
     branches:
-      - master
+      - ${{ github.ref_name }}
     types: [closed]
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_BRANCH: ${{ github.ref_name }}
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
@@ -36,7 +36,6 @@ jobs:
           git rm -r ${DOCUMENTATION_PUBLISH_FOLDER}
           git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
           git push
-
       - name: Cleanup Folder
         if: always()
         run: rm -rf ${{ github.workspace }}/gh-docs

@@ -1,4 +1,4 @@
-name: Run Applitools
+name: Applitools
 on:
   workflow_dispatch:
 
@@ -48,7 +48,6 @@ jobs:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
           --name storybook
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -67,24 +66,22 @@ jobs:
         uses: docker://docker
         with:
           args: docker restart storybook
-      
+
       - name: Required Dependencies
         run: |
           sudo apt-get -y update 
           sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
-      
+
       - name: Install automation/Applitools
         run: |
           cd ${{ github.workspace }}/automation/applitools
           npm ci
-
       - name: Run Applitools Storybook Visual Testing
         env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
           cd ${{ github.workspace }}/automation/applitools
           APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
-
       - name: Archive Logs
         if: always()
         uses: actions/upload-artifact@v2
@@ -95,48 +92,3 @@ jobs:
       - name: Clean Folders
         if: always()
         run: rm -rf ${{ github.workspace }}/dist
-
-  Notify-End:
-    name: Notify End
-    needs: [Applitools]
-    if: always()
-    runs-on: ubuntu-latest
-
-    steps:
-      # delete storybook artifact
-      - uses: geekyeggo/delete-artifact@v1
-        with:
-          name: storybook-v2
-
-      - uses: technote-space/workflow-conclusion-action@v1
-
-      - name: generate conclusion color
-        id: conclusion_color
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
-
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "color": "${{env.COLOR}}",
-                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-                }
-              ]
-            }

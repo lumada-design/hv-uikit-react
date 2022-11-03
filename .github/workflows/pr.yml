@@ -2,28 +2,11 @@ name: Pull Request
 on:
   pull_request:
     branches:
-      - master
-
-# flow:
-# +------------------------------------+     +---------------------------------+
-# |Static-Checks (Licenses, Lint, Jest)|     |Build-Storybook (v2 and v3 store)|
-# +----------+-------------------------+     +--------------+------------------+
-#            |                                              |
-#            |                   +-----------+------------------------------------------------------------+
-#            |                   |           |              |                   |              |          |
-#            |             +-----v----+ +----v-----+ +------v-----------+ +-----v-----+ +------v----------+
-#            |             |A11Y-Tests| |Applitools| |  Robot (chrome)  | |Playwright | |Github-Deployment|
-#            |             +--------+-+ +--+-------+ +------+-----------+ +------+----+ +------+----------+
-#            |                      |      |                |                    |             |
-#            |                      |      |                |                    |             |
-#            |                      |      |                |                    |             |
-#            |                    +-v------v-+              |                    |             |
-#            +------------------->|Notify-End|<-------------+--------------------+-------------+
-#                                 +----------+
+      - ${{ github.ref_name }}
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_BRANCH: ${{ github.ref_name }}
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.event.number }} of ${{ github.repository }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/

@@ -1,13 +1,13 @@
-name: Regenerate Documentation
+name: Documentation
 on:
   workflow_dispatch:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
-  DOCUMENTATION_PUBLISH_FOLDER: uikit/master
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master of ${{ github.repository }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/master/
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ github.ref_name }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for ${{ github.ref_name }} of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
 
 jobs:
   Release:

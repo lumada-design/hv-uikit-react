@@ -1,37 +1,8 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"master\"}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
-name: v3.x Nightly
+name: v2.x Nightly
 on:
   repository_dispatch:
-    types: [v3x]
+    types: [v2x]
   workflow_dispatch:
-
-# ref is not needed across checkouts because master is the default branch
-
-# flow:
-# +------------------------------------+     +---------------------------------+
-# |Static-Checks (Licenses, Lint, Jest)|     |Build-Storybook (v2 and v3 store)|
-# +----------+-------------------------+     +--------------+------------------+
-#            |                                              |
-#            |                   +-----------+--------------+
-#            |                   |           |              |
-#            |             +-----v----+ +----v-----+ +------v----------------+
-#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)|
-#            |             +-----+----+ +----+-----+ +------+----------------+
-#            |                   |           |              |
-#            +-------------------+-----+-----+--------------+
-#                                      |
-#                   +----------+       |        +-------+
-#                   |Notify End|<------+------->|Release|
-#                   +----------+                +-------+
 
 env:
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
@@ -45,20 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v3.x"
+          ref: "v2.x"
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "14"
 
       - name: Install
         run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
-
-      - name: Build
-        run: npm run build
 
       - name: License Check
         run: npm run license-check
@@ -69,8 +37,8 @@ jobs:
       - name: Test
         run: npm run test
 
-  Build-Storybook-V2-Store:
-    name: Build Storybook (v2 store)
+  Build-Storybook:
+    name: Build Storybook
     runs-on: ubuntu-latest
 
     steps:
@@ -79,43 +47,11 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "14"
 
       - name: Install
         run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
-      - name: Build Storybook
-        run: V2_COMPAT_STORY_STORE=TRUE npm run build-documentation
-
-      - name: Archive Storybook
-        uses: actions/upload-artifact@v2
-        with:
-          name: storybook-v2
-          path: ${{ github.workspace }}/dist
-
-      - name: Clean Folders
-        if: always()
-        run: rm -rf ${{ github.workspace }}/dist
-
-  Build-Storybook-V3-Store:
-    name: Build Storybook (v3 store)
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
-      - name: Install
-        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
@@ -126,16 +62,16 @@ jobs:
       - name: Archive Storybook
         uses: actions/upload-artifact@v2
         with:
-          name: storybook-v3
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Clean Folders
         if: always()
-        run: rm -rf ${{ github.workspace }}/dist
+        run: |
 
   A11Y-Tests:
     name: Accessibility Tests
-    needs: [Build-Storybook-V3-Store]
+    needs: [Build-Storybook]
     runs-on: ubuntu-latest
 
     services:
@@ -154,23 +90,18 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16" # npm 8.x needed for overrides
+          node-version: "14"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook-v3
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
         uses: docker://docker
         with:
           args: docker restart storybook
-
-      - name: Required Dependencies
-        run: |
-          sudo apt-get -y update 
-          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
 
       - name: Install automation/pa11y
         run: |
@@ -188,7 +119,7 @@ jobs:
 
   Applitools:
     name: Applitools Storybook Visual Testing
-    needs: [Build-Storybook-V2-Store]
+    needs: [Build-Storybook]
     runs-on: ubuntu-latest
 
     services:
@@ -207,23 +138,18 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "14"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook-v2
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
         uses: docker://docker
         with:
           args: docker restart storybook
-
-      - name: Required Dependencies
-        run: |
-          sudo apt-get -y update 
-          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
 
       - name: Install automation/Applitools
         run: |
@@ -248,60 +174,9 @@ jobs:
         if: always()
         run: rm -rf ${{ github.workspace }}/dist
 
-  Playwright:
-    name: Playwright test
-    needs: [Build-Storybook-V3-Store]
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-
-    services:
-      storybook:
-        image: nginx
-        ports:
-          - 9001:80
-        volumes:
-          - ${{ github.workspace }}/dist:/usr/share/nginx/html
-        options: >-
-          --name storybook
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v2
-        with:
-          name: storybook-v2
-          path: ${{ github.workspace }}/dist
-
-      - name: Restart nginx
-        uses: docker://docker
-        with:
-          args: docker restart storybook
-
-      - name: Install dependencies
-        run: npm ci
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-
-      - name: Run Playwright tests
-        run: npm run test:e2e
-        env:
-          PLAYWRIGHT_TEST_BASE_URL: http://storybook
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-
   Robot:
     name: Test Robot
-    needs: [Build-Storybook-V3-Store]
+    needs: [Build-Storybook]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
@@ -317,7 +192,6 @@ jobs:
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
         ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
-        GECKO_DRIVER_VERSION: v0.31.0
 
     services:
       storybook:
@@ -334,7 +208,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: storybook-v3
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -360,7 +234,7 @@ jobs:
 
   Notify-End-Internal:
     name: Notify End Internal
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Playwright]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     if: failure()
     runs-on: ubuntu-latest
 
@@ -408,4 +282,4 @@ jobs:
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
             -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
-            -d '{"event_type": "v3-release"}'
+            -d '{"event_type": "v2-release"}'

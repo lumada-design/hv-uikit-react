@@ -1,39 +1,10 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"master\"}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
-name: Master Nightly
+name: Nightly
 on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
     types: [master]
   workflow_dispatch:
-
-# ref is not needed across checkouts because master is the default branch
-
-# flow:
-# +------------------------------------+     +---------------------------------+
-# |Static-Checks (Licenses, Lint, Jest)|     |Build-Storybook (v2 and v3 store)|
-# +----------+-------------------------+     +--------------+------------------+
-#            |                                              |
-#            |                   +-----------+--------------+
-#            |                   |           |              |
-#            |             +-----v----+ +----v-----+ +------v----------------+
-#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)|
-#            |             +-----+----+ +----+-----+ +------+----------------+
-#            |                   |           |              |
-#            +-------------------+-----+-----+--------------+
-#                                      |
-#                   +----------+       |        +-------+
-#                   |Notify End|<------+------->|Release|
-#                   +----------+                +-------+
 
 env:
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
