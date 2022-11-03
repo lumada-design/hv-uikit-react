@@ -6,7 +6,7 @@ type AsProp<C extends React.ElementType> = {
 
 type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P);
 
-type PolymorphicComponent<
+type PolymorphicComponentProp<
   C extends React.ElementType,
   Props = {}
 > = React.PropsWithChildren<Props & AsProp<C>> &
@@ -18,4 +18,4 @@ type PolymorphicRef<C extends React.ElementType> =
 type PolymorphicComponentRef<
   C extends React.ElementType,
   Props = {}
-> = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
+> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };

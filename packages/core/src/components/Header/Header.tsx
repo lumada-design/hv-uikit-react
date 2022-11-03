@@ -22,3 +22,5 @@ export const Header = ({ children, position = "fixed" }: HeaderProps) => {
     </DivStyledAppBar>
   );
 };
+
+Header.displayName = "Header";

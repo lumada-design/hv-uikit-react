@@ -5,7 +5,7 @@ import {
   themeVars,
 } from "@hitachivantara/uikit-react-core";
 import { CSSProperties } from "react";
-import { Buttons, Typography } from "./components";
+import { Buttons, Tags, Typography } from "./components";
 import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
@@ -24,6 +24,7 @@ const App = () => {
         <HvBox sx={styles}>
           <ThemeSwitcher />
           <Typography />
+          <Tags />
           <Buttons />
         </HvBox>
       </div>

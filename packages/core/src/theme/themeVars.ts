@@ -10,6 +10,9 @@ const componentsSpec = {
     borderTop: "string",
     shadow: "string",
   },
+  tag: {
+    borderRadius: "string",
+  },
 };
 
 export const themeVars = mapCSSVars({

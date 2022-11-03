@@ -3,8 +3,8 @@ import { colors, makeTheme } from "theme";
 const theme = makeTheme((themeVars) => ({
   colors: {
     modes: {
-      dawn: { ...colors.light },
-      wicked: { ...colors.dark },
+      dawn: { ...colors.common, ...colors.light },
+      wicked: { ...colors.common, ...colors.dark },
     },
   },
   components: {
@@ -15,6 +15,9 @@ const theme = makeTheme((themeVars) => ({
       height: "44px",
       borderTop: `4px solid ${themeVars.colors.sema4}`,
       shadow: themeVars.shadows.md,
+    },
+    tag: {
+      borderRadius: "none",
     },
   },
 }));
