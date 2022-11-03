@@ -1,15 +1,14 @@
 const isIncludedPath = (kind) => {
-  const includedPaths = ["Components/", "Widgets/", "Templates/"];
+  const includedPaths = ["Components/", "Widgets/"];
   return includedPaths.some((p) => kind.startsWith(p));
 };
 
 const isExcludedSample = (kind) => {
   const excludedSamples = [
-    // asset inventory stories excluded due inconsistent view port (applitools ticket)
-    "Widgets/Asset Inventory",
     "Templates/Asset Inventory",
-    "Templates/Kpis List",
+    "Templates/Details Page",
     "Templates/Form",
+    "Templates/Kpis List",
     // dialog is opened and tested via Tests/Dialog
     "Components/Overlay/Dialog",
 
@@ -31,8 +30,8 @@ module.exports = {
   runInDocker: true,
   variations: () => ["theme:wicked"],
 
-  appName: "UIKit",
-  batchId: process.env.APPLITOOLS_BATCH_ID,
+  appName: "UI Kit v3.x",
+  batchName: "UI Kit v3.x",
 
   browser: [
     { width: 1024, height: 768, name: "chrome" },
