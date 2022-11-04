@@ -4,8 +4,7 @@ import HvSimpleGrid from "../SimpleGrid";
 export default {
   title: "Layout/SimpleGrid",
   parameters: {
-    componentSubtitle:
-      "SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of space.",
+    componentSubtitle: null,
     usage: 'import { HvSimpleGrid } from "@hitachivantara/uikit-react-core"',
   },
   component: HvSimpleGrid,

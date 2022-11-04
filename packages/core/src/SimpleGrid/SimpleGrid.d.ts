@@ -1,4 +1,7 @@
-export type Spacing = "xs" | "sm" | "md" | "lg";
+import React from "react";
+import { HvSpacingKeys } from "../theme";
+
+export type Spacing = HvSpacingKeys;
 export type Breakpoint = {
   cols?: number;
   maxWidth?: number;
@@ -7,7 +10,7 @@ export type Breakpoint = {
 };
 
 export interface SimpleGridProps {
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   spacing?: Spacing;
   cols?: number;
   breakpoints?: Breakpoint[];
