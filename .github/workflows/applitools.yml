@@ -1,22 +1,23 @@
-name: Run Applitools
+name: Applitools
+run-name: v2.x Applitools
 on:
   workflow_dispatch:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-
+  
 jobs:
-  Build-Documentation:
-    name: Build Documentation
+  Build-Storybook:
+    name: Build Storybook
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Install
         run: |
@@ -26,49 +27,56 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
-        run: |
-          npm run build-documentation
+      - name: Build Storybook
+        run: npm run build-documentation
 
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
-    needs: [Build-Documentation]
-    runs-on: [self-hosted, Linux]
+    needs: [Build-Storybook]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
           --name storybook
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
+
+      - name: Required Dependencies
+        run: |
+          sudo apt-get -y update 
+          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
 
       - name: Install automation/Applitools
         run: |
@@ -76,59 +84,20 @@ jobs:
           npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
-      - name: run Applitools Storybook Visual Testing
+      - name: Run Applitools Storybook Visual Testing
         env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npx eyes-storybook -u http://localhost:9001
+          APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
+          
+      - name: Archive Logs
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
-
-  Notify-End:
-    name: Notify End
-    needs: [Applitools]
-    if: always()
-    runs-on: ubuntu-latest
-
-    steps:
-      # delete artifact since it was published to gh-pages
-      - uses: geekyeggo/delete-artifact@v1
-        with:
-          name: documentation
-
-      - uses: technote-space/workflow-conclusion-action@v1
-
-      - name: generate conclusion color
-        id: conclusion_color
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
-            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
-
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "color": "${{env.COLOR}}",
-                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-                }
-              ]
-            }
+        run: rm -rf ${{ github.workspace }}/dist

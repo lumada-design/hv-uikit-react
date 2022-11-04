@@ -1,38 +1,11 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"v2x\"}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
-name: v2.x Nightly
+name: Nightly
+run-name: v2.x Nightly
 on:
-  # disable v2.x cron since no daily changes come in
-  #  schedule:
-  #    - cron: "0 3 * * *" # daily at 03:00
+  schedule:
+    - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
-    types: [v2x]
+    types: [v3]
   workflow_dispatch:
-
-# flow:
-# +------------------------------------+          +-------------------+
-# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
-# +----------+-------------------------+          +---------+---------+
-#            |                                              |
-#            |                   +-----------+--------------+
-#            |                   |           |              |
-#            |             +-----v----+ +----v-----+ +------v----------------+
-#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)|
-#            |             +-----+----+ +----+-----+ +------+----------------+
-#            |                   |           |              |
-#            +-------------------+-----+-----+--------------+
-#                                      |
-#                   +----------+       |        +-------+
-#                   |Notify End|<------+------->|Release|
-#                   +----------+                +-------+
 
 env:
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
@@ -41,7 +14,7 @@ env:
 jobs:
   Static-Checks:
     name: Licenses, Lint, Jest
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -50,14 +23,16 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
+
+      - name: Build
+        run: npm run build
 
       - name: License Check
         run: npm run license-check
@@ -104,11 +79,11 @@ jobs:
   A11Y-Tests:
     name: Accessibility Tests
     needs: [Build-Storybook]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -122,7 +97,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14 # npm 8.x needed for overrides
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -131,9 +106,14 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
+
+      - name: Required Dependencies
+        run: |
+          sudo apt-get -y update 
+          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
 
       - name: Install automation/pa11y
         run: |
@@ -147,17 +127,16 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Applitools:
     name: Applitools Storybook Visual Testing
     needs: [Build-Storybook]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -171,7 +150,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
@@ -180,9 +159,14 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
+
+      - name: Required Dependencies
+        run: |
+          sudo apt-get -y update 
+          sudo apt-get install -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
 
       - name: Install automation/Applitools
         run: |
@@ -205,31 +189,31 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
 
   Robot:
     name: Test Robot
     needs: [Build-Storybook]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         browser: [firefox, chrome]
     container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
+      image: joaoeg/docker-robot-framework:0.1
+      options: --shm-size=6g -u 1001
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
         ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+        GECKO_DRIVER_VERSION: v0.31.0
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
@@ -246,7 +230,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 

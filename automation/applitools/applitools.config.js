@@ -1,5 +1,5 @@
 const isIncludedPath = (kind) => {
-  const includedPaths = ["Components/", "Visualizations/", "Tests/"];
+  const includedPaths = ["Components/", "Visualizations/"];
   return includedPaths.some((p) => kind.startsWith(p));
 };
 
@@ -33,7 +33,6 @@ module.exports = {
   batchName: "UI Kit v2.x",
 
   browser: [
-    { width: 1024, height: 768, name: "ie11" },
     { width: 1024, height: 768, name: "chrome" },
     { width: 1024, height: 768, name: "firefox" },
     { width: 1024, height: 768, name: "safari" },

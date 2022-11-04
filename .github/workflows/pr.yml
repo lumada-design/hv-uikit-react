@@ -1,39 +1,26 @@
-name: v2.x Pull Request
+name: Pull Request
+run-name: v2.x Pull Request
 on:
   pull_request:
     branches:
       - v2.x
 
-# flow:
-# +------------------------------------+          +-------------------+
-# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
-# +----------+-------------------------+          +---------+---------+
-#            |                                              |
-#            |                   +-----------+----------------------------------------+
-#            |                   |           |              |                         |
-#            |             +-----v----+ +----v-----+ +------v----------------+ +------v----------+
-#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)| |Github-Deployment|
-#            |             +--------+-+ +--+-------+ +------+----------------+ +------+----------+
-#            |                      |      |                |                         |
-#            |                      |      |                |                         |
-#            |                      |      |                |                         |
-#            |                    +-v------v-+              |                         |
-#            +------------------->|Notify-End|<-------------+-------------------------+
-#                                 +----------+
-
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_BRANCH: v2.x
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.event.number }} of ${{ github.repository }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
   PR_URL: https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
   RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+  APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+  APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+  APPLITOOLS_SERVER_URL: "https://eyesapi.applitools.com"
 
 jobs:
   Static-Checks:
     name: Licenses, Lint, Jest
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -41,14 +28,16 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
+
+      - name: Build
+        run: npm run build
 
       - name: License Check
         run: npm run license-check
@@ -59,9 +48,9 @@ jobs:
       - name: Test
         run: npm run test
 
-  Build-Documentation:
-    name: Build Documentation
-    runs-on: [self-hosted, Linux]
+  Build-Storybook:
+    name: Build Storybook
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -69,34 +58,102 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Install
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
-        run: |
-          npm run build-documentation
+      - name: Build Storybook
+        run: npm run build-documentation
 
-      - name: Archive Documentation
+      - name: Archive Storybook
         uses: actions/upload-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Clean Folders
         if: always()
+        run: rm -rf ${{ github.workspace }}/dist
+
+  Applitools:
+    name: Applitools Storybook Visual Testing
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+    needs: [Build-Storybook]
+    runs-on: ubuntu-latest
+
+    services:
+      storybook:
+        image: nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook-v2
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/Applitools
         run: |
-          rm -rf ${{ github.workspace }}/dist
+          cd ${{ github.workspace }}/automation/applitools
+          npm ci
+
+      - name: Run Applitools Storybook Visual Testing
+        env:
+          APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+          APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+        run: |
+          cd ${{ github.workspace }}/automation/applitools
+          npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
+
+      - name: Archive Logs
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
+
+      - name: Clean Folders
+        if: always()
+        run: rm -rf ${{ github.workspace }}/dist
+
+  Applitools-Complete:
+    name: Applitools complete API call
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
+    needs: [Applitools]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Applitools Finish
+        run: |
+          curl -X POST \
+            https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{env.APPLITOOLS_BATCH_ID}}/complete?apiKey=${{env.APPLITOOLS_API_KEY}} \
+            -H "accept:*/*" \
 
   Github-Deployment:
     name: Github Deployment
     if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
-    needs: [Build-Documentation]
+    needs: [Build-Storybook]
     runs-on: ubuntu-latest
 
     steps:
@@ -120,12 +177,12 @@ jobs:
           fetch-depth: 1
 
       - name: Remove Previous Documentation
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+        run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Push Documentation
@@ -136,10 +193,11 @@ jobs:
           git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
           git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
           git push
+
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
+
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3
         if: always()
@@ -152,12 +210,12 @@ jobs:
 
   A11Y-Tests:
     name: Accessibility Tests
-    needs: [Build-Documentation]
-    runs-on: [self-hosted, Linux]
+    needs: [Build-Storybook]
+    runs-on: ubuntu-latest
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         ports:
           - 9001:80
         volumes:
@@ -171,16 +229,16 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -196,21 +254,68 @@ jobs:
 
       - name: Clean Folders
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/dist
+        run: rm -rf ${{ github.workspace }}/dist
+
+  Playwright:
+    name: Playwright test
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+    needs: [Build-Storybook]
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    services:
+      storybook:
+        image: nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook-v2
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: http://storybook
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
   Robot:
     name: Test Robot
-    needs: [Build-Documentation]
-    runs-on: [self-hosted, Linux]
+    needs: [Build-Storybook]
+    runs-on: ubuntu-latest
     timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome]
     container:
-      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
-      options: --shm-size=6g --cpus 4 -u 2501
+      image: joaoeg/docker-robot-framework:0.1
+      options: --shm-size=6g -u 1001
       env:
         BROWSER: chrome
         ROBOT_TESTS_DIR: ./automation/robot/storybook
@@ -220,12 +325,11 @@ jobs:
 
     services:
       storybook:
-        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
+        image: nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
           --name storybook
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -233,11 +337,11 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v2
         with:
-          name: documentation
+          name: storybook
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
+        uses: docker://docker
         with:
           args: docker restart storybook
 
@@ -248,7 +352,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: ${{ matrix.browser }}-reports
+          name: chrome-reports
           path: ${{ github.workspace }}/reports
 
       - name: Clean Folders
@@ -257,19 +361,27 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  Notify-End:
-    name: Notify End
-    needs: [Static-Checks, Github-Deployment, A11Y-Tests, Robot]
+  Cleanup:
+    name: Cleanup test artifacts
     if: always()
+    needs: [Github-Deployment, Applitools, A11Y-Tests, Robot]
     runs-on: ubuntu-latest
 
     steps:
-      # delete artifact since it was published to gh-pages
       - uses: geekyeggo/delete-artifact@v1
         with:
-          name: documentation
+          name: |
+            storybook-v2
+            storybook
 
-      - uses: technote-space/workflow-conclusion-action@v2
+  Notify-End:
+    name: Notify End
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && always()
+    needs: [Static-Checks, Github-Deployment, Applitools, A11Y-Tests, Robot, Playwright]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
 
       - name: generate conclusion color
         id: conclusion_color

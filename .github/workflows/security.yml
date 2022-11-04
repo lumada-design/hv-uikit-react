@@ -1,0 +1,38 @@
+name: Security
+run-name: v2.x Security
+on:
+  workflow_dispatch:
+
+env:
+  BLACKDUCK_VERSION: 7
+
+jobs:
+  BlackDuckScan:
+    name: BlackDuck Scan
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+          distribution: "adopt"
+
+      - name: Build uikit
+        run: |
+          npm ci
+          npm run bootstrap
+          npm run build
+
+      - name: Run BlackDuck Scan
+        env:
+          BLACKDUCK_URL: ${{ secrets.BLACKDUCK_SERVER_URL }}
+          BLACKDUCK_TOKEN: ${{ secrets.BLACKDUCK_TOKEN }}
+        run: ./.github/security/blackduck.sh

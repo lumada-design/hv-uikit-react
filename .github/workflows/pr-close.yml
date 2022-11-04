@@ -1,4 +1,5 @@
 name: Pull Request Close
+run-name: v2.x Pull Request Close
 on:
   pull_request:
     branches:
@@ -7,7 +8,7 @@ on:
 
 env:
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_BRANCH: v2.x
   DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
@@ -15,6 +16,8 @@ jobs:
   CleanupDeployment:
     name: Cleanup Deployment
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -34,11 +37,9 @@ jobs:
           git rm -r ${DOCUMENTATION_PUBLISH_FOLDER}
           git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
           git push
-
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: mark environment as deactivated
         uses: bobheadxi/deployments@v0.4.3

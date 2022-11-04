@@ -1,27 +1,11 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# A few optional parameters that can be passed to this workflow:
-#  - ref: specific branch to perform the release, defaults to 'master'.
-#  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
-#  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
-name: v2.x Release
+name: Release
+run-name: v2.x Release
 on:
   repository_dispatch:
     types: [v2-release]
   workflow_dispatch:
 
 env:
-  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
   DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   DOCUMENTATION_PUBLISH_BRANCH: master
   DOCUMENTATION_PUBLISH_FOLDER: uikit/v2.x
@@ -30,23 +14,21 @@ env:
 
 jobs:
   Release:
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     env:
       NODE_ENV: production
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PUBLISH_REGISTRY: ${{ github.event.client_payload.registry }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
     steps:
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 14
 
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: v2.x
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -59,9 +41,8 @@ jobs:
         env:
           # ensure dev dependencies are installed
           NODE_ENV: development
-        run: |
-          npm ci
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
+        run: npm ci
+
       - name: Bootstrap
         env:
           # ensure dev dependencies are installed
@@ -70,18 +51,15 @@ jobs:
 
       - name: Publish Setup
         run: |
-          npm config delete @hv:registry
-          npm config set registry "${PUBLISH_REGISTRY:-DEFAULT_PUBLISH_REGISTRY}"
-
-          npm config set _auth ${{ secrets.NPM_PUBLISH_AUTH }}
-          npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
-          npm config set always-auth true
-
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
-        run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset --no-verify-access
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset --no-verify-access
 
       - name: Get Releases Commit Message
         uses: actions/github-script@v3
@@ -113,8 +91,7 @@ jobs:
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Generate Documentation
-        run: |
-          EXCLUDE_TEST_STORIES=true npm run build-documentation
+        run: EXCLUDE_TEST_STORIES=true npm run build-documentation
 
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
@@ -145,8 +122,7 @@ jobs:
 
       - name: Cleanup Folder
         if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/gh-docs
+        run: rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@v0.4.3
@@ -170,7 +146,7 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit artifacts are available for v2",
+                  "author_name": "New UI-Kit artifacts are available",
                   "title": "More details https://github.com/${{github.repository}}/releases",
                   "text": "${{env.SLACK_MESSAGE}}",
                   "footer": "${{env.DOCUMENTATION_URL}}"
