@@ -47,8 +47,10 @@ const HvWizard = ({
   );
 
   React.useEffect(() => {
-    if (!open) {
-      setTab(0);
+    return () => {
+      if (!open) {
+        setTab(0);
+      }
     }
   }, [open]);
 

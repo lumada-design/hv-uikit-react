@@ -15,6 +15,7 @@ const styles = (theme) => ({
   },
   summaryContainer: {
     position: "absolute",
+    top: -20,
     minWidth: 280,
     boxShadow: theme.hv.shadows[1],
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
