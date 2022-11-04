@@ -1,0 +1,21 @@
+name: Security Scans
+
+on:
+  workflow_dispatch:
+
+jobs:
+  codedx-analyze:
+    runs-on: ubuntu-latest
+
+    env:
+      CODE_DX_SERVER_URL: https://codedx.orl.eng.hitachivantara.com
+      CODE_DX_SERVER_API_KEY: ${{secrets.CODEDX_TOKEN}}
+      CODE_DX_SERVER_PROJECT_ID: 120
+      CODE_DX_PROJECT_NAME: uikit
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run CodeDx scan
+        shell: bash
+        run: ./.github/scripts/codedx.sh ${{env.CODE_DX_PROJECT_NAME}} ${{github.workspace}}
