@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.1.0...@hitachivantara/uikit-react-core@4.1.1) (2022-11-04)
+
+### Bug Fixes
+
+- **SimpleGrid:** typings & docs ([#2957](https://github.com/lumada-design/hv-uikit-react/issues/2957)) ([4afacf4](https://github.com/lumada-design/hv-uikit-react/commit/4afacf476d93f7859d68cdb2a2df4d65df70fc7c))
+
 # 4.1.0 (2022-10-30)
 
 ### Features
