@@ -19,7 +19,8 @@
     "baseUrl": ".",
     "paths": {
       "@hitachivantara/uikit-react-core": ["./packages/core/src"],
-      "@hitachivantara/uikit-react-types": ["./packages/types/build"]
+      "@hitachivantara/uikit-react-icons": ["./packages/icons/bin"],
+      "@hitachivantara/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
     },
     "preserveSymlinks": true,
     "noImplicitAny": false

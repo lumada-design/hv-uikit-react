@@ -1,0 +1,68 @@
+{
+  "name": "@hitachivantara/uikit-react-icons",
+  "version": "5.0.0",
+  "description": "A collection of icons for use with Hitachi Vantara's React Components.",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "license": "Apache-2.0",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git"
+  },
+  "scripts": {
+    "build": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize build:*",
+    "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
+    "build:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
+    "build:vite": "vite build",
+    "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
+    "clean": "npx rimraf dist",
+    "clean:all": "npx rimraf dist bin",
+    "prepare": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize --parallel build:convert build:copy",
+    "prepublishOnly": "npm run build",
+    "link": "npm link",
+    "yalc-publish": "npx yalc publish --no-scripts",
+    "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
+    "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
+    "ts-check": "npx tsc -p ."
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.9.0",
+    "@mui/styles": "^5.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-react-core": "workspace:*",
+    "clsx": "^1.2.1",
+    "prop-types": "^15.8.1",
+    "recursive-readdir": "^2.2.2",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "cross-env": "^7.0.3",
+    "htmltojsx": "^0.3.0",
+    "jsdom-no-contextify": "^3.1.0",
+    "svgo": "^1.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

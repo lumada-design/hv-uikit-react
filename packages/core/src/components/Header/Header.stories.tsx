@@ -82,9 +82,7 @@ export const Main: StoryObj<HeaderProps> = {
               onClick={() => console.log("badge")}
               aria-label="Open Notifications panel"
               variant="ghost"
-            >
-              Badge
-            </Button>
+            ></Button>
             <Button
               onClick={() => console.log("user")}
               aria-label="Open User panel"

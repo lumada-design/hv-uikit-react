@@ -6,6 +6,7 @@ import {
   HvHeaderBrand,
   HvHeaderNavigation,
 } from "@hitachivantara/uikit-react-core";
+import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import HitachiLogo from "../../assets/HitachiLogo";
@@ -74,7 +75,7 @@ export const Header = () => {
           style={{ width: 32, height: 32, border: "1px solid black" }}
           onClick={() => console.log("menu")}
         >
-          M
+          <Menu />
         </HvButton>
       )}
       <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
@@ -95,7 +96,7 @@ export const Header = () => {
           aria-label="Open Notifications panel"
           variant="ghost"
         >
-          Badge
+          <Alert />
         </HvButton>
         {isMdUp && (
           <HvButton
@@ -103,7 +104,7 @@ export const Header = () => {
             aria-label="Open User panel"
             variant="ghost"
           >
-            User
+            <User />
           </HvButton>
         )}
       </HvHeaderActions>

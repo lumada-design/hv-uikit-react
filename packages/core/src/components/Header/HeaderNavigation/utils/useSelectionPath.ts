@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavigationItemProp } from "../HeaderNavigation";
 
 const getSelectionPath = (
   data: NavigationItemProp[] | undefined,

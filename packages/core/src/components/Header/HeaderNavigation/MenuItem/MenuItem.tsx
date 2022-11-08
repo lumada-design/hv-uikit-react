@@ -1,8 +1,16 @@
 import { Typography } from "components/Typography";
 import { useContext } from "react";
+import { BaseProps } from "types/base";
 import { MenuBar } from "../";
+import { NavigationItemProp } from "../HeaderNavigation";
 import SelectionContext from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
+
+export interface MenuItemProps extends BaseProps<"div", { onClick }> {
+  item: NavigationItemProp;
+  type?: string;
+  onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
+}
 
 export const MenuItem = ({ item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);

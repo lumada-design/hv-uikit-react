@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { themeVars } from "theme";
+import { PolymorphicComponentRef, PolymorphicRef } from "types/base";
 
 type SxProps =
   | React.CSSProperties

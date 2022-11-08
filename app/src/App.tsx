@@ -20,7 +20,7 @@ const App = () => {
   return (
     <HvProvider>
       <Header />
-      <div style={{ marginTop: `calc(${themeVars.header.height} + 80px)` }}>
+      <div style={{ marginTop: `calc(${themeVars.header.height} + 120px)` }}>
         <HvBox sx={styles}>
           <ThemeSwitcher />
           <Typography />

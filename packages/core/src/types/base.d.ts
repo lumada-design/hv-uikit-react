@@ -19,3 +19,9 @@ type PolymorphicComponentRef<
   C extends React.ElementType,
   Props = {}
 > = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };
+
+// Base Props
+export type BaseProps<
+  E extends keyof JSX.IntrinsicElements = "div",
+  P = {}
+> = Omit<JSX.IntrinsicElements[E], keyof P>;
