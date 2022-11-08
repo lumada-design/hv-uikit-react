@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@mui/styles";
-import useResizeAware from "react-resize-aware";
+import { useElementSize } from "usehooks-ts";
 import clsx from "clsx";
 import { HvDialogContent } from "@hitachivantara/uikit-react-core";
 import HvWizardContext from "../WizardContext";
@@ -34,7 +34,7 @@ const HvWizardContent = ({
   const { context, setContext, summary } = React.useContext(HvWizardContext);
 
   const resizedRef = React.useRef({ width: 0, height: 0 });
-  const [resizeListener, sizes] = useResizeAware();
+  const [containerRef, sizes] = useElementSize();
 
   const [summaryHeight, setSummaryHeight] = React.useState(0);
   const [summaryWidth, setSummaryWidth] = React.useState(0);
@@ -84,35 +84,38 @@ const HvWizardContent = ({
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 
   return (
-    <HvDialogContent
-      className={clsx(classes.contentContainer, {
-        [classes.fixedHeight]: fixedHeight,
-      })}
-      indentContent
-    >
-      {resizeListener}
-      <div className={classes.summarySticky}>
-        <div
-          className={classes.summaryContainer}
-          style={{
-            left: summaryLeft,
-            width: summaryWidth,
-            height: summaryHeight,
-            transform: `translate(${summary ? 0 : translateX}px, 0)`,
-          }}
-        >
-          {summaryContent}
-        </div>
-      </div>
-      <LoadingContainer hidden={!loading}>
-        {React.Children.map(arrayChildren, (child, index) => {
-          if (index === tab) {
-            return React.cloneElement(child, { tab });
-          }
-          return null;
+    <div ref={containerRef}>
+      <HvDialogContent
+        className={clsx(classes.contentContainer, {
+          [classes.fixedHeight]: fixedHeight,
         })}
-      </LoadingContainer>
-    </HvDialogContent>
+        indentContent
+      >
+        {summary !== null && (
+          <div className={classes.summarySticky}>
+            <div
+              className={classes.summaryContainer}
+              style={{
+                left: summaryLeft,
+                width: summaryWidth,
+                height: summaryHeight,
+                transform: `translate(${summary ? 0 : translateX}px, 0)`,
+              }}
+            >
+              {summaryContent}
+            </div>
+          </div>
+        )}
+        <LoadingContainer hidden={!loading}>
+          {React.Children.map(arrayChildren, (child, index) => {
+            if (index === tab) {
+              return React.cloneElement(child, { tab });
+            }
+            return null;
+          })}
+        </LoadingContainer>
+      </HvDialogContent>
+    </div>
   );
 };
 
