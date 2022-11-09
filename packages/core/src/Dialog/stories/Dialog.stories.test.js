@@ -5,9 +5,6 @@ import {
   TextAndSemantic,
   CustomIcon,
   Accessibility,
-  RemoveSchedule,
-  DeleteConfirmation,
-  NoRename,
 } from "./Dialog.stories";
 
 export default {
@@ -65,40 +62,7 @@ DialogOpened.parameters = {
 //   },
 // };
 
-// open No Rename Dialog
-export const sNoRename = () => NoRename();
-
-sNoRename.parameters = {
-  eyes: {
-    runBefore() {
-      return openDialog();
-    },
-  },
-};
-
-// open dialog DeleteConfirmation
-export const sDeleteConfirmation = () => DeleteConfirmation();
-
-sDeleteConfirmation.parameters = {
-  eyes: {
-    runBefore() {
-      return openDialog();
-    },
-  },
-};
-
-// open dialog DeleteConfirmation
-export const sRemoveSchedule = () => RemoveSchedule();
-
-sRemoveSchedule.parameters = {
-  eyes: {
-    runBefore() {
-      return openDialog();
-    },
-  },
-};
-
-// open dialog DeleteConfirmation
+// open dialog Accessibility
 export const sAccessibility = () => Accessibility();
 
 sAccessibility.parameters = {

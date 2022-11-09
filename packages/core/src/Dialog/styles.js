@@ -5,16 +5,19 @@ const styles = (theme) => ({
     background: fade(theme.hv.palette.atmosphere.atmo4, 0.8),
   },
   paper: {
-    background: `${theme.hv.palette.atmosphere.atmo1}`,
-    padding: "0px",
+    background: theme.hv.palette.atmosphere.atmo1,
+    padding: 0,
     overflow: "auto",
     boxShadow: theme.hv.shadows[1],
-    "&:not(.fullscreen)": {
-      maxHeight: "calc(100% - 200px)",
-      display: "flex",
-      flexDirection: "column",
+    maxHeight: "calc(100% - 200px)",
+    "@media (max-height:720px)": {
+      maxHeight: "calc(100% - 40px)", // "sm" margin
+    },
+    "&$fullscreen": {
+      maxHeight: "none",
     },
   },
+  fullscreen: {},
   closeButton: {
     padding: 0,
     minWidth: "inherit",

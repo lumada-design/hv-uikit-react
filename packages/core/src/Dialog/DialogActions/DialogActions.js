@@ -10,7 +10,7 @@ const HvDialogActions = (props) => {
   return (
     <DialogActions
       classes={{
-        root: clsx(classes.root, fullscreen && classes.fullscreen),
+        root: clsx(classes.root, { [classes.fullscreen]: fullscreen }),
         spacing: classes.spacing,
       }}
       className={className}

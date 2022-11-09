@@ -6,11 +6,12 @@ import clsx from "clsx";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
-const HvDialogContent = ({ classes, className, children, indentContent = false }) => {
+const HvDialogContent = ({ classes, className, children, indentContent = false, ...others }) => {
   return (
     <HvTypography
       component={DialogContent}
       className={clsx(className, classes.root, { [classes.textContent]: indentContent })}
+      {...others}
     >
       {children}
     </HvTypography>
@@ -31,7 +32,7 @@ HvDialogContent.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Style applied when the content is a string.
+     * Style applied when the content is indented.
      */
     textContent: PropTypes.string,
   }).isRequired,
