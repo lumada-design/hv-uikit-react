@@ -51,7 +51,7 @@ const HvWizard = ({
       if (!open) {
         setTab(0);
       }
-    }
+    };
   }, [open]);
 
   const handleClose = React.useCallback(
