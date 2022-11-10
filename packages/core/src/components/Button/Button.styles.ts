@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
-import { themeVars, themeVariant, themeUtils } from "theme";
+import {
+  themeVars,
+  themeVariant,
+  themeUtils,
+} from "@hitachivantara/uikit-styles";
 import { ButtonVariant } from "./Button";
 
 export const StyledButton = styled.button<{ variant: ButtonVariant }>(

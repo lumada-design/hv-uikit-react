@@ -1,4 +1,4 @@
-import { themeVars } from "theme";
+import { themeVars } from "@hitachivantara/uikit-styles";
 import { HvBox } from "components";
 
 const styles = {

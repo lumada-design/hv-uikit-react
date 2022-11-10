@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { themes } from "theme";
-import { parseThemes } from "theme/utils";
+import { themes, parseThemes } from "@hitachivantara/uikit-styles";
 
 export const useTheme = () => {
   const themesNames = Object.keys(themes);

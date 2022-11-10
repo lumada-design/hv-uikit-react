@@ -4,6 +4,6 @@
     "outDir": "dist",
     "baseUrl": "src"
   },
-  "include": ["src", "../.husky/types"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

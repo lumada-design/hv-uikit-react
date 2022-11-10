@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeVars, themeUtils } from "theme";
+import { themeVars, themeUtils } from "@hitachivantara/uikit-styles";
 
 export interface DropdownListItemProps {
   isSelected: boolean;

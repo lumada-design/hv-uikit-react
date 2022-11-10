@@ -1,7 +1,8 @@
 const tsconfigPaths = require("vite-tsconfig-paths");
+const fg = require("fast-glob");
 
 module.exports = {
-  stories: ["../packages/**/*.stories.tsx"],
+  stories: ["../packages/**/*.stories.@(ts|tsx|mdx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

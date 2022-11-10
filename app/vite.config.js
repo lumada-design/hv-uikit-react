@@ -13,6 +13,7 @@ export default defineConfig({
     tsconfigPaths({ loose: true }),
   ],
   build: {
+    emptyOutDir: true,
     sourcemap: true,
   },
 });

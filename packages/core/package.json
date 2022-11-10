@@ -38,8 +38,7 @@
     "build": "tsc && vite build && tsc-alias",
     "test": "vitest run",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
-    "prepare": "pnpm build"
+    "coverage": "vitest run --coverage"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -56,6 +55,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.5",
+    "@hitachivantara/uikit-styles": "workspace:*",
     "@testing-library/user-event": "^14.4.3",
     "@vitejs/plugin-react": "^2.2.0",
     "@vitest/ui": "^0.25.1",

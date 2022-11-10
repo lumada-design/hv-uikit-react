@@ -1,4 +1,4 @@
-import { themeVars, themes } from "theme";
+import { themeVars, themes } from "@hitachivantara/uikit-styles";
 
 declare module "*.css";
 

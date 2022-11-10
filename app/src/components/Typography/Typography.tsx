@@ -3,8 +3,8 @@ import {
   HvBox,
   HvTypography,
   TypographyVariants,
-  themeUtils,
 } from "@hitachivantara/uikit-react-core";
+import { themeUtils } from "@hitachivantara/uikit-styles";
 
 const variants = [
   "display",

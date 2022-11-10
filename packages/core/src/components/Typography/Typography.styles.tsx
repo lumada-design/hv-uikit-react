@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeVars, themeVariant } from "theme";
+import { themeVars, themeVariant } from "@hitachivantara/uikit-styles";
 import { TypographyVariants } from "./Typography";
 
 export const StyledTypography = styled.p<{ variant: TypographyVariants }>(

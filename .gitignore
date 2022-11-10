@@ -26,6 +26,7 @@ lib/
 cjs/
 esm/
 dist/
+bin/
 
 # tests
 .e2e

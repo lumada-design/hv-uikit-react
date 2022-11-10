@@ -18,7 +18,9 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-react-core": ["./packages/core/src"]
+      "@hitachivantara/uikit-react-core": ["./packages/core/src"],
+      "@hitachivantara/uikit-react-icons": ["./packages/icons/bin"],
+      "@hitachivantara/uikit-styles": ["./packages/styles/src"]
     },
     "preserveSymlinks": true,
     "noImplicitAny": false

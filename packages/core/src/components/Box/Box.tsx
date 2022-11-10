@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { themeVars } from "theme";
+import { themeVars } from "@hitachivantara/uikit-styles";
 
 type SxProps =
   | React.CSSProperties

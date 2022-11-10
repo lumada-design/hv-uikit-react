@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeUtils } from "theme";
+import { themeUtils } from "@hitachivantara/uikit-styles";
 
 export interface HeaderActionsProps {
   children?: React.ReactNode;

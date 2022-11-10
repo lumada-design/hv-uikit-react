@@ -11,6 +11,8 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@hitachivantara/uikit-react-core": "workspace:*",
+    "@hitachivantara/uikit-react-icons": "workspace:*",
+    "@hitachivantara/uikit-styles": "workspace:*",
     "@vitejs/plugin-react": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

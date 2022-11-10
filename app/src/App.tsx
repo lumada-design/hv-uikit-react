@@ -1,10 +1,7 @@
-import {
-  HvBox,
-  HvProvider,
-  themeUtils,
-} from "@hitachivantara/uikit-react-core";
+import { HvBox, HvProvider } from "@hitachivantara/uikit-react-core";
+import { themeUtils } from "@hitachivantara/uikit-styles";
 import { Header, ThemeSwitcher } from "./layout";
-import { Typography, Buttons } from "./components";
+import { Buttons, Icons, Typography } from "./components";
 import { CSSProperties } from "react";
 
 const styles = {
@@ -23,6 +20,7 @@ const App = () => {
         <ThemeSwitcher />
         <Typography />
         <Buttons />
+        <Icons />
       </HvBox>
     </HvProvider>
   );

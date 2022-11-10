@@ -2,7 +2,7 @@ import { useState, useRef, CSSProperties } from "react";
 
 import { Typography } from "components";
 import { useClickOutside } from "hooks";
-import { themeVars } from "theme";
+import { themeVars } from "@hitachivantara/uikit-styles";
 
 import { DropdownHeader } from "./DropdownHeader";
 import { DropdownList } from "./List";
