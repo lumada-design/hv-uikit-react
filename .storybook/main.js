@@ -1,5 +1,4 @@
 const tsconfigPaths = require("vite-tsconfig-paths");
-const fg = require("fast-glob");
 
 module.exports = {
   stories: ["../packages/**/*.stories.@(ts|tsx|mdx)"],

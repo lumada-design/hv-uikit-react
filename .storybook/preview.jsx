@@ -35,4 +35,23 @@ export const parameters = {
     { title: "Light", value: "light", color: "#F0F0F0" },
     { title: "Dark", color: "#414141" },
   ],
+  options: {
+    storySort: {
+      order: [
+        "Theme",
+        "Layout",
+        "Display",
+        "Feedback",
+        "Inputs",
+        "Navigation",
+        "Overlay",
+        "Structure",
+        "Visualizations",
+        "Widgets",
+        "Templates",
+        "Lab",
+        "Compat",
+      ],
+    },
+  },
 };
