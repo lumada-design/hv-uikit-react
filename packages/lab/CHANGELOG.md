@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.1...@hitachivantara/uikit-react-lab@4.1.2) (2022-11-11)
+
+### Bug Fixes
+
+- **wizard:** replace resize lib ([7fa210b](https://github.com/lumada-design/hv-uikit-react/commit/7fa210bb2c1eacab44e3271f973721e9d78bdad4))
+
 ## [4.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.0...@hitachivantara/uikit-react-lab@4.1.1) (2022-11-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
