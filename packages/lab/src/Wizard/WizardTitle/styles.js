@@ -1,4 +1,12 @@
 const styles = (theme) => ({
+  headerContainer: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    "& h6": {
+      fontSize: "16px",
+      fontWeight: "bold",
+      letterSpacing: 0,
+    },
+  },
   messageContainer: {
     "& > div": {
       width: "100%",
@@ -13,14 +21,6 @@ const styles = (theme) => ({
   },
   rootSummaryButton: {
     paddingRight: 18,
-  },
-  headerContainer: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo2,
-    "& h6": {
-      fontSize: "16px",
-      fontWeight: "bold",
-      letterSpacing: 0,
-    },
   },
   stepContainer: {
     margin: "auto",

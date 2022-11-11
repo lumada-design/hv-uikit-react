@@ -1,4 +1,9 @@
 const styles = (theme) => ({
+  refContainer: {
+    flex: 1,
+    overflowY: "auto",
+    overflowX: "hidden",
+  },
   contentContainer: {
     position: "relative",
     padding: 20,
@@ -8,11 +13,6 @@ const styles = (theme) => ({
   },
   fixedHeight: {
     minHeight: "calc(100vh - 387px)",
-  },
-  summaryRef: {
-    flex: 1,
-    overflowY: "auto",
-    overflowX: "hidden",
   },
   summarySticky: {
     position: "sticky",

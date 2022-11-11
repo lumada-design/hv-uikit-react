@@ -6,6 +6,7 @@ import { HvWizard } from "../..";
 
 describe("Wizard", () => {
   it("renders the component as expected", () => {
+    jest.spyOn(console, "error").mockImplementation();
     const mockOnClose = jest.fn();
     render(
       <HvWizard open onClose={mockOnClose} handleSubmit={jest.fn()} title="Mock Wizard">
@@ -26,6 +27,7 @@ describe("Wizard", () => {
   });
 
   it("should move across the pages when clicking the wizard actions", () => {
+    jest.spyOn(console, "error").mockImplementation();
     const mockOnClose = jest.fn();
     const mockHandleSubmit = jest.fn();
     render(

@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@mui/styles";
 import { HvButton, HvDialogTitle, HvGrid, HvTypography } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
 import { HvStepNavigation } from "@hitachivantara/uikit-react-lab";
+import HvWizardCleanContainer from "../WizardCleanContainer";
 import HvWizardContext from "../WizardContext";
 
 import styles from "./styles";
@@ -26,6 +28,8 @@ const HvWizardTitle = ({
   classes,
   changeTab,
   customStep = {},
+  fullscreen,
+  className,
 }) => {
   const { context, summary, setSummary } = React.useContext(HvWizardContext);
   const [steps, setSteps] = React.useState([]);
@@ -36,7 +40,7 @@ const HvWizardTitle = ({
     }
 
     return () => {
-      setSummary(false);
+      setSummary?.(false);
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -57,9 +61,11 @@ const HvWizardTitle = ({
     setSummary((oldSummary) => !oldSummary);
   };
 
+  const Container = fullscreen ? HvWizardCleanContainer : HvDialogTitle;
+
   return (
-    <HvDialogTitle
-      className={classes.headerContainer}
+    <Container
+      className={clsx(classes.headerContainer, className)}
       classes={{ messageContainer: classes.messageContainer }}
     >
       <HvGrid
@@ -93,7 +99,7 @@ const HvWizardTitle = ({
           </HvButton>
         )}
       </HvGrid>
-    </HvDialogTitle>
+    </Container>
   );
 };
 
@@ -175,6 +181,14 @@ HvWizardTitle.propTypes = {
       xl: PropTypes.number,
     }),
   }),
+  /**
+   * If fullscreen is true we remove Dialog references
+   */
+  fullscreen: PropTypes.bool,
+  /**
+   * Styles applied to the component container
+   */
+  className: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvWizardTitle" })(HvWizardTitle);

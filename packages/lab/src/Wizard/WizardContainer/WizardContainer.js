@@ -1,22 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import clsx from "clsx";
 import { withStyles } from "@mui/styles";
 import { HvDialog } from "@hitachivantara/uikit-react-core";
+import HvWizardCleanContainer from "../WizardCleanContainer";
 
 import styles from "./styles";
 
 const HvWizardContainer = ({ classes, className, children, handleClose, open, ...others }) => {
+  const { fullscreen } = others;
+  const Container = fullscreen ? HvWizardCleanContainer : HvDialog;
+
   return (
-    <HvDialog
+    <Container
       classes={{ closeButton: classes.closeButton, paper: classes.paper }} // overrides css
-      className={clsx(className, classes.root)}
+      className={className}
       open={open}
       onClose={handleClose}
       {...others}
     >
-      {children}
-    </HvDialog>
+      {React.Children.map(children, (child) => React.cloneElement(child, { fullscreen }))}
+    </Container>
   );
 };
 
@@ -29,10 +32,6 @@ HvWizardContainer.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
-    /**
-     * Styles applied to the component root class.
-     */
-    root: PropTypes.string,
     /**
      * Style applied to the component (root).
      */

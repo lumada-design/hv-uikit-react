@@ -348,3 +348,93 @@ export const ComponentBreakDown = () => {
     </>
   );
 };
+
+const useFullscreenStyles = makeStyles(() => ({
+  customHeaderContainer: {
+    backgroundColor: "gray",
+    "& h6": {
+      fontSize: 12,
+      fontWeight: 900,
+      letterSpacing: 2,
+    },
+  },
+  customContainer: {
+    display: "flex",
+    flexDirection: "column",
+    height: "calc(100vh - 20px)",
+  },
+  customTitle: {
+    padding: 20,
+    height: 200,
+  },
+  customContent: {
+    flex: 1,
+    overflowY: "auto",
+  },
+  customActions: {
+    backgroundColor: "gray",
+    height: 200,
+  },
+}));
+
+export const FullScreenWizard = () => {
+  const classes = useFullscreenStyles();
+  const [tab, setTab] = React.useState(0);
+  const [context, setContext] = React.useState({});
+  const [summary, setSummary] = React.useState(false);
+
+  const contextValue = React.useMemo(
+    () => ({
+      context,
+      setContext,
+      summary,
+      setSummary,
+    }),
+    [context, summary]
+  );
+
+  const handleClose = React.useCallback((evt, reason) => {
+    if (reason !== "backdropClick") {
+      setTab(0);
+    }
+  }, []);
+
+  return (
+    <HvWizardContext.Provider value={contextValue}>
+      <HvWizardContainer
+        className={classes.customContainer}
+        open
+        handleClose={handleClose}
+        fullscreen
+      >
+        <HvWizardTitle
+          className={classes.customTitle}
+          classes={{ headerContainer: classes.customHeaderContainer }}
+          title="Super component"
+          tab={tab}
+          changeTab={setTab}
+          hasSummary
+          customStep={{ width: { xs: 200, sm: 250, md: 420, lg: 650 } }}
+        />
+        <HvWizardContent
+          className={classes.customContent}
+          tab={tab}
+          summaryContent={<div>Simple Summary</div>}
+        >
+          <div>1. Content</div>
+          <div>
+            <h2>2. Description</h2>
+            <p>{mockText}</p>
+          </div>
+        </HvWizardContent>
+        <HvWizardActions
+          className={classes.customActions}
+          tab={tab}
+          changeTab={setTab}
+          handleClose={handleClose}
+          handleSubmit={handleClose}
+        />
+      </HvWizardContainer>
+    </HvWizardContext.Provider>
+  );
+};

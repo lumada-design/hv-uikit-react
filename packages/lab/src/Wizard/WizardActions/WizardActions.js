@@ -4,6 +4,7 @@ import { withStyles } from "@mui/styles";
 import clsx from "clsx";
 import { HvButton, HvDialogActions, HvGrid } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
+import HvWizardCleanContainer from "../WizardCleanContainer";
 import HvWizardContext from "../WizardContext";
 
 import styles from "./styles";
@@ -23,6 +24,8 @@ const HvWizardActions = ({
     skip: "Skip",
     submit: "Submit",
   },
+  fullscreen,
+  className,
 }) => {
   const { context, setContext } = React.useContext(HvWizardContext);
   const [pages, setPages] = React.useState(0);
@@ -56,8 +59,10 @@ const HvWizardActions = ({
     [handleSubmit, context]
   );
 
+  const Container = fullscreen ? HvWizardCleanContainer : HvDialogActions;
+
   return (
-    <HvDialogActions className={classes.actionsContainer}>
+    <Container className={clsx(classes.actionsContainer, className)}>
       <HvGrid>
         <HvButton category="ghost" onClick={handleClose} className={classes.buttonWidth}>
           {`${labels.cancel ?? "Cancel"}`}
@@ -103,7 +108,7 @@ const HvWizardActions = ({
           </HvButton>
         )}
       </HvGrid>
-    </HvDialogActions>
+    </Container>
   );
 };
 
@@ -178,6 +183,14 @@ HvWizardActions.propTypes = {
    * Enables the skip button.
    */
   skippable: PropTypes.bool,
+  /**
+   * If fullscreen is true we remove Dialog references
+   */
+  fullscreen: PropTypes.bool,
+  /**
+   * Styles applied to the component container
+   */
+  className: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvWizardActions" })(HvWizardActions);

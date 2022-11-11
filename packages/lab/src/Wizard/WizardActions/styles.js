@@ -1,10 +1,10 @@
 const styles = () => ({
-  buttonWidth: {
-    width: 120,
-  },
   actionsContainer: {
     display: "flex",
     justifyContent: "space-between",
+  },
+  buttonWidth: {
+    width: 120,
   },
   buttonsContainer: {
     "& > button:last-child": {

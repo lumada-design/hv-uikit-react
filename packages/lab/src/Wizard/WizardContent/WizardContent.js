@@ -4,6 +4,7 @@ import { withStyles } from "@mui/styles";
 import { useElementSize } from "usehooks-ts";
 import clsx from "clsx";
 import { HvDialogContent } from "@hitachivantara/uikit-react-core";
+import HvWizardCleanContainer from "../WizardCleanContainer";
 import HvWizardContext from "../WizardContext";
 import LoadingContainer from "./LoadingContainer";
 
@@ -19,6 +20,8 @@ const HvWizardContent = ({
   children,
   tab,
   summaryContent,
+  fullscreen,
+  className,
 }) => {
   const arrayChildren = React.Children.toArray(children);
   const initialContext = arrayChildren.reduce((acc, child, index) => {
@@ -91,9 +94,11 @@ const HvWizardContent = ({
 
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 
+  const Container = fullscreen ? HvWizardCleanContainer : HvDialogContent;
+
   return (
     <div
-      className={classes.summaryRef}
+      className={clsx(classes.refContainer, className)}
       ref={(el) => {
         containerRef(el);
         summaryRef.current = el;
@@ -114,7 +119,7 @@ const HvWizardContent = ({
           </div>
         </div>
       )}
-      <HvDialogContent
+      <Container
         className={clsx(classes.contentContainer, {
           [classes.fixedHeight]: fixedHeight,
         })}
@@ -128,7 +133,7 @@ const HvWizardContent = ({
             return null;
           })}
         </LoadingContainer>
-      </HvDialogContent>
+      </Container>
     </div>
   );
 };
@@ -166,6 +171,10 @@ HvWizardContent.propTypes = {
      * Style applied to the Summary container to position it on the right.
      */
     summaryContainer: PropTypes.string,
+    /**
+     * Style applied to the container which holds the summary functionality.
+     */
+    refContainer: PropTypes.string,
   }).isRequired,
   /**
    * Forces minimum height to the component.
@@ -179,6 +188,14 @@ HvWizardContent.propTypes = {
    * The content of the summary.
    */
   summaryContent: PropTypes.node,
+  /**
+   * If fullscreen is true we remove Dialog references
+   */
+  fullscreen: PropTypes.bool,
+  /**
+   * Styles applied to the component container
+   */
+  className: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvWizardContent" })(HvWizardContent);

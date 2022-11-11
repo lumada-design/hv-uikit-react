@@ -15,3 +15,6 @@ export * from "./WizardActions";
 
 export { default as HvWizardContext } from "./WizardContext";
 export * from "./WizardContext";
+
+export { default as HvWizardCleanContainer } from "./WizardCleanContainer";
+export * from "./WizardCleanContainer";
