@@ -10,7 +10,6 @@ import LoadingContainer from "./LoadingContainer";
 import styles from "./styles";
 
 const DRAWER_PERCENTAGE = 0.3;
-const MODAL_MARGIN = 20;
 const DRAWER_MIN_WIDTH = 280;
 
 const HvWizardContent = ({
@@ -33,7 +32,8 @@ const HvWizardContent = ({
 
   const { context, setContext, summary } = React.useContext(HvWizardContext);
 
-  const resizedRef = React.useRef({ width: 0, height: 0 });
+  const summaryRef = React.useRef(null);
+  const resizedRef = React.useRef({ height: 0, width: 0 });
   const [containerRef, sizes] = useElementSize();
 
   const [summaryHeight, setSummaryHeight] = React.useState(0);
@@ -44,21 +44,30 @@ const HvWizardContent = ({
     const drawerWidth = modalWidth * DRAWER_PERCENTAGE;
     setSummaryHeight(newSizes.height);
     setSummaryWidth(Math.max(drawerWidth, DRAWER_MIN_WIDTH));
-    setSummaryLeft(modalWidth - Math.max(drawerWidth, DRAWER_MIN_WIDTH) - MODAL_MARGIN);
+    setSummaryLeft(modalWidth - Math.max(drawerWidth, DRAWER_MIN_WIDTH));
+
+    resizedRef.current = {
+      height: newSizes.height,
+      width: newSizes.width,
+    };
   }, []);
 
   React.useEffect(() => {
+    const pageHeight = summaryRef.current?.getBoundingClientRect?.()?.height;
     if (
       (summary && sizes.height !== resizedRef.current.height) ||
       sizes.width !== resizedRef.current.width
     ) {
       updateSummaryMeasures(sizes);
-      resizedRef.current = {
-        height: sizes.height,
-        width: sizes.width,
-      };
     }
-  }, [sizes, summary, updateSummaryMeasures]);
+
+    if (pageHeight && sizes.height !== pageHeight) {
+      updateSummaryMeasures({
+        width: sizes.width,
+        height: pageHeight,
+      });
+    }
+  }, [tab, sizes, summary, updateSummaryMeasures]);
 
   React.useEffect(() => {
     setContext(initialContext);
@@ -78,34 +87,39 @@ const HvWizardContent = ({
 
       setContext(updatedContext);
     }
-    updateSummaryMeasures(sizes);
   }, [tab]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 
   return (
-    <div ref={containerRef}>
+    <div
+      className={classes.summaryRef}
+      ref={(el) => {
+        containerRef(el);
+        summaryRef.current = el;
+      }}
+    >
+      {summary !== null && (
+        <div className={classes.summarySticky}>
+          <div
+            className={classes.summaryContainer}
+            style={{
+              left: summaryLeft,
+              width: summaryWidth,
+              height: summaryHeight,
+              transform: `translate(${summary ? 0 : translateX}px, 0)`,
+            }}
+          >
+            {summaryContent}
+          </div>
+        </div>
+      )}
       <HvDialogContent
         className={clsx(classes.contentContainer, {
           [classes.fixedHeight]: fixedHeight,
         })}
         indentContent
       >
-        {summary !== null && (
-          <div className={classes.summarySticky}>
-            <div
-              className={classes.summaryContainer}
-              style={{
-                left: summaryLeft,
-                width: summaryWidth,
-                height: summaryHeight,
-                transform: `translate(${summary ? 0 : translateX}px, 0)`,
-              }}
-            >
-              {summaryContent}
-            </div>
-          </div>
-        )}
         <LoadingContainer hidden={!loading}>
           {React.Children.map(arrayChildren, (child, index) => {
             if (index === tab) {
@@ -140,6 +154,10 @@ HvWizardContent.propTypes = {
      * Style applied to the Wizard to fix its height.
      */
     fixedHeight: PropTypes.string,
+    /**
+     * Style applied to the summary container around the page content container.
+     */
+    summaryRef: PropTypes.string,
     /**
      * Style applied to the Summary container to stick it to the top.
      */

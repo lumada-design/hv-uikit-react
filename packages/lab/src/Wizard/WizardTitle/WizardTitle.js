@@ -34,6 +34,10 @@ const HvWizardTitle = ({
     if (summary === null && hasSummary) {
       setSummary(false);
     }
+
+    return () => {
+      setSummary(false);
+    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   React.useEffect(() => {
