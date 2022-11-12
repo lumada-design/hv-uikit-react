@@ -1,22 +1,26 @@
-import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
+import { BaseProps } from "types/base";
+import { HeaderRoot, StyledAppBar } from "./Header.styles";
 
-export interface HeaderProps {
-  children?: React.ReactNode;
+export type HeaderPosition =
+  | "fixed"
+  | "absolute"
+  | "sticky"
+  | "static"
+  | "relative";
+
+export interface HeaderProps extends BaseProps {
+  /** The position of the header bar */
+  position?: HeaderPosition;
 }
 
-export const Header = ({ children }: HeaderProps) => {
-  const Styled = styled("header")({
-    display: "flex",
-    padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
-    borderTop: theme.header.borderTop,
-    height: theme.header.height,
-    backgroundColor: theme.colors.atmo1,
-    boxShadow: theme.shadows.md,
-    alignItems: "center",
-  });
-
-  return <Styled>{children}</Styled>;
+/**
+ * Header component is used to render a header bar with logo and brand name, navigation and actions.
+ */
+export const Header = (props: HeaderProps) => {
+  const { children, position = "fixed" } = props;
+  return (
+    <StyledAppBar position={position}>
+      <HeaderRoot>{children}</HeaderRoot>
+    </StyledAppBar>
+  );
 };
-
-Header.displayName = "Header";
