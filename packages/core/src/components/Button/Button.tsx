@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { BaseProps } from "types/base";
 import { StyledButton } from "./Button.styles";
 
 export type ButtonVariant =
@@ -11,12 +12,10 @@ export type ButtonVariant =
   | "secondary"
   | "ghost";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends BaseProps<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
   variant?: ButtonVariant;
   sx?: CSSProperties;
-  className?: string;
 }
 
 /**
