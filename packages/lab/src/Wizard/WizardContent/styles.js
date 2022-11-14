@@ -9,13 +9,19 @@ const styles = (theme) => ({
   fixedHeight: {
     minHeight: "calc(100vh - 387px)",
   },
+  summaryRef: {
+    flex: 1,
+    overflowY: "auto",
+    overflowX: "hidden",
+  },
   summarySticky: {
     position: "sticky",
     top: 0,
+    zIndex: 1,
   },
   summaryContainer: {
     position: "absolute",
-    top: -20,
+    top: 0,
     minWidth: 280,
     boxShadow: theme.hv.shadows[1],
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
