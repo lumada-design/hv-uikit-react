@@ -17,30 +17,47 @@ const navigationData = [
     data: [
       {
         id: "1-1",
-        label: "Overview 1",
+        label: "Model Effectiveness 1",
       },
       {
         id: "1-2",
-        label: "Overview 2",
+        label: "Trend Analysis 1-2",
       },
     ],
   },
   {
     id: "2",
     label: "Events",
-    href: "",
   },
   {
     id: "3",
-    label: "Orders",
+    label: "Work Orders",
     data: [
       {
         id: "3-1",
-        label: "Orders 1",
+        label: "Model Effectiveness 3-1",
       },
       {
         id: "3-2",
-        label: "Orders 2",
+        label: "Trend Analysis 3-2",
+      },
+    ],
+  },
+  {
+    id: "4",
+    label: "Assets",
+  },
+  {
+    id: "5",
+    label: "Analytics",
+    data: [
+      {
+        id: "5-1",
+        label: "Model Effectiveness 5-1",
+      },
+      {
+        id: "5-2",
+        label: "Trend Analysis 5-2",
       },
     ],
   },
