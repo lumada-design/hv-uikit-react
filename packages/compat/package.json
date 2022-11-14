@@ -56,6 +56,8 @@
     "@emotion/babel-plugin": "^11.10.5",
     "@hitachivantara/uikit-styles": "workspace:*",
     "@testing-library/user-event": "^14.4.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "@vitest/ui": "^0.25.1",
     "jsdom": "^20.0.2",
