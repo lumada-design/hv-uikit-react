@@ -2,7 +2,7 @@ import {
   HvHeader,
   HvHeaderBrand,
   HvTypography,
-} from "@hitachivantara/uikit-react-core";
+} from "@hitachivantara/uikit-core";
 
 export const Header = () => {
   return (

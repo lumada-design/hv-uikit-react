@@ -1,7 +1,9 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "extends": [
     "plugin:import/recommended",
@@ -15,7 +17,7 @@
     "browser": true,
     "node": true
   },
-  "ignorePatterns": ["dist", "node_modules", "config"],
+  "ignorePatterns": ["dist", "node_modules"],
   "rules": {
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off"

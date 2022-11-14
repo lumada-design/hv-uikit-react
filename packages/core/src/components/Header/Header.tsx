@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeVars, themeUtils } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export interface HeaderProps {
   children?: React.ReactNode;
@@ -8,11 +8,11 @@ export interface HeaderProps {
 export const Header = ({ children }: HeaderProps) => {
   const Styled = styled("header")({
     display: "flex",
-    padding: `${themeUtils.space(1)} ${themeUtils.space(3)}`,
-    borderTop: themeVars.header.borderTop,
-    height: themeVars.header.height,
-    backgroundColor: themeVars.colors.atmo1,
-    boxShadow: themeVars.shadows.md,
+    padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
+    borderTop: theme.header.borderTop,
+    height: theme.header.height,
+    backgroundColor: theme.colors.atmo1,
+    boxShadow: theme.shadows.md,
     alignItems: "center",
   });
 

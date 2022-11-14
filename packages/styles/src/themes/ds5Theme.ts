@@ -1,6 +1,6 @@
 import { colors, makeTheme } from "..";
 
-const theme = makeTheme((themeVars) => ({
+const ds5Theme = makeTheme((theme) => ({
   colors: {
     modes: {
       light: {
@@ -18,7 +18,7 @@ const theme = makeTheme((themeVars) => ({
   },
   components: {
     dropdown: {
-      borderRadius: themeVars.radii.sm,
+      borderRadius: theme.radii.sm,
     },
     header: {
       height: "100px",
@@ -27,4 +27,4 @@ const theme = makeTheme((themeVars) => ({
   },
 }));
 
-export default theme;
+export default ds5Theme;

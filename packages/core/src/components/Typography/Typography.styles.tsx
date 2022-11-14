@@ -1,57 +1,57 @@
 import styled from "@emotion/styled";
-import { themeVars, themeVariant } from "@hitachivantara/uikit-styles";
+import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 import { TypographyVariants } from "./Typography";
 
 export const StyledTypography = styled.p<{ variant: TypographyVariants }>(
   {
-    color: themeVars.colors.acce1,
+    color: theme.colors.acce1,
   },
   themeVariant({
     variants: {
       display: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.xl4,
-        lineHeight: themeVars.lineHeights.xl3,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl4,
+        lineHeight: theme.lineHeights.xl3,
       },
       title1: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.xl3,
-        lineHeight: themeVars.lineHeights.xl2,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl3,
+        lineHeight: theme.lineHeights.xl2,
       },
       title2: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.xl2,
-        lineHeight: themeVars.lineHeights.xl,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl2,
+        lineHeight: theme.lineHeights.xl,
       },
       title3: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.xl,
-        lineHeight: themeVars.lineHeights.lg,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl,
+        lineHeight: theme.lineHeights.lg,
       },
       title4: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.lg,
-        lineHeight: themeVars.lineHeights.lg,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.lg,
+        lineHeight: theme.lineHeights.lg,
       },
       body: {
-        fontWeight: themeVars.fontWeights.normal,
-        fontSize: themeVars.fontSizes.base,
-        lineHeight: themeVars.lineHeights.base,
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.base,
+        lineHeight: theme.lineHeights.base,
       },
       label: {
-        fontWeight: themeVars.fontWeights.semibold,
-        fontSize: themeVars.fontSizes.base,
-        lineHeight: themeVars.lineHeights.base,
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.base,
+        lineHeight: theme.lineHeights.base,
       },
       caption1: {
-        fontWeight: themeVars.fontWeights.normal,
-        fontSize: themeVars.fontSizes.sm,
-        lineHeight: themeVars.lineHeights.sm,
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.sm,
+        lineHeight: theme.lineHeights.sm,
       },
       caption2: {
-        fontWeight: themeVars.fontWeights.normal,
-        fontSize: themeVars.fontSizes.xs,
-        lineHeight: themeVars.lineHeights.sm,
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.xs,
+        lineHeight: theme.lineHeights.sm,
       },
     },
   })

@@ -1,9 +1,7 @@
 import { forwardRef } from "react";
-import { themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
-type SxProps =
-  | React.CSSProperties
-  | ((themeVars: ThemeVars) => React.CSSProperties);
+type SxProps = React.CSSProperties | ((theme: Theme) => React.CSSProperties);
 
 type BaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   C,
@@ -15,7 +13,7 @@ export type BoxProps = <C extends React.ElementType = "div">(
 ) => React.ReactElement | null;
 
 const useSx = (sx: SxProps) => {
-  return typeof sx === "function" ? sx(themeVars) : sx;
+  return typeof sx === "function" ? sx(theme) : sx;
 };
 
 export const Box: BoxProps = forwardRef(

@@ -1,9 +1,7 @@
-import { themeVars, themes } from "@hitachivantara/uikit-styles";
-
-declare module "*.css";
+import { theme } from "@hitachivantara/uikit-styles";
 
 declare global {
-  type ThemeVars = typeof themeVars;
+  type Theme = typeof theme;
 }
 
 declare module "vitest" {

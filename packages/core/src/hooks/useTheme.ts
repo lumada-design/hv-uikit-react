@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
-import { themes, parseThemes } from "@hitachivantara/uikit-styles";
+import {
+  themes,
+  parseTheme,
+  getThemesModes,
+  getThemesVars,
+} from "@hitachivantara/uikit-styles";
 
 export const useTheme = () => {
-  const themesNames = Object.keys(themes);
-  let theme = parseThemes(themes);
+  const themesModes = getThemesModes(themes);
+  const themesVars = getThemesVars(themes);
+
+  let theme = parseTheme(themes);
 
   const [selectedTheme, setSelectedTheme] = useState(theme.selected);
   const [selectedColorMode, setSelectedColorMode] = useState(
@@ -12,7 +19,7 @@ export const useTheme = () => {
   const [themeColorModes, setThemeColorModes] = useState(theme.colorModes);
 
   useEffect(() => {
-    theme = parseThemes(themes, selectedTheme, selectedColorMode);
+    theme = parseTheme(themes, selectedTheme, selectedColorMode);
 
     document.body.setAttribute(`data-theme`, theme.selected);
     document.body.setAttribute(`data-color-mode`, theme.selectedColorMode);
@@ -34,7 +41,8 @@ export const useTheme = () => {
   };
 
   return {
-    themesNames,
+    themesModes,
+    themesVars,
     selectedTheme,
     selectedColorMode,
     themeColorModes,
