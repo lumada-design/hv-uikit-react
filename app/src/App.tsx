@@ -1,8 +1,7 @@
+import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-core";
 import { CSSProperties } from "react";
-import { HvProvider, HvBox, theme } from "@hitachivantara/uikit-core";
-
-import { Header, ThemeSwitcher } from "./layout";
 import { Buttons, Icons, Typography } from "./components";
+import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
   display: "flex",
@@ -10,6 +9,7 @@ const styles = {
   gap: theme.spacing(5),
   maxWidth: "960px",
   margin: `${theme.spacing(5)} auto`,
+  marginTop: `calc(${theme.header.height} + 120px)`,
 } as CSSProperties;
 
 const App = () => {

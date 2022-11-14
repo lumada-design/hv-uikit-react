@@ -1,5 +1,7 @@
 // https://blog.logrocket.com/build-strongly-typed-polymorphic-components-react-typescript/#handling-valid-component-attributes-typescript-generics
 
+import { HTMLAttributes } from "react";
+
 type AsProp<C extends React.ElementType> = {
   as?: C;
 };
@@ -19,3 +21,9 @@ type PolymorphicComponentRef<
   C extends React.ElementType,
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
+
+// Base Props
+export type BaseProps<E = HTMLDivElement, P = {}> = Omit<
+  HTMLAttributes<E>,
+  keyof P
+>;

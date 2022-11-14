@@ -23,6 +23,7 @@ const ds5Theme = makeTheme((theme) => ({
     header: {
       height: "100px",
       borderTop: "none",
+      shadow: "none",
     },
   },
 }));

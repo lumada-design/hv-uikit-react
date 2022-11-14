@@ -1,7 +1,9 @@
-import { Global, css } from "@emotion/react";
-import { theme, CssBaseline } from "@hitachivantara/uikit-styles";
-
+import { css, Global } from "@emotion/react";
+import { CssBaseline, theme } from "@hitachivantara/uikit-styles";
+import "focus-visible";
+import "focus-within-polyfill";
 import { useTheme } from "hooks";
+
 interface ProviderProps {
   children?: React.ReactNode;
   enableCssBaseline?: boolean;

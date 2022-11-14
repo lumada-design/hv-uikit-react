@@ -1,5 +1,6 @@
-import { forwardRef } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
+import { forwardRef } from "react";
+import { PolymorphicComponentRef, PolymorphicRef } from "types/base";
 
 type SxProps = React.CSSProperties | ((theme: Theme) => React.CSSProperties);
 

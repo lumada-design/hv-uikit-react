@@ -1,19 +1,15 @@
-export { Box as HvBox } from "./Box";
 export * from "./Box";
-
-export { Button as HvButton } from "./Button";
+export { Box as HvBox } from "./Box";
 export * from "./Button";
-
-export { Dropdown as HvDropdown } from "./Dropdown";
+export { Button as HvButton } from "./Button";
 export * from "./Dropdown";
-
-export {
-  Header as HvHeader,
-  HeaderActions as HvHeaderActions,
-  HeaderBrand as HvHeaderBrand,
-  HeaderNavigation as HvHeaderNavigation,
-} from "./Header";
+export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./Header";
-
-export { Typography as HvTypography } from "./Typography";
+export {
+  Actions as HvHeaderActions,
+  Brand as HvHeaderBrand,
+  Header as HvHeader,
+  Navigation as HvHeaderNavigation,
+} from "./Header";
 export * from "./Typography";
+export { Typography as HvTypography } from "./Typography";
