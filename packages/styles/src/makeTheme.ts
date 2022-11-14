@@ -1,16 +1,23 @@
 import * as tokens from "./tokens";
-import { themeVars } from "./themeVars";
+import { theme } from "./theme";
 import { mergeTheme } from "./utils";
 
-export const makeTheme = <T extends object | ((themeVars: ThemeVars) => void)>(
-  arg: T
+/**
+ * Generate a theme base on the options received.
+ * Takes an incomplete theme object and adds the missing parts.
+ *
+ * @param options The options to generate the theme
+ * @returns The generated theme
+ */
+export const makeTheme = <T extends object | ((theme: Theme) => void)>(
+  options: T
 ): T => {
-  const theme = typeof arg === "function" ? arg(themeVars) : arg;
+  const opt = typeof options === "function" ? options(theme) : options;
 
   const { components, ...newTheme } = mergeTheme(
     tokens,
-    theme,
-    { ...theme.components } // flatten components
+    opt,
+    { ...opt.components } // flatten components
   );
 
   return newTheme;

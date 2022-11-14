@@ -31,19 +31,19 @@
 
 ## Packages
 
-- `@hitachivantara/uikit-react-core` – core components library
+- `@hitachivantara/uikit-core` – core components library
 
 ## Installing 🚀
 
 UI Kit is available as an [npm package](https://www.npmjs.com/package/@hitachivantara).  
-All you need to do is install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
+All you need to do is install the `@hitachivantara/uikit-core` package and its peer dependencies:
 
 ```sh
 # With yarn
-yarn add @hitachivantara/uikit-react-core @emotion/react @emotion/styles
+yarn add @hitachivantara/uikit-core @emotion/react @emotion/styles
 
 # With npm
-npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styles
+npm install @hitachivantara/uikit-core @emotion/react @emotion/styles
 ```
 
 ## Usage
@@ -51,7 +51,7 @@ npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styles
 To start using the components, wrap your application with the `HvProvider`.
 
 ```jsx
-import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-core";
 
 const App = () => (
   <HvProvider>

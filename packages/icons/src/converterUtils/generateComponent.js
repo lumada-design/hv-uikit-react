@@ -9,7 +9,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
         if (themeColor === defaultColor.toUpperCase()) {
           result = defaultPalette.replace(
             `${defaultColor}`,
-            `themeVars.colors.${themeColorName}`
+            `theme.colors.${themeColorName}`
           );
         }
       });
@@ -58,12 +58,12 @@ module.exports = (
   const calcSize = (size) => (hasSpecialSize ? size + 8 : size);
 
   const themedPalette = colors
-    .replace(/"#414141"/g, "themeVars.colors.acce1")
-    .replace(/"#fff"/g, `themeVars.colors.${isSelector ? "atmo1" : "acce0"}`);
+    .replace(/"#414141"/g, "theme.colors.acce1")
+    .replace(/"#fff"/g, `theme.colors.${isSelector ? "atmo1" : "acce0"}`);
   const palette = replaceColorsWithTheme(themedPalette, lightPalette);
 
   return `
-import { themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 import { IconBase, IconBaseProps } from "${iconBasePath}";
 
 const sizeSelector = (iconSize, height, width) => {
@@ -95,14 +95,14 @@ const ${componentName} = ({
   svgProps,
   ...others
 }: IconBaseProps) => {
-  const getColor = c => themeVars?.colors?.[c] || c;
+  const getColor = c => theme?.colors?.[c] || c;
   const colorArray = 
     (typeof color === "string" && [getColor(color)]) ||
     (Array.isArray(color) && color.map?.(getColor)) ||
     [${palette}];
 
   if (semantic) {
-    colorArray[0] = themeVars.colors?.[semantic] || colorArray[0];
+    colorArray[0] = theme.colors?.[semantic] || colorArray[0];
   }
 
   if (inverted && colorArray[1]) {

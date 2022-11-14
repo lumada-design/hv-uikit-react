@@ -1,5 +1,5 @@
 {
-  "name": "@hitachivantara/uikit-react-compat",
+  "name": "@hitachivantara/uikit-compat",
   "version": "5.0.0",
   "private": false,
   "description": "Compatibility package to ease interoperability between UI Kit versions.",
@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "tsc && vite build && tsc-alias",
+    "build": "tsc && vite build",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage"
@@ -61,7 +61,6 @@
     "jsdom": "^20.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tsc-alias": "^1.7.1",
     "typescript": "^4.8.4",
     "vitest": "^0.25.1"
   }

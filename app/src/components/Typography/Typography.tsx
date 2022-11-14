@@ -1,10 +1,9 @@
-import React from "react";
 import {
   HvBox,
   HvTypography,
   TypographyVariants,
-} from "@hitachivantara/uikit-react-core";
-import { themeUtils } from "@hitachivantara/uikit-styles";
+  theme,
+} from "@hitachivantara/uikit-core";
 
 const variants = [
   "display",
@@ -23,10 +22,7 @@ export const Typography = () => {
     <HvBox>
       {variants.map((variant: TypographyVariants) => {
         return (
-          <HvBox
-            key={`key_${variant}`}
-            sx={{ marginBottom: themeUtils.space(1) }}
-          >
+          <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.spacing(1) }}>
             <HvTypography variant="label" key={`label_${variant}`}>
               {variant}
             </HvTypography>

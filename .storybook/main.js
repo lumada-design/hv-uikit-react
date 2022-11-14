@@ -6,18 +6,22 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    // "../tools/theme-switcher/preset.js",
+    "../tools/addon-theme-switcher/preset.js",
   ],
   docs: {
-    docsPage: "automatic", // see below for alternatives
-    defaultName: "Docs", // set to change the name of generated docs entries
+    docsPage: "automatic",
+    defaultName: "Docs",
   },
   framework: {
     name: "@storybook/react-vite",
-    options: {},
   },
   async viteFinal(config) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));
+
+    config.optimizeDeps.include = [
+      ...(config.optimizeDeps?.include ?? []),
+      "@emotion/react",
+    ];
 
     return config;
   },

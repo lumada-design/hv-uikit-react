@@ -29,7 +29,7 @@ export interface TypographyProps {
   as?: keyof typeof TypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: TypographyVariants;
-  sx?: CSSProperties;
+  css?: CSSProperties;
   className?: string;
   children: React.ReactNode;
 }

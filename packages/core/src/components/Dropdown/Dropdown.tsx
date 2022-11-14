@@ -1,8 +1,8 @@
 import { useState, useRef, CSSProperties } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { Typography } from "components";
 import { useClickOutside } from "hooks";
-import { themeVars } from "@hitachivantara/uikit-styles";
 
 import { DropdownHeader } from "./DropdownHeader";
 import { DropdownList } from "./List";
@@ -45,12 +45,12 @@ export const Dropdown = ({
   };
 
   return (
-    <div ref={ref} className={className} css={{ position: "relative" }}>
+    <div ref={ref} className={className} style={{ position: "relative" }}>
       <DropdownHeader isOpen={isOpen} onClick={onToggleHandler}>
         <Typography
           variant="label"
           css={{
-            color: themeVars.colors.acce4,
+            color: theme.colors.acce4,
           }}
         >
           {value}

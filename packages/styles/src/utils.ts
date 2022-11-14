@@ -1,34 +1,19 @@
-export const mergeTheme = (...objects) => {
-  const isObject = (obj) => obj && typeof obj === "object";
+const toCSSVars = (obj: object, prefix = "-") => {
+  const vars = {};
 
-  return objects.reduce((prev, obj) => {
-    Object.keys(obj).forEach((key) => {
-      const pVal = prev[key];
-      const oVal = obj[key];
+  for (const [key, value] of Object.entries(obj)) {
+    if (typeof value === "object") {
+      const nestedVars = toCSSVars(value, `${prefix}-${key}`);
 
-      if (isObject(pVal) && isObject(oVal)) {
-        prev[key] = pVal ? oVal : mergeTheme(pVal, oVal);
-      } else {
-        prev[key] = oVal;
+      for (const [nestedKey, nestedValue] of Object.entries(nestedVars)) {
+        vars[nestedKey] = nestedValue;
       }
-    });
+    } else {
+      vars[`${prefix}-${key}`] = value;
+    }
+  }
 
-    return prev;
-  }, {});
-};
-
-export const parseThemes = (
-  themes: object,
-  theme?: string,
-  colorMode?: string
-) => {
-  const names = Object.keys(themes);
-  const selected = theme || names[0];
-  const colorModes = Object.keys(themes[selected].colors.modes);
-  const selectedColorMode =
-    (colorMode && colorModes[colorMode]) || colorModes[0];
-
-  return { names, selected, colorModes, selectedColorMode };
+  return vars;
 };
 
 export const mapCSSVars = <T extends object>(
@@ -48,25 +33,65 @@ export const mapCSSVars = <T extends object>(
   return vars;
 };
 
-export const toCSSVars = (obj: object, prefix = "-") => {
-  const vars = {};
+export const mergeTheme = (...objects) => {
+  const isObject = (obj) => obj && typeof obj === "object";
 
-  for (const [key, value] of Object.entries(obj)) {
-    if (typeof value === "object") {
-      const nestedVars = toCSSVars(value, `${prefix}-${key}`);
+  return objects.reduce((prev, obj) => {
+    Object.keys(obj).forEach((key) => {
+      const pVal = prev[key];
+      const oVal = obj[key];
 
-      for (const [nestedKey, nestedValue] of Object.entries(nestedVars)) {
-        vars[nestedKey] = nestedValue;
+      if (isObject(pVal) && isObject(oVal)) {
+        prev[key] = pVal ? oVal : mergeTheme(pVal, oVal);
+      } else {
+        prev[key] = oVal;
       }
-    } else {
-      vars[`${prefix}-${key}`] = value;
-    }
-  }
+    });
 
-  return vars;
+    return prev;
+  }, {});
 };
 
-export const getThemesCSSVars = (themes) => {
+export const parseTheme = (
+  themes: object,
+  theme?: string,
+  colorMode?: string
+) => {
+  const names = Object.keys(themes);
+  const selected = theme || names[0];
+  const colorModes = Object.keys(themes[selected].colors.modes);
+  const selectedColorMode =
+    (colorMode && colorModes[colorMode]) || colorModes[0];
+
+  return { selected, selectedColorMode, colorModes };
+};
+
+export const getThemesList = (themes: object) => {
+  const list = {};
+
+  Object.keys(themes).forEach((themeName) => {
+    const theme = themes[themeName];
+    const colorModes = Object.keys(theme.colors.modes);
+
+    list[themeName] = {
+      colorModes: {},
+    };
+
+    colorModes.forEach((colorMode) => {
+      list[themeName].colorModes[colorMode] = toCSSVars({
+        ...theme,
+        colors: {
+          ...theme.colors.common,
+          ...theme.colors.modes[colorMode],
+        },
+      });
+    });
+  });
+
+  return list;
+};
+
+export const getThemesVars = (themes, elem = "body") => {
   const vars = {};
 
   Object.keys(themes).forEach((themeName) => {
@@ -74,7 +99,7 @@ export const getThemesCSSVars = (themes) => {
     const colorModes = Object.keys(theme.colors.modes);
 
     colorModes.forEach((colorMode) => {
-      const styleName = `body[data-theme="${themeName}"][data-color-mode="${colorMode}"]`;
+      const styleName = `${elem}[data-theme="${themeName}"][data-color-mode="${colorMode}"]`;
 
       vars[styleName] = toCSSVars({
         ...theme,
@@ -87,4 +112,19 @@ export const getThemesCSSVars = (themes) => {
   });
 
   return vars;
+};
+
+export const getThemesModes = (themes) => {
+  const modes: string[] = [];
+
+  Object.keys(themes).forEach((themeName) => {
+    const theme = themes[themeName];
+    const colorModes = Object.keys(theme.colors.modes);
+
+    colorModes.forEach((colorMode) => {
+      modes.push(`${themeName}-${colorMode}`);
+    });
+  });
+
+  return modes;
 };

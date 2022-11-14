@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "tsc && vite build && tsc-alias",
+    "build": "tsc && vite build",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage"
@@ -51,7 +51,6 @@
     "@emotion/babel-plugin": "^11.10.5",
     "@vitejs/plugin-react": "^2.2.0",
     "jsdom": "^20.0.2",
-    "tsc-alias": "^1.7.1",
     "typescript": "^4.8.4"
   }
 }

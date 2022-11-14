@@ -1,4 +1,4 @@
-import { themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 import { HvBox } from "components";
 
 const styles = {
@@ -19,7 +19,7 @@ export const DropdownIcon = () => (
       focusable="false"
     >
       <path
-        fill={themeVars.colors.acce4}
+        fill={theme.colors.acce4}
         d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
       ></path>
     </svg>

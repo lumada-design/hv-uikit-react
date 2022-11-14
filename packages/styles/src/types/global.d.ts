@@ -1,5 +1,5 @@
-import { themeVars, themes } from "..";
+import { theme } from "..";
 
 declare global {
-  type ThemeVars = typeof themeVars;
+  type Theme = typeof theme;
 }

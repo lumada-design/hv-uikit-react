@@ -1,4 +1,4 @@
-# @hitachivantara/uikit-react-icons
+# @hitachivantara/uikit-icons
 
 This package provides the Hitachi Vantara Design System icons packaged as a set of React components.
 
@@ -7,7 +7,7 @@ This package provides the Hitachi Vantara Design System icons packaged as a set 
 Install the package in your project directory with:
 
 ```sh
-npm install @hitachivantara/uikit-react-icons
+npm install @hitachivantara/uikit-icons
 ```
 
 ## Adding New Icons

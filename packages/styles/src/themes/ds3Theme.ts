@@ -1,6 +1,6 @@
 import { colors, makeTheme } from "..";
 
-const theme = makeTheme((themeVars) => ({
+const ds3Theme = makeTheme((theme) => ({
   colors: {
     modes: {
       dawn: { ...colors.light },
@@ -13,9 +13,9 @@ const theme = makeTheme((themeVars) => ({
     },
     header: {
       height: 44,
-      borderTop: `4px solid ${themeVars.colors.sema4}`,
+      borderTop: `4px solid ${theme.colors.sema4}`,
     },
   },
 }));
 
-export default theme;
+export default ds3Theme;
