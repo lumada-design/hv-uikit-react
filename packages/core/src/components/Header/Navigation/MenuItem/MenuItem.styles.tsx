@@ -1,12 +1,8 @@
 import styled from "@emotion/styled";
-import {
-  themeUtils,
-  themeVariant,
-  themeVars,
-} from "@hitachivantara/uikit-styles";
+import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "components/Focus/Focus.Styles";
 
-const hoverColor = themeVars.colors.atmo3;
+const hoverColor = theme.colors.atmo3;
 
 export const MenuItemLi = styled("li")<{ selected: string }>(
   {
@@ -32,10 +28,10 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
     prop: "selected",
     variants: {
       selectedItem: {
-        borderTop: `2px solid ${themeVars.colors.acce3}`,
+        borderTop: `2px solid ${theme.colors.acce3}`,
         paddingTop: "2px",
         "& > div > p": {
-          color: themeVars.colors.acce3,
+          color: theme.colors.acce3,
         },
       },
       notSelectedItem: {
@@ -49,7 +45,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
   {
     border: "none",
     cursor: "pointer",
-    padding: `${themeUtils.space(1)} ${themeUtils.space(2)}`,
+    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
     "&:active": {
       outline: "none",
     },
@@ -65,7 +61,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
     prop: "isSelected",
     variants: {
       true: {
-        "& p": { color: themeVars.colors.acce3 },
+        "& p": { color: theme.colors.acce3 },
       },
     },
   })
@@ -74,7 +70,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
 export const MenuItemLink = styled("a")({
   border: "none",
   cursor: "pointer",
-  padding: `${themeUtils.space(1)} ${themeUtils.space(2)}`,
+  padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
   display: "block",
   textDecoration: "none",
   "&:active": {

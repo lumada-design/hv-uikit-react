@@ -1,23 +1,19 @@
 import styled from "@emotion/styled";
-import {
-  themeUtils,
-  themeVariant,
-  themeVars,
-} from "@hitachivantara/uikit-styles";
+import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 
 export const StyledAppBar = styled("div")<{ position: string }>(
   {
-    height: themeVars.header.height,
-    backgroundColor: themeVars.colors.atmo1,
+    height: theme.header.height,
+    backgroundColor: theme.colors.atmo1,
     display: "flex",
     flexDirection: "column",
     width: "100%",
     boxSizing: "border-box",
     flexShrink: 0,
-    zIndex: themeVars.zIndices.banner,
-    color: themeVars.colors.atmo1,
-    boxShadow: themeVars.header.shadow,
-    borderTop: themeVars.header.borderTop,
+    zIndex: theme.zIndices.banner,
+    color: theme.colors.atmo1,
+    boxShadow: theme.header.shadow,
+    borderTop: theme.header.borderTop,
   },
   themeVariant({
     prop: "position",
@@ -40,8 +36,8 @@ export const HeaderRoot = styled("div")({
   alignItems: "center",
   width: "100%",
   height: "100%",
-  padding: `0 ${themeUtils.space(2)}`,
-  boxShadow: themeVars.header.shadow,
+  padding: `0 ${theme.spacing(2)}`,
+  boxShadow: theme.header.shadow,
   "& > *:not(nav)": {
     zIndex: 2,
   },

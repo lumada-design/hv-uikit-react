@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export interface MenuBarRootProps {
   type: string;
@@ -8,9 +8,9 @@ export interface MenuBarRootProps {
 }
 
 const show = {
-  top: `calc(${themeVars.header.height}-2px)`,
+  top: `calc(${theme.header.height}-2px)`,
   transition: ["top"],
-  boxShadow: themeVars.header.shadow,
+  boxShadow: theme.header.shadow,
   transitionDuration: "500ms",
 };
 
@@ -31,14 +31,14 @@ export const MenuBarRoot = styled("div")(
     alignItems: "center",
     ...(type === "menubar" && {
       position: "relative",
-      backgroundColor: themeVars.colors.atmo1,
+      backgroundColor: theme.colors.atmo1,
     }),
     ...(hidden && { ...hide }),
     ...(active && { ...show }),
     ...(type === "menu" && {
       position: "absolute",
       zIndex: -2,
-      backgroundColor: themeVars.colors.atmo2,
+      backgroundColor: theme.colors.atmo2,
       "& li > div": {
         marginTop: 0,
       },

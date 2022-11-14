@@ -4,8 +4,8 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "@hitachivantara/uikit-react-core";
-import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
+} from "@hitachivantara/uikit-core";
+import { Alert, Menu, User } from "@hitachivantara/uikit-icons";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import HitachiLogo from "../../assets/HitachiLogo";

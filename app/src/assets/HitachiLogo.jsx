@@ -1,7 +1,7 @@
-import { themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
 const HitachiLogo = (props) => {
-  const color = themeVars.colors.acce1;
+  const color = theme.colors.acce1;
   return (
     <svg
       version="1.1"

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { themeUtils, themeVars } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export const BrandRoot = styled("div")({
   display: "flex",
@@ -8,7 +8,7 @@ export const BrandRoot = styled("div")({
 
 export const BrandSeparator = styled("div")({
   width: 1,
-  height: themeUtils.space(2),
-  margin: themeUtils.space(1),
-  backgroundColor: themeVars.colors.acce1,
+  height: theme.spacing(2),
+  margin: theme.spacing(1),
+  backgroundColor: theme.colors.acce1,
 });
