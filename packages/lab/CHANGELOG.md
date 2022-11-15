@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.2...@hitachivantara/uikit-react-lab@4.1.3) (2022-11-15)
+
+### Bug Fixes
+
+- **wizard:** style summary container to fix content scroll ([#2967](https://github.com/lumada-design/hv-uikit-react/issues/2967)) ([3db9c83](https://github.com/lumada-design/hv-uikit-react/commit/3db9c838bc040deb8b9f3b5d789e9e7851f14f1a))
+
 ## [4.1.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.1...@hitachivantara/uikit-react-lab@4.1.2) (2022-11-11)
 
 ### Bug Fixes
