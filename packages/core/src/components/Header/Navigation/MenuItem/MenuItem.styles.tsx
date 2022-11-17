@@ -28,14 +28,18 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
     prop: "selected",
     variants: {
       selectedItem: {
-        borderTop: `2px solid ${theme.colors.acce3}`,
+        borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.selectedItemBorderTopColor}`,
+        borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
         paddingTop: "2px",
+        height: "100%",
         "& > div > p": {
-          color: theme.colors.acce3,
+          color: theme.header.color,
         },
       },
       notSelectedItem: {
-        marginTop: "4px",
+        marginTop: theme.header.selectedItemBorderTopThickness,
+        marginBottom: theme.header.selectedItemBorderBottomThickness,
+        height: `calc(100% - 4px)`,
       },
     },
   })
@@ -46,6 +50,9 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
     border: "none",
     cursor: "pointer",
     padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
     "&:active": {
       outline: "none",
     },
@@ -61,7 +68,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
     prop: "isSelected",
     variants: {
       true: {
-        "& p": { color: theme.colors.acce3 },
+        "& p": { color: theme.header.color },
       },
     },
   })
