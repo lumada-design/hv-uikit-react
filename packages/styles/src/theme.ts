@@ -6,8 +6,14 @@ const componentsSpec = {
     borderRadius: "string",
   },
   header: {
+    color: "string",
     height: "string",
-    borderTop: "string",
+    borderTopThickness: "string",
+    borderTopColor: "string",
+    selectedItemBorderTopColor: "string",
+    selectedItemBorderTopThickness: "string",
+    selectedItemBorderBottomColor: "string",
+    selectedItemBorderBottomThickness: "string",
     shadow: "string",
   },
 };

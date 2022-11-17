@@ -13,7 +13,7 @@ export const StyledAppBar = styled("div")<{ position: string }>(
     zIndex: theme.zIndices.banner,
     color: theme.colors.atmo1,
     boxShadow: theme.header.shadow,
-    borderTop: theme.header.borderTop,
+    borderTop: `${theme.header.borderTopThickness} solid ${theme.header.borderTopColor}`,
   },
   themeVariant({
     prop: "position",

@@ -8,7 +8,7 @@ export interface MenuBarRootProps {
 }
 
 const show = {
-  top: `calc(${theme.header.height}-2px)`,
+  top: `calc(${theme.header.height} - ${theme.header.borderTopThickness})`,
   transition: ["top"],
   boxShadow: theme.header.shadow,
   transitionDuration: "500ms",
@@ -33,8 +33,6 @@ export const MenuBarRoot = styled("div")(
       position: "relative",
       backgroundColor: theme.colors.atmo1,
     }),
-    ...(hidden && { ...hide }),
-    ...(active && { ...show }),
     ...(type === "menu" && {
       position: "absolute",
       zIndex: -2,
@@ -43,6 +41,8 @@ export const MenuBarRoot = styled("div")(
         marginTop: 0,
       },
     }),
+    ...(hidden && { ...hide }),
+    ...(active && { ...show }),
   })
 );
 
@@ -50,6 +50,8 @@ export const MenuBarUl = styled("ul")({
   margin: 0,
   padding: 0,
   display: "inherit",
+  alignItems: "center",
+  height: "100%",
   "&:hover .active": {
     ...hide,
   },
@@ -75,7 +77,4 @@ export const MenuBarUl = styled("ul")({
     ...show,
     zIndex: -1,
   },
-  // "& li div.focus-visible + div": {
-  //   ...show,
-  // },
 });
