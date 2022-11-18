@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 
+const fixedPosition = {
+  position: "fixed",
+  top: 0,
+  left: "auto",
+  right: 0,
+};
+
 export const StyledAppBar = styled("div")<{ position: string }>(
   {
     height: theme.header.height,
@@ -18,14 +25,18 @@ export const StyledAppBar = styled("div")<{ position: string }>(
   themeVariant({
     prop: "position",
     variants: {
-      fixed: {
-        position: "fixed",
-        top: 0,
-        left: "auto",
-        right: 0,
-      },
+      fixed: { ...fixedPosition },
       relative: {
         position: "relative",
+      },
+      absolute: {
+        position: "absolute",
+      },
+      static: {
+        position: "static",
+      },
+      sticky: {
+        position: "sticky",
       },
     },
   })

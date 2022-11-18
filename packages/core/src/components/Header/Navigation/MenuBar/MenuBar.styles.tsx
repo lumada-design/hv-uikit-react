@@ -35,6 +35,7 @@ export const MenuBarRoot = styled("div")(
     }),
     ...(type === "menu" && {
       position: "absolute",
+      paddingTop: theme.header.selectedItemBorderBottomThickness,
       zIndex: -2,
       backgroundColor: theme.colors.atmo2,
       "& li > div": {
