@@ -154,8 +154,6 @@ importers:
       '@vitejs/plugin-react': ^2.2.0
       '@vitest/ui': ^0.25.1
       clsx: ^1.2.1
-      focus-visible: ^5.2.0
-      focus-within-polyfill: 5.2.1
       jsdom: ^20.0.2
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -171,8 +169,6 @@ importers:
       '@hitachivantara/uikit-styles': link:../styles
       '@styled-system/variant': 5.1.5
       clsx: 1.2.1
-      focus-visible: 5.2.0
-      focus-within-polyfill: 5.2.1
       styled-system: 5.1.5
       vite: 3.2.3
       vite-plugin-dts: 1.7.0_vite@3.2.3
@@ -2657,7 +2653,7 @@ packages:
       '@storybook/csf-plugin': 7.0.0-alpha.48
       '@storybook/csf-tools': 7.0.0-alpha.48
       '@storybook/docs-tools': 7.0.0-alpha.48_c0175b6e3ab0281be0580fd5f84a3410
-      '@storybook/mdx2-csf': 0.1.0-next.5
+      '@storybook/mdx2-csf': 0.1.0-next.6
       '@storybook/node-logger': 7.0.0-alpha.48
       '@storybook/postinstall': 7.0.0-alpha.48
       '@storybook/preview-web': 7.0.0-alpha.48_react-dom@18.2.0+react@18.2.0
@@ -2990,7 +2986,7 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.48_react-dom@18.2.0+react@18.2.0
       '@storybook/client-logger': 7.0.0-alpha.48
       '@storybook/core-common': 7.0.0-alpha.48_c0175b6e3ab0281be0580fd5f84a3410
-      '@storybook/mdx2-csf': 0.1.0-next.5
+      '@storybook/mdx2-csf': 0.1.0-next.6
       '@storybook/node-logger': 7.0.0-alpha.48
       '@storybook/preview-web': 7.0.0-alpha.48_react-dom@18.2.0+react@18.2.0
       '@storybook/source-loader': 7.0.0-alpha.48_react-dom@18.2.0+react@18.2.0
@@ -3356,8 +3352,8 @@ packages:
     resolution: {integrity: sha512-NM+Nnn2oIv+fzCZhQ+ShJfF3L5or6X375K39q0oCmomlA+VnkNAV0tKpsgfVxkAAJaUdTy0cMZTB1tVqlndD1A==}
     dev: true
 
-  /@storybook/mdx2-csf/0.1.0-next.5:
-    resolution: {integrity: sha512-Q8FuGusfrZcpe4EfHCIdAWsys1VTqWgl5iM3A02feeoFR3Y36JSLP0nlWDhxH2CxuWv7oiu06U2bhrDl+rTx9w==}
+  /@storybook/mdx2-csf/0.1.0-next.6:
+    resolution: {integrity: sha512-FDBPTDHG9BcI27Zp5kwkqjsv2A3s8aUahtKeHOsmTicOBS8uWqUZ3jmL7vg6N7SpiUUBAft9/vTQfttNLeHO7w==}
     dependencies:
       loader-utils: 2.0.4
     dev: true
@@ -7083,15 +7079,6 @@ packages:
     resolution: {integrity: sha512-FLyei0ikf4ab9xlg+05WNmdpOODiH9XVBuw7iI9OZyjIo+cX2L2OUPTovjbWLYLlI41oGTcprbKdB/f9XwBnKw==}
     engines: {node: '>=0.4.0'}
     dev: true
-
-  /focus-visible/5.2.0:
-    resolution: {integrity: sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==}
-    dev: false
-
-  /focus-within-polyfill/5.2.1:
-    resolution: {integrity: sha512-24dSGm2euJ0V+blff5Yj0IXtemjjGIoT6/OjmvICZ80NIgnyXDpthfxdkJAJWCDs0BaUvdB+2RParJ9b7X4EuQ==}
-    engines: {node: '>=8'}
-    dev: false
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}

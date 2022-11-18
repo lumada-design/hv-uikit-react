@@ -17,12 +17,6 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
         },
       },
     },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
-      "& > [role='button']": {
-        backgroundColor: hoverColor,
-      },
-    },
   },
   themeVariant({
     prop: "selected",
@@ -61,7 +55,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
       outline: "none",
       backgroundColor: hoverColor,
     },
-    "&.focus-visible": {
+    "&:focus-visible": {
       ...outlineStyles,
     },
   },
@@ -88,7 +82,7 @@ export const MenuItemLink = styled("a")({
     outline: "none",
     backgroundColor: hoverColor,
   },
-  "&.focus-visible": {
+  "&:focus-visible": {
     ...outlineStyles,
   },
 });
