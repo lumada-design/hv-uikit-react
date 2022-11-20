@@ -1,7 +1,5 @@
 import { css, Global } from "@emotion/react";
 import { CssBaseline, theme } from "@hitachivantara/uikit-styles";
-import "focus-visible";
-import "focus-within-polyfill";
 import { useTheme } from "hooks";
 
 interface ProviderProps {

@@ -35,6 +35,7 @@ export const MenuBarRoot = styled("div")(
     }),
     ...(type === "menu" && {
       position: "absolute",
+      paddingTop: theme.header.selectedItemBorderBottomThickness,
       zIndex: -2,
       backgroundColor: theme.colors.atmo2,
       "& li > div": {
@@ -59,21 +60,11 @@ export const MenuBarUl = styled("ul")({
     ...show,
   },
 
-  // IE fallback code (using focus-within-polyfill)
-  "&.focus-within .active": {
-    ...hide,
-    zIndex: -2,
-  },
-  "& li.focus-within > .hidden": {
-    ...show,
-    zIndex: -1,
-  },
-
   "&:focus-within .active": {
     ...hide,
     zIndex: -2,
   },
-  "& li:focus-within> .hidden": {
+  "& li:focus-within > .hidden": {
     ...show,
     zIndex: -1,
   },

@@ -17,12 +17,6 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
         },
       },
     },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
-      "& > [role='button']": {
-        backgroundColor: hoverColor,
-      },
-    },
   },
   themeVariant({
     prop: "selected",
@@ -30,7 +24,7 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
       selectedItem: {
         borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.selectedItemBorderTopColor}`,
         borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
-        paddingTop: "2px",
+        paddingTop: theme.header.selectedItemBorderBottomThickness,
         height: "100%",
         "& > div > p": {
           color: theme.header.color,
@@ -39,6 +33,7 @@ export const MenuItemLi = styled("li")<{ selected: string }>(
       notSelectedItem: {
         marginTop: theme.header.selectedItemBorderTopThickness,
         marginBottom: theme.header.selectedItemBorderBottomThickness,
+        paddingTop: theme.header.selectedItemBorderBottomThickness,
         height: `calc(100% - 4px)`,
       },
     },
@@ -60,7 +55,7 @@ export const MenuItemLabel = styled("div")<{ isSelected: boolean }>(
       outline: "none",
       backgroundColor: hoverColor,
     },
-    "&.focus-visible": {
+    "&:focus-visible": {
       ...outlineStyles,
     },
   },
@@ -87,7 +82,7 @@ export const MenuItemLink = styled("a")({
     outline: "none",
     backgroundColor: hoverColor,
   },
-  "&.focus-visible": {
+  "&:focus-visible": {
     ...outlineStyles,
   },
 });
