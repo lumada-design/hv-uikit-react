@@ -14,14 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noEmit": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "@hitachivantara/uikit-core": ["packages/core/src"],
       "@hitachivantara/uikit-icons": ["packages/icons/bin"],
       "@hitachivantara/uikit-styles": ["packages/styles/src"]
-    },
-    "noImplicitAny": false,
-    "preserveSymlinks": true
+    }
   },
-  "exclude": ["**/dist", "**/node_modules", "**/*spec.ts*", "**/*.test.ts*"]
+  "exclude": ["**/dist", "**/node_modules"]
 }

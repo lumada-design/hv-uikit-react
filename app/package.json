@@ -3,28 +3,24 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "pnpm clean && vite build",
+    "clean": "del-cli dist"
   },
   "dependencies": {
-    "@babel/core": "^7.20.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@hitachivantara/uikit-core": "workspace:*",
     "@hitachivantara/uikit-icons": "workspace:*",
     "@hitachivantara/uikit-styles": "workspace:*",
-    "@vitejs/plugin-react": "^2.2.0",
     "@mui/material": "^5.10.13",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vite": "^3.2.3",
-    "vite-tsconfig-paths": "^3.5.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.10.5",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "@vitejs/plugin-react": "^2.2.0",
-    "typescript": "^4.8.4"
+    "del-cli": "^5.0.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3"
   }
 }

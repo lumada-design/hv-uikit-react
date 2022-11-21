@@ -34,6 +34,7 @@
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "clean": "del-cli dist bin",
+    "type-check": "tsc --noEmit",
     "prepare": "pnpm convert"
   },
   "peerDependencies": {

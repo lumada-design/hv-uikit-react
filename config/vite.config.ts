@@ -9,8 +9,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 const definePkgConfig = (entryDir, externals) => {
   return defineConfig({
     plugins: [
-      react({ jsxRuntime: "classic" }),
-      tsconfigPaths({ loose: true }),
+      react(),
+      tsconfigPaths(),
       dts({
         skipDiagnostics: true,
         outputDir: "dist/types",
@@ -33,6 +33,6 @@ const definePkgConfig = (entryDir, externals) => {
       },
     },
   });
-}
+};
 
-export default definePkgConfig
+export default definePkgConfig;

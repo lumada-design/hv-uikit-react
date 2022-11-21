@@ -32,6 +32,8 @@
 ## Packages
 
 - `@hitachivantara/uikit-core` – core components library
+- `@hitachivantara/uikit-icons` – design system svg react icons
+- `@hitachivantara/uikit-styles` – styling system and utilities
 
 ## Installing 🚀
 
