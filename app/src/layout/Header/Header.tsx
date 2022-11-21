@@ -6,6 +6,7 @@ import {
   HvHeaderNavigation,
 } from "@hitachivantara/uikit-core";
 import { Alert, Menu, User } from "@hitachivantara/uikit-icons";
+import { theme } from "@hitachivantara/uikit-styles";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import HitachiLogo from "../../assets/HitachiLogo";
@@ -65,7 +66,7 @@ const navigationData = [
 
 export const Header = () => {
   const [selected, setSelected] = useState<string>("2");
-  const isMdUp = useMediaQuery("@media screen and (min-width: 960px)");
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleChange = (e, selectedItem) => {
     console.log(selectedItem);
