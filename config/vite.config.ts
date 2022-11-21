@@ -1,39 +1,38 @@
-/// <reference types="vitest" />
 /// <reference types="vite/client" />
+import glob from "glob";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
-  plugins: [
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
+const definePkgConfig = (entryDir, externals) => {
+  return defineConfig({
+    plugins: [
+      react({ jsxRuntime: "classic" }),
+      tsconfigPaths({ loose: true }),
+      dts({
+        skipDiagnostics: true,
+        outputDir: "dist/types",
+        entryRoot: `${entryDir}`,
+      }),
+    ],
+    build: {
+      outDir: resolve(process.cwd(), "dist/es"),
+      lib: {
+        entry: resolve(process.cwd(), `${entryDir}/index.ts`),
+        formats: ["es"],
       },
-    }),
-    tsconfigPaths({ loose: true }),
-    dts({
-      insertTypesEntry: true,
-      noEmitOnError: true,
-      skipDiagnostics: false,
-    }),
-  ],
-  build: {
-    sourcemap: true,
-    emptyOutDir: true,
-    lib: {
-      entry: resolve(process.cwd(), "src", "index.ts"),
-      formats: ["es", "cjs"],
-      fileName: (ext) => `index.${ext}.js`,
+      rollupOptions: {
+        input: glob.sync(resolve(process.cwd(), `${entryDir}/**/*.{ts,tsx}`)),
+        output: {
+          preserveModules: true,
+          entryFileNames: ({ name: fileName }) => `${fileName}.js`,
+        },
+        external: [...externals, /node_modules/],
+      },
     },
-  },
-  test: {
-    globals: true,
-    environment: "jsdom",
-    setupFiles: resolve(__dirname, "test.setup.ts"),
-    include: ["**/*.test.{ts,tsx}"],
-  },
-});
+  });
+}
+
+export default definePkgConfig

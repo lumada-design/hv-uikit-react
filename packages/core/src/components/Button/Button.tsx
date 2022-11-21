@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-import { BaseProps } from "types/base";
 import { StyledButton } from "./Button.styles";
 
 export type ButtonVariant =

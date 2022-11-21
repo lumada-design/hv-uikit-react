@@ -1,6 +1,5 @@
 import { Typography } from "components/Typography";
 import { useContext } from "react";
-import { BaseProps } from "types/base";
 import { isKeypress, KeyboardCodes } from "utils/KeyboardUtils";
 import { MenuBar } from "..";
 import { NavigationItemProp } from "../Navigation";

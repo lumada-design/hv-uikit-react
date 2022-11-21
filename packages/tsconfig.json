@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "paths": {
+      "@hitachivantara/uikit-core": ["../../core/src"],
+      "@hitachivantara/uikit-icons": ["../../icons/bin"],
+      "@hitachivantara/uikit-styles": ["../../styles/src"]
+    }
+  }
+}

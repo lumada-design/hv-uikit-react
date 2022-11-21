@@ -1,30 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "allowJs": false,
+    "module": "ESNext",
+    "target": "es5",
+    "lib": ["es2020", "dom"],
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-    "declaration": true,
-    "declarationMap": true,
+    "jsx": "preserve",
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-compat": ["packages/compat/src"],
       "@hitachivantara/uikit-core": ["packages/core/src"],
       "@hitachivantara/uikit-icons": ["packages/icons/bin"],
       "@hitachivantara/uikit-styles": ["packages/styles/src"]
     },
-    "preserveSymlinks": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "preserveSymlinks": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["**/dist", "**/node_modules", "**/*spec.ts*", "**/*.test.ts*"]
 }

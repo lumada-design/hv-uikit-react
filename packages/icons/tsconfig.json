@@ -1,9 +1,12 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../tsconfig",
   "compilerOptions": {
-    "outDir": "dist",
     "baseUrl": "bin"
   },
-  "include": ["bin"],
-  "exclude": ["node_modules", "dist"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["bin"]
 }
