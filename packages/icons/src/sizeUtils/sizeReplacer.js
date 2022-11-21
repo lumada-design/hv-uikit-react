@@ -3,7 +3,7 @@
  * @param  string fileData
  * @return Object
  */
-module.exports = function ReplaceSize(fileData) {
+const replaceSize = (fileData) => {
   const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/;
   const widthRegexp = /width={(\d*?)}/;
   const heightRegexp = /height={(\d*?)}/;
@@ -16,3 +16,5 @@ module.exports = function ReplaceSize(fileData) {
       `viewBox={viewbox} height={size.height} width={size.width}`
     );
 };
+
+export default replaceSize;

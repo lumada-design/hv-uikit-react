@@ -3,7 +3,7 @@
  * @param  string fileData
  * @return Object
  */
-module.exports = function extractColors(fileData) {
+const extractColors = (fileData) => {
   const regexp = /fill="(.*?)"|fill: (.*?);/g; // find all the fills inside the component
   let matcher;
 
@@ -33,3 +33,5 @@ module.exports = function extractColors(fileData) {
   result.colorText = result.colorText.slice(0, -1); // eliminate the last comma
   return result;
 };
+
+export default extractColors;
