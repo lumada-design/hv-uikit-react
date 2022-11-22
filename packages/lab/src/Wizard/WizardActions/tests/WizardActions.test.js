@@ -20,7 +20,7 @@ describe("WizardActions", () => {
     );
 
     expect(screen.getByText("Cancel")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Skip" })).toBeDisabled();
+    expect(screen.queryByRole("button", { name: "Skip" })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Previous" })).toBeDisabled();
     expect(screen.getByText("Next")).toBeInTheDocument();
     expect(screen.queryByText("Submit")).not.toBeInTheDocument();
@@ -40,7 +40,7 @@ describe("WizardActions", () => {
     );
 
     expect(screen.getByRole("button", { name: "Cancel" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Skip" })).toBeDisabled();
+    expect(screen.queryByRole("button", { name: "Skip" })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Previous" })).toBeEnabled();
     expect(screen.queryByRole("button", { name: "Next" })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Submit" })).toBeInTheDocument();
