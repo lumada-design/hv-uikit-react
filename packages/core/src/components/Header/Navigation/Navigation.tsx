@@ -1,5 +1,4 @@
 import { clsx } from "clsx";
-import { BaseProps } from "types/base";
 import { MenuBar } from "./MenuBar";
 import { NavigationNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";

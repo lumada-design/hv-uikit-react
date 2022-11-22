@@ -1,4 +1,3 @@
-import { BaseProps } from "types/base";
 import { Typography as HvTypography } from "../../Typography";
 import { BrandRoot, BrandSeparator } from "./Brand.styles";
 
