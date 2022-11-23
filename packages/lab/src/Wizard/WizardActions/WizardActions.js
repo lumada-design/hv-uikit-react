@@ -62,14 +62,16 @@ const HvWizardActions = ({
         <HvButton category="ghost" onClick={handleClose} className={classes.buttonWidth}>
           {`${labels.cancel ?? "Cancel"}`}
         </HvButton>
-        <HvButton
-          category="ghost"
-          disabled={isLastPage || !skippable}
-          className={classes.buttonWidth}
-          onClick={handleSkip}
-        >
-          {`${labels.skip ?? "Skip"}`}
-        </HvButton>
+        {skippable && (
+          <HvButton
+            category="ghost"
+            disabled={isLastPage}
+            className={classes.buttonWidth}
+            onClick={handleSkip}
+          >
+            {`${labels.skip ?? "Skip"}`}
+          </HvButton>
+        )}
       </HvGrid>
       <HvGrid className={classes.buttonsContainer}>
         <HvButton
