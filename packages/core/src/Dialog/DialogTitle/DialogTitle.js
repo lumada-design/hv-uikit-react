@@ -17,19 +17,11 @@ const HvDialogTitle = ({
   ...others
 }) => {
   const isString = typeof children === "string";
-  const { fullscreen } = others;
-
-  // prevent the `fullscreen` prop from being passed to the `DialogTitle` component
-  // eslint-disable-next-line no-param-reassign
-  delete others.fullscreen;
 
   const icon = customIcon || (showIcon && iconVariant(variant));
 
   return (
-    <DialogTitle
-      className={clsx(classes.root, className, fullscreen ? "fullscreen" : "")}
-      {...others}
-    >
+    <DialogTitle className={clsx(classes.root, className)} {...others}>
       <div className={classes.messageContainer}>
         {icon}
         <div className={clsx({ [classes.textWithIcon]: icon })}>

@@ -1,6 +1,6 @@
 import { DialogProps, StandardProps } from "@mui/material";
 
-export type HvDialogClassKey = "root" | "background" | "paper" | "closeButton";
+export type HvDialogClassKey = "root" | "background" | "paper" | "fullscreen" | "closeButton";
 
 export interface HvDialogProps extends StandardProps<DialogProps, HvDialogClassKey> {
   /**

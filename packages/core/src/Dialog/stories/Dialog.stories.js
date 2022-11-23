@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
-import { withStyles, useTheme, makeStyles } from "@mui/styles";
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
 import {
@@ -11,12 +10,6 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvTextArea,
-  HvTable,
-  HvTableHead,
-  HvTableHeader,
-  HvTableRow,
-  HvTableBody,
-  HvTableCell,
   HvTypography,
 } from "../..";
 
@@ -41,13 +34,7 @@ const SimpleDialog = ({ buttonMessage, title, content, classes, indentContent = 
       <HvButton id={buttonMessage} style={{ width: "120px" }} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        classes={classes}
-        open={open}
-        onClose={() => setOpen(false)}
-      >
+      <HvDialog disableBackdropClick classes={classes} open={open} onClose={() => setOpen(false)}>
         {title}
 
         {content || (
@@ -57,10 +44,8 @@ const SimpleDialog = ({ buttonMessage, title, content, classes, indentContent = 
           </HvDialogContent>
         )}
         <HvDialogActions>
-          <HvButton id="apply" category="ghost">
-            Apply
-          </HvButton>
-          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+          <HvButton category="ghost">Apply</HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -74,26 +59,18 @@ export const Main = () => {
 
   return (
     <div>
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open Dialog
       </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-      >
+      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
         <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
         <HvDialogContent indentContent>
           Switching to model view will clear all the fields in your visualization. You will need to
           re-select your fields.
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton id="apply" category="ghost">
-            Apply
-          </HvButton>
-          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+          <HvButton category="ghost">Apply</HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -199,233 +176,57 @@ Accessibility.parameters = {
   docs: {
     description: {
       story:
-        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
+        "Dialogs should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
     },
   },
 };
 
-export const CustomContent = () => {
-  const useStyles = makeStyles(() => ({
-    style: {
-      paddingLeft: "10px",
-    },
-  }));
-  const classes = useStyles();
-
-  const contentStyles = {
-    paper: {
-      width: "100%",
-    },
-  };
-
-  const DialogWithStyles = withStyles(contentStyles)(SimpleDialog);
-  const theme = useTheme();
-
-  const data = [
-    { id: 1, customer: "Blauer See Auto, Co.", dealSize: "Small" },
-    { id: 2, customer: "Blauer See Auto, Co.", dealSize: "Small" },
-    { id: 3, customer: "Blauer See Auto, Co.", dealSize: "Medium" },
-    { id: 4, customer: "Online Diecast Creation", dealSize: "Medium" },
-    { id: 5, customer: "Vitachrome Inc.", dealSize: "Small" },
-  ];
-
-  const getColumns = () => [
-    {
-      headerText: "Customer",
-    },
-    {
-      headerText: "Dealsize",
-    },
-  ];
+export const FormContent = () => {
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState("");
 
   return (
-    <>
-      <DialogWithStyles
-        buttonMessage="Table"
-        disableBackdropClick
-        title={
-          <HvDialogTitle showIcon={false}>
-            <div>
-              <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
-              <HvTypography>HDI</HvTypography>
-            </div>
-          </HvDialogTitle>
-        }
-        content={
-          <HvDialogContent>
-            <HvTable>
-              <HvTableHead>
-                <HvTableRow>
-                  {getColumns().map((el) => (
-                    <HvTableHeader className={classes.style} key={el.headerText}>
-                      {el.headerText}
-                    </HvTableHeader>
-                  ))}
-                </HvTableRow>
-              </HvTableHead>
-              <HvTableBody style={{ backgroundColor: "#F0F0F0" }}>
-                {data.map((el) => (
-                  <HvTableRow key={el.id} hover>
-                    <HvTableCell className={classes.style} style={{ width: "50%" }}>
-                      {el.customer}
-                    </HvTableCell>
-                    <HvTableCell className={classes.style}>{el.dealSize}</HvTableCell>
-                  </HvTableRow>
-                ))}
-              </HvTableBody>
-            </HvTable>
-          </HvDialogContent>
-        }
-      />
-      <p />
-      <SimpleDialog
-        buttonMessage="Inputs"
-        disableBackdropClick
-        title={<HvDialogTitle showIcon={false}>Work request</HvDialogTitle>}
-        content={
-          <HvDialogContent>
-            <HvInput
-              id="input-simple-sample"
-              label="Title"
-              placeholder="Enter text"
-              style={{ marginBottom: theme.hv.spacing.md }}
-            />
-            <HvTextArea
-              id="main"
-              label="Description"
-              placeholder="Enter text"
-              rows={3}
-              style={{ width: "560px" }}
-            />
-          </HvDialogContent>
-        }
-      />
-    </>
+    <div>
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open Dialog
+      </HvButton>
+      <HvTypography>{data}</HvTypography>
+      <HvDialog open={open} onClose={() => setOpen(false)} aria-label="Create a new post">
+        <HvDialogTitle>Create post</HvDialogTitle>
+        <HvDialogContent style={{ width: 500 }}>
+          <form
+            id="dialog-form"
+            onSubmit={(evt) => {
+              evt.preventDefault();
+              const formData = new FormData(evt.target);
+              setData(JSON.stringify(Object.fromEntries(formData)));
+              setOpen(false);
+            }}
+          >
+            <HvInput required name="title" label="Title" placeholder="Enter text" />
+            <br />
+            <HvTextArea name="description" label="Description" placeholder="Enter text" rows={3} />
+            <br />
+            <HvTextArea name="body" label="Body" placeholder="Enter text" rows={6} />
+          </form>
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton type="submit" form="dialog-form" category="ghost">
+            Submit
+          </HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </div>
   );
 };
 
-CustomContent.parameters = {
+FormContent.parameters = {
   docs: {
-    description: { story: "It is possible to insert any component in the modal." },
+    description: { story: "Dialog with a form as content" },
   },
-};
-
-export const RemoveSchedule = () => {
-  const [open, setOpen] = useState(false);
-
-  const styledString = () => (
-    <div>
-      The
-      <b>
-        {"\u00A0"}Generate Search Index{"\u00A0"}
-      </b>
-      schedule will be permanently removed.
-    </div>
-  );
-
-  return (
-    <div>
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
-        Open dialog
-      </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-      >
-        <HvDialogTitle variant="warning">Remove schedule?</HvDialogTitle>
-        <HvDialogContent indentContent>{styledString()}</HvDialogContent>
-        <HvDialogActions>
-          <HvButton id="remove" category="ghost">
-            Remove
-          </HvButton>
-          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
-            Cancel
-          </HvButton>
-        </HvDialogActions>
-      </HvDialog>
-    </div>
-  );
-};
-
-export const DeleteConfirmation = () => {
-  const [open, setOpen] = useState(false);
-
-  const styledString = () => (
-    <div>
-      This Execution and all its dependencies will be deleted permanently.
-      <br />
-      Confirm by typing
-      <b>
-        {"\u00A0"}Cleanse Raw Retail Store Date{"\u00A0"}
-      </b>
-      below.
-      <br />
-    </div>
-  );
-
-  return (
-    <div>
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
-        Open dialog
-      </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-      >
-        <HvDialogTitle variant="warning">Delete Confirmation</HvDialogTitle>
-        <HvDialogContent indentContent>
-          {styledString()}
-          <div style={{ marginTop: 20 }}>
-            <HvInput id="input-simple-sample" placeholder="Enter text" />
-          </div>
-        </HvDialogContent>
-        <HvDialogActions>
-          <HvButton id="remove" category="ghost">
-            Delete Forever
-          </HvButton>
-          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
-            Cancel
-          </HvButton>
-        </HvDialogActions>
-      </HvDialog>
-    </div>
-  );
-};
-
-export const NoRename = () => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div>
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
-        Open dialog
-      </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-      >
-        <HvDialogTitle variant="warning">Cannot rename</HvDialogTitle>
-        <HvDialogContent indentContent>
-          A file with the same name already exists. You can replace existing file or specify another
-          name.
-        </HvDialogContent>
-        <HvDialogActions>
-          <HvButton id="remove" category="ghost">
-            Specify another name
-          </HvButton>
-        </HvDialogActions>
-      </HvDialog>
-    </div>
-  );
 };
 
 export const LongContent = () => {
@@ -439,16 +240,10 @@ export const LongContent = () => {
       </HvTypography>
       <br />
       <br />
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open dialog
       </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-      >
+      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
         <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
         <HvDialogContent indentContent>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sem mattis, finibus
@@ -529,17 +324,10 @@ export const Fullscreen = () => {
       </HvTypography>
       <br />
       <br />
-      <HvButton id="openDialog" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open dialog
       </HvButton>
-      <HvDialog
-        disableBackdropClick
-        id="test"
-        open={open}
-        onClose={() => setOpen(false)}
-        firstFocusable="test-close"
-        fullscreen
-      >
+      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)} fullscreen>
         <HvDialogTitle variant="warning">Fullscreen</HvDialogTitle>
         <HvDialogContent indentContent>A fullscreen dialog.</HvDialogContent>
         <HvDialogActions>

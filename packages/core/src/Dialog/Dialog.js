@@ -104,7 +104,7 @@ const HvDialog = ({
       open={open}
       PaperProps={{
         classes: {
-          root: clsx(classes.paper, fullscreen ? "fullscreen" : ""),
+          root: clsx(classes.paper, { [classes.fullscreen]: fullscreen }),
         },
       }}
       fullScreen={fullscreen}
@@ -115,8 +115,8 @@ const HvDialog = ({
       }}
       onClose={(event, reason) => wrappedClose(event, reason)}
       onKeyDown={keyDownHandler}
-      {...others}
       aria-modal
+      {...others}
     >
       <Button
         id={setId(id, "close")}
@@ -156,9 +156,13 @@ HvDialog.propTypes = {
      */
     background: PropTypes.string,
     /**
-     * Style applied to the component (root).
+     * Style applied to the paper component.
      */
     paper: PropTypes.string,
+    /**
+     * Style applied to the paper component when it's fullscreen.
+     */
+    fullscreen: PropTypes.string,
     /**
      * Style applied to the close button.
      */
