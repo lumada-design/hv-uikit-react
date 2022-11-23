@@ -145,3 +145,21 @@ WithLongLabels.parameters = {
     description: { story: "Breadcrumb with long labels." },
   },
 };
+
+export const WithOtherCharacters = () => {
+  const data = [
+    { label: "Label_1@[]", path: "route1" },
+    { label: "Label_2-#$", path: "route2" },
+    { label: "Label_3-/", path: "route3" },
+    { label: "Label_4-*", path: "route4" },
+    { label: "Label_5+ç", path: "route5" },
+  ];
+
+  return <HvBreadCrumb listRoute={data} id="breadcrumb8" aria-label="Breadcrumb" />;
+};
+
+WithOtherCharacters.parameters = {
+  docs: {
+    description: { story: "Breadcrumb with other type of characters." },
+  },
+};

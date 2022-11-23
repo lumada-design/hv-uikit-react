@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@mui/styles";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
-import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import { HvLink, HvTypography, HvOverflowTooltip } from "..";
-import { pathWithSubMenu, removeExtension } from "./utils";
+import pathWithSubMenu from "./utils";
 import styles from "./styles";
 
 const Page = ({ Component, onClick, elem, classes }) => (
@@ -17,8 +16,13 @@ const Page = ({ Component, onClick, elem, classes }) => (
     data={elem}
     classes={{ a: classes.a }}
   >
-    <HvTypography noWrap component="div" variant="highlightText" className={classes.link}>
-      <HvOverflowTooltip data={startCase(elem.label)} />
+    <HvTypography
+      noWrap
+      component="div"
+      variant="highlightText"
+      className={clsx(classes.link, classes.label)}
+    >
+      <HvOverflowTooltip data={elem.label} />
     </HvTypography>
   </HvLink>
 );
@@ -101,8 +105,12 @@ const BreadCrumb = (props) => {
             <PathElement classes={classes} key={key} last={isLast}>
               {(React.isValidElement(elem) && elem) ||
                 (isLast && (
-                  <HvTypography className={classes.currentPage} variant="normalText">
-                    {startCase(removeExtension(elem.label))}
+                  <HvTypography
+                    noWrap
+                    className={clsx(classes.currentPage, classes.label)}
+                    variant="normalText"
+                  >
+                    {elem.label}
                   </HvTypography>
                 )) || (
                   <Page
@@ -150,6 +158,10 @@ BreadCrumb.propTypes = {
      *  Styles applied to the last element.
      */
     currentPage: PropTypes.string,
+    /**
+     * Styles applied to the list elements.
+     */
+    label: PropTypes.string,
   }).isRequired,
   /**
    * List of breadcrumb.
