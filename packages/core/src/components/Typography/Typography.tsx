@@ -25,7 +25,7 @@ const TypographyMap = {
   body2: "p",
 } as const;
 
-export interface TypographyProps {
+export interface TypographyProps extends BaseProps {
   as?: keyof typeof TypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: TypographyVariants;

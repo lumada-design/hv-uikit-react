@@ -37,6 +37,7 @@
     "dev": "vite build --watch",
     "build": "tsc && vite build",
     "test": "vitest run",
+    "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage"
   },
