@@ -464,6 +464,42 @@ WithDefinedHeight.parameters = {
   eyes: { include: false },
 };
 
+export const WithMaxHeight = () => {
+  const values1 = [];
+  for (let i = 0; i < 4; i += 1) {
+    values1.push({
+      id: `${i}`,
+      label: `value  ${i}`,
+    });
+  }
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvDropdown
+            aria-label="With max height"
+            values={values1}
+            maxHeight={350}
+            hasTooltips
+            showSearch
+          />
+        </HvGrid>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+WithMaxHeight.parameters = {
+  docs: {
+    description: {
+      story:
+        "Experimental Dropdown with max height defined. Note: only validated in the single selection use-case.",
+    },
+  },
+  eyes: { include: false },
+};
+
 export const WithMoreThan1000Items = () => {
   const values1 = [];
   for (let i = 0; i < 1500; i += 1) {
