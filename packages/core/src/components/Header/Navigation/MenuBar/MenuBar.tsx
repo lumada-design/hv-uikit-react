@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { useContext } from "react";
-import { BaseProps } from "types/base";
 import { MenuItem } from "../MenuItem";
 import { NavigationItemProp } from "../Navigation";
 import SelectionContext from "../utils/SelectionContext";
