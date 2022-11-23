@@ -113,7 +113,7 @@ const ${componentName} = ({
   const size = sizeSelector(iconSize, height, width);
 
   return (
-    <IconBase iconSize={iconSize ?? "S"} {...others}>
+    <IconBase iconSize={iconSize ?? "S"} name="${componentName}" {...others}>
       ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
     </IconBase>
 )};
