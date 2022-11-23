@@ -18,7 +18,7 @@ const componentsSpec = {
   },
 };
 
-const keys = Object.keys(tokens.breakpoints.values);
+const keys = [...Object.keys(tokens.breakpoints.values)];
 
 const themeUtils = {
   spacing: (factor: number): string =>
@@ -26,11 +26,17 @@ const themeUtils = {
 
   breakpoints: {
     up: (key: string) => {
-      const value = typeof keys[key] === "number" ? keys[key] : key;
+      const value =
+        typeof tokens.breakpoints.values[key] === "number"
+          ? tokens.breakpoints.values[key]
+          : key;
       return `@media (min-width:${value}${tokens.breakpoints.unit})`;
     },
     down: (key: string) => {
-      const value = typeof keys[key] === "number" ? keys[key] : key;
+      const value =
+        typeof tokens.breakpoints.values[key] === "number"
+          ? tokens.breakpoints.values[key]
+          : key;
       return `@media (max-width:${value - tokens.breakpoints.step / 100}${
         tokens.breakpoints.unit
       })`;
@@ -40,18 +46,24 @@ const themeUtils = {
 
       return (
         `@media (min-width:${
-          typeof keys[start] === "number" ? keys[start] : start
+          typeof tokens.breakpoints.values[start] === "number"
+            ? tokens.breakpoints.values[start]
+            : start
         }${tokens.breakpoints.unit}) and ` +
         `(max-width:${
-          (endIndex !== -1 && typeof keys[keys[endIndex]] === "number"
-            ? keys[keys[endIndex]]
+          (endIndex !== -1 &&
+          typeof tokens.breakpoints.values[keys[endIndex]] === "number"
+            ? tokens.breakpoints.values[keys[endIndex]]
             : end) -
           tokens.breakpoints.step / 100
         }${tokens.breakpoints.unit})`
       );
     },
     only: (key: string) => {
-      if (keys.indexOf(key) + 1 < keys.length) {
+      if (
+        keys.indexOf(key) + 1 <
+        Object.keys(tokens.breakpoints.values).length
+      ) {
         return themeUtils.breakpoints.between(key, keys[keys.indexOf(key) + 1]);
       }
 
