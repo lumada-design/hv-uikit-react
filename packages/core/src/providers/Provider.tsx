@@ -1,6 +1,6 @@
 import { css, Global } from "@emotion/react";
 import { CssBaseline, theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "hooks";
+import { useTheme } from "../hooks";
 
 interface ProviderProps {
   children?: React.ReactNode;

@@ -1,6 +1,6 @@
-import { Typography } from "components/Typography";
+import { Typography } from "../../../..";
 import { useContext } from "react";
-import { isKeypress, KeyboardCodes } from "utils/KeyboardUtils";
+import { isKeypress, KeyboardCodes } from "../../../../utils/KeyboardUtils";
 import { MenuBar } from "..";
 import { NavigationItemProp } from "../Navigation";
 import { FocusContext } from "../utils/FocusContext";

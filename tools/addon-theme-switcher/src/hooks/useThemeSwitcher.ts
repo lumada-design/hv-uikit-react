@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStorybookApi } from "@storybook/api";
 import { themes as sbThemes } from "@storybook/theming";
 
-import { setLocalTheme, getLocalTheme } from "utils";
+import { setLocalTheme, getLocalTheme } from "../utils";
 
 const getInitialMode = () => {
   const localTheme = getLocalTheme();

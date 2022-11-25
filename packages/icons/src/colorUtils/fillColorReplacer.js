@@ -3,7 +3,7 @@
  * @param  string fileData
  * @return Object
  */
-module.exports = function replaceFill(fileData, colorObject) {
+const replaceFill = (fileData, colorObject) => {
   let result = fileData;
   colorObject.colorArray.forEach((element, index) => {
     result = result
@@ -13,3 +13,5 @@ module.exports = function replaceFill(fileData, colorObject) {
 
   return result;
 };
+
+export default replaceFill;

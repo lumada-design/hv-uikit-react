@@ -3,7 +3,7 @@
  * @param  string fileData
  * @return Object
  */
-module.exports = function extractSize(fileData) {
+const extractSize = (fileData) => {
   const viewBoxRegexp = /viewBox="(\d*?) (\d*?) (\d*?) (\d*?)"/g;
   const widthRegexp = /width={(\d*?)}/g;
   const heightRegexp = /height={(\d*?)}/g;
@@ -31,3 +31,5 @@ module.exports = function extractSize(fileData) {
 
   return result;
 };
+
+export default extractSize;

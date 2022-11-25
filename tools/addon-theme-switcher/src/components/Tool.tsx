@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { WithTooltip, TooltipLinkList } from "@storybook/components";
 import { useTheme } from "@hitachivantara/uikit-core";
 
-import useThemeSwitcher from "hooks/useThemeSwitcher";
-import ThemeSwitcher from "components/ThemeSwitcher";
-import ColorIcon from "icons/ColorIcon";
+import useThemeSwitcher from "../hooks/useThemeSwitcher";
+import ThemeSwitcher from "../components/ThemeSwitcher";
+import ColorIcon from "../icons/ColorIcon";
 
 const toPascalCase = (str: string) =>
   str.replace(

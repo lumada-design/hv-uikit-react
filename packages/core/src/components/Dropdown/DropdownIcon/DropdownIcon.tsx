@@ -1,5 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBox } from "components";
+import { HvBox } from "../..";
 
 const styles = {
   display: "flex",

@@ -1,27 +1,26 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 // Vendor includes
-const fs = require("fs"); // file system
-const recursive = require("recursive-readdir");
-const yargs = require("yargs"); // argument reader
-const path = require("path"); // utilities for working with file and directory
-const HTMLtoJSX = require("htmltojsx"); // converter from html to jsx
-const jsdom = require("jsdom-no-contextify");
+import fs from "fs"; // file system
+import recursive from "recursive-readdir";
+import yargs from "yargs"; // argument reader
+import path from "path"; // utilities for working with file and directory
+import { Parser } from "html-to-react";
+import ReactDOMServer from "react-dom/server";
 
-const theme = require("@hitachivantara/uikit-styles");
+import jsdom from "jsdom-no-contextify";
 
-// Language files
-const content = require("./lang/en");
+import { colors } from "@hitachivantara/uikit-styles";
 
 // Local includes
-const createComponentName = require("./fileSystemUtils/createComponentName");
-const formatSVG = require("./converterUtils/formatSVG");
-const generateComponent = require("./converterUtils/generateComponent");
-const removeStyle = require("./converterUtils/removeStyle");
-const colorExtractor = require("./colorUtils/colorExtractor");
-const fillColorReplacer = require("./colorUtils/fillColorReplacer");
-const sizeExtractor = require("./sizeUtils/sizeExtractor");
-const sizeReplacer = require("./sizeUtils/sizeReplacer");
+import createComponentName from "./fileSystemUtils/createComponentName";
+import formatSVG from "./converterUtils/formatSVG";
+import generateComponent from "./converterUtils/generateComponent";
+import removeStyle from "./converterUtils/removeStyle";
+import colorExtractor from "./colorUtils/colorExtractor";
+import fillColorReplacer from "./colorUtils/fillColorReplacer";
+import sizeExtractor from "./sizeUtils/sizeExtractor";
+import sizeReplacer from "./sizeUtils/sizeReplacer";
 
 const printErrors = console.warn;
 
@@ -36,24 +35,14 @@ const args = yargs // reading arguments from the command line
 // Resolve arguments
 const firstArg = args._[0];
 const secondArgs = args._[1] || "MyComponent";
-const outputPath = args.output;
 const inputPath = args.input;
 const { rmStyle, format } = args;
+const outputPath = args.output as string;
 
 // Bootstrap base variables
-const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
+const htmlToReactParser = new Parser();
+
 const svg = `./${firstArg}.svg`; // append the file extension
-
-// Exit out early arguments
-if (args.help) {
-  console.log(content.helptext);
-  process.exit(1);
-}
-
-if (args.example) {
-  console.log(content.exampleText);
-  process.exit(1);
-}
 
 const componentOutputFolder = outputPath
   ? path.resolve(process.cwd(), outputPath)
@@ -61,7 +50,7 @@ const componentOutputFolder = outputPath
 
 const knownSubfolders = {};
 
-const writeFile = (processedSVG, fileName, subFolder = ".", depth = 0) => {
+const writeFile = (processedSVG, fileName, subFolder = ".") => {
   fs.mkdirSync(path.resolve(componentOutputFolder, subFolder), {
     recursive: true,
   });
@@ -163,19 +152,33 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
       // such as className
       body.firstChild.setAttribute(":props:", "");
 
-      // Now that we are done with manipulating the node/s we can return it back as a string
-      output = body.innerHTML;
-
       // Convert from HTML to JSX
-      output = converter.convert(output);
+      const parsed = htmlToReactParser.parse(body.innerHTML);
+      output = ReactDOMServer.renderToStaticMarkup(parsed);
 
       // jsdom and htmltojsx will automatically (and correctly) wrap attributes in double quotes,
       // and generally just dislikes all the little markers used by react, such as the spread
       // operator. We will sub those back in manually now
-      output = output.replace(/:props:/g, "{...other}");
+
+      const widthValue = output
+        .match(/width="(\d*?)"/g)?.[0]
+        .match(/"(\d*?)"/g)?.[0]
+        .replace(/['"]+/g, "");
+
+      const heightValue = output
+        .match(/height="(\d*?)"/g)?.[0]
+        .match(/"(\d*?)"/g)?.[0]
+        .replace(/['"]+/g, "");
+
+      output = output
+        .replace(/:props:/g, "{...other}")
+        .replace(/width="(\d*?)"/g, `width={${widthValue}}`)
+        .replace(/height="(\d*?)"/g, `height={${heightValue}}`)
+        .replace('style="isolation:isolate"', "")
+        .replace('="">', ">");
 
       const sizeObject = sizeExtractor(output);
-      output = sizeReplacer(output, sizeObject);
+      output = sizeReplacer(output);
 
       const colorObject = colorExtractor(output);
       output = fillColorReplacer(output, colorObject);
@@ -198,8 +201,8 @@ const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
         iconBasePath: `${".".repeat(depth + 1)}/IconBase`,
       };
 
-      output = generateComponent(params, theme);
-      writeFile(output, fileToWrite, subFolder, depth);
+      output = generateComponent(params, colors.light);
+      writeFile(output, fileToWrite, subFolder);
     });
   });
 };

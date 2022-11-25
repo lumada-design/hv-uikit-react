@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { themeVariant } from "@hitachivantara/uikit-styles";
-import React from "react";
 
 export type IconSize = "XS" | "S" | "M" | "L";
 
@@ -26,19 +25,19 @@ export const StyledIconBase = styled.div<{ iconSize: IconSize }>(
   themeVariant({
     prop: "iconSize",
     variants: {
-      XS: {
+      xs: {
         width: 32,
         height: 32,
       },
-      S: {
+      s: {
         width: 32,
         height: 32,
       },
-      M: {
+      m: {
         width: 48,
         height: 48,
       },
-      L: {
+      l: {
         width: 112,
         height: 112,
       },
@@ -46,12 +45,8 @@ export const StyledIconBase = styled.div<{ iconSize: IconSize }>(
   })
 );
 
-export const IconBase = ({ children, iconSize, ...others }) => {
-  return (
-    <StyledIconBase iconSize={iconSize} {...others}>
-      {children}
-    </StyledIconBase>
-  );
+export const IconBase = ({ children, iconSize }) => {
+  return <StyledIconBase iconSize={iconSize}>{children}</StyledIconBase>;
 };
 
 IconBase.displayName = "IconBase";

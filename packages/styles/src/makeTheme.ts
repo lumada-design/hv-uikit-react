@@ -2,6 +2,8 @@ import * as tokens from "./tokens";
 import { theme } from "./theme";
 import { mergeTheme } from "./utils";
 
+type Theme = typeof theme;
+
 /**
  * Generate a theme base on the options received.
  * Takes an incomplete theme object and adds the missing parts.

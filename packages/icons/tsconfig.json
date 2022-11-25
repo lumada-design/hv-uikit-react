@@ -2,8 +2,19 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": "bin"
+    "rootDir": "bin",
+    "composite": true
   },
   "include": ["bin"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["src", "dist"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/styles/tsconfig.json"
+    }
+  ]
 }

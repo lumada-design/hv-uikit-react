@@ -1,8 +1,8 @@
 import { useState, useRef, CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { Typography } from "components";
-import { useClickOutside } from "hooks";
+import { Typography } from "..";
+import { useClickOutside } from "../../hooks";
 
 import { DropdownHeader } from "./DropdownHeader";
 import { DropdownList } from "./List";
