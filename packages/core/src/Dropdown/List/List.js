@@ -40,6 +40,7 @@ const List = ({
   hasTooltips = false,
   singleSelectionToggle,
   height: dropdownHeight,
+  maxHeight,
   virtualized = false,
   ...others
 }) => {
@@ -224,7 +225,9 @@ const List = ({
         root: {
           ...(dropdownHeight && { height: dropdownHeight }),
           maxWidth: width,
-          maxHeight: `calc(${height}px - 32px - ${theme.spacing("xs")} - ${theme.spacing("sm")})`,
+          maxHeight:
+            maxHeight ??
+            `calc(${height}px - 32px - ${theme.spacing("xs")} - ${theme.spacing("sm")})`,
           overflow: "auto",
           padding: 5,
         },
@@ -235,7 +238,7 @@ const List = ({
           padding: 0,
         },
       }),
-    [width, height, dropdownHeight, theme]
+    [width, height, maxHeight, dropdownHeight, theme]
   )();
 
   return (
@@ -250,7 +253,7 @@ const List = ({
             classes={{
               root: clsx(
                 classes.dropdownListContainer,
-                dropdownHeight && maxSizeClasses.root,
+                (dropdownHeight || maxHeight) && maxSizeClasses.root,
                 virtualized && maxSizeClasses.virtualized
               ),
             }}
@@ -325,6 +328,10 @@ List.propTypes = {
    * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
    */
   height: PropTypes.number,
+  /**
+   * Experimental. Max height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class.
+   */
+  maxHeight: PropTypes.number,
   /**
    * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
    */

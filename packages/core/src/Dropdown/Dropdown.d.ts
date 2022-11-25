@@ -144,6 +144,10 @@ export interface HvDropdownProps
    */
   height?: number;
   /**
+   * Experimental. Max height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class.
+   */
+  maxHeight?: number;
+  /**
    * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
    */
   virtualized?: boolean;
