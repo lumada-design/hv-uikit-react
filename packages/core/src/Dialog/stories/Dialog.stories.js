@@ -34,7 +34,14 @@ const SimpleDialog = ({ buttonMessage, title, content, classes, indentContent = 
       <HvButton id={buttonMessage} style={{ width: "120px" }} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvDialog disableBackdropClick classes={classes} open={open} onClose={() => setOpen(false)}>
+      <HvDialog
+        disableBackdropClick
+        classes={classes}
+        open={open}
+        onClose={() => setOpen(false)}
+        id="test"
+        firstFocusable="test-close"
+      >
         {title}
 
         {content || (
@@ -44,8 +51,10 @@ const SimpleDialog = ({ buttonMessage, title, content, classes, indentContent = 
           </HvDialogContent>
         )}
         <HvDialogActions>
-          <HvButton category="ghost">Apply</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -62,15 +71,23 @@ export const Main = () => {
       <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open Dialog
       </HvButton>
-      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
+      <HvDialog
+        disableBackdropClick
+        open={open}
+        onClose={() => setOpen(false)}
+        id="test"
+        firstFocusable="test-close"
+      >
         <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
         <HvDialogContent indentContent>
           Switching to model view will clear all the fields in your visualization. You will need to
           re-select your fields.
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton category="ghost">Apply</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -153,6 +170,8 @@ export const Accessibility = () => {
         onClose={() => setOpen(false)}
         aria-labelledby="hv-dialog-title"
         aria-describedby="hv-dialog-description"
+        id="test"
+        firstFocusable="test-close"
       >
         <HvDialogTitle id="hv-dialog-title" variant="warning">
           Switch model view?
@@ -162,8 +181,10 @@ export const Accessibility = () => {
           re-select your fields.
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton category="ghost">Apply</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -214,7 +235,7 @@ export const FormContent = () => {
           <HvButton type="submit" form="dialog-form" category="ghost">
             Submit
           </HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvDialogActions>
@@ -243,7 +264,13 @@ export const LongContent = () => {
       <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open dialog
       </HvButton>
-      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
+      <HvDialog
+        disableBackdropClick
+        open={open}
+        onClose={() => setOpen(false)}
+        id="test"
+        firstFocusable="test-close"
+      >
         <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
         <HvDialogContent indentContent>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sem mattis, finibus
@@ -327,7 +354,14 @@ export const Fullscreen = () => {
       <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open dialog
       </HvButton>
-      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)} fullscreen>
+      <HvDialog
+        disableBackdropClick
+        open={open}
+        onClose={() => setOpen(false)}
+        fullscreen
+        id="test"
+        firstFocusable="test-close"
+      >
         <HvDialogTitle variant="warning">Fullscreen</HvDialogTitle>
         <HvDialogContent indentContent>A fullscreen dialog.</HvDialogContent>
         <HvDialogActions>

@@ -127,9 +127,7 @@ const HvDialog = ({
       >
         <CloseButtonTooltipWrapper />
       </Button>
-      {children && typeof children === "object"
-        ? React.Children.map(children, (c) => React.cloneElement(c, { fullscreen }))
-        : children}
+      {children}
     </Dialog>
   );
 };
