@@ -36,6 +36,9 @@ const styles = (theme) => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
   },
+  label: {
+    textTransform: "capitalize",
+  },
 });
 
 export default styles;

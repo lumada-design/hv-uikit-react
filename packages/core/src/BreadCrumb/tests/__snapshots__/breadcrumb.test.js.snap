@@ -52,6 +52,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         "a": "HvBreadCrumb-a",
         "centerContainer": "HvBreadCrumb-centerContainer",
         "currentPage": "HvBreadCrumb-currentPage",
+        "label": "HvBreadCrumb-label",
         "link": "HvBreadCrumb-link",
         "orderedList": "HvBreadCrumb-orderedList",
         "root": "HvBreadCrumb-root",
@@ -114,6 +115,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -132,6 +134,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -179,13 +182,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route1"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -217,7 +220,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 1"
@@ -283,6 +286,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -301,6 +305,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -348,13 +353,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route2"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -386,7 +391,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 2"
@@ -452,6 +457,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -470,6 +476,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -517,13 +524,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route3"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -555,7 +562,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 3"
@@ -621,6 +628,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -639,6 +647,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -686,13 +695,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route4"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -724,7 +733,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 4"
@@ -790,6 +799,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -808,6 +818,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -855,13 +866,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route5"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -893,7 +904,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 5"
@@ -959,6 +970,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -977,6 +989,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -1024,13 +1037,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route6"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -1062,7 +1075,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 6"
@@ -1128,6 +1141,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1146,6 +1160,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -1193,13 +1208,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route7"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -1231,7 +1246,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 7"
@@ -1297,6 +1312,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1315,6 +1331,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "currentPage": "HvBreadCrumb-currentPage",
+                  "label": "HvBreadCrumb-label",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -1362,13 +1379,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                     href="route8"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvBreadCrumb-link"
+                      className="HvBreadCrumb-link HvBreadCrumb-label"
                       component="div"
                       noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
-                        className="HvBreadCrumb-link"
+                        className="HvBreadCrumb-link HvBreadCrumb-label"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -1400,7 +1417,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         variant="highlightText"
                       >
                         <div
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvBreadCrumb-label HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           <WithStyles(memo(HvOverflowTooltip))
                             data="Label 8"
@@ -1466,6 +1483,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "currentPage": "HvBreadCrumb-currentPage",
+              "label": "HvBreadCrumb-label",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1479,11 +1497,12 @@ exports[`Breadcrumb should render correctly 1`] = `
             className="HvBreadCrumb-centerContainer"
           >
             <WithStyles(ForwardRef)
-              className="HvBreadCrumb-currentPage"
+              className="HvBreadCrumb-currentPage HvBreadCrumb-label"
+              noWrap={true}
               variant="normalText"
             >
               <ForwardRef
-                className="HvBreadCrumb-currentPage"
+                className="HvBreadCrumb-currentPage HvBreadCrumb-label"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -1510,10 +1529,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                noWrap={true}
                 variant="normalText"
               >
                 <p
-                  className="HvBreadCrumb-currentPage HvTypography-root HvTypography-normalText"
+                  className="HvBreadCrumb-currentPage HvBreadCrumb-label HvTypography-root HvTypography-normalText HvTypography-noWrap"
                 >
                   Label 9
                 </p>
