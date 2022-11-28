@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 import { TypographyVariants } from "./Typography";
 
-export const StyledTypography = styled.p<{ variant: TypographyVariants }>(
+export const StyledTypography = styled.div<{ variant: TypographyVariants }>(
   {
     color: theme.colors.acce1,
   },

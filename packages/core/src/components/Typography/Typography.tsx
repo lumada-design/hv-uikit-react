@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { StyledTypography } from "./Typography.styles";
 
 export type TypographyVariants =
@@ -29,7 +28,6 @@ export interface TypographyProps extends BaseProps {
   as?: keyof typeof TypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: TypographyVariants;
-  css?: CSSProperties;
   className?: string;
   children: React.ReactNode;
 }
@@ -42,11 +40,17 @@ export const Typography = ({
   as = "body1",
   variant = "body",
   className,
+  ...others
 }: TypographyProps) => {
   const Component = TypographyMap[as];
 
   return (
-    <StyledTypography as={Component} className={className} variant={variant}>
+    <StyledTypography
+      as={Component}
+      className={className}
+      variant={variant}
+      {...others}
+    >
       {children}
     </StyledTypography>
   );
