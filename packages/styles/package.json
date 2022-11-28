@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "pnpm clean && tsc -b",
-    "clean": "npx rimraf dist"
+    "clean": "npx rimraf dist tsconfig.tsbuildinfo"
   },
   "dependencies": {
     "@styled-system/variant": "^5.1.5",

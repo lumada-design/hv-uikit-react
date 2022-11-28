@@ -18,7 +18,7 @@ const useThemeSwitcher = (): ThemeSwitcher => {
   const [themeMode, setThemeMode] = useState(initialMode);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isToggleMode] = useState(false);
-  const [theme, setTheme] = useState<Theme>();
+  const [theme, setTheme] = useState<AddonTheme>();
   const api = useStorybookApi();
 
   useEffect(() => {

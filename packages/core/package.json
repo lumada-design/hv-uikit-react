@@ -27,7 +27,7 @@
     "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf dist"
+    "clean": "npx rimraf dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -42,9 +42,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
-    "jsdom": "^20.0.3",
-    "vitest": "^0.25.3"
+    "@types/react-dom": "^18.0.8"
   },
   "sideEffects": false,
   "publishConfig": {

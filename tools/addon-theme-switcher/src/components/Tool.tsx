@@ -13,7 +13,7 @@ const toPascalCase = (str: string) =>
   );
 
 const Tool = () => {
-  const [themesList, setThemesList] = useState<Theme[]>([]);
+  const [themesList, setThemesList] = useState<AddonTheme[]>([]);
   const { themesModes } = useTheme();
   const { setTheme } = useThemeSwitcher();
 
@@ -38,7 +38,7 @@ const Tool = () => {
       trigger="click"
       tooltip={
         <TooltipLinkList
-          links={themesList?.map((theme: Theme) => ({
+          links={themesList?.map((theme: AddonTheme) => ({
             id: theme.name,
             title: theme.label,
             right: theme.color ? <ColorIcon color={theme.color} /> : undefined,

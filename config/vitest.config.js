@@ -11,15 +11,6 @@ export default defineConfig({
       },
     }),
   ],
-  build: {
-    sourcemap: true,
-    emptyOutDir: true,
-    lib: {
-      entry: resolve(process.cwd(), "src", "index.ts"),
-      formats: ["es", "cjs"],
-      fileName: (ext) => `index.${ext}.js`,
-    },
-  },
   test: {
     globals: true,
     environment: "jsdom",

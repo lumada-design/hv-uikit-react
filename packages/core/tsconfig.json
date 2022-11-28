@@ -9,10 +9,10 @@
   "exclude": ["dist"],
   "references": [
     {
-      "path": "../../packages/icons/tsconfig.json"
+      "path": "../icons/tsconfig.json"
     },
     {
-      "path": "../../packages/styles/tsconfig.json"
+      "path": "../styles/tsconfig.json"
     }
   ]
 }

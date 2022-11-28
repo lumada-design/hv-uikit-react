@@ -9,11 +9,10 @@
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "license": "Apache-2.0",
-  "type": "module",
   "scripts": {
     "dev": "pnpm -F='./app' dev",
     "doc": "storybook dev -p 6006 --no-manager-cache --no-open",
-    "build": "pnpm -r -F=!'./app' build",
+    "build": "pnpm -r -F=!'./app' -F=!'./toolsn' build",
     "build:doc": "storybook build",
     "lint": "eslint --ext .ts,.tsx --cache",
     "lint-staged": "lint-staged",
@@ -22,7 +21,8 @@
     "test:e2e": "npx playwright test --config=config/playwright.config.ts",
     "clean": "npx rimraf ./{packages,tools}/*/{dist,bin,*.tsbuildinfo}",
     "wipe": "pnpm clean && npx rimraf **/{node_modules,pnpm-lock.yaml}",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
@@ -37,10 +37,12 @@
     "@testing-library/react": "^13.4.0",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
+    "c8": "^7.12.0",
     "eslint": "^8.27.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "jsdom": "^20.0.3",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
@@ -49,7 +51,8 @@
     "storybook": "7.0.0-alpha.48",
     "typescript": "^4.8.4",
     "vite": "^3.2.4",
-    "vite-tsconfig-paths": "^3.5.2"
+    "vite-tsconfig-paths": "^3.5.2",
+    "vitest": "^0.25.3"
   },
   "husky": {
     "hooks": {
