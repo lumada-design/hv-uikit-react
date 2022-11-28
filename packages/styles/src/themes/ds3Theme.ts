@@ -3,8 +3,8 @@ import { colors, makeTheme } from "..";
 const ds3Theme = makeTheme((theme) => ({
   colors: {
     modes: {
-      dawn: { ...colors.light },
-      wicked: { ...colors.dark },
+      dawn: { ...colors.common, ...colors.light },
+      wicked: { ...colors.common, ...colors.dark },
     },
   },
   components: {

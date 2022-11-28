@@ -4,12 +4,15 @@ const ds5Theme = makeTheme((theme) => ({
   colors: {
     modes: {
       light: {
+        ...colors.common,
         ...colors.light,
       },
       dark: {
+        ...colors.common,
         ...colors.dark,
       },
       orange: {
+        ...colors.common,
         ...colors.light,
         acce1: "orange",
         atmo1: "white",
