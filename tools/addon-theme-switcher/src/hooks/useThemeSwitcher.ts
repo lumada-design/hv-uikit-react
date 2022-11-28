@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStorybookApi } from "@storybook/api";
 import { themes as sbThemes } from "@storybook/theming";
 
-import { setLocalTheme, getLocalTheme } from "utils";
+import { setLocalTheme, getLocalTheme } from "../utils";
 
 const getInitialMode = () => {
   const localTheme = getLocalTheme();
@@ -18,7 +18,7 @@ const useThemeSwitcher = (): ThemeSwitcher => {
   const [themeMode, setThemeMode] = useState(initialMode);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isToggleMode] = useState(false);
-  const [theme, setTheme] = useState<Theme>();
+  const [theme, setTheme] = useState<AddonTheme>();
   const api = useStorybookApi();
 
   useEffect(() => {

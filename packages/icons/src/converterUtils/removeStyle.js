@@ -4,7 +4,7 @@
  * @param  node A node produced by jsdom
  * @return undefined
  */
-module.exports = function removeStyle(node) {
+const removeStyle = (node) => {
   const elements = node.getElementsByTagName("*");
   Object.keys(elements).forEach((key) => {
     if (elements[key].removeAttribute) {
@@ -12,3 +12,5 @@ module.exports = function removeStyle(node) {
     }
   });
 };
+
+export default removeStyle;

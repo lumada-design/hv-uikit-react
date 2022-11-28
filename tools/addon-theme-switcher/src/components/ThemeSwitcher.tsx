@@ -1,8 +1,8 @@
 import { Icons, IconButton } from "@storybook/components";
 
-import useThemeSwitcher from "hooks/useThemeSwitcher";
-import SunIcon from "icons/SunIcon";
-import MoonIcon from "icons/MoonIcon";
+import useThemeSwitcher from "../hooks/useThemeSwitcher";
+import SunIcon from "../icons/SunIcon";
+import MoonIcon from "../icons/MoonIcon";
 
 import { ADDON_ID } from "../constants";
 

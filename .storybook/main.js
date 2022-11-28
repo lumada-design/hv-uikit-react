@@ -16,12 +16,7 @@ module.exports = {
     name: "@storybook/react-vite",
   },
   async viteFinal(config) {
-    config.plugins.push(tsconfigPaths.default({ loose: true }));
-
-    config.optimizeDeps.include = [
-      ...(config.optimizeDeps?.include ?? []),
-      "@emotion/react",
-    ];
+    config.plugins.push(tsconfigPaths.default());
 
     return config;
   },

@@ -1,6 +1,6 @@
 import { BarChart, Ghost, Info } from "@hitachivantara/uikit-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography } from "components";
+import { HvTypography } from "..";
 import { EmptyState, EmptyStateProps } from "./EmptyState";
 
 const meta: Meta<typeof EmptyState> = {
@@ -61,7 +61,7 @@ export const CustomMessages: StoryObj<EmptyStateProps> = {
   },
   render: ({ title, icon }) => {
     const CustomAction = (
-      <HvTypography as="div">
+      <HvTypography>
         <div>Here are some helpful links instead:</div>
         <a href="#" target="_blank">
           Online Help
@@ -69,7 +69,7 @@ export const CustomMessages: StoryObj<EmptyStateProps> = {
       </HvTypography>
     );
 
-    const CustomMessage = <HvTypography as="div">404 Not Found</HvTypography>;
+    const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
     return (
       <EmptyState
         title={title}

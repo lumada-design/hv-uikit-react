@@ -25,7 +25,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
  * @param  string colors - The defaults value of colors to add to the component
  * @return string The parsed component string
  */
-module.exports = (
+const generateComponent = (
   {
     svgOutput,
     componentName,
@@ -33,12 +33,8 @@ module.exports = (
     defaultSizes,
     iconBasePath = "../IconBase",
   },
-  theme
+  lightPalette
 ) => {
-  const {
-    colors: { light: lightPalette },
-  } = theme;
-
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some((el) => componentName.startsWith(el));
   const largerIcons = [
@@ -120,3 +116,5 @@ const ${componentName} = ({
 
 export default ${componentName};`;
 };
+
+export default generateComponent;

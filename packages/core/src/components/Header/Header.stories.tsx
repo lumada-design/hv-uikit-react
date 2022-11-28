@@ -6,7 +6,7 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "components";
+} from "..";
 import { useState } from "react";
 import HitachiLogo from "./assets/HitachiLogo";
 

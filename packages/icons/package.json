@@ -2,68 +2,60 @@
   "name": "@hitachivantara/uikit-icons",
   "version": "5.0.0",
   "private": false,
-  "description": "A collection of icons for use with Hitachi Vantara's React Components.",
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "A collection of icons to use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "license": "Apache-2.0",
+  "main": "./src/index.ts",
   "keywords": [
     "hitachi-vantara",
     "design-system",
     "ui-kit",
     "react",
-    "typescript",
-    "wai-aria"
+    "typescript"
   ],
-  "author": {
-    "name": "Hitachi Vantara UI Kit Team"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
-    }
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "npx npm-run-all --npm-path pnpm --serial clean svg-optimize build:*",
-    "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
-    "build:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
-    "build:vite": "tsc && vite build",
-    "svg-optimize": "npx svgo --config=./svgo.config.js -r -f assets assets",
-    "clean": "npx rimraf dist bin"
+    "build": "run-s clean convert:* build:*",
+    "build:ts": "tsc -b",
+    "convert": "run-s clean convert:*",
+    "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
+    "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
+    "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
+    "clean": "npx rimraf dist bin tsconfig.tsbuildinfo",
+    "prepare": "pnpm convert"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "workspace:*",
-    "chokidar-cli": "^3.0.0",
-    "recursive-readdir": "^2.2.3",
-    "vite": "^3.2.3",
-    "vite-plugin-dts": "^1.7.0",
-    "vite-tsconfig-paths": "^3.5.2",
-    "yargs": "^17.6.2"
+    "@emotion/styled": "^11.10.5",
+    "@hitachivantara/uikit-styles": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "htmltojsx": "^0.3.0",
+    "html-to-react": "^1.5.0",
     "jsdom-no-contextify": "^3.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "svgo": "^3.0.0",
-    "typescript": "^4.8.4"
+    "npm-run-all": "^4.1.5",
+    "recursive-readdir": "^2.2.3",
+    "svgo": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "yargs": "^17.6.2"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.6.0"
   }
 }

@@ -1,6 +1,6 @@
 type ThemeMode = "light" | "dark";
 
-interface Theme {
+interface AddonTheme {
   name: string;
   label: string;
   value: string;
@@ -14,7 +14,7 @@ interface ThemeLink {
 }
 
 interface ThemeSwitcher {
-  setTheme: (theme: Theme) => void;
+  setTheme: (theme: AddonTheme) => void;
   toggleTheme: () => void;
   isDarkMode: boolean;
   isToggleMode: boolean;

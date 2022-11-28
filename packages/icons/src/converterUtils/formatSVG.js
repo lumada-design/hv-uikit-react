@@ -5,7 +5,7 @@
  * @param  string  svg The svg data to format
  * @return string The formatted svg data
  */
-module.exports = function formatSVG(svg) {
+const formatSVG = (svg) => {
   const reg = /(>)\s*(<)(\/*)/g;
   const wsexp = / *(.*) +\n/g;
   const contexp = /(<.+>)(.+\n)/g;
@@ -66,3 +66,5 @@ module.exports = function formatSVG(svg) {
 
   return formatted.trim();
 };
+
+export default formatSVG;

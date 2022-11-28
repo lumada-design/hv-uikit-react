@@ -1,10 +1,11 @@
 {
   "name": "@hitachivantara/addon-theme-switcher",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
   "description": "Storybook addon Theme Switcher",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "license": "Apache-2.0",
+  "main": "./dist/index.js",
   "keywords": [
     "hitachi-vantara",
     "ui-kit",
@@ -12,32 +13,18 @@
     "storybook",
     "theme-switcher"
   ],
-  "author": {
-    "name": "Hitachi Vantara UI Kit Team"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "default": "./dist/esm/index.js"
-    }
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "dev": "tsc-watch --onSuccess 'pnpm build'",
-    "build": "npm-run-all clean build:*",
-    "build:esm": "tsc --module es2015 --outDir dist/esm && tsc-alias --dir dist/esm",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs && tsc-alias --dir dist/cjs",
-    "clean": "npx rimraf ./dist"
+    "build": "pnpm clean && tsc -b",
+    "clean": "npx rimraf dist",
+    "prepare": "pnpm build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -48,18 +35,12 @@
     "@storybook/core-events": "^6.4.20",
     "@storybook/theming": "^6.4.22",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsc-alias": "^1.7.1",
-    "typescript": "^4.8.4"
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@hitachivantara/uikit-core": "workspace:*"
   },
-  "devDependencies": {
-    "@emotion/babel-plugin": "^11.10.5",
-    "npm-run-all": "^4.1.5",
-    "tsc-alias": "^1.6.5",
-    "tsc-watch": "^5.0.3",
-    "typescript": "^4.6.3"
+  "engines": {
+    "node": ">=16.6.0"
   }
 }

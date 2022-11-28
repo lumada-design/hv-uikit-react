@@ -1,4 +1,4 @@
-const path = require("path");
+import path from "path";
 
 /**
  * Convert a string from snake case to camel case
@@ -15,7 +15,7 @@ function snakeToCamel(s) {
  * @param  string fileName
  * @return string
  */
-module.exports = function createComponentName(file, fileName) {
+const createComponentName = (file, fileName) => {
   let componentNamePrep;
 
   if (fileName.indexOf("-") !== -1) {
@@ -27,3 +27,5 @@ module.exports = function createComponentName(file, fileName) {
   componentNameArr[0] = componentNameArr[0].toUpperCase();
   return componentNameArr.join("");
 };
+
+export default createComponentName;
