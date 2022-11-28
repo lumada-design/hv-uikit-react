@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.4 (2022-11-28)
+
+### Bug Fixes
+
+- **breadcrumb:** fix capitalize inconsistency between browsers ([e71c6d7](https://github.com/lumada-design/hv-uikit-react/commit/e71c6d72934ecd05e2cded0ef528026fa88815cc))
+
 ## 4.0.3 (2022-10-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.3...@hitachivantara/uikit-react-lab@4.2.0) (2022-11-28)
+
+### Bug Fixes
+
+- **dialog:** height & fullscreen styles ([#2964](https://github.com/lumada-design/hv-uikit-react/issues/2964)) ([0ac2032](https://github.com/lumada-design/hv-uikit-react/commit/0ac2032632bd77a41f954433c0fe501a0748de44))
+
+### Features
+
+- **wizard:** hide skip button when skippable is false ([#2979](https://github.com/lumada-design/hv-uikit-react/issues/2979)) ([8af5729](https://github.com/lumada-design/hv-uikit-react/commit/8af5729d27df471be2f75735b82e7de08907b5fb))
+
 ## [4.1.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.1.2...@hitachivantara/uikit-react-lab@4.1.3) (2022-11-15)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.3 (2022-11-28)
+
+### Bug Fixes
+
+- **dialog:** height & fullscreen styles ([#2964](https://github.com/lumada-design/hv-uikit-react/issues/2964)) ([0ac2032](https://github.com/lumada-design/hv-uikit-react/commit/0ac2032632bd77a41f954433c0fe501a0748de44))
+
 ## [4.1.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.1.1...@hitachivantara/uikit-react-viz@4.1.2) (2022-11-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

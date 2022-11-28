@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.2.0 (2022-11-28)
+
+### Bug Fixes
+
+- **breadcrumb:** fix capitalize inconsistency between browsers ([e71c6d7](https://github.com/lumada-design/hv-uikit-react/commit/e71c6d72934ecd05e2cded0ef528026fa88815cc))
+- **dialog:** height & fullscreen styles ([#2964](https://github.com/lumada-design/hv-uikit-react/issues/2964)) ([0ac2032](https://github.com/lumada-design/hv-uikit-react/commit/0ac2032632bd77a41f954433c0fe501a0748de44))
+- **dialog:** remove fullscreen prop from dialog title ([#2990](https://github.com/lumada-design/hv-uikit-react/issues/2990)) ([10e13bc](https://github.com/lumada-design/hv-uikit-react/commit/10e13bcff8305356347a8232908afbe0c9f68792))
+
+### Features
+
+- **breadcrumb:** display other type of characters on breadcrumb label ([#2960](https://github.com/lumada-design/hv-uikit-react/issues/2960)) ([#2986](https://github.com/lumada-design/hv-uikit-react/issues/2986)) ([9858bc9](https://github.com/lumada-design/hv-uikit-react/commit/9858bc97aa90f9485e357cfd24b66af49871e54b))
+- **dropdown:** fix max height ([#2978](https://github.com/lumada-design/hv-uikit-react/issues/2978)) ([#2985](https://github.com/lumada-design/hv-uikit-react/issues/2985)) ([34410c9](https://github.com/lumada-design/hv-uikit-react/commit/34410c936a96de50a671b6d5e5eea05b99f129f6))
+
 ## [4.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.1.0...@hitachivantara/uikit-react-core@4.1.1) (2022-11-04)
 
 ### Bug Fixes
