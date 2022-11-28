@@ -4,7 +4,7 @@ import { HvTypography } from "..";
 import { EmptyState, EmptyStateProps } from "./EmptyState";
 
 const meta: Meta<typeof EmptyState> = {
-  title: "Theme/EmptyState",
+  title: "Feedback/EmptyState",
   component: EmptyState,
 };
 export default meta;
