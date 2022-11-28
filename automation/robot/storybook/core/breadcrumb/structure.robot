@@ -21,4 +21,4 @@ show all links levels when breadcrumb is rendered
 ${breadcrumb}     css:[id^=breadcrumb]
 ${dropDown}       breadcrumb3-submenu-list
 ${label_text}     Label 2\nLabel 3\nLabel 4\nLabel 5\nLabel 6\nLabel 7
-${label_text2}    Sites\nDesignSystem\nPattern Library\nHome.Aspx
+${label_text2}    Sites\nDesignSystem\nPattern Library\nHome.aspx

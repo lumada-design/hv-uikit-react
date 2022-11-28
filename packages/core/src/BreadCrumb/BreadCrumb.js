@@ -8,6 +8,9 @@ import { HvLink, HvTypography, HvOverflowTooltip } from "..";
 import pathWithSubMenu from "./utils";
 import styles from "./styles";
 
+const capitalize = ([first, ...rest], lowerRest = false) =>
+  first.toUpperCase() + (lowerRest ? rest.join("").toLowerCase() : rest.join(""));
+
 const Page = ({ Component, onClick, elem, classes }) => (
   <HvLink
     route={elem.path}
@@ -105,12 +108,8 @@ const BreadCrumb = (props) => {
             <PathElement classes={classes} key={key} last={isLast}>
               {(React.isValidElement(elem) && elem) ||
                 (isLast && (
-                  <HvTypography
-                    noWrap
-                    className={clsx(classes.currentPage, classes.label)}
-                    variant="normalText"
-                  >
-                    {elem.label}
+                  <HvTypography noWrap className={clsx(classes.currentPage)} variant="normalText">
+                    {capitalize(elem.label)}
                   </HvTypography>
                 )) || (
                   <Page

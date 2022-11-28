@@ -1497,12 +1497,12 @@ exports[`Breadcrumb should render correctly 1`] = `
             className="HvBreadCrumb-centerContainer"
           >
             <WithStyles(ForwardRef)
-              className="HvBreadCrumb-currentPage HvBreadCrumb-label"
+              className="HvBreadCrumb-currentPage"
               noWrap={true}
               variant="normalText"
             >
               <ForwardRef
-                className="HvBreadCrumb-currentPage HvBreadCrumb-label"
+                className="HvBreadCrumb-currentPage"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -1533,7 +1533,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="HvBreadCrumb-currentPage HvBreadCrumb-label HvTypography-root HvTypography-normalText HvTypography-noWrap"
+                  className="HvBreadCrumb-currentPage HvTypography-root HvTypography-normalText HvTypography-noWrap"
                 >
                   Label 9
                 </p>
