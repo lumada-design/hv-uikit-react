@@ -5,6 +5,13 @@ const componentsSpec = {
   dropdown: {
     borderRadius: "string",
   },
+  button: {
+    borderRadius: "string",
+    marginIconRight: "string",
+    marginIconLeft: "string",
+    semanticColor: "string",
+    semanticColorDisabled: "string",
+  },
   header: {
     color: "string",
     height: "string",

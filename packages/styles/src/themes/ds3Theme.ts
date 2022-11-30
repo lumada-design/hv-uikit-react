@@ -11,6 +11,13 @@ const ds3Theme = makeTheme((theme) => ({
     dropdown: {
       borderRadius: "none",
     },
+    button: {
+      borderRadius: theme.radii.base,
+      marginIconRight: "0px",
+      marginIconLeft: "-8px",
+      semanticColor: "rgba(251, 252, 252, 0.3)",
+      semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
+    },
     header: {
       color: theme.colors.sema4,
       height: "44px",

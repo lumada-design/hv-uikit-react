@@ -23,6 +23,13 @@ const ds5Theme = makeTheme((theme) => ({
     dropdown: {
       borderRadius: theme.radii.sm,
     },
+    button: {
+      borderRadius: theme.radii.base,
+      marginIconRight: "0px",
+      marginIconLeft: "-8px",
+      semanticColor: theme.colors.base2,
+      semanticColorDisabled: theme.colors.base2,
+    },
     header: {
       color: theme.colors.acce1,
       height: "64px",
