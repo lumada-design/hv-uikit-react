@@ -8,10 +8,10 @@ import {
 export const ThemeSwitcher = () => {
   const {
     selectedTheme,
-    selectedColorMode,
-    themeColorModes,
-    changeTheme,
-    changeColorMode,
+    selectedMode,
+    colorModes,
+    onChangeTheme,
+    onChangeColorMode,
   } = useTheme();
 
   const themesList = Object.keys(themes);
@@ -25,16 +25,16 @@ export const ThemeSwitcher = () => {
           value: name,
           label: name,
         }))}
-        onChange={changeTheme}
+        onChange={onChangeTheme}
       />
       <HvDropdown
         css={{ width: 150 }}
-        value={selectedColorMode}
-        options={themeColorModes.map((name) => ({
+        value={selectedMode}
+        options={colorModes.map((name) => ({
           value: name,
           label: name,
         }))}
-        onChange={changeColorMode}
+        onChange={onChangeColorMode}
       />
     </HvBox>
   );

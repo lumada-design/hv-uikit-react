@@ -8,7 +8,9 @@ interface ProviderProps {
 }
 
 const Provider = ({ enableCssBaseline = true, children }: ProviderProps) => {
-  const { themesVars } = useTheme();
+  const { themesVars, setThemeAttrs } = useTheme();
+
+  setThemeAttrs();
 
   return (
     <>
