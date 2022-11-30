@@ -27,7 +27,7 @@
     "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf dist tsconfig.tsbuildinfo"
+    "clean": "npx rimraf ./{dist,*.tsbuildinfo}"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",

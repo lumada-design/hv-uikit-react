@@ -3,20 +3,18 @@ const tsconfigPaths = require("vite-tsconfig-paths");
 module.exports = {
   stories: ["../packages/**/*.stories.@(ts|tsx|mdx)"],
   addons: [
-    "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
     "../tools/addon-theme-switcher/preset.js",
   ],
-  docs: {
-    docsPage: "automatic",
-    defaultName: "Docs",
+  framework: "@storybook/react",
+  core: {
+    builder: "@storybook/builder-vite",
   },
-  framework: {
-    name: "@storybook/react-vite",
+  features: {
+    storyStoreV7: true,
   },
   async viteFinal(config) {
-    config.plugins.push(tsconfigPaths.default());
+    config.plugins.push(tsconfigPaths.default({ loose: true }));
 
     return config;
   },

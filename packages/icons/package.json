@@ -28,7 +28,7 @@
     "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
-    "clean": "npx rimraf dist bin tsconfig.tsbuildinfo",
+    "clean": "npx rimraf ./{dist,bin/*.tsbuildinfo}",
     "prepare": "pnpm convert"
   },
   "peerDependencies": {
