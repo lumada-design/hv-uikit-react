@@ -77,6 +77,7 @@ const HvDropdown = (props) => {
     variableWidth = false,
     popperProps = {},
     height,
+    maxHeight,
     virtualized = false,
     baseDropdownProps = {},
     listProps = {},
@@ -327,6 +328,7 @@ const HvDropdown = (props) => {
           singleSelectionToggle={singleSelectionToggle}
           aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
           height={height}
+          maxHeight={maxHeight}
           virtualized={virtualized}
           {...listProps}
         />
@@ -609,6 +611,10 @@ HvDropdown.propTypes = {
    * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
    */
   height: PropTypes.number,
+  /**
+   * Experimental. Max height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class.
+   */
+  maxHeight: PropTypes.number,
   /**
    * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
    */
