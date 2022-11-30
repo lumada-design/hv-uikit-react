@@ -60,10 +60,9 @@ export const parseTheme = (
   const names = Object.keys(themes);
   const selected = theme || names[0];
   const colorModes = Object.keys(themes[selected].colors.modes);
-  const selectedColorMode =
-    (colorMode && colorModes[colorMode]) || colorModes[0];
+  const selectedMode = (colorMode && colorModes[colorMode]) || colorModes[0];
 
-  return { selected, selectedColorMode, colorModes };
+  return { selected, selectedMode, colorModes };
 };
 
 export const getThemesList = (themes: object) => {
