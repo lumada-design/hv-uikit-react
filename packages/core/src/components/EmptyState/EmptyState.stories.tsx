@@ -9,7 +9,7 @@ const meta: Meta<typeof EmptyState> = {
 };
 export default meta;
 
-export const AMain: StoryObj<EmptyStateProps> = {
+export const Main: StoryObj<EmptyStateProps> = {
   args: {
     title: "No data routes",
     message: "After you start adding Data Routes, they will appear here.",

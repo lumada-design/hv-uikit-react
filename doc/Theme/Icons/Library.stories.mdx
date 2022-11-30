@@ -1,0 +1,62 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+import IconLibrary from "./Library";
+import {
+  ActualSize,
+  FemaleRunning,
+  icons as iconComponentList,
+  pictograms as iconPictogramComponentList,
+} from "@hitachivantara/uikit-icons";
+
+<Meta title="Theme/Icons/Library" parameters={{}} />
+
+# Icon library
+
+You can import our React icons from the icon library as follows (example for the `ActualSize` icon):
+
+```js
+import { ActualSize } from "@hitachivantara/uikit-icons";
+```
+
+And to use them:
+
+```jsx
+<ActualSize />
+```
+
+This will be the result:
+
+<Preview>
+  <ActualSize />
+</Preview>
+
+<Preview>
+  <Story name="Icons">
+    <IconLibrary icons={iconComponentList} />
+  </Story>
+</Preview>
+
+# Pictograms library
+
+You can import our React pictograms from the icon library as follows (example for the `FemaleRunning` icon):
+
+```js
+import { FemaleRunning } from "@hitachivantara/uikit-icons";
+```
+
+And to use them:
+
+```jsx
+<FemaleRunning />
+```
+
+This will be the result:
+
+<Preview>
+  <FemaleRunning />
+</Preview>
+
+<Preview>
+  <Story name="Pictograms">
+    <IconLibrary icons={iconPictogramComponentList} widerSpacing />
+  </Story>
+</Preview>

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { addons } from "@storybook/addons";
 import { HvProvider } from "@hitachivantara/uikit-core";
+import { addons } from "@storybook/addons";
+import { useEffect, useState } from "react";
 
 export const withThemeSwitcher = (Story) => {
   const [theme, setTheme] = useState();

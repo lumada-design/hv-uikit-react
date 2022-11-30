@@ -1,9 +1,12 @@
+import DocsContainer from "./blocks/DocsContainer";
+import DocsPage from "./blocks/DocsPage";
 import { withThemeSwitcher } from "./decorators";
 
 export const decorators = [withThemeSwitcher];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  docs: { page: DocsPage, container: DocsContainer },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -14,6 +17,7 @@ export const parameters = {
     storySort: {
       order: [
         "Theme",
+        ["Typography", "Colors", "Icons"],
         "Layout",
         "Display",
         "Feedback",
