@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.2.0...@hitachivantara/uikit-react-core@4.3.0) (2022-12-01)
+
+### Features
+
+- **dropdown:** fix max height ([#2978](https://github.com/lumada-design/hv-uikit-react/issues/2978)) ([#2985](https://github.com/lumada-design/hv-uikit-react/issues/2985)) ([#2993](https://github.com/lumada-design/hv-uikit-react/issues/2993)) ([83f741c](https://github.com/lumada-design/hv-uikit-react/commit/83f741c5366755e9b8bab2e04dfbdbf21a584fa3))
+
 # 4.2.0 (2022-11-28)
 
 ### Bug Fixes
