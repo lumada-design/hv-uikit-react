@@ -2,24 +2,25 @@ import { useContext } from "react";
 import { ThemeContext, ThemeContextProvider } from "./Context";
 
 import { css, Global } from "@emotion/react";
-import { CssBaseline, theme } from "@hitachivantara/uikit-styles";
+import { CssBaseline } from "@hitachivantara/uikit-styles";
 import { useTheme } from "../hooks";
 
 interface ProviderProps {
   children?: React.ReactNode;
   enableCssBaseline?: boolean;
+  rootElementId?: string;
 }
 
 const InternalProvider = ({
   enableCssBaseline = true,
   children,
+  rootElementId,
 }: ProviderProps) => {
   const { themesVars, setThemeAttrs } = useTheme();
 
-  const { theme: cTheme, mode } = useContext(ThemeContext);
-  console.log("Provider: ", cTheme, mode);
+  const { theme: contextTheme, mode: contextMode } = useContext(ThemeContext);
 
-  setThemeAttrs(cTheme, mode);
+  setThemeAttrs(contextTheme, contextMode);
 
   return (
     <>
@@ -28,22 +29,28 @@ const InternalProvider = ({
           ${enableCssBaseline && CssBaseline}
           ${themesVars}
       body {
-            background: ${theme.colors.atmo2};
             transition: background 0.5s ease-out;
           }
         `}
       />
 
-      {children}
+      <div id={rootElementId}>{children}</div>
     </>
   );
 };
 
-const Provider = ({ enableCssBaseline = true, children }: ProviderProps) => {
+const Provider = ({
+  enableCssBaseline = true,
+  children,
+  rootElementId = "uikit-root",
+}: ProviderProps) => {
   return (
     <>
       <ThemeContextProvider>
-        <InternalProvider enableCssBaseline={enableCssBaseline}>
+        <InternalProvider
+          enableCssBaseline={enableCssBaseline}
+          rootElementId={rootElementId}
+        >
           {children}
         </InternalProvider>
       </ThemeContextProvider>

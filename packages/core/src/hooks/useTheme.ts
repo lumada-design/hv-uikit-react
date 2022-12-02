@@ -12,12 +12,12 @@ const themesModes = getThemesModes(themes);
 
 let theme = parseTheme(themes);
 
-export const useTheme = () => {
+export const useTheme = (rootElementId = "uikit-root") => {
   const {
     theme: contextTheme,
     mode: contextMode,
-    setTheme: setSelThemeCtx,
-    setMode: setSelModeCtx,
+    setTheme: setContextTheme,
+    setMode: setContextMode,
   } = useContext(ThemeContext);
 
   const [colorModes, setColorModes] = useState(theme.colorModes);
@@ -26,9 +26,18 @@ export const useTheme = () => {
     dataTheme = contextTheme,
     dataColorMode = contextMode
   ) => {
-    console.log("SETTING ATTRS WITH ", dataTheme, dataColorMode);
-    document.body.setAttribute(`data-theme`, dataTheme);
-    document.body.setAttribute(`data-color-mode`, dataColorMode);
+    document
+      .getElementById(rootElementId)
+      ?.setAttribute(`data-theme`, dataTheme);
+    document
+      .getElementById(rootElementId)
+      ?.setAttribute(`data-color-mode`, dataColorMode);
+
+    // We need the body to have the background color based on the theme
+    document.body.style.backgroundColor =
+      themes[contextTheme]?.colors.modes[contextMode]?.atmo2;
+
+    console.log(contextMode);
   };
 
   useEffect(() => {
@@ -36,23 +45,23 @@ export const useTheme = () => {
 
     setColorModes(theme.colorModes);
 
-    setSelThemeCtx(contextTheme);
-    setSelModeCtx(theme.selectedMode);
+    setContextTheme(contextTheme);
+    setContextMode(theme.selectedMode);
 
-    setThemeAttrs(contextTheme, theme.selectedMode);
+    setThemeAttrs(contextTheme, contextMode);
   }, [contextTheme]);
 
   useEffect(() => {
-    setSelModeCtx(contextMode);
+    setContextMode(contextMode);
     setThemeAttrs(contextTheme, contextMode);
   }, [contextMode]);
 
   const onChangeTheme = (nextTheme: string) => {
-    setSelThemeCtx(nextTheme);
+    setContextTheme(nextTheme);
   };
 
   const onChangeColorMode = (nextColorMode: string) => {
-    setSelModeCtx(nextColorMode);
+    setContextMode(nextColorMode);
   };
 
   return {

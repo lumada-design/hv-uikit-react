@@ -91,7 +91,7 @@ export const getThemesList = (themes: object) => {
   return list;
 };
 
-export const getThemesVars = (themes, elem = "body") => {
+export const getThemesVars = (themes, elem = "div") => {
   const vars = {};
 
   Object.keys(themes).forEach((themeName) => {
