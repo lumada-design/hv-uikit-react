@@ -1,6 +1,6 @@
 import { BarChart, Ghost, Info } from "@hitachivantara/uikit-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography } from "..";
+import { HvLink, HvTypography } from "..";
 import { EmptyState, EmptyStateProps } from "./EmptyState";
 
 const meta: Meta<typeof EmptyState> = {
@@ -37,7 +37,8 @@ export const WithAction: StoryObj<EmptyStateProps> = {
   },
   render: ({ title, message, icon }) => {
     const CustomAction = (
-      <HvTypography variant="label">Create a new data route</HvTypography>
+      // <HvTypography variant="label">Create a new data route</HvTypography>
+      <HvLink route="/">Create a new data route</HvLink>
     );
     return (
       <EmptyState
