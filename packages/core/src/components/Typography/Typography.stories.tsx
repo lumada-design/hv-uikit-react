@@ -6,6 +6,7 @@ export default { title: "Theme/Typography", component: Typography };
 export const Main: StoryObj<TypographyProps> = {
   args: {
     variant: "title1",
+    link: false,
     children: "Welcome to NEXT Design System!",
   },
 };

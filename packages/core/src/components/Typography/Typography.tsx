@@ -28,6 +28,7 @@ export interface TypographyProps extends BaseProps {
   as?: keyof typeof TypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: TypographyVariants;
+  link?: boolean;
   className?: string;
   children: React.ReactNode;
 }
@@ -39,6 +40,7 @@ export const Typography = ({
   children,
   as = "body1",
   variant = "body",
+  link = false,
   className,
   ...others
 }: TypographyProps) => {
@@ -49,6 +51,7 @@ export const Typography = ({
       as={Component}
       className={className}
       variant={variant}
+      link={link}
       {...others}
     >
       {children}
