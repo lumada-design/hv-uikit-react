@@ -6,13 +6,13 @@ import { Typography } from "..";
 const interval = 0.11;
 
 const bars = {
-  "&:nth-child(1)": {
+  "&:nth-of-type(1)": {
     animationDelay: "0",
   },
-  "&:nth-child(2)": {
+  "&:nth-of-type(2)": {
     animationDelay: `${interval * 2}s`,
   },
-  "&:nth-child(3)": {
+  "&:nth-of-type(3)": {
     animationDelay: `${interval * 4}s`,
   },
 };
