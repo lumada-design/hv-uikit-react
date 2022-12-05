@@ -66,14 +66,14 @@ describe("Header", () => {
         <Header>
           <Actions aria-label="My-aria-label">
             <Button
-              onClick={() => console.log("badge")}
+              onClick={() => {}}
               aria-label="Open Notifications panel"
               variant="ghost"
             >
               Badge
             </Button>
             <Button
-              onClick={() => console.log("user")}
+              onClick={() => {}}
               aria-label="Open User panel"
               variant="ghost"
             >

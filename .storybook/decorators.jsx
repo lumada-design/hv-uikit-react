@@ -4,6 +4,7 @@ import { HvProvider } from "@hitachivantara/uikit-core";
 
 export const withThemeSwitcher = (Story) => {
   const [theme, setTheme] = useState();
+  const selected = theme?.name.split("-");
 
   useEffect(() => {
     const channel = addons.getChannel();
@@ -15,7 +16,7 @@ export const withThemeSwitcher = (Story) => {
   });
 
   return (
-    <HvProvider>
+    <HvProvider theme={selected?.[0]} colorMode={selected?.[1]}>
       <Story />
     </HvProvider>
   );

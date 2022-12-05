@@ -1,30 +1,39 @@
 import { css, Global } from "@emotion/react";
-import { CssBaseline, theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "../hooks";
+import {
+  CssBaseline,
+  themes,
+  getThemesVars,
+} from "@hitachivantara/uikit-styles";
+
+import ThemeProvider from "../providers/ThemeProvider";
+import { setElementAttrs } from "../utils/themeUtils";
 
 interface ProviderProps {
   children?: React.ReactNode;
   enableCssBaseline?: boolean;
+  rootElementId?: string;
+  theme?: string;
+  colorMode?: string;
 }
 
-const Provider = ({ enableCssBaseline = true, children }: ProviderProps) => {
-  const { themesVars, setThemeAttrs } = useTheme();
-
-  setThemeAttrs();
+const Provider = ({
+  children,
+  enableCssBaseline = true,
+  rootElementId,
+  theme,
+  colorMode,
+}: ProviderProps) => {
+  setElementAttrs(rootElementId, theme, colorMode);
 
   return (
     <>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}
-          ${themesVars}
-          body {
-            background: ${theme.colors.atmo2};
-            transition: background 0.5s ease-out;
-          }
+          ${getThemesVars(themes)}
         `}
       />
-      {children}
+      <ThemeProvider rootElementId={rootElementId}>{children}</ThemeProvider>
     </>
   );
 };

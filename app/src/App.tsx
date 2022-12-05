@@ -1,14 +1,6 @@
-import {
-  HvBox,
-  HvEmptyState,
-  HvProvider,
-  HvTypography,
-  theme,
-  useWidth,
-} from "@hitachivantara/uikit-core";
-import { Info } from "@hitachivantara/uikit-icons";
+import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-core";
 import { CSSProperties } from "react";
-import { Buttons, Icons, Typography } from "./components";
+import { Buttons, Icons, Typography, EmptyState } from "./components";
 import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
@@ -17,22 +9,16 @@ const styles = {
   gap: theme.spacing(5),
   maxWidth: "960px",
   margin: `${theme.spacing(5)} auto`,
-  marginTop: `calc(${theme.header.height} + 120px)`,
+  paddingTop: `calc(${theme.header.height} + 50px)`,
 } as CSSProperties;
 
 const App = () => {
-  const width = useWidth();
   return (
-    <HvProvider>
+    <HvProvider rootElementId="root">
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
-        <HvTypography variant="body">Current Width: {width}</HvTypography>
-        <HvEmptyState
-          icon={<Info />}
-          message="After you start adding Data Routes, they will appear here."
-          title="No data routes"
-        />
+        <EmptyState />
         <Typography />
         <Buttons />
         <Icons />

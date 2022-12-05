@@ -7,3 +7,18 @@ export const setLocalTheme = (value: string): void => {
 export const getLocalTheme = (): string | null => {
   return localStorage?.getItem(STORAGE_KEY);
 };
+
+export const getThemesModes = (themes) => {
+  const modes: string[] = [];
+
+  Object.keys(themes).forEach((themeName) => {
+    const theme = themes[themeName];
+    const colorModes = Object.keys(theme.colors.modes);
+
+    colorModes.forEach((colorMode) => {
+      modes.push(`${themeName}-${colorMode}`);
+    });
+  });
+
+  return modes;
+};

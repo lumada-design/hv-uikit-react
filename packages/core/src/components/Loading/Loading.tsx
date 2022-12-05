@@ -35,7 +35,6 @@ export const Loading = (props: LoadingProps) => {
   const { color, hidden, small, label, classes, className, ...others } = props;
 
   const getColor = (colorName) => {
-    if (color) console.log(color, colorName, theme.colors[color]);
     return color ? theme.colors[color] || color : theme.colors[colorName];
   };
 

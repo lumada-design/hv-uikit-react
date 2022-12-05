@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "pnpm clean && tsc -b",
-    "clean": "npx rimraf dist",
+    "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
     "prepare": "pnpm build"
   },
   "peerDependencies": {
@@ -38,7 +38,8 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-core": "workspace:*"
+    "@hitachivantara/uikit-core": "workspace:*",
+    "@hitachivantara/uikit-styles": "workspace:*"
   },
   "engines": {
     "node": ">=16.6.0"
