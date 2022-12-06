@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { WithTooltip, TooltipLinkList } from "@storybook/components";
-import { useTheme } from "@hitachivantara/uikit-core";
+import { themes as hvThemes } from "@hitachivantara/uikit-styles";
 
 import useThemeSwitcher from "../hooks/useThemeSwitcher";
 import ThemeSwitcher from "../components/ThemeSwitcher";
 import ColorIcon from "../icons/ColorIcon";
+import { getThemesModes } from "../utils";
 
 const toPascalCase = (str: string) =>
   str.replace(
@@ -14,11 +15,12 @@ const toPascalCase = (str: string) =>
 
 const Tool = () => {
   const [themesList, setThemesList] = useState<AddonTheme[]>([]);
-  const { themesModes } = useTheme();
   const { setTheme } = useThemeSwitcher();
 
+  const modes = getThemesModes(hvThemes);
+
   useEffect(() => {
-    const themes = themesModes.map((theme) => {
+    const themes = modes.map((theme) => {
       const isDark = theme.includes("dark") || theme.includes("wicked");
 
       return {

@@ -1,4 +1,6 @@
 export * from "./KeyboardUtils";
+export * from "./themeUtils";
+
 // export { default as isBrowser } from "./browser";
 // export * from "./setId";
 // export * from "./focusableElementFinder";
@@ -11,7 +13,6 @@ export * from "./KeyboardUtils";
 // export { default as useSavedState } from "./useSavedState";
 // export { default as useLabels } from "./useLabels";
 // export { default as useUpdated } from "./useUpdated";
-export { default as useWidth } from "./useWidth";
 // export { default as useDeprecated } from "./useDeprecated";
 // export { default as multiSelectionEventHandler } from "./multiSelectionEventHandler";
 // export { default as useForkRef } from "./useForkRef";

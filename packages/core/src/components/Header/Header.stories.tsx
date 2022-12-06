@@ -81,7 +81,6 @@ export const Main: StoryObj<HeaderProps> = {
   render: ({ position }) => {
     const [selected, setSelected] = useState<string>("2");
     const handleChange = (e, selectedItem) => {
-      console.log(selectedItem);
       setSelected(selectedItem.id);
     };
 
@@ -96,12 +95,12 @@ export const Main: StoryObj<HeaderProps> = {
           />
           <HvHeaderActions aria-label="My-aria-label">
             <Button
-              onClick={() => console.log("badge")}
+              onClick={() => {}}
               aria-label="Open Notifications panel"
               variant="ghost"
             ></Button>
             <Button
-              onClick={() => console.log("user")}
+              onClick={() => {}}
               aria-label="Open User panel"
               variant="ghost"
             >

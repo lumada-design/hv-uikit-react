@@ -69,7 +69,6 @@ export const Header = () => {
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleChange = (e, selectedItem) => {
-    console.log(selectedItem);
     setSelected(selectedItem.id);
   };
 
@@ -79,7 +78,7 @@ export const Header = () => {
         <HvButton
           variant="ghost"
           style={{ width: 32, height: 32, border: "1px solid black" }}
-          onClick={() => console.log("menu")}
+          onClick={() => {}}
         >
           <Menu />
         </HvButton>
@@ -94,7 +93,7 @@ export const Header = () => {
       )}
       <HvHeaderActions aria-label="My-aria-label">
         <HvButton
-          onClick={() => console.log("badge")}
+          onClick={() => {}}
           aria-label="Open Notifications panel"
           variant="ghost"
         >
@@ -102,7 +101,7 @@ export const Header = () => {
         </HvButton>
         {isMdUp && (
           <HvButton
-            onClick={() => console.log("user")}
+            onClick={() => {}}
             aria-label="Open User panel"
             variant="ghost"
           >

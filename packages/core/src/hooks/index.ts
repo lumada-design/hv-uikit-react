@@ -1,2 +1,2 @@
 export * from "./useClickOutside";
-export * from "./useTheme";
+export * from "./useWidth";

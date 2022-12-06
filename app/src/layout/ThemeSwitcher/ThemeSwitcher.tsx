@@ -1,18 +1,14 @@
+import { useContext } from "react";
 import {
   HvBox,
   HvDropdown,
-  useTheme,
   themes,
+  ThemeContext,
 } from "@hitachivantara/uikit-core";
 
 export const ThemeSwitcher = () => {
-  const {
-    selectedTheme,
-    selectedMode,
-    colorModes,
-    onChangeTheme,
-    onChangeColorMode,
-  } = useTheme();
+  const { selectedTheme, selectedMode, setTheme, setThemeMode, colorModes } =
+    useContext(ThemeContext);
 
   const themesList = Object.keys(themes);
 
@@ -25,7 +21,7 @@ export const ThemeSwitcher = () => {
           value: name,
           label: name,
         }))}
-        onChange={onChangeTheme}
+        onChange={setTheme}
       />
       <HvDropdown
         css={{ width: 150 }}
@@ -34,7 +30,7 @@ export const ThemeSwitcher = () => {
           value: name,
           label: name,
         }))}
-        onChange={onChangeColorMode}
+        onChange={setThemeMode}
       />
     </HvBox>
   );

@@ -23,9 +23,6 @@ const useThemeSwitcher = (): ThemeSwitcher => {
 
   useEffect(() => {
     const mode = theme ? theme.value : themeMode;
-    const iframe = document.getElementById(
-      "storybook-preview-iframe"
-    ) as HTMLIFrameElement;
 
     setThemeMode(mode);
     setLocalTheme(mode);
@@ -33,15 +30,6 @@ const useThemeSwitcher = (): ThemeSwitcher => {
 
     api.emit("THEME_SWITCH", theme);
     api.setOptions({ theme: sbThemes[mode as ThemeMode] });
-
-    const themeSelected = theme?.name.split("-");
-    if (themeSelected) {
-      const contentWindow = iframe.contentWindow?.document.getElementsByTagName(
-        "body"
-      )[0] as HTMLBodyElement;
-      contentWindow.setAttribute(`data-theme`, themeSelected[0]);
-      contentWindow.setAttribute(`data-color-mode`, themeSelected[1]);
-    }
   }, [theme]);
 
   const toggleTheme = () => {
