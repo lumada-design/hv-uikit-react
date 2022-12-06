@@ -15,5 +15,7 @@ export {
   Header as HvHeader,
   Navigation as HvHeaderNavigation,
 } from "./Header";
+export * from "./Link";
+export { Link as HvLink } from "./Link";
 export * from "./Typography";
 export { Typography as HvTypography } from "./Typography";
