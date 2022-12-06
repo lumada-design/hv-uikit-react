@@ -2,11 +2,23 @@ import styled from "@emotion/styled";
 import { theme, themeVariant } from "@hitachivantara/uikit-styles";
 import { TypographyVariants } from "./Typography";
 
-export const StyledTypography = styled.div<{ variant: TypographyVariants }>(
-  {
+export const StyledTypography = styled("div")(
+  ({
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    variant,
+    link = false,
+  }: {
+    variant: TypographyVariants;
+    link?: boolean;
+  }) => ({
     color: theme.colors.acce1,
-  },
+    ...(link && {
+      color: theme.colors.acce2,
+      textDecoration: "underline",
+    }),
+  }),
   themeVariant({
+    prop: "variant",
     variants: {
       display: {
         fontWeight: theme.fontWeights.semibold,
