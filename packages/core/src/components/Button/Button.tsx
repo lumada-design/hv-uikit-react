@@ -1,6 +1,10 @@
-import { CSSProperties } from "react";
-
-import { StyledButton } from "./Button.styles";
+import React, { CSSProperties, ReactElement } from "react";
+import {
+  StyledButton,
+  StyledChildren,
+  StyledContentDiv,
+  StyledIconSpan,
+} from "./Button.styles";
 
 export type ButtonVariant =
   | "primary"
@@ -8,14 +12,26 @@ export type ButtonVariant =
   | "primaryGhost"
   | "secondarySubtle"
   | "secondaryGhost"
+  | "semantic"
   // deprecated props
   | "secondary"
   | "ghost";
 
-export interface ButtonProps extends BaseProps<HTMLButtonElement> {
+export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
+
+export type ButtonRadius = "xs" | "sm" | "md" | "lg" | "xl" | "none" | "base";
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
   variant?: ButtonVariant;
   sx?: CSSProperties;
+  icon?: Boolean;
+  className?: string;
+  startIcon?: ReactElement;
+  size?: ButtonSize;
+  radius?: ButtonRadius;
+  overrideIconColors?: Boolean;
 }
 
 /**
@@ -45,18 +61,36 @@ const mapVariant = (variant: ButtonVariant): ButtonVariant => {
  * Button component is used to trigger an action or event.
  */
 export const Button = ({
+  id,
   children,
   variant = "primary",
   onClick,
+  disabled,
   className,
+  startIcon,
+  icon = false,
+  size = "md",
+  radius = "base",
+  overrideIconColors = true,
+  ...others
 }: ButtonProps) => {
   return (
     <StyledButton
+      id={id}
       className={className}
       variant={mapVariant(variant)}
+      iconOnly={icon}
       onClick={onClick}
+      disabled={disabled}
+      size={size}
+      radius={radius}
+      overrideIconColors={overrideIconColors}
+      {...others}
     >
-      {children}
+      <StyledContentDiv>
+        {startIcon && <StyledIconSpan>{startIcon}</StyledIconSpan>}
+        {children && <StyledChildren>{children}</StyledChildren>}
+      </StyledContentDiv>
     </StyledButton>
   );
 };

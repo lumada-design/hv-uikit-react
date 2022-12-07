@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`Button > sample snapshot testing > should match the snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="css-10e11nj-StyledButton egl9i9v0"
+    radius="base"
+  >
+    <div
+      class="css-1nxr552-StyledContentDiv egl9i9v3"
+    />
+  </button>
+</DocumentFragment>
+`;
