@@ -79,7 +79,7 @@ export interface HvAvatarProps
   /**
    * Attributes applied to the container element.
    */
-  containerProps: object;
+  containerProps?: object;
 }
 
 export default function HvAvatar(props: HvAvatarProps): JSX.Element | null;
