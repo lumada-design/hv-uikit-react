@@ -2,8 +2,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
 import { HvButton, HvTypography } from "..";
 import { Loading, LoadingProps } from "./Loading";
-{
-}
 
 const meta: Meta<typeof Loading> = {
   title: "Feedback/Loading",
@@ -11,7 +9,7 @@ const meta: Meta<typeof Loading> = {
 };
 export default meta;
 
-export const AMain: StoryObj<LoadingProps> = {
+export const Main: StoryObj<LoadingProps> = {
   args: {
     label: "Loading",
     hidden: false,

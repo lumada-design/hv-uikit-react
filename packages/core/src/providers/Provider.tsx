@@ -1,8 +1,8 @@
 import { css, Global } from "@emotion/react";
 import {
   CssBaseline,
-  themes,
   getThemesVars,
+  themes,
 } from "@hitachivantara/uikit-styles";
 
 import ThemeProvider from "../providers/ThemeProvider";

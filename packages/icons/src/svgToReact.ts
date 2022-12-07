@@ -2,23 +2,23 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // Vendor includes
 import fs from "fs"; // file system
+import { Parser } from "html-to-react";
+import path from "path"; // utilities for working with file and directory
+import ReactDOMServer from "react-dom/server";
 import recursive from "recursive-readdir";
 import yargs from "yargs"; // argument reader
-import path from "path"; // utilities for working with file and directory
-import { Parser } from "html-to-react";
-import ReactDOMServer from "react-dom/server";
 
 import jsdom from "jsdom-no-contextify";
 
 import { colors } from "@hitachivantara/uikit-styles";
 
 // Local includes
-import createComponentName from "./fileSystemUtils/createComponentName";
+import colorExtractor from "./colorUtils/colorExtractor";
+import fillColorReplacer from "./colorUtils/fillColorReplacer";
 import formatSVG from "./converterUtils/formatSVG";
 import generateComponent from "./converterUtils/generateComponent";
 import removeStyle from "./converterUtils/removeStyle";
-import colorExtractor from "./colorUtils/colorExtractor";
-import fillColorReplacer from "./colorUtils/fillColorReplacer";
+import createComponentName from "./fileSystemUtils/createComponentName";
 import sizeExtractor from "./sizeUtils/sizeExtractor";
 import sizeReplacer from "./sizeUtils/sizeReplacer";
 
@@ -96,13 +96,21 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     if (subFolder === ".") {
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./icons";\n`,
+        `\nexport * from "./icons";\nexport * as icons from "./icons";\n`,
+        () => {}
+      );
+      fs.appendFile(
+        path.resolve(componentOutputFolder, `index.ts`),
+        `\nexport { IconBase } from "./IconBase";\n`,
         () => {}
       );
     } else {
       fs.appendFile(
         path.resolve(componentOutputFolder, subFolder, "..", `index.ts`),
-        `\nexport * from "${subFolder}";\n`,
+        `\nexport * from "${subFolder}";\nexport * as ${subFolder.replace(
+          "./",
+          ""
+        )} from "${subFolder}"\n`,
         () => {}
       );
     }
