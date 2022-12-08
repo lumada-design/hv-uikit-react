@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.3.0...@hitachivantara/uikit-react-core@4.3.1) (2022-12-08)
+
+### Bug Fixes
+
+- **avatar:** make the prop containerProps not required #HVUIKIT-6488 ([a6fb7d1](https://github.com/lumada-design/hv-uikit-react/commit/a6fb7d1e959183c9fe73567ff0782309152a47e9)), closes [#HVUIKIT-6488](https://github.com/lumada-design/hv-uikit-react/issues/HVUIKIT-6488)
+
 # [4.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.2.0...@hitachivantara/uikit-react-core@4.3.0) (2022-12-01)
 
 ### Features
