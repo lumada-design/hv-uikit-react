@@ -1,5 +1,7 @@
 export * from "./ActionBar";
 export { ActionBar as HvActionBar } from "./ActionBar";
+export * from "./Badge";
+export { Badge as HvBadge } from "./Badge";
 export * from "./Box";
 export { Box as HvBox } from "./Box";
 export * from "./Button";
