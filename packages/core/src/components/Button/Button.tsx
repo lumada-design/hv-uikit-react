@@ -1,4 +1,5 @@
-import React, { CSSProperties, ReactElement, forwardRef } from "react";
+import clsx from "clsx";
+import React, { CSSProperties, forwardRef, ReactElement } from "react";
 import {
   StyledButton,
   StyledChildren,
@@ -32,6 +33,10 @@ export interface ButtonProps
   size?: ButtonSize;
   radius?: ButtonRadius;
   overrideIconColors?: Boolean;
+  selected?: Boolean;
+  classes?: {
+    focusVisible?: string;
+  };
 }
 
 /**
@@ -64,6 +69,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const {
       id,
+      classes,
       children,
       variant = "primary",
       onClick,
@@ -89,6 +95,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         size={size}
         radius={radius}
         overrideIconColors={overrideIconColors}
+        focusVisibleClassName={clsx("HvIsFocusVisible", classes?.focusVisible)}
         {...others}
       >
         <StyledContentDiv>
