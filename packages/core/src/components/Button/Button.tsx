@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from "react";
+import React, { CSSProperties, ReactElement, forwardRef } from "react";
 import {
   StyledButton,
   StyledChildren,
@@ -60,39 +60,44 @@ const mapVariant = (variant: ButtonVariant): ButtonVariant => {
 /**
  * Button component is used to trigger an action or event.
  */
-export const Button = ({
-  id,
-  children,
-  variant = "primary",
-  onClick,
-  disabled,
-  className,
-  startIcon,
-  icon = false,
-  size = "md",
-  radius = "base",
-  overrideIconColors = true,
-  ...others
-}: ButtonProps) => {
-  return (
-    <StyledButton
-      id={id}
-      className={className}
-      variant={mapVariant(variant)}
-      iconOnly={icon}
-      onClick={onClick}
-      disabled={disabled}
-      size={size}
-      radius={radius}
-      overrideIconColors={overrideIconColors}
-      {...others}
-    >
-      <StyledContentDiv>
-        {startIcon && <StyledIconSpan>{startIcon}</StyledIconSpan>}
-        {children && <StyledChildren>{children}</StyledChildren>}
-      </StyledContentDiv>
-    </StyledButton>
-  );
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    const {
+      id,
+      children,
+      variant = "primary",
+      onClick,
+      disabled,
+      className,
+      startIcon,
+      icon = false,
+      size = "md",
+      radius = "base",
+      overrideIconColors = true,
+      ...others
+    }: ButtonProps = props;
+
+    return (
+      <StyledButton
+        id={id}
+        className={className}
+        ref={ref}
+        variant={mapVariant(variant)}
+        iconOnly={icon}
+        onClick={onClick}
+        disabled={disabled}
+        size={size}
+        radius={radius}
+        overrideIconColors={overrideIconColors}
+        {...others}
+      >
+        <StyledContentDiv>
+          {startIcon && <StyledIconSpan>{startIcon}</StyledIconSpan>}
+          {children && <StyledChildren>{children}</StyledChildren>}
+        </StyledContentDiv>
+      </StyledButton>
+    );
+  }
+);
 
 Button.displayName = "Button";
