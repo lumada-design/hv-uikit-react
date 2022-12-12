@@ -6,7 +6,11 @@ export const decorators = [withThemeSwitcher];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  docs: { page: DocsPage, container: DocsContainer },
+  docs: {
+    page: DocsPage,
+    container: DocsContainer,
+    source: { type: "dynamic" },
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
