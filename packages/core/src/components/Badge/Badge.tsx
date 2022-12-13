@@ -1,5 +1,5 @@
-import { StyledRoot, StyledContainer, StyledBadge } from "./Badge.styles";
-import { Typography } from "..";
+import { Typography, TypographyVariants } from "..";
+import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 
 export interface BadgeProps extends BaseProps {
   /**
@@ -27,7 +27,7 @@ export interface BadgeProps extends BaseProps {
   /** Text which the notification will be attached. */
   text?: string;
   /** Text variant. */
-  textVariant?: string;
+  textVariant?: TypographyVariants;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: {
     root?: string;
@@ -49,7 +49,7 @@ export const Badge = (props: BadgeProps) => {
     label = null,
     icon = null,
     text = null,
-    textVariant = null,
+    textVariant = undefined,
     ...others
   } = props;
 
@@ -63,23 +63,25 @@ export const Badge = (props: BadgeProps) => {
   const Component =
     icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
+  console.log(renderedCountOrLabel);
   return (
     <StyledRoot
-      aria-label={renderedCountOrLabel}
+      // @ts-ignore
+      aria-label={renderedCountOrLabel?.toString()}
       className={classes?.root}
       {...others}
     >
       {Component}
       <StyledContainer
         component={Component ? true : false}
-        className={Component ? classes?.badgeContainer : null}
+        className={Component ? classes?.badgeContainer : ""}
       >
         <StyledBadge
           className={classes?.badgePosition}
-          badge={count > 0 || renderedCountOrLabel}
-          showCount={!label && renderedCountOrLabel}
-          showLabel={label}
-          icon={icon}
+          badge={!!(count > 0 || renderedCountOrLabel)}
+          showCount={!!(!label && renderedCountOrLabel)}
+          showLabel={!!label}
+          badgeIcon={!!icon}
           badgeOneDigit={String(renderedCountOrLabel).length === 1}
         >
           {renderedCountOrLabel}

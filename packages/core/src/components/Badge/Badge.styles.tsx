@@ -9,16 +9,15 @@ interface StyledBadgeProps {
   badgeOneDigit?: boolean;
 }
 
-const labelBaseStyle = () => ({
+const labelBaseStyle = {
   fontSize: "12px",
   letterSpacing: "0.02em",
   lineHeight: "16px",
   fontWeight: 600,
-  fontFamily: theme.fontFamily,
+  fontFamily: theme.fontFamily.body,
   padding: "0 5px",
-  wordBreak: "keep-all",
   color: theme.colors.atmo1,
-});
+};
 
 export const StyledRoot = styled("div")({
   position: "relative",
@@ -50,11 +49,13 @@ export const StyledBadge = styled("div")(
       minWidth: "8px",
     }),
     ...(showCount && {
-      ...labelBaseStyle(),
+      ...labelBaseStyle,
+      wordBreak: "keep-all",
       maxWidth: 30,
     }),
     ...(showLabel && {
-      ...labelBaseStyle(),
+      ...labelBaseStyle,
+      wordBreak: "keep-all",
     }),
     ...(badgeIcon && {
       position: "relative",

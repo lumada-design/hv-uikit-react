@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "@hitachivantara/uikit-icons";
-import { Badge, BadgeProps } from "./Badge";
+import { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 import { Button } from "..";
+import { Badge, BadgeProps } from "./Badge";
 
 const container = {
   width: 400,
@@ -23,7 +23,7 @@ export const Main: StoryObj<BadgeProps> = {
     label: "",
     maxCount: 99,
     text: "",
-    textVariant: "",
+    textVariant: "body",
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -172,7 +172,7 @@ export const WithState: StoryObj<BadgeProps> = {
           showCount
           count={count}
           text="Events"
-          textVariant="sTitle"
+          textVariant="title4"
         />
       </>
     );
