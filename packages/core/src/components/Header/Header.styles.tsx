@@ -1,15 +1,8 @@
 import styled from "@emotion/styled";
-import { theme, themeVariant } from "@hitachivantara/uikit-styles";
+import { theme } from "@hitachivantara/uikit-styles";
 
-const fixedPosition = {
-  position: "fixed",
-  top: 0,
-  left: "auto",
-  right: 0,
-};
-
-export const StyledAppBar = styled("div")<{ position: string }>(
-  {
+export const StyledAppBar = styled("div")(
+  ({ position }: { position?: string }) => ({
     height: theme.header.height,
     backgroundColor: theme.colors.atmo1,
     display: "flex",
@@ -21,24 +14,17 @@ export const StyledAppBar = styled("div")<{ position: string }>(
     color: theme.colors.atmo1,
     boxShadow: theme.header.shadow,
     borderTop: `${theme.header.borderTopThickness} solid ${theme.header.borderTopColor}`,
-  },
-  themeVariant({
-    prop: "position",
-    variants: {
-      fixed: { ...fixedPosition },
-      relative: {
-        position: "relative",
-      },
-      absolute: {
-        position: "absolute",
-      },
-      static: {
-        position: "static",
-      },
-      sticky: {
-        position: "sticky",
-      },
-    },
+
+    ...(position === "fixed" && {
+      position: "fixed",
+      top: 0,
+      left: "auto",
+      right: 0,
+    }),
+    ...(position === "relative" && { position: "relative" }),
+    ...(position === "absolute" && { position: "absolute" }),
+    ...(position === "static" && { position: "static" }),
+    ...(position === "sticky" && { position: "sticky" }),
   })
 );
 

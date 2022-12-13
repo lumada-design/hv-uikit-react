@@ -1,15 +1,15 @@
 import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-core";
 import { CSSProperties } from "react";
-import { Buttons, Icons, Typography, EmptyState } from "./components";
+import { Buttons, EmptyState, Grid, Icons, Typography } from "./components";
 import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(5),
-  maxWidth: "960px",
+  maxWidth: "100%",
   margin: `${theme.spacing(5)} auto`,
-  paddingTop: `calc(${theme.header.height} + 50px)`,
+  padding: `calc(${theme.header.height} + 50px) 20px 20px 20px`,
 } as CSSProperties;
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <Grid />
         <EmptyState />
         <Typography />
         <Buttons />

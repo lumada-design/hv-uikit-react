@@ -6,8 +6,8 @@ import {
   HvHeaderNavigation,
 } from "@hitachivantara/uikit-core";
 import { Alert, Menu, User } from "@hitachivantara/uikit-icons";
-import { theme } from "@hitachivantara/uikit-styles";
 import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import HitachiLogo from "../../assets/HitachiLogo";
 
@@ -66,7 +66,8 @@ const navigationData = [
 
 export const Header = () => {
   const [selected, setSelected] = useState<string>("2");
-  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const muiTheme = useTheme();
+  const isMdUp = useMediaQuery(muiTheme.breakpoints.up("md"));
 
   const handleChange = (e, selectedItem) => {
     setSelected(selectedItem.id);
@@ -95,7 +96,7 @@ export const Header = () => {
         <HvButton
           onClick={() => {}}
           aria-label="Open Notifications panel"
-          variant="ghost"
+          variant="secondaryGhost"
         >
           <Alert />
         </HvButton>
@@ -103,7 +104,7 @@ export const Header = () => {
           <HvButton
             onClick={() => {}}
             aria-label="Open User panel"
-            variant="ghost"
+            variant="secondaryGhost"
           >
             <User />
           </HvButton>

@@ -19,6 +19,17 @@ const ds5Theme = makeTheme((theme) => ({
       },
     },
   },
+  breakpoints: {
+    unit: "px",
+    step: 5,
+    values: {
+      xs: 0,
+      sm: 250,
+      md: 500,
+      lg: 725,
+      xl: 1050,
+    },
+  },
   components: {
     dropdown: {
       borderRadius: theme.radii.sm,

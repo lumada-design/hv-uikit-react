@@ -12,6 +12,8 @@ export * from "./EmptyState";
 export { EmptyState as HvEmptyState } from "./EmptyState";
 export * from "./Footer";
 export { Footer as HvFooter } from "./Footer";
+export * from "./Grid";
+export { Grid as HvGrid } from "./Grid";
 export * from "./Header";
 export {
   Actions as HvHeaderActions,

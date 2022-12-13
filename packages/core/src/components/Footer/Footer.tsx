@@ -1,3 +1,4 @@
+import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import {
   StyledCopyright,
@@ -32,17 +33,34 @@ export const Footer = (props: FooterProps) => {
     className,
     ...others
   } = props;
+  const muiTheme = useTheme();
 
   return (
-    <StyledRoot className={clsx(className, classes?.root)} {...others}>
-      <StyledName variant="label" className={classes?.name}>
+    <StyledRoot
+      breakpoints={muiTheme.breakpoints}
+      className={clsx(className, classes?.root)}
+      {...others}
+    >
+      <StyledName
+        breakpoints={muiTheme.breakpoints}
+        variant="label"
+        className={classes?.name}
+      >
         {name}
       </StyledName>
-      <StyledRightContainer>
-        <StyledCopyright className={classes?.copyright}>
+      <StyledRightContainer breakpoints={muiTheme.breakpoints}>
+        <StyledCopyright
+          breakpoints={muiTheme.breakpoints}
+          className={classes?.copyright}
+        >
           {copyright}
         </StyledCopyright>
-        {links && <StyledSeparator className={classes?.separator} />}
+        {links && (
+          <StyledSeparator
+            breakpoints={muiTheme.breakpoints}
+            className={classes?.separator}
+          />
+        )}
         {links}
       </StyledRightContainer>
     </StyledRoot>

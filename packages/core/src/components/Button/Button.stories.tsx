@@ -1,15 +1,15 @@
+import {
+  Delete,
+  Favorite,
+  MoreOptionsVertical,
+  Pause,
+  Play,
+  Refresh,
+  Stop,
+} from "@hitachivantara/uikit-icons";
 import { StoryObj } from "@storybook/react";
 import { HvBox } from "../..";
 import { Button, ButtonProps } from "./Button";
-import {
-  Favorite,
-  Refresh,
-  Delete,
-  MoreOptionsVertical,
-  Play,
-  Pause,
-  Stop,
-} from "@hitachivantara/uikit-icons";
 
 export default { title: "Inputs/Button", component: Button };
 
