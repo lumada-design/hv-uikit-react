@@ -56,7 +56,7 @@ HvSnackbarContentWrapper.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["default", "success", "error"]).isRequired,
+  variant: PropTypes.oneOf(["default", "success", "warning", "error"]).isRequired,
   /**
    * Controls if the associated icon to the variant should be shown.
    */

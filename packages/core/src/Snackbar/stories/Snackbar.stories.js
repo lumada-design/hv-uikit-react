@@ -34,6 +34,7 @@ export const Main = () => (
   <>
     <HvSnackbar open variant="default" style={styles} label="This is a default snackbar." />
     <HvSnackbar open variant="success" style={styles} showIcon label="This is a success message." />
+    <HvSnackbar open variant="warning" style={styles} showIcon label="This is a warning message." />
     <HvSnackbar open variant="error" style={styles} showIcon label="This is an error message." />
     <HvSnackbar
       open

@@ -14,6 +14,9 @@ const styles = (theme) => ({
   default: {
     backgroundColor: theme.hv.palette.semantic.sema7,
   },
+  warning: {
+    backgroundColor: theme.hv.palette.semantic.sema20,
+  },
   message: {
     padding: 0,
     width: "100%",

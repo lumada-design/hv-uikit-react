@@ -78,6 +78,18 @@ describe("Snackbar ", () => {
     expect(component.length).toBe(1);
   });
 
+  it("should render the warning icon", () => {
+    const component = mount(
+      <HvProvider cssBaseline="none">
+        <HvSnackbar open variant="warning" showIcon />
+      </HvProvider>
+    )
+      .find(HvSnackbarContent)
+      .find("svg");
+
+    expect(component.length).toBe(1);
+  });
+
   it("should render the error icon", () => {
     const component = mount(
       <HvProvider cssBaseline="none">
