@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`ToggleButton > should render correctly 1`] = `
+<div>
+  <button
+    aria-pressed="false"
+    class="css-3lr2sb-StyledButton egl9i9v0"
+    radius="base"
+  >
+    <div
+      class="css-1nxr552-StyledContentDiv egl9i9v3"
+    />
+  </button>
+</div>
+`;
