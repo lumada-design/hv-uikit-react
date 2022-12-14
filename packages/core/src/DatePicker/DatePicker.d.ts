@@ -1,5 +1,6 @@
 import { StandardProps } from "@mui/material";
 import { HvFormElementProps } from "..";
+import { HvCalendarProps } from "../Calendar/Calendar";
 
 export type HvDatePickerClassKey =
   | "root"
@@ -105,6 +106,10 @@ export interface HvDatePickerProps
    * If `true` the DatePicker will be in read only mode, unable to be interacted.
    */
   readOnly?: boolean;
+  /**
+   * Additional props passed to the HvCalendar component.
+   */
+  calendarProps?: Partial<HvCalendarProps>;
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

@@ -45,6 +45,7 @@ const HvDatePicker = (props) => {
 
     required = false,
     disabled = false,
+    readOnly,
 
     label,
     "aria-label": ariaLabel,
@@ -76,7 +77,7 @@ const HvDatePicker = (props) => {
     disablePortal = true,
     escapeWithReference = true,
     dropdownProps,
-    readOnly,
+    calendarProps,
     ...others
   } = props;
 
@@ -389,6 +390,7 @@ const HvDatePicker = (props) => {
           }}
           locale={locale}
           {...visibleDate}
+          {...calendarProps}
         />
         {(rangeMode || showActions) && renderActions()}
       </HvBaseDropdown>
@@ -621,6 +623,10 @@ HvDatePicker.propTypes = {
    * If `true` the DatePicker will be in read only mode, unable to be interacted.
    */
   readOnly: PropTypes.bool,
+  /**
+   * Additional props passed to the HvCalendar component.
+   */
+  calendarProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(HvDatePicker);
