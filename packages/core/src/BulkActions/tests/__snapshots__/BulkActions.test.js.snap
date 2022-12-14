@@ -22811,7 +22811,6 @@ exports[`BulkActions with custom label should render correctly 1`] = `
               </React.Fragment>
             </WithStyles(ForwardRef)>
           }
-          onChange={[Function]}
           semantic={false}
         >
           <HvCheckBox
@@ -22843,7 +22842,6 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                 </React.Fragment>
               </WithStyles(ForwardRef)>
             }
-            onChange={[Function]}
             semantic={false}
           >
             <WithStyles(HvFormElement)
@@ -32420,7 +32418,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
               </React.Fragment>
             </WithStyles(ForwardRef)>
           }
-          onChange={[Function]}
+          onChange={[MockFunction]}
           semantic={true}
         >
           <HvCheckBox
@@ -32452,7 +32450,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                 </React.Fragment>
               </WithStyles(ForwardRef)>
             }
-            onChange={[Function]}
+            onChange={[MockFunction]}
             semantic={true}
           >
             <WithStyles(HvFormElement)

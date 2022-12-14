@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@mui/material";
-import { HvActionsGenericCommonProps } from "../ActionsGeneric";
-import { HvCheckBoxProps } from "..";
+import { HvActionsGenericCommonProps, HvCheckBoxProps, HvButtonProps } from "..";
 
 export type HvBulkActionsClassKey =
   | "root"
@@ -37,11 +36,11 @@ export interface HvBulkActionsProps
   /**
    * Function called when the "select all" Checkbox is toggled.
    */
-  onSelectAll?: (event: React.MouseEvent) => void;
+  onSelectAll?: HvCheckBoxProps["onChange"];
   /**
-   * Function called when the "select all pages" Button is clicked toggled.
+   * Function called when the "select all pages" button is clicked.
    */
-  onSelectAllPages?: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void;
+  onSelectAllPages?: HvButtonProps["onClick"];
   /**
    *  Whether actions should be all disabled
    */
