@@ -1,13 +1,10 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 
+import { HvProvider } from "../..";
 import FileUploader from "..";
-import DropZone from "../DropZone";
-import HvProvider from "../../Provider";
-import File from "../File";
-import FileList from "../FileList";
 
 const fileList = [
   {
@@ -24,69 +21,50 @@ const fileList = [
   },
 ];
 
-const onClickCallback = jest.fn();
-
 const setupComponent = (props = {}) =>
-  mount(
+  render(
     <HvProvider cssBaseline="none">
-      <FileUploader {...props} />
+      <FileUploader onFilesAdded={() => {}} onFileRemoved={() => {}} {...props} />
     </HvProvider>
   );
 
-describe("FileUploader withStyles", () => {
-  let wrapper;
+describe("FileUploader", () => {
+  const compProps = { fileList, acceptedFiles: ["jpeg"], maxFileSize: 12 };
 
-  const compProps = {
-    fileList,
-    onFilesAdded: onClickCallback,
-    onFileRemoved: onClickCallback,
-    acceptedFiles: ["jpeg"],
-    maxFileSize: 12,
-  };
-
-  beforeEach(() => {
-    wrapper = setupComponent(compProps);
+  it("renders correctly", () => {
+    const { container } = setupComponent(compProps);
+    expect(container).toMatchSnapshot();
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
+  it("renders the file list", () => {
+    setupComponent(compProps);
+    expect(screen.getByRole("list")).toBeVisible();
+    expect(screen.queryAllByRole("listitem").length).toBe(2);
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(FileUploader)).toMatchSnapshot();
+  it("renders the dropzone", () => {
+    setupComponent(compProps);
+    const dropZone = screen.getByRole("button", { name: /Label/ });
+    expect(dropZone).toBeVisible();
   });
 
-  it("should render the FileUploader", () => {
-    const fileuploader = wrapper.find(FileUploader);
-    expect(fileuploader.length).toBe(1);
-  });
+  it("calls file upload callback", () => {
+    const onClickCallback = jest.fn();
+    setupComponent({ ...compProps, onFilesAdded: onClickCallback });
+    const dropZone = screen.getByRole("button", { name: /Label/ });
 
-  it("should render the FileList", () => {
-    const fList = wrapper.find(FileList);
-    const files = wrapper.find(File);
+    // eslint-disable-next-line testing-library/no-node-access
+    fireEvent.change(dropZone.querySelector("input"), {});
 
-    expect(fList.length).toBe(1);
-    expect(files.length).toBe(2);
-  });
-
-  it("should render the Dropzone", () => {
-    const fileuploader = wrapper.find(DropZone);
-    expect(fileuploader.length).toBe(1);
-  });
-
-  it("should call file upload callback", () => {
-    const dropzone = wrapper.find(DropZone);
-
-    dropzone.find("input").simulate("change");
     expect(onClickCallback).toHaveBeenCalled();
   });
 });
 
 describe("FileUploader validations", () => {
-  let uploadWrapper;
+  it("displays incorrect file type warning", () => {
+    const onClickCallback = jest.fn();
 
-  it("correctly display incorrect file type warning", () => {
-    const faultyCompProps = {
+    setupComponent({
       fileList: [
         {
           id: "3",
@@ -101,16 +79,15 @@ describe("FileUploader validations", () => {
       onFileRemoved: onClickCallback,
       acceptedFiles: ["png"],
       maxFileSize: 1,
-    };
-
-    uploadWrapper = setupComponent(faultyCompProps);
-    expect(uploadWrapper.find("File").find("p").at(1).text()).toEqual(
-      "File type not allowed for upload"
-    );
+    });
+    const files = screen.queryAllByRole("listitem");
+    expect(within(files[0]).getByText(/File type not allowed for upload/)).toBeVisible();
   });
 
-  it("correctly display incorrect file size warning", () => {
-    const faultyCompProps = {
+  it("displays incorrect file size warning", () => {
+    const onClickCallback = jest.fn();
+
+    setupComponent({
       fileList: [
         {
           id: "4",
@@ -125,11 +102,9 @@ describe("FileUploader validations", () => {
       onFileRemoved: onClickCallback,
       acceptedFiles: ["png"],
       maxFileSize: 5 * 1000,
-    };
+    });
 
-    uploadWrapper = setupComponent(faultyCompProps);
-    expect(uploadWrapper.find("File").find("p").at(1).text()).toEqual(
-      "The file exceeds the maximum upload size"
-    );
+    const files = screen.queryAllByRole("listitem");
+    expect(within(files[0]).getByText(/The file exceeds the maximum upload size/)).toBeVisible();
   });
 });
