@@ -1,3 +1,4 @@
+import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
 import {
@@ -34,9 +35,16 @@ export interface EmptyStateProps extends BaseProps<HTMLDivElement, { title }> {
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
 export const EmptyState = (props: EmptyStateProps) => {
+  const muiTheme = useTheme();
+
   const renderNode = (node, className, type, variant) =>
     node && (
-      <StyledTypography type={type} variant={variant} className={className}>
+      <StyledTypography
+        breakpoints={muiTheme.breakpoints}
+        type={type}
+        variant={variant}
+        className={className}
+      >
         {node}
       </StyledTypography>
     );
@@ -45,9 +53,13 @@ export const EmptyState = (props: EmptyStateProps) => {
 
   return (
     <StyledRoot className={className} {...others}>
-      <StyledContainer messageOnly={!!(message && !(title || action))}>
+      <StyledContainer
+        breakpoints={muiTheme.breakpoints}
+        messageOnly={!!(message && !(title || action))}
+      >
         <StyledIconContainer>{icon}</StyledIconContainer>
         <StyledTextContainer
+          breakpoints={muiTheme.breakpoints}
           className={clsx("textContainer", classes?.textContainer)}
         >
           {renderNode(title, classes?.titleContainer, "title", "title4")}

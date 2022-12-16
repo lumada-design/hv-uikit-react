@@ -1,6 +1,9 @@
-import { createContext, useState, useMemo, useEffect } from "react";
-import { themes, parseTheme } from "@hitachivantara/uikit-styles";
-
+import { parseTheme, themes } from "@hitachivantara/uikit-styles";
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@mui/material/styles";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { setElementAttrs } from "../utils/themeUtils";
 
 interface ThemeContextValue {
@@ -10,6 +13,16 @@ interface ThemeContextValue {
   setTheme: (theme: string) => void;
   setThemeMode: (mode: string) => void;
   colorModes: string[];
+}
+
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+  }
 }
 
 export const ThemeContext = createContext<ThemeContextValue>({
@@ -61,8 +74,18 @@ const ThemeProvider = ({
     [selectedTheme, selectedMode, setTheme, setThemeMode, colorModes]
   );
 
+  const myTheme = createTheme({
+    breakpoints: {
+      values: {
+        ...themes[selectedTheme].breakpoints.values,
+      },
+    },
+  });
+
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <MuiThemeProvider theme={myTheme}>
+      <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    </MuiThemeProvider>
   );
 };
 

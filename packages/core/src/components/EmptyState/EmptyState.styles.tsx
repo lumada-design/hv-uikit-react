@@ -10,17 +10,23 @@ export const StyledRoot = styled("div")({
 });
 
 export const StyledContainer = styled("div")(
-  ({ messageOnly }: { messageOnly: boolean }) => ({
+  ({
+    messageOnly,
+    breakpoints,
+  }: {
+    messageOnly: boolean;
+    breakpoints?: any;
+  }) => ({
     display: "flex",
     flexDirection: "row",
-    [theme.breakpoints.only("xs")]: {
+    [breakpoints.only("xs")]: {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
     },
     ...(messageOnly && {
       alignItems: "center",
-      [theme.breakpoints.only("xs")]: {
+      [breakpoints.only("xs")]: {
         flexDirection: "row",
       },
       "& .textContainer": {
@@ -32,22 +38,24 @@ export const StyledContainer = styled("div")(
 
 export const StyledIconContainer = styled("div")({});
 
-export const StyledTextContainer = styled("div")({
-  background: "transparent",
-  maxWidth: "510px",
-  overflow: "hidden",
-  fontFamily: theme.fontFamily.body,
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-  },
-  "& a": {
-    color: theme.colors.acce2,
-    textDecoration: "none",
-  },
-});
+export const StyledTextContainer = styled("div")(
+  ({ breakpoints }: { breakpoints?: any }) => ({
+    background: "transparent",
+    maxWidth: "510px",
+    overflow: "hidden",
+    fontFamily: theme.fontFamily.body,
+    [breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(1),
+    },
+    "& a": {
+      color: theme.colors.acce2,
+      textDecoration: "none",
+    },
+  })
+);
 
 export const StyledTypography = styled(Typography)(
-  ({ type }: { type: string }) => ({
+  ({ type, breakpoints }: { type: string; breakpoints?: any }) => ({
     ...(type === "title" && {
       marginTop: 4,
       marginBottom: theme.spacing(1),
@@ -57,7 +65,7 @@ export const StyledTypography = styled(Typography)(
       maxWidth: "510px",
       overflow: "hidden",
       fontFamily: theme.fontFamily.body,
-      [theme.breakpoints.up("sm")]: {
+      [breakpoints.up("sm")]: {
         marginLeft: theme.spacing(1),
       },
       "& a": {

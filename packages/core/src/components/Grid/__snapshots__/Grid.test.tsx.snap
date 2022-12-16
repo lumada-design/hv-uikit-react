@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`Grid > should render correctly 1`] = `
+<div>
+  <div
+    class="MuiGrid-root css-vj1n65-MuiGrid-root"
+  />
+</div>
+`;
