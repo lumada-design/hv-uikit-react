@@ -68,7 +68,7 @@ const Chart = ({
         dataFromPoints.elements.push({
           color: fData.marker?.color || fData.line?.color || p.color,
           name: fData.labels?.[pNumber] || fData.name,
-          value: isHorizontal ? p.x : p.y || p.value,
+          value: isHorizontal ? p.x : p.y ?? p.value,
           zValue: p.z,
         });
       });
