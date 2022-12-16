@@ -1,12 +1,10 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import { fireEvent, render, screen } from "@testing-library/react";
 
+import { HvProvider } from "../../..";
 import File from "..";
-import HvProvider from "../../../Provider";
-
-let wrapper;
 
 const dataFail = {
   name: "somefile.png",
@@ -26,64 +24,44 @@ const dataSuccess = {
   fileStatus: "success",
 };
 
-const onClickCallback = jest.fn();
-
-describe("File withStyles - Invalid File", () => {
-  wrapper = mount(
+const setup = ({ ...fileProps }) =>
+  render(
     <HvProvider cssBaseline="none">
       <File
-        data={dataFail}
         onFilesAdded={() => {}}
         onFileRemoved={() => {}}
         removeFileButtonLabel="removeFileButtonLabel"
+        {...fileProps}
       />
     </HvProvider>
   );
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
+describe("File invalid", () => {
+  it("renders correctly", () => {
+    setup({ data: dataFail });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(File)).toMatchSnapshot();
-  });
-
-  it("should render the File", () => {
-    const file = wrapper.find("File");
-    expect(file.length).toBe(1);
+    const file = screen.getByRole("listitem");
+    expect(file).toBeVisible();
+    expect(file).toMatchSnapshot();
   });
 });
 
-describe("File withStyles - Valid File", () => {
-  wrapper = mount(
-    <HvProvider cssBaseline="none">
-      <File
-        data={dataSuccess}
-        unit="mb"
-        onFilesAdded={() => {}}
-        onFileRemoved={onClickCallback}
-        removeFileButtonLabel="removeFileButtonLabel"
-      />
-    </HvProvider>
-  );
+describe("File valid", () => {
+  it("renders correctly", () => {
+    setup({ data: dataSuccess, unit: "mb" });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
+    const file = screen.getByRole("listitem");
+    expect(file).toBeVisible();
+    expect(file).toMatchSnapshot();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(File)).toMatchSnapshot();
-  });
+  it("calls the delete file callback", () => {
+    const onClickCallback = jest.fn();
+    setup({ data: dataSuccess, unit: "mb", onFileRemoved: onClickCallback });
 
-  it("should render the File", () => {
-    const file = wrapper.find("File");
-    expect(file.length).toBe(1);
-  });
+    const fileButton = screen.getByRole("button");
 
-  it("should call the delete file callback", () => {
-    const fileButton = wrapper.find("button");
-
-    fileButton.simulate("click");
+    fireEvent.click(fileButton);
     expect(onClickCallback).toHaveBeenCalled();
   });
 });

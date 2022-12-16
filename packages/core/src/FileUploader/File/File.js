@@ -57,7 +57,7 @@ const File = ({ id, classes, data, onFileRemoved, removeFileButtonLabel }) => {
   const currentProgress = getProgressBarWith(data);
 
   return (
-    <li>
+    <li className={classes.root}>
       {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
@@ -102,6 +102,10 @@ File.propTypes = {
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to the root element.
+     */
+    root: PropTypes.string,
     /**
      * Style applied to the progress bar.
      */

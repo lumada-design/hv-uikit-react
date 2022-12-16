@@ -1,12 +1,10 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
 
+import { HvProvider } from "../../..";
 import FileList from "..";
-import HvProvider from "../../../Provider";
-
-let wrapper;
 
 const files = [
   {
@@ -31,26 +29,27 @@ const files = [
   },
 ];
 
-describe("FileList withStyles", () => {
-  it("should be defined", () => {
-    wrapper = mount(
-      <HvProvider cssBaseline="none">
-        <FileList
-          list={files}
-          removeFileButtonLabel="removeFileButtonLabel"
-          onFileRemoved={() => {}}
-        />
-      </HvProvider>
-    );
-    expect(wrapper).toBeDefined();
+const setup = (list) =>
+  render(
+    <HvProvider cssBaseline="none">
+      <FileList
+        id="list"
+        list={list}
+        removeFileButtonLabel="removeFileButtonLabel"
+        onFileRemoved={() => {}}
+      />
+    </HvProvider>
+  );
+
+describe("FileList", () => {
+  it("renders correctly", () => {
+    setup(files);
+    expect(screen.getByRole("list")).toMatchSnapshot();
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(FileList)).toMatchSnapshot();
-  });
-
-  it("should render the FileList", () => {
-    const fileList = wrapper.find(FileList);
-    expect(fileList.length).toBe(1);
+  it("renders the list with items", () => {
+    setup(files);
+    expect(screen.getByRole("list")).toBeVisible();
+    expect(screen.queryAllByRole("listitem").length).toBe(2);
   });
 });

@@ -1,4 +1,5 @@
 const styles = (theme) => ({
+  root: {},
   progressbarBack: {
     position: "absolute",
     top: "-1px",
@@ -31,8 +32,6 @@ const styles = (theme) => ({
     "& img": {
       width: "100%",
       height: "100%",
-      maxWidth: 52,
-      maxHeight: 52,
       objectFit: "cover",
       objectPosition: "center",
     },

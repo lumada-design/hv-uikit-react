@@ -16,6 +16,7 @@ const FileList = ({ id, classes, list = [], removeFileButtonLabel, onFileRemoved
       {list.map((data) => (
         <File
           key={data.id}
+          classes={{ root: classes.listItem }}
           id={setId(elementId, "values")}
           data={data}
           onFileRemoved={onFileRemoved}
