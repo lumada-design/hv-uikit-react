@@ -78,7 +78,7 @@ const HvBulkActions = (props) => {
           className={classes.selectAll}
           checked={numSelected > 0}
           semantic={isSemantic}
-          onChange={(...args) => onSelectAll?.(...args)}
+          onChange={onSelectAll}
           indeterminate={numSelected > 0 && numSelected < numTotal}
           label={selectAllLabelComponent}
           {...checkboxProps}
@@ -88,7 +88,7 @@ const HvBulkActions = (props) => {
             id={setId(id, "pages")}
             className={classes.selectAllPages}
             category={isSemantic ? "semantic" : "ghost"}
-            onClick={(...args) => onSelectAllPages?.(...args)}
+            onClick={onSelectAllPages}
           >
             {selectAllPagesLabel ?? defaultSelectAllPagesLabel}
           </HvButton>
