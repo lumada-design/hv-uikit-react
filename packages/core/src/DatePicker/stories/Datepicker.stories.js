@@ -41,13 +41,14 @@ export const DefaultValue = () => (
     id="DatePicker"
     aria-label="Date"
     placeholder="Select date"
-    value={new Date(2020, 9, 10)}
+    value={new Date("2020-10-10")}
+    calendarProps={{ minimumDate: "2020-10-03", maximumDate: "2020-10-20" }}
   />
 );
 
 DefaultValue.parameters = {
   docs: {
-    description: { story: "Datepicker sample with a value already set." },
+    description: { story: "Datepicker default value and limit selection range." },
   },
 };
 
