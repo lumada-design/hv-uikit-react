@@ -24,3 +24,6 @@ export * from "./TimeAgo";
 
 export { default as HvWizard } from "./Wizard";
 export * from "./Wizard";
+
+export { default as HvVerticalNavigation } from "./VerticalNavigation";
+export * from "./VerticalNavigation";
