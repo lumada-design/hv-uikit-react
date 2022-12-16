@@ -48,6 +48,25 @@ describe("HvSnackbarProvider", () => {
       const snackbars = await findAllByText(defaultSnackbar);
       expect(snackbars.length).toBe(5);
     });
+    it("renders the warning snackbar", async () => {
+      const buttonText = "warning";
+      const defaultSnackbar = "This is a warning message.";
+      const { getByRole, findByText, findAllByText, queryByText } = render(<SnackbarProvider />);
+
+      const snackbarSpawner = getByRole("button", { name: buttonText });
+      expect(snackbarSpawner).toBeInTheDocument();
+      let snackbar = queryByText(defaultSnackbar);
+      expect(snackbar).not.toBeInTheDocument();
+      userEvent.click(snackbarSpawner);
+      snackbar = await findByText(defaultSnackbar);
+      expect(snackbar).toBeInTheDocument();
+      userEvent.click(snackbarSpawner);
+      userEvent.click(snackbarSpawner);
+      userEvent.click(snackbarSpawner);
+      userEvent.click(snackbarSpawner);
+      const snackbars = await findAllByText(defaultSnackbar);
+      expect(snackbars.length).toBe(5);
+    });
     it("renders the error snackbar", async () => {
       const buttonText = "error";
       const defaultSnackbar = "This is an error message.";

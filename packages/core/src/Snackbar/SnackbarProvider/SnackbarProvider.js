@@ -146,7 +146,7 @@ HvNotistackSnackMessage.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["default", "success", "error"]),
+  variant: PropTypes.oneOf(["default", "success", "warning", "error"]),
   /**
    * Extra values to pass to the snackbar.
    */

@@ -55,6 +55,8 @@ export const SnackbarProvider = () => (
     <p />
     <Snackbar variant="success" showIcon label="This is a success message." />
     <p />
+    <Snackbar variant="warning" showIcon label="This is a warning message." />
+    <p />
     <Snackbar variant="error" showIcon label="This is an error message." />
   </HvSnackbarProvider>
 );

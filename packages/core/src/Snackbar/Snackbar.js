@@ -155,7 +155,7 @@ HvSnackbar.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["default", "success", "error"]),
+  variant: PropTypes.oneOf(["default", "success", "warning", "error"]),
   /**
    * Custom icon to replace the variant default.
    */
