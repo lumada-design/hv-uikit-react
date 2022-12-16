@@ -47,6 +47,7 @@
     "@hitachivantara/uikit-react-core": "^4.3.1",
     "@hitachivantara/uikit-react-icons": "^4.0.4",
     "clsx": "^1.2.1",
+    "core-js": "^3.26.1",
     "dayjs": "^1.11.4",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",

@@ -50,6 +50,7 @@
     "@types/react-table": "^7.7.12",
     "attr-accept": "^2.2.2",
     "clsx": "^1.2.1",
+    "core-js": "^3.26.1",
     "dayjs": "^1.11.4",
     "deep-diff": "^1.0.2",
     "detect-browser": "^5.3.0",
