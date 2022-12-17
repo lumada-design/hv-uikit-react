@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.2.2...@hitachivantara/uikit-react-lab@4.2.3) (2022-12-17)
+
+### Bug Fixes
+
+- **deps:** add missing core-js to core/lab ([#3015](https://github.com/lumada-design/hv-uikit-react/issues/3015)) ([50c0c45](https://github.com/lumada-design/hv-uikit-react/commit/50c0c45008d085425fcaee4ee97ad0f1e92d3f11))
+
 ## [4.2.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.2.1...@hitachivantara/uikit-react-lab@4.2.2) (2022-12-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.3.1...@hitachivantara/uikit-react-core@4.4.0) (2022-12-17)
+
+### Bug Fixes
+
+- **bulkactions:** selectAll/selectAllPages typings ([#3016](https://github.com/lumada-design/hv-uikit-react/issues/3016)) ([141e384](https://github.com/lumada-design/hv-uikit-react/commit/141e38401b3c69fcbb85a4e7386ef88fbb15b091))
+- **deps:** add missing core-js to core/lab ([#3015](https://github.com/lumada-design/hv-uikit-react/issues/3015)) ([50c0c45](https://github.com/lumada-design/hv-uikit-react/commit/50c0c45008d085425fcaee4ee97ad0f1e92d3f11))
+
+### Features
+
+- **DatePicker:** expose HvCalendar props ([#3018](https://github.com/lumada-design/hv-uikit-react/issues/3018)) ([11f0bd7](https://github.com/lumada-design/hv-uikit-react/commit/11f0bd7f5640cc29634a7f9846ee811e405f52a1))
+- **snackbar:** add warning styling ([#3011](https://github.com/lumada-design/hv-uikit-react/issues/3011)) ([b726a9a](https://github.com/lumada-design/hv-uikit-react/commit/b726a9a1dfb377f7944b075acaec466caeadcb11))
+
 ## [4.3.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@4.3.0...@hitachivantara/uikit-react-core@4.3.1) (2022-12-08)
 
 ### Bug Fixes

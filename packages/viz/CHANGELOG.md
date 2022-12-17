@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.1.5...@hitachivantara/uikit-react-viz@4.1.6) (2022-12-17)
+
+### Bug Fixes
+
+- **charts:** allow point Y to return value 0 ([#3022](https://github.com/lumada-design/hv-uikit-react/issues/3022)) ([93bb7a1](https://github.com/lumada-design/hv-uikit-react/commit/93bb7a1c5f891214743298281d144e08825001d4))
+
 ## [4.1.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@4.1.4...@hitachivantara/uikit-react-viz@4.1.5) (2022-12-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
