@@ -1,8 +1,9 @@
-import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { render } from "@testing-library/react";
+
+import { Button } from "components";
+import { HvProvider } from "providers";
 import { Actions, Brand, Header, Navigation } from ".";
-import { Button } from "../";
-import { HvProvider } from "../../providers";
 import HitachiLogo from "./assets/HitachiLogo";
 
 describe("Header", () => {

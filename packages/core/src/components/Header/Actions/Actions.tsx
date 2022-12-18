@@ -1,3 +1,4 @@
+import { BaseProps } from "types";
 import { StyledDiv } from "./Actions.styles";
 
 export interface ActionsProps extends BaseProps {}
@@ -12,4 +13,6 @@ export const Actions = (props: ActionsProps) => {
   );
 };
 
-Actions.displayName = "Actions";
+if (process.env.NODE_ENV !== "production") {
+  Actions.displayName = "Actions";
+}

@@ -1,3 +1,4 @@
+import { BaseProps } from "types";
 import { StyledTypography } from "./Typography.styles";
 
 export type TypographyVariants =

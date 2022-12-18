@@ -1,4 +1,6 @@
 import clsx from "clsx";
+
+import { BaseProps } from "types";
 import { StyledRoot } from "./ActionBar.styles";
 
 export interface ActionBarProps extends BaseProps {

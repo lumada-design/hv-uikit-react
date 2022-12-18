@@ -1,9 +1,11 @@
 import { clsx } from "clsx";
+
+import { BaseProps } from "types";
+import { useSelectionPath } from "hooks";
 import { MenuBar } from "./MenuBar";
 import { NavigationNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
-import SelectionContext from "./utils/SelectionContext";
-import useSelectionPath from "./utils/useSelectionPath";
+import { SelectionContext } from "./utils/SelectionContext";
 
 export interface NavigationItemProp {
   id: string;
@@ -47,4 +49,6 @@ export const Navigation = ({
   );
 };
 
-Navigation.displayName = "Navigation";
+if (process.env.NODE_ENV !== "production") {
+  Navigation.displayName = "Navigation";
+}

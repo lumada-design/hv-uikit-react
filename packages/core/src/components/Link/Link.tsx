@@ -1,3 +1,4 @@
+import { BaseProps } from "types";
 import { StyledA, StyledBox } from "./Link.styles";
 
 export interface LinkProps extends BaseProps {

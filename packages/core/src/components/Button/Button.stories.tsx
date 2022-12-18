@@ -1,3 +1,4 @@
+import { StoryObj } from "@storybook/react";
 import {
   Delete,
   Favorite,
@@ -7,8 +8,8 @@ import {
   Refresh,
   Stop,
 } from "@hitachivantara/uikit-icons";
-import { StoryObj } from "@storybook/react";
-import { HvBox } from "../..";
+
+import { Box } from "components";
 import { Button, ButtonProps } from "./Button";
 
 export default { title: "Inputs/Button", component: Button };
@@ -21,7 +22,7 @@ export const AMain: StoryObj<ButtonProps> = {
 
 export const Disabled = ({ onClick }) => {
   return (
-    <HvBox sx={{ display: "flex", gap: 20 }}>
+    <Box sx={{ display: "flex", gap: 20 }}>
       <Button variant="primary" onClick={onClick} disabled>
         Primary
       </Button>
@@ -43,7 +44,7 @@ export const Disabled = ({ onClick }) => {
       <Button variant="semantic" onClick={onClick} disabled>
         Semantic
       </Button>
-    </HvBox>
+    </Box>
   );
 };
 
@@ -58,7 +59,7 @@ Disabled.args = {
 export const Icons = ({ onClick }) => {
   return (
     <>
-      <HvBox sx={{ display: "flex", gap: 20 }}>
+      <Box sx={{ display: "flex", gap: 20 }}>
         <Button
           icon
           aria-label="Play"
@@ -83,8 +84,8 @@ export const Icons = ({ onClick }) => {
         >
           <Stop />
         </Button>
-      </HvBox>
-      <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
+      </Box>
+      <Box sx={{ display: "flex", gap: 20, marginTop: 10 }}>
         <Button
           startIcon={<Play />}
           variant="secondaryGhost"
@@ -109,7 +110,7 @@ export const Icons = ({ onClick }) => {
         >
           Stop
         </Button>
-      </HvBox>
+      </Box>
     </>
   );
 };
@@ -120,7 +121,7 @@ Icons.args = {
 
 export const Semantic = ({ onClick }) => {
   return (
-    <HvBox
+    <Box
       sx={{ display: "flex", gap: 20, backgroundColor: "#D3E3F6", padding: 20 }}
     >
       <Button
@@ -155,7 +156,7 @@ export const Semantic = ({ onClick }) => {
       >
         <MoreOptionsVertical />
       </Button>
-    </HvBox>
+    </Box>
   );
 };
 

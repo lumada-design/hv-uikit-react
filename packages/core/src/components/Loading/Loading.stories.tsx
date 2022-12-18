@@ -1,6 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import { HvButton, HvTypography } from "..";
+import { Meta, StoryObj } from "@storybook/react";
+
+import { HvButton, HvTypography } from "components";
 import { Loading, LoadingProps } from "./Loading";
 
 const meta: Meta<typeof Loading> = {

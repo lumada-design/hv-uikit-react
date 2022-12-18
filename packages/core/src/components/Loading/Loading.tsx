@@ -1,6 +1,9 @@
-import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import range from "lodash/range";
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { BaseProps } from "types";
+
 import {
   StyledBar,
   StyledBarContainer,

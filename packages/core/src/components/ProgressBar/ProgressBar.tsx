@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import clamp from "lodash/clamp";
+
+import { BaseProps } from "types";
 import {
   StyledProgressBar,
   StyledProgressBarContainer,

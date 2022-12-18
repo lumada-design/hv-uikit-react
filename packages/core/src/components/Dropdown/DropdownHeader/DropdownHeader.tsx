@@ -25,4 +25,6 @@ export const DropdownHeader = styled("div")<DropdownHeaderProps>`
       : `${theme.dropdown.borderRadius} ${theme.dropdown.borderRadius}`};
 `;
 
-DropdownHeader.displayName = "DropdownHeader";
+if (process.env.NODE_ENV !== "production") {
+  DropdownHeader.displayName = "DropdownHeader";
+}

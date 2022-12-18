@@ -1,9 +1,11 @@
 import clsx from "clsx";
 import { useContext } from "react";
-import { MenuItem } from "../MenuItem";
-import { NavigationItemProp } from "../Navigation";
-import SelectionContext from "../utils/SelectionContext";
+
+import { BaseProps } from "types";
+import { NavigationItemProp } from "components";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
+import { MenuItem } from "../MenuItem";
+import { SelectionContext } from "../utils/SelectionContext";
 
 export interface MenuBarProps extends BaseProps<"div", { onClick }> {
   data: NavigationItemProp[];
@@ -41,4 +43,6 @@ export const MenuBar = ({
   );
 };
 
-MenuBar.displayName = "MenuBar";
+if (process.env.NODE_ENV !== "production") {
+  MenuBar.displayName = "MenuBar";
+}

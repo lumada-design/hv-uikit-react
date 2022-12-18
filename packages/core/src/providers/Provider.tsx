@@ -4,8 +4,9 @@ import {
   getThemesVars,
   themes,
 } from "@hitachivantara/uikit-styles";
-import ThemeProvider from "../providers/ThemeProvider";
-import { setElementAttrs } from "../utils/themeUtils";
+
+import { setElementAttrs } from "utils";
+import { ThemeProvider } from "./ThemeProvider";
 
 interface ProviderProps {
   children?: React.ReactNode;
@@ -15,7 +16,7 @@ interface ProviderProps {
   colorMode?: string;
 }
 
-const Provider = ({
+export const Provider = ({
   children,
   enableCssBaseline = true,
   rootElementId,
@@ -36,8 +37,6 @@ const Provider = ({
     </>
   );
 };
-
-export default Provider;
 
 if (process.env.NODE_ENV !== "production") {
   Provider.displayName = "Provider";

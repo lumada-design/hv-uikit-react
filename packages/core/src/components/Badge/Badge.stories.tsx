@@ -1,7 +1,8 @@
-import { Alert } from "@hitachivantara/uikit-icons";
-import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Button } from "..";
+import { Meta, StoryObj } from "@storybook/react";
+import { Alert } from "@hitachivantara/uikit-icons";
+
+import { Button } from "components";
 import { Badge, BadgeProps } from "./Badge";
 
 const container = {

@@ -1,8 +1,9 @@
+import { describe, it } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it } from "vitest";
+
 import { ProgressBar } from "./ProgressBar";
-import ProgressBarSimulator from "./ProgressBarSimulator";
+import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 describe(
   "ProgressBar",

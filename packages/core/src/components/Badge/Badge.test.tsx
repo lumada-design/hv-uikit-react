@@ -1,6 +1,7 @@
-import { Alert } from "@hitachivantara/uikit-icons";
-import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { render } from "@testing-library/react";
+import { Alert } from "@hitachivantara/uikit-icons";
+
 import { Badge } from "./Badge";
 
 describe("Badge", () => {

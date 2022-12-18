@@ -1,19 +1,41 @@
 import { useEffect, useState } from "react";
-import { WithTooltip, TooltipLinkList } from "@storybook/components";
+import {
+  WithTooltip,
+  TooltipLinkList,
+  Icons,
+  IconButton,
+} from "@storybook/components";
 import { themes as hvThemes } from "@hitachivantara/uikit-styles";
 
-import useThemeSwitcher from "../hooks/useThemeSwitcher";
-import ThemeSwitcher from "../components/ThemeSwitcher";
-import ColorIcon from "../icons/ColorIcon";
-import { getThemesModes } from "../utils";
+import useThemeSwitcher from "./useThemeSwitcher";
+import { getThemesModes, toPascalCase } from "./utils";
+import { ADDON_ID } from "../constants";
 
-const toPascalCase = (str: string) =>
-  str.replace(
-    /\w\S*/g,
-    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+interface ColorIconProps {
+  color: string;
+}
+
+const ColorIcon = ({ color }: ColorIconProps) => (
+  <span
+    style={{
+      borderRadius: "1rem",
+      display: "block",
+      height: "1rem",
+      width: "1rem",
+      background: color,
+    }}
+  />
+);
+
+const Switcher = () => {
+  return (
+    <IconButton key={ADDON_ID} active={false} title={"Select theme"}>
+      <Icons icon="lightning" />
+    </IconButton>
   );
+};
 
-const Tool = () => {
+export const ThemeSwitcher = () => {
   const [themesList, setThemesList] = useState<AddonTheme[]>([]);
   const { setTheme } = useThemeSwitcher();
 
@@ -49,11 +71,7 @@ const Tool = () => {
         />
       }
     >
-      <ThemeSwitcher />
+      <Switcher />
     </WithTooltip>
-  ) : (
-    <ThemeSwitcher />
-  );
+  ) : null;
 };
-
-export default Tool;

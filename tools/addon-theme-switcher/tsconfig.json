@@ -1,18 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES5",
-    "outDir": "dist",
-    "rootDir": "src",
-    "composite": true
+    "baseUrl": "src",
+    "outDir": "dist"
   },
   "include": ["src"],
-  "references": [
-    {
-      "path": "../../packages/core/tsconfig.json"
-    },
-    {
-      "path": "../../packages/styles/tsconfig.json"
-    }
-  ]
+  "exclude": ["dist"]
 }

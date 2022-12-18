@@ -1,4 +1,5 @@
 import { StoryObj } from "@storybook/react";
+
 import { Typography, TypographyProps } from "./Typography";
 
 export default { title: "Theme/Typography", component: Typography };

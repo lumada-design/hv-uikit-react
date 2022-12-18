@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button } from "..";
+
+import { Button } from "components";
 import { ProgressBar, ProgressBarStatus } from "./ProgressBar";
 
 export const ProgressBarSimulator = ({
@@ -60,5 +61,3 @@ export const ProgressBarSimulator = ({
     </div>
   );
 };
-
-export { ProgressBarSimulator as default };

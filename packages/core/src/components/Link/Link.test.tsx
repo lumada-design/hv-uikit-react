@@ -1,6 +1,7 @@
-import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Link } from "./";
+import { render } from "@testing-library/react";
+
+import { Link } from "./Link";
 
 describe("Link", () => {
   it("should render correctly", () => {

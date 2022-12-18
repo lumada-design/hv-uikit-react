@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "@emotion/styled";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   BackwardsEmpty,
   BackwardsSelected,
@@ -19,10 +21,9 @@ import {
   UpEmpty,
   UpSelected,
 } from "@hitachivantara/uikit-icons";
-import { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
-import Eye from "./Eye";
+
 import { ToggleButton, ToggleButtonProps } from "./ToggleButton";
+import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {
   const StyledRoot = styled("div")({
@@ -174,7 +175,7 @@ export const Animated: StoryObj<ToggleButtonProps> = {
 
     return (
       <ToggleButton selected={select} onClick={toggleState} aria-label="Eye">
-        <Eye className={select ? "selected" : "notSelected"} />
+        <ToggleEye className={select ? "selected" : "notSelected"} />
       </ToggleButton>
     );
   },

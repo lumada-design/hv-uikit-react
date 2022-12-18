@@ -1,4 +1,4 @@
-import { STORAGE_KEY } from "./constants";
+import { STORAGE_KEY } from "../constants";
 
 export const setLocalTheme = (value: string): void => {
   return localStorage?.setItem(STORAGE_KEY, value);
@@ -22,3 +22,9 @@ export const getThemesModes = (themes) => {
 
   return modes;
 };
+
+export const toPascalCase = (str: string) =>
+  str.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  );

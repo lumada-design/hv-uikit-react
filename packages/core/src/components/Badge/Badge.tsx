@@ -1,5 +1,7 @@
-import { Typography, TypographyVariants } from "..";
+import { Typography, TypographyVariants } from "components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
+
+import { BaseProps } from "types";
 
 export interface BadgeProps extends BaseProps {
   /**

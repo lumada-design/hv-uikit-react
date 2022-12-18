@@ -12,17 +12,17 @@
   "scripts": {
     "dev": "pnpm -F='./app' dev",
     "doc": "start-storybook -p 6006 --no-manager-cache",
-    "build": "pnpm -r -F=!'./app' -F=!'./toolsn' build",
+    "build": "pnpm -r -F='./packages/**' build",
     "build:doc": "build-storybook",
     "lint": "eslint --ext .ts,.tsx --cache",
     "lint-staged": "lint-staged",
     "format": "npx prettier -w .",
-    "test": "pnpm --parallel -F=!'./tools/**' test",
+    "test": "pnpm --parallel -F='./packages/**' test",
     "test:e2e": "npx playwright test --config=config/playwright.config.ts",
     "clean": "npx rimraf ./{packages,tools}/*/{dist,bin,*.tsbuildinfo}",
     "wipe": "pnpm clean && npx rimraf **/{node_modules,pnpm-lock.yaml}",
     "prepare": "npx husky install",
-    "type-check": "tsc --noEmit"
+    "typecheck": "pnpm -r -F='./packages/**' typecheck"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
@@ -38,7 +38,6 @@
     "@testing-library/user-event": "^14.4.3",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
-    "c8": "^7.12.0",
     "eslint": "^8.27.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",

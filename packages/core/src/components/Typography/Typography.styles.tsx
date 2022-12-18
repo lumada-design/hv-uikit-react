@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { TypographyVariants } from "./Typography";
 
 export const StyledTypography = styled("div")(

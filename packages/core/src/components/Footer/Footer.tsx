@@ -1,5 +1,7 @@
-import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
+import { useTheme } from "@mui/material/styles";
+import { BaseProps } from "types";
+
 import {
   StyledCopyright,
   StyledName,

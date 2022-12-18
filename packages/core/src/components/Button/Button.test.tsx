@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
-import { Button } from "../Button";
+
 import { Disabled, Icons, Semantic } from "./Button.stories";
+import { Button } from "./Button";
 
 describe("Button", () => {
   describe("sample snapshot testing", () => {

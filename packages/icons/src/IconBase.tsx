@@ -78,4 +78,6 @@ export const IconBase = ({ children, iconSize, ...others }) => {
   );
 };
 
-IconBase.displayName = "IconBase";
+if (process.env.NODE_ENV !== "production") {
+  IconBase.displayName = "IconBase";
+}

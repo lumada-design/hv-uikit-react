@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Typography } from "..";
+
+import { Typography } from "components";
 import { ProgressBarStatus } from "./ProgressBar";
 
 export const StyledRoot = styled("div")({

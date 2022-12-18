@@ -11,7 +11,7 @@ const StyledBox = styled("div")({
   },
 });
 
-const Eye = (props) => {
+export const ToggleEye = (props) => {
   const { classes, className = "notSelected", ...other } = props;
 
   return (
@@ -64,5 +64,3 @@ const Eye = (props) => {
     </StyledBox>
   );
 };
-
-export default Eye;

@@ -22,12 +22,16 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "pnpm clean && tsc -b",
-    "clean": "npx rimraf ./{dist,*.tsbuildinfo}"
+    "build": "pnpm clean && tsc -b tsconfig.build.json && tsc-alias",
+    "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@styled-system/variant": "^5.1.5",
     "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.2"
   },
   "sideEffects": false,
   "publishConfig": {

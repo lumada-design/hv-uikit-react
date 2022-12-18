@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Typography } from "../Typography";
+
+import { Typography } from "components";
 
 export const StyledRoot = styled("footer")(
   ({ breakpoints }: { breakpoints?: any }) => ({

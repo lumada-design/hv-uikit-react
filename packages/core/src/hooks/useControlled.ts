@@ -6,11 +6,11 @@
 //    so the stacktrace shows the caller
 // 4. given that, the hook signature was simplified, no need for metadata
 
-import * as React from "react";
+import { useRef, useState, useCallback } from "react";
 
-export default function useControlled(controlledProp, initialState) {
-  const { current: isControlled } = React.useRef(controlledProp !== undefined);
-  const [valueState, setValue] = React.useState(initialState);
+export const useControlled = (controlledProp, initialState) => {
+  const { current: isControlled } = useRef(controlledProp !== undefined);
+  const [valueState, setValue] = useState(initialState);
   const value = isControlled ? controlledProp : valueState;
 
   if (
@@ -30,7 +30,7 @@ export default function useControlled(controlledProp, initialState) {
     );
   }
 
-  const setValueIfUncontrolled = React.useCallback(
+  const setValueIfUncontrolled = useCallback(
     (newValue) => {
       if (!isControlled) {
         setValue(newValue);
@@ -40,4 +40,4 @@ export default function useControlled(controlledProp, initialState) {
   );
 
   return [value, setValueIfUncontrolled];
-}
+};

@@ -1,3 +1,4 @@
+import { BaseProps } from "types";
 import { HeaderRoot, StyledAppBar } from "./Header.styles";
 
 export type HeaderPosition =

@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import React, { cloneElement } from "react";
-import { ButtonVariant } from "../index";
+
+import { BaseProps } from "types";
+import { ButtonVariant } from "components";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
 
 export interface MultiButtonProps extends BaseProps {
