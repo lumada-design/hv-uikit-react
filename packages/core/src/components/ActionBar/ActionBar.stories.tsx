@@ -1,8 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+
+import { Button } from "components";
 import { ActionBar, ActionBarProps } from "./ActionBar";
-import { Button } from "..";
 
 // Common styles
 const StyledContainer = styled("div")({

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavigationItemProp } from "../Navigation";
+import { NavigationItemProp } from "components";
 
 const getSelectionPath = (
   data: NavigationItemProp[] | undefined,
@@ -20,7 +20,7 @@ const getSelectionPath = (
   return selection;
 };
 
-const useSelectionPath = (data, selectedId): string[] => {
+export const useSelectionPath = (data, selectedId): string[] => {
   const [selectionPath, setSelectionPath] = useState<string[]>([]);
 
   useEffect(() => {
@@ -30,5 +30,3 @@ const useSelectionPath = (data, selectedId): string[] => {
 
   return selectionPath;
 };
-
-export default useSelectionPath;

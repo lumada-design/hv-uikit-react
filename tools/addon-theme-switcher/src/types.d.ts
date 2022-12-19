@@ -15,7 +15,5 @@ interface ThemeLink {
 
 interface ThemeSwitcher {
   setTheme: (theme: AddonTheme) => void;
-  toggleTheme: () => void;
   isDarkMode: boolean;
-  isToggleMode: boolean;
 }

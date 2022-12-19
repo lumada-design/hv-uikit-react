@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { createContext, useMemo, useReducer } from "react";
 
 const reducer = (state, action) => {
@@ -11,9 +10,10 @@ const reducer = (state, action) => {
 };
 
 const initialState = { itemFocused: null };
-const FocusContext = createContext(initialState);
 
-const FocusProvider = (props) => {
+export const FocusContext = createContext(initialState);
+
+export const FocusProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const contextValue = useMemo(
     () => ({ ...state, dispatch }),
@@ -27,9 +27,3 @@ const FocusProvider = (props) => {
     </FocusContext.Provider>
   );
 };
-
-FocusProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export { FocusContext, FocusProvider };

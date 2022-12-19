@@ -1,3 +1,6 @@
+export * from "./Typography";
+export { Typography as HvTypography } from "./Typography";
+
 export * from "./ActionBar";
 export { ActionBar as HvActionBar } from "./ActionBar";
 export * from "./Badge";
@@ -23,5 +26,11 @@ export {
 } from "./Header";
 export * from "./Link";
 export { Link as HvLink } from "./Link";
-export * from "./Typography";
-export { Typography as HvTypography } from "./Typography";
+export * from "./Loading";
+export { Loading as HvLoading } from "./Loading";
+export * from "./MultiButton";
+export { MultiButton as HvMultiButton } from "./MultiButton";
+export * from "./ProgressBar";
+export { ProgressBar as HvProgressBar } from "./ProgressBar";
+export * from "./ToggleButton";
+export { ToggleButton as HvToggleButton } from "./ToggleButton";

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React, { CSSProperties, forwardRef, ReactElement } from "react";
+
 import {
   StyledButton,
   StyledChildren,
@@ -107,4 +108,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+if (process.env.NODE_ENV !== "production") {
+  Button.displayName = "Button";
+}

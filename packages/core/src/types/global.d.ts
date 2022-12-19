@@ -1,11 +1,17 @@
-import { theme } from "@hitachivantara/uikit-styles";
-
 declare global {
-  type Theme = typeof theme;
-}
+  declare module "vitest" {
+    export interface TestContext {
+      render: any;
+    }
+  }
 
-declare module "vitest" {
-  export interface TestContext {
-    render: any;
+  declare module "@mui/material/styles" {
+    interface BreakpointOverrides {
+      xs: true;
+      sm: true;
+      md: true;
+      lg: true;
+      xl: true;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { StoryObj } from "@storybook/react";
+
+import { Box } from "components";
 import { Dropdown, DropdownProps } from "./Dropdown";
-import { Box } from "../Box";
 
 export default { component: Dropdown, title: "Inputs/Dropdown" };
 

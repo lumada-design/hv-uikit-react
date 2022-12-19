@@ -10,7 +10,7 @@ export default defineConfig({
         plugins: ["@emotion/babel-plugin"],
       },
     }),
-    tsconfigPaths({ loose: true }),
+    tsconfigPaths({ root: ".." }),
   ],
   build: {
     emptyOutDir: true,

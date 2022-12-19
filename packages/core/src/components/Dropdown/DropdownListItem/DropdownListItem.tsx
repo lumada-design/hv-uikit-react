@@ -14,5 +14,3 @@ export const DropdownListItem = styled("li")<DropdownListItemProps>`
   background-color: ${(props) =>
     props.isSelected ? theme.colors.acce2s : null};
 `;
-
-DropdownListItem.displayName = "DropdownListItem";

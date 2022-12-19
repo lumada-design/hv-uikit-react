@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Typography } from "..";
+
+import { Typography } from "components";
 import { ProgressBar, ProgressBarProps } from "./ProgressBar";
-import ProgressBarSimulator from "./ProgressBarSimulator";
+import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 const meta: Meta<typeof ProgressBar> = {
   title: "Feedback/ProgressBar",

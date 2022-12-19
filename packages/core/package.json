@@ -22,12 +22,13 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "pnpm clean && tsc -b",
+    "build": "pnpm clean && tsc -b tsconfig.build.json && tsc-alias",
     "test": "vitest run",
     "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf ./{dist,*.tsbuildinfo}"
+    "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -44,7 +45,8 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8"
+    "@types/react-dom": "^18.0.8",
+    "tsc-alias": "^1.8.2"
   },
   "sideEffects": false,
   "publishConfig": {

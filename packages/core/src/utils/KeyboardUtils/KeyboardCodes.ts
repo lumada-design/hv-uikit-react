@@ -1,4 +1,4 @@
-const KeyboardCodes = Object.freeze({
+export const keyboardCodes = Object.freeze({
   Backspace: 8,
   Tab: 9,
   Enter: 13,
@@ -99,5 +99,3 @@ const KeyboardCodes = Object.freeze({
   closeBracket: 221,
   singleQuote: 222,
 });
-
-export default KeyboardCodes;

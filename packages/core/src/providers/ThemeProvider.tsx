@@ -1,10 +1,11 @@
+import { createContext, useEffect, useMemo, useState } from "react";
 import { parseTheme, themes } from "@hitachivantara/uikit-styles";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
-import { createContext, useEffect, useMemo, useState } from "react";
-import { setElementAttrs } from "../utils/themeUtils";
+
+import { setElementAttrs } from "utils";
 
 interface ThemeContextValue {
   rootId?: string;
@@ -15,14 +16,9 @@ interface ThemeContextValue {
   colorModes: string[];
 }
 
-declare module "@mui/material/styles" {
-  interface BreakpointOverrides {
-    xs: true;
-    sm: true;
-    md: true;
-    lg: true;
-    xl: true;
-  }
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  rootElementId?: string;
 }
 
 export const ThemeContext = createContext<ThemeContextValue>({
@@ -34,15 +30,10 @@ export const ThemeContext = createContext<ThemeContextValue>({
   colorModes: [],
 });
 
-type NavigationProviderProps = {
-  children: React.ReactNode;
-  rootElementId?: string;
-};
-
-const ThemeProvider = ({
+export const ThemeProvider = ({
   children,
   rootElementId,
-}: NavigationProviderProps) => {
+}: ThemeProviderProps) => {
   let theme = parseTheme(themes);
 
   const [rootId] = useState(rootElementId);

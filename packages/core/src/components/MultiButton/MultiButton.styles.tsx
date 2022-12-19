@@ -1,6 +1,6 @@
+import clsx from "clsx";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import clsx from "clsx";
 
 export const StyledRoot = styled("div")(
   ({ vertical }: { vertical: boolean }) => ({

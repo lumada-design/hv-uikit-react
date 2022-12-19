@@ -22,7 +22,7 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "pnpm clean && tsc -b",
+    "build": "pnpm clean && tsc",
     "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
     "prepare": "pnpm build"
   },

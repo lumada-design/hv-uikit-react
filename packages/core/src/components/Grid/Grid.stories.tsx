@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { Typography } from "..";
-import { useWidth } from "../../hooks/useWidth";
+import { theme } from "@hitachivantara/uikit-styles";
+
+import { Typography } from "components";
+import { useWidth } from "hooks";
 import { Grid, GridProps } from "./Grid";
 
 const meta: Meta<typeof Grid> = {

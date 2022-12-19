@@ -1,7 +1,8 @@
-import { LocationPin, Map } from "@hitachivantara/uikit-icons";
-import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Button } from "..";
+import { render } from "@testing-library/react";
+import { LocationPin, Map } from "@hitachivantara/uikit-icons";
+
+import { Button } from "components";
 import { MultiButton } from "./MultiButton";
 
 describe("MultiButton", () => {

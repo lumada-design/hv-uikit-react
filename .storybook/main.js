@@ -18,6 +18,17 @@ module.exports = {
   },
   async viteFinal(config) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));
+    config.optimizeDeps = {
+      ...config.optimizeDeps,
+      // Use this option to force linked packages to be pre-bundled.
+      include: [
+        "@storybook/theming",
+        "@storybook/addon-docs",
+        "@mdx-js/react",
+        "lodash/capitalize",
+        "lodash/startCase",
+      ],
+    };
 
     return config;
   },

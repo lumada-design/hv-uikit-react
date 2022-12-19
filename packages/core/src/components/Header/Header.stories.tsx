@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { StoryObj } from "@storybook/react";
+
 import {
-  Button,
+  HvButton,
   HeaderProps,
   HvHeader,
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "..";
-import { useState } from "react";
+} from "components";
 import HitachiLogo from "./assets/HitachiLogo";
 
 const navigationData = [
@@ -94,18 +95,18 @@ export const Main: StoryObj<HeaderProps> = {
             onClick={handleChange}
           />
           <HvHeaderActions aria-label="My-aria-label">
-            <Button
+            <HvButton
               onClick={() => {}}
               aria-label="Open Notifications panel"
               variant="ghost"
-            ></Button>
-            <Button
+            ></HvButton>
+            <HvButton
               onClick={() => {}}
               aria-label="Open User panel"
               variant="ghost"
             >
               User
-            </Button>
+            </HvButton>
           </HvHeaderActions>
         </HvHeader>
       </div>

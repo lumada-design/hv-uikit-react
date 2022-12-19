@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Typography } from "../";
+
+import { Typography } from "components";
 import { Footer, FooterProps } from "./Footer";
 
 const meta: Meta<typeof Footer> = {

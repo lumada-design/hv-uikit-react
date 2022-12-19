@@ -1,6 +1,8 @@
-import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import { BaseProps } from "types";
+
 import {
   StyledContainer,
   StyledIconContainer,

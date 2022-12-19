@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Box } from "../";
-import { outlineStyles } from "../Focus/Focus.Styles";
+
+import { Box } from "components";
+import { outlineStyles } from "utils";
 
 export const StyledBox = styled(Box)({
   // ...theme.hv.typography.link,

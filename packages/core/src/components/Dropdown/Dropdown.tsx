@@ -1,12 +1,12 @@
 import { useState, useRef, CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { Typography } from "..";
-import { useClickOutside } from "../../hooks";
+import { Typography } from "components";
+import { useClickOutside } from "hooks";
 
 import { DropdownHeader } from "./DropdownHeader";
-import { DropdownList } from "./List";
-import { DropdownListItem } from "./ListItem";
+import { DropdownList } from "./DropdownList";
+import { DropdownListItem } from "./DropdownListItem";
 import { DropdownIcon } from "./DropdownIcon";
 
 export interface DropdownOption {
@@ -74,4 +74,6 @@ export const Dropdown = ({
   );
 };
 
-Dropdown.displayName = "Dropdown";
+if (process.env.NODE_ENV !== "production") {
+  Dropdown.displayName = "Dropdown";
+}

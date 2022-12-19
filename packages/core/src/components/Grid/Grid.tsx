@@ -1,7 +1,9 @@
-import { Grid as MuiGrid } from "@mui/material";
-import { isString } from "lodash";
 import { forwardRef } from "react";
-import { useWidth } from "../../hooks/useWidth";
+import { isString } from "lodash";
+import { Grid as MuiGrid } from "@mui/material";
+
+import { useWidth } from "hooks";
+import { BaseProps } from "types";
 
 const BREAKPOINT_GUTTERS = {
   xs: 2,

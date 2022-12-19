@@ -1,8 +1,9 @@
-import { LocationPin, Map } from "@hitachivantara/uikit-icons";
-import { Meta, StoryObj } from "@storybook/react";
-import { range } from "lodash";
 import { useState } from "react";
-import { Button } from "..";
+import { range } from "lodash";
+import { Meta, StoryObj } from "@storybook/react";
+import { LocationPin, Map } from "@hitachivantara/uikit-icons";
+
+import { Button } from "components";
 import { MultiButton, MultiButtonProps } from "./MultiButton";
 
 const meta: Meta<typeof MultiButton> = {

@@ -80,7 +80,7 @@ const ColorsGroup = ({ keys, colors }) => {
 };
 
 const Colors = () => {
-  const [allColors, setAllColors] = useState(undefined);
+  const [allColors, setAllColors] = useState<typeof baseGroups>();
 
   useEffect(() => {
     const groups = groupColors(Object.keys(theme.colors));

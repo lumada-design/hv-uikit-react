@@ -1,11 +1,11 @@
-import { Typography } from "../../../..";
 import { useContext } from "react";
-import { isKeypress, KeyboardCodes } from "../../../../utils/KeyboardUtils";
-import { MenuBar } from "..";
-import { NavigationItemProp } from "../Navigation";
-import { FocusContext } from "../utils/FocusContext";
-import SelectionContext from "../utils/SelectionContext";
+
+import { BaseProps } from "types";
+import { Typography, MenuBar, NavigationItemProp } from "components";
+import { isKeypress, keyboardCodes } from "utils";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
+import { FocusContext } from "../utils/FocusContext";
+import { SelectionContext } from "../utils/SelectionContext";
 
 export interface MenuItemProps extends BaseProps<"div", { onClick }> {
   item: NavigationItemProp;
@@ -27,8 +27,8 @@ export const MenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const actionHandler = (event) => {
     if (
       event.type === "click" ||
-      isKeypress(event, KeyboardCodes.Enter) ||
-      isKeypress(event, KeyboardCodes.SpaceBar)
+      isKeypress(event, keyboardCodes.Enter) ||
+      isKeypress(event, keyboardCodes.SpaceBar)
     ) {
       if (event.type === "click") {
         event.currentTarget.blur();

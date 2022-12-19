@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
-import { Button } from "..";
-import { useControlled } from "../../utils";
+
+import { Button } from "components";
+import { useControlled } from "hooks";
 
 export interface ToggleButtonProps
   // extends BaseProps<HTMLButtonElement, { onClick }> {

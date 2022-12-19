@@ -1,6 +1,7 @@
-import { Lock, Unlock } from "@hitachivantara/uikit-icons";
-import { act, render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+import { act, render } from "@testing-library/react";
+import { Lock, Unlock } from "@hitachivantara/uikit-icons";
+
 import { ToggleButton } from "./ToggleButton";
 
 describe("ToggleButton", () => {

@@ -5,7 +5,7 @@
   "author": "Hitachi Vantara UI Kit Team",
   "description": "A collection of icons to use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "./src/index.ts",
+  "main": "./bin/index.ts",
   "keywords": [
     "hitachi-vantara",
     "design-system",

@@ -54,9 +54,7 @@ export const Buttons = () => {
           Secondary Ghost
         </HvButton>
       </HvBox>
-      <HvBox
-        sx={{ display: "flex", gap: 20, backgroundColor: "#D3E3F6", p: 4 }}
-      >
+      <HvBox sx={{ display: "flex", gap: 20, backgroundColor: "#D3E3F6" }}>
         <HvTypography variant="title1">Semantic</HvTypography>
         <HvButton variant="semantic" startIcon={<Draw />}>
           Primary

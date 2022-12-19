@@ -1,5 +1,5 @@
 import { HvTypography } from "@hitachivantara/uikit-core";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const iconContainer = {
   margin: "5px",
@@ -54,7 +54,7 @@ const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
 
 const Icons = ({ icons, widerSpacing }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [iconSize, setIconSize] = useState(null);
+  const [iconSize, setIconSize] = useState<typeof dropdownSizes[0]>();
 
   return (
     <div>

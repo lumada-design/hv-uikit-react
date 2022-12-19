@@ -14,5 +14,3 @@ export const DropdownList = styled("ul")`
   text-overflow: ellipsis;
   border-radius: 0 0 ${theme.radii.sm} ${theme.radii.sm};
 `;
-
-DropdownList.displayName = "DropdownList";
