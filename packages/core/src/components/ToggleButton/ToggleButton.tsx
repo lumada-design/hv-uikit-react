@@ -2,10 +2,9 @@ import { forwardRef } from "react";
 
 import { Button } from "components";
 import { useControlled } from "hooks";
+import { HvBaseProps } from "types";
 
-export interface ToggleButtonProps
-  // extends BaseProps<HTMLButtonElement, { onClick }> {
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> {
+export type ToggleButtonProps = HvBaseProps<HTMLButtonElement, { onClick }> & {
   /** When uncontrolled, defines the initial selected state. */
   defaultSelected?: boolean;
   /** Defines if the button is selected. When defined the button state becomes controlled. */
@@ -16,7 +15,7 @@ export interface ToggleButtonProps
   selectedIcon?: React.ReactNode;
   /** Function called when icon is clicked. */
   onClick?: Function;
-}
+};
 
 export const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
   (props, ref) => {

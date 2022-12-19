@@ -1,4 +1,4 @@
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 import { HeaderRoot, StyledAppBar } from "./Header.styles";
 
 export type HeaderPosition =
@@ -8,10 +8,10 @@ export type HeaderPosition =
   | "static"
   | "relative";
 
-export interface HeaderProps extends BaseProps {
+export type HeaderProps = HvBaseProps & {
   /** The position of the header bar */
   position?: HeaderPosition;
-}
+};
 
 /**
  * Header component is used to render a header bar with logo and brand name, navigation and actions.

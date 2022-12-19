@@ -1,7 +1,7 @@
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 import { StyledDiv } from "./Actions.styles";
 
-export interface ActionsProps extends BaseProps {}
+export type ActionsProps = HvBaseProps;
 
 export const Actions = (props: ActionsProps) => {
   const { children, className, ...others } = props;

@@ -1,17 +1,17 @@
 import { useContext } from "react";
 
-import { BaseProps } from "types";
-import { Typography, MenuBar, NavigationItemProp } from "components";
+import { MenuBar, NavigationItemProp, Typography } from "components";
+import { HvBaseProps } from "types";
 import { isKeypress, keyboardCodes } from "utils";
-import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
+import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
 
-export interface MenuItemProps extends BaseProps<"div", { onClick }> {
+export type MenuItemProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   item: NavigationItemProp;
   type?: string;
   onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
-}
+};
 
 export const MenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);

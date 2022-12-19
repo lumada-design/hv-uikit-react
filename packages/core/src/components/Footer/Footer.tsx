@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import { useTheme } from "@mui/material/styles";
-import { BaseProps } from "types";
+import clsx from "clsx";
+import { HvBaseProps } from "types";
 
 import {
   StyledCopyright,
@@ -10,7 +10,7 @@ import {
   StyledSeparator,
 } from "./Footer.styles";
 
-export interface FooterProps extends BaseProps<HTMLDivElement> {
+export type FooterProps = HvBaseProps<HTMLDivElement> & {
   name?: React.ReactNode;
   copyright?: React.ReactNode;
   links?: React.ReactNode;
@@ -21,7 +21,7 @@ export interface FooterProps extends BaseProps<HTMLDivElement> {
     copyright?: string;
     separator?: string;
   };
-}
+};
 
 /**
  * A Footer is a way of providing extra information at the end of a page.

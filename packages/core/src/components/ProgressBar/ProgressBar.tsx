@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import clamp from "lodash/clamp";
 
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 import {
   StyledProgressBar,
   StyledProgressBarContainer,
@@ -15,7 +15,7 @@ export type ProgressBarStatus = "inProgress" | "completed" | "error";
 /**
  * ProgressBar provides feedback about a process that is taking place in the application.
  */
-export interface ProgressBarProps extends BaseProps {
+export type ProgressBarProps = HvBaseProps & {
   /** The value of the progress bar. */
   value: number;
   /**
@@ -35,7 +35,7 @@ export interface ProgressBarProps extends BaseProps {
     progressBar?: string;
     progressBarLabel?: string;
   };
-}
+};
 
 export const ProgressBar = (props: ProgressBarProps) => {
   const {

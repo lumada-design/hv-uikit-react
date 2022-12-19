@@ -1,11 +1,11 @@
-import { BaseProps } from "types";
 import { Typography as HvTypography } from "components";
+import { HvBaseProps } from "types";
 import { BrandRoot, BrandSeparator } from "./Brand.styles";
 
-export interface BrandProps extends BaseProps {
+export type BrandProps = HvBaseProps & {
   logo?: React.ReactNode;
   name?: string;
-}
+};
 
 /**
  * Header component is used to render a header bar with logo and brand name, navigation and actions.

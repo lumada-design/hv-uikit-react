@@ -1,8 +1,8 @@
+import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import range from "lodash/range";
-import { theme } from "@hitachivantara/uikit-styles";
 
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 
 import {
   StyledBar,
@@ -11,7 +11,7 @@ import {
   StyledRoot,
 } from "./Loading.Styles";
 
-export interface LoadingProps extends BaseProps<HTMLDivElement> {
+export type LoadingProps = HvBaseProps<HTMLDivElement> & {
   /** Indicates if the component should be render in a small size. */
   small?: boolean;
   /** The label to be displayed.  */
@@ -29,7 +29,7 @@ export interface LoadingProps extends BaseProps<HTMLDivElement> {
     blur?: string;
     hidden?: string;
   };
-}
+};
 
 /**
  * Loading provides feedback about a process that is taking place in the application.
