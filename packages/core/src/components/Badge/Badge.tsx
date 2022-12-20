@@ -1,9 +1,9 @@
 import { Typography, TypographyVariants } from "components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 
-export interface BadgeProps extends BaseProps {
+export type BadgeProps = HvBaseProps & {
   /**
    * Count is the number of unread notifications.
    * Note count and label are mutually exclusive.
@@ -36,7 +36,7 @@ export interface BadgeProps extends BaseProps {
     badgeContainer?: string;
     badgePosition?: string;
   };
-}
+};
 
 /**
  * The badge is a component used to notify the user that something has occurred, in the app context.

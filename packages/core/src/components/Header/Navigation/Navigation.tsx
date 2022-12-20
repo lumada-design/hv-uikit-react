@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 
-import { BaseProps } from "types";
 import { useSelectionPath } from "hooks";
+import { HvBaseProps } from "types";
 import { MenuBar } from "./MenuBar";
 import { NavigationNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
@@ -16,14 +16,14 @@ export interface NavigationItemProp {
   data?: NavigationItemProp[];
 }
 
-export interface NavigationProps extends BaseProps<"div", { onClick }> {
+export type NavigationProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   data: NavigationItemProp[];
   selected?: string;
   onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
   classes?: {
     root?: string;
   };
-}
+};
 
 export const Navigation = ({
   data,

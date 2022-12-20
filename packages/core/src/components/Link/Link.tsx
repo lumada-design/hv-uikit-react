@@ -1,7 +1,7 @@
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 import { StyledA, StyledBox } from "./Link.styles";
 
-export interface LinkProps extends BaseProps {
+export type LinkProps = HvBaseProps & {
   as?: React.ElementType | undefined;
   onClick?: any;
   tabIndex?: number;
@@ -12,7 +12,7 @@ export interface LinkProps extends BaseProps {
   classes?: {
     a?: string;
   };
-}
+};
 
 export const Link = (props: LinkProps) => {
   const {

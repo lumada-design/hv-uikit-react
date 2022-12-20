@@ -1,9 +1,9 @@
-import { forwardRef } from "react";
-import { isString } from "lodash";
 import { Grid as MuiGrid } from "@mui/material";
+import { isString } from "lodash";
+import { forwardRef } from "react";
 
 import { useWidth } from "hooks";
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 
 const BREAKPOINT_GUTTERS = {
   xs: 2,
@@ -33,7 +33,7 @@ export type GridSpacing =
   | 9
   | 10;
 
-export interface GridProps extends BaseProps {
+export type GridProps = HvBaseProps & {
   /**
    * If `true`, the component will have the flex *container* behavior.
    * You should be wrapping *items* with a *container*.
@@ -101,7 +101,7 @@ export interface GridProps extends BaseProps {
    * Refer to the limitations section of the documentation to better understand the use case.
    */
   zeroMinWidth?: boolean;
-}
+};
 
 /**
  * The grid creates visual consistency between layouts while allowing flexibility

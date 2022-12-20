@@ -1,17 +1,17 @@
-import { forwardRef } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
+import { forwardRef } from "react";
 
 import { PolymorphicComponentRef, PolymorphicRef } from "types";
 
 type SxProps = React.CSSProperties | ((theme) => React.CSSProperties);
 
-type BaseProps<C extends React.ElementType> = PolymorphicComponentRef<
+type HvBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   C,
   { style?: React.CSSProperties; sx?: SxProps }
 >;
 
 export type BoxProps = <C extends React.ElementType = "div">(
-  props: BaseProps<C>
+  props: HvBaseProps<C>
 ) => React.ReactElement | null;
 
 const useSx = (sx: SxProps) => {
@@ -20,7 +20,7 @@ const useSx = (sx: SxProps) => {
 
 export const Box: BoxProps = forwardRef(
   <C extends React.ElementType = "div">(
-    { style, as, sx, children, ...restProps }: BaseProps<C>,
+    { style, as, sx, children, ...restProps }: HvBaseProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || "div";

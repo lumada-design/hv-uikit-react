@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import React, { cloneElement } from "react";
 
-import { BaseProps } from "types";
 import { ButtonVariant } from "components";
+import { HvBaseProps } from "types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
 
-export interface MultiButtonProps extends BaseProps {
+export type MultiButtonProps = HvBaseProps & {
   /** If all the buttons are disabled. */
   disabled?: boolean;
   /** If the MultiButton is to be displayed vertically. */
@@ -17,7 +17,7 @@ export interface MultiButtonProps extends BaseProps {
     root?: string;
     button?: string;
   };
-}
+};
 
 export const MultiButton = ({
   className,

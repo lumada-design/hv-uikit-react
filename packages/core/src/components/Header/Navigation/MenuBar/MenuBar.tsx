@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import { useContext } from "react";
 
-import { BaseProps } from "types";
 import { NavigationItemProp } from "components";
-import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
+import { HvBaseProps } from "types";
 import { MenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
+import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
 
-export interface MenuBarProps extends BaseProps<"div", { onClick }> {
+export type MenuBarProps = HvBaseProps<"div", { onClick }> & {
   data: NavigationItemProp[];
   type: string;
   onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
-}
+};
 
 export const MenuBar = ({
   id,

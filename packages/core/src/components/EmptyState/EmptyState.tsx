@@ -1,7 +1,7 @@
+import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
-import { useTheme } from "@mui/material/styles";
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 
 import {
   StyledContainer,
@@ -11,7 +11,7 @@ import {
   StyledTypography,
 } from "./EmptyState.styles";
 
-export interface EmptyStateProps extends BaseProps<HTMLDivElement, { title }> {
+export type EmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** Icon to be presented. */
   icon: React.ReactNode;
   /** The title to be shown. */
@@ -31,7 +31,7 @@ export interface EmptyStateProps extends BaseProps<HTMLDivElement, { title }> {
     messageContainer?: string;
     actionContainer?: string;
   };
-}
+};
 
 /**
  * Empty states communicate that there’s no information, data or values to display in a given context.

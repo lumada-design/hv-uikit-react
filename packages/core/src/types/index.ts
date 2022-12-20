@@ -20,7 +20,7 @@ export type PolymorphicComponentRef<
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
-export type BaseProps<E = HTMLDivElement, P = {}> = Omit<
+export type HvBaseProps<E = HTMLDivElement, P = {}> = Omit<
   HTMLAttributes<E>,
   keyof P
 >;

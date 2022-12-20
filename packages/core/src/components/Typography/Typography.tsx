@@ -1,4 +1,4 @@
-import { BaseProps } from "types";
+import { HvBaseProps } from "types";
 import { StyledTypography } from "./Typography.styles";
 
 export type TypographyVariants =
@@ -25,14 +25,14 @@ const TypographyMap = {
   body2: "p",
 } as const;
 
-export interface TypographyProps extends BaseProps {
+export type TypographyProps = HvBaseProps & {
   as?: keyof typeof TypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: TypographyVariants;
   link?: boolean;
   className?: string;
   children: React.ReactNode;
-}
+};
 
 /**
  * Typography component is used to render text and paragraphs within an interface.
