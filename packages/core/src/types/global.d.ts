@@ -15,3 +15,8 @@ declare global {
     }
   }
 }
+
+// To import .png files on stories
+declare module "*.png" {
+  export default "" as string;
+}
