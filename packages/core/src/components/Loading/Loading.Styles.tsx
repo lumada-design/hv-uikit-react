@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { Typography } from "components";
+import { Typography } from "components/Typography";
 
 const interval = 0.11;
 
