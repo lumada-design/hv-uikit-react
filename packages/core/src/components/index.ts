@@ -1,6 +1,3 @@
-export * from "./Typography";
-export { Typography as HvTypography } from "./Typography";
-
 export * from "./ActionBar";
 export { ActionBar as HvActionBar } from "./ActionBar";
 export * from "./Badge";
@@ -9,6 +6,8 @@ export * from "./Box";
 export { Box as HvBox } from "./Box";
 export * from "./Button";
 export { Button as HvButton } from "./Button";
+export * from "./Container";
+export { Container as HvContainer } from "./Container";
 export * from "./Dropdown";
 export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./EmptyState";
@@ -34,3 +33,5 @@ export * from "./ProgressBar";
 export { ProgressBar as HvProgressBar } from "./ProgressBar";
 export * from "./ToggleButton";
 export { ToggleButton as HvToggleButton } from "./ToggleButton";
+export * from "./Typography";
+export { Typography as HvTypography } from "./Typography";
