@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> should match the snapshot 1`] = `
+<ul
+  className="HvListContainer-root"
+>
+  <li
+    className="HvListItem-root Navigation-listItemRoot-9 HvListItem-gutters HvListItem-interactive HvListItem-selected Navigation-listItemSelected-10 HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    selected={true}
+  >
+    <span>
+      Menu1
+    </span>
+    <div
+      className="HvListItem-endAdornment"
+    />
+  </li>
+</ul>
+`;
