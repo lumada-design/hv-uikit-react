@@ -9,6 +9,8 @@ export * from "./Box";
 export { Box as HvBox } from "./Box";
 export * from "./Button";
 export { Button as HvButton } from "./Button";
+export * from "./Container";
+export { Container as HvContainer } from "./Container";
 export * from "./Dropdown";
 export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./EmptyState";

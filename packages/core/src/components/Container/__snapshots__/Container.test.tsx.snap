@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`Container > should render correctly 1`] = `
+<div>
+  <div
+    breakpoints="[object Object]"
+    class="MuiContainer-root e4r8k2m0 css-1coxtr1-MuiContainer-root-StyledRoot"
+  />
+</div>
+`;
