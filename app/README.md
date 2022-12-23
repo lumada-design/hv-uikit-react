@@ -1,4 +1,4 @@
-# UI Kit Vite.js example
+# UI Kit App
 
 This example shows how to use [Vite.js](https://github.com/vitejs/vite) with Ui kit.
 

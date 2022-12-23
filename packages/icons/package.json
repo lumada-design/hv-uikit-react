@@ -1,11 +1,12 @@
 {
   "name": "@hitachivantara/uikit-icons",
-  "version": "5.0.0",
+  "version": "5.1.0-next.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "A collection of icons to use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "./bin/index.ts",
+  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
@@ -51,7 +52,6 @@
     "tsconfig-paths": "^4.1.0",
     "yargs": "^17.6.2"
   },
-  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },

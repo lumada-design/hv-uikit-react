@@ -1,11 +1,12 @@
 {
   "name": "@hitachivantara/uikit-core",
-  "version": "5.0.0",
+  "version": "5.1.0-next.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit core React components for the Hitachi Vantara Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "./src/index.ts",
+  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
@@ -48,7 +49,6 @@
     "@types/react-dom": "^18.0.8",
     "tsc-alias": "^1.8.2"
   },
-  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },

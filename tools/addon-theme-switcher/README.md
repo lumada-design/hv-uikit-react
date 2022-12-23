@@ -1,3 +1,3 @@
-# @hitachivantara/addon-theme-switcher
+# addon-theme-switcher
 
 Storybook addon Theme Switcher.
