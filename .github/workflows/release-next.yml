@@ -1,0 +1,57 @@
+name: Release Next
+
+on:
+  repository_dispatch:
+    types: [next]
+  workflow_dispatch:
+
+env:
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: next
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/next
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for next of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/next/
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_ENV: production
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CHECKOUT_REF: ${{ github.event.client_payload.ref }}
+      RELEASE_TYPE: ${{ github.event.client_payload.type }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
+        run: pnpm install
+
+      - name: Publish Setup
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Publish Next
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          pnpm publish:next

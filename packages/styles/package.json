@@ -34,10 +34,14 @@
   "devDependencies": {
     "tsc-alias": "^1.8.2"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "engines": {
     "node": ">=16.6.0"
-  }
+  },
+  "gitHead": "1d9cb5bd8000d79b36270db95cee2a640d50ffdc"
 }

@@ -30,7 +30,7 @@
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf ./{dist,bin,*.tsbuildinfo}",
-    "prepare": "pnpm convert"
+    "install": "pnpm convert"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -52,10 +52,14 @@
     "tsconfig-paths": "^4.1.0",
     "yargs": "^17.6.2"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "engines": {
     "node": ">=16.6.0"
-  }
+  },
+  "gitHead": "1d9cb5bd8000d79b36270db95cee2a640d50ffdc"
 }

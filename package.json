@@ -22,9 +22,9 @@
     "clean": "npx rimraf ./{packages,tools}/*/{dist,bin,*.tsbuildinfo}",
     "wipe": "pnpm clean && npx rimraf **/{node_modules,pnpm-lock.yaml}",
     "typecheck": "pnpm -r -F='./packages/**' typecheck",
-    "prepare": "npx husky install",
+    "install": "npx husky install",
     "preinstall": "npx only-allow pnpm",
-    "ver": "npx lerna version --no-private --no-push --yes"
+    "publish:next": "pnpm build && npx lerna publish --yes --conventional-prerelease --preid next"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
