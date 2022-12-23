@@ -6,6 +6,7 @@
   "description": "UI Kit styling solution for the Hitachi Vantara Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "./src/index.ts",
+  "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
     "design-system",
@@ -33,11 +34,14 @@
   "devDependencies": {
     "tsc-alias": "^1.8.2"
   },
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "engines": {
     "node": ">=16.6.0"
-  }
+  },
+  "gitHead": "1d9cb5bd8000d79b36270db95cee2a640d50ffdc"
 }

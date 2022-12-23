@@ -1,11 +1,9 @@
 {
-  "name": "@hitachivantara/addon-theme-switcher",
-  "version": "1.0.0",
-  "private": false,
+  "name": "addon-theme-switcher",
+  "private": true,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Storybook addon Theme Switcher",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "./dist/index.js",
+  "main": "./src/index.ts",
   "keywords": [
     "hitachi-vantara",
     "ui-kit",
@@ -13,18 +11,10 @@
     "storybook",
     "theme-switcher"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git"
-  },
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
-  },
   "scripts": {
     "build": "pnpm clean && tsc",
     "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
-    "prepare": "pnpm build"
+    "install": "pnpm build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",

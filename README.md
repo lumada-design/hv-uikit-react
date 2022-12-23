@@ -13,12 +13,10 @@
 
 <br>
 
-![React 17.02](https://img.shields.io/badge/react-^17.02.1-blue.svg)
+![React 18.2.0](https://img.shields.io/badge/react-^^18.2.0-blue.svg)
 ![Node 16](https://img.shields.io/badge/node-16.13.1-brightgreen.svg)
 ![License Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![Supported browsers: Chrome, Firefox, Safari, Edge](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge-blue.svg)
-
-![Master Nightly build status](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
 
 </div>
 
@@ -32,6 +30,8 @@
 ## Packages
 
 - `@hitachivantara/uikit-core` – core components library
+- `@hitachivantara/uikit-icons` – icons components library
+- `@hitachivantara/uikit-styles` – [emotion](https://emotion.sh/docs/introduction) based styling library
 
 ## Installing 🚀
 

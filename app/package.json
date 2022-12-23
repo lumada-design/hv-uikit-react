@@ -1,5 +1,5 @@
 {
-  "name": "hv-uikit-app",
+  "name": "uikit-app",
   "private": true,
   "scripts": {
     "dev": "vite",
