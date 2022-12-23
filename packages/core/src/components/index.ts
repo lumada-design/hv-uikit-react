@@ -1,3 +1,6 @@
+export * from "./Typography";
+export { Typography as HvTypography } from "./Typography";
+
 export * from "./ActionBar";
 export { ActionBar as HvActionBar } from "./ActionBar";
 export * from "./Badge";
@@ -33,5 +36,3 @@ export * from "./ProgressBar";
 export { ProgressBar as HvProgressBar } from "./ProgressBar";
 export * from "./ToggleButton";
 export { ToggleButton as HvToggleButton } from "./ToggleButton";
-export * from "./Typography";
-export { Typography as HvTypography } from "./Typography";
