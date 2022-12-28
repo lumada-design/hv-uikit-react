@@ -34,5 +34,7 @@ export * from "./MultiButton";
 export { MultiButton as HvMultiButton } from "./MultiButton";
 export * from "./ProgressBar";
 export { ProgressBar as HvProgressBar } from "./ProgressBar";
+export * from "./SimpleGrid";
+export { SimpleGrid as HvSimpleGrid } from "./SimpleGrid";
 export * from "./ToggleButton";
 export { ToggleButton as HvToggleButton } from "./ToggleButton";
