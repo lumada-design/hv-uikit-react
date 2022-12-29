@@ -1,0 +1,90 @@
+import styled from "@emotion/styled";
+import { Close, Edit } from "@hitachivantara/uikit-icons";
+import { Meta, StoryObj } from "@storybook/react";
+import { HvButton, HvTypography, theme } from "index";
+import { HvPanel, PanelProps } from "./Panel";
+
+const meta: Meta<typeof HvPanel> = {
+  title: "Layout/Panel",
+  component: HvPanel,
+};
+export default meta;
+
+export const Main: StoryObj<PanelProps> = {
+  render: () => {
+    return (
+      <HvPanel>
+        <HvTypography>Panel Content</HvTypography>
+      </HvPanel>
+    );
+  },
+};
+
+export const WithScroll: StoryObj<PanelProps> = {
+  render: () => {
+    return (
+      <HvPanel style={{ width: "400px", height: "400px" }}>
+        <div style={{ height: 600, backgroundColor: theme.colors.atmo4 }}>
+          &nbsp;
+        </div>
+      </HvPanel>
+    );
+  },
+};
+
+const StyledButton = styled(HvButton)({
+  position: "absolute",
+  top: theme.space.sm,
+  right: theme.space.sm,
+  width: "32px",
+  height: "32px",
+});
+
+export const FullWidth: StoryObj<PanelProps> = {
+  render: () => {
+    return (
+      <HvPanel style={{ width: "100%", height: "200px" }}>
+        <HvTypography>Panel Content</HvTypography>
+        <StyledButton icon aria-label="Edit" variant="secondaryGhost">
+          <Edit />
+        </StyledButton>
+      </HvPanel>
+    );
+  },
+};
+
+const CloseButton = styled(HvButton)({
+  position: "absolute",
+  top: theme.space.sm,
+  right: theme.space.sm,
+  width: "32px",
+  height: "32px",
+});
+
+const Overlay = styled("div")({
+  backgroundColor: theme.colors.atmo3,
+  opacity: 0.8,
+  width: "100%",
+  padding: theme.space.md,
+});
+
+export const Modal: StoryObj<PanelProps> = {
+  render: () => {
+    return (
+      <Overlay>
+        <HvPanel
+          style={{
+            width: "100%",
+            height: "200px",
+            boxShadow: theme.shadows.sm,
+          }}
+        >
+          <HvTypography>Panel Content</HvTypography>
+          <CloseButton icon aria-label="Close" variant="secondaryGhost">
+            <Close />
+          </CloseButton>
+        </HvPanel>
+      </Overlay>
+    );
+  },
+};

@@ -17,6 +17,7 @@ export * from "./Header";
 export * from "./Link";
 export * from "./Loading";
 export * from "./MultiButton";
+export * from "./Panel";
 export * from "./ProgressBar";
 export * from "./SimpleGrid";
 export * from "./Stack";
