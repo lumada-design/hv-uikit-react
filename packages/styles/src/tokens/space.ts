@@ -1,8 +1,8 @@
 export const space = {
   base: 8,
-  xs: "6px",
-  sm: "10px",
-  md: "14px",
-  lg: "18px",
-  xl: "22px",
+  xs: "8px",
+  sm: "16px",
+  md: "24px",
+  lg: "48px",
+  xl: "80px",
 };

@@ -7,6 +7,14 @@ const ds3Theme = makeTheme((theme) => ({
       wicked: { ...colors.common, ...colors.dark },
     },
   },
+  space: {
+    base: 10,
+    xs: "10px",
+    sm: "20px",
+    md: "30px",
+    lg: "60px",
+    xl: "90px",
+  },
   components: {
     dropdown: {
       borderRadius: "none",
