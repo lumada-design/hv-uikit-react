@@ -65,10 +65,8 @@ export const Badge = (props: BadgeProps) => {
   const Component =
     icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
-  console.log(renderedCountOrLabel);
   return (
     <StyledRoot
-      // @ts-ignore
       aria-label={renderedCountOrLabel?.toString()}
       className={classes?.root}
       {...others}
