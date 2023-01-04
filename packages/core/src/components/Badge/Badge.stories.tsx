@@ -40,11 +40,7 @@ export const Multiple: StoryObj<BadgeProps> = {
     classes: { control: { disable: true } },
   },
   decorators: [
-    (Story) => (
-      <div style={{ ...container, width: 500 }}>
-        <Story />
-      </div>
-    ),
+    (Story) => <div style={{ ...container, width: 500 }}>{Story()}</div>,
   ],
   render: () => {
     return (
