@@ -7,6 +7,7 @@ import {
   Icons,
   Cards,
   Typography,
+  Tags,
 } from "./components";
 import { Header, ThemeSwitcher } from "./layout";
 
@@ -25,6 +26,7 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <Tags />
         <Cards />
         <Grid />
         <EmptyState />
