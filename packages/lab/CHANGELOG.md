@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.2.3...@hitachivantara/uikit-react-lab@4.3.0) (2023-01-06)
+
+### Features
+
+- **VerticalNavigation:** add expand / collapse vertical navigation ([#3021](https://github.com/lumada-design/hv-uikit-react/issues/3021)) ([0a89cb1](https://github.com/lumada-design/hv-uikit-react/commit/0a89cb1b5c48bed3572dd27f4bc923d782a31857))
+
 ## [4.2.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.2.2...@hitachivantara/uikit-react-lab@4.2.3) (2022-12-17)
 
 ### Bug Fixes
