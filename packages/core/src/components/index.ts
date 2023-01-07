@@ -9,6 +9,7 @@ export * from "./Container";
 export * from "./Dropdown";
 export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./EmptyState";
+export * from "./Focus";
 export * from "./Footer";
 export * from "./Grid";
 export * from "./Header";

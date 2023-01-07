@@ -88,3 +88,6 @@ export type HvBaseColors = Record<HvBaseColorKeys, string>;
 export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
 export type HvSupportColors = Record<HvSupportColorKeys, string>;
+
+// BREAKPOINTS
+export type HvBreakpoints = "xs" | "sm" | "md" | "lg" | "xl";

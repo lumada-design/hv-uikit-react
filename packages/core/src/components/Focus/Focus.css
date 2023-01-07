@@ -1,0 +1,35 @@
+.root {
+  /* border: 5px solid lightgreen; */
+}
+.root:hover {
+  /* border: 5px solid hotpink; */
+}
+
+.focused {
+  outline-color: #52a8ec;
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: -1px;
+  box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
+
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    outline-color: #52a8ec;
+    outline-style: solid;
+    outline-width: 0px;
+    outline-offset: -1px;
+    box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
+  }
+}
+
+.focusDisabled {
+  outline: none;
+  box-shadow: none;
+}
+.focusDisabled *:focus {
+  outline: none;
+  box-shadow: none;
+}
+.focusDisabled * {
+  outline: none !important;
+  box-shadow: none !important;
+}
