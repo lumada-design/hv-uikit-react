@@ -1,10 +1,3 @@
-.root {
-  /* border: 5px solid lightgreen; */
-}
-.root:hover {
-  /* border: 5px solid hotpink; */
-}
-
 .focused {
   outline-color: #52a8ec;
   outline-style: solid;

@@ -10,12 +10,12 @@ import { StyledRoot } from "./Stack.styles";
 import { Focus } from "index";
 import { HvBreakpoints } from "types/hv";
 
-export type StackDirection = "column" | "row";
-export type StackBreakpoints = Record<HvBreakpoints, string>;
+export type HvStackDirection = "column" | "row";
+export type HvStackBreakpoints = Record<HvBreakpoints, string>;
 
-export type StackProps = HvBaseProps & {
+export type HvStackProps = HvBaseProps & {
   /** The direction of the stack. Can be either a string or an object that states the direction for each breakpoint. */
-  direction?: StackDirection | Partial<StackBreakpoints>;
+  direction?: HvStackDirection | Partial<HvStackBreakpoints>;
   /** The spacing between elements of the stack. */
   spacing?: HvBreakpoints;
   /** The divider component to be used between the stack elements.
@@ -56,7 +56,7 @@ const getDirection = (direction, width, breakpoints) => {
  *
  * It also allows the specification of the spacing between the stack elements and the adition of a divider between the elements.
  */
-export const Stack = ({
+export const HvStack = ({
   classes,
   className,
   children,
@@ -66,7 +66,7 @@ export const Stack = ({
   withNavigation = false,
   dividerProps = {},
   ...others
-}: StackProps) => {
+}: HvStackProps) => {
   const width = useWidth();
   const containerRef = useRef(null);
   const { breakpoints } = useTheme();

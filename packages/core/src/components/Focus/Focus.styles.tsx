@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
-import clsx from "clsx";
 import { outlineStyles } from "utils/focusUtils";
 
 export const StyledFocusWrapper = styled("div")({
@@ -21,32 +19,3 @@ export const StyledFalseFocus = styled("div")({
   backgroundColor: "transparent",
   pointerEvents: "none",
 });
-
-export const StyledComp = (Element) =>
-  styled(({ className }) => (
-    <Element.type
-      {...Element.props}
-      className={clsx(
-        className,
-        Element.props.selected && "selected",
-        Element.props.disabledClass && "disabled",
-        Element.props.focusDisabled && "focusDisabled"
-      )}
-    />
-  ))({
-    "&.focusDisabled": {
-      outline: "none",
-      "& *:focus": {
-        outline: "none",
-      },
-      "& *": {
-        outline: "none !important",
-      },
-    },
-    "&.focused": {
-      ...outlineStyles,
-      "@media (-webkit-min-device-pixel-ratio:0)": {
-        ...outlineStyles,
-      },
-    },
-  });

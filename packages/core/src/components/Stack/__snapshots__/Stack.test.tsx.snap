@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`Stack > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-5p3hah-StyledRoot e1rmp81u0"
+  />
+</div>
+`;
