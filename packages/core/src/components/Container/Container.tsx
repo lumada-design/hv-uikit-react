@@ -8,7 +8,7 @@ export interface ContainerProps extends HvBaseProps {
    * The component used for the root node.
    * Either a string to use a DOM element or a component.
    */
-  component: React.ElementType;
+  component?: React.ElementType;
   /**
    * Determine the max-width of the container.
    * The container width grows with the size of the screen.
