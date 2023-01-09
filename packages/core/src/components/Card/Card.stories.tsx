@@ -1,6 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Card, CardHeader, CardContent, CardMedia, CardProps } from "./";
-import { Typography } from "components";
+import {
+  HvTypography,
+  HvCard,
+  HvCardProps,
+  HvCardContent,
+  HvCardHeader,
+  HvCardMedia,
+} from "components";
 import compressor from "./assets/compressor.png";
 
 const colors = [
@@ -32,14 +38,14 @@ const colors = [
   "atmo5",
 ];
 
-const meta: Meta<typeof Card> = {
+const meta: Meta<typeof HvCard> = {
   title: "Display/Card",
-  component: Card,
+  component: HvCard,
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };
 export default meta;
 
-export const Main: StoryObj<CardProps> = {
+export const Main: StoryObj<HvCardProps> = {
   args: {
     bgColor: "atmo1",
     statusColor: "sema4",
@@ -54,36 +60,36 @@ export const Main: StoryObj<CardProps> = {
   },
   render: ({ bgColor, statusColor, selectable, selected }) => {
     return (
-      <Card
+      <HvCard
         bgColor={bgColor}
         statusColor={statusColor}
         style={{ width: 360 }}
         selectable={selectable}
         selected={selected}
       >
-        <CardHeader
+        <HvCardHeader
           title="Asset Avatar L90"
           subheader="Compressor"
           aria-label="Compressor"
         />
-        <CardMedia
+        <HvCardMedia
           component="img"
           // @ts-ignore
           alt="Compressor"
           height={140}
           image={compressor}
         />
-        <CardContent>
+        <HvCardContent>
           <div style={{ paddingTop: "20px" }}>
-            <Typography variant="label">ID</Typography>
-            <Typography>2101cad3-7cd4-1000-bdp95-d8c497176e7c</Typography>
+            <HvTypography variant="label">ID</HvTypography>
+            <HvTypography>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
           </div>
           <div style={{ marginTop: "20px" }}>
-            <Typography variant="label">Last connected</Typography>
-            <Typography>Aug 30, 2017 12:27:53 PM</Typography>
+            <HvTypography variant="label">Last connected</HvTypography>
+            <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
           </div>
-        </CardContent>
-      </Card>
+        </HvCardContent>
+      </HvCard>
     );
   },
 };

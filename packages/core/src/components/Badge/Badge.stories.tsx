@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "@hitachivantara/uikit-icons";
-
-import { Button } from "components";
-import { Badge, BadgeProps } from "./Badge";
+import { HvButton, HvBadge, HvBadgeProps } from "components";
 
 const container = {
   width: 400,
@@ -11,13 +9,13 @@ const container = {
   justifyContent: "space-between",
 };
 
-const meta: Meta<typeof Badge> = {
+const meta: Meta<typeof HvBadge> = {
   title: "Display/Badge",
-  component: Badge,
+  component: HvBadge,
 };
 export default meta;
 
-export const Main: StoryObj<BadgeProps> = {
+export const Main: StoryObj<HvBadgeProps> = {
   args: {
     count: 1,
     showCount: false,
@@ -31,11 +29,11 @@ export const Main: StoryObj<BadgeProps> = {
     icon: { control: { disable: true } },
   },
   render: (args) => {
-    return <Badge {...args} />;
+    return <HvBadge {...args} />;
   },
 };
 
-export const Multiple: StoryObj<BadgeProps> = {
+export const Multiple: StoryObj<HvBadgeProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -45,17 +43,17 @@ export const Multiple: StoryObj<BadgeProps> = {
   render: () => {
     return (
       <>
-        <Badge id="badge1" count={1} />
-        <Badge id="badge2" showCount count={8} />
-        <Badge id="badge3" showCount count={22} />
-        <Badge id="badge4" showCount count={100} />
-        <Badge id="labelBadge1" label="100%" />
+        <HvBadge id="badge1" count={1} />
+        <HvBadge id="badge2" showCount count={8} />
+        <HvBadge id="badge3" showCount count={22} />
+        <HvBadge id="badge4" showCount count={100} />
+        <HvBadge id="labelBadge1" label="100%" />
       </>
     );
   },
 };
 
-export const WithIcon: StoryObj<BadgeProps> = {
+export const WithIcon: StoryObj<HvBadgeProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -74,18 +72,18 @@ export const WithIcon: StoryObj<BadgeProps> = {
   render: () => {
     return (
       <>
-        <Badge id="badge5" count={0} icon={<Alert />} />
-        <Badge id="badge6" count={1} icon={<Alert />} />
-        <Badge id="badge7" showCount count={8} icon={<Alert />} />
-        <Badge id="badge8" showCount count={88} icon={<Alert />} />
-        <Badge id="badge9" showCount count={888} icon={<Alert />} />
-        <Badge id="labelBadge3" label="100%" icon={<Alert />} />
+        <HvBadge id="badge5" count={0} icon={<Alert />} />
+        <HvBadge id="badge6" count={1} icon={<Alert />} />
+        <HvBadge id="badge7" showCount count={8} icon={<Alert />} />
+        <HvBadge id="badge8" showCount count={88} icon={<Alert />} />
+        <HvBadge id="badge9" showCount count={888} icon={<Alert />} />
+        <HvBadge id="labelBadge3" label="100%" icon={<Alert />} />
       </>
     );
   },
 };
 
-export const WithText: StoryObj<BadgeProps> = {
+export const WithText: StoryObj<HvBadgeProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -104,30 +102,30 @@ export const WithText: StoryObj<BadgeProps> = {
   render: () => {
     return (
       <>
-        <Badge id="badge10" count={0} text="Events" textVariant="title3" />
-        <Badge id="badge11" count={1} text="Events" textVariant="title3" />
-        <Badge
+        <HvBadge id="badge10" count={0} text="Events" textVariant="title3" />
+        <HvBadge id="badge11" count={1} text="Events" textVariant="title3" />
+        <HvBadge
           id="badge12"
           showCount
           count={8}
           text="Events"
           textVariant="title2"
         />
-        <Badge
+        <HvBadge
           id="badge13"
           showCount
           count={88}
           text="Events"
           textVariant="title3"
         />
-        <Badge
+        <HvBadge
           id="badge14"
           showCount
           count={888}
           text="Events"
           textVariant="title3"
         />
-        <Badge
+        <HvBadge
           id="labelBadge5"
           label="100%"
           text="Events"
@@ -138,7 +136,7 @@ export const WithText: StoryObj<BadgeProps> = {
   },
 };
 
-export const WithState: StoryObj<BadgeProps> = {
+export const WithState: StoryObj<HvBadgeProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -162,9 +160,9 @@ export const WithState: StoryObj<BadgeProps> = {
 
     return (
       <>
-        <Button onClick={addCount}>Double Value</Button>
+        <HvButton onClick={addCount}>Double Value</HvButton>
         <p />
-        <Badge
+        <HvBadge
           id="badge15"
           showCount
           count={count}

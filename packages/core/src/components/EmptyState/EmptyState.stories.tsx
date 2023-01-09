@@ -1,16 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { BarChart, Ghost, Info } from "@hitachivantara/uikit-icons";
 
-import { HvLink, HvTypography } from "components";
-import { EmptyState, EmptyStateProps } from "./EmptyState";
+import {
+  HvLink,
+  HvTypography,
+  HvEmptyState,
+  HvEmptyStateProps,
+} from "components";
 
-const meta: Meta<typeof EmptyState> = {
+const meta: Meta<typeof HvEmptyState> = {
   title: "Feedback/EmptyState",
-  component: EmptyState,
+  component: HvEmptyState,
 };
 export default meta;
 
-export const Main: StoryObj<EmptyStateProps> = {
+export const Main: StoryObj<HvEmptyStateProps> = {
   args: {
     title: "No data routes",
     message: "After you start adding Data Routes, they will appear here.",
@@ -22,11 +26,11 @@ export const Main: StoryObj<EmptyStateProps> = {
     classes: { control: { disable: true } },
   },
   render: (args) => {
-    return <EmptyState {...args} />;
+    return <HvEmptyState {...args} />;
   },
 };
 
-export const WithAction: StoryObj<EmptyStateProps> = {
+export const WithAction: StoryObj<HvEmptyStateProps> = {
   args: {
     title: "No data routes",
     message: "After you start adding Data Routes, they will appear here.",
@@ -42,7 +46,7 @@ export const WithAction: StoryObj<EmptyStateProps> = {
       <HvLink route="/">Create a new data route</HvLink>
     );
     return (
-      <EmptyState
+      <HvEmptyState
         title={title}
         message={message}
         icon={icon}
@@ -52,7 +56,7 @@ export const WithAction: StoryObj<EmptyStateProps> = {
   },
 };
 
-export const CustomMessages: StoryObj<EmptyStateProps> = {
+export const CustomMessages: StoryObj<HvEmptyStateProps> = {
   args: {
     title: "This page can't be displayed",
     icon: <Ghost />,
@@ -73,7 +77,7 @@ export const CustomMessages: StoryObj<EmptyStateProps> = {
 
     const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
     return (
-      <EmptyState
+      <HvEmptyState
         title={title}
         message={CustomMessage}
         icon={icon}
@@ -83,7 +87,7 @@ export const CustomMessages: StoryObj<EmptyStateProps> = {
   },
 };
 
-export const Minimal: StoryObj<EmptyStateProps> = {
+export const Minimal: StoryObj<HvEmptyStateProps> = {
   args: {
     message: "No data to display",
     icon: <Info />,
@@ -93,6 +97,6 @@ export const Minimal: StoryObj<EmptyStateProps> = {
     classes: { control: { disable: true } },
   },
   render: ({ message, icon }) => {
-    return <EmptyState message={message} icon={icon} />;
+    return <HvEmptyState message={message} icon={icon} />;
   },
 };

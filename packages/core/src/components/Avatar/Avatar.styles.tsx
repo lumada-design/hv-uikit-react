@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Avatar as MuiAvatar } from "@mui/material";
 import { outlineStyles } from "../../utils/focusUtils";
-import { AvatarSize, AvatarVariant } from "./Avatar";
+import { HvAvatarSize, HvAvatarVariant } from "./Avatar";
 
 const EXTRA_SMALL = { container: "32px", avatar: "24px" };
 const SMALL = { container: "40px", avatar: "32px" };
@@ -29,7 +29,7 @@ export const StyledImg = styled("img")({
 });
 
 export const StyledStatus = styled("div")(
-  ({ variant, size }: { variant: AvatarVariant; size: AvatarSize }) => ({
+  ({ variant, size }: { variant: HvAvatarVariant; size: HvAvatarSize }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -65,7 +65,7 @@ export const StyledStatus = styled("div")(
 
 export const StyledAvatar = styled(MuiAvatar)(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ({ component, size }: { component: any; size: AvatarSize }) => ({
+  ({ component, size }: { component: any; size: HvAvatarSize }) => ({
     // root
     fontSize: "1rem",
     // avatar

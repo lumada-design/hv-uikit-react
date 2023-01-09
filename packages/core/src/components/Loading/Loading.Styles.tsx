@@ -1,8 +1,7 @@
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { Typography } from "components";
+import { HvTypography } from "components";
 
 const interval = 0.11;
 
@@ -86,7 +85,7 @@ export const StyledBarContainer = styled("div")({
   display: "flex",
 });
 
-export const StyledLabel = styled(Typography)({
+export const StyledLabel = styled(HvTypography)({
   marginTop: "15px",
 });
 

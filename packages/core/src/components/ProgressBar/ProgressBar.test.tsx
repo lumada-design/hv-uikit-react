@@ -2,26 +2,26 @@ import { describe, it } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { ProgressBar } from "./ProgressBar";
+import { HvProgressBar } from "./ProgressBar";
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 describe(
   "ProgressBar",
   () => {
     it("should to be defined", () => {
-      const { container } = render(<ProgressBar value={0} />);
+      const { container } = render(<HvProgressBar value={0} />);
       expect(container).toBeDefined();
     });
 
     it("should render correctly", () => {
-      const { container } = render(<ProgressBar value={0} />);
+      const { container } = render(<HvProgressBar value={0} />);
       expect(container).toMatchSnapshot();
     });
 
     describe("Static Determinate Value Tests", () => {
       it("completed progress bar", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={100}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -43,7 +43,7 @@ describe(
 
       it("zero progress bar", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={0}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -64,7 +64,7 @@ describe(
 
       it("middle progress bar", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={50}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -85,7 +85,7 @@ describe(
 
       it("out of bounds progress bar (up)", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={200}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -106,7 +106,7 @@ describe(
 
       it("out of bounds progress bar (down)", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={-200}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -127,7 +127,7 @@ describe(
 
       it("error", async () => {
         const { container, findByRole, findByText, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={-200}
             labelProps={{
               "aria-label": "My Aria Label",
@@ -150,7 +150,7 @@ describe(
     describe("Aria Label", () => {
       it("check aria label", async () => {
         const { container, findByRole, getByLabelText } = render(
-          <ProgressBar
+          <HvProgressBar
             value={100}
             labelProps={{
               "aria-label": "My Aria Label",

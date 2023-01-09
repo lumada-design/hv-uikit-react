@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { StoryObj } from "@storybook/react";
-
 import {
   HvButton,
-  HeaderProps,
+  HvHeaderProps,
   HvHeader,
   HvHeaderActions,
   HvHeaderBrand,
@@ -70,7 +69,7 @@ export default {
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
 };
 
-export const Main: StoryObj<HeaderProps> = {
+export const Main: StoryObj<HvHeaderProps> = {
   args: {
     position: "relative",
   },

@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { Typography } from "components";
+import { HvTypography } from "components";
 
 export const StyledRoot = styled("footer")(
   ({ breakpoints }: { breakpoints?: any }) => ({
@@ -22,7 +21,7 @@ export const StyledRoot = styled("footer")(
   })
 );
 
-export const StyledName = styled(Typography)(
+export const StyledName = styled(HvTypography)(
   ({ breakpoints }: { breakpoints?: any }) => ({
     [breakpoints.down("sm")]: {
       marginBottom: theme.spacing(1),
@@ -44,7 +43,7 @@ export const StyledRightContainer = styled("div")(
   })
 );
 
-export const StyledCopyright = styled(Typography)(
+export const StyledCopyright = styled(HvTypography)(
   ({ breakpoints }: { breakpoints?: any }) => ({
     [breakpoints.down("sm")]: {
       flexDirection: "column",

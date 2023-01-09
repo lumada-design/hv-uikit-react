@@ -1,23 +1,22 @@
 import { describe, expect, it, vi } from "vitest";
 import { act, render } from "@testing-library/react";
 import { Lock, Unlock } from "@hitachivantara/uikit-icons";
-
-import { ToggleButton } from "./ToggleButton";
+import { HvToggleButton } from "./ToggleButton";
 
 describe("ToggleButton", () => {
   it("should be defined", () => {
-    const { container } = render(<ToggleButton />);
+    const { container } = render(<HvToggleButton />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<ToggleButton />);
+    const { container } = render(<HvToggleButton />);
     expect(container).toMatchSnapshot();
   });
 
   it("should render the unselected icon", () => {
     const { queryByTestId } = render(
-      <ToggleButton
+      <HvToggleButton
         aria-label="Lock"
         notSelectedIcon={<Unlock data-testid="logo-unlock" />}
         selectedIcon={<Lock data-testid="logo-lock" />}
@@ -31,7 +30,7 @@ describe("ToggleButton", () => {
     const onClickMock = vi.fn(() => "mock");
 
     const { getByRole } = render(
-      <ToggleButton
+      <HvToggleButton
         aria-label="Lock"
         notSelectedIcon={<Unlock data-testid="logo-unlock" />}
         selectedIcon={<Lock data-testid="logo-lock" />}

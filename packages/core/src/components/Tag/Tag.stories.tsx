@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Tag, TagProps } from "./Tag";
+import { HvTag, HvTagProps } from "components";
 
-const meta: Meta<typeof Tag> = {
+const meta: Meta<typeof HvTag> = {
   title: "Display/Tag",
-  component: Tag,
+  component: HvTag,
 };
 export default meta;
 
-export const Main: StoryObj<TagProps> = {
+export const Main: StoryObj<HvTagProps> = {
   args: {
     label: "Tag Label",
     onDelete: () => console.log("delete"),
@@ -19,11 +19,11 @@ export const Main: StoryObj<TagProps> = {
     type: { control: { type: "radio", options: ["semantic", "categorical"] } },
   },
   render: (args) => {
-    return <Tag {...args} />;
+    return <HvTag {...args} />;
   },
 };
 
-export const Semantical: StoryObj<TagProps> = {
+export const Semantical: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <div
@@ -33,16 +33,16 @@ export const Semantical: StoryObj<TagProps> = {
           justifyContent: "space-between",
         }}
       >
-        <Tag label="Informational" />
-        <Tag color="sema8" label="Success" />
-        <Tag color="sema9" label="Warning" />
-        <Tag color="sema20" label="Error" />
+        <HvTag label="Informational" />
+        <HvTag color="sema8" label="Success" />
+        <HvTag color="sema9" label="Warning" />
+        <HvTag color="sema20" label="Error" />
       </div>
     );
   },
 };
 
-export const Categorial: StoryObj<TagProps> = {
+export const Categorial: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <div
@@ -52,38 +52,38 @@ export const Categorial: StoryObj<TagProps> = {
           justifyContent: "space-between",
         }}
       >
-        <Tag label="Feat" onClick={() => alert("Hello")} type="categorical" />
-        <Tag
+        <HvTag label="Feat" onClick={() => alert("Hello")} type="categorical" />
+        <HvTag
           label="Docs"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz2"
         />
-        <Tag
+        <HvTag
           label="Fix"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz3"
         />
-        <Tag
+        <HvTag
           label="New"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz4"
         />
-        <Tag
+        <HvTag
           label="Deprecated"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz5"
         />
-        <Tag label="No Click" type="categorical" color="#22FF45" />
+        <HvTag label="No Click" type="categorical" color="#22FF45" />
       </div>
     );
   },
 };
 
-export const DisabledTags: StoryObj<TagProps> = {
+export const DisabledTags: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <div
@@ -93,12 +93,12 @@ export const DisabledTags: StoryObj<TagProps> = {
           justifyContent: "space-between",
         }}
       >
-        <Tag
+        <HvTag
           label="Informational"
           disabled
           deleteButtonProps={{ "aria-label": "Disabled tag" }}
         />
-        <Tag
+        <HvTag
           label="Success"
           disabled
           onDelete={() => {
@@ -111,7 +111,7 @@ export const DisabledTags: StoryObj<TagProps> = {
   },
 };
 
-export const WithDeleteAction: StoryObj<TagProps> = {
+export const WithDeleteAction: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <div
@@ -121,13 +121,13 @@ export const WithDeleteAction: StoryObj<TagProps> = {
           justifyContent: "space-between",
         }}
       >
-        <Tag
+        <HvTag
           label="Informational"
           onDelete={() => {
             alert("On Delete Action");
           }}
         />
-        <Tag
+        <HvTag
           label="Success"
           color="sema8"
           onDelete={() => {
@@ -137,7 +137,7 @@ export const WithDeleteAction: StoryObj<TagProps> = {
             tabIndex: -1, // tab navigation should skip this tag
           }}
         />
-        <Tag
+        <HvTag
           label="Warning"
           color="sema9"
           onDelete={() => {
@@ -147,7 +147,7 @@ export const WithDeleteAction: StoryObj<TagProps> = {
             tabIndex: -1, // tab navigation should skip this tag
           }}
         />
-        <Tag
+        <HvTag
           label="Error"
           color="sema20"
           onDelete={() => {
@@ -159,7 +159,7 @@ export const WithDeleteAction: StoryObj<TagProps> = {
   },
 };
 
-export const CategoricalTagsDisabled: StoryObj<TagProps> = {
+export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <div
@@ -169,34 +169,34 @@ export const CategoricalTagsDisabled: StoryObj<TagProps> = {
           justifyContent: "space-between",
         }}
       >
-        <Tag
+        <HvTag
           label="Feat"
           onClick={() => alert("Hello")}
           type="categorical"
           disabled
         />
-        <Tag
+        <HvTag
           label="Docs"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz2"
           disabled
         />
-        <Tag
+        <HvTag
           label="Fix"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz3"
           disabled
         />
-        <Tag
+        <HvTag
           label="New"
           onClick={() => alert("Hello")}
           type="categorical"
           color="cviz4"
           disabled
         />
-        <Tag
+        <HvTag
           label="Deprecated"
           onClick={() => alert("Hello")}
           type="categorical"

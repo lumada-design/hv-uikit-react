@@ -1,17 +1,16 @@
 import clsx from "clsx";
 import React, { cloneElement } from "react";
-
-import { ButtonVariant } from "components";
+import { HvButtonVariant } from "components";
 import { HvBaseProps } from "types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
 
-export type MultiButtonProps = HvBaseProps & {
+export type HvMultiButtonProps = HvBaseProps & {
   /** If all the buttons are disabled. */
   disabled?: boolean;
   /** If the MultiButton is to be displayed vertically. */
   vertical?: boolean;
   /** Category of button to use */
-  variant?: ButtonVariant;
+  variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: {
     root?: string;
@@ -19,7 +18,7 @@ export type MultiButtonProps = HvBaseProps & {
   };
 };
 
-export const MultiButton = ({
+export const HvMultiButton = ({
   className,
   children,
   classes,
@@ -27,7 +26,7 @@ export const MultiButton = ({
   vertical = false,
   variant = "secondarySubtle",
   ...others
-}: MultiButtonProps) => {
+}: HvMultiButtonProps) => {
   return (
     <StyledRoot
       className={clsx(className, classes?.root)}

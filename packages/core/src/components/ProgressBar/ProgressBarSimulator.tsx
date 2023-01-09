@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-
-import { Button } from "components";
-import { ProgressBar, ProgressBarStatus } from "./ProgressBar";
+import { HvButton } from "components";
+import { HvProgressBar, HvProgressBarStatus } from "./ProgressBar";
 
 export const ProgressBarSimulator = ({
   inc,
@@ -43,9 +42,9 @@ export const ProgressBarSimulator = ({
 
   return (
     <div style={{ width: 400 }}>
-      <ProgressBar
+      <HvProgressBar
         value={value}
-        status={status as ProgressBarStatus}
+        status={status as HvProgressBarStatus}
         labelProps={{
           "aria-label": ariaLabel,
           "aria-busy": false,
@@ -53,10 +52,10 @@ export const ProgressBarSimulator = ({
         }}
       />
       <div style={{ marginTop: 10 }}>
-        <Button onClick={start}>Start</Button>
-        <Button style={{ marginLeft: 10 }} onClick={reset}>
+        <HvButton onClick={start}>Start</HvButton>
+        <HvButton style={{ marginLeft: 10 }} onClick={reset}>
           Reset
-        </Button>
+        </HvButton>
       </div>
     </div>
   );

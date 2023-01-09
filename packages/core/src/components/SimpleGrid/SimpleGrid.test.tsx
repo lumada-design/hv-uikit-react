@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-
-import { HvProvider, HvSimpleGrid } from "../..";
+import { HvProvider } from "providers";
+import { HvSimpleGrid } from "./SimpleGrid";
 
 export default {
   title: "Tests/SimpleGrid",

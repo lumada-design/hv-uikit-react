@@ -21,8 +21,7 @@ import {
   UpEmpty,
   UpSelected,
 } from "@hitachivantara/uikit-icons";
-
-import { ToggleButton, ToggleButtonProps } from "./ToggleButton";
+import { HvToggleButton, HvToggleButtonProps } from "components";
 import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {
@@ -38,9 +37,9 @@ const FlexDecorator = ({ children }) => {
   return <StyledRoot>{children}</StyledRoot>;
 };
 
-const meta: Meta<typeof ToggleButton> = {
+const meta: Meta<typeof HvToggleButton> = {
   title: "Inputs/ToggleButton",
-  component: ToggleButton,
+  component: HvToggleButton,
   decorators: [
     (Story) => (
       <FlexDecorator>
@@ -51,7 +50,7 @@ const meta: Meta<typeof ToggleButton> = {
 };
 export default meta;
 
-export const Main: StoryObj<ToggleButtonProps> = {
+export const Main: StoryObj<HvToggleButtonProps> = {
   args: {
     defaultSelected: false,
     selected: false,
@@ -71,11 +70,11 @@ export const Main: StoryObj<ToggleButtonProps> = {
     ),
   ],
   render: (args) => {
-    return <ToggleButton {...args} />;
+    return <HvToggleButton {...args} />;
   },
 };
 
-export const Multiple: StoryObj<ToggleButtonProps> = {
+export const Multiple: StoryObj<HvToggleButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -86,49 +85,50 @@ export const Multiple: StoryObj<ToggleButtonProps> = {
   render: () => {
     return (
       <>
-        <ToggleButton
+        <HvToggleButton
           defaultSelected
           aria-label="Favorite"
           notSelectedIcon={<Favorite />}
           selectedIcon={<FavoriteSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Backwards"
           notSelectedIcon={<BackwardsEmpty />}
           selectedIcon={<BackwardsSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Up"
           notSelectedIcon={<UpEmpty />}
           selectedIcon={<UpSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
+          // @ts-ignore
           disabled
           aria-label="Down"
           notSelectedIcon={<DownEmpty />}
           selectedIcon={<DownSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Forward"
           notSelectedIcon={<ForwardsEmpty />}
           selectedIcon={<ForwardsSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Like"
           notSelectedIcon={<Like />}
           selectedIcon={<LikeSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Dislike"
           notSelectedIcon={<Dislike />}
           selectedIcon={<DislikeSelected />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Light"
           notSelectedIcon={<LightOff />}
           selectedIcon={<LightOn />}
         />
-        <ToggleButton
+        <HvToggleButton
           aria-label="Lock"
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}
@@ -138,7 +138,7 @@ export const Multiple: StoryObj<ToggleButtonProps> = {
   },
 };
 
-export const Disabled: StoryObj<ToggleButtonProps> = {
+export const Disabled: StoryObj<HvToggleButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -151,15 +151,16 @@ export const Disabled: StoryObj<ToggleButtonProps> = {
     // TODO: Add Tooltip
     return (
       <>
-        <ToggleButton disabled aria-label="Light">
+        {/* @ts-ignore */}
+        <HvToggleButton disabled aria-label="Light">
           <LightOff />
-        </ToggleButton>
+        </HvToggleButton>
       </>
     );
   },
 };
 
-export const Animated: StoryObj<ToggleButtonProps> = {
+export const Animated: StoryObj<HvToggleButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -174,9 +175,9 @@ export const Animated: StoryObj<ToggleButtonProps> = {
     const toggleState = () => setSelect(!select);
 
     return (
-      <ToggleButton selected={select} onClick={toggleState} aria-label="Eye">
+      <HvToggleButton selected={select} onClick={toggleState} aria-label="Eye">
         <ToggleEye className={select ? "selected" : "notSelected"} />
-      </ToggleButton>
+      </HvToggleButton>
     );
   },
 };

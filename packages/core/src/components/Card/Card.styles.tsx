@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Box } from "components";
-import { outlineStyles } from "index";
+import { HvBox } from "components";
+import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledRoot = styled(
-  Box,
+  HvBox,
   transientOptions
 )(({ $selectable, $selected }) => ({
   overflow: "visible",

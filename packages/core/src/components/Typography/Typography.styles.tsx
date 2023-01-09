@@ -1,15 +1,13 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { TypographyVariants } from "./Typography";
+import { HvTypographyVariants } from "./Typography";
 
 export const StyledTypography = styled("div")(
   ({
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     variant,
     link = false,
   }: {
-    variant: TypographyVariants;
+    variant: HvTypographyVariants;
     link?: boolean;
   }) => ({
     color: theme.colors.acce1,

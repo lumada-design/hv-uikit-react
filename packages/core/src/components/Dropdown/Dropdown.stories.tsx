@@ -1,6 +1,6 @@
 import { StoryObj } from "@storybook/react";
 
-import { Box } from "components";
+import { HvBox } from "components";
 import { Dropdown, DropdownProps } from "./Dropdown";
 
 export default { component: Dropdown, title: "Inputs/Dropdown" };
@@ -15,8 +15,8 @@ export const Main: StoryObj<DropdownProps> = {
     ],
   },
   render: ({ value, options }) => (
-    <Box sx={{ width: 200, height: 200, position: "relative" }}>
+    <HvBox sx={{ width: 200, height: 200, position: "relative" }}>
       <Dropdown value={value} options={options} />
-    </Box>
+    </HvBox>
   ),
 };

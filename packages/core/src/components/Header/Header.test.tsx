@@ -1,16 +1,20 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-
-import { Button } from "components";
+import { HvButton } from "components";
 import { HvProvider } from "providers";
-import { Actions, Brand, Header, Navigation } from ".";
+import {
+  HvHeaderActions,
+  HvHeaderBrand,
+  HvHeader,
+  HvHeaderNavigation,
+} from ".";
 import HitachiLogo from "./assets/HitachiLogo";
 
 describe("Header", () => {
   it("should render correctly with no data", () => {
     const { container } = render(
       <HvProvider enableCssBaseline={false}>
-        <Header />
+        <HvHeader />
       </HvProvider>
     );
     expect(container).toBeDefined();
@@ -19,9 +23,12 @@ describe("Header", () => {
   it("should render correctly the brand data", () => {
     const { getByText, getByTestId } = render(
       <HvProvider enableCssBaseline={false}>
-        <Header>
-          <Brand logo={<HitachiLogo data-testid="logo" />} name="Lumada App" />
-        </Header>
+        <HvHeader>
+          <HvHeaderBrand
+            logo={<HitachiLogo data-testid="logo" />}
+            name="Lumada App"
+          />
+        </HvHeader>
       </HvProvider>
     );
     expect(getByText("Lumada App")).toBeInTheDocument();
@@ -49,14 +56,11 @@ describe("Header", () => {
 
     const { getAllByText, getAllByRole } = render(
       <HvProvider enableCssBaseline={false}>
-        <Header>
-          <Navigation data={navigationData} />
-        </Header>
+        <HvHeader>
+          <HvHeaderNavigation data={navigationData} />
+        </HvHeader>
       </HvProvider>
     );
-    // I should be using `getAllByRole` here, but for some strange reason
-    // that's returning the incorrect count even though the `render` method
-    // returns the correct DOM with 3 buttons.
     expect(getAllByRole("link")).toHaveLength(1);
     expect(getAllByText("text")).toHaveLength(3);
   });
@@ -64,24 +68,24 @@ describe("Header", () => {
   it("should render correctly the actions elements", () => {
     const { getAllByRole } = render(
       <HvProvider enableCssBaseline={false}>
-        <Header>
-          <Actions aria-label="My-aria-label">
-            <Button
+        <HvHeader>
+          <HvHeaderActions aria-label="My-aria-label">
+            <HvButton
               onClick={() => {}}
               aria-label="Open Notifications panel"
               variant="ghost"
             >
               Badge
-            </Button>
-            <Button
+            </HvButton>
+            <HvButton
               onClick={() => {}}
               aria-label="Open User panel"
               variant="ghost"
             >
               User
-            </Button>
-          </Actions>
-        </Header>
+            </HvButton>
+          </HvHeaderActions>
+        </HvHeader>
       </HvProvider>
     );
     expect(getAllByRole("button")).toHaveLength(2);

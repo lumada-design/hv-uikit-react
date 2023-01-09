@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Typography } from "@hitachivantara/uikit-core";
+import { HvTypography } from "@hitachivantara/uikit-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledGroup = styled("div")({
@@ -7,7 +7,7 @@ export const StyledGroup = styled("div")({
   borderTop: `1px solid ${theme.colors.atmo4}`,
 });
 
-export const StyledGroupName = styled(Typography)({
+export const StyledGroupName = styled(HvTypography)({
   marginTop: theme.spacing(3),
   marginBottom: theme.spacing(2),
 });

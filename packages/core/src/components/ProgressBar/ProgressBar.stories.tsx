@@ -1,16 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-
-import { Typography } from "components";
-import { ProgressBar, ProgressBarProps } from "./ProgressBar";
+import { HvTypography, HvProgressBar, HvProgressBarProps } from "components";
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
-const meta: Meta<typeof ProgressBar> = {
+const meta: Meta<typeof HvProgressBar> = {
   title: "Feedback/ProgressBar",
-  component: ProgressBar,
+  component: HvProgressBar,
 };
 export default meta;
 
-export const Main: StoryObj<ProgressBarProps> = {
+export const Main: StoryObj<HvProgressBarProps> = {
   args: {
     value: 0,
   },
@@ -19,11 +17,11 @@ export const Main: StoryObj<ProgressBarProps> = {
     value: { control: { type: "range" } },
   },
   render: (args) => {
-    return <ProgressBar {...args} />;
+    return <HvProgressBar {...args} />;
   },
 };
 
-export const Indeterminate: StoryObj<ProgressBarProps> = {
+export const Indeterminate: StoryObj<HvProgressBarProps> = {
   args: {
     value: 0,
   },
@@ -51,7 +49,7 @@ export const Indeterminate: StoryObj<ProgressBarProps> = {
             marginBottom: 40,
           }}
         >
-          <Typography variant="label">Success</Typography>
+          <HvTypography variant="label">Success</HvTypography>
           <ProgressBarSimulator
             inc={(v) => v + 10}
             ariaLabel="Determinate Progress Bar"
@@ -68,7 +66,7 @@ export const Indeterminate: StoryObj<ProgressBarProps> = {
             margin: "auto",
           }}
         >
-          <Typography variant="label">Error</Typography>
+          <HvTypography variant="label">Error</HvTypography>
           <ProgressBarSimulator
             inc={(v) => v + 5}
             error={30}
@@ -80,7 +78,7 @@ export const Indeterminate: StoryObj<ProgressBarProps> = {
   },
 };
 
-export const Determinate: StoryObj<ProgressBarProps> = {
+export const Determinate: StoryObj<HvProgressBarProps> = {
   args: {
     value: 0,
   },
@@ -108,8 +106,8 @@ export const Determinate: StoryObj<ProgressBarProps> = {
             marginBottom: 40,
           }}
         >
-          <Typography variant="label">Success</Typography>
-          <ProgressBar
+          <HvTypography variant="label">Success</HvTypography>
+          <HvProgressBar
             value={100}
             status="completed"
             labelProps={{
@@ -131,8 +129,8 @@ export const Determinate: StoryObj<ProgressBarProps> = {
             marginBottom: 40,
           }}
         >
-          <Typography variant="label">Loading</Typography>
-          <ProgressBar
+          <HvTypography variant="label">Loading</HvTypography>
+          <HvProgressBar
             value={40}
             labelProps={{
               "aria-label": "Example Determined Loading Progress Bar",
@@ -151,8 +149,8 @@ export const Determinate: StoryObj<ProgressBarProps> = {
             margin: "auto",
           }}
         >
-          <Typography variant="label">Error</Typography>
-          <ProgressBar
+          <HvTypography variant="label">Error</HvTypography>
+          <HvProgressBar
             value={30}
             status="error"
             labelProps={{

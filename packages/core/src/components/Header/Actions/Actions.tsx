@@ -1,9 +1,9 @@
 import { HvBaseProps } from "types";
 import { StyledDiv } from "./Actions.styles";
 
-export type ActionsProps = HvBaseProps;
+export type HvActionsProps = HvBaseProps;
 
-export const Actions = (props: ActionsProps) => {
+export const HvActions = (props: HvActionsProps) => {
   const { children, className, ...others } = props;
 
   return (
@@ -12,7 +12,3 @@ export const Actions = (props: ActionsProps) => {
     </StyledDiv>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Actions.displayName = "Actions";
-}

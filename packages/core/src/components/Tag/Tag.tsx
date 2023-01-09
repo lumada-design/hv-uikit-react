@@ -2,55 +2,57 @@ import clsx from "clsx";
 import { CSSProperties, useState, useContext } from "react";
 import { CloseXS } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "types";
 import { StyledChip, StyledButton } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/hv";
 import { ThemeContext } from "index";
 
-export type TagProps = HvBaseProps<HTMLDivElement, { children }> & {
-  /** Inline styles to be applied to the root element. */
-  style?: CSSProperties;
-  /** The label of the tag element. */
-  label?: React.ReactNode;
-  /** Indicates that the form element is disabled. */
-  disabled?: boolean;
-  /** The type of the tag element. A tag can be of semantic or categoric type. */
-  type?: "semantic" | "categorical";
-  /** Background color to be applied to the tag */
-  color?: HvSemanticColorKeys | HvCategoricalColorKeys | string;
-  /** Icon used to customize the delete icon in the Chip element */
-  deleteIcon?: React.ReactElement;
-  /**
-   * The callback fired when the delete icon is pressed.
-   * This function has to be provided to the component, in order to render the delete icon
-   * */
-  onDelete?: any;
-  /** Callback triggered when any item is clicked. */
-  onClick?: any;
-  /** The role of the element with an attributed event. */
-  role?: string;
-  /** Aria properties to apply to delete button in tag */
-  deleteButtonArialLabel?: string;
-  /** Props to apply to delete button */
-  deleteButtonProps?: object;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    tagButton?: string;
-    focusVisible?: string;
-    primaryButton?: string;
-    label?: string;
-    chipRoot?: string;
-    categorical?: string;
-    disabled?: string;
-    clickable?: string;
-    categoricalFocus?: string;
-    categoricalDisabled?: string;
-    deleteIcon?: string;
-    disabledDeleteIcon?: string;
+export type HvTagProps = Omit<MuiChipProps, "color"> &
+  HvBaseProps<HTMLDivElement, { children }> & {
+    /** Inline styles to be applied to the root element. */
+    style?: CSSProperties;
+    /** The label of the tag element. */
+    label?: React.ReactNode;
+    /** Indicates that the form element is disabled. */
+    disabled?: boolean;
+    /** The type of the tag element. A tag can be of semantic or categoric type. */
+    type?: "semantic" | "categorical";
+    /** Background color to be applied to the tag */
+    color?: HvSemanticColorKeys | HvCategoricalColorKeys | string;
+    /** Icon used to customize the delete icon in the Chip element */
+    deleteIcon?: React.ReactElement;
+    /**
+     * The callback fired when the delete icon is pressed.
+     * This function has to be provided to the component, in order to render the delete icon
+     * */
+    onDelete?: any;
+    /** Callback triggered when any item is clicked. */
+    onClick?: any;
+    /** The role of the element with an attributed event. */
+    role?: string;
+    /** Aria properties to apply to delete button in tag */
+    deleteButtonArialLabel?: string;
+    /** Props to apply to delete button */
+    deleteButtonProps?: object;
+    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    classes?: {
+      root?: string;
+      tagButton?: string;
+      focusVisible?: string;
+      primaryButton?: string;
+      label?: string;
+      chipRoot?: string;
+      categorical?: string;
+      disabled?: string;
+      clickable?: string;
+      categoricalFocus?: string;
+      categoricalDisabled?: string;
+      deleteIcon?: string;
+      disabledDeleteIcon?: string;
+    };
   };
-};
 
 const getColor = (customColor, type, activeTheme) => {
   const defaultSemanticColor = theme.colors.sema7;
@@ -77,7 +79,7 @@ const getColor = (customColor, type, activeTheme) => {
  *
  * It leverages the Chip component from Material UI
  */
-export const Tag = ({
+export const HvTag = ({
   classes,
   className,
   style,
@@ -92,7 +94,7 @@ export const Tag = ({
   deleteButtonArialLabel = "Delete tag",
   deleteButtonProps = {},
   ...others
-}: TagProps) => {
+}: HvTagProps) => {
   const { activeTheme, selectedMode } = useContext(ThemeContext);
 
   const getDeleteIcon = () => {
@@ -184,7 +186,9 @@ export const Tag = ({
       $disabled={disabled || false}
       $categoricalFocus={type === "categorical" && !disabled}
       $categoricalDisabled={(type === "categorical" && disabled) || false}
-      $base1Color={activeTheme.colors.modes[selectedMode].base1}
+      $base1Color={
+        activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+      }
       {...others}
     />
   );

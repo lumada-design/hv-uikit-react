@@ -1,11 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-
-import { Link } from "./Link";
+import { HvLink } from "./Link";
 
 describe("Link", () => {
   it("should render correctly", () => {
-    const { container } = render(<Link>text</Link>);
+    const { container } = render(<HvLink>text</HvLink>);
     expect(container).toBeDefined();
   });
 });

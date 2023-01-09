@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
-import { Button } from "components";
+import { HvButton } from "components";
 import { outlineStyles } from "utils";
 import fade from "utils/hexToRgbA";
 import { transientOptions } from "utils/transientOptions";
@@ -120,7 +120,7 @@ export const StyledChip = styled(
   })
 );
 
-export const StyledButton = styled(Button)({
+export const StyledButton = styled(HvButton)({
   "& .MuiButton-startIcon": {
     width: 16,
     height: 16,

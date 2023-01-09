@@ -1,24 +1,24 @@
 import { render } from "@testing-library/react";
-import { Typography } from "components";
+import { HvTypography } from "components";
 import { describe, expect, it } from "vitest";
-import { Card, CardContent, CardHeader, CardMedia } from "./";
+import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from "./";
 
 describe("Card", () => {
   it("should be defined", () => {
-    const { container } = render(<Card />);
+    const { container } = render(<HvCard />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<Card />);
+    const { container } = render(<HvCard />);
     expect(container).toMatchSnapshot();
   });
 
   it("should render header", () => {
     const { container, getByText } = render(
-      <Card>
-        <CardHeader title="mockTitle" subheader="mockSubtitle" />
-      </Card>
+      <HvCard>
+        <HvCardHeader title="mockTitle" subheader="mockSubtitle" />
+      </HvCard>
     );
     expect(getByText("mockTitle")).toBeInTheDocument();
     expect(getByText("mockSubtitle")).toBeInTheDocument();
@@ -28,14 +28,14 @@ describe("Card", () => {
   it("should render image", () => {
     const mockImg = "";
     const { container, getByRole } = render(
-      <Card>
-        <CardMedia
+      <HvCard>
+        <HvCardMedia
           component="img"
           // @ts-ignore
           alt="mockImg"
           image={mockImg}
         />
-      </Card>
+      </HvCard>
     );
     expect(getByRole("img", { name: /mockImg/ })).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -43,11 +43,11 @@ describe("Card", () => {
 
   it("should render content", () => {
     const { container, getByText } = render(
-      <Card>
-        <CardContent>
-          <Typography variant="label">mockCardContent</Typography>
-        </CardContent>
-      </Card>
+      <HvCard>
+        <HvCardContent>
+          <HvTypography variant="label">mockCardContent</HvTypography>
+        </HvCardContent>
+      </HvCard>
     );
     expect(getByText("mockCardContent")).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -56,18 +56,18 @@ describe("Card", () => {
   it("should render all the compoents", () => {
     const mockImg = "";
     const { container, getByText, getByRole } = render(
-      <Card>
-        <CardHeader title="mockTitle" subheader="mockSubtitle" />
-        <CardMedia
+      <HvCard>
+        <HvCardHeader title="mockTitle" subheader="mockSubtitle" />
+        <HvCardMedia
           component="img"
           // @ts-ignore
           alt="mockImg"
           image={mockImg}
         />
-        <CardContent>
-          <Typography variant="label">mockCardContent</Typography>
-        </CardContent>
-      </Card>
+        <HvCardContent>
+          <HvTypography variant="label">mockCardContent</HvTypography>
+        </HvCardContent>
+      </HvCard>
     );
     expect(getByText("mockTitle")).toBeInTheDocument();
     expect(getByText("mockSubtitle")).toBeInTheDocument();

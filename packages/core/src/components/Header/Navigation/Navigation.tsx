@@ -1,37 +1,36 @@
 import { clsx } from "clsx";
-
 import { useSelectionPath } from "hooks";
 import { HvBaseProps } from "types";
-import { MenuBar } from "./MenuBar";
-import { NavigationNav } from "./Navigation.styles";
+import { HvMenuBar } from "./MenuBar";
+import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
 import { SelectionContext } from "./utils/SelectionContext";
 
-export interface NavigationItemProp {
+export interface HvNavigationItemProp {
   id: string;
   label: string;
   path?: string;
   href?: string;
   target?: string;
-  data?: NavigationItemProp[];
+  data?: HvNavigationItemProp[];
 }
 
-export type NavigationProps = HvBaseProps<HTMLDivElement, { onClick }> & {
-  data: NavigationItemProp[];
+export type HvNavigationProps = HvBaseProps<HTMLDivElement, { onClick }> & {
+  data: HvNavigationItemProp[];
   selected?: string;
-  onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
   classes?: {
     root?: string;
   };
 };
 
-export const Navigation = ({
+export const HvNavigation = ({
   data,
   selected,
   onClick,
   className,
   classes = {},
-}: NavigationProps) => {
+}: HvNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
 
   const handleClick = (event, selection) => {
@@ -41,14 +40,10 @@ export const Navigation = ({
   return (
     <SelectionContext.Provider value={selectionPath}>
       <FocusProvider>
-        <NavigationNav className={clsx(className, classes.root)}>
-          <MenuBar data={data} type="menubar" onClick={handleClick} />
-        </NavigationNav>
+        <StyledNav className={clsx(className, classes.root)}>
+          <HvMenuBar data={data} type="menubar" onClick={handleClick} />
+        </StyledNav>
       </FocusProvider>
     </SelectionContext.Provider>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Navigation.displayName = "Navigation";
-}

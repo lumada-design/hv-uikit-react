@@ -1,9 +1,9 @@
-import { Typography, TypographyVariants } from "components";
+import { HvTypography, HvTypographyVariants } from "components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 
 import { HvBaseProps } from "types";
 
-export type BadgeProps = HvBaseProps & {
+export type HvBadgeProps = HvBaseProps & {
   /**
    * Count is the number of unread notifications.
    * Note count and label are mutually exclusive.
@@ -29,7 +29,7 @@ export type BadgeProps = HvBaseProps & {
   /** Text which the notification will be attached. */
   text?: string;
   /** Text variant. */
-  textVariant?: TypographyVariants;
+  textVariant?: HvTypographyVariants;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: {
     root?: string;
@@ -41,7 +41,7 @@ export type BadgeProps = HvBaseProps & {
 /**
  * The badge is a component used to notify the user that something has occurred, in the app context.
  */
-export const Badge = (props: BadgeProps) => {
+export const HvBadge = (props: HvBadgeProps) => {
   const {
     classes,
     className,
@@ -63,7 +63,7 @@ export const Badge = (props: BadgeProps) => {
   const renderedCountOrLabel =
     label || (showCount && count > 0 && renderedCount) || null;
   const Component =
-    icon || (text && <Typography variant={textVariant}>{text}</Typography>);
+    icon || (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
 
   return (
     <StyledRoot

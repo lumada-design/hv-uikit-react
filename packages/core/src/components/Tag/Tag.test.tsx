@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Tag } from "./Tag";
+import { HvTag } from "./Tag";
 
 describe("Tag", () => {
   it("should be defined", () => {
-    const { container } = render(<Tag />);
+    const { container } = render(<HvTag />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<Tag />);
+    const { container } = render(<HvTag />);
     expect(container).toMatchSnapshot();
   });
 });

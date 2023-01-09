@@ -1,4 +1,4 @@
 export * from "./Card";
-export { Header as CardHeader } from "./Header";
-export { Content as CardContent } from "./Content";
-export { Media as CardMedia } from "./Media";
+export { HvHeader as HvCardHeader } from "./Header";
+export { HvContent as HvCardContent } from "./Content";
+export { HvMedia as HvCardMedia } from "./Media";

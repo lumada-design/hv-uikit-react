@@ -1,7 +1,6 @@
 import { Backwards } from "@hitachivantara/uikit-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { Button, Typography } from "..";
-import { Container } from "components";
+import { HvButton, HvTypography, HvContainer } from "components";
 import { GlobalActions, GlobalActionsProps } from "./GlobalActions";
 
 const meta: Meta<typeof GlobalActions> = {
@@ -22,26 +21,26 @@ export const Main: StoryObj<GlobalActionsProps> = {
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: ({ title, headingLevel, variant }) => {
     const BackButton = () => (
-      <Button
+      <HvButton
         aria-label="Back"
         variant="secondaryGhost"
         icon
         onClick={() => alert("Back!")}
       >
         <Backwards />
-      </Button>
+      </HvButton>
     );
 
     return (
-      <Container>
+      <HvContainer>
         <GlobalActions
           title={title}
           headingLevel={headingLevel}
           variant={variant}
           backButton={<BackButton />}
         >
-          <Button variant="primary">Approve & Share</Button>
-          <Button variant="secondary">Reset</Button>
+          <HvButton variant="primary">Approve & Share</HvButton>
+          <HvButton variant="secondary">Reset</HvButton>
           {/* <DropDownMenu
             id={`dropdownItem-${uniqueId()}`}
             aria-label="dropdownMenu-Items"
@@ -56,8 +55,8 @@ export const Main: StoryObj<GlobalActionsProps> = {
 
         <div style={{ paddingBottom: 60 }}>
           <GlobalActions title="Section Title" variant="section">
-            <Button variant="secondary">Remove</Button>
-            <Button variant="secondary">Share</Button>
+            <HvButton variant="secondary">Remove</HvButton>
+            <HvButton variant="secondary">Share</HvButton>
             {/* <DropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -70,7 +69,7 @@ export const Main: StoryObj<GlobalActionsProps> = {
             /> */}
           </GlobalActions>
 
-          <Typography
+          <HvTypography
             variant="body"
             style={{ marginTop: 20, marginBottom: 30 }}
           >
@@ -90,9 +89,9 @@ export const Main: StoryObj<GlobalActionsProps> = {
             elementum sagittis vitae et. In est ante in nibh mauris cursus
             mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
             aliquam eleifend mi in nulla posuere.
-          </Typography>
+          </HvTypography>
 
-          <Typography variant="body" style={{ marginBottom: 60 }}>
+          <HvTypography variant="body" style={{ marginBottom: 60 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
             faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
@@ -109,11 +108,11 @@ export const Main: StoryObj<GlobalActionsProps> = {
             elementum sagittis vitae et. In est ante in nibh mauris cursus
             mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
             aliquam eleifend mi in nulla posuere.
-          </Typography>
+          </HvTypography>
 
           <GlobalActions title="Section Title" variant="section">
-            <Button variant="secondary">Remove</Button>
-            <Button variant="secondary">Share</Button>
+            <HvButton variant="secondary">Remove</HvButton>
+            <HvButton variant="secondary">Share</HvButton>
             {/* <DropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -126,7 +125,7 @@ export const Main: StoryObj<GlobalActionsProps> = {
             /> */}
           </GlobalActions>
 
-          <Typography
+          <HvTypography
             variant="body"
             style={{ marginTop: 20, marginBottom: 30 }}
           >
@@ -142,9 +141,9 @@ export const Main: StoryObj<GlobalActionsProps> = {
             tortor at. Turpis egestas maecenas pharetra convallis posuere morbi.
             Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed
             euismod nisi.
-          </Typography>
+          </HvTypography>
 
-          <Typography variant="body" style={{ marginBottom: 60 }}>
+          <HvTypography variant="body" style={{ marginBottom: 60 }}>
             Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem
             nulla pharetra diam sit amet. Sagittis purus sit amet volutpat
             consequat mauris nunc congue. Sed vulputate mi sit amet mauris
@@ -157,11 +156,11 @@ export const Main: StoryObj<GlobalActionsProps> = {
             sagittis vitae et. In est ante in nibh mauris cursus mattis.
             Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam
             eleifend mi in nulla posuere.
-          </Typography>
+          </HvTypography>
 
           <GlobalActions title="Section Title" variant="section">
-            <Button variant="secondary">Remove</Button>
-            <Button variant="secondary">Share</Button>
+            <HvButton variant="secondary">Remove</HvButton>
+            <HvButton variant="secondary">Share</HvButton>
             {/* <DropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -174,7 +173,7 @@ export const Main: StoryObj<GlobalActionsProps> = {
             /> */}
           </GlobalActions>
 
-          <Typography
+          <HvTypography
             variant="body"
             style={{ marginTop: 20, marginBottom: 30 }}
           >
@@ -192,16 +191,16 @@ export const Main: StoryObj<GlobalActionsProps> = {
             elementum sagittis vitae et. In est ante in nibh mauris cursus
             mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus
             aliquam eleifend mi in nulla posuere.
-          </Typography>
+          </HvTypography>
 
-          <Typography variant="body" style={{ marginBottom: 30 }}>
+          <HvTypography variant="body" style={{ marginBottom: 30 }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
             faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus
             viverra adipiscing at in tellus.
-          </Typography>
+          </HvTypography>
         </div>
-      </Container>
+      </HvContainer>
     );
   },
 };
@@ -221,27 +220,27 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<GlobalActionsPr
     },
     render: () => {
       const CustomTitle: React.ReactNode = (
-        <Typography variant="title3" as="h1">
+        <HvTypography variant="title3" as="h1">
           A Custom Title
-        </Typography>
+        </HvTypography>
       );
 
       const BackButton = () => (
-        <Button
+        <HvButton
           aria-label="Back"
           icon
           variant="secondaryGhost"
           onClick={() => alert("Back!")}
         >
           <Backwards />
-        </Button>
+        </HvButton>
       );
 
       return (
         <GlobalActions title={CustomTitle} backButton={<BackButton />}>
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="secondary">Secondary</Button>
+          <HvButton variant="primary">Primary</HvButton>
+          <HvButton variant="secondary">Secondary</HvButton>
+          <HvButton variant="secondary">Secondary</HvButton>
         </GlobalActions>
       );
     },

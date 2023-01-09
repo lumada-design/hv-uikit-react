@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { Box } from "components";
+import { HvBox } from "components";
 
 const styles = {
   display: "flex",
@@ -11,7 +11,7 @@ const styles = {
 };
 
 export const DropdownIcon = () => (
-  <Box sx={styles}>
+  <HvBox sx={styles}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 12 12"
@@ -24,7 +24,7 @@ export const DropdownIcon = () => (
         d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
       ></path>
     </svg>
-  </Box>
+  </HvBox>
 );
 
 if (process.env.NODE_ENV !== "production") {

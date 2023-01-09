@@ -1,11 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-
-import { Footer } from "./Footer";
+import { HvFooter } from "./Footer";
 
 describe("Footer", () => {
   it("should render correctly", () => {
-    const { container } = render(<Footer />);
+    const { container } = render(<HvFooter />);
     expect(container).toBeDefined();
   });
 
@@ -15,7 +14,7 @@ describe("Footer", () => {
     const mockLinks = <div>mockLinks</div>;
 
     const { getByText } = render(
-      <Footer name={mockName} copyright={mockCopyright} links={mockLinks} />
+      <HvFooter name={mockName} copyright={mockCopyright} links={mockLinks} />
     );
     expect(getByText("mockName")).toBeInTheDocument();
     expect(getByText("mockCopyright")).toBeInTheDocument();

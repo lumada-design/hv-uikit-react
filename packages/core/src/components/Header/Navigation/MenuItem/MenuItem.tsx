@@ -1,6 +1,6 @@
 import { useContext } from "react";
-
-import { MenuBar, NavigationItemProp, Typography } from "components";
+import { HvNavigationItemProp, HvTypography } from "components";
+import { HvMenuBar } from "../MenuBar";
 import { HvBaseProps } from "types";
 import { isKeypress, keyboardCodes } from "utils";
 import { FocusContext } from "../utils/FocusContext";
@@ -8,12 +8,12 @@ import { SelectionContext } from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
 
 export type MenuItemProps = HvBaseProps<HTMLDivElement, { onClick }> & {
-  item: NavigationItemProp;
+  item: HvNavigationItemProp;
   type?: string;
-  onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
 };
 
-export const MenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
+export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);
   // @ts-ignore
   const { dispatch } = useContext(FocusContext);
@@ -49,9 +49,9 @@ export const MenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   };
 
   const label = (
-    <Typography variant={isSelected ? "label" : "body"}>
+    <HvTypography variant={isSelected ? "label" : "body"}>
       {item.label}
-    </Typography>
+    </HvTypography>
   );
 
   return (
@@ -69,7 +69,7 @@ export const MenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           {label}
         </MenuItemLabel>
       )}
-      {hasSubLevel && <MenuBar data={data} onClick={onClick} type="menu" />}
+      {hasSubLevel && <HvMenuBar data={data} onClick={onClick} type="menu" />}
     </MenuItemLi>
   );
 };

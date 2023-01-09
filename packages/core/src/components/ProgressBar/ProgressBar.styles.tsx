@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { Typography } from "components";
-import { ProgressBarStatus } from "./ProgressBar";
+import { HvTypography } from "components";
+import { HvProgressBarStatus } from "./ProgressBar";
 
 export const StyledRoot = styled("div")({
   display: "flex",
@@ -18,7 +17,7 @@ export const StyledProgressContainer = styled("div")({
   width: "100%",
 });
 
-export const StyledValue = styled(Typography)({
+export const StyledValue = styled(HvTypography)({
   backgroundColor: "transparent",
   display: "flex",
   justifyContent: "end",
@@ -32,7 +31,7 @@ export const StyledProgressBarContainer = styled("div")({
 });
 
 export const StyledProgressBar = styled("div")(
-  ({ status }: { status?: ProgressBarStatus }) => ({
+  ({ status }: { status?: HvProgressBarStatus }) => ({
     backgroundColor: "#000",
     height: 4,
     ...(status === "completed" && {
