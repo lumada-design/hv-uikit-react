@@ -18,6 +18,7 @@ const baseGroups = {
   Atmosphere: {},
   Semantic: {},
   Support: {},
+  Categorical: {},
 };
 
 // Get the actual value of a color from its CSS variable
@@ -41,6 +42,8 @@ const groupColors = (colors: string[]) => {
       baseGroups.Semantic[c] = getColor(c);
     } else if (c.includes("supp")) {
       baseGroups.Support[c] = getColor(c);
+    } else if (c.includes("cviz")) {
+      baseGroups.Categorical[c] = getColor(c);
     }
   });
   return baseGroups;

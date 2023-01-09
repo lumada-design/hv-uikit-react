@@ -35,6 +35,8 @@ export interface ButtonProps
   selected?: Boolean;
   classes?: {
     focusVisible?: string;
+    startIcon?: string;
+    primary?: string;
   };
 }
 

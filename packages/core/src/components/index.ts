@@ -44,5 +44,7 @@ export * from "./ProgressBar";
 export { ProgressBar as HvProgressBar } from "./ProgressBar";
 export * from "./SimpleGrid";
 export { SimpleGrid as HvSimpleGrid } from "./SimpleGrid";
+export * from "./Tag";
+export { Tag as HvTag } from "./Tag";
 export * from "./ToggleButton";
 export { ToggleButton as HvToggleButton } from "./ToggleButton";

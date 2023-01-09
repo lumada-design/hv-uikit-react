@@ -9,6 +9,7 @@ import { setElementAttrs } from "utils";
 
 interface ThemeContextValue {
   rootId?: string;
+  activeTheme: any;
   selectedTheme: string;
   selectedMode: string;
   setTheme: (theme: string) => void;
@@ -23,6 +24,7 @@ interface ThemeProviderProps {
 
 export const ThemeContext = createContext<ThemeContextValue>({
   rootId: undefined,
+  activeTheme: {},
   selectedTheme: "",
   selectedMode: "",
   setTheme: () => {},
@@ -41,11 +43,15 @@ export const ThemeProvider = ({
   const [selectedMode, setThemeMode] = useState(theme.selectedMode);
   const [colorModes, setColorModes] = useState(theme.colorModes);
 
+  const [activeTheme, setActiveTheme] = useState(themes[theme.selected]);
+
   useEffect(() => {
     theme = parseTheme(themes, selectedTheme, selectedMode);
 
     setThemeMode(theme.selectedMode);
     setColorModes(theme.colorModes);
+
+    setActiveTheme(themes[selectedTheme]);
 
     setElementAttrs(rootId, theme.selected, theme.selectedMode);
   }, [selectedTheme]);
@@ -56,13 +62,21 @@ export const ThemeProvider = ({
 
   const value = useMemo(
     () => ({
+      activeTheme,
       selectedTheme,
       selectedMode,
       setTheme,
       setThemeMode,
       colorModes,
     }),
-    [selectedTheme, selectedMode, setTheme, setThemeMode, colorModes]
+    [
+      activeTheme,
+      selectedTheme,
+      selectedMode,
+      setTheme,
+      setThemeMode,
+      colorModes,
+    ]
   );
 
   const myTheme = createTheme({
