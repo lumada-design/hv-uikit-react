@@ -37,15 +37,13 @@ export const StyledButton = styled("button")(
     size,
     radius,
     overrideIconColors,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    focusVisibleClassName,
   }: StyledButtonProps) => ({
     display: "inline-flex",
     justifyContent: "center",
     textTransform: "none",
     "&:hover": {},
     "&:focus": {},
-    "&:focus-visible": {
+    "&.HvIsFocusVisible": {
       ...outlineStyles,
     },
     "&:active": {},

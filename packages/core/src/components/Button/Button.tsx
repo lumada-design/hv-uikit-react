@@ -1,6 +1,4 @@
-import clsx from "clsx";
 import React, { CSSProperties, forwardRef, ReactElement } from "react";
-
 import {
   StyledButton,
   StyledChildren,
@@ -63,6 +61,14 @@ const mapVariant = (variant: ButtonVariant): ButtonVariant => {
   return variant;
 };
 
+const onFocusHandler = (event) => {
+  event.target.classList.add("HvIsFocusVisible");
+};
+
+const onBlurHandler = (event) => {
+  event.target.classList.remove("HvIsFocusVisible");
+};
+
 /**
  * Button component is used to trigger an action or event.
  */
@@ -96,7 +102,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         size={size}
         radius={radius}
         overrideIconColors={overrideIconColors}
-        focusVisibleClassName={clsx("HvIsFocusVisible", classes?.focusVisible)}
+        onFocus={onFocusHandler}
+        onBlur={onBlurHandler}
         {...others}
       >
         <StyledContentDiv>
