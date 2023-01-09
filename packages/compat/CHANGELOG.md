@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-compat@4.1.6...@hitachivantara/uikit-react-compat@4.1.7) (2023-01-09)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-compat
+
 ## 4.1.6 (2023-01-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-compat

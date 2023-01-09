@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@hitachivantara/uikit-common-themes": "^4.0.3",
-    "@hitachivantara/uikit-react-icons": "^4.0.4",
+    "@hitachivantara/uikit-react-icons": "^4.0.5",
     "@popperjs/core": "2.11.5",
     "@types/react-table": "^7.7.12",
     "attr-accept": "^2.2.2",

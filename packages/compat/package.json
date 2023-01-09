@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-compat",
-  "version": "4.1.6",
+  "version": "4.1.7",
   "description": "Compat package to ease interoperability between UI Kit versions.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
@@ -44,8 +44,8 @@
     "react-dom": "^16.13.1 || ^17.0.2"
   },
   "dependencies": {
-    "@hitachivantara/uikit-react-core": "^4.4.1",
-    "@hitachivantara/uikit-react-icons": "^4.0.4",
+    "@hitachivantara/uikit-react-core": "^4.4.2",
+    "@hitachivantara/uikit-react-icons": "^4.0.5",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "lodash": "^4.17.21",
