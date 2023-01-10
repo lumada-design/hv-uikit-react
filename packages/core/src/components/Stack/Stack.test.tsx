@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Stack } from "./Stack";
+import { HvStack } from "./Stack";
 
 describe("Stack", () => {
   it("should be defined", () => {
-    const { container } = render(<Stack />);
+    const { container } = render(<HvStack />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<Stack />);
+    const { container } = render(<HvStack />);
     expect(container).toMatchSnapshot();
   });
 });

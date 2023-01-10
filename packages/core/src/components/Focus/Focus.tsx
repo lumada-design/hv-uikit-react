@@ -1,14 +1,12 @@
+import clsx from "clsx";
 import { isNil } from "lodash";
-import React, { cloneElement, RefObject, useState } from "react";
+import React, { RefObject, useState } from "react";
 import { HvBaseProps } from "types";
 import { keyboardCodes, isBrowser } from "utils";
 import ConditionalWrapper from "utils/ConditionalWrapper";
-import {
-  StyledComp,
-  StyledFocusWrapper,
-  StyledFalseFocus,
-} from "./Focus.styles";
+import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
+import "./Focus.css";
 
 export type FocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   children: React.ReactElement;
@@ -68,9 +66,9 @@ export const Focus = ({
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef?.current && filterClass && classes?.root
+    rootRef?.current && filterClass
       ? Array.from(
-          rootRef.current.getElementsByClassName(filterClass || classes?.root)
+          rootRef.current.getElementsByClassName(filterClass || "root")
         )
       : [];
 
@@ -87,7 +85,6 @@ export const Focus = ({
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
     const firstSelected = focuses.find((focus) =>
-      // TODO : focus.classList.contains(classes?.selected)
       focus.classList.contains("selected")
     );
 
@@ -144,7 +141,7 @@ export const Focus = ({
 
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
-      evt.currentTarget.classList.add("focused"); // classes?.focused
+      evt.currentTarget.classList.add("focused");
       // add global class HvIsFocused as a marker
       // not to be styled directly, only as helper in specific css queries
       evt.currentTarget.classList.add("HvIsFocused");
@@ -157,7 +154,7 @@ export const Focus = ({
   const removeFocusClass = () => {
     if (!useFalseFocus) {
       getFocuses().forEach((element) => {
-        if (classes?.focused) element.classList.remove("focused"); // classes?.focused
+        element.classList.remove("focused");
         // remove the global class HvIsFocused
         element.classList.remove("HvIsFocused");
         classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
@@ -444,22 +441,22 @@ export const Focus = ({
 
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          const c = cloneElement(child as React.ReactElement, {
-            ref: config,
-            onFocus,
-            onBlur,
-            onMouseDown,
-            onKeyDown,
-            onKeyUp,
-            selected,
-            disabledClass,
-            focusDisabled,
-          });
-          const StyledC = StyledComp(c);
-          return React.createElement(StyledC);
-        }
+      {React.cloneElement(children, {
+        className: clsx(
+          children.props.className,
+          "root",
+          [(classes?.root, filterClass)],
+          selected && "selected",
+          disabledClass && "disabled",
+          focusDisabled && "focusDisabled"
+        ),
+        ref: config,
+        onFocus,
+        onBlur,
+        onMouseDown,
+        onKeyDown,
+        onKeyUp,
+        selected,
       })}
     </ConditionalWrapper>
   );

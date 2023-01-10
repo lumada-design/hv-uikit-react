@@ -19,5 +19,6 @@ export * from "./Loading";
 export * from "./MultiButton";
 export * from "./ProgressBar";
 export * from "./SimpleGrid";
+export * from "./Stack";
 export * from "./Tag";
 export * from "./ToggleButton";
