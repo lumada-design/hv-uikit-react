@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 
-import { EmptyState } from "./EmptyState";
+import { HvEmptyState } from "./EmptyState";
 
 describe("EmptyState", () => {
   const MockIcon = <div>mockIcon</div>;
@@ -11,7 +11,7 @@ describe("EmptyState", () => {
 
   it("should render correctly", () => {
     const { container } = render(
-      <EmptyState
+      <HvEmptyState
         title={MockTitle}
         message={MockMessage}
         action={MockAction}
@@ -23,7 +23,7 @@ describe("EmptyState", () => {
 
   it("should contain all the elements", () => {
     const { getByText } = render(
-      <EmptyState
+      <HvEmptyState
         title={MockTitle}
         message={MockMessage}
         action={MockAction}
@@ -38,7 +38,7 @@ describe("EmptyState", () => {
 
   it("should contain all the elements as strings except for the icon", () => {
     const { getByText } = render(
-      <EmptyState
+      <HvEmptyState
         title="mockTitle"
         message="mockMessage"
         action="mockAction"
@@ -52,7 +52,7 @@ describe("EmptyState", () => {
 
   it("should not render title or action if none is passed (minimal empty state)", () => {
     const { getByText, queryByText } = render(
-      <EmptyState message={MockMessage} icon={MockIcon} />
+      <HvEmptyState message={MockMessage} icon={MockIcon} />
     );
     expect(getByText("mockMessage")).toBeInTheDocument();
     expect(getByText("mockIcon")).toBeInTheDocument();

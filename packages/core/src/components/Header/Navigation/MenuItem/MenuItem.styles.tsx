@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
 import { outlineStyles } from "utils";
 
 const hoverColor = theme.colors.atmo3;
@@ -34,26 +33,6 @@ export const MenuItemLi = styled("li")(
       height: `calc(100% - 4px)`,
     }),
   })
-  // themeVariant({
-  //   prop: "selected",
-  //   variants: {
-  //     selectedItem: {
-  //       borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.selectedItemBorderTopColor}`,
-  //       borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
-  //       paddingTop: theme.header.selectedItemBorderBottomThickness,
-  //       height: "100%",
-  //       "& > div > p": {
-  //         color: theme.header.color,
-  //       },
-  //     },
-  //     notSelectedItem: {
-  //       marginTop: theme.header.selectedItemBorderTopThickness,
-  //       marginBottom: theme.header.selectedItemBorderBottomThickness,
-  //       paddingTop: theme.header.selectedItemBorderBottomThickness,
-  //       height: `calc(100% - 4px)`,
-  //     },
-  //   },
-  // })
 );
 
 export const MenuItemLabel = styled("div")(
@@ -78,14 +57,6 @@ export const MenuItemLabel = styled("div")(
       "& p": { color: theme.header.color },
     }),
   })
-  // themeVariant({
-  //   prop: "isSelected",
-  //   variants: {
-  //     true: {
-  //       "& p": { color: theme.header.color },
-  //     },
-  //   },
-  // })
 );
 
 export const MenuItemLink = styled("a")({

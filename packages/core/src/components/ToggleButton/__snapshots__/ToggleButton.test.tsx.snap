@@ -4,7 +4,7 @@ exports[`ToggleButton > should render correctly 1`] = `
 <div>
   <button
     aria-pressed="false"
-    class="css-1uas5d6-StyledButton egl9i9v0"
+    class="css-fbe2a5-StyledButton egl9i9v0"
     radius="base"
   >
     <div

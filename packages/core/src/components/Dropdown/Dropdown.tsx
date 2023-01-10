@@ -1,9 +1,7 @@
 import { useState, useRef, CSSProperties } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { Typography } from "components";
+import { HvTypography } from "components";
 import { useClickOutside } from "hooks";
-
 import { DropdownHeader } from "./DropdownHeader";
 import { DropdownList } from "./DropdownList";
 import { DropdownListItem } from "./DropdownListItem";
@@ -47,14 +45,14 @@ export const Dropdown = ({
   return (
     <div ref={ref} className={className} style={{ position: "relative" }}>
       <DropdownHeader isOpen={isOpen} onClick={onToggleHandler}>
-        <Typography
+        <HvTypography
           variant="label"
           css={{
             color: theme.colors.acce4,
           }}
         >
           {value}
-        </Typography>
+        </HvTypography>
         <DropdownIcon />
       </DropdownHeader>
       {isOpen && (
@@ -65,7 +63,7 @@ export const Dropdown = ({
               key={option.value}
               isSelected={option.value === value}
             >
-              <Typography variant="label">{option.label}</Typography>
+              <HvTypography variant="label">{option.label}</HvTypography>
             </DropdownListItem>
           ))}
         </DropdownList>

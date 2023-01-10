@@ -1,7 +1,7 @@
 import { HvBaseProps } from "types";
 import { StyledTypography } from "./Typography.styles";
 
-export type TypographyVariants =
+export type HvTypographyVariants =
   | "display"
   | "title1"
   | "title2"
@@ -12,7 +12,7 @@ export type TypographyVariants =
   | "caption1"
   | "caption2";
 
-const TypographyMap = {
+const HvTypographyMap = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
@@ -25,10 +25,10 @@ const TypographyMap = {
   body2: "p",
 } as const;
 
-export type TypographyProps = HvBaseProps & {
-  as?: keyof typeof TypographyMap;
+export type HvTypographyProps = HvBaseProps & {
+  as?: keyof typeof HvTypographyMap;
   /** Use the variant prop to change the visual style of the Typography. */
-  variant?: TypographyVariants;
+  variant?: HvTypographyVariants;
   link?: boolean;
   className?: string;
   children: React.ReactNode;
@@ -37,15 +37,15 @@ export type TypographyProps = HvBaseProps & {
 /**
  * Typography component is used to render text and paragraphs within an interface.
  */
-export const Typography = ({
+export const HvTypography = ({
   children,
   as = "body1",
   variant = "body",
   link = false,
   className,
   ...others
-}: TypographyProps) => {
-  const Component = TypographyMap[as];
+}: HvTypographyProps) => {
+  const Component = HvTypographyMap[as];
 
   return (
     <StyledTypography
@@ -59,7 +59,3 @@ export const Typography = ({
     </StyledTypography>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Typography.displayName = "Typography";
-}

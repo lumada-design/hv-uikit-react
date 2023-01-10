@@ -11,7 +11,7 @@ import {
   StyledTypography,
 } from "./EmptyState.styles";
 
-export type EmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
+export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** Icon to be presented. */
   icon: React.ReactNode;
   /** The title to be shown. */
@@ -36,7 +36,7 @@ export type EmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
 /**
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
-export const EmptyState = (props: EmptyStateProps) => {
+export const HvEmptyState = (props: HvEmptyStateProps) => {
   const muiTheme = useTheme();
 
   const renderNode = (node, className, type, variant) =>

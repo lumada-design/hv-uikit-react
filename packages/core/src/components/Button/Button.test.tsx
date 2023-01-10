@@ -3,12 +3,12 @@ import { fireEvent, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { Disabled, Icons, Semantic } from "./Button.stories";
-import { Button } from "./Button";
+import { HvButton } from "./Button";
 
 describe("Button", () => {
   describe("sample snapshot testing", () => {
     it("should match the snapshot", () => {
-      const { asFragment } = render(<Button />);
+      const { asFragment } = render(<HvButton />);
       expect(asFragment()).toMatchSnapshot();
     });
   });
@@ -57,24 +57,24 @@ describe("Button", () => {
   it("disabled", () => {
     const { getByRole } = render(
       <div>
-        <Button variant="primary" disabled>
+        <HvButton variant="primary" disabled>
           Primary
-        </Button>
-        <Button variant="primarySubtle" disabled>
+        </HvButton>
+        <HvButton variant="primarySubtle" disabled>
           Primary Subtle
-        </Button>
-        <Button variant="primaryGhost" disabled>
+        </HvButton>
+        <HvButton variant="primaryGhost" disabled>
           Primary Ghost
-        </Button>
-        <Button variant="secondary" disabled>
+        </HvButton>
+        <HvButton variant="secondary" disabled>
           Secondary
-        </Button>
-        <Button variant="secondarySubtle" disabled>
+        </HvButton>
+        <HvButton variant="secondarySubtle" disabled>
           Secondary Subtle
-        </Button>
-        <Button variant="secondaryGhost" disabled>
+        </HvButton>
+        <HvButton variant="secondaryGhost" disabled>
           Secondary Ghost
-        </Button>
+        </HvButton>
       </div>
     );
     const primary = getByRole("button", { name: "Primary" });
@@ -103,7 +103,7 @@ describe("Button", () => {
       const buttonSpy = vi.fn();
       const buttonText = "click me";
       const { getByRole } = render(
-        <Button onClick={buttonSpy}>{buttonText}</Button>
+        <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
       );
 
       const buttonToTest = getByRole("button", { name: buttonText });
@@ -116,7 +116,7 @@ describe("Button", () => {
       const buttonSpy = vi.fn();
       const buttonText = "click me";
       const { getByRole } = render(
-        <Button onClick={buttonSpy}>{buttonText}</Button>
+        <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
       );
 
       const buttonToTest = getByRole("button", { name: buttonText });
@@ -134,9 +134,9 @@ describe("Button", () => {
       const buttonSpy = vi.fn();
       const buttonText = "click me";
       const { getByRole } = render(
-        <Button disabled onClick={buttonSpy}>
+        <HvButton disabled onClick={buttonSpy}>
           {buttonText}
-        </Button>
+        </HvButton>
       );
 
       const buttonToTest = getByRole("button", { name: buttonText });
@@ -152,8 +152,8 @@ describe("Button", () => {
       const buttonText = "focus me";
       const { getByRole } = render(
         <div role="outer-div">
-          <Button onClick={buttonSpyDismiss}>{buttonDismissText}</Button>
-          <Button onClick={buttonSpy}>{buttonText}</Button>
+          <HvButton onClick={buttonSpyDismiss}>{buttonDismissText}</HvButton>
+          <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
         </div>
       );
 
@@ -182,12 +182,12 @@ describe("Button", () => {
       const buttonText = "focus me";
       const { getByRole } = render(
         <div role="outer-div">
-          <Button onClick={buttonSpyDismiss} onKeyDown={buttonSpyDismiss}>
+          <HvButton onClick={buttonSpyDismiss} onKeyDown={buttonSpyDismiss}>
             {buttonDismissText}
-          </Button>
-          <Button disabled onClick={buttonSpy} onKeyDown={buttonSpy}>
+          </HvButton>
+          <HvButton disabled onClick={buttonSpy} onKeyDown={buttonSpy}>
             {buttonText}
-          </Button>
+          </HvButton>
         </div>
       );
 

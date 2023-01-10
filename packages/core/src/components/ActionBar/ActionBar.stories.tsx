@@ -2,8 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { Button } from "components";
-import { ActionBar, ActionBarProps } from "./ActionBar";
+import { HvButton, HvActionBar, HvActionBarProps } from "components";
 
 // Common styles
 const StyledContainer = styled("div")({
@@ -18,23 +17,23 @@ const StyledSpace = styled("div")({
   flex: 1,
 });
 
-const StyledActionBar = styled(ActionBar)({
+const StyledActionBar = styled(HvActionBar)({
   position: "absolute",
   bottom: "0",
 });
 
-const StyledButtonSeparator = styled(Button)({
+const StyledButtonSeparator = styled(HvButton)({
   marginRight: theme.spacing(1),
 });
 
-const meta: Meta<typeof ActionBar> = {
+const meta: Meta<typeof HvActionBar> = {
   title: "Structure/ActionBar",
-  component: ActionBar,
+  component: HvActionBar,
 };
 
 export default meta;
 
-export const Main: StoryObj<ActionBarProps> = {
+export const Main: StoryObj<HvActionBarProps> = {
   args: {},
   argTypes: {
     classes: { control: { disable: true } },
@@ -43,12 +42,12 @@ export const Main: StoryObj<ActionBarProps> = {
     return (
       <StyledContainer>
         <StyledActionBar>
-          <Button
+          <HvButton
             variant="secondaryGhost"
             onClick={() => console.log("Help action")}
           >
             Help
-          </Button>
+          </HvButton>
           <StyledSpace aria-hidden="true">&nbsp;</StyledSpace>
           <StyledButtonSeparator
             variant="secondaryGhost"
@@ -56,19 +55,19 @@ export const Main: StoryObj<ActionBarProps> = {
           >
             Save
           </StyledButtonSeparator>
-          <Button
+          <HvButton
             variant="secondaryGhost"
             onClick={() => console.log("Cancel action")}
           >
             Cancel
-          </Button>
+          </HvButton>
         </StyledActionBar>
       </StyledContainer>
     );
   },
 };
 
-export const DualAction: StoryObj<ActionBarProps> = {
+export const DualAction: StoryObj<HvActionBarProps> = {
   args: {},
   argTypes: {
     classes: { control: { disable: true } },
@@ -90,12 +89,12 @@ export const DualAction: StoryObj<ActionBarProps> = {
           >
             Save
           </StyledButtonSeparator>
-          <Button
+          <HvButton
             variant="secondaryGhost"
             onClick={() => console.log("Cancel action")}
           >
             Cancel
-          </Button>
+          </HvButton>
         </StyledActionBar>
       </StyledContainer>
     );

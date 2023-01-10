@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvSimpleGrid, SimpleGridProps } from "components/index";
+import { HvSimpleGrid, HvSimpleGridProps } from "components";
 
 const style = {
   display: "flex",
@@ -15,7 +15,7 @@ const meta: Meta<typeof HvSimpleGrid> = {
 };
 export default meta;
 
-export const Main: StoryObj<SimpleGridProps> = {
+export const Main: StoryObj<HvSimpleGridProps> = {
   args: {
     spacing: "sm",
     cols: 2,
@@ -35,7 +35,7 @@ export const Main: StoryObj<SimpleGridProps> = {
   },
 };
 
-export const BreakpointsGrid: StoryObj<SimpleGridProps> = {
+export const BreakpointsGrid: StoryObj<HvSimpleGridProps> = {
   args: {
     spacing: "sm",
     cols: 2,

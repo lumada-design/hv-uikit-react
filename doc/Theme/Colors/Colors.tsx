@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
 import { HvTypography, theme } from "@hitachivantara/uikit-core";

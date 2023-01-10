@@ -1,7 +1,6 @@
-import { Grid as MuiGrid } from "@mui/material";
+import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import { isString } from "lodash";
 import { forwardRef } from "react";
-
 import { useWidth } from "hooks";
 import { HvBaseProps } from "types";
 
@@ -13,9 +12,13 @@ const BREAKPOINT_GUTTERS = {
   xl: 4,
 };
 
-export type GridDirection = "row" | "row-reverse" | "column" | "column-reverse";
+export type HvGridDirection =
+  | "row"
+  | "row-reverse"
+  | "column"
+  | "column-reverse";
 
-export type GridSpacing =
+export type HvGridSpacing =
   | "xs"
   | "sm"
   | "md"
@@ -33,75 +36,76 @@ export type GridSpacing =
   | 9
   | 10;
 
-export type GridProps = HvBaseProps & {
-  /**
-   * If `true`, the component will have the flex *container* behavior.
-   * You should be wrapping *items* with a *container*.
-   */
-  container?: boolean;
-  /**
-   * If `true`, the component will have the flex *item* behavior.
-   * You should be wrapping *items* with a *container*.
-   */
-  item?: boolean;
-  /**
-   * Defines the space between the type item component. It can only be used on a type container component.
-   * Based in the 8x factor defined in the theme, it allows the definition of this factor based on the factor
-   * (number between 0 and 10), breakpoint or auto.
-   */
-  spacing?: GridSpacing | number;
-  /**
-   * Defines the `flex-direction` style property.
-   * It is applied for all screen sizes.
-   */
-  direction?: GridDirection;
-  /**
-   * Defines the `justify-content` style property.
-   * It is applied for all screen sizes.
-   */
-  justify?:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
-  /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for all the screen sizes with the lowest priority.
-   */
-  xs?: number | boolean;
-  /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `sm` breakpoint and wider screens if not overridden.
-   */
-  sm?: number | boolean;
-  /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `md` breakpoint and wider screens if not overridden.
-   */
-  md?: number | boolean;
-  /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `lg` breakpoint and wider screens if not overridden.
-   */
-  lg?: number | boolean;
-  /**
-   * Defines the number of grids the component is going to use.
-   * It's applied for the `xl` breakpoint and wider screens.
-   */
-  xl?: number | boolean;
-  /**
-   * Defines the `flex-wrap` style property.
-   * It's applied for all screen sizes.
-   */
-  wrap?: "nowrap" | "wrap" | "wrap-reverse";
-  /**
-   * If `true`, it sets `min-width: 0` on the item.
-   * Refer to the limitations section of the documentation to better understand the use case.
-   */
-  zeroMinWidth?: boolean;
-};
+export type HvGridProps = MuiGridProps &
+  HvBaseProps & {
+    /**
+     * If `true`, the component will have the flex *container* behavior.
+     * You should be wrapping *items* with a *container*.
+     */
+    container?: boolean;
+    /**
+     * If `true`, the component will have the flex *item* behavior.
+     * You should be wrapping *items* with a *container*.
+     */
+    item?: boolean;
+    /**
+     * Defines the space between the type item component. It can only be used on a type container component.
+     * Based in the 8x factor defined in the theme, it allows the definition of this factor based on the factor
+     * (number between 0 and 10), breakpoint or auto.
+     */
+    spacing?: HvGridSpacing | number;
+    /**
+     * Defines the `flex-direction` style property.
+     * It is applied for all screen sizes.
+     */
+    direction?: HvGridDirection;
+    /**
+     * Defines the `justify-content` style property.
+     * It is applied for all screen sizes.
+     */
+    justify?:
+      | "flex-start"
+      | "center"
+      | "flex-end"
+      | "space-between"
+      | "space-around"
+      | "space-evenly";
+    /**
+     * Defines the number of grids the component is going to use.
+     * It's applied for all the screen sizes with the lowest priority.
+     */
+    xs?: number | boolean;
+    /**
+     * Defines the number of grids the component is going to use.
+     * It's applied for the `sm` breakpoint and wider screens if not overridden.
+     */
+    sm?: number | boolean;
+    /**
+     * Defines the number of grids the component is going to use.
+     * It's applied for the `md` breakpoint and wider screens if not overridden.
+     */
+    md?: number | boolean;
+    /**
+     * Defines the number of grids the component is going to use.
+     * It's applied for the `lg` breakpoint and wider screens if not overridden.
+     */
+    lg?: number | boolean;
+    /**
+     * Defines the number of grids the component is going to use.
+     * It's applied for the `xl` breakpoint and wider screens.
+     */
+    xl?: number | boolean;
+    /**
+     * Defines the `flex-wrap` style property.
+     * It's applied for all screen sizes.
+     */
+    wrap?: "nowrap" | "wrap" | "wrap-reverse";
+    /**
+     * If `true`, it sets `min-width: 0` on the item.
+     * Refer to the limitations section of the documentation to better understand the use case.
+     */
+    zeroMinWidth?: boolean;
+  };
 
 /**
  * The grid creates visual consistency between layouts while allowing flexibility
@@ -120,7 +124,7 @@ export type GridProps = HvBaseProps & {
  * | xl         | [1200-...[    | 32              | 12                |
  *
  */
-export const Grid = forwardRef<HTMLDivElement, GridProps>(
+export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>(
   ({ container, spacing = "auto", ...others }, ref) => {
     const width = useWidth();
     let gridSpacing = spacing;

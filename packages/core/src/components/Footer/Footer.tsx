@@ -10,7 +10,7 @@ import {
   StyledSeparator,
 } from "./Footer.styles";
 
-export type FooterProps = HvBaseProps<HTMLDivElement> & {
+export type HvFooterProps = HvBaseProps & {
   name?: React.ReactNode;
   copyright?: React.ReactNode;
   links?: React.ReactNode;
@@ -26,7 +26,7 @@ export type FooterProps = HvBaseProps<HTMLDivElement> & {
 /**
  * A Footer is a way of providing extra information at the end of a page.
  */
-export const Footer = (props: FooterProps) => {
+export const HvFooter = (props: HvFooterProps) => {
   const {
     name = "Hitachi Vantara",
     copyright = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`,

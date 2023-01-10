@@ -2,16 +2,15 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { useWidth } from "hooks";
-import { Typography } from "..";
-import { Container, ContainerProps } from "./Container";
+import { HvContainer, HvContainerProps, HvTypography } from "components";
 
-const meta: Meta<typeof Container> = {
+const meta: Meta<typeof HvContainer> = {
   title: "Layout/Container",
-  component: Container,
+  component: HvContainer,
 };
 export default meta;
 
-export const Main: StoryObj<ContainerProps> = {
+export const Main: StoryObj<HvContainerProps> = {
   args: {
     maxWidth: "md",
   },
@@ -20,7 +19,7 @@ export const Main: StoryObj<ContainerProps> = {
     component: { control: { disable: true } },
   },
   render: (args) => {
-    const StyledContainer = styled(Container)({
+    const StyledContainer = styled(HvContainer)({
       border: "1px solid",
       borderColor: theme.colors.atmo4,
       backgroundColor: theme.colors.atmo3,
@@ -34,12 +33,12 @@ export const Main: StoryObj<ContainerProps> = {
     return (
       <StyledContainer {...args}>
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <Typography variant="label">Current width:</Typography>
-          <Typography variant="body">{width}</Typography>
+          <HvTypography variant="label">Current width:</HvTypography>
+          <HvTypography variant="body">{width}</HvTypography>
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <Typography variant="label">maxWidth:</Typography>
-          <Typography variant="body">{args.maxWidth}</Typography>
+          <HvTypography variant="label">maxWidth:</HvTypography>
+          <HvTypography variant="body">{args.maxWidth}</HvTypography>
         </div>
       </StyledContainer>
     );

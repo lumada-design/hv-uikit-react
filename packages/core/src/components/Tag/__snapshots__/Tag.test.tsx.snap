@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`Tag > should render correctly 1`] = `
+<div>
+  <div
+    class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault  e1wqgfhq1 css-v13zxu-MuiChip-root-StyledChip"
+    tabindex="0"
+  >
+    <span
+      class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+    />
+  </div>
+</div>
+`;

@@ -1,4 +1,8 @@
 import { HvTypography } from "@hitachivantara/uikit-core";
+import {
+  icons as iconComponentList,
+  pictograms as pictogramComponentList,
+} from "@hitachivantara/uikit-icons";
 import { useState } from "react";
 
 const iconContainer = {
@@ -52,12 +56,12 @@ const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
   );
 };
 
-const Icons = ({ icons, widerSpacing }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Library = ({ isIcons }) => {
   const [iconSize, setIconSize] = useState<typeof dropdownSizes[0]>();
 
+  const library = isIcons ? iconComponentList : pictogramComponentList;
   return (
-    <div>
+    <>
       <div style={{ padding: "20px 0", width: 220 }}>
         {/* <HvDropdown
           label="Select icon size"
@@ -75,11 +79,6 @@ const Icons = ({ icons, widerSpacing }) => {
             borderRadius: 2,
           }}
           onChange={(item) => {
-            console.log(
-              dropdownSizes.filter(
-                (d) => d.id === item.target.selectedIndex.toString()
-              )
-            );
             setIconSize(
               dropdownSizes.filter(
                 (d) => d.id === item.target.selectedIndex.toString()
@@ -95,11 +94,11 @@ const Icons = ({ icons, widerSpacing }) => {
       </div>
       <Group
         iconSize={iconSize}
-        widerSpacing={widerSpacing}
-        iconsLibrary={icons}
+        widerSpacing={!isIcons}
+        iconsLibrary={library}
       />
-    </div>
+    </>
   );
 };
 
-export default Icons;
+export default Library;

@@ -1,16 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-
-import { Grid } from "./Grid";
+import { HvGrid } from "./Grid";
 
 describe("Grid", () => {
   it("should be defined", () => {
-    const { container } = render(<Grid />);
+    const { container } = render(<HvGrid />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<Grid />);
+    const { container } = render(<HvGrid />);
     expect(container).toMatchSnapshot();
   });
 });

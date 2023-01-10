@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { HvButton, HvTypography } from "components";
-import { Loading, LoadingProps } from "./Loading";
+import { HvLoading, HvLoadingProps } from "./Loading";
 
-const meta: Meta<typeof Loading> = {
+const meta: Meta<typeof HvLoading> = {
   title: "Feedback/Loading",
-  component: Loading,
+  component: HvLoading,
 };
 export default meta;
 
-export const Main: StoryObj<LoadingProps> = {
+export const Main: StoryObj<HvLoadingProps> = {
   args: {
     label: "Loading",
     hidden: false,
@@ -20,7 +20,7 @@ export const Main: StoryObj<LoadingProps> = {
     classes: { control: { disable: true } },
   },
   render: (args) => {
-    return <Loading {...args} />;
+    return <HvLoading {...args} />;
   },
 };
 
@@ -49,7 +49,7 @@ export const Buttons = () => {
         </HvTypography>
         <HvButton variant={category} onClick={activateTimer}>
           {(!isLoading && "Submit") || (
-            <Loading small hidden={!isLoading} color={color} />
+            <HvLoading small hidden={!isLoading} color={color} />
           )}
         </HvButton>
       </div>
@@ -83,7 +83,7 @@ export const Determinate = () => {
       return () => clearInterval(interval);
     }, [inc]);
 
-    return <Loading label={label?.(value)} />;
+    return <HvLoading label={label?.(value)} />;
   };
 
   return (

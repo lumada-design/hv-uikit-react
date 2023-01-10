@@ -1,11 +1,6 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs";
 import IconLibrary from "./Library";
-import {
-  ActualSize,
-  FemaleRunning,
-  icons as iconComponentList,
-  pictograms as iconPictogramComponentList,
-} from "@hitachivantara/uikit-icons";
+import { ActualSize, FemaleRunning } from "@hitachivantara/uikit-icons";
 
 <Meta title="Theme/Icons/Library" parameters={{}} />
 
@@ -31,7 +26,7 @@ This will be the result:
 
 <Preview>
   <Story name="Icons">
-    <IconLibrary icons={iconComponentList} />
+    <IconLibrary isIcons />
   </Story>
 </Preview>
 
@@ -57,6 +52,6 @@ This will be the result:
 
 <Preview>
   <Story name="Pictograms">
-    <IconLibrary icons={iconPictogramComponentList} widerSpacing />
+    <IconLibrary isIcons={false} />
   </Story>
 </Preview>

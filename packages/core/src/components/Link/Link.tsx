@@ -1,7 +1,7 @@
 import { HvBaseProps } from "types";
 import { StyledA, StyledBox } from "./Link.styles";
 
-export type LinkProps = HvBaseProps & {
+export type HvLinkProps = HvBaseProps & {
   as?: React.ElementType | undefined;
   onClick?: any;
   tabIndex?: number;
@@ -14,7 +14,7 @@ export type LinkProps = HvBaseProps & {
   };
 };
 
-export const Link = (props: LinkProps) => {
+export const HvLink = (props: HvLinkProps) => {
   const {
     as = "div",
     tabIndex = 0,

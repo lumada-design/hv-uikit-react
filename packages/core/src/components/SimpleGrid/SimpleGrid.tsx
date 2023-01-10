@@ -1,12 +1,12 @@
 import { StyledContainer } from "./SimpleGrid.styles";
 
-export const SimpleGrid = ({
+export const HvSimpleGrid = ({
   children,
   breakpoints,
   spacing = "sm",
   cols,
   ...others
-}: SimpleGridProps) => {
+}: HvSimpleGridProps) => {
   return (
     <StyledContainer
       spacing={spacing}
@@ -28,7 +28,7 @@ export type Breakpoint = {
   spacing?: Spacing;
 };
 
-export type SimpleGridProps = {
+export type HvSimpleGridProps = {
   /**
    * -
    */

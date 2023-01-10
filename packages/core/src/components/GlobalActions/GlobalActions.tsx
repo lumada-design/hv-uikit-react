@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import { HvBaseProps } from "types";
 import { isString } from "lodash";
-import { Typography } from "..";
+import { HvTypography } from "components";
 import {
   StyledActions,
   StyledBackButton,
@@ -84,13 +84,13 @@ export const GlobalActions = ({
         {!isString(title) ? (
           title
         ) : (
-          <Typography
+          <HvTypography
             variant={variant === "global" ? "title3" : "title4"} // "sectionTitle"
             as={`h${headingLevelToApply}`}
             className={classes?.name}
           >
             {title}
-          </Typography>
+          </HvTypography>
         )}
         {children && (
           <StyledActions className={classes?.actions}>{children}</StyledActions>

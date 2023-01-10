@@ -10,7 +10,7 @@ type HvBaseProps<C extends React.ElementType> = PolymorphicComponentRef<
   { style?: React.CSSProperties; sx?: SxProps }
 >;
 
-export type BoxProps = <C extends React.ElementType = "div">(
+export type HvBoxProps = <C extends React.ElementType = "div">(
   props: HvBaseProps<C>
 ) => React.ReactElement | null;
 
@@ -18,7 +18,7 @@ const useSx = (sx: SxProps) => {
   return typeof sx === "function" ? sx(theme) : sx;
 };
 
-export const Box: BoxProps = forwardRef(
+export const HvBox: HvBoxProps = forwardRef(
   <C extends React.ElementType = "div">(
     { style, as, sx, children, ...restProps }: HvBaseProps<C>,
     ref?: PolymorphicRef<C>

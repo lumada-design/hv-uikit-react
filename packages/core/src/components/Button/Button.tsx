@@ -6,7 +6,7 @@ import {
   StyledIconSpan,
 } from "./Button.styles";
 
-export type ButtonVariant =
+export type HvButtonVariant =
   | "primary"
   | "primarySubtle"
   | "primaryGhost"
@@ -17,20 +17,20 @@ export type ButtonVariant =
   | "secondary"
   | "ghost";
 
-export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
+export type HvButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type ButtonRadius = "xs" | "sm" | "md" | "lg" | "xl" | "none" | "base";
+export type HvButtonRadius = "xs" | "sm" | "md" | "lg" | "xl" | "none" | "base";
 
-export interface ButtonProps
+export interface HvButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
-  variant?: ButtonVariant;
+  variant?: HvButtonVariant;
   sx?: CSSProperties;
   icon?: Boolean;
   className?: string;
   startIcon?: ReactElement;
-  size?: ButtonSize;
-  radius?: ButtonRadius;
+  size?: HvButtonSize;
+  radius?: HvButtonRadius;
   overrideIconColors?: Boolean;
   selected?: Boolean;
   classes?: {
@@ -47,7 +47,7 @@ export interface ButtonProps
  * @param variant the variant of the button
  * @returns       the normalized variant in DS 5 API
  */
-const mapVariant = (variant: ButtonVariant): ButtonVariant => {
+const mapVariant = (variant: HvButtonVariant): HvButtonVariant => {
   if (variant === "secondary") {
     console.warn(
       "Button variant 'secondary' is deprecated. Please use 'secondarySubtle'."
@@ -74,7 +74,7 @@ const onBlurHandler = (event) => {
 /**
  * Button component is used to trigger an action or event.
  */
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
   (props, ref) => {
     const {
       id,
@@ -90,7 +90,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       radius = "base",
       overrideIconColors = true,
       ...others
-    }: ButtonProps = props;
+    }: HvButtonProps = props;
 
     return (
       <StyledButton
@@ -116,7 +116,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
-if (process.env.NODE_ENV !== "production") {
-  Button.displayName = "Button";
-}

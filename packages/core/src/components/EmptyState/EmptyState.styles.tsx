@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
-import { Typography } from "components";
+import { HvTypography } from "components";
 
 export const StyledRoot = styled("div")({
   width: "100%",
@@ -55,7 +54,7 @@ export const StyledTextContainer = styled("div")(
   })
 );
 
-export const StyledTypography = styled(Typography)(
+export const StyledTypography = styled(HvTypography)(
   ({ type, breakpoints }: { type: string; breakpoints?: any }) => ({
     ...(type === "title" && {
       marginTop: 4,

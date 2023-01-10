@@ -3,16 +3,15 @@ import { range } from "lodash";
 import { Meta, StoryObj } from "@storybook/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-icons";
 
-import { Button } from "components";
-import { MultiButton, MultiButtonProps } from "./MultiButton";
+import { HvButton, HvMultiButton, HvMultiButtonProps } from "components";
 
-const meta: Meta<typeof MultiButton> = {
+const meta: Meta<typeof HvMultiButton> = {
   title: "Inputs/MultiButton",
-  component: MultiButton,
+  component: HvMultiButton,
 };
 export default meta;
 
-export const Main: StoryObj<MultiButtonProps> = {
+export const Main: StoryObj<HvMultiButtonProps> = {
   args: {
     disabled: false,
     vertical: false,
@@ -26,35 +25,35 @@ export const Main: StoryObj<MultiButtonProps> = {
       const [val, setVal] = useState(-1);
 
       return (
-        <MultiButton
+        <HvMultiButton
           style={{ width: "210px" }}
           vertical={vertical}
           disabled={disabled}
           variant={variant}
         >
-          <Button
+          <HvButton
             key="1"
             startIcon={<Map />}
             selected={val === 0}
             onClick={() => setVal(0)}
           >
             Map
-          </Button>
-          <Button
+          </HvButton>
+          <HvButton
             key="2"
             selected={val === 1}
             onClick={() => setVal(1)}
             startIcon={<LocationPin />}
           >
             Satellite
-          </Button>
-        </MultiButton>
+          </HvButton>
+        </HvMultiButton>
       );
     }
   },
 };
 
-export const OnlyLabels: StoryObj<MultiButtonProps> = {
+export const OnlyLabels: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState(0);
     const buttons = ["Map", "Satellite"];
@@ -64,23 +63,23 @@ export const OnlyLabels: StoryObj<MultiButtonProps> = {
     };
 
     return (
-      <MultiButton style={{ width: "210px" }}>
+      <HvMultiButton style={{ width: "210px" }}>
         {buttons.map((button, i) => (
-          <Button
+          <HvButton
             id={button.toLowerCase()}
             key={`${buttons[i]}`}
             selected={selection === i}
             onClick={(evt) => handleChange(evt, i)}
           >
             {button}
-          </Button>
+          </HvButton>
         ))}
-      </MultiButton>
+      </HvMultiButton>
     );
   },
 };
 
-export const OnlyIcons: StoryObj<MultiButtonProps> = {
+export const OnlyIcons: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
     const buttons = [
@@ -96,9 +95,9 @@ export const OnlyIcons: StoryObj<MultiButtonProps> = {
     };
 
     return (
-      <MultiButton style={{ width: "64px" }}>
+      <HvMultiButton style={{ width: "64px" }}>
         {buttons.map(({ name, icon }, i) => (
-          <Button
+          <HvButton
             id={name.toLowerCase()}
             key={`${buttons[i].name}`}
             icon
@@ -107,14 +106,14 @@ export const OnlyIcons: StoryObj<MultiButtonProps> = {
             onClick={(evt) => handleChange(evt, i)}
           >
             {icon}
-          </Button>
+          </HvButton>
         ))}
-      </MultiButton>
+      </HvMultiButton>
     );
   },
 };
 
-export const Disabled: StoryObj<MultiButtonProps> = {
+export const Disabled: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
 
@@ -127,25 +126,37 @@ export const Disabled: StoryObj<MultiButtonProps> = {
     };
 
     return (
-      <MultiButton disabled style={{ width: "320px" }}>
-        <Button selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
+      <HvMultiButton disabled style={{ width: "320px" }}>
+        <HvButton
+          selected={selection.includes(0)}
+          onClick={() => toggleIndex(0)}
+        >
           Potato
-        </Button>
-        <Button selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
+        </HvButton>
+        <HvButton
+          selected={selection.includes(1)}
+          onClick={() => toggleIndex(1)}
+        >
           Onion
-        </Button>
-        <Button selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
+        </HvButton>
+        <HvButton
+          selected={selection.includes(2)}
+          onClick={() => toggleIndex(2)}
+        >
           Carrot
-        </Button>
-        <Button selected={selection.includes(3)} onClick={() => toggleIndex(3)}>
+        </HvButton>
+        <HvButton
+          selected={selection.includes(3)}
+          onClick={() => toggleIndex(3)}
+        >
           Tomato
-        </Button>
-      </MultiButton>
+        </HvButton>
+      </HvMultiButton>
     );
   },
 };
 
-export const DisabledItem: StoryObj<MultiButtonProps> = {
+export const DisabledItem: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0]);
 
@@ -158,29 +169,38 @@ export const DisabledItem: StoryObj<MultiButtonProps> = {
     };
 
     return (
-      <MultiButton style={{ width: "320px" }}>
-        <Button selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
+      <HvMultiButton style={{ width: "320px" }}>
+        <HvButton
+          selected={selection.includes(0)}
+          onClick={() => toggleIndex(0)}
+        >
           Potato
-        </Button>
-        <Button selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
+        </HvButton>
+        <HvButton
+          selected={selection.includes(1)}
+          onClick={() => toggleIndex(1)}
+        >
           Onion
-        </Button>
-        <Button
+        </HvButton>
+        <HvButton
           disabled
           selected={selection.includes(2)}
           onClick={() => toggleIndex(2)}
         >
           Carrot
-        </Button>
-        <Button selected={selection.includes(3)} onClick={() => toggleIndex(3)}>
+        </HvButton>
+        <HvButton
+          selected={selection.includes(3)}
+          onClick={() => toggleIndex(3)}
+        >
           Tomato
-        </Button>
-      </MultiButton>
+        </HvButton>
+      </HvMultiButton>
     );
   },
 };
 
-export const MultipleSelection: StoryObj<MultiButtonProps> = {
+export const MultipleSelection: StoryObj<HvMultiButtonProps> = {
   render: () => {
     const [selection, setSelection] = useState([0, 2, 3, 5]);
     const buttons = [
@@ -201,28 +221,28 @@ export const MultipleSelection: StoryObj<MultiButtonProps> = {
     };
 
     return (
-      <MultiButton style={{ width: "224px" }}>
+      <HvMultiButton style={{ width: "224px" }}>
         {buttons.map((button, i) => (
-          <Button
+          <HvButton
             key={`${buttons[i]}`}
             aria-label={button}
             selected={selection.includes(i)}
             onClick={(evt) => handleChange(evt, i)}
           >
             {button[0]}
-          </Button>
+          </HvButton>
         ))}
-      </MultiButton>
+      </HvMultiButton>
     );
   },
 };
 
-export const EnforcedSelection: StoryObj<MultiButtonProps> = {
+export const EnforcedSelection: StoryObj<HvMultiButtonProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          'MultiButton element set as enforced cannot be toggled - In this case **"Location 1" cannot be toggled on/off**.',
+          'HvMultiButton element set as enforced cannot be toggled - In this case **"Location 1" cannot be toggled on/off**.',
       },
     },
   },
@@ -239,9 +259,9 @@ export const EnforcedSelection: StoryObj<MultiButtonProps> = {
 
     return (
       <div style={{ width: "600px" }}>
-        <MultiButton>
+        <HvMultiButton>
           {range(5).map((i) => (
-            <Button
+            <HvButton
               id={`location${i + 1 || ""}`}
               key={`ef-${i}`}
               startIcon={<LocationPin />}
@@ -249,15 +269,15 @@ export const EnforcedSelection: StoryObj<MultiButtonProps> = {
               onClick={(evt) => handleChange(evt, i)}
             >
               {`Location ${i + 1}`}
-            </Button>
+            </HvButton>
           ))}
-        </MultiButton>
+        </HvMultiButton>
       </div>
     );
   },
 };
 
-export const MinimumSelection: StoryObj<MultiButtonProps> = {
+export const MinimumSelection: StoryObj<HvMultiButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -279,9 +299,9 @@ export const MinimumSelection: StoryObj<MultiButtonProps> = {
 
     return (
       <div style={{ width: "800px" }}>
-        <MultiButton>
+        <HvMultiButton>
           {range(5).map((i) => (
-            <Button
+            <HvButton
               id={`location${i + 1}`}
               key={`ms-${i}`}
               startIcon={<LocationPin />}
@@ -289,15 +309,15 @@ export const MinimumSelection: StoryObj<MultiButtonProps> = {
               onClick={(evt) => handleChange(evt, i)}
             >
               {`Location ${i + 1}`}
-            </Button>
+            </HvButton>
           ))}
-        </MultiButton>
+        </HvMultiButton>
       </div>
     );
   },
 };
 
-export const MaximumSelection: StoryObj<MultiButtonProps> = {
+export const MaximumSelection: StoryObj<HvMultiButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -319,9 +339,9 @@ export const MaximumSelection: StoryObj<MultiButtonProps> = {
 
     return (
       <div style={{ width: "800px" }}>
-        <MultiButton>
+        <HvMultiButton>
           {range(5).map((i) => (
-            <Button
+            <HvButton
               id={`location${i + 1}`}
               key={`maxse-${i}`}
               startIcon={<LocationPin />}
@@ -329,15 +349,15 @@ export const MaximumSelection: StoryObj<MultiButtonProps> = {
               onClick={(evt) => handleChange(evt, i)}
             >
               {`Location ${i + 1}`}
-            </Button>
+            </HvButton>
           ))}
-        </MultiButton>
+        </HvMultiButton>
       </div>
     );
   },
 };
 
-export const VerticalOrientation: StoryObj<MultiButtonProps> = {
+export const VerticalOrientation: StoryObj<HvMultiButtonProps> = {
   parameters: {
     docs: {
       description: {
@@ -367,21 +387,21 @@ export const VerticalOrientation: StoryObj<MultiButtonProps> = {
 
     return (
       <div style={{ display: "flex" }}>
-        <MultiButton vertical style={{ width: "32px" }}>
+        <HvMultiButton vertical style={{ width: "32px" }}>
           {buttons.map(({ name, icon }, i) => (
-            <Button
+            <HvButton
               key={`${buttons[i].key}`}
               aria-label={name}
               selected={selection.includes(i)}
               onClick={(evt) => handleChange(evt, i)}
             >
               {icon}
-            </Button>
+            </HvButton>
           ))}
-        </MultiButton>
-        <MultiButton vertical style={{ marginLeft: "20px", width: "120px" }}>
+        </HvMultiButton>
+        <HvMultiButton vertical style={{ marginLeft: "20px", width: "120px" }}>
           {buttons.map(({ name, icon }, i) => (
-            <Button
+            <HvButton
               key={`${buttons[i].key}`}
               aria-label={name}
               startIcon={icon}
@@ -389,9 +409,9 @@ export const VerticalOrientation: StoryObj<MultiButtonProps> = {
               onClick={(evt) => handleChange(evt, i)}
             >
               {name}
-            </Button>
+            </HvButton>
           ))}
-        </MultiButton>
+        </HvMultiButton>
       </div>
     );
   },

@@ -1,17 +1,15 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import range from "lodash/range";
-
 import { HvBaseProps } from "types";
-
 import {
   StyledBar,
   StyledBarContainer,
   StyledLabel,
   StyledRoot,
-} from "./Loading.Styles";
+} from "./Loading.styles";
 
-export type LoadingProps = HvBaseProps<HTMLDivElement> & {
+export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
   /** Indicates if the component should be render in a small size. */
   small?: boolean;
   /** The label to be displayed.  */
@@ -34,7 +32,7 @@ export type LoadingProps = HvBaseProps<HTMLDivElement> & {
 /**
  * Loading provides feedback about a process that is taking place in the application.
  */
-export const Loading = (props: LoadingProps) => {
+export const HvLoading = (props: HvLoadingProps) => {
   const { color, hidden, small, label, classes, className, ...others } = props;
 
   const getColor = (colorName) => {

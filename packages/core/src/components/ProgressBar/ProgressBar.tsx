@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import clamp from "lodash/clamp";
-
 import { HvBaseProps } from "types";
 import {
   StyledProgressBar,
@@ -10,12 +9,12 @@ import {
   StyledValue,
 } from "./ProgressBar.styles";
 
-export type ProgressBarStatus = "inProgress" | "completed" | "error";
+export type HvProgressBarStatus = "inProgress" | "completed" | "error";
 
 /**
  * ProgressBar provides feedback about a process that is taking place in the application.
  */
-export type ProgressBarProps = HvBaseProps & {
+export type HvProgressBarProps = HvBaseProps & {
   /** The value of the progress bar. */
   value: number;
   /**
@@ -25,7 +24,7 @@ export type ProgressBarProps = HvBaseProps & {
    *
    * When uncontrolled and unspecified it will default to "inProgress".
    */
-  status?: ProgressBarStatus;
+  status?: HvProgressBarStatus;
   /** Aria Properties passed on to the progress bar. */
   labelProps?: object;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
@@ -37,7 +36,7 @@ export type ProgressBarProps = HvBaseProps & {
   };
 };
 
-export const ProgressBar = (props: ProgressBarProps) => {
+export const HvProgressBar = (props: HvProgressBarProps) => {
   const {
     className,
     classes,
@@ -48,8 +47,6 @@ export const ProgressBar = (props: ProgressBarProps) => {
   } = props;
 
   const clampedValue = clamp(value, 0, 100);
-
-  // className={clsx(className, classes.root, classes.progress)}
 
   return (
     <StyledRoot

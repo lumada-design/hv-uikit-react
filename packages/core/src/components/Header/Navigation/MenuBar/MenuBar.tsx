@@ -1,25 +1,24 @@
 import clsx from "clsx";
 import { useContext } from "react";
-
-import { NavigationItemProp } from "components";
+import { HvNavigationItemProp } from "components";
 import { HvBaseProps } from "types";
-import { MenuItem } from "../MenuItem";
+import { HvMenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
 
-export type MenuBarProps = HvBaseProps<"div", { onClick }> & {
-  data: NavigationItemProp[];
+export type HvMenuBarProps = HvBaseProps<"div", { onClick }> & {
+  data: HvNavigationItemProp[];
   type: string;
-  onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
 };
 
-export const MenuBar = ({
+export const HvMenuBar = ({
   id,
   data = [],
   onClick,
   type = "menubar",
   className,
-}: MenuBarProps) => {
+}: HvMenuBarProps) => {
   const selectionPath = useContext(SelectionContext);
 
   const isMenu = type === "menu";
@@ -35,14 +34,10 @@ export const MenuBar = ({
       active={isActive}
     >
       <MenuBarUl id={id} onFocus={() => {}}>
-        {data.map((item: NavigationItemProp) => (
-          <MenuItem key={item.id} item={item} type={type} onClick={onClick} />
+        {data.map((item: HvNavigationItemProp) => (
+          <HvMenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}
       </MenuBarUl>
     </MenuBarRoot>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  MenuBar.displayName = "MenuBar";
-}

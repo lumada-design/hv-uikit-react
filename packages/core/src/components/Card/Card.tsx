@@ -8,7 +8,7 @@ import {
   StyledIcon,
 } from "./Card.styles";
 
-export type CardProps = HvBaseProps<HTMLDivElement> & {
+export type HvCardProps = HvBaseProps<HTMLDivElement> & {
   /** The renderable content inside the icon slot of the header. */
   icon?: React.ReactNode;
   /** Whether the card is selectable. */
@@ -37,7 +37,7 @@ export type CardProps = HvBaseProps<HTMLDivElement> & {
  * linked short representation of a conceptual unit. For that reason,
  * this pattern must be used as an entry-point for further information.
  */
-export const Card = ({
+export const HvCard = ({
   classes,
   className,
   children,
@@ -47,7 +47,7 @@ export const Card = ({
   statusColor = "sema0",
   bgColor = "atmo1",
   ...others
-}: CardProps) => {
+}: HvCardProps) => {
   return (
     <StyledRoot
       aria-selected={selectable ? selected : undefined}
