@@ -23,6 +23,7 @@ const HvTypographyMap = {
   subheading2: "h6",
   body1: "p",
   body2: "p",
+  div: "div",
 } as const;
 
 export type HvTypographyProps = HvBaseProps & {
