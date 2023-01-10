@@ -68,6 +68,7 @@ export const ThemeProvider = ({
       setTheme,
       setThemeMode,
       colorModes,
+      rootId,
     }),
     [
       activeTheme,
@@ -76,6 +77,7 @@ export const ThemeProvider = ({
       setTheme,
       setThemeMode,
       colorModes,
+      rootId,
     ]
   );
 

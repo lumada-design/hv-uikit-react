@@ -76,11 +76,7 @@ export const Header = () => {
   return (
     <HvHeader>
       {!isMdUp && (
-        <HvButton
-          variant="ghost"
-          style={{ width: 32, height: 32, border: "1px solid black" }}
-          onClick={() => {}}
-        >
+        <HvButton variant="secondaryGhost" onClick={() => {}} icon>
           <Menu />
         </HvButton>
       )}
@@ -97,6 +93,7 @@ export const Header = () => {
           onClick={() => {}}
           aria-label="Open Notifications panel"
           variant="secondaryGhost"
+          icon
         >
           <Alert />
         </HvButton>
@@ -105,6 +102,7 @@ export const Header = () => {
             onClick={() => {}}
             aria-label="Open User panel"
             variant="secondaryGhost"
+            icon
           >
             <User />
           </HvButton>

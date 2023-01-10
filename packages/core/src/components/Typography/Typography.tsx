@@ -1,4 +1,5 @@
-import { forwardRef, Ref } from "react";
+import { forwardRef, Ref, ElementType } from "react";
+import { isString } from "lodash";
 import { HvBaseProps } from "../../types";
 import { StyledTypography } from "./Typography.styles";
 
@@ -28,7 +29,7 @@ const HvTypographyMap = {
 } as const;
 
 export type HvTypographyProps = HvBaseProps & {
-  as?: keyof typeof HvTypographyMap;
+  as?: keyof typeof HvTypographyMap | ElementType;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: HvTypographyVariants;
   link?: boolean;
@@ -50,7 +51,7 @@ export const HvTypography = forwardRef(
       ...others
     } = props;
 
-    const Component = HvTypographyMap[as];
+    const Component = isString(as) ? HvTypographyMap[as] : as;
 
     return (
       <StyledTypography
@@ -58,7 +59,7 @@ export const HvTypography = forwardRef(
         ref={ref}
         className={className}
         variant={variant}
-        link={link}
+        $link={link}
         {...others}
       >
         {children}

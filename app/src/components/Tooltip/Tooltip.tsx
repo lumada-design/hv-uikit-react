@@ -1,4 +1,4 @@
-import { Box, HvTooltip, HvTypography } from "@hitachivantara/uikit-core";
+import { HvBox, HvTooltip, HvTypography } from "@hitachivantara/uikit-core";
 
 export const Tooltip = () => {
   const styling = {
@@ -15,7 +15,7 @@ export const Tooltip = () => {
   const data = <HvTypography>Grid View</HvTypography>;
 
   return (
-    <Box sx={styling.placeholder}>
+    <HvBox sx={styling.placeholder}>
       <HvTooltip title={data} useSingle>
         {/* <HvTypography>Hover here</HvTypography> */}
         <p>hello world</p>
@@ -24,6 +24,6 @@ export const Tooltip = () => {
         {/* <HvTypography>Tooltip open</HvTypography> */}
         <p>hello world</p>
       </HvTooltip>
-    </Box>
+    </HvBox>
   );
 };

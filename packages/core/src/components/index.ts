@@ -7,6 +7,7 @@ export * from "./Badge";
 export * from "./Button";
 export * from "./Card";
 export * from "./Container";
+export * from "./Dialog";
 export * from "./Dropdown";
 export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./EmptyState";

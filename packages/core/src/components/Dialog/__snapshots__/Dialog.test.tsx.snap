@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`Dialog > should render all components correctly 1`] = `
+<div
+  aria-hidden="true"
+/>
+`;
+
+exports[`Dialog > should render correctly 1`] = `
+<div
+  aria-hidden="true"
+/>
+`;
