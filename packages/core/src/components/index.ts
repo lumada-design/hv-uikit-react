@@ -1,6 +1,7 @@
 export * from "./Typography";
 export * from "./Box";
 export * from "./ActionBar";
+export * from "./Accordion";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Button";
