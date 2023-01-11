@@ -1,6 +1,6 @@
 import { CardMediaProps as MuiCardMediaProps } from "@mui/material/CardMedia";
 import { StyledMedia } from "./Media.styles";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../types";
 
 export type HvMediaProps = MuiCardMediaProps &
   HvBaseProps<HTMLDivElement, { onClick; title }> & {

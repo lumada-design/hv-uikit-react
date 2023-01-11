@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 
 import {
   StyledContainer,

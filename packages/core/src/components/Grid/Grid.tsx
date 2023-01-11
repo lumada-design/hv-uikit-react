@@ -2,7 +2,7 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import { isString } from "lodash";
 import { forwardRef } from "react";
 import { useWidth } from "hooks";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 
 const BREAKPOINT_GUTTERS = {
   xs: 2,

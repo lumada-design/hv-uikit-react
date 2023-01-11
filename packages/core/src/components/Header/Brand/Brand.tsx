@@ -1,5 +1,5 @@
 import { HvTypography as HvTypography } from "components";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../types";
 import { BrandRoot, BrandSeparator } from "./Brand.styles";
 
 export type HvBrandProps = HvBaseProps & {

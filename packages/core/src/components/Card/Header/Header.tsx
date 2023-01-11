@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { CardHeaderProps as MuiCardHeaderProps } from "@mui/material/CardHeader";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../types";
 import { StyledHeader } from "./Header.styles";
 
 export type HvHeaderProps = MuiCardHeaderProps &

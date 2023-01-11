@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./ActionBar.styles";
 
 export type HvActionBarProps = HvBaseProps & {

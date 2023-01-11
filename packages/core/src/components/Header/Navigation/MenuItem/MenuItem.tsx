@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { HvNavigationItemProp, HvTypography } from "components";
 import { HvMenuBar } from "../MenuBar";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../../types";
 import { isKeypress, keyboardCodes } from "utils";
 import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";

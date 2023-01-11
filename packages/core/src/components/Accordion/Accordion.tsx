@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useCallback, useMemo } from "react";
 import clsx from "clsx";
 import { useControlled } from "hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-icons";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { setId } from "utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 

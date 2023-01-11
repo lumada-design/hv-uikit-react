@@ -1,4 +1,4 @@
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { StyledA, StyledBox } from "./Link.styles";
 
 export type HvLinkProps = HvBaseProps & {

@@ -9,35 +9,6 @@ import {
 } from "components";
 import compressor from "./assets/compressor.png";
 
-const colors = [
-  "sema0",
-  "sema1",
-  "sema2",
-  "sema3",
-  "sema4",
-  "sema5",
-  "sema6",
-  "sema7",
-  "sema8",
-  "sema9",
-  "sema10",
-  "sema11",
-  "sema12",
-  "sema13",
-  "sema14",
-  "sema15",
-  "sema16",
-  "sema17",
-  "sema18",
-  "sema19",
-  "sema20",
-  "atmo1",
-  "atmo2",
-  "atmo3",
-  "atmo4",
-  "atmo5",
-];
-
 const meta: Meta<typeof HvCard> = {
   title: "Display/Card",
   component: HvCard,
@@ -55,8 +26,6 @@ export const Main: StoryObj<HvCardProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     icon: { control: { disable: true } },
-    bgColor: { control: { type: "select", options: colors } },
-    statusColor: { control: { type: "select", options: colors } },
   },
   render: ({ bgColor, statusColor, selectable, selected }) => {
     return (

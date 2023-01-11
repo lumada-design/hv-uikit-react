@@ -1,4 +1,4 @@
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../types";
 import { StyledDiv } from "./Actions.styles";
 
 export type HvActionsProps = HvBaseProps;
