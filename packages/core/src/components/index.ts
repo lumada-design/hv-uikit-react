@@ -23,3 +23,4 @@ export * from "./Stack";
 export * from "./Tag";
 export * from "./ToggleButton";
 export * from "./Tab";
+export * from "./Tabs";
