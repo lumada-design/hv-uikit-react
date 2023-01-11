@@ -30,13 +30,8 @@ export const Main: StoryObj<HvAccordionProps> = {
           headingLevel={headingLevel}
           disabled={disabled}
         >
-          <HvTypography>item 1</HvTypography>
-        </HvAccordion>
-        <HvAccordion id="item2" label="System" headingLevel={headingLevel}>
-          <HvTypography>item 2</HvTypography>
-        </HvAccordion>
-        <HvAccordion id="item3" label="Data" headingLevel={headingLevel}>
-          <HvTypography>item 2</HvTypography>
+          <HvTypography>Views</HvTypography>
+          <HvTypography>Parameters</HvTypography>
         </HvAccordion>
       </HvBox>
     );
@@ -48,13 +43,16 @@ export const Disabled: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" label="Analytics" headingLevel={3} disabled>
-          <HvTypography>item 1</HvTypography>
+          <HvTypography>Views</HvTypography>
+          <HvTypography>Parameters</HvTypography>
         </HvAccordion>
         <HvAccordion id="item2" label="System" headingLevel={3}>
-          <HvTypography>item 2</HvTypography>
+          <HvTypography>Settings</HvTypography>
+          <HvTypography>Network</HvTypography>
         </HvAccordion>
         <HvAccordion id="item3" label="Data" headingLevel={3} disabled>
-          <HvTypography>item 2</HvTypography>
+          <HvTypography>Storage</HvTypography>
+          <HvTypography>Memory</HvTypography>
         </HvAccordion>
       </HvBox>
     );
@@ -134,7 +132,8 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("analytics")}
             expanded={expandedState.analytics}
           >
-            <HvTypography>item 1</HvTypography>
+            <HvTypography>Views</HvTypography>
+            <HvTypography>Parameters</HvTypography>
           </HvAccordion>
           <HvAccordion
             id="controlled-item2"
@@ -142,7 +141,8 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("system")}
             expanded={expandedState.system}
           >
-            <HvTypography>item 2</HvTypography>
+            <HvTypography>Settings</HvTypography>
+            <HvTypography>Network</HvTypography>
           </HvAccordion>
           <HvAccordion
             id="controlled-item3"
@@ -150,7 +150,8 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("data")}
             expanded={expandedState.data}
           >
-            <HvTypography>item 3</HvTypography>
+            <HvTypography>Storage</HvTypography>
+            <HvTypography>Memory</HvTypography>
           </HvAccordion>
         </HvBox>
       </>
