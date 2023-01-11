@@ -24,6 +24,15 @@ const componentsSpec = {
     selectedItemBorderBottomThickness: "string",
     shadow: "string",
   },
+  tab: {
+    letterSpacing: "string",
+    fontSize: "string",
+    lineHeight: "string",
+    padding: "string",
+    hoveredBackgroundColor: "string",
+    hoveredBackgroundBorderRadius: "string",
+    hoveredUnderlineBackgroundColor: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

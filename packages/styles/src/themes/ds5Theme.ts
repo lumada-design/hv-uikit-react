@@ -52,6 +52,15 @@ const ds5Theme = makeTheme((theme) => ({
       selectedItemBorderBottomThickness: "4px",
       shadow: "none",
     },
+    tab: {
+      letterSpacing: "0em",
+      fontSize: "14px",
+      lineHeight: "24px",
+      padding: "0 16px",
+      hoveredBackgroundColor: theme.colors.acce2s,
+      hoveredBackgroundBorderRadius: "2px",
+      hoveredUnderlineBackgroundColor: theme.colors.atmo4,
+    },
   },
 }));
 

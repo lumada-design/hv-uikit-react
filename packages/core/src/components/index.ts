@@ -22,3 +22,4 @@ export * from "./SimpleGrid";
 export * from "./Stack";
 export * from "./Tag";
 export * from "./ToggleButton";
+export * from "./Tab";

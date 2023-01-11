@@ -37,6 +37,15 @@ const ds3Theme = makeTheme((theme) => ({
       selectedItemBorderBottomThickness: "0px",
       shadow: theme.shadows.md,
     },
+    tab: {
+      letterSpacing: "0.02em",
+      fontSize: "12px",
+      lineHeight: "16px",
+      padding: "0 20px",
+      hoveredBackgroundColor: "transparent",
+      hoveredBackgroundBorderRadius: "0px",
+      hoveredUnderlineBackgroundColor: theme.colors.atmo5,
+    },
   },
 }));
 
