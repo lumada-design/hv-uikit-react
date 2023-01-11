@@ -1,0 +1,77 @@
+// Vitest Snapshot v1
+
+exports[`Tabs > should render correctly 1`] = `
+<div>
+  <div
+    class="MuiTabs-root e1sqm2u0 css-mlk5wh-MuiTabs-root-StyledTabs"
+  >
+    <div
+      class="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+      style="overflow: hidden; margin-bottom: 0px;"
+    >
+      <div
+        class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+        role="tablist"
+      />
+      <span
+        class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+        style="left: 0px; width: 0px;"
+      >
+        <div />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs > should render correctly all components 1`] = `
+<div>
+  <div
+    class="MuiTabs-root e1sqm2u0 css-mlk5wh-MuiTabs-root-StyledTabs"
+  >
+    <div
+      class="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+      style="overflow: hidden; margin-bottom: 0px;"
+    >
+      <div
+        class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+        role="tablist"
+      >
+        <button
+          aria-selected="true"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected e14slfdm0 css-b3mesr-MuiButtonBase-root-MuiTab-root-StyledTab"
+          role="tab"
+          tabindex="0"
+          type="button"
+        >
+          Clickable tab 1
+        </button>
+        <button
+          aria-selected="false"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary e14slfdm0 css-b3mesr-MuiButtonBase-root-MuiTab-root-StyledTab"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Clickable tab 2
+        </button>
+        <button
+          aria-selected="false"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary e14slfdm0 css-b3mesr-MuiButtonBase-root-MuiTab-root-StyledTab"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Clickable tab 3
+        </button>
+      </div>
+      <span
+        class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+        style="left: 0px; width: 0px;"
+      >
+        <div />
+      </span>
+    </div>
+  </div>
+</div>
+`;
