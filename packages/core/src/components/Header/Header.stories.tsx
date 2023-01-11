@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { StoryObj } from "@storybook/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+import { User, Menu, Alert } from "@hitachivantara/uikit-icons";
 import {
+  HvBadge,
   HvButton,
   HvHeaderProps,
   HvHeader,
@@ -84,28 +88,50 @@ export const Main: StoryObj<HvHeaderProps> = {
       setSelected(selectedItem.id);
     };
 
+    const muiTheme = useTheme();
+    const isLgUp = useMediaQuery(muiTheme.breakpoints.up("lg"));
+
     return (
       <div style={{ minHeight: 100 }}>
         <HvHeader position={position}>
+          {!isLgUp && (
+            <HvButton
+              style={{ width: 32, height: 32 }}
+              variant="secondaryGhost"
+              icon
+              onClick={() => console.log("menu")}
+            >
+              <Menu />
+            </HvButton>
+          )}
           <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
-          <HvHeaderNavigation
-            data={navigationData}
-            selected={selected}
-            onClick={handleChange}
-          />
+          {isLgUp && (
+            <HvHeaderNavigation
+              data={navigationData}
+              selected={selected}
+              onClick={handleChange}
+            />
+          )}
+
           <HvHeaderActions aria-label="My-aria-label">
             <HvButton
-              onClick={() => {}}
+              icon
+              variant="secondaryGhost"
+              onClick={() => console.log("alerts")}
               aria-label="Open Notifications panel"
-              variant="ghost"
-            ></HvButton>
-            <HvButton
-              onClick={() => {}}
-              aria-label="Open User panel"
-              variant="ghost"
             >
-              User
+              <HvBadge count={1} icon={<Alert />} />
             </HvButton>
+            {isLgUp && (
+              <HvButton
+                onClick={() => {}}
+                aria-label="Open User panel"
+                icon
+                variant="secondaryGhost"
+              >
+                <User />
+              </HvButton>
+            )}
           </HvHeaderActions>
         </HvHeader>
       </div>
