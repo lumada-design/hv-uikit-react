@@ -249,8 +249,6 @@ export const StyledButton = styled("button")(
     ...(iconOnly && {
       margin: 0,
       padding: 0,
-      width: theme.sizes.sm,
-      height: theme.sizes.sm,
     }),
     ...(!iconOnly && {
       minWidth: "70px",
