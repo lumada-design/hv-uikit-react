@@ -8,7 +8,7 @@ import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
 import "./Focus.css";
 
-export type FocusProps = HvBaseProps<HTMLDivElement, { children }> & {
+export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   children: React.ReactElement;
   /** Extra configuration for the child element. */
   configuration?: {
@@ -46,7 +46,7 @@ export type FocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   };
 };
 
-export const Focus = ({
+export const HvFocus = ({
   classes,
   children,
   configuration = {},
@@ -60,7 +60,7 @@ export const Focus = ({
   useFalseFocus = false,
   filterClass,
   navigationJump = 4,
-}: FocusProps) => {
+}: HvFocusProps) => {
   const [showFocus, setShowFocus] = useState<boolean>(false);
   const [childFocus, setChildFocus] = useState<React.ReactNode>();
   const [hasRunConfig, setHasRunConfig] = useState(false);

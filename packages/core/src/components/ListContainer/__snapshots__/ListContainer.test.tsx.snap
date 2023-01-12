@@ -1,0 +1,36 @@
+// Vitest Snapshot v1
+
+exports[`ListContainer > should render all the items 1`] = `
+<div>
+  <ul
+    class=""
+  >
+    <li
+      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      role="option"
+    >
+      Item 1
+    </li>
+    <li
+      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      role="option"
+    >
+      Item 2
+    </li>
+    <li
+      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      role="option"
+    >
+      Item 3
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ListContainer > should render correctly 1`] = `
+<div>
+  <ul
+    class=""
+  />
+</div>
+`;

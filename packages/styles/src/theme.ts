@@ -39,6 +39,10 @@ const componentsSpec = {
     hoveredBackgroundBorderRadius: "string",
     hoveredUnderlineBackgroundColor: "string",
   },
+  list: {
+    hoverColor: "string",
+    disabledBackgroundColor: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

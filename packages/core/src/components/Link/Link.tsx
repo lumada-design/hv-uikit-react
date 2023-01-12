@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledA, StyledBox } from "./Link.styles";
 
@@ -14,32 +15,30 @@ export type HvLinkProps = HvBaseProps & {
   };
 };
 
-export const HvLink = (props: HvLinkProps) => {
-  const {
-    as = "div",
-    tabIndex = 0,
-    onClick,
-    classes,
-    className,
-    route,
-    data,
-    datatype,
-    children,
-    ...others
-  } = props;
+export const HvLink = ({
+  as = "div",
+  tabIndex = 0,
+  onClick,
+  classes,
+  className,
+  route,
+  data,
+  children,
+  ...others
+}: HvLinkProps) => {
   return onClick ? (
     <StyledBox
       role="button"
       tabIndex={tabIndex}
       onClick={(event) => onClick?.(event, data)}
-      className={classes?.a}
+      className={clsx(className, classes?.a)}
       as={as}
       {...others}
     >
       {children}
     </StyledBox>
   ) : (
-    <StyledA href={route} className={classes?.a}>
+    <StyledA href={route} className={clsx(className, classes?.a)}>
       {children}
     </StyledA>
   );

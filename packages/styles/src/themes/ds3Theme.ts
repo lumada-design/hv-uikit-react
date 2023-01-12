@@ -52,6 +52,10 @@ const ds3Theme = makeTheme((theme) => ({
       hoveredBackgroundBorderRadius: "0px",
       hoveredUnderlineBackgroundColor: theme.colors.atmo5,
     },
+    list: {
+      hoverColor: theme.colors.atmo3,
+      disabledBackgroundColor: "transparent",
+    },
   },
 }));
 
