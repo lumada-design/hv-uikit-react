@@ -52,6 +52,9 @@ const ds5Theme = makeTheme((theme) => ({
       selectedItemBorderBottomThickness: "4px",
       shadow: "none",
     },
+    card: {
+      iconMargin: "16px",
+    },
     tab: {
       letterSpacing: "0em",
       fontSize: "14px",

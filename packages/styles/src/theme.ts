@@ -24,6 +24,9 @@ const componentsSpec = {
     selectedItemBorderBottomThickness: "string",
     shadow: "string",
   },
+  card: {
+    iconMargin: "string",
+  },
   tab: {
     letterSpacing: "string",
     fontSize: "string",
