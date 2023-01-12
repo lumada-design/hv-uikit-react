@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.3.2...@hitachivantara/uikit-react-lab@4.3.3) (2023-01-12)
+
+### Bug Fixes
+
+- fix the position issue on storybook for the lab vertical navigation ([#3060](https://github.com/lumada-design/hv-uikit-react/issues/3060)) ([ff3b03d](https://github.com/lumada-design/hv-uikit-react/commit/ff3b03d6bc9ebaaac2e7848dd150f8e3e1590310))
+
 ## [4.3.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.3.1...@hitachivantara/uikit-react-lab@4.3.2) (2023-01-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
