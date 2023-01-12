@@ -24,8 +24,9 @@ const HvVerticalNavigation = ({
   topPosition,
   expandedPanelWidth,
   collapsedPanelWidth,
+  position,
 }) => {
-  const classes = useStyles({ topPosition, expandedPanelWidth, collapsedPanelWidth })();
+  const classes = useStyles({ topPosition, expandedPanelWidth, collapsedPanelWidth, position })();
 
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -118,6 +119,10 @@ HvVerticalNavigation.propTypes = {
    * The width of the panel when collapsed. Default vlaue is 52.
    */
   collapsedPanelWidth: PropTypes.number,
+  /**
+   * Position of the component.
+   */
+  position: PropTypes.oneOf(["static", "relative", "fixed", "absolute", "sticky"]),
 };
 
 HvVerticalNavigation.defaultProps = {
@@ -125,6 +130,7 @@ HvVerticalNavigation.defaultProps = {
   topPosition: 44,
   expandedPanelWidth: 300,
   collapsedPanelWidth: 52,
+  position: "fixed",
 };
 
 export default withStyles(useStyles, { name: "HvVerticalNavigation" })(HvVerticalNavigation);
