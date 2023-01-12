@@ -3,9 +3,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import clsx from "clsx";
 import { CSSProperties } from "react";
-import { HvBaseProps } from "types";
-import { useImageLoaded } from "../../hooks";
-import { decreaseSize } from "../../utils";
+import { HvBaseProps } from "../../types";
+import { useImageLoaded } from "hooks";
+import { decreaseSize } from "utils";
 import {
   StyledAvatar,
   StyledBadge,

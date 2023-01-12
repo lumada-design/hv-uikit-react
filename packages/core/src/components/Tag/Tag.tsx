@@ -3,10 +3,10 @@ import { CSSProperties, useState, useContext } from "react";
 import { CloseXS } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { StyledChip, StyledButton } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
-import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/hv";
+import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
 import { ThemeContext } from "index";
 
 export type HvTagProps = Omit<MuiChipProps, "color"> &

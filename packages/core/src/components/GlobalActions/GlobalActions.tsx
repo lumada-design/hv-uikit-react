@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { isString } from "lodash";
 import { HvTypography } from "components";
 import {

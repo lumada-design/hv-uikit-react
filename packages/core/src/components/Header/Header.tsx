@@ -1,4 +1,4 @@
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { HeaderRoot, StyledAppBar } from "./Header.styles";
 
 export type HvHeaderPosition =

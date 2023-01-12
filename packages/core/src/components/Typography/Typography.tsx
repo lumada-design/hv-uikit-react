@@ -1,4 +1,4 @@
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { StyledTypography } from "./Typography.styles";
 
 export type HvTypographyVariants =

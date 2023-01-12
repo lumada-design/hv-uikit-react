@@ -5,10 +5,10 @@ import clsx from "clsx";
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 import { useWidth } from "hooks";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
 import { Focus } from "index";
-import { HvBreakpoints } from "types/hv";
+import { HvBreakpoints } from "types/theme";
 
 export type HvStackDirection = "column" | "row";
 export type HvStackBreakpoints = Record<HvBreakpoints, string>;

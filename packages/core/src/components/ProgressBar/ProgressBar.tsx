@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import clamp from "lodash/clamp";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import {
   StyledProgressBar,
   StyledProgressBarContainer,

@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { useSelectionPath } from "hooks";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../../types";
 import { HvMenuBar } from "./MenuBar";
 import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { isNil } from "lodash";
 import React, { RefObject, useState } from "react";
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 import { keyboardCodes, isBrowser } from "utils";
 import ConditionalWrapper from "utils/ConditionalWrapper";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";

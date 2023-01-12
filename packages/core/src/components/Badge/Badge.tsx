@@ -1,7 +1,7 @@
 import { HvTypography, HvTypographyVariants } from "components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 
-import { HvBaseProps } from "types";
+import { HvBaseProps } from "../../types";
 
 export type HvBadgeProps = HvBaseProps & {
   /**

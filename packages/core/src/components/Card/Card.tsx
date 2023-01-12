@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { HvBaseProps } from "types";
-import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "types/hv";
+import { HvBaseProps } from "../../types";
+import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/theme";
 import {
   StyledRoot,
   StyledContainer,
@@ -8,7 +8,7 @@ import {
   StyledIcon,
 } from "./Card.styles";
 
-export type HvCardProps = HvBaseProps<HTMLDivElement> & {
+export type HvCardProps = HvBaseProps & {
   /** The renderable content inside the icon slot of the header. */
   icon?: React.ReactNode;
   /** Whether the card is selectable. */
