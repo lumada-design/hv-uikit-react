@@ -56,6 +56,7 @@ export const Main = () => {
       selected={selectedItem}
       topPosition={0}
       onNavigationChange={navigationChangeHandler}
+      position="absolute"
     />
   );
 };
@@ -86,7 +87,7 @@ export const ExampleWithDefaultHeader = () => {
   };
 
   const Header = () => (
-    <HvHeader position="fixed">
+    <HvHeader position="absolute">
       <HvHeaderNavigation data={headerNavigationData} />
       <HvHeaderActions>
         <HvButton icon>
@@ -103,6 +104,7 @@ export const ExampleWithDefaultHeader = () => {
         data={verticalNavigationData}
         selected={selectedItem}
         onNavigationChange={navigationChangeHandler}
+        position="absolute"
       />
     </>
   );
@@ -121,7 +123,7 @@ export const ExampleWithCustomHeader = () => {
       width: "100%",
       left: 0,
       top: 0,
-      position: "fixed",
+      position: "absolute",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -139,6 +141,7 @@ export const ExampleWithCustomHeader = () => {
         data={verticalNavigationData}
         selected={selectedItem}
         onNavigationChange={navigationChangeHandler}
+        position="absolute"
       />
     </>
   );

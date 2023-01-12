@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 const styles = (props) =>
   makeStyles((theme) => ({
     panel: {
-      position: "fixed",
+      position: props.position,
       top: props.topPosition,
       left: 0,
       zIndex: 1100,
