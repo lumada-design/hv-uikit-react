@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+
 import { HvBox } from "components";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
@@ -65,7 +66,8 @@ export const StyledBar = styled("div")(
 );
 
 export const StyledIcon = styled("div")({
-  top: 0,
-  right: 0,
+  top: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
+  right: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
   transform: "translate(50%, -50%)",
+  position: "absolute",
 });

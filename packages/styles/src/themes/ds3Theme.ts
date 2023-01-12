@@ -37,6 +37,9 @@ const ds3Theme = makeTheme((theme) => ({
       selectedItemBorderBottomThickness: "0px",
       shadow: theme.shadows.md,
     },
+    card: {
+      iconMargin: "-8px",
+    },
     tab: {
       letterSpacing: "0.02em",
       fontSize: "12px",
