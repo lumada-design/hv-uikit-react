@@ -39,7 +39,7 @@ const ds3Theme = makeTheme((theme) => ({
     },
     card: {
       iconMargin: "-24px",
-      border: "none",
+      outline: "none",
       borderRadius: "0px",
       hoverColor: theme.colors.atmo4,
     },

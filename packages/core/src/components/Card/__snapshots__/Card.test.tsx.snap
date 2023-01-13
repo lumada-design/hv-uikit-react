@@ -3,7 +3,7 @@
 exports[`Card > should render all the compoents 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-pygfxg-StyledRoot e19ah2h63"
   >
     <div
       class="css-13ob5sy-StyledContainer e19ah2h62"
@@ -54,7 +54,7 @@ exports[`Card > should render all the compoents 1`] = `
 exports[`Card > should render content 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-pygfxg-StyledRoot e19ah2h63"
   >
     <div
       class="css-13ob5sy-StyledContainer e19ah2h62"
@@ -82,7 +82,7 @@ exports[`Card > should render content 1`] = `
 exports[`Card > should render correctly 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-pygfxg-StyledRoot e19ah2h63"
   >
     <div
       class="css-13ob5sy-StyledContainer e19ah2h62"
@@ -101,7 +101,7 @@ exports[`Card > should render correctly 1`] = `
 exports[`Card > should render header 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-pygfxg-StyledRoot e19ah2h63"
   >
     <div
       class="css-13ob5sy-StyledContainer e19ah2h62"
@@ -138,7 +138,7 @@ exports[`Card > should render header 1`] = `
 exports[`Card > should render image 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-pygfxg-StyledRoot e19ah2h63"
   >
     <div
       class="css-13ob5sy-StyledContainer e19ah2h62"

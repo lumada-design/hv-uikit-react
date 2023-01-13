@@ -26,7 +26,7 @@ const componentsSpec = {
   },
   card: {
     iconMargin: "string",
-    border: "string",
+    outline: "string",
     borderRadius: "string",
     hoverColor: "string",
   },

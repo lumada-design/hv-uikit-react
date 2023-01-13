@@ -54,7 +54,7 @@ const ds5Theme = makeTheme((theme) => ({
     },
     card: {
       iconMargin: "0px",
-      border: `1px solid ${theme.colors.atmo4}`,
+      outline: `1px solid ${theme.colors.atmo4}`,
       borderRadius: "0px 0px 6px 6px",
       hoverColor: theme.colors.acce2,
     },

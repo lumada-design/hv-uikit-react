@@ -13,7 +13,7 @@ export const StyledRoot = styled(
   overflow: "visible",
   position: "relative",
   backgroundColor: getColor($bgColor),
-  border: theme.card.border,
+  outline: theme.card.outline,
   borderRadius: theme.card.borderRadius,
   "&.focus-visible": {
     ...outlineStyles,
