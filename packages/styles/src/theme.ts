@@ -26,6 +26,9 @@ const componentsSpec = {
   },
   card: {
     iconMargin: "string",
+    outline: "string",
+    borderRadius: "string",
+    hoverColor: "string",
   },
   tab: {
     letterSpacing: "string",

@@ -1,16 +1,20 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
 import { HvBox } from "components";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 
+const getColor = (c: string): string => theme.colors[c];
+
 export const StyledRoot = styled(
   HvBox,
   transientOptions
-)(({ $selectable, $selected }) => ({
+)(({ $selectable, $selected, $bgColor }) => ({
   overflow: "visible",
   position: "relative",
+  backgroundColor: getColor($bgColor),
+  outline: theme.card.outline,
+  borderRadius: theme.card.borderRadius,
   "&.focus-visible": {
     ...outlineStyles,
   },
@@ -19,7 +23,7 @@ export const StyledRoot = styled(
   },
   ...($selectable && {
     "&:hover": {
-      outline: `1px solid ${theme.colors.atmo4}`,
+      outline: `1px solid ${theme.card.hoverColor}`,
     },
   }),
   ...($selected && {
@@ -39,18 +43,13 @@ export const StyledRoot = styled(
   }),
 }));
 
-const getColor = (c: string): string => theme.colors[c];
-
-export const StyledContainer = styled("div")(
-  ({ bgColor }: { bgColor: string }) => ({
-    position: "relative",
-    backgroundColor: getColor(bgColor),
-    "& > *": {
-      position: "relative",
-      zIndex: 1,
-    },
-  })
-);
+export const StyledContainer = styled("div")({
+  position: "relative",
+  "& > *": {
+    position: "absolute",
+    zIndex: 1,
+  },
+});
 
 export const StyledBar = styled("div")(
   ({ barColor }: { barColor: string }) => ({
@@ -68,6 +67,4 @@ export const StyledBar = styled("div")(
 export const StyledIcon = styled("div")({
   top: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
   right: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
-  transform: "translate(50%, -50%)",
-  position: "absolute",
 });

@@ -60,13 +60,14 @@ export const HvCard = ({
       )}
       $selectable={selectable}
       $selected={selected}
+      $bgColor={bgColor}
       {...others}
     >
-      <StyledContainer bgColor={bgColor}>
+      <StyledContainer>
         <StyledBar className={classes?.semanticBar} barColor={statusColor} />
         <StyledIcon>{icon}</StyledIcon>
-        {children}
       </StyledContainer>
+      {children}
     </StyledRoot>
   );
 };

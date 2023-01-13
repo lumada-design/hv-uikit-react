@@ -53,7 +53,10 @@ const ds5Theme = makeTheme((theme) => ({
       shadow: "none",
     },
     card: {
-      iconMargin: "16px",
+      iconMargin: "0px",
+      outline: `1px solid ${theme.colors.atmo4}`,
+      borderRadius: "0px 0px 6px 6px",
+      hoverColor: theme.colors.acce2,
     },
     tab: {
       letterSpacing: "0em",
