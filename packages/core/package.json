@@ -43,7 +43,8 @@
     "@hitachivantara/uikit-styles": "workspace:*",
     "clsx": "^1.2.1",
     "detect-browser": "^5.3.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react-google-charts": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
