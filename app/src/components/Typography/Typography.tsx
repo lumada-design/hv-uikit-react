@@ -1,7 +1,7 @@
 import {
   HvBox,
   HvTypography,
-  TypographyVariants,
+  HvTypographyVariants,
   theme,
 } from "@hitachivantara/uikit-core";
 
@@ -15,12 +15,12 @@ const variants = [
   "label",
   "caption1",
   "caption2",
-] as TypographyVariants[];
+] as HvTypographyVariants[];
 
 export const Typography = () => {
   return (
     <HvBox>
-      {variants.map((variant: TypographyVariants) => {
+      {variants.map((variant: HvTypographyVariants) => {
         return (
           <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.spacing(1) }}>
             <HvTypography variant="label" key={`label_${variant}`}>
@@ -35,7 +35,3 @@ export const Typography = () => {
     </HvBox>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Typography.displayName = "Typography";
-}

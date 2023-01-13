@@ -41,7 +41,3 @@ export const Cards = () => {
     </HvCard>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Cards.displayName = "Card";
-}

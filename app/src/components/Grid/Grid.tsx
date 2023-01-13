@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import {
   HvGrid,
   theme,
-  Typography,
+  HvTypography,
   useWidth,
 } from "@hitachivantara/uikit-core";
 
@@ -36,12 +36,12 @@ export const Grid = () => {
 
   return (
     <>
-      <Typography variant="label">
+      <HvTypography variant="label">
         {Object.keys(theme.breakpoints.values).map(
           (b: string) => `${b}: ${getBreakpointValue(b)}, `
         )}
-      </Typography>
-      <Typography variant="label">{`Current width: ${width}`}</Typography>
+      </HvTypography>
+      <HvTypography variant="label">{`Current width: ${width}`}</HvTypography>
       <HvGrid container spacing={6}>
         <HvGrid item xl={2} lg={3} md={4} sm={6} xs={12}>
           <StyledItem>xl=2 lg=3 md=4 sm=6 xs=1</StyledItem>
