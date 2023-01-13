@@ -3,49 +3,49 @@
 exports[`Card > should render all the compoents 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1k0udpq-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
   >
     <div
-      class="css-1728172-StyledContainer e19ah2h62"
+      class="css-13ob5sy-StyledContainer e19ah2h62"
     >
       <div
         class="css-mez56c-StyledBar e19ah2h61"
       />
       <div
-        class="css-dngten-StyledIcon e19ah2h60"
+        class="css-vz0gkq-StyledIcon e19ah2h60"
       />
+    </div>
+    <div
+      class="MuiCardHeader-root  e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+    >
       <div
-        class="MuiCardHeader-root  e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+        class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
       >
-        <div
-          class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        <span
+          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1qvr50w-MuiTypography-root"
         >
-          <span
-            class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1qvr50w-MuiTypography-root"
-          >
-            mockTitle
-          </span>
-          <span
-            class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-nrdprl-MuiTypography-root"
-          >
-            mockSubtitle
-          </span>
-        </div>
+          mockTitle
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-nrdprl-MuiTypography-root"
+        >
+          mockSubtitle
+        </span>
       </div>
-      <img
-        alt="mockImg"
-        class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img eawuy7p0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
-        role="img"
-      />
-      <div
-        class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
+    </div>
+    <img
+      alt="mockImg"
+      class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img eawuy7p0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      role="img"
+    />
+    <div
+      class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
+    >
+      <p
+        class="css-nvh5te-StyledTypography e1bct5r50"
       >
-        <p
-          class="css-nvh5te-StyledTypography e1bct5r50"
-        >
-          mockCardContent
-        </p>
-      </div>
+        mockCardContent
+      </p>
     </div>
   </div>
 </div>
@@ -54,26 +54,26 @@ exports[`Card > should render all the compoents 1`] = `
 exports[`Card > should render content 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1k0udpq-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
   >
     <div
-      class="css-1728172-StyledContainer e19ah2h62"
+      class="css-13ob5sy-StyledContainer e19ah2h62"
     >
       <div
         class="css-mez56c-StyledBar e19ah2h61"
       />
       <div
-        class="css-dngten-StyledIcon e19ah2h60"
+        class="css-vz0gkq-StyledIcon e19ah2h60"
       />
-      <div
-        class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
+    </div>
+    <div
+      class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
+    >
+      <p
+        class="css-nvh5te-StyledTypography e1bct5r50"
       >
-        <p
-          class="css-nvh5te-StyledTypography e1bct5r50"
-        >
-          mockCardContent
-        </p>
-      </div>
+        mockCardContent
+      </p>
     </div>
   </div>
 </div>
@@ -82,16 +82,16 @@ exports[`Card > should render content 1`] = `
 exports[`Card > should render correctly 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1k0udpq-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
   >
     <div
-      class="css-1728172-StyledContainer e19ah2h62"
+      class="css-13ob5sy-StyledContainer e19ah2h62"
     >
       <div
         class="css-mez56c-StyledBar e19ah2h61"
       />
       <div
-        class="css-dngten-StyledIcon e19ah2h60"
+        class="css-vz0gkq-StyledIcon e19ah2h60"
       />
     </div>
   </div>
@@ -101,34 +101,34 @@ exports[`Card > should render correctly 1`] = `
 exports[`Card > should render header 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1k0udpq-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
   >
     <div
-      class="css-1728172-StyledContainer e19ah2h62"
+      class="css-13ob5sy-StyledContainer e19ah2h62"
     >
       <div
         class="css-mez56c-StyledBar e19ah2h61"
       />
       <div
-        class="css-dngten-StyledIcon e19ah2h60"
+        class="css-vz0gkq-StyledIcon e19ah2h60"
       />
+    </div>
+    <div
+      class="MuiCardHeader-root  e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+    >
       <div
-        class="MuiCardHeader-root  e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+        class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
       >
-        <div
-          class="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        <span
+          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1qvr50w-MuiTypography-root"
         >
-          <span
-            class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1qvr50w-MuiTypography-root"
-          >
-            mockTitle
-          </span>
-          <span
-            class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-nrdprl-MuiTypography-root"
-          >
-            mockSubtitle
-          </span>
-        </div>
+          mockTitle
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-nrdprl-MuiTypography-root"
+        >
+          mockSubtitle
+        </span>
       </div>
     </div>
   </div>
@@ -138,23 +138,23 @@ exports[`Card > should render header 1`] = `
 exports[`Card > should render image 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement css-1k0udpq-StyledRoot e19ah2h63"
+    class="HvIsCardGridElement css-1a87jwh-StyledRoot e19ah2h63"
   >
     <div
-      class="css-1728172-StyledContainer e19ah2h62"
+      class="css-13ob5sy-StyledContainer e19ah2h62"
     >
       <div
         class="css-mez56c-StyledBar e19ah2h61"
       />
       <div
-        class="css-dngten-StyledIcon e19ah2h60"
-      />
-      <img
-        alt="mockImg"
-        class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img eawuy7p0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
-        role="img"
+        class="css-vz0gkq-StyledIcon e19ah2h60"
       />
     </div>
+    <img
+      alt="mockImg"
+      class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img eawuy7p0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      role="img"
+    />
   </div>
 </div>
 `;
