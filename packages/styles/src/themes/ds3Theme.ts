@@ -38,7 +38,10 @@ const ds3Theme = makeTheme((theme) => ({
       shadow: theme.shadows.md,
     },
     card: {
-      iconMargin: "-8px",
+      iconMargin: "-24px",
+      border: "none",
+      borderRadius: "0px",
+      hoverColor: theme.colors.atmo4,
     },
     tab: {
       letterSpacing: "0.02em",
