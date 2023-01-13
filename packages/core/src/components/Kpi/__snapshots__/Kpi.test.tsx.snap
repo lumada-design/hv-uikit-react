@@ -1,0 +1,55 @@
+// Vitest Snapshot v1
+
+exports[`Kpi > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-1p3o5cs-StyledRoot esnn82o9"
+  >
+    <div>
+      <p
+        class="css-nvh5te-StyledTypography e1bct5r50"
+      >
+        Title
+      </p>
+    </div>
+    <div
+      class="css-1a6w73h-StyledIndicatorsContainer esnn82o8"
+    >
+      <p
+        class=" esnn82o6 css-1u56al4-StyledTypography-StyledIndicatorText e1bct5r50"
+      >
+        Indicator
+      </p>
+      <p
+        class="esnn82o5 css-ieb6qb-StyledTypography-StyledIndicatorUnit e1bct5r50"
+      >
+        Unit
+      </p>
+    </div>
+    <div
+      class="css-jr4b4k-StyledComparisonComposition esnn82o4"
+    >
+      <div>
+        <div
+          class="css-1762388-StyledComparisonContainer esnn82o2"
+        >
+          <p
+            class=" esnn82o0 css-ietz74-StyledTypography-StyledInternalVisualComparisonTypography e1bct5r50"
+          >
+            Visual comparison
+          </p>
+        </div>
+        <div
+          class="css-1762388-StyledComparisonContainer esnn82o2"
+        >
+          <p
+            class="css-1eged0j-StyledTypography e1bct5r50"
+          >
+            Comparison indicator info
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

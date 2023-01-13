@@ -24,3 +24,4 @@ export * from "./Tag";
 export * from "./ToggleButton";
 export * from "./Tab";
 export * from "./Tabs";
+export * from "./Kpi";
