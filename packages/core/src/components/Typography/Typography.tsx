@@ -1,3 +1,4 @@
+import { forwardRef, Ref } from "react";
 import { HvBaseProps } from "../../types";
 import { StyledTypography } from "./Typography.styles";
 
@@ -38,25 +39,30 @@ export type HvTypographyProps = HvBaseProps & {
 /**
  * Typography component is used to render text and paragraphs within an interface.
  */
-export const HvTypography = ({
-  children,
-  as = "body1",
-  variant = "body",
-  link = false,
-  className,
-  ...others
-}: HvTypographyProps) => {
-  const Component = HvTypographyMap[as];
+export const HvTypography = forwardRef(
+  (props: HvTypographyProps, ref: Ref<HTMLDivElement>) => {
+    const {
+      children,
+      as = "body1",
+      variant = "body",
+      link = false,
+      className,
+      ...others
+    } = props;
 
-  return (
-    <StyledTypography
-      as={Component}
-      className={className}
-      variant={variant}
-      link={link}
-      {...others}
-    >
-      {children}
-    </StyledTypography>
-  );
-};
+    const Component = HvTypographyMap[as];
+
+    return (
+      <StyledTypography
+        as={Component}
+        ref={ref}
+        className={className}
+        variant={variant}
+        link={link}
+        {...others}
+      >
+        {children}
+      </StyledTypography>
+    );
+  }
+);

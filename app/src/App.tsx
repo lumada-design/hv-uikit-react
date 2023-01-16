@@ -9,6 +9,7 @@ import {
   Typography,
   Tags,
 } from "./components";
+import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
@@ -28,6 +29,7 @@ const App = () => {
         <ThemeSwitcher />
         <Tags />
         <Cards />
+        <Tooltip />
         <Grid />
         <EmptyState />
         <Typography />

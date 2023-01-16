@@ -25,3 +25,4 @@ export * from "./ToggleButton";
 export * from "./Tab";
 export * from "./Tabs";
 export * from "./Kpi";
+export * from "./Tooltip";
