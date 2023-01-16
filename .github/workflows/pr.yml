@@ -1,4 +1,4 @@
-name: Pull Request
+name: Pull Request test
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ env:
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
 
 jobs:
-  Static-Checks:
+  Build-Storybook:
     name: Lint, Test
     runs-on: ubuntu-latest
 
