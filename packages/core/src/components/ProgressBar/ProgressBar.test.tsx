@@ -1,5 +1,5 @@
 import { describe, it } from "vitest";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { HvProgressBar } from "./ProgressBar";
@@ -179,7 +179,8 @@ describe(
         await findByText("0%");
         expect(progressBar).toHaveAttribute("aria-valuenow", "0");
 
-        userEvent.click(button);
+        await waitFor(() => userEvent.click(button));
+        
         await findByText("100%");
         expect(progressBar).toHaveAttribute("aria-valuenow", "100");
         expect(container).toBeInTheDocument();

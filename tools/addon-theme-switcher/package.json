@@ -14,7 +14,7 @@
   "scripts": {
     "build": "pnpm clean && tsc",
     "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
-    "prepare": "pnpm build"
+    "install": "pnpm build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",

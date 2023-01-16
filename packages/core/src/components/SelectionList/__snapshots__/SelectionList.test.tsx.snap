@@ -22,48 +22,54 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
     >
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="1"
       >
         ListItem 1
       </li>
       <li
         aria-selected="true"
-        class="gutters condensed interactive selected css-f2rz3l-StyledListItem e180q0291"
+        class="root gutters condensed interactive selected root selected focusDisabled css-1qaws6e-StyledListItem e180q0291"
         role="option"
+        tabindex="0"
         value="2"
       >
         ListItem 2
       </li>
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="3"
       >
         ListItem 3
       </li>
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="4"
       >
         ListItem 4
       </li>
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="5"
       >
         ListItem 5
       </li>
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="6"
       >
         ListItem 6
@@ -85,24 +91,27 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
     >
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="1"
       >
         ListItem 1
       </li>
       <li
         aria-selected="true"
-        class="gutters condensed interactive selected css-f2rz3l-StyledListItem e180q0291"
+        class="root gutters condensed interactive selected root selected focusDisabled css-1qaws6e-StyledListItem e180q0291"
         role="option"
+        tabindex="0"
         value="2"
       >
         ListItem 2
       </li>
       <li
         aria-selected="false"
-        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
         role="option"
+        tabindex="-1"
         value="3"
       >
         ListItem 3
