@@ -7,7 +7,7 @@ import isBoolean from "lodash/isBoolean";
 import { useWidth } from "hooks";
 import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
-import { Focus } from "index";
+import { HvFocus } from "index";
 import { HvBreakpoints } from "types/theme";
 
 export type HvStackDirection = "column" | "row";
@@ -110,7 +110,7 @@ export const HvStack = ({
           <>
             {divider && i !== 0 && getDividerComponent()}
             {withNavigation ? (
-              <Focus
+              <HvFocus
                 rootRef={containerRef}
                 focusDisabled={false}
                 strategy="grid"
@@ -122,7 +122,7 @@ export const HvStack = ({
                 filterClass="child"
               >
                 <div className="child">{child}</div>
-              </Focus>
+              </HvFocus>
             ) : (
               child
             )}

@@ -67,6 +67,10 @@ const ds5Theme = makeTheme((theme) => ({
       hoveredBackgroundBorderRadius: "2px",
       hoveredUnderlineBackgroundColor: theme.colors.atmo4,
     },
+    list: {
+      hoverColor: theme.colors.acce2s,
+      disabledBackgroundColor: theme.colors.atmo3,
+    },
   },
 }));
 
