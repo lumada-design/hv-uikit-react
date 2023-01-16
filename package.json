@@ -13,7 +13,7 @@
     "dev": "pnpm -F='./app' dev",
     "doc": "start-storybook -p 6006 --no-manager-cache",
     "build": "pnpm -r -F='./packages/**' build",
-    "build:doc": "build-storybook",
+    "build:doc": "build-storybook --docs -o dist --quiet",
     "lint": "eslint --ext .ts,.tsx --cache",
     "lint-staged": "lint-staged",
     "format": "npx prettier -w .",
