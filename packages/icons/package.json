@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-icons",
-  "version": "5.1.0-next.0",
+  "version": "5.1.0-next.1",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "A collection of icons to use with Hitachi Vantara's React Components.",
@@ -30,7 +30,7 @@
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf ./{dist,bin,*.tsbuildinfo}",
-    "prepare": "pnpm convert"
+    "install": "pnpm convert"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -52,6 +52,9 @@
     "tsconfig-paths": "^4.1.0",
     "yargs": "^17.6.2"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },

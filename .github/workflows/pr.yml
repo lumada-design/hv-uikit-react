@@ -1,0 +1,128 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - "next*"
+
+env:
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: next
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.event.number }} of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
+
+jobs:
+  Build-Storybook:
+    name: Lint, Test, Storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies
+        env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build Storybook
+        run: pnpm build:doc
+
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v3
+        with:
+          name: storybook
+          path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: rm -rf ${{ github.workspace }}/dist
+
+  Github-Deployment:
+    name: Github Deployment
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+    needs: [Build-Storybook]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Documentation Deployment
+        uses: bobheadxi/deployments@v0.4.3
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          ref: refs/pull/${{ github.event.number }}/head
+          desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+
+      - name: Checkout Documentation Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
+
+      - name: Remove Previous Documentation
+        run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook
+          path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+      - name: Push Documentation
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git push
+
+      - name: Cleanup Folder
+        if: always()
+        run: rm -rf ${{ github.workspace }}/gh-docs
+
+      - name: Update Deployment Status
+        uses: bobheadxi/deployments@v0.4.3
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{env.DOCUMENTATION_URL}}
+
+  Cleanup:
+    name: Cleanup storybook
+    if: always()
+    needs: [Github-Deployment]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: storybook
