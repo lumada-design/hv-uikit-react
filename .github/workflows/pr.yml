@@ -13,7 +13,7 @@ env:
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
 
 jobs:
-  Bootstrap:
+  Build-Storybook:
     name: Lint, Test, Storybook
     runs-on: ubuntu-latest
 
