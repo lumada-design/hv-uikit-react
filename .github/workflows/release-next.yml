@@ -1,5 +1,4 @@
 name: Release Next
-
 on:
   repository_dispatch:
     types: [next]
