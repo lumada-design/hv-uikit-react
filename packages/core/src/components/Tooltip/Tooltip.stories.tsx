@@ -1,0 +1,165 @@
+import { Meta, StoryObj } from "@storybook/react";
+import { HvBox, HvTypography } from "components";
+import { HvTooltip, TooltipProps } from "./Tooltip";
+
+const meta: Meta<typeof HvTooltip> = {
+  title: "Overlay/Tooltip",
+  component: HvTooltip,
+};
+export default meta;
+
+export const Main: StoryObj<TooltipProps> = {
+  args: {
+    open: true,
+    title: <HvTypography>Grid View</HvTypography>,
+  },
+  render: ({ title, open }) => {
+    {
+      const styling = {
+        placeholder: {
+          display: "flex",
+          justifyContent: "space-between",
+          maxWidth: 600,
+          margin: "0 auto",
+          paddingTop: 0,
+        },
+      };
+
+      return (
+        <HvBox sx={styling.placeholder}>
+          <HvTooltip title={title}>
+            <HvTypography>Hover here</HvTypography>
+          </HvTooltip>
+          <HvTooltip title={title} open={open}>
+            <HvTypography>Tooltip open</HvTypography>
+          </HvTooltip>
+        </HvBox>
+      );
+    }
+  },
+};
+
+export const LongText = () => {
+  const styling = {
+    longTextContainer: {
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: 90,
+    },
+  };
+
+  const data = (
+    <HvTypography>
+      Tooltips can showcase truncated text. The text should be concise and not
+      redundant.
+    </HvTypography>
+  );
+
+  return (
+    <HvBox sx={styling.longTextContainer}>
+      <HvTooltip title={data}>
+        <HvTypography id="placeholder" tabIndex={0}>
+          Hover here
+        </HvTypography>
+      </HvTooltip>
+    </HvBox>
+  );
+};
+
+export const Multiline = () => {
+  const title = {
+    title: "January",
+    elements: [
+      { name: "Sales", value: "52,000 units" },
+      { name: "Profit", value: "50%" },
+    ],
+  };
+
+  const styling = {
+    longTextContainer: {
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: 90,
+    },
+  };
+
+  const TooltipContent = ({ classes }) => (
+    <div>
+      <div className={classes.title}>
+        <div>
+          <HvTypography variant="label">{title.title}</HvTypography>
+        </div>
+      </div>
+      <div className={classes.valueWrapper}>
+        {title.elements.map((element) => (
+          <div key={element.name} className={classes.values}>
+            <HvTypography variant="label">{element.name}</HvTypography>
+            <div className={classes.separator} />
+            <HvTypography>{element.value}</HvTypography>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const classes = {
+    values: "values",
+    title: "title",
+    separator: "separator",
+    valueWrapper: "valueWrapper",
+    classes: "values",
+  };
+
+  return (
+    <HvBox sx={styling.longTextContainer}>
+      <HvTooltip title={<TooltipContent classes={classes} />} useSingle={false}>
+        <HvTypography>Hover here</HvTypography>
+      </HvTooltip>
+    </HvBox>
+  );
+};
+
+export const MultilineWithoutHeader = () => {
+  const data = [
+    { name: "Status", value: "Open" },
+    { name: "Date", value: "12/08/2018" },
+    { name: "Assignee", value: "Management" },
+    { name: "Approval", value: "Not yet requested" },
+  ];
+
+  const styling = {
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: 170,
+    },
+  };
+
+  const TooltipContent = ({ classes }) => (
+    <div className={classes.valueWrapper}>
+      {data.map((element) => (
+        <div key={element.name} className={classes.values}>
+          <HvTypography variant="label">{element.name}</HvTypography>
+          <div className={classes.separator} />
+          <HvTypography>{element.value}</HvTypography>
+        </div>
+      ))}
+    </div>
+  );
+
+  const classes = {
+    values: "values",
+    title: "title",
+    separator: "separator",
+    valueWrapper: "valueWrapper",
+    classes: "values",
+  };
+
+  return (
+    <HvBox sx={styling.container}>
+      <HvTooltip title={<TooltipContent classes={classes} />} useSingle={false}>
+        <HvTypography>Hover here</HvTypography>
+      </HvTooltip>
+    </HvBox>
+  );
+};
