@@ -1,7 +1,12 @@
-import { Fade, Tooltip as MuiTooltip } from "@mui/material";
-import { forwardRef, ReactElement } from "react";
+import {
+  Fade,
+  Tooltip as MuiTooltip,
+  TooltipProps as MuiTooltipProps,
+} from "@mui/material";
+import { forwardRef, ReactElement, useContext } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
+import { ThemeContext } from "providers";
 
 export type TooltipPlacementType =
   | "bottom-end"
@@ -17,7 +22,7 @@ export type TooltipPlacementType =
   | "top-start"
   | "top";
 
-export type TooltipProps = {
+export type TooltipProps = MuiTooltipProps & {
   /**
    * Class names to be applied.
    */
@@ -125,6 +130,8 @@ export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
     ...others
   } = props;
 
+  const { rootId } = useContext(ThemeContext);
+
   return (
     <MuiTooltip
       ref={ref}
@@ -141,6 +148,7 @@ export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
       title={title}
       PopperProps={{
         sx: popperSx(useSingle),
+        container: document.getElementById(rootId || ""),
       }}
       {...others}
     >
