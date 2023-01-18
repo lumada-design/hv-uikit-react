@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`InfoMessage > should render correctly 1`] = `
+<div>
+  <div
+    class=" ecu8rho0 css-bliwfw-StyledTypography-StyledTypography e1bct5r50"
+    variant="body"
+  />
+</div>
+`;

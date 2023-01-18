@@ -22,6 +22,7 @@ export const parameters = {
       order: [
         "Theme",
         ["Typography", "Colors", "Icons"],
+        "Guides",
         "Layout",
         "Structure",
         "Display",

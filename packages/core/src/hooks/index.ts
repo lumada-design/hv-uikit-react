@@ -5,3 +5,4 @@ export * from "./useImageLoaded";
 export * from "./useSelectionPath";
 export * from "./useWidth";
 export * from "./useLabels";
+export { default as useUniqueId } from "./useUniqueId";

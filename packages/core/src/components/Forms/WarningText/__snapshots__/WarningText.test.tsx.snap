@@ -1,0 +1,35 @@
+// Vitest Snapshot v1
+
+exports[`WarningText > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-1urz3al-StyledRoot e1ll5nqb2"
+  >
+    <div
+      class="css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+      name="Fail"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
+          fill="var(--colors-sema4)"
+        />
+      </svg>
+    </div>
+    <div
+      aria-relevant="additions text"
+      as="p"
+      class=" e1ll5nqb1 css-1cb3ppr-StyledTypography-StyledTypography e1bct5r50"
+      role="status"
+      variant="body"
+    />
+  </div>
+</div>
+`;

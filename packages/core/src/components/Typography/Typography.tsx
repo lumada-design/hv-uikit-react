@@ -35,6 +35,8 @@ export type HvTypographyProps = HvBaseProps & {
   link?: boolean;
   className?: string;
   children: React.ReactNode;
+
+  htmlFor?: string;
 };
 
 /**
