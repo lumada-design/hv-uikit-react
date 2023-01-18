@@ -43,6 +43,10 @@ const componentsSpec = {
     hoverColor: "string",
     disabledBackgroundColor: "string",
   },
+  dialog: {
+    borderRadius: "string",
+    margin: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

@@ -20,7 +20,11 @@ export type PolymorphicComponentRef<
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
+// Base HV Props
 export type HvBaseProps<E = HTMLDivElement, P = {}> = Omit<
   HTMLAttributes<E>,
   keyof P
 >;
+
+// This is a type that allows us to pass undetermined extra props to our components
+export type HvExtraProps = { [key: string]: any };

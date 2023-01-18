@@ -56,6 +56,10 @@ const ds3Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.atmo3,
       disabledBackgroundColor: "transparent",
     },
+    dialog: {
+      borderRadius: "0",
+      margin: "100px",
+    },
   },
 }));
 

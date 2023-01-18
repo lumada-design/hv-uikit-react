@@ -1,17 +1,21 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { transientOptions } from "utils/transientOptions";
 import { HvTypographyVariants } from "./Typography";
 
-export const StyledTypography = styled("div")(
+export const StyledTypography = styled(
+  "div",
+  transientOptions
+)(
   ({
     variant,
-    link = false,
+    $link = false,
   }: {
     variant: HvTypographyVariants;
-    link?: boolean;
+    $link?: boolean;
   }) => ({
     color: theme.colors.acce1,
-    ...(link && {
+    ...($link && {
       color: theme.colors.acce2,
       textDecoration: "underline",
     }),

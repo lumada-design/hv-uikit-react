@@ -10,6 +10,7 @@ import {
   Tags,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
+import { Dialogs } from "./components/Dialogs/Dialogs";
 import { Header, ThemeSwitcher } from "./layout";
 
 const styles = {
@@ -23,10 +24,11 @@ const styles = {
 
 const App = () => {
   return (
-    <HvProvider rootElementId="root">
+    <HvProvider rootElementId="hv-root">
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <Dialogs />
         <Tags />
         <Cards />
         <Tooltip />

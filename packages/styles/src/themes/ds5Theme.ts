@@ -71,6 +71,10 @@ const ds5Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce2s,
       disabledBackgroundColor: theme.colors.atmo3,
     },
+    dialog: {
+      borderRadius: "6px",
+      margin: "80px",
+    },
   },
 }));
 

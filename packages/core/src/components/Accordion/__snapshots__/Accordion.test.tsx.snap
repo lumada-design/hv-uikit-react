@@ -8,9 +8,11 @@ exports[`Accordion > should render correctly 1`] = `
     <div
       aria-disabled="false"
       aria-expanded="false"
+      as="div"
       class=" e555ywc0 css-wfitgk-StyledTypography-StyledLabel e1bct5r50"
       role="button"
       tabindex="0"
+      variant="label"
     >
       <div
         class="css-du18qm"

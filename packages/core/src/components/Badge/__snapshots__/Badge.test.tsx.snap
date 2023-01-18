@@ -154,11 +154,13 @@ exports[`Badge > should render correctly with text 1`] = `
     aria-label="99+"
     class="css-1q5qni0-StyledRoot e14fbj1m2"
   >
-    <p
+    <div
+      as="p"
       class="css-y9wk7b-StyledTypography e1bct5r50"
+      variant="title3"
     >
       hello
-    </p>
+    </div>
     <div
       class="css-1ab0lly-StyledContainer e14fbj1m1"
     >
