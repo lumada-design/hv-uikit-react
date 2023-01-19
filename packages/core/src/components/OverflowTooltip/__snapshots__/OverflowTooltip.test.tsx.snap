@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`OverflowTooltip > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-trvmb4-StyledDataContainer ej7nvq90"
+  />
+</div>
+`;
