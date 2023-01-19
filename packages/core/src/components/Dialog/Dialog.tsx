@@ -16,7 +16,7 @@ import { isKeypress, keyboardCodes, setId } from "utils";
 import { ThemeContext } from "providers";
 import { withTooltip } from "hocs";
 
-export type HvDialogProps = MuiDialogProps &
+export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
   HvBaseProps & {
     /** Id to be applied to the root node. */
     id?: string;
@@ -52,6 +52,8 @@ export const HvDialog = ({
   disableBackdropClick = false,
   ...others
 }: HvDialogProps) => {
+  delete others.fullScreen;
+
   const { activeTheme, selectedMode, rootId } = useContext(ThemeContext);
 
   const [focusableQueue, setFocusableQueue] = useState<{
