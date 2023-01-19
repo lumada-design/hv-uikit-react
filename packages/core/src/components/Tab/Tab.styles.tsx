@@ -27,11 +27,11 @@ export const StyledTab = styled(MuiTab)({
     content: "''",
   },
   "&:hover": {
-    backgroundColor: theme.tab.hoveredBackgroundColor,
-    borderRadius: theme.tab.hoveredBackgroundBorderRadius,
+    backgroundColor: theme.tab.hoverBackgroundColor,
+    borderRadius: theme.tab.hoverBackgroundBorderRadius,
     "&::after": {
       height: "1px",
-      backgroundColor: theme.tab.hoveredUnderlineBackgroundColor,
+      backgroundColor: theme.tab.hoverUnderlineBackgroundColor,
     },
   },
   "&:focus-visible": {

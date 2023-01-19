@@ -8,6 +8,7 @@ import {
   Cards,
   Typography,
   Tags,
+  CheckBox,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -28,6 +29,7 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <CheckBox />
         <Dialogs />
         <Tags />
         <Cards />

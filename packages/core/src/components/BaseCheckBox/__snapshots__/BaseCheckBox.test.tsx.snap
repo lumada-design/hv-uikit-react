@@ -1,0 +1,246 @@
+// Vitest Snapshot v1
+
+exports[`BaseCheckBox > checked > should render correctly 1`] = `
+<div>
+  <span
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-checked MuiCheckbox-root MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+  >
+    <input
+      checked=""
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="false"
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="CheckboxCheck"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-acce1)"
+        />
+        <path
+          class="color0"
+          d="M16 16H0V0h16zM1 15h14V1H1z"
+          fill="var(--colors-acce1)"
+        />
+        <path
+          class="color1"
+          d="M6.049 12.463 2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+          fill="var(--colors-atmo1)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BaseCheckBox > disabled > should render correctly 1`] = `
+<div>
+  <span
+    aria-disabled="true"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled MuiCheckbox-root MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    tabindex="-1"
+  >
+    <input
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="false"
+      disabled=""
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="Checkbox"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-atmo3)"
+        />
+        <path
+          class="color1"
+          d="M16 16H0V0h16zM1 15h14V1H1z"
+          fill="var(--colors-atmo5)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
+<div>
+  <span
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+  >
+    <input
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="true"
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="CheckboxPartial"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-atmo1)"
+        />
+        <path
+          class="color1"
+          d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+          fill="var(--colors-acce1)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BaseCheckBox > read only > should render correctly 1`] = `
+<div>
+  <span
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+  >
+    <input
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="false"
+      readonly=""
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="Checkbox"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-atmo1)"
+        />
+        <path
+          class="color1"
+          d="M16 16H0V0h16zM1 15h14V1H1z"
+          fill="var(--colors-acce1)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BaseCheckBox > required > should render correctly 1`] = `
+<div>
+  <span
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+  >
+    <input
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="false"
+      required=""
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="Checkbox"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-atmo1)"
+        />
+        <path
+          class="color1"
+          d="M16 16H0V0h16zM1 15h14V1H1z"
+          fill="var(--colors-acce1)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BaseCheckBox > should render correctly 1`] = `
+<div>
+  <span
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault  e1noodtt0 css-ee113u-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+  >
+    <input
+      class="PrivateSwitchBase-input css-1m9pwf3"
+      data-indeterminate="false"
+      type="checkbox"
+      value="on"
+    />
+    <div
+      class="css-du18qm"
+      font-size="medium"
+      name="Checkbox"
+    >
+      <svg
+        focusable="false"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="color0"
+          d="M0 0h16v16H0z"
+          fill="var(--colors-atmo1)"
+        />
+        <path
+          class="color1"
+          d="M16 16H0V0h16zM1 15h14V1H1z"
+          fill="var(--colors-acce1)"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;

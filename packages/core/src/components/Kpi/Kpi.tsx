@@ -15,7 +15,7 @@ import {
   StyledVisualIndicator,
 } from "./Kpi.styles";
 
-export interface HvKpiProps extends HvBaseProps<HTMLDivElement, { children }> {
+export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
    */
@@ -60,7 +60,7 @@ export interface HvKpiProps extends HvBaseProps<HTMLDivElement, { children }> {
     spacingToTheRight?: string;
     trendLine?: string;
   };
-}
+};
 
 const DEFAULT_LABELS = {
   title: "",

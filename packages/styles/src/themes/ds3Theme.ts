@@ -48,9 +48,9 @@ const ds3Theme = makeTheme((theme) => ({
       fontSize: "12px",
       lineHeight: "16px",
       padding: "0 20px",
-      hoveredBackgroundColor: "transparent",
-      hoveredBackgroundBorderRadius: "0px",
-      hoveredUnderlineBackgroundColor: theme.colors.atmo5,
+      hoverBackgroundColor: "transparent",
+      hoverBackgroundBorderRadius: "0px",
+      hoverUnderlineBackgroundColor: theme.colors.atmo5,
     },
     list: {
       hoverColor: theme.colors.atmo3,
@@ -59,6 +59,9 @@ const ds3Theme = makeTheme((theme) => ({
     dialog: {
       borderRadius: "0",
       margin: "100px",
+    },
+    baseCheckBox: {
+      hoverColor: theme.colors.atmo3,
     },
   },
 }));
