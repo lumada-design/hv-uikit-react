@@ -42,9 +42,6 @@ export const HvTitle = ({
   const isString = typeof children === "string";
   const { fullscreen } = others;
 
-  // prevent the `fullscreen` prop from being passed to the `DialogTitle` component
-  delete others.fullscreen;
-
   const icon = customIcon || (showIcon && iconVariant(variant, "", ""));
 
   return (
