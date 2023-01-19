@@ -63,6 +63,14 @@ const ds3Theme = makeTheme((theme) => ({
     baseCheckBox: {
       hoverColor: theme.colors.atmo3,
     },
+    baseRadio: {
+      hoverColor: theme.colors.atmo3,
+      hoverBorderRadius: 0,
+      disabledColor: theme.colors.atmo5,
+      borderRadius: 0,
+      padding: 0,
+      focusBorderRadius: "8px",
+    },
   },
 }));
 
