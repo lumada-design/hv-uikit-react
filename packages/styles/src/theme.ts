@@ -35,9 +35,9 @@ const componentsSpec = {
     fontSize: "string",
     lineHeight: "string",
     padding: "string",
-    hoveredBackgroundColor: "string",
-    hoveredBackgroundBorderRadius: "string",
-    hoveredUnderlineBackgroundColor: "string",
+    hoverBackgroundColor: "string",
+    hoverBackgroundBorderRadius: "string",
+    hoverUnderlineBackgroundColor: "string",
   },
   list: {
     hoverColor: "string",
@@ -46,6 +46,9 @@ const componentsSpec = {
   dialog: {
     borderRadius: "string",
     margin: "string",
+  },
+  baseCheckBox: {
+    hoverColor: "string",
   },
 };
 

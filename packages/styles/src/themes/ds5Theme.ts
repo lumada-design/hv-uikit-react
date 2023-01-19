@@ -63,9 +63,9 @@ const ds5Theme = makeTheme((theme) => ({
       fontSize: "14px",
       lineHeight: "24px",
       padding: "0 16px",
-      hoveredBackgroundColor: theme.colors.acce2s,
-      hoveredBackgroundBorderRadius: "2px",
-      hoveredUnderlineBackgroundColor: theme.colors.atmo4,
+      hoverBackgroundColor: theme.colors.acce2s,
+      hoverBackgroundBorderRadius: "2px",
+      hoverUnderlineBackgroundColor: theme.colors.atmo4,
     },
     list: {
       hoverColor: theme.colors.acce2s,
@@ -74,6 +74,9 @@ const ds5Theme = makeTheme((theme) => ({
     dialog: {
       borderRadius: "6px",
       margin: "80px",
+    },
+    baseCheckBox: {
+      hoverColor: theme.colors.acce2s,
     },
   },
 }));
