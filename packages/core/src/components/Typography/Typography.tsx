@@ -1,7 +1,9 @@
 import { forwardRef, Ref, ElementType } from "react";
 import { isString } from "lodash";
 import { HvBaseProps } from "../../types";
-import { StyledTypography } from "./Typography.styles";
+import { styled } from "@mui/system";
+import { transientOptions } from "utils/transientOptions";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvTypographyVariants =
   | "display"
@@ -26,7 +28,78 @@ const HvTypographyMap = {
   body1: "p",
   body2: "p",
   div: "div",
+  label: "label",
 } as const;
+
+const getStyledComponent = (c: any) =>
+  styled(
+    c,
+    transientOptions
+  )(
+    ({
+      variant,
+      $link = false,
+    }: {
+      variant: HvTypographyVariants;
+      $link?: boolean;
+    }) => ({
+      color: theme.colors.acce1,
+      ...($link && {
+        color: theme.colors.acce2,
+        textDecoration: "underline",
+      }),
+      ...(variant === "display" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl4,
+        lineHeight: theme.lineHeights.xl3,
+      }),
+      ...(variant === "display" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl4,
+        lineHeight: theme.lineHeights.xl3,
+      }),
+      ...(variant === "title1" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl3,
+        lineHeight: theme.lineHeights.xl2,
+      }),
+      ...(variant === "title2" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl2,
+        lineHeight: theme.lineHeights.xl,
+      }),
+      ...(variant === "title3" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.xl,
+        lineHeight: theme.lineHeights.lg,
+      }),
+      ...(variant === "title4" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.lg,
+        lineHeight: theme.lineHeights.lg,
+      }),
+      ...(variant === "body" && {
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.base,
+        lineHeight: theme.lineHeights.base,
+      }),
+      ...(variant === "label" && {
+        fontWeight: theme.fontWeights.semibold,
+        fontSize: theme.fontSizes.base,
+        lineHeight: theme.lineHeights.base,
+      }),
+      ...(variant === "caption1" && {
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.sm,
+        lineHeight: theme.lineHeights.sm,
+      }),
+      ...(variant === "caption2" && {
+        fontWeight: theme.fontWeights.normal,
+        fontSize: theme.fontSizes.xs,
+        lineHeight: theme.lineHeights.sm,
+      }),
+    })
+  );
 
 export type HvTypographyProps = HvBaseProps & {
   as?: keyof typeof HvTypographyMap | ElementType;
@@ -35,7 +108,6 @@ export type HvTypographyProps = HvBaseProps & {
   link?: boolean;
   className?: string;
   children: React.ReactNode;
-
   htmlFor?: string;
 };
 
@@ -53,11 +125,12 @@ export const HvTypography = forwardRef(
       ...others
     } = props;
 
-    const Component = isString(as) ? HvTypographyMap[as] : as;
+    const StyledComponent = getStyledComponent(
+      isString(as) ? HvTypographyMap[as] : as
+    );
 
     return (
-      <StyledTypography
-        as={Component}
+      <StyledComponent
         ref={ref}
         className={className}
         variant={variant}
@@ -65,7 +138,7 @@ export const HvTypography = forwardRef(
         {...others}
       >
         {children}
-      </StyledTypography>
+      </StyledComponent>
     );
   }
 );
