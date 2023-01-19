@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`Label > should render correctly 1`] = `
+<div>
+  <label
+    class=" e1injmq50 css-1igvri3-StyledTypography"
+    variant="label"
+  />
+</div>
+`;

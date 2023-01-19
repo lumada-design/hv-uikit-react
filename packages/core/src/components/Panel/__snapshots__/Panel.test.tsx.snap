@@ -5,13 +5,12 @@ exports[`Panel > should render correctly 1`] = `
   <div
     class=" css-r49k44-StyledDiv e1sxb3mk0"
   >
-    <div
-      as="p"
-      class="css-tzfv7m-StyledTypography e1bct5r50"
+    <p
+      class="css-1yeqqqs"
       variant="body"
     >
       Panel Content
-    </div>
+    </p>
   </div>
 </div>
 `;

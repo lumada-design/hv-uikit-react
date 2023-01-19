@@ -12,14 +12,13 @@ exports[`ProgressBar > should render correctly 1`] = `
     <div
       class="css-1ezqlcy-StyledProgressContainer eafrvc93"
     >
-      <div
-        as="p"
-        class=" eafrvc92 css-81pe4f-StyledTypography-StyledValue e1bct5r50"
+      <p
+        class=" eafrvc92 css-fvihkg-StyledValue"
         style="width: 0%;"
         variant="caption2"
       >
         0%
-      </div>
+      </p>
       <div
         class="css-179kxy2-StyledProgressBarContainer eafrvc91"
       >

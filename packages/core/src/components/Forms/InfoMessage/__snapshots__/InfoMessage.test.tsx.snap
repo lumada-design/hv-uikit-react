@@ -2,8 +2,8 @@
 
 exports[`InfoMessage > should render correctly 1`] = `
 <div>
-  <div
-    class=" ecu8rho0 css-bliwfw-StyledTypography-StyledTypography e1bct5r50"
+  <label
+    class=" ecu8rho0 css-6ni1wz-StyledTypography"
     variant="body"
   />
 </div>

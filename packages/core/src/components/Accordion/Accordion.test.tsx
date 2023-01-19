@@ -58,7 +58,7 @@ describe("Accordion", () => {
           </HvAccordion>
         </>
       );
-      const analyticsItem = getByRole("button", { name: /Analytics/i });
+      let analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");
       expect(analyticsItem).toBeInTheDocument();
       expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
@@ -67,6 +67,7 @@ describe("Accordion", () => {
       expect(analyticsContent).not.toHaveFocus();
       fireEvent.click(analyticsItem); // open
       await waitFor(() => {
+        analyticsItem = getByRole("button", { name: /Analytics/i });
         expect(analyticsItem).toBeInTheDocument();
       });
       expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
@@ -86,7 +87,7 @@ describe("Accordion", () => {
           </HvAccordion>
         </>
       );
-      const analyticsItem = getByRole("button", { name: /Analytics/i });
+      let analyticsItem = getByRole("button", { name: /Analytics/i });
       const analyticsContent = getByText("Views");
       expect(analyticsItem).toBeInTheDocument();
       expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
@@ -94,14 +95,14 @@ describe("Accordion", () => {
       expect(analyticsContent).not.toBeVisible();
       fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 }); // open
       await waitFor(() => {
-        expect(analyticsItem).toBeInTheDocument();
+        analyticsItem = getByRole("button", { name: /Analytics/i });
         expect(analyticsContent).toBeVisible();
       });
       expect(analyticsItem).toHaveAttribute("aria-expanded", "true");
       userEvent.tab();
       fireEvent.keyDown(analyticsItem, { key: "Enter", keyCode: 13 });
       await waitFor(() => {
-        expect(analyticsItem).toBeInTheDocument();
+        analyticsItem = getByRole("button", { name: /Analytics/i });
       });
       expect(analyticsItem).toHaveAttribute("aria-expanded", "false");
       userEvent.tab();

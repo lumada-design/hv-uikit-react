@@ -41,13 +41,12 @@ exports[`Card > should render all the compoents 1`] = `
     <div
       class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
-      <div
-        as="p"
-        class="css-nvh5te-StyledTypography e1bct5r50"
+      <p
+        class="css-1vqwi0i"
         variant="label"
       >
         mockCardContent
-      </div>
+      </p>
     </div>
   </div>
 </div>
@@ -71,13 +70,12 @@ exports[`Card > should render content 1`] = `
     <div
       class="MuiCardContent-root  es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
-      <div
-        as="p"
-        class="css-nvh5te-StyledTypography e1bct5r50"
+      <p
+        class="css-1vqwi0i"
         variant="label"
       >
         mockCardContent
-      </div>
+      </p>
     </div>
   </div>
 </div>

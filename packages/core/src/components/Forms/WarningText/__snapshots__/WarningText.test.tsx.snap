@@ -23,10 +23,9 @@ exports[`WarningText > should render correctly 1`] = `
         />
       </svg>
     </div>
-    <div
+    <p
       aria-relevant="additions text"
-      as="p"
-      class=" e1ll5nqb1 css-1cb3ppr-StyledTypography-StyledTypography e1bct5r50"
+      class=" e1ll5nqb1 css-1dvosc9-StyledTypography"
       role="status"
       variant="body"
     />
