@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`FormElement > should render correctly 1`] = `
+<div>
+  <div
+    class=""
+  />
+</div>
+`;

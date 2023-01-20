@@ -1,0 +1,33 @@
+// Vitest Snapshot v1
+
+exports[`Adornment > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-16q1xu7-StyledRoot e1g8g9qg2"
+    role="presentation"
+  >
+    <div
+      class="css-1431vi8-StyledIcon e1g8g9qg1"
+    >
+      <div
+        class="css-du18qm"
+        name="CloseXS"
+      >
+        <svg
+          focusable="false"
+          height="12"
+          viewBox="0 0 12 12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="m10.6 2.1-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
+            fill="var(--colors-acce1)"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

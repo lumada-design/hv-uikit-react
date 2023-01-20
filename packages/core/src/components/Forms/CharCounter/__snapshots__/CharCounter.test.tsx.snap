@@ -1,0 +1,23 @@
+// Vitest Snapshot v1
+
+exports[`CharCounter > should render correctly 1`] = `
+<div>
+  <div
+    aria-live="polite"
+    class=" css-ltrngp-StyledRoot ebqrjbb1"
+  >
+    <label
+      class=" ebqrjbb0 css-drzw6k-StyledTypography"
+      variant="label"
+    >
+      0
+    </label>
+    <label
+      class=" ebqrjbb0 css-1wbrqd9-StyledTypography"
+      variant="body"
+    >
+       / 10
+    </label>
+  </div>
+</div>
+`;
