@@ -50,6 +50,14 @@ const componentsSpec = {
   baseCheckBox: {
     hoverColor: "string",
   },
+  baseRadio: {
+    hoverColor: "string",
+    hoverBorderRadius: "string",
+    disabledColor: "string",
+    borderRadius: "string",
+    padding: "string",
+    focusBorderRadius: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

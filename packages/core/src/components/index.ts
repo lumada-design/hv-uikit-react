@@ -32,3 +32,4 @@ export * from "./ToggleButton";
 export * from "./Tooltip";
 export * from "./OverflowTooltip";
 export * from "./BaseCheckBox";
+export * from "./BaseRadio";
