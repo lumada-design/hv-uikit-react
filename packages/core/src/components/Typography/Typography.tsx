@@ -1,4 +1,4 @@
-import { forwardRef, Ref, ElementType } from "react";
+import { forwardRef, Ref, ElementType, useMemo } from "react";
 import { isString } from "lodash";
 import { HvBaseProps } from "../../types";
 import { styled } from "@mui/system";
@@ -125,8 +125,10 @@ export const HvTypography = forwardRef(
       ...others
     } = props;
 
-    const StyledComponent = getStyledComponent(
-      isString(as) ? HvTypographyMap[as] : as
+    const component = isString(as) ? HvTypographyMap[as] : as;
+    const StyledComponent = useMemo(
+      () => getStyledComponent(component),
+      [component]
     );
 
     return (
