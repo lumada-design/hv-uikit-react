@@ -23,6 +23,7 @@ export * from "./Loading";
 export * from "./MultiButton";
 export * from "./Panel";
 export * from "./ProgressBar";
+export * from "./SelectionList";
 export * from "./SimpleGrid";
 export * from "./Stack";
 export * from "./Tab";

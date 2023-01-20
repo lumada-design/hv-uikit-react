@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HvFormElement, HvFormElementProps } from "components";
 
 const meta: Meta<typeof HvFormElement> = {
-  title: "FOLDER_HERE/FormElement",
+  title: "Guides/Forms/Form Element",
   component: HvFormElement,
 };
 export default meta;
