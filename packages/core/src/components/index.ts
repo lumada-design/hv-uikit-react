@@ -1,5 +1,13 @@
+// Compoennts that need to be loaded first because of mutual dependencies (preserve order)
 export * from "./Typography";
 export * from "./Box";
+export * from "./Focus";
+export * from "./ListContainer";
+export * from "./Forms";
+export * from "./SelectionList";
+export * from "./Forms/Suggestions";
+
+// Remaining compoennts
 export * from "./ActionBar";
 export * from "./Accordion";
 export * from "./Avatar";
@@ -11,19 +19,15 @@ export * from "./Dialog";
 export * from "./Dropdown";
 export { Dropdown as HvDropdown } from "./Dropdown";
 export * from "./EmptyState";
-export * from "./Focus";
 export * from "./Footer";
-export * from "./Forms";
 export * from "./Grid";
 export * from "./Header";
 export * from "./Kpi";
 export * from "./Link";
-export * from "./ListContainer";
 export * from "./Loading";
 export * from "./MultiButton";
 export * from "./Panel";
 export * from "./ProgressBar";
-export * from "./SelectionList";
 export * from "./SimpleGrid";
 export * from "./Stack";
 export * from "./Tab";
