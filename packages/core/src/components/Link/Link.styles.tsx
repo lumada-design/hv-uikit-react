@@ -10,7 +10,7 @@ export const StyledBox = styled(HvBox)({
   fontWeight: 600,
   textDecoration: "underline",
   color: theme.colors.acce2,
-  "&.focus-visible": { ...outlineStyles },
+  "&:focus-visible": { ...outlineStyles },
 });
 
 export const StyledA = styled("a")({
@@ -20,5 +20,5 @@ export const StyledA = styled("a")({
   fontWeight: 600,
   textDecoration: "underline",
   color: theme.colors.acce2,
-  "&.focus-visible": { ...outlineStyles },
+  "&:focus-visible": { ...outlineStyles },
 });

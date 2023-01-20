@@ -2,10 +2,14 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledA, StyledBox } from "./Link.styles";
 import { linkClasses, HvLinkClasses } from ".";
+import { MouseEventHandler } from "react";
 
-export type HvLinkProps = HvBaseProps & {
-  as?: React.ElementType | undefined;
-  onClick?: any;
+export type HvLinkProps = HvBaseProps<HTMLDivElement, { onClick }> & {
+  as?: React.ElementType;
+  onClick?: (
+    event: MouseEventHandler<HTMLDivElement>,
+    data: any
+  ) => void | undefined;
   tabIndex?: number;
   route?: string;
   data?: any;

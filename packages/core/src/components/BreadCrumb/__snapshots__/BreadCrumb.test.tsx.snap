@@ -1,0 +1,246 @@
+// Vitest Snapshot v1
+
+exports[`BreadCrumb > should render correctly 1`] = `
+<div>
+  <nav
+    class="HvBreadCrumb-root css-b148f9-StyledRoot ep0htik2"
+  >
+    <ol
+      class="HvBreadCrumb-orderedList css-1w4l0kj-StyledOrderedList ep0htik1"
+    >
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route1"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 1
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route2"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 2
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route3"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 3
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route4"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 4
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route5"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 5
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <a
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          href="route6"
+        >
+          <div
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            variant="label"
+          >
+            <div
+              class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer ej7nvq90"
+            >
+              Label 6
+            </div>
+          </div>
+        </a>
+        <div
+          class="HvPathElement-separatorContainer HvBreadCrumb-separatorContainer css-du18qm"
+          name="DropRightXS"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--colors-atmo5)"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
+      >
+        <p
+          class="HvBreadCrumb-currentPage ep0htik0 css-1bexfom-getStyledComponent-StyledTypography e1te0rfk0"
+          variant="body"
+        >
+          Label 7
+        </p>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;
