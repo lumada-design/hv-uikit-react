@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import HvListContext from "../ListContext";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   /**
@@ -47,6 +46,8 @@ export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
    * If unwanted, the element should be placed directly as a child.
    */
   endAdornment?: React.ReactNode;
+  /** The value to be set on the 'li' element */
+  value?: string;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: {
     root?: string;
@@ -101,6 +102,7 @@ export const HvListItem = ({
   classes,
   className,
   role,
+  value,
   selected,
   disabled,
   interactive: interactiveProp,
@@ -169,6 +171,7 @@ export const HvListItem = ({
     <StyledListItem
       id={id}
       role={role}
+      value={value}
       onClick={handleOnClick}
       onKeyDown={() => {}}
       className={clsx(

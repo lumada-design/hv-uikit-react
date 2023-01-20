@@ -1,0 +1,113 @@
+// Vitest Snapshot v1
+
+exports[`Selection List > Multi Selection List testing > Multi Selection Snapshot > Multi Selection List Container Snapshot 1`] = `
+<div>
+  <div
+    class=" css-1gf6ci5-StyledFormElement e1kkfxni4"
+    id="main"
+  >
+    <label
+      class="e1kkfxni3 e1injmq50 css-n9teq7-StyledTypography-StyledLabel"
+      id="main-label"
+      variant="label"
+    >
+      Choose your favorite items
+    </label>
+    <ul
+      aria-labelledby="main-label"
+      aria-multiselectable="true"
+      class=" css-1ijv1u-StyledListContainer e1kkfxni0"
+      id="main-listbox"
+      role="listbox"
+    >
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="1"
+      >
+        ListItem 1
+      </li>
+      <li
+        aria-selected="true"
+        class="gutters condensed interactive selected css-f2rz3l-StyledListItem e180q0291"
+        role="option"
+        value="2"
+      >
+        ListItem 2
+      </li>
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="3"
+      >
+        ListItem 3
+      </li>
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="4"
+      >
+        ListItem 4
+      </li>
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="5"
+      >
+        ListItem 5
+      </li>
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="6"
+      >
+        ListItem 6
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Selection List > Single Selection List testing > Selection List Snapshot testing > Selection List Container 1`] = `
+<div>
+  <div
+    class=" css-1gf6ci5-StyledFormElement e1kkfxni4"
+  >
+    <ul
+      class=" css-1ijv1u-StyledListContainer e1kkfxni0"
+      id=""
+      role="listbox"
+    >
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="1"
+      >
+        ListItem 1
+      </li>
+      <li
+        aria-selected="true"
+        class="gutters condensed interactive selected css-f2rz3l-StyledListItem e180q0291"
+        role="option"
+        value="2"
+      >
+        ListItem 2
+      </li>
+      <li
+        aria-selected="false"
+        class="gutters condensed interactive css-1u8mpa8-StyledListItem e180q0291"
+        role="option"
+        value="3"
+      >
+        ListItem 3
+      </li>
+    </ul>
+  </div>
+</div>
+`;
