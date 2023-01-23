@@ -86,6 +86,19 @@ const ds3Theme = makeTheme((theme) => ({
       padding: 0,
       focusBorderRadius: "8px",
     },
+    baseInput: {
+      underlineHeight: "1px",
+      placeholderColor: theme.colors.atmo5,
+      borderColor: "none",
+      hoverColor: theme.colors.acce1,
+      invalidBorderColor: "transparent",
+      disabledBorderColor: "transparent",
+      disabledTextColor: theme.colors.atmo5,
+      disabledBackgroundColor: theme.colors.atmo3,
+      readOnlyBorderColor: "transparent",
+      readOnlyTextColor: theme.colors.acce1,
+      readOnlyBackgroundColor: theme.colors.atmo1,
+    },
   },
 }));
 

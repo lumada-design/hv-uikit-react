@@ -73,6 +73,19 @@ const componentsSpec = {
     padding: "string",
     focusBorderRadius: "string",
   },
+  baseInput: {
+    underlineHeight: "string",
+    placeholderColor: "string",
+    borderColor: "string",
+    hoverColor: "string",
+    invalidBorderColor: "string",
+    disabledBorderColor: "string",
+    disabledTextColor: "string",
+    disabledBackgroundColor: "string",
+    readOnlyBorderColor: "string",
+    readOnlyTextColor: "string",
+    readOnlyBackgroundColor: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

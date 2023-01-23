@@ -101,6 +101,19 @@ const ds5Theme = makeTheme((theme) => ({
       padding: 0,
       focusBorderRadius: "8px",
     },
+    baseInput: {
+      underlineHeight: "0px",
+      placeholderColor: theme.colors.acce4,
+      borderColor: theme.colors.acce4,
+      hoverColor: theme.colors.acce2,
+      invalidBorderColor: theme.colors.sema4,
+      disabledBorderColor: theme.colors.atmo5,
+      disabledTextColor: theme.colors.atmo5,
+      disabledBackgroundColor: theme.colors.atmo2,
+      readOnlyBorderColor: theme.colors.atmo5,
+      readOnlyTextColor: theme.colors.acce4,
+      readOnlyBackgroundColor: theme.colors.atmo2,
+    },
   },
 }));
 
