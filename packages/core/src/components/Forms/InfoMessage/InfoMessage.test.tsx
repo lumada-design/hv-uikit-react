@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvInfoMessage } from "./InfoMessage";
+import { HvInfoMessage } from "components";
 
 describe("InfoMessage", () => {
   it("should be defined", () => {
