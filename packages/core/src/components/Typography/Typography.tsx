@@ -29,6 +29,9 @@ const HvTypographyMap = {
   body2: "p",
   div: "div",
   label: "label",
+  a: "a",
+  button: "button",
+  span: "span",
 } as const;
 
 const getStyledComponent = (c: any) =>
@@ -127,7 +130,7 @@ export const HvTypography = forwardRef(
 
     const component = isString(as) ? HvTypographyMap[as] : as;
     const StyledComponent = useMemo(
-      () => getStyledComponent(component),
+      () => getStyledComponent(component || "div"),
       [component]
     );
 
