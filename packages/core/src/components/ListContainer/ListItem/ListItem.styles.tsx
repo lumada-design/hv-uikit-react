@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { HvFocus } from "components";
+import { outlineStyles } from "utils";
 
 export const StyledListItem = styled(
   "li",
@@ -93,6 +94,11 @@ export const StyledListItem = styled(
         fill: theme.colors.atmo5,
       },
     }),
+    "&.HvIsFocused": {
+      ...outlineStyles,
+      backgroundColor: theme.colors.atmo3,
+      zIndex: 2,
+    },
   })
 );
 

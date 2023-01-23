@@ -73,6 +73,7 @@ export const HvListContainer = React.forwardRef(
 
         return React.cloneElement(child, {
           tabIndex,
+          interactive,
         });
       });
     };

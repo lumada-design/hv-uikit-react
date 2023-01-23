@@ -176,6 +176,7 @@ export const HvListItem = ({
       onKeyDown={() => {}}
       className={clsx(
         className,
+        "root",
         classes?.root,
         !disableGutters && classes?.gutters,
         !disableGutters && "gutters",

@@ -66,7 +66,7 @@ export const HvFocus = ({
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef?.current && filterClass
+    rootRef?.current
       ? Array.from(
           rootRef.current.getElementsByClassName(filterClass || "root")
         )
