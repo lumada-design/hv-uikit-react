@@ -108,6 +108,7 @@ importers:
       '@hitachivantara/uikit-icons': workspace:*
       '@hitachivantara/uikit-styles': workspace:*
       '@mui/material': ^5.11.0
+      '@popperjs/core': ^2.11.6
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.8
       clsx: ^1.2.1
@@ -116,6 +117,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       react-google-charts: ^4.0.0
+      react-popper: ^2.3.0
       react-resize-detector: ^7.1.2
       tsc-alias: ^1.8.2
     dependencies:
@@ -124,12 +126,14 @@ importers:
       '@hitachivantara/uikit-icons': link:../icons
       '@hitachivantara/uikit-styles': link:../styles
       '@mui/material': 5.11.2_lskpmcsdi7ipu6qpuapyu56ihm
+      '@popperjs/core': 2.11.6
       clsx: 1.2.1
       detect-browser: 5.3.0
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-google-charts: 4.0.0_biqbaboplfbrettd7655fr4n2y
+      react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
       react-resize-detector: 7.1.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/react': 18.0.26
@@ -14069,6 +14073,10 @@ packages:
       react-is: 17.0.2
     dev: true
 
+  /react-fast-compare/3.2.0:
+    resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
+    dev: false
+
   /react-google-charts/4.0.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-9OG0EkBb9JerKEPQYdhmAXnhGLzOdOHOPS9j7l+P1a3z1kcmq9mGDa7PUoX/VQUY4IjZl2/81nsO4o+1cuYsuw==}
     peerDependencies:
@@ -14099,6 +14107,20 @@ packages:
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  /react-popper/2.3.0_r6q5zrenym2zg7je7hgi674bti:
+    resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
+    peerDependencies:
+      '@popperjs/core': ^2.0.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: ^16.8.0 || ^17 || ^18
+    dependencies:
+      '@popperjs/core': 2.11.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-fast-compare: 3.2.0
+      warning: 4.0.3
+    dev: false
 
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
@@ -16611,6 +16633,12 @@ packages:
     dependencies:
       makeerror: 1.0.12
     dev: true
+
+  /warning/4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
 
   /watchpack-chokidar2/2.0.1:
     resolution: {integrity: sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==}

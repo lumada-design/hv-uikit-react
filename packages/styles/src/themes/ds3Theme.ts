@@ -1,4 +1,4 @@
-import { colors, makeTheme } from "..";
+import { colors, makeTheme, shadows } from "..";
 
 const ds3Theme = makeTheme((theme) => ({
   colors: {
@@ -62,6 +62,21 @@ const ds3Theme = makeTheme((theme) => ({
     },
     baseCheckBox: {
       hoverColor: theme.colors.atmo3,
+      borderRadius: "0px",
+    },
+    baseDropdown: {
+      shadow: shadows.md,
+      placeholderColor: theme.colors.atmo5,
+      letterSpacing: "0.02em",
+      fontSize: "12px",
+      lineHeight: "16px",
+      borderColor: theme.colors.atmo4,
+      hoverBorderColor: theme.colors.acce1,
+      disabledBorderColor: theme.colors.atmo4,
+      disabledBackgroundColor: theme.colors.atmo3,
+      readOnlyBorder: "none",
+      readOnlyBackgroundColor: theme.colors.atmo1,
+      openBorderColor: theme.colors.atmo1,
     },
     baseRadio: {
       hoverColor: theme.colors.atmo3,

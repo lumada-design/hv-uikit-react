@@ -77,6 +77,21 @@ const ds5Theme = makeTheme((theme) => ({
     },
     baseCheckBox: {
       hoverColor: theme.colors.acce2s,
+      borderRadius: "2px",
+    },
+    baseDropdown: {
+      shadow: "none",
+      placeholderColor: theme.colors.acce4,
+      letterSpacing: "0em",
+      fontSize: "14px",
+      lineHeight: "24px",
+      borderColor: theme.colors.acce4,
+      hoverBorderColor: theme.colors.acce2,
+      disabledBorderColor: theme.colors.atmo5,
+      disabledBackgroundColor: theme.colors.atmo2,
+      readOnlyBorder: `1px solid ${theme.colors.atmo5}`,
+      readOnlyBackgroundColor: theme.colors.atmo2,
+      openBorderColor: theme.colors.acce4,
     },
     baseRadio: {
       hoverColor: theme.colors.acce2s,
