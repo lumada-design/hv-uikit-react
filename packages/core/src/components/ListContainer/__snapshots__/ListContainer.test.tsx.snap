@@ -6,19 +6,19 @@ exports[`ListContainer > should render all the items 1`] = `
     class=""
   >
     <li
-      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
       role="option"
     >
       Item 1
     </li>
     <li
-      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
       role="option"
     >
       Item 2
     </li>
     <li
-      class="gutters css-rq6p2x-StyledListItem e180q0291"
+      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
       role="option"
     >
       Item 3

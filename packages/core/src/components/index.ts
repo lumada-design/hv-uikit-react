@@ -1,4 +1,4 @@
-// Compoennts that need to be loaded first because of mutual dependencies (preserve order)
+// Components that need to be loaded first because of mutual dependencies (preserve order)
 export * from "./Typography";
 export * from "./Box";
 export * from "./Focus";
@@ -7,7 +7,7 @@ export * from "./Forms";
 export * from "./SelectionList";
 export * from "./Forms/Suggestions";
 
-// Remaining compoennts
+// Remaining components
 export * from "./ActionBar";
 export * from "./Accordion";
 export * from "./Avatar";
@@ -38,3 +38,4 @@ export * from "./Tooltip";
 export * from "./OverflowTooltip";
 export * from "./BaseCheckBox";
 export * from "./BaseRadio";
+export * from "./BaseDropdown";

@@ -12,7 +12,7 @@ export const StyledCheckedBox = styled(
   transientOptions
 )(({ $focusVisible }: { $focusVisible: boolean }) => ({
   padding: 0,
-  borderRadius: 0,
+  borderRadius: theme.baseCheckBox.borderRadius,
   cursor: "pointer",
   "&:hover": {
     backgroundColor: theme.baseCheckBox.hoverColor,
