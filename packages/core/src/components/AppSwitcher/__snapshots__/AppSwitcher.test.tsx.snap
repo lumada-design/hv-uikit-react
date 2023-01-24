@@ -1,0 +1,157 @@
+// Vitest Snapshot v1
+
+exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-dp3omj-StyledRoot edqwsaf4"
+  >
+    <span
+      class=" edqwsaf2 css-1hhpnks-StyledTitleWithTooltip"
+      data-mui-internal-clone-element="true"
+      variant="label"
+    >
+      Mock title
+    </span>
+    <ul
+      class="css-91p7g3-StyledActionsContainer edqwsaf1"
+    >
+      <li
+        class=" e1mxicxc4 root interactive root focusDisabled css-1sz3bze-StyledListItem-StyledListItem e180q0291"
+        tabindex="-1"
+      >
+        <a
+          class="e1mxicxc3 css-2jtyow-StyledTypography"
+          href="http://mockapp1/"
+          tabindex="0"
+          target="_top"
+          variant="body"
+        >
+          <div
+            class="css-14gx8az-StyledIcon e1mxicxc0"
+          >
+            <img
+              class="css-lotzyn-StyledImg e1mxicxc2"
+              src="http://mockapp1/icon"
+            />
+          </div>
+          <span
+            class=" edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            data-mui-internal-clone-element="true"
+            variant="label"
+          >
+            Mock App 1
+          </span>
+        </a>
+      </li>
+      <li
+        class=" e1mxicxc4 root interactive root focusDisabled css-1sz3bze-StyledListItem-StyledListItem e180q0291"
+        tabindex="-1"
+      >
+        <a
+          class="e1mxicxc3 css-2jtyow-StyledTypography"
+          href="http://mockapp2/"
+          tabindex="0"
+          target="_blank"
+          variant="body"
+        >
+          <div
+            class="css-14gx8az-StyledIcon e1mxicxc0"
+          >
+            <img
+              alt="Mock App 2 Description"
+              class="css-lotzyn-StyledImg e1mxicxc2"
+              src="http://mockapp2/icon"
+            />
+          </div>
+          <span
+            class=" edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            data-mui-internal-clone-element="true"
+            variant="label"
+          >
+            Mock App 2
+          </span>
+          <div
+            class=""
+            data-mui-internal-clone-element="true"
+          >
+            <div
+              aria-label="Mock App 2 Description"
+              class="css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
+              name="Info"
+              role="img"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M8 16a8 8 0 1 1 8-8 8 8 0 0 1-8 8zM8 1a6.957 6.957 0 0 0-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 0 0 6.91373 7q.04314.00027.08627 0a6.957 6.957 0 0 0 7-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 0 0-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li
+        class=" e1mxicxc4 root interactive root focusDisabled css-1sz3bze-StyledListItem-StyledListItem e180q0291"
+        tabindex="-1"
+      >
+        <a
+          class="e1mxicxc3 css-2jtyow-StyledTypography"
+          href="http://mockapp2/"
+          tabindex="0"
+          target="_top"
+          variant="body"
+        >
+          <div
+            class="css-14gx8az-StyledIcon e1mxicxc0"
+          >
+            <img
+              alt="Mock App 2 Description"
+              class="css-lotzyn-StyledImg e1mxicxc2"
+              src="http://mockapp2/icon"
+            />
+          </div>
+          <span
+            class=" edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            data-mui-internal-clone-element="true"
+            variant="label"
+          >
+            Mock App 3
+          </span>
+          <div
+            class=""
+            data-mui-internal-clone-element="true"
+          >
+            <div
+              aria-label="Mock App 2 Description"
+              class="css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
+              name="Info"
+              role="img"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M8 16a8 8 0 1 1 8-8 8 8 0 0 1-8 8zM8 1a6.957 6.957 0 0 0-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 0 0 6.91373 7q.04314.00027.08627 0a6.957 6.957 0 0 0 7-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 0 0-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
