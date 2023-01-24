@@ -1,0 +1,18 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - master
+      - "next*"
+
+jobs:
+  Applitools:
+    uses: ./.github/workflows/applitools.yml
+    secrets:
+      APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+
+  Documentation:
+    uses: ./.github/workflows/documentation.yml
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}

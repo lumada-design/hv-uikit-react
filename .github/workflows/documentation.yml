@@ -1,0 +1,100 @@
+name: Documentation
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY:
+        required: true
+    inputs:
+      publish-folder:
+        type: string
+        default: pr-${{ github.event.number }}
+
+env:
+  ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ inputs.publish-folder || github.ref_name }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ inputs.publish-folder || github.ref_name }} of ${{ github.repository }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ inputs.publish-folder || github.ref_name }}/
+
+jobs:
+  Build-Artifact:
+    name: Build Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/actions/install
+
+      - name: Build Documentation
+        run: pnpm build:doc
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+  Deployment:
+    name: Deployment
+    needs: [Build-Artifact]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Deployment
+        uses: bobheadxi/deployments@v0.4.3
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+
+      - name: Checkout Publish Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: master
+          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
+
+      - name: Fetch Documentation
+        uses: actions/download-artifact@v3
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+      - name: Push Documentation
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git push
+
+      - name: Update Deployment Status
+        uses: bobheadxi/deployments@v0.4.3
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{env.DOCUMENTATION_URL}}
+
+  Cleanup:
+    name: Cleanup Artifact
+    if: always()
+    needs: [Deployment]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: geekyeggo/delete-artifact@v2
+        with:
+          name: documentation

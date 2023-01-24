@@ -2,8 +2,9 @@ const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   stories: [
-    "../doc/**/*.stories.@(tsx|mdx)",
-    "../packages/**/*.stories.@(ts|tsx|mdx)",
+    // "../doc/**/*.stories.@(tsx|mdx)",
+    // "../packages/**/*.stories.@(ts|tsx|mdx)",
+    "../packages/core/src/components/Button/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
     "@storybook/addon-essentials",
