@@ -1,0 +1,57 @@
+// Vitest Snapshot v1
+
+exports[`BaseDropDown > should render correctly 1`] = `
+<div>
+  <div
+    style="width: 121px;"
+  >
+    <div
+      class="css-1nukton-StyledRoot e1xgfj1t9"
+    >
+      <div
+        aria-expanded="false"
+        aria-label="Main sample"
+        class=" css-c41kvr-StyledAnchor e1xgfj1t8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Main sample"
+          class=" css-z15in3-StyledHeaderRoot e1xgfj1t7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="css-1c8fpra-StyledSelection e1xgfj1t6"
+          >
+            <p
+              class=" e1xgfj1t5 css-fi1crd-StyledPlaceholder"
+              variant="body"
+            >
+              Placeholder...
+            </p>
+          </div>
+          <div
+            class="css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+            name="DropDownXS"
+          >
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 12 12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                fill="var(--colors-acce1)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

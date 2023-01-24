@@ -6,3 +6,4 @@ export * from "./Icons";
 export * from "./Tags";
 export * from "./Typography";
 export * from "./CheckBox";
+export * from "./BaseDropdown";
