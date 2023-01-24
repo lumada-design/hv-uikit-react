@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import {
@@ -11,7 +11,7 @@ import { HvFormElementContext } from "../FormElement";
 import { HvListItem } from "components";
 import { useClickOutside } from "hooks";
 
-type Suggestion = {
+export type HvSuggestion = {
   id?: string;
   label: React.ReactNode;
   value?: any;
@@ -24,7 +24,7 @@ export type HvSuggestionsProps = HvBaseProps & {
   /** The HTML element Suggestions attaches to. */
   anchorEl?: HTMLElement;
   /** Array of { id, label, ...others } values to display in the suggestion list */
-  suggestionValues?: Suggestion[];
+  suggestionValues: HvSuggestion[] | null;
   /** Function called when suggestion list is closed */
   // onClose: Function,
   /** Function called when a suggestion is selected */
@@ -54,12 +54,16 @@ export const HvSuggestions = ({
   const localId = id ?? setId(elementId, "suggestions");
 
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(expanded);
+  const [isOpen, setIsOpen] = useState<boolean>(expanded);
 
   useClickOutside(ref, (e) => {
     setIsOpen(false);
     onClose?.(e);
   });
+
+  useEffect(() => {
+    setIsOpen(expanded);
+  }, [expanded]);
 
   return (
     <StyledRoot
@@ -69,14 +73,13 @@ export const HvSuggestions = ({
       {...others}
     >
       <StyledPopper
-        open={isOpen} // expanded
+        open={isOpen}
         disablePortal
         anchorEl={anchorEl}
         className={classes?.popper}
       >
-        {/*  <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}> */}
         <StyledSelectionList
-          className={classes?.list}
+          className={clsx(classes?.list, "list")}
           id={setId(localId, "list")}
           onChange={onSuggestionSelected}
         >
@@ -94,7 +97,6 @@ export const HvSuggestions = ({
             );
           })}
         </StyledSelectionList>
-        {/* </OutsideClickHandler> */}
       </StyledPopper>
     </StyledRoot>
   );

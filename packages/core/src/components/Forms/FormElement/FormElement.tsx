@@ -7,7 +7,7 @@ import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
 
-export type HvFormStatus = "standBy" | "valid" | "invalid";
+export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
 export type HvFormElementProps = HvBaseProps & {
   /**

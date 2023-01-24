@@ -129,6 +129,7 @@ export const HvBaseInput = ({
   return (
     <StyledRoot
       className={clsx(
+        "root",
         classes?.root,
         className,
         formElementProps.disabled && classes?.disabled,
@@ -152,20 +153,24 @@ export const HvBaseInput = ({
         disabled={formElementProps.disabled}
         onChange={onChangeHandler}
         className={clsx(
-          multiline && "inputRootMultiline",
-          disabled && "inputRootDisabled",
+          // "input",
+          // multiline && "inputRootMultiline",
+          // disabled && "inputRootDisabled",
           localInvalid && "inputRootInvalid",
           readOnly && "inputRootReadOnly"
         )}
         classes={{
-          root: classes?.inputRoot,
-          focused: classes?.inputRootFocused,
-          disabled: classes?.inputRootDisabled,
-          multiline: classes?.inputRootMultiline,
+          root: clsx("inputRoot", classes?.inputRoot),
+          focused: clsx("inputRootFocused", classes?.inputRootFocused),
+          disabled: clsx("inputRootDisabled", classes?.inputRootDisabled),
+          multiline: clsx("inputRootMultiline", classes?.inputRootMultiline),
           input: clsx(
+            "input",
             classes?.input,
-            !formElementProps.disabled && resizable && classes?.inputResizable,
-            disabled && classes?.inputDisabled,
+            !formElementProps.disabled &&
+              resizable &&
+              clsx("inputResizable", classes?.inputResizable),
+            disabled && clsx("inputDisabled", classes?.inputDisabled),
             readOnly && "readOnly" && classes?.readOnly
           ),
         }}
