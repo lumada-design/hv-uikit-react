@@ -40,4 +40,4 @@ export * from "./BaseCheckBox";
 export * from "./BaseRadio";
 export * from "./AppSwitcher";
 export * from "./BaseDropdown";
-
+export * from "./BaseInput";

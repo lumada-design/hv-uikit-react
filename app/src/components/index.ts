@@ -7,3 +7,4 @@ export * from "./Tags";
 export * from "./Typography";
 export * from "./CheckBox";
 export * from "./BaseDropdown";
+export * from "./BaseInput";

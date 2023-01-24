@@ -1,0 +1,24 @@
+// Vitest Snapshot v1
+
+exports[`BaseInput > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-1dooakw-StyledRoot e1wsukd12"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-93nz9b-MuiInputBase-root-MuiInput-root-StyledInput"
+    >
+      <input
+        class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+        rows="10"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="inputBorderContainer css-u8jwkr-StyledInputBorderContainer e1wsukd11"
+      role="presentation"
+    />
+  </div>
+</div>
+`;

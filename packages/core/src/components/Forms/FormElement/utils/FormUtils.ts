@@ -71,16 +71,20 @@ const getIdReferenceFor = (formElementType, descriptors, filterFor = null) => {
   return referenceList !== "" ? referenceList : undefined;
 };
 
-const buildFormElementPropsFromContext = (props, context) => {
+const buildFormElementPropsFromContext = (
+  name,
+  disabled,
+  readOnly,
+  required,
+  status,
+  context
+) => {
   return {
-    name: props.name || context?.elementName,
-    disabled:
-      props.disabled !== undefined ? props.disabled : context?.elementDisabled,
-    readOnly:
-      props.readOnly !== undefined ? props.readOnly : context?.elementReadOnly,
-    required:
-      props.required !== undefined ? props.required : context?.elementRequired,
-    status: props.status || context?.elementStatus,
+    name: name || context?.elementName,
+    disabled: disabled !== undefined ? disabled : context?.elementDisabled,
+    readOnly: readOnly !== undefined ? readOnly : context?.elementReadOnly,
+    required: required !== undefined ? required : context?.elementRequired,
+    status: status || context?.elementStatus,
   };
 };
 
