@@ -43,7 +43,6 @@ describe("Button", () => {
       const { getByRole } = render(<Semantic onClick={() => {}} />);
 
       const favoriteButton = getByRole("button", { name: "Favorite" });
-      console.log(favoriteButton);
       expect(favoriteButton).toBeInTheDocument();
       const refreshButton = getByRole("button", { name: "Refresh" });
       expect(refreshButton).toBeInTheDocument();

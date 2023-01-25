@@ -64,6 +64,12 @@ const ds3Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.atmo3,
       borderRadius: "0px",
     },
+    checkbox: {
+      hoverColor: theme.colors.atmo3,
+      borderRadius: "0px",
+      letterSpacing: "0.02em",
+      fontSize: "12px",
+    },
     baseDropdown: {
       shadow: shadows.md,
       placeholderColor: theme.colors.atmo5,

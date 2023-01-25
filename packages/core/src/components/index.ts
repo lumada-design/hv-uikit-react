@@ -3,7 +3,12 @@ export * from "./Typography";
 export * from "./Box";
 export * from "./Focus";
 export * from "./ListContainer";
-export * from "./Forms";
+export * from "./Forms/Adornment";
+export * from "./Forms/CharCounter";
+export * from "./Forms/FormElement";
+export * from "./Forms/InfoMessage";
+export * from "./Forms/Label";
+export * from "./Forms/WarningText";
 export * from "./SelectionList";
 export * from "./Forms/Suggestions";
 
@@ -42,3 +47,4 @@ export * from "./AppSwitcher";
 export * from "./BaseDropdown";
 export * from "./BaseInput";
 export * from "./BaseSwitch";
+export * from "./CheckBox";

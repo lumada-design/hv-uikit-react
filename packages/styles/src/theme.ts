@@ -51,6 +51,12 @@ const componentsSpec = {
     hoverColor: "string",
     borderRadius: "string",
   },
+  checkbox: {
+    hoverColor: "string",
+    borderRadius: "string",
+    letterSpacing: "string",
+    fontSize: "string",
+  },
   baseDropdown: {
     shadow: "string",
     placeholderColor: "string",

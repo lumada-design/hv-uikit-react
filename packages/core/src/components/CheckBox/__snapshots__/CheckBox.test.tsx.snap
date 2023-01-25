@@ -1,0 +1,57 @@
+// Vitest Snapshot v1
+
+exports[`CheckBox > general > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-1lst77x-StyledFormElement e162au073"
+  >
+    <div
+      class=" css-j79apy-StyledLabelContainer e162au072"
+    >
+      <span
+        class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault checkbox e162au070 e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+      >
+        <input
+          class="PrivateSwitchBase-input css-1m9pwf3"
+          data-indeterminate="false"
+          id="hvcheckbox3-input"
+          type="checkbox"
+          value="dogs"
+        />
+        <div
+          class="css-du18qm"
+          font-size="medium"
+          name="Checkbox"
+        >
+          <svg
+            focusable="false"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="M0 0h16v16H0z"
+              fill="var(--colors-atmo1)"
+            />
+            <path
+              class="color1"
+              d="M16 16H0V0h16zM1 15h14V1H1z"
+              fill="var(--colors-acce1)"
+            />
+          </svg>
+        </div>
+      </span>
+      <label
+        class="e162au071 e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+        for="hvcheckbox3-input"
+        id="hvcheckbox3-label"
+        variant="label"
+      >
+        Dogs
+      </label>
+    </div>
+  </div>
+</div>
+`;
