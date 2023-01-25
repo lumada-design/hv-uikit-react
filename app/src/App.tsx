@@ -15,6 +15,7 @@ import {
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
 import { Header, ThemeSwitcher } from "./layout";
+import { Switch } from "./components/Switch";
 
 const styles = {
   display: "flex",
@@ -34,6 +35,7 @@ const App = () => {
         <BaseDropdown />
         <BaseInput />
         <CheckBox />
+        <Switch />
         <Dialogs />
         <Tags />
         <Cards />
