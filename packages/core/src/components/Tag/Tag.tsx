@@ -164,6 +164,7 @@ export const HvTag = ({
       }}
       classes={{
         root: clsx(
+          "chipRoot",
           classes?.chipRoot,
           type === "categorical" && classes?.categorical,
           disabled && classes?.disabled,

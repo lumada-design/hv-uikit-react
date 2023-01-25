@@ -157,6 +157,12 @@ const componentsSpec = {
     labelWidth: "string",
     labelDisabledColor: "string",
   },
+  tagsInput: {
+    disabledBackgroundColor: "string",
+    readOnlyBackgroundColor: "string",
+    hoverColor: "string",
+    readOnlyBorderColor: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

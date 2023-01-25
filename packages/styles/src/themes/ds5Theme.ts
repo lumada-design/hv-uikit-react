@@ -183,6 +183,12 @@ const ds5Theme = makeTheme((theme) => ({
       labelWidth: "100%",
       labelDisabledColor: theme.colors.atmo5,
     },
+    tagsInput: {
+      disabledBackgroundColor: theme.colors.atmo2,
+      readOnlyBackgroundColor: theme.colors.atmo2,
+      hoverColor: theme.colors.acce2,
+      readOnlyBorderColor: theme.colors.atmo5,
+    },
   },
 }));
 
