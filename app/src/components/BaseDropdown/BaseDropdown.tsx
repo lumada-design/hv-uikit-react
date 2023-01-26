@@ -2,43 +2,46 @@ import { HvBaseDropdown } from "@hitachivantara/uikit-core";
 
 export const BaseDropdown = () => {
   return (
-    <div style={{ width: "50%" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "50%",
+        rowGap: "10px",
+      }}
+    >
       <HvBaseDropdown
         placeholder="Select..."
         children={
           <>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
+            <div>Option 1</div>
+            <div>Option 2</div>
+            <div>Option 3</div>
           </>
         }
       />
-      <br />
       <HvBaseDropdown
         placeholder="Disabled"
         disabled
         children={
           <>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
+            <div>Option 1</div>
+            <div>Option 2</div>
+            <div>Option 3</div>
           </>
         }
       />
-      <br />
       <HvBaseDropdown readOnly placeholder="Read only" />
-      <br />
       <HvBaseDropdown
         disablePortal
         children={
           <>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
-            <div>TESTE TESTE TESTE</div>
+            <div>Option 1</div>
+            <div>Option 2</div>
+            <div>Option 3</div>
           </>
         }
       />
-      <HvBaseDropdown defaultExpanded />
       <HvBaseDropdown variableWidth />
       <HvBaseDropdown placement="left" />
       <HvBaseDropdown placement="right" />

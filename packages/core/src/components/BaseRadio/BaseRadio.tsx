@@ -179,8 +179,6 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
     [onChange, readOnly, value]
   );
 
-  console.log(classes?.root);
-
   return (
     <StyledRadio
       id={id}

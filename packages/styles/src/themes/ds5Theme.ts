@@ -79,6 +79,12 @@ const ds5Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce2s,
       borderRadius: "2px",
     },
+    checkbox: {
+      hoverColor: theme.colors.acce2s,
+      borderRadius: "2px",
+      letterSpacing: "0em",
+      fontSize: "14px",
+    },
     baseDropdown: {
       shadow: "none",
       placeholderColor: theme.colors.acce4,
