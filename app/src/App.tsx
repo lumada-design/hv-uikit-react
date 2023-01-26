@@ -11,6 +11,7 @@ import {
   CheckBox,
   BaseDropdown,
   BaseInput,
+  Radio,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -36,6 +37,7 @@ const App = () => {
         <BaseInput />
         <CheckBox />
         <Switch />
+        <Radio />
         <Dialogs />
         <Tags />
         <Cards />
