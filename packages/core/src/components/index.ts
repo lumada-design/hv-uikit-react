@@ -11,6 +11,7 @@ export * from "./Forms/Label";
 export * from "./Forms/WarningText";
 export * from "./SelectionList";
 export * from "./Forms/Suggestions";
+export * from "./BaseInput";
 
 // Remaining components
 export * from "./ActionBar";
@@ -45,6 +46,6 @@ export * from "./BaseCheckBox";
 export * from "./BaseRadio";
 export * from "./AppSwitcher";
 export * from "./BaseDropdown";
-export * from "./BaseInput";
 export * from "./BaseSwitch";
 export * from "./CheckBox";
+export * from "./Input";
