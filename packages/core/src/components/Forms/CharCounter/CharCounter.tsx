@@ -6,7 +6,7 @@ import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
 
 export type HvCharCounterProps = HvBaseProps & {
-  /** The string that separtes the current char quantity from the max quantity. */
+  /** The string that separates the current char quantity from the max quantity. */
   separator?: string;
   /** The maximum allowed length of the characters. */
   maxCharQuantity: number;

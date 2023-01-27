@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { HvBaseRadio, HvGrid } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HvRadio, HvRadioProps, HvRadioStatus } from "./Radio";
 import { Meta, StoryObj } from "@storybook/react";
 

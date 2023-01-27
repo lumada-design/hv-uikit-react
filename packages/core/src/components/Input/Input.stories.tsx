@@ -12,12 +12,14 @@ import {
   HvLabel,
   HvInfoMessage,
   HvTypography,
+  HvBaseInput,
 } from "components";
 import countryNamesArray from "./countries";
 
 const meta: Meta<typeof HvInput> = {
   title: "Inputs/Input",
   component: HvInput,
+  subcomponents: { HvBaseInput },
 };
 export default meta;
 

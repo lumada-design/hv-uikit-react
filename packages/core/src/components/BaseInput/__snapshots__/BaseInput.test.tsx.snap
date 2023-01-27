@@ -3,10 +3,10 @@
 exports[`BaseInput > should render correctly 1`] = `
 <div>
   <div
-    class="root css-1dooakw-StyledRoot e1wsukd12"
+    class="root css-sbb0n0-StyledRoot e1wsukd12"
   >
     <div
-      class="MuiInputBase-root MuiInput-root inputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-93nz9b-MuiInputBase-root-MuiInput-root-StyledInput"
+      class="MuiInputBase-root MuiInput-root inputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-c3ix7s-MuiInputBase-root-MuiInput-root-StyledInput"
     >
       <input
         class="MuiInputBase-input MuiInput-input input css-1x51dt5-MuiInputBase-input-MuiInput-input"

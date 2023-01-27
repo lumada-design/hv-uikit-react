@@ -25,18 +25,11 @@ export const StyledRoot = styled(
     display: "inline-block",
     width: "100%",
     position: "relative",
-    "& .inputRootMultiline": {
-      overflow: "auto",
-      border: "none",
-    },
-    "&:hover .inputRootMultiline": {
-      "& .input": {
-        border: `1px solid ${theme.baseInput.hoverColor}`,
-      },
-    },
+
     "&:hover .inputBorderContainer": {
       backgroundColor: theme.baseInput.hoverColor,
     },
+
     "&:focus-within .inputBorderContainer": {
       backgroundColor: theme.baseInput.hoverColor,
     },
@@ -47,7 +40,7 @@ export const StyledRoot = styled(
         "-webkit-text-fill-color": theme.colors.acce1,
       },
 
-      /* clears input's clear and reveal buttons from IE */
+      /* Clears input's clear and reveal buttons from IE */
       "input[type=search]::-ms-clear": {
         display: "none",
         width: 0,
@@ -59,7 +52,7 @@ export const StyledRoot = styled(
         height: 0,
       },
 
-      /* clears input's clear button from Chrome */
+      /* Clears input's clear button from Chrome */
       "input[type=search]::-webkit-search-decoration": { display: "none" },
       "input[type=search]::-webkit-search-cancel-button": { display: "none" },
       "input[type=search]::-webkit-search-results-button": {
@@ -69,79 +62,43 @@ export const StyledRoot = styled(
         display: "none",
       },
     },
+
     ...($resizable && {
       width: "auto",
     }),
+
     ...($readOnly && {
       "& .inputBorderContainer": {
         backgroundColor: "transparent",
       },
+
       "&:hover .inputBorderContainer": {
         backgroundColor: "transparent",
       },
+
       "&:focus-within .inputBorderContainer": {
         backgroundColor: "transparent",
       },
-
-      // multiline
-      "& .inputRootMultiline": {
-        "& .input": {
-          border: "1px solid transparent",
-        },
-      },
-      "&:hover .inputRootMultiline": {
-        "& .input": {
-          border: "1px solid transparent",
-        },
-      },
-      "&:focus-within .inputRootMultiline": {
-        "& .input": {
-          border: "1px solid transparent",
-        },
-      },
     }),
+
     ...($disabled && {
       "& .inputBorderContainer": {
         backgroundColor: theme.colors.atmo4,
       },
+
       "&:hover .inputBorderContainer": {
         backgroundColor: theme.colors.atmo4,
       },
-      "& .inputRootMultiline": {
-        "& .input": {
-          backgroundColor: theme.colors.atmo3,
-          border: `1px solid ${theme.colors.atmo4}`,
-        },
-      },
-      "&:hover .inputRootMultiline": {
-        "& .input": {
-          backgroundColor: theme.colors.atmo3,
-          border: `1px solid ${theme.colors.atmo4}`,
-        },
-      },
     }),
+
     ...($invalid && {
       "&:not(.disabled)": {
         "& .inputBorderContainer": {
           backgroundColor: theme.colors.sema4,
         },
+
         "&:hover .inputBorderContainer": {
           backgroundColor: theme.colors.sema4,
-        },
-        "& .inputRootMultiline": {
-          "& .input": {
-            border: `1px solid ${theme.colors.sema4}`,
-          },
-        },
-        "&:hover .inputRootMultiline": {
-          "& .input": {
-            border: `1px solid ${theme.colors.sema4}`,
-          },
-        },
-        "&:focus-within .inputRootMultiline": {
-          "& .input": {
-            border: `1px solid ${theme.colors.sema4}`,
-          },
         },
       },
     }),
@@ -165,10 +122,12 @@ export const StyledInput = styled(
     $resizable,
     $disabled,
     $readOnly,
+    $invalid,
   }: {
     $resizable: boolean;
     $disabled: boolean;
     $readOnly: boolean;
+    $invalid: boolean;
   }) => ({
     [`&.${MuiInputClasses.root}`]: {
       margin: 0,
@@ -176,93 +135,113 @@ export const StyledInput = styled(
       borderRadius: "2px",
       border: `1px solid ${theme.baseInput.borderColor}`,
       backgroundColor: theme.colors.atmo1,
-      "&.inputRootInvalid": {
-        border: `1px solid ${theme.baseInput.invalidBorderColor}`,
-      },
-      "&.inputRootReadOnly": {
-        border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
+
+      ...($invalid && {
+        borderColor: theme.colors.sema4,
+      }),
+
+      ...($readOnly && {
+        borderColor: theme.baseInput.readOnlyBorderColor,
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
-      },
-      "&:hover:not(.inputRootDisabled):not(.inputRootInvalid)": {
-        borderColor: theme.baseInput.hoverColor,
-      },
+      }),
+
+      "&:hover:not(.inputRootDisabled):not(.inputRootInvalid):not(.inputRootReadOnly)":
+        {
+          borderColor: theme.baseInput.hoverColor,
+        },
+
       "&:hover:not(.inputRootDisabled)::before": {
         borderBottom: "none",
       },
+
       "&::before": {
         borderBottom: "none",
       },
+
       "&::after": {
         borderBottom: "none",
       },
-      [`& .${MuiInputClasses.input}`]: {
-        height: "21px",
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-        padding: "6px 0 5px",
-        color: theme.colors.acce1,
-        fontSize: "12px",
-        letterSpacing: "0.02em",
-        lineHeight: "16px",
-        fontWeight: 400,
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        outline: "none",
-        "&.inputReadOnly": {
-          color: "yellow",
-        },
-        "&::placeholder": {
-          color: theme.baseInput.placeholderColor,
-          fontSize: "12px",
-          letterSpacing: "0.02em",
-          lineHeight: "16px",
-          fontWeight: 400,
-          opacity: 1,
-        },
-        "&::-ms-clear": {
-          display: "none",
-        },
-        width: "initial",
-        flexGrow: 1,
-        ...($resizable && {
-          resize: "both",
-          width: "100%",
-        }),
-        ...($disabled && {
-          color: theme.baseInput.disabledTextColor,
-        }),
-        ...($readOnly && {
-          color: theme.baseInput.readOnlyTextColor,
-        }),
-      },
     },
+
+    [`& .${MuiInputClasses.input}`]: {
+      height: "21px",
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      padding: "6px 0 5px",
+      color: theme.colors.acce1,
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      outline: "none",
+      width: "initial",
+      flexGrow: 1,
+      fontWeight: 400,
+      fontSize: theme.baseInput.fontSize,
+      letterSpacing: theme.baseInput.letterSpacing,
+      lineHeight: theme.baseInput.lineHeight,
+
+      "&::placeholder": {
+        opacity: 1,
+        color: theme.baseInput.placeholderColor,
+        fontWeight: 400,
+        fontSize: theme.baseInput.fontSize,
+        letterSpacing: theme.baseInput.letterSpacing,
+        lineHeight: theme.baseInput.lineHeight,
+      },
+
+      "&::-ms-clear": {
+        display: "none",
+      },
+
+      ...($resizable && {
+        resize: "both",
+        width: "100%",
+      }),
+
+      ...($disabled && {
+        color: theme.baseInput.disabledTextColor,
+      }),
+
+      ...($readOnly && {
+        color: theme.baseInput.readOnlyTextColor,
+      }),
+    },
+
     [`&.${MuiInputClasses.focused}`]: {
       background: theme.colors.atmo1,
       ...outlineStyles,
+
       "&:hover": {
         background: theme.colors.atmo1,
       },
+
       "&.inputRootReadOnly": {
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
     },
+
     [`&.${MuiInputClasses.disabled}`]: {
       background: theme.baseInput.disabledBackgroundColor,
       borderColor: theme.baseInput.disabledBorderColor,
+      cursor: "not-allowed",
+
       "&:hover": {
-        background: theme.colors.atmo3,
+        background: theme.baseInput.disabledBackgroundColor,
         cursor: "not-allowed",
       },
-      cursor: "not-allowed",
+
       "&&::before": {
         borderBottomStyle: "none",
       },
     },
+
     [`&.${MuiInputClasses.multiline}`]: {
       padding: 0,
       backgroundColor: "transparent",
-      "& input": {
-        border: `1px solid ${theme.colors.atmo4}`,
+      overflow: "auto",
+      border: "none",
+
+      "& .input": {
+        border: `1px solid ${theme.baseInput.multilineBorderColor}`,
         borderRadius: "2px",
         backgroundColor: theme.colors.atmo1,
         height: "auto",
@@ -271,6 +250,47 @@ export const StyledInput = styled(
         overflow: "auto",
         marginLeft: "0px",
         marginRight: "0px",
+
+        "&:hover": {
+          border: `1px solid ${theme.baseInput.hoverColor}`,
+        },
+
+        ...($disabled && {
+          backgroundColor: theme.baseInput.disabledBackgroundColor,
+          border: `1px solid ${theme.baseInput.multilineDisabledBorderColor}`,
+
+          ":hover": {
+            backgroundColor: theme.baseInput.disabledBackgroundColor,
+            border: `1px solid ${theme.baseInput.multilineDisabledBorderColor}`,
+          },
+        }),
+
+        ...($readOnly && {
+          border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
+          backgroundColor: theme.baseInput.readOnlyBackgroundColor,
+
+          "&:hover": {
+            border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
+            backgroundColor: theme.baseInput.readOnlyBackgroundColor,
+          },
+
+          "&:focus-within": {
+            border: `1px solid ${theme.baseInput.readOnlyBorderColor}`,
+            backgroundColor: theme.baseInput.readOnlyBackgroundColor,
+          },
+        }),
+
+        ...($invalid && {
+          border: `1px solid ${theme.colors.sema4}`,
+
+          "&:hover": {
+            border: `1px solid ${theme.colors.sema4}`,
+          },
+
+          "&:focus-within": {
+            border: `1px solid ${theme.colors.sema4}`,
+          },
+        }),
       },
     },
   })
