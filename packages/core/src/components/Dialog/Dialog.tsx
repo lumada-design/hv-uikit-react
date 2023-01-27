@@ -15,6 +15,7 @@ import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { ThemeContext } from "providers";
 import { withTooltip } from "hocs";
+import { dialogClasses, HvDialogClasses } from ".";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
   HvBaseProps & {
@@ -33,10 +34,7 @@ export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
     /** Prevent closing the dialog when clicking on the backdrop. */
     disableBackdropClick?: boolean;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      root?: string;
-      closeButton?: string;
-    };
+    classes?: HvDialogClasses;
   } & HvExtraProps;
 
 export const HvDialog = ({
@@ -135,7 +133,7 @@ export const HvDialog = ({
   return (
     <StyledDialog
       container={document.getElementById(rootId || "")}
-      className={clsx(classes?.root, className)}
+      className={clsx(dialogClasses.root, classes?.root, className)}
       id={id}
       ref={measuredRef}
       open={open}
@@ -162,7 +160,7 @@ export const HvDialog = ({
       )}
       PaperProps={{
         classes: {
-          root: fullscreen ? "fullscreen" : "",
+          root: fullscreen ? dialogClasses.fullscreen : "",
         },
       }}
       {...others}
@@ -170,7 +168,7 @@ export const HvDialog = ({
     >
       <StyledClose
         id={setId(id, "close")}
-        className={classes?.closeButton}
+        className={clsx(dialogClasses.closeButton, classes?.closeButton)}
         variant="secondaryGhost"
         onClick={(event) => wrappedClose(event, undefined, true)}
         aria-label={buttonTitle}

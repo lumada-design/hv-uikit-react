@@ -3,6 +3,8 @@ import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
 import { forwardRef } from "react";
 import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Container.styles";
+import { containerClasses, HvContainerClasses } from ".";
+import clsx from "clsx";
 
 export type HvContainerProps = MuiContainerProps &
   HvBaseProps & {
@@ -27,17 +29,15 @@ export type HvContainerProps = MuiContainerProps &
      */
     fixed?: boolean;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      root?: string;
-    };
+    classes?: HvContainerClasses;
   };
 
 export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
-  ({ maxWidth = false, classes, fixed, ...others }, ref) => {
+  ({ maxWidth = false, classes, className, fixed, ...others }, ref) => {
     const muiTheme = useTheme();
     return (
       <StyledRoot
-        className={classes?.root}
+        className={clsx(className, containerClasses.root, classes?.root)}
         breakpoints={muiTheme.breakpoints}
         ref={ref}
         maxWidth={maxWidth}

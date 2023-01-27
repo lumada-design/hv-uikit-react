@@ -8,6 +8,7 @@ import { StyledChip, StyledButton } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
 import { ThemeContext } from "index";
+import { tagClasses, HvTagClasses } from ".";
 
 export type HvTagProps = Omit<MuiChipProps, "color"> &
   HvBaseProps<HTMLDivElement, { children }> & {
@@ -37,21 +38,7 @@ export type HvTagProps = Omit<MuiChipProps, "color"> &
     /** Props to apply to delete button */
     deleteButtonProps?: object;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      root?: string;
-      tagButton?: string;
-      focusVisible?: string;
-      primaryButton?: string;
-      label?: string;
-      chipRoot?: string;
-      categorical?: string;
-      disabled?: string;
-      clickable?: string;
-      categoricalFocus?: string;
-      categoricalDisabled?: string;
-      deleteIcon?: string;
-      disabledDeleteIcon?: string;
-    };
+    classes?: HvTagClasses;
   };
 
 const getColor = (customColor, type, activeTheme) => {
@@ -149,7 +136,7 @@ export const HvTag = ({
   return (
     <StyledChip
       label={label}
-      className={clsx(classes?.root, className)}
+      className={clsx(classes?.root, className, tagClasses.root)}
       onMouseEnter={() => {
         setHover(!!onClick);
       }}
@@ -164,18 +151,25 @@ export const HvTag = ({
       }}
       classes={{
         root: clsx(
-          "chipRoot",
+          tagClasses.chipRoot,
           classes?.chipRoot,
-          type === "categorical" && classes?.categorical,
-          disabled && classes?.disabled,
-          !!onClick && classes?.clickable,
-          type === "categorical" && !disabled && classes?.categoricalFocus,
-          type === "categorical" && disabled && classes?.categoricalDisabled
+          type === "categorical" &&
+            clsx(tagClasses.categorical, classes?.categorical),
+          disabled && clsx(tagClasses.disabled, classes?.disabled),
+          !!onClick && clsx(tagClasses.clickable, classes?.clickable),
+          type === "categorical" &&
+            !disabled &&
+            clsx(tagClasses.categoricalFocus, classes?.categoricalFocus),
+          type === "categorical" &&
+            disabled &&
+            clsx(tagClasses.categoricalDisabled, classes?.categoricalDisabled)
         ),
         label: classes?.label,
         deleteIcon: clsx(
           classes?.deleteIcon,
-          disabled && classes?.disabledDeleteIcon
+          tagClasses.deleteIcon,
+          disabled &&
+            clsx(tagClasses.disabledDeleteIcon, classes?.disabledDeleteIcon)
         ),
       }}
       deleteIcon={(hasDeleteAction(onDelete) && deleteIcon) || getDeleteIcon()}

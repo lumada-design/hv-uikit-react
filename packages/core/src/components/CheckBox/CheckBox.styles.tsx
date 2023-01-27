@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 import { HvBaseCheckBox, HvLabel, HvFormElement } from "components";
+import { checkBoxClasses } from ".";
 
 export const StyledFormElement = styled(
   HvFormElement,
@@ -17,7 +18,7 @@ export const StyledFormElement = styled(
       backgroundColor: theme.colors.atmo3,
     },
 
-    "& .checkbox div > svg": {
+    [`& .${checkBoxClasses.checkbox} div > svg`]: {
       outline: "none",
       boxShadow: "none",
     },

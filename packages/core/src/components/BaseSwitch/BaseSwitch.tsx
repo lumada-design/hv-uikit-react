@@ -1,11 +1,9 @@
 import React, { useState, useCallback } from "react";
-
 import clsx from "clsx";
-
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
-
 import { StyledSwitch } from "./BaseSwitch.styles";
 import { HvBaseProps, HvExtraProps } from "../../types";
+import { baseSwitchClasses, HvBaseSwitchClasses } from ".";
 
 export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
@@ -16,44 +14,7 @@ export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange"> &
     /**
      * A Jss Object used to override or extend the styles applied to the switch.
      */
-    classes?: {
-      /**
-       * Styles applied to the component.
-       */
-      root?: string;
-      /**
-       * Styles applied to the switch when it is disabled.
-       */
-      disabled?: string;
-      /**
-       * Styles applied to the switch when it is in read only mode.
-       */
-      readOnly?: string;
-      /**
-       * Styles applied to the internal Switch component's root class.
-       */
-      switch?: string;
-      /**
-       * Styles applied to the internal SwitchBase component's root class.
-       */
-      switchBase?: string;
-      /**
-       * Pseudo-class applied to the internal SwitchBase component's checked class.
-       */
-      checked?: string;
-      /**
-       * Styles applied to the track element.
-       */
-      track?: string;
-      /**
-       * Styles used to create the thumb passed to the internal SwitchBase component icon prop.
-       */
-      thumb?: string;
-      /**
-       * Class applied to the root element if keyboard focused.
-       */
-      focusVisible?: string;
-    };
+    classes?: HvBaseSwitchClasses;
     /**
      * Id to be applied to the root node.
      */
@@ -179,10 +140,12 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
       name={name}
       className={clsx(
         className,
+        baseSwitchClasses.root,
         classes?.root,
-        disabled && classes?.disabled,
-        readOnly && classes?.readOnly,
-        focusVisible && classes?.focusVisible
+        disabled && clsx(baseSwitchClasses.disabled, classes?.disabled),
+        readOnly && clsx(baseSwitchClasses.readOnly, classes?.readOnly),
+        focusVisible &&
+          clsx(baseSwitchClasses.focusVisible, classes?.focusVisible)
       )}
       $focusVisible={focusVisible}
       $readOnly={readOnly}
@@ -197,12 +160,12 @@ export const HvBaseSwitch = (props: HvBaseSwitchProps) => {
       checked={checked}
       defaultChecked={defaultChecked}
       classes={{
-        root: classes?.switch,
-        switchBase: classes?.switchBase,
-        checked: classes?.checked,
-        track: classes?.track,
-        thumb: classes?.thumb,
-        disabled: classes?.disabled,
+        root: clsx(baseSwitchClasses.switch, classes?.switch),
+        switchBase: clsx(baseSwitchClasses.switchBase, classes?.switchBase),
+        checked: clsx(baseSwitchClasses.checked, classes?.checked),
+        track: clsx(baseSwitchClasses.track, classes?.track),
+        thumb: clsx(baseSwitchClasses.thumb, classes?.thumb),
+        disabled: clsx(baseSwitchClasses.disabled, classes?.disabled),
       }}
       inputProps={inputProps}
       onFocusVisible={onFocusVisibleCallback}

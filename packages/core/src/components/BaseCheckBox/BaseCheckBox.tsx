@@ -8,6 +8,7 @@ import clsx from "clsx";
 import React, { useCallback, useState } from "react";
 import { HvBaseProps } from "../../types";
 import { StyledCheckedBox } from "./BaseCheckBox.styles";
+import { baseCheckBoxClasses, HvBaseCheckBoxClasses } from ".";
 
 export type HvBaseCheckBoxProps = Omit<MuiCheckboxProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
@@ -78,11 +79,7 @@ export type HvBaseCheckBoxProps = Omit<MuiCheckboxProps, "onChange"> &
     /**
      * A Jss Object used to override or extend the styles applied to the checkbox.
      */
-    classes?: {
-      root?: string;
-      disabled?: string;
-      focusVisible?: string;
-    };
+    classes?: HvBaseCheckBoxClasses;
   };
 
 const getSelectorIcons = (options: {
@@ -170,9 +167,11 @@ export const HvBaseCheckBox = ({
       value={value}
       className={clsx(
         className,
+        baseCheckBoxClasses.root,
         classes?.root,
-        disabled && classes?.disabled,
-        focusVisible && classes?.focusVisible
+        disabled && clsx(baseCheckBoxClasses.disabled, classes?.disabled),
+        focusVisible &&
+          clsx(baseCheckBoxClasses.focusVisible, classes?.focusVisible)
       )}
       $focusVisible={focusVisible}
       icon={icons.checkbox}

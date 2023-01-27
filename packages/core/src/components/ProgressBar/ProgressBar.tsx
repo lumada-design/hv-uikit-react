@@ -8,6 +8,7 @@ import {
   StyledRoot,
   StyledValue,
 } from "./ProgressBar.styles";
+import { progressBarClasses, HvProgressBarClasses } from ".";
 
 export type HvProgressBarStatus = "inProgress" | "completed" | "error";
 
@@ -28,12 +29,7 @@ export type HvProgressBarProps = HvBaseProps & {
   /** Aria Properties passed on to the progress bar. */
   labelProps?: object;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    progress?: string;
-    progressBar?: string;
-    progressBarLabel?: string;
-  };
+  classes?: HvProgressBarClasses;
 };
 
 export const HvProgressBar = (props: HvProgressBarProps) => {
@@ -50,7 +46,13 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
 
   return (
     <StyledRoot
-      className={clsx(className, classes?.root, classes?.progress)}
+      className={clsx(
+        className,
+        progressBarClasses.root,
+        classes?.root,
+        progressBarClasses.progress,
+        classes?.progress
+      )}
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
@@ -59,7 +61,10 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
     >
       <StyledProgressContainer>
         <StyledValue
-          className={clsx(classes?.progressBarLabel)}
+          className={clsx(
+            progressBarClasses.progressBarLabel,
+            classes?.progressBarLabel
+          )}
           variant="caption2"
           style={{ width: `${clampedValue}%` }}
           {...labelProps}
@@ -69,7 +74,10 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
         <StyledProgressBarContainer>
           <StyledProgressBar
             style={{ width: `${clampedValue}%` }}
-            className={classes?.progressBar}
+            className={clsx(
+              progressBarClasses.progressBar,
+              classes?.progressBar
+            )}
             status={status}
           />
         </StyledProgressBarContainer>

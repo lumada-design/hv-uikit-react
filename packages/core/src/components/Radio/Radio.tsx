@@ -1,13 +1,10 @@
 import React, { useCallback, useState } from "react";
 import clsx from "clsx";
 import { RadioProps as MuiRadioProps } from "@mui/material";
-
 import { HvBaseProps, HvExtraProps } from "../../types";
 import { HvWarningText } from "components";
 import { isInvalid } from "../Forms/FormElement/validationStates";
-
 import { useControlled, useUniqueId } from "hooks";
-
 import { setId } from "utils";
 import {
   StyledDivContainer,
@@ -15,6 +12,7 @@ import {
   StyledHvFormElement,
   StyledHvLabel,
 } from "./Radio.styles";
+import { radioClasses, HvRadioClasses } from ".";
 
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
@@ -27,40 +25,7 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
     /**
      * A Jss Object used to override or extend the styles applied to the radio button.
      */
-    classes?: {
-      /**
-       * Styles applied to the component.
-       */
-      root?: string;
-      /**
-       * Styles applied to the radio button+label container (only when a label is provided).
-       */
-      container?: string;
-      /**
-       * Styles applied to the HvBaseCheckbox (only when a label is provided).
-       */
-      invalidContainer?: string;
-      /**
-       * Styles applied to the radio button+label container when the radio button is disabled.
-       */
-      disabled?: string;
-      /**
-       * Styles applied to the HvBaseRadio.
-       */
-      radio?: string;
-      /**
-       * Styles applied to the HvBaseCheckbox (only when a label is not provided).
-       */
-      invalidRadio?: string;
-      /**
-       * Styles applied to the label.
-       */
-      label?: string;
-      /**
-       * Class applied to the root element if keyboard focused.
-       */
-      focusVisible?: string;
-    };
+    classes?: HvRadioClasses;
     /**
      * Id to be applied to the form element root node.
      */
@@ -270,7 +235,11 @@ export const HvRadio = (props: HvRadioProps) => {
     <StyledHvBaseRadio
       id={label ? setId(elementId, "input") : setId(id, "input")}
       name={name}
-      className={clsx(classes?.radio, isStateInvalid && classes?.invalidRadio)}
+      className={clsx(
+        radioClasses.radio,
+        classes?.radio,
+        isStateInvalid && clsx(radioClasses.invalidRadio, classes?.invalidRadio)
+      )}
       $invalidRadio={isStateInvalid}
       disabled={disabled}
       readOnly={readOnly}
@@ -300,15 +269,19 @@ export const HvRadio = (props: HvRadioProps) => {
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, radioClasses.root, classes?.root)}
     >
       {hasLabel ? (
         <StyledDivContainer
           className={clsx(
+            radioClasses.container,
             classes?.container,
-            disabled && classes?.disabled,
-            focusVisible && label && classes?.focusVisible,
-            isStateInvalid && classes?.invalidContainer
+            disabled && clsx(radioClasses.disabled, classes?.disabled),
+            focusVisible &&
+              label &&
+              clsx(radioClasses.focusVisible, classes?.focusVisible),
+            isStateInvalid &&
+              clsx(radioClasses.invalidContainer, classes?.invalidContainer)
           )}
           $invalidContainer={isStateInvalid}
           $focusVisible={focusVisible}
@@ -318,7 +291,7 @@ export const HvRadio = (props: HvRadioProps) => {
             id={setId(elementId, "label")}
             htmlFor={setId(elementId, "input")}
             label={label}
-            className={clsx(classes?.label)}
+            className={clsx(radioClasses.label, classes?.label)}
             {...labelProps}
           />
         </StyledDivContainer>

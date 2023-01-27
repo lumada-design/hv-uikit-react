@@ -1,5 +1,6 @@
 import { tooltipClasses as MuitooltipClasses } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
+import { tooltipClasses } from ".";
 
 export const singleStyle = {
   maxWidth: 532,
@@ -42,14 +43,14 @@ export const popperSx = (useSingle: boolean) => {
       opacity: 1,
     },
     [`& .${MuitooltipClasses.tooltip}`]: useSingle ? singleStyle : multiStyle,
-    "& .title": {
+    [`& .${tooltipClasses.title}`]: {
       padding: "15px 20px",
       borderBottom: `3px solid ${theme.colors.atmo2}`,
     },
-    "& .valuesContainer": {
+    [`& .${tooltipClasses.valuesContainer}`]: {
       padding: theme.space.sm,
     },
-    "& .values": {
+    [`& .${tooltipClasses.values}`]: {
       display: "flex",
       justifyContent: "space-between",
       paddingBottom: "10px",
@@ -57,16 +58,16 @@ export const popperSx = (useSingle: boolean) => {
         paddingBottom: 0,
       },
     },
-    "& .color": {
+    [`& .${tooltipClasses.color}`]: {
       width: theme.space.xs,
     },
-    "& .separator": {
+    [`& .${tooltipClasses.separator}`]: {
       width: theme.space.xs,
     },
-    "& .separatorColor": {
+    [`& .${tooltipClasses.separatorColor}`]: {
       width: "5px",
     },
-    "& .valueWrapper": {
+    [`& .${tooltipClasses.valueWrapper}`]: {
       padding: theme.space.sm,
     },
   };

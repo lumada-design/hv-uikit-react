@@ -5,6 +5,7 @@ import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-icons";
 import { HvBaseProps } from "../../types";
 import { setId } from "utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
+import { accordionClasses, HvAccordionClasses } from ".";
 
 export type HvAccordionProps = HvBaseProps & {
   /**
@@ -18,28 +19,7 @@ export type HvAccordionProps = HvBaseProps & {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes?: {
-    /**
-     * Styles applied to the component root of the accordion.
-     */
-    root?: string;
-    /**
-     * Styles applied to the content when it is hidden.
-     */
-    hidden?: string;
-    /**
-     * Styles applied to the content when it is hidden.
-     */
-    container?: string;
-    /**
-     * Styles applied to the label button.
-     */
-    label?: string;
-    /**
-     * Styles applied to the label button when it is disabled.
-     */
-    disabled?: string;
-  };
+  classes?: HvAccordionClasses;
   /**
    * The accordion label button.
    */
@@ -149,7 +129,7 @@ export const HvAccordion = ({
         id={accordionHeaderId}
         as="div"
         role="button"
-        className={clsx(classes?.label)}
+        className={clsx(accordionClasses.label, classes?.label)}
         disabled={disabled}
         tabIndex={0}
         onKeyDown={handleKeyDown}
@@ -181,13 +161,17 @@ export const HvAccordion = ({
   ]);
 
   return (
-    <StyledRoot id={id} className={clsx(className, classes?.root)} {...others}>
+    <StyledRoot
+      id={id}
+      className={clsx(className, accordionClasses.root, classes?.root)}
+      {...others}
+    >
       {accordionHeader}
       <StyledContainer
         id={accordionContainer}
         role="region"
         aria-labelledby={accordionHeaderId}
-        className={clsx(classes?.container)}
+        className={clsx(accordionClasses.container, classes?.container)}
         hidden={!isOpen}
         {...containerProps}
       >

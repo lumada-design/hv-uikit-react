@@ -27,6 +27,7 @@ import {
 import { setId } from "utils";
 import { isNil } from "lodash";
 import { HvValidationMessages } from "types/forms";
+import { textAreaClasses, HvTextAreaClasses } from ".";
 
 export type HvTextAreaProps = Omit<
   HvBaseInputProps,
@@ -135,20 +136,7 @@ export type HvTextAreaProps = Omit<
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
-  classes?: {
-    root?: string;
-    disabled?: string;
-    resizable?: string;
-    invalid?: string;
-    baseInput?: string;
-    input?: string;
-    inputResizable?: string;
-    labelContainer?: string;
-    label?: string;
-    description?: string;
-    characterCounter?: string;
-    error?: string;
-  };
+  classes?: HvTextAreaClasses;
 };
 
 /**
@@ -416,20 +404,26 @@ export const HvTextArea = ({
       required={required}
       readOnly={readOnly}
       className={clsx(
+        textAreaClasses.root,
         classes?.root,
         className,
-        resizable && classes?.resizable,
-        disabled && classes?.disabled,
-        isStateInvalid && classes?.invalid
+        resizable && clsx(textAreaClasses.resizable, classes?.resizable),
+        disabled && clsx(textAreaClasses.disabled, classes?.disabled),
+        isStateInvalid && clsx(textAreaClasses.invalid, classes?.invalid)
       )}
       $resizable={resizable}
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer className={classes?.labelContainer}>
+        <StyledLabelContainer
+          className={clsx(
+            textAreaClasses.labelContainer,
+            classes?.labelContainer
+          )}
+        >
           {hasLabel && (
             <StyledLabel
-              className={classes?.label}
+              className={clsx(textAreaClasses.label, classes?.label)}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -438,7 +432,10 @@ export const HvTextArea = ({
 
           {hasDescription && (
             <StyledInfoMessage
-              className={classes?.description}
+              className={clsx(
+                textAreaClasses.description,
+                classes?.description
+              )}
               id={setId(elementId, "description")}
             >
               {description}
@@ -450,7 +447,10 @@ export const HvTextArea = ({
       {hasCounter && (
         <StyledCharCounter
           id={setId(elementId, "charCounter")}
-          className={classes?.characterCounter}
+          className={clsx(
+            textAreaClasses.characterCounter,
+            classes?.characterCounter
+          )}
           separator={middleCountLabel}
           currentCharQuantity={value.length}
           maxCharQuantity={maxCharQuantity}
@@ -460,9 +460,12 @@ export const HvTextArea = ({
 
       <StyledBaseInput
         classes={{
-          root: classes?.baseInput,
-          input: classes?.input,
-          inputResizable: classes?.inputResizable,
+          root: clsx(textAreaClasses.baseInput, classes?.baseInput),
+          input: clsx(textAreaClasses.input, classes?.input),
+          inputResizable: clsx(
+            textAreaClasses.inputResizable,
+            classes?.inputResizable
+          ),
         }}
         id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
         name={name}
@@ -493,13 +496,14 @@ export const HvTextArea = ({
           ...inputProps,
         }}
         inputRef={inputRef}
+        $resizable={resizable}
         {...others}
       />
 
       {canShowError && (
         <StyledWarningText
           id={setId(elementId, "error")}
-          className={classes?.error}
+          className={clsx(textAreaClasses.error, classes?.error)}
           disableBorder
         >
           {validationMessage}

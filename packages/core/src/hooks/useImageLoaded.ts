@@ -13,7 +13,7 @@ export const useImageLoaded = (src, srcSet) => {
     let active = true;
     const image = new Image();
     image.src = src;
-    image.srcset = srcSet;
+    image.srcset = srcSet || "";
     image.onload = () => {
       if (!active) {
         return;

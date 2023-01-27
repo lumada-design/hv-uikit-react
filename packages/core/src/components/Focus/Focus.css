@@ -1,4 +1,4 @@
-.focused {
+.HvFocus-focused {
   outline-color: #52a8ec;
   outline-style: solid;
   outline-width: 0px;
@@ -14,15 +14,15 @@
   }
 }
 
-.focusDisabled {
+.HvFocus-focusDisabled {
   outline: none;
   box-shadow: none;
 }
-.focusDisabled *:focus {
+.HvFocus-focusDisabled *:focus {
   outline: none;
   box-shadow: none;
 }
-.focusDisabled * {
+.HvFocus-focusDisabled * {
   outline: none !important;
   box-shadow: none !important;
 }

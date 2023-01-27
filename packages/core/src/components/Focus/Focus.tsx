@@ -6,6 +6,7 @@ import { keyboardCodes, isBrowser } from "utils";
 import ConditionalWrapper from "utils/ConditionalWrapper";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
+import { focusClasses, HvFocusClasses } from "./index";
 import "./Focus.css";
 
 export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
@@ -35,15 +36,7 @@ export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   /** How much the navigation will skip when using the arrows. v*/
   navigationJump?: number;
   /** A Jss Object used to override or extend the styles applied to the empty state Focus. */
-  classes?: {
-    root?: string;
-    selected?: string;
-    focused?: string;
-    focus?: string;
-    disabled?: string;
-    externalReference?: string;
-    falseFocus?: string;
-  };
+  classes?: HvFocusClasses;
 };
 
 export const HvFocus = ({
@@ -68,7 +61,9 @@ export const HvFocus = ({
   const getFocuses = () =>
     rootRef?.current
       ? Array.from(
-          rootRef.current.getElementsByClassName(filterClass || "root")
+          rootRef.current.getElementsByClassName(
+            filterClass || focusClasses.root || "root"
+          )
         )
       : [];
 
@@ -85,7 +80,7 @@ export const HvFocus = ({
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
     const firstSelected = focuses.find((focus) =>
-      focus.classList.contains("selected")
+      focus.classList.contains(focusClasses.selected || "selected")
     );
 
     if (!firstSelected) return;
@@ -141,7 +136,7 @@ export const HvFocus = ({
 
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
-      evt.currentTarget.classList.add("focused");
+      evt.currentTarget.classList.add(focusClasses.focused || "focused");
       // add global class HvIsFocused as a marker
       // not to be styled directly, only as helper in specific css queries
       evt.currentTarget.classList.add("HvIsFocused");
@@ -154,7 +149,7 @@ export const HvFocus = ({
   const removeFocusClass = () => {
     if (!useFalseFocus) {
       getFocuses().forEach((element) => {
-        element.classList.remove("focused");
+        element.classList.remove(focusClasses.focused || "focused");
         // remove the global class HvIsFocused
         element.classList.remove("HvIsFocused");
         classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
@@ -444,11 +439,11 @@ export const HvFocus = ({
       {React.cloneElement(children, {
         className: clsx(
           children.props.className,
-          "root",
-          [(classes?.root, filterClass)],
-          selected && "selected",
-          disabledClass && "disabled",
-          focusDisabled && "focusDisabled"
+          focusClasses.root,
+          [(focusClasses.root, classes?.root, filterClass)],
+          selected && focusClasses.selected,
+          disabledClass && focusClasses.disabled,
+          focusDisabled && focusClasses.focusDisabled
         ),
         ref: config,
         onFocus,

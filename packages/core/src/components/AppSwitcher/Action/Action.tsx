@@ -12,6 +12,7 @@ import {
   StyledTypography,
   StyledImg,
 } from "./Action.styles";
+import { appSwitcherActionClasses, HvAppSwitcherActionClasses } from ".";
 
 export type HvActionProps = HvBaseProps & {
   /** The application data to be used to render the Action object. */
@@ -21,16 +22,7 @@ export type HvActionProps = HvBaseProps & {
   /** Must return a boolean stating if the action element is selected or not. */
   isSelectedCallback?: Function;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    icon?: string;
-    iconUrl?: string;
-    iconInfo?: string;
-    disabled?: string;
-    selected?: string;
-    typography?: string;
-    title?: string;
-  };
+  classes?: HvAppSwitcherActionClasses;
 };
 
 const getColor = (color, defaultColor) =>
@@ -61,7 +53,7 @@ export const HvAction = ({
     if (iconUrl && validIconUrl) {
       return (
         <StyledImg
-          className={classes?.iconUrl}
+          className={clsx(appSwitcherActionClasses.iconUrl, classes?.iconUrl)}
           src={iconUrl}
           onError={() => {
             setValidIconUrl(false);
@@ -108,9 +100,10 @@ export const HvAction = ({
       disabled={disabled}
       className={clsx(
         className,
+        appSwitcherActionClasses.root,
         classes?.root,
-        disabled && classes?.disabled,
-        isSelected && classes?.selected
+        disabled && clsx(appSwitcherActionClasses.disabled, classes?.disabled),
+        isSelected && clsx(appSwitcherActionClasses.selected, classes?.selected)
       )}
     >
       <StyledTypography
@@ -118,17 +111,22 @@ export const HvAction = ({
         // @ts-ignore
         href={isLink ? url : undefined}
         target={isLink ? target || "_top" : undefined}
-        className={classes?.typography}
+        className={clsx(
+          appSwitcherActionClasses.typography,
+          classes?.typography
+        )}
         onClick={handleOnClick}
         style={{ borderColor: color }}
       >
-        <StyledIcon className={classes?.icon}>
+        <StyledIcon
+          className={clsx(appSwitcherActionClasses.icon, classes?.icon)}
+        >
           {renderApplicationIcon()}
         </StyledIcon>
 
         <TitleWithTooltip
           title={name}
-          className={classes?.title}
+          className={clsx(appSwitcherActionClasses.title, classes?.title)}
           type="action"
         />
 
@@ -140,7 +138,10 @@ export const HvAction = ({
           >
             <div>
               <StyledIconInfo
-                className={classes?.iconInfo}
+                className={clsx(
+                  appSwitcherActionClasses.iconInfo,
+                  classes?.iconInfo
+                )}
                 role="img"
                 aria-label={description}
               />

@@ -9,6 +9,7 @@ import {
   StyledFooter,
 } from "./AppSwitcher.styles";
 import TitleWithTooltip from "./TitleWithTooltip";
+import { appSwitcherClasses, HvAppSwitcherClasses } from ".";
 
 export type HvApplication = {
   /** Id of the application. */
@@ -55,21 +56,7 @@ export type HvAppSwitcherProps = HvBaseProps & {
    */
   isOpen?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    item?: string;
-    itemSelected?: string;
-    itemDisabled?: string;
-    itemTrigger?: string;
-    itemIcon?: string;
-    itemTitle?: string;
-    itemInfoIcon?: string;
-    actionsContainer?: string;
-    footerContainer?: string;
-    open?: string;
-    closed?: string;
-    title?: string;
-  };
+  classes?: HvAppSwitcherClasses;
 };
 
 export const HvAppSwitcher = ({
@@ -123,6 +110,7 @@ export const HvAppSwitcher = ({
       id={id}
       className={clsx(
         className,
+        appSwitcherClasses.root,
         classes?.root,
         isOpen && classes?.open,
         isOpen === false && classes?.closed
@@ -132,23 +120,33 @@ export const HvAppSwitcher = ({
       $layout={layout}
     >
       {(header && (
-        <StyledTitle className={classes?.title}>{header}</StyledTitle>
+        <StyledTitle className={clsx(appSwitcherClasses.title, classes?.title)}>
+          {header}
+        </StyledTitle>
       )) ||
         (title && (
           <TitleWithTooltip
-            className={classes?.title}
+            className={clsx(appSwitcherClasses.title, classes?.title)}
             title={title}
             type="appSwitcher"
           />
         ))}
       <StyledActionsContainer
         disableGutters
-        className={classes?.actionsContainer}
+        className={clsx(
+          appSwitcherClasses.actionsContainer,
+          classes?.actionsContainer
+        )}
       >
         {panelActions}
       </StyledActionsContainer>
       {footer && (
-        <StyledFooter className={classes?.footerContainer}>
+        <StyledFooter
+          className={clsx(
+            appSwitcherClasses.footerContainer,
+            classes?.footerContainer
+          )}
+        >
           {footer}
         </StyledFooter>
       )}

@@ -9,6 +9,7 @@ import {
   StyledMessageContainer,
   StyledTextWithIcon,
 } from "./Title.styles";
+import { dialogTitleClasses, HvDialogTitleClasses } from ".";
 
 export type HvDialogTitleVariant =
   | "success"
@@ -25,9 +26,7 @@ export type HvTitleProps = Omit<MuiDialogTitleProps, "variant"> &
     showIcon?: boolean;
     /** Custom icon to replace the variant default. */
     customIcon?: React.ReactNode;
-    classes?: {
-      root?: string;
-    };
+    classes?: HvDialogTitleClasses;
   } & HvExtraProps;
 
 export const HvTitle = ({
@@ -46,7 +45,13 @@ export const HvTitle = ({
 
   return (
     <StyledTitle
-      className={clsx(classes?.root, className, fullscreen ? "fullscreen" : "")}
+      className={clsx(
+        dialogTitleClasses.root,
+        classes?.root,
+        className,
+        fullscreen ? dialogTitleClasses.fullscreen : ""
+      )}
+      $fullscreen={fullscreen}
       {...others}
     >
       <StyledMessageContainer>

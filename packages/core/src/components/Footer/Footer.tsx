@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
+import { footerClasses, HvFooterClasses } from ".";
 
 import {
   StyledCopyright,
@@ -15,12 +16,7 @@ export type HvFooterProps = HvBaseProps & {
   copyright?: React.ReactNode;
   links?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    name?: string;
-    copyright?: string;
-    separator?: string;
-  };
+  classes?: HvFooterClasses;
 };
 
 /**
@@ -40,27 +36,27 @@ export const HvFooter = (props: HvFooterProps) => {
   return (
     <StyledRoot
       breakpoints={muiTheme.breakpoints}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, footerClasses.root, classes?.root)}
       {...others}
     >
       <StyledName
         breakpoints={muiTheme.breakpoints}
         variant="label"
-        className={classes?.name}
+        className={clsx(footerClasses.name, classes?.name)}
       >
         {name}
       </StyledName>
       <StyledRightContainer breakpoints={muiTheme.breakpoints}>
         <StyledCopyright
           breakpoints={muiTheme.breakpoints}
-          className={classes?.copyright}
+          className={clsx(footerClasses.copyright, classes?.copyright)}
         >
           {copyright}
         </StyledCopyright>
         {links && (
           <StyledSeparator
             breakpoints={muiTheme.breakpoints}
-            className={classes?.separator}
+            className={clsx(footerClasses.separator, classes?.separator)}
           />
         )}
         {links}

@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { HvFocus } from "components";
 import { outlineStyles } from "utils";
+import { listItemClasses } from ".";
 
 export const StyledListItem = styled(
   "li",
@@ -40,26 +41,27 @@ export const StyledListItem = styled(
     "&:not(:last-child)": {
       marginBottom: "8px",
     },
-    "&.condensed": {
+    [`&.${listItemClasses.condensed}`]: {
       marginBottom: 0,
     },
 
     ...($gutters && {
       padding: `0 ${theme.spacing(1)}`,
 
-      "&.withStartAdornment": {
+      [`&.${listItemClasses.withStartAdornment}`]: {
         paddingLeft: 0,
       },
-      "&.withEndAdornment": {
+      [`&.${listItemClasses.withEndAdornment}`]: {
         paddingRight: 0,
       },
     }),
     ...($interactive && {
       cursor: "pointer",
-      "&:not(.disabled):not(.selected):hover": {
-        backgroundColor: theme.list.hoverColor,
-      },
-      "&.disabled": {
+      [`&:not(.${listItemClasses.disabled}):not(.${listItemClasses.selected}):hover`]:
+        {
+          backgroundColor: theme.list.hoverColor,
+        },
+      [`&.${listItemClasses.disabled}`]: {
         cursor: "not-allowed",
       },
     }),
@@ -79,7 +81,7 @@ export const StyledListItem = styled(
         boxShadow: "none !important",
         outline: "none !important",
       },
-      ".disabled > svg *.color0": {
+      [`.${listItemClasses.disabled} > svg *.color0`]: {
         fill: theme.colors.atmo5,
       },
     }),
@@ -90,7 +92,7 @@ export const StyledListItem = styled(
         boxShadow: "none !important",
         outline: "none !important",
       },
-      ".disabled > svg *.color0": {
+      [`.${listItemClasses.disabled} > svg *.color0`]: {
         fill: theme.colors.atmo5,
       },
     }),

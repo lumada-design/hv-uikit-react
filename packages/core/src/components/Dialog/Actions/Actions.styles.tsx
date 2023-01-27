@@ -7,7 +7,6 @@ export const StyledActions = styled(
   DialogActions,
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
-  // "& .MuiDialogActions-root": {
   margin: "0",
   padding: theme.spacing(2),
   borderTop: `3px solid ${theme.colors.atmo2}`,
@@ -20,7 +19,6 @@ export const StyledActions = styled(
     bottom: 0,
     left: 0,
   }),
-  // },
   "&.MuiDialogActions-spacing": {
     "& > :not(:first-of-type)": {
       marginLeft: theme.spacing(1),

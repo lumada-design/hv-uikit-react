@@ -6,6 +6,7 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { outlineStyles } from "utils";
+import { baseInputClasses } from ".";
 
 export const StyledRoot = styled(
   "div",
@@ -26,11 +27,13 @@ export const StyledRoot = styled(
     width: "100%",
     position: "relative",
 
-    "&:hover .inputBorderContainer": {
+    // "&:hover .inputBorderContainer": {
+    [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
       backgroundColor: theme.baseInput.hoverColor,
     },
 
-    "&:focus-within .inputBorderContainer": {
+    // "&:focus-within .inputBorderContainer": {
+    [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
       backgroundColor: theme.baseInput.hoverColor,
     },
 
@@ -68,36 +71,43 @@ export const StyledRoot = styled(
     }),
 
     ...($readOnly && {
-      "& .inputBorderContainer": {
+      // "& .inputBorderContainer": {
+      [`& .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
 
-      "&:hover .inputBorderContainer": {
+      // "&:hover .inputBorderContainer": {
+      [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
 
-      "&:focus-within .inputBorderContainer": {
+      // "&:focus-within .inputBorderContainer": {
+      [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
     }),
 
     ...($disabled && {
-      "& .inputBorderContainer": {
+      // "& .inputBorderContainer": {
+      [`& .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: theme.colors.atmo4,
       },
 
-      "&:hover .inputBorderContainer": {
+      // "&:hover .inputBorderContainer": {
+      [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: theme.colors.atmo4,
       },
     }),
 
     ...($invalid && {
       "&:not(.disabled)": {
-        "& .inputBorderContainer": {
+        // "& .inputBorderContainer": {
+        [`& .${baseInputClasses.inputBorderContainer}`]: {
           backgroundColor: theme.colors.sema4,
         },
 
-        "&:hover .inputBorderContainer": {
+        // "&:hover .inputBorderContainer": {
+        [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
           backgroundColor: theme.colors.sema4,
         },
       },
@@ -145,12 +155,14 @@ export const StyledInput = styled(
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       }),
 
-      "&:hover:not(.inputRootDisabled):not(.inputRootInvalid):not(.inputRootReadOnly)":
+      // "&:hover:not(.inputRootDisabled):not(.inputRootInvalid):not(.inputRootReadOnly)":
+      [`&:hover:not(.${baseInputClasses.inputRootDisabled}):not(.${baseInputClasses.inputRootInvalid}):not(.${baseInputClasses.inputRootReadOnly})`]:
         {
           borderColor: theme.baseInput.hoverColor,
         },
 
-      "&:hover:not(.inputRootDisabled)::before": {
+      // "&:hover:not(.inputRootDisabled)::before": {
+      [`&:hover:not(.${baseInputClasses.inputRootDisabled})::before`]: {
         borderBottom: "none",
       },
 
@@ -214,7 +226,8 @@ export const StyledInput = styled(
         background: theme.colors.atmo1,
       },
 
-      "&.inputRootReadOnly": {
+      // "&.inputRootReadOnly": {
+      [`&.${baseInputClasses.inputRootReadOnly}`]: {
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
     },
@@ -240,7 +253,8 @@ export const StyledInput = styled(
       overflow: "auto",
       border: "none",
 
-      "& .input": {
+      // "& .input": {
+      [`& .${baseInputClasses.input}`]: {
         border: `1px solid ${theme.baseInput.multilineBorderColor}`,
         borderRadius: "2px",
         backgroundColor: theme.colors.atmo1,

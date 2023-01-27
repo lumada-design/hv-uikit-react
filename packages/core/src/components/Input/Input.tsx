@@ -49,6 +49,7 @@ import {
 } from "components";
 import { useControlled, useIsMounted, useLabels, useUniqueId } from "hooks";
 import { HvInputLabels, HvValidationMessages } from "types/forms";
+import { inputClasses, HvInputClasses } from ".";
 
 export type HvInputProps = HvBaseProps<
   HTMLElement,
@@ -154,46 +155,7 @@ export type HvInputProps = HvBaseProps<
   /** The minimum allowed length of the characters, if this value is null no check will be perform. */
   minCharQuantity?: number;
   /** A Jss Object used to override or extend the styles applied to the empty state Input. */
-  classes?: {
-    /** Styles applied to the root container of the input. */
-    root?: string;
-    /** Styles applied to the root container when the suggestion list is open. */
-    hasSuggestions?: string;
-    /** Styles applied to input root which is comprising of everything but the labels and descriptions. */
-    inputRoot?: string;
-    /** Styles applied to the base input border element. */
-    inputBorderContainer?: string;
-    /** Styles applied to input root when it is focused. */
-    inputRootFocused?: string;
-    /** Styles applied to input html element when it is disabled. */
-    inputRootDisabled?: string;
-    /** Styles applied to input html element when it is multiline mode. */
-    inputRootMultiline?: string;
-    /** Styles applied to input html element. */
-    input?: string;
-    /** Styles applied to the container of the labels elements. */
-    labelContainer?: string;
-    /** Styles applied to the label element. */
-    label?: string;
-    /** Styles applied to the icon information text. */
-    description?: string;
-    /** Styles applied to the error area. */
-    error?: string;
-    /** Styles applied to the div around the adornment. */
-    adornmentsBox?: string;
-    /** Styles applied to the the adornment when behaving as a button. */
-    adornmentButton?: string;
-    /** Styles applied to the input adornment icons. */
-    icon?: string;
-    /** Styles applied to the icon used to clean the input. */
-    iconClear?: string;
-    /** Styles applied to the input extension shown when the suggestions list is visible. */
-    inputExtension?: string;
-    /** Styles applied to the container of the suggestions list. */
-    suggestionsContainer?: string;
-    /** Styles applied to the suggestions list. */
-    suggestionList?: string;
-  };
+  classes?: HvInputClasses;
 };
 
 const DEFAULT_LABELS = {
@@ -585,8 +547,10 @@ export const HvInput = ({
       <StyledAdornmentButton
         // don't control visibility when the search icon is enabled
         className={clsx(
+          inputClasses.adornmentButton,
           classes?.adornmentButton,
-          !showSearchIcon && clsx("iconClear", classes?.iconClear)
+          !showSearchIcon &&
+            clsx("iconClear", inputClasses.iconClear, classes?.iconClear)
         )}
         onClick={handleClear}
         aria-label={labels?.clearButtonLabel}
@@ -628,7 +592,7 @@ export const HvInput = ({
 
     return (
       <StyledAdornmentButton
-        className={clsx(classes?.adornmentButton)}
+        className={clsx(inputClasses.adornmentButton, classes?.adornmentButton)}
         onClick={hasOnEnter ? handleSearch : undefined}
         aria-label={labels?.searchButtonLabel}
         icon={<Search />}
@@ -669,7 +633,10 @@ export const HvInput = ({
         }
       >
         <StyledAdornmentButton
-          className={classes?.adornmentButton}
+          className={clsx(
+            inputClasses.adornmentButton,
+            classes?.adornmentButton
+          )}
           onClick={handleRevealPassword}
           aria-label={labels?.revealPasswordButtonLabel}
           aria-controls={setId(elementId, "input")}
@@ -697,7 +664,12 @@ export const HvInput = ({
       return null;
     }
 
-    return <StyledSuccess semantic="sema1" className={classes?.icon} />;
+    return (
+      <StyledSuccess
+        semantic="sema1"
+        className={clsx(inputClasses.icon, classes?.icon)}
+      />
+    );
   }, [showValidationIcon, validationState, classes?.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
@@ -705,7 +677,11 @@ export const HvInput = ({
     () =>
       isValidElement(endAdornment) &&
       React.cloneElement(endAdornment as React.ReactElement, {
-        className: clsx(classes?.icon, endAdornment.props.className),
+        className: clsx(
+          inputClasses.icon,
+          classes?.icon,
+          endAdornment.props.className
+        ),
       }),
     [classes?.icon, endAdornment]
   );
@@ -724,7 +700,7 @@ export const HvInput = ({
     // a validation feedback icon is being shown.
     return (
       <StyledAdornmentsBox
-        className={classes?.adornmentsBox}
+        className={clsx(inputClasses.adornmentsBox, classes?.adornmentsBox)}
         aria-hidden="true"
       >
         {clearButton}
@@ -770,19 +746,22 @@ export const HvInput = ({
       required={required}
       readOnly={readOnly}
       className={clsx(
-        "root",
+        inputClasses.root,
         classes?.root,
         className,
-        hasSuggestions && classes?.hasSuggestions
+        hasSuggestions &&
+          clsx(inputClasses.hasSuggestions, classes?.hasSuggestions)
       )}
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer className={classes?.labelContainer}>
+        <StyledLabelContainer
+          className={clsx(inputClasses.labelContainer, classes?.labelContainer)}
+        >
           {hasLabel && (
             <StyledLabel
               id={setId(elementId, "label")}
-              className={classes?.label}
+              className={clsx(inputClasses.label, classes?.label)}
               htmlFor={setId(elementId, "input")}
               label={label}
             />
@@ -791,7 +770,7 @@ export const HvInput = ({
           {hasDescription && (
             <HvInfoMessage
               id={setId(elementId, "description")}
-              className={classes?.description}
+              className={clsx(inputClasses.description, classes?.description)}
             >
               {description}
             </HvInfoMessage>
@@ -856,14 +835,20 @@ export const HvInput = ({
           {hasSuggestions && (
             <StyledInputExtension
               role="presentation"
-              className={classes?.inputExtension}
+              className={clsx(
+                inputClasses.inputExtension,
+                classes?.inputExtension
+              )}
             />
           )}
           <StyledSuggestions
             id={setId(elementId, "suggestions")}
             classes={{
-              root: classes?.suggestionsContainer,
-              list: classes?.suggestionList,
+              root: clsx(
+                inputClasses.suggestionsContainer,
+                classes?.suggestionsContainer
+              ),
+              list: clsx(inputClasses.suggestionList, classes?.suggestionList),
             }}
             expanded={hasSuggestions}
             anchorEl={inputRef?.current?.parentElement}
@@ -878,7 +863,7 @@ export const HvInput = ({
         <HvWarningText
           id={setId(elementId, "error")}
           disableBorder
-          className={classes?.error}
+          className={clsx(inputClasses.error, classes?.error)}
         >
           {validationMessage}
         </HvWarningText>

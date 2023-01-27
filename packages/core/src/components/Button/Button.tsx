@@ -5,6 +5,7 @@ import {
   StyledContentDiv,
   StyledIconSpan,
 } from "./Button.styles";
+import { HvButtonClasses } from ".";
 
 export type HvButtonVariant =
   | "primary"
@@ -33,11 +34,7 @@ export interface HvButtonProps
   radius?: HvButtonRadius;
   overrideIconColors?: Boolean;
   selected?: Boolean;
-  classes?: {
-    focusVisible?: string;
-    startIcon?: string;
-    primary?: string;
-  };
+  classes?: HvButtonClasses;
 }
 
 /**

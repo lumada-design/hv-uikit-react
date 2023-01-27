@@ -10,6 +10,7 @@ import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
 import { HvListItem } from "components";
 import { useClickOutside } from "hooks";
+import { suggestionsClasses, HvSuggestionsClasses } from ".";
 
 export type HvSuggestion = {
   id?: string;
@@ -32,11 +33,7 @@ export type HvSuggestionsProps = HvBaseProps & {
   /** Function called when suggestion list is closed */
   onClose?: Function;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    list?: string;
-    popper?: string;
-  };
+  classes?: HvSuggestionsClasses;
 };
 
 export const HvSuggestions = ({
@@ -69,17 +66,17 @@ export const HvSuggestions = ({
     <StyledRoot
       id={localId}
       ref={ref}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, suggestionsClasses.root, classes?.root)}
       {...others}
     >
       <StyledPopper
         open={isOpen}
         disablePortal
         anchorEl={anchorEl}
-        className={classes?.popper}
+        className={clsx(suggestionsClasses.popper, classes?.popper)}
       >
         <StyledSelectionList
-          className={clsx(classes?.list, "list")}
+          className={clsx(suggestionsClasses.list, classes?.list)}
           id={setId(localId, "list")}
           onChange={onSuggestionSelected}
         >

@@ -13,6 +13,7 @@ import {
   StyledImg,
   StyledStatus,
 } from "./Avatar.styles";
+import { avatarClasses, HvAvatarClasses } from ".";
 
 export type HvAvatarVariant = "circular" | "square";
 
@@ -56,15 +57,7 @@ export type HvAvatarProps = MuiAvatarProps &
     /** Attributes applied to the avatar element. */
     avatarProps?: object;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      root?: string;
-      container?: string;
-      img?: string;
-      fallback?: string;
-      badge?: string;
-      avatar?: string;
-      status?: string;
-    };
+    classes?: HvAvatarClasses;
   };
 
 /**
@@ -127,7 +120,7 @@ export const HvAvatar = ({
       <User
         color={color}
         iconSize={decreaseSize(size)}
-        className={classes?.fallback}
+        className={clsx(avatarClasses.fallback, classes?.fallback)}
       />
     );
   }
@@ -157,22 +150,30 @@ export const HvAvatar = ({
   const badgeColor = getColor(badge || "", theme.colors.sema1);
 
   return (
-    <StyledContainer className={classes?.container} {...others}>
+    <StyledContainer
+      className={clsx(avatarClasses.container, classes?.container)}
+      {...others}
+    >
       <StyledStatus
-        className={clsx(classes?.status)}
+        className={clsx(avatarClasses.status, classes?.status)}
         style={statusInlineStyle}
         variant={variant}
         size={size}
       >
         {badge && (
           <StyledBadge
-            className={classes?.badge}
+            className={clsx(avatarClasses.badge, classes?.badge)}
             style={{ backgroundColor: badgeColor }}
           />
         )}
         <StyledAvatar
           component={component}
-          className={clsx(className, classes?.root, classes?.avatar)}
+          className={clsx(
+            className,
+            avatarClasses.root,
+            classes?.root,
+            classes?.avatar
+          )}
           style={inlineStyle}
           variant={variant}
           size={size}

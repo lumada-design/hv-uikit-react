@@ -1,6 +1,16 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledDiv } from "./Panel.styles";
+import { panelClasses, HvPanelClasses } from ".";
+
+export type PanelProps = HvBaseProps & {
+  /** Id to be applied to the root node. */
+  id?: string;
+  /** Class names to be applied. */
+  className?: string;
+  /** A Jss Object used to override or extend the styles applied. */
+  classes?: HvPanelClasses;
+};
 
 /**
  * A panel is a container used in a variety of patterns (e.g. dropdown, filter group, details section).
@@ -11,28 +21,12 @@ export const HvPanel = (props: PanelProps) => {
   const { id, className, classes, children, ...others } = props;
 
   return (
-    <StyledDiv id={id} className={clsx(className, classes?.root)} {...others}>
+    <StyledDiv
+      id={id}
+      className={clsx(className, panelClasses.root, classes?.root)}
+      {...others}
+    >
       {children}
     </StyledDiv>
   );
-};
-
-export type PanelProps = HvBaseProps & {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
-  classes?: {
-    /**
-     * Styles applied to the component root class.
-     */
-    root?: string;
-  };
 };

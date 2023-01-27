@@ -10,6 +10,7 @@ import {
 } from "@hitachivantara/uikit-icons";
 import { HvBaseProps, HvExtraProps } from "../../types";
 import { StyledRadio } from "./BaseRadio.styles";
+import { baseRadioClasses, HvBaseRadioClasses } from ".";
 
 export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
@@ -20,20 +21,7 @@ export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
     /**
      * A Jss Object used to override or extend the styles applied to the radio button.
      */
-    classes?: {
-      /**
-       * Styles applied to the component.
-       */
-      root?: string;
-      /**
-       * Styles applied to the radio button when it is disabled.
-       */
-      disabled?: string;
-      /**
-       * Class applied to the root element if keyboard focused.
-       */
-      focusVisible?: string;
-    };
+    classes?: HvBaseRadioClasses;
     /**
      * Id to be applied to the root node.
      */
@@ -108,9 +96,17 @@ export const getSelectorIcons = (
     undefined;
 
   return {
-    radio: <RadioButtonUnselected color={color} className={classes?.icon} />,
+    radio: (
+      <RadioButtonUnselected
+        color={color}
+        className={clsx(baseRadioClasses.icon, classes?.icon)}
+      />
+    ),
     radioChecked: (
-      <RadioButtonSelected color={checkedColor} className={classes?.icon} />
+      <RadioButtonSelected
+        color={checkedColor}
+        className={clsx(baseRadioClasses.icon, classes?.icon)}
+      />
     ),
   };
 };
@@ -185,9 +181,11 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
       name={name}
       className={clsx(
         className,
+        baseRadioClasses.root,
         classes?.root,
-        disabled && classes?.disabled,
-        focusVisible && classes?.focusVisible
+        disabled && clsx(baseRadioClasses.disabled, classes?.disabled),
+        focusVisible &&
+          clsx(baseRadioClasses.focusVisible, classes?.focusVisible)
       )}
       $focusVisible={focusVisible}
       icon={icons.radio}

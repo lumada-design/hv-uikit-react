@@ -14,6 +14,7 @@ import {
   StyledTrendIndicator,
   StyledVisualIndicator,
 } from "./Kpi.styles";
+import { kpiClasses, HvKpiClasses } from ".";
 
 export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**
@@ -48,18 +49,7 @@ export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
-  classes?: {
-    root?: string;
-    visualIndicatorContainer?: string;
-    comparisons?: string;
-    comparisonContainer?: string;
-    comparisonComposition?: string;
-    indicatorsContainer?: string;
-    indicatorText?: string;
-    indicatorUnit?: string;
-    spacingToTheRight?: string;
-    trendLine?: string;
-  };
+  classes?: HvKpiClasses;
 };
 
 const DEFAULT_LABELS = {
@@ -93,14 +83,24 @@ export const HvKpi = ({
       : StyledInternalVisualComparisonDiv;
 
   return (
-    <StyledRoot className={clsx(classes?.root, className)} {...others}>
+    <StyledRoot
+      className={clsx(classes?.root, className, kpiClasses.root)}
+      {...others}
+    >
       <div>
         <HvTypography variant="label">{mergedLabels?.title}</HvTypography>
       </div>
-      <StyledIndicatorsContainer className={classes?.indicatorsContainer}>
+      <StyledIndicatorsContainer
+        className={clsx(
+          kpiClasses.indicatorsContainer,
+          classes?.indicatorsContainer
+        )}
+      >
         {visualIndicator && (
           <StyledVisualIndicator
             className={clsx(
+              kpiClasses.visualIndicatorContainer,
+              kpiClasses.spacingToTheRight,
               classes?.visualIndicatorContainer,
               classes?.spacingToTheRight
             )}
@@ -110,7 +110,12 @@ export const HvKpi = ({
         )}
         {mergedLabels?.indicator && (
           <StyledIndicatorText
-            className={clsx(classes?.spacingToTheRight, classes?.indicatorText)}
+            className={clsx(
+              kpiClasses.spacingToTheRight,
+              kpiClasses.indicatorText,
+              classes?.spacingToTheRight,
+              classes?.indicatorText
+            )}
             variant={indicatorTextVariant}
           >
             {mergedLabels.indicator}
@@ -118,7 +123,7 @@ export const HvKpi = ({
         )}
         {mergedLabels?.unit && (
           <StyledIndicatorUnit
-            className={classes?.indicatorUnit}
+            className={clsx(kpiClasses.indicatorUnit, classes?.indicatorUnit)}
             variant={indicatorUnitTextVariant}
           >
             {mergedLabels.unit}
@@ -126,18 +131,35 @@ export const HvKpi = ({
         )}
       </StyledIndicatorsContainer>
       {visualComparison && (
-        <StyledComparisonComposition className={classes?.comparisonComposition}>
+        <StyledComparisonComposition
+          className={clsx(
+            kpiClasses.comparisonComposition,
+            classes?.comparisonComposition
+          )}
+        >
           {trendIndicator && (
             <StyledTrendIndicator
-              className={clsx(classes?.trendLine, classes?.spacingToTheRight)}
+              className={clsx(
+                kpiClasses.trendLine,
+                kpiClasses.spacingToTheRight,
+                classes?.trendLine,
+                classes?.spacingToTheRight
+              )}
             >
               {trendIndicator}
             </StyledTrendIndicator>
           )}
           <div>
-            <StyledComparisonContainer className={classes?.comparisonContainer}>
+            <StyledComparisonContainer
+              className={clsx(
+                kpiClasses.comparisonContainer,
+                classes?.comparisonContainer
+              )}
+            >
               <InternalVisualComparison
                 className={clsx(
+                  kpiClasses.comparisons,
+                  kpiClasses.spacingToTheRight,
                   classes?.comparisons,
                   classes?.spacingToTheRight
                 )}
@@ -146,8 +168,16 @@ export const HvKpi = ({
                 {visualComparison}
               </InternalVisualComparison>
             </StyledComparisonContainer>
-            <StyledComparisonContainer className={classes?.comparisonContainer}>
-              <HvTypography className={classes?.comparisons} variant="caption2">
+            <StyledComparisonContainer
+              className={clsx(
+                kpiClasses.comparisonContainer,
+                classes?.comparisonContainer
+              )}
+            >
+              <HvTypography
+                className={clsx(kpiClasses.comparisons, classes?.comparisons)}
+                variant="caption2"
+              >
                 {mergedLabels?.comparisonIndicatorInfo}
               </HvTypography>
             </StyledComparisonContainer>
