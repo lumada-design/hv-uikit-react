@@ -163,6 +163,12 @@ const componentsSpec = {
     hoverColor: "string",
     readOnlyBorderColor: "string",
   },
+  switch: {
+    labelMarginBottom: "string",
+    containerHeight: "string",
+    containerBorderBottom: "string",
+    invalidContainerBorderBottom: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

@@ -189,6 +189,12 @@ const ds5Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce2,
       readOnlyBorderColor: theme.colors.atmo5,
     },
+    switch: {
+      labelMarginBottom: theme.space.xs,
+      containerHeight: "32px",
+      containerBorderBottom: `1px solid transparent`,
+      invalidContainerBorderBottom: `1px solid transparent`,
+    },
   },
 }));
 

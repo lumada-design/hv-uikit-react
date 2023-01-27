@@ -49,4 +49,5 @@ export * from "./BaseDropdown";
 export * from "./BaseSwitch";
 export * from "./CheckBox";
 export * from "./Input";
+export * from "./Switch";
 export * from "./TagsInput";

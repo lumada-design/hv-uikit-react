@@ -174,6 +174,12 @@ const ds3Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce1,
       readOnlyBorderColor: "transparent",
     },
+    switch: {
+      labelMarginBottom: theme.space.xs,
+      containerHeight: "32px",
+      containerBorderBottom: `1px solid transparent`,
+      invalidContainerBorderBottom: `1px solid transparent`,
+    },
   },
 }));
 
