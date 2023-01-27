@@ -141,7 +141,7 @@ export type HvInputProps = HvBaseProps<
   /** If `true` the search button is disabled. Valid only when type is "search". */
   disableSearchButton?: boolean;
   /**
-   * If `true` the validation icon adorment is visible. Defaults to `false`.
+   * If `true` the validation icon adornment is visible. Defaults to `false`.
    *
    * Currently, DS specifications define only a positive feedback icon;
    * errors are signaled through the border style and by displaying the error message.

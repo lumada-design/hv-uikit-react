@@ -1,5 +1,8 @@
 import { RefObject, useContext } from "react";
-import { InputProps as MuiInputProps } from "@mui/material";
+import {
+  InputBaseComponentProps as MuiInputBaseComponentProps,
+  InputProps as MuiInputProps,
+} from "@mui/material";
 import { HvBaseProps } from "../../types";
 import {
   StyledRoot,
@@ -30,7 +33,10 @@ export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
     required?: boolean;
     /** The function that will be executed onChange, allows modification of the input,
      * it receives the value. If a new value should be presented it must returned it. */
-    onChange?: Function;
+    onChange?: (
+      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+      value: string
+    ) => void;
     /** The input type. */
     type?: string;
     /** Label inside the input used to help user. */
@@ -42,7 +48,7 @@ export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
     /** Denotes if the input is in an invalid state. */
     invalid?: boolean;
     /** Attributes applied to the input element. */
-    inputProps?: object;
+    inputProps?: MuiInputBaseComponentProps;
     /** Allows passing a ref to the underlying input */
     inputRef?: RefObject<HTMLElement>;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
@@ -122,7 +128,9 @@ export const HvBaseInput = ({
     id
   );
 
-  const onChangeHandler = (event) => {
+  const onChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     onChange?.(event, event.target.value);
   };
 
@@ -172,7 +180,7 @@ export const HvBaseInput = ({
           ),
         }}
         inputProps={{
-          // avoid the required attribute at the root node
+          // Avoid the required attribute at the root node
           required: formElementProps.required,
           ...inputProps,
           ...ariaProps,
@@ -183,6 +191,7 @@ export const HvBaseInput = ({
         $resizable={!formElementProps.disabled && resizable}
         $disabled={!!disabled}
         $readOnly={!!readOnly}
+        $invalid={localInvalid}
         {...others}
       />
       {!multiline && (

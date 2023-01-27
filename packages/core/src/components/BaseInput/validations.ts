@@ -154,9 +154,9 @@ export const validateInput = (
   maxCharQuantity,
   validationType,
   validation
-) => {
+): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
-  const inputValidity = {
+  const inputValidity: HvInputValidity = {
     valid: input?.validity?.valid ?? true,
     badInput: input?.validity?.badInput,
     customError: input?.validity?.customError,
@@ -216,6 +216,20 @@ export const validateInput = (
   }
 
   return inputValidity;
+};
+
+export type HvInputValidity = {
+  valid?: boolean;
+  badInput?: boolean;
+  customError?: boolean;
+  patternMismatch?: boolean;
+  rangeOverflow?: boolean;
+  rangeUnderflow?: boolean;
+  stepMismatch?: boolean;
+  tooLong?: boolean;
+  tooShort?: boolean;
+  typeMismatch?: boolean;
+  valueMissing?: boolean;
 };
 
 export const DEFAULT_ERROR_MESSAGES = {
