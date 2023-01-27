@@ -12,6 +12,7 @@ import {
   BaseDropdown,
   BaseInput,
   Radio,
+  TagsInput,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -33,8 +34,9 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
-        <BaseDropdown />
+        <TagsInput />
         <BaseInput />
+        {/* <BaseDropdown />
         <CheckBox />
         <Switch />
         <Radio />
@@ -46,7 +48,7 @@ const App = () => {
         <EmptyState />
         <Typography />
         <Buttons />
-        <Icons />
+        <Icons /> */}
       </HvBox>
     </HvProvider>
   );

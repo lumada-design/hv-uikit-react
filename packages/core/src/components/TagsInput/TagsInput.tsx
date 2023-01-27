@@ -1,0 +1,716 @@
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import clsx from "clsx";
+import isNil from "lodash/isNil";
+import { HvValidationMessages } from "types/forms";
+import { HvBaseProps } from "../../types";
+import {
+  StyledCharCounter,
+  StyledDescription,
+  StyledError,
+  StyledFormElement,
+  StyledLabel,
+  StyledLabelContainer,
+  StyledListItem,
+  StyledTag,
+  StyledTagsList,
+  StyledInputListItem,
+  StyledInput,
+  StyledSuggestions,
+} from "./TagsInput.styles";
+import validationStates from "../Forms/FormElement/validationStates";
+import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
+import { useControlled, useIsMounted, useUniqueId } from "hooks";
+import { isKeypress, keyboardCodes, setId } from "utils";
+import { HvTagProps } from "components";
+
+export type HvTagsInputProps = HvBaseProps<
+  HTMLElement,
+  { onChange; onBlur; onFocus; onKeyDown; color }
+> & {
+  /** The form element name. */
+  name?: string;
+  /** The value of the form element. */
+  value?: string[] | HvTagProps[];
+  /** When uncontrolled, defines the initial input value. */
+  defaultValue?: string[] | HvTagProps[];
+  /**
+   * The label of the form element.
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
+   */
+  label?: React.ReactNode;
+  /** Provide additional descriptive text for the form element. */
+  description?: React.ReactNode;
+  /** Indicates that the form element is disabled. */
+  disabled?: boolean;
+  /** Indicates that the form element is not editable. */
+  readOnly?: boolean;
+  /** Indicates that the form element is required. */
+  required?: boolean;
+  /** The function that will be executed onChange. */
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: any) => void;
+  /** The function that will be executed when the element is focused. */
+  onFocus?: Function;
+  /** The function that will be executed when the element is blurred. */
+  onBlur?: Function;
+  /** The function that will be executed when a tag is deleted. */
+  onDelete?: Function;
+  /** The function that will be executed when a tag is added. */
+  onAdd?: Function;
+  /** The placeholder value of the input. */
+  placeholder?: string;
+  /** If `true` the character counter isn't shown even if maxTagsQuantity is set. */
+  hideCounter?: boolean;
+  /** Text between the current char counter and max value. */
+  middleCountLabel?: string;
+  /** The maximum allowed length of the characters, if this value is null no check will be performed. */
+  maxTagsQuantity?: number;
+  /** Attributes applied to the input element. */
+  inputProps?: object;
+  /** If `true` it should autofocus. */
+  autoFocus?: boolean;
+  /** If `true` the component is resizable. */
+  resizable?: boolean;
+  /** Props passed to the HvCharCount component. */
+  countCharProps?: object;
+  /** If `true` the component is in multiline mode. */
+  multiline?: boolean;
+  /** The status of the form element. */
+  status?: string;
+  /** The error message to show when `status` is "invalid". */
+  statusMessage?: string;
+  /** An Object containing the various texts associated with the input. */
+  validationMessages?: HvValidationMessages;
+  /** An array of strings that represent the character used to input a tag. This character is the string representation of the event.code from the input event. */
+  commitTagOn?: string[];
+  /** If `true` the tag will be commited when the blur event occurs. */
+  commitOnBlur?: boolean;
+  /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
+  suggestionListCallback?: Function;
+  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  classes?: {
+    /** Styles applied to the input element. */
+    input?: string;
+    /** Styles applied to the list item gutters. */
+    listItemGutters?: string;
+    /** Styles applied to the list item element. */
+    listItemRoot?: string;
+    /** Styles applied to the root container of the textarea. */
+    root?: string;
+    /** Styles applies to the tag root. */
+    chipRoot?: string;
+    /** Style applied to the root when resizable is `true`. */
+    disabled?: string;
+    /** Style applied to the root when resizable is `true`. */
+    resizable?: string;
+    /** Style applied to the root when invalid. */
+    invalid?: string;
+    /** Styles applied to text area container that holds the label, description and counter. */
+    labelContainer?: string;
+    /** Styles applied to the label element. */
+    label?: string;
+    /** Styles applied to the label element. */
+    description?: string;
+    /** Style applied on the character counter. */
+    characterCounter?: string;
+    /** Styles applied to the tags list container element. */
+    tagsList?: string;
+    /** Styles applied to the tag input container element. */
+    tagInputContainerRoot?: string;
+    /** Styles applied to the tag input element. */
+    tagInputRoot?: string;
+    /** Styles applied to a tag element when selected */
+    tagSelected?: string;
+    /** Styles applied to the input element border. */
+    tagInputBorderContainer?: string;
+    /** Styles applied to the input element when focused. */
+    tagInputRootFocused?: string;
+    /** Styles applied to the container when in single line mode. */
+    singleLine?: string;
+    /** Styles applied to the tags list when an error occurred. */
+    error?: string;
+    /** Styles applied to the input extension shown when the suggestions list is visible. */
+    inputExtension?: string;
+    /** Styles applied to the container of the suggestions list. */
+    suggestionsContainer?: string;
+    /** Styles applied to the suggestions list. */
+    suggestionList?: string;
+  };
+};
+
+/**
+ * A tags input is a single or multiline control that allows the input of tags.
+ */
+export const HvTagsInput = ({
+  classes,
+  className,
+  id,
+  name,
+  value: valueProp,
+  defaultValue = [],
+  readOnly = false,
+  disabled = false,
+  required = false,
+  label: textAreaLabel,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  description,
+  "aria-describedby": ariaDescribedBy,
+  onChange,
+  onAdd,
+  onDelete,
+  onBlur,
+  onFocus,
+  placeholder,
+  hideCounter = false,
+  middleCountLabel = "/",
+  maxTagsQuantity,
+  autoFocus = false,
+  resizable = true,
+  inputProps = {},
+  countCharProps = {},
+  multiline = false,
+  status,
+  statusMessage,
+  validationMessages,
+  commitTagOn = ["Enter"],
+  commitOnBlur = false,
+  suggestionListCallback,
+  ...others
+}: HvTagsInputProps) => {
+  const elementId = useUniqueId(id, "hvTagsInput");
+
+  const hasLabel = textAreaLabel != null;
+  const hasDescription = description != null;
+
+  const [value, setValue] = useControlled(valueProp, defaultValue);
+
+  const [validationState, setValidationState] = useControlled(
+    status,
+    validationStates.standBy
+  );
+  const [validationMessage, setValidationMessage] = useControlled(
+    statusMessage,
+    ""
+  );
+
+  const [tagInput, setTagInput] = useState("");
+  const [tagCursorPos, setTagCursorPos] = useState(value.length);
+  const [stateValid, setStateValid] = useState(true);
+
+  const inputRef = useRef<any>();
+  const containerRef = useRef<any>();
+  const skipReset = useRef(false);
+  const blurTimeout = useRef<any>();
+  const materialInputRef = useRef<any>(null);
+
+  const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
+  const hasCounter = maxTagsQuantity != null && !hideCounter;
+
+  // suggestions related state
+  const [suggestionValues, setSuggestionValues] = useState(null);
+
+  const isStateInvalid = useMemo(() => {
+    return hasCounter && value.length > maxTagsQuantity;
+  }, [hasCounter, maxTagsQuantity, value.length]);
+
+  const canShowSuggestions = suggestionListCallback != null;
+  const hasSuggestions = !!suggestionValues;
+
+  const errorMessages = useMemo(
+    () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+    [
+      validationMessages?.error,
+      validationMessages?.requiredError,
+      validationMessages?.minCharError,
+      validationMessages?.maxCharError,
+    ]
+  );
+
+  const performValidation = useCallback(
+    (currValue) => {
+      if (
+        maxTagsQuantity !== null &&
+        maxTagsQuantity !== undefined &&
+        currValue.length > maxTagsQuantity
+      ) {
+        setValidationState(validationStates.invalid);
+        setValidationMessage(errorMessages.maxCharError);
+        setStateValid(false);
+      } else {
+        setValidationState(validationStates.valid);
+        setValidationMessage("");
+        setStateValid(true);
+      }
+    },
+    [
+      errorMessages.maxCharError,
+      maxTagsQuantity,
+      setValidationMessage,
+      setValidationState,
+    ]
+  );
+
+  /**
+   * Deletes a Tag from the array of tags and sets the new position for the tag cursor.
+   * Also executes the user provided onDelete and onChange events.
+   *
+   * @param {number}  tagPos - the position at which to remove the tag
+   * @param {Event}   event  - the event associated with the delete
+   * @param {boolean} end    - whether or not to set the cursor at the end of the array
+   */
+  const deleteTag = useCallback(
+    (tagPos, event, end) => {
+      const newTagsArr = [
+        ...value.slice(0, tagPos),
+        ...value.slice(tagPos + 1),
+      ];
+      setValue(newTagsArr);
+      setTagCursorPos(
+        end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0
+      );
+      inputRef.current?.focus();
+      performValidation(newTagsArr);
+      onDelete?.(event, value[tagPos], tagPos);
+      onChange?.(event, newTagsArr);
+      skipReset.current = true;
+    },
+    [onChange, onDelete, performValidation, setValue, tagCursorPos, value]
+  );
+
+  /**
+   * Adds a Tag to the array of tags.
+   * Also executes the user provided onAdd and onDelete events.
+   *
+   * @param {Event}   event  - whatever event triggered adding a tag
+   * @param {string}  tag    - the string for the tag
+   */
+  const addTag = useCallback(
+    (event, tag) => {
+      event.preventDefault();
+      if (tag !== "") {
+        const newTag = { label: tag, type: "semantic" };
+        const newTagsArr = [...value, newTag];
+        setValue(newTagsArr);
+        performValidation(newTagsArr);
+        onAdd?.(event, newTag, newTagsArr.length - 1);
+        onChange?.(event, newTagsArr);
+      }
+    },
+    [onAdd, onChange, performValidation, setValue, value]
+  );
+
+  const canShowError =
+    (status !== undefined &&
+      status === "invalid" &&
+      statusMessage !== undefined) ||
+    !stateValid;
+
+  useEffect(() => {
+    if (!multiline) {
+      const element = containerRef?.current?.children[tagCursorPos];
+      // this setTimeout is a workaround for Firefox not properly dealing
+      // with setting the scrollLeft value.
+      setTimeout(() => {
+        const container = containerRef.current;
+        if (isNil(container)) return;
+        container.scrollLeft = element
+          ? element.offsetLeft -
+            container.getBoundingClientRect().width / 2 +
+            element.getBoundingClientRect().width / 2
+          : 0;
+      }, 50);
+
+      element?.focus();
+    }
+  }, [multiline, tagCursorPos]);
+
+  useEffect(() => {
+    if (!skipReset.current) {
+      setTagInput("");
+      setTagCursorPos(value.length);
+    }
+    skipReset.current = false;
+  }, [value]);
+
+  const isMounted = useIsMounted();
+
+  /**
+   * Looks for the node that represent the input inside the material tree and focus it.
+   */
+  const focusInput = () => {
+    materialInputRef.current.focus();
+  };
+
+  const getSuggestions = useCallback(
+    (li) => {
+      // TODO Replace with ref
+      const listEl = document.getElementById(
+        setId(elementId, "suggestions-list") || ""
+      );
+      return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
+    },
+    [elementId]
+  );
+
+  /**
+   * Clears the suggestion array.
+   */
+  const suggestionClearHandler = useCallback(() => {
+    if (isMounted.current) {
+      setSuggestionValues(null);
+    }
+  }, [isMounted]);
+
+  /**
+   * Fills of the suggestion array.
+   */
+  const suggestionHandler = useCallback(
+    (val) => {
+      const suggestionsArray = suggestionListCallback?.(val);
+      if (suggestionsArray?.[0]?.label) {
+        setSuggestionValues(suggestionsArray);
+      } else {
+        suggestionClearHandler();
+      }
+    },
+    [suggestionClearHandler, suggestionListCallback]
+  );
+
+  /**
+   * Executes the user callback adds the selection to the state and clears the suggestions.
+   */
+  const suggestionSelectedHandler = (event, item) => {
+    addTag(event, item.value || item.label);
+
+    // set the input value (only when value is uncontrolled)
+    setTagInput(item.value || item.label);
+
+    focusInput();
+    suggestionClearHandler();
+  };
+
+  /**
+   * Handler for the `onKeyDown` event on the suggestions component
+   */
+  const onSuggestionKeyDown = (event) => {
+    if (isKeypress(event, keyboardCodes.Esc)) {
+      suggestionClearHandler();
+      focusInput();
+    } else if (isKeypress(event, keyboardCodes.Tab)) {
+      suggestionClearHandler();
+    }
+  };
+
+  /**
+   * Handler for the `onChange` event on the tag input
+   */
+  const onChangeHandler = useCallback(
+    (event, input) => {
+      setTagInput(input);
+
+      if (canShowSuggestions) {
+        // an edge case might be a controlled input whose onChange callback
+        // doesn't change the value (or sets another): the suggestionListCallback
+        // callback will still receive the original rejected value.
+        // a refactor is needed so the suggestionListCallback might be called only
+        // when the input is uncontrolled, providing a way to externally control
+        // the suggestion values.
+        suggestionHandler(input);
+      }
+    },
+    [canShowSuggestions, suggestionHandler]
+  );
+
+  /**
+   * Handler for the `onKeyDown` event on the form element
+   */
+  const onInputKeyDownHandler = useCallback(
+    (event) => {
+      if (!canShowSuggestions && commitTagOn.includes(event.code)) {
+        addTag(event, tagInput);
+      }
+    },
+    [addTag, canShowSuggestions, commitTagOn, tagInput]
+  );
+
+  /**
+   * Handler for the `onKeyDown` event on the list container.
+   */
+  const onKeyDownHandler = useCallback(
+    (event) => {
+      if (tagInput === "") {
+        switch (event.code) {
+          case "ArrowLeft":
+            setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
+            break;
+          case "ArrowRight":
+            setTagCursorPos(
+              tagCursorPos < value.length ? tagCursorPos + 1 : value.length
+            );
+            break;
+          case "Backspace":
+            if (isTagSelected) {
+              deleteTag(tagCursorPos, event, false);
+            } else {
+              setTagCursorPos(value.length - 1);
+            }
+            break;
+          case "Delete":
+            if (isTagSelected) {
+              deleteTag(tagCursorPos, event, false);
+            }
+            break;
+          default:
+            break;
+        }
+      } else {
+        switch (event.code) {
+          case "ArrowDown":
+            getSuggestions(0)?.focus();
+            break;
+          default:
+            break;
+        }
+      }
+    },
+    [
+      deleteTag,
+      getSuggestions,
+      isTagSelected,
+      tagCursorPos,
+      tagInput,
+      value.length,
+    ]
+  );
+
+  /**
+   * Handler for the `onDelete` event on the tag component
+   */
+  const onDeleteTagHandler = useCallback(
+    (event, i) => {
+      deleteTag(i, event, true);
+      setValidationState(validationStates.standBy);
+    },
+    [deleteTag, setValidationState]
+  );
+
+  /**
+   * Handler for the `onClick` event on the list container
+   */
+  const onContainerClickHandler = useCallback(() => {
+    inputRef.current?.focus();
+    clearTimeout(blurTimeout.current);
+    setTagCursorPos(value.length);
+  }, [value.length]);
+
+  const onBlurHandler = (evt) => {
+    blurTimeout.current = setTimeout(() => {
+      if (commitOnBlur) {
+        addTag(evt, tagInput);
+      }
+      onBlur?.(evt, tagInput);
+    }, 250);
+  };
+
+  const onFocusHandler = (evt) => {
+    clearTimeout(blurTimeout.current);
+    onFocus?.(evt, tagInput);
+  };
+
+  return (
+    <StyledFormElement
+      id={id}
+      name={name}
+      disabled={disabled}
+      readOnly={readOnly}
+      status={validationState}
+      required={required}
+      onBlur={onBlurHandler}
+      onFocus={onFocusHandler}
+      className={clsx(
+        "root",
+        classes?.root,
+        className,
+        disabled && classes?.disabled
+      )}
+    >
+      {(hasLabel || hasDescription) && (
+        <StyledLabelContainer className={classes?.labelContainer}>
+          {hasLabel && (
+            <StyledLabel
+              className={classes?.label}
+              id={setId(id, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={textAreaLabel}
+            />
+          )}
+
+          {hasDescription && (
+            <StyledDescription
+              className={classes?.description}
+              id={setId(elementId, "description")}
+            >
+              {description}
+            </StyledDescription>
+          )}
+        </StyledLabelContainer>
+      )}
+
+      {hasCounter && (
+        <StyledCharCounter
+          id={setId(elementId, "charCounter")}
+          className={classes?.characterCounter}
+          separator={middleCountLabel}
+          currentCharQuantity={value.length}
+          maxCharQuantity={maxTagsQuantity}
+          {...countCharProps}
+        />
+      )}
+
+      <StyledTagsList
+        className={clsx(
+          "tagsList",
+          classes?.tagsList,
+          canShowError && classes?.error,
+          resizable && multiline && classes?.resizable,
+          isStateInvalid && classes?.invalid,
+          !multiline && classes?.singleLine
+        )}
+        $disabled={disabled}
+        $singleLine={!multiline}
+        $error={canShowError}
+        $resizable={resizable && multiline}
+        $invalid={isStateInvalid}
+        $readOnly={readOnly}
+        onKeyDown={onKeyDownHandler}
+        onClick={onContainerClickHandler}
+        ref={containerRef}
+      >
+        {value &&
+          value.map((t, i) => {
+            const tag =
+              typeof t === "string"
+                ? {
+                    label: t,
+                    type: "semantic",
+                  }
+                : t;
+            const { label, type, ...otherProps } = tag;
+            return (
+              <StyledListItem
+                key={`${tag.label}-${i}`}
+                tabIndex={-1}
+                className={clsx(!multiline && classes?.singleLine)}
+                classes={{
+                  gutters: classes?.listItemGutters,
+                  root: classes?.listItemRoot,
+                }}
+                id={`tag-${i}`}
+                $singleLine={!multiline}
+              >
+                <StyledTag
+                  label={label}
+                  className={clsx(i === tagCursorPos && classes?.tagSelected)}
+                  classes={{
+                    chipRoot: classes?.chipRoot,
+                  }}
+                  type={type}
+                  {...(!(readOnly || disabled || type === "categorical") && {
+                    onDelete: (event) => onDeleteTagHandler(event, i),
+                  })}
+                  deleteButtonProps={{
+                    tabIndex: -1,
+                  }}
+                  $selected={i === tagCursorPos}
+                  {...otherProps}
+                />
+              </StyledListItem>
+            );
+          })}
+        {!(disabled || readOnly) && (
+          <StyledInputListItem
+            className={clsx(
+              !multiline && classes?.singleLine,
+              value.length === 0 ? "empty" : ""
+            )}
+            classes={{
+              root: classes?.tagInputContainerRoot,
+              gutters: classes?.listItemGutters,
+            }}
+            id={`tag-${value.length}`}
+            $singleLine={!multiline}
+          >
+            <StyledInput
+              value={tagInput}
+              disableClear
+              onChange={onChangeHandler}
+              onKeyDown={onInputKeyDownHandler}
+              placeholder={value.length === 0 ? placeholder : ""}
+              autoFocus={autoFocus}
+              className={clsx(!multiline && classes?.singleLine)}
+              classes={{
+                root: classes?.tagInputRoot,
+                input: classes?.input,
+                inputBorderContainer: classes?.tagInputBorderContainer,
+                inputRootFocused: classes?.tagInputRootFocused,
+              }}
+              disabled={disabled}
+              readOnly={readOnly || isTagSelected}
+              inputProps={{
+                ref: materialInputRef,
+                "aria-label": ariaLabel,
+                "aria-labelledby": ariaLabelledBy,
+                "aria-describedby":
+                  ariaDescribedBy != null
+                    ? ariaDescribedBy
+                    : description && setId(elementId, "description"),
+
+                ...inputProps,
+              }}
+              inputRef={inputRef}
+              $singleLine={!multiline}
+              $isTagSelected={isTagSelected}
+              {...others}
+            />
+          </StyledInputListItem>
+        )}
+      </StyledTagsList>
+      {canShowSuggestions && (
+        <>
+          {hasSuggestions && (
+            <div role="presentation" className={classes?.inputExtension} />
+          )}
+          <StyledSuggestions
+            id={setId(elementId, "suggestions")}
+            classes={{
+              root: classes?.suggestionsContainer,
+              list: classes?.suggestionList,
+            }}
+            expanded={hasSuggestions}
+            anchorEl={containerRef?.current?.parentElement}
+            onClose={suggestionClearHandler}
+            onKeyDown={onSuggestionKeyDown}
+            onSuggestionSelected={suggestionSelectedHandler}
+            suggestionValues={suggestionValues}
+          />
+        </>
+      )}
+      {canShowError && (
+        <StyledError
+          id={setId(elementId, "error")}
+          disableBorder
+          className={classes?.error}
+        >
+          {validationMessage}
+        </StyledError>
+      )}
+    </StyledFormElement>
+  );
+};

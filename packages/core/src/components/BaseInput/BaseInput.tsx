@@ -153,9 +153,6 @@ export const HvBaseInput = ({
         disabled={formElementProps.disabled}
         onChange={onChangeHandler}
         className={clsx(
-          // "input",
-          // multiline && "inputRootMultiline",
-          // disabled && "inputRootDisabled",
           localInvalid && "inputRootInvalid",
           readOnly && "inputRootReadOnly"
         )}
