@@ -3,16 +3,16 @@
 exports[`Avatar > letter avatar > should render the avatar as text 1`] = `
 <div>
   <div
-    class="css-1a4hhck-StyledContainer erijylh4"
+    class="HvAvatar-container css-1a4hhck-StyledContainer erijylh4"
   >
     <div
-      class=" css-pfc2yb-StyledStatus erijylh2"
+      class="HvAvatar-status css-pfc2yb-StyledStatus erijylh2"
     >
       <div
-        class="css-y4cyfh-StyledBadge erijylh0"
+        class="HvAvatar-badge css-y4cyfh-StyledBadge erijylh0"
       />
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault  erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
       >
         AB
       </div>
@@ -24,16 +24,16 @@ exports[`Avatar > letter avatar > should render the avatar as text 1`] = `
 exports[`Avatar > should render correctly 1`] = `
 <div>
   <div
-    class="css-1a4hhck-StyledContainer erijylh4"
+    class="HvAvatar-container css-1a4hhck-StyledContainer erijylh4"
   >
     <div
-      class=" css-pfc2yb-StyledStatus erijylh2"
+      class="HvAvatar-status css-pfc2yb-StyledStatus erijylh2"
     >
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault  erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
       >
         <div
-          class="css-du18qm"
+          class="HvAvatar-fallback css-du18qm"
           name="User"
         >
           <svg

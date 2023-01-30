@@ -3,7 +3,7 @@
 exports[`Panel > should render correctly 1`] = `
 <div>
   <div
-    class=" css-r49k44-StyledDiv e1sxb3mk0"
+    class="HvPanel-root css-r49k44-StyledDiv e1sxb3mk0"
   >
     <p
       class="css-1yeqqqs"

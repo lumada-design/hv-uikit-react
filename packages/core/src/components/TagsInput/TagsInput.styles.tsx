@@ -10,10 +10,11 @@ import {
   HvListItem,
   HvSuggestions,
   HvWarningText,
+  baseInputClasses,
+  listItemClasses,
 } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
-import { baseInputClasses, listItemClasses } from "components";
 import { tagsInputClasses } from ".";
 
 export const StyledFormElement = styled(HvFormElement)({
@@ -38,7 +39,9 @@ export const StyledDescription = styled(HvInfoMessage)({
   float: "left",
 });
 
-export const StyledCharCounter = styled(HvCharCounter)(() => ({
+export const StyledCharCounter = styled((props) => (
+  <HvCharCounter {...props} />
+))(() => ({
   display: "block",
   float: "right",
   textAlign: "right",

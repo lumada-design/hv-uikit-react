@@ -3,10 +3,10 @@
 exports[`WarningText > should render correctly 1`] = `
 <div>
   <div
-    class=" css-1urz3al-StyledRoot e1ll5nqb2"
+    class="HvWarningText-root HvWarningText-topBorder css-1urz3al-StyledRoot e1ll5nqb2"
   >
     <div
-      class="css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+      class="HvWarningText-defaultIcon css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
       name="Fail"
     >
       <svg
@@ -25,7 +25,7 @@ exports[`WarningText > should render correctly 1`] = `
     </div>
     <p
       aria-relevant="additions text"
-      class=" e1ll5nqb1 css-1dvosc9-StyledTypography"
+      class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-1dvosc9-StyledTypography"
       role="status"
       variant="body"
     />

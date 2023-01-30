@@ -3,11 +3,11 @@
 exports[`Adornment > should render correctly 1`] = `
 <div>
   <div
-    class=" css-16q1xu7-StyledRoot e1g8g9qg2"
+    class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-16q1xu7-StyledRoot e1g8g9qg2"
     role="presentation"
   >
     <div
-      class="css-1431vi8-StyledIcon e1g8g9qg1"
+      class="HvAdornment-icon css-1431vi8-StyledIcon e1g8g9qg1"
     >
       <div
         class="css-du18qm"
