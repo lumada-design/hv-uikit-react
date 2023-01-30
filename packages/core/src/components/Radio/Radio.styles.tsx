@@ -65,7 +65,7 @@ export const StyledHvLabel = styled(
 )(({ $disabled }: { $disabled: boolean }) => ({
   overflow: theme.radio.labelOverflow,
   textOverflow: theme.radio.labelTextOverflow,
-
+  verticalAlign: theme.radio.labelVerticalAlign,
   paddingRight: theme.radio.labelPaddingRight,
   fontWeight: theme.radio.labelFontWeight,
   cursor: "pointer",

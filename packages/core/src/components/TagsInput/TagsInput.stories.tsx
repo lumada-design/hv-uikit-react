@@ -7,6 +7,7 @@ import {
   HvTagsInputProps,
   HvTypography,
   HvTagProps,
+  HvFormStatus,
 } from "components";
 import { isEmpty } from "lodash";
 import { useState } from "react";
@@ -163,7 +164,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
   },
   render: () => {
     const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
-    const [status, setStatus] = useState("valid");
+    const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
     const isInvalidTag = (tag) => tag?.includes("-");
@@ -189,7 +190,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
               setCurrValueStr([...currValueStr, value]);
             }
           }}
-          onDelete={(event, value) => {
+          onDelete={(_, value) => {
             const newArr = currValueStr.filter((t) => t !== value);
             setCurrValueStr(newArr);
           }}

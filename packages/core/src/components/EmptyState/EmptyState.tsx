@@ -53,7 +53,12 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
         breakpoints={muiTheme.breakpoints}
         messageOnly={!!(message && !(title || action))}
       >
-        <StyledIconContainer className={classes?.iconContainer}>
+        <StyledIconContainer
+          className={clsx(
+            emptyStateClasses.iconContainer,
+            classes?.iconContainer
+          )}
+        >
           {icon}
         </StyledIconContainer>
         <StyledTextContainer

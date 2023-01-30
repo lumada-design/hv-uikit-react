@@ -164,7 +164,7 @@ const ds3Theme = makeTheme((theme) => ({
 
       labelOverflow: "hidden",
       labelTextOverflow: "ellipsis",
-
+      labelVerticalAlign: "middle",
       labelPaddingRight: theme.space.xs,
       labelFontWeight: theme.fontWeights.normal,
       labelHeight: "32px",

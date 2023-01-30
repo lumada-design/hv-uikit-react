@@ -50,6 +50,7 @@ import {
 import { useControlled, useIsMounted, useLabels, useUniqueId } from "hooks";
 import { HvInputLabels, HvValidationMessages } from "types/forms";
 import { inputClasses, HvInputClasses } from ".";
+import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
 export type HvInputProps = HvBaseProps<
   HTMLElement,
@@ -122,7 +123,7 @@ export type HvInputProps = HvBaseProps<
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
   /** Attributes applied to the input element. */
-  inputProps?: object;
+  inputProps?: MuiInputBaseComponentProps;
   /** Allows passing a ref to the underlying input */
   inputRef?: any;
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
