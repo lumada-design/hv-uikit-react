@@ -36,7 +36,9 @@ export const StyledDescription = styled(HvInfoMessage)({
   float: "left",
 });
 
-export const StyledCharCounter = styled(HvCharCounter)({
+export const StyledCharCounter = styled((props) => (
+  <HvCharCounter {...props} />
+))({
   display: "block",
   float: "right",
   textAlign: "right",
@@ -161,7 +163,7 @@ export const StyledListItem = styled(HvListItem)(
   })
 );
 
-export const StyledTag = styled(HvTag)(
+export const StyledTag = styled((props) => <HvTag {...props} />)(
   ({ $selected }: { $selected: boolean }) => ({
     "& .chipRoot": {
       maxWidth: "none",
