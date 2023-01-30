@@ -13,20 +13,21 @@ export const StyledFormElement = styled(
 });
 
 export const StyledLabel = styled(HvLabel)({
-  marginBottom: theme.switch.labelMarginBottom,
+  marginBottom: theme.space.xs,
 });
 
 export const StyledSwitchContainer = styled(
   "div",
   transientOptions
 )(({ $invalid }: { $invalid: boolean }) => ({
-  height: theme.switch.containerHeight,
+  height: "32px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  borderBottom: theme.switch.containerBorderBottom,
+  borderBottom: "1px solid transparent",
 
   ...($invalid && {
-    borderBottom: theme.switch.containerBorderBottom,
+    paddingBottom: theme.switch.invalidPaddingBottom,
+    borderBottom: `1px solid ${theme.colors.sema4}`,
   }),
 }));

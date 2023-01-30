@@ -168,10 +168,7 @@ const componentsSpec = {
     readOnlyBorderColor: "string",
   },
   switch: {
-    labelMarginBottom: "string",
-    containerHeight: "string",
-    containerBorderBottom: "string",
-    invalidContainerBorderBottom: "string",
+    invalidPaddingBottom: "string",
   },
 };
 
