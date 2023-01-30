@@ -167,6 +167,9 @@ const componentsSpec = {
     hoverColor: "string",
     readOnlyBorderColor: "string",
   },
+  switch: {
+    invalidPaddingBottom: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

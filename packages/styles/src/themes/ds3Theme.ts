@@ -178,6 +178,9 @@ const ds3Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce1,
       readOnlyBorderColor: "transparent",
     },
+    switch: {
+      invalidPaddingBottom: "0px",
+    },
   },
 }));
 

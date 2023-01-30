@@ -193,6 +193,9 @@ const ds5Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce2,
       readOnlyBorderColor: theme.colors.atmo5,
     },
+    switch: {
+      invalidPaddingBottom: "1px",
+    },
   },
 }));
 
