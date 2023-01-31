@@ -53,3 +53,4 @@ export * from "./Switch";
 export * from "./Radio";
 export * from "./TextArea";
 export * from "./TagsInput";
+export * from "./CheckBoxGroup";

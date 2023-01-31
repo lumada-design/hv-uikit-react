@@ -1,0 +1,176 @@
+// Vitest Snapshot v1
+
+exports[`CheckBoxGroup > general > should render correctly 1`] = `
+<div>
+  <div
+    class="HvCheckBoxGroup-root css-whistd-StyledFormElement e1616oom2 HvFormElement-root"
+  >
+    <label
+      class="HvCheckBoxGroup-label e1616oom1 HvLabel-root e1injmq50 css-1wvnv6c-StyledTypography-StyledLabel"
+      id="hvcheckboxgroup9-label"
+      variant="label"
+    >
+      Favorite Pet
+    </label>
+    <div
+      aria-labelledby="hvcheckboxgroup9-label"
+      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical css-c59uva-StyledGroupContainer e1616oom0"
+      role="group"
+    >
+      <div
+        class="HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
+      >
+        <div
+          class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
+        >
+          <span
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+          >
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox11-input"
+              type="checkbox"
+              value="dogs"
+            />
+            <div
+              class="css-du18qm"
+              font-size="medium"
+              name="Checkbox"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="var(--colors-atmo1)"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <label
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            for="hvcheckbox11-input"
+            id="hvcheckbox11-label"
+            variant="label"
+          >
+            Dogs
+          </label>
+        </div>
+      </div>
+      <div
+        class="HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
+      >
+        <div
+          class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
+        >
+          <span
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+          >
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox13-input"
+              type="checkbox"
+              value="cats"
+            />
+            <div
+              class="css-du18qm"
+              font-size="medium"
+              name="Checkbox"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="var(--colors-atmo1)"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <label
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            for="hvcheckbox13-input"
+            id="hvcheckbox13-label"
+            variant="label"
+          >
+            Cats
+          </label>
+        </div>
+      </div>
+      <div
+        class="HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
+      >
+        <div
+          class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
+        >
+          <span
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+          >
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox15-input"
+              type="checkbox"
+              value="dragons"
+            />
+            <div
+              class="css-du18qm"
+              font-size="medium"
+              name="Checkbox"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="var(--colors-atmo1)"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <label
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            for="hvcheckbox15-input"
+            id="hvcheckbox15-label"
+            variant="label"
+          >
+            Dragons
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

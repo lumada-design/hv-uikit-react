@@ -29,6 +29,8 @@ import { useControlled, useIsMounted, useUniqueId } from "hooks";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { HvTagProps } from "components";
 import { tagsInputClasses, HvTagsInputClasses } from ".";
+import { HvCharCounterProps, HvFormStatus } from "../Forms";
+import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
 export type HvTagsInputProps = HvBaseProps<
   HTMLElement,
@@ -73,24 +75,24 @@ export type HvTagsInputProps = HvBaseProps<
   /** The maximum allowed length of the characters, if this value is null no check will be performed. */
   maxTagsQuantity?: number;
   /** Attributes applied to the input element. */
-  inputProps?: object;
+  inputProps?: MuiInputBaseComponentProps;
   /** If `true` it should autofocus. */
   autoFocus?: boolean;
   /** If `true` the component is resizable. */
   resizable?: boolean;
   /** Props passed to the HvCharCount component. */
-  countCharProps?: object;
+  countCharProps?: Partial<HvCharCounterProps>;
   /** If `true` the component is in multiline mode. */
   multiline?: boolean;
   /** The status of the form element. */
-  status?: string;
+  status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
   /** An array of strings that represent the character used to input a tag. This character is the string representation of the event.code from the input event. */
   commitTagOn?: string[];
-  /** If `true` the tag will be commited when the blur event occurs. */
+  /** If `true` the tag will be committed when the blur event occurs. */
   commitOnBlur?: boolean;
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: Function;
@@ -366,7 +368,7 @@ export const HvTagsInput = ({
    * Handler for the `onChange` event on the tag input
    */
   const onChangeHandler = useCallback(
-    (event, input) => {
+    (_, input) => {
       setTagInput(input);
 
       if (canShowSuggestions) {
@@ -672,7 +674,8 @@ export const HvTagsInput = ({
                 "aria-describedby":
                   ariaDescribedBy != null
                     ? ariaDescribedBy
-                    : description && setId(elementId, "description"),
+                    : (description && setId(elementId, "description")) ||
+                      undefined,
 
                 ...inputProps,
               }}
