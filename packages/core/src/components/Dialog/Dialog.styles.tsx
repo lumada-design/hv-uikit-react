@@ -21,11 +21,11 @@ export const StyledPaper = styled(
   overflow: "auto",
   boxShadow: ["none", "0 2px 12px rgba(65,65,65,0.12)"],
   borderRadius: theme.dialog.borderRadius,
-  "&:not(.fullscreen)": {
+  ...(!$fullscreen && {
     maxHeight: `calc(100% - (2 * ${theme.dialog.margin}))`,
     display: "flex",
     flexDirection: "column",
-  },
+  }),
   "& svg *.color0": {
     fill: theme.colors.acce1,
   },

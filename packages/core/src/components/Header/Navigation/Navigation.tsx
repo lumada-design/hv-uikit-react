@@ -5,6 +5,7 @@ import { HvMenuBar } from "./MenuBar";
 import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";
 import { SelectionContext } from "./utils/SelectionContext";
+import { navigationClasses, HvNavigationClasses } from ".";
 
 export interface HvNavigationItemProp {
   id: string;
@@ -19,9 +20,7 @@ export type HvNavigationProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   data: HvNavigationItemProp[];
   selected?: string;
   onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
-  classes?: {
-    root?: string;
-  };
+  classes?: HvNavigationClasses;
 };
 
 export const HvNavigation = ({
@@ -40,7 +39,9 @@ export const HvNavigation = ({
   return (
     <SelectionContext.Provider value={selectionPath}>
       <FocusProvider>
-        <StyledNav className={clsx(className, classes.root)}>
+        <StyledNav
+          className={clsx(className, navigationClasses.root, classes?.root)}
+        >
           <HvMenuBar data={data} type="menubar" onClick={handleClick} />
         </StyledNav>
       </FocusProvider>

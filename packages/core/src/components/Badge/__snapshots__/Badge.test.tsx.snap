@@ -3,13 +3,13 @@
 exports[`Badge > should render a small dot when count>0 without showCount 1`] = `
 <div>
   <div
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-1cxkspw-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-1cxkspw-StyledBadge e14fbj1m0"
       />
     </div>
   </div>
@@ -20,13 +20,13 @@ exports[`Badge > should render correctly with custom label 1`] = `
 <div>
   <div
     aria-label="New!"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-gc67ei-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-gc67ei-StyledBadge e14fbj1m0"
       >
         New!
       </div>
@@ -39,13 +39,13 @@ exports[`Badge > should render correctly with custom one-character label 1`] = `
 <div>
   <div
     aria-label="!"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-ayqxmt-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-ayqxmt-StyledBadge e14fbj1m0"
       >
         !
       </div>
@@ -58,13 +58,13 @@ exports[`Badge > should render correctly with maxCount 1`] = `
 <div>
   <div
     aria-label="99+"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-1cidmec-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-1cidmec-StyledBadge e14fbj1m0"
       >
         99+
       </div>
@@ -77,13 +77,13 @@ exports[`Badge > should render correctly with showCount 1`] = `
 <div>
   <div
     aria-label="12"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-1cidmec-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-1cidmec-StyledBadge e14fbj1m0"
       >
         12
       </div>
@@ -96,13 +96,13 @@ exports[`Badge > should render correctly with showCount and one-digit count 1`] 
 <div>
   <div
     aria-label="9"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-soobn1-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-soobn1-StyledBadge e14fbj1m0"
       >
         9
       </div>
@@ -115,7 +115,7 @@ exports[`Badge > should render correctly with svg 1`] = `
 <div>
   <div
     aria-label="99+"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class="css-du18qm"
@@ -136,10 +136,10 @@ exports[`Badge > should render correctly with svg 1`] = `
       </svg>
     </div>
     <div
-      class="css-1ab0lly-StyledContainer e14fbj1m1"
+      class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-9hbhr0-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-9hbhr0-StyledBadge e14fbj1m0"
       >
         99+
       </div>
@@ -152,7 +152,7 @@ exports[`Badge > should render correctly with text 1`] = `
 <div>
   <div
     aria-label="99+"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <p
       class="css-1vooxue"
@@ -161,10 +161,10 @@ exports[`Badge > should render correctly with text 1`] = `
       hello
     </p>
     <div
-      class="css-1ab0lly-StyledContainer e14fbj1m1"
+      class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-1cidmec-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-1cidmec-StyledBadge e14fbj1m0"
       >
         99+
       </div>
@@ -177,13 +177,13 @@ exports[`Badge > should render custom label but not count when both are specifie
 <div>
   <div
     aria-label="New!"
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-gc67ei-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-gc67ei-StyledBadge e14fbj1m0"
       >
         New!
       </div>
@@ -195,13 +195,13 @@ exports[`Badge > should render custom label but not count when both are specifie
 exports[`Badge > should render nothing when count is 0 even with showCount 1`] = `
 <div>
   <div
-    class="css-1q5qni0-StyledRoot e14fbj1m2"
+    class="HvBadgeClasses-root css-1q5qni0-StyledRoot e14fbj1m2"
   >
     <div
       class=" css-27p99g-StyledContainer e14fbj1m1"
     >
       <div
-        class="css-3p36c7-StyledBadge e14fbj1m0"
+        class="HvBadgeClasses-badgePosition css-3p36c7-StyledBadge e14fbj1m0"
       />
     </div>
   </div>

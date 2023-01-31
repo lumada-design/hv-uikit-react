@@ -3,22 +3,22 @@
 exports[`ListContainer > should render all the items 1`] = `
 <div>
   <ul
-    class=""
+    class="HvListContainer-root"
   >
     <li
-      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
       role="option"
     >
       Item 1
     </li>
     <li
-      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
       role="option"
     >
       Item 2
     </li>
     <li
-      class="root gutters css-1aiu9eb-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
       role="option"
     >
       Item 3
@@ -30,7 +30,7 @@ exports[`ListContainer > should render all the items 1`] = `
 exports[`ListContainer > should render correctly 1`] = `
 <div>
   <ul
-    class=""
+    class="HvListContainer-root"
   />
 </div>
 `;

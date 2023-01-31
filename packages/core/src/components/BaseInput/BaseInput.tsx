@@ -16,6 +16,7 @@ import {
   buildAriaPropsFromContext,
 } from "../Forms/FormElement";
 import clsx from "clsx";
+import { baseInputClasses, HvBaseInputClasses } from ".";
 
 export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
   HvBaseProps<HTMLDivElement, { onChange }> & {
@@ -52,34 +53,7 @@ export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
     /** Allows passing a ref to the underlying input */
     inputRef?: RefObject<HTMLElement>;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      /** Styles applied to the root container of the input. */
-      root?: string;
-      /** Styles applied to the root container of the input when it is disabled. */
-      disabled?: string;
-      /** Styles applied to the root container of the input when it is invalid. */
-      invalid?: string;
-      /** Styles applied to the root container of the input when it is resizable. */
-      resizable?: string;
-      /** Styles applied to input root which is the input that encloses all the other elements. */
-      inputRoot?: string;
-      /** Styles applied to input root when it is focused. */
-      inputRootFocused?: string;
-      /** Styles applied to input html element when it is disabled. */
-      inputRootDisabled?: string;
-      /** Styles applied to input html element when it is multiline mode. */
-      inputRootMultiline?: string;
-      /** Styles applied to input html element. */
-      input?: string;
-      /** Styles applied to input html element when is disabled. */
-      inputDisabled?: string;
-      /** Styles applied to input html element when it is resizable. */
-      inputResizable?: string;
-      /** Styles applied to the container of the border element. */
-      inputBorderContainer?: string;
-      /** Styles applied to the container of the border element, when in read only mode. */
-      readOnly?: string;
-    };
+    classes?: HvBaseInputClasses;
   };
 
 /**
@@ -137,13 +111,16 @@ export const HvBaseInput = ({
   return (
     <StyledRoot
       className={clsx(
-        "root",
+        baseInputClasses.root,
         classes?.root,
         className,
-        formElementProps.disabled && classes?.disabled,
-        localInvalid && classes?.invalid,
-        multiline && resizable && classes?.resizable,
-        readOnly && classes?.readOnly
+        formElementProps.disabled &&
+          clsx(baseInputClasses.disabled, classes?.disabled),
+        localInvalid && clsx(baseInputClasses.invalid, classes?.invalid),
+        multiline &&
+          resizable &&
+          clsx(baseInputClasses.resizable, classes?.resizable),
+        readOnly && clsx(baseInputClasses.readOnly, classes?.readOnly)
       )}
       $disabled={formElementProps.disabled}
       $invalid={localInvalid}
@@ -161,22 +138,32 @@ export const HvBaseInput = ({
         disabled={formElementProps.disabled}
         onChange={onChangeHandler}
         className={clsx(
-          localInvalid && "inputRootInvalid",
-          readOnly && "inputRootReadOnly"
+          localInvalid && baseInputClasses.inputRootInvalid,
+          readOnly && baseInputClasses.inputRootReadOnly
         )}
         classes={{
-          root: clsx("inputRoot", classes?.inputRoot),
-          focused: clsx("inputRootFocused", classes?.inputRootFocused),
-          disabled: clsx("inputRootDisabled", classes?.inputRootDisabled),
-          multiline: clsx("inputRootMultiline", classes?.inputRootMultiline),
+          root: clsx(baseInputClasses.inputRoot, classes?.inputRoot),
+          focused: clsx(
+            baseInputClasses.inputRootFocused,
+            classes?.inputRootFocused
+          ),
+          disabled: clsx(
+            baseInputClasses.inputRootDisabled,
+            classes?.inputRootDisabled
+          ),
+          multiline: clsx(
+            baseInputClasses.inputRootMultiline,
+            classes?.inputRootMultiline
+          ),
           input: clsx(
-            "input",
+            baseInputClasses.input,
             classes?.input,
             !formElementProps.disabled &&
               resizable &&
-              clsx("inputResizable", classes?.inputResizable),
-            disabled && clsx("inputDisabled", classes?.inputDisabled),
-            readOnly && "readOnly" && classes?.readOnly
+              clsx(baseInputClasses.inputResizable, classes?.inputResizable),
+            disabled &&
+              clsx(baseInputClasses.inputDisabled, classes?.inputDisabled),
+            readOnly && baseInputClasses.inputReadOnly && classes?.readOnly
           ),
         }}
         inputProps={{
@@ -198,7 +185,7 @@ export const HvBaseInput = ({
         <StyledInputBorderContainer
           role="presentation"
           className={clsx(
-            "inputBorderContainer",
+            baseInputClasses.inputBorderContainer,
             classes?.inputBorderContainer
           )}
         />

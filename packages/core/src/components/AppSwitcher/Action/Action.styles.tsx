@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { HvListItem, HvTypography } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-icons";
+import { appSwitcherActionClasses } from ".";
 
 export const StyledListItem = styled(HvListItem)({
   width: "100%",
@@ -10,7 +11,7 @@ export const StyledListItem = styled(HvListItem)({
   marginRight: theme.spacing(2),
 });
 
-export const StyledTypography = styled(HvTypography)({
+export const StyledTypography = styled(HvTypography)(() => ({
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "center",
@@ -29,10 +30,11 @@ export const StyledTypography = styled(HvTypography)({
   color: "inherit",
   backgroundColor: "inherit",
 
-  ".disabled &": {
+  // ".disabled &": {
+  [`.${appSwitcherActionClasses.disabled} &`]: {
     cursor: "not-allowed",
   },
-});
+}));
 
 export const StyledImg = styled("img")({
   width: 32,

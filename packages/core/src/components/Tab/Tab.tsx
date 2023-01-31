@@ -2,35 +2,21 @@ import { TabProps as MuiTabProps } from "@mui/material";
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledTab } from "./Tab.styles";
+import { tabClasses, HvTabClasses } from ".";
 
 // Mui Tab props: https://mui.com/material-ui/api/tab/#props
 export type HvTabProps = Omit<MuiTabProps, "children"> &
   HvBaseProps<HTMLDivElement, { children }> & {
-    /**
-     * If `true`, the tab will be disabled.
-     */
+    /** If `true`, the tab will be disabled. */
     disabled?: boolean;
-    /**
-     * The icon element.
-     */
+    /** The icon element. */
     icon?: React.ReactElement | string;
-    /**
-     * The label element.
-     */
+    /** The label element. */
     label?: React.ReactNode;
-    /**
-     * The position of the icon relative to the label.
-     */
+    /** The position of the icon relative to the label. */
     iconPosition?: "bottom" | "end" | "start" | "top";
-    /**
-     * A Jss Object used to override or extend the component styles.
-     */
-    classes?: {
-      root?: string;
-      selected?: string;
-      disabled?: string;
-      focusVisible?: string;
-    };
+    /** A Jss Object used to override or extend the component styles. */
+    classes?: HvTabClasses;
   };
 
 export const HvTab = ({
@@ -42,15 +28,18 @@ export const HvTab = ({
   return (
     <StyledTab
       classes={{
-        root: classes?.root,
-        selected: classes?.selected,
-        disabled: classes?.disabled,
+        root: clsx(tabClasses.root, classes?.root),
+        selected: clsx(tabClasses.selected, classes?.selected),
+        disabled: clsx(tabClasses.disabled, classes?.disabled),
       }}
       disableRipple
       disableTouchRipple
       // Exposes the global class HvIsFocusVisible as a marker not to
       // be styled directly, but only as helper in specific css queries
-      focusVisibleClassName={clsx("HvIsFocusVisible", classes?.focusVisible)}
+      focusVisibleClassName={clsx(
+        "HvIsFocusVisible",
+        clsx(tabClasses.focusVisible, classes?.focusVisible)
+      )}
       disabled={disabled}
       iconPosition={iconPosition}
       {...others}

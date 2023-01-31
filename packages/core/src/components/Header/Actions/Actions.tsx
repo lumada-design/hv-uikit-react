@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledDiv } from "./Actions.styles";
+import { actionsClasses, HvActionsClasses } from ".";
 
 export type HvActionsProps = HvBaseProps & {
-  classes?: {
-    root?: string;
-  };
+  classes?: HvActionsClasses;
 };
 
 export const HvActions = ({
@@ -15,7 +14,10 @@ export const HvActions = ({
   ...others
 }: HvActionsProps) => {
   return (
-    <StyledDiv className={clsx(className, classes?.root)} {...others}>
+    <StyledDiv
+      className={clsx(className, actionsClasses.root, classes?.root)}
+      {...others}
+    >
       {children}
     </StyledDiv>
   );

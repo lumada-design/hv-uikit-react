@@ -7,6 +7,7 @@ import {
   StyledBar,
   StyledIcon,
 } from "./Card.styles";
+import { cardClasses, HvCardClasses } from ".";
 
 export type HvCardProps = HvBaseProps & {
   /** The renderable content inside the icon slot of the header. */
@@ -23,12 +24,7 @@ export type HvCardProps = HvBaseProps & {
    */
   statusColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    selectable?: string;
-    selected?: string;
-    semanticBar?: string;
-  };
+  classes?: HvCardClasses;
 };
 
 /**
@@ -53,10 +49,11 @@ export const HvCard = ({
       aria-selected={selectable ? selected : undefined}
       className={clsx(
         "HvIsCardGridElement",
+        cardClasses.root,
         classes?.root,
         className,
-        selectable && classes?.selectable,
-        selected && classes?.selected
+        selectable && clsx(cardClasses.selectable, classes?.selectable),
+        selected && clsx(cardClasses.selected, classes?.selected)
       )}
       $selectable={selectable}
       $selected={selected}
@@ -64,7 +61,10 @@ export const HvCard = ({
       {...others}
     >
       <StyledContainer>
-        <StyledBar className={classes?.semanticBar} barColor={statusColor} />
+        <StyledBar
+          className={clsx(cardClasses.semanticBar, classes?.semanticBar)}
+          barColor={statusColor}
+        />
         <StyledIcon>{icon}</StyledIcon>
       </StyledContainer>
       {children}

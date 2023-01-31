@@ -5,6 +5,7 @@ import { HvButton } from "components";
 import { outlineStyles } from "utils";
 import fade from "utils/hexToRgbA";
 import { transientOptions } from "utils/transientOptions";
+import { tagClasses } from ".";
 
 export const StyledChip = styled(
   Chip,
@@ -28,12 +29,12 @@ export const StyledChip = styled(
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
-      "& $focusVisible": {
+      "& .focusVisible": {
         backgroundColor: fade(theme.colors.base1, 0.3),
       },
       ...($type === "categorical" && {
         borderRadius: 8,
-        "&$clickable": {
+        [`&.${tagClasses.clickable}`]: {
           cursor: "pointer",
         },
         "&:hover": {

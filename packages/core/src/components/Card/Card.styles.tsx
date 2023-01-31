@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvBox } from "components";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
+import { cardClasses } from ".";
 
 const getColor = (c: string): string => theme.colors[c];
 
@@ -34,7 +35,7 @@ export const StyledRoot = styled(
     "&:focus": {
       outline: `1px solid ${theme.colors.acce1}`,
     },
-    "& .semanticBar": {
+    [`& .${cardClasses.semanticBar}`]: {
       height: 4,
     },
     "& .sema0": {

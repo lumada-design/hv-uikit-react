@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBox, HvTypography } from "components";
+import { HvBox, HvTypography, tooltipClasses } from "components";
 import { HvTooltip, TooltipProps } from "./Tooltip";
 
 const meta: Meta<typeof HvTooltip> = {
@@ -103,11 +103,10 @@ export const Multiline = () => {
   );
 
   const classes = {
-    values: "values",
-    title: "title",
-    separator: "separator",
-    valueWrapper: "valueWrapper",
-    classes: "values",
+    values: tooltipClasses.values,
+    title: tooltipClasses.title,
+    separator: tooltipClasses.separator,
+    valueWrapper: tooltipClasses.valueWrapper,
   };
 
   return (
@@ -148,11 +147,10 @@ export const MultilineWithoutHeader = () => {
   );
 
   const classes = {
-    values: "values",
-    title: "title",
-    separator: "separator",
-    valueWrapper: "valueWrapper",
-    classes: "values",
+    values: tooltipClasses.values,
+    title: tooltipClasses.title,
+    separator: tooltipClasses.separator,
+    valueWrapper: tooltipClasses.valueWrapper,
   };
 
   return (

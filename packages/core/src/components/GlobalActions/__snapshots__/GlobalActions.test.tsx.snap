@@ -3,10 +3,10 @@
 exports[`GlobalActions > should render correctly 1`] = `
 <div>
   <div
-    class=" css-18nncdf-StyledRoot e18blyh03"
+    class="HvGlobalActions-root css-18nncdf-StyledRoot e18blyh03"
   >
     <div
-      class="css-11ugc84-StyledWrapper e18blyh01"
+      class="HvGlobalActions-wrapper css-11ugc84-StyledWrapper e18blyh01"
     />
   </div>
 </div>

@@ -7,6 +7,8 @@ import { forwardRef, ReactElement, useContext } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
 import { ThemeContext } from "providers";
+import { tooltipClasses, HvTooltipClasses } from ".";
+import clsx from "clsx";
 
 export type TooltipPlacementType =
   | "bottom-end"
@@ -30,52 +32,7 @@ export type TooltipProps = MuiTooltipProps & {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes?: {
-    /**
-     * Styles applied to the tooltip root class.
-     */
-    root?: string;
-    /**
-     * Styles applied to the tooltip class when it is single
-     *  */
-    tooltip?: string;
-    /**
-     * Styles applied to the tooltip class when it is multi
-     *  */
-    tooltipMulti?: string;
-    /**
-     * Styles applied to the popper component
-     *  */
-    popper?: string;
-    /**
-     * Styles applied to the title.
-     */
-    title?: string;
-    /**
-     * Styles applied to the values container.
-     */
-    valuesContainer?: string;
-    /**
-     * Styles applied to the values.
-     */
-    values?: string;
-    /**
-     * Styles applied to the color.
-     */
-    color?: string;
-    /**
-     * Styles applied to the separator between color and title.
-     */
-    separatorColor?: string;
-    /**
-     * Styles applied to the separator.
-     */
-    separator?: string;
-    /**
-     * Styles applied to the values wrapper.
-     */
-    valueWrapper?: string;
-  };
+  classes?: HvTooltipClasses;
   /**
    * If true, the tooltip is shown.
    */
@@ -142,8 +99,10 @@ export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
       TransitionProps={TransitionProps}
       className={className}
       classes={{
-        tooltip: useSingle ? classes?.tooltip : classes?.tooltipMulti,
-        popper: classes?.popper,
+        tooltip: useSingle
+          ? clsx(tooltipClasses.tooltip, classes?.tooltip)
+          : clsx(tooltipClasses.tooltipMulti, classes?.tooltipMulti),
+        popper: clsx(tooltipClasses.popper, classes?.popper),
       }}
       title={title}
       PopperProps={{

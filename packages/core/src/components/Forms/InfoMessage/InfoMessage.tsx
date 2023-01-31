@@ -4,6 +4,7 @@ import { HvFormElementContext } from "../FormElement";
 import { useContext } from "react";
 import { setId } from "utils";
 import clsx from "clsx";
+import { HvInfoMessageClasses, infoMessageClasses } from ".";
 
 export type HvInfoMessageProps = HvBaseProps & {
   /** If `true` the label is disabled. */
@@ -11,11 +12,7 @@ export type HvInfoMessageProps = HvBaseProps & {
   /** If `true` the info message won't have margins. */
   disableGutter?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    infoDisabled?: string;
-    gutter?: string;
-  };
+  classes?: HvInfoMessageClasses;
 };
 
 /**
@@ -39,9 +36,11 @@ export const HvInfoMessage = ({
       id={localId}
       className={clsx(
         className,
+        infoMessageClasses.root,
         classes?.root,
-        localDisabled && classes?.infoDisabled,
-        !disableGutter && classes?.gutter
+        localDisabled &&
+          clsx(infoMessageClasses.infoDisabled, classes?.infoDisabled),
+        !disableGutter && clsx(infoMessageClasses.gutter, classes?.gutter)
       )}
       variant="body"
       as="label"

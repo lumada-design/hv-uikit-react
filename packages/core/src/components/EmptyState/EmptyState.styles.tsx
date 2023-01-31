@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "components";
+import { emptyStateClasses } from ".";
 
 export const StyledRoot = styled("div")({
   width: "100%",
@@ -29,7 +30,7 @@ export const StyledContainer = styled("div")(
       [breakpoints.only("xs")]: {
         flexDirection: "row",
       },
-      "& .textContainer": {
+      [`& .${emptyStateClasses.textContainer}`]: {
         marginLeft: 0,
       },
     }),

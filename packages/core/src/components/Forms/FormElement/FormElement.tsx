@@ -6,6 +6,7 @@ import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
+import { formElementClasses, HvFormElementClasses } from ".";
 
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
@@ -51,9 +52,7 @@ export type HvFormElementProps = HvBaseProps & {
   /** The callback fired when the value changes. */
   onChange?: Function;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-  };
+  classes?: HvFormElementClasses;
 };
 
 export const HvFormElement = ({
@@ -86,7 +85,11 @@ export const HvFormElement = ({
   const descriptors = useMemo(() => findDescriptors(children), [children]);
 
   return (
-    <div id={id} className={clsx(className, classes?.root)} {...others}>
+    <div
+      id={id}
+      className={clsx(className, formElementClasses.root, classes?.root)}
+      {...others}
+    >
       <HvFormElementContextProvider value={contextValue}>
         <HvFormElementValueContextProvider value={value}>
           <HvFormElementDescriptorsContextProvider value={descriptors}>

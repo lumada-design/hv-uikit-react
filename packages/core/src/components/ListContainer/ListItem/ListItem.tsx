@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import HvListContext from "../ListContext";
+import { HvListItemClasses, listItemClasses } from ".";
 
 export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   /**
@@ -49,19 +50,7 @@ export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   /** The value to be set on the 'li' element */
   value?: any;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    focus?: string;
-    startAdornment?: string;
-    endAdornment?: string;
-    gutters?: string;
-    condensed?: string;
-    interactive?: string;
-    selected?: string;
-    disabled?: string;
-    withStartAdornment?: string;
-    withEndAdornment?: string;
-  };
+  classes?: HvListItemClasses;
 };
 
 const applyClassNameAndStateToElement = (
@@ -144,7 +133,10 @@ export const HvListItem = ({
         selected,
         disabled,
         handleOnClick,
-        clsx("startAdornment", disabled && "disabled"),
+        clsx(
+          listItemClasses.startAdornment,
+          disabled && listItemClasses.disabled
+        ),
         classes?.startAdornment
       ),
     [classes?.startAdornment, disabled, handleOnClick, selected, startAdornment]
@@ -153,7 +145,10 @@ export const HvListItem = ({
     () =>
       applyClassNameToElement(
         endAdornment,
-        clsx("endAdornment", disabled && "disabled"),
+        clsx(
+          listItemClasses.endAdornment,
+          disabled && listItemClasses.disabled
+        ),
         classes?.endAdornment
       ),
     [classes?.endAdornment, endAdornment]
@@ -176,22 +171,17 @@ export const HvListItem = ({
       onKeyDown={() => {}}
       className={clsx(
         className,
-        "root",
+        listItemClasses.root,
         classes?.root,
-        !disableGutters && classes?.gutters,
-        !disableGutters && "gutters",
-        condensed && classes?.condensed,
-        condensed && "condensed",
-        interactive && classes?.interactive,
-        interactive && "interactive",
-        selected && classes?.selected,
-        selected && "selected",
-        disabled && classes?.disabled,
-        disabled && "disabled",
-        startAdornment != null && classes?.withStartAdornment,
-        startAdornment != null && "withStartAdornment",
-        endAdornment != null && classes?.withEndAdornment,
-        endAdornment != null && "withEndAdornment"
+        !disableGutters && clsx(listItemClasses.gutters, classes?.gutters),
+        condensed && clsx(listItemClasses.condensed, classes?.condensed),
+        interactive && clsx(listItemClasses.interactive, classes?.interactive),
+        selected && clsx(listItemClasses.selected, classes?.selected),
+        disabled && clsx(listItemClasses.disabled, classes?.disabled),
+        startAdornment != null &&
+          clsx(listItemClasses.withStartAdornment, classes?.withStartAdornment),
+        endAdornment != null &&
+          clsx(listItemClasses.withEndAdornment, classes?.withEndAdornment)
       )}
       $gutters={!disableGutters}
       $interactive={interactive}

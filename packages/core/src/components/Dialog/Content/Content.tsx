@@ -2,14 +2,13 @@ import { DialogContentProps as MuiDialogContentProps } from "@mui/material/Dialo
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledContent, StyledTypography } from "./Content.styles";
+import { dialogContentClasses, HvDialogContentClasses } from ".";
 
 export type HvContentProps = MuiDialogContentProps &
   HvBaseProps & {
     /** Content should be indented in relationship to the Dialog title. */
     indentContent?: boolean;
-    classes?: {
-      root?: string;
-    };
+    classes?: HvDialogContentClasses;
   };
 
 export const HvContent = ({
@@ -21,7 +20,7 @@ export const HvContent = ({
   return (
     <StyledTypography
       as={StyledContent}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, dialogContentClasses.root, classes?.root)}
       $indentContent={indentContent}
     >
       {children}

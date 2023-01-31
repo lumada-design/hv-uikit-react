@@ -1,6 +1,8 @@
 import { TabsProps as MuiTabsProps } from "@mui/material";
 import { HvBaseProps } from "../../types";
 import { StyledTabs } from "./Tabs.styles";
+import { tabsClasses, HvTabsClasses } from ".";
+import clsx from "clsx";
 
 // Mui Tabs props: https://mui.com/material-ui/api/tabs/#props
 export type HvTabsProps = MuiTabsProps &
@@ -16,12 +18,7 @@ export type HvTabsProps = MuiTabsProps &
     /**
      * A Jss Object used to override or extend the component styles.
      */
-    classes?: {
-      root?: string;
-      flexContainer?: string;
-      indicator?: string;
-      scroller?: string;
-    };
+    classes?: HvTabsClasses;
   };
 
 /**
@@ -32,10 +29,10 @@ export const HvTabs = ({ classes, ...others }: HvTabsProps) => {
   return (
     <StyledTabs
       classes={{
-        root: classes?.root,
-        flexContainer: classes?.flexContainer,
-        indicator: classes?.indicator,
-        scroller: classes?.scroller,
+        root: clsx(tabsClasses.root, classes?.root),
+        flexContainer: clsx(tabsClasses.flexContainer, classes?.flexContainer),
+        indicator: clsx(tabsClasses.indicator, classes?.indicator),
+        scroller: clsx(tabsClasses.scroller, classes?.scroller),
       }}
       TabIndicatorProps={{ children: <div /> }}
       {...others}

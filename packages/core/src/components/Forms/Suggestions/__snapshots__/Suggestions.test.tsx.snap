@@ -3,7 +3,7 @@
 exports[`Suggestions > should render correctly 1`] = `
 <div>
   <div
-    class=" css-1xgkixt-StyledRoot e9u5kns2"
+    class="HvSuggestions-root css-1xgkixt-StyledRoot e9u5kns2"
   />
 </div>
 `;

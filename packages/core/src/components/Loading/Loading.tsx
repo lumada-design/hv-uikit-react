@@ -7,7 +7,8 @@ import {
   StyledBarContainer,
   StyledLabel,
   StyledRoot,
-} from "./Loading.styles";
+} from "./Loading.Styles";
+import { loadingClasses, HvLoadingClasses } from ".";
 
 export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
   /** Indicates if the component should be render in a small size. */
@@ -18,15 +19,7 @@ export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
   hidden?: boolean;
   /** Color applied to the bars. */
   color?: string;
-  classes?: {
-    root?: string;
-    barContainer?: string;
-    loadingBar?: string;
-    label?: string;
-    overlay?: string;
-    blur?: string;
-    hidden?: string;
-  };
+  classes?: HvLoadingClasses;
 };
 
 /**
@@ -47,20 +40,39 @@ export const HvLoading = (props: HvLoadingProps) => {
   return (
     <StyledRoot
       hidden={!!hidden}
-      className={clsx(className, classes?.root, "hidden")}
+      className={clsx(
+        className,
+        loadingClasses.root,
+        classes?.root,
+        hidden && classes?.hidden,
+        hidden && loadingClasses.hidden
+      )}
       {...others}
     >
-      <StyledBarContainer>
+      <StyledBarContainer
+        className={clsx(loadingClasses.barContainer, classes?.barContainer)}
+      >
         {range(0, 3).map((e) => (
           <StyledBar
             key={e}
             style={inline}
-            className={clsx(classes?.loadingBar, variant)}
+            className={clsx(
+              loadingClasses.loadingBar,
+              classes?.loadingBar,
+              variant
+            )}
             variant={variant}
           ></StyledBar>
         ))}
       </StyledBarContainer>
-      {label && <StyledLabel variant="caption1">{label}</StyledLabel>}
+      {label && (
+        <StyledLabel
+          variant="caption1"
+          className={clsx(loadingClasses.label, classes?.label)}
+        >
+          {label}
+        </StyledLabel>
+      )}
     </StyledRoot>
   );
 };

@@ -3,6 +3,7 @@ import React, { cloneElement } from "react";
 import { HvButtonVariant } from "components";
 import { HvBaseProps } from "../../types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
+import { multiButtonClasses, HvMultiButtonClasses } from ".";
 
 export type HvMultiButtonProps = HvBaseProps & {
   /** If all the buttons are disabled. */
@@ -12,10 +13,7 @@ export type HvMultiButtonProps = HvBaseProps & {
   /** Category of button to use */
   variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    button?: string;
-  };
+  classes?: HvMultiButtonClasses;
 };
 
 export const HvMultiButton = ({
@@ -29,7 +27,7 @@ export const HvMultiButton = ({
 }: HvMultiButtonProps) => {
   return (
     <StyledRoot
-      className={clsx(className, classes?.root)}
+      className={clsx(className, multiButtonClasses.root, classes?.root)}
       vertical={vertical}
       {...others}
     >

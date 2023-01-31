@@ -3,11 +3,11 @@
 exports[`Selection List > Multi Selection List testing > Multi Selection Snapshot > Multi Selection List Container Snapshot 1`] = `
 <div>
   <div
-    class=" css-1gf6ci5-StyledFormElement e1kkfxni4"
+    class="HvSelectionList-root css-1gf6ci5-StyledFormElement e1kkfxni4 HvFormElement-root"
     id="main"
   >
     <label
-      class="e1kkfxni3 e1injmq50 css-n9teq7-StyledTypography-StyledLabel"
+      class="HvSelectionList-label e1kkfxni3 HvLabel-root e1injmq50 css-n9teq7-StyledTypography-StyledLabel"
       id="main-label"
       variant="label"
     >
@@ -16,13 +16,13 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
     <ul
       aria-labelledby="main-label"
       aria-multiselectable="true"
-      class=" css-1ijv1u-StyledListContainer e1kkfxni0"
+      class="HvSelectionList-listbox HvSelectionList-vertical css-1ijv1u-StyledListContainer e1kkfxni0 HvListContainer-root"
       id="main-listbox"
       role="listbox"
     >
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="1"
@@ -31,7 +31,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="true"
-        class="root gutters condensed interactive selected root selected focusDisabled css-1qaws6e-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled css-yzng7x-StyledListItem e180q0291"
         role="option"
         tabindex="0"
         value="2"
@@ -40,7 +40,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="3"
@@ -49,7 +49,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="4"
@@ -58,7 +58,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="5"
@@ -67,7 +67,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="6"
@@ -82,16 +82,16 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
 exports[`Selection List > Single Selection List testing > Selection List Snapshot testing > Selection List Container 1`] = `
 <div>
   <div
-    class=" css-1gf6ci5-StyledFormElement e1kkfxni4"
+    class="HvSelectionList-root css-1gf6ci5-StyledFormElement e1kkfxni4 HvFormElement-root"
   >
     <ul
-      class=" css-1ijv1u-StyledListContainer e1kkfxni0"
+      class="HvSelectionList-listbox HvSelectionList-vertical css-1ijv1u-StyledListContainer e1kkfxni0 HvListContainer-root"
       id=""
       role="listbox"
     >
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="1"
@@ -100,7 +100,7 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
       </li>
       <li
         aria-selected="true"
-        class="root gutters condensed interactive selected root selected focusDisabled css-1qaws6e-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled css-yzng7x-StyledListItem e180q0291"
         role="option"
         tabindex="0"
         value="2"
@@ -109,7 +109,7 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
       </li>
       <li
         aria-selected="false"
-        class="root gutters condensed interactive root focusDisabled css-7wuy46-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2o9drl-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="3"

@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
 import { HvBaseProps } from "../../types";
-
+import { emptyStateClasses, HvEmptyStateClasses } from ".";
 import {
   StyledContainer,
   StyledIconContainer,
@@ -21,16 +21,7 @@ export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** The action message to be shown. */
   action?: string | React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    container?: string;
-    containerMessageOnly?: string;
-    iconContainer?: string;
-    titleContainer?: string;
-    textContainer?: string;
-    messageContainer?: string;
-    actionContainer?: string;
-  };
+  classes?: HvEmptyStateClasses;
 };
 
 /**
@@ -54,19 +45,42 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
   const { action, icon, title, message, classes, className, ...others } = props;
 
   return (
-    <StyledRoot className={className} {...others}>
+    <StyledRoot
+      className={clsx(className, emptyStateClasses.root, classes?.root)}
+      {...others}
+    >
       <StyledContainer
         breakpoints={muiTheme.breakpoints}
         messageOnly={!!(message && !(title || action))}
       >
-        <StyledIconContainer>{icon}</StyledIconContainer>
+        <StyledIconContainer className={classes?.iconContainer}>
+          {icon}
+        </StyledIconContainer>
         <StyledTextContainer
           breakpoints={muiTheme.breakpoints}
-          className={clsx("textContainer", classes?.textContainer)}
+          className={clsx(
+            emptyStateClasses.textContainer,
+            classes?.textContainer
+          )}
         >
-          {renderNode(title, classes?.titleContainer, "title", "title4")}
-          {renderNode(message, classes?.messageContainer, "message", "body")}
-          {renderNode(action, classes?.actionContainer, "action", "body")}
+          {renderNode(
+            title,
+            clsx(emptyStateClasses.titleContainer, classes?.titleContainer),
+            "title",
+            "title4"
+          )}
+          {renderNode(
+            message,
+            clsx(emptyStateClasses.messageContainer, classes?.messageContainer),
+            "message",
+            "body"
+          )}
+          {renderNode(
+            action,
+            clsx(emptyStateClasses.actionContainer, classes?.actionContainer),
+            "action",
+            "body"
+          )}
         </StyledTextContainer>
       </StyledContainer>
     </StyledRoot>

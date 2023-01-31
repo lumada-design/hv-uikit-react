@@ -9,6 +9,7 @@ import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
 import { HvFocus } from "index";
 import { HvBreakpoints } from "types/theme";
+import { stackClasses, HvStackClasses } from ".";
 
 export type HvStackDirection = "column" | "row";
 export type HvStackBreakpoints = Record<HvBreakpoints, string>;
@@ -28,9 +29,7 @@ export type HvStackProps = HvBaseProps & {
   /** Sets whether or not there should be arrow navigation between the stack elements. */
   withNavigation?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-  };
+  classes?: HvStackClasses;
 };
 
 /**
@@ -100,7 +99,7 @@ export const HvStack = ({
   return (
     <StyledRoot
       ref={containerRef}
-      className={clsx(classes?.root)}
+      className={clsx(stackClasses.root, classes?.root)}
       $direction={processedDirection}
       $breakpoint={spacing}
       {...others}

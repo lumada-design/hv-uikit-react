@@ -5,6 +5,7 @@ import { HvBaseProps } from "../../../types";
 import { StyledRoot, StyledTypography, StyledIcon } from "./WarningText.styles";
 import { HvFormElementContext } from "../FormElement";
 import { setId } from "utils";
+import { warningTextClasses, HvWarningTextClasses } from ".";
 
 export type HvWarningTextProps = HvBaseProps & {
   /** Icon to be rendered alongside the warning text. */
@@ -22,15 +23,7 @@ export type HvWarningTextProps = HvBaseProps & {
   /** If `true` the text isn't shown. */
   hideText?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    defaultIcon?: string;
-    warningText?: string;
-    show?: string;
-    topGutter?: string;
-    hideText?: string;
-    topBorder?: string;
-  };
+  classes?: HvWarningTextClasses;
 };
 
 /**
@@ -60,16 +53,20 @@ export const HvWarningText = ({
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
   const localAdornment = adornment || (
-    <StyledIcon className={classes?.defaultIcon} semantic="sema4" />
+    <StyledIcon
+      className={clsx(warningTextClasses.defaultIcon, classes?.defaultIcon)}
+      semantic="sema4"
+    />
   );
 
   return (
     <StyledRoot
       className={clsx(
         className,
+        warningTextClasses.root,
         classes?.root,
-        showWarning && classes?.show,
-        !disableBorder && classes?.topBorder
+        showWarning && clsx(warningTextClasses.show, classes?.show),
+        !disableBorder && clsx(warningTextClasses.topBorder, classes?.topBorder)
       )}
       $show={showWarning}
       $topBorder={!disableBorder}
@@ -78,9 +75,11 @@ export const HvWarningText = ({
       <StyledTypography
         id={localId}
         className={clsx(
+          warningTextClasses.warningText,
           classes?.warningText,
-          !disableGutter && classes?.topGutter,
-          hideText && classes?.hideText
+          !disableGutter &&
+            clsx(warningTextClasses.topGutter, classes?.topGutter),
+          hideText && clsx(warningTextClasses.hideText, classes?.hideText)
         )}
         $topGutter={!disableGutter}
         $hideText={hideText}

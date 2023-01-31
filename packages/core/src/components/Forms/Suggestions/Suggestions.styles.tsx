@@ -5,12 +5,6 @@ import { HvSelectionList } from "components";
 
 export const StyledRoot = styled("div")({
   position: "relative",
-  // "& $list": {
-  //   backgroundColor: theme.colors.atmo1,
-  //   boxShadow: theme.shadows.md,
-  //   padding: theme.spacing(1),
-  //   width: "100%",
-  // },
 });
 
 export const StyledSelectionList = styled(HvSelectionList)({

@@ -3,7 +3,7 @@
 exports[`FormElement > should render correctly 1`] = `
 <div>
   <div
-    class=""
+    class="HvFormElement-root"
   />
 </div>
 `;

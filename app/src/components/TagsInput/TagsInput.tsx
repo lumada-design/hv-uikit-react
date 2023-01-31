@@ -1,6 +1,24 @@
 import { HvTagsInput } from "@hitachivantara/uikit-core";
+import { useState } from "react";
+import countryNamesArray from "./countries";
 
 export const TagsInput = () => {
+  const [currValueStr, setCurrValueStr] = useState([]);
+  const countries = countryNamesArray;
+
+  const suggestionHandler = (val) => {
+    if (typeof val !== "string" || val === "") return null;
+    const foundCountries = countries.filter((country) =>
+      country.toUpperCase().startsWith(val.toUpperCase())
+    );
+
+    if (foundCountries.length === 0) return null;
+
+    return foundCountries.map((country, idx) => ({
+      id: `c_${idx}`,
+      label: country,
+    }));
+  };
   return (
     <div
       style={{
@@ -40,6 +58,18 @@ export const TagsInput = () => {
         statusMessage="Oh no!"
       />
       <HvTagsInput placeholder="Insert text" multiline style={{ width: 200 }} />
+      <HvTagsInput
+        id="tags-list-12"
+        label="Suggestions"
+        description="A list of suggestions is presented when text is entered."
+        aria-label="Suggestions"
+        placeholder="Enter value"
+        onChange={(event, value) => {
+          setCurrValueStr(value);
+        }}
+        value={currValueStr}
+        suggestionListCallback={suggestionHandler}
+      />
     </div>
   );
 };

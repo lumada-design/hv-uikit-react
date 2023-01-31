@@ -28,6 +28,7 @@ import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import { useControlled, useIsMounted, useUniqueId } from "hooks";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { HvTagProps } from "components";
+import { tagsInputClasses, HvTagsInputClasses } from ".";
 
 export type HvTagsInputProps = HvBaseProps<
   HTMLElement,
@@ -94,54 +95,7 @@ export type HvTagsInputProps = HvBaseProps<
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: Function;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    /** Styles applied to the input element. */
-    input?: string;
-    /** Styles applied to the list item gutters. */
-    listItemGutters?: string;
-    /** Styles applied to the list item element. */
-    listItemRoot?: string;
-    /** Styles applied to the root container of the textarea. */
-    root?: string;
-    /** Styles applies to the tag root. */
-    chipRoot?: string;
-    /** Style applied to the root when resizable is `true`. */
-    disabled?: string;
-    /** Style applied to the root when resizable is `true`. */
-    resizable?: string;
-    /** Style applied to the root when invalid. */
-    invalid?: string;
-    /** Styles applied to text area container that holds the label, description and counter. */
-    labelContainer?: string;
-    /** Styles applied to the label element. */
-    label?: string;
-    /** Styles applied to the label element. */
-    description?: string;
-    /** Style applied on the character counter. */
-    characterCounter?: string;
-    /** Styles applied to the tags list container element. */
-    tagsList?: string;
-    /** Styles applied to the tag input container element. */
-    tagInputContainerRoot?: string;
-    /** Styles applied to the tag input element. */
-    tagInputRoot?: string;
-    /** Styles applied to a tag element when selected */
-    tagSelected?: string;
-    /** Styles applied to the input element border. */
-    tagInputBorderContainer?: string;
-    /** Styles applied to the input element when focused. */
-    tagInputRootFocused?: string;
-    /** Styles applied to the container when in single line mode. */
-    singleLine?: string;
-    /** Styles applied to the tags list when an error occurred. */
-    error?: string;
-    /** Styles applied to the input extension shown when the suggestions list is visible. */
-    inputExtension?: string;
-    /** Styles applied to the container of the suggestions list. */
-    suggestionsContainer?: string;
-    /** Styles applied to the suggestions list. */
-    suggestionList?: string;
-  };
+  classes?: HvTagsInputClasses;
 };
 
 /**
@@ -535,17 +489,22 @@ export const HvTagsInput = ({
       onBlur={onBlurHandler}
       onFocus={onFocusHandler}
       className={clsx(
-        "root",
+        tagsInputClasses.root,
         classes?.root,
         className,
-        disabled && classes?.disabled
+        disabled && clsx(tagsInputClasses.disabled, classes?.disabled)
       )}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer className={classes?.labelContainer}>
+        <StyledLabelContainer
+          className={clsx(
+            tagsInputClasses.labelContainer,
+            classes?.labelContainer
+          )}
+        >
           {hasLabel && (
             <StyledLabel
-              className={classes?.label}
+              className={clsx(tagsInputClasses.label, classes?.label)}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={textAreaLabel}
@@ -554,7 +513,10 @@ export const HvTagsInput = ({
 
           {hasDescription && (
             <StyledDescription
-              className={classes?.description}
+              className={clsx(
+                tagsInputClasses.description,
+                classes?.description
+              )}
               id={setId(elementId, "description")}
             >
               {description}
@@ -566,7 +528,10 @@ export const HvTagsInput = ({
       {hasCounter && (
         <StyledCharCounter
           id={setId(elementId, "charCounter")}
-          className={classes?.characterCounter}
+          className={clsx(
+            tagsInputClasses.characterCounter,
+            classes?.characterCounter
+          )}
           separator={middleCountLabel}
           currentCharQuantity={value.length}
           maxCharQuantity={maxTagsQuantity}
@@ -576,12 +541,14 @@ export const HvTagsInput = ({
 
       <StyledTagsList
         className={clsx(
-          "tagsList",
+          tagsInputClasses.tagsList,
           classes?.tagsList,
-          canShowError && classes?.error,
-          resizable && multiline && classes?.resizable,
-          isStateInvalid && classes?.invalid,
-          !multiline && classes?.singleLine
+          canShowError && clsx(tagsInputClasses.error, classes?.error),
+          resizable &&
+            multiline &&
+            clsx(tagsInputClasses.resizable, classes?.resizable),
+          isStateInvalid && clsx(tagsInputClasses.invalid, classes?.invalid),
+          !multiline && clsx(tagsInputClasses.singleLine, classes?.singleLine)
         )}
         $disabled={disabled}
         $singleLine={!multiline}
@@ -607,19 +574,34 @@ export const HvTagsInput = ({
               <StyledListItem
                 key={`${tag.label}-${i}`}
                 tabIndex={-1}
-                className={clsx(!multiline && classes?.singleLine)}
+                className={clsx(
+                  !multiline &&
+                    clsx(tagsInputClasses.singleLine, classes?.singleLine)
+                )}
                 classes={{
-                  gutters: classes?.listItemGutters,
-                  root: classes?.listItemRoot,
+                  gutters: clsx(
+                    tagsInputClasses.listItemGutters,
+                    classes?.listItemGutters
+                  ),
+                  root: clsx(
+                    tagsInputClasses.listItemRoot,
+                    classes?.listItemRoot
+                  ),
                 }}
                 id={`tag-${i}`}
                 $singleLine={!multiline}
               >
                 <StyledTag
                   label={label}
-                  className={clsx(i === tagCursorPos && classes?.tagSelected)}
+                  className={clsx(
+                    i === tagCursorPos &&
+                      clsx(tagsInputClasses.tagSelected, classes?.tagSelected)
+                  )}
                   classes={{
-                    chipRoot: classes?.chipRoot,
+                    chipRoot: clsx(
+                      tagsInputClasses.chipRoot,
+                      classes?.chipRoot
+                    ),
                   }}
                   type={type}
                   {...(!(readOnly || disabled || type === "categorical") && {
@@ -637,15 +619,23 @@ export const HvTagsInput = ({
         {!(disabled || readOnly) && (
           <StyledInputListItem
             className={clsx(
-              !multiline && classes?.singleLine,
-              value.length === 0 ? "empty" : ""
+              !multiline &&
+                clsx(tagsInputClasses.singleLine, classes?.singleLine),
+              value.length === 0 ? tagsInputClasses.tagInputRootEmpty : ""
             )}
             classes={{
-              root: classes?.tagInputContainerRoot,
-              gutters: classes?.listItemGutters,
+              root: clsx(
+                tagsInputClasses.tagInputContainerRoot,
+                classes?.tagInputContainerRoot
+              ),
+              gutters: clsx(
+                tagsInputClasses.listItemGutters,
+                classes?.listItemGutters
+              ),
             }}
             id={`tag-${value.length}`}
             $singleLine={!multiline}
+            $isTagSelected={!!isTagSelected}
           >
             <StyledInput
               value={tagInput}
@@ -654,12 +644,24 @@ export const HvTagsInput = ({
               onKeyDown={onInputKeyDownHandler}
               placeholder={value.length === 0 ? placeholder : ""}
               autoFocus={autoFocus}
-              className={clsx(!multiline && classes?.singleLine)}
+              className={clsx(
+                !multiline &&
+                  clsx(tagsInputClasses.singleLine, classes?.singleLine)
+              )}
               classes={{
-                root: classes?.tagInputRoot,
-                input: classes?.input,
-                inputBorderContainer: classes?.tagInputBorderContainer,
-                inputRootFocused: classes?.tagInputRootFocused,
+                root: clsx(
+                  tagsInputClasses.tagInputRoot,
+                  classes?.tagInputRoot
+                ),
+                input: clsx(tagsInputClasses.input, classes?.input),
+                inputBorderContainer: clsx(
+                  tagsInputClasses.tagInputBorderContainer,
+                  classes?.tagInputBorderContainer
+                ),
+                inputRootFocused: clsx(
+                  tagsInputClasses.tagInputRootFocused,
+                  classes?.tagInputRootFocused
+                ),
               }}
               disabled={disabled}
               readOnly={readOnly || isTagSelected}
@@ -676,7 +678,6 @@ export const HvTagsInput = ({
               }}
               inputRef={inputRef}
               $singleLine={!multiline}
-              $isTagSelected={isTagSelected}
               {...others}
             />
           </StyledInputListItem>
@@ -690,8 +691,14 @@ export const HvTagsInput = ({
           <StyledSuggestions
             id={setId(elementId, "suggestions")}
             classes={{
-              root: classes?.suggestionsContainer,
-              list: classes?.suggestionList,
+              root: clsx(
+                tagsInputClasses.suggestionsContainer,
+                classes?.suggestionsContainer
+              ),
+              list: clsx(
+                tagsInputClasses.suggestionList,
+                classes?.suggestionList
+              ),
             }}
             expanded={hasSuggestions}
             anchorEl={containerRef?.current?.parentElement}
@@ -706,7 +713,7 @@ export const HvTagsInput = ({
         <StyledError
           id={setId(elementId, "error")}
           disableBorder
-          className={classes?.error}
+          className={clsx(tagsInputClasses.error, classes?.error)}
         >
           {validationMessage}
         </StyledError>

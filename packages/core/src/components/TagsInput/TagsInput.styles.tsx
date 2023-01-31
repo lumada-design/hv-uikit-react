@@ -10,9 +10,12 @@ import {
   HvListItem,
   HvSuggestions,
   HvWarningText,
+  baseInputClasses,
+  listItemClasses,
 } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
+import { tagsInputClasses } from ".";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "inline-block",
@@ -38,12 +41,12 @@ export const StyledDescription = styled(HvInfoMessage)({
 
 export const StyledCharCounter = styled((props) => (
   <HvCharCounter {...props} />
-))({
+))(() => ({
   display: "block",
   float: "right",
   textAlign: "right",
   marginBottom: "6px",
-});
+}));
 
 export const StyledTagsList = styled(
   HvListContainer,
@@ -87,7 +90,7 @@ export const StyledTagsList = styled(
       border: `1px solid ${theme.tagsInput.hoverColor}`,
     },
 
-    "&& .inputRoot": {
+    [`&& .${baseInputClasses.inputRoot}`]: {
       border: "none",
     },
 
@@ -153,7 +156,7 @@ export const StyledListItem = styled(HvListItem)(
     "&:not(:last-child)": {
       marginBottom: 2,
     },
-    "&.gutters": {
+    [`&.${listItemClasses.gutters}`]: {
       padding: "0 5px",
     },
     ...($singleLine && {
@@ -190,7 +193,7 @@ export const StyledInputListItem = styled(HvListItem)(
     flexGrow: 1,
     height: 24,
     lineHeight: "24px",
-    "&.gutters": {
+    [`&.${listItemClasses.gutters}`]: {
       padding: "0 5px",
     },
     ...($singleLine && {
@@ -206,7 +209,7 @@ export const StyledInputListItem = styled(HvListItem)(
       },
     }),
     ...($isTagSelected && {
-      "& .inputRoot": {
+      [`& .${baseInputClasses.inputRoot}`]: {
         backgroundColor: theme.colors.atmo1,
       },
     }),
@@ -215,17 +218,17 @@ export const StyledInputListItem = styled(HvListItem)(
 
 export const StyledInput = styled(HvInput)(
   ({ $singleLine }: { $singleLine: boolean }) => ({
-    "& .root": {
+    [`& .${baseInputClasses.root}`]: {
       width: "100%",
-      "&:hover .tagInputBorderContainer": {
+      [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
         background: "none",
       },
-      "&:focus-within .tagInputBorderContainer": {
+      [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
         background: "none",
       },
       "&.singleLine": {},
     },
-    "& .inputRoot": {
+    [`& .${baseInputClasses.inputRoot}`]: {
       marginLeft: 0,
       marginRight: 0,
       width: 0,
@@ -235,15 +238,15 @@ export const StyledInput = styled(HvInput)(
       lineHeight: "24px",
       padding: 0,
     },
-    "& .inputBorderContainer": {
+    [`& .${baseInputClasses.inputBorderContainer}`]: {
       border: "none",
       background: "none",
     },
-    "& .inputRootFocused": {
+    [`& .${baseInputClasses.inputRootFocused}`]: {
       outline: "none!important",
       boxShadow: "none!important",
     },
-    "&& .inputRootReadOnly": {
+    [`&& .${baseInputClasses.inputRootReadOnly}`]: {
       border: "none",
       "&:hover": {
         border: "none",

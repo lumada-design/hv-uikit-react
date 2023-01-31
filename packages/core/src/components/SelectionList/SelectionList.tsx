@@ -16,6 +16,7 @@ import {
 } from "utils";
 import { useControlled, useUniqueId } from "hooks";
 import { HvFormStatus } from "components";
+import { selectionListClasses, HvSelectionListClasses } from ".";
 
 export type HvSelectionListProps = HvBaseProps<
   HTMLUListElement,
@@ -73,16 +74,7 @@ export type HvSelectionListProps = HvBaseProps<
   /** The callback fired when the value changes. */
   onChange?: Function;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    error?: string;
-    listbox?: string;
-    label?: string;
-    description?: string;
-    horizontal?: string;
-    vertical?: string;
-    invalid?: string;
-  };
+  classes?: HvSelectionListClasses;
 };
 
 const getValueFromSelectedChildren = (children, multiple) => {
@@ -291,19 +283,22 @@ export const HvSelectionList = ({
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, selectionListClasses.root, classes?.root)}
     >
       {label && (
         <StyledLabel
           id={setId(elementId, "label")}
           label={label}
-          className={classes?.label}
+          className={clsx(selectionListClasses.label, classes?.label)}
         />
       )}
       {description && (
         <StyledInfoMessage
           id={setId(elementId, "description")}
-          className={classes?.description}
+          className={clsx(
+            selectionListClasses.description,
+            classes?.description
+          )}
         >
           {description}
         </StyledInfoMessage>
@@ -332,9 +327,13 @@ export const HvSelectionList = ({
         }
         className={clsx(
           classes?.listbox,
-          orientation === "vertical" && classes?.vertical,
-          orientation === "horizontal" && classes?.horizontal,
-          validationState === "invalid" && classes?.invalid
+          selectionListClasses.listbox,
+          orientation === "vertical" &&
+            clsx(selectionListClasses.vertical, classes?.vertical),
+          orientation === "horizontal" &&
+            clsx(selectionListClasses.horizontal, classes?.horizontal),
+          validationState === "invalid" &&
+            clsx(selectionListClasses.invalid, classes?.invalid)
         )}
         ref={listContainer}
         $orientation={orientation}
@@ -348,7 +347,7 @@ export const HvSelectionList = ({
         <StyledError
           id={setId(elementId, "error")}
           disableBorder
-          className={classes?.error}
+          className={clsx(selectionListClasses.error, classes?.error)}
         >
           {validationMessage}
         </StyledError>

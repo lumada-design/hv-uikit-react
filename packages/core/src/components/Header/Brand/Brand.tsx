@@ -1,10 +1,13 @@
 import { HvTypography as HvTypography } from "components";
 import { HvBaseProps } from "../../../types";
 import { BrandRoot, BrandSeparator } from "./Brand.styles";
+import { brandClasses, HvBrandClasses } from ".";
+import clsx from "clsx";
 
 export type HvBrandProps = HvBaseProps & {
   logo?: React.ReactNode;
   name?: string;
+  classes?: HvBrandClasses;
 };
 
 /**
@@ -12,7 +15,7 @@ export type HvBrandProps = HvBaseProps & {
  */
 export const HvBrand = ({ logo, name, className }: HvBrandProps) => {
   return (
-    <BrandRoot className={className}>
+    <BrandRoot className={clsx(brandClasses.root, className)}>
       {logo}
       {logo && name && <BrandSeparator />}
       {name && <HvTypography variant="label">{name}</HvTypography>}

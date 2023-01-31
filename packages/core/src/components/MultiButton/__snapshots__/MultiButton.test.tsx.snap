@@ -3,7 +3,7 @@
 exports[`MultiButton > should render correctly 1`] = `
 <div>
   <div
-    class=" css-1bscudw-StyledRoot ehjsuxy1"
+    class="HvMultiButton-root css-1bscudw-StyledRoot ehjsuxy1"
   />
 </div>
 `;

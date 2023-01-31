@@ -9,4 +9,5 @@ export * from "./CheckBox";
 export * from "./BaseDropdown";
 export * from "./BaseInput";
 export * from "./Radio";
+export * from "./Input";
 export * from "./TagsInput";

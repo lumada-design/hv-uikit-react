@@ -7,6 +7,7 @@ import {
   HvFormElementDescriptorsContext,
   HvFormStatus,
 } from "../FormElement";
+import { adornmentClasses, HvAdornmentClasses } from ".";
 
 const preventDefault = (event) => event.preventDefault();
 const noop = () => {};
@@ -24,14 +25,7 @@ export type HvAdornmentProps = HvBaseProps<
   /** If this property is defined the adornment visibility will be exclusively controlled by this value. */
   isVisible?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    icon?: string;
-    adornment?: string;
-    adornmentIcon?: string;
-    hideIcon?: string;
-    adornmentButton?: string;
-  };
+  classes?: HvAdornmentClasses;
 };
 
 /**
@@ -80,10 +74,13 @@ export const HvAdornment = forwardRef<
         aria-controls={input?.[0]?.id}
         className={clsx(
           className,
+          adornmentClasses.root,
           classes?.root,
+          adornmentClasses.adornment,
           classes?.adornment,
+          adornmentClasses.adornmentButton,
           classes?.adornmentButton,
-          !displayIcon && classes?.hideIcon
+          !displayIcon && clsx(adornmentClasses.hideIcon, classes?.hideIcon)
         )}
         onClick={onClick}
         onMouseDown={preventDefault}
@@ -99,16 +96,21 @@ export const HvAdornment = forwardRef<
         ref={ref as ForwardedRef<HTMLDivElement>}
         className={clsx(
           className,
+          adornmentClasses.root,
           classes?.root,
+          adornmentClasses.adornment,
           classes?.adornment,
+          adornmentClasses.adornmentIcon,
           classes?.adornmentIcon,
-          !displayIcon && classes?.hideIcon
+          !displayIcon && clsx(adornmentClasses.hideIcon, classes?.hideIcon)
         )}
         $hideIcon={!displayIcon}
         role="presentation"
         {...others}
       >
-        <StyledIcon className={classes?.icon}>{icon}</StyledIcon>
+        <StyledIcon className={clsx(adornmentClasses.icon, classes?.icon)}>
+          {icon}
+        </StyledIcon>
       </StyledRoot>
     );
   }

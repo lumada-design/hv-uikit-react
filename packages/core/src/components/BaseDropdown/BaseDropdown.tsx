@@ -27,6 +27,7 @@ import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 import { ThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
+import { baseDropdownClasses, HvBaseDropdownClasses } from ".";
 
 const { Tab, Enter, Esc, Space, ArrowDown } = keyboardCodes;
 
@@ -114,28 +115,7 @@ export type HvBaseDropdownProps = HvBaseProps<
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
-  classes?: {
-    root?: string;
-    rootDisabled?: string;
-    anchor?: string;
-    container?: string;
-    header?: string;
-    headerOpen?: string;
-    headerOpenUp?: string;
-    headerOpenDown?: string;
-    headerDisabled?: string;
-    headerReadOnly?: string;
-    arrow?: string;
-    selection?: string;
-    placeholder?: string;
-    selectionDisabled?: string;
-    panel?: string;
-    inputExtensionOpen?: string;
-    inputExtensionLeftPosition?: string;
-    inputExtensionOpenShadow?: string;
-    inputExtensionFloatRight?: string;
-    inputExtensionFloatLeft?: string;
-  };
+  classes?: HvBaseDropdownClasses;
 };
 
 export const HvBaseDropdown = ({
@@ -358,14 +338,19 @@ export const HvBaseDropdown = ({
       <StyledHeaderRoot
         id={setId(id, "header")}
         className={clsx(
+          baseDropdownClasses.header,
           classes?.header,
-          disabled && classes?.headerDisabled,
-          readOnly && classes?.headerReadOnly,
-          isOpen && classes?.headerOpen,
-          isOpen && popperPlacement.includes("top") && classes?.headerOpenUp,
+          disabled &&
+            clsx(baseDropdownClasses.headerDisabled, classes?.headerDisabled),
+          readOnly &&
+            clsx(baseDropdownClasses.headerReadOnly, classes?.headerReadOnly),
+          isOpen && clsx(baseDropdownClasses.headerOpen, classes?.headerOpen),
+          isOpen &&
+            popperPlacement.includes("top") &&
+            clsx(baseDropdownClasses.headerOpenUp, classes?.headerOpenUp),
           isOpen &&
             popperPlacement.includes("bottom") &&
-            classes?.headerOpenDown
+            clsx(baseDropdownClasses.headerOpenDown, classes?.headerOpenDown)
         )}
         $disabled={disabled}
         $readOnly={readOnly}
@@ -384,12 +369,19 @@ export const HvBaseDropdown = ({
         ref={handleDropdownHeaderRef}
         {...dropdownHeaderProps}
       >
-        <StyledSelection className={classes?.selection}>
+        <StyledSelection
+          className={clsx(baseDropdownClasses.selection, classes?.selection)}
+        >
           {placeholder && typeof placeholder === "string" ? (
             <StyledPlaceholder
               className={clsx(
+                baseDropdownClasses.placeholder,
                 classes?.placeholder,
-                disabled && classes?.selectionDisabled
+                disabled &&
+                  clsx(
+                    baseDropdownClasses.selectionDisabled,
+                    classes?.selectionDisabled
+                  )
               )}
               $disabled={disabled}
               variant="body"
@@ -402,11 +394,14 @@ export const HvBaseDropdown = ({
         </StyledSelection>
         {adornment ||
           (isOpen ? (
-            <StyledDropUpXS iconSize="XS" className={classes?.arrow} />
+            <StyledDropUpXS
+              iconSize="XS"
+              className={clsx(baseDropdownClasses.arrow, classes?.arrow)}
+            />
           ) : (
             <StyledDropDownXS
               iconSize="XS"
-              className={classes?.arrow}
+              className={clsx(baseDropdownClasses.arrow, classes?.arrow)}
               $disabled={disabled}
             />
           ))}
@@ -444,7 +439,7 @@ export const HvBaseDropdown = ({
       <StyledContainer
         role="tooltip"
         ref={setPopperElement}
-        className={classes?.container}
+        className={clsx(baseDropdownClasses.container, classes?.container)}
         style={popperStyles.popper}
         {...attributes.popper}
         // Fix CSS vars for portal
@@ -456,9 +451,13 @@ export const HvBaseDropdown = ({
               <StyledExtension
                 style={{ width: extensionWidth }}
                 className={clsx(
+                  baseDropdownClasses.inputExtensionOpen,
                   classes?.inputExtensionOpen,
                   popperPlacement.includes("end") &&
-                    classes?.inputExtensionLeftPosition
+                    clsx(
+                      baseDropdownClasses.inputExtensionLeftPosition,
+                      classes?.inputExtensionLeftPosition
+                    )
                 )}
                 $leftPosition={popperPlacement.includes("end")}
                 $openShadow={false}
@@ -478,7 +477,7 @@ export const HvBaseDropdown = ({
             <BaseDropdownContext.Provider value={popperMaxSize}>
               <StyledPanel
                 id={setId(elementId, "children-container")}
-                className={classes?.panel}
+                className={clsx(baseDropdownClasses.panel, classes?.panel)}
                 // Fix CSS vars when the container was created using a portal
                 $shadowColor={activeTheme.baseDropdown.shadow || "none"}
               >
@@ -489,12 +488,20 @@ export const HvBaseDropdown = ({
               <StyledExtension
                 style={{ width: extensionWidth }}
                 className={clsx(
+                  baseDropdownClasses.inputExtensionOpen,
                   classes?.inputExtensionOpen,
+                  baseDropdownClasses.inputExtensionOpenShadow,
                   classes?.inputExtensionOpenShadow,
                   popperPlacement.includes("start") &&
-                    classes?.inputExtensionFloatRight,
+                    clsx(
+                      baseDropdownClasses.inputExtensionFloatRight,
+                      classes?.inputExtensionFloatRight
+                    ),
                   popperPlacement.includes("end") &&
-                    classes?.inputExtensionFloatLeft
+                    clsx(
+                      baseDropdownClasses.inputExtensionFloatLeft,
+                      classes?.inputExtensionFloatLeft
+                    )
                 )}
                 $leftPosition={false}
                 $openShadow={true}
@@ -523,7 +530,7 @@ export const HvBaseDropdown = ({
   })();
 
   return (
-    <StyledRoot className={classes?.root}>
+    <StyledRoot className={clsx(baseDropdownClasses.root, classes?.root)}>
       <StyledAnchor
         id={id}
         role={ariaRole}
@@ -531,8 +538,10 @@ export const HvBaseDropdown = ({
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
         className={clsx(
           className,
+          baseDropdownClasses.anchor,
           classes?.anchor,
-          disabled && classes?.rootDisabled
+          disabled &&
+            clsx(baseDropdownClasses.rootDisabled, classes?.rootDisabled)
         )}
         $disabled={disabled}
         {...(!readOnly && {

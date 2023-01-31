@@ -6,33 +6,33 @@ exports[`BaseDropDown > should render correctly 1`] = `
     style="width: 121px;"
   >
     <div
-      class="css-1nukton-StyledRoot e1xgfj1t9"
+      class="HvBaseDropdown-root css-1nukton-StyledRoot e1xgfj1t9"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class=" css-c41kvr-StyledAnchor e1xgfj1t8"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor e1xgfj1t8"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class=" css-z15in3-StyledHeaderRoot e1xgfj1t7"
+          class="HvBaseDropdown-header css-z15in3-StyledHeaderRoot e1xgfj1t7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="css-1c8fpra-StyledSelection e1xgfj1t6"
+            class="HvBaseDropdown-selection css-1c8fpra-StyledSelection e1xgfj1t6"
           >
             <p
-              class=" e1xgfj1t5 css-fi1crd-StyledPlaceholder"
+              class="HvBaseDropdown-placeholder e1xgfj1t5 css-fi1crd-StyledPlaceholder"
               variant="body"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
             name="DropDownXS"
           >
             <svg

@@ -47,13 +47,16 @@ export const StyledCharCounter = styled((props) => (
 
 export const StyledWarningText = styled(HvWarningText)({ float: "left" });
 
-export const StyledBaseInput = styled(HvBaseInput)({
+export const StyledBaseInput = styled(
+  HvBaseInput,
+  transientOptions
+)(({ $resizable }: { $resizable: boolean }) => ({
   clear: "both",
   float: "left",
 
-  "& .inputResizable": {
+  ...($resizable && {
     resize: "both",
     minWidth: "150px",
     maxWidth: "610px",
-  },
-});
+  }),
+}));

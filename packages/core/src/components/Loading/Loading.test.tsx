@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 import { HvLoading } from "./Loading";
+import { loadingClasses } from ".";
 
 describe("Loading", () => {
   const mockLabel = "mockLabel";
@@ -10,7 +11,7 @@ describe("Loading", () => {
     expect(container).toBeDefined();
   });
 
-  it("should cont§§in the correct the label", () => {
+  it("should contain the correct the label", () => {
     const { getByText } = render(<HvLoading label={mockLabel} />);
     expect(getByText(mockLabel)).toBeInTheDocument();
   });
@@ -18,7 +19,10 @@ describe("Loading", () => {
   it("should be hidden if set to hidden", () => {
     const { container } = render(<HvLoading label={mockLabel} hidden />);
     expect(
-      (container.firstChild as HTMLElement).classList.contains("hidden")
+      loadingClasses.hidden &&
+        (container.firstChild as HTMLElement).classList.contains(
+          loadingClasses.hidden
+        )
     ).toBe(true);
   });
 

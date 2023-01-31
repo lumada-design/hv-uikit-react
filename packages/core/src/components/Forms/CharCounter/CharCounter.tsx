@@ -4,6 +4,7 @@ import { HvBaseProps } from "../../../types";
 import { StyledRoot, StyledTypography } from "./CharCounter.styles";
 import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
+import { charCounterClasses, HvCharCounterClasses } from ".";
 
 export type HvCharCounterProps = HvBaseProps & {
   /** The string that separates the current char quantity from the max quantity. */
@@ -17,12 +18,7 @@ export type HvCharCounterProps = HvBaseProps & {
   /** If `true` the info message won't have margins. */
   disableGutter?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    counterDisabled?: string;
-    gutter?: string;
-    overloaded?: string;
-  };
+  classes?: HvCharCounterClasses;
 };
 
 /**
@@ -54,9 +50,11 @@ export const HvCharCounter = ({
       id={localId}
       className={clsx(
         className,
+        charCounterClasses.root,
         classes?.root,
-        localDisabled && classes?.counterDisabled,
-        !disableGutter && classes?.gutter
+        localDisabled &&
+          clsx(charCounterClasses.counterDisabled, classes?.counterDisabled),
+        !disableGutter && clsx(charCounterClasses.gutter, classes?.gutter)
       )}
       $counterDisabled={!!localDisabled}
       $gutter={!disableGutter}
@@ -67,8 +65,11 @@ export const HvCharCounter = ({
       <StyledTypography
         id={currentId}
         className={clsx(
-          isOverloaded && !localDisabled && classes?.overloaded,
-          localDisabled && classes?.counterDisabled
+          isOverloaded &&
+            !localDisabled &&
+            clsx(charCounterClasses.overloaded, classes?.overloaded),
+          localDisabled &&
+            clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
         )}
         variant="label"
         as="label"
@@ -80,8 +81,11 @@ export const HvCharCounter = ({
       <StyledTypography
         id={maxQuantityId}
         className={clsx(
-          isOverloaded && !localDisabled && classes?.overloaded,
-          localDisabled && classes?.counterDisabled
+          isOverloaded &&
+            !localDisabled &&
+            clsx(charCounterClasses.overloaded, classes?.overloaded),
+          localDisabled &&
+            clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
         )}
         variant="body"
         as="label"

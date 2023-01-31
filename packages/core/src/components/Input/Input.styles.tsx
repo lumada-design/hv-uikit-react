@@ -7,7 +7,9 @@ import {
   HvFormElement,
   HvLabel,
   HvSuggestions,
+  baseInputClasses,
 } from "components";
+import { inputClasses } from ".";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "block",
@@ -31,9 +33,10 @@ export const StyledSuccess = styled(Success)({
 export const StyledSuggestions = styled(HvSuggestions)({
   width: "100%",
   position: "relative",
-  "& .root .list &": {
-    width: "100%",
-  },
+  // "& .root .list &": {
+  // // [`& .${inputClasses.root} .list &`]: {
+  //   width: "100%",
+  // },
 });
 
 export const StyledAdornmentsBox = styled("div")({
@@ -63,36 +66,36 @@ export const StyledInputExtension = styled("div")({
   boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
 });
 
-export const StyledBaseInput = styled(HvBaseInput)({
-  "& .input": {
+export const StyledBaseInput = styled(HvBaseInput)(() => ({
+  [`& .${baseInputClasses.input}`]: {
     "&::-ms-clear": {
       display: "none",
     },
   },
   ":hover": {
-    "& .iconClear": {
+    [`& .${inputClasses.iconClear}`]: {
       display: "block",
     },
   },
-  "&.inputRoot": {
-    "&:focus-within .iconClear": {
+  [`&.${baseInputClasses.inputRoot}`]: {
+    [`&:focus-within .${inputClasses.iconClear}`]: {
       display: "block",
     },
   },
-  "& .inputRootFocused": {
-    "& .iconClear": {
+  [`& .${baseInputClasses.inputRootFocused}`]: {
+    [`& .${inputClasses.iconClear}`]: {
       display: "block",
     },
   },
-  "& .inputRootMultiline": {
+  [`& .${baseInputClasses.inputRootMultiline}`]: {
     padding: 0,
   },
-  "& .inputBorderContainer": {
-    ".hasSuggestions &": {
+  [`& .${baseInputClasses.inputBorderContainer}`]: {
+    [`.${inputClasses.hasSuggestions} &`]: {
       display: "none",
     },
   },
-  "& .inputRootDisabled": {
+  [`& .${baseInputClasses.inputRootDisabled}`]: {
     cursor: "not-allowed",
   },
-});
+}));

@@ -3,13 +3,13 @@
 exports[`CheckBox > general > should render correctly 1`] = `
 <div>
   <div
-    class=" css-1lst77x-StyledFormElement e162au073"
+    class="HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
   >
     <div
-      class=" css-j79apy-StyledLabelContainer e162au072"
+      class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
     >
       <span
-        class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault checkbox e162au070 e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+        class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
       >
         <input
           class="PrivateSwitchBase-input css-1m9pwf3"
@@ -44,7 +44,7 @@ exports[`CheckBox > general > should render correctly 1`] = `
         </div>
       </span>
       <label
-        class="e162au071 e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+        class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
         for="hvcheckbox3-input"
         id="hvcheckbox3-label"
         variant="label"

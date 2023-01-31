@@ -1,6 +1,8 @@
 import { CardMediaProps as MuiCardMediaProps } from "@mui/material/CardMedia";
 import { StyledMedia } from "./Media.styles";
 import { HvBaseProps } from "../../../types";
+import { cardMediaClasses, HvCardMediaClasses } from ".";
+import clsx from "clsx";
 
 export type HvMediaProps = MuiCardMediaProps &
   HvBaseProps<HTMLDivElement, { onClick; title }> & {
@@ -15,10 +17,7 @@ export type HvMediaProps = MuiCardMediaProps &
     /** The image to display. */
     image?: string;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: {
-      root?: string;
-      media?: string;
-    };
+    classes?: HvCardMediaClasses;
   };
 
 export const HvMedia = ({
@@ -33,7 +32,10 @@ export const HvMedia = ({
   return (
     <StyledMedia
       id={id}
-      classes={{ root: classes?.root, media: classes?.media }}
+      classes={{
+        root: clsx(cardMediaClasses.root, classes?.root),
+        media: clsx(cardMediaClasses.media, classes?.media),
+      }}
       className={className}
       role="img"
       title={title}

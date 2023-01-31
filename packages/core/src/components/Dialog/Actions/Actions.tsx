@@ -2,16 +2,13 @@ import { DialogActionsProps as MuiDialogActionsProps } from "@mui/material/Dialo
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledActions } from "./Actions.styles";
+import { dialogActionClasses, HvDialogActionClasses } from ".";
 
 export type HvActionsProps = MuiDialogActionsProps &
   HvBaseProps & {
     /** Set the dialog to fullscreen mode. */
     fullscreen?: boolean;
-    classes?: {
-      root?: string;
-      fullscreen?: string;
-      spacing?: string;
-    };
+    classes?: HvDialogActionClasses;
   };
 
 export const HvActions = ({
@@ -25,8 +22,13 @@ export const HvActions = ({
     <StyledActions
       className={className}
       classes={{
-        root: clsx(classes?.root, fullscreen && classes?.fullscreen),
-        spacing: classes?.spacing,
+        root: clsx(
+          dialogActionClasses.root,
+          classes?.root,
+          fullscreen &&
+            clsx(dialogActionClasses.fullscreen, classes?.fullscreen)
+        ),
+        spacing: clsx(dialogActionClasses.spacing, classes?.spacing),
       }}
       $fullscreen={fullscreen}
       {...others}

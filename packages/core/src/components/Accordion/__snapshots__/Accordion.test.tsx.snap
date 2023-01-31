@@ -3,12 +3,12 @@
 exports[`Accordion > should render correctly 1`] = `
 <div>
   <div
-    class=" css-1fpvnjx-StyledRoot e555ywc2"
+    class="HvAccordion-root css-1fpvnjx-StyledRoot e555ywc2"
   >
     <div
       aria-disabled="false"
       aria-expanded="false"
-      class=" e555ywc0 css-iaso1x-StyledLabel"
+      class="HvAccordion-label e555ywc0 css-iaso1x-StyledLabel"
       role="button"
       tabindex="0"
       variant="label"
@@ -33,7 +33,7 @@ exports[`Accordion > should render correctly 1`] = `
       </div>
     </div>
     <div
-      class=" css-1av53l8-StyledContainer e555ywc1"
+      class="HvAccordion-container css-1av53l8-StyledContainer e555ywc1"
       hidden=""
       role="region"
     />

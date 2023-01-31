@@ -9,6 +9,7 @@ import {
   StyledRoot,
   StyledWrapper,
 } from "./GlobalActions.styles";
+import { globalActionsClasses, HvGlobalActionsClasses } from ".";
 
 export type GlobalActionsVariant = "global" | "section";
 
@@ -31,13 +32,7 @@ export type GlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
    */
   position?: GlobalActionsPosition;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    backButton?: string;
-    actions?: string;
-    wrapper?: string;
-    name?: string;
-  };
+  classes?: HvGlobalActionsClasses;
 };
 
 /**
@@ -61,7 +56,9 @@ export const GlobalActions = ({
   const backButtonRenderer = () => {
     if (backButton) {
       return (
-        <StyledBackButton className={classes?.backButton}>
+        <StyledBackButton
+          className={clsx(globalActionsClasses.backButton, classes?.backButton)}
+        >
           {backButton}
         </StyledBackButton>
       );
@@ -75,11 +72,14 @@ export const GlobalActions = ({
     <StyledRoot
       variant={variant}
       position={position}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, globalActionsClasses.root, classes?.root)}
       breakpoints={muiTheme.breakpoints}
       {...others}
     >
-      <StyledWrapper className={classes?.wrapper} variant={variant}>
+      <StyledWrapper
+        className={clsx(globalActionsClasses.wrapper, classes?.wrapper)}
+        variant={variant}
+      >
         {variant === "global" && backButtonRenderer()}
         {!isString(title) ? (
           title
@@ -87,13 +87,17 @@ export const GlobalActions = ({
           <HvTypography
             variant={variant === "global" ? "title3" : "title4"} // "sectionTitle"
             as={`h${headingLevelToApply}`}
-            className={classes?.name}
+            className={clsx(globalActionsClasses.name, classes?.name)}
           >
             {title}
           </HvTypography>
         )}
         {children && (
-          <StyledActions className={classes?.actions}>{children}</StyledActions>
+          <StyledActions
+            className={clsx(globalActionsClasses.actions, classes?.actions)}
+          >
+            {children}
+          </StyledActions>
         )}
       </StyledWrapper>
     </StyledRoot>

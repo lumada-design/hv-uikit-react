@@ -3,13 +3,16 @@ import { theme } from "@hitachivantara/uikit-styles";
 import DialogTitle from "@mui/material/DialogTitle";
 import { transientOptions } from "utils/transientOptions";
 
-export const StyledTitle = styled(DialogTitle)({
+export const StyledTitle = styled(
+  DialogTitle,
+  transientOptions
+)(({ $fullscreen }: { $fullscreen: boolean }) => ({
   padding: theme.spacing(2),
   margin: 0,
-  "&:not(.fullscreen)": {
+  ...(!$fullscreen && {
     flex: 1,
-  },
-});
+  }),
+}));
 
 export const StyledMessageContainer = styled("div")({
   display: "flex",

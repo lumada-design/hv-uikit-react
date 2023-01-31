@@ -4,6 +4,7 @@ import { useResizeDetector } from "react-resize-detector";
 import { HvBaseProps } from "../../types/index";
 import { HvTooltip, HvTypography } from "components";
 import { StyledDataContainer } from "./OverflowTooltip.styles";
+import { overflowTooltipClasses, HvOverflowTooltipClasses } from ".";
 
 export type HvOverflowTooltipProps = HvBaseProps & {
   /** The node that will be rendered inside the tooltip. */
@@ -29,12 +30,7 @@ export type HvOverflowTooltipProps = HvBaseProps & {
   /** Extra properties to add to the tooltip. */
   tooltipsProps?: object;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    tooltipAnchor?: string;
-    tooltipAnchorParagraph?: string;
-    tooltipData?: string;
-  };
+  classes?: HvOverflowTooltipClasses;
 };
 
 const isParagraph = (children) => /\s/.test(children);
@@ -74,8 +70,13 @@ export const HvOverflowTooltip = ({
         ref={ref}
         className={clsx(
           className,
-          !isParag && classes?.tooltipAnchor,
-          isParag && classes?.tooltipAnchorParagraph
+          !isParag &&
+            clsx(overflowTooltipClasses.tooltipAnchor, classes?.tooltipAnchor),
+          isParag &&
+            clsx(
+              overflowTooltipClasses.tooltipAnchorParagraph,
+              classes?.tooltipAnchorParagraph
+            )
         )}
         $isParag={isParag}
       >
@@ -99,7 +100,13 @@ export const HvOverflowTooltip = ({
       open={open}
       placement={placement}
       title={
-        <HvTypography className={classes?.tooltipData} variant="body">
+        <HvTypography
+          className={clsx(
+            overflowTooltipClasses.tooltipData,
+            classes?.tooltipData
+          )}
+          variant="body"
+        >
           {data}
         </HvTypography>
       }

@@ -10,6 +10,7 @@ import {
   StyledLabel,
   StyledLabelContainer,
 } from "./CheckBox.styles";
+import { checkBoxClasses, HvCheckBoxClasses } from ".";
 
 export type HvCheckBoxProps = Omit<HvBaseCheckBoxProps, "classes"> & {
   /**
@@ -41,16 +42,7 @@ export type HvCheckBoxProps = Omit<HvBaseCheckBoxProps, "classes"> & {
   /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
-  classes?: {
-    root?: string;
-    container?: string;
-    disabled?: string;
-    focusVisible?: string;
-    invalidContainer?: string;
-    checkbox?: string;
-    invalidCheckbox?: string;
-    label?: string;
-  };
+  classes?: HvCheckBoxClasses;
 };
 
 /**
@@ -178,9 +170,10 @@ export const HvCheckBox = ({
       id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
       name={name}
       className={clsx(
+        checkBoxClasses.checkbox,
         classes?.checkbox,
-        "checkbox",
-        isStateInvalid && classes?.invalidCheckbox
+        isStateInvalid &&
+          clsx(checkBoxClasses.invalidCheckbox, classes?.invalidCheckbox)
       )}
       $invalid={isStateInvalid}
       disabled={disabled}
@@ -215,17 +208,21 @@ export const HvCheckBox = ({
       readOnly={readOnly}
       className={clsx(
         className,
+        checkBoxClasses.root,
         classes?.root,
-        !!(focusVisible && label) && classes?.focusVisible
+        !!(focusVisible && label) &&
+          clsx(checkBoxClasses.focusVisible, classes?.focusVisible)
       )}
       $focusVisible={!!(focusVisible && label)}
     >
       {hasLabel ? (
         <StyledLabelContainer
           className={clsx(
+            checkBoxClasses.container,
             classes?.container,
-            disabled && classes?.disabled,
-            isStateInvalid && classes?.invalidContainer
+            disabled && clsx(checkBoxClasses.disabled, classes?.disabled),
+            isStateInvalid &&
+              clsx(checkBoxClasses.invalidContainer, classes?.invalidContainer)
           )}
           $disabled={disabled}
           $invalid={isStateInvalid}
@@ -235,7 +232,7 @@ export const HvCheckBox = ({
             id={setId(elementId, "label")}
             htmlFor={setId(elementId, "input")}
             label={label}
-            className={classes?.label}
+            className={clsx(checkBoxClasses.label, classes?.label)}
             $disabled={disabled}
             {...labelProps}
           />

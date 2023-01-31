@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import HvListContext from "./ListContext";
 import { useForkRef } from "hooks";
+import { HvListContainerClasses, listContainerClasses } from ".";
 
 export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
   /**
@@ -15,9 +16,7 @@ export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
   /** If `true`, the list items' left and right padding is removed. */
   disableGutters?: boolean;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-  };
+  classes?: HvListContainerClasses;
 };
 
 /**
@@ -85,7 +84,7 @@ export const HvListContainer = React.forwardRef(
         <ul
           ref={handleRef}
           id={id}
-          className={clsx(className, classes?.root)}
+          className={clsx(className, listContainerClasses.root, classes?.root)}
           {...others}
         >
           {renderChildren()}

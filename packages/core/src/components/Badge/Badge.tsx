@@ -1,7 +1,8 @@
 import { HvTypography, HvTypographyVariants } from "components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
-
 import { HvBaseProps } from "../../types";
+import { badgeClasses, HvBadgeClasses } from ".";
+import clsx from "clsx";
 
 export type HvBadgeProps = HvBaseProps & {
   /**
@@ -31,11 +32,7 @@ export type HvBadgeProps = HvBaseProps & {
   /** Text variant. */
   textVariant?: HvTypographyVariants;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
-  classes?: {
-    root?: string;
-    badgeContainer?: string;
-    badgePosition?: string;
-  };
+  classes?: HvBadgeClasses;
 };
 
 /**
@@ -68,16 +65,20 @@ export const HvBadge = (props: HvBadgeProps) => {
   return (
     <StyledRoot
       aria-label={renderedCountOrLabel?.toString()}
-      className={classes?.root}
+      className={clsx(badgeClasses.root, classes?.root)}
       {...others}
     >
       {Component}
       <StyledContainer
         component={Component ? true : false}
-        className={Component ? classes?.badgeContainer : ""}
+        className={
+          Component
+            ? clsx(badgeClasses.badgeContainer, classes?.badgeContainer)
+            : ""
+        }
       >
         <StyledBadge
-          className={classes?.badgePosition}
+          className={clsx(badgeClasses.badgePosition, classes?.badgePosition)}
           badge={!!(count > 0 || renderedCountOrLabel)}
           showCount={!!(!label && renderedCountOrLabel)}
           showLabel={!!label}
