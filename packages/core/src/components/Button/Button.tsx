@@ -103,6 +103,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         overrideIconColors={overrideIconColors}
         onFocus={onFocusHandler}
         onBlur={onBlurHandler}
+        $disabled={!!disabled}
         {...others}
       >
         <StyledContentDiv>

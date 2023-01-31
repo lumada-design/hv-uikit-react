@@ -205,6 +205,13 @@ const ds5Theme = makeTheme((theme) => ({
         overlayBorderRadius: "2px",
       },
     },
+    dropDownMenu: {
+      borderRadius: "2px",
+      hoverColor: theme.colors.acce2s,
+      borderColor: theme.colors.acce4,
+      extensionHeight: "0px",
+      extensionBorderColor: theme.colors.acce4,
+    },
   },
 }));
 

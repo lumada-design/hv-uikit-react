@@ -1,11 +1,28 @@
 import { HvBox, HvButton, HvTypography } from "@hitachivantara/uikit-core";
-import { Draw } from "@hitachivantara/uikit-icons";
+import { Draw, MoreOptionsVertical } from "@hitachivantara/uikit-icons";
 import { ButtonConfigurator } from "../../components/ButtonConfigurator";
 
 export const Buttons = () => {
   return (
     <>
       <ButtonConfigurator />
+      <HvBox sx={{ display: "flex", gap: 20 }}>
+        <HvButton icon variant="primary">
+          <MoreOptionsVertical />
+        </HvButton>
+        <HvButton icon variant="primarySubtle">
+          <MoreOptionsVertical />
+        </HvButton>
+        <HvButton icon variant="primaryGhost">
+          <MoreOptionsVertical />
+        </HvButton>
+        <HvButton icon variant="secondarySubtle">
+          <MoreOptionsVertical />
+        </HvButton>
+        <HvButton icon variant="secondaryGhost">
+          <MoreOptionsVertical />
+        </HvButton>
+      </HvBox>
       <HvBox sx={{ display: "flex", gap: 20 }}>
         <HvButton
           variant="primary"

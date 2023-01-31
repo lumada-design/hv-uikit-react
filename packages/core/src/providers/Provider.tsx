@@ -18,7 +18,7 @@ interface ProviderProps {
 export const Provider = ({
   children,
   enableCssBaseline = true,
-  rootElementId,
+  rootElementId = "hv-root",
   theme,
   colorMode,
 }: ProviderProps) => {

@@ -20,6 +20,7 @@ import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
 import { Header, ThemeSwitcher } from "./layout";
 import { Switch } from "./components/Switch";
+import { DropDownMenu } from "./components/DropDownMenu/DropDownMenu";
 
 const styles = {
   display: "flex",
@@ -36,11 +37,15 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <DropDownMenu />
+        <Buttons />
+        {/* 
         <BaseInput />
         <Input />
         <TagsInput />
         <FileUploader />
         <BaseDropdown />
+        
         <CheckBox />
         <Switch />
         <Radio />
@@ -53,6 +58,7 @@ const App = () => {
         <Typography />
         <Buttons />
         <Icons />
+        <Icons /> */}
       </HvBox>
     </HvProvider>
   );

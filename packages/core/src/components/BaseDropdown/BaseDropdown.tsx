@@ -142,7 +142,7 @@ export const HvBaseDropdown = ({
   onContainerCreation,
   ...others
 }: HvBaseDropdownProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode, rootId = "" } = useContext(ThemeContext);
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
@@ -492,12 +492,12 @@ export const HvBaseDropdown = ({
                   classes?.inputExtensionOpen,
                   baseDropdownClasses.inputExtensionOpenShadow,
                   classes?.inputExtensionOpenShadow,
-                  popperPlacement.includes("start") &&
+                  popperPlacement.includes("end") &&
                     clsx(
                       baseDropdownClasses.inputExtensionFloatRight,
                       classes?.inputExtensionFloatRight
                     ),
-                  popperPlacement.includes("end") &&
+                  popperPlacement.includes("start") &&
                     clsx(
                       baseDropdownClasses.inputExtensionFloatLeft,
                       classes?.inputExtensionFloatLeft
@@ -505,8 +505,8 @@ export const HvBaseDropdown = ({
                 )}
                 $leftPosition={false}
                 $openShadow={true}
-                $floatLeft={popperPlacement.includes("end")}
-                $floatRight={popperPlacement.includes("start")}
+                $floatLeft={popperPlacement.includes("start")}
+                $floatRight={popperPlacement.includes("end")}
                 // Fix CSS vars when the container was created using a portal
                 $backgroundColor={
                   activeTheme?.colors?.modes[selectedMode].atmo1 ||
@@ -526,7 +526,11 @@ export const HvBaseDropdown = ({
     if (disablePortal) return container;
 
     // Warning: By creating a portal, the container is not able to access the theme's CSS vars
-    return createPortal(container, document.body);
+
+    return createPortal(
+      container,
+      document.getElementById(rootId) || document.body
+    );
   })();
 
   return (
