@@ -7,7 +7,7 @@ exports[`Tag > should render correctly 1`] = `
     tabindex="0"
   >
     <span
-      class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+      class="MuiChip-label HvTag-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
     />
   </div>
 </div>

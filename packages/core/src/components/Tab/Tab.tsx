@@ -36,7 +36,10 @@ export const HvTab = ({
       disableTouchRipple
       // Exposes the global class HvIsFocusVisible as a marker not to
       // be styled directly, but only as helper in specific css queries
-      focusVisibleClassName={clsx("HvIsFocusVisible", classes?.focusVisible)}
+      focusVisibleClassName={clsx(
+        "HvIsFocusVisible",
+        clsx(tabClasses.focusVisible, classes?.focusVisible)
+      )}
       disabled={disabled}
       iconPosition={iconPosition}
       {...others}

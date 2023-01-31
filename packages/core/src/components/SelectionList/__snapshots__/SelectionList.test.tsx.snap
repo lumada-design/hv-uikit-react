@@ -7,7 +7,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
     id="main"
   >
     <label
-      class="e1kkfxni3 HvLabel-root e1injmq50 css-n9teq7-StyledTypography-StyledLabel"
+      class="HvSelectionList-label e1kkfxni3 HvLabel-root e1injmq50 css-n9teq7-StyledTypography-StyledLabel"
       id="main-label"
       variant="label"
     >

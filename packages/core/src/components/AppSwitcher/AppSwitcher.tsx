@@ -112,8 +112,8 @@ export const HvAppSwitcher = ({
         className,
         appSwitcherClasses.root,
         classes?.root,
-        isOpen && classes?.open,
-        isOpen === false && classes?.closed
+        isOpen && clsx(appSwitcherClasses.open, classes?.open),
+        isOpen === false && (appSwitcherClasses.closed, classes?.closed)
       )}
       $open={!!isOpen}
       $closed={isOpen === false}

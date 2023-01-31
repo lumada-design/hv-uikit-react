@@ -289,7 +289,7 @@ export const HvSelectionList = ({
         <StyledLabel
           id={setId(elementId, "label")}
           label={label}
-          className={classes?.label}
+          className={clsx(selectionListClasses.label, classes?.label)}
         />
       )}
       {description && (

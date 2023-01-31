@@ -114,10 +114,13 @@ export const HvBaseInput = ({
         baseInputClasses.root,
         classes?.root,
         className,
-        formElementProps.disabled && classes?.disabled,
-        localInvalid && classes?.invalid,
-        multiline && resizable && classes?.resizable,
-        readOnly && classes?.readOnly
+        formElementProps.disabled &&
+          clsx(baseInputClasses.disabled, classes?.disabled),
+        localInvalid && clsx(baseInputClasses.invalid, classes?.invalid),
+        multiline &&
+          resizable &&
+          clsx(baseInputClasses.resizable, classes?.resizable),
+        readOnly && clsx(baseInputClasses.readOnly, classes?.readOnly)
       )}
       $disabled={formElementProps.disabled}
       $invalid={localInvalid}

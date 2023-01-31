@@ -489,15 +489,19 @@ export const HvTagsInput = ({
       onBlur={onBlurHandler}
       onFocus={onFocusHandler}
       className={clsx(
-        // "root",
         tagsInputClasses.root,
         classes?.root,
         className,
-        disabled && classes?.disabled
+        disabled && clsx(tagsInputClasses.disabled, classes?.disabled)
       )}
     >
       {(hasLabel || hasDescription) && (
-        <StyledLabelContainer className={classes?.labelContainer}>
+        <StyledLabelContainer
+          className={clsx(
+            tagsInputClasses.labelContainer,
+            classes?.labelContainer
+          )}
+        >
           {hasLabel && (
             <StyledLabel
               className={clsx(tagsInputClasses.label, classes?.label)}
@@ -537,13 +541,14 @@ export const HvTagsInput = ({
 
       <StyledTagsList
         className={clsx(
-          // "tagsList",
           tagsInputClasses.tagsList,
           classes?.tagsList,
-          canShowError && classes?.error,
-          resizable && multiline && classes?.resizable,
-          isStateInvalid && classes?.invalid,
-          !multiline && classes?.singleLine
+          canShowError && clsx(tagsInputClasses.error, classes?.error),
+          resizable &&
+            multiline &&
+            clsx(tagsInputClasses.resizable, classes?.resizable),
+          isStateInvalid && clsx(tagsInputClasses.invalid, classes?.invalid),
+          !multiline && clsx(tagsInputClasses.singleLine, classes?.singleLine)
         )}
         $disabled={disabled}
         $singleLine={!multiline}
@@ -574,8 +579,14 @@ export const HvTagsInput = ({
                     clsx(tagsInputClasses.singleLine, classes?.singleLine)
                 )}
                 classes={{
-                  gutters: classes?.listItemGutters,
-                  root: classes?.listItemRoot,
+                  gutters: clsx(
+                    tagsInputClasses.listItemGutters,
+                    classes?.listItemGutters
+                  ),
+                  root: clsx(
+                    tagsInputClasses.listItemRoot,
+                    classes?.listItemRoot
+                  ),
                 }}
                 id={`tag-${i}`}
                 $singleLine={!multiline}
@@ -587,7 +598,10 @@ export const HvTagsInput = ({
                       clsx(tagsInputClasses.tagSelected, classes?.tagSelected)
                   )}
                   classes={{
-                    chipRoot: classes?.chipRoot,
+                    chipRoot: clsx(
+                      tagsInputClasses.chipRoot,
+                      classes?.chipRoot
+                    ),
                   }}
                   type={type}
                   {...(!(readOnly || disabled || type === "categorical") && {
@@ -610,8 +624,14 @@ export const HvTagsInput = ({
               value.length === 0 ? tagsInputClasses.tagInputRootEmpty : ""
             )}
             classes={{
-              root: classes?.tagInputContainerRoot,
-              gutters: classes?.listItemGutters,
+              root: clsx(
+                tagsInputClasses.tagInputContainerRoot,
+                classes?.tagInputContainerRoot
+              ),
+              gutters: clsx(
+                tagsInputClasses.listItemGutters,
+                classes?.listItemGutters
+              ),
             }}
             id={`tag-${value.length}`}
             $singleLine={!multiline}
@@ -629,10 +649,19 @@ export const HvTagsInput = ({
                   clsx(tagsInputClasses.singleLine, classes?.singleLine)
               )}
               classes={{
-                root: classes?.tagInputRoot,
-                input: classes?.input,
-                inputBorderContainer: classes?.tagInputBorderContainer,
-                inputRootFocused: classes?.tagInputRootFocused,
+                root: clsx(
+                  tagsInputClasses.tagInputRoot,
+                  classes?.tagInputRoot
+                ),
+                input: clsx(tagsInputClasses.input, classes?.input),
+                inputBorderContainer: clsx(
+                  tagsInputClasses.tagInputBorderContainer,
+                  classes?.tagInputBorderContainer
+                ),
+                inputRootFocused: clsx(
+                  tagsInputClasses.tagInputRootFocused,
+                  classes?.tagInputRootFocused
+                ),
               }}
               disabled={disabled}
               readOnly={readOnly || isTagSelected}
@@ -662,8 +691,14 @@ export const HvTagsInput = ({
           <StyledSuggestions
             id={setId(elementId, "suggestions")}
             classes={{
-              root: classes?.suggestionsContainer,
-              list: classes?.suggestionList,
+              root: clsx(
+                tagsInputClasses.suggestionsContainer,
+                classes?.suggestionsContainer
+              ),
+              list: clsx(
+                tagsInputClasses.suggestionList,
+                classes?.suggestionList
+              ),
             }}
             expanded={hasSuggestions}
             anchorEl={containerRef?.current?.parentElement}

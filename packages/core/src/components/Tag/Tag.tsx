@@ -92,9 +92,9 @@ export const HvTag = ({
     return (
       <StyledButton
         classes={{
-          startIcon: classes?.tagButton,
-          focusVisible: classes?.focusVisible,
-          primary: classes?.primaryButton,
+          startIcon: clsx(tagClasses.tagButton, classes?.tagButton),
+          focusVisible: clsx(tagClasses.focusVisible, classes?.focusVisible),
+          primary: clsx(tagClasses.primaryButton, classes?.primaryButton),
         }}
         aria-label={deleteButtonArialLabel}
         tabIndex={tabIndex}
@@ -164,7 +164,7 @@ export const HvTag = ({
             disabled &&
             clsx(tagClasses.categoricalDisabled, classes?.categoricalDisabled)
         ),
-        label: classes?.label,
+        label: clsx(tagClasses.label, classes?.label),
         deleteIcon: clsx(
           classes?.deleteIcon,
           tagClasses.deleteIcon,

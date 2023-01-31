@@ -796,12 +796,24 @@ export const HvInput = ({
         placeholder={placeholder}
         type={realType}
         classes={{
-          input: classes?.input,
-          inputRoot: classes?.inputRoot,
-          inputRootFocused: classes?.inputRootFocused,
-          inputRootDisabled: classes?.inputRootDisabled,
-          inputRootMultiline: classes?.inputRootMultiline,
-          inputBorderContainer: classes?.inputBorderContainer,
+          input: clsx(inputClasses.input, classes?.input),
+          inputRoot: clsx(inputClasses.inputRoot, classes?.inputRoot),
+          inputRootFocused: clsx(
+            inputClasses.inputRootFocused,
+            classes?.inputRootFocused
+          ),
+          inputRootDisabled: clsx(
+            inputClasses.inputRootDisabled,
+            classes?.inputRootDisabled
+          ),
+          inputRootMultiline: clsx(
+            inputClasses.inputRootMultiline,
+            classes?.inputRootMultiline
+          ),
+          inputBorderContainer: clsx(
+            inputClasses.inputBorderContainer,
+            classes?.inputBorderContainer
+          ),
         }}
         invalid={isStateInvalid}
         inputProps={{
