@@ -30,7 +30,6 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
      * Id to be applied to the form element root node.
      */
     id?: string;
-
     /**
      * The form element name.
      */
@@ -41,7 +40,6 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
      * The default value is "on".
      */
     value?: any;
-
     /**
      * The label of the form element.
      *
@@ -112,7 +110,11 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
     /**
      * The callback fired when the radio button is pressed.
      */
-    onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+    onChange?: (
+      event: React.ChangeEvent<HTMLInputElement>,
+      checked: boolean,
+      value: any
+    ) => void;
     /**
      * Whether the selector should use semantic colors.
      */
@@ -145,36 +147,27 @@ export const HvRadio = (props: HvRadioProps) => {
   const {
     classes,
     className,
-
     id,
     name,
     value = "on",
     required = false,
     readOnly = false,
     disabled = false,
-
     label,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     "aria-describedby": ariaDescribedBy,
     labelProps,
-
     checked,
     defaultChecked = false,
-
     onChange,
-
     status = "standBy",
     statusMessage,
     "aria-errormessage": ariaErrorMessage,
-
     semantic = false,
-
     inputProps,
-
     onFocusVisible,
     onBlur,
-
     ...others
   } = props;
 
@@ -204,7 +197,7 @@ export const HvRadio = (props: HvRadioProps) => {
   );
 
   const onLocalChange = useCallback(
-    (evt: React.ChangeEvent<Element>, newChecked: boolean) => {
+    (evt: React.ChangeEvent<HTMLInputElement>, newChecked: boolean) => {
       setIsChecked(newChecked);
 
       onChange?.(evt, newChecked, value);
@@ -240,7 +233,7 @@ export const HvRadio = (props: HvRadioProps) => {
         classes?.radio,
         isStateInvalid && clsx(radioClasses.invalidRadio, classes?.invalidRadio)
       )}
-      $invalidRadio={isStateInvalid}
+      $invalid={isStateInvalid}
       disabled={disabled}
       readOnly={readOnly}
       onChange={onLocalChange}
@@ -283,8 +276,9 @@ export const HvRadio = (props: HvRadioProps) => {
             isStateInvalid &&
               clsx(radioClasses.invalidContainer, classes?.invalidContainer)
           )}
-          $invalidContainer={isStateInvalid}
-          $focusVisible={focusVisible}
+          $invalid={isStateInvalid}
+          $focusVisible={!!(focusVisible && label)}
+          $disabled={disabled}
         >
           {radio}
           <StyledHvLabel
@@ -292,6 +286,7 @@ export const HvRadio = (props: HvRadioProps) => {
             htmlFor={setId(elementId, "input")}
             label={label}
             className={clsx(radioClasses.label, classes?.label)}
+            $disabled={disabled}
             {...labelProps}
           />
         </StyledDivContainer>

@@ -87,10 +87,6 @@ const ds3Theme = makeTheme((theme) => ({
     baseRadio: {
       hoverColor: theme.colors.atmo3,
       hoverBorderRadius: 0,
-      disabledColor: theme.colors.atmo5,
-      borderRadius: 0,
-      padding: 0,
-      focusBorderRadius: "8px",
     },
     baseSwitch: {
       padding: 0,
@@ -148,29 +144,10 @@ const ds3Theme = makeTheme((theme) => ({
       lineHeight: "16px",
     },
     radio: {
-      display: "inline-block",
-      height: "32px",
-      invalidRadioBottomBorder: `1px solid ${theme.colors.sema4}`,
-
-      containerDisplay: "flex",
-      containerHeight: "32px",
-      containerTransitionProperty: "background-color",
-      containerTransitionDuration: "150ms",
-      containerTransitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-      containerTransitionDelay: "0ms",
-
-      containerHoverBackgroundColor: theme.colors.atmo3,
-      containerFocusBackgroundColor: theme.colors.atmo3,
-
-      labelOverflow: "hidden",
-      labelTextOverflow: "ellipsis",
-      labelVerticalAlign: "middle",
-      labelPaddingRight: theme.space.xs,
-      labelFontWeight: theme.fontWeights.normal,
-      labelHeight: "32px",
-      labelLineHeight: "32px",
-      labelWidth: "100%",
-      labelDisabledColor: theme.colors.atmo5,
+      hoverColor: theme.colors.atmo3,
+      borderRadius: "0px",
+      letterSpacing: "0.02em",
+      fontSize: "12px",
     },
     tagsInput: {
       disabledBackgroundColor: theme.colors.atmo1,

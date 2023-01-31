@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from "react";
-
 import clsx from "clsx";
-
 import { RadioProps as MuiRadioProps } from "@mui/material";
-
 import {
   RadioButtonUnselected,
   RadioButtonSelected,
@@ -61,7 +58,11 @@ export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
     /**
      * The callback fired when the radio button is pressed.
      */
-    onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+    onChange?: (
+      event: React.ChangeEvent<HTMLInputElement>,
+      checked: boolean,
+      value: any
+    ) => void;
     /**
      * Whether the selector should use semantic colors.
      */
@@ -121,26 +122,19 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
   const {
     classes,
     className,
-
     id,
     name,
     value = "on",
     required = false,
     readOnly = false,
     disabled = false,
-
     checked,
     defaultChecked,
-
     onChange,
-
     semantic = false,
-
     inputProps,
-
     onFocusVisible,
     onBlur,
-
     ...others
   } = props;
 

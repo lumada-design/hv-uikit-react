@@ -27,13 +27,13 @@ export interface HvButtonProps
   /** Use the variant prop to change the visual style of the Button. */
   variant?: HvButtonVariant;
   sx?: CSSProperties;
-  icon?: Boolean;
+  icon?: boolean;
   className?: string;
   startIcon?: ReactElement;
   size?: HvButtonSize;
   radius?: HvButtonRadius;
-  overrideIconColors?: Boolean;
-  selected?: Boolean;
+  overrideIconColors?: boolean;
+  selected?: boolean;
   classes?: HvButtonClasses;
 }
 

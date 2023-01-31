@@ -7,11 +7,16 @@ import { transientOptions } from "utils/transientOptions";
 export const StyledHvBaseRadio = styled(
   HvBaseRadio,
   transientOptions
-)(({ $invalidRadio }: { $invalidRadio: boolean }) => ({
-  height: theme.radio.height,
+)(({ $invalid }: { $invalid: boolean }) => ({
+  height: "32px",
 
-  ...($invalidRadio && {
-    borderBottom: theme.radio.invalidRadioBottomBorder,
+  ...($invalid && {
+    borderBottom: `1px solid ${theme.colors.sema4}`,
+
+    "&:hover": {
+      borderBottomLeftRadius: "0px",
+      borderBottomRightRadius: "0px",
+    },
   }),
 
   "& svg": {
@@ -21,7 +26,7 @@ export const StyledHvBaseRadio = styled(
 }));
 
 export const StyledHvFormElement = styled(HvFormElement)({
-  display: theme.radio.display,
+  display: "inline-block",
 });
 
 export const StyledDivContainer = styled(
@@ -29,31 +34,42 @@ export const StyledDivContainer = styled(
   transientOptions
 )(
   ({
-    $invalidContainer,
+    $invalid,
     $focusVisible,
+    $disabled,
   }: {
-    $invalidContainer: boolean;
+    $disabled: boolean;
+    $invalid: boolean;
     $focusVisible: boolean;
   }) => ({
     cursor: "pointer",
-    display: theme.radio.containerDisplay,
-
-    height: theme.radio.containerHeight,
-
-    transitionProperty: theme.radio.containerTransitionProperty,
-    transitionDuration: theme.radio.containerTransitionDuration,
-    transitionTimingFunction: theme.radio.containerTransitionTimingFunction,
-    transitionDelay: theme.radio.containerTransitionDelay,
+    display: "flex",
+    height: "32px",
+    transitionProperty: "background-color",
+    transitionDuration: "150ms",
+    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+    transitionDelay: "0ms",
 
     "&:hover": {
-      backgroundColor: theme.radio.containerHoverBackgroundColor,
+      backgroundColor: theme.radio.hoverColor,
+      borderRadius: theme.radio.borderRadius,
+
+      ...($invalid && {
+        borderBottomLeftRadius: "0px",
+        borderBottomRightRadius: "0px",
+      }),
     },
-    ...($invalidContainer && {
-      borderBottom: theme.radio.invalidRadioBottomBorder,
+
+    ...($disabled && {
+      cursor: "not-allowed",
+    }),
+
+    ...($invalid && {
+      borderBottom: `1px solid ${theme.colors.sema4}`,
     }),
 
     ...($focusVisible && {
-      backgroundColor: theme.radio.containerFocusBackgroundColor,
+      backgroundColor: theme.colors.atmo3,
       ...outlineStyles,
     }),
   })
@@ -63,17 +79,22 @@ export const StyledHvLabel = styled(
   HvLabel,
   transientOptions
 )(({ $disabled }: { $disabled: boolean }) => ({
-  overflow: theme.radio.labelOverflow,
-  textOverflow: theme.radio.labelTextOverflow,
-  verticalAlign: theme.radio.labelVerticalAlign,
-  paddingRight: theme.radio.labelPaddingRight,
-  fontWeight: theme.radio.labelFontWeight,
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  verticalAlign: "middle",
+  paddingRight: "10px",
+  whiteSpace: "nowrap",
+  color: theme.colors.acce1,
   cursor: "pointer",
-  height: theme.radio.labelHeight,
-  lineHeight: theme.radio.labelLineHeight,
-  width: theme.radio.labelWidth,
+  fontWeight: theme.fontWeights.normal,
+  width: "100%",
+  height: "32px",
+  lineHeight: "32px",
+  letterSpacing: theme.radio.letterSpacing,
+  fontSize: theme.radio.fontSize,
+
   ...($disabled && {
-    color: theme.radio.labelDisabledColor,
+    color: theme.colors.atmo5,
     cursor: "not-allowed",
   }),
 }));

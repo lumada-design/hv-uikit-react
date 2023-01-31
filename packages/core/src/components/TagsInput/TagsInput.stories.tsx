@@ -12,22 +12,23 @@ import {
 import { isEmpty } from "lodash";
 import { useState } from "react";
 import countryNamesArray from "./countries";
+import { tagsInputClasses } from ".";
 
 const StyledTagsInput = styled(HvTagsInput)({
-  "&.root": {
+  [`&.${tagsInputClasses.root}`]: {
     width: 500,
   },
 });
 
 const StyledMultilineTagsInput = styled(HvTagsInput)({
-  "& .tagsList": {
+  [`& .${tagsInputClasses.tagsList}`]: {
     width: 350,
     height: 100,
   },
 });
 
 const StyledSuggestionsTagsInput = styled(HvTagsInput)({
-  "& > .root": {
+  [`& > .${tagsInputClasses.root}`]: {
     width: 550,
     height: 400,
   },
@@ -89,7 +90,7 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
     );
   },
 };
-const StyledButtoWrapper = styled("div")({
+const StyledButtonWrapper = styled("div")({
   "& button": {
     marginRight: theme.spacing(1),
     marginBottom: theme.spacing(4),
@@ -110,7 +111,7 @@ export const ControlledTagArray = () => {
 
   return (
     <>
-      <StyledButtoWrapper>
+      <StyledButtonWrapper>
         <HvButton
           variant="secondarySubtle"
           onClick={() => {
@@ -128,7 +129,7 @@ export const ControlledTagArray = () => {
         <HvButton variant="secondarySubtle" onClick={() => setCurrValueArr([])}>
           Clear tags
         </HvButton>
-      </StyledButtoWrapper>
+      </StyledButtonWrapper>
 
       <HvTagsInput
         id="tags-list-4"

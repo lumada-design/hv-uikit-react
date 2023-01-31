@@ -1,10 +1,9 @@
 import clsx from "clsx";
 import { CSSProperties, useState, useContext } from "react";
-import { CloseXS } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "../../types";
-import { StyledChip, StyledButton } from "./Tag.styles";
+import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
 import { ThemeContext } from "index";
@@ -101,13 +100,14 @@ export const HvTag = ({
         variant="secondaryGhost"
         {...deleteButtonProps}
       >
-        <CloseXS
+        <StyledCloseXS
           iconSize="XS"
           style={{
             ...(disabled ? { cursor: "not-allowed" } : undefined),
             height: 16,
           }}
           color={disabled ? disabledSemanticColor : "base2"}
+          $color={disabled ? disabledSemanticColor : "base2"}
         />
       </StyledButton>
     );
