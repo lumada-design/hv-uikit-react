@@ -12,6 +12,7 @@ import {
   HvWarningText,
   baseInputClasses,
   listItemClasses,
+  suggestionsClasses,
 } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
@@ -90,7 +91,7 @@ export const StyledTagsList = styled(
       border: `1px solid ${theme.tagsInput.hoverColor}`,
     },
 
-    [`&& .${baseInputClasses.inputRoot}`]: {
+    [`& .${baseInputClasses.inputRoot}`]: {
       border: "none",
     },
 
@@ -168,7 +169,7 @@ export const StyledListItem = styled(HvListItem)(
 
 export const StyledTag = styled((props) => <HvTag {...props} />)(
   ({ $selected }: { $selected: boolean }) => ({
-    "& .chipRoot": {
+    [`& .${tagsInputClasses.chipRoot}`]: {
       maxWidth: "none",
     },
     ...($selected && {
@@ -202,7 +203,7 @@ export const StyledInputListItem = styled(HvListItem)(
       width: "100%",
       paddingTop: "3px!important",
       verticalAlign: "middle",
-      "&.empty": {
+      [`&.${tagsInputClasses.tagInputRootEmpty}`]: {
         position: "absolute",
         height: "100%",
         paddingTop: "3px!important",
@@ -226,7 +227,6 @@ export const StyledInput = styled(HvInput)(
       [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
         background: "none",
       },
-      "&.singleLine": {},
     },
     [`& .${baseInputClasses.inputRoot}`]: {
       marginLeft: 0,
@@ -246,7 +246,7 @@ export const StyledInput = styled(HvInput)(
       outline: "none!important",
       boxShadow: "none!important",
     },
-    [`&& .${baseInputClasses.inputRootReadOnly}`]: {
+    [`& .${baseInputClasses.inputRootReadOnly}`]: {
       border: "none",
       "&:hover": {
         border: "none",
@@ -260,7 +260,7 @@ export const StyledSuggestions = styled(HvSuggestions)({
   width: "100%",
   position: "relative",
   top: 59,
-  "& .root .list &": {
+  [`& .${suggestionsClasses.root} .${suggestionsClasses.list} &`]: {
     width: "100%",
   },
 });

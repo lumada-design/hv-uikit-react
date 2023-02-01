@@ -55,3 +55,4 @@ export * from "./TextArea";
 export * from "./TagsInput";
 export * from "./CheckBoxGroup";
 export * from "./List";
+export * from "./RadioGroup";

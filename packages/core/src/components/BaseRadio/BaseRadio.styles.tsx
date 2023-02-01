@@ -11,26 +11,26 @@ export const StyledRadio = styled(
   MuiRadio,
   transientOptions
 )(({ $focusVisible }: { $focusVisible: boolean }) => ({
-  padding: theme.baseRadio.padding,
+  padding: 0,
   cursor: "pointer",
   "&:hover": {
     backgroundColor: theme.baseRadio.hoverColor,
     borderRadius: theme.baseRadio.hoverBorderRadius,
   },
-  borderRadius: theme.baseRadio.borderRadius,
+  borderRadius: 0,
 
   [`&.${MuiRadioClasses.disabled}`]: {
     cursor: "not-allowed",
     pointerEvents: "initial",
     "& svg": {
       "& path:nth-child(2)": {
-        fill: theme.baseRadio.disabledColor,
+        fill: theme.colors.atmo5,
       },
     },
   },
   ...($focusVisible && {
     "& svg": {
-      borderRadius: theme.baseRadio.focusBorderRadius,
+      borderRadius: "8px",
       ...outlineStyles,
     },
   }),
