@@ -74,10 +74,6 @@ const componentsSpec = {
   baseRadio: {
     hoverColor: "string",
     hoverBorderRadius: "string",
-    disabledColor: "string",
-    borderRadius: "string",
-    padding: "string",
-    focusBorderRadius: "string",
   },
   baseSwitch: {
     padding: "string",
@@ -137,29 +133,10 @@ const componentsSpec = {
     lineHeight: "string",
   },
   radio: {
-    display: "string",
-    height: "string",
-    invalidRadioBottomBorder: "string",
-
-    containerDisplay: "string",
-    containerHeight: "string",
-    containerTransitionProperty: "string",
-    containerTransitionDuration: "string",
-    containerTransitionTimingFunction: "string",
-    containerTransitionDelay: "string",
-
-    containerHoverBackgroundColor: "string",
-    containerFocusBackgroundColor: "string",
-
-    labelOverflow: "string",
-    labelTextOverflow: "string",
-    labelVerticalAlign: "string",
-    labelPaddingRight: "string",
-    labelFontWeight: "string",
-    labelHeight: "string",
-    labelLineHeight: "string",
-    labelWidth: "string",
-    labelDisabledColor: "string",
+    hoverColor: "string",
+    borderRadius: "string",
+    letterSpacing: "string",
+    fontSize: "string",
   },
   tagsInput: {
     disabledBackgroundColor: "string",

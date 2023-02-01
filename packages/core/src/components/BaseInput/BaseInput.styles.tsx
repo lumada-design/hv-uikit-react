@@ -27,12 +27,10 @@ export const StyledRoot = styled(
     width: "100%",
     position: "relative",
 
-    // "&:hover .inputBorderContainer": {
     [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
       backgroundColor: theme.baseInput.hoverColor,
     },
 
-    // "&:focus-within .inputBorderContainer": {
     [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
       backgroundColor: theme.baseInput.hoverColor,
     },
@@ -71,29 +69,24 @@ export const StyledRoot = styled(
     }),
 
     ...($readOnly && {
-      // "& .inputBorderContainer": {
       [`& .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
 
-      // "&:hover .inputBorderContainer": {
       [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
 
-      // "&:focus-within .inputBorderContainer": {
       [`&:focus-within .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: "transparent",
       },
     }),
 
     ...($disabled && {
-      // "& .inputBorderContainer": {
       [`& .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: theme.colors.atmo4,
       },
 
-      // "&:hover .inputBorderContainer": {
       [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
         backgroundColor: theme.colors.atmo4,
       },
@@ -101,12 +94,10 @@ export const StyledRoot = styled(
 
     ...($invalid && {
       "&:not(.disabled)": {
-        // "& .inputBorderContainer": {
         [`& .${baseInputClasses.inputBorderContainer}`]: {
           backgroundColor: theme.colors.sema4,
         },
 
-        // "&:hover .inputBorderContainer": {
         [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
           backgroundColor: theme.colors.sema4,
         },
@@ -155,13 +146,11 @@ export const StyledInput = styled(
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       }),
 
-      // "&:hover:not(.inputRootDisabled):not(.inputRootInvalid):not(.inputRootReadOnly)":
       [`&:hover:not(.${baseInputClasses.inputRootDisabled}):not(.${baseInputClasses.inputRootInvalid}):not(.${baseInputClasses.inputRootReadOnly})`]:
         {
           borderColor: theme.baseInput.hoverColor,
         },
 
-      // "&:hover:not(.inputRootDisabled)::before": {
       [`&:hover:not(.${baseInputClasses.inputRootDisabled})::before`]: {
         borderBottom: "none",
       },
@@ -226,7 +215,6 @@ export const StyledInput = styled(
         background: theme.colors.atmo1,
       },
 
-      // "&.inputRootReadOnly": {
       [`&.${baseInputClasses.inputRootReadOnly}`]: {
         backgroundColor: theme.baseInput.readOnlyBackgroundColor,
       },
@@ -253,7 +241,6 @@ export const StyledInput = styled(
       overflow: "auto",
       border: "none",
 
-      // "& .input": {
       [`& .${baseInputClasses.input}`]: {
         border: `1px solid ${theme.baseInput.multilineBorderColor}`,
         borderRadius: "2px",

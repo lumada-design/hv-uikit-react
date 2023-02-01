@@ -8,6 +8,7 @@ import {
   HvLabel,
   HvSuggestions,
   baseInputClasses,
+  suggestionsClasses,
 } from "components";
 import { inputClasses } from ".";
 
@@ -33,10 +34,9 @@ export const StyledSuccess = styled(Success)({
 export const StyledSuggestions = styled(HvSuggestions)({
   width: "100%",
   position: "relative",
-  // "& .root .list &": {
-  // // [`& .${inputClasses.root} .list &`]: {
-  //   width: "100%",
-  // },
+  [`& .${suggestionsClasses.root} .${suggestionsClasses.list} &`]: {
+    width: "100%",
+  },
 });
 
 export const StyledAdornmentsBox = styled("div")({

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { CloseXS } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
 import { HvButton } from "components";
@@ -29,7 +30,7 @@ export const StyledChip = styled(
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
-      "& .focusVisible": {
+      [`& .${tagClasses.focusVisible}`]: {
         backgroundColor: fade(theme.colors.base1, 0.3),
       },
       ...($type === "categorical" && {
@@ -40,7 +41,7 @@ export const StyledChip = styled(
         "&:hover": {
           borderRadius: 8,
         },
-        "& $label > p": {
+        [`& .${tagClasses.label}`]: {
           color: theme.colors.acce1,
         },
         "&:focus:not(:focus-visible)": {
@@ -51,7 +52,7 @@ export const StyledChip = styled(
       ...($disabled && {
         backgroundColor: theme.colors.atmo3,
         cursor: "not-allowed",
-        "& $label > p": {
+        [`& .${tagClasses.label}`]: {
           color: theme.colors.atmo5,
         },
       }),
@@ -63,7 +64,7 @@ export const StyledChip = styled(
       ...($categoricalDisabled && {
         backgroundColor: theme.colors.atmo3,
         cursor: "not-allowed",
-        "& $label > p": {
+        [`& .${tagClasses.label}`]: {
           color: theme.colors.atmo5,
         },
         "&:hover": {
@@ -134,3 +135,12 @@ export const StyledButton = styled(HvButton)({
     background: "transparent",
   },
 });
+
+export const StyledCloseXS = styled(
+  CloseXS,
+  transientOptions
+)(({ $color }: { $color: string }) => ({
+  "& svg .color0": {
+    fill: theme.colors[$color],
+  },
+}));
