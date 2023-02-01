@@ -212,6 +212,11 @@ const ds5Theme = makeTheme((theme) => ({
       extensionHeight: "0px",
       extensionBorderColor: theme.colors.acce4,
     },
+    pagination: {
+      pageSizeBorderColor: theme.colors.acce1,
+      pageSizeBorderRadius: "2px",
+      pageJumpTextAlign: "center",
+    },
   },
 }));
 

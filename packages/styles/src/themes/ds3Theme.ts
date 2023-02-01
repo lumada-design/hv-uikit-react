@@ -197,6 +197,11 @@ const ds3Theme = makeTheme((theme) => ({
       extensionHeight: "10px",
       extensionBorderColor: "transparent",
     },
+    pagination: {
+      pageSizeBorderColor: "transparent",
+      pageSizeBorderRadius: "0px",
+      pageJumpTextAlign: "right",
+    },
   },
 }));
 

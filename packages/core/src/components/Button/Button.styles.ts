@@ -47,135 +47,94 @@ export const StyledButton = styled(
     display: "inline-flex",
     justifyContent: "center",
     textTransform: "none",
-    cursor: "pointer",
+    cursor: $disabled ? "not-allowed" : "pointer",
+    ...($disabled && {
+      pointerEvents: "auto",
+    }),
     "&:hover": {},
     "&:focus": {},
     "&.HvIsFocusVisible": {
       ...outlineStyles,
     },
     "&:active": {},
-    ...($disabled && {
-      cursor: "not-allowed",
-      pointerEvents: "auto",
-    }),
+
     fontSize: theme.fontSizes.base,
     fontWeight: 600,
     ...(overrideIconColors &&
       variant === "primary" && {
         "& svg .color0": {
-          fill: theme.colors.atmo1,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(overrideIconColors &&
       variant === "primarySubtle" && {
         "& svg .color0": {
-          fill: theme.colors.acce2,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(overrideIconColors &&
       variant === "primaryGhost" && {
         "& svg .color0": {
-          fill: theme.colors.acce2,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(overrideIconColors &&
       variant === "secondarySubtle" && {
         "& svg .color0": {
-          fill: theme.colors.acce1,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(overrideIconColors &&
       variant === "secondaryGhost" && {
         "& svg .color0": {
-          fill: theme.colors.acce1,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(overrideIconColors &&
       variant === "semantic" && {
         "& svg .color0": {
-          fill: theme.colors.base2,
+          fill: $disabled ? theme.colors.atmo5 : theme.colors.base2,
         },
-        ...($disabled && {
-          "& svg .color0": {
-            fill: theme.colors.atmo5,
-          },
-        }),
       }),
     ...(variant === "primary" && {
-      color: theme.colors.atmo1,
-      backgroundColor: theme.colors.acce2,
+      color: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
+      backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.acce2,
       "&:hover": {
         backgroundColor: theme.colors.acce2h,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        backgroundColor: theme.colors.atmo3,
-      }),
       "&:focus-visible": {
         backgroundColor: theme.colors.acce2h,
       },
     }),
     ...(variant === "primarySubtle" && {
-      backgroundColor: "transparent",
-      border: `1px solid ${theme.colors.acce2}`,
-      color: theme.colors.acce2,
+      backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
+      border: $disabled
+        ? `1px solid ${theme.colors.atmo4}`
+        : `1px solid ${theme.colors.acce2}`,
+      color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
       "&:hover": {
         backgroundColor: theme.colors.atmo3,
       },
       "&:focus-visible": {
         backgroundColor: theme.colors.atmo3,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        backgroundColor: theme.colors.atmo3,
-        border: `1px solid ${theme.colors.atmo4}`,
-      }),
     }),
     ...(variant === "primaryGhost" && {
-      color: theme.colors.acce2,
+      color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: $disabled ? "transparent" : theme.colors.atmo3,
       },
       "&:focus-visible": {
         backgroundColor: theme.colors.atmo3,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        "&:hover": {
-          backgroundColor: "transparent",
-        },
-      }),
     }),
     ...(variant === "secondarySubtle" && {
-      color: theme.colors.acce1,
-      backgroundColor: "transparent",
-      border: `1px solid ${theme.colors.atmo4}`,
+      color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
+      backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
+      border: $disabled
+        ? `1px solid ${theme.colors.atmo4}`
+        : `1px solid ${theme.colors.atmo4}`,
       "&:hover": {
         backgroundColor: theme.colors.atmo3,
         border: `1px solid ${theme.colors.atmo4}`,
@@ -183,38 +142,25 @@ export const StyledButton = styled(
       "&:focus-visible": {
         backgroundColor: theme.colors.atmo3,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        backgroundColor: theme.colors.atmo3,
-        border: `1px solid ${theme.colors.atmo4}`,
-      }),
     }),
     ...(variant === "secondaryGhost" && {
-      color: theme.colors.acce1,
+      color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: $disabled ? "transparent" : theme.colors.atmo3,
       },
       "&:focus-visible": {
         backgroundColor: theme.colors.atmo3,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        "&:hover": {
-          backgroundColor: "transparent",
-        },
-      }),
     }),
     ...(variant === "semantic" && {
-      color: theme.colors.base2,
-      backgroundColor: "transparent",
+      color: $disabled ? theme.colors.atmo5 : theme.colors.base2,
+      backgroundColor: $disabled
+        ? theme.button.semanticColorDisabled
+        : "transparent",
       "&:hover": {
         backgroundColor: theme.button.semanticColor,
       },
-      ...($disabled && {
-        color: theme.colors.atmo5,
-        backgroundColor: theme.button.semanticColorDisabled,
-      }),
     }),
     ...(size === "xs" && {
       height: theme.sizes.xs,
