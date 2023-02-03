@@ -6,7 +6,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
     class="HvAppSwitcher-root HvAppSwitcher-open css-dp3omj-StyledRoot edqwsaf4"
   >
     <span
-      class="HvAppSwitcher-title edqwsaf2 css-1hhpnks-StyledTitleWithTooltip"
+      class="HvAppSwitcher-title edqwsaf2 css-1iqc9gm-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
       data-mui-internal-clone-element="true"
       variant="label"
     >
@@ -20,7 +20,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-la26v5-StyledTypography"
+          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp1/"
           tabindex="0"
           target="_top"
@@ -35,7 +35,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >
@@ -48,7 +48,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-la26v5-StyledTypography"
+          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp2/"
           tabindex="0"
           target="_blank"
@@ -64,7 +64,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >
@@ -102,7 +102,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-la26v5-StyledTypography"
+          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp2/"
           tabindex="0"
           target="_top"
@@ -118,7 +118,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-gnt68b-StyledTitleWithTooltip"
+            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >

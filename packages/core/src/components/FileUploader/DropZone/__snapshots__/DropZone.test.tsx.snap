@@ -1,0 +1,162 @@
+// Vitest Snapshot v1
+
+exports[`DropZone > should render correctly 1`] = `
+<div>
+  <div
+    aria-label="File Dropzone"
+    class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1exqe5d10"
+    id="dropzone-test"
+  >
+    <label
+      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-u24g5u-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+      for="dropzone-test-input-file"
+      id="dropzone-test-input-file-label"
+      variant="label"
+    >
+      Label
+    </label>
+    <label
+      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1kms97j-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+      id="dropzone-test-description"
+      variant="body"
+    >
+      Max. file size: 1.00B
+      Accepted files:
+    </label>
+  </div>
+  <div
+    class="HvDropZone-dropZoneContainer css-w7n486-StyledDropZoneContainer e1exqe5d7"
+    id="dropzone-test-button"
+    role="button"
+    tabindex="0"
+  >
+    <input
+      accept=""
+      class="HvDropZone-inputArea css-yg1b7p-StyledInput e1exqe5d6"
+      id="dropzone-test-input-file"
+      multiple=""
+      tabindex="-1"
+      title="Drag and drop or Select files"
+      type="file"
+    />
+    <div
+      class="HvDropZone-dropArea css-7a01xx-StyledDropArea e1exqe5d5"
+    >
+      <div
+        class="HvDropZone-dropZoneAreaIcon css-unhwub-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+        name="Doc"
+      >
+        <svg
+          focusable="false"
+          height="32"
+          viewBox="0 0 16 16"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+            fill="var(--colors-acce1)"
+          />
+        </svg>
+      </div>
+      <div
+        class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
+      >
+        <p
+          class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+          variant="body"
+        >
+          Drag and drop or
+          <span
+            class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+          >
+             Select files
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropZone > should render correctly when disabled 1`] = `
+<div>
+  <div
+    aria-label="File Dropzone"
+    class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1exqe5d10"
+    id="dropzone-test"
+  >
+    <label
+      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-15makj7-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+      for="dropzone-test-input-file"
+      id="dropzone-test-input-file-label"
+      variant="label"
+    >
+      Label
+    </label>
+    <label
+      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1pkbal3-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+      id="dropzone-test-description"
+      variant="body"
+    >
+      Max. file size: 1.00B
+      Accepted files:
+    </label>
+  </div>
+  <div
+    class="HvDropZone-dropZoneContainer HvDropZone-dropZoneContainerDisabled css-193xdyp-StyledDropZoneContainer e1exqe5d7"
+    id="dropzone-test-button"
+    role="button"
+    tabindex="0"
+  >
+    <input
+      accept=""
+      class="HvDropZone-inputArea css-yg1b7p-StyledInput e1exqe5d6"
+      disabled=""
+      id="dropzone-test-input-file"
+      multiple=""
+      tabindex="-1"
+      title=""
+      type="file"
+    />
+    <div
+      class="HvDropZone-dropArea css-7a01xx-StyledDropArea e1exqe5d5"
+    >
+      <div
+        class="HvDropZone-dropZoneAreaIcon css-unhwub-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+        name="Doc"
+      >
+        <svg
+          focusable="false"
+          height="32"
+          viewBox="0 0 16 16"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+            fill="var(--colors-atmo5)"
+          />
+        </svg>
+      </div>
+      <div
+        class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
+      >
+        <p
+          class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+          variant="body"
+        >
+          Drag and drop or
+          <span
+            class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+          >
+             Select files
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

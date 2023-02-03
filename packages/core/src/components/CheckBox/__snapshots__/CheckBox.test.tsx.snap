@@ -19,7 +19,7 @@ exports[`CheckBox > general > should render correctly 1`] = `
           value="dogs"
         />
         <div
-          class="css-du18qm"
+          class="HvBaseCheckBox-icon css-du18qm"
           font-size="medium"
           name="Checkbox"
         >
@@ -44,7 +44,7 @@ exports[`CheckBox > general > should render correctly 1`] = `
         </div>
       </span>
       <label
-        class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+        class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-19409s6-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
         for="hvcheckbox3-input"
         id="hvcheckbox3-label"
         variant="label"

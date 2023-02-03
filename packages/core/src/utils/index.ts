@@ -8,3 +8,4 @@ export { default as hexToRgbA } from "./hexToRgbA";
 export { default as isBrowser } from "./browser";
 export { default as multiSelectionEventHandler } from "./multiSelectionEventHandler";
 export * from "./classes";
+export { default as getComponentName } from "./getComponentName";

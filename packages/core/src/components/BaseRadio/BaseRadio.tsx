@@ -83,8 +83,8 @@ export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
   } & HvExtraProps;
 
 export const getSelectorIcons = (
-  classes,
-  options: { disabled: boolean; semantic: boolean }
+  options: { disabled: boolean; semantic: boolean },
+  classes?: HvBaseRadioClasses
 ) => {
   const { disabled, semantic } = options;
   const color =
@@ -156,7 +156,7 @@ export const HvBaseRadio = (props: HvBaseRadioProps) => {
     [onBlur]
   );
 
-  const icons = getSelectorIcons(classes, { disabled, semantic });
+  const icons = getSelectorIcons({ disabled, semantic }, classes);
 
   const onLocalChange = useCallback(
     (evt: React.ChangeEvent<HTMLInputElement>) => {

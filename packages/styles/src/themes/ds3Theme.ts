@@ -158,6 +158,38 @@ const ds3Theme = makeTheme((theme) => ({
     switch: {
       invalidPaddingBottom: "0px",
     },
+    fileUploader: {
+      dropZone: {
+        fontSize: "12px",
+        lineHeight: "16px",
+        letterSpacing: "0.02em",
+        borderColor: theme.colors.atmo4,
+        backgroundColor: theme.colors.atmo2,
+        borderRadius: "0px",
+        borderColorDrag: theme.colors.acce1,
+        borderColorDisabled: theme.colors.atmo4,
+        borderType: "dotted",
+      },
+      fileList: {
+        itemBorder: "none",
+        itemBorderRadius: "0px",
+      },
+      file: {
+        fontSize: "12px",
+        letterSpacing: "0.02em",
+        lineHeight: "16px",
+        progressHeight: "2px",
+        borderWidth: "1px",
+        previewContainerSize: "52px",
+        imageSize: "100%",
+      },
+      preview: {
+        buttonSize: "52px",
+        overlayColor: theme.colors.atmo3,
+        overlayOpacity: "0.75",
+        overlayBorderRadius: "0px",
+      },
+    },
   },
 }));
 

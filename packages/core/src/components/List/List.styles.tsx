@@ -17,7 +17,9 @@ export const StyledFixedSizeList = styled(FixedSizeList)({
   marginBottom: 5,
 });
 
-export const StyledSelectAllCheckBox = styled(HvCheckBox)({
+export const StyledSelectAllCheckBox = styled((props) => (
+  <HvCheckBox {...props} />
+))({
   width: "100%",
   margin: "0 0 2px 0",
 
@@ -34,7 +36,9 @@ export const StyledSelectAllCheckBox = styled(HvCheckBox)({
   },
 });
 
-export const StyledMultiSelectCheckBox = styled(HvCheckBox)({
+export const StyledMultiSelectCheckBox = styled((props) => (
+  <HvCheckBox {...props} />
+))({
   [`& .${checkBoxClasses.root}`]: {
     width: "100%",
     zIndex: 0,
@@ -64,7 +68,7 @@ export const StyledMultiSelectCheckBox = styled(HvCheckBox)({
   },
 });
 
-export const StyledLink = styled(HvLink)({
+export const StyledLink = styled((props) => <HvLink {...props} />)({
   color: theme.colors.acce1,
   fontSize: "12px",
   letterSpacing: "0.02em",
@@ -77,7 +81,9 @@ export const StyledLink = styled(HvLink)({
   },
 });
 
-export const StyledSingleSelectRadio = styled(HvRadio)({
+export const StyledSingleSelectRadio = styled((props) => (
+  <HvRadio {...props} />
+))({
   [`& .${radioClasses.root}`]: {
     width: "100%",
     zIndex: 0,

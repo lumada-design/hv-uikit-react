@@ -1,0 +1,149 @@
+// Vitest Snapshot v1
+
+exports[`File > should render correctly fail status 1`] = `
+<li
+  class="HvFile-root"
+>
+  <div
+    class="HvFile-icon css-mych0h-StyledFail e11o985j10 css-du18qm"
+    name="Fail"
+  >
+    <svg
+      focusable="false"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="color0"
+        d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
+        fill="var(--colors-sema4)"
+      />
+    </svg>
+  </div>
+  <p
+    class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
+    variant="body"
+  >
+    somefile.png
+  </p>
+  <span
+    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+  >
+     | 
+    <p
+      class="HvFile-fail e11o985j6 css-2nnc5a-getStyledComponent-StyledErrorMessage e1te0rfk0"
+      variant="body"
+    >
+      File type not allowed for upload
+    </p>
+  </span>
+  <button
+    aria-label="removeFileButtonLabel"
+    class="HvFile-removeButton e11o985j0 css-ffc17q-StyledButton-StyledIconButton egl9i9v0"
+    radius="base"
+  >
+    <div
+      class="css-1nxr552-StyledContentDiv egl9i9v3"
+    >
+      <span
+        class="css-1o4qkkz-StyledChildren egl9i9v1"
+      >
+        <div
+          class="css-du18qm"
+          name="Close"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+              fill="var(--colors-acce1)"
+            />
+          </svg>
+        </div>
+      </span>
+    </div>
+  </button>
+</li>
+`;
+
+exports[`File > should render correctly success status 1`] = `
+<li
+  class="HvFile-root"
+>
+  <div
+    class="HvFile-icon css-18h216t-StyledSuccess e11o985j11 css-du18qm"
+    name="Success"
+  >
+    <svg
+      focusable="false"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="color0"
+        d="M6.387 12 4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 0 1-4.943-2.057A7.023 7.023 0 1 1 8 15m8-7a8 8 0 1 0-8 8 8 8 0 0 0 8-8z"
+        fill="var(--colors-sema1)"
+      />
+    </svg>
+  </div>
+  <p
+    class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
+    variant="body"
+  >
+    somefile.png
+  </p>
+  <span
+    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+  >
+     | 
+    <p
+      class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+      variant="body"
+    >
+      875.00B
+    </p>
+  </span>
+  <button
+    aria-label="removeFileButtonLabel"
+    class="HvFile-removeButton e11o985j0 css-ffc17q-StyledButton-StyledIconButton egl9i9v0"
+    radius="base"
+  >
+    <div
+      class="css-1nxr552-StyledContentDiv egl9i9v3"
+    >
+      <span
+        class="css-1o4qkkz-StyledChildren egl9i9v1"
+      >
+        <div
+          class="css-du18qm"
+          name="Close"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+              fill="var(--colors-acce1)"
+            />
+          </svg>
+        </div>
+      </span>
+    </div>
+  </button>
+</li>
+`;

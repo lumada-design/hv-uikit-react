@@ -147,6 +147,38 @@ const componentsSpec = {
   switch: {
     invalidPaddingBottom: "string",
   },
+  fileUploader: {
+    dropZone: {
+      fontSize: "string",
+      lineHeight: "string",
+      letterSpacing: "string",
+      borderColor: "string",
+      backgroundColor: "string",
+      borderRadius: "string",
+      borderColorDrag: "string",
+      borderColorDisabled: "string",
+      borderType: "string",
+    },
+    fileList: {
+      itemBorder: "string",
+      itemBorderRadius: "string",
+    },
+    file: {
+      fontSize: "string",
+      letterSpacing: "string",
+      lineHeight: "string",
+      progressHeight: "string",
+      borderWidth: "string",
+      previewContainerSize: "string",
+      imageSize: "string",
+    },
+    preview: {
+      buttonSize: "string",
+      overlayColor: "string",
+      overlayOpacity: "string",
+      overlayBorderRadius: "string",
+    },
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

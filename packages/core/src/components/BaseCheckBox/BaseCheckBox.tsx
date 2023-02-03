@@ -82,10 +82,13 @@ export type HvBaseCheckBoxProps = Omit<MuiCheckboxProps, "onChange"> &
     classes?: HvBaseCheckBoxClasses;
   };
 
-const getSelectorIcons = (options: {
-  disabled: boolean;
-  semantic: boolean;
-}) => {
+const getSelectorIcons = (
+  options: {
+    disabled: boolean;
+    semantic: boolean;
+  },
+  classes?: HvBaseCheckBoxClasses
+) => {
   const { disabled, semantic } = options;
   const color =
     (disabled && ["atmo3", "atmo5"]) ||
@@ -98,9 +101,24 @@ const getSelectorIcons = (options: {
 
   // Default colors: ["atmo1","acce1"]
   return {
-    checkbox: <CheckboxIcon color={color} />,
-    checkboxPartial: <CheckboxPartialIcon color={color} />,
-    checkboxChecked: <CheckboxCheckIcon color={checkedColor} />,
+    checkbox: (
+      <CheckboxIcon
+        color={color}
+        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
+      />
+    ),
+    checkboxPartial: (
+      <CheckboxPartialIcon
+        color={color}
+        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
+      />
+    ),
+    checkboxChecked: (
+      <CheckboxCheckIcon
+        color={checkedColor}
+        className={clsx(classes?.icon, baseCheckBoxClasses.icon)}
+      />
+    ),
   };
 };
 
@@ -131,7 +149,7 @@ export const HvBaseCheckBox = ({
 }: HvBaseCheckBoxProps) => {
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
 
-  const icons = getSelectorIcons({ disabled, semantic });
+  const icons = getSelectorIcons({ disabled, semantic }, classes);
 
   const onChangeCallback = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {

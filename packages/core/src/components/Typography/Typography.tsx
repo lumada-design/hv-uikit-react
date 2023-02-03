@@ -1,7 +1,7 @@
 import { forwardRef, Ref, ElementType, useMemo } from "react";
 import { isString } from "lodash";
 import { HvBaseProps } from "../../types";
-import { styled } from "@mui/system";
+import styled from "@emotion/styled";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 

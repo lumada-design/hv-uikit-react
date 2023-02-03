@@ -111,8 +111,10 @@ importers:
       '@popperjs/core': ^2.11.6
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.8
+      attr-accept: ^2.2.2
       clsx: ^1.2.1
       detect-browser: ^5.3.0
+      hoist-non-react-statics: ^3.3.2
       lodash: ^4.17.21
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -128,8 +130,10 @@ importers:
       '@hitachivantara/uikit-styles': link:../styles
       '@mui/material': 5.11.2_lskpmcsdi7ipu6qpuapyu56ihm
       '@popperjs/core': 2.11.6
+      attr-accept: 2.2.2
       clsx: 1.2.1
       detect-browser: 5.3.0
+      hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -6332,6 +6336,11 @@ packages:
     engines: {node: '>= 4.5.0'}
     hasBin: true
     dev: true
+
+  /attr-accept/2.2.2:
+    resolution: {integrity: sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==}
+    engines: {node: '>=4'}
+    dev: false
 
   /autoprefixer/9.8.8:
     resolution: {integrity: sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA==}
