@@ -8,7 +8,7 @@ const pascalToKebab = (string = "") =>
   string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
 const withId = (Component) => {
-  const WithId = ({ id, ...others }: { id: string } & HvExtraProps) => {
+  const WithId = ({ id, ...others }: { id?: string } & HvExtraProps) => {
     const [internalId] = useState(
       id || uniqueId(`${pascalToKebab(getComponentName(Component))}-`)
     );
