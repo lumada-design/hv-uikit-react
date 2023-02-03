@@ -1,0 +1,55 @@
+// Vitest Snapshot v1
+
+exports[`DropDownMenu > should render correctly 1`] = `
+<div>
+  <div
+    class="css-1nctzd3-StyledRoot e1y5ntva3"
+  >
+    <div
+      class="HvBaseDropdown-root HvDropDownMenu-root css-1nukton-StyledRoot e1xgfj1t9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="menu"
+        class="HvDropDownMenu-container e1y5ntva2 HvBaseDropdown-anchor css-2kevrv-StyledAnchor-StyledBaseDropDown e1xgfj1t8"
+        tabindex="-1"
+      >
+        <button
+          aria-expanded="false"
+          aria-label="Dropdown menu"
+          class="HvDropDownMenu-icon e1y5ntva1 css-ubhy60-StyledButton-StyledButton egl9i9v0"
+          radius="base"
+          variant="secondaryGhost"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv egl9i9v3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren egl9i9v1"
+            >
+              <div
+                class="css-du18qm"
+                name="MoreOptionsVertical"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                    fill="var(--colors-acce1)"
+                  />
+                </svg>
+              </div>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

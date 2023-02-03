@@ -190,6 +190,13 @@ const ds3Theme = makeTheme((theme) => ({
         overlayBorderRadius: "0px",
       },
     },
+    dropDownMenu: {
+      borderRadius: "0px",
+      hoverColor: theme.colors.atmo3,
+      borderColor: "transparent",
+      extensionHeight: "10px",
+      extensionBorderColor: "transparent",
+    },
   },
 }));
 

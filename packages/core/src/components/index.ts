@@ -57,3 +57,4 @@ export * from "./CheckBoxGroup";
 export * from "./List";
 export * from "./RadioGroup";
 export * from "./FileUploader";
+export * from "./DropDownMenu";

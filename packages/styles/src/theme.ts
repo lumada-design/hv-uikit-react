@@ -179,6 +179,13 @@ const componentsSpec = {
       overlayBorderRadius: "string",
     },
   },
+  dropDownMenu: {
+    borderRadius: "string",
+    hoverColor: "string",
+    borderColor: "string",
+    extensionHeight: "string",
+    extensionBorderColor: "string",
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

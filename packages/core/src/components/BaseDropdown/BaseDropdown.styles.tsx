@@ -162,6 +162,7 @@ export const StyledContainer = styled(
   transientOptions
 )(({ $zIndex }: { $zIndex: string | number }) => ({
   zIndex: $zIndex,
+  width: "auto",
 }));
 
 export const StyledExtension = styled(
@@ -173,18 +174,20 @@ export const StyledExtension = styled(
     $openShadow,
     $floatLeft,
     $floatRight,
-    $backgroundColor,
     $shadowColor,
   }: {
     $leftPosition: boolean;
     $openShadow: boolean;
     $floatLeft: boolean;
     $floatRight: boolean;
-    $backgroundColor: string;
     $shadowColor: string;
   }) => ({
-    height: "10px",
-    backgroundColor: $backgroundColor,
+    height: theme.dropDownMenu.extensionHeight,
+    backgroundColor: theme.colors.atmo1,
+    borderTop: "none",
+    borderBottom: "none",
+    borderRight: `1px solid ${theme.dropDownMenu.extensionBorderColor}`,
+    borderLeft: `1px solid ${theme.dropDownMenu.extensionBorderColor}`,
 
     ...($leftPosition && {
       marginLeft: "auto",
