@@ -1,4 +1,4 @@
-import { styled } from "@mui/system";
+import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvOverflowTooltip, HvOverflowTooltipProps } from "components";
 

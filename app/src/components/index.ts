@@ -11,3 +11,4 @@ export * from "./BaseInput";
 export * from "./Radio";
 export * from "./Input";
 export * from "./TagsInput";
+export * from "./FileUploader";

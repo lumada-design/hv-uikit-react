@@ -6,7 +6,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
     class="HvRadioGroup-root css-whistd-StyledFormElement e3r04jq2 HvFormElement-root"
   >
     <label
-      class="HvRadioGroup-label e3r04jq1 HvLabel-root e1injmq50 css-1wvnv6c-StyledTypography-StyledLabel"
+      class="HvRadioGroup-label e3r04jq1 HvLabel-root e1injmq50 css-rk59er-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
       id="hvradiogroup9-label"
       variant="label"
     >
@@ -59,7 +59,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-1gx0pbn-StyledTypography-StyledHvLabel"
+            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-yf4ghi-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
             for="hvradio11-input"
             id="hvradio11-label"
             variant="label"
@@ -116,7 +116,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-1gx0pbn-StyledTypography-StyledHvLabel"
+            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-yf4ghi-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
             for="hvradio13-input"
             id="hvradio13-label"
             variant="label"
@@ -167,7 +167,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-1gx0pbn-StyledTypography-StyledHvLabel"
+            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-yf4ghi-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
             for="hvradio15-input"
             id="hvradio15-label"
             variant="label"

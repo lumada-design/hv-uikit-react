@@ -1,0 +1,201 @@
+// Vitest Snapshot v1
+
+exports[`FileUploader > should render correctly 1`] = `
+<div>
+  <div>
+    <div
+      aria-label="File Dropzone"
+      class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1exqe5d10"
+      id="-3"
+    >
+      <label
+        class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-u24g5u-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+        for="-3-input-file"
+        id="-3-input-file-label"
+        variant="label"
+      >
+        Label
+      </label>
+      <label
+        class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1kms97j-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+        id="-3-description"
+        variant="body"
+      >
+        Max. file size: 12.00B
+         (jpeg)
+      </label>
+    </div>
+    <div
+      class="HvDropZone-dropZoneContainer css-w7n486-StyledDropZoneContainer e1exqe5d7"
+      id="-3-button"
+      role="button"
+      tabindex="0"
+    >
+      <input
+        accept="jpeg"
+        class="HvDropZone-inputArea css-yg1b7p-StyledInput e1exqe5d6"
+        id="-3-input-file"
+        multiple=""
+        tabindex="-1"
+        title="Drop files here or click to upload"
+        type="file"
+      />
+      <div
+        class="HvDropZone-dropArea css-7a01xx-StyledDropArea e1exqe5d5"
+      >
+        <div
+          class="HvDropZone-dropZoneAreaIcon css-unhwub-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+          name="Doc"
+        >
+          <svg
+            focusable="false"
+            height="32"
+            viewBox="0 0 16 16"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+              fill="var(--colors-acce1)"
+            />
+          </svg>
+        </div>
+        <div
+          class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
+        >
+          <p
+            class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+            variant="body"
+          >
+            Drop files here or
+            <span
+              class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+            >
+               click to upload
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <ul
+      class="HvFileList-list css-12tzpa8-StyledList e1ybz4wc0"
+    >
+      <li
+        class="HvFileList-listItem HvFile-root"
+      >
+        <div
+          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j9"
+        />
+        <p
+          class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
+          variant="body"
+        >
+          Screenshot 2019-12-05 at 17.15.43.png
+        </p>
+        <span
+          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+        >
+           | 
+          <p
+            class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+            variant="body"
+          >
+            14.10MB
+          </p>
+        </span>
+        <button
+          aria-label="Remove File"
+          class="HvFile-removeButton e11o985j0 css-ffc17q-StyledButton-StyledIconButton egl9i9v0"
+          id="hvfilelist4-values-remove-button"
+          radius="base"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv egl9i9v3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren egl9i9v1"
+            >
+              <div
+                class="css-du18qm"
+                name="Close"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                    fill="var(--colors-acce1)"
+                  />
+                </svg>
+              </div>
+            </span>
+          </div>
+        </button>
+      </li>
+      <li
+        class="HvFileList-listItem HvFile-root"
+      >
+        <div
+          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j9"
+        />
+        <p
+          class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
+          variant="body"
+        >
+          Screenshot 2019-12-05 at 12.03.13.png
+        </p>
+        <span
+          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+        >
+           | 
+          <p
+            class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+            variant="body"
+          >
+            875.00kB
+          </p>
+        </span>
+        <button
+          aria-label="Remove File"
+          class="HvFile-removeButton e11o985j0 css-ffc17q-StyledButton-StyledIconButton egl9i9v0"
+          id="hvfilelist4-values-remove-button"
+          radius="base"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv egl9i9v3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren egl9i9v1"
+            >
+              <div
+                class="css-du18qm"
+                name="Close"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                    fill="var(--colors-acce1)"
+                  />
+                </svg>
+              </div>
+            </span>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

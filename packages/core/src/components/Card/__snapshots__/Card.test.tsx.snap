@@ -42,7 +42,7 @@ exports[`Card > should render all the compoents 1`] = `
       class="MuiCardContent-root HvCard-Content-content es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
       <p
-        class="css-1vqwi0i"
+        class="css-1jadsn9-getStyledComponent e1te0rfk0"
         variant="label"
       >
         mockCardContent
@@ -71,7 +71,7 @@ exports[`Card > should render content 1`] = `
       class="MuiCardContent-root HvCard-Content-content es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
       <p
-        class="css-1vqwi0i"
+        class="css-1jadsn9-getStyledComponent e1te0rfk0"
         variant="label"
       >
         mockCardContent

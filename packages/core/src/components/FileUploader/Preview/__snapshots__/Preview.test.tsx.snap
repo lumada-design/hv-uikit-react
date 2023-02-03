@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`FileUploaderPreview > should render correctly 1`] = `
+<div>
+  <div>
+    Hello
+  </div>
+</div>
+`;

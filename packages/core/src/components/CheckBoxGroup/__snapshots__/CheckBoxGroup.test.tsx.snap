@@ -6,7 +6,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
     class="HvCheckBoxGroup-root css-whistd-StyledFormElement e1616oom2 HvFormElement-root"
   >
     <label
-      class="HvCheckBoxGroup-label e1616oom1 HvLabel-root e1injmq50 css-1wvnv6c-StyledTypography-StyledLabel"
+      class="HvCheckBoxGroup-label e1616oom1 HvLabel-root e1injmq50 css-rk59er-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
       id="hvcheckboxgroup9-label"
       variant="label"
     >
@@ -34,7 +34,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="dogs"
             />
             <div
-              class="css-du18qm"
+              class="HvBaseCheckBox-icon css-du18qm"
               font-size="medium"
               name="Checkbox"
             >
@@ -59,7 +59,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-19409s6-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
             for="hvcheckbox11-input"
             id="hvcheckbox11-label"
             variant="label"
@@ -85,7 +85,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="cats"
             />
             <div
-              class="css-du18qm"
+              class="HvBaseCheckBox-icon css-du18qm"
               font-size="medium"
               name="Checkbox"
             >
@@ -110,7 +110,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-19409s6-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
             for="hvcheckbox13-input"
             id="hvcheckbox13-label"
             variant="label"
@@ -136,7 +136,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="dragons"
             />
             <div
-              class="css-du18qm"
+              class="HvBaseCheckBox-icon css-du18qm"
               font-size="medium"
               name="Checkbox"
             >
@@ -161,7 +161,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-1wcg3ml-StyledTypography-StyledLabel"
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-19409s6-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
             for="hvcheckbox15-input"
             id="hvcheckbox15-label"
             variant="label"

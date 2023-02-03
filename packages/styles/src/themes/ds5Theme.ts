@@ -173,6 +173,38 @@ const ds5Theme = makeTheme((theme) => ({
     switch: {
       invalidPaddingBottom: "1px",
     },
+    fileUploader: {
+      dropZone: {
+        fontSize: "14px",
+        lineHeight: "20px",
+        letterSpacing: "0em",
+        borderColor: theme.colors.atmo5,
+        backgroundColor: theme.colors.atmo1,
+        borderRadius: "6px",
+        borderColorDrag: theme.colors.acce2,
+        borderColorDisabled: theme.colors.atmo5,
+        borderType: "dashed",
+      },
+      fileList: {
+        itemBorder: `1px solid ${theme.colors.atmo4}`,
+        itemBorderRadius: "0px 0px 6px 6px",
+      },
+      file: {
+        fontSize: "14px",
+        letterSpacing: "0em",
+        lineHeight: "20px",
+        progressHeight: "4px",
+        borderWidth: "2px",
+        previewContainerSize: "48px",
+        imageSize: "40px",
+      },
+      preview: {
+        buttonSize: "48px",
+        overlayColor: theme.colors.acce2s,
+        overlayOpacity: "0.6", // WARNING: Change to 1 when acce2s is fixed and has an alpha value
+        overlayBorderRadius: "2px",
+      },
+    },
   },
 }));
 

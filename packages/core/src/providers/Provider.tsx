@@ -4,7 +4,6 @@ import {
   getThemesVars,
   themes,
 } from "@hitachivantara/uikit-styles";
-
 import { setElementAttrs } from "utils";
 import { ThemeProvider } from "./ThemeProvider";
 

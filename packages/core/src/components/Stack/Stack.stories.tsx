@@ -1,4 +1,3 @@
-import { styled } from "@mui/system";
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Tool, Favorite, FavoriteSelected } from "@hitachivantara/uikit-icons";
@@ -14,6 +13,7 @@ import {
   HvButton,
 } from "components";
 import { useWidth } from "hooks";
+import styled from "@emotion/styled";
 
 const StyledBox = styled("div")({
   display: "flex",
