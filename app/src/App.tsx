@@ -15,6 +15,7 @@ import {
   TagsInput,
   Input,
   FileUploader,
+  Pagination,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -29,6 +30,7 @@ const styles = {
   maxWidth: "100%",
   margin: `${theme.spacing(5)} auto`,
   padding: `calc(${theme.header.height} + 50px) 20px 20px 20px`,
+  height: "100vh",
 } as CSSProperties;
 
 const App = () => {
@@ -37,9 +39,10 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <Pagination />
+        {/* 
         <DropDownMenu />
         <Buttons />
-        {/* 
         <BaseInput />
         <Input />
         <TagsInput />

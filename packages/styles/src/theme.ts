@@ -186,6 +186,11 @@ const componentsSpec = {
     extensionHeight: "string",
     extensionBorderColor: "string",
   },
+  pagination: {
+    pageSizeBorderColor: "string",
+    pageSizeBorderRadius: "string",
+    pageJumpTextAlign: "string"
+  },
 };
 
 const keys = [...Object.keys(tokens.breakpoints.values)];

@@ -526,7 +526,6 @@ export const HvBaseDropdown = ({
     if (disablePortal) return container;
 
     // Warning: By creating a portal, the container is not able to access the theme's CSS vars
-
     return createPortal(
       container,
       document.getElementById(rootId) || document.body

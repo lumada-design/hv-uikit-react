@@ -58,3 +58,4 @@ export * from "./List";
 export * from "./RadioGroup";
 export * from "./FileUploader";
 export * from "./DropDownMenu";
+export * from "./Pagination";

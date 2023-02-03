@@ -14,7 +14,7 @@ import {
   Preview,
   Search,
 } from "@hitachivantara/uikit-icons";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps, HvExtraProps } from "../../types";
 import {
   StyledFormElement,
   StyledLabelContainer,
@@ -119,7 +119,7 @@ export type HvInputProps = HvBaseProps<
   /** The placeholder value of the input. */
   placeholder?: string;
   /** Internal labels?. */
-  labels?: HvInputLabels;
+  labels?: HvInputLabels & HvExtraProps;
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
   /** Attributes applied to the input element. */
