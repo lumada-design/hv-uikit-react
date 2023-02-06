@@ -1,11 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvLinkClasses = {
-  a?: string;
-};
-
-const classKeys: string[] = ["a"];
-
-export const linkClasses = getClasses<HvLinkClasses>(classKeys, "HvLink");
-
+export { default as linkClasses } from "./linkClasses";
+export * from "./linkClasses";
 export * from "./Link";

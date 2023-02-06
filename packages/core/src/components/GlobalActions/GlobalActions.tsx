@@ -9,7 +9,9 @@ import {
   StyledRoot,
   StyledWrapper,
 } from "./GlobalActions.styles";
-import { globalActionsClasses, HvGlobalActionsClasses } from ".";
+import globalActionsClasses, {
+  HvGlobalActionsClasses,
+} from "./globalActionsClasses";
 
 export type GlobalActionsVariant = "global" | "section";
 

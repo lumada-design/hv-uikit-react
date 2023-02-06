@@ -1,14 +1,4 @@
-import { getClasses } from "utils";
-
-export type HvBrandClasses = {
-  root?: string;
-};
-
-const classKeys: string[] = ["root"];
-
-export const brandClasses = getClasses<HvBrandClasses>(
-  classKeys,
-  "HvHeader-Brand"
-);
-
-export * from "./Brand";
+export { default as headerBrandClasses } from "./brandClasses";
+export * from "./brandClasses";
+export { HvBrand as HvHeaderBrand } from "./Brand";
+export type { HvBrandProps as HvHeaderBrandProps } from "./Brand";

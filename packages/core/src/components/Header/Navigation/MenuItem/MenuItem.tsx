@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { HvNavigationItemProp, HvTypography } from "components";
+import { HvHeaderNavigationItemProp, HvTypography } from "components";
 import { HvMenuBar } from "../MenuBar";
 import { HvBaseProps } from "../../../../types";
 import { isKeypress, keyboardCodes } from "utils";
@@ -8,9 +8,9 @@ import { SelectionContext } from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
 
 export type MenuItemProps = HvBaseProps<HTMLDivElement, { onClick }> & {
-  item: HvNavigationItemProp;
+  item: HvHeaderNavigationItemProp;
   type?: string;
-  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
 };
 
 export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {

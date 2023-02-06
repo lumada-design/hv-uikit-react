@@ -16,18 +16,18 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
       class="HvAppSwitcher-actionsContainer css-91p7g3-StyledActionsContainer edqwsaf1 HvListContainer-root"
     >
       <li
-        class="HvAppSwitcher-Action-root e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp1/"
           tabindex="0"
           target="_top"
           variant="body"
         >
           <div
-            class="HvAppSwitcher-Action-icon css-14gx8az-StyledIcon e1mxicxc0"
+            class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e1mxicxc0"
           >
             <img
               class="HvAppSwitcher-Action-iconUrl css-lotzyn-StyledImg e1mxicxc2"
@@ -35,7 +35,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >
@@ -44,18 +44,18 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp2/"
           tabindex="0"
           target="_blank"
           variant="body"
         >
           <div
-            class="HvAppSwitcher-Action-icon css-14gx8az-StyledIcon e1mxicxc0"
+            class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e1mxicxc0"
           >
             <img
               alt="Mock App 2 Description"
@@ -64,7 +64,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >
@@ -76,7 +76,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcher-Action-iconInfo css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
+              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
               name="Info"
               role="img"
             >
@@ -98,18 +98,18 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-1t1184z-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e1mxicxc3 css-vmp3h0-getStyledComponent-StyledTypography e1te0rfk0"
           href="http://mockapp2/"
           tabindex="0"
           target="_top"
           variant="body"
         >
           <div
-            class="HvAppSwitcher-Action-icon css-14gx8az-StyledIcon e1mxicxc0"
+            class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e1mxicxc0"
           >
             <img
               alt="Mock App 2 Description"
@@ -118,7 +118,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle edqwsaf2 css-3u7tx1-getStyledComponent-StyledTitleWithTooltip e1te0rfk0"
             data-mui-internal-clone-element="true"
             variant="label"
           >
@@ -130,7 +130,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcher-Action-iconInfo css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
+              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon css-1voto92-StyledIconInfo e1mxicxc1 css-du18qm"
               name="Info"
               role="img"
             >

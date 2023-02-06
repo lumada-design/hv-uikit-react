@@ -61,7 +61,7 @@ const App = () => {
         <Typography />
         <Buttons />
         <Icons />
-        <Icons /> */}
+        <Icons />
       </HvBox>
     </HvProvider>
   );

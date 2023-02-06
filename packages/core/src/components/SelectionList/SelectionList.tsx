@@ -16,7 +16,9 @@ import {
 } from "utils";
 import { useControlled, useUniqueId } from "hooks";
 import { HvFormStatus } from "components";
-import { selectionListClasses, HvSelectionListClasses } from ".";
+import selectionListClasses, {
+  HvSelectionListClasses,
+} from "./selectionListClasses";
 
 export type HvSelectionListProps = HvBaseProps<
   HTMLUListElement,

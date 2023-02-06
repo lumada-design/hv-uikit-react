@@ -1,17 +1,6 @@
-import { getClasses } from "utils";
-
-export type HvCardClasses = {
-  root?: string;
-  selectable?: string;
-  selected?: string;
-  semanticBar?: string;
-};
-
-const classKeys: string[] = ["root", "selectable", "selected", "semanticBar"];
-
-export const cardClasses = getClasses<HvCardClasses>(classKeys, "HvCard");
-
+export { default as cardClasses } from "./cardClasses";
+export * from "./cardClasses";
 export * from "./Card";
-export { HvHeader as HvCardHeader } from "./Header";
-export { HvContent as HvCardContent } from "./Content";
-export { HvMedia as HvCardMedia } from "./Media";
+export * from "./Header";
+export * from "./Content";
+export * from "./Media";

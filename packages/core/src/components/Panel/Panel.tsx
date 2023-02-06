@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledDiv } from "./Panel.styles";
-import { panelClasses, HvPanelClasses } from ".";
+import panelClasses, { HvPanelClasses } from "./panelClasses";
 
 export type PanelProps = HvBaseProps & {
   /** Id to be applied to the root node. */

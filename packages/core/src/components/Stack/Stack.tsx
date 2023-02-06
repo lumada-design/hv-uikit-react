@@ -9,7 +9,7 @@ import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
 import { HvFocus } from "index";
 import { HvBreakpoints } from "types/theme";
-import { stackClasses, HvStackClasses } from ".";
+import stackClasses, { HvStackClasses } from "./stackClasses";
 
 export type HvStackDirection = "column" | "row";
 export type HvStackBreakpoints = Record<HvBreakpoints, string>;

@@ -4,7 +4,7 @@ import { HvFormElementContext } from "../FormElement";
 import { useContext } from "react";
 import { setId } from "utils";
 import clsx from "clsx";
-import { HvInfoMessageClasses, infoMessageClasses } from ".";
+import infoMessageClasses, { HvInfoMessageClasses } from "./infoMessageClasses";
 
 export type HvInfoMessageProps = HvBaseProps & {
   /** If `true` the label is disabled. */

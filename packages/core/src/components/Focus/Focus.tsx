@@ -6,7 +6,7 @@ import { keyboardCodes, isBrowser } from "utils";
 import ConditionalWrapper from "utils/ConditionalWrapper";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
-import { focusClasses, HvFocusClasses } from "./index";
+import focusClasses, { HvFocusClasses } from "./focusClasses";
 import "./Focus.css";
 
 export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
@@ -386,7 +386,7 @@ export const HvFocus = ({
       return;
     }
 
-    // TODO keep the smart default, but allow to explictly override if disabled elements should be focusable
+    // TODO keep the smart default, but allow to explicitly override if disabled elements should be focusable
     const isDisabledFocusable = strategy === "menu";
     const focusesList = getFocuses().filter(
       (el) =>
@@ -416,7 +416,7 @@ export const HvFocus = ({
       return;
     }
 
-    // TODO add property for specifing the composite widget orientation
+    // TODO add property for specifying the composite widget orientation
     // TODO implement handler for horizontal orientation
     onVerticalArrangementHandler(evt, focuses, focusesList);
   };
@@ -428,9 +428,18 @@ export const HvFocus = ({
   if (disabled) return children;
 
   const focusWrapper = (childrenToWrap) => (
-    <StyledFocusWrapper className={classes?.externalReference}>
+    <StyledFocusWrapper
+      className={clsx(
+        classes?.externalReference,
+        focusClasses.externalReference
+      )}
+    >
       {childrenToWrap}
-      {showFocus && <StyledFalseFocus className={classes?.falseFocus} />}
+      {showFocus && (
+        <StyledFalseFocus
+          className={clsx(classes?.falseFocus, focusClasses.falseFocus)}
+        />
+      )}
     </StyledFocusWrapper>
   );
 
@@ -441,9 +450,10 @@ export const HvFocus = ({
           children.props.className,
           focusClasses.root,
           [(focusClasses.root, classes?.root, filterClass)],
-          selected && focusClasses.selected,
-          disabledClass && focusClasses.disabled,
-          focusDisabled && focusClasses.focusDisabled
+          selected && clsx(focusClasses.selected, classes?.selected),
+          disabledClass && clsx(focusClasses.disabled, classes?.disabled),
+          focusDisabled &&
+            clsx(focusClasses.focusDisabled, classes?.focusDisabled)
         ),
         ref: config,
         onFocus,

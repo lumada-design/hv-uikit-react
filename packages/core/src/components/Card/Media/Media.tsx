@@ -1,7 +1,7 @@
 import { CardMediaProps as MuiCardMediaProps } from "@mui/material/CardMedia";
 import { StyledMedia } from "./Media.styles";
 import { HvBaseProps } from "../../../types";
-import { cardMediaClasses, HvCardMediaClasses } from ".";
+import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import clsx from "clsx";
 
 export type HvMediaProps = MuiCardMediaProps &

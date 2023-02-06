@@ -1,13 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvButtonClasses = {
-  focusVisible?: string;
-  startIcon?: string;
-  primary?: string;
-};
-
-const classKeys: string[] = ["focusVisible", "startIcon", "primary"];
-
-export const buttonClasses = getClasses<HvButtonClasses>(classKeys, "HvButton");
-
+export { default as buttonClasses } from "./buttonClasses";
+export * from "./buttonClasses";
 export * from "./Button";

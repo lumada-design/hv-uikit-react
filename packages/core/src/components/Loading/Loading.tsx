@@ -8,7 +8,7 @@ import {
   StyledLabel,
   StyledRoot,
 } from "./Loading.Styles";
-import { loadingClasses, HvLoadingClasses } from ".";
+import loadingClasses, { HvLoadingClasses } from "./loadingClasses";
 
 export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
   /** Indicates if the component should be render in a small size. */
@@ -44,8 +44,7 @@ export const HvLoading = (props: HvLoadingProps) => {
         className,
         loadingClasses.root,
         classes?.root,
-        hidden && classes?.hidden,
-        hidden && loadingClasses.hidden
+        hidden && clsx(classes?.hidden, loadingClasses.hidden)
       )}
       {...others}
     >

@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import { useContext } from "react";
-import { HvNavigationItemProp } from "components";
+import { HvHeaderNavigationItemProp } from "components";
 import { HvBaseProps } from "../../../../types";
 import { HvMenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
 
 export type HvMenuBarProps = HvBaseProps<"div", { onClick }> & {
-  data: HvNavigationItemProp[];
+  data: HvHeaderNavigationItemProp[];
   type: string;
-  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
 };
 
 export const HvMenuBar = ({
@@ -34,7 +34,7 @@ export const HvMenuBar = ({
       active={isActive}
     >
       <MenuBarUl id={id} onFocus={() => {}}>
-        {data.map((item: HvNavigationItemProp) => (
+        {data.map((item: HvHeaderNavigationItemProp) => (
           <HvMenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}
       </MenuBarUl>

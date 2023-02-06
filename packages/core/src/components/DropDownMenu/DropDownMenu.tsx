@@ -7,7 +7,9 @@ import {
   StyledButton,
   StyledPanel,
 } from "./DropDownMenu.styles";
-import { dropDownMenuClasses, HvDropDownMenuClasses } from ".";
+import dropDownMenuClasses, {
+  HvDropDownMenuClasses,
+} from "./dropDownMenuClasses";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import getPrevNextFocus from "utils/focusableElementFinder";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-icons";

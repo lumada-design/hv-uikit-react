@@ -3,7 +3,7 @@ import React, { cloneElement } from "react";
 import { HvButtonVariant } from "components";
 import { HvBaseProps } from "../../types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
-import { multiButtonClasses, HvMultiButtonClasses } from ".";
+import multiButtonClasses, { HvMultiButtonClasses } from "./multiButtonClasses";
 
 export type HvMultiButtonProps = HvBaseProps & {
   /** If all the buttons are disabled. */

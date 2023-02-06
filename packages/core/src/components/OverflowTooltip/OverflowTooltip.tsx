@@ -4,7 +4,9 @@ import { useResizeDetector } from "react-resize-detector";
 import { HvBaseProps } from "../../types/index";
 import { HvTooltip, HvTypography } from "components";
 import { StyledDataContainer } from "./OverflowTooltip.styles";
-import { overflowTooltipClasses, HvOverflowTooltipClasses } from ".";
+import overflowTooltipClasses, {
+  HvOverflowTooltipClasses,
+} from "./overflowTooltipClasses";
 
 export type HvOverflowTooltipProps = HvBaseProps & {
   /** The node that will be rendered inside the tooltip. */

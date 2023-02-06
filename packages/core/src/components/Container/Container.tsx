@@ -3,7 +3,7 @@ import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
 import { forwardRef } from "react";
 import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Container.styles";
-import { containerClasses, HvContainerClasses } from ".";
+import containerClasses, { HvContainerClasses } from "./containerClasses";
 import clsx from "clsx";
 
 export type HvContainerProps = MuiContainerProps &

@@ -6,7 +6,7 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { outlineStyles } from "utils";
-import { baseInputClasses } from ".";
+import baseInputClasses from "./baseInputClasses";
 
 export const StyledRoot = styled(
   "div",

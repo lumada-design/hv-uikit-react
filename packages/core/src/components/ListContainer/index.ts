@@ -1,15 +1,4 @@
-import { getClasses } from "utils";
-
-export type HvListContainerClasses = {
-  root?: string;
-};
-
-const classKeys: string[] = ["root"];
-
-export const listContainerClasses = getClasses<HvListContainerClasses>(
-  classKeys,
-  "HvListContainer"
-);
-
+export { default as listContainerClasses } from "./listContainerClasses";
+export * from "./listContainerClasses";
 export * from "./ListContainer";
 export * from "./ListItem";

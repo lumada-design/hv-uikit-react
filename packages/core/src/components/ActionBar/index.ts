@@ -1,14 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvActionBarClasses = {
-  root?: string;
-};
-
-const classKeys: string[] = ["root"];
-
-export const actionBarClasses = getClasses<HvActionBarClasses>(
-  classKeys,
-  "HvActionBar"
-);
-
+export { default as actionBarClasses } from "./actionBarClasses";
+export * from "./actionBarClasses";
 export * from "./ActionBar";

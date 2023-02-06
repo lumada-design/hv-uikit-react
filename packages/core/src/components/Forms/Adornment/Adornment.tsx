@@ -7,7 +7,7 @@ import {
   HvFormElementDescriptorsContext,
   HvFormStatus,
 } from "../FormElement";
-import { adornmentClasses, HvAdornmentClasses } from ".";
+import adornmentClasses, { HvAdornmentClasses } from "./adornmentClasses";
 
 const preventDefault = (event) => event.preventDefault();
 const noop = () => {};
@@ -88,7 +88,9 @@ export const HvAdornment = forwardRef<
         $hideIcon={!displayIcon}
         {...others}
       >
-        <StyledIcon className={classes?.icon}>{icon}</StyledIcon>
+        <StyledIcon className={clsx(adornmentClasses.icon, classes?.icon)}>
+          {icon}
+        </StyledIcon>
       </StyledButton>
     ) : (
       <StyledRoot

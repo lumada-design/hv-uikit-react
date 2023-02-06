@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useMemo } from "react";
 import { HvBaseProps } from "../../types";
-import { HvAction } from "./Action";
+import { HvAppSwitcherAction } from "./Action";
 import {
   StyledRoot,
   StyledTitle,
@@ -9,7 +9,7 @@ import {
   StyledFooter,
 } from "./AppSwitcher.styles";
 import TitleWithTooltip from "./TitleWithTooltip";
-import { appSwitcherClasses, HvAppSwitcherClasses } from ".";
+import appSwitcherClasses, { HvAppSwitcherClasses } from "./appSwitcherClasses";
 
 export type HvApplication = {
   /** Id of the application. */
@@ -22,7 +22,7 @@ export type HvApplication = {
   iconElement?: React.ReactElement;
   /** Small description of the application. */
   description?: string;
-  /**  URL where the application is accesible. */
+  /**  URL where the application is accessible. */
   url?: string;
   /** Defines if the application should be opened in the same tab or in a new one. */
   target?: "_top" | "_blank";
@@ -82,19 +82,31 @@ export const HvAppSwitcher = ({
       applications?.map((application) => {
         if (application.name) {
           return (
-            <HvAction
+            <HvAppSwitcherAction
               key={application.id || `${application.name}_${application.url}`}
               application={application}
               onClickCallback={actionClicked}
               isSelectedCallback={isActionSelectedCallback}
               classes={{
-                root: classes?.item,
-                selected: classes?.itemSelected,
-                disabled: classes?.itemDisabled,
-                typography: classes?.itemTrigger,
-                icon: classes?.itemIcon,
-                title: classes?.itemTitle,
-                iconInfo: classes?.itemInfoIcon,
+                root: clsx(classes?.item, appSwitcherClasses.item),
+                selected: clsx(
+                  classes?.itemSelected,
+                  appSwitcherClasses.itemSelected
+                ),
+                disabled: clsx(
+                  classes?.itemDisabled,
+                  appSwitcherClasses.itemDisabled
+                ),
+                typography: clsx(
+                  classes?.itemTrigger,
+                  appSwitcherClasses.itemTrigger
+                ),
+                icon: clsx(classes?.itemIcon, appSwitcherClasses.itemIcon),
+                title: clsx(classes?.itemTitle, appSwitcherClasses.itemTitle),
+                iconInfo: clsx(
+                  classes?.itemInfoIcon,
+                  appSwitcherClasses.itemInfoIcon
+                ),
               }}
             />
           );

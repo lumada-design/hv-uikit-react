@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-icons";
 import { HvBaseProps, HvExtraProps } from "../../types";
 import { StyledRadio } from "./BaseRadio.styles";
-import { baseRadioClasses, HvBaseRadioClasses } from ".";
+import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
 
 export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {

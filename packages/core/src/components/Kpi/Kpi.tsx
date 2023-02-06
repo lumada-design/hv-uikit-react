@@ -14,7 +14,7 @@ import {
   StyledTrendIndicator,
   StyledVisualIndicator,
 } from "./Kpi.styles";
-import { kpiClasses, HvKpiClasses } from ".";
+import kpiClasses, { HvKpiClasses } from "./kpiClasses";
 
 export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**

@@ -3,7 +3,9 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import HvListContext from "./ListContext";
 import { useForkRef } from "hooks";
-import { HvListContainerClasses, listContainerClasses } from ".";
+import listContainerClasses, {
+  HvListContainerClasses,
+} from "./listContainerClasses";
 
 export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
   /**

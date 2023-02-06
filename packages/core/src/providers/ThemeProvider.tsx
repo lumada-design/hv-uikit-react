@@ -4,7 +4,6 @@ import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
-
 import { setElementAttrs } from "utils";
 
 interface ThemeContextValue {

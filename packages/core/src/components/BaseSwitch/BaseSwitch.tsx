@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 import { StyledSwitch } from "./BaseSwitch.styles";
 import { HvBaseProps, HvExtraProps } from "../../types";
-import { baseSwitchClasses, HvBaseSwitchClasses } from ".";
+import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
 
 export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {

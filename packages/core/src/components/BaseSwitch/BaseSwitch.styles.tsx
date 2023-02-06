@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Switch as MuiSwitch, switchClasses } from "@mui/material";
+import {
+  Switch as MuiSwitch,
+  switchClasses as MuiSwitchClasses,
+} from "@mui/material";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 
@@ -28,22 +31,22 @@ export const StyledSwitch = styled(
     },
     borderRadius: theme.baseSwitch.borderRadius,
 
-    [`&.${switchClasses.root}`]: {
+    [`&.${MuiSwitchClasses.root}`]: {
       width: theme.baseSwitch.width,
       height: theme.baseSwitch.height,
       padding: theme.baseSwitch.padding,
     },
 
-    [`& .${switchClasses.switchBase}`]: {
+    [`& .${MuiSwitchClasses.switchBase}`]: {
       width: theme.baseSwitch.width,
       height: theme.baseSwitch.height,
       padding: theme.baseSwitch.padding,
       "&:hover": {
         backgroundColor: theme.baseSwitch.hoverBaseBackgroundColor,
       },
-      [`&.${switchClasses.checked}`]: {
+      [`&.${MuiSwitchClasses.checked}`]: {
         transform: "translateX(16px)",
-        [`& + .${switchClasses.track}`]: {
+        [`& + .${MuiSwitchClasses.track}`]: {
           opacity: theme.baseSwitch.checkedOpacity,
           backgroundColor: theme.baseSwitch.checkedTrackBackgroundColor,
         },
@@ -53,7 +56,7 @@ export const StyledSwitch = styled(
       },
     },
 
-    [`.${switchClasses.track}`]: {
+    [`.${MuiSwitchClasses.track}`]: {
       opacity: theme.baseSwitch.track.opacity,
       borderRadius: theme.baseSwitch.track.borderRadius,
       height: theme.baseSwitch.track.height,
@@ -62,7 +65,7 @@ export const StyledSwitch = styled(
       backgroundColor: theme.baseSwitch.track.backgroundColor,
     },
 
-    [`.${switchClasses.thumb}`]: {
+    [`.${MuiSwitchClasses.thumb}`]: {
       position: "relative",
       left: theme.baseSwitch.thumb.left,
       width: theme.baseSwitch.thumb.width,
@@ -74,12 +77,12 @@ export const StyledSwitch = styled(
       boxShadow: theme.baseSwitch.thumb.boxShadow,
     },
 
-    [`.${switchClasses.disabled}`]: {
-      [`& .${switchClasses.thumb}`]: {
+    [`.${MuiSwitchClasses.disabled}`]: {
+      [`& .${MuiSwitchClasses.thumb}`]: {
         backgroundColor: theme.baseSwitch.disabled.thumbBackgroundColor,
         border: theme.baseSwitch.disabled.thumbBorder,
       },
-      [`&.${switchClasses.switchBase} + .${switchClasses.track}`]: {
+      [`&.${MuiSwitchClasses.switchBase} + .${MuiSwitchClasses.track}`]: {
         opacity: theme.baseSwitch.disabled.trackOpacity,
         backgroundColor: theme.baseSwitch.disabled.trackBackgroundColor,
         border: theme.baseSwitch.disabled.trackBorder,
@@ -87,7 +90,7 @@ export const StyledSwitch = styled(
     },
 
     ...($readOnly && {
-      [`.${switchClasses.switchBase}`]: {
+      [`.${MuiSwitchClasses.switchBase}`]: {
         cursor: "default",
       },
     }),
@@ -98,7 +101,7 @@ export const StyledSwitch = styled(
     }),
 
     ...($disabled && {
-      [`&.${switchClasses.root}`]: {
+      [`&.${MuiSwitchClasses.root}`]: {
         cursor: "not-allowed",
       },
     }),

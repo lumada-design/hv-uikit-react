@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBox, HvTypography, tooltipClasses } from "components";
+import { HvBox, HvTypography } from "components";
 import { HvTooltip, TooltipProps } from "./Tooltip";
+import tooltipClasses from "./tooltipClasses";
 
 const meta: Meta<typeof HvTooltip> = {
   title: "Overlay/Tooltip",

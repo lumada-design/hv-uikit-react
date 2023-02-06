@@ -4,7 +4,7 @@ import { HvBaseProps } from "../../../types";
 import { StyledRoot, StyledTypography } from "./CharCounter.styles";
 import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
-import { charCounterClasses, HvCharCounterClasses } from ".";
+import charCounterClasses, { HvCharCounterClasses } from "./charCounterClasses";
 
 export type HvCharCounterProps = HvBaseProps & {
   /** The string that separates the current char quantity from the max quantity. */

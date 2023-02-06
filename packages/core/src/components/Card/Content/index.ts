@@ -1,14 +1,4 @@
-import { getClasses } from "utils";
-
-export type HvCardContentClasses = {
-  content?: string;
-};
-
-const classKeys: string[] = ["content"];
-
-export const cardContentClasses = getClasses<HvCardContentClasses>(
-  classKeys,
-  "HvCard-Content"
-);
-
-export * from "./Content";
+export { default as cardContentClasses } from "./contentClasses";
+export * from "./contentClasses";
+export { HvContent as HvCardContent } from "./Content";
+export type { HvContentProps as HvCardContentProps } from "./Content";

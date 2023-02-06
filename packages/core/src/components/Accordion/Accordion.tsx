@@ -5,7 +5,7 @@ import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-icons";
 import { HvBaseProps } from "../../types";
 import { setId } from "utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
-import { accordionClasses, HvAccordionClasses } from ".";
+import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
 
 export type HvAccordionProps = HvBaseProps & {
   /**

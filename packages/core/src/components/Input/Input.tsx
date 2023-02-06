@@ -49,7 +49,7 @@ import {
 } from "components";
 import { useControlled, useIsMounted, useLabels, useUniqueId } from "hooks";
 import { HvInputLabels, HvValidationMessages } from "types/forms";
-import { inputClasses, HvInputClasses } from ".";
+import inputClasses, { HvInputClasses } from "./inputClasses";
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
 export type HvInputProps = HvBaseProps<
