@@ -59,3 +59,4 @@ export * from "./RadioGroup";
 export * from "./FileUploader";
 export * from "./DropDownMenu";
 export * from "./Pagination";
+export * from "./ActionsGeneric";
