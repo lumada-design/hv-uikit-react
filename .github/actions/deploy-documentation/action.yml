@@ -1,0 +1,56 @@
+name: Documentation
+description: Deploy UI Kit documentation
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build Documentation
+      uses: ./.github/actions/build-documentation
+      if: github.event_name == 'workflow_dispatch'
+
+    - name: Start Deployment
+      uses: bobheadxi/deployments@v0.4.3
+      id: deployment
+      with:
+        step: start
+        token: ${{ env.GITHUB_TOKEN }}
+        env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+        desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+
+    - name: Checkout Publish Repository
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+        ref: master
+        token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
+        path: gh-docs
+        fetch-depth: 1
+
+    - name: Fetch Documentation
+      uses: actions/download-artifact@v3
+      with:
+        name: documentation
+        path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+    - name: Push Documentation
+      run: |
+        cd ${{ github.workspace }}/gh-docs
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+        git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+        git push
+      shell: bash
+
+    - name: Update Deployment Status
+      uses: bobheadxi/deployments@v0.4.3
+      if: always()
+      with:
+        step: finish
+        token: ${{ env.GITHUB_TOKEN }}
+        status: ${{ job.status }}
+        deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+        env_url: ${{env.DOCUMENTATION_URL}}

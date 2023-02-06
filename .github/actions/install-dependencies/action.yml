@@ -1,0 +1,25 @@
+name: Dependencies
+description: Install UI Kit dependencies
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      env:
+        # ensure dev dependencies are installed
+        NODE_ENV: development
+      run: pnpm install
+      shell: bash

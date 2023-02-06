@@ -1,0 +1,46 @@
+name: Pull Request Close
+
+on:
+  pull_request:
+    branches:
+      - master
+      - "next*"
+    types: [closed]
+
+env:
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.event.number }} of ${{ github.repository }}"
+
+jobs:
+  cleanup-deployment:
+    name: Cleanup Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Documentation Repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
+
+      - name: Commit removal
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git rm -r ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git push
+
+      - name: Prune Deployment
+        uses: bobheadxi/deployments@v0.4.3
+        with:
+          step: deactivate-env
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          desc: Deployment was pruned
