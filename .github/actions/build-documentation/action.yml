@@ -1,0 +1,21 @@
+name: Documentation
+description: Build UI Kit documentation
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      uses: ./.github/actions/install-dependencies
+
+    - name: Build Documentation
+      run: pnpm build:doc
+      shell: bash
+
+    - name: Archive Documentation
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: ${{ github.workspace }}/dist
