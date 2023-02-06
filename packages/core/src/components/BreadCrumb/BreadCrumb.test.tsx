@@ -1,4 +1,4 @@
-import { prettyDOM, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { HvProvider } from "index";
 import { describe, expect, it, vi } from "vitest";
 import { HvBreadCrumb } from "./BreadCrumb";

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { HvNavigationItemProp } from "components";
+import { HvHeaderNavigationItemProp } from "components";
 
 const getSelectionPath = (
-  data: HvNavigationItemProp[] | undefined,
+  data: HvHeaderNavigationItemProp[] | undefined,
   selectedId: string,
   selection: string[] = [],
   idx: number = -1,
-  parent: HvNavigationItemProp[] = []
+  parent: HvHeaderNavigationItemProp[] = []
 ): string[] => {
-  data?.forEach((item: HvNavigationItemProp, i) => {
+  data?.forEach((item: HvHeaderNavigationItemProp, i) => {
     const hasData = item.data && item.data.length;
     const isSelected = item.id === selectedId;
 

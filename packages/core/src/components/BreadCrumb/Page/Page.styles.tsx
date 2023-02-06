@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvLink, HvTypography } from "components";
 
-export const StyledLink = styled(HvLink)({
+export const StyledLink = styled((props) => <HvLink {...props} />)({
   padding: `8px ${theme.spacing(1)}`,
   textDecoration: "none",
   borderRadius: "2px",

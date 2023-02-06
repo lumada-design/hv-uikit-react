@@ -189,7 +189,7 @@ const componentsSpec = {
   pagination: {
     pageSizeBorderColor: "string",
     pageSizeBorderRadius: "string",
-    pageJumpTextAlign: "string"
+    pageJumpTextAlign: "string",
   },
 };
 

@@ -2,11 +2,13 @@ const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   stories: [
-    "../doc/**/*.stories.@(tsx|mdx)",
+    "./docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/*.stories.@(ts|tsx|mdx)",
+    // "../packages/core/src/components/Header/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
     "@storybook/addon-essentials",
+    "@storybook/addon-a11y",
     "../tools/addon-theme-switcher/preset.js",
   ],
   framework: "@storybook/react",

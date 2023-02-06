@@ -3,18 +3,18 @@ import { colors, makeTheme } from "..";
 const ds5Theme = makeTheme((theme) => ({
   colors: {
     modes: {
-      light: {
+      dawn: {
         ...colors.common,
         ...colors.light,
       },
-      dark: {
+      wicked: {
         ...colors.common,
         ...colors.dark,
       },
-      orange: {
+      custom: {
         ...colors.common,
         ...colors.light,
-        acce1: "orange",
+        acce1: "#3e5eff",
         atmo1: "white",
       },
     },

@@ -1,4 +1,11 @@
-export const continents = ["Africa", "Asia", "Oceania", "Europe", "North America", "South America"];
+export const continents = [
+  "Africa",
+  "Asia",
+  "Oceania",
+  "Europe",
+  "North America",
+  "South America",
+];
 
 export const countries = [
   /* Africa */

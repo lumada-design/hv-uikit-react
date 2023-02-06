@@ -7,7 +7,7 @@ import {
   StyledBarContainer,
   StyledLabel,
   StyledRoot,
-} from "./Loading.Styles";
+} from "./Loading.styles";
 import loadingClasses, { HvLoadingClasses } from "./loadingClasses";
 
 export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
