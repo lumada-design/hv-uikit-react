@@ -7,7 +7,7 @@ exports[`Kpi > should render correctly 1`] = `
   >
     <div>
       <p
-        class="css-1jadsn9-getStyledComponent e1te0rfk0"
+        class="css-ivbjlp-getStyledComponent e1te0rfk0"
         variant="label"
       >
         Title
@@ -17,13 +17,13 @@ exports[`Kpi > should render correctly 1`] = `
       class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer esnn82o8"
     >
       <p
-        class="HvKpi-spacingToTheRight HvKpi-indicatorText esnn82o6 css-1pc2ofa-getStyledComponent-StyledIndicatorText e1te0rfk0"
+        class="HvKpi-spacingToTheRight HvKpi-indicatorText esnn82o6 css-1s6if3c-getStyledComponent-StyledIndicatorText e1te0rfk0"
         variant="title1"
       >
         Indicator
       </p>
       <p
-        class="HvKpi-indicatorUnit esnn82o5 css-5squ5c-getStyledComponent-StyledIndicatorUnit e1te0rfk0"
+        class="HvKpi-indicatorUnit esnn82o5 css-1r32d1h-getStyledComponent-StyledIndicatorUnit e1te0rfk0"
         variant="title2"
       >
         Unit
@@ -37,7 +37,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer esnn82o2"
         >
           <p
-            class="HvKpi-comparisons HvKpi-spacingToTheRight esnn82o0 css-1g1dgwq-getStyledComponent-StyledInternalVisualComparisonTypography e1te0rfk0"
+            class="HvKpi-comparisons HvKpi-spacingToTheRight esnn82o0 css-q5j2r5-getStyledComponent-StyledInternalVisualComparisonTypography e1te0rfk0"
             variant="label"
           >
             Visual comparison
@@ -47,7 +47,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer esnn82o2"
         >
           <p
-            class="HvKpi-comparisons css-e7zzve-getStyledComponent e1te0rfk0"
+            class="HvKpi-comparisons css-20caqa-getStyledComponent e1te0rfk0"
             variant="caption2"
           >
             Comparison indicator info

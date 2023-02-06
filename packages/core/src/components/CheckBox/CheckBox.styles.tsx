@@ -62,14 +62,11 @@ export const StyledLabel = styled(
   verticalAlign: "middle",
   paddingRight: "10px",
   whiteSpace: "nowrap",
-  color: theme.colors.acce1,
+  ...theme.typography.body,
   cursor: "pointer",
   height: "32px",
-  width: "100%",
-  fontWeight: 400,
   lineHeight: "32px",
-  fontSize: theme.checkbox.fontSize,
-  letterSpacing: theme.checkbox.letterSpacing,
+  width: "100%",
 
   ...($disabled && {
     color: theme.colors.atmo5,

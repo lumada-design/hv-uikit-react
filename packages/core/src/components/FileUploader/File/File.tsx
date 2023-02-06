@@ -2,13 +2,12 @@ import { Close } from "@hitachivantara/uikit-icons";
 import clsx from "clsx";
 import { setId } from "utils";
 import fileClasses, { HvFileClasses } from "./fileClasses";
+import { HvTypography } from "components";
 import { convertUnits } from "../utils";
 import {
   StyledFail,
   StyledErrorMessage,
-  StyledProgressText,
   StyledSuccess,
-  StyledSizeText,
   StyledProgressBarBack,
   StyledProgressBar,
   StyledNameText,
@@ -111,13 +110,13 @@ const getProgressText = (data: HvFileData, classes?: HvFileClasses) => {
       {data.progress || data.size || data.errorMessage ? `\xa0|\xa0` : null}
 
       {inProgress && data.progress != null && (
-        <StyledProgressText>
+        <HvTypography variant="label">
           {`${convertUnits(data.progress)}\xa0/\xa0`}
-        </StyledProgressText>
+        </HvTypography>
       )}
 
       {!hasFailed && data.size && (
-        <StyledSizeText>{`${convertUnits(data.size)}`}</StyledSizeText>
+        <HvTypography>{`${convertUnits(data.size)}`}</HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
@@ -176,7 +175,10 @@ export const HvFile = ({
 
       {statusIcon}
 
-      <StyledNameText className={clsx(classes?.nameText, fileClasses.nameText)}>
+      <StyledNameText
+        className={clsx(classes?.nameText, fileClasses.nameText)}
+        variant="label"
+      >
         {data.name}
       </StyledNameText>
 

@@ -4,6 +4,7 @@ import { HvBaseProps } from "../../types";
 import styled from "@emotion/styled";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
+import { mapVariant } from "./utils";
 
 export type HvTypographyVariants =
   | "display"
@@ -15,6 +16,28 @@ export type HvTypographyVariants =
   | "label"
   | "caption1"
   | "caption2";
+
+export type HvTypographyLegacyVariants =
+  | "5xlTitle"
+  | "4xlTitle"
+  | "3xlTitle"
+  | "xxlTitle"
+  | "xlTitle"
+  | "lTitle"
+  | "mTitle"
+  | "sTitle"
+  | "xsTitle"
+  | "xxsTitle"
+  | "sectionTitle"
+  | "highlightText"
+  | "normalText"
+  | "placeholderText"
+  | "link"
+  | "disabledText"
+  | "selectedNavText"
+  | "vizText"
+  | "vizTextDisabled"
+  | "xsInlineLink";
 
 const HvTypographyMap = {
   h1: "h1",
@@ -42,73 +65,53 @@ const getStyledComponent = (c: any) =>
     ({
       variant,
       $link = false,
+      $disabled = false,
     }: {
-      variant: HvTypographyVariants;
+      variant: HvTypographyVariants | HvTypographyLegacyVariants;
       $link?: boolean;
+      $disabled?: boolean;
     }) => ({
+      ...(variant === "display" && { ...theme.typography.display }),
+      ...(variant === "title1" && { ...theme.typography.title1 }),
+      ...(variant === "title2" && { ...theme.typography.title2 }),
+      ...(variant === "title3" && { ...theme.typography.title3 }),
+      ...(variant === "title4" && { ...theme.typography.title4 }),
+      ...(variant === "body" && { ...theme.typography.body }),
+      ...(variant === "label" && { ...theme.typography.label }),
+      ...(variant === "caption1" && { ...theme.typography.caption1 }),
+      ...(variant === "caption2" && { ...theme.typography.caption2 }),
+      // LEGACY
+      ...(variant === "5xlTitle" && { ...theme.typography["5xlTitle"] }),
+      ...(variant === "4xlTitle" && { ...theme.typography["4xlTitle"] }),
+      ...(variant === "xxlTitle" && { ...theme.typography.xxlTitle }),
+      ...(variant === "lTitle" && { ...theme.typography.lTitle }),
+      ...(variant === "sTitle" && { ...theme.typography.sTitle }),
+      ...(variant === "xxsTitle" && { ...theme.typography.xxsTitle }),
+      ...(variant === "sectionTitle" && {
+        ...theme.typography.sectionTitle,
+        textTransform: "uppercase",
+      }),
+      ...(variant === "placeholderText" && {
+        ...theme.typography.placeholderText,
+      }),
       color: theme.colors.acce1,
+      // ADDED PROPS
       ...($link && {
         color: theme.colors.acce2,
         textDecoration: "underline",
       }),
-      ...(variant === "display" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.xl4,
-        lineHeight: theme.lineHeights.xl3,
-      }),
-      ...(variant === "display" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.xl4,
-        lineHeight: theme.lineHeights.xl3,
-      }),
-      ...(variant === "title1" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.xl3,
-        lineHeight: theme.lineHeights.xl2,
-      }),
-      ...(variant === "title2" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.xl2,
-        lineHeight: theme.lineHeights.xl,
-      }),
-      ...(variant === "title3" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.xl,
-        lineHeight: theme.lineHeights.lg,
-      }),
-      ...(variant === "title4" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.lg,
-        lineHeight: theme.lineHeights.lg,
-      }),
-      ...(variant === "body" && {
-        fontWeight: theme.fontWeights.normal,
-        fontSize: theme.fontSizes.base,
-        lineHeight: theme.lineHeights.base,
-      }),
-      ...(variant === "label" && {
-        fontWeight: theme.fontWeights.semibold,
-        fontSize: theme.fontSizes.base,
-        lineHeight: theme.lineHeights.base,
-      }),
-      ...(variant === "caption1" && {
-        fontWeight: theme.fontWeights.normal,
-        fontSize: theme.fontSizes.sm,
-        lineHeight: theme.lineHeights.sm,
-      }),
-      ...(variant === "caption2" && {
-        fontWeight: theme.fontWeights.normal,
-        fontSize: theme.fontSizes.xs,
-        lineHeight: theme.lineHeights.sm,
+      ...($disabled && {
+        color: theme.colors.atmo5,
       }),
     })
   );
 
-export type HvTypographyProps = HvBaseProps & {
+export type HvTypographyProps = HvBaseProps<HTMLElement, { disabled }> & {
   as?: keyof typeof HvTypographyMap | ElementType;
   /** Use the variant prop to change the visual style of the Typography. */
-  variant?: HvTypographyVariants;
+  variant?: HvTypographyVariants | HvTypographyLegacyVariants;
   link?: boolean;
+  disabled?: boolean;
   className?: string;
   children: React.ReactNode;
   htmlFor?: string;
@@ -124,9 +127,12 @@ export const HvTypography = forwardRef(
       as = "body1",
       variant = "body",
       link = false,
+      disabled = false,
       className,
       ...others
     } = props;
+
+    const mappedVariant = mapVariant(variant);
 
     const component = isString(as) ? HvTypographyMap[as] : as;
     const StyledComponent = useMemo(
@@ -138,8 +144,9 @@ export const HvTypography = forwardRef(
       <StyledComponent
         ref={ref}
         className={className}
-        variant={variant}
+        variant={mappedVariant}
         $link={link}
+        $disabled={disabled}
         {...others}
       >
         {children}

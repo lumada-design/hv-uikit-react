@@ -30,6 +30,112 @@ const ds5Theme = makeTheme((theme) => ({
       xl: 1050,
     },
   },
+  typography: {
+    display: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.xl4,
+      lineHeight: theme.lineHeights.xl3,
+    },
+    title1: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.xl3,
+      lineHeight: theme.lineHeights.xl2,
+    },
+    title2: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.xl2,
+      lineHeight: theme.lineHeights.xl,
+    },
+    title3: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.xl,
+      lineHeight: theme.lineHeights.lg,
+    },
+    title4: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.lg,
+      lineHeight: theme.lineHeights.lg,
+    },
+    label: {
+      fontWeight: theme.fontWeights.semibold,
+      fontSize: theme.fontSizes.base,
+      lineHeight: theme.lineHeights.base,
+    },
+    body: {
+      color: theme.colors.acce1,
+      fontWeight: theme.fontWeights.normal,
+      fontSize: theme.fontSizes.base,
+      lineHeight: theme.lineHeights.base,
+    },
+    caption1: {
+      fontWeight: theme.fontWeights.normal,
+      fontSize: theme.fontSizes.sm,
+      lineHeight: theme.lineHeights.sm,
+    },
+    caption2: {
+      fontWeight: theme.fontWeights.normal,
+      fontSize: theme.fontSizes.xs,
+      lineHeight: theme.lineHeights.sm,
+    },
+    // LEGACY
+    ["5xlTitle"]: {
+      color: theme.colors.acce1,
+      fontSize: "52px",
+      letterSpacing: "0.02em",
+      lineHeight: "60px",
+      fontWeight: 600,
+    },
+    ["4xlTitle"]: {
+      color: theme.colors.acce1,
+      fontSize: "52px",
+      letterSpacing: "0.02em",
+      lineHeight: "60px",
+      fontWeight: 400,
+    },
+    xxlTitle: {
+      color: theme.colors.acce1,
+      fontSize: "42px",
+      letterSpacing: "0.02em",
+      lineHeight: "52px",
+      fontWeight: 400,
+    },
+    lTitle: {
+      color: theme.colors.acce1,
+      fontSize: "32px",
+      letterSpacing: "0.02em",
+      lineHeight: "40px",
+      fontWeight: 400,
+    },
+    sTitle: {
+      color: theme.colors.acce1,
+      fontSize: "22px",
+      letterSpacing: "0.02em",
+      lineHeight: "30px",
+      fontWeight: 400,
+    },
+    xxsTitle: {
+      color: theme.colors.acce1,
+      fontSize: "18px",
+      letterSpacing: "0.02em",
+      lineHeight: "28px",
+      fontWeight: 400,
+    },
+    sectionTitle: {
+      color: theme.colors.acce1,
+      fontSize: "14px",
+      letterSpacing: "0.32em",
+      lineHeight: "18px",
+      fontWeight: 400,
+      textTransform: "uppercase",
+    },
+    placeholderText: {
+      color: theme.colors.atmo5,
+      fontSize: "12px",
+      letterSpacing: "0.02em",
+      lineHeight: "16px",
+      fontWeight: 400,
+    },
+  },
   components: {
     dropdown: {
       borderRadius: theme.radii.sm,
@@ -59,9 +165,6 @@ const ds5Theme = makeTheme((theme) => ({
       hoverColor: theme.colors.acce2,
     },
     tab: {
-      letterSpacing: "0em",
-      fontSize: "14px",
-      lineHeight: "24px",
       padding: "0 16px",
       hoverBackgroundColor: theme.colors.acce2s,
       hoverBackgroundBorderRadius: "2px",
@@ -82,15 +185,10 @@ const ds5Theme = makeTheme((theme) => ({
     checkbox: {
       hoverColor: theme.colors.acce2s,
       borderRadius: "2px",
-      letterSpacing: "0em",
-      fontSize: "14px",
     },
     baseDropdown: {
       shadow: "none",
       placeholderColor: theme.colors.acce4,
-      letterSpacing: "0em",
-      fontSize: "14px",
-      lineHeight: "24px",
       borderColor: theme.colors.acce4,
       hoverBorderColor: theme.colors.acce2,
       disabledBorderColor: theme.colors.atmo5,
@@ -154,15 +252,10 @@ const ds5Theme = makeTheme((theme) => ({
       readOnlyBackgroundColor: theme.colors.atmo2,
       multilineBorderColor: theme.colors.acce4,
       multilineDisabledBorderColor: theme.colors.atmo5,
-      letterSpacing: "0em",
-      fontSize: "14px",
-      lineHeight: "24px",
     },
     radio: {
       hoverColor: theme.colors.acce2s,
       borderRadius: "2px",
-      letterSpacing: "0em",
-      fontSize: "14px",
     },
     tagsInput: {
       disabledBackgroundColor: theme.colors.atmo2,
@@ -175,9 +268,6 @@ const ds5Theme = makeTheme((theme) => ({
     },
     fileUploader: {
       dropZone: {
-        fontSize: "14px",
-        lineHeight: "20px",
-        letterSpacing: "0em",
         borderColor: theme.colors.atmo5,
         backgroundColor: theme.colors.atmo1,
         borderRadius: "6px",
@@ -190,9 +280,6 @@ const ds5Theme = makeTheme((theme) => ({
         itemBorderRadius: "0px 0px 6px 6px",
       },
       file: {
-        fontSize: "14px",
-        letterSpacing: "0em",
-        lineHeight: "20px",
         progressHeight: "4px",
         borderWidth: "2px",
         previewContainerSize: "48px",

@@ -6,19 +6,19 @@ exports[`ListContainer > should render all the items 1`] = `
     class="HvListContainer-root"
   >
     <li
-      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1c669w2-StyledListItem e180q0291"
       role="option"
     >
       Item 1
     </li>
     <li
-      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1c669w2-StyledListItem e180q0291"
       role="option"
     >
       Item 2
     </li>
     <li
-      class="HvListItem-root HvListItem-gutters css-1az0xhw-StyledListItem e180q0291"
+      class="HvListItem-root HvListItem-gutters css-1c669w2-StyledListItem e180q0291"
       role="option"
     >
       Item 3

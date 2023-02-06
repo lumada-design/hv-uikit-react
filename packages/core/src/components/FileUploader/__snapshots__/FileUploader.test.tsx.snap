@@ -9,7 +9,7 @@ exports[`FileUploader > should render correctly 1`] = `
       id="-3"
     >
       <label
-        class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-u24g5u-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+        class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
         for="-3-input-file"
         id="-3-input-file-label"
         variant="label"
@@ -17,7 +17,7 @@ exports[`FileUploader > should render correctly 1`] = `
         Label
       </label>
       <label
-        class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1kms97j-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+        class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
         id="-3-description"
         variant="body"
       >
@@ -65,12 +65,12 @@ exports[`FileUploader > should render correctly 1`] = `
           class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
         >
           <p
-            class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+            class="HvDropZone-dragText e1exqe5d3 css-12v085h-getStyledComponent-StyledDragText e1te0rfk0"
             variant="body"
           >
             Drop files here or
             <span
-              class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+              class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1exqe5d0"
             >
                click to upload
             </span>
@@ -85,11 +85,11 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j9"
+          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j7"
         />
         <p
-          class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
-          variant="body"
+          class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+          variant="label"
         >
           Screenshot 2019-12-05 at 17.15.43.png
         </p>
@@ -98,7 +98,7 @@ exports[`FileUploader > should render correctly 1`] = `
         >
            | 
           <p
-            class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+            class="css-1mchk7j-getStyledComponent e1te0rfk0"
             variant="body"
           >
             14.10MB
@@ -143,11 +143,11 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j9"
+          class="HvFile-icon css-ww6rg5-StyledEmptyIcon e11o985j7"
         />
         <p
-          class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
-          variant="body"
+          class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+          variant="label"
         >
           Screenshot 2019-12-05 at 12.03.13.png
         </p>
@@ -156,7 +156,7 @@ exports[`FileUploader > should render correctly 1`] = `
         >
            | 
           <p
-            class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+            class="css-1mchk7j-getStyledComponent e1te0rfk0"
             variant="body"
           >
             875.00kB

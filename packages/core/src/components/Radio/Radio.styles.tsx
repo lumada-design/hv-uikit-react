@@ -84,14 +84,11 @@ export const StyledHvLabel = styled(
   verticalAlign: "middle",
   paddingRight: "10px",
   whiteSpace: "nowrap",
-  color: theme.colors.acce1,
+  ...theme.typography.body,
   cursor: "pointer",
-  fontWeight: theme.fontWeights.normal,
-  width: "100%",
   height: "32px",
   lineHeight: "32px",
-  letterSpacing: theme.radio.letterSpacing,
-  fontSize: theme.radio.fontSize,
+  width: "100%",
 
   ...($disabled && {
     color: theme.colors.atmo5,

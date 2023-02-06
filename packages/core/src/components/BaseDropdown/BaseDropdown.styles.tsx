@@ -116,18 +116,11 @@ export const StyledPlaceholder = styled(
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
+  ...theme.typography.body,
   color: theme.baseDropdown.placeholderColor,
-  letterSpacing: theme.baseDropdown.letterSpacing,
-  lineHeight: theme.baseDropdown.lineHeight,
-  fontSize: theme.baseDropdown.fontSize,
-  fontWeight: theme.fontWeights.normal,
 
   ...($disabled && {
     color: theme.colors.atmo5,
-    fontWeight: theme.fontWeights.normal,
-    fontSize: theme.baseDropdown.fontSize,
-    lineHeight: theme.baseDropdown.lineHeight,
-    letterSpacing: theme.baseDropdown.letterSpacing,
   }),
 }));
 

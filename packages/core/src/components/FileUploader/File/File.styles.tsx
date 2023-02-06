@@ -17,28 +17,8 @@ export const StyledEmptyIcon = styled("div")({
   ...iconStyles,
 });
 
-export const StyledProgressText = styled(HvTypography)({
-  color: theme.colors.acce1,
-  fontWeight: 600,
-  fontSize: theme.fileUploader.file.fontSize,
-  letterSpacing: theme.fileUploader.file.letterSpacing,
-  lineHeight: theme.fileUploader.file.lineHeight,
-});
-
-export const StyledSizeText = styled(HvTypography)({
-  color: theme.colors.acce1,
-  fontWeight: 400,
-  fontSize: theme.fileUploader.file.fontSize,
-  letterSpacing: theme.fileUploader.file.letterSpacing,
-  lineHeight: theme.fileUploader.file.lineHeight,
-});
-
 export const StyledErrorMessage = styled(HvTypography)({
   color: theme.colors.sema4,
-  fontWeight: 400,
-  fontSize: theme.fileUploader.file.fontSize,
-  letterSpacing: theme.fileUploader.file.letterSpacing,
-  lineHeight: theme.fileUploader.file.lineHeight,
 });
 
 export const StyledProgressBarBack = styled("span")({
@@ -64,11 +44,6 @@ export const StyledNameText = styled(HvTypography)({
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
-  color: theme.colors.acce1,
-  fontWeight: 600,
-  fontSize: theme.fileUploader.file.fontSize,
-  letterSpacing: theme.fileUploader.file.letterSpacing,
-  lineHeight: theme.fileUploader.file.lineHeight,
 });
 
 export const StyledProgressTextContainer = styled("span")({

@@ -31,7 +31,7 @@ const styles = {
   maxWidth: "100%",
   margin: `${theme.spacing(5)} auto`,
   padding: `calc(${theme.header.height} + 50px) 20px 20px 20px`,
-  height: "100vh",
+  height: "100%",
 } as CSSProperties;
 
 const App = () => {
@@ -40,15 +40,16 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
-        <Pagination />
+        <Typography />
         {/* 
+        <BaseDropdown />
+        <Pagination />
         <DropDownMenu />
         <Buttons />
         <BaseInput />
         <Input />
         <TagsInput />
         <FileUploader />
-        <BaseDropdown />
         <CheckBox />
         <Switch />
         <Radio />
@@ -58,10 +59,9 @@ const App = () => {
         <Tooltip />
         <Grid />
         <EmptyState />
-        <Typography />
         <Buttons />
         <Icons />
-        <Icons />
+        <Icons /> */}
       </HvBox>
     </HvProvider>
   );

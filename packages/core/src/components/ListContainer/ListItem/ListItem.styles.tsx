@@ -24,10 +24,7 @@ export const StyledListItem = styled(
     $startAdornment: boolean;
     $endAdornment: boolean;
   }) => ({
-    color: theme.colors.acce1,
-    fontSize: "12px",
-    letterSpacing: "0.02em",
-    fontWeight: 400,
+    ...theme.typography.body,
     padding: 0,
     display: "block",
     height: "32px",

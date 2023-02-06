@@ -8,7 +8,7 @@ exports[`DropZone > should render correctly 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-u24g5u-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
       variant="label"
@@ -16,7 +16,7 @@ exports[`DropZone > should render correctly 1`] = `
       Label
     </label>
     <label
-      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1kms97j-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
       id="dropzone-test-description"
       variant="body"
     >
@@ -64,12 +64,12 @@ exports[`DropZone > should render correctly 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
       >
         <p
-          class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+          class="HvDropZone-dragText e1exqe5d3 css-12v085h-getStyledComponent-StyledDragText e1te0rfk0"
           variant="body"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+            class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1exqe5d0"
           >
              Select files
           </span>
@@ -88,7 +88,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-15makj7-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+      class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-1jlu4ud-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
       variant="label"
@@ -96,7 +96,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       Label
     </label>
     <label
-      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1pkbal3-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+      class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-1ypp4a9-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
       id="dropzone-test-description"
       variant="body"
     >
@@ -145,12 +145,12 @@ exports[`DropZone > should render correctly when disabled 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
       >
         <p
-          class="HvDropZone-dragText e1exqe5d3 css-1y1abq7-getStyledComponent-StyledDragText e1te0rfk0"
+          class="HvDropZone-dragText e1exqe5d3 css-12v085h-getStyledComponent-StyledDragText e1te0rfk0"
           variant="body"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-1r90syv-StyledSelectedFilesText e1exqe5d0"
+            class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1exqe5d0"
           >
              Select files
           </span>

@@ -25,7 +25,7 @@ exports[`WarningText > should render correctly 1`] = `
     </div>
     <p
       aria-relevant="additions text"
-      class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-y3evkr-getStyledComponent-StyledTypography e1te0rfk0"
+      class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-mq4y8t-getStyledComponent-StyledTypography e1te0rfk0"
       role="status"
       variant="body"
     />

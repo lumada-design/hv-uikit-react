@@ -12,11 +12,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route1"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -49,11 +49,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route2"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -86,11 +86,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route3"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -123,11 +123,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route4"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -160,11 +160,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route5"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -197,11 +197,11 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <a
-          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-nxf158-StyledA-StyledLink eenqmua0"
+          class="e1xzhjcp1 HvLink-a HvPage-a HvBreadCrumb-a css-o81qk8-StyledA-StyledLink eenqmua0"
           href="route6"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-13n0da1-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e1xzhjcp0 css-u3igi1-getStyledComponent-StyledTypography e1te0rfk0"
             variant="label"
           >
             <div
@@ -234,7 +234,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi ej2cvge0"
       >
         <p
-          class="HvBreadCrumb-currentPage ep0htik0 css-1bexfom-getStyledComponent-StyledTypography e1te0rfk0"
+          class="HvBreadCrumb-currentPage ep0htik0 css-gdg8pb-getStyledComponent-StyledTypography e1te0rfk0"
           variant="body"
         >
           Label 7
