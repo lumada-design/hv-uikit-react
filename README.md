@@ -13,12 +13,8 @@
 
 <br>
 
-![React 17.02](https://img.shields.io/badge/react-^17.02.1-blue.svg)
-![Node 16](https://img.shields.io/badge/node-16.13.1-brightgreen.svg)
 ![License Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![Supported browsers: Chrome, Firefox, Safari, Edge](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge-blue.svg)
-
-![Master Nightly build status](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
 
 </div>
 
@@ -32,6 +28,8 @@
 ## Packages
 
 - `@hitachivantara/uikit-core` – core components library
+- `@hitachivantara/uikit-icons` – icons components library
+- `@hitachivantara/uikit-styles` – [emotion](https://emotion.sh/docs/introduction) based styling library
 
 ## Installing 🚀
 
@@ -70,6 +68,7 @@ See our documentation site [here](https://lumada-design.github.io/uikit/master/?
   <tr>
     <td align="center"><a href="https://github.com/francisco-guilherme"><img src="https://avatars.githubusercontent.com/u/14975353?v=4" width="64px;" alt=""/><br /><sub><b>Francisco Guilherme</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/HQFOX"><img src="https://avatars.githubusercontent.com/u/19229133?v=4" width="64px;" alt=""/><br /><sub><b>Henrique Raposo</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/MEsteves22"><img src="https://avatars.githubusercontent.com/u/43220251?v=4" width="64px;" alt=""/><br /><sub><b>Márcia Esteves</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/plagoa"><img src="https://avatars.githubusercontent.com/u/7498785?v=4" width="64px;" alt=""/><br /><sub><b>Paulo Lagoá</b></sub></a><br /></td>
   </tr>
 </table>
