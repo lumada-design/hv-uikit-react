@@ -96,7 +96,7 @@ export const StyledPageJump = styled("div")({
       paddingLeft: `4px`,
       paddingRight: `4px`,
       margin: 0,
-      textAlign: theme.pagination.pageJumpTextAlign,
+      // textAlign: theme.pagination.pageJumpTextAlign, TODO: fix this
       MozAppearance: "textfield",
       "&:focus": {
         backgroundColor: hoverColor,

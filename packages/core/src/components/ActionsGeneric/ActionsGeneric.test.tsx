@@ -1,10 +1,5 @@
 import { Add, Delete, Preview, Upload } from "@hitachivantara/uikit-icons";
-import {
-  fireEvent,
-  getAllByRole,
-  prettyDOM,
-  render,
-} from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { HvProvider } from "index";
 import { describe, expect, it, vi } from "vitest";
 import { HvActionsGeneric } from "./ActionsGeneric";

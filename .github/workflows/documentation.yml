@@ -6,8 +6,12 @@ on:
     secrets:
       ORG_GHPAGES_DEPLOY_KEY:
         required: true
+    inputs:
+      publish-folder:
+        type: string
+        default: ${{ github.ref_name }}
+
 env:
-  PUBLISH_FOLDER: ${{ github.ref_name }}
   ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
 
 jobs:
@@ -28,6 +32,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG_GHPAGES_DEPLOY_KEY: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
           DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-          DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
-          DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"
-          DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.PUBLISH_FOLDER }}/
+          DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ inputs.publish-folder }}
+          DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ inputs.publish-folder }} of ${{ github.repository }}"
+          DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ inputs.publish-folder }}/
