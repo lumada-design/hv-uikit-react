@@ -6,9 +6,6 @@ on:
       - master
       - "next*"
 
-env:
-  PUBLISH_FOLDER: pr-${{ github.event.number }}
-
 jobs:
   static-checks:
     name: Static Checks
@@ -20,6 +17,8 @@ jobs:
     needs: [static-checks]
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      publish-folder: pr-${{ github.event.number }}
 
   applitools:
     name: Applitools

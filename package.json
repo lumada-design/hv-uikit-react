@@ -13,7 +13,7 @@
     "dev": "pnpm -F='./app' dev",
     "doc": "start-storybook -p 6006 --no-manager-cache",
     "build": "pnpm -r -F='./packages/**' build",
-    "build:doc": "build-storybook -o dist --docs --quiet",
+    "build:doc": "build-storybook --docs -o dist --quiet",
     "test": "pnpm -F='./packages/**' test",
     "test:pa11y": "npx pa11y-ci -c config/pa11yci.config.js",
     "prettier": "prettier --check .",

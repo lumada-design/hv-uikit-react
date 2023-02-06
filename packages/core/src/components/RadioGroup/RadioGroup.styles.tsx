@@ -49,8 +49,7 @@ export const StyledGroup = styled(
     ...($horizontal && {
       flexDirection: "row",
       flexWrap: "wrap",
-      marginLeft: `-${theme.spacing(2.5)}`,
-      "&>*": {
+      "&>*:not(:first-child)": {
         marginLeft: theme.spacing(2.5),
       },
       width: `calc(100% + ${theme.spacing(2.5)})`, // Compensate the negative margin left which increases the width

@@ -49,9 +49,8 @@ export const StyledGroupContainer = styled(
     ...($horizontal && {
       flexDirection: "row",
       flexWrap: "wrap",
-      marginLeft: `-${theme.spacing(2.5)}`,
 
-      "&>*": {
+      "&>*:not(:first-child)": {
         marginLeft: theme.spacing(2.5),
       },
     }),

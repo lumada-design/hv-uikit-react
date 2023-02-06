@@ -11,8 +11,8 @@ runs:
       uses: ./.github/actions/build-documentation
       if: github.event_name == 'workflow_dispatch'
 
-    - name: Start Deployment
-      uses: bobheadxi/deployments@v0.4.3
+    - name: Start Documentation Deployment
+      uses: bobheadxi/deployments@v1
       id: deployment
       with:
         step: start
@@ -20,7 +20,7 @@ runs:
         env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
         desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
-    - name: Checkout Publish Repository
+    - name: Checkout Documentation Repository
       uses: actions/checkout@v3
       with:
         repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
@@ -28,6 +28,10 @@ runs:
         token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
         path: gh-docs
         fetch-depth: 1
+
+    - name: Remove Previous Documentation
+      run: rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+      shell: bash
 
     - name: Fetch Documentation
       uses: actions/download-artifact@v3
@@ -46,11 +50,12 @@ runs:
       shell: bash
 
     - name: Update Deployment Status
-      uses: bobheadxi/deployments@v0.4.3
+      uses: bobheadxi/deployments@v1
       if: always()
       with:
         step: finish
         token: ${{ env.GITHUB_TOKEN }}
+        env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         env_url: ${{env.DOCUMENTATION_URL}}

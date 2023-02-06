@@ -11,7 +11,7 @@ runs:
       uses: ./.github/actions/install-dependencies
 
     - name: Build Documentation
-      run: pnpm build:doc
+      run: npx cross-env NODE_OPTIONS=--max_old_space_size=8192 build-storybook --docs -o dist --quiet
       shell: bash
 
     - name: Archive Documentation

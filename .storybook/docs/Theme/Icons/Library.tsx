@@ -57,7 +57,7 @@ const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
 };
 
 const Library = ({ isIcons }) => {
-  const [iconSize, setIconSize] = useState<typeof dropdownSizes[0]>();
+  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
 
   const library = isIcons ? iconComponentList : pictogramComponentList;
   return (
