@@ -5,7 +5,7 @@ import { HvBaseProps } from "../../../types";
 import { StyledRoot, StyledTypography, StyledIcon } from "./WarningText.styles";
 import { HvFormElementContext } from "../FormElement";
 import { setId } from "utils";
-import { warningTextClasses, HvWarningTextClasses } from ".";
+import warningTextClasses, { HvWarningTextClasses } from "./warningTextClasses";
 
 export type HvWarningTextProps = HvBaseProps & {
   /** Icon to be rendered alongside the warning text. */

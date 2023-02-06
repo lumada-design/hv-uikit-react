@@ -12,7 +12,7 @@ import {
   StyledHvFormElement,
   StyledHvLabel,
 } from "./Radio.styles";
-import { radioClasses, HvRadioClasses } from ".";
+import radioClasses, { HvRadioClasses } from "./radioClasses";
 
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 

@@ -1,16 +1,5 @@
-import { getClasses } from "utils";
-
-export type HvFormElementClasses = {
-  root?: string;
-};
-
-const classKeys: string[] = ["root"];
-
-export const formElementClasses = getClasses<HvFormElementClasses>(
-  classKeys,
-  "HvFormElement"
-);
-
+export { default as formElementClasses } from "./formElementClasses";
+export * from "./formElementClasses";
 export * from "./FormElement";
 export * from "./context/FormElementContext";
 export * from "./context/FormElementValueContext";

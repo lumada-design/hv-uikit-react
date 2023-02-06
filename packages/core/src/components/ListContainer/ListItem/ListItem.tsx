@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import HvListContext from "../ListContext";
-import { HvListItemClasses, listItemClasses } from ".";
+import listItemClasses, { HvListItemClasses } from "./listItemClasses";
 
 export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   /**
@@ -204,7 +204,7 @@ export const HvListItem = ({
       selected={selected}
       disabledClass={disabled || undefined}
       strategy={role === "option" ? "listbox" : "menu"}
-      classes={{ focus: classes?.focus }}
+      classes={{ focus: clsx(classes?.focus, listItemClasses.focus) }}
       configuration={{
         tabIndex,
       }}

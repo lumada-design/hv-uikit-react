@@ -12,7 +12,7 @@ import {
 import { isEmpty } from "lodash";
 import { useState } from "react";
 import countryNamesArray from "./countries";
-import { tagsInputClasses } from ".";
+import tagsInputClasses from "./tagsInputClasses";
 
 const StyledTagsInput = styled(HvTagsInput)({
   [`&.${tagsInputClasses.root}`]: {

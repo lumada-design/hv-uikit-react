@@ -27,7 +27,9 @@ import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 import { ThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
-import { baseDropdownClasses, HvBaseDropdownClasses } from ".";
+import baseDropdownClasses, {
+  HvBaseDropdownClasses,
+} from "./baseDropdownClasses";
 
 const { Tab, Enter, Esc, Space, ArrowDown } = keyboardCodes;
 
@@ -463,11 +465,6 @@ export const HvBaseDropdown = ({
                 $openShadow={false}
                 $floatLeft={false}
                 $floatRight={false}
-                // Fix CSS vars when the container was created using a portal
-                $backgroundColor={
-                  activeTheme?.colors?.modes[selectedMode].atmo1 ||
-                  theme.colors.atmo1
-                }
                 $shadowColor={
                   activeTheme?.colors?.modes[selectedMode].atmo1 ||
                   theme.colors.atmo1
@@ -507,11 +504,6 @@ export const HvBaseDropdown = ({
                 $openShadow={true}
                 $floatLeft={popperPlacement.includes("start")}
                 $floatRight={popperPlacement.includes("end")}
-                // Fix CSS vars when the container was created using a portal
-                $backgroundColor={
-                  activeTheme?.colors?.modes[selectedMode].atmo1 ||
-                  theme.colors.atmo1
-                }
                 $shadowColor={
                   activeTheme?.colors?.modes[selectedMode].atmo1 ||
                   theme.colors.atmo1

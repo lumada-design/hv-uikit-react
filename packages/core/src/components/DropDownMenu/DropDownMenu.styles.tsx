@@ -1,13 +1,9 @@
 import styled from "@emotion/styled";
-import {
-  HvBaseDropdown,
-  HvButton,
-  baseDropdownClasses,
-  HvPanel,
-} from "components";
+import { HvBaseDropdown, HvButton, HvPanel } from "components";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
+import baseDropdownClasses from "../BaseDropdown/baseDropdownClasses";
 
 export const StyledRoot = styled("div")({
   [`. ${baseDropdownClasses.root}`]: {

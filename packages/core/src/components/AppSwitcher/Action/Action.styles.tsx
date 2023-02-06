@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { HvListItem, HvTypography } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-icons";
-import { appSwitcherActionClasses } from ".";
+import appSwitcherActionClasses from "./actionClasses";
 
 export const StyledListItem = styled(HvListItem)({
   width: "100%",
@@ -30,7 +30,6 @@ export const StyledTypography = styled(HvTypography)(() => ({
   color: "inherit",
   backgroundColor: "inherit",
 
-  // ".disabled &": {
   [`.${appSwitcherActionClasses.disabled} &`]: {
     cursor: "not-allowed",
   },

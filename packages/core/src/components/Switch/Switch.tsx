@@ -16,7 +16,7 @@ import {
   StyledSwitchContainer,
 } from "./Switch.styles";
 import { HvBaseProps, HvExtraProps } from "../../types";
-import { switchClasses, HvSwitchClasses } from ".";
+import switchClasses, { HvSwitchClasses } from "./switchClasses";
 
 export type HvSwitchProps = Omit<MuiSwitchProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {

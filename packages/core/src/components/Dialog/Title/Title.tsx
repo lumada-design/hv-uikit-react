@@ -1,4 +1,3 @@
-// import clsx from "clsx";
 import { DialogTitleProps as MuiDialogTitleProps } from "@mui/material/DialogTitle";
 import clsx from "clsx";
 import { HvTypography } from "components";
@@ -9,7 +8,7 @@ import {
   StyledMessageContainer,
   StyledTextWithIcon,
 } from "./Title.styles";
-import { dialogTitleClasses, HvDialogTitleClasses } from ".";
+import dialogTitleClasses, { HvDialogTitleClasses } from "./titleClasses";
 
 export type HvDialogTitleVariant =
   | "success"
@@ -49,7 +48,9 @@ export const HvTitle = ({
         dialogTitleClasses.root,
         classes?.root,
         className,
-        fullscreen ? dialogTitleClasses.fullscreen : ""
+        fullscreen
+          ? clsx(dialogTitleClasses.fullscreen, classes?.fullscreen)
+          : ""
       )}
       $fullscreen={fullscreen}
       {...others}

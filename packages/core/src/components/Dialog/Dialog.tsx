@@ -15,7 +15,7 @@ import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { ThemeContext } from "providers";
 import { withTooltip } from "hocs";
-import { dialogClasses, HvDialogClasses } from ".";
+import dialogClasses, { HvDialogClasses } from "./dialogClasses";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
   HvBaseProps & {
@@ -160,7 +160,9 @@ export const HvDialog = ({
       )}
       PaperProps={{
         classes: {
-          root: fullscreen ? dialogClasses.fullscreen : "",
+          root: fullscreen
+            ? clsx(dialogClasses.fullscreen, classes?.fullscreen)
+            : "",
         },
       }}
       {...others}

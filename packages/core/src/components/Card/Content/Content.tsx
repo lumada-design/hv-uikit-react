@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledContent } from "./Content.styles";
 import { CardContentProps as MuiCardContentProps } from "@mui/material/CardContent";
-import { cardContentClasses, HvCardContentClasses } from ".";
+import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 
 export type HvContentProps = MuiCardContentProps &
   HvBaseProps & {

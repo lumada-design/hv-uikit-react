@@ -7,7 +7,7 @@ import { forwardRef, ReactElement, useContext } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
 import { ThemeContext } from "providers";
-import { tooltipClasses, HvTooltipClasses } from ".";
+import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 import clsx from "clsx";
 
 export type TooltipPlacementType =

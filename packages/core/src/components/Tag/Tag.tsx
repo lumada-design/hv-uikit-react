@@ -7,7 +7,7 @@ import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
 import { ThemeContext } from "index";
-import { tagClasses, HvTagClasses } from ".";
+import tagClasses, { HvTagClasses } from "./tagClasses";
 
 export type HvTagProps = Omit<MuiChipProps, "color"> &
   HvBaseProps<HTMLDivElement, { children }> & {

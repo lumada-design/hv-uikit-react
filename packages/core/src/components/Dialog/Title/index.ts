@@ -1,15 +1,7 @@
-import { getClasses } from "utils";
-
-export type HvDialogTitleClasses = {
-  root?: string;
-  fullscreen?: string;
-};
-
-const classKeys: string[] = ["root", "fullscreen"];
-
-export const dialogTitleClasses = getClasses<HvDialogTitleClasses>(
-  classKeys,
-  "HvDialog-Title"
-);
-
-export * from "./Title";
+export { default as dialogTitleClasses } from "./titleClasses";
+export * from "./titleClasses";
+export { HvTitle as HvDialogTitle } from "./Title";
+export type {
+  HvDialogTitleVariant,
+  HvTitleProps as HvDialogTitleProps,
+} from "./Title";

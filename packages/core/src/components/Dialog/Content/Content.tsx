@@ -2,7 +2,7 @@ import { DialogContentProps as MuiDialogContentProps } from "@mui/material/Dialo
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledContent, StyledTypography } from "./Content.styles";
-import { dialogContentClasses, HvDialogContentClasses } from ".";
+import dialogContentClasses, { HvDialogContentClasses } from "./contentClasses";
 
 export type HvContentProps = MuiDialogContentProps &
   HvBaseProps & {

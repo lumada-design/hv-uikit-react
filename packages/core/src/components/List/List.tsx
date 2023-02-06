@@ -10,7 +10,7 @@ import {
   StyledListItem,
   StyledDropRightXS,
 } from "./List.styles";
-import { listClasses, HvListClasses } from ".";
+import listClasses, { HvListClasses } from "./listClasses";
 import useSelectableList from "./useSelectableList";
 import { parseList, wrapperTooltip } from "./utils";
 import { HvListContainer, HvTypography } from "components";
@@ -325,7 +325,6 @@ export const HvList = ({
   }, [listRef, selectedItemIndex]);
 
   const ListItem = ({ index, style }) => {
-    console.log("inside ListItem");
     const item = filteredList[index];
     const tabIndex =
       item.tabIndex ||

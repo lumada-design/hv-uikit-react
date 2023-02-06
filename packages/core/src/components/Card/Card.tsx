@@ -7,7 +7,7 @@ import {
   StyledBar,
   StyledIcon,
 } from "./Card.styles";
-import { cardClasses, HvCardClasses } from ".";
+import cardClasses, { HvCardClasses } from "./cardClasses";
 
 export type HvCardProps = HvBaseProps & {
   /** The renderable content inside the icon slot of the header. */

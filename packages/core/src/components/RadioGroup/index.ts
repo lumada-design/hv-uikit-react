@@ -1,28 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvRadioGroupClasses = {
-  root?: string;
-  label?: string;
-  group?: string;
-  vertical?: string;
-  horizontal?: string;
-  invalid?: string;
-  error?: string;
-};
-
-const classKeys: string[] = [
-  "root",
-  "label",
-  "group",
-  "vertical",
-  "horizontal",
-  "invalid",
-  "error",
-];
-
-export const radioGroupClasses = getClasses<HvRadioGroupClasses>(
-  classKeys,
-  "HvRadioGroup"
-);
-
+export { default as radioGroupClasses } from "./radioGroupClasses";
+export * from "./radioGroupClasses";
 export * from "./RadioGroup";

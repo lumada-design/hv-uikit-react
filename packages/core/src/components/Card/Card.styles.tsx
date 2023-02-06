@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvBox } from "components";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
-import { cardClasses } from ".";
+import cardClasses from "./cardClasses";
 
 const getColor = (c: string): string => theme.colors[c];
 

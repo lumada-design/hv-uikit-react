@@ -28,7 +28,7 @@ import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import { useControlled, useIsMounted, useUniqueId } from "hooks";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { HvTagProps } from "components";
-import { tagsInputClasses, HvTagsInputClasses } from ".";
+import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
 import { HvCharCounterProps, HvFormStatus } from "../Forms";
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
@@ -623,7 +623,12 @@ export const HvTagsInput = ({
             className={clsx(
               !multiline &&
                 clsx(tagsInputClasses.singleLine, classes?.singleLine),
-              value.length === 0 ? tagsInputClasses.tagInputRootEmpty : ""
+              value.length === 0
+                ? clsx(
+                    tagsInputClasses.tagInputRootEmpty,
+                    classes?.tagInputRootEmpty
+                  )
+                : ""
             )}
             classes={{
               root: clsx(
@@ -689,7 +694,13 @@ export const HvTagsInput = ({
       {canShowSuggestions && (
         <>
           {hasSuggestions && (
-            <div role="presentation" className={classes?.inputExtension} />
+            <div
+              role="presentation"
+              className={clsx(
+                tagsInputClasses.inputExtension,
+                classes?.inputExtension
+              )}
+            />
           )}
           <StyledSuggestions
             id={setId(elementId, "suggestions")}

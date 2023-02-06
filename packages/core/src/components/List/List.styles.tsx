@@ -1,17 +1,12 @@
 import styled from "@emotion/styled";
 import { FixedSizeList } from "react-window";
-import {
-  HvCheckBox,
-  HvLink,
-  HvListItem,
-  HvRadio,
-  checkBoxClasses,
-  radioClasses,
-  listItemClasses,
-} from "components";
+import { HvCheckBox, HvLink, HvListItem, HvRadio } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { DropRightXS } from "@hitachivantara/uikit-icons";
+import checkBoxClasses from "../CheckBox/checkBoxClasses";
+import radioClasses from "../Radio/radioClasses";
+import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 
 export const StyledFixedSizeList = styled(FixedSizeList)({
   marginBottom: 5,

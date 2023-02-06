@@ -22,7 +22,7 @@ describe("TagsInput examples", () => {
       );
       const uncommittedText = "uncommitted text";
       let clickableButtons = getAllByRole("button");
-      console.log(clickableButtons);
+
       expect(clickableButtons.length).toBe(5);
       const addTagButton = getByText("Add tags");
       const tagsInput = getByRole("textbox");

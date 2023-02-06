@@ -10,7 +10,7 @@ import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
 import { HvListItem } from "components";
 import { useClickOutside } from "hooks";
-import { suggestionsClasses, HvSuggestionsClasses } from ".";
+import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
 
 export type HvSuggestion = {
   id?: string;

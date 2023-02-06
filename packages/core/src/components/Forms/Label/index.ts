@@ -1,13 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvLabelClasses = {
-  root?: string;
-  labelDisabled?: string;
-  childGutter?: string;
-};
-
-const classKeys: string[] = ["root", "labelDisabled", "childGutter"];
-
-export const labelClasses = getClasses<HvLabelClasses>(classKeys, "HvLabel");
-
+export { default as labelClasses } from "./labelClasses";
+export * from "./labelClasses";
 export * from "./Label";

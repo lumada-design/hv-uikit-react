@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-
 import { transientOptions } from "utils/transientOptions";
 import { HvTypographyVariants } from "./Typography";
 

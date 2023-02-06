@@ -1,37 +1,3 @@
-import { getClasses } from "utils";
-
-export type HvTagClasses = {
-  root?: string;
-  tagButton?: string;
-  focusVisible?: string;
-  primaryButton?: string;
-  label?: string;
-  chipRoot?: string;
-  categorical?: string;
-  disabled?: string;
-  clickable?: string;
-  categoricalFocus?: string;
-  categoricalDisabled?: string;
-  deleteIcon?: string;
-  disabledDeleteIcon?: string;
-};
-
-const classKeys: string[] = [
-  "root",
-  "tagButton",
-  "focusVisible",
-  "primaryButton",
-  "label",
-  "chipRoot",
-  "categorical",
-  "disabled",
-  "clickable",
-  "categoricalFocus",
-  "categoricalDisabled",
-  "deleteIcon",
-  "disabledDeleteIcon",
-];
-
-export const tagClasses = getClasses<HvTagClasses>(classKeys, "HvTag");
-
+export { default as tagClasses } from "./tagClasses";
+export * from "./tagClasses";
 export * from "./Tag";

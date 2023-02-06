@@ -7,10 +7,10 @@ import {
   HvFormElement,
   HvLabel,
   HvSuggestions,
-  baseInputClasses,
-  suggestionsClasses,
 } from "components";
-import { inputClasses } from ".";
+import inputClasses from "./inputClasses";
+import baseInputClasses from "../BaseInput/baseInputClasses";
+import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "block",

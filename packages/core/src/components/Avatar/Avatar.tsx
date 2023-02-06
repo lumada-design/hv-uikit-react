@@ -13,7 +13,7 @@ import {
   StyledImg,
   StyledStatus,
 } from "./Avatar.styles";
-import { avatarClasses, HvAvatarClasses } from ".";
+import avatarClasses, { HvAvatarClasses } from "./avatarClasses";
 
 export type HvAvatarVariant = "circular" | "square";
 
@@ -107,7 +107,7 @@ export const HvAvatar = ({
         src={src}
         srcSet={srcSet}
         sizes={sizes}
-        className={classes?.img}
+        className={clsx(classes?.img, avatarClasses.img)}
         {...imgProps}
       />
     );
@@ -172,6 +172,7 @@ export const HvAvatar = ({
             className,
             avatarClasses.root,
             classes?.root,
+            avatarClasses.avatar,
             classes?.avatar
           )}
           style={inlineStyle}

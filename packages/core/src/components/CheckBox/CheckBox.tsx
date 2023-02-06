@@ -10,7 +10,7 @@ import {
   StyledLabel,
   StyledLabelContainer,
 } from "./CheckBox.styles";
-import { checkBoxClasses, HvCheckBoxClasses } from ".";
+import checkBoxClasses, { HvCheckBoxClasses } from "./checkBoxClasses";
 
 export type HvCheckBoxProps = Omit<HvBaseCheckBoxProps, "classes"> & {
   /**

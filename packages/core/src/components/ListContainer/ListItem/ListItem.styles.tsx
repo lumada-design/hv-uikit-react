@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import { HvFocus } from "components";
 import { outlineStyles } from "utils";
-import { listItemClasses } from ".";
+import listItemClasses from "./listItemClasses";
 
 export const StyledListItem = styled(
   "li",

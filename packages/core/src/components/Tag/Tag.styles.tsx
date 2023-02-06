@@ -6,7 +6,7 @@ import { HvButton } from "components";
 import { outlineStyles } from "utils";
 import fade from "utils/hexToRgbA";
 import { transientOptions } from "utils/transientOptions";
-import { tagClasses } from ".";
+import tagClasses from "./tagClasses";
 
 export const StyledChip = styled(
   Chip,

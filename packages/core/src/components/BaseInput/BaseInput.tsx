@@ -16,7 +16,7 @@ import {
   buildAriaPropsFromContext,
 } from "../Forms/FormElement";
 import clsx from "clsx";
-import { baseInputClasses, HvBaseInputClasses } from ".";
+import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 
 export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
   HvBaseProps<HTMLDivElement, { onChange }> & {
@@ -163,7 +163,7 @@ export const HvBaseInput = ({
               clsx(baseInputClasses.inputResizable, classes?.inputResizable),
             disabled &&
               clsx(baseInputClasses.inputDisabled, classes?.inputDisabled),
-            readOnly && baseInputClasses.inputReadOnly && classes?.readOnly
+            readOnly && clsx(baseInputClasses.inputReadOnly, classes?.readOnly)
           ),
         }}
         inputProps={{

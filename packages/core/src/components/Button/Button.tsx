@@ -5,7 +5,7 @@ import {
   StyledContentDiv,
   StyledIconSpan,
 } from "./Button.styles";
-import { HvButtonClasses } from ".";
+import { HvButtonClasses } from "./buttonClasses";
 
 export type HvButtonVariant =
   | "primary"

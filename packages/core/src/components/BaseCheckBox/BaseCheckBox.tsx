@@ -8,7 +8,9 @@ import clsx from "clsx";
 import React, { useCallback, useState } from "react";
 import { HvBaseProps } from "../../types";
 import { StyledCheckedBox } from "./BaseCheckBox.styles";
-import { baseCheckBoxClasses, HvBaseCheckBoxClasses } from ".";
+import baseCheckBoxClasses, {
+  HvBaseCheckBoxClasses,
+} from "./baseCheckBoxClasses";
 
 export type HvBaseCheckBoxProps = Omit<MuiCheckboxProps, "onChange"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {

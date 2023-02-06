@@ -2,7 +2,7 @@ import { DialogActionsProps as MuiDialogActionsProps } from "@mui/material/Dialo
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
 import { StyledActions } from "./Actions.styles";
-import { dialogActionClasses, HvDialogActionClasses } from ".";
+import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
 
 export type HvActionsProps = MuiDialogActionsProps &
   HvBaseProps & {

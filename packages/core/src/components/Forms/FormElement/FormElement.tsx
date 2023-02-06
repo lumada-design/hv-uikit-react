@@ -6,7 +6,7 @@ import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
 import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
-import { formElementClasses, HvFormElementClasses } from ".";
+import formElementClasses, { HvFormElementClasses } from "./formElementClasses";
 
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 

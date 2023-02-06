@@ -1,14 +1,4 @@
-import { getClasses } from "utils";
-
-export type HvDialogContentClasses = {
-  root?: string;
-};
-
-const classKeys: string[] = ["root"];
-
-export const dialogContentClasses = getClasses<HvDialogContentClasses>(
-  classKeys,
-  "HvDialog-Content"
-);
-
-export * from "./Content";
+export { default as dialogContentClasses } from "./contentClasses";
+export * from "./contentClasses";
+export { HvContent as HvDialogContent } from "./Content";
+export type { HvContentProps as HvDialogContentProps } from "./Content";

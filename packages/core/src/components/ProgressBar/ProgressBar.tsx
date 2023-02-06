@@ -8,7 +8,7 @@ import {
   StyledRoot,
   StyledValue,
 } from "./ProgressBar.styles";
-import { progressBarClasses, HvProgressBarClasses } from ".";
+import progressBarClasses, { HvProgressBarClasses } from "./progressBarClasses";
 
 export type HvProgressBarStatus = "inProgress" | "completed" | "error";
 

@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import React from "react";
 import { HvBaseProps } from "../../types";
-import { emptyStateClasses, HvEmptyStateClasses } from ".";
+import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 import {
   StyledContainer,
   StyledIconContainer,

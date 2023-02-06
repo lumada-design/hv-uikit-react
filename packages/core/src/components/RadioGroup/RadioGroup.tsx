@@ -9,7 +9,7 @@ import {
 import clsx from "clsx";
 import { useControlled, useUniqueId } from "hooks";
 import { setId } from "utils";
-import { HvRadioGroupClasses, radioGroupClasses } from ".";
+import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
 export type HvRadioGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
   /**

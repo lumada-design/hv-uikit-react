@@ -10,7 +10,9 @@ import { useControlled, useUniqueId } from "hooks";
 import { multiSelectionEventHandler, setId } from "utils";
 import { HvCheckBox, HvInfoMessage, HvWarningText } from "components";
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
-import { checkBoxGroupClasses, HvCheckBoxGroupClasses } from ".";
+import checkBoxGroupClasses, {
+  HvCheckBoxGroupClasses,
+} from "./checkBoxGroupClasses";
 
 const computeSelectAllState = (selected, total) => {
   if (selected === 0) {

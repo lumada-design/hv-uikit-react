@@ -12,12 +12,14 @@ exports[`DropDownMenu > should render correctly 1`] = `
         aria-expanded="false"
         aria-haspopup="menu"
         class="HvDropDownMenu-container e1y5ntva2 HvBaseDropdown-anchor css-2kevrv-StyledAnchor-StyledBaseDropDown e1xgfj1t8"
+        id="-2"
         tabindex="-1"
       >
         <button
           aria-expanded="false"
           aria-label="Dropdown menu"
           class="HvDropDownMenu-icon e1y5ntva1 css-ubhy60-StyledButton-StyledButton egl9i9v0"
+          id="-2-icon-button"
           radius="base"
           variant="secondaryGhost"
         >

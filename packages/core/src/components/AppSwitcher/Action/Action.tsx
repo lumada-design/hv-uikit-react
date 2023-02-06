@@ -12,7 +12,9 @@ import {
   StyledTypography,
   StyledImg,
 } from "./Action.styles";
-import { appSwitcherActionClasses, HvAppSwitcherActionClasses } from ".";
+import appSwitcherActionClasses, {
+  HvAppSwitcherActionClasses,
+} from "./actionClasses";
 
 export type HvActionProps = HvBaseProps & {
   /** The application data to be used to render the Action object. */

@@ -1,6 +1,6 @@
 import { tooltipClasses as MuitooltipClasses } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { tooltipClasses } from ".";
+import tooltipClasses from "./tooltipClasses";
 
 export const singleStyle = {
   maxWidth: 532,

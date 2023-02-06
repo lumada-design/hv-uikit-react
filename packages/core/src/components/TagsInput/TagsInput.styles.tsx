@@ -10,13 +10,13 @@ import {
   HvListItem,
   HvSuggestions,
   HvWarningText,
-  baseInputClasses,
-  listItemClasses,
-  suggestionsClasses,
 } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
-import { tagsInputClasses } from ".";
+import tagsInputClasses from "./tagsInputClasses";
+import baseInputClasses from "../BaseInput/baseInputClasses";
+import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
+import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "inline-block",

@@ -27,7 +27,7 @@ import {
 import { setId } from "utils";
 import { isNil } from "lodash";
 import { HvValidationMessages } from "types/forms";
-import { textAreaClasses, HvTextAreaClasses } from ".";
+import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
 
 export type HvTextAreaProps = Omit<
   HvBaseInputProps,
