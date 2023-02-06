@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-styles",
-  "version": "5.1.0-next.0",
+  "version": "5.0.0-next.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit styling solution for the Hitachi Vantara Design System.",
@@ -32,8 +32,12 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "rimraf": "^4.1.2",
     "tsc-alias": "^1.8.2"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
