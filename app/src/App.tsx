@@ -22,7 +22,6 @@ import { Dialogs } from "./components/Dialogs/Dialogs";
 import { Header, ThemeSwitcher } from "./layout";
 import { Switch } from "./components/Switch";
 import { DropDownMenu } from "./components/DropDownMenu/DropDownMenu";
-import { BreadCrumb } from "./components/BreadCrumb/BreadCrumb";
 
 const styles = {
   display: "flex",
@@ -41,7 +40,6 @@ const App = () => {
       <HvBox sx={styles}>
         <ThemeSwitcher />
         <Typography />
-        {/* 
         <BaseDropdown />
         <Pagination />
         <DropDownMenu />
@@ -61,7 +59,7 @@ const App = () => {
         <EmptyState />
         <Buttons />
         <Icons />
-        <Icons /> */}
+        <Icons />
       </HvBox>
     </HvProvider>
   );
