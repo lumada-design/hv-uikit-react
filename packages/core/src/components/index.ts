@@ -60,3 +60,4 @@ export * from "./FileUploader";
 export * from "./DropDownMenu";
 export * from "./Pagination";
 export * from "./ActionsGeneric";
+export * from "./BreadCrumb";
