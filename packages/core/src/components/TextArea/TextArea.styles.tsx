@@ -25,13 +25,15 @@ export const StyledLabelContainer = styled("div")({
   alignItems: "flex-start",
 });
 
-export const StyledLabel = styled(HvLabel)({
+export const StyledLabel = styled((props) => <HvLabel {...props} />)({
   display: "block",
   float: "left",
   paddingBottom: "6px",
 });
 
-export const StyledInfoMessage = styled(HvInfoMessage)({
+export const StyledInfoMessage = styled((props) => (
+  <HvInfoMessage {...props} />
+))({
   display: "block",
   float: "left",
 });

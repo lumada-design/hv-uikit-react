@@ -54,7 +54,7 @@ export const HvActionsGeneric = ({
       <StyledButton
         id={actionId}
         key={actionId || idx}
-        category={category}
+        variant={category}
         className={clsx(actionsGenericClasses.button, classes?.button)}
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id, action)}
