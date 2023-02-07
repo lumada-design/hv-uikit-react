@@ -94,15 +94,15 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         id={id}
         className={className}
         ref={ref}
-        variant={mapVariant(variant)}
-        iconOnly={!!icon}
         onClick={onClick}
         disabled={disabled}
-        size={size}
-        radius={radius}
-        overrideIconColors={overrideIconColors}
         onFocus={onFocusHandler}
         onBlur={onBlurHandler}
+        $variant={mapVariant(variant)}
+        $iconOnly={!!icon}
+        $size={size}
+        $radius={radius}
+        $overrideIconColors={overrideIconColors}
         $disabled={!!disabled}
         {...others}
       >
