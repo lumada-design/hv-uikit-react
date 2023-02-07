@@ -11,7 +11,9 @@ export const StyledFormElement = styled(HvFormElement)({
   verticalAlign: "top",
 });
 
-export const StyledLabel = styled(HvLabel)({ marginBottom: "10px" });
+export const StyledLabel = styled(HvLabel)({
+  marginBottom: theme.spacing(1.25),
+});
 
 export const StyledGroupContainer = styled(
   "div",
@@ -47,15 +49,15 @@ export const StyledGroupContainer = styled(
     ...($horizontal && {
       flexDirection: "row",
       flexWrap: "wrap",
-      marginLeft: "-20px",
+      marginLeft: `-${theme.spacing(2.5)}`,
 
       "&>*": {
-        marginLeft: "20px",
+        marginLeft: theme.spacing(2.5),
       },
     }),
 
     ...($invalid && {
-      paddingBottom: "10px",
+      paddingBottom: theme.spacing(1.25),
       borderBottom: `1px solid ${theme.colors.sema4}`,
     }),
   })

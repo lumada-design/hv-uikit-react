@@ -60,7 +60,7 @@ export const StyledLabel = styled(
   overflow: "hidden",
   textOverflow: "ellipsis",
   verticalAlign: "middle",
-  paddingRight: "10px",
+  paddingRight: theme.spacing(1.25),
   whiteSpace: "nowrap",
   ...theme.typography.body,
   cursor: "pointer",

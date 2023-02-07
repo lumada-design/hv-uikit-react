@@ -28,7 +28,7 @@ exports[`Pagination > should render correctly 1`] = `
               tabindex="0"
             >
               <div
-                class="HvBaseDropdown-selection css-1c8fpra-StyledSelection e1xgfj1t6"
+                class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection e1xgfj1t6"
               >
                 <p
                   class="css-1mchk7j-getStyledComponent e1te0rfk0"
@@ -71,8 +71,6 @@ exports[`Pagination > should render correctly 1`] = `
           aria-label="First Page"
           class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
-          radius="base"
-          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -109,8 +107,6 @@ exports[`Pagination > should render correctly 1`] = `
         <button
           class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
-          radius="base"
-          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -153,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root ep58gjf0 css-cpmv9g-StyledRoot-StyledBaseInput e1wsukd12"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-qhl3bu-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-1veljhk-MuiInputBase-root-MuiInput-root-StyledInput"
               >
                 <input
                   aria-label="Current page"
@@ -220,8 +216,6 @@ exports[`Pagination > should render correctly 1`] = `
           aria-label="Next Page"
           class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
-          radius="base"
-          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -259,8 +253,6 @@ exports[`Pagination > should render correctly 1`] = `
           aria-label="Last Page"
           class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
-          radius="base"
-          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"

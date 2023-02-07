@@ -22,10 +22,10 @@ exports[`BaseDropDown > should render correctly 1`] = `
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection css-1c8fpra-StyledSelection e1xgfj1t6"
+            class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection e1xgfj1t6"
           >
             <p
-              class="HvBaseDropdown-placeholder e1xgfj1t5 css-14mbrmu-getStyledComponent-StyledPlaceholder e1te0rfk0"
+              class="HvBaseDropdown-placeholder e1xgfj1t5 css-17knwax-getStyledComponent-StyledPlaceholder e1te0rfk0"
               variant="body"
             >
               Placeholder...

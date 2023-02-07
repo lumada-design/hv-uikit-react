@@ -193,7 +193,6 @@ export const HvPagination = ({
     </StyledPageJump>
   );
 
-  console.log(`canPrevious: ${canPrevious}, canNext: ${canNext}`);
   return (
     <StyledRoot
       id={id}

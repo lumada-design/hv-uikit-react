@@ -40,10 +40,10 @@ exports[`DropZone > should render correctly 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-7a01xx-StyledDropArea e1exqe5d5"
+      class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1exqe5d5"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-unhwub-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
         name="Doc"
       >
         <svg
@@ -121,10 +121,10 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-7a01xx-StyledDropArea e1exqe5d5"
+      class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1exqe5d5"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-unhwub-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
         name="Doc"
       >
         <svg

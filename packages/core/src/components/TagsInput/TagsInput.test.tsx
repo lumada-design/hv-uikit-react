@@ -1,6 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
-import {} from "@storybook/react";
 import { HvTagsInput } from "components";
 import { ControlledTagArray } from "./TagsInput.stories";
 import { ThemeProvider } from "providers";

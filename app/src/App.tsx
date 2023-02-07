@@ -16,6 +16,7 @@ import {
   Input,
   FileUploader,
   Pagination,
+  DotPagination,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -41,8 +42,8 @@ const App = () => {
       <HvBox sx={styles}>
         <ThemeSwitcher />
         <Typography />
-        {/* 
         <BaseDropdown />
+        <DotPagination />
         <Pagination />
         <DropDownMenu />
         <Buttons />
@@ -61,7 +62,7 @@ const App = () => {
         <EmptyState />
         <Buttons />
         <Icons />
-        <Icons /> */}
+        <BreadCrumb />
       </HvBox>
     </HvProvider>
   );

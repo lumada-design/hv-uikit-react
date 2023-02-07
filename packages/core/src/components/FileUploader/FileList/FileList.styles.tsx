@@ -5,10 +5,10 @@ import fileListClasses from "./fileListClasses";
 export const StyledList = styled("ul")({
   display: "flex",
   flexDirection: "column",
-  gap: "10px",
+  gap: theme.spacing(1.25),
   margin: 0,
   padding: 0,
-  marginTop: "20px",
+  marginTop: theme.spacing(2.5),
   listStyle: "none",
 
   [`& .${fileListClasses.listItem}`]: {
@@ -16,7 +16,7 @@ export const StyledList = styled("ul")({
     display: "flex",
     alignItems: "center",
     background: theme.colors.atmo1,
-    padding: "10px 0px",
+    padding: `${theme.spacing(1.25)} 0px`,
     border: theme.fileUploader.fileList.itemBorder,
     borderRadius: theme.fileUploader.fileList.itemBorderRadius,
   },
