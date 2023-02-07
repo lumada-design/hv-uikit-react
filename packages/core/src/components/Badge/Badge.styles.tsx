@@ -10,10 +10,7 @@ interface StyledBadgeProps {
 }
 
 const labelBaseStyle = {
-  fontSize: "12px",
-  letterSpacing: "0.02em",
-  lineHeight: "16px",
-  fontWeight: 600,
+  ...theme.typography.label,
   fontFamily: theme.fontFamily.body,
   padding: "0 5px",
   color: theme.colors.atmo1,

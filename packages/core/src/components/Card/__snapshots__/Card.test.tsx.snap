@@ -16,7 +16,7 @@ exports[`Card > should render all the compoents 1`] = `
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root e1u3cqlo0 css-zba4p5-MuiCardHeader-root-StyledHeader"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -42,7 +42,7 @@ exports[`Card > should render all the compoents 1`] = `
       class="MuiCardContent-root HvCard-Content-content es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
       <p
-        class="css-1jadsn9-getStyledComponent e1te0rfk0"
+        class="css-ivbjlp-getStyledComponent e1te0rfk0"
         variant="label"
       >
         mockCardContent
@@ -71,7 +71,7 @@ exports[`Card > should render content 1`] = `
       class="MuiCardContent-root HvCard-Content-content es2bop10 css-a04jz9-MuiCardContent-root-StyledContent"
     >
       <p
-        class="css-1jadsn9-getStyledComponent e1te0rfk0"
+        class="css-ivbjlp-getStyledComponent e1te0rfk0"
         variant="label"
       >
         mockCardContent
@@ -116,7 +116,7 @@ exports[`Card > should render header 1`] = `
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1u3cqlo0 css-1ebgaor-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root e1u3cqlo0 css-zba4p5-MuiCardHeader-root-StyledHeader"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"

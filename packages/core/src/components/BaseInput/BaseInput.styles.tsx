@@ -169,24 +169,16 @@ export const StyledInput = styled(
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       padding: "6px 0 5px",
-      color: theme.colors.acce1,
       overflow: "hidden",
       textOverflow: "ellipsis",
       outline: "none",
       width: "initial",
       flexGrow: 1,
-      fontWeight: 400,
-      fontSize: theme.baseInput.fontSize,
-      letterSpacing: theme.baseInput.letterSpacing,
-      lineHeight: theme.baseInput.lineHeight,
+      ...theme.typography.body,
 
       "&::placeholder": {
         opacity: 1,
         color: theme.baseInput.placeholderColor,
-        fontWeight: 400,
-        fontSize: theme.baseInput.fontSize,
-        letterSpacing: theme.baseInput.letterSpacing,
-        lineHeight: theme.baseInput.lineHeight,
       },
 
       "&::-ms-clear": {

@@ -16,11 +16,7 @@ export const StyledRoot = styled("div")({
   flexWrap: "wrap",
   marginTop: theme.spacing(2),
   [`& .${paginationClasses.pageSizeInput}`]: {
-    color: theme.colors.acce1,
-    fontSize: "12px",
-    letterSpacing: "0.02em",
-    lineHeight: "16px",
-    fontWeight: 600,
+    ...theme.typography.label,
   },
   [`& .${paginationClasses.pageSizeInputContainer}`]: {
     width: 40,

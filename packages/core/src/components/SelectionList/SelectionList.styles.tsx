@@ -15,16 +15,18 @@ export const StyledFormElement = styled(HvFormElement)({
   margin: 0,
 });
 
-export const StyledLabel = styled(HvLabel)({
+export const StyledLabel = styled((props) => <HvLabel {...props} />)({
   marginBottom: theme.spacing(1),
   float: "left",
 });
 
-export const StyledInfoMessage = styled(HvInfoMessage)({
+export const StyledInfoMessage = styled((props) => (
+  <HvInfoMessage {...props} />
+))({
   float: "left",
 });
 
-export const StyledError = styled(HvWarningText)({
+export const StyledError = styled((props) => <HvWarningText {...props} />)({
   width: "100%",
   float: "left",
   clear: "both",

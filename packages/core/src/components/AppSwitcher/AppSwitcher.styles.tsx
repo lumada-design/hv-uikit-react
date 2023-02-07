@@ -103,9 +103,5 @@ export const StyledFooter = styled("div")({
   // padding: `${theme.hv.spacing.sm - 4}px ${theme.hv.spacing.sm + 4}px 4px 4px`,
   padding: `${theme.spacing(2)} ${theme.spacing(2)} 4px 4px`,
 
-  color: theme.colors.acce1,
-  fontSize: "12px",
-  letterSpacing: "0.02em",
-  lineHeight: "16px",
-  fontWeight: 600,
+  ...theme.typography.label,
 });

@@ -64,11 +64,7 @@ export const StyledMultiSelectCheckBox = styled((props) => (
 });
 
 export const StyledLink = styled((props) => <HvLink {...props} />)({
-  color: theme.colors.acce1,
-  fontSize: "12px",
-  letterSpacing: "0.02em",
-  lineHeight: "16px",
-  fontWeight: 400,
+  ...theme.typography.body,
   textDecoration: "none",
 
   "&:focus": {

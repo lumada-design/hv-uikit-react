@@ -12,21 +12,13 @@ export const StyledHeader = styled(
 
   // https://mui.com/material-ui/api/card-header/#css
   "& .MuiCardHeader-title": {
-    color: "#414141",
-    fontSize: "18px",
-    letterSpacing: "0.02em",
-    lineHeight: "28px",
-    fontWeight: 600,
+    ...theme.typography.title3,
     fontFamily: theme.fontFamily.body,
     ...($short && { marginRight: "30px" }),
   },
   "& .MuiCardHeader-subheader": {
     fontFamily: theme.fontFamily.body,
-    color: "#414141",
-    fontSize: "12px",
-    letterSpacing: "0.02em",
-    lineHeight: "16px",
-    fontWeight: 400,
+    ...theme.typography.label,
   },
   "& .MuiCardHeader-action": {
     position: "absolute",

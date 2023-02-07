@@ -8,7 +8,7 @@ exports[`Accordion > should render correctly 1`] = `
     <div
       aria-disabled="false"
       aria-expanded="false"
-      class="HvAccordion-label e555ywc0 css-1v3xau4-getStyledComponent-StyledLabel e1te0rfk0"
+      class="HvAccordion-label e555ywc0 css-19d9cum-getStyledComponent-StyledLabel e1te0rfk0"
       role="button"
       tabindex="0"
       variant="label"

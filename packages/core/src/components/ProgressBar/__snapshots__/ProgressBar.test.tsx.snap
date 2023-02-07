@@ -13,7 +13,7 @@ exports[`ProgressBar > should render correctly 1`] = `
       class="css-1ezqlcy-StyledProgressContainer eafrvc93"
     >
       <p
-        class="HvProgressBar-progressBarLabel eafrvc92 css-oaj17d-getStyledComponent-StyledValue e1te0rfk0"
+        class="HvProgressBar-progressBarLabel eafrvc92 css-1kbrn80-getStyledComponent-StyledValue e1te0rfk0"
         style="width: 0%;"
         variant="caption2"
       >

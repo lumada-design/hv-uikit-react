@@ -5,7 +5,7 @@ exports[`File > should render correctly fail status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-mych0h-StyledFail e11o985j10 css-du18qm"
+    class="HvFile-icon css-mych0h-StyledFail e11o985j8 css-du18qm"
     name="Fail"
   >
     <svg
@@ -23,8 +23,8 @@ exports[`File > should render correctly fail status 1`] = `
     </svg>
   </div>
   <p
-    class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
-    variant="body"
+    class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+    variant="label"
   >
     somefile.png
   </p>
@@ -33,7 +33,7 @@ exports[`File > should render correctly fail status 1`] = `
   >
      | 
     <p
-      class="HvFile-fail e11o985j6 css-2nnc5a-getStyledComponent-StyledErrorMessage e1te0rfk0"
+      class="HvFile-fail e11o985j6 css-s37gxk-getStyledComponent-StyledErrorMessage e1te0rfk0"
       variant="body"
     >
       File type not allowed for upload
@@ -80,7 +80,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-18h216t-StyledSuccess e11o985j11 css-du18qm"
+    class="HvFile-icon css-18h216t-StyledSuccess e11o985j9 css-du18qm"
     name="Success"
   >
     <svg
@@ -98,8 +98,8 @@ exports[`File > should render correctly success status 1`] = `
     </svg>
   </div>
   <p
-    class="HvFile-nameText e11o985j3 css-1egwif4-getStyledComponent-StyledNameText e1te0rfk0"
-    variant="body"
+    class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+    variant="label"
   >
     somefile.png
   </p>
@@ -108,7 +108,7 @@ exports[`File > should render correctly success status 1`] = `
   >
      | 
     <p
-      class="e11o985j7 css-klixrc-getStyledComponent-StyledSizeText e1te0rfk0"
+      class="css-1mchk7j-getStyledComponent e1te0rfk0"
       variant="body"
     >
       875.00B

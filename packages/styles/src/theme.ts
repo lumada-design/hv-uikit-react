@@ -31,9 +31,6 @@ const componentsSpec = {
     hoverColor: "string",
   },
   tab: {
-    letterSpacing: "string",
-    fontSize: "string",
-    lineHeight: "string",
     padding: "string",
     hoverBackgroundColor: "string",
     hoverBackgroundBorderRadius: "string",
@@ -54,15 +51,10 @@ const componentsSpec = {
   checkbox: {
     hoverColor: "string",
     borderRadius: "string",
-    letterSpacing: "string",
-    fontSize: "string",
   },
   baseDropdown: {
     shadow: "string",
     placeholderColor: "string",
-    letterSpacing: "string",
-    fontSize: "string",
-    lineHeight: "string",
     borderColor: "string",
     hoverBorderColor: "string",
     disabledBorderColor: "string",
@@ -128,15 +120,10 @@ const componentsSpec = {
     readOnlyBackgroundColor: "string",
     multilineBorderColor: "string",
     multilineDisabledBorderColor: "string",
-    letterSpacing: "string",
-    fontSize: "string",
-    lineHeight: "string",
   },
   radio: {
     hoverColor: "string",
     borderRadius: "string",
-    letterSpacing: "string",
-    fontSize: "string",
   },
   tagsInput: {
     disabledBackgroundColor: "string",
@@ -149,9 +136,6 @@ const componentsSpec = {
   },
   fileUploader: {
     dropZone: {
-      fontSize: "string",
-      lineHeight: "string",
-      letterSpacing: "string",
       borderColor: "string",
       backgroundColor: "string",
       borderRadius: "string",
@@ -164,9 +148,6 @@ const componentsSpec = {
       itemBorderRadius: "string",
     },
     file: {
-      fontSize: "string",
-      letterSpacing: "string",
-      lineHeight: "string",
       progressHeight: "string",
       borderWidth: "string",
       previewContainerSize: "string",
@@ -189,7 +170,38 @@ const componentsSpec = {
   pagination: {
     pageSizeBorderColor: "string",
     pageSizeBorderRadius: "string",
-    pageJumpTextAlign: "string"
+    pageJumpTextAlign: "string",
+  },
+};
+
+const typographyProps = {
+  color: "string",
+  fontSize: "string",
+  letterSpacing: "string",
+  lineHeight: "string",
+  fontWeight: "string",
+};
+const typographySpec = {
+  typography: {
+    // DS5
+    display: { ...typographyProps },
+    title1: { ...typographyProps },
+    title2: { ...typographyProps },
+    title3: { ...typographyProps },
+    title4: { ...typographyProps },
+    label: { ...typographyProps },
+    body: { ...typographyProps },
+    caption1: { ...typographyProps },
+    caption2: { ...typographyProps },
+    // LEGACY UNMAPPABLE
+    ["5xlTitle"]: { ...typographyProps },
+    ["4xlTitle"]: { ...typographyProps },
+    xxlTitle: { ...typographyProps },
+    lTitle: { ...typographyProps },
+    sTitle: { ...typographyProps },
+    xxsTitle: { ...typographyProps },
+    sectionTitle: { ...typographyProps },
+    placeholderText: { ...typographyProps },
   },
 };
 
@@ -204,6 +216,7 @@ const themeVars = mapCSSVars({
   ...tokens,
   colors: { ...tokens.colors.common, ...tokens.colors.light }, // flatten colors
   ...componentsSpec,
+  ...typographySpec,
 });
 
 export const theme = {

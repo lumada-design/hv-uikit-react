@@ -3,13 +3,13 @@
 exports[`Pagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvPagination-root css-1i2s86p-StyledRoot en2ju178"
+    class="HvPagination-root css-1ruqlwu-StyledRoot en2ju178"
   >
     <div
       class="HvPagination-pageSizeOptions css-191htxu-StyledPageSizeOptions en2ju177"
     >
       <div
-        class="css-1qjw4ry-StyledRoot elm6gjx0"
+        class="css-1gue3w7-StyledRoot elm6gjx0"
       >
         <div
           class="HvBaseDropdown-root css-1nukton-StyledRoot e1xgfj1t9"
@@ -31,7 +31,7 @@ exports[`Pagination > should render correctly 1`] = `
                 class="HvBaseDropdown-selection css-1c8fpra-StyledSelection e1xgfj1t6"
               >
                 <p
-                  class="css-1yeqqqs"
+                  class="css-1mchk7j-getStyledComponent e1te0rfk0"
                   variant="body"
                 >
                   1
@@ -69,9 +69,10 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="First Page"
-          class="HvPagination-iconContainer en2ju172 css-b352c0-StyledButton-StyledButtonIconTooltip egl9i9v0"
+          class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
           radius="base"
+          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -106,10 +107,10 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
-          aria-label="Previous Page"
-          class="en2ju172 css-b352c0-StyledButton-StyledButtonIconTooltip egl9i9v0"
+          class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
           radius="base"
+          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -118,7 +119,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren egl9i9v1"
             >
               <div
-                class="css-du18qm"
+                class="HvPagination-icon css-du18qm"
                 name="Backwards"
               >
                 <svg
@@ -140,10 +141,10 @@ exports[`Pagination > should render correctly 1`] = `
         </button>
       </div>
       <div
-        class="css-1wjzhg6-StyledPageInfo en2ju171"
+        class="HvPagination-pageInfo css-1wjzhg6-StyledPageInfo en2ju171"
       >
         <div
-          class="css-fq42na-StyledPageJump en2ju170"
+          class="HvPagination-pageJump css-fq42na-StyledPageJump en2ju170"
         >
           <div
             class="HvInput-root HvPagination-pageSizeInputContainer css-b8m0re-StyledFormElement ep58gjf8 HvFormElement-root"
@@ -190,7 +191,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-1dvosc9-StyledTypography"
+                class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-mq4y8t-getStyledComponent-StyledTypography e1te0rfk0"
                 id="hvinput9-error"
                 role="status"
                 variant="body"
@@ -199,13 +200,13 @@ exports[`Pagination > should render correctly 1`] = `
           </div>
         </div>
         <span
-          class="css-1yeqqqs"
+          class="css-1mchk7j-getStyledComponent e1te0rfk0"
           variant="body"
         >
           / 
         </span>
         <span
-          class="css-1yeqqqs"
+          class="css-1mchk7j-getStyledComponent e1te0rfk0"
           variant="body"
         >
           1
@@ -217,9 +218,10 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Next Page"
-          class="en2ju172 css-b352c0-StyledButton-StyledButtonIconTooltip egl9i9v0"
+          class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
           radius="base"
+          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -228,7 +230,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren egl9i9v1"
             >
               <div
-                class="css-du18qm"
+                class="HvPagination-icon css-du18qm"
                 name="Forwards"
               >
                 <svg
@@ -255,9 +257,10 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Last Page"
-          class="en2ju172 css-b352c0-StyledButton-StyledButtonIconTooltip egl9i9v0"
+          class="HvPagination-iconContainer en2ju172 css-12i0xb-StyledButton-StyledButtonIconTooltip egl9i9v0"
           disabled=""
           radius="base"
+          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -266,7 +269,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren egl9i9v1"
             >
               <div
-                class="css-du18qm"
+                class="HvPagination-icon css-du18qm"
                 name="End"
               >
                 <svg

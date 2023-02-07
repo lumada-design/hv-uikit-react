@@ -107,11 +107,7 @@ export const StyledDropAreaLabel = styled("div")({
 });
 
 export const StyledDragText = styled(HvTypography)({
-  color: theme.colors.acce1,
-  fontWeight: 400,
-  fontSize: theme.fileUploader.dropZone.fontSize,
-  letterSpacing: theme.fileUploader.dropZone.letterSpacing,
-  lineHeight: theme.fileUploader.dropZone.lineHeight,
+  ...theme.typography.body,
 });
 
 export const StyledDropAreaIcon = styled(Doc)({
@@ -126,9 +122,5 @@ export const StyledDropAreaLabels = styled("div")({
 });
 
 export const StyledSelectedFilesText = styled("span")({
-  color: theme.colors.acce1,
-  fontWeight: 600,
-  fontSize: theme.fileUploader.dropZone.fontSize,
-  letterSpacing: theme.fileUploader.dropZone.letterSpacing,
-  lineHeight: theme.fileUploader.dropZone.lineHeight,
+  ...theme.typography.label,
 });

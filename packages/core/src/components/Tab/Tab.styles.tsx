@@ -11,11 +11,7 @@ export const StyledTab = styled(MuiTab)({
   minHeight: 32,
   textTransform: "none",
   fontFamily: theme.fontFamily.body,
-  color: theme.colors.acce1,
-  fontSize: theme.tab.fontSize,
-  letterSpacing: theme.tab.letterSpacing,
-  lineHeight: theme.tab.lineHeight,
-  fontWeight: 400,
+  ...theme.typography.body,
   opacity: 1,
   "&::after": {
     position: "absolute",
@@ -44,9 +40,9 @@ export const StyledTab = styled(MuiTab)({
   // Override Mui styling: https://mui.com/material-ui/api/tab/#css
   "&.Mui-selected": {
     color: theme.colors.acce1,
-    letterSpacing: theme.tab.letterSpacing,
-    lineHeight: theme.tab.lineHeight,
-    fontWeight: 600,
+    letterSpacing: theme.typography.label.letterSpacing,
+    lineHeight: theme.typography.label.lineHeight,
+    fontWeight: theme.typography.label.fontWeight,
   },
   "&.Mui-disabled": {
     color: theme.colors.atmo5,
