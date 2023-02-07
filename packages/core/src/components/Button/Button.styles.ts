@@ -6,12 +6,11 @@ import { transientOptions } from "utils/transientOptions";
 import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./Button";
 
 export interface StyledButtonProps {
-  variant?: HvButtonVariant;
-  iconOnly?: Boolean;
-  size?: HvButtonSize;
-  radius?: HvButtonRadius;
-  overrideIconColors?: Boolean;
-  focusVisibleClassName?: String;
+  $radius?: HvButtonRadius;
+  $size?: HvButtonSize;
+  $variant?: HvButtonVariant;
+  $iconOnly?: Boolean;
+  $overrideIconColors?: Boolean;
   $disabled?: Boolean;
 }
 
@@ -37,11 +36,11 @@ export const StyledButton = styled(
   transientOptions
 )(
   ({
-    variant,
-    iconOnly,
-    size,
-    radius,
-    overrideIconColors,
+    $variant,
+    $iconOnly,
+    $size,
+    $radius,
+    $overrideIconColors,
     $disabled,
   }: StyledButtonProps) => ({
     display: "inline-flex",
@@ -60,43 +59,43 @@ export const StyledButton = styled(
 
     fontSize: theme.fontSizes.base,
     fontWeight: 600,
-    ...(overrideIconColors &&
-      variant === "primary" && {
+    ...($overrideIconColors &&
+      $variant === "primary" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
         },
       }),
-    ...(overrideIconColors &&
-      variant === "primarySubtle" && {
+    ...($overrideIconColors &&
+      $variant === "primarySubtle" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
         },
       }),
-    ...(overrideIconColors &&
-      variant === "primaryGhost" && {
+    ...($overrideIconColors &&
+      $variant === "primaryGhost" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
         },
       }),
-    ...(overrideIconColors &&
-      variant === "secondarySubtle" && {
+    ...($overrideIconColors &&
+      $variant === "secondarySubtle" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
         },
       }),
-    ...(overrideIconColors &&
-      variant === "secondaryGhost" && {
+    ...($overrideIconColors &&
+      $variant === "secondaryGhost" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
         },
       }),
-    ...(overrideIconColors &&
-      variant === "semantic" && {
+    ...($overrideIconColors &&
+      $variant === "semantic" && {
         "& svg .color0": {
           fill: $disabled ? theme.colors.atmo5 : theme.colors.base2,
         },
       }),
-    ...(variant === "primary" && {
+    ...($variant === "primary" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
       backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.acce2,
       "&:hover": {
@@ -106,7 +105,7 @@ export const StyledButton = styled(
         backgroundColor: theme.colors.acce2h,
       },
     }),
-    ...(variant === "primarySubtle" && {
+    ...($variant === "primarySubtle" && {
       backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
       border: $disabled
         ? `1px solid ${theme.colors.atmo4}`
@@ -119,7 +118,7 @@ export const StyledButton = styled(
         backgroundColor: theme.colors.atmo3,
       },
     }),
-    ...(variant === "primaryGhost" && {
+    ...($variant === "primaryGhost" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
       backgroundColor: "transparent",
       "&:hover": {
@@ -129,7 +128,7 @@ export const StyledButton = styled(
         backgroundColor: theme.colors.atmo3,
       },
     }),
-    ...(variant === "secondarySubtle" && {
+    ...($variant === "secondarySubtle" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
       backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
       border: $disabled
@@ -143,7 +142,7 @@ export const StyledButton = styled(
         backgroundColor: theme.colors.atmo3,
       },
     }),
-    ...(variant === "secondaryGhost" && {
+    ...($variant === "secondaryGhost" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
       backgroundColor: "transparent",
       "&:hover": {
@@ -153,7 +152,7 @@ export const StyledButton = styled(
         backgroundColor: theme.colors.atmo3,
       },
     }),
-    ...(variant === "semantic" && {
+    ...($variant === "semantic" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.base2,
       backgroundColor: $disabled
         ? theme.button.semanticColorDisabled
@@ -162,49 +161,49 @@ export const StyledButton = styled(
         backgroundColor: theme.button.semanticColor,
       },
     }),
-    ...(size === "xs" && {
+    ...($size === "xs" && {
       height: theme.sizes.xs,
       paddingLeft: theme.space.xs,
       paddingRight: theme.space.xs,
       fontSize: theme.fontSizes.xs,
     }),
-    ...(size === "sm" && {
+    ...($size === "sm" && {
       height: theme.sizes.sm,
       paddingLeft: theme.space.sm,
       paddingRight: theme.space.sm,
       fontSize: theme.fontSizes.sm,
     }),
-    ...(size === "md" && {
+    ...($size === "md" && {
       height: theme.sizes.md,
       paddingLeft: theme.space.md,
       paddingRight: theme.space.md,
     }),
-    ...(size === "lg" && {
+    ...($size === "lg" && {
       height: theme.sizes.lg,
       paddingLeft: theme.space.lg,
       paddingRight: theme.space.lg,
       fontSize: theme.fontSizes.lg,
     }),
-    ...(size === "xl" && {
+    ...($size === "xl" && {
       height: theme.sizes.xl,
       paddingLeft: theme.space.xl,
       paddingRight: theme.space.xl,
       fontSize: theme.fontSizes.xl,
     }),
-    ...(radius === "xs" && { borderRadius: theme.radii.xs }),
-    ...(radius === "sm" && { borderRadius: theme.radii.sm }),
-    ...(radius === "md" && { borderRadius: theme.radii.md }),
-    ...(radius === "lg" && { borderRadius: theme.radii.lg }),
-    ...(radius === "xl" && { borderRadius: theme.radii.xl }),
-    ...(radius === "none" && { borderRadius: theme.radii.none }),
-    ...(radius === "base" && { borderRadius: theme.radii.base }),
-    ...(iconOnly && {
+    ...($radius === "xs" && { borderRadius: theme.radii.xs }),
+    ...($radius === "sm" && { borderRadius: theme.radii.sm }),
+    ...($radius === "md" && { borderRadius: theme.radii.md }),
+    ...($radius === "lg" && { borderRadius: theme.radii.lg }),
+    ...($radius === "xl" && { borderRadius: theme.radii.xl }),
+    ...($radius === "none" && { borderRadius: theme.radii.none }),
+    ...($radius === "base" && { borderRadius: theme.radii.base }),
+    ...($iconOnly && {
       margin: 0,
       padding: 0,
       width: theme.sizes.sm,
       height: theme.sizes.sm,
     }),
-    ...(!iconOnly && {
+    ...(!$iconOnly && {
       minWidth: "70px",
     }),
   })
