@@ -12,7 +12,7 @@ export const StyledFormElement = styled(HvFormElement)({
 });
 
 export const StyledLabel = styled(HvLabel)({
-  marginBottom: "10px",
+  marginBottom: theme.spacing(1.25),
 });
 
 export const StyledGroup = styled(
@@ -49,15 +49,15 @@ export const StyledGroup = styled(
     ...($horizontal && {
       flexDirection: "row",
       flexWrap: "wrap",
-      marginLeft: "-20px",
+      marginLeft: `-${theme.spacing(2.5)}`,
       "&>*": {
-        marginLeft: "20px",
+        marginLeft: theme.spacing(2.5),
       },
-      width: "calc(100% + 20px)", // Compensate the negative margin left which increases the width
+      width: `calc(100% + ${theme.spacing(2.5)})`, // Compensate the negative margin left which increases the width
     }),
 
     ...($invalid && {
-      paddingBottom: "10px",
+      paddingBottom: theme.spacing(1.25),
       borderBottom: `1px solid ${theme.colors.sema4}`,
     }),
   })

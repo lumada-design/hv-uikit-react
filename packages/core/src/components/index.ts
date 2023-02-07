@@ -61,3 +61,4 @@ export * from "./DropDownMenu";
 export * from "./Pagination";
 export * from "./ActionsGeneric";
 export * from "./BreadCrumb";
+export * from "./DotPagination";

@@ -10,8 +10,6 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       class="HvActionsGeneric-button e1bww73k0 css-5isxga-StyledButton-StyledButton egl9i9v0"
       disabled=""
       id="post"
-      radius="base"
-      variant="primary"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -49,8 +47,6 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       category="primaryGhost"
       class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
       id="get"
-      radius="base"
-      variant="primary"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -88,8 +84,6 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       category="primaryGhost"
       class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
       id="put"
-      radius="base"
-      variant="primary"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -127,8 +121,6 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       category="primaryGhost"
       class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
       id="delete"
-      radius="base"
-      variant="primary"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"

@@ -20,8 +20,6 @@ exports[`DropDownMenu > should render correctly 1`] = `
           aria-label="Dropdown menu"
           class="HvDropDownMenu-icon e1y5ntva1 css-ubhy60-StyledButton-StyledButton egl9i9v0"
           id="-2-icon-button"
-          radius="base"
-          variant="secondaryGhost"
         >
           <div
             class="css-1nxr552-StyledContentDiv egl9i9v3"

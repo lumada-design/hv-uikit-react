@@ -3,7 +3,11 @@ import { Fail, Success } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton, HvTypography } from "components";
 
-const iconStyles = { width: 32, height: 32, margin: "0px 10px" };
+const iconStyles = {
+  width: 32,
+  height: 32,
+  margin: `0px ${theme.spacing(1.25)}`,
+};
 
 export const StyledSuccess = styled(Success)({
   ...iconStyles,
@@ -54,7 +58,7 @@ export const StyledProgressTextContainer = styled("span")({
 
 export const StyledPreviewContainer = styled("div")({
   display: "flex",
-  margin: "0px 10px",
+  margin: `0px ${theme.spacing(1.25)}`,
   width: theme.fileUploader.file.previewContainerSize,
   height: theme.fileUploader.file.previewContainerSize,
   justifyContent: "center",
@@ -78,5 +82,5 @@ export const StyledPreviewContainer = styled("div")({
 });
 
 export const StyledIconButton = styled(HvButton)({
-  margin: "0px 10px",
+  margin: `0px ${theme.spacing(1.25)}`,
 });

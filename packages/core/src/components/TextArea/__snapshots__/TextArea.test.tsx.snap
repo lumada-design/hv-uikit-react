@@ -42,7 +42,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvBaseInput-root HvTextArea-baseInput e1f8on4z0 css-1pj9pub-StyledRoot-StyledBaseInput e1wsukd12"
     >
       <div
-        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e1wsukd10 css-1wb3arn-MuiInputBase-root-MuiInput-root-StyledInput"
+        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e1wsukd10 css-jmrod1-MuiInputBase-root-MuiInput-root-StyledInput"
       >
         <textarea
           aria-controls="hvtextarea3-charCounter"

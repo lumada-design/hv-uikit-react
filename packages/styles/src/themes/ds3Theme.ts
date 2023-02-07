@@ -291,7 +291,7 @@ const ds3Theme = makeTheme((theme) => ({
       borderRadius: "0px",
       hoverColor: theme.colors.atmo3,
       borderColor: "transparent",
-      extensionHeight: "10px",
+      extensionHeight: theme.spacing(1.25),
       extensionBorderColor: "transparent",
     },
     pagination: {

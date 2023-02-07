@@ -3,14 +3,14 @@
 exports[`FileList > should render correctly 1`] = `
 <div>
   <ul
-    class="HvFileList-list css-12tzpa8-StyledList e1ybz4wc0"
+    class="HvFileList-list css-1bo3zqs-StyledList e1ybz4wc0"
     id="list-list"
   >
     <li
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-mych0h-StyledFail e11o985j8 css-du18qm"
+        class="HvFile-icon css-xinaoy-StyledFail e11o985j8 css-du18qm"
         name="Fail"
       >
         <svg
@@ -46,10 +46,8 @@ exports[`FileList > should render correctly 1`] = `
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e11o985j0 css-7nz3sy-StyledButton-StyledIconButton egl9i9v0"
+        class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
         id="list-values-remove-button"
-        radius="base"
-        variant="secondaryGhost"
       >
         <div
           class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -83,7 +81,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-mych0h-StyledFail e11o985j8 css-du18qm"
+        class="HvFile-icon css-xinaoy-StyledFail e11o985j8 css-du18qm"
         name="Fail"
       >
         <svg
@@ -119,10 +117,8 @@ exports[`FileList > should render correctly 1`] = `
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e11o985j0 css-7nz3sy-StyledButton-StyledIconButton egl9i9v0"
+        class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
         id="list-values-remove-button"
-        radius="base"
-        variant="secondaryGhost"
       >
         <div
           class="css-1nxr552-StyledContentDiv egl9i9v3"

@@ -31,7 +31,9 @@ export const StyledSuccess = styled(Success)({
   height: "30px",
 });
 
-export const StyledSuggestions = styled(HvSuggestions)({
+export const StyledSuggestions = styled((props) => (
+  <HvSuggestions {...props} />
+))({
   width: "100%",
   position: "relative",
   [`& .${suggestionsClasses.root} .${suggestionsClasses.list} &`]: {
