@@ -63,3 +63,4 @@ export * from "./ActionsGeneric";
 export * from "./BreadCrumb";
 export * from "./DotPagination";
 export * from "./Banner";
+export * from "./Snackbar";
