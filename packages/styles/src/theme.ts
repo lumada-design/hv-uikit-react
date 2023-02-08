@@ -163,7 +163,8 @@ const componentsSpec = {
   dropDownMenu: {
     borderRadius: "string",
     hoverColor: "string",
-    borderColor: "string",
+    borderOpened: "string",
+    borderClosed: "string",
     extensionHeight: "string",
     extensionBorderColor: "string",
   },
@@ -171,6 +172,15 @@ const componentsSpec = {
     pageSizeBorderColor: "string",
     pageSizeBorderRadius: "string",
     pageJumpTextAlign: "string",
+  },
+  actionsGeneric: { buttonSize: "string" },
+  bulkActions: {
+    separatorDisplay: "string",
+    border: "string",
+    backgroundColor: "string",
+    padding: "string",
+    anySelectedBackgroundColor: "string",
+    buttonSize: "string",
   },
 };
 

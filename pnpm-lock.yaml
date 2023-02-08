@@ -140,7 +140,7 @@ importers:
       detect-browser: 5.3.0
       hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
-      notistack: 2.0.8_je6wcyxzzodpuivmp54wfrprbm
+      notistack: 2.0.8_2jzjqnnmrlgpzfrvelta6rhlzm
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-google-charts: 4.0.0_biqbaboplfbrettd7655fr4n2y
@@ -13888,7 +13888,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /notistack/2.0.8_je6wcyxzzodpuivmp54wfrprbm:
+  /notistack/2.0.8_2jzjqnnmrlgpzfrvelta6rhlzm:
     resolution: {integrity: sha512-/IY14wkFp5qjPgKNvAdfL5Jp6q90+MjgKTPh4c81r/lW70KeuX6b9pE/4f8L4FG31cNudbN9siiFS5ql1aSLRw==}
     peerDependencies:
       '@emotion/react': ^11.4.1
@@ -13902,9 +13902,9 @@ packages:
       '@emotion/styled':
         optional: true
     dependencies:
-      '@emotion/react': 11.10.5_3grbeiqrb6djg67fiejiqngkdi
-      '@emotion/styled': 11.10.5_pwtpayi7py7ecifctvjbac33ee
-      '@mui/material': 5.11.2_lskpmcsdi7ipu6qpuapyu56ihm
+      '@emotion/react': 11.10.5_yxdp3dl3eazy3vwpbmv4fq727a
+      '@emotion/styled': 11.10.5_4erqsq3n444jecyuvaxwc5b3vi
+      '@mui/material': 5.11.8_rqh7qj4464ntrqrt6banhaqg4q
       clsx: 1.2.1
       hoist-non-react-statics: 3.3.2
       react: 18.2.0

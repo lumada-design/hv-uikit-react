@@ -90,8 +90,8 @@ export const MultipleExamples: StoryObj<HvSnackbarProps> = {
           offset={0}
           label="This is a snackbar with action."
           action={customAction}
-          actionCallback={(id, action) =>
-            console.log(`Clicked ${action.label}`)
+          actionCallback={(_, __, action) =>
+            console.log(`Clicked ${action?.label}`)
           }
         />
       </>

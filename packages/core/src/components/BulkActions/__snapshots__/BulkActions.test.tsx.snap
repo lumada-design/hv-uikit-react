@@ -1,0 +1,274 @@
+// Vitest Snapshot v1
+
+exports[`BulkActions > With actions > should render correctly 1`] = `
+<div>
+  <div
+    class="HvBulkActions-root css-mjszyv-StyledRoot espcpjl3"
+  >
+    <div
+      class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer espcpjl2"
+    >
+      <div
+        class="HvBulkActions-selectAll HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
+      >
+        <div
+          class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
+        >
+          <span
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+          >
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox18-input"
+              type="checkbox"
+              value="on"
+            />
+            <div
+              class="HvBaseCheckBox-icon css-du18qm"
+              font-size="medium"
+              name="Checkbox"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="var(--colors-atmo1)"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <label
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+            for="hvcheckbox18-input"
+            id="hvcheckbox18-label"
+            variant="label"
+          >
+            <span
+              class="css-1mchk7j-getStyledComponent e1te0rfk0"
+              variant="body"
+            >
+              <b>
+                All
+              </b>
+               (8)
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="espcpjl1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e1bww73k1"
+    >
+      <button
+        class="HvActionsGeneric-button e1bww73k0 css-1watp9i-StyledButton-StyledButton egl9i9v0"
+        disabled=""
+      >
+        <div
+          class="css-1nxr552-StyledContentDiv egl9i9v3"
+        >
+          <span
+            class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          >
+            <div
+              class="css-du18qm"
+              name="Add"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <span
+            class="css-1o4qkkz-StyledChildren egl9i9v1"
+          >
+            Add
+          </span>
+        </div>
+      </button>
+      <button
+        class="HvActionsGeneric-button e1bww73k0 css-1watp9i-StyledButton-StyledButton egl9i9v0"
+        disabled=""
+      >
+        <div
+          class="css-1nxr552-StyledContentDiv egl9i9v3"
+        >
+          <span
+            class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          >
+            <div
+              class="css-du18qm"
+              name="Delete"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <span
+            class="css-1o4qkkz-StyledChildren egl9i9v1"
+          >
+            Delete
+          </span>
+        </div>
+      </button>
+      <div
+        class="css-1nctzd3-StyledRoot e1y5ntva3"
+      >
+        <div
+          class="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu css-1nukton-StyledRoot e1xgfj1t9"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="menu"
+            class="HvDropDownMenu-container e1y5ntva2 HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-7kx3el-StyledAnchor-StyledBaseDropDown e1xgfj1t8"
+            id="-20"
+            tabindex="-1"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="Dropdown menu"
+              class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e1y5ntva1 css-11kbmo9-StyledButton-StyledButton egl9i9v0"
+              disabled=""
+              id="-20-icon-button"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv egl9i9v3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren egl9i9v1"
+                >
+                  <div
+                    class="css-du18qm"
+                    name="MoreOptionsVertical"
+                  >
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                        fill="var(--colors-atmo5)"
+                      />
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BulkActions > Without actions > should render correctly 1`] = `
+<div>
+  <div
+    class="HvBulkActions-root css-mjszyv-StyledRoot espcpjl3"
+  >
+    <div
+      class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer espcpjl2"
+    >
+      <div
+        class="HvBulkActions-selectAll HvCheckBox-root css-1lst77x-StyledFormElement e162au073 HvFormElement-root"
+      >
+        <div
+          class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
+        >
+          <span
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+          >
+            <input
+              class="PrivateSwitchBase-input css-1m9pwf3"
+              data-indeterminate="false"
+              id="hvcheckbox3-input"
+              type="checkbox"
+              value="on"
+            />
+            <div
+              class="HvBaseCheckBox-icon css-du18qm"
+              font-size="medium"
+              name="Checkbox"
+            >
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M0 0h16v16H0z"
+                  fill="var(--colors-atmo1)"
+                />
+                <path
+                  class="color1"
+                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </span>
+          <label
+            class="HvCheckBox-label e162au071 HvLabel-root e1injmq50 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+            for="hvcheckbox3-input"
+            id="hvcheckbox3-label"
+            variant="label"
+          >
+            <span
+              class="css-1mchk7j-getStyledComponent e1te0rfk0"
+              variant="body"
+            >
+              <b>
+                All
+              </b>
+               (8)
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="espcpjl1 HvActionsGeneric-root HvBulkActions-actions css-14xb33s-StyledRoot-StyledGenericActions e1bww73k1"
+    />
+  </div>
+</div>
+`;

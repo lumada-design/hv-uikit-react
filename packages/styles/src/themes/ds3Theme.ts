@@ -290,7 +290,8 @@ const ds3Theme = makeTheme((theme) => ({
     dropDownMenu: {
       borderRadius: "0px",
       hoverColor: theme.colors.atmo3,
-      borderColor: "transparent",
+      borderOpened: "none",
+      borderClosed: "none",
       extensionHeight: theme.spacing(1.25),
       extensionBorderColor: "transparent",
     },
@@ -298,6 +299,15 @@ const ds3Theme = makeTheme((theme) => ({
       pageSizeBorderColor: "transparent",
       pageSizeBorderRadius: "0px",
       pageJumpTextAlign: "right",
+    },
+    actionsGeneric: { buttonSize: "sm" },
+    bulkActions: {
+      separatorDisplay: "none",
+      border: "none",
+      backgroundColor: theme.colors.atmo1,
+      padding: "0px",
+      anySelectedBackgroundColor: theme.colors.sema7,
+      buttonSize: "sm",
     },
   },
 }));

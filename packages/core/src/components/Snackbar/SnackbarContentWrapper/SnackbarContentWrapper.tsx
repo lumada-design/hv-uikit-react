@@ -14,7 +14,7 @@ import {
   snackbarContentWrapperClasses,
   HvSnackbarContentWrapperClasses,
 } from ".";
-import { HvActionsGeneric, HvAction } from "components";
+import { HvActionsGeneric, HvAction, HvListValue } from "components";
 
 export type HvSnackbarContentWrapperProps = Omit<
   MuiSnackbarContentProps,
@@ -32,7 +32,13 @@ export type HvSnackbarContentWrapperProps = Omit<
     /** Action to display. */
     action?: React.ReactNode | HvAction;
     /** The callback function ran when an action is triggered, receiving `action` as param */
-    actionCallback?: Function;
+    actionCallback?: (
+      event:
+        | React.ChangeEvent<HTMLLIElement>
+        | React.MouseEvent<HTMLButtonElement>,
+      id: string,
+      action: HvAction | HvListValue
+    ) => void;
     /** A Jss Object used to override or extend the styles applied to the empty state component. */
     classes?: HvSnackbarContentWrapperClasses;
   };
