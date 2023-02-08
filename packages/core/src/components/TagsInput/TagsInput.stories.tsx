@@ -14,22 +14,15 @@ import { useState } from "react";
 import countryNamesArray from "./countries";
 import tagsInputClasses from "./tagsInputClasses";
 
-const StyledTagsInput = styled(HvTagsInput)({
-  [`&.${tagsInputClasses.root}`]: {
-    width: 500,
-  },
-});
-
 const StyledMultilineTagsInput = styled(HvTagsInput)({
   [`& .${tagsInputClasses.tagsList}`]: {
-    width: 350,
+    width: 600,
     height: 100,
   },
 });
 
 const StyledSuggestionsTagsInput = styled(HvTagsInput)({
   [`& > .${tagsInputClasses.root}`]: {
-    width: 550,
     height: 400,
   },
 });
@@ -172,7 +165,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
 
     return (
       <>
-        <StyledTagsInput
+        <HvTagsInput
           id="tags-list-10"
           label="Controlled with validation"
           aria-label="Controlled with validation"
@@ -321,7 +314,7 @@ export const NotResizable: StoryObj<HvTagsInputProps> = {
   },
   render: () => {
     return (
-      <StyledTagsInput
+      <HvTagsInput
         id="tags-list-7"
         label="Fixed size not resizable"
         aria-label="The label"
@@ -354,7 +347,7 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
     };
 
     return (
-      <StyledTagsInput
+      <HvTagsInput
         id="tags-list-8"
         label="Tags"
         description="Maximum 3 tags"
@@ -381,7 +374,7 @@ export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
   },
   render: () => {
     return (
-      <StyledTagsInput
+      <HvTagsInput
         id="tags-list-11"
         label="Custom commit character"
         description="Will only add a tag when a space or comma is entered or when the user clicks outside the input box and there's text that's not been commited"
