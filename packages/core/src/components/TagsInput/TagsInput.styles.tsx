@@ -20,7 +20,7 @@ import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "inline-block",
-  maxWidth: "100%",
+  width: "100%",
 });
 
 export const StyledLabelContainer = styled("div")({
