@@ -1,0 +1,37 @@
+name: Documentation
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY:
+        required: true
+    inputs:
+      publish-folder:
+        type: string
+        default: ${{ github.ref_name }}
+
+env:
+  ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+
+jobs:
+  build-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Documentation
+        uses: ./.github/actions/build-documentation
+
+      - name: Deploy Documentation
+        uses: ./.github/actions/deploy-documentation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_GHPAGES_DEPLOY_KEY: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
+          DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+          DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ inputs.publish-folder }}
+          DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ inputs.publish-folder }} of ${{ github.repository }}"
+          DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ inputs.publish-folder }}/

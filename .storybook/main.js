@@ -2,11 +2,12 @@ const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   stories: [
-    "../doc/**/*.stories.@(tsx|mdx)",
+    "./docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
     "@storybook/addon-essentials",
+    "@storybook/addon-a11y",
     "../tools/addon-theme-switcher/preset.js",
   ],
   framework: "@storybook/react",
@@ -16,7 +17,7 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));
     config.optimizeDeps = {
       ...config.optimizeDeps,
@@ -29,6 +30,10 @@ module.exports = {
         "lodash/startCase",
       ],
     };
+
+    if (configType === "PRODUCTION") {
+      config.base = "./";
+    }
 
     return config;
   },

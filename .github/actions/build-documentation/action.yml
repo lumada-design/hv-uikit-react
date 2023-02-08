@@ -1,0 +1,21 @@
+name: Documentation
+description: Build UI Kit documentation
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      uses: ./.github/actions/install-dependencies
+
+    - name: Build Documentation
+      run: npx cross-env NODE_OPTIONS=--max_old_space_size=8192 build-storybook --docs -o dist --quiet
+      shell: bash
+
+    - name: Archive Documentation
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: ${{ github.workspace }}/dist

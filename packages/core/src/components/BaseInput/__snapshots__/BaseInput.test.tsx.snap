@@ -6,7 +6,7 @@ exports[`BaseInput > should render correctly 1`] = `
     class="HvBaseInput-root css-fp1w37-StyledRoot e1wsukd12"
   >
     <div
-      class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-1veljhk-MuiInputBase-root-MuiInput-root-StyledInput"
+      class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-vw6roc-MuiInputBase-root-MuiInput-root-StyledInput"
     >
       <input
         class="MuiInputBase-input MuiInput-input HvBaseInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"

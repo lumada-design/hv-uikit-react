@@ -1,0 +1,47 @@
+name: Applitools Tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      APPLITOOLS_API_KEY:
+        required: true
+
+env:
+  APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+  APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha }}
+
+jobs:
+  run-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Eyes Storybook
+        run: |
+          npx eyes-storybook -f ${{ github.workspace }}/config/applitools.config.js
+
+      - name: Archive Logs
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/applitools-logs.txt
+
+  complete:
+    name: Complete
+    runs-on: ubuntu-latest
+    needs: [run-tests]
+
+    steps:
+      - name: Notify Applitools Finish
+        run: |
+          curl -X POST \
+            https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{env.APPLITOOLS_BATCH_ID}}/complete?apiKey=${{env.APPLITOOLS_API_KEY}} \
+            -H "accept:*/*" \

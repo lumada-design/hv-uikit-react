@@ -25,7 +25,7 @@ export type HvSuggestionsProps = HvBaseProps & {
   /** The HTML element Suggestions attaches to. */
   anchorEl?: HTMLElement;
   /** Array of { id, label, ...others } values to display in the suggestion list */
-  suggestionValues: HvSuggestion[] | null;
+  suggestionValues?: HvSuggestion[] | null;
   /** Function called when suggestion list is closed */
   // onClose: Function,
   /** Function called when a suggestion is selected */

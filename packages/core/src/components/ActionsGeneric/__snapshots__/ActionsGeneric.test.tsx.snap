@@ -6,8 +6,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     class="HvActionsGeneric-root css-1668iss-StyledRoot e1bww73k1"
   >
     <button
-      category="primaryGhost"
-      class="HvActionsGeneric-button e1bww73k0 css-5isxga-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-17zrt7q-StyledButton-StyledButton egl9i9v0"
       disabled=""
       id="post"
     >
@@ -44,8 +43,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      category="primaryGhost"
-      class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-12tcu92-StyledButton-StyledButton egl9i9v0"
       id="get"
     >
       <div
@@ -81,8 +79,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      category="primaryGhost"
-      class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-12tcu92-StyledButton-StyledButton egl9i9v0"
       id="put"
     >
       <div
@@ -118,8 +115,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      category="primaryGhost"
-      class="HvActionsGeneric-button e1bww73k0 css-3zs8og-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-12tcu92-StyledButton-StyledButton egl9i9v0"
       id="delete"
     >
       <div

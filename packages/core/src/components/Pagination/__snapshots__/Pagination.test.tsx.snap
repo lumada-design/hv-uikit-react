@@ -140,7 +140,7 @@ exports[`Pagination > should render correctly 1`] = `
         class="HvPagination-pageInfo css-1wjzhg6-StyledPageInfo en2ju171"
       >
         <div
-          class="HvPagination-pageJump css-fq42na-StyledPageJump en2ju170"
+          class="HvPagination-pageJump css-cgrn9k-StyledPageJump en2ju170"
         >
           <div
             class="HvInput-root HvPagination-pageSizeInputContainer css-b8m0re-StyledFormElement ep58gjf8 HvFormElement-root"
@@ -149,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root ep58gjf0 css-cpmv9g-StyledRoot-StyledBaseInput e1wsukd12"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-1veljhk-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-vw6roc-MuiInputBase-root-MuiInput-root-StyledInput"
               >
                 <input
                   aria-label="Current page"
