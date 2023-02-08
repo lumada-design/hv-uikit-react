@@ -34,6 +34,7 @@ export type ThemeComponents = {
     marginIconLeft: string;
     semanticColor: string;
     semanticColorDisabled: string;
+    hoverColor: string;
   };
   header: {
     color: string;
@@ -200,6 +201,15 @@ export type ThemeComponents = {
     padding: string;
     anySelectedBackgroundColor: string;
     buttonSize: string;
+  };
+  table: {
+    headerHoverColor: string;
+    headerBorderTopColor: string;
+    selectedRowBackgroundColor: string;
+    rowBackgroundColor: string;
+    rowHoverColor: string;
+    rowStripedBackgroundColor: string;
+    rowExpandBackgroundColor: string;
   };
 };
 

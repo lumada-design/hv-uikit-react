@@ -66,3 +66,4 @@ export * from "./Snackbar";
 export * from "./BulkActions";
 export * from "./GlobalActions";
 export * from "./Dropdown";
+export * from "./Table";

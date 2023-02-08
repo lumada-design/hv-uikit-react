@@ -18,7 +18,7 @@ exports[`DropDownMenu > should render correctly 1`] = `
         <button
           aria-expanded="false"
           aria-label="Dropdown menu"
-          class="HvDropDownMenu-icon e13q7myz1 css-qjgghy-StyledButton-StyledButton e138pvrm0"
+          class="HvDropDownMenu-icon e13q7myz1 css-7qaujj-StyledButton-StyledButton e138pvrm0"
           id="-2-icon-button"
         >
           <div

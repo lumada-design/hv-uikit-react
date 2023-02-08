@@ -40,7 +40,7 @@ const focusStyles = css`
   }
 `;
 
-export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
+export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
   children: React.ReactElement;
   /** Extra configuration for the child element. */
   configuration?: {
@@ -58,6 +58,8 @@ export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   focusOnClick?: boolean;
   /** Show focus when click element. v*/
   focusDisabled?: boolean;
+  /** Use up/ down keyboard arrows to control focus. */
+  useArrows?: boolean;
   /** Focus and navigation strategy to be used. v*/
   strategy?: "listbox" | "menu" | "card" | "grid";
   /** Uses an absolute positioned div as a focus. v*/
@@ -86,17 +88,19 @@ export const HvFocus = ({
   navigationJump = 4,
 }: HvFocusProps) => {
   const [showFocus, setShowFocus] = useState<boolean>(false);
-  const [childFocus, setChildFocus] = useState<React.ReactNode>();
+  const [childFocus, setChildFocus] = useState<any>();
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
-  const getFocuses = () =>
-    rootRef?.current
+  const getFocuses = () => {
+    const focuses = rootRef?.current
       ? Array.from(
           rootRef.current.getElementsByClassName(
             filterClass || focusClasses.root || "root"
           )
         )
       : [];
+    return focuses;
+  };
 
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
@@ -167,7 +171,7 @@ export const HvFocus = ({
 
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
-      evt.currentTarget.classList.add(focusClasses.focused || "focused");
+      evt.currentTarget.classList.add(focusClasses.focused);
       // add global class HvIsFocused as a marker
       // not to be styled directly, only as helper in specific css queries
       evt.currentTarget.classList.add("HvIsFocused");
@@ -180,7 +184,9 @@ export const HvFocus = ({
   const removeFocusClass = () => {
     if (!useFalseFocus) {
       getFocuses().forEach((element) => {
-        element.classList.remove(focusClasses.focused || "focused");
+        if (focusClasses.focused) {
+          element.classList.remove(focusClasses.focused);
+        }
         // remove the global class HvIsFocused
         element.classList.remove("HvIsFocused");
         classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
@@ -193,7 +199,6 @@ export const HvFocus = ({
     setShowFocus(true);
     // give focus to child element if any focusable
 
-    // @ts-ignore
     if (childFocus && childFocus.focus) childFocus.focus();
     onFocusStrategy(evt);
   };
@@ -255,7 +260,7 @@ export const HvFocus = ({
       Enter,
       SpaceBar,
     } = keyboardCodes;
-    // @ts-ignore
+
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
@@ -345,7 +350,6 @@ export const HvFocus = ({
 
   const onVerticalArrangementHandler = (evt, focuses, focusesList) => {
     const { ArrowUp, ArrowDown, Home, End, Enter, SpaceBar } = keyboardCodes;
-    // @ts-ignore
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (
@@ -391,7 +395,6 @@ export const HvFocus = ({
 
   const onSingleHandler = (evt) => {
     const { Enter, SpaceBar } = keyboardCodes;
-    // @ts-ignore
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
     if (

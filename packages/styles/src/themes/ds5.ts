@@ -143,6 +143,7 @@ const ds5 = makeTheme((theme: Theme) => ({
     marginIconLeft: "-8px",
     semanticColor: "rgba(251, 252, 252, 0.3)",
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
+    hoverColor: theme.colors.acce2s,
   },
   header: {
     color: theme.colors.acce1,
@@ -309,6 +310,15 @@ const ds5 = makeTheme((theme: Theme) => ({
     padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
     anySelectedBackgroundColor: theme.colors.acce2s,
     buttonSize: "md",
+  },
+  table: {
+    headerHoverColor: "transparent",
+    headerBorderTopColor: "transparent",
+    selectedRowBackgroundColor: theme.colors.acce2s,
+    rowBackgroundColor: theme.colors.atmo1,
+    rowHoverColor: theme.colors.acce2s,
+    rowStripedBackgroundColor: theme.colors.atmo1,
+    rowExpandBackgroundColor: theme.colors.atmo2,
   },
 }));
 

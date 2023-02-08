@@ -9,3 +9,4 @@ export { default as isBrowser } from "./browser";
 export { default as multiSelectionEventHandler } from "./multiSelectionEventHandler";
 export * from "./classes";
 export { default as getComponentName } from "./getComponentName";
+export { default as Random } from "./Random";

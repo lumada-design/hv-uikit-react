@@ -281,6 +281,7 @@ export const HvPagination = ({
         </StyledButtonIconTooltip>
         <StyledButtonIconTooltip
           id={setId(id, "previousPage-button")}
+          aria-label={labels?.previousPage}
           className={clsx(
             paginationClasses.iconContainer,
             classes?.iconContainer
