@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import { HvButtonVariant, HvDropDownMenu } from "components";
 import { setId } from "utils";
-import { isValidElement } from "react";
+import { isValidElement, useContext } from "react";
 import { HvBaseProps } from "../../types";
 import { actionsGenericClasses, HvActionsGenericClasses } from ".";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-icons";
+import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
+import { ThemeContext } from "providers";
 
 export type HvAction = {
   id: string;
@@ -40,6 +42,8 @@ export const HvActionsGeneric = ({
   maxVisibleActions = Infinity,
   ...others
 }: HvActionsGenericProps) => {
+  const { activeTheme, selectedMode } = useContext(ThemeContext);
+
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
   const renderButton = (action, idx) => {
@@ -59,6 +63,9 @@ export const HvActionsGeneric = ({
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id, action)}
         startIcon={renderedIcon}
+        $baseColor={
+          activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+        }
         {...other}
       >
         {label}

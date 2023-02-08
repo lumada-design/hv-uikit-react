@@ -256,7 +256,9 @@ export const StyledInput = styled(HvInput)(
   })
 );
 
-export const StyledSuggestions = styled(HvSuggestions)({
+export const StyledSuggestions = styled((props) => (
+  <HvSuggestions {...props} />
+))({
   width: "100%",
   position: "relative",
   top: 59,
