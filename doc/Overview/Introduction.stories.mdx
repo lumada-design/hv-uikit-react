@@ -1,0 +1,100 @@
+import { Meta } from "@storybook/addon-docs";
+import Diagram from "../assets/Diagram";
+
+import corePackage from "../../packages/core/package.json";
+import labPackage from "../../packages/lab/package.json";
+import iconsPackage from "../../packages/icons/package.json";
+import vizPackage from "../../packages/viz/package.json";
+import themesPackage from "../../packages/themes/package.json";
+import compatPackage from "../../packages/compat/package.json";
+import codeEditor from "../../packages/code-editor/package.json";
+import uikit_diagram from "../assets/uikit_diagram.png";
+
+<Meta title="Overview/Introduction" />
+
+# The UI Kit initiative
+
+The **UI Kit initiative** is a collaboration between the **Engineering** group and the **Design System** team.
+
+As a part of the **Product Design** group, the **Design System** is responsible to define and curate **reference Design guidelines** and **methodologies**, producing **reusable patterns** that will reduce design and implementation effort generating a unique, coherent and inclusive **[Design System](https://designsystem.hitachivantara.com/)**.
+
+The **UI Kit** provides a collection of **reusable React components**, that guarantees the alignment with the Design System specifications, and stands as a catalyser for a consistent overall User Experience across Hitachi portfolio.​
+
+<div style={{ textAlign: "center", padding: "20px 0" }}>
+  <Diagram />
+</div>
+
+## UI Kit Packages
+
+<ul>
+  <li>
+    <b>Core</b> - v{corePackage.version} - Core components library fully compliant with DS.
+  </li>
+  <li>
+    <b>Lab</b> - v{labPackage.version} - Components not fully compliant with DS or contributed by
+    external teams.
+  </li>
+  <li>
+    <b>Viz</b> - v{vizPackage.version} - DS visualizations compliant with DS.
+  </li>
+  <li>
+    <b>Icons</b> - v{iconsPackage.version} - DS icons packaged as a set of React components.
+  </li>
+  <li>
+    <b>Themes</b> - v{themesPackage.version} - JSON based DS theming specifications.
+  </li>
+  <li>
+    <b>Compat</b> - v{compatPackage.version} - Compatibility package to ease interoperability
+    between UI Kit versions..
+  </li>
+  <li>
+    <b>Code Editor</b> - v{codeEditor.version} - React Monaco editor compliant with DS guidelines.
+  </li>
+</ul>
+
+## Components, Widgets and Templates
+
+While the UI Kit is a component library, we also provide Widgets and Templates. Here's a run down of what's what:
+
+<ul>
+  <li>
+    <b>Components:</b> UI Kit building blocks for creating your apps.
+  </li>
+  <li>
+    <b>Widgets:</b> A set of components that addresses specif use cases and can be used as base to
+    support other scenarios.
+  </li>
+  <li>
+    <b>Templates:</b> A set of recipes that addresses common UI patterns to help teams accelerate
+    their development.
+  </li>
+</ul>
+
+## Accessibility
+
+The **UI kit** follows the two most commonly conformance guidelines for accessibility:
+
+<ul>
+  <li>
+    <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG</a> - Globally accepted
+    standard
+  </li>
+  <li>
+    <a href="https://www.section508.gov/">Section 508</a> - US federal agencies
+  </li>
+</ul>
+
+We target our development and tests to meet these two standards. Since many of our components are custom built,
+there is always room for improvement or areas where the accessibility of a component can be improved.
+If there is any component where you think improvements can be made, please reach out to us.
+
+Even though we're focused on developing a component library that is compliant with these standards, the application in which the components are integrated into has the responsibility of ensuring that the individual components are configured correctly and that the integration of those components produce an accessible application.
+
+## Community
+
+Stay up to date on the development of the UI Kit and the Design System or to reach out to the community:
+
+- Chat with us in the [#ui-kit Hitachi Vantara](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) Slack Engineering channel and keep an eye on the release announcments.
+- Take a look to our detailed [Releases Change Logs](https://github.com/lumada-design/hv-uikit-react/releases).
+- Dive into our issues in the [github](https://github.com/lumada-design/hv-uikit-react/issues) repository.
+- Discover the [Design System](https://hitachivantara.sharepoint.com/sites/DesignSystem/UI%20KIT/Home.aspx) resources.

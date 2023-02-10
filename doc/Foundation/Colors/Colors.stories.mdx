@@ -1,12 +1,12 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs";
 import Colors from "./Colors";
 import PaletteCustomization from "./PaletteCustomization";
-import { MaturityStatus } from "../../.storybook/blocks/MaturityStatus";
+import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
 
-import componentDefinitions from "../../doc/Theme/versions";
+import componentDefinitions from "../../versions";
 
 <Meta
-  title="Theme/Colors"
+  title="Foundation/Colors"
   parameters={{
     dsVersion: componentDefinitions.dsVersion.v3,
   }}
@@ -155,6 +155,6 @@ export default Palette;
 
 ## Result
 
-<Story name="customization">
+<Story name="Customization">
   <PaletteCustomization />
 </Story>

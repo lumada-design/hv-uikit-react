@@ -45,8 +45,7 @@ By default it will run in [http://localhost:9001](http://localhost:9001).
 
 ## Question or Problem?
 
-Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
-Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
+Use GitHub issues for bug reports and feature requests or one of our available communication channels for general support questions.
 
 ## New components
 
@@ -102,7 +101,7 @@ Be sure that an issue describes the problem you're fixing, or documents the desi
 
 #### Branch Structure
 
-All contributions should target the `master` branch (or `v2.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
+All contributions should target the `master` branch (or a previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
 
@@ -171,7 +170,7 @@ fix: minor typos in code, fixes issue #12
 
 ## Testing
 
-If you add any features to our code, make sure to add tests so that your changes are covered. Tests are written using [JEST](https://github.com/facebook/jest). You can see how well your code is covered by looking at the `coverage/lcov-report/index.html` file after running the coverage command.
+If you add any features to our code, make sure to add tests so that your changes are covered. You can see how well your code is covered by looking at the `coverage/lcov-report/index.html` file after running the coverage command.
 
 Test your changes by running our test commands:
 
@@ -186,3 +185,5 @@ Test your changes by running our test commands:
   ```
   npm run test:watch
   ```
+
+We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), end-to-end tests (using Playwright) and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.

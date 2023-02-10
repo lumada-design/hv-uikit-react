@@ -11,10 +11,10 @@ import {
 // only for API documentation purposes
 import HvIconBase from "@hitachivantara/uikit-react-icons/IconBase";
 
-import componentDefinitions from "../versions";
+import componentDefinitions from "../../versions";
 
 export default {
-  title: "Theme/Icons/Usage",
+  title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",

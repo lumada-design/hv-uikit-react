@@ -8,10 +8,10 @@ import SpacingUsage from "./SpacingUsage";
 import ThemePreviewMix from "./ThemePreviewMix";
 
 import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
-import componentDefinitions from "../../Theme/versions";
+import componentDefinitions from "../../versions";
 
 <Meta
-  title="Theme/Theming"
+  title="Guides/Theming"
   parameters={{
     dsVersion: componentDefinitions.dsVersion.v3,
   }}
@@ -384,7 +384,7 @@ export const myRawCustomTheme = {
 };
 export const myCustomTheme = createTheme(myRawCustomTheme);
 
-<Story name="Other">
+<Story name="Customize theme">
   <HvProvider
     uikitTheme="dawn"
     theme={myCustomTheme}

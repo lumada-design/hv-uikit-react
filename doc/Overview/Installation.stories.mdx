@@ -1,0 +1,67 @@
+import { Meta } from "@storybook/addon-docs";
+
+import LinkTo from "@storybook/addon-links/react";
+
+<Meta title="Overview/Installation" />
+
+# Installation
+
+UI Kit is available as an npm package.
+All you need to do is install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
+
+```shell
+npm install @hitachivantara/uikit-react-core @mui/material @mui/styles @emotion/react @emotion/styled
+```
+
+### Other packages available
+
+If you need to use any non-core community contributed component, install the `@hitachivantara/uikit-react-lab` package.
+
+```shell
+npm install @hitachivantara/uikit-react-lab
+```
+
+Also available:
+
+- **Icons** - `npm install @hitachivantara/uikit-react-icons`
+  - installed as a dependency of `uikit-react-core`
+- **Viz** - `npm install @hitachivantara/uikit-react-viz`
+- **Themes** - `npm install @hitachivantara/uikit-common-themes`
+  - shouldn't be necessary out of a very specific use case.
+- **Compat** - `npm install @hitachivantara/uikit-react-compat`
+- **Code Editor** - `npm install @hitachivantara/uikit-react-code-editor`
+
+### Installing an older version
+
+Older versions use a different registry and import names. If needed, please follow the documentation at https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page.
+
+If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** release. Check https://lumada-design.github.io/uikit/v2.x/?path=/docs/get-started-installation--page for instructions.
+
+## Usage
+
+1. Wrap your application with the `HvProvider` provided by `@hitachivantara/uikit-react-core`.
+
+```jsx
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+
+// Do this at the root of your application
+function App({ children }) {
+  return <HvProvider>{children}</HvProvider>;
+}
+```
+
+Optionally, you can configure the active theme and locale, among others.
+Check <LinkTo kind="Guides/Provider" story="Main" className="sbdocs sbdocs-a">the Provider's API documentation</LinkTo> for further details.
+
+2. Now you can start using components:
+
+```jsx
+import { HvButton } from "@hitachivantara/uikit-react-core";
+
+function Example() {
+  return <HvButton>Hello from UI Kit!</HvButton>;
+}
+```
+
+3. For a fully functioning setup, you'll also need to setup a <LinkTo kind="Guides/CSS Baseline" story="Page" className="sbdocs sbdocs-a">CSS Baseline</LinkTo>
+   and ensure <LinkTo kind="Guides/Typography" story="Description" className="sbdocs sbdocs-a">the loading of the Open Sans font</LinkTo>.
