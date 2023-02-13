@@ -11,6 +11,7 @@ import { StyledSnackbar } from "./Banner.styles";
 import { bannerClasses, HvBannerClasses } from ".";
 import { setId } from "utils";
 import { HvBannerContent } from "./BannerContent/BannerContent";
+import { HvAction, HvListValue } from "components";
 
 export type HvBannerVariant =
   | "success"
@@ -47,7 +48,13 @@ export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
     /** Actions to display on the right side. */
     actions?: React.ReactNode | HvBannerAction[];
     /** The callback function ran when an action is triggered, receiving `action` as param */
-    actionsCallback?: Function;
+    actionsCallback?: (
+      event:
+        | React.ChangeEvent<HTMLLIElement>
+        | React.MouseEvent<HTMLButtonElement>,
+      id: string,
+      action: HvAction | HvListValue
+    ) => void;
     /** The position property of the header. */
     actionsPosition?: HvBannerActionPosition;
     /** How much the transition animation last in milliseconds, if 0 no animation is played. */

@@ -11,7 +11,7 @@ import { capitalize } from "lodash";
 import { SyntheticEvent } from "react";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import { setId } from "utils";
-import { HvAction } from "components";
+import { HvAction, HvListValue } from "components";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
@@ -41,7 +41,13 @@ export type HvSnackbarProps = Omit<MuiSnackbarProps, "action"> &
     /** Action to display. */
     action?: React.ReactNode | HvAction;
     /** The callback function ran when an action is triggered, receiving `action` as param */
-    actionCallback?: Function;
+    actionCallback?: (
+      event:
+        | React.ChangeEvent<HTMLLIElement>
+        | React.MouseEvent<HTMLButtonElement>,
+      id: string,
+      action: HvAction | HvListValue
+    ) => void;
     /** Duration of transition in milliseconds. */
     transitionDuration?: number;
     /** Direction of slide transition. */

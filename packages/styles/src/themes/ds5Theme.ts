@@ -144,8 +144,8 @@ const ds5Theme = makeTheme((theme) => ({
       borderRadius: theme.radii.base,
       marginIconRight: "0px",
       marginIconLeft: "-8px",
-      semanticColor: theme.colors.base2,
-      semanticColorDisabled: theme.colors.base2,
+      semanticColor: "rgba(251, 252, 252, 0.3)",
+      semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
     },
     header: {
       color: theme.colors.acce1,
@@ -288,14 +288,15 @@ const ds5Theme = makeTheme((theme) => ({
       preview: {
         buttonSize: "48px",
         overlayColor: theme.colors.acce2s,
-        overlayOpacity: "0.6", // WARNING: Change to 1 when acce2s is fixed and has an alpha value
+        overlayOpacity: "0.6", // TODO: Change to 1 when acce2s is fixed and has an alpha value
         overlayBorderRadius: "2px",
       },
     },
     dropDownMenu: {
       borderRadius: "2px",
       hoverColor: theme.colors.acce2s,
-      borderColor: theme.colors.acce4,
+      borderOpened: `1px solid ${theme.colors.acce4}`,
+      borderClosed: "1px solid transparent",
       extensionHeight: "0px",
       extensionBorderColor: theme.colors.acce4,
     },
@@ -303,6 +304,15 @@ const ds5Theme = makeTheme((theme) => ({
       pageSizeBorderColor: theme.colors.acce1,
       pageSizeBorderRadius: "2px",
       pageJumpTextAlign: "center",
+    },
+    actionsGeneric: { buttonSize: "md" },
+    bulkActions: {
+      separatorDisplay: "flex",
+      border: `1px solid ${theme.colors.atmo4}`,
+      backgroundColor: theme.colors.atmo2,
+      padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
+      anySelectedBackgroundColor: theme.colors.acce2s,
+      buttonSize: "md",
     },
   },
 }));

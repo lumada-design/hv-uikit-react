@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvButton } from "index";
+import { HvButton, HvButtonProps } from "components";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import fade from "utils/hexToRgbA";
@@ -10,17 +10,18 @@ export const StyledRoot = styled(
 )(({ $actionOverflow }: { $actionOverflow: boolean }) => ({
   ...($actionOverflow && {
     display: "flex",
+    alignItems: "center",
     float: "right",
   }),
 }));
 
-export const StyledButton = styled((props) => <HvButton {...props} />)(
-  ({ $baseColor }: { $baseColor: string }) => ({
-    "&:not(:last-child)": {
-      marginRight: theme.spacing(1),
-    },
-    "&:hover": {
-      backgroundColor: fade($baseColor, 0.3),
-    },
-  })
-);
+export const StyledButton = styled((props: HvButtonProps) => (
+  <HvButton {...props} />
+))(({ $baseColor }: { $baseColor: string }) => ({
+  "&:not(:last-child)": {
+    marginRight: theme.spacing(1),
+  },
+  "&:hover": {
+    backgroundColor: fade($baseColor, 0.3),
+  },
+}));

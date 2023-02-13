@@ -14,3 +14,4 @@ export * from "./TagsInput";
 export * from "./FileUploader";
 export * from "./Pagination";
 export * from "./BreadCrumb";
+export * from "./BulkActions";

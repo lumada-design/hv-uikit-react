@@ -476,7 +476,7 @@ export const HvBaseDropdown = ({
                 id={setId(elementId, "children-container")}
                 className={clsx(baseDropdownClasses.panel, classes?.panel)}
                 // Fix CSS vars when the container was created using a portal
-                $shadowColor={activeTheme.baseDropdown.shadow || "none"}
+                $shadowColor={activeTheme?.baseDropdown?.shadow || "none"}
               >
                 {children}
               </StyledPanel>

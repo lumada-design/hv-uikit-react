@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HvButtonVariant, HvDropDownMenu } from "components";
+import { HvButtonVariant, HvDropDownMenu, HvListValue } from "components";
 import { setId } from "utils";
 import { isValidElement, useContext } from "react";
 import { HvBaseProps } from "../../types";
@@ -24,7 +24,13 @@ export type HvActionsGenericProps = HvBaseProps & {
   /** The renderable content inside the actions slot of the footer, or an Array of actions `{id, label, icon, disabled}` */
   actions: React.ReactNode | HvAction[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */
-  actionsCallback?: Function;
+  actionsCallback?: (
+    event:
+      | React.ChangeEvent<HTMLLIElement>
+      | React.MouseEvent<HTMLButtonElement>,
+    id: string,
+    action: HvAction | HvListValue
+  ) => void;
   /**  The number of maximum visible actions before they're collapsed into a `DropDownMenu`. */
   maxVisibleActions?: number;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
@@ -46,13 +52,13 @@ export const HvActionsGeneric = ({
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
-  const renderButton = (action, idx) => {
-    const { disabled: actDisabled, icon, label, ...other } = action;
+  const renderButton = (action: HvAction, idx: number) => {
+    const { disabled: actDisabled, id: actId, icon, label, ...other } = action;
     const actionId = setId(id, idx, "action", action.id);
 
     const renderedIcon = isValidElement(icon)
       ? icon
-      : icon?.({ isDisabled: disabled });
+      : (icon as Function)?.({ isDisabled: disabled });
 
     return (
       <StyledButton
@@ -61,11 +67,12 @@ export const HvActionsGeneric = ({
         variant={category}
         className={clsx(actionsGenericClasses.button, classes?.button)}
         disabled={actDisabled ?? disabled}
-        onClick={(event) => actionsCallback?.(event, id, action)}
+        onClick={(event) => actionsCallback?.(event, id || "", action)}
         startIcon={renderedIcon}
         $baseColor={
           activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
         }
+        size={activeTheme?.actionsGeneric?.buttonSize || "md"}
         {...other}
       >
         {label}
@@ -104,7 +111,10 @@ export const HvActionsGeneric = ({
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
-          onClick={(event, action) => actionsCallback?.(event, id, action)}
+          onClick={(
+            event: React.ChangeEvent<HTMLLIElement>,
+            action: HvListValue
+          ) => actionsCallback?.(event, id || "", action)}
           dataList={actsDropdown}
           keepOpened={false}
           disablePortal={false}

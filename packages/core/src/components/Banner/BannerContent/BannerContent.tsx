@@ -8,7 +8,13 @@ import {
   HvActionContainer,
 } from ".";
 import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
-import { HvBannerAction, HvBannerActionPosition, HvBannerVariant } from "../..";
+import {
+  HvAction,
+  HvBannerAction,
+  HvBannerActionPosition,
+  HvBannerVariant,
+  HvListValue,
+} from "components";
 import { forwardRef } from "react";
 import { iconVariant } from "utils";
 
@@ -27,7 +33,13 @@ export type HvBannerContentProps = Omit<MuiSnackbarContentProps, "variant"> &
     /** Actions to display on the right side. */
     actions?: React.ReactNode | HvBannerAction[];
     /**  The callback function ran when an action is triggered, receiving `action` as param */
-    actionsCallback?: Function;
+    actionsCallback?: (
+      event:
+        | React.ChangeEvent<HTMLLIElement>
+        | React.MouseEvent<HTMLButtonElement>,
+      id: string,
+      action: HvAction | HvListValue
+    ) => void;
     /** The position property of the header. */
     actionsPosition?: HvBannerActionPosition;
     /** The props to pass down to the Action Container. */
