@@ -1,24 +1,32 @@
 import { Meta } from "@storybook/addon-docs";
 
-<Meta title="Introduction/Community/Contributing" />
+<Meta title="Overview/Community/Contributing" />
 
 # Contribution guidelines
 
 We welcome contributions to our project. Here are a few guidelines that will help you along the way:
 
-- [Getting Started](#getting-started)
-- [Question or Problem?](#question-or-problem)
-- [New components](#new-components)
-- [Bugs](#bugs)
-- [Feature Requests](#feature-requests)
-- [Submission Guidelines](#submission-guidelines)
-  - [Submitting an Issue](#submitting-an-issue)
-  - [Submitting a Pull Request](#submitting-a-pull-request)
-- [Coding Standards](#coding-standards)
-  - [Style Guide](#style-guide)
-  - [Linting](#linting)
-- [Commit Message Guidelines](#commit-message-guidelines)
-- [Testing](#testing)
+- [Contribution guidelines](#contribution-guidelines)
+  - [Getting Started](#getting-started)
+    - [Clone the hv-uikit-react repository and bootstrap the project](#clone-the-hv-uikit-react-repository-and-bootstrap-the-project)
+      - [Start the storybook dev environment](#start-the-storybook-dev-environment)
+  - [Question or Problem?](#question-or-problem)
+  - [New components](#new-components)
+    - [Running the generate utility tool](#running-the-generate-utility-tool)
+    - [Symlinking packages](#symlinking-packages)
+  - [Bugs](#bugs)
+  - [Feature Requests](#feature-requests)
+  - [Submission Guidelines](#submission-guidelines)
+    - [Submitting an Issue](#submitting-an-issue)
+    - [Submitting a Pull Request](#submitting-a-pull-request)
+      - [Branch Structure](#branch-structure)
+      - [Setup](#setup)
+  - [Coding Standards](#coding-standards)
+    - [Style Guide](#style-guide)
+    - [Linting](#linting)
+  - [Commit Message Guidelines](#commit-message-guidelines)
+    - [Type](#type)
+  - [Testing](#testing)
 
 ## Getting Started
 
@@ -41,16 +49,15 @@ By default it will run in [http://localhost:9001](http://localhost:9001).
 
 ## Question or Problem?
 
-Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
-Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
+Use GitHub issues for bug reports and feature requests or one of our available communication channels for general support questions.
 
 ## New components
 
-When contributing with a new component, please add it to the **lab** in `packages/lab/src/<COMPONENT>`
+When contributing with a new component, please add it to the **lab** in `packages/lab/src/<YOUR_COMPONENT>`
 
 In order to make your component available in the Storybook you also need to add:
 
-- A **sample** in `packages/lab/src/<COMPONENT>/stories/<COMPONENT>.stories.js`
+- A **story** in `packages/lab/src/<YOUR_COMPONENT>/stories/<YOUR_STORY>.stories.js`
 
 ### Running the generate utility tool
 
@@ -98,7 +105,7 @@ Be sure that an issue describes the problem you're fixing, or documents the desi
 
 #### Branch Structure
 
-All contributions should target the `master` branch (or `v2.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
+All contributions should target the `master` branch (or a previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
 
@@ -167,7 +174,7 @@ fix: minor typos in code, fixes issue #12
 
 ## Testing
 
-If you add any features to our code, make sure to add tests so that your changes are covered. Tests are written using [JEST](https://github.com/facebook/jest). You can see how well your code is covered by looking at the `coverage/lcov-report/index.html` file after running the coverage command.
+If you add any features to our code, make sure to add tests so that your changes are covered. You can see how well your code is covered by looking at the `coverage/lcov-report/index.html` file after running the coverage command.
 
 Test your changes by running our test commands:
 
@@ -183,4 +190,4 @@ Test your changes by running our test commands:
   npm run test:watch
   ```
 
-We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), selenium based tests (using Robot Framework) to validate the behavioural part and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.
+We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), end-to-end tests (using Playwright) and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.

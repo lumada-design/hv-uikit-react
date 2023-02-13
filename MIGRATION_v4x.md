@@ -26,15 +26,6 @@ Install the Material UI v5 packages.
 ```
 npm install @mui/material @mui/styles
 ```
-
-### Peer dependencies
-
-Next, add the Emotion packages.
-
-```
-npm install @emotion/react @emotion/styled
-```
-
 ### Replace all imports
 
 With the release of v5, the names of all related packages were changed from @material-ui/_ to @mui/_.
@@ -53,25 +44,20 @@ In v5 MUI altered the theme definition, meaning that if you have a theme definit
 to include the ui kit theme, otherwise the typescript's checks are going to fail.
 
 ```diff
+import { HvTheme, HvUiKitThemeNames } from "@hitachivantara/uikit-react-core";
+import type { Theme } from "@mui/material/styles";
+
+// makeStyles is now exported from @mui/styles package which does not know about Theme
+// we need to augment the DefaultTheme (empty object) in @mui/styles with Theme from the core.
+declare module "@mui/private-theming" {
+  interface DefaultTheme extends Theme {}
+}
+
+// extend MUI theme to use `theme.hv` object
 declare module "@mui/material/styles" {
   interface Theme {
     hv: HvTheme;
     hvSpacing?: SpacingOptions;
-  }
-
-  interface ThemeOptions {
-    hv?: HvTheme;
-  }
-}
-
-declare module "@mui/styles" {
-  interface DefaultTheme {
-    hv: HvTheme;
-    hvSpacing?: SpacingOptions;
-  }
-
-  interface ThemeOptions {
-    hv?: HvTheme;
   }
 }
 ```
@@ -95,7 +81,7 @@ To use the visualizations you need to:
 ### Install the new package.
 
 ```
-npm install @hitachivantara/hv-uikit-viz
+npm install @hitachivantara/uikit-react-viz
 ```
 
 ### Replace all imports

@@ -18,7 +18,7 @@ const HvButtonWithMargin = withStyles({
 })(HvButton);
 
 export default {
-  title: "Theme/Provider",
+  title: "Guides/Provider",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvProvider } from '@hitachivantara/uikit-react-core'",

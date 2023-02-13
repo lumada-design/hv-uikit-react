@@ -1,12 +1,17 @@
-<h1 align="center">Hitachi Vantara UI Kit - React</h1>
+<p align="center">
+  <a href="https://github.com/chakra-ui/chakra-ui">
+    <img src="https://user-images.githubusercontent.com/14975353/194580478-9d952473-7d06-4572-b5e4-232cb8f67cc2.png" alt="Hitach logo" width="100" />
+  </a>
+</p>
 
-## React components for the Hitachi Vantara Design System.
+<h1 align="center">Hitachi Vantara UI Kit</h1>
+
+<p align="center">React UI library for the Hitachi Vantara Design System.
+</p>
 
 <div align="center">
 
-Quickly build apps that follow the HV Design System's patterns and specifications.
-
-![React 16.13](https://img.shields.io/badge/react-^16.13.1-blue.svg)
+![React 17](https://img.shields.io/badge/react-17-blue.svg)
 ![Node 16](https://img.shields.io/badge/node-16.13.1-brightgreen.svg)
 ![License Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![Supported browsers: Chrome, Firefox, Safari, Edge](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge-blue.svg)
@@ -15,21 +20,25 @@ Quickly build apps that follow the HV Design System's patterns and specification
 
 </div>
 
-## Installation
+## Why use the UI Kit?
 
-HV UI Kit is composed of multiple mostly independent npm packages. You can install them in any working **React v16.x or x17.x** project.
+- **Ready to go**: Start your project with over 50 high-quality React components out of the box.
+- **Composable**: Compose your UI with reusable building blocks.
+- **Accessible**: UI Kit follows WAI-ARIA standards, helping you to reach the largest audience possible with less effort.
+- **Themeable**: Use Hitachi Vantara Design System or customize it using the theming features.
 
-### Package installation
+## Installing 🚀
 
-Install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
+UI Kit is available as an npm package.
+All you need to do is install the `@hitachivantara/uikit-react-core` package and its peer dependencies:
 
 ```shell
-npm install @hitachivantara/uikit-react-core @mui/material @mui/styles
+npm install @hitachivantara/uikit-react-core @mui/material @mui/styles @emotion/react @emotion/styled
 ```
 
-#### Other packages available
+### Other packages available
 
-If you need to use any non-core community contributed package, install the `@hitachivantara/uikit-react-lab` package.
+If you need to use any non-core community contributed component, install the `@hitachivantara/uikit-react-lab` package.
 
 ```shell
 npm install @hitachivantara/uikit-react-lab
@@ -37,26 +46,23 @@ npm install @hitachivantara/uikit-react-lab
 
 Also available:
 
-- code-editor - `npm install @hitachivantara/uikit-react-code-editor`
-- visualizations - `npm install @hitachivantara/uikit-react-viz`
-- compat - `npm install @hitachivantara/uikit-react-compat
-- icons - `npm install @hitachivantara/uikit-react-icons`
-- themes - `npm install @hitachivantara/uikit-common-themes`
+- **Viz** - `npm install @hitachivantara/uikit-react-viz`
+- **Icons** - `npm install @hitachivantara/uikit-react-icons`
+  - installed as a dependency of `uikit-react-core`
+- **Themes** - `npm install @hitachivantara/uikit-common-themes`
+  - shouldn't be necessary out of a very specific use case.
+- **Compat** - `npm install @hitachivantara/uikit-react-compat`
+- **Code Editor** - `npm install @hitachivantara/uikit-react-code-editor`
 
-The `@hitachivantara/uikit-react-icons` is installed as a dependency of `@hitachivantara/uikit-react-core` and the `@hitachivantara/uikit-common-themes` shouldn't be necessary out of a very specific use case.
+### Installing an older version
 
-#### Installing an older version
-
-The above commands will install the latest version of **UI Kit 4.x**. It implements the **DS 3.x** specifications.
-
-Older v3.x packages use a different registry and import names. If needed, please follow the documentation at https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page.
+Older versions use a different registry and import names. If needed, please follow the documentation at https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page.
 
 If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** release. Check https://lumada-design.github.io/uikit/v2.x/?path=/docs/get-started-installation--page for instructions.
 
 ## Usage
 
-1. Wrap your application with the `HvProvider` provided by
-   `@hitachivantara/uikit-react-core`.
+1. Wrap your application with the `HvProvider` provided by `@hitachivantara/uikit-react-core`.
 
 ```jsx
 import { HvProvider } from "@hitachivantara/uikit-react-core";
@@ -68,7 +74,7 @@ function App({ children }) {
 ```
 
 Optionally, you can configure the active theme and locale, among others.
-Check [the Provider's API documentation](https://lumada-design.github.io/uikit/master/?path=/docs/foundation-provider--main) for further details.
+Check <LinkTo kind="Guides/Provider" story="Main" className="sbdocs sbdocs-a">the Provider's API documentation</LinkTo> for further details.
 
 2. Now you can start using components:
 
@@ -80,9 +86,12 @@ function Example() {
 }
 ```
 
+3. For a fully functioning setup, you'll also need to setup a <LinkTo kind="Guides/CSS Baseline" story="Page" className="sbdocs sbdocs-a">CSS Baseline</LinkTo>
+   and ensure <LinkTo kind="Guides/Typography" story="Description" className="sbdocs sbdocs-a">the loading of the Open Sans font</LinkTo>.
+
 ## Documentation
 
-Check out our [documentation website](https://lumada-design.github.io/uikit/master/).
+See our [documentation site](https://lumada-design.github.io/uikit/master/) here for full how-to docs and guidelines
 
 ## Changelog
 
@@ -90,28 +99,11 @@ Recently Updated? Please read the packages changelog: [core](/packages/core/CHAN
 
 ## Contributing
 
-Please check out our [Contribution Guidelines](/CONTRIBUTING.md) for detailed information.
+Please check out our [Contribution Guidelines](/CONTRIBUTING.md) and let's build a better UI Kit together.
 
-You need to ask to be added as a project member, to be able to contribute:
+We welcome all contributions. You can help us fixing bugs or submit any new ideas, as [pull requests](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-a-pull-request) or as [GitHub issues](https://github.com/lumada-design/hv-uikit-react/blob/master/CONTRIBUTING.md#submitting-an-issue).
 
-- **#ui-kit** slack channel on the [hitachivantara-eng](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) workspace.
-- **#ui-kit** slack channel on the [hitachi-design](https://hitachi-design.slack.com/messages/CGC1E37J9/) workspace.
-
-### Bugs
-
-If you find a bug in the source code, you can help us by [submitting an issue](/CONTRIBUTING.md#submitting-an-issue) to this repo.
-Even better you can [submit a Pull Request](/CONTRIBUTING.md#submitting-a-pull-request) with a fix.
-
-### Feature Requests
-
-You can request a new feature by [submitting an issue](/CONTRIBUTING.md#submitting-an-issue) to this repo.
-Features can be **new components** or changes to **existing**.
-
-## License
-
-This project is licensed under the terms of the [Apache 2.0 license](/LICENSE.md).
-
-Details for the required packages and their licenses can be obtained in https://knowledge.hitachivantara.com/Documents/Open_Source_Software.
+Join and support the project!
 
 ## Team
 
@@ -119,8 +111,11 @@ The UI Kit is maintained by a small group of invaluable core contributors, with 
 
 - Francisco Guilherme ([@francisco-guilherme](https://github.com/frncisco-guilherme))
 - Henrique Raposo ([@HQFOX](https://github.com/HQFOX))
+- Márcia Esteves ([@MEsteves22](https://github.com/MEsteves22))
 - Paulo Lagoá ([@plagoa](https://github.com/plagoa))
 
-Get involved with our development by opening an issue or submitting a pull request. Read the contributing guidelines for information on how we develop.
+## License
 
-Join and support the project!
+This project is licensed under the terms of the [Apache 2.0 license](/LICENSE.md).
+
+Details for the required packages and their licenses can be obtained in https://knowledge.hitachivantara.com/Documents/Open_Source_Software.

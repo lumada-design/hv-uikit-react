@@ -5,10 +5,10 @@ import { PopUp } from "@hitachivantara/uikit-react-icons";
 
 import Typography from "./Typography";
 import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
-import componentDefinitions from "../../Theme/versions";
+import componentDefinitions from "../../versions";
 
 <Meta
-  title="Theme/Typography"
+  title="Foundation/Typography"
   parameters={{
     dsVersion: componentDefinitions.dsVersion.v3,
   }}
@@ -33,7 +33,7 @@ The **Open Sans font** can be loaded from a CDN, using the following markup:
 ```
 
 <Preview>
-  <Story name="Description">
+  <Story name="Main">
     <Typography />
   </Story>
 </Preview>
@@ -52,7 +52,7 @@ The Typography component can be composed with other elements that require typogr
 ```
 
 <Preview>
-  <Story name="Typography Usage">
+  <Story name="Usage">
     <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
       <HvButton icon aria-label="Popup">
         <a href="#">
@@ -104,7 +104,7 @@ You can change the underlying element for the component property:
 This is useful in situations, where you want to have the same style applied to various elements of the page, but do not want to use the same underlying semantics. In the following example, the style used for a 5xlTitle typography is applied by default to an h1 element. The typography can be applied to the same page, specifying a different variant, in this case an h3.
 
 <Preview>
-  <Story name="Changing the semantic element">
+  <Story name="Semantic">
     <HvTypography variant="5xlTitle">The quick brown fox jumps over the lazy dog.</HvTypography>
     <HvTypography variant="5xlTitle" component="h3">
       The quick brown fox jumps over the lazy dog.
