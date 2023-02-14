@@ -16,7 +16,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
       class="HvAppSwitcher-actionsContainer css-91p7g3-StyledActionsContainer edqwsaf1 HvListContainer-root"
     >
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
@@ -44,7 +44,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
@@ -98,7 +98,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e1mxicxc4 HvListItem-root HvListItem-interactive HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e180q0291"
         tabindex="-1"
       >
         <a
