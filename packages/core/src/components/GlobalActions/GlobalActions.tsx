@@ -13,26 +13,26 @@ import globalActionsClasses, {
   HvGlobalActionsClasses,
 } from "./globalActionsClasses";
 
-export type GlobalActionsVariant = "global" | "section";
+export type HvGlobalActionsVariant = "global" | "section";
 
-export type GlobalActionsPosition = "sticky" | "fixed" | "relative";
+export type HvGlobalActionsPosition = "sticky" | "fixed" | "relative";
 
-export type GlobalActionsHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export type HvGlobalActionsHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type GlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
+export type HvGlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** Text to display in the component. */
   title?: React.ReactNode;
   /** Denotes if this is a global or section component. */
-  variant?: GlobalActionsVariant;
+  variant?: HvGlobalActionsVariant;
   /** User can pass in a fully customized button or false for when the back button should not be rendered. */
   backButton?: React.ReactNode;
   /** Heading Level to apply to Title Area. */
-  headingLevel?: GlobalActionsHeadingLevel;
+  headingLevel?: HvGlobalActionsHeadingLevel;
   /**
    * Position of the Global Actions.
    * Defaults to `sticky` when it is a global title and `relative` when it's a section title.
    */
-  position?: GlobalActionsPosition;
+  position?: HvGlobalActionsPosition;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvGlobalActionsClasses;
 };
@@ -41,7 +41,7 @@ export type GlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
  * Global Actions are actions that affect the entire page they live in.
  * They should persist while scrolling down the screen.
  */
-export const GlobalActions = ({
+export const HvGlobalActions = ({
   children,
   classes,
   className,
@@ -51,7 +51,7 @@ export const GlobalActions = ({
   headingLevel,
   position: positionProp,
   ...others
-}: GlobalActionsProps) => {
+}: HvGlobalActionsProps) => {
   const muiTheme = useTheme();
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 

@@ -21,7 +21,12 @@ import {
   UpEmpty,
   UpSelected,
 } from "@hitachivantara/uikit-icons";
-import { HvToggleButton, HvToggleButtonProps } from "components";
+import {
+  HvToggleButton,
+  HvToggleButtonProps,
+  HvTooltip,
+  HvTypography,
+} from "components";
 import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {
@@ -142,14 +147,43 @@ export const Disabled: StoryObj<HvToggleButtonProps> = {
     },
   },
   render: () => {
-    // TODO: Add Tooltip
     return (
-      <>
-        {/* @ts-ignore */}
-        <HvToggleButton disabled aria-label="Light">
-          <LightOff />
+      <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
+        <span>
+          {/* @ts-ignore */}
+          <HvToggleButton disabled aria-label="Light">
+            <LightOff />
+          </HvToggleButton>
+        </span>
+      </HvTooltip>
+    );
+  },
+};
+
+export const Tooltip: StoryObj<HvToggleButtonProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
+      },
+    },
+  },
+  render: () => {
+    const [selected, setSelected] = useState(false);
+
+    const tooltip = (
+      <HvTypography>{selected ? "Turn off" : "Turn on"}</HvTypography>
+    );
+    return (
+      <HvTooltip title={tooltip}>
+        <HvToggleButton
+          aria-label="Light"
+          onClick={() => setSelected(!selected)}
+        >
+          {selected ? <LightOn /> : <LightOff />}
         </HvToggleButton>
-      </>
+      </HvTooltip>
     );
   },
 };
