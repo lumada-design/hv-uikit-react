@@ -19,10 +19,16 @@ import { setId } from "utils";
 export type HvListValue = {
   id?: string | number;
   label: React.ReactNode;
+  searchValue?: string;
   selected?: boolean;
   disabled?: boolean;
   isHidden?: boolean;
-  icon?: Function | React.ReactNode;
+  icon?:
+    | React.ReactNode
+    | ((params: {
+        isDisabled?: boolean;
+        isSelected?: boolean;
+      }) => React.ReactNode);
   showNavIcon?: boolean;
   path?: string;
   params?: object;

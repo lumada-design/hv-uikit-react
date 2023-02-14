@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Info } from "@hitachivantara/uikit-icons";
 import {
   HvSnackbar,
-  HvAction,
+  HvActionGeneric,
   HvSnackbarProps,
   HvButton,
   HvTypography,
@@ -59,7 +59,7 @@ export const Main: StoryObj<HvSnackbarProps> = {
 
 export const MultipleExamples: StoryObj<HvSnackbarProps> = {
   render: () => {
-    const customAction: HvAction = {
+    const customAction: HvActionGeneric = {
       id: "get",
       label: "Action",
     };

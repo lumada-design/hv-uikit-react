@@ -7,8 +7,7 @@ import {
   StyledClose,
   StyledActionsInnerContainer,
 } from "./ActionContainer.styles";
-import { HvAction, HvActionsGeneric, HvListValue } from "components";
-import { HvBannerAction } from "../..";
+import { HvActionGeneric, HvActionsGeneric } from "components";
 import { useContext } from "react";
 import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -17,15 +16,9 @@ export type HvActionContainerProps = HvBaseProps & {
   /** onClose function. */
   onClose?: Function;
   /** Actions to display. */
-  action?: React.ReactNode | HvBannerAction[];
+  action?: React.ReactNode | HvActionGeneric[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */
-  actionCallback?: (
-    event:
-      | React.ChangeEvent<HTMLLIElement>
-      | React.MouseEvent<HTMLButtonElement>,
-    id: string,
-    action: HvAction | HvListValue
-  ) => void;
+  actionCallback?: (event: Event, id: string, action: HvActionGeneric) => void;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvActionContainerClasses;
 };

@@ -1,17 +1,13 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../../../types";
+import { HvActionGeneric, HvActionsGeneric } from "components";
 import { messageContainerClasses, HvMessageContainerClasses } from ".";
 import {
   StyledIconContainer,
   StyledTypography,
   StyledMessageContainer,
-  StyledActionsGeneric,
 } from "./MessageContainer.styles";
-import { HvBannerAction } from "../..";
 import { setId } from "utils";
-import { useContext } from "react";
-import { HvThemeContext } from "providers";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvMessageContainerProps = HvBaseProps & {
   /** Icon to be presented. */
@@ -19,9 +15,13 @@ export type HvMessageContainerProps = HvBaseProps & {
   /** The message to display. */
   message?: React.ReactNode;
   /** Actions to display on message. */
-  actionsOnMessage?: React.ReactNode | HvBannerAction[];
+  actionsOnMessage?: React.ReactNode | HvActionGeneric[];
   /** The callback function ran when an action is triggered, receiving `actionsOnMessage` as param */
-  actionsOnMessageCallback?: Function;
+  actionsOnMessageCallback?: (
+    event: Event,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvMessageContainerClasses;
 };
@@ -34,8 +34,6 @@ export const HvMessageContainer = ({
   actionsOnMessageCallback,
   message,
 }: HvMessageContainerProps) => {
-  const { activeTheme, selectedMode } = useContext(HvThemeContext);
-
   return (
     <>
       {icon && (
@@ -62,15 +60,11 @@ export const HvMessageContainer = ({
             classes?.actionMessageContainer
           )}
         >
-          <StyledActionsGeneric
+          <HvActionsGeneric
             id={id}
-            category="secondaryGhost"
+            category="semantic"
             actions={actionsOnMessage}
             actionsCallback={actionsOnMessageCallback}
-            $baseColor={
-              activeTheme?.colors?.modes[selectedMode].base1 ||
-              theme.colors.base1
-            }
           />
         </StyledMessageContainer>
       )}

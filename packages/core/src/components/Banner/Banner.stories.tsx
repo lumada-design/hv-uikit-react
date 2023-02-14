@@ -241,7 +241,7 @@ export const BannerVariations: StoryObj<HvBannerProps> = {
         <HvTypography variant="xsTitle">Actions</HvTypography>
         <BannerContent
           content="This is a default banner."
-          actions={<HvButton variant="secondaryGhost">Action</HvButton>}
+          actions={<HvButton variant="semantic">Action</HvButton>}
           actionsPosition="inline"
         />
         <BannerContent
