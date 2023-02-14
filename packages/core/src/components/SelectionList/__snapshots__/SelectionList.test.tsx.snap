@@ -22,7 +22,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
     >
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="1"
@@ -31,7 +31,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="true"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled css-1k05yyd-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-selected HvFocus-focusDisabled css-1k05yyd-StyledListItem e180q0291"
         role="option"
         tabindex="0"
         value="2"
@@ -40,7 +40,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="3"
@@ -49,7 +49,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="4"
@@ -58,7 +58,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="5"
@@ -67,7 +67,7 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="6"
@@ -91,7 +91,7 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
     >
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="1"
@@ -100,7 +100,7 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
       </li>
       <li
         aria-selected="true"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled css-1k05yyd-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-selected HvFocus-focusDisabled css-1k05yyd-StyledListItem e180q0291"
         role="option"
         tabindex="0"
         value="2"
@@ -109,7 +109,7 @@ exports[`Selection List > Single Selection List testing > Selection List Snapsho
       </li>
       <li
         aria-selected="false"
-        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
+        class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-focusDisabled css-gbtvg9-StyledListItem e180q0291"
         role="option"
         tabindex="-1"
         value="3"
