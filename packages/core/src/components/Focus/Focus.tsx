@@ -7,7 +7,38 @@ import ConditionalWrapper from "utils/ConditionalWrapper";
 import { StyledFocusWrapper, StyledFalseFocus } from "./Focus.styles";
 import { getFocusableChildren, isKey, isOneOfKeys, setFocusTo } from "./utils";
 import focusClasses, { HvFocusClasses } from "./focusClasses";
-import "./Focus.css";
+import { css, Global } from "@emotion/react";
+
+const focusStyles = css`
+  .HvFocus-focused {
+    outline-color: #52a8ec;
+    outline-style: solid;
+    outline-width: 0px;
+    outline-offset: -1px;
+    box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
+
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      outline-color: #52a8ec;
+      outline-style: solid;
+      outline-width: 0px;
+      outline-offset: -1px;
+      box-shadow: 0 0 0 1px #52a8ec, 0 0 0 4px rgba(29, 155, 209, 0.3);
+    }
+  }
+
+  .HvFocus-focusDisabled {
+    outline: none;
+    box-shadow: none;
+  }
+  .HvFocus-focusDisabled *:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .HvFocus-focusDisabled * {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+`;
 
 export type HvFocusProps = HvBaseProps<HTMLDivElement, { children }> & {
   children: React.ReactElement;
@@ -445,10 +476,10 @@ export const HvFocus = ({
 
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
+      <Global styles={focusStyles} />
       {React.cloneElement(children, {
         className: clsx(
           children.props.className,
-          focusClasses.root,
           [(focusClasses.root, classes?.root, filterClass)],
           selected && clsx(focusClasses.selected, classes?.selected),
           disabledClass && clsx(focusClasses.disabled, classes?.disabled),
