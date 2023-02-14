@@ -1,15 +1,22 @@
 import { Backwards } from "@hitachivantara/uikit-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, HvTypography, HvContainer } from "components";
-import { GlobalActions, GlobalActionsProps } from "./GlobalActions";
+import uniqueId from "lodash/uniqueId";
+import {
+  HvButton,
+  HvTypography,
+  HvContainer,
+  HvDropDownMenu,
+  HvGlobalActions,
+  HvGlobalActionsProps,
+} from "components";
 
-const meta: Meta<typeof GlobalActions> = {
+const meta: Meta<typeof HvGlobalActions> = {
   title: "Structure/GlobalActions",
-  component: GlobalActions,
+  component: HvGlobalActions,
 };
 export default meta;
 
-export const Main: StoryObj<GlobalActionsProps> = {
+export const Main: StoryObj<HvGlobalActionsProps> = {
   args: {
     title: "Details Page Title",
     headingLevel: 1,
@@ -33,7 +40,7 @@ export const Main: StoryObj<GlobalActionsProps> = {
 
     return (
       <HvContainer>
-        <GlobalActions
+        <HvGlobalActions
           title={title}
           headingLevel={headingLevel}
           variant={variant}
@@ -41,7 +48,7 @@ export const Main: StoryObj<GlobalActionsProps> = {
         >
           <HvButton variant="primary">Approve & Share</HvButton>
           <HvButton variant="secondary">Reset</HvButton>
-          {/* <DropDownMenu
+          <HvDropDownMenu
             id={`dropdownItem-${uniqueId()}`}
             aria-label="dropdownMenu-Items"
             placement="left"
@@ -50,14 +57,14 @@ export const Main: StoryObj<GlobalActionsProps> = {
               { label: "Action 3" },
               { label: "Action 4" },
             ]}
-          /> */}
-        </GlobalActions>
+          />
+        </HvGlobalActions>
 
         <div style={{ paddingBottom: 60 }}>
-          <GlobalActions title="Section Title" variant="section">
+          <HvGlobalActions title="Section Title" variant="section">
             <HvButton variant="secondary">Remove</HvButton>
             <HvButton variant="secondary">Share</HvButton>
-            {/* <DropDownMenu
+            <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
               placement="left"
@@ -66,8 +73,8 @@ export const Main: StoryObj<GlobalActionsProps> = {
                 { label: "Action 3" },
                 { label: "Action 4" },
               ]}
-            /> */}
-          </GlobalActions>
+            />
+          </HvGlobalActions>
 
           <HvTypography
             variant="body"
@@ -110,10 +117,10 @@ export const Main: StoryObj<GlobalActionsProps> = {
             aliquam eleifend mi in nulla posuere.
           </HvTypography>
 
-          <GlobalActions title="Section Title" variant="section">
+          <HvGlobalActions title="Section Title" variant="section">
             <HvButton variant="secondary">Remove</HvButton>
             <HvButton variant="secondary">Share</HvButton>
-            {/* <DropDownMenu
+            <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
               placement="left"
@@ -122,8 +129,8 @@ export const Main: StoryObj<GlobalActionsProps> = {
                 { label: "Action 3" },
                 { label: "Action 4" },
               ]}
-            /> */}
-          </GlobalActions>
+            />
+          </HvGlobalActions>
 
           <HvTypography
             variant="body"
@@ -158,10 +165,10 @@ export const Main: StoryObj<GlobalActionsProps> = {
             eleifend mi in nulla posuere.
           </HvTypography>
 
-          <GlobalActions title="Section Title" variant="section">
+          <HvGlobalActions title="Section Title" variant="section">
             <HvButton variant="secondary">Remove</HvButton>
             <HvButton variant="secondary">Share</HvButton>
-            {/* <DropDownMenu
+            <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
               placement="left"
@@ -170,8 +177,8 @@ export const Main: StoryObj<GlobalActionsProps> = {
                 { label: "Action 3" },
                 { label: "Action 4" },
               ]}
-            /> */}
-          </GlobalActions>
+            />
+          </HvGlobalActions>
 
           <HvTypography
             variant="body"
@@ -205,7 +212,73 @@ export const Main: StoryObj<GlobalActionsProps> = {
   },
 };
 
-export const SampleWithCustomTitleAndAdditionalActions: StoryObj<GlobalActionsProps> =
+export const SampleWithAdditionalActions: StoryObj<HvGlobalActionsProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When more than two secondary actions are in place, they should be grouped in a dropdown menu, ordered from the most to least used.",
+      },
+    },
+  },
+  render: () => {
+    const BackButton = () => (
+      <HvButton
+        aria-label="Back"
+        icon
+        variant="secondaryGhost"
+        onClick={() => alert("Back!")}
+      >
+        <Backwards />
+      </HvButton>
+    );
+
+    return (
+      <HvGlobalActions title="Detail Page Title" backButton={<BackButton />}>
+        <HvButton variant="secondaryGhost">Primary</HvButton>
+        <HvDropDownMenu
+          id={`dropdownItem-${uniqueId()}`}
+          aria-label="dropdownMenu-Items"
+          placement="left"
+          dataList={[
+            { label: "Action 2" },
+            { label: "Action 3" },
+            { label: "Action 4" },
+          ]}
+        />
+      </HvGlobalActions>
+    );
+  },
+};
+
+export const SampleWithAdditionalActionsAndNoBackButton: StoryObj<HvGlobalActionsProps> =
+  {
+    argTypes: {
+      classes: { control: { disable: true } },
+    },
+    render: () => {
+      return (
+        <HvGlobalActions title="Detail Page Title" backButton={false}>
+          <HvButton variant="secondaryGhost">Primary</HvButton>
+          <HvDropDownMenu
+            id={`dropdownItem-${uniqueId()}`}
+            aria-label="dropdownMenu-Items"
+            placement="left"
+            dataList={[
+              { label: "Action 2" },
+              { label: "Action 3" },
+              { label: "Action 4" },
+            ]}
+          />
+        </HvGlobalActions>
+      );
+    },
+  };
+
+export const SampleWithCustomTitleAndAdditionalActions: StoryObj<HvGlobalActionsProps> =
   {
     argTypes: {
       classes: { control: { disable: true } },
@@ -219,8 +292,8 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<GlobalActionsPr
       },
     },
     render: () => {
-      const CustomTitle: React.ReactNode = (
-        <HvTypography variant="title3" as="h1">
+      const CustomTitle = (
+        <HvTypography variant="sectionTitle" as="h1">
           A Custom Title
         </HvTypography>
       );
@@ -228,8 +301,8 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<GlobalActionsPr
       const BackButton = () => (
         <HvButton
           aria-label="Back"
-          icon
           variant="secondaryGhost"
+          icon
           onClick={() => alert("Back!")}
         >
           <Backwards />
@@ -237,16 +310,46 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<GlobalActionsPr
       );
 
       return (
-        <GlobalActions title={CustomTitle} backButton={<BackButton />}>
+        <HvGlobalActions title={CustomTitle} backButton={<BackButton />}>
           <HvButton variant="primary">Primary</HvButton>
           <HvButton variant="secondary">Secondary</HvButton>
           <HvButton variant="secondary">Secondary</HvButton>
-        </GlobalActions>
+        </HvGlobalActions>
       );
     },
   };
 
-export const SampleWithNoChildren: StoryObj<GlobalActionsProps> = {
+export const SectionGlobalActions: StoryObj<HvGlobalActionsProps> = {
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "Section Global Actions.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <HvGlobalActions title="Section Title" variant="section">
+        <HvButton variant="secondaryGhost">Primary</HvButton>
+        <HvDropDownMenu
+          id={`dropdownItem-${uniqueId()}`}
+          aria-label="dropdownMenu-Items"
+          placement="left"
+          dataList={[
+            { label: "Action 2" },
+            { label: "Action 3" },
+            { label: "Action 4" },
+          ]}
+        />
+      </HvGlobalActions>
+    );
+  },
+};
+
+export const SampleWithNoChildren: StoryObj<HvGlobalActionsProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
@@ -258,5 +361,5 @@ export const SampleWithNoChildren: StoryObj<GlobalActionsProps> = {
       },
     },
   },
-  render: () => <GlobalActions title="Detail Page Title" backButton />,
+  render: () => <HvGlobalActions title="Detail Page Title" backButton />,
 };

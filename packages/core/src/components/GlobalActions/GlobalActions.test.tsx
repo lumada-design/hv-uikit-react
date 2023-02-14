@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { GlobalActions } from "./GlobalActions";
+import { HvGlobalActions } from "./GlobalActions";
 
 describe("GlobalActions", () => {
   it("should be defined", () => {
-    const { container } = render(<GlobalActions />);
+    const { container } = render(<HvGlobalActions />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<GlobalActions />);
+    const { container } = render(<HvGlobalActions />);
     expect(container).toMatchSnapshot();
   });
 
@@ -17,7 +17,7 @@ describe("GlobalActions", () => {
     const headingLevel = 3;
 
     const { container, getByText } = render(
-      <GlobalActions title="mockTitle" headingLevel={headingLevel} />
+      <HvGlobalActions title="mockTitle" headingLevel={headingLevel} />
     );
 
     expect(getByText("mockTitle")).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe("GlobalActions", () => {
   it("should render the back button", () => {
     const backButton = <div>mockBackButton</div>;
 
-    const { getByText } = render(<GlobalActions backButton={backButton} />);
+    const { getByText } = render(<HvGlobalActions backButton={backButton} />);
 
     expect(getByText("mockBackButton")).toBeInTheDocument();
   });

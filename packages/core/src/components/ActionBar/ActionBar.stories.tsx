@@ -2,7 +2,12 @@ import { Meta, StoryObj } from "@storybook/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvButton, HvActionBar, HvActionBarProps } from "components";
+import {
+  HvButton,
+  HvActionBar,
+  HvActionBarProps,
+  HvDropDownMenu,
+} from "components";
 
 // Common styles
 const StyledContainer = styled("div")({
@@ -95,6 +100,45 @@ export const DualAction: StoryObj<HvActionBarProps> = {
           >
             Cancel
           </HvButton>
+        </StyledActionBar>
+      </StyledContainer>
+    );
+  },
+};
+
+export const VariedActionBar: StoryObj<HvActionBarProps> = {
+  args: {},
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "Showcasing the action bar pattern with only two actions.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <StyledContainer>
+        <StyledActionBar>
+          <HvButton
+            variant="secondaryGhost"
+            onClick={() => console.log("Help action")}
+          >
+            Help
+          </HvButton>
+          <StyledSpace aria-hidden="true">&nbsp;</StyledSpace>
+          <StyledButtonSeparator
+            variant="secondaryGhost"
+            onClick={() => console.log("Save action")}
+          >
+            Save
+          </StyledButtonSeparator>
+          <HvDropDownMenu
+            onClick={(e, item) => console.log(item.label)}
+            dataList={[{ label: "Delete" }, { label: "Update" }]}
+          />
         </StyledActionBar>
       </StyledContainer>
     );
