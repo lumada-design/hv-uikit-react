@@ -7,6 +7,7 @@ import { DropRightXS } from "@hitachivantara/uikit-icons";
 import checkBoxClasses from "../CheckBox/checkBoxClasses";
 import radioClasses from "../Radio/radioClasses";
 import listItemClasses from "../ListContainer/ListItem/listItemClasses";
+import { CSSProperties } from "react";
 
 export const StyledFixedSizeList = styled(FixedSizeList)({
   marginBottom: 5,
@@ -64,7 +65,7 @@ export const StyledMultiSelectCheckBox = styled((props) => (
 });
 
 export const StyledLink = styled((props) => <HvLink {...props} />)({
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
   textDecoration: "none",
 
   "&:focus": {

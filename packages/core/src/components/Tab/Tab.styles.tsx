@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Tab as MuiTab } from "@mui/material";
+import { CSSProperties } from "react";
 import { outlineStyles } from "utils";
 
 export const StyledTab = styled(MuiTab)({
@@ -11,7 +12,7 @@ export const StyledTab = styled(MuiTab)({
   minHeight: 32,
   textTransform: "none",
   fontFamily: theme.fontFamily.body,
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
   opacity: 1,
   "&::after": {
     position: "absolute",

@@ -1,5 +1,10 @@
 import clsx from "clsx";
-import { HvButtonVariant, HvDropDownMenu, HvListValue } from "components";
+import {
+  HvButtonSize,
+  HvButtonVariant,
+  HvDropDownMenu,
+  HvListValue,
+} from "components";
 import { setId } from "utils";
 import { isValidElement, useContext } from "react";
 import { HvBaseProps } from "../../types";
@@ -7,7 +12,7 @@ import { actionsGenericClasses, HvActionsGenericClasses } from ".";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 
 export type HvAction = {
   id: string;
@@ -48,7 +53,7 @@ export const HvActionsGeneric = ({
   maxVisibleActions = Infinity,
   ...others
 }: HvActionsGenericProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode } = useContext(HvThemeContext);
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
@@ -72,7 +77,7 @@ export const HvActionsGeneric = ({
         $baseColor={
           activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
         }
-        size={activeTheme?.actionsGeneric?.buttonSize || "md"}
+        size={(activeTheme?.actionsGeneric?.buttonSize as HvButtonSize) || "md"}
         {...other}
       >
         {label}

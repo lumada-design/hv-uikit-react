@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+// @ts-ignore
 import { HvTypography } from "@hitachivantara/uikit-core";
+// @ts-ignore
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledGroup = styled("div")({

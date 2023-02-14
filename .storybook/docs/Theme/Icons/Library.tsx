@@ -1,9 +1,11 @@
+// @ts-ignore
 import { HvTypography } from "@hitachivantara/uikit-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
+  // @ts-ignore
 } from "@hitachivantara/uikit-icons";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const iconContainer = {
   margin: "5px",

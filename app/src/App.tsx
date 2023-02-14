@@ -18,12 +18,14 @@ import {
   Pagination,
   DotPagination,
   BulkActions,
+  BreadCrumb,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
 import { Header, ThemeSwitcher } from "./layout";
 import { Switch } from "./components/Switch";
 import { DropDownMenu } from "./components/DropDownMenu/DropDownMenu";
+import customTheme from "./customTheme";
 
 const styles = {
   display: "flex",
@@ -37,11 +39,10 @@ const styles = {
 
 const App = () => {
   return (
-    <HvProvider rootElementId="hv-root">
+    <HvProvider rootElementId="hv-root" theme={customTheme}>
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
-        <BulkActions />
         <Typography />
         <BaseDropdown />
         <DotPagination />
@@ -64,6 +65,7 @@ const App = () => {
         <Buttons />
         <Icons />
         <BreadCrumb />
+        <BulkActions />
       </HvBox>
     </HvProvider>
   );

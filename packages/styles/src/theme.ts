@@ -1,8 +1,16 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+  DeepString,
+  Theme,
+  ThemeComponents,
+  ThemeTypography,
+  ThemeUtils,
+  ThemeVars,
+  TypographyProps,
+} from "./types";
 import * as tokens from "./tokens";
 import { mapCSSVars } from "./utils";
 
-const componentsSpec = {
+const componentsSpec: DeepString<ThemeComponents> = {
   dropdown: {
     borderRadius: "string",
   },
@@ -84,8 +92,6 @@ const componentsSpec = {
       width: "string",
       height: "string",
       left: "string",
-      opacity: "string",
-      borderRadius: "string",
       border: "string",
       backgroundColor: "string",
       marginLeft: "string",
@@ -95,7 +101,6 @@ const componentsSpec = {
     disabled: {
       thumbBackgroundColor: "string",
       thumbBorder: "string",
-
       trackBackgroundColor: "string",
       trackBorder: "string",
       trackOpacity: "string",
@@ -184,14 +189,15 @@ const componentsSpec = {
   },
 };
 
-const typographyProps = {
+const typographyProps: DeepString<TypographyProps> = {
   color: "string",
   fontSize: "string",
   letterSpacing: "string",
   lineHeight: "string",
   fontWeight: "string",
 };
-const typographySpec = {
+
+const typographySpec: DeepString<ThemeTypography> = {
   typography: {
     // DS5
     display: { ...typographyProps },
@@ -203,7 +209,7 @@ const typographySpec = {
     body: { ...typographyProps },
     caption1: { ...typographyProps },
     caption2: { ...typographyProps },
-    // LEGACY UNMAPPABLE
+    // LEGACY UNMAPPABLE (DS3)
     ["5xlTitle"]: { ...typographyProps },
     ["4xlTitle"]: { ...typographyProps },
     xxlTitle: { ...typographyProps },
@@ -215,24 +221,19 @@ const typographySpec = {
   },
 };
 
-const keys = [...Object.keys(tokens.breakpoints.values)];
-
-const themeUtils = {
+const themeUtils: ThemeUtils = {
   spacing: (factor: number): string =>
     `calc(${tokens.space.base} * ${factor}px)`,
 };
 
-const themeVars = mapCSSVars({
+const themeVars: ThemeVars = mapCSSVars({
   ...tokens,
-  colors: { ...tokens.colors.common, ...tokens.colors.light }, // flatten colors
+  colors: { ...tokens.colors.common, ...tokens.colors.light }, // Flatten colors
   ...componentsSpec,
   ...typographySpec,
 });
 
-export const theme = {
+export const theme: Theme = {
   ...themeVars,
   ...themeUtils,
-  // The line below is needed because both `themeVars` and `themeUtils` have a `breakpoints` prop
-  // and the one from the utils was replacing the values on the vars.
-  breakpoints: { ...themeVars.breakpoints },
 };

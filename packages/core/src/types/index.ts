@@ -20,11 +20,25 @@ export type PolymorphicComponentRef<
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
-// Base HV Props
+// HV base props
 export type HvBaseProps<E = HTMLDivElement, P = {}> = Omit<
   HTMLAttributes<E>,
   keyof P
 >;
 
-// This is a type that allows us to pass undetermined extra props to our components
+// This type allows to pass undetermined extra props to components
 export type HvExtraProps = { [key: string]: any };
+
+// This type allows to do a deep partial by applying the Partial type to each key recursively
+export type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
+
+// This type combines the HvExtraProps and DeepPartial types
+export type HvExtraDeepPartialProps<T> = Partial<{
+  [P in keyof T]: DeepPartial<T[P]> & HvExtraProps;
+}> &
+  HvExtraProps;
+
+// This type allows to pass undetermined extra props to components recursively
+export type HvExtraDeepProps<T> = {
+  [P in keyof T]: T[P] & HvExtraProps;
+} & HvExtraProps;

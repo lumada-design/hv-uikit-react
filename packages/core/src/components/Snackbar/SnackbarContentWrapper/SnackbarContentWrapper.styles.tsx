@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import SnackbarContent, {
   snackbarContentClasses,
 } from "@mui/material/SnackbarContent";
+import { CSSProperties } from "react";
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledSnackbarContent = styled(
@@ -41,7 +42,7 @@ export const StyledMessageSpan = styled("div")({
 });
 
 export const StyledMessageText = styled("div")({
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
   padding: `0 ${theme.spacing(1)}`,
   color: theme.colors.base2,
   fontFamily: theme.fontFamily.body,

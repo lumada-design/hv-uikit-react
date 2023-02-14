@@ -1,5 +1,6 @@
 export { variant as themeVariant } from "@styled-system/variant";
 
+export * from "./types";
 export * from "./theme";
 export * from "./makeTheme";
 

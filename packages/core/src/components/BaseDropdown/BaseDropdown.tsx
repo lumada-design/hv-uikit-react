@@ -25,8 +25,7 @@ import {
 } from "./BaseDropdown.styles";
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
-import { ThemeContext } from "providers";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvThemeContext } from "providers";
 import baseDropdownClasses, {
   HvBaseDropdownClasses,
 } from "./baseDropdownClasses";
@@ -144,7 +143,7 @@ export const HvBaseDropdown = ({
   onContainerCreation,
   ...others
 }: HvBaseDropdownProps) => {
-  const { activeTheme, selectedMode, rootId = "" } = useContext(ThemeContext);
+  const { rootId } = useContext(HvThemeContext);
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
@@ -444,8 +443,6 @@ export const HvBaseDropdown = ({
         className={clsx(baseDropdownClasses.container, classes?.container)}
         style={popperStyles.popper}
         {...attributes.popper}
-        // Fix CSS vars for portal
-        $zIndex={activeTheme?.zIndices?.tooltip || theme.zIndices.tooltip}
       >
         <ClickAwayListener onClickAway={handleOutside}>
           <div onKeyDown={handleContainerKeyDown}>
@@ -465,18 +462,12 @@ export const HvBaseDropdown = ({
                 $openShadow={false}
                 $floatLeft={false}
                 $floatRight={false}
-                $shadowColor={
-                  activeTheme?.colors?.modes[selectedMode].atmo1 ||
-                  theme.colors.atmo1
-                }
               />
             )}
             <BaseDropdownContext.Provider value={popperMaxSize}>
               <StyledPanel
                 id={setId(elementId, "children-container")}
                 className={clsx(baseDropdownClasses.panel, classes?.panel)}
-                // Fix CSS vars when the container was created using a portal
-                $shadowColor={activeTheme?.baseDropdown?.shadow || "none"}
               >
                 {children}
               </StyledPanel>
@@ -504,10 +495,6 @@ export const HvBaseDropdown = ({
                 $openShadow={true}
                 $floatLeft={popperPlacement.includes("start")}
                 $floatRight={popperPlacement.includes("end")}
-                $shadowColor={
-                  activeTheme?.colors?.modes[selectedMode].atmo1 ||
-                  theme.colors.atmo1
-                }
               />
             )}
           </div>
@@ -517,10 +504,9 @@ export const HvBaseDropdown = ({
 
     if (disablePortal) return container;
 
-    // Warning: By creating a portal, the container is not able to access the theme's CSS vars
     return createPortal(
       container,
-      document.getElementById(rootId) || document.body
+      document.getElementById(rootId || "") || document.body
     );
   })();
 
