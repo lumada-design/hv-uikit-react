@@ -1,10 +1,7 @@
-node_modules/
+node_modules
 
 # Ignore artifacts:
-coverage/
-dist/
-bin/
-public/
-
-commitlint.config.js
-jest.config.js
+*/**.d.ts
+bin
+dist
+coverage

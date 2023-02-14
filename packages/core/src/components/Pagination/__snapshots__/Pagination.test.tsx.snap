@@ -38,7 +38,7 @@ exports[`Pagination > should render correctly 1`] = `
                 </p>
               </div>
               <div
-                class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+                class="HvBaseDropdown-arrow e1xgfj1t3 css-1jdpeh4-StyledDropDownXS"
                 name="DropDownXS"
               >
                 <svg
@@ -149,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root ep58gjf0 css-cpmv9g-StyledRoot-StyledBaseInput e1wsukd12"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e1wsukd10 css-vw6roc-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  css-9j2qzf-StyledInput e1wsukd10 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Current page"
@@ -168,7 +168,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvInput-error HvWarningText-root css-wyhb5v-StyledRoot e1ll5nqb2"
             >
               <div
-                class="HvWarningText-defaultIcon css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+                class="HvWarningText-defaultIcon e1ll5nqb0 css-7mfkjz-StyledIcon"
                 name="Fail"
               >
                 <svg

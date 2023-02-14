@@ -3,7 +3,7 @@
 exports[`Tabs > should render correctly 1`] = `
 <div>
   <div
-    class="MuiTabs-root HvTabs-root e1sqm2u0 css-mlk5wh-MuiTabs-root-StyledTabs"
+    class="MuiTabs-root HvTabs-root css-v4a9vp-StyledTabs e1sqm2u0 css-1ujnqem-MuiTabs-root"
   >
     <div
       class="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
@@ -27,7 +27,7 @@ exports[`Tabs > should render correctly 1`] = `
 exports[`Tabs > should render correctly all components 1`] = `
 <div>
   <div
-    class="MuiTabs-root HvTabs-root e1sqm2u0 css-mlk5wh-MuiTabs-root-StyledTabs"
+    class="MuiTabs-root HvTabs-root css-v4a9vp-StyledTabs e1sqm2u0 css-1ujnqem-MuiTabs-root"
   >
     <div
       class="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
@@ -39,7 +39,7 @@ exports[`Tabs > should render correctly all components 1`] = `
       >
         <button
           aria-selected="true"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary Mui-selected HvTab-selected e14slfdm0 css-1nu4rqa-MuiButtonBase-root-MuiTab-root-StyledTab"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary Mui-selected HvTab-selected css-1b9xyra-StyledTab e14slfdm0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="0"
           type="button"
@@ -48,7 +48,7 @@ exports[`Tabs > should render correctly all components 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary e14slfdm0 css-1nu4rqa-MuiButtonBase-root-MuiTab-root-StyledTab"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-1b9xyra-StyledTab e14slfdm0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="-1"
           type="button"
@@ -57,7 +57,7 @@ exports[`Tabs > should render correctly all components 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary e14slfdm0 css-1nu4rqa-MuiButtonBase-root-MuiTab-root-StyledTab"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-1b9xyra-StyledTab e14slfdm0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="-1"
           type="button"

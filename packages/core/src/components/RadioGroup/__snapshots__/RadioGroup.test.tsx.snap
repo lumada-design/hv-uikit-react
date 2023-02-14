@@ -24,7 +24,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
           class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root css-e6p07q-StyledRadio-StyledHvBaseRadio e1v341dn0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -75,7 +75,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
           class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root css-e6p07q-StyledRadio-StyledHvBaseRadio e1v341dn0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               checked=""
@@ -132,7 +132,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
           class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root css-e6p07q-StyledRadio-StyledHvBaseRadio e1v341dn0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"

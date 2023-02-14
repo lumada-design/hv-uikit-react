@@ -24,7 +24,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root css-5iqcg6-StyledCheckedBox-StyledBaseCheckBox e1noodtt0 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -75,7 +75,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root css-5iqcg6-StyledCheckedBox-StyledBaseCheckBox e1noodtt0 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -126,7 +126,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-j79apy-StyledLabelContainer e162au072"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root e1noodtt0 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox e162au070 HvBaseCheckBox-root css-5iqcg6-StyledCheckedBox-StyledBaseCheckBox e1noodtt0 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"

@@ -42,7 +42,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvBaseInput-root HvTextArea-baseInput e1f8on4z0 css-1pj9pub-StyledRoot-StyledBaseInput e1wsukd12"
     >
       <div
-        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e1wsukd10 css-122smlq-MuiInputBase-root-MuiInput-root-StyledInput"
+        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  css-9j2qzf-StyledInput e1wsukd10 css-he3345-MuiInputBase-root-MuiInput-root"
       >
         <textarea
           aria-controls="hvtextarea3-charCounter"
@@ -65,7 +65,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvTextArea-error e1f8on4z1 HvWarningText-root css-1fh2wz-StyledRoot-StyledWarningText e1ll5nqb2"
     >
       <div
-        class="HvWarningText-defaultIcon css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+        class="HvWarningText-defaultIcon e1ll5nqb0 css-7mfkjz-StyledIcon"
         name="Fail"
       >
         <svg

@@ -6,7 +6,7 @@ exports[`WarningText > should render correctly 1`] = `
     class="HvWarningText-root HvWarningText-topBorder css-1urz3al-StyledRoot e1ll5nqb2"
   >
     <div
-      class="HvWarningText-defaultIcon css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+      class="HvWarningText-defaultIcon e1ll5nqb0 css-7mfkjz-StyledIcon"
       name="Fail"
     >
       <svg

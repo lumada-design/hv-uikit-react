@@ -44,7 +44,7 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1exqe5d5"
       >
         <div
-          class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+          class="HvDropZone-dropZoneAreaIcon e1exqe5d2 css-dv6v7n-StyledDropAreaIcon"
           name="Doc"
         >
           <svg
