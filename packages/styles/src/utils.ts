@@ -1,3 +1,5 @@
+import { DeepString, ThemeStructure } from "./types";
+
 const toCSSVars = (obj: object, prefix = "-") => {
   const vars = {};
 
@@ -19,8 +21,8 @@ const toCSSVars = (obj: object, prefix = "-") => {
 export const mapCSSVars = <T extends object>(
   obj: T,
   prefix: string = "-"
-): T => {
-  const vars = {} as T;
+): DeepString<T> => {
+  const vars = {} as DeepString<T>;
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -53,10 +55,14 @@ export const mergeTheme = (...objects) => {
 };
 
 export const parseTheme = (
-  themes: object,
+  themes: { [key: string]: ThemeStructure },
   theme: string = "",
   colorMode: string = ""
-) => {
+): {
+  selected: string;
+  selectedMode: string;
+  colorModes: string[];
+} => {
   const names = Object.keys(themes);
   const selected = names.includes(theme) ? theme : names[0];
   const colorModes = Object.keys(themes[selected].colors.modes);
@@ -92,7 +98,7 @@ export const getThemesList = (themes: object) => {
   return list;
 };
 
-export const getThemesVars = (themes) => {
+export const getThemesVars = (themes: { [key: string]: ThemeStructure }) => {
   const vars = {};
 
   Object.keys(themes).forEach((themeName) => {
@@ -105,7 +111,6 @@ export const getThemesVars = (themes) => {
       vars[styleName] = toCSSVars({
         ...theme,
         colors: {
-          ...theme.colors.common,
           ...theme.colors.modes[colorMode],
         },
       });

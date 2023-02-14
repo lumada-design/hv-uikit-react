@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { CSSProperties } from "react";
 
 export const StyledRoot = styled("div")(
   ({ vertical }: { vertical: boolean }) => ({
@@ -63,7 +64,7 @@ export const StyledRoot = styled("div")(
           height: 32,
           width: `calc(100% + 2px) !important`,
           background: theme.colors.atmo1,
-          ...theme.typography.label,
+          ...(theme.typography.label as CSSProperties),
           borderRadius: "2px",
           border: `solid 1px ${theme.colors.acce1}`,
           zIndex: 2,
@@ -105,7 +106,7 @@ export const StyledButton = (Element) =>
     borderLeft: "solid 1px transparent",
     borderRight: "solid 1px transparent",
     borderRadius: 0,
-    ...theme.typography.body,
+    ...(theme.typography.body as CSSProperties),
     "&:active": {
       backgroundColor: `${theme.colors.atmo3}`,
     },
@@ -139,7 +140,7 @@ export const StyledButton = (Element) =>
     "&.selected": {
       background: theme.colors.atmo1,
       height: 34,
-      ...theme.typography.label,
+      ...(theme.typography.label as CSSProperties),
       borderRadius: "2px",
       border: `solid 1px ${theme.colors.acce1}`,
       zIndex: 2,

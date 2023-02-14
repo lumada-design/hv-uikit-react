@@ -4,6 +4,7 @@ import Select from "./Select";
 import ButtonIconTooltip from "./ButtonIconTooltip";
 import { inputClasses } from "components";
 import { paginationClasses } from ".";
+import { CSSProperties } from "react";
 
 const hoverColor = theme.colors.atmo3;
 
@@ -16,7 +17,7 @@ export const StyledRoot = styled("div")({
   flexWrap: "wrap",
   marginTop: theme.spacing(2),
   [`& .${paginationClasses.pageSizeInput}`]: {
-    ...theme.typography.label,
+    ...(theme.typography.label as CSSProperties),
   },
   [`& .${paginationClasses.pageSizeInputContainer}`]: {
     width: 40,

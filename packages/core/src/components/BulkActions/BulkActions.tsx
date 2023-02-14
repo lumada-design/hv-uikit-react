@@ -2,7 +2,7 @@ import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
 import { HvBaseProps } from "../../types";
 import { HvAction, HvActionsGenericProps } from "../ActionsGeneric";
 import bulkActionsClasses, { HvBulkActionsClasses } from "./bulkActionsClasses";
-import { HvButton, HvButtonProps } from "../Button";
+import { HvButton, HvButtonProps, HvButtonSize } from "../Button";
 import { useContext, useEffect, useState } from "react";
 import { HvTypography } from "components";
 import {
@@ -13,7 +13,7 @@ import {
 } from "./BulkActions.styles";
 import clsx from "clsx";
 import { setId } from "utils";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvBulkActionsProps = HvBaseProps & {
@@ -105,7 +105,7 @@ export const HvBulkActions = ({
   onSelectAllPages,
   ...others
 }: HvBulkActionsProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode } = useContext(HvThemeContext);
 
   const [anySelected, setAnySelected] = useState<boolean>(false);
 
@@ -173,7 +173,9 @@ export const HvBulkActions = ({
               )}
               variant={isSemantic ? "semantic" : "secondaryGhost"}
               onClick={onSelectAllPages}
-              size={activeTheme?.bulkActions?.buttonSize || "md"}
+              size={
+                (activeTheme?.bulkActions?.buttonSize as HvButtonSize) || "md"
+              }
             >
               {selectAllPagesLabel ??
                 `Select all ${numTotal} items across all pages`}

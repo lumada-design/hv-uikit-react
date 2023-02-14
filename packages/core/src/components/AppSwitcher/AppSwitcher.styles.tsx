@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography, HvListContainer } from "components";
+import { CSSProperties } from "react";
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledRoot = styled(
@@ -103,5 +104,5 @@ export const StyledFooter = styled("div")({
   // padding: `${theme.hv.spacing.sm - 4}px ${theme.hv.spacing.sm + 4}px 4px 4px`,
   padding: `${theme.spacing(2)} ${theme.spacing(2)} 4px 4px`,
 
-  ...theme.typography.label,
+  ...(theme.typography.label as CSSProperties),
 });

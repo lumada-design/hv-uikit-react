@@ -4,6 +4,7 @@ import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 import { HvBaseCheckBox, HvLabel, HvFormElement } from "components";
 import checkBoxClasses from "./checkBoxClasses";
+import { CSSProperties } from "react";
 
 export const StyledFormElement = styled(
   HvFormElement,
@@ -62,7 +63,7 @@ export const StyledLabel = styled(
   verticalAlign: "middle",
   paddingRight: theme.spacing(1.25),
   whiteSpace: "nowrap",
-  ...theme.typography.body,
+  ...(theme.typography.body.color as CSSProperties),
   cursor: "pointer",
   height: "32px",
   lineHeight: "32px",

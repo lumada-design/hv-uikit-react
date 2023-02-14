@@ -116,7 +116,7 @@ export const StyledPlaceholder = styled(
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
   color: theme.baseDropdown.placeholderColor,
 
   ...($disabled && {
@@ -150,13 +150,10 @@ export const StyledDropDownXS = styled(
   }),
 }));
 
-export const StyledContainer = styled(
-  "div",
-  transientOptions
-)(({ $zIndex }: { $zIndex: string | number }) => ({
-  zIndex: $zIndex,
+export const StyledContainer = styled("div")({
+  zIndex: theme.zIndices.tooltip,
   width: "auto",
-}));
+});
 
 export const StyledExtension = styled(
   "div",
@@ -167,13 +164,11 @@ export const StyledExtension = styled(
     $openShadow,
     $floatLeft,
     $floatRight,
-    $shadowColor,
   }: {
     $leftPosition: boolean;
     $openShadow: boolean;
     $floatLeft: boolean;
     $floatRight: boolean;
-    $shadowColor: string;
   }) => ({
     height: theme.dropDownMenu.extensionHeight,
     backgroundColor: theme.colors.atmo1,
@@ -187,7 +182,7 @@ export const StyledExtension = styled(
     }),
 
     ...($openShadow && {
-      boxShadow: `0px 8px 0px ${$shadowColor}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+      boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
     }),
 
     ...($floatLeft && {
@@ -200,10 +195,7 @@ export const StyledExtension = styled(
   })
 );
 
-export const StyledPanel = styled(
-  "div",
-  transientOptions
-)(({ $shadowColor }: { $shadowColor: string }) => ({
+export const StyledPanel = styled("div")({
   position: "relative",
-  boxShadow: $shadowColor,
-}));
+  boxShadow: theme.baseDropdown.shadow,
+});

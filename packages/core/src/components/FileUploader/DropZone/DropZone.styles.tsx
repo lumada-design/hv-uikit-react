@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Doc } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvInfoMessage, HvLabel, HvTypography } from "components";
+import { CSSProperties } from "react";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 import dropZoneClasses from "./dropZoneClasses";
@@ -107,7 +108,7 @@ export const StyledDropAreaLabel = styled("div")({
 });
 
 export const StyledDragText = styled(HvTypography)({
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
 });
 
 export const StyledDropAreaIcon = styled(Doc)({
@@ -122,5 +123,5 @@ export const StyledDropAreaLabels = styled("div")({
 });
 
 export const StyledSelectedFilesText = styled("span")({
-  ...theme.typography.label,
+  ...(theme.typography.label as CSSProperties),
 });

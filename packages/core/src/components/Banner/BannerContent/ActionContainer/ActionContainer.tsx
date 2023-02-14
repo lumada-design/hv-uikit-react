@@ -10,7 +10,7 @@ import {
 import { HvAction, HvActionsGeneric, HvListValue } from "components";
 import { HvBannerAction } from "../..";
 import { useContext } from "react";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvActionContainerProps = HvBaseProps & {
@@ -38,7 +38,8 @@ export const HvActionContainer = ({
   actionCallback,
   ...others
 }: HvActionContainerProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode } = useContext(HvThemeContext);
+
   return (
     <StyledActionContainer
       className={clsx(

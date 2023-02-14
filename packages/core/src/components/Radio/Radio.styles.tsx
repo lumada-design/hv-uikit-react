@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvBaseRadio, HvFormElement, HvLabel } from "components";
+import { CSSProperties } from "react";
 import { outlineStyles } from "utils";
 import { transientOptions } from "utils/transientOptions";
 
@@ -84,7 +85,7 @@ export const StyledHvLabel = styled(
   verticalAlign: "middle",
   paddingRight: theme.spacing(1.25),
   whiteSpace: "nowrap",
-  ...theme.typography.body,
+  ...(theme.typography.body as CSSProperties),
   cursor: "pointer",
   height: "32px",
   lineHeight: "32px",

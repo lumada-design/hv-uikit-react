@@ -18,6 +18,7 @@ import {
   Pagination,
   DotPagination,
   BulkActions,
+  BreadCrumb,
 } from "./components";
 import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Dialogs } from "./components/Dialogs/Dialogs";
@@ -37,11 +38,43 @@ const styles = {
 
 const App = () => {
   return (
-    <HvProvider rootElementId="hv-root">
+    <HvProvider
+      rootElementId="hv-root"
+      theme={{
+        baseTheme: "ds5",
+        baseColorMode: "dawn",
+        name: "custom-theme",
+        colors: {
+          modes: {
+            /* dawn: {
+              atmo1: "#A2ECE6",
+              newColor: "#eee",
+            }, */
+            salmon: {
+              acce1: "#FFA07A",
+              atmo2: "#add8e6",
+              /* newColor: "#eee", */
+            },
+          },
+        },
+        /* checkbox: { hoverColor: "red" },
+        baseCheckBox: {
+          hoverColor: "red",
+        },
+        newProperty: {
+          newValue1: "",
+          newValue2: {
+            newValue3: "",
+            newValue4: {
+              newValue5: 120,
+            },
+          },
+        }, */
+      }}
+    >
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
-        <BulkActions />
         <Typography />
         <BaseDropdown />
         <DotPagination />
@@ -64,6 +97,7 @@ const App = () => {
         <Buttons />
         <Icons />
         <BreadCrumb />
+        <BulkActions />
       </HvBox>
     </HvProvider>
   );
