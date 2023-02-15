@@ -11,7 +11,7 @@ import compressor from "./assets/compressor.png";
 export const Cards = () => {
   return (
     <HvCard
-      bgColor="atmo1"
+      bgcolor="atmo1"
       statusColor="sema4"
       style={{ width: 360 }}
       selectable

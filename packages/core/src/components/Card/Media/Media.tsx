@@ -3,8 +3,10 @@ import { StyledMedia } from "./Media.styles";
 import { HvBaseProps } from "../../../types";
 import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import clsx from "clsx";
+import { ImgHTMLAttributes } from "react";
 
 export type HvMediaProps = MuiCardMediaProps &
+  ImgHTMLAttributes<HTMLImageElement> &
   HvBaseProps<HTMLDivElement, { onClick; title }> & {
     /** Id to be applied to the root node. */
     id?: string;
