@@ -6,7 +6,7 @@ import { HvBaseProps } from "../../types";
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
-import { ThemeContext } from "index";
+import { HvThemeContext } from "index";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 
 export type HvTagProps = Omit<MuiChipProps, "color"> &
@@ -40,9 +40,9 @@ export type HvTagProps = Omit<MuiChipProps, "color"> &
     classes?: HvTagClasses;
   };
 
-const getColor = (customColor, type, activeTheme) => {
+const getColor = (customColor, type, colors) => {
   const defaultSemanticColor = theme.colors.sema7;
-  const defaultCategoricalColor = activeTheme.cviz1;
+  const defaultCategoricalColor = colors.cviz1;
 
   let backgroundColor;
 
@@ -52,7 +52,7 @@ const getColor = (customColor, type, activeTheme) => {
   }
   if (type === "categorical") {
     backgroundColor =
-      activeTheme[customColor] || customColor || defaultCategoricalColor;
+      colors[customColor] || customColor || defaultCategoricalColor;
   }
   return backgroundColor;
 };
@@ -81,7 +81,7 @@ export const HvTag = ({
   deleteButtonProps = {},
   ...others
 }: HvTagProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode } = useContext(HvThemeContext);
 
   const getDeleteIcon = () => {
     const disabledSemanticColor = type === "semantic" ? "atmo5" : "base2";
@@ -125,7 +125,7 @@ export const HvTag = ({
     categoricalBackgroundColor = getColor(
       color,
       type,
-      activeTheme.colors.modes[selectedMode]
+      activeTheme?.colors?.modes[selectedMode]
     );
 
     inlineStyle.backgroundColor = `${categoricalBackgroundColor}30`;

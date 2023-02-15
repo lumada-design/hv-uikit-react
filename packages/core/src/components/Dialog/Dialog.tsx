@@ -13,7 +13,7 @@ import {
 } from "./Dialog.styles";
 import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 import { withTooltip } from "hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
 
@@ -52,7 +52,7 @@ export const HvDialog = ({
 }: HvDialogProps) => {
   delete others.fullScreen;
 
-  const { activeTheme, selectedMode, rootId } = useContext(ThemeContext);
+  const { activeTheme, selectedMode, rootId } = useContext(HvThemeContext);
 
   const [focusableQueue, setFocusableQueue] = useState<{
     first: any;
@@ -132,7 +132,7 @@ export const HvDialog = ({
 
   return (
     <StyledDialog
-      container={document.getElementById(rootId || "")}
+      container={document.getElementById(rootId || "") || document.body}
       className={clsx(dialogClasses.root, classes?.root, className)}
       id={id}
       ref={measuredRef}

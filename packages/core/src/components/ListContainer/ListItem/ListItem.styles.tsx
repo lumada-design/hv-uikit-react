@@ -4,6 +4,7 @@ import { transientOptions } from "utils/transientOptions";
 import { HvFocus } from "components";
 import { outlineStyles } from "utils";
 import listItemClasses from "./listItemClasses";
+import { CSSProperties } from "react";
 
 export const StyledListItem = styled(
   "li",
@@ -24,7 +25,7 @@ export const StyledListItem = styled(
     $startAdornment: boolean;
     $endAdornment: boolean;
   }) => ({
-    ...theme.typography.body,
+    ...(theme.typography.body as CSSProperties),
     padding: 0,
     display: "block",
     height: "32px",

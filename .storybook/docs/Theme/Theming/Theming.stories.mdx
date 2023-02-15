@@ -1,0 +1,356 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { ThemeSample } from "./ThemeSample";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-core";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { SpacingUsage } from "./SpacingUsage";
+import { ThemeStructures } from "./ThemeStructures";
+
+<Meta title="Theme/Theming" />
+
+# Theming
+
+The UI Kit components are supported for the **Design System versions 3 and 5**. For each one of these versions, two different color modes are provided: **Dawn** and **Wicked**.
+
+<Story name="Main">
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+    <div id="hv-root-dawn">
+      <HvProvider
+        rootElementId="hv-root-dawn"
+        theme={{
+          baseColorMode: "dawn",
+        }}
+      >
+        <ThemeSample />
+      </HvProvider>
+    </div>
+    <div id="hv-root-wicked">
+      <HvProvider
+        rootElementId="hv-root-wicked"
+        theme={{
+          baseColorMode: "wicked",
+        }}
+      >
+        <ThemeSample />
+      </HvProvider>
+    </div>
+  </div>
+</Story>
+
+The active theme can be configured through the `HvProvider`'s `theme` property. This property enables you to set the theme and color mode you want as well as define
+customizations for your specific design needs. If no value is provided, UI Kit defaults to **Design System version 5** and to the **Dawn** color mode.
+
+Using another Design System version and color mode is as simple as setting the `baseTheme` and `baseColorMode` properties inside the `HvProvider`'s `theme` property.
+As mentioned previously, the default values for `baseTheme` and `baseColorMode` are `ds5` and `dawn`, respectively.
+
+```jsx
+<HvProvider
+  theme={{
+    baseTheme: "ds3",
+    baseColorMode: "wicked",
+  }}
+>
+  <MyApp />
+</HvProvider>
+```
+
+<Story name="DS3">
+  <div style={{ display: "flex", paddingBottom: "16px" }}>
+    <div id="hv-root-ds3">
+      <HvProvider
+        rootElementId="hv-root-ds3"
+        theme={{
+          baseTheme: "ds3",
+          baseColorMode: "wicked",
+        }}
+      >
+        <ThemeSample />
+      </HvProvider>
+    </div>
+  </div>
+</Story>
+
+## Customizations
+
+As mentioned above, the `HvProvider`'s `theme` property is an object used to set the theme but it can also be used to inject the customizations needed to meet specific design needs.
+Through this object, you are able to create new themes, new color modes, and/or customize an available theme by overriding the current styling values.
+
+Before creating or customizing a new theme, you'll need to set the `baseTheme` property by choosing which one of the currently available themes you want to use as base: `ds3` or `ds5`.
+If no value is provided to this property, `ds5` will be used as fallback.
+
+Then, if you want to create a new theme, you'll need to set the `name` property. In this case, a new theme will be created applying the customizations to the base theme.
+If no `name` is provided, all the customizations will be applied directly to the base theme without creating a new theme.
+
+You can also set the color mode you want to use with the `baseColorMode` property. The values possible are `dawn`, `wicked`, and any new color mode created with your customizations.
+If no value is provided, the fallback value will be `dawn`.
+
+Inside the `theme` property, you'll also be able to inject any customization you need to meet your specific needs. You can create new theme properties and override existing ones.
+To help you override existing values, the current theme structure are the following:
+
+<Story name="ThemeStructures">
+  <ThemeStructures />
+</Story>
+
+Finally, through the context `ThemeContext` you can have access to the following values:
+
+- `selectedTheme`: name of the current theme;
+- `selectedMode`: name of the current theme color mode;
+- `colorModes`: list of color modes available for the theme;
+- `themes`: list of the available themes;
+- `rootId`: id of your root element;
+- `activeTheme`: object with the current theme;
+- `changeTheme`: function to change the current theme and color mode.
+
+```jsx
+<HvProvider
+  theme={{
+    baseTheme: "ds3",
+    baseColorMode: "wicked",
+    name: "newTheme",
+    colors: {
+      modes: {
+        wicked: { acce1: "#FFA07A" },
+        newMode: {
+          sema1: "#4AB573",
+          sema2: "#33ABCC",
+          sema3: "#F5996E",
+          sema15: "#9672C1",
+          acce1: "#3e5eff",
+        },
+      },
+    },
+    typography: {
+      body: {
+        fontWeight: 600,
+      },
+    },
+    newProperty: {
+      newValue: "10px",
+    },
+  }}
+>
+  <MyApp />
+</HvProvider>
+```
+
+For code readability, you can also define the `theme` property in a separate file, import it where `HvProvider` is being used, and inject its content in the provider.
+
+```jsx
+// customTheme.ts
+import { HvProviderProps } from "@hitachivantara/uikit-core";
+
+const customTheme: HvProviderProps["theme"] = {
+  baseTheme: "ds3",
+  baseColorMode: "wicked",
+  name: "newTheme",
+  colors: {
+    modes: {
+      wicked: { acce1: "#FFA07A" },
+      newMode: {
+        sema1: "#4AB573",
+        sema2: "#33ABCC",
+        sema3: "#F5996E",
+        sema15: "#9672C1",
+        acce1: "#3e5eff",
+      },
+    },
+  },
+  typography: {
+    body: {
+      fontWeight: 600,
+    },
+  },
+};
+export default customTheme;
+
+// App.tsx
+import customTheme from "./customTheme";
+
+const App = () => {
+  return (
+    <HvProvider theme={customTheme}>
+      <p>My app</p>
+    </HvProvider>
+  );
+};
+```
+
+### Example
+
+```jsx
+import React, { useContext } from "react";
+import styled from "@emotion/styled";
+import {
+  HvProvider,
+  HvThemeContext,
+  HvBox,
+  HvDropdown,
+  HvPanel,
+  HvCheckBox,
+  HvRadio,
+  HvSwitch,
+} from "@hitachivantara/uikit-core";
+import { Level0Good, Level1 } from "@hitachivantara/uikit-icons";
+
+const ThemeSwitcher = () => {
+  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
+    useContext(HvThemeContext);
+
+  const StyledDropdown = styled(HvDropdown)({
+    width: "200px",
+  });
+
+  return (
+    <HvBox sx={{ display: "flex", margin: "10px", gap: 20 }}>
+      <StyledDropdown
+        value={selectedTheme}
+        options={themes.map((name) => ({
+          value: name,
+          label: name,
+        }))}
+        onChange={(theme) => changeTheme(theme, selectedMode)}
+      />
+      <StyledDropdown
+        value={selectedMode}
+        options={colorModes.map((name) => ({
+          value: name,
+          label: name,
+        }))}
+        onChange={(mode) => changeTheme(selectedTheme, mode)}
+      />
+    </HvBox>
+  );
+};
+
+const MyApp = () => {
+  const StyledPanel = styled(HvPanel)({
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    margin: "10px",
+
+    "& > *": {
+      margin: "0px 10px",
+    },
+  });
+
+  return (
+    <StyledPanel>
+      <HvCheckBox label="Checkbox" />
+      <HvRadio label="Radio" />
+      <HvSwitch aria-label="Switch" />
+      <Level0Good semantic="sema1" />
+      <Level1 semantic="sema2" />
+      <Level1 semantic="sema3" />
+      <Level1 semantic="sema15" />
+    </StyledPanel>
+  );
+};
+
+const Main = () => {
+  return (
+    <HvProvider
+      theme={{
+        baseTheme: "ds5",
+        baseColorMode: "newMode",
+        name: "newTheme",
+        colors: {
+          modes: {
+            wicked: { acce1: "#FFA07A" },
+            newMode: {
+              sema1: "#4AB573",
+              sema2: "#33ABCC",
+              sema3: "#F5996E",
+              sema15: "#9672C1",
+              acce1: "#C51162",
+            },
+          },
+        },
+        typography: {
+          body: {
+            fontWeight: 600,
+          },
+        },
+      }}
+    >
+      <ThemeSwitcher />
+      <MyApp />
+    </HvProvider>
+  );
+};
+```
+
+### Result
+
+<Story name="Customizations">
+  <div style={{ display: "flex", paddingBottom: "16px" }}>
+    <div id="hv-root-customizations">
+      <HvProvider
+        rootElementId="hv-root-customizations"
+        theme={{
+          baseTheme: "ds5",
+          baseColorMode: "newMode",
+          name: "newTheme",
+          colors: {
+            modes: {
+              wicked: { acce1: "#FFA07A" },
+              newMode: {
+                sema1: "#4AB573",
+                sema2: "#33ABCC",
+                sema3: "#F5996E",
+                sema15: "#9672C1",
+                acce1: "#C51162",
+              },
+            },
+          },
+          typography: {
+            body: {
+              fontWeight: 600,
+            },
+          },
+        }}
+      >
+        <ThemeSwitcher />
+        <ThemeSample />
+      </HvProvider>
+    </div>
+  </div>
+</Story>
+
+## Spacing
+
+UI Kit provides a spacing helper function named `spacing`.
+This function helps generate the spacing values for the UI elements when required and is contained within the `theme` object provided by the `@hitachivantara/uikit-core`.
+It receives a factor number, multiples it by 8, and returns the appropriate value in pixels to achieve the desired spacing.
+
+### Example
+
+```jsx
+import React from "react";
+import styled from "@emotion/styled";
+import { HvButton, theme } from "@hitachivantara/uikit-core";
+
+export const Spacing = () => {
+  const StyledContainer = styled("div")({
+    marginTop: theme.spacing(2),
+
+    "& > *:not(:last-child)": {
+      marginRight: theme.spacing(3),
+    },
+  });
+
+  return (
+    <StyledContainer>
+      <HvButton variant="primary">Test 1</HvButton>
+      <HvButton variant="primarySubtle">Test 2</HvButton>
+      <HvButton variant="primaryGhost">Test 3</HvButton>
+    </StyledContainer>
+  );
+};
+```
+
+### Result
+
+<Story name="Spacing">
+  <SpacingUsage />
+</Story>

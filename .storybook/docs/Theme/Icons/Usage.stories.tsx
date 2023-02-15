@@ -5,7 +5,9 @@ import {
   Level4,
   Level5,
   Machine,
+  // @ts-ignore
 } from "@hitachivantara/uikit-icons";
+import React from "react";
 
 export default {
   title: "Theme/Icons/Usage",

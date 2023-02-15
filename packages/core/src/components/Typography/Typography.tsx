@@ -1,4 +1,4 @@
-import { forwardRef, Ref, ElementType, useMemo } from "react";
+import { forwardRef, Ref, ElementType, useMemo, CSSProperties } from "react";
 import { isString } from "lodash";
 import { HvBaseProps } from "../../types";
 import styled from "@emotion/styled";
@@ -71,28 +71,58 @@ const getStyledComponent = (c: any) =>
       $link?: boolean;
       $disabled?: boolean;
     }) => ({
-      ...(variant === "display" && { ...theme.typography.display }),
-      ...(variant === "title1" && { ...theme.typography.title1 }),
-      ...(variant === "title2" && { ...theme.typography.title2 }),
-      ...(variant === "title3" && { ...theme.typography.title3 }),
-      ...(variant === "title4" && { ...theme.typography.title4 }),
-      ...(variant === "body" && { ...theme.typography.body }),
-      ...(variant === "label" && { ...theme.typography.label }),
-      ...(variant === "caption1" && { ...theme.typography.caption1 }),
-      ...(variant === "caption2" && { ...theme.typography.caption2 }),
+      ...(variant === "display" && {
+        ...(theme.typography.display as CSSProperties),
+      }),
+      ...(variant === "title1" && {
+        ...(theme.typography.title1 as CSSProperties),
+      }),
+      ...(variant === "title2" && {
+        ...(theme.typography.title2 as CSSProperties),
+      }),
+      ...(variant === "title3" && {
+        ...(theme.typography.title3 as CSSProperties),
+      }),
+      ...(variant === "title4" && {
+        ...(theme.typography.title4 as CSSProperties),
+      }),
+      ...(variant === "body" && {
+        ...(theme.typography.body as CSSProperties),
+      }),
+      ...(variant === "label" && {
+        ...(theme.typography.label as CSSProperties),
+      }),
+      ...(variant === "caption1" && {
+        ...(theme.typography.caption1 as CSSProperties),
+      }),
+      ...(variant === "caption2" && {
+        ...(theme.typography.caption2 as CSSProperties),
+      }),
       // LEGACY
-      ...(variant === "5xlTitle" && { ...theme.typography["5xlTitle"] }),
-      ...(variant === "4xlTitle" && { ...theme.typography["4xlTitle"] }),
-      ...(variant === "xxlTitle" && { ...theme.typography.xxlTitle }),
-      ...(variant === "lTitle" && { ...theme.typography.lTitle }),
-      ...(variant === "sTitle" && { ...theme.typography.sTitle }),
-      ...(variant === "xxsTitle" && { ...theme.typography.xxsTitle }),
+      ...(variant === "5xlTitle" && {
+        ...(theme.typography["5xlTitle"] as CSSProperties),
+      }),
+      ...(variant === "4xlTitle" && {
+        ...(theme.typography["4xlTitle"] as CSSProperties),
+      }),
+      ...(variant === "xxlTitle" && {
+        ...(theme.typography.xxlTitle as CSSProperties),
+      }),
+      ...(variant === "lTitle" && {
+        ...(theme.typography.lTitle as CSSProperties),
+      }),
+      ...(variant === "sTitle" && {
+        ...(theme.typography.sTitle as CSSProperties),
+      }),
+      ...(variant === "xxsTitle" && {
+        ...(theme.typography.xxsTitle as CSSProperties),
+      }),
       ...(variant === "sectionTitle" && {
-        ...theme.typography.sectionTitle,
+        ...(theme.typography.sectionTitle as CSSProperties),
         textTransform: "uppercase",
       }),
       ...(variant === "placeholderText" && {
-        ...theme.typography.placeholderText,
+        ...(theme.typography.placeholderText as CSSProperties),
       }),
       color: theme.colors.acce1,
       // ADDED PROPS

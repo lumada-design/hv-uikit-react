@@ -6,7 +6,7 @@ import {
 import { forwardRef, ReactElement, useContext } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 import clsx from "clsx";
 
@@ -87,7 +87,7 @@ export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
     ...others
   } = props;
 
-  const { rootId } = useContext(ThemeContext);
+  const { rootId } = useContext(HvThemeContext);
 
   return (
     <MuiTooltip
@@ -107,7 +107,7 @@ export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
       title={title}
       PopperProps={{
         sx: popperSx(useSingle),
-        container: document.getElementById(rootId || ""),
+        container: document.getElementById(rootId || "") || document.body,
       }}
       {...others}
     >

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
-// import { withStyles } from "@mui/styles";
 import {
   HvBaseDropdown,
   HvSelectionList,
@@ -74,5 +73,4 @@ const HvSelect = ({
   );
 };
 
-// export default withStyles(styles, { name: "HvSelect" })(HvSelect);
 export default HvSelect;

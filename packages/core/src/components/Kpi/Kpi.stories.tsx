@@ -4,7 +4,7 @@ import { Level0Good, TopXS, Level2Average } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "types/theme";
 import { useState } from "react";
-import Chart from "react-google-charts";
+import ReactChart from "react-google-charts";
 import styled from "@emotion/styled";
 
 const meta: Meta<typeof HvKpi> = {
@@ -132,7 +132,7 @@ export const IOPS: StoryObj<HvKpiProps> = {
 
     const TrendChart = () => (
       <div style={{ pointerEvents: "none", marginRight: -8, marginBottom: -1 }}>
-        <Chart
+        <ReactChart
           width="40px"
           height="30px"
           chartType="AreaChart"
@@ -260,7 +260,7 @@ export const Selectable: StoryObj<HvKpiProps> = {
 
     const TrendChart = () => (
       <div style={{ pointerEvents: "none", marginRight: -8, marginBottom: -1 }}>
-        <Chart
+        <ReactChart
           width="40px"
           height="30px"
           chartType="AreaChart"
@@ -369,7 +369,7 @@ export const SelectableSemantic: StoryObj<HvKpiProps> = {
 
     const TrendChart = () => (
       <div style={{ pointerEvents: "none", marginRight: -8, marginBottom: -1 }}>
-        <Chart
+        <ReactChart
           width="40px"
           height="30px"
           chartType="AreaChart"

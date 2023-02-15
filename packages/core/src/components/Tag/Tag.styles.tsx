@@ -3,6 +3,7 @@ import { CloseXS } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
 import { HvButton } from "components";
+import { CSSProperties } from "react";
 import { outlineStyles } from "utils";
 import fade from "utils/hexToRgbA";
 import { transientOptions } from "utils/transientOptions";
@@ -79,7 +80,7 @@ export const StyledChip = styled(
     "& .MuiChip-label": {
       paddingLeft: theme.spacing(1),
       paddingRight: theme.spacing(1),
-      ...theme.typography.body,
+      ...(theme.typography.body as CSSProperties),
       color: theme.colors.base2,
       "& p": {
         color: theme.colors.base2,

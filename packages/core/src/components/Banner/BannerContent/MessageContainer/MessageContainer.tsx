@@ -10,7 +10,7 @@ import {
 import { HvBannerAction } from "../..";
 import { setId } from "utils";
 import { useContext } from "react";
-import { ThemeContext } from "providers";
+import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvMessageContainerProps = HvBaseProps & {
@@ -34,7 +34,7 @@ export const HvMessageContainer = ({
   actionsOnMessageCallback,
   message,
 }: HvMessageContainerProps) => {
-  const { activeTheme, selectedMode } = useContext(ThemeContext);
+  const { activeTheme, selectedMode } = useContext(HvThemeContext);
 
   return (
     <>

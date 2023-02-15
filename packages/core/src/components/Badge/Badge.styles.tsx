@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { CSSProperties } from "react";
 
 interface StyledBadgeProps {
   badge?: boolean;
@@ -46,12 +47,12 @@ export const StyledBadge = styled("div")(
       minWidth: "8px",
     }),
     ...(showCount && {
-      ...labelBaseStyle,
+      ...(labelBaseStyle as CSSProperties),
       wordBreak: "keep-all",
       maxWidth: 30,
     }),
     ...(showLabel && {
-      ...labelBaseStyle,
+      ...(labelBaseStyle as CSSProperties),
       wordBreak: "keep-all",
     }),
     ...(badgeIcon && {
