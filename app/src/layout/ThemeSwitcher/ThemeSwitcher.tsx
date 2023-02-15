@@ -1,5 +1,10 @@
 import { useContext } from "react";
 import { HvBox, HvDropdown, HvThemeContext } from "@hitachivantara/uikit-core";
+import styled from "@emotion/styled";
+
+const StyledDropdown = styled(HvDropdown)({
+  width: 150,
+});
 
 export const ThemeSwitcher = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -7,23 +12,19 @@ export const ThemeSwitcher = () => {
 
   return (
     <HvBox sx={{ display: "flex", gap: 20 }}>
-      <HvDropdown
-        css={{ width: 150 }}
-        value={selectedTheme}
-        options={themes.map((name) => ({
-          value: name,
+      <StyledDropdown
+        values={themes.map((name) => ({
           label: name,
+          selected: selectedTheme === name,
         }))}
-        onChange={(theme) => changeTheme(theme, selectedMode)}
+        onChange={(item) => changeTheme(item.label, selectedMode)}
       />
-      <HvDropdown
-        css={{ width: 150 }}
-        value={selectedMode}
-        options={colorModes.map((name) => ({
-          value: name,
+      <StyledDropdown
+        values={colorModes.map((name) => ({
           label: name,
+          selected: selectedMode === name,
         }))}
-        onChange={(mode) => changeTheme(selectedTheme, mode)}
+        onChange={(item) => changeTheme(selectedTheme, item.label)}
       />
     </HvBox>
   );

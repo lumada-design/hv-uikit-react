@@ -1,17 +1,17 @@
 import {
-  ButtonSize,
-  ButtonVariant,
+  HvButtonSize,
+  HvButtonVariant,
   HvBox,
   HvButton,
   HvDropdown,
   HvTypography,
-  ButtonRadius,
+  HvButtonRadius,
 } from "@hitachivantara/uikit-core";
 import { useState } from "react";
 
-const sizes: ButtonSize[] = ["xs", "sm", "md", "lg", "xl"];
+const sizes: HvButtonSize[] = ["xs", "sm", "md", "lg", "xl"];
 
-const variants: ButtonVariant[] = [
+const variants: HvButtonVariant[] = [
   "primary",
   "primarySubtle",
   "primaryGhost",
@@ -21,46 +21,43 @@ const variants: ButtonVariant[] = [
 ];
 
 export const ButtonConfigurator = () => {
-  const [variant, setVariant] = useState<ButtonVariant>("primary");
-  const [size, setSize] = useState<ButtonSize>("md");
-  const [radius, setRadius] = useState<ButtonRadius>("base");
+  const [variant, setVariant] = useState<HvButtonVariant>("primary");
+  const [size, setSize] = useState<HvButtonSize>("md");
+  const [radius, setRadius] = useState<HvButtonRadius>("base");
 
   return (
     <HvBox sx={{ display: "flex", gap: 20, height: 70 }}>
       <HvTypography>Variant: </HvTypography>
       <HvDropdown
         css={{ width: 150 }}
-        value={variant}
-        options={variants.map((name) => ({
+        values={variants.map((name) => ({
           value: name,
           label: name,
         }))}
-        onChange={(value: string) => {
-          setVariant(value as ButtonVariant);
+        onChange={(item) => {
+          setVariant(item.value as HvButtonVariant);
         }}
       />
       <HvTypography>Sizes: </HvTypography>
       <HvDropdown
         css={{ width: 150 }}
-        value={size}
-        options={sizes.map((name) => ({
+        values={sizes.map((name) => ({
           value: name,
           label: name,
         }))}
-        onChange={(value: string) => {
-          setSize(value as ButtonSize);
+        onChange={(item) => {
+          setSize(item?.value);
         }}
       />
       <HvTypography>Radius: </HvTypography>
       <HvDropdown
         css={{ width: 150 }}
-        value={radius}
-        options={sizes.map((name) => ({
+        values={sizes.map((name) => ({
           value: name,
           label: name,
         }))}
-        onChange={(value: string) => {
-          setRadius(value as ButtonRadius);
+        onChange={(item) => {
+          setRadius(item.value);
         }}
       />
       <HvButton variant={variant} size={size} radius={radius}>
