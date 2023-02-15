@@ -1,5 +1,32 @@
+import styled from "@emotion/styled";
+import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTag, HvTagProps } from "components";
+import {
+  HvListContainer,
+  HvListItem,
+  HvOverflowTooltip,
+  HvTag,
+  HvTagProps,
+} from "components";
+
+// #region styled components
+
+const StyledListContainer = styled(HvListContainer)({
+  display: "flex",
+  flexWrap: "wrap",
+  alignContent: "flex-start",
+  maxWidth: 350,
+});
+
+const StyledListItem = styled(HvListItem)({
+  padding: 0,
+  paddingRight: theme.spacing(1),
+  paddingBottom: theme.spacing(1),
+  height: "auto",
+  lineHeight: "16px",
+});
+
+// #endregion
 
 const meta: Meta<typeof HvTag> = {
   title: "Display/Tag",
@@ -20,6 +47,19 @@ export const Main: StoryObj<HvTagProps> = {
   },
   render: (args) => {
     return <HvTag {...args} />;
+  },
+};
+
+export const LongLabelText: StoryObj<HvTagProps> = {
+  render: () => {
+    const longText = "This is an example of a very long tag";
+
+    return (
+      <div style={{ display: "flex", gap: 20 }}>
+        <HvTag label={<HvOverflowTooltip data={longText} />} />
+        <HvTag label={`${longText} with default overflow`} />
+      </div>
+    );
   },
 };
 
@@ -204,6 +244,33 @@ export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
           disabled
         />
       </div>
+    );
+  },
+};
+
+export const TagArray: StoryObj<HvTagProps> = {
+  render: () => {
+    return (
+      <StyledListContainer condensed role="list">
+        <StyledListItem>
+          <HvTag label="In progress" />
+        </StyledListItem>
+        <StyledListItem>
+          <HvTag label="To Do" />
+        </StyledListItem>
+        <StyledListItem>
+          <HvTag label="New" />
+        </StyledListItem>
+        <StyledListItem>
+          <HvTag label="Success" />
+        </StyledListItem>
+        <StyledListItem>
+          <HvTag label="Fixed" />
+        </StyledListItem>
+        <StyledListItem>
+          <HvTag label="Completed" />
+        </StyledListItem>
+      </StyledListContainer>
     );
   },
 };

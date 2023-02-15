@@ -65,3 +65,4 @@ export * from "./DotPagination";
 export * from "./Banner";
 export * from "./Snackbar";
 export * from "./BulkActions";
+export * from "./GlobalActions";
