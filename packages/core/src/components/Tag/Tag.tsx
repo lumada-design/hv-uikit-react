@@ -5,7 +5,7 @@ import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "../../types";
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
-import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/theme";
+import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/tokens";
 import { HvThemeContext } from "index";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Popper } from "@mui/material";
+import { PopperUnstyled } from "@mui/base";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvSelectionList } from "components";
 
@@ -14,7 +14,7 @@ export const StyledSelectionList = styled(HvSelectionList)({
   width: "100%",
 });
 
-export const StyledPopper = styled(Popper)({
+export const StyledPopper = styled(PopperUnstyled)({
   width: "100%",
   position: "absolute",
   transform: "translate3d(0, -1px, 0) !important",

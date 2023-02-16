@@ -1,66 +1,8 @@
 import { css, Global } from "@emotion/react";
-import {
-  CssBaseline,
-  getThemesVars,
-  ThemeStructure,
-  ThemeColors,
-  ThemeColorMode,
-  BaseTheme,
-} from "@hitachivantara/uikit-styles";
-import {
-  HvExtraDeepPartialProps,
-  HvExtraDeepProps,
-  HvExtraProps,
-} from "../types";
-import { getCustomizedThemes } from "../utils";
+import { CssBaseline, getThemesVars } from "@hitachivantara/uikit-styles";
+import { parseThemes } from "utils";
+import { HvTheme } from "types/theme";
 import { HvThemeProvider } from "./ThemeProvider";
-
-// Theme customization
-export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
-  Omit<ThemeStructure, "colors">
-> & {
-  colors?: {
-    modes?: {
-      [key: string]: Partial<ThemeColors> & { [key: string]: string };
-    };
-  } & HvExtraProps;
-};
-
-// Customized theme
-export type HvCustomizedTheme = HvExtraDeepProps<
-  Omit<ThemeStructure, "colors">
-> & {
-  colors: {
-    modes: {
-      [key: string]: ThemeColors & { [key: string]: string };
-    };
-  } & HvExtraProps;
-};
-
-/**
- * Theme structure is be used on the `HvProvider` to set the theme and inject the customizations needed to meet the specific design needs.
- */
-export type HvTheme = {
-  /**
-   * The theme to be used as base for the customization.
-   *
-   * `"ds5"` will be used as default if no value is provided.
-   */
-  baseTheme?: BaseTheme;
-  /**
-   * The name used for the theme.
-   *
-   * By providing a name, a new theme is created based on the base theme and the customizations provided.
-   * If no name is provided, the base theme is customized.
-   */
-  name?: string;
-  /**
-   * The color mode to initialize the UI Kit. It can be an existing one or a custom one.
-   *
-   * `"dawn"` will be used as default if no value is provided.
-   */
-  baseColorMode?: ThemeColorMode | string;
-} & HvThemeCustomizationProps;
 
 // Provider props
 export type HvProviderProps = {
@@ -118,18 +60,18 @@ export const HvProvider = ({
   } = theme;
 
   // Get themes list
-  const customizedThemes = getCustomizedThemes(baseTheme, name, customizations);
+  const themes = parseThemes(baseTheme, name, customizations);
 
   return (
     <>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}
-          ${getThemesVars(customizedThemes)}
+          ${getThemesVars(themes)}
         `}
       />
       <HvThemeProvider
-        themes={customizedThemes}
+        themes={themes}
         theme={name || baseTheme}
         colorMode={baseColorMode}
         rootElementId={rootElementId}

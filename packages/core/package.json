@@ -28,8 +28,9 @@
     "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
-    "typecheck": "tsc --noEmit"
+    "clean": "npx rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -62,7 +63,9 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   },
   "engines": {
     "node": ">=16.6.0"

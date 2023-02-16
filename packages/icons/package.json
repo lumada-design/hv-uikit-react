@@ -29,8 +29,9 @@
     "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
-    "clean": "npx rimraf ./{dist,bin,*.tsbuildinfo}",
-    "install": "pnpm convert"
+    "clean": "npx rimraf dist bin",
+    "prepare": "pnpm convert",
+    "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -57,7 +58,9 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   },
   "engines": {
     "node": ">=16.6.0"

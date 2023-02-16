@@ -8,20 +8,20 @@ import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
-import { setElementAttrs } from "../utils";
-import { HvCustomizedTheme } from "./Provider";
+import { setElementAttrs } from "utils";
+import { HvCustomizedTheme } from "types/theme";
 
 interface HvThemeContextValue {
-  rootId?: string;
+  themes: (BaseTheme | string)[];
   activeTheme?: HvCustomizedTheme;
+  colorModes: (ThemeColorMode | string)[];
   selectedTheme: BaseTheme | string;
   selectedMode: ThemeColorMode | string;
-  colorModes: (ThemeColorMode | string)[];
-  themes: (BaseTheme | string)[];
   changeTheme: (
     theme: BaseTheme | string,
     mode: ThemeColorMode | string
   ) => void;
+  rootId?: string;
 }
 
 interface HvThemeProviderProps {
@@ -33,119 +33,84 @@ interface HvThemeProviderProps {
 }
 
 export const HvThemeContext = createContext<HvThemeContextValue>({
-  rootId: undefined,
+  themes: [],
   activeTheme: undefined,
+  colorModes: [],
   selectedTheme: "",
   selectedMode: "",
-  colorModes: [],
-  themes: [],
   changeTheme: () => {},
+  rootId: undefined,
 });
 
 export const HvThemeProvider = ({
   children,
-  themes: availableThemes,
+  themes: themesList,
   theme,
   colorMode,
   rootElementId,
 }: HvThemeProviderProps) => {
-  const initTheme = availableThemes[theme]
-    ? theme
-    : Object.keys(availableThemes)[0];
-  const initMode = availableThemes[initTheme].colors.modes[colorMode]
-    ? colorMode
-    : Object.keys(availableThemes[initTheme].colors.modes)[0];
+  let pTheme = parseTheme(themesList, theme, colorMode);
 
   const [rootId] = useState<string | undefined>(rootElementId);
-  const [selectedTheme, setTheme] = useState<string>(initTheme);
-  const [selectedMode, setThemeMode] = useState<string>(initMode);
-  const [colorModes, setColorModes] = useState<string[]>(
-    Object.keys(availableThemes[initTheme].colors.modes)
-  );
-  const [themes, setThemes] = useState<string[]>(Object.keys(availableThemes));
   const [activeTheme, setActiveTheme] = useState<HvCustomizedTheme>(
-    availableThemes[initTheme]
+    themesList[pTheme.selected]
   );
+  const [selectedTheme, setSelectedTheme] = useState<string>(pTheme.selected);
+  const [selectedMode, setThemeMode] = useState<string>(pTheme.selectedMode);
+  const [colorModes, setColorModes] = useState<string[]>(pTheme.colorModes);
+  const [themes] = useState<string[]>(Object.keys(themesList));
 
-  useEffect(() => {
-    const parsedTheme = parseTheme(availableThemes, theme, colorMode);
+  const changeTheme = (newTheme = selectedTheme, newMode = selectedMode) => {
+    pTheme = parseTheme(themesList, newTheme, newMode);
 
-    setThemes(Object.keys(availableThemes));
-    setTheme(parsedTheme.selected);
-    setThemeMode(parsedTheme.selectedMode);
-    setColorModes(parsedTheme.colorModes);
-    setActiveTheme(availableThemes[parsedTheme.selected]);
+    setActiveTheme(themesList[pTheme.selected]);
+    setSelectedTheme(pTheme.selected);
+    setThemeMode(pTheme.selectedMode);
+    setColorModes(pTheme.colorModes);
+
     setElementAttrs(
-      parsedTheme.selected,
-      parsedTheme.selectedMode,
-      availableThemes[parsedTheme.selected].colors.modes[
-        parsedTheme.selectedMode
-      ].atmo2,
+      pTheme.selected,
+      pTheme.selectedMode,
+      pTheme.bgColor,
       rootId
     );
-  }, [availableThemes, theme, colorMode]);
-
-  const changeTheme = (
-    newTheme: BaseTheme | string,
-    newMode: ThemeColorMode | string
-  ) => {
-    if (newTheme !== selectedTheme && themes.includes(newTheme)) {
-      const parsedTheme = parseTheme(availableThemes, newTheme, newMode);
-
-      setTheme(parsedTheme.selected);
-      setThemeMode(parsedTheme.selectedMode);
-      setColorModes(parsedTheme.colorModes);
-      setActiveTheme(availableThemes[parsedTheme.selected]);
-      setElementAttrs(
-        parsedTheme.selected,
-        parsedTheme.selectedMode,
-        availableThemes[parsedTheme.selected].colors.modes[
-          parsedTheme.selectedMode
-        ].atmo2,
-        rootId
-      );
-    } else if (newMode !== selectedMode && colorModes.includes(newMode)) {
-      setThemeMode(newMode);
-      setElementAttrs(
-        selectedTheme,
-        newMode,
-        availableThemes[selectedTheme].colors.modes[newMode].atmo2,
-        rootId
-      );
-    }
   };
+
+  useEffect(() => {
+    changeTheme(theme, colorMode);
+  }, [theme, colorMode]);
 
   const value = useMemo(
     () => ({
+      themes,
+      colorModes,
       activeTheme,
       selectedTheme,
       selectedMode,
-      colorModes,
-      themes,
-      rootId,
       changeTheme,
+      rootId,
     }),
     [
+      themes,
+      colorModes,
       activeTheme,
       selectedTheme,
       selectedMode,
-      colorModes,
-      themes,
-      rootId,
       changeTheme,
+      rootId,
     ]
   );
 
-  const myTheme = createTheme({
+  const MuiTheme = createTheme({
     breakpoints: {
       values: {
-        ...availableThemes[selectedTheme].breakpoints.values,
+        ...themesList[selectedTheme].breakpoints.values,
       },
     },
   });
 
   return (
-    <MuiThemeProvider theme={myTheme}>
+    <MuiThemeProvider theme={MuiTheme}>
       <HvThemeContext.Provider value={value}>
         {children}
       </HvThemeContext.Provider>

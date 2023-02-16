@@ -20,9 +20,19 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        "Theme",
+        "Overview",
+        [
+          "Introduction",
+          "Installation",
+          "Changelogs",
+          "Community",
+          "Migration",
+          "Roadmap",
+        ],
+        "Foundation",
         ["Typography", "Colors", "Icons"],
         "Guides",
+        ["Provider", "Theming", "Styling", "Forms"],
         "Layout",
         "Structure",
         "Display",
@@ -30,10 +40,11 @@ export const parameters = {
         "Inputs",
         "Navigation",
         "Overlay",
-        "Visualizations",
         "Widgets",
         "Templates",
+        ["Overview"],
         "Lab",
+        "Visualizations",
         "Compat",
       ],
     },

@@ -1,5 +1,5 @@
 import { themes, BaseTheme, colors } from "@hitachivantara/uikit-styles";
-import { HvThemeCustomizationProps, HvCustomizedTheme } from "../providers";
+import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
 
 /**
  * Sets the element attributes for a theme and color mode.
@@ -53,7 +53,7 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
  *
  * If a newThemeName is given, a new theme is created based on the base theme and customizations.
  */
-export const getCustomizedThemes = (
+export const parseThemes = (
   baseTheme: BaseTheme,
   newThemeName?: string,
   customizations?: HvThemeCustomizationProps

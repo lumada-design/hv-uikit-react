@@ -11,7 +11,6 @@
     "hitachi-vantara",
     "design-system",
     "ui-kit",
-    "react",
     "typescript"
   ],
   "repository": {
@@ -24,8 +23,9 @@
   },
   "scripts": {
     "build": "pnpm clean && tsc -b tsconfig.build.json && tsc-alias",
-    "clean": "npx rimraf ./{dist,*.tsbuildinfo}",
-    "typecheck": "tsc --noEmit"
+    "clean": "npx rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {
     "@styled-system/variant": "^5.1.5",
@@ -39,7 +39,9 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   },
   "engines": {
     "node": ">=16.6.0"

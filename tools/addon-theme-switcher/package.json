@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "build": "pnpm clean && tsc",
-    "clean": "rimraf ./{dist,*.tsbuildinfo}",
-    "install": "pnpm build"
+    "clean": "rimraf dist",
+    "prepare": "pnpm build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",

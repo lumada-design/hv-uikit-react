@@ -1,28 +1,27 @@
-import { HvProvider, HvThemeContext } from "@hitachivantara/uikit-core";
+import { useEffect, useState } from "react";
 import { addons } from "@storybook/addons";
-import { useEffect, useContext } from "react";
+import { HvProvider } from "@hitachivantara/uikit-core";
 
 export const withThemeSwitcher = (Story) => {
-  const { changeTheme } = useContext(HvThemeContext);
+  const [theme, setTheme] = useState();
+  const selected = theme?.name.split("-");
 
   useEffect(() => {
     const channel = addons.getChannel();
-
-    const switchTheme = (concatTheme) => {
-      const selected = concatTheme?.name.split("-");
-
-      changeTheme(selected?.[0], selected?.[1]);
-    };
-
-    channel.on("THEME_SWITCH", switchTheme);
+    channel.on("THEME_SWITCH", setTheme);
 
     return () => {
-      channel.removeListener("THEME_SWITCH", switchTheme);
+      channel.removeListener("THEME_SWITCH", setTheme);
     };
   });
 
   return (
-    <HvProvider>
+    <HvProvider
+      theme={{
+        baseTheme: selected?.[0] || "ds5",
+        baseColorMode: selected?.[1] || "dawn",
+      }}
+    >
       <Story />
     </HvProvider>
   );
