@@ -37,7 +37,7 @@ export const HvActionsGeneric = ({
   id,
   classes,
   className,
-  category = "primaryGhost",
+  category = "secondaryGhost",
   disabled = false,
   actions = [],
   actionsCallback,

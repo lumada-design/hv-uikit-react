@@ -174,7 +174,7 @@ export const WithNavigation = () => {
           dividerProps={{ variant: "middle", light: true, component: "p" }}
         >
           <HvCard
-            bgColor="atmo1"
+            bgcolor="atmo1"
             statusColor="sema4"
             style={{ width: 275 }}
             selectable
@@ -208,7 +208,7 @@ export const WithNavigation = () => {
             </HvActionBar>
           </HvCard>
           <HvCard
-            bgColor="atmo1"
+            bgcolor="atmo1"
             statusColor="sema1"
             style={{ width: 275 }}
             selectable
@@ -235,7 +235,7 @@ export const WithNavigation = () => {
             </HvActionBar>
           </HvCard>
           <HvCard
-            bgColor="atmo1"
+            bgcolor="atmo1"
             statusColor="sema15"
             style={{ width: 275 }}
             selectable
@@ -262,7 +262,7 @@ export const WithNavigation = () => {
             </HvActionBar>
           </HvCard>
           <HvCard
-            bgColor="atmo1"
+            bgcolor="atmo1"
             statusColor="sema7"
             style={{ width: 275 }}
             selectable

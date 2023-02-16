@@ -67,7 +67,7 @@ export const AverageService: StoryObj<HvKpiProps> = {
       <HvCard
         style={{ width: 280 }}
         statusColor="sema1"
-        bgColor="atmo2"
+        bgcolor="atmo2"
         icon={<Level0Good title="Good" semantic="sema1" />}
       >
         <StyledContainer>
@@ -473,15 +473,15 @@ export const Gauge: StoryObj<HvKpiProps> = {
 
     const StyledInnerSemiCircle = styled("div")(
       ({
-        bgColor,
+        bgcolor,
       }: {
-        bgColor: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+        bgcolor: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
       }) => ({
         position: "absolute",
         width: "110px",
         height: "55px",
         borderRadius: "55px 55px 0px 0px",
-        backgroundColor: theme.colors[bgColor],
+        backgroundColor: theme.colors[bgcolor],
         bottom: 0,
         left: 0,
         right: 0,
@@ -522,18 +522,18 @@ export const Gauge: StoryObj<HvKpiProps> = {
       unit,
       percentage,
       statusColor = "sema0",
-      bgColor = "atmo1",
+      bgcolor = "atmo1",
     }: {
       indicator: string;
       unit?: string;
       percentage?: number;
       statusColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
-      bgColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+      bgcolor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
     }) => (
       <StyledGaugeContainer>
         <StyledOuterSemiCircle statusColor={statusColor}>
           <StyledGaugeMask percentage={percentage ?? 0} />
-          <StyledInnerSemiCircle bgColor={bgColor} />
+          <StyledInnerSemiCircle bgcolor={bgcolor} />
         </StyledOuterSemiCircle>
         <StyledIndicatorContainer>
           <HvTypography variant="title2">{indicator}</HvTypography>
@@ -553,7 +553,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
       <HvCard
         style={{ width: 222 }}
         statusColor="sema1"
-        bgColor="atmo2"
+        bgcolor="atmo2"
         icon={<Level0Good title="Good" semantic="sema1" />}
       >
         <StyledContainer>
@@ -571,7 +571,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
             unit="t/h"
             percentage={125}
             statusColor="sema1"
-            bgColor="atmo2"
+            bgcolor="atmo2"
           />
         </StyledContainer>
       </HvCard>

@@ -42,7 +42,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-1lkyidm-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -77,7 +77,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-1lkyidm-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"
@@ -112,7 +112,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-1lkyidm-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
     >
       <div
         class="css-1nxr552-StyledContentDiv egl9i9v3"

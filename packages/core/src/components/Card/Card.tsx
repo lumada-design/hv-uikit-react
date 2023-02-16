@@ -17,7 +17,7 @@ export type HvCardProps = HvBaseProps & {
   /** Whether the card is currently selected. */
   selected?: boolean;
   /** The background color of the card. */
-  bgColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  bgcolor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
   /**
    *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
    *  To set another color, the borderTop should be override.
@@ -41,7 +41,7 @@ export const HvCard = ({
   selectable = false,
   selected = false,
   statusColor = "sema0",
-  bgColor = "atmo1",
+  bgcolor = "atmo1",
   ...others
 }: HvCardProps) => {
   return (
@@ -57,7 +57,7 @@ export const HvCard = ({
       )}
       $selectable={selectable}
       $selected={selected}
-      $bgColor={bgColor}
+      $bgcolor={bgcolor}
       {...others}
     >
       <StyledContainer>

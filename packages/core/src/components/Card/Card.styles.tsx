@@ -10,10 +10,10 @@ const getColor = (c: string): string => theme.colors[c];
 export const StyledRoot = styled(
   HvBox,
   transientOptions
-)(({ $selectable, $selected, $bgColor }) => ({
+)(({ $selectable, $selected, $bgcolor }) => ({
   overflow: "visible",
   position: "relative",
-  backgroundColor: getColor($bgColor),
+  backgroundColor: getColor($bgcolor),
   outline: theme.card.outline,
   borderRadius: theme.card.borderRadius,
   "&.focus-visible": {
