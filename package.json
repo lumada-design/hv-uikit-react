@@ -22,18 +22,20 @@
     "lint:fix": "pnpm lint --fix",
     "lint-staged": "lint-staged",
     "typecheck": "pnpm -r -F='./packages/**' typecheck",
-    "publish:next": "pnpm build && npx lerna publish --yes --conventional-prerelease --preid next",
+    "publish:next": "npx lerna publish --yes --conventional-prerelease",
     "preinstall": "npx only-allow pnpm",
-    "install": "npx husky install"
+    "prepare": "npx husky install .config/husky"
   },
   "devDependencies": {
     "@applitools/eyes-storybook": "^3.30.2",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@emotion/core": "^11.0.0",
     "@mui/material": "^5.11.0",
     "@playwright/test": "^1.27.1",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-vite": "^0.1.29",
     "@storybook/core-common": "^6.4.22",
     "@storybook/react": "^6.4.22",
@@ -47,6 +49,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "formik": "^2.2.9",
     "jsdom": "^20.0.3",
     "lerna": "^6.3.0",
     "lint-staged": "^13.0.3",
@@ -57,7 +60,8 @@
     "typescript": "^4.8.4",
     "vite": "^3.2.4",
     "vite-tsconfig-paths": "^3.5.2",
-    "vitest": "^0.25.3"
+    "vitest": "^0.25.3",
+    "yup": "^1.0.0"
   },
   "husky": {
     "hooks": {

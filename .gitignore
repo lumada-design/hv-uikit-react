@@ -2,12 +2,12 @@
 .DS_Store
 
 # editor
-.idea/
-.vscode/
-.nova/
+.idea
+.vscode
+.nova
 
 # node
-node_modules/
+node_modules
 
 # Logs
 logs
@@ -26,7 +26,7 @@ dist
 bin
 
 # tests
-.e2e
+coverage
 
 # lint
 .eslintcache

@@ -18,6 +18,7 @@ runs:
         step: start
         token: ${{ env.GITHUB_TOKEN }}
         env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+        ref: refs/pull/${{ env.PUBLISH_FOLDER }}/head
         desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
     - name: Checkout Documentation Repository
