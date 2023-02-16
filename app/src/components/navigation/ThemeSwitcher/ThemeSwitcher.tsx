@@ -28,7 +28,3 @@ export const ThemeSwitcher = () => {
     </HvBox>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  ThemeSwitcher.displayName = "ThemeSwitcher";
-}
