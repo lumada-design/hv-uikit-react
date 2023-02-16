@@ -62,6 +62,7 @@ export const parseTheme = (
   selected: string;
   selectedMode: string;
   colorModes: string[];
+  bgColor: string;
 } => {
   const names = Object.keys(themes);
   const selected = names.includes(theme) ? theme : names[0];
@@ -70,7 +71,9 @@ export const parseTheme = (
     ? colorMode
     : colorModes[0];
 
-  return { selected, selectedMode, colorModes };
+  const bgColor = themes[selected].colors.modes[selectedMode].atmo2;
+
+  return { selected, selectedMode, colorModes, bgColor };
 };
 
 export const getThemesList = (themes: object) => {

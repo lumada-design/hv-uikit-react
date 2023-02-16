@@ -1,7 +1,7 @@
 export * from "./focusUtils";
 export * from "./keyboardUtils";
 export * from "./sizes";
-export * from "./themeUtils";
+export * from "./theme";
 export * from "./setId";
 export { default as iconVariant } from "./iconVariant";
 export { default as hexToRgbA } from "./hexToRgbA";
