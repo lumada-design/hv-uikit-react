@@ -6,79 +6,90 @@ import clsx from "clsx";
 import {
   HvVerticalNavigation as HvVerticalNavigationCore,
   HvVerticalNavigationTree,
-  HvVerticalNavigationActions,
   HvButton,
-  setId,
+  HvContainer,
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
 import useStyles from "./styles";
+import { getAllParents, findRootParentById, findItemById } from "./utils";
 
 const HvVerticalNavigation = ({
-  id,
   onNavigationChange,
+  onToggleExpanded,
   data,
   selected,
-  collapseLabel,
-
+  expanded,
   topPosition,
   expandedPanelWidth,
   collapsedPanelWidth,
   position,
+
+  ...others
 }) => {
   const classes = useStyles({ topPosition, expandedPanelWidth, collapsedPanelWidth, position })();
 
-  const [isExpanded, setIsExpanded] = useState(true);
+  const noSubData = data.map(({ data: dataToRemove, ...rest }) => rest);
+
+  const [expandedItems, setExpandedItems] = useState(getAllParents(data).map((item) => item.id));
+
+  const selectedTopParent = findRootParentById(data, selected)?.id;
 
   const handleVerticalNavigationChange = (event, item) => {
-    onNavigationChange?.(event, item);
+    // This need to be done because the item recieved on the callback is missing the original data object
+    const fullItem = findItemById(data, item.id);
+
+    if (!expanded && fullItem.data && fullItem.data.length > 0) {
+      setExpandedItems((prevState) => [...prevState, item.id]);
+      onToggleExpanded(true);
+    } else {
+      onNavigationChange?.(event, item);
+    }
+  };
+
+  const handleVerticalNavigationToggle = (event, currentExpandedItems) => {
+    setExpandedItems(currentExpandedItems);
   };
 
   const handleExpandToggle = () => {
-    setIsExpanded((prevState) => !prevState);
+    onToggleExpanded(!expanded);
   };
 
   return (
     <HvVerticalNavigationCore
       className={clsx(classes.panel, {
-        [classes.panelExpanded]: isExpanded,
-        [classes.panelCollapsed]: !isExpanded,
+        [classes.panelExpanded]: expanded,
+        [classes.panelCollapsed]: !expanded,
       })}
+      {...others}
     >
+      <HvContainer className={`${classes.toggleCollapsePanel}`}>
+        <HvButton icon onClick={handleExpandToggle}>
+          {expanded ? <Backwards iconSize="XS" /> : <Forwards iconSize="XS" />}
+        </HvButton>
+      </HvContainer>
+
       <HvVerticalNavigationTree
         collapsible
-        data={data}
-        selected={selected}
+        expanded={expandedItems}
+        data={expanded ? data : noSubData}
+        selected={expanded ? selected : selectedTopParent}
         onChange={handleVerticalNavigationChange}
+        onToggle={handleVerticalNavigationToggle}
       />
-
-      <HvVerticalNavigationActions>
-        <HvButton
-          id={setId(id, "button-toggle")}
-          className={clsx({
-            [classes.collapseButton]: isExpanded,
-            [classes.expandButton]: !isExpanded,
-          })}
-          category="ghost"
-          startIcon={isExpanded ? <Backwards iconSize="XS" /> : <Forwards iconSize="XS" />}
-          onClick={handleExpandToggle}
-        >
-          {isExpanded && <span className={classes.collapseTextContainer}>{collapseLabel}</span>}
-        </HvButton>
-      </HvVerticalNavigationActions>
     </HvVerticalNavigationCore>
   );
 };
 
 HvVerticalNavigation.propTypes = {
   /**
-   * Id to be applied to the root node of the panel.
-   */
-  id: PropTypes.string,
-  /**
    * Called when a menu item is clicked.
    */
   onNavigationChange: PropTypes.func,
+  /**
+   * Called when the collapse / expand button is clicked.
+   */
+  onToggleExpanded: PropTypes.func,
   /**
    * An array containing the data for each menu item.
    *
@@ -100,13 +111,13 @@ HvVerticalNavigation.propTypes = {
     })
   ).isRequired,
   /**
-   * Text to be displayed in the collpase area when the panel is expanded.
-   */
-  collapseLabel: PropTypes.string,
-  /**
    * The ID of the selected page.
    */
   selected: PropTypes.string,
+  /**
+   * Boolean value stating if the panel should be collapsed or expanded.
+   */
+  expanded: PropTypes.bool,
   /**
    * The top value where the panel will be rendered. Default is 44 as it is the height of the Header component.
    */
@@ -126,7 +137,6 @@ HvVerticalNavigation.propTypes = {
 };
 
 HvVerticalNavigation.defaultProps = {
-  collapseLabel: "Collapse",
   topPosition: 44,
   expandedPanelWidth: 300,
   collapsedPanelWidth: 52,

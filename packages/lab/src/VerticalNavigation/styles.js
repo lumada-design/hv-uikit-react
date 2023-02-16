@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 const styles = (props) =>
   makeStyles((theme) => ({
     panel: {
+      justifyContent: "flex-start",
       position: props.position,
       top: props.topPosition,
       left: 0,
@@ -12,24 +13,22 @@ const styles = (props) =>
       width: props.expandedPanelWidth,
       height: `calc(100vh - ${props.topPosition}px)`,
 
-      // This is for the bottom actions
-      "& > :not(:first-child) > button > span": {
-        marginBottom: 0,
+      // To remove the top border of the navigation section
+      "& > :not(:first-child)": {
+        borderTop: "none",
       },
     },
     panelCollapsed: {
       width: props.collapsedPanelWidth,
       height: `calc(100vh - ${props.topPosition}px)`,
 
-      // This is for the bottom actions
+      // Customize the navigation section
       "& > :not(:first-child)": {
+        borderTop: "none",
         padding: theme.hvSpacing("xs", "xs", "sm", "xs"),
-
-        "& > button > span": {
-          marginLeft: 0,
-        },
       },
-      // This is for the top menu items
+
+      // Customize the collapse / expand
       "& > :first-child:not(:last-child)": {
         padding: theme.hvSpacing("sm", "xs", "xs", "xs"),
       },
@@ -38,25 +37,10 @@ const styles = (props) =>
         marginLeft: "6px",
       },
     },
-    collapseButton: {
-      ...theme.hv.typography.normalText,
-      width: "100%",
 
-      "& > span": {
-        justifyContent: "flex-start",
-      },
-    },
-    expandButton: {
-      width: "100%",
-      minWidth: "unset",
-
-      "& > span > span": {
-        marginLeft: "unset",
-      },
-    },
-    collapseTextContainer: {
-      width: "100%",
-      textAlign: "left",
+    toggleCollapsePanel: {
+      display: "flex",
+      justifyContent: "flex-end",
     },
   }));
 

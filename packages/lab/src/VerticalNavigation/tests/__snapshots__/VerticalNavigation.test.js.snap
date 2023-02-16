@@ -1,125 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<VerticalNavigation /> with custom collapse label should match the snapshot 1`] = `
+exports[`<VerticalNavigation /> with empty values should match the snapshot 1`] = `
 <div
-  className="makeStyles-panel-9 makeStyles-panelExpanded-10 HvVerticalNavigation-root"
+  className="makeStyles-panel-9 makeStyles-panelCollapsed-11 HvVerticalNavigation-root"
 >
-  <nav
-    className="HvVerticalNavigationTree-root"
-  >
-    <ul
-      className="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list"
-    >
-      <li
-        className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-unselectable HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed"
-        id="hvtreeview3-1"
-      >
-        <div
-          aria-controls="hvtreeview3-1-group"
-          aria-expanded={false}
-          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-          id="hvtreeview3-1-button"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          role="button"
-          style={
-            Object {
-              "paddingLeft": 0,
-            }
-          }
-          tabIndex={0}
-        >
-          <div
-            className="HvIconBase-root HvIconBase-xs"
-            name="DropDownXS"
-          >
-            <svg
-              focusable={false}
-              height={12}
-              viewBox="0 0 12 12"
-              width={12}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                className="color0"
-                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-          <div
-            aria-label={null}
-            aria-labelledby={null}
-            className=""
-            data-mui-internal-clone-element={true}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "overflow": "hidden",
-                "textOverflow": "ellipsis",
-                "whiteSpace": "nowrap",
-              }
-            }
-          >
-            Menu1
-          </div>
-        </div>
-        <ul
-          className="HvVerticalNavigationTreeViewItem-group"
-          id="hvtreeview3-1-group"
-        >
-          <li
-            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
-            id="hvtreeview3-2"
-          >
-            <div
-              className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-              id="hvtreeview3-2-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="button"
-              style={
-                Object {
-                  "paddingLeft": 42,
-                }
-              }
-              tabIndex={0}
-            >
-              <div
-                aria-label={null}
-                aria-labelledby={null}
-                className=""
-                data-mui-internal-clone-element={true}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                onMouseOver={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "overflow": "hidden",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Menu2
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
   <div
-    className="HvVerticalNavigationActions-root"
+    className="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl makeStyles-toggleCollapsePanel-12 css-1d4akpq-MuiContainer-root"
   >
     <button
-      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-collapseButton-12 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -137,42 +26,26 @@ exports[`<VerticalNavigation /> with custom collapse label should match the snap
       tabIndex={0}
       type="button"
     >
-      <span
-        className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+      <div
+        className="HvIconBase-root HvIconBase-xs"
+        name="Forwards"
       >
-        <div
-          className="HvIconBase-root HvIconBase-xs"
-          name="Backwards"
+        <svg
+          focusable={false}
+          height={12}
+          viewBox="0 0 16 16"
+          width={12}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            focusable={false}
-            height={12}
-            viewBox="0 0 16 16"
-            width={12}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              className="color0"
-              d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-              fill="#414141"
-            />
-          </svg>
-        </div>
-      </span>
-      <span
-        className="makeStyles-collapseTextContainer-14"
-      >
-        Close
-      </span>
+          <path
+            className="color0"
+            d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+            fill="#414141"
+          />
+        </svg>
+      </div>
     </button>
   </div>
-</div>
-`;
-
-exports[`<VerticalNavigation /> with empty values should match the snapshot 1`] = `
-<div
-  className="makeStyles-panel-9 makeStyles-panelExpanded-10 HvVerticalNavigation-root"
->
   <nav
     className="HvVerticalNavigationTree-root"
   >
@@ -180,11 +53,18 @@ exports[`<VerticalNavigation /> with empty values should match the snapshot 1`] 
       className="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list"
     />
   </nav>
+</div>
+`;
+
+exports[`<VerticalNavigation /> with navigation data should match the snapshot 1`] = `
+<div
+  className="makeStyles-panel-9 makeStyles-panelCollapsed-11 HvVerticalNavigation-root"
+>
   <div
-    className="HvVerticalNavigationActions-root"
+    className="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl makeStyles-toggleCollapsePanel-12 css-1d4akpq-MuiContainer-root"
   >
     <button
-      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-collapseButton-12 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
+      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium HvButton-icon HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -202,42 +82,26 @@ exports[`<VerticalNavigation /> with empty values should match the snapshot 1`] 
       tabIndex={0}
       type="button"
     >
-      <span
-        className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+      <div
+        className="HvIconBase-root HvIconBase-xs"
+        name="Forwards"
       >
-        <div
-          className="HvIconBase-root HvIconBase-xs"
-          name="Backwards"
+        <svg
+          focusable={false}
+          height={12}
+          viewBox="0 0 16 16"
+          width={12}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            focusable={false}
-            height={12}
-            viewBox="0 0 16 16"
-            width={12}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              className="color0"
-              d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-              fill="#414141"
-            />
-          </svg>
-        </div>
-      </span>
-      <span
-        className="makeStyles-collapseTextContainer-14"
-      >
-        Collapse
-      </span>
+          <path
+            className="color0"
+            d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+            fill="#414141"
+          />
+        </svg>
+      </div>
     </button>
   </div>
-</div>
-`;
-
-exports[`<VerticalNavigation /> with navigation data should match the snapshot 1`] = `
-<div
-  className="makeStyles-panel-9 makeStyles-panelExpanded-10 HvVerticalNavigation-root"
->
   <nav
     className="HvVerticalNavigationTree-root"
   >
@@ -245,12 +109,10 @@ exports[`<VerticalNavigation /> with navigation data should match the snapshot 1
       className="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list"
     >
       <li
-        className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-unselectable HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed"
+        className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
         id="hvtreeview2-1"
       >
         <div
-          aria-controls="hvtreeview2-1-group"
-          aria-expanded={false}
           className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
           id="hvtreeview2-1-button"
           onClick={[Function]}
@@ -259,29 +121,11 @@ exports[`<VerticalNavigation /> with navigation data should match the snapshot 1
           role="button"
           style={
             Object {
-              "paddingLeft": 0,
+              "paddingLeft": 10,
             }
           }
           tabIndex={0}
         >
-          <div
-            className="HvIconBase-root HvIconBase-xs"
-            name="DropDownXS"
-          >
-            <svg
-              focusable={false}
-              height={12}
-              viewBox="0 0 12 12"
-              width={12}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                className="color0"
-                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
           <div
             aria-label={null}
             aria-labelledby={null}
@@ -302,103 +146,8 @@ exports[`<VerticalNavigation /> with navigation data should match the snapshot 1
             Menu1
           </div>
         </div>
-        <ul
-          className="HvVerticalNavigationTreeViewItem-group"
-          id="hvtreeview2-1-group"
-        >
-          <li
-            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTree-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
-            id="hvtreeview2-2"
-          >
-            <div
-              className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-              id="hvtreeview2-2-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="button"
-              style={
-                Object {
-                  "paddingLeft": 42,
-                }
-              }
-              tabIndex={0}
-            >
-              <div
-                aria-label={null}
-                aria-labelledby={null}
-                className=""
-                data-mui-internal-clone-element={true}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                onMouseOver={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "overflow": "hidden",
-                    "textOverflow": "ellipsis",
-                    "whiteSpace": "nowrap",
-                  }
-                }
-              >
-                Menu2
-              </div>
-            </div>
-          </li>
-        </ul>
       </li>
     </ul>
   </nav>
-  <div
-    className="HvVerticalNavigationActions-root"
-  >
-    <button
-      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root HvButton-root MuiButton-text MuiButton-textPrimary HvButton-ghost MuiButton-sizeMedium MuiButton-textSizeMedium makeStyles-collapseButton-12 HvButton-ghostSVG css-fsero8-MuiButtonBase-root-MuiButton-root"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onContextMenu={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
-      >
-        <div
-          className="HvIconBase-root HvIconBase-xs"
-          name="Backwards"
-        >
-          <svg
-            focusable={false}
-            height={12}
-            viewBox="0 0 16 16"
-            width={12}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              className="color0"
-              d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-              fill="#414141"
-            />
-          </svg>
-        </div>
-      </span>
-      <span
-        className="makeStyles-collapseTextContainer-14"
-      >
-        Collapse
-      </span>
-    </button>
-  </div>
 </div>
 `;
