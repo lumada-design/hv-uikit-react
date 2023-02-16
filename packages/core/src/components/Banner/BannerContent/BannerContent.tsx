@@ -9,11 +9,9 @@ import {
 } from ".";
 import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
 import {
-  HvAction,
-  HvBannerAction,
+  HvActionGeneric,
   HvBannerActionPosition,
   HvBannerVariant,
-  HvListValue,
 } from "components";
 import { forwardRef } from "react";
 import { iconVariant } from "utils";
@@ -31,14 +29,12 @@ export type HvBannerContentProps = Omit<MuiSnackbarContentProps, "variant"> &
     /** onClose function. */
     onClose?: Function;
     /** Actions to display on the right side. */
-    actions?: React.ReactNode | HvBannerAction[];
+    actions?: React.ReactNode | HvActionGeneric[];
     /**  The callback function ran when an action is triggered, receiving `action` as param */
     actionsCallback?: (
-      event:
-        | React.ChangeEvent<HTMLLIElement>
-        | React.MouseEvent<HTMLButtonElement>,
+      event: Event,
       id: string,
-      action: HvAction | HvListValue
+      action: HvActionGeneric
     ) => void;
     /** The position property of the header. */
     actionsPosition?: HvBannerActionPosition;

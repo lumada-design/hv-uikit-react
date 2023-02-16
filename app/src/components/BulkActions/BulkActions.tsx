@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import {
   HvCheckBox,
-  HvAction,
+  HvActionGeneric,
   HvListValue,
   HvBulkActions,
   HvPagination,
@@ -58,7 +58,7 @@ const SampleComponent = ({
 export const BulkActions = () => {
   const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];
 
-  const actions: HvAction[] = [
+  const actions: HvActionGeneric[] = [
     { id: "add", label: "Add", icon: <Add /> },
     { id: "delete", label: "Delete", icon: <Delete /> },
     { id: "lock", label: "Lock", icon: <Lock /> },
@@ -109,7 +109,7 @@ export const BulkActions = () => {
     setData(newData);
   };
 
-  const handleAction = (_, __, action: HvAction | HvListValue) => {
+  const handleAction = (_, __, action: HvActionGeneric | HvListValue) => {
     const selected = data.filter((el) => el.checked);
 
     switch (action.id) {

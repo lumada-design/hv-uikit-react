@@ -1,6 +1,6 @@
 import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
 import { HvBaseProps } from "../../types";
-import { HvAction, HvActionsGenericProps } from "../ActionsGeneric";
+import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import bulkActionsClasses, { HvBulkActionsClasses } from "./bulkActionsClasses";
 import { HvButton, HvButtonProps, HvButtonSize } from "../Button";
 import { useContext, useEffect, useState } from "react";
@@ -57,7 +57,7 @@ export type HvBulkActionsProps = HvBaseProps & {
    * The renderable content inside the right actions slot,
    * or an Array of actions `{ id, label, icon, disabled, ... }`
    */
-  actions?: React.ReactNode | HvAction[];
+  actions?: React.ReactNode | HvActionGeneric[];
   /**
    *  Whether actions should be all disabled
    */

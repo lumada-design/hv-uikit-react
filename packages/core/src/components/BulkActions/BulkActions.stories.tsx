@@ -2,7 +2,12 @@ import styled from "@emotion/styled";
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvAction, HvCheckBox, HvListValue, HvPagination } from "components";
+import {
+  HvCheckBox,
+  HvListValue,
+  HvPagination,
+  HvActionGeneric,
+} from "components";
 import { uniqueId } from "lodash";
 import { useState } from "react";
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
@@ -114,7 +119,7 @@ export const Main: StoryObj<HvBulkActionsProps> = {
 
 export const WithActions: StoryObj<HvBulkActionsProps> = {
   render: () => {
-    const actions: HvAction[] = [
+    const actions: HvActionGeneric[] = [
       { id: "add", label: "Add", icon: <Add /> },
       { id: "delete", label: "Delete", icon: <Delete /> },
       { id: "lock", label: "Lock", icon: <Lock /> },
@@ -141,7 +146,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
       setData(newData);
     };
 
-    const handleAction = (_, __, action: HvListValue | HvAction) => {
+    const handleAction = (_, __, action: HvListValue | HvActionGeneric) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {
@@ -184,7 +189,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
   render: () => {
     const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];
 
-    const actions: HvAction[] = [
+    const actions: HvActionGeneric[] = [
       { id: "add", label: "Add", icon: <Add /> },
       { id: "delete", label: "Delete", icon: <Delete /> },
       { id: "lock", label: "Lock", icon: <Lock /> },
@@ -236,7 +241,7 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       setData(newData);
     };
 
-    const handleAction = (_, __, action: HvAction | HvListValue) => {
+    const handleAction = (_, __, action: HvActionGeneric | HvListValue) => {
       const selected = data.filter((el) => el.checked);
 
       switch (action.id) {

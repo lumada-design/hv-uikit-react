@@ -18,14 +18,6 @@ import { useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { withId } from "hocs";
 
-export type HvDropDownMenuItem = {
-  label: React.ReactNode;
-  selected?: boolean;
-  disabled?: boolean;
-  icon?: Function | React.ReactNode;
-  showNavIcon?: boolean;
-};
-
 export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   /** Icon. */
   icon?: React.ReactElement;
@@ -38,7 +30,7 @@ export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
    * - icon: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
    */
-  dataList: HvDropDownMenuItem[];
+  dataList: HvListValue[];
   /** Placement of the dropdown. */
   placement?: "left" | "right";
   /** Disable the portal behavior. The children stay within it's parent DOM hierarchy. */

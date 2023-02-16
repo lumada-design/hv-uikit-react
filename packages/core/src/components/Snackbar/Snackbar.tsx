@@ -11,7 +11,7 @@ import { capitalize } from "lodash";
 import { SyntheticEvent } from "react";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import { setId } from "utils";
-import { HvAction, HvListValue } from "components";
+import { HvActionGeneric } from "components";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
@@ -39,14 +39,12 @@ export type HvSnackbarProps = Omit<MuiSnackbarProps, "action"> &
     /** Controls if the associated icon to the variant should be shown. */
     showIcon?: boolean;
     /** Action to display. */
-    action?: React.ReactNode | HvAction;
+    action?: React.ReactNode | HvActionGeneric;
     /** The callback function ran when an action is triggered, receiving `action` as param */
     actionCallback?: (
-      event:
-        | React.ChangeEvent<HTMLLIElement>
-        | React.MouseEvent<HTMLButtonElement>,
+      event: Event,
       id: string,
-      action: HvAction | HvListValue
+      action: HvActionGeneric
     ) => void;
     /** Duration of transition in milliseconds. */
     transitionDuration?: number;

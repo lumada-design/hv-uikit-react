@@ -11,7 +11,7 @@ import { StyledSnackbar } from "./Banner.styles";
 import { bannerClasses, HvBannerClasses } from ".";
 import { setId } from "utils";
 import { HvBannerContent } from "./BannerContent/BannerContent";
-import { HvAction, HvListValue } from "components";
+import { HvActionGeneric } from "components";
 
 export type HvBannerVariant =
   | "success"
@@ -21,13 +21,6 @@ export type HvBannerVariant =
   | "default";
 
 export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
-
-export type HvBannerAction = {
-  id: string;
-  label: string;
-  icon?: Function;
-  disabled?: boolean;
-};
 
 export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
   HvBaseProps & {
@@ -46,14 +39,12 @@ export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
     /** Controls if the associated icon to the variant should be shown. */
     showIcon?: boolean;
     /** Actions to display on the right side. */
-    actions?: React.ReactNode | HvBannerAction[];
+    actions?: React.ReactNode | HvActionGeneric[];
     /** The callback function ran when an action is triggered, receiving `action` as param */
     actionsCallback?: (
-      event:
-        | React.ChangeEvent<HTMLLIElement>
-        | React.MouseEvent<HTMLButtonElement>,
+      event: Event,
       id: string,
-      action: HvAction | HvListValue
+      action: HvActionGeneric
     ) => void;
     /** The position property of the header. */
     actionsPosition?: HvBannerActionPosition;
