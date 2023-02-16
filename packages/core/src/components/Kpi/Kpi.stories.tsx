@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HvCard, HvKpi, HvKpiProps, HvTypography } from "components";
 import { Level0Good, TopXS, Level2Average } from "@hitachivantara/uikit-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "types/theme";
+import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "types/tokens";
 import { useState } from "react";
 import ReactChart from "react-google-charts";
 import styled from "@emotion/styled";

@@ -8,7 +8,7 @@ import { useWidth } from "hooks";
 import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
 import { HvFocus } from "index";
-import { HvBreakpoints } from "types/theme";
+import { HvBreakpoints } from "types/tokens";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 
 export type HvStackDirection = "column" | "row";

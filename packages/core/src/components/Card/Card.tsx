@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
-import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/theme";
+import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/tokens";
 import {
   StyledRoot,
   StyledContainer,
