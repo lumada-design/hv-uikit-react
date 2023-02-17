@@ -1,0 +1,64 @@
+// Vitest Snapshot v1
+
+exports[`Dropdown > should render correctly 1`] = `
+<div>
+  <div
+    style="width: 310px;"
+  >
+    <div
+      class="HvDropdown-root css-13v24hy-StyledHvFormElement e1jemzt54 HvFormElement-root"
+    >
+      <div
+        class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot e1xgfj1t9"
+      >
+        <div
+          aria-expanded="false"
+          aria-label="Main sample"
+          class="e1jemzt53 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown e1xgfj1t8"
+          role="combobox"
+          tabindex="-1"
+        >
+          <div
+            aria-label="Main sample"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot e1xgfj1t7"
+            role="textbox"
+            tabindex="0"
+          >
+            <div
+              class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection e1xgfj1t6"
+            >
+              <div
+                class="HvDropdown-placeholder e1jemzt50 css-4kh4g2-getStyledComponent-StyledTypography e1te0rfk0"
+                variant="body"
+              >
+                <b>
+                  1
+                </b>
+                 / 4
+              </div>
+            </div>
+            <div
+              class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+              name="DropDownXS"
+            >
+              <svg
+                focusable="false"
+                height="12"
+                viewBox="0 0 12 12"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                  fill="var(--colors-acce1)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

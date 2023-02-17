@@ -126,10 +126,10 @@ export const HvList = ({
   useEffect(() => {
     const passedProps = { multiSelect, selectable, singleSelectionToggle };
     const parsedList: HvListValue[] = parseList(
-      valuesProp,
+      undefined,
       passedProps,
       undefined,
-      list
+      valuesProp
     );
 
     setList(parsedList);
@@ -153,7 +153,7 @@ export const HvList = ({
       (elem) => elem.selected || elem.disabled
     );
     const parsedList = parseList(
-      null,
+      undefined,
       passedProps,
       !anySelectableSelected,
       list

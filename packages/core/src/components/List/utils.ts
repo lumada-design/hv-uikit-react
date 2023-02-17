@@ -1,7 +1,7 @@
 import { withTooltip } from "hocs";
 import { HvListValue } from "./List";
 
-const isItemSelected = (item, newItem) => {
+const isItemSelected = (item: HvListValue, newItem: HvListValue) => {
   const selectionKey = item?.id ? "id" : "label";
   const selectionElement = item && item[selectionKey];
   return newItem[selectionKey] === selectionElement;
@@ -33,9 +33,13 @@ const parseState = (list = []) => {
 };
 
 const parseList = (
-  item,
-  props,
-  selectAll,
+  item: HvListValue | undefined,
+  props: {
+    multiSelect?: boolean;
+    selectable?: boolean;
+    singleSelectionToggle?: boolean;
+  },
+  selectAll: boolean | undefined,
   list: HvListValue[] = []
 ): HvListValue[] => {
   const { multiSelect, selectable, singleSelectionToggle } = props || {};

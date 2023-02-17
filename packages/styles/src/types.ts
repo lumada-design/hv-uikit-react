@@ -14,6 +14,19 @@ export type ThemeTokens = typeof flattenTokens;
 export type ThemeComponents = {
   dropdown: {
     borderRadius: string;
+    headerBorder: string;
+    headerBorderHover: string;
+    disabledColor: string;
+    readOnlyBorder: string;
+    readOnlyBackgroundColor: string;
+    placeholderColor: string;
+    dropdownHeaderInvalidBorder: string;
+    dropdownHeaderOpenBorder: string;
+    listBackgroundColor: string;
+    listBorder: string;
+    listBorderRadius: string;
+    listContainerPadding: string;
+    searchContainerMargin: string;
   };
   button: {
     borderRadius: string;

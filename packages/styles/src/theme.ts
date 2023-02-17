@@ -13,6 +13,19 @@ import { mapCSSVars } from "./utils";
 const componentsSpec: DeepString<ThemeComponents> = {
   dropdown: {
     borderRadius: "string",
+    headerBorder: "string",
+    headerBorderHover: "string",
+    disabledColor: "string",
+    readOnlyBorder: "string",
+    readOnlyBackgroundColor: "string",
+    placeholderColor: "string",
+    dropdownHeaderInvalidBorder: "string",
+    dropdownHeaderOpenBorder: "string",
+    listBackgroundColor: "string",
+    listBorder: "string",
+    listBorderRadius: "string",
+    listContainerPadding: "string",
+    searchContainerMargin: "string",
   },
   button: {
     borderRadius: "string",
