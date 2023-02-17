@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 // @ts-ignore
-import { HvButton, theme } from "@hitachivantara/uikit-core";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
 export const SpacingUsage = () => {
   const StyledContainer = styled("div")({

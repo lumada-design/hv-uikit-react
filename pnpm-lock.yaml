@@ -82,8 +82,8 @@ importers:
       '@emotion/babel-plugin': ^11.10.5
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
-      '@hitachivantara/uikit-core': workspace:*
-      '@hitachivantara/uikit-icons': workspace:*
+      '@hitachivantara/uikit-react-core': workspace:*
+      '@hitachivantara/uikit-react-icons': workspace:*
       '@hitachivantara/uikit-styles': workspace:*
       '@mui/material': ^5.10.13
       '@types/react': ^18.0.25
@@ -98,8 +98,8 @@ importers:
       '@babel/core': 7.20.12
       '@emotion/react': 11.10.5_wkiylh6bncbdhwh6tncqb3s2nm
       '@emotion/styled': 11.10.5_cjinou6kcnbro54hfk33pnlsly
-      '@hitachivantara/uikit-core': link:../packages/core
-      '@hitachivantara/uikit-icons': link:../packages/icons
+      '@hitachivantara/uikit-react-core': link:../packages/core
+      '@hitachivantara/uikit-react-icons': link:../packages/icons
       '@hitachivantara/uikit-styles': link:../packages/styles
       '@mui/material': 5.11.9_acl7mc3llczqccvmbrsweq6vga
       react: 18.2.0
@@ -117,7 +117,7 @@ importers:
     specifiers:
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
-      '@hitachivantara/uikit-icons': workspace:*
+      '@hitachivantara/uikit-react-icons': workspace:*
       '@hitachivantara/uikit-styles': workspace:*
       '@mui/material': ^5.11.0
       '@popperjs/core': ^2.11.6
@@ -139,7 +139,7 @@ importers:
     dependencies:
       '@emotion/react': 11.10.5_wkiylh6bncbdhwh6tncqb3s2nm
       '@emotion/styled': 11.10.5_cjinou6kcnbro54hfk33pnlsly
-      '@hitachivantara/uikit-icons': link:../icons
+      '@hitachivantara/uikit-react-icons': link:../icons
       '@hitachivantara/uikit-styles': link:../styles
       '@mui/material': 5.11.9_acl7mc3llczqccvmbrsweq6vga
       '@popperjs/core': 2.11.6
@@ -212,7 +212,7 @@ importers:
     specifiers:
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
-      '@hitachivantara/uikit-core': workspace:*
+      '@hitachivantara/uikit-react-core': workspace:*
       '@hitachivantara/uikit-styles': workspace:*
       '@storybook/addons': ^6.4.20
       '@storybook/api': ^6.4.20
@@ -225,7 +225,7 @@ importers:
     dependencies:
       '@emotion/react': 11.10.5_2exiyaescjxorpwwmy4ejghgte
       '@emotion/styled': 11.10.5_csjd3nthallvoinafcukdmosde
-      '@hitachivantara/uikit-core': link:../../packages/core
+      '@hitachivantara/uikit-react-core': link:../../packages/core
       '@hitachivantara/uikit-styles': link:../../packages/styles
       '@storybook/addons': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/api': 6.5.16_biqbaboplfbrettd7655fr4n2y

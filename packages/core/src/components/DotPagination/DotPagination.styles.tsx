@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { HvRadio, HvRadioGroup } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import dotPaginationClasses from "./dotPaginationClasses";
-import { CurrentStep, OtherStep } from "@hitachivantara/uikit-icons";
+import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 
 export const StyledRadioGroup = styled(HvRadioGroup)({
   display: "flex",

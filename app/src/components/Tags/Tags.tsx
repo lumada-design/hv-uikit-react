@@ -1,4 +1,4 @@
-import { HvTag } from "@hitachivantara/uikit-core";
+import { HvTag } from "@hitachivantara/uikit-react-core";
 
 export const Tags = () => {
   return (

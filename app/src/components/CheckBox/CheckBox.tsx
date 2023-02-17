@@ -1,4 +1,4 @@
-import { HvBaseCheckBox } from "@hitachivantara/uikit-core";
+import { HvBaseCheckBox } from "@hitachivantara/uikit-react-core";
 
 export const CheckBox = () => {
   return (

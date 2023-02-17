@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Close, Edit } from "@hitachivantara/uikit-icons";
+import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvButton, HvTypography, theme } from "index";
 import { HvPanel, PanelProps } from "./Panel";

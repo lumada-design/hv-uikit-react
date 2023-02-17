@@ -1,4 +1,4 @@
-import { HvProviderProps } from "@hitachivantara/uikit-core";
+import { HvProviderProps } from "@hitachivantara/uikit-react-core";
 
 const customTheme: HvProviderProps["theme"] = {
   baseTheme: "ds5",

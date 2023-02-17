@@ -12,7 +12,7 @@ import dropDownMenuClasses, {
 } from "./dropDownMenuClasses";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import getPrevNextFocus from "utils/focusableElementFinder";
-import { MoreOptionsVertical } from "@hitachivantara/uikit-icons";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { HvButtonVariant, HvList, HvListValue } from "components";
 import { useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";

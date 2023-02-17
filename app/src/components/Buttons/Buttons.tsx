@@ -1,5 +1,9 @@
-import { HvBox, HvButton, HvTypography } from "@hitachivantara/uikit-core";
-import { Draw, MoreOptionsVertical } from "@hitachivantara/uikit-icons";
+import {
+  HvBox,
+  HvButton,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+import { Draw, MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { ButtonConfigurator } from "../../components/ButtonConfigurator";
 
 export const Buttons = () => {

@@ -3,7 +3,7 @@ import {
   HvDotPagination,
   HvPagination,
   HvTypography,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 
 const StyledBox = styled(HvTypography)({

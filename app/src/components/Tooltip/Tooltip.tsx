@@ -1,4 +1,8 @@
-import { HvBox, HvTooltip, HvTypography } from "@hitachivantara/uikit-core";
+import {
+  HvBox,
+  HvTooltip,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
 export const Tooltip = () => {
   const styling = {

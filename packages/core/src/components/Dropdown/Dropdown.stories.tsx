@@ -6,7 +6,7 @@ import {
   Priority3,
   Priority4,
   Priority5,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvGrid, HvListValue } from "components";
 import { useEffect, useMemo, useState } from "react";

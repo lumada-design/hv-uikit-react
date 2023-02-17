@@ -5,7 +5,7 @@ exports[`File > should render correctly fail status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-xinaoy-StyledFail e11o985j8 css-du18qm"
+    class="HvFile-icon css-xinaoy-StyledFail e6pb7kb8 css-du18qm"
     name="Fail"
   >
     <svg
@@ -23,17 +23,17 @@ exports[`File > should render correctly fail status 1`] = `
     </svg>
   </div>
   <p
-    class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+    class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
     variant="label"
   >
     somefile.png
   </p>
   <span
-    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
   >
      | 
     <p
-      class="HvFile-fail e11o985j6 css-s37gxk-getStyledComponent-StyledErrorMessage e1te0rfk0"
+      class="HvFile-fail e6pb7kb6 css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
       variant="body"
     >
       File type not allowed for upload
@@ -41,13 +41,13 @@ exports[`File > should render correctly fail status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
+    class="HvFile-removeButton e6pb7kb0 css-17wdxfh-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
-      class="css-1nxr552-StyledContentDiv egl9i9v3"
+      class="css-1nxr552-StyledContentDiv e138pvrm3"
     >
       <span
-        class="css-1o4qkkz-StyledChildren egl9i9v1"
+        class="css-1o4qkkz-StyledChildren e138pvrm1"
       >
         <div
           class="css-du18qm"
@@ -78,7 +78,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-1guhon3-StyledSuccess e11o985j9 css-du18qm"
+    class="HvFile-icon css-1guhon3-StyledSuccess e6pb7kb9 css-du18qm"
     name="Success"
   >
     <svg
@@ -96,17 +96,17 @@ exports[`File > should render correctly success status 1`] = `
     </svg>
   </div>
   <p
-    class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+    class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
     variant="label"
   >
     somefile.png
   </p>
   <span
-    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+    class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
   >
      | 
     <p
-      class="css-1mchk7j-getStyledComponent e1te0rfk0"
+      class="css-1mchk7j-getStyledComponent e1tnpalo0"
       variant="body"
     >
       875.00B
@@ -114,13 +114,13 @@ exports[`File > should render correctly success status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
+    class="HvFile-removeButton e6pb7kb0 css-17wdxfh-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
-      class="css-1nxr552-StyledContentDiv egl9i9v3"
+      class="css-1nxr552-StyledContentDiv e138pvrm3"
     >
       <span
-        class="css-1o4qkkz-StyledChildren egl9i9v1"
+        class="css-1o4qkkz-StyledChildren e138pvrm1"
       >
         <div
           class="css-du18qm"

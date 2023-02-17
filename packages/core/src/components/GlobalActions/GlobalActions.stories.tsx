@@ -1,4 +1,4 @@
-import { Backwards } from "@hitachivantara/uikit-icons";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import uniqueId from "lodash/uniqueId";
 import {

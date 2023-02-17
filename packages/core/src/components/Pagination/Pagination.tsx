@@ -2,7 +2,12 @@ import { useCallback, useEffect } from "react";
 import clsx from "clsx";
 import { Hidden } from "@mui/material";
 import { HvInput, HvTypography } from "components";
-import { Start, End, Backwards, Forwards } from "@hitachivantara/uikit-icons";
+import {
+  Start,
+  End,
+  Backwards,
+  Forwards,
+} from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "../../types";
 import { Option } from "./Select";
 import {

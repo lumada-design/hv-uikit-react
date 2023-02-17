@@ -3,10 +3,10 @@
 exports[`RadioGroup > general > should render correctly 1`] = `
 <div>
   <div
-    class="HvRadioGroup-root css-whistd-StyledFormElement e3r04jq2 HvFormElement-root"
+    class="HvRadioGroup-root css-whistd-StyledFormElement e1qvmihv2 HvFormElement-root"
   >
     <label
-      class="HvRadioGroup-label e3r04jq1 HvLabel-root e1injmq50 css-1gjgsi2-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+      class="HvRadioGroup-label e1qvmihv1 HvLabel-root e17iqvr40 css-1gjgsi2-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       id="hvradiogroup9-label"
       variant="label"
     >
@@ -14,17 +14,17 @@ exports[`RadioGroup > general > should render correctly 1`] = `
     </label>
     <div
       aria-labelledby="hvradiogroup9-label"
-      class="HvRadioGroup-group HvRadioGroup-vertical css-jyhpet-StyledGroup e3r04jq0"
+      class="HvRadioGroup-group HvRadioGroup-vertical css-jyhpet-StyledGroup e1qvmihv0"
       role="radiogroup"
     >
       <div
-        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e1h80t9i2 HvFormElement-root"
+        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <div
-          class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
+          class="HvRadio-container css-kflfdh-StyledDivContainer e11n8xyl1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -59,7 +59,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
+            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio11-input"
             id="hvradio11-label"
             variant="label"
@@ -69,13 +69,13 @@ exports[`RadioGroup > general > should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e1h80t9i2 HvFormElement-root"
+        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <div
-          class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
+          class="HvRadio-container css-kflfdh-StyledDivContainer e11n8xyl1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
           >
             <input
               checked=""
@@ -116,7 +116,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
+            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio13-input"
             id="hvradio13-label"
             variant="label"
@@ -126,13 +126,13 @@ exports[`RadioGroup > general > should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e1h80t9i2 HvFormElement-root"
+        class="HvRadio-root css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
       >
         <div
-          class="HvRadio-container css-kflfdh-StyledDivContainer e1h80t9i1"
+          class="HvRadio-container css-kflfdh-StyledDivContainer e11n8xyl1"
         >
           <span
-            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+            class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -167,7 +167,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvRadio-label e1h80t9i0 HvLabel-root e1injmq50 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1te0rfk0"
+            class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio15-input"
             id="hvradio15-label"
             variant="label"

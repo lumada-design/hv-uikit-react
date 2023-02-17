@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { Info } from "@hitachivantara/uikit-icons";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import {
   HvSnackbar,
   HvActionGeneric,

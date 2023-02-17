@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Fail, Success } from "@hitachivantara/uikit-icons";
+import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton, HvTypography } from "components";
 

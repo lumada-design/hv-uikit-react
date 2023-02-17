@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Alert } from "@hitachivantara/uikit-icons";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvBadge, HvBadgeProps } from "components";
 
 const container = {

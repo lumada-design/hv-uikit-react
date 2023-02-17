@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Doc } from "@hitachivantara/uikit-icons";
+import { Doc } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvInfoMessage, HvLabel, HvTypography } from "components";
 import { CSSProperties } from "react";

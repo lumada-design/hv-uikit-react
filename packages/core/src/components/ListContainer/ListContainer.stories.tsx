@@ -15,7 +15,7 @@ import {
   Machine,
   Plane,
   User,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
 const meta: Meta<typeof HvListContainer> = {

@@ -1,10 +1,10 @@
 // @ts-ignore
-import { HvTypography } from "@hitachivantara/uikit-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
   // @ts-ignore
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import React, { useState } from "react";
 
 const iconContainer = {

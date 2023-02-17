@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { range } from "lodash";
 import { Meta, StoryObj } from "@storybook/react";
-import { LocationPin, Map } from "@hitachivantara/uikit-icons";
+import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton, HvMultiButton, HvMultiButtonProps } from "components";
 

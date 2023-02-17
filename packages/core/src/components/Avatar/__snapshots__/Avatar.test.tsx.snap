@@ -3,16 +3,16 @@
 exports[`Avatar > letter avatar > should render the avatar as text 1`] = `
 <div>
   <div
-    class="HvAvatar-container css-1a4hhck-StyledContainer erijylh4"
+    class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
   >
     <div
-      class="HvAvatar-status css-pfc2yb-StyledStatus erijylh2"
+      class="HvAvatar-status css-pfc2yb-StyledStatus e1sw81qd2"
     >
       <div
-        class="HvAvatar-badge css-y4cyfh-StyledBadge erijylh0"
+        class="HvAvatar-badge css-y4cyfh-StyledBadge e1sw81qd0"
       />
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar e1sw81qd1 css-rtd540-MuiAvatar-root-StyledAvatar"
       >
         AB
       </div>
@@ -24,13 +24,13 @@ exports[`Avatar > letter avatar > should render the avatar as text 1`] = `
 exports[`Avatar > should render correctly 1`] = `
 <div>
   <div
-    class="HvAvatar-container css-1a4hhck-StyledContainer erijylh4"
+    class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
   >
     <div
-      class="HvAvatar-status css-pfc2yb-StyledStatus erijylh2"
+      class="HvAvatar-status css-pfc2yb-StyledStatus e1sw81qd2"
     >
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar erijylh1 css-rtd540-MuiAvatar-root-StyledAvatar"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar e1sw81qd1 css-rtd540-MuiAvatar-root-StyledAvatar"
       >
         <div
           class="HvAvatar-fallback css-du18qm"

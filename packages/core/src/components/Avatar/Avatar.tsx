@@ -1,4 +1,4 @@
-import { User } from "@hitachivantara/uikit-icons";
+import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import clsx from "clsx";

@@ -4,7 +4,7 @@ import { Global } from "@storybook/theming";
 import { default as React, useMemo } from "react";
 import { getDocsStyles } from "../theme/styles/docs";
 
-import { HvProvider, theme } from "@hitachivantara/uikit-core";
+import { HvProvider, theme } from "@hitachivantara/uikit-react-core";
 
 export default ({ context, children }) => {
   // const { selectedTheme } = useTheme();

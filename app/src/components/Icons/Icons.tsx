@@ -1,10 +1,10 @@
-import { HvBox } from "@hitachivantara/uikit-core";
+import { HvBox } from "@hitachivantara/uikit-react-core";
 import {
   CheckboxCheck,
   Bookmark,
   Machine,
   Level5,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 
 export const Icons = () => {
   return (

@@ -4,7 +4,7 @@ import { RadioProps as MuiRadioProps } from "@mui/material";
 import {
   RadioButtonUnselected,
   RadioButtonSelected,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps, HvExtraProps } from "../../types";
 import { StyledRadio } from "./BaseRadio.styles";
 import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";

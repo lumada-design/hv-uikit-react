@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import {
   CurrentStep,
   RadioButtonUnselected,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvTypography } from "components";

@@ -3,10 +3,10 @@
 exports[`HvRadio > sample snapshot testing > should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="HvRadio-root css-1rzqrp5-StyledHvFormElement e1h80t9i2 HvFormElement-root"
+    class="HvRadio-root css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
   >
     <span
-      class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+      class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
     >
       <input
         class="PrivateSwitchBase-input css-1m9pwf3"

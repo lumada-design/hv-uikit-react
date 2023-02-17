@@ -4,16 +4,16 @@ exports[`CharCounter > should render correctly 1`] = `
 <div>
   <div
     aria-live="polite"
-    class="HvCharCounter-root HvCharCounter-gutter css-ltrngp-StyledRoot ebqrjbb1"
+    class="HvCharCounter-root HvCharCounter-gutter css-ltrngp-StyledRoot e11kw0681"
   >
     <label
-      class=" ebqrjbb0 css-gd6fvd-getStyledComponent-StyledTypography e1te0rfk0"
+      class=" e11kw0680 css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
       variant="label"
     >
       0
     </label>
     <label
-      class=" ebqrjbb0 css-1iwt6gt-getStyledComponent-StyledTypography e1te0rfk0"
+      class=" e11kw0680 css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
       variant="body"
     >
        / 10

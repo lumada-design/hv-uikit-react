@@ -3,7 +3,7 @@
 exports[`Stack > should render correctly 1`] = `
 <div>
   <div
-    class="HvStack-root css-5p3hah-StyledRoot e1rmp81u0"
+    class="HvStack-root css-5p3hah-StyledRoot evwozt80"
   />
 </div>
 `;

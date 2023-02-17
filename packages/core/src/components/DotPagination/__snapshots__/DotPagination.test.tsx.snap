@@ -3,17 +3,17 @@
 exports[`DotPagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvDotPagination-root e1jtaca23 HvRadioGroup-root css-w7urnl-StyledFormElement-StyledRadioGroup e3r04jq2 HvFormElement-root"
+    class="HvDotPagination-root e1buriah3 HvRadioGroup-root css-w7urnl-StyledFormElement-StyledRadioGroup e1qvmihv2 HvFormElement-root"
   >
     <div
-      class="HvRadioGroup-group HvDotPagination-horizontal HvRadioGroup-horizontal css-2e6w85-StyledGroup e3r04jq0"
+      class="HvRadioGroup-group HvDotPagination-horizontal HvRadioGroup-horizontal css-2e6w85-StyledGroup e1qvmihv0"
       role="navigation"
     >
       <div
-        class="e1jtaca22 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e1h80t9i2 HvFormElement-root"
+        class="e1buriah2 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e11n8xyl2 HvFormElement-root"
       >
         <span
-          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault Mui-checked MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
         >
           <input
             aria-label="first page button aria-label"
@@ -24,7 +24,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="0"
           />
           <div
-            class="HvDotPagination-icon css-10burq8-StyledCurrentStep e1jtaca20 css-du18qm"
+            class="HvDotPagination-icon css-10burq8-StyledCurrentStep e1buriah0 css-du18qm"
             font-size="medium"
             name="CurrentStep"
           >
@@ -45,10 +45,10 @@ exports[`DotPagination > should render correctly 1`] = `
         </span>
       </div>
       <div
-        class="e1jtaca22 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e1h80t9i2 HvFormElement-root"
+        class="e1buriah2 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e11n8xyl2 HvFormElement-root"
       >
         <span
-          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
         >
           <input
             aria-label="2 page aria-label"
@@ -58,7 +58,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="1"
           />
           <div
-            class="HvDotPagination-icon css-1tb1fcm-StyledOtherStep e1jtaca21 css-du18qm"
+            class="HvDotPagination-icon css-1tb1fcm-StyledOtherStep e1buriah1 css-du18qm"
             font-size="medium"
             name="OtherStep"
           >
@@ -79,10 +79,10 @@ exports[`DotPagination > should render correctly 1`] = `
         </span>
       </div>
       <div
-        class="e1jtaca22 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e1h80t9i2 HvFormElement-root"
+        class="e1buriah2 HvRadio-root HvDotPagination-radioRoot css-esudyc-StyledHvFormElement-StyledRadio e11n8xyl2 HvFormElement-root"
       >
         <span
-          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e1h80t9i3 HvBaseRadio-root e1v341dn0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
+          class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio HvDotPagination-radio e11n8xyl3 HvBaseRadio-root e1sbb5xr0 css-1t388db-MuiButtonBase-root-MuiRadio-root-StyledRadio-StyledHvBaseRadio"
         >
           <input
             aria-label="last page button aria-label"
@@ -92,7 +92,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="2"
           />
           <div
-            class="HvDotPagination-icon css-1tb1fcm-StyledOtherStep e1jtaca21 css-du18qm"
+            class="HvDotPagination-icon css-1tb1fcm-StyledOtherStep e1buriah1 css-du18qm"
             font-size="medium"
             name="OtherStep"
           >

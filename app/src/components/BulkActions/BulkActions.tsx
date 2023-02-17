@@ -5,8 +5,8 @@ import {
   HvListValue,
   HvBulkActions,
   HvPagination,
-} from "@hitachivantara/uikit-core";
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { useState } from "react";
 

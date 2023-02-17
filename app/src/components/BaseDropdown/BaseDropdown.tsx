@@ -1,4 +1,4 @@
-import { HvBaseDropdown } from "@hitachivantara/uikit-core";
+import { HvBaseDropdown } from "@hitachivantara/uikit-react-core";
 
 export const BaseDropdown = () => {
   return (

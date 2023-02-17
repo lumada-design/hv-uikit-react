@@ -1,5 +1,5 @@
-import { HvInput } from "@hitachivantara/uikit-core";
-import { Map } from "@hitachivantara/uikit-icons";
+import { HvInput } from "@hitachivantara/uikit-react-core";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
 import countryNamesArray from "./countries";
 

@@ -6,33 +6,33 @@ exports[`BaseDropDown > should render correctly 1`] = `
     style="width: 121px;"
   >
     <div
-      class="HvBaseDropdown-root css-1nukton-StyledRoot e1xgfj1t9"
+      class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor e1xgfj1t8"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header css-z15in3-StyledHeaderRoot e1xgfj1t7"
+          class="HvBaseDropdown-header css-z15in3-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection e1xgfj1t6"
+            class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection eapzthe6"
           >
             <p
-              class="HvBaseDropdown-placeholder e1xgfj1t5 css-17knwax-getStyledComponent-StyledPlaceholder e1te0rfk0"
+              class="HvBaseDropdown-placeholder eapzthe5 css-17knwax-getStyledComponent-StyledPlaceholder e1tnpalo0"
               variant="body"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
             name="DropDownXS"
           >
             <svg

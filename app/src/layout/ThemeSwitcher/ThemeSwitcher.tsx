@@ -1,5 +1,9 @@
 import { useContext } from "react";
-import { HvBox, HvDropdown, HvThemeContext } from "@hitachivantara/uikit-core";
+import {
+  HvBox,
+  HvDropdown,
+  HvThemeContext,
+} from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
 const StyledDropdown = styled(HvDropdown)({

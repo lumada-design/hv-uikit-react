@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 // @ts-ignore
-import { HvThemeContext, HvBox, HvDropdown } from "@hitachivantara/uikit-core";
+import {
+  HvThemeContext,
+  HvBox,
+  HvDropdown,
+} from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
 export const ThemeSwitcher = () => {

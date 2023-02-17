@@ -20,7 +20,7 @@ import {
   Unlock,
   UpEmpty,
   UpSelected,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvToggleButton,
   HvToggleButtonProps,

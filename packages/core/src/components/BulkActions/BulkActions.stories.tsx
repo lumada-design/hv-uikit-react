@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-icons";
+import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import {

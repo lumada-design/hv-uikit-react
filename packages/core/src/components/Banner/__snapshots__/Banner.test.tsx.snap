@@ -3,15 +3,15 @@
 exports[`Banner > should render correctly 1`] = `
 <div>
   <div
-    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter evzbf990 css-1ubopil-MuiSnackbar-root-StyledSnackbar"
+    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter e14yk37x0 css-1ubopil-MuiSnackbar-root-StyledSnackbar"
     role="presentation"
     style="top: 60px;"
   >
     <div
-      class="HvBanner-Content-outContainer css-1xx0g7u-StyledRoot edetxhd1"
+      class="HvBanner-Content-outContainer css-1xx0g7u-StyledRoot ey1hm771"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant edetxhd0 css-1by1nec-MuiPaper-root-MuiSnackbarContent-root-StyledSnackbarContent"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant ey1hm770 css-1by1nec-MuiPaper-root-MuiSnackbarContent-root-StyledSnackbarContent"
         role="alert"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
@@ -19,7 +19,7 @@ exports[`Banner > should render correctly 1`] = `
           class="MuiSnackbarContent-message HvBanner-Content-message css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
-            class="HvBanner-MessageContainer-message exp7lm21 css-1ib6p6l-getStyledComponent-StyledTypography e1te0rfk0"
+            class="HvBanner-MessageContainer-message e3wuhfa1 css-1ib6p6l-getStyledComponent-StyledTypography e1tnpalo0"
             variant="body"
           />
         </div>
@@ -27,21 +27,21 @@ exports[`Banner > should render correctly 1`] = `
           class="MuiSnackbarContent-action HvBanner-Content-action css-1kr9x0n-MuiSnackbarContent-action"
         >
           <div
-            class="HvBanner-ActionContainer-actionContainer css-uzerey-StyledActionContainer e3b95xi3"
+            class="HvBanner-ActionContainer-actionContainer css-uzerey-StyledActionContainer euz8sqk3"
           >
             <button
               aria-label="Close"
-              class="HvBanner-ActionContainer-closeAction e3b95xi2 css-1h0df8q-StyledButton-StyledButton egl9i9v0"
+              class="HvBanner-ActionContainer-closeAction euz8sqk2 css-1h0df8q-StyledButton-StyledButton e138pvrm0"
               tabindex="0"
             >
               <div
-                class="css-1nxr552-StyledContentDiv egl9i9v3"
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
               >
                 <span
-                  class="css-1o4qkkz-StyledChildren egl9i9v1"
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
                 >
                   <div
-                    class="HvBanner-ActionContainer-iconContainer css-11ckr3u-StyledClose e3b95xi1 css-du18qm"
+                    class="HvBanner-ActionContainer-iconContainer css-11ckr3u-StyledClose euz8sqk1 css-du18qm"
                     name="Close"
                   >
                     <svg

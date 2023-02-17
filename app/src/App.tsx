@@ -1,4 +1,4 @@
-import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-core";
+import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-react-core";
 import { CSSProperties } from "react";
 import {
   Buttons,

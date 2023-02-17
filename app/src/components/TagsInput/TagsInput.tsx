@@ -1,4 +1,4 @@
-import { HvTagsInput } from "@hitachivantara/uikit-core";
+import { HvTagsInput } from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 import countryNamesArray from "./countries";
 

@@ -4,7 +4,7 @@ import {
   HvCardContent,
   HvCardMedia,
   HvTypography,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 // @ts-ignore
 import compressor from "./assets/compressor.png";
 

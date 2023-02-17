@@ -6,29 +6,29 @@ exports[`Dropdown > should render correctly 1`] = `
     style="width: 310px;"
   >
     <div
-      class="HvDropdown-root css-13v24hy-StyledHvFormElement e1jemzt54 HvFormElement-root"
+      class="HvDropdown-root css-13v24hy-StyledHvFormElement etta2py4 HvFormElement-root"
     >
       <div
-        class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot e1xgfj1t9"
+        class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="false"
           aria-label="Main sample"
-          class="e1jemzt53 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown e1xgfj1t8"
+          class="etta2py3 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-label="Main sample"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot e1xgfj1t7"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection e1xgfj1t6"
+              class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection eapzthe6"
             >
               <div
-                class="HvDropdown-placeholder e1jemzt50 css-4kh4g2-getStyledComponent-StyledTypography e1te0rfk0"
+                class="HvDropdown-placeholder etta2py0 css-4kh4g2-getStyledComponent-StyledTypography e1tnpalo0"
                 variant="body"
               >
                 <b>
@@ -38,7 +38,7 @@ exports[`Dropdown > should render correctly 1`] = `
               </div>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS e1xgfj1t3 css-du18qm"
+              class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
               name="DropDownXS"
             >
               <svg

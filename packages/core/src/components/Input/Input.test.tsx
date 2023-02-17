@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { Map } from "@hitachivantara/uikit-icons";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import { HvInput } from "components";
 
 describe("Input", () => {

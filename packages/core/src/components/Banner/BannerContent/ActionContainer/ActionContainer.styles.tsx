@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Close } from "@hitachivantara/uikit-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "components";
 import { outlineStyles } from "utils";
 import fade from "utils/hexToRgbA";

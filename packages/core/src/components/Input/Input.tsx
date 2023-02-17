@@ -13,7 +13,7 @@ import {
   PreviewOff,
   Preview,
   Search,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps, HvExtraProps } from "../../types";
 import {
   StyledFormElement,

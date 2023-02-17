@@ -6,7 +6,7 @@ import {
   Level5,
   Machine,
   // @ts-ignore
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import React from "react";
 
 export default {
@@ -14,7 +14,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-icons'",
+      "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",
   },
   component: IconBase,
 };
