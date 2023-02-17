@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Map } from "@hitachivantara/uikit-icons";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,

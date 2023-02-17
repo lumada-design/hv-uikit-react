@@ -5,9 +5,9 @@ import {
   HvRadio,
   HvSwitch,
   // @ts-ignore
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 // @ts-ignore
-import { Level0Good, Level1 } from "@hitachivantara/uikit-icons";
+import { Level0Good, Level1 } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
 export const ThemeSample = () => {

@@ -3,17 +3,17 @@
 exports[`ActionsGeneric > should render correctly 1`] = `
 <div>
   <div
-    class="HvActionsGeneric-root css-1668iss-StyledRoot e1bww73k1"
+    class="HvActionsGeneric-root css-1668iss-StyledRoot e4fkrgz1"
   >
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-1watp9i-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e4fkrgz0 css-1watp9i-StyledButton-StyledButton e138pvrm0"
       disabled=""
     >
       <div
-        class="css-1nxr552-StyledContentDiv egl9i9v3"
+        class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          class="css-1bs0ujq-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-du18qm"
@@ -35,20 +35,20 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           </div>
         </span>
         <span
-          class="css-1o4qkkz-StyledChildren egl9i9v1"
+          class="css-1o4qkkz-StyledChildren e138pvrm1"
         >
           Add
         </span>
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e4fkrgz0 css-17m1muu-StyledButton-StyledButton e138pvrm0"
     >
       <div
-        class="css-1nxr552-StyledContentDiv egl9i9v3"
+        class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          class="css-1bs0ujq-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-du18qm"
@@ -70,20 +70,20 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           </div>
         </span>
         <span
-          class="css-1o4qkkz-StyledChildren egl9i9v1"
+          class="css-1o4qkkz-StyledChildren e138pvrm1"
         >
           Preview
         </span>
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e4fkrgz0 css-17m1muu-StyledButton-StyledButton e138pvrm0"
     >
       <div
-        class="css-1nxr552-StyledContentDiv egl9i9v3"
+        class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          class="css-1bs0ujq-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-du18qm"
@@ -105,20 +105,20 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           </div>
         </span>
         <span
-          class="css-1o4qkkz-StyledChildren egl9i9v1"
+          class="css-1o4qkkz-StyledChildren e138pvrm1"
         >
           Upload
         </span>
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e1bww73k0 css-17m1muu-StyledButton-StyledButton egl9i9v0"
+      class="HvActionsGeneric-button e4fkrgz0 css-17m1muu-StyledButton-StyledButton e138pvrm0"
     >
       <div
-        class="css-1nxr552-StyledContentDiv egl9i9v3"
+        class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="css-1bs0ujq-StyledIconSpan egl9i9v2"
+          class="css-1bs0ujq-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-du18qm"
@@ -140,7 +140,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           </div>
         </span>
         <span
-          class="css-1o4qkkz-StyledChildren egl9i9v1"
+          class="css-1o4qkkz-StyledChildren e138pvrm1"
         >
           Delete
         </span>

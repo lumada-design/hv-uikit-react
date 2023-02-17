@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { ThemeSample } from "./ThemeSample";
-import { HvProvider, HvButton } from "@hitachivantara/uikit-core";
+import { HvProvider, HvButton } from "@hitachivantara/uikit-react-core";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { SpacingUsage } from "./SpacingUsage";
 import { ThemeStructures } from "./ThemeStructures";
@@ -136,7 +136,7 @@ For code readability, you can also define the `theme` property in a separate fil
 
 ```jsx
 // customTheme.ts
-import { HvProviderProps } from "@hitachivantara/uikit-core";
+import { HvProviderProps } from "@hitachivantara/uikit-react-core";
 
 const customTheme: HvProviderProps["theme"] = {
   baseTheme: "ds3",
@@ -188,8 +188,8 @@ import {
   HvCheckBox,
   HvRadio,
   HvSwitch,
-} from "@hitachivantara/uikit-core";
-import { Level0Good, Level1 } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Level0Good, Level1 } from "@hitachivantara/uikit-react-icons";
 
 const ThemeSwitcher = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -320,7 +320,7 @@ const Main = () => {
 ## Spacing
 
 UI Kit provides a spacing helper function named `spacing`.
-This function helps generate the spacing values for the UI elements when required and is contained within the `theme` object provided by the `@hitachivantara/uikit-core`.
+This function helps generate the spacing values for the UI elements when required and is contained within the `theme` object provided by the `@hitachivantara/uikit-react-core`.
 It receives a factor number, multiples it by 8, and returns the appropriate value in pixels to achieve the desired spacing.
 
 ### Example
@@ -328,7 +328,7 @@ It receives a factor number, multiples it by 8, and returns the appropriate valu
 ```jsx
 import React from "react";
 import styled from "@emotion/styled";
-import { HvButton, theme } from "@hitachivantara/uikit-core";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
 export const Spacing = () => {
   const StyledContainer = styled("div")({

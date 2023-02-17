@@ -7,7 +7,7 @@ import {
   Play,
   Refresh,
   Stop,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 
 import { HvBox, HvButton, HvButtonProps } from "components";
 

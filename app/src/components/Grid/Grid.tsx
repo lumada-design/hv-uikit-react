@@ -4,7 +4,7 @@ import {
   theme,
   HvTypography,
   useWidth,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 
 const StyledItem = styled("div")({
   padding: theme.spacing(2),

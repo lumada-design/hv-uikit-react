@@ -5,7 +5,7 @@ import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
 import { HvFileUploaderPreview } from "./Preview";
 import { cancelUpload, simulateUpload } from "./simulators";
 import rainbow from "./assets/rainbow.jpg";
-import { Code, DocWord } from "@hitachivantara/uikit-icons";
+import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import { HvDialog, HvDialogContent, HvDialogTitle } from "components";
 
 const meta: Meta<typeof HvFileUploader> = {

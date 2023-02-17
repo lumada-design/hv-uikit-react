@@ -6,7 +6,7 @@ import {
   HvDropdown,
   HvTypography,
   HvButtonRadius,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 
 const sizes: HvButtonSize[] = ["xs", "sm", "md", "lg", "xl"];

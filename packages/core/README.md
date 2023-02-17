@@ -1,4 +1,4 @@
-# @hitachivantara/uikit-core
+# @hitachivantara/uikit-react-core
 
 UI Kit core React components for the Hitachi Vantara Design System.
 
@@ -7,5 +7,5 @@ UI Kit core React components for the Hitachi Vantara Design System.
 Install the package in your project directory with:
 
 ```sh
-npm install @hitachivantara/uikit-core
+npm install @hitachivantara/uikit-react-core
 ```

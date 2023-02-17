@@ -13,8 +13,8 @@ import {
   HvSwitch,
   HvTextArea,
   HvFormStatus,
-} from "@hitachivantara/uikit-core";
-import { Map } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Map } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import isEmpty from "lodash/isEmpty";
 import { fields, allCountries } from "./utils";

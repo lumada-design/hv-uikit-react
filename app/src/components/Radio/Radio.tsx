@@ -1,4 +1,4 @@
-import { HvBaseRadio } from "@hitachivantara/uikit-core";
+import { HvBaseRadio } from "@hitachivantara/uikit-react-core";
 
 export const Radio = () => {
   return (

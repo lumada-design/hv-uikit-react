@@ -3,13 +3,13 @@
 exports[`TextArea > should render correctly 1`] = `
 <div>
   <div
-    class="HvTextArea-root css-1fh6bq0-StyledFormElement e1f8on4z6 HvFormElement-root"
+    class="HvTextArea-root css-1fh6bq0-StyledFormElement e1e5t49x6 HvFormElement-root"
   >
     <div
-      class="HvTextArea-labelContainer css-1rvt36b-StyledLabelContainer e1f8on4z5"
+      class="HvTextArea-labelContainer css-1rvt36b-StyledLabelContainer e1e5t49x5"
     >
       <label
-        class="HvTextArea-label e1f8on4z4 HvLabel-root e1injmq50 css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvtextarea3-input"
         id="hvformelement4-label"
         variant="label"
@@ -20,18 +20,18 @@ exports[`TextArea > should render correctly 1`] = `
     <div
       aria-disabled="false"
       aria-live="polite"
-      class="HvTextArea-characterCounter e1f8on4z2 HvCharCounter-root HvCharCounter-gutter css-4vx1s7-StyledRoot-StyledCharCounter ebqrjbb1"
+      class="HvTextArea-characterCounter e1e5t49x2 HvCharCounter-root HvCharCounter-gutter css-4vx1s7-StyledRoot-StyledCharCounter e11kw0681"
       id="hvtextarea3-charCounter"
     >
       <label
-        class=" ebqrjbb0 css-gd6fvd-getStyledComponent-StyledTypography e1te0rfk0"
+        class=" e11kw0680 css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-currentQuantity"
         variant="label"
       >
         0
       </label>
       <label
-        class=" ebqrjbb0 css-1iwt6gt-getStyledComponent-StyledTypography e1te0rfk0"
+        class=" e11kw0680 css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-maxQuantity"
         variant="body"
       >
@@ -39,10 +39,10 @@ exports[`TextArea > should render correctly 1`] = `
       </label>
     </div>
     <div
-      class="HvBaseInput-root HvTextArea-baseInput e1f8on4z0 css-1pj9pub-StyledRoot-StyledBaseInput e1wsukd12"
+      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-1pj9pub-StyledRoot-StyledBaseInput e8ibl7d2"
     >
       <div
-        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e1wsukd10 css-122smlq-MuiInputBase-root-MuiInput-root-StyledInput"
+        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e8ibl7d0 css-122smlq-MuiInputBase-root-MuiInput-root-StyledInput"
       >
         <textarea
           aria-controls="hvtextarea3-charCounter"
@@ -62,10 +62,10 @@ exports[`TextArea > should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="HvTextArea-error e1f8on4z1 HvWarningText-root css-1fh2wz-StyledRoot-StyledWarningText e1ll5nqb2"
+      class="HvTextArea-error e1e5t49x1 HvWarningText-root css-1fh2wz-StyledRoot-StyledWarningText e1jkc0dp2"
     >
       <div
-        class="HvWarningText-defaultIcon css-184echi-StyledIcon e1ll5nqb0 css-du18qm"
+        class="HvWarningText-defaultIcon css-184echi-StyledIcon e1jkc0dp0 css-du18qm"
         name="Fail"
       >
         <svg
@@ -84,7 +84,7 @@ exports[`TextArea > should render correctly 1`] = `
       </div>
       <p
         aria-relevant="additions text"
-        class="HvWarningText-warningText HvWarningText-topGutter e1ll5nqb1 css-mq4y8t-getStyledComponent-StyledTypography e1te0rfk0"
+        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-mq4y8t-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-error"
         role="status"
         variant="body"

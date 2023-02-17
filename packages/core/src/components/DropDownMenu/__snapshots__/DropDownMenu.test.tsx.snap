@@ -3,29 +3,29 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="css-1nctzd3-StyledRoot e1y5ntva3"
+    class="css-1nctzd3-StyledRoot e13q7myz3"
   >
     <div
-      class="HvBaseDropdown-root HvDropDownMenu-root css-1nukton-StyledRoot e1xgfj1t9"
+      class="HvBaseDropdown-root HvDropDownMenu-root css-1nukton-StyledRoot eapzthe9"
     >
       <div
         aria-expanded="false"
         aria-haspopup="menu"
-        class="HvDropDownMenu-container e1y5ntva2 HvBaseDropdown-anchor css-2kevrv-StyledAnchor-StyledBaseDropDown e1xgfj1t8"
+        class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor css-2kevrv-StyledAnchor-StyledBaseDropDown eapzthe8"
         id="-2"
         tabindex="-1"
       >
         <button
           aria-expanded="false"
           aria-label="Dropdown menu"
-          class="HvDropDownMenu-icon e1y5ntva1 css-qjgghy-StyledButton-StyledButton egl9i9v0"
+          class="HvDropDownMenu-icon e13q7myz1 css-qjgghy-StyledButton-StyledButton e138pvrm0"
           id="-2-icon-button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv egl9i9v3"
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="css-1o4qkkz-StyledChildren egl9i9v1"
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
                 class="css-du18qm"

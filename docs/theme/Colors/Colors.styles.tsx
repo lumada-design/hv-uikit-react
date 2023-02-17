@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 // @ts-ignore
-import { HvTypography } from "@hitachivantara/uikit-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
 // @ts-ignore
 import { theme } from "@hitachivantara/uikit-styles";
 

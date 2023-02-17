@@ -4,7 +4,7 @@ import { setId } from "utils";
 import { isValidElement, useContext } from "react";
 import { HvBaseProps } from "../../types";
 import { actionsGenericClasses, HvActionsGenericClasses } from ".";
-import { MoreOptionsVertical } from "@hitachivantara/uikit-icons";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
 import { HvThemeContext } from "providers";

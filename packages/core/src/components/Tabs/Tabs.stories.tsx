@@ -7,7 +7,7 @@ import {
   Calendar,
   Reload,
   DataStore,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 

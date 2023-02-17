@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { HvListItem, HvTypography } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Info } from "@hitachivantara/uikit-icons";
+import { Info } from "@hitachivantara/uikit-react-icons";
 import appSwitcherActionClasses from "./actionClasses";
 
 export const StyledListItem = styled(HvListItem)({

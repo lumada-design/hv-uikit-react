@@ -4,8 +4,8 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "@hitachivantara/uikit-core";
-import { Alert, Menu, User } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";

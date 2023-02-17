@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { Archives, Bookmark, LogIn, Search } from "@hitachivantara/uikit-icons";
+import {
+  Archives,
+  Bookmark,
+  LogIn,
+  Search,
+} from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvButton } from "../index";
 import { HvAvatar, HvAvatarProps } from "components";

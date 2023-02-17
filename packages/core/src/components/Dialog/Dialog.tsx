@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useState } from "react";
 import clsx from "clsx";
 import { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
-import { Close } from "@hitachivantara/uikit-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { isNil } from "lodash";
 import { HvBaseProps, HvExtraProps } from "../../types";

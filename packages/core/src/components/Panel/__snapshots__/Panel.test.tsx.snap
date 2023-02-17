@@ -3,10 +3,10 @@
 exports[`Panel > should render correctly 1`] = `
 <div>
   <div
-    class="HvPanel-root css-r49k44-StyledDiv e1sxb3mk0"
+    class="HvPanel-root css-r49k44-StyledDiv e1yqctam0"
   >
     <p
-      class="css-1mchk7j-getStyledComponent e1te0rfk0"
+      class="css-1mchk7j-getStyledComponent e1tnpalo0"
       variant="body"
     >
       Panel Content

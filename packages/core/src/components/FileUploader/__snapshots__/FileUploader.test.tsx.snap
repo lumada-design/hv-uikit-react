@@ -5,11 +5,11 @@ exports[`FileUploader > should render correctly 1`] = `
   <div>
     <div
       aria-label="File Dropzone"
-      class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1exqe5d10"
+      class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1r4xwg210"
       id="-3"
     >
       <label
-        class="HvDropZone-dropZoneLabel e1exqe5d9 HvLabel-root e1injmq50 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1te0rfk0"
+        class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="-3-input-file"
         id="-3-input-file-label"
         variant="label"
@@ -17,7 +17,7 @@ exports[`FileUploader > should render correctly 1`] = `
         Label
       </label>
       <label
-        class="e1exqe5d8 HvInfoMessage-root HvInfoMessage-gutter ecu8rho0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1te0rfk0"
+        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
         id="-3-description"
         variant="body"
       >
@@ -26,14 +26,14 @@ exports[`FileUploader > should render correctly 1`] = `
       </label>
     </div>
     <div
-      class="HvDropZone-dropZoneContainer css-w7n486-StyledDropZoneContainer e1exqe5d7"
+      class="HvDropZone-dropZoneContainer css-w7n486-StyledDropZoneContainer e1r4xwg27"
       id="-3-button"
       role="button"
       tabindex="0"
     >
       <input
         accept="jpeg"
-        class="HvDropZone-inputArea css-yg1b7p-StyledInput e1exqe5d6"
+        class="HvDropZone-inputArea css-yg1b7p-StyledInput e1r4xwg26"
         id="-3-input-file"
         multiple=""
         tabindex="-1"
@@ -41,10 +41,10 @@ exports[`FileUploader > should render correctly 1`] = `
         type="file"
       />
       <div
-        class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1exqe5d5"
+        class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1r4xwg25"
       >
         <div
-          class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1exqe5d2 css-xq48n2"
+          class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
           name="Doc"
         >
           <svg
@@ -62,15 +62,15 @@ exports[`FileUploader > should render correctly 1`] = `
           </svg>
         </div>
         <div
-          class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1exqe5d1"
+          class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
         >
           <p
-            class="HvDropZone-dragText e1exqe5d3 css-12v085h-getStyledComponent-StyledDragText e1te0rfk0"
+            class="HvDropZone-dragText e1r4xwg23 css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
             variant="body"
           >
             Drop files here or
             <span
-              class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1exqe5d0"
+              class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1r4xwg20"
             >
                click to upload
             </span>
@@ -79,26 +79,26 @@ exports[`FileUploader > should render correctly 1`] = `
       </div>
     </div>
     <ul
-      class="HvFileList-list css-1bo3zqs-StyledList e1ybz4wc0"
+      class="HvFileList-list css-1bo3zqs-StyledList e1u4sq610"
     >
       <li
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-11wunl3-StyledEmptyIcon e11o985j7"
+          class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
         />
         <p
-          class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+          class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
           variant="label"
         >
           Screenshot 2019-12-05 at 17.15.43.png
         </p>
         <span
-          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
         >
            | 
           <p
-            class="css-1mchk7j-getStyledComponent e1te0rfk0"
+            class="css-1mchk7j-getStyledComponent e1tnpalo0"
             variant="body"
           >
             14.10MB
@@ -106,14 +106,14 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
+          class="HvFile-removeButton e6pb7kb0 css-17wdxfh-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv egl9i9v3"
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="css-1o4qkkz-StyledChildren egl9i9v1"
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
                 class="css-du18qm"
@@ -141,20 +141,20 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-11wunl3-StyledEmptyIcon e11o985j7"
+          class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
         />
         <p
-          class="HvFile-nameText e11o985j3 css-1rntirt-getStyledComponent-StyledNameText e1te0rfk0"
+          class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
           variant="label"
         >
           Screenshot 2019-12-05 at 12.03.13.png
         </p>
         <span
-          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e11o985j2"
+          class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
         >
            | 
           <p
-            class="css-1mchk7j-getStyledComponent e1te0rfk0"
+            class="css-1mchk7j-getStyledComponent e1tnpalo0"
             variant="body"
           >
             875.00kB
@@ -162,14 +162,14 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e11o985j0 css-17wdxfh-StyledButton-StyledIconButton egl9i9v0"
+          class="HvFile-removeButton e6pb7kb0 css-17wdxfh-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div
-            class="css-1nxr552-StyledContentDiv egl9i9v3"
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
           >
             <span
-              class="css-1o4qkkz-StyledChildren egl9i9v1"
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
                 class="css-du18qm"

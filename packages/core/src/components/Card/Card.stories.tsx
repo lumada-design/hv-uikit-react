@@ -10,7 +10,7 @@ import {
   Preview,
   Tool,
   Upload,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Grid } from "@mui/material";
 import { Meta, StoryObj } from "@storybook/react";

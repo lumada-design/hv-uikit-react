@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 // @ts-ignore
-import { HvDropdown, themes } from "@hitachivantara/uikit-core";
+import { HvDropdown, themes } from "@hitachivantara/uikit-react-core";
 
 export const ThemeStructures = () => {
   const [list] = useState(["-", ...Object.keys(themes)]);

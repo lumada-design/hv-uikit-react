@@ -1,5 +1,10 @@
 import React from "react";
-import { Fail, Success, Caution, Info } from "@hitachivantara/uikit-icons";
+import {
+  Fail,
+  Success,
+  Caution,
+  Info,
+} from "@hitachivantara/uikit-react-icons";
 
 const iconVariant = (variant, color, semantic) => {
   switch (variant) {

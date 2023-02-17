@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { HvTypography } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
-import { Fail } from "@hitachivantara/uikit-icons";
+import { Fail } from "@hitachivantara/uikit-react-icons";
 
 export const StyledRoot = styled(
   "div",

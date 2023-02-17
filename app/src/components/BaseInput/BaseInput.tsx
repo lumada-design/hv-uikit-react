@@ -1,4 +1,4 @@
-import { HvBaseInput } from "@hitachivantara/uikit-core";
+import { HvBaseInput } from "@hitachivantara/uikit-react-core";
 
 export const BaseInput = () => {
   return (

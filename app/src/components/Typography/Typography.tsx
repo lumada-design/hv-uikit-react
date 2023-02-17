@@ -5,7 +5,7 @@ import {
   HvTypographyLegacyVariants,
   HvTypographyVariants,
   theme,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 import { useState } from "react";
 
 const variants = [

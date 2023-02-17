@@ -1,4 +1,4 @@
-import { HvBreadCrumb } from "@hitachivantara/uikit-core";
+import { HvBreadCrumb } from "@hitachivantara/uikit-react-core";
 
 const data = [
   { label: "Label 1", path: "route1" },

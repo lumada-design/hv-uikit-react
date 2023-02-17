@@ -1,4 +1,4 @@
-import { HvBaseSwitch } from "@hitachivantara/uikit-core";
+import { HvBaseSwitch } from "@hitachivantara/uikit-react-core";
 
 export const Switch = () => {
   return (

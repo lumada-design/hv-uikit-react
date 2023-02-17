@@ -1,4 +1,4 @@
-import { Ungroup } from "@hitachivantara/uikit-icons";
+import { Ungroup } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,

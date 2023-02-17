@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { CloseXS } from "@hitachivantara/uikit-icons";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
 import { HvButton } from "components";

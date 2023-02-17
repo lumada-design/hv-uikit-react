@@ -2,7 +2,7 @@ import {
   CheckboxCheck as CheckboxCheckIcon,
   CheckboxPartial as CheckboxPartialIcon,
   Checkbox as CheckboxIcon,
-} from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-icons";
 import { CheckboxProps as MuiCheckboxProps } from "@mui/material";
 import clsx from "clsx";
 import React, { useCallback, useState } from "react";

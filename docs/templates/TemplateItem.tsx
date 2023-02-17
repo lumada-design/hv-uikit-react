@@ -5,7 +5,7 @@ import {
   HvCardMedia,
   HvActionBar,
   HvButton,
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 
 const openLink = (link: string) => () => window.open(link, "_blank");
 

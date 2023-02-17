@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StoryObj } from "@storybook/react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { User, Menu, Alert } from "@hitachivantara/uikit-icons";
+import { User, Menu, Alert } from "@hitachivantara/uikit-react-icons";
 import {
   HvBadge,
   HvButton,

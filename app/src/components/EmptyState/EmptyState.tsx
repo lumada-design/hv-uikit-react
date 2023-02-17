@@ -3,8 +3,8 @@ import {
   HvEmptyState,
   HvTypography,
   useWidth,
-} from "@hitachivantara/uikit-core";
-import { Info } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 export const EmptyState = () => {
   const width = useWidth();

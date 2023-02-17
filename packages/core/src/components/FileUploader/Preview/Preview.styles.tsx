@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Preview } from "@hitachivantara/uikit-icons";
+import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvButton } from "components";
 import fileUploaderPreviewClasses from "./previewClasses";

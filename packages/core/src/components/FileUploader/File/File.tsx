@@ -1,4 +1,4 @@
-import { Close } from "@hitachivantara/uikit-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
 import { setId } from "utils";
 import fileClasses, { HvFileClasses } from "./fileClasses";

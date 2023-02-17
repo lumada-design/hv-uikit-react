@@ -1,6 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Tool, Favorite, FavoriteSelected } from "@hitachivantara/uikit-icons";
+import {
+  Tool,
+  Favorite,
+  FavoriteSelected,
+} from "@hitachivantara/uikit-react-icons";
 import {
   HvActionBar,
   HvCard,

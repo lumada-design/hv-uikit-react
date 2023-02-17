@@ -17,9 +17,9 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-core": ["packages/core/src"],
-      "@hitachivantara/uikit-icons": ["packages/icons/bin"],
-      "@hitachivantara/uikit-icons/dist/*": ["packages/icons/bin/*"],
+      "@hitachivantara/uikit-react-core": ["packages/core/src"],
+      "@hitachivantara/uikit-react-icons": ["packages/icons/bin"],
+      "@hitachivantara/uikit-react-icons/dist/*": ["packages/icons/bin/*"],
       "@hitachivantara/uikit-styles": ["packages/styles/src"]
     },
     "preserveSymlinks": true,

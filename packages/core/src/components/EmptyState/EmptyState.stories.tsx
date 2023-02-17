@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { BarChart, Ghost, Info } from "@hitachivantara/uikit-icons";
+import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvLink,

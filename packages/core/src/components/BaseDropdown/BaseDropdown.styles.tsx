@@ -1,6 +1,6 @@
 import { CSSProperties } from "@emotion/serialize";
 import styled from "@emotion/styled";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-icons";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "components";
 import { outlineStyles } from "utils";

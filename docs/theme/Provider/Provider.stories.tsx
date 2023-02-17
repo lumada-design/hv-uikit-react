@@ -5,7 +5,7 @@ import {
   HvCheckBox,
   HvProviderProps,
   // @ts-ignore
-} from "@hitachivantara/uikit-core";
+} from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
 const meta: Meta<typeof HvProvider> = {

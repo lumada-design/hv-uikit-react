@@ -6,24 +6,24 @@ exports[`ProgressBar > should render correctly 1`] = `
     aria-valuemax="100"
     aria-valuemin="0"
     aria-valuenow="0"
-    class="HvProgressBar-root HvProgressBar-progress css-vzi3yb-StyledRoot eafrvc94"
+    class="HvProgressBar-root HvProgressBar-progress css-vzi3yb-StyledRoot e1eucrrc4"
     role="progressbar"
   >
     <div
-      class="css-1ezqlcy-StyledProgressContainer eafrvc93"
+      class="css-1ezqlcy-StyledProgressContainer e1eucrrc3"
     >
       <p
-        class="HvProgressBar-progressBarLabel eafrvc92 css-1kbrn80-getStyledComponent-StyledValue e1te0rfk0"
+        class="HvProgressBar-progressBarLabel e1eucrrc2 css-1kbrn80-getStyledComponent-StyledValue e1tnpalo0"
         style="width: 0%;"
         variant="caption2"
       >
         0%
       </p>
       <div
-        class="css-179kxy2-StyledProgressBarContainer eafrvc91"
+        class="css-179kxy2-StyledProgressBarContainer e1eucrrc1"
       >
         <div
-          class="HvProgressBar-progressBar css-1q42i5j-StyledProgressBar eafrvc90"
+          class="HvProgressBar-progressBar css-1q42i5j-StyledProgressBar e1eucrrc0"
           style="width: 0%;"
         />
       </div>

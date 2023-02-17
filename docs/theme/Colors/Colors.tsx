@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
 // @ts-ignore
-import { HvTypography, theme } from "@hitachivantara/uikit-core";
+import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
 import {
   StyledGroup,
   StyledGroupName,

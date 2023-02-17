@@ -1,4 +1,4 @@
-import { MoreOptionsHorizontal } from "@hitachivantara/uikit-icons";
+import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
 import { HvDropDownMenu } from "components";
 import { setId } from "utils";
 

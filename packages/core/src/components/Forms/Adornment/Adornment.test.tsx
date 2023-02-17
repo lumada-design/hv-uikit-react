@@ -1,4 +1,4 @@
-import { CloseXS } from "@hitachivantara/uikit-icons";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { HvAdornment } from "components";

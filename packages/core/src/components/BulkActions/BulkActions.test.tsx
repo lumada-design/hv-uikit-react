@@ -1,4 +1,4 @@
-import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-icons";
+import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useState } from "react";

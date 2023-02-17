@@ -5,8 +5,8 @@ import {
   HvDialogActions,
   HvDialogContent,
   HvDialogTitle,
-} from "@hitachivantara/uikit-core";
-import { Alert } from "@hitachivantara/uikit-icons";
+} from "@hitachivantara/uikit-react-core";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 
 export const Dialogs = () => {
   const [open, setOpen] = useState(false);

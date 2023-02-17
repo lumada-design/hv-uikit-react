@@ -28,7 +28,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-core": "workspace:*",
+    "@hitachivantara/uikit-react-core": "workspace:*",
     "@hitachivantara/uikit-styles": "workspace:*"
   },
   "engines": {

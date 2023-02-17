@@ -3,51 +3,51 @@
 exports[`Kpi > should render correctly 1`] = `
 <div>
   <div
-    class="HvKpi-root css-1p3o5cs-StyledRoot esnn82o9"
+    class="HvKpi-root css-1p3o5cs-StyledRoot e70l5p69"
   >
     <div>
       <p
-        class="css-ivbjlp-getStyledComponent e1te0rfk0"
+        class="css-ivbjlp-getStyledComponent e1tnpalo0"
         variant="label"
       >
         Title
       </p>
     </div>
     <div
-      class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer esnn82o8"
+      class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer e70l5p68"
     >
       <p
-        class="HvKpi-spacingToTheRight HvKpi-indicatorText esnn82o6 css-1s6if3c-getStyledComponent-StyledIndicatorText e1te0rfk0"
+        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 css-1s6if3c-getStyledComponent-StyledIndicatorText e1tnpalo0"
         variant="title1"
       >
         Indicator
       </p>
       <p
-        class="HvKpi-indicatorUnit esnn82o5 css-1r32d1h-getStyledComponent-StyledIndicatorUnit e1te0rfk0"
+        class="HvKpi-indicatorUnit e70l5p65 css-1r32d1h-getStyledComponent-StyledIndicatorUnit e1tnpalo0"
         variant="title2"
       >
         Unit
       </p>
     </div>
     <div
-      class="HvKpi-comparisonComposition css-jr4b4k-StyledComparisonComposition esnn82o4"
+      class="HvKpi-comparisonComposition css-jr4b4k-StyledComparisonComposition e70l5p64"
     >
       <div>
         <div
-          class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer esnn82o2"
+          class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <p
-            class="HvKpi-comparisons HvKpi-spacingToTheRight esnn82o0 css-q5j2r5-getStyledComponent-StyledInternalVisualComparisonTypography e1te0rfk0"
+            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 css-q5j2r5-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
             variant="label"
           >
             Visual comparison
           </p>
         </div>
         <div
-          class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer esnn82o2"
+          class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <p
-            class="HvKpi-comparisons css-20caqa-getStyledComponent e1te0rfk0"
+            class="HvKpi-comparisons css-20caqa-getStyledComponent e1tnpalo0"
             variant="caption2"
           >
             Comparison indicator info

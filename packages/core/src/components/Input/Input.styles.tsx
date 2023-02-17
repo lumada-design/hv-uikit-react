@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Success } from "@hitachivantara/uikit-icons";
+import { Success } from "@hitachivantara/uikit-react-icons";
 import {
   HvAdornment,
   HvBaseInput,

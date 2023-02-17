@@ -1,4 +1,4 @@
-import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-icons";
+import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvAppSwitcher,

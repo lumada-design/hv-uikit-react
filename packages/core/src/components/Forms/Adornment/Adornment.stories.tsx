@@ -1,4 +1,4 @@
-import { Preview } from "@hitachivantara/uikit-icons";
+import { Preview } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvAdornment, HvAdornmentProps } from "components";
 
