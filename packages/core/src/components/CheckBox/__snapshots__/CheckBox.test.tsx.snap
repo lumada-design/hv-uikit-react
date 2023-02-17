@@ -47,7 +47,6 @@ exports[`CheckBox > general > should render correctly 1`] = `
         class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvcheckbox3-input"
         id="hvcheckbox3-label"
-        variant="label"
       >
         Dogs
       </label>

@@ -11,14 +11,12 @@ exports[`DropZone > should render correctly 1`] = `
       class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
-      variant="label"
     >
       Label
     </label>
     <label
       class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
-      variant="body"
     >
       Max. file size: 1.00B
       Accepted files:
@@ -65,7 +63,6 @@ exports[`DropZone > should render correctly 1`] = `
       >
         <p
           class="HvDropZone-dragText e1r4xwg23 css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
-          variant="body"
         >
           Drag and drop or
           <span
@@ -91,14 +88,12 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 css-1jlu4ud-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
-      variant="label"
     >
       Label
     </label>
     <label
       class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-1ypp4a9-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
-      variant="body"
     >
       Max. file size: 1.00B
       Accepted files:
@@ -146,7 +141,6 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       >
         <p
           class="HvDropZone-dragText e1r4xwg23 css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
-          variant="body"
         >
           Drag and drop or
           <span

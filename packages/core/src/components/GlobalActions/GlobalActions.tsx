@@ -88,7 +88,7 @@ export const HvGlobalActions = ({
         ) : (
           <HvTypography
             variant={variant === "global" ? "title3" : "title4"} // "sectionTitle"
-            as={`h${headingLevelToApply}`}
+            component={`h${headingLevelToApply}`}
             className={clsx(globalActionsClasses.name, classes?.name)}
           >
             {title}

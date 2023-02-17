@@ -12,14 +12,12 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="-3-input-file"
         id="-3-input-file-label"
-        variant="label"
       >
         Label
       </label>
       <label
         class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
         id="-3-description"
-        variant="body"
       >
         Max. file size: 12.00B
          (jpeg)
@@ -66,7 +64,6 @@ exports[`FileUploader > should render correctly 1`] = `
         >
           <p
             class="HvDropZone-dragText e1r4xwg23 css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
-            variant="body"
           >
             Drop files here or
             <span
@@ -87,19 +84,17 @@ exports[`FileUploader > should render correctly 1`] = `
         <div
           class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
         />
-        <p
+        <label
           class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
-          variant="label"
         >
           Screenshot 2019-12-05 at 17.15.43.png
-        </p>
+        </label>
         <span
           class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
         >
            | 
           <p
             class="css-1mchk7j-getStyledComponent e1tnpalo0"
-            variant="body"
           >
             14.10MB
           </p>
@@ -143,19 +138,17 @@ exports[`FileUploader > should render correctly 1`] = `
         <div
           class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
         />
-        <p
+        <label
           class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
-          variant="label"
         >
           Screenshot 2019-12-05 at 12.03.13.png
-        </p>
+        </label>
         <span
           class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
         >
            | 
           <p
             class="css-1mchk7j-getStyledComponent e1tnpalo0"
-            variant="body"
           >
             875.00kB
           </p>

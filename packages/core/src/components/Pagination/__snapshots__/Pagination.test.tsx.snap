@@ -32,7 +32,6 @@ exports[`Pagination > should render correctly 1`] = `
               >
                 <p
                   class="css-1mchk7j-getStyledComponent e1tnpalo0"
-                  variant="body"
                 >
                   1
                 </p>
@@ -191,20 +190,17 @@ exports[`Pagination > should render correctly 1`] = `
                 class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-mq4y8t-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
-                variant="body"
               />
             </div>
           </div>
         </div>
         <span
           class="css-1mchk7j-getStyledComponent e1tnpalo0"
-          variant="body"
         >
           / 
         </span>
         <span
           class="css-1mchk7j-getStyledComponent e1tnpalo0"
-          variant="body"
         >
           1
         </span>

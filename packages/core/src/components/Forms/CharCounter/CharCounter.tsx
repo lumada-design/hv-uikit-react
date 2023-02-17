@@ -72,7 +72,7 @@ export const HvCharCounter = ({
             clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
         )}
         variant="label"
-        as="label"
+        component="label"
         $overloaded={isOverloaded && !localDisabled}
         $counterDisabled={!!localDisabled}
       >
@@ -88,7 +88,7 @@ export const HvCharCounter = ({
             clsx(charCounterClasses.counterDisabled, classes?.counterDisabled)
         )}
         variant="body"
-        as="label"
+        component="label"
         $overloaded={isOverloaded && !localDisabled}
         $counterDisabled={!!localDisabled}
       >

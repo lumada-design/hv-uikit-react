@@ -179,7 +179,7 @@ export const HvList = ({
     const allSelected = selection.length === list.length;
 
     const selectionLabel = (
-      <HvTypography as="span">
+      <HvTypography component="span">
         {!anySelected ? (
           <>
             <b>{selectAll}</b>

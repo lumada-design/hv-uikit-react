@@ -23,7 +23,7 @@ const TitleWithTooltip = ({ className, title, type }) => {
     >
       <StyledTitleWithTooltip
         variant="label"
-        as="span"
+        component="span"
         ref={textRef}
         className={className}
         $type={type}

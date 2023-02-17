@@ -8,13 +8,11 @@ exports[`CharCounter > should render correctly 1`] = `
   >
     <label
       class=" e11kw0680 css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
-      variant="label"
     >
       0
     </label>
     <label
       class=" e11kw0680 css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
-      variant="body"
     >
        / 10
     </label>

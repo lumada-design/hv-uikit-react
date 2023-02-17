@@ -19,7 +19,7 @@ export const HvContent = ({
 }: HvContentProps) => {
   return (
     <StyledTypography
-      as={StyledContent}
+      component={StyledContent}
       className={clsx(className, dialogContentClasses.root, classes?.root)}
       $indentContent={indentContent}
     >

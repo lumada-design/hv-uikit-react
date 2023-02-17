@@ -11,7 +11,6 @@ exports[`Accordion > should render correctly 1`] = `
       class="HvAccordion-label e86r8k00 css-19d9cum-getStyledComponent-StyledLabel e1tnpalo0"
       role="button"
       tabindex="0"
-      variant="label"
     >
       <div
         class="css-du18qm"

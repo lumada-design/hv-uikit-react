@@ -263,7 +263,11 @@ export const SimpleTable: StoryObj<HvTableProps> = {
                 <HvTableCell>{el.severity}</HvTableCell>
                 <HvTableCell>{el.priority}</HvTableCell>
                 <HvTableCell>
-                  <HvTypography link as="a" onClick={() => alert(el.link)}>
+                  <HvTypography
+                    link
+                    component="a"
+                    onClick={() => alert(el.link)}
+                  >
                     Details Page
                   </HvTypography>
                 </HvTableCell>

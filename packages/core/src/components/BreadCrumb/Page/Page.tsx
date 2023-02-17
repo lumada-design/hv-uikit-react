@@ -24,14 +24,14 @@ export const HvPage = ({ Component, onClick, elem, classes }: HvPageProps) => {
   return (
     <StyledLink
       route={elem.path}
-      as={Component}
+      component={Component}
       onClick={onClick}
       data={elem}
       classes={{ a: clsx(pageClasses.a, classes?.a) }}
     >
       <StyledTypography
         // noWrap
-        as="div"
+        component="div"
         variant="label"
         className={clsx(
           pageClasses.link,

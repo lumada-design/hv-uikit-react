@@ -15,7 +15,6 @@ exports[`ProgressBar > should render correctly 1`] = `
       <p
         class="HvProgressBar-progressBarLabel e1eucrrc2 css-1kbrn80-getStyledComponent-StyledValue e1tnpalo0"
         style="width: 0%;"
-        variant="caption2"
       >
         0%
       </p>

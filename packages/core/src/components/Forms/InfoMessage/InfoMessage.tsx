@@ -43,7 +43,7 @@ export const HvInfoMessage = ({
         !disableGutter && clsx(infoMessageClasses.gutter, classes?.gutter)
       )}
       variant="body"
-      as="label"
+      component="label"
       $infoDisabled={!!localDisabled}
       $gutter={!disableGutter}
       {...others}

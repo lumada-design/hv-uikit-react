@@ -17,7 +17,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -54,7 +53,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -91,7 +89,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -128,7 +125,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -165,7 +161,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -202,7 +197,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
         >
           <div
             class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 css-u3igi1-getStyledComponent-StyledTypography e1tnpalo0"
-            variant="label"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -235,7 +229,6 @@ exports[`BreadCrumb > should render correctly 1`] = `
       >
         <p
           class="HvBreadCrumb-currentPage e17idydo0 css-gdg8pb-getStyledComponent-StyledTypography e1tnpalo0"
-          variant="body"
         >
           Label 7
         </p>

@@ -8,7 +8,6 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
     <label
       class="HvCheckBoxGroup-label e1pxeedd1 HvLabel-root e17iqvr40 css-1gjgsi2-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       id="hvcheckboxgroup9-label"
-      variant="label"
     >
       Favorite Pet
     </label>
@@ -62,7 +61,6 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox11-input"
             id="hvcheckbox11-label"
-            variant="label"
           >
             Dogs
           </label>
@@ -113,7 +111,6 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox13-input"
             id="hvcheckbox13-label"
-            variant="label"
           >
             Cats
           </label>
@@ -164,7 +161,6 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox15-input"
             id="hvcheckbox15-label"
-            variant="label"
           >
             Dragons
           </label>

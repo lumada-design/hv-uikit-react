@@ -8,7 +8,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
     <span
       class="HvAppSwitcher-title e1lxr4i82 css-19o2ij3-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
       data-mui-internal-clone-element="true"
-      variant="label"
     >
       Mock title
     </span>
@@ -24,7 +23,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           href="http://mockapp1/"
           tabindex="0"
           target="_top"
-          variant="body"
         >
           <div
             class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e187pp8e0"
@@ -37,7 +35,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           <span
             class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
-            variant="label"
           >
             Mock App 1
           </span>
@@ -52,7 +49,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           href="http://mockapp2/"
           tabindex="0"
           target="_blank"
-          variant="body"
         >
           <div
             class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e187pp8e0"
@@ -66,7 +62,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           <span
             class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
-            variant="label"
           >
             Mock App 2
           </span>
@@ -106,7 +101,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           href="http://mockapp2/"
           tabindex="0"
           target="_top"
-          variant="body"
         >
           <div
             class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e187pp8e0"
@@ -120,7 +114,6 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           <span
             class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
-            variant="label"
           >
             Mock App 3
           </span>

@@ -116,7 +116,11 @@ export const HvBulkActions = ({
   }, [numSelected]);
 
   const selectAllLabelComponent = (
-    <HvTypography as="span" disabled={checkboxProps?.disabled} variant="body">
+    <HvTypography
+      component="span"
+      disabled={checkboxProps?.disabled}
+      variant="body"
+    >
       {!anySelected ? (
         <>
           <b>{selectAllLabel}</b>

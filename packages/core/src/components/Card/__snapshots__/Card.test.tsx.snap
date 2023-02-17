@@ -41,12 +41,11 @@ exports[`Card > should render all the compoents 1`] = `
     <div
       class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-a04jz9-MuiCardContent-root-StyledContent"
     >
-      <p
+      <label
         class="css-ivbjlp-getStyledComponent e1tnpalo0"
-        variant="label"
       >
         mockCardContent
-      </p>
+      </label>
     </div>
   </div>
 </div>
@@ -70,12 +69,11 @@ exports[`Card > should render content 1`] = `
     <div
       class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-a04jz9-MuiCardContent-root-StyledContent"
     >
-      <p
+      <label
         class="css-ivbjlp-getStyledComponent e1tnpalo0"
-        variant="label"
       >
         mockCardContent
-      </p>
+      </label>
     </div>
   </div>
 </div>

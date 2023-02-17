@@ -220,7 +220,9 @@ export const HvPagination = ({
                   classes?.pageSizeTextContainer
                 )}
               >
-                <HvTypography as="span">{labels?.pageSizePrev}</HvTypography>
+                <HvTypography component="span">
+                  {labels?.pageSizePrev}
+                </HvTypography>
               </StyledPageSizePrev>
             </Hidden>
             <StyledSelect
@@ -248,7 +250,7 @@ export const HvPagination = ({
                   classes?.pageSizeTextContainer
                 )}
               >
-                <HvTypography as="span">
+                <HvTypography component="span">
                   {labels?.pageSizeEntryName}
                 </HvTypography>
               </StyledPageSizeTextContainer>
@@ -301,10 +303,10 @@ export const HvPagination = ({
           {showPageJump ? (
             renderPageJump()
           ) : (
-            <HvTypography as="span">{`${page + 1}`}</HvTypography>
+            <HvTypography component="span">{`${page + 1}`}</HvTypography>
           )}
-          <HvTypography as="span">{`${labels?.pagesSeparator} `}</HvTypography>
-          <HvTypography id={setId(id, "totalPages")} as="span">
+          <HvTypography component="span">{`${labels?.pagesSeparator} `}</HvTypography>
+          <HvTypography id={setId(id, "totalPages")} component="span">
             {pages}
           </HvTypography>
         </StyledPageInfo>
