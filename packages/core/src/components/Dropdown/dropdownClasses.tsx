@@ -30,8 +30,8 @@ const classKeys: string[] = [
   "dropdownHeader",
   "dropdownHeaderInvalid",
   "dropdownHeaderOpen",
-  "rootList",
   "dropdownListContainer",
+  "rootList",
 ];
 
 const dropdownClasses = getClasses<HvDropdownClasses>(classKeys, "HvDropdown");

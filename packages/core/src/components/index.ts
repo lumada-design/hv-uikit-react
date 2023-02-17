@@ -70,3 +70,4 @@ export * from "./Login";
 export * from "./Controls";
 export * from "./Calendar";
 export * from "./VerticalNavigation";
+export * from "./Slider";

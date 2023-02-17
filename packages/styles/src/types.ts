@@ -265,6 +265,11 @@ export type HvThemeComponents = {
     inactiveBorderLeft: string;
     actionsMarginTop: string;
   };
+  slider: {
+    dragBarColor: string;
+    ringColor: string;
+    ringOpacity: string;
+  };
 };
 
 // Theme typography

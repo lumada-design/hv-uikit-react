@@ -474,6 +474,11 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     inactiveBorderLeft: `2px solid transparent`,
     actionsMarginTop: "none",
   },
+  slider: {
+    dragBarColor: theme.colors.atmo3,
+    ringColor: theme.colors.secondary,
+    ringOpacity: "20%",
+  },
 }));
 
 export default ds3;
