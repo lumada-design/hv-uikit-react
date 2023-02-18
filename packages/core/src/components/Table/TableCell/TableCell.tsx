@@ -193,7 +193,9 @@ const StyledTableCell = (c: any) =>
         verticalAlign: "top",
 
         backgroundColor: $variantList ? "inherit" : theme.colors.atmo1,
-        borderTop: $variantList ? 0 : `1px solid ${theme.colors.atmo4}`,
+        borderTop: $variantList
+          ? 0
+          : `1px solid ${theme.table.headerBorderTopColor}`,
         borderBottom: $variantList ? 0 : `1px solid ${theme.colors.atmo4}`,
         ...(theme.typography.label as CSSProperties),
       }),
