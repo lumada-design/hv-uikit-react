@@ -167,6 +167,7 @@ const ds3 = makeTheme((theme: Theme) => ({
     marginIconLeft: "-8px",
     semanticColor: "rgba(251, 252, 252, 0.3)",
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
+    hoverColor: theme.colors.atmo3,
   },
   header: {
     color: theme.colors.sema4,
@@ -333,6 +334,15 @@ const ds3 = makeTheme((theme: Theme) => ({
     padding: "0px",
     anySelectedBackgroundColor: theme.colors.sema7,
     buttonSize: "sm",
+  },
+  table: {
+    headerHoverColor: theme.colors.atmo3,
+    headerBorderTopColor: theme.colors.atmo4,
+    selectedRowBackgroundColor: "transparent",
+    rowBackgroundColor: "transparent",
+    rowHoverColor: theme.colors.atmo3,
+    rowStripedBackgroundColor: theme.colors.atmo1,
+    rowExpandBackgroundColor: theme.colors.atmo1,
   },
 }));
 

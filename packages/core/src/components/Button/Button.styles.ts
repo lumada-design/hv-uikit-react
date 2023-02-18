@@ -99,10 +99,10 @@ export const StyledButton = styled(
       color: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
       backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.acce2,
       "&:hover": {
-        backgroundColor: theme.colors.acce2h,
+        backgroundColor: theme.button.hoverColor,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.acce2h,
+        backgroundColor: theme.button.hoverColor,
       },
     }),
     ...($variant === "primarySubtle" && {
@@ -112,20 +112,20 @@ export const StyledButton = styled(
         : `1px solid ${theme.colors.acce2}`,
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
       "&:hover": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
       },
     }),
     ...($variant === "primaryGhost" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: $disabled ? "transparent" : theme.colors.atmo3,
+        backgroundColor: $disabled ? "transparent" : theme.button.hoverColor,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
       },
     }),
     ...($variant === "secondarySubtle" && {
@@ -135,21 +135,21 @@ export const StyledButton = styled(
         ? `1px solid ${theme.colors.atmo4}`
         : `1px solid ${theme.colors.atmo4}`,
       "&:hover": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
         border: `1px solid ${theme.colors.atmo4}`,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
       },
     }),
     ...($variant === "secondaryGhost" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
       backgroundColor: "transparent",
       "&:hover": {
-        backgroundColor: $disabled ? "transparent" : theme.colors.atmo3,
+        backgroundColor: $disabled ? "transparent" : theme.button.hoverColor,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.atmo3,
+        backgroundColor: theme.button.hoverColor,
       },
     }),
     ...($variant === "semantic" && {

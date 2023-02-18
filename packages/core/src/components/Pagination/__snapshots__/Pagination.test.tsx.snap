@@ -69,7 +69,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="First Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-12i0xb-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-uxbhrl-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -105,7 +105,8 @@ exports[`Pagination > should render correctly 1`] = `
         data-mui-internal-clone-element="true"
       >
         <button
-          class="HvPagination-iconContainer e1tn2n0k2 css-12i0xb-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          aria-label="Previous Page"
+          class="HvPagination-iconContainer e1tn2n0k2 css-uxbhrl-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -140,7 +141,7 @@ exports[`Pagination > should render correctly 1`] = `
         class="HvPagination-pageInfo css-1wjzhg6-StyledPageInfo e1tn2n0k1"
       >
         <div
-          class="HvPagination-pageJump css-cgrn9k-StyledPageJump e1tn2n0k0"
+          class="HvPagination-pageJump css-1cwfk71-StyledPageJump e1tn2n0k0"
         >
           <div
             class="HvInput-root HvPagination-pageSizeInputContainer css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
@@ -214,7 +215,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Next Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-12i0xb-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-uxbhrl-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -251,7 +252,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Last Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-12i0xb-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-uxbhrl-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div

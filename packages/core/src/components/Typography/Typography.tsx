@@ -1,6 +1,6 @@
 import { forwardRef, Ref, ElementType, useMemo, CSSProperties } from "react";
 import { isString } from "lodash";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps, HvExtraProps } from "../../types";
 import styled from "@emotion/styled";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -129,6 +129,7 @@ const getStyledComponent = (c: any) =>
       ...($link && {
         color: theme.colors.acce2,
         textDecoration: "underline",
+        cursor: "pointer",
       }),
       ...($disabled && {
         color: theme.colors.atmo5,
@@ -145,7 +146,7 @@ export type HvTypographyProps = HvBaseProps<HTMLElement, { disabled }> & {
   className?: string;
   children: React.ReactNode;
   htmlFor?: string;
-};
+} & HvExtraProps;
 
 /**
  * Typography component is used to render text and paragraphs within an interface.

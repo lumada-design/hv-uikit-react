@@ -125,6 +125,7 @@ importers:
       '@types/react-dom': ^18.0.8
       attr-accept: ^2.2.2
       clsx: ^1.2.1
+      dayjs: ^1.11.7
       detect-browser: ^5.3.0
       hoist-non-react-statics: ^3.3.2
       lodash: ^4.17.21
@@ -134,6 +135,7 @@ importers:
       react-google-charts: ^4.0.0
       react-popper: ^2.3.0
       react-resize-detector: ^7.1.2
+      react-table: ^7.8.0
       react-window: ^1.8.7
       tsc-alias: ^1.8.2
     dependencies:
@@ -145,6 +147,7 @@ importers:
       '@popperjs/core': 2.11.6
       attr-accept: 2.2.2
       clsx: 1.2.1
+      dayjs: 1.11.7
       detect-browser: 5.3.0
       hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
@@ -154,6 +157,7 @@ importers:
       react-google-charts: 4.0.0_biqbaboplfbrettd7655fr4n2y
       react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
       react-resize-detector: 7.1.2_biqbaboplfbrettd7655fr4n2y
+      react-table: 7.8.0_react@18.2.0
       react-window: 1.8.8_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/react': 18.0.28
@@ -8255,6 +8259,10 @@ packages:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
 
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
+    dev: false
+
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -15372,6 +15380,14 @@ packages:
       throttle-debounce: 3.0.1
     dev: true
 
+  /react-table/7.8.0_react@18.2.0:
+    resolution: {integrity: sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
@@ -17959,7 +17975,7 @@ packages:
       globrex: 0.1.2
       recrawl-sync: 2.2.3
       tsconfig-paths: 4.1.2
-      vite: 3.2.5_@types+node@18.13.0
+      vite: 3.2.5
     transitivePeerDependencies:
       - supports-color
     dev: true
