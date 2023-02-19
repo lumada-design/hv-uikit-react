@@ -447,7 +447,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
     const hasSelection = getSelected(internalValues).length > 0;
     return labels?.select || !multiSelect ? (
       <StyledTypography
-        as="div"
+        component="div"
         $selectionDisabled={disabled}
         $isOpen={isOpen || hasSelection}
         // variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
@@ -463,7 +463,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
       </StyledTypography>
     ) : (
       <StyledTypography
-        as="div"
+        component="div"
         $selectionDisabled={disabled}
         className={clsx(
           dropdownClasses?.placeholder,

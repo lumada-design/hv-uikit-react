@@ -4,7 +4,6 @@ exports[`Label > should render correctly 1`] = `
 <div>
   <label
     class="HvLabel-root e17iqvr40 css-1mcz2vv-getStyledComponent-StyledTypography e1tnpalo0"
-    variant="label"
   />
 </div>
 `;

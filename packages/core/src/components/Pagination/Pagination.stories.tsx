@@ -41,7 +41,7 @@ export const Main: StoryObj<HvPaginationProps> = {
       <>
         <StyledBox>
           {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
-            <HvTypography key={i} as="span">
+            <HvTypography key={i} component="span">
               {`Item ${i + 1}`}
             </HvTypography>
           ))}

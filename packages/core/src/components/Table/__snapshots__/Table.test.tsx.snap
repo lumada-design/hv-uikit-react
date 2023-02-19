@@ -21,13 +21,11 @@ exports[`List Row > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 0
-              </p>
+              </div>
             </div>
           </th>
           <th
@@ -37,13 +35,11 @@ exports[`List Row > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 1
-              </p>
+              </div>
             </div>
           </th>
           <th
@@ -53,13 +49,11 @@ exports[`List Row > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 2
-              </p>
+              </div>
             </div>
           </th>
         </tr>
@@ -208,13 +202,11 @@ exports[`Simple Table > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 0
-              </p>
+              </div>
             </div>
           </th>
           <th
@@ -224,13 +216,11 @@ exports[`Simple Table > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 1
-              </p>
+              </div>
             </div>
           </th>
           <th
@@ -240,13 +230,11 @@ exports[`Simple Table > should be defined 1`] = `
             <div
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
-              <p
+              <div
                 class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
-                component="div"
-                variant="label"
               >
                 Sample Header 2
-              </p>
+              </div>
             </div>
           </th>
         </tr>

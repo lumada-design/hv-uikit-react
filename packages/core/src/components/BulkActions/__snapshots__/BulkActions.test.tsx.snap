@@ -53,11 +53,9 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox18-input"
             id="hvcheckbox18-label"
-            variant="label"
           >
             <span
               class="css-1mchk7j-getStyledComponent e1tnpalo0"
-              variant="body"
             >
               <b>
                 All
@@ -251,11 +249,9 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
             class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
-            variant="label"
           >
             <span
               class="css-1mchk7j-getStyledComponent e1tnpalo0"
-              variant="body"
             >
               <b>
                 All

@@ -4,7 +4,6 @@ exports[`InfoMessage > should render correctly 1`] = `
 <div>
   <label
     class="HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-1hgpcsh-getStyledComponent-StyledTypography e1tnpalo0"
-    variant="body"
   />
 </div>
 `;

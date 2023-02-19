@@ -219,7 +219,7 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
             xs={12}
             alignItems="center"
           >
-            <StyledTitle as="h4" variant="title4">
+            <StyledTitle component="h4" variant="title4">
               Form errors:
             </StyledTitle>
             <StyledList>

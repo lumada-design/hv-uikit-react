@@ -9,7 +9,6 @@ exports[`Selection List > Multi Selection List testing > Multi Selection Snapsho
     <label
       class="HvSelectionList-label e1l81ih63 HvLabel-root e17iqvr40 css-16z0gb6-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       id="main-label"
-      variant="label"
     >
       Choose your favorite items
     </label>

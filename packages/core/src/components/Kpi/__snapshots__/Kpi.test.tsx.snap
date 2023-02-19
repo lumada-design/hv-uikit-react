@@ -6,28 +6,25 @@ exports[`Kpi > should render correctly 1`] = `
     class="HvKpi-root css-1p3o5cs-StyledRoot e70l5p69"
   >
     <div>
-      <p
+      <label
         class="css-ivbjlp-getStyledComponent e1tnpalo0"
-        variant="label"
       >
         Title
-      </p>
+      </label>
     </div>
     <div
       class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer e70l5p68"
     >
-      <p
+      <h1
         class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 css-1s6if3c-getStyledComponent-StyledIndicatorText e1tnpalo0"
-        variant="title1"
       >
         Indicator
-      </p>
-      <p
+      </h1>
+      <h2
         class="HvKpi-indicatorUnit e70l5p65 css-1r32d1h-getStyledComponent-StyledIndicatorUnit e1tnpalo0"
-        variant="title2"
       >
         Unit
-      </p>
+      </h2>
     </div>
     <div
       class="HvKpi-comparisonComposition css-jr4b4k-StyledComparisonComposition e70l5p64"
@@ -36,19 +33,17 @@ exports[`Kpi > should render correctly 1`] = `
         <div
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
-          <p
+          <label
             class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 css-q5j2r5-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
-            variant="label"
           >
             Visual comparison
-          </p>
+          </label>
         </div>
         <div
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <p
             class="HvKpi-comparisons css-20caqa-getStyledComponent e1tnpalo0"
-            variant="caption2"
           >
             Comparison indicator info
           </p>

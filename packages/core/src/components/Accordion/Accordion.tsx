@@ -127,7 +127,7 @@ export const HvAccordion = ({
     const accordionButton = (
       <StyledLabel
         id={accordionHeaderId}
-        as="div"
+        component="div"
         role="button"
         className={clsx(accordionClasses.label, classes?.label)}
         disabled={disabled}
@@ -146,7 +146,9 @@ export const HvAccordion = ({
       headingLevel === undefined ? (
         accordionButton
       ) : (
-        <StyledLabel as={`h${headingLevel}`}>{accordionButton}</StyledLabel>
+        <StyledLabel component={`h${headingLevel}`}>
+          {accordionButton}
+        </StyledLabel>
       );
     return result;
   }, [

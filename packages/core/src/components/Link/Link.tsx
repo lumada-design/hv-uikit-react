@@ -35,7 +35,7 @@ export const HvLink = ({
       tabIndex={tabIndex}
       onClick={(event) => onClick?.(event, data)}
       className={clsx(className, linkClasses.a, classes?.a)}
-      as={as}
+      component={as}
       {...others}
     >
       {children}

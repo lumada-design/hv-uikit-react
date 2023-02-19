@@ -12,7 +12,6 @@ exports[`TextArea > should render correctly 1`] = `
         class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvtextarea3-input"
         id="hvformelement4-label"
-        variant="label"
       >
         Label
       </label>
@@ -26,14 +25,12 @@ exports[`TextArea > should render correctly 1`] = `
       <label
         class=" e11kw0680 css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-currentQuantity"
-        variant="label"
       >
         0
       </label>
       <label
         class=" e11kw0680 css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-maxQuantity"
-        variant="body"
       >
          / 10
       </label>
@@ -87,7 +84,6 @@ exports[`TextArea > should render correctly 1`] = `
         class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-mq4y8t-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-error"
         role="status"
-        variant="body"
       />
     </div>
   </div>

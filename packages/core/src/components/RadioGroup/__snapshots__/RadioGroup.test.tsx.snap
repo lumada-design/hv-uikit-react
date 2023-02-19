@@ -8,7 +8,6 @@ exports[`RadioGroup > general > should render correctly 1`] = `
     <label
       class="HvRadioGroup-label e1qvmihv1 HvLabel-root e17iqvr40 css-1gjgsi2-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       id="hvradiogroup9-label"
-      variant="label"
     >
       Choose your favorite radio button
     </label>
@@ -62,7 +61,6 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio11-input"
             id="hvradio11-label"
-            variant="label"
           >
             Radio 1
           </label>
@@ -119,7 +117,6 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio13-input"
             id="hvradio13-label"
-            variant="label"
           >
             Radio 2
           </label>
@@ -170,7 +167,6 @@ exports[`RadioGroup > general > should render correctly 1`] = `
             class="HvRadio-label e11n8xyl0 HvLabel-root e17iqvr40 css-czzja4-getStyledComponent-StyledTypography-StyledHvLabel e1tnpalo0"
             for="hvradio15-input"
             id="hvradio15-label"
-            variant="label"
           >
             Radio 3
           </label>

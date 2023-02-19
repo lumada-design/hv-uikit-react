@@ -154,12 +154,11 @@ exports[`Badge > should render correctly with text 1`] = `
     aria-label="99+"
     class="HvBadgeClasses-root css-1q5qni0-StyledRoot e16y1fwq2"
   >
-    <p
+    <h3
       class="css-1sl6r1z-getStyledComponent e1tnpalo0"
-      variant="title3"
     >
       hello
-    </p>
+    </h3>
     <div
       class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e16y1fwq1"
     >

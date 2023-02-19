@@ -7,7 +7,6 @@ exports[`Panel > should render correctly 1`] = `
   >
     <p
       class="css-1mchk7j-getStyledComponent e1tnpalo0"
-      variant="body"
     >
       Panel Content
     </p>

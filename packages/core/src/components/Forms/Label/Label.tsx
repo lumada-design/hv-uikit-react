@@ -59,7 +59,8 @@ export const HvLabel = ({
             clsx(labelClasses.childGutter, classes?.childGutter)
         )}
         variant="label"
-        as="label"
+        component="label"
+        // @ts-ignore
         htmlFor={forId}
         $labelDisabled={!!localDisabled}
         $childGutter={!!(children && label)}

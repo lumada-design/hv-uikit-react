@@ -27,19 +27,17 @@ exports[`FileList > should render correctly 1`] = `
           />
         </svg>
       </div>
-      <p
+      <label
         class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
-        variant="label"
       >
         Screenshot 2019-12-05 at 17.15.43.png
-      </p>
+      </label>
       <span
         class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
       >
          | 
         <p
           class="HvFile-fail e6pb7kb6 css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
-          variant="body"
         >
           File type not allowed for upload
         </p>
@@ -98,19 +96,17 @@ exports[`FileList > should render correctly 1`] = `
           />
         </svg>
       </div>
-      <p
+      <label
         class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
-        variant="label"
       >
         Screenshot 2019-12-05 at 12.03.13.png
-      </p>
+      </label>
       <span
         class="HvFile-progressTextContainer css-5aquur-StyledProgressTextContainer e6pb7kb2"
       >
          | 
         <p
           class="HvFile-fail e6pb7kb6 css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
-          variant="body"
         >
           File type not allowed for upload
         </p>

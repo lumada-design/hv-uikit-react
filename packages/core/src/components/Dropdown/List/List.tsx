@@ -243,7 +243,7 @@ export const HvDropdownList = ({
     const nbrSelected = getSelected(list).length;
 
     const defaultLabel = (
-      <HvTypography as="span">
+      <HvTypography component="span">
         {nbrSelected > 0 ? (
           <>
             <b>{nbrSelected}</b>
