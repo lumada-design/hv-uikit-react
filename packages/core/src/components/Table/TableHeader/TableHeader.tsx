@@ -205,7 +205,7 @@ const StyledTableHeader = (c: any) =>
         paddingTop: 8,
         verticalAlign: "top",
 
-        backgroundColor: $variantList ? "inherit" : theme.colors.atmo1,
+        backgroundColor: $variantList ? theme.colors.atmo1 : theme.colors.atmo1,
         borderBottom: $variantList ? 0 : `1px solid ${theme.colors.atmo4}`,
         ...(theme.typography.label as CSSProperties),
 

@@ -96,7 +96,13 @@ const StyledTableRow = (c: any) =>
         "tr&:first-child": {
           height: 52,
         },
+        backgroundColor: "transparent",
       }),
+
+      ...($variantList &&
+        $type !== "head" && {
+          backgroundColor: theme.colors.atmo1,
+        }),
 
       ...($variantList && {
         borderBottom: 0,
@@ -145,6 +151,8 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     },
     externalRef
   ) => {
+    console.log(selected);
+
     const { activeTheme, selectedMode } = useContext(HvThemeContext);
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
