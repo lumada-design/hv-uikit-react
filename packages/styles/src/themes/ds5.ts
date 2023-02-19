@@ -317,8 +317,11 @@ const ds5 = makeTheme((theme: Theme) => ({
     selectedRowBackgroundColor: theme.colors.acce2s,
     rowBackgroundColor: theme.colors.atmo1,
     rowHoverColor: theme.colors.acce2s,
+    rowHoverBorderColor: theme.colors.acce2,
+    rowBorderColor: theme.colors.atmo4,
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo2,
+    rowSelectedBorderColor: theme.colors.acce2,
   },
 }));
 

@@ -341,8 +341,11 @@ const ds3 = makeTheme((theme: Theme) => ({
     selectedRowBackgroundColor: "transparent",
     rowBackgroundColor: "transparent",
     rowHoverColor: theme.colors.atmo3,
+    rowHoverBorderColor: theme.colors.atmo3,
+    rowBorderColor: "transparent",
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo1,
+    rowSelectedBorderColor: theme.colors.acce1,
   },
 }));
 

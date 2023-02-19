@@ -12,7 +12,7 @@ exports[`List Row > should be defined 1`] = `
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
       >
         <tr
-          class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead css-1ty88jv-StyledTableRow e1cjstvf0"
+          class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead css-f7bher-StyledTableRow e1cjstvf0"
         >
           <th
             class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-9wl04c-StyledTableHeader eopmu0i1"
@@ -62,7 +62,7 @@ exports[`List Row > should be defined 1`] = `
         class="HvTableBody-root css-1uj09q8-StyledTableBody e1i1hapa0"
       >
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -81,7 +81,7 @@ exports[`List Row > should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -100,7 +100,7 @@ exports[`List Row > should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -119,7 +119,7 @@ exports[`List Row > should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -138,7 +138,7 @@ exports[`List Row > should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -157,7 +157,7 @@ exports[`List Row > should be defined 1`] = `
           </td>
         </tr>
         <tr
-          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1073a8o-StyledTableRow e1cjstvf0"
+          class="grid grid HvTableRow-root HvTableRow-body HvTableRow-variantList css-1v7ej7s-StyledTableRow e1cjstvf0"
         >
           <td
             class="HvTableCell-root HvTableCell-body HvTableCell-variantList css-si41fa-StyledTableCell e8848lx0"
@@ -193,7 +193,7 @@ exports[`Simple Table > should be defined 1`] = `
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
       >
         <tr
-          class="HvTableRow-root HvTableRow-head css-1lg6m06-StyledTableRow e1cjstvf0"
+          class="HvTableRow-root HvTableRow-head css-1uu8yhk-StyledTableRow e1cjstvf0"
         >
           <th
             class="HvTableHeader-root HvTableHeader-head css-11yxkke-StyledTableHeader eopmu0i1"
