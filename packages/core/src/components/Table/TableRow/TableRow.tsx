@@ -29,6 +29,27 @@ export type HvTableRowProps = Omit<HvBaseProps, "children"> & {
 
 const defaultComponent = "tr";
 
+const borderStyles = (color: string) => {
+  return {
+    "& td:first-child": {
+      borderLeft: `1px solid ${color}`,
+      borderTop: `1px solid ${color}`,
+      borderBottom: `1px solid ${color}`,
+      borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
+    },
+    "& td:last-child": {
+      borderRight: `1px solid ${color}`,
+      borderTop: `1px solid ${color}`,
+      borderBottom: `1px solid ${color}`,
+      borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
+    },
+    "& td:not(:first-child):not(:last-child)": {
+      borderTop: `1px solid ${color}`,
+      borderBottom: `1px solid ${color}`,
+    },
+  };
+};
+
 const StyledTableRow = (c: any) =>
   styled(
     c,
@@ -98,86 +119,21 @@ const StyledTableRow = (c: any) =>
         }),
 
       ...($variantList && {
-        // borderBottom: 0,
         height: 52,
         [`&.${tableRowClasses.selected}`]: {
-          // boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
-          "& td:first-child": {
-            borderLeft: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderTop: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-          },
-          "& td:last-child": {
-            borderRight: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderTop: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-          },
-          "& td:not(:first-child):not(:last-child)": {
-            borderTop: `1px solid ${theme.table.rowSelectedBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowSelectedBorderColor}`,
-          },
+          ...borderStyles(theme.table.rowSelectedBorderColor),
 
           "&:hover": {
-            // boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
-            "& td:first-child": {
-              borderLeft: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-            },
-            "& td:last-child": {
-              borderRight: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-            },
-            "& td:not(:first-child):not(:last-child)": {
-              borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-              borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-            },
+            ...borderStyles(theme.table.rowHoverBorderColor),
             background: "theme.colors.atmo1",
           },
         },
 
         "&:hover": {
-          // boxShadow: `1px 1px ${theme.colors.atmo4}, -1px -1px ${theme.colors.atmo4}, -1px 1px ${theme.colors.atmo4}, 1px -1px ${theme.colors.atmo4}`,
-          // background: theme.colors.atmo1,
-          "& td:first-child": {
-            borderLeft: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-          },
-          "& td:last-child": {
-            borderRight: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-          },
-          "& td:not(:first-child):not(:last-child)": {
-            borderTop: `1px solid ${theme.table.rowHoverBorderColor}`,
-            borderBottom: `1px solid ${theme.table.rowHoverBorderColor}`,
-          },
+          ...borderStyles(theme.table.rowHoverBorderColor),
         },
 
-        "& td:first-child": {
-          borderLeft: `1px solid ${theme.table.rowBorderColor}`,
-          borderTop: `1px solid ${theme.table.rowBorderColor}`,
-          borderBottom: `1px solid ${theme.table.rowBorderColor}`,
-          borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-        },
-        "& td:last-child": {
-          borderRight: `1px solid ${theme.table.rowBorderColor}`,
-          borderTop: `1px solid ${theme.table.rowBorderColor}`,
-          borderBottom: `1px solid ${theme.table.rowBorderColor}`,
-          borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-        },
-        "& td:not(:first-child):not(:last-child)": {
-          borderTop: `1px solid ${theme.table.rowBorderColor}`,
-          borderBottom: `1px solid ${theme.table.rowBorderColor}`,
-        },
+        ...borderStyles(theme.table.rowBorderColor),
       }),
       ...($variantListHead && {
         height: 16,
