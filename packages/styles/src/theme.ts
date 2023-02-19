@@ -207,8 +207,11 @@ const componentsSpec: DeepString<ThemeComponents> = {
     selectedRowBackgroundColor: "string",
     rowBackgroundColor: "string",
     rowHoverColor: "string",
+    rowHoverBorderColor: "string",
+    rowBorderColor: "string",
     rowStripedBackgroundColor: "string",
     rowExpandBackgroundColor: "string",
+    rowSelectedBorderColor: "string",
   },
 };
 

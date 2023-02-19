@@ -179,12 +179,14 @@ const StyledTableCell = (c: any) =>
       }),
       ...($variant === "listactions" && {
         borderLeft: `solid 2px ${theme.colors.atmo2}`,
-        paddingLeft: "0",
+        paddingLeft: 0,
+        paddingRight: theme.space.xs,
         textAlign: "center",
-        width: 130,
-        maxWidth: 130,
+        // width: 130,
+        // maxWidth: 130,
         display: "flex",
         alignItems: "center",
+        justifyContent: "flex-end",
       }),
 
       // type
