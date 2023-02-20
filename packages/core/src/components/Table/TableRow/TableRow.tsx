@@ -53,7 +53,11 @@ const StyledTableRow = (c: any) =>
       $type: string;
       $stripedColor: string;
     }) => ({
-      backgroundColor: theme.table.rowBackgroundColor,
+      backgroundColor: theme.colors.atmo1,
+      ...($type !== "head" && {
+        boxShadow: `1px 1px ${theme.table.rowBorderColor}, -1px -1px ${theme.table.rowBorderColor}, -1px 1px ${theme.table.rowBorderColor}, 1px -1px ${theme.table.rowBorderColor}`,
+      }),
+
       ...($hover && {
         transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         "&:hover": {
@@ -93,23 +97,23 @@ const StyledTableRow = (c: any) =>
 
       ...($variantList && {
         borderBottom: 0,
-        backgroundColor: theme.colors.atmo1,
-        height: 52,
+        height: theme.table.listRowHeight,
         [`&.${tableRowClasses.selected}`]: {
           boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
 
           "&:hover": {
-            boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
+            boxShadow: `1px 1px ${theme.table.rowHoverBorderColor}, -1px -1px ${theme.table.rowHoverBorderColor}, -1px 1px ${theme.table.rowHoverBorderColor}, 1px -1px ${theme.table.rowHoverBorderColor}`,
             background: "theme.colors.atmo1",
           },
         },
 
         "&:hover": {
-          boxShadow: `1px 1px ${theme.colors.atmo4}, -1px -1px ${theme.colors.atmo4}, -1px 1px ${theme.colors.atmo4}, 1px -1px ${theme.colors.atmo4}`,
+          boxShadow: `1px 1px ${theme.table.rowHoverBorderColor}, -1px -1px ${theme.table.rowHoverBorderColor}, -1px 1px ${theme.table.rowHoverBorderColor}, 1px -1px ${theme.table.rowHoverBorderColor}`,
           background: theme.colors.atmo1,
         },
       }),
       ...($variantListHead && {
+        backgroundColor: "transparent",
         height: 16,
         "&:first-child": {
           height: 16,
@@ -119,6 +123,9 @@ const StyledTableRow = (c: any) =>
           height: 16,
         },
       }),
+      "& td": {
+        maxHeight: theme.table.listRowHeight,
+      },
     })
   );
 

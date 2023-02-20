@@ -316,9 +316,12 @@ const ds5 = makeTheme((theme: Theme) => ({
     headerBorderTopColor: "transparent",
     selectedRowBackgroundColor: theme.colors.acce2s,
     rowBackgroundColor: theme.colors.atmo1,
+    rowBorderColor: theme.colors.atmo4,
     rowHoverColor: theme.colors.acce2s,
+    rowHoverBorderColor: theme.colors.acce2,
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo2,
+    listRowHeight: "48px",
   },
 }));
 

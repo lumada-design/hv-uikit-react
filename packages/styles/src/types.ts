@@ -207,9 +207,12 @@ export type ThemeComponents = {
     headerBorderTopColor: string;
     selectedRowBackgroundColor: string;
     rowBackgroundColor: string;
+    rowBorderColor: string;
     rowHoverColor: string;
+    rowHoverBorderColor: string;
     rowStripedBackgroundColor: string;
     rowExpandBackgroundColor: string;
+    listRowHeight: string;
   };
 };
 
