@@ -322,6 +322,7 @@ const ds5 = makeTheme((theme: Theme) => ({
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo2,
     rowSelectedBorderColor: theme.colors.acce2,
+    listRowHeight: "48px",
   },
 }));
 

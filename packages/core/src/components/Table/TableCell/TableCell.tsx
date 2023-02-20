@@ -102,6 +102,8 @@ const StyledTableCell = (c: any) =>
       paddingBottom: theme.spacing(1),
       paddingLeft: theme.spacing(4),
       borderBottom: `1px solid ${theme.colors.atmo4}`,
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
 
       ...($resizable && {
         borderRight: `solid 1px ${theme.colors.atmo4}`,
@@ -172,6 +174,7 @@ const StyledTableCell = (c: any) =>
       }),
       ...($variant === "listcheckbox" && {
         borderRight: `solid 2px ${theme.colors.atmo2}`,
+        borderBottom: 0,
         padding: 0,
         textAlign: "center",
         width: 34,
@@ -179,11 +182,12 @@ const StyledTableCell = (c: any) =>
       }),
       ...($variant === "listactions" && {
         borderLeft: `solid 2px ${theme.colors.atmo2}`,
-        paddingLeft: 0,
+        borderBottom: 0,
+        paddingLeft: theme.space.xs,
         textAlign: "center",
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
       }),
 
       // type
@@ -211,15 +215,18 @@ const StyledTableCell = (c: any) =>
         },
       }),
       ...($variantList && {
-        minHeight: 52,
+        minHeight: theme.table.listRowHeight,
         "td&": {
-          height: 52,
+          height: theme.table.listRowHeight,
         },
         paddingTop: 0,
         paddingRight: theme.space.sm,
         paddingBottom: 0,
-        paddingLeft: 32,
-        border: 0,
+        ...($variant !== "listactions" &&
+          $variant !== "listcheckbox" && {
+            paddingLeft: 32,
+            border: 0,
+          }),
       }),
 
       ...($stickyColumn && {

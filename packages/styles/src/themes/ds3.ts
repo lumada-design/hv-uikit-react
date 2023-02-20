@@ -338,14 +338,15 @@ const ds3 = makeTheme((theme: Theme) => ({
   table: {
     headerHoverColor: theme.colors.atmo3,
     headerBorderTopColor: theme.colors.atmo4,
-    selectedRowBackgroundColor: "transparent",
+    selectedRowBackgroundColor: theme.colors.atmo1,
     rowBackgroundColor: "transparent",
     rowHoverColor: theme.colors.atmo3,
-    rowHoverBorderColor: theme.colors.atmo3,
+    rowHoverBorderColor: theme.colors.atmo4,
     rowBorderColor: "transparent",
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo1,
     rowSelectedBorderColor: theme.colors.acce1,
+    listRowHeight: "52px",
   },
 }));
 

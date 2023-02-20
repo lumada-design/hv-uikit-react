@@ -29,27 +29,6 @@ export type HvTableRowProps = Omit<HvBaseProps, "children"> & {
 
 const defaultComponent = "tr";
 
-const borderStyles = (color: string) => {
-  return {
-    "& td:first-child": {
-      borderLeft: `1px solid ${color}`,
-      borderTop: `1px solid ${color}`,
-      borderBottom: `1px solid ${color}`,
-      borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-    },
-    "& td:last-child": {
-      borderRight: `1px solid ${color}`,
-      borderTop: `1px solid ${color}`,
-      borderBottom: `1px solid ${color}`,
-      borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-    },
-    "& td:not(:first-child):not(:last-child)": {
-      borderTop: `1px solid ${color}`,
-      borderBottom: `1px solid ${color}`,
-    },
-  };
-};
-
 const StyledTableRow = (c: any) =>
   styled(
     c,
@@ -74,7 +53,11 @@ const StyledTableRow = (c: any) =>
       $type: string;
       $stripedColor: string;
     }) => ({
-      backgroundColor: theme.table.rowBackgroundColor,
+      // backgroundColor: theme.colors.atmo1,
+      ...($type !== "head" && {
+        boxShadow: `1px 1px ${theme.table.rowBorderColor}, -1px -1px ${theme.table.rowBorderColor}, -1px 1px ${theme.table.rowBorderColor}, 1px -1px ${theme.table.rowBorderColor}`,
+      }),
+
       ...($hover && {
         transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         "&:hover": {
@@ -115,27 +98,29 @@ const StyledTableRow = (c: any) =>
 
       ...($variantList &&
         $type !== "head" && {
-          backgroundColor: theme.colors.atmo1,
+          backgroundColor: $selected
+            ? theme.table.selectedRowBackgroundColor
+            : theme.colors.atmo1,
         }),
 
       ...($variantList && {
-        height: 52,
+        height: theme.table.listRowHeight,
         [`&.${tableRowClasses.selected}`]: {
-          ...borderStyles(theme.table.rowSelectedBorderColor),
+          boxShadow: `1px 1px ${theme.table.rowSelectedBorderColor}, -1px -1px ${theme.table.rowSelectedBorderColor}, -1px 1px ${theme.table.rowSelectedBorderColor}, 1px -1px ${theme.table.rowSelectedBorderColor}`,
 
           "&:hover": {
-            ...borderStyles(theme.table.rowHoverBorderColor),
+            boxShadow: `1px 1px ${theme.table.rowHoverBorderColor}, -1px -1px ${theme.table.rowHoverBorderColor}, -1px 1px ${theme.table.rowHoverBorderColor}, 1px -1px ${theme.table.rowHoverBorderColor}`,
             background: "theme.colors.atmo1",
           },
         },
 
         "&:hover": {
-          ...borderStyles(theme.table.rowHoverBorderColor),
+          boxShadow: `1px 1px ${theme.table.rowHoverBorderColor}, -1px -1px ${theme.table.rowHoverBorderColor}, -1px 1px ${theme.table.rowHoverBorderColor}, 1px -1px ${theme.table.rowHoverBorderColor}`,
         },
-
-        ...borderStyles(theme.table.rowBorderColor),
+        boxShadow: `1px 1px ${theme.table.rowBorderColor}, -1px -1px ${theme.table.rowBorderColor}, -1px 1px ${theme.table.rowBorderColor}, 1px -1px ${theme.table.rowBorderColor}`,
       }),
       ...($variantListHead && {
+        backgroundColor: "transparent",
         height: 16,
         "&:first-child": {
           height: 16,
@@ -145,6 +130,9 @@ const StyledTableRow = (c: any) =>
           height: 16,
         },
       }),
+      "& td": {
+        maxHeight: theme.table.listRowHeight,
+      },
     })
   );
 

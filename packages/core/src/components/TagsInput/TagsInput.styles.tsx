@@ -182,7 +182,7 @@ export const StyledTag = styled((props) => <HvTag {...props} />)(
   })
 );
 
-export const StyledInputListItem = styled(HvListItem)(
+export const StyledInputListItem = styled((props) => <HvListItem {...props} />)(
   ({
     $singleLine,
     $isTagSelected,

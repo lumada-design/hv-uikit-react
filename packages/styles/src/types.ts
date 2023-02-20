@@ -213,6 +213,7 @@ export type ThemeComponents = {
     rowStripedBackgroundColor: string;
     rowExpandBackgroundColor: string;
     rowSelectedBorderColor: string;
+    listRowHeight: string;
   };
 };
 
