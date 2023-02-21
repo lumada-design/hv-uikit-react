@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { useControlled } from "hooks";
 import { HvBaseProps } from "../../types";
 import {
-  StyledRoot,
   StyledBaseDropDown,
   StyledButton,
   StyledPanel,
@@ -10,13 +9,14 @@ import {
 import dropDownMenuClasses, {
   HvDropDownMenuClasses,
 } from "./dropDownMenuClasses";
-import { isKeypress, keyboardCodes, setId } from "utils";
+import { isKeypress, keyboardCodes, outlineStyles, setId } from "utils";
 import getPrevNextFocus from "utils/focusableElementFinder";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { HvButtonVariant, HvList, HvListValue } from "components";
 import { useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { withId } from "hocs";
+import { ClassNames } from "@emotion/react";
 
 export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   /** Icon. */
@@ -136,55 +136,67 @@ export const HvDropDownMenu = withId(
     };
 
     return (
-      <StyledRoot>
-        <StyledBaseDropDown
-          id={id}
-          className={clsx(
-            className,
-            dropDownMenuClasses.container,
-            classes?.container
-          )}
-          classes={{
-            root: clsx(dropDownMenuClasses.root, classes?.root),
-            container: clsx(
-              dropDownMenuClasses.baseContainer,
-              classes?.baseContainer
-            ),
-          }}
-          expanded={open && !disabled}
-          component={headerComponent}
-          aria-haspopup="menu"
-          placement={placement}
-          variableWidth
-          disablePortal={disablePortal}
-          onToggle={(e, s) => {
-            // this will only run if uncontrolled
-            setOpen(s);
-            onToggle?.(e, s);
-          }}
-          disabled={disabled}
-          onContainerCreation={setFocusToContent}
-          popperProps={popperStyle}
-          {...others}
-        >
-          <StyledPanel>
-            <HvList
-              id={listId}
-              values={dataList}
-              selectable={false}
-              condensed={condensed}
-              onClick={(event, item) => {
-                if (!keepOpened) handleClose(event);
-                onClick?.(event, item);
-              }}
-              onKeyDown={handleKeyDown}
-              classes={{
-                root: clsx(dropDownMenuClasses.menuList, classes?.menuList),
-              }}
-            />
-          </StyledPanel>
-        </StyledBaseDropDown>
-      </StyledRoot>
+      <ClassNames>
+        {({ css }) => (
+          <StyledBaseDropDown
+            id={id}
+            className={clsx(
+              className,
+              dropDownMenuClasses.container,
+              classes?.container
+            )}
+            classes={{
+              root: clsx(
+                dropDownMenuClasses.root,
+                classes?.root,
+                css({
+                  display: "inline-block",
+                  width: "auto",
+                  "&.focus-visible $icon": {
+                    ...outlineStyles,
+                  },
+                })
+              ),
+              container: clsx(
+                dropDownMenuClasses.baseContainer,
+                classes?.baseContainer
+              ),
+            }}
+            expanded={open && !disabled}
+            component={headerComponent}
+            aria-haspopup="menu"
+            placement={placement}
+            variableWidth
+            disablePortal={disablePortal}
+            onToggle={(e, s) => {
+              // this will only run if uncontrolled
+              setOpen(s);
+              onToggle?.(e, s);
+            }}
+            disabled={disabled}
+            onContainerCreation={setFocusToContent}
+            popperProps={popperStyle}
+            {...others}
+          >
+            <StyledPanel>
+              <HvList
+                id={listId}
+                values={dataList}
+                selectable={false}
+                condensed={condensed}
+                onClick={(event, item) => {
+                  if (!keepOpened) handleClose(event);
+                  onClick?.(event, item);
+                }}
+                onKeyDown={handleKeyDown}
+                classes={{
+                  root: clsx(dropDownMenuClasses.menuList, classes?.menuList),
+                }}
+              />
+            </StyledPanel>
+          </StyledBaseDropDown>
+        )}
+      </ClassNames>
     );
   }
 );

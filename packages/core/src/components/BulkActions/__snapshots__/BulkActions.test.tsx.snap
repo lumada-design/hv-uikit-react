@@ -142,53 +142,49 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <div
-        class="css-1nctzd3-StyledRoot e13q7myz3"
+        class="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu css-uqb84k css-1nukton-StyledRoot eapzthe9"
       >
         <div
-          class="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu css-1nukton-StyledRoot eapzthe9"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-7kx3el-StyledAnchor-StyledBaseDropDown eapzthe8"
+          id="-20"
+          tabindex="-1"
         >
-          <div
+          <button
             aria-expanded="false"
-            aria-haspopup="menu"
-            class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor HvBaseDropdown-rootDisabled css-7kx3el-StyledAnchor-StyledBaseDropDown eapzthe8"
-            id="-20"
-            tabindex="-1"
+            aria-label="Dropdown menu"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-1csw29r-StyledButton-StyledButton e138pvrm0"
+            disabled=""
+            id="-20-icon-button"
           >
-            <button
-              aria-expanded="false"
-              aria-label="Dropdown menu"
-              class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-1csw29r-StyledButton-StyledButton e138pvrm0"
-              disabled=""
-              id="-20-icon-button"
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
             >
-              <div
-                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
               >
-                <span
-                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                <div
+                  class="css-du18qm"
+                  name="MoreOptionsVertical"
                 >
-                  <div
-                    class="css-du18qm"
-                    name="MoreOptionsVertical"
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      focusable="false"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="color0"
-                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                        fill="var(--colors-atmo5)"
-                      />
-                    </svg>
-                  </div>
-                </span>
-              </div>
-            </button>
-          </div>
+                    <path
+                      class="color0"
+                      d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                      fill="var(--colors-atmo5)"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
