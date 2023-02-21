@@ -82,6 +82,7 @@ const StyledTableRow = (c: any) =>
 
       // type
       ...($type === "head" && {
+        backgroundColor: "transparent",
         "&:first-child": {
           height: 52,
         },
