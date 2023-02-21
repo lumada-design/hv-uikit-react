@@ -338,9 +338,9 @@ const ds3 = makeTheme((theme: Theme) => ({
   table: {
     headerHoverColor: theme.colors.atmo3,
     headerBorderTopColor: theme.colors.atmo4,
-    selectedRowBackgroundColor: "transparent",
+    selectedRowBackgroundColor: theme.colors.atmo1,
     rowBackgroundColor: "transparent",
-    rowHoverColor: theme.colors.atmo3,
+    rowHoverColor: theme.colors.atmo1,
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo1,
   },
