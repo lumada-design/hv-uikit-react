@@ -100,14 +100,12 @@ const StyledTableRow = (c: any) =>
         height: 52,
         "&:hover": {
           boxShadow: `1px 1px ${theme.colors.atmo4}, -1px -1px ${theme.colors.atmo4}, -1px 1px ${theme.colors.atmo4}, 1px -1px ${theme.colors.atmo4}`,
-          background: theme.table.rowHoverColor,
         },
         [`&.${tableRowClasses.selected}`]: {
           boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
 
           "&:hover": {
             boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
-            background: theme.table.rowHoverColor,
           },
         },
       }),
