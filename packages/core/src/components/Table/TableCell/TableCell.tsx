@@ -182,8 +182,6 @@ const StyledTableCell = (c: any) =>
         textAlign: "center",
         width: 138,
         maxWidth: 138,
-        display: "flex",
-        alignItems: "center",
       }),
 
       // type
