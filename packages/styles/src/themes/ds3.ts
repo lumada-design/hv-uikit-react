@@ -339,10 +339,13 @@ const ds3 = makeTheme((theme: Theme) => ({
     headerHoverColor: theme.colors.atmo3,
     headerBorderTopColor: theme.colors.atmo4,
     selectedRowBackgroundColor: theme.colors.atmo1,
+    rowBorderColor: "transparent",
     rowBackgroundColor: "transparent",
-    rowHoverColor: theme.colors.atmo1,
+    rowBorderRadius: "0px",
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo1,
+    rowHoverColor: theme.colors.atmo1,
+    rowHoverBorderColor: theme.colors.atmo4,
   },
 }));
 

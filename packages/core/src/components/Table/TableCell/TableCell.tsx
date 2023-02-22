@@ -21,6 +21,7 @@ import TableSectionContext from "../TableSectionContext";
 import { capitalize } from "lodash";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvThemeContext } from "providers";
+import { getBorderStyles } from "../utils/utils";
 
 export type HvTableCellProps = Omit<TdHTMLAttributes<HTMLElement>, "align"> &
   Omit<HvBaseProps, "children"> & {
@@ -178,7 +179,7 @@ const StyledTableCell = (c: any) =>
         maxWidth: 34,
       }),
       ...($variant === "listactions" && {
-        borderLeft: `solid 2px ${theme.colors.atmo2}`,
+        borderLeft: `solid 2px red`, //${theme.colors.atmo2}`,
         textAlign: "center",
         width: 138,
         maxWidth: 138,
@@ -220,6 +221,9 @@ const StyledTableCell = (c: any) =>
         ...($variant !== "listactions" && { paddingLeft: 32 }),
         ...($variant === "listactions" && { paddingLeft: 0 }),
         border: 0,
+        ...($type === "body" && {
+          ...getBorderStyles("cell", theme.table.rowBorderColor),
+        }),
       }),
 
       ...($stickyColumn && {

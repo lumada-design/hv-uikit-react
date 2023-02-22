@@ -205,10 +205,13 @@ const componentsSpec: DeepString<ThemeComponents> = {
     headerHoverColor: "string",
     headerBorderTopColor: "string",
     selectedRowBackgroundColor: "string",
+    rowBorderColor: "string",
     rowBackgroundColor: "string",
-    rowHoverColor: "string",
+    rowBorderRadius: "string",
     rowStripedBackgroundColor: "string",
     rowExpandBackgroundColor: "string",
+    rowHoverColor: "string",
+    rowHoverBorderColor: "string",
   },
 };
 
