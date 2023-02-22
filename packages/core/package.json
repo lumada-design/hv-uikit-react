@@ -3,7 +3,7 @@
   "version": "5.0.0-next.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
-  "description": "UI Kit core React components for the Hitachi Vantara Design System.",
+  "description": "UI Kit core React components for the Next Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "./src/index.ts",
   "sideEffects": false,
@@ -23,14 +23,15 @@
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
   "scripts": {
-    "build": "pnpm clean && tsc -b tsconfig.build.json && tsc-alias",
+    "build": "run-s clean build:*",
+    "build:js": "vite build",
     "test": "vitest run",
     "test:update": "vitest -u",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "clean": "npx rimraf dist",
+    "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build && npx clean-publish --fields main"
   },
   "peerDependencies": {
     "@emotion/react": "^11.10.5",
@@ -66,10 +67,19 @@
   ],
   "publishConfig": {
     "access": "public",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "directory": "package",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "dist/cjs/index.cjs",
+        "import": "dist/esm/index.js"
+      }
+    }
   },
-  "engines": {
-    "node": ">=16.6.0"
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package"
   }
 }
