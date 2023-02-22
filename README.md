@@ -6,7 +6,7 @@
 
 <h1 align="center">Hitachi Vantara UI Kit</h1>
 
-<p align="center">React UI library for the Hitachi Vantara Design System.
+<p align="center">React UI library for the Next Design System.
 </p>
 
 <div align="center">
@@ -23,7 +23,7 @@
 - **Ready to go**: Start your project with over 50 high-quality React components out of the box.
 - **Composable**: Compose your UI with reusable building blocks.
 - **Accessible**: UI Kit follows WAI-ARIA standards, helping you to reach the largest audience possible with less effort.
-- **Themeable**: Use Hitachi Vantara Design System or customize it using the theming features.
+- **Themeable**: Use Next Design System or customize it using the theming features.
 
 ## Packages
 
