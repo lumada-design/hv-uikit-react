@@ -96,7 +96,6 @@ const StyledTableRow = (c: any) =>
         "tr&:first-child": {
           height: 52,
         },
-        backgroundColor: "transparent",
       }),
 
       ...($variantList &&

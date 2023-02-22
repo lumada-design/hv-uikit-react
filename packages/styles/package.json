@@ -1,49 +1,46 @@
 {
   "name": "@hitachivantara/uikit-styles",
   "version": "5.0.0-next.0",
-  "private": false,
-  "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit styling solution for the Hitachi Vantara Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "./src/index.ts",
-  "sideEffects": false,
+  "author": "Hitachi Vantara UI Kit Team",
   "keywords": [
     "hitachi-vantara",
     "design-system",
     "ui-kit",
     "typescript"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git"
-  },
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
-  },
+  "main": "src/index.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "pnpm clean && tsc -b tsconfig.build.json && tsc-alias",
-    "clean": "npx rimraf dist",
+    "build": "run-s clean build:*",
+    "build:js": "vite build",
+    "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm build"
-  },
-  "dependencies": {
-    "@styled-system/variant": "^5.1.5",
-    "styled-system": "^5.1.5"
+    "prepublishOnly": "pnpm build && npx clean-publish --fields main"
   },
   "devDependencies": {
-    "rimraf": "^4.1.2",
-    "tsc-alias": "^1.8.2"
+    "npm-run-all": "^4.1.5"
   },
   "files": [
     "dist"
   ],
   "publishConfig": {
     "access": "public",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "directory": "package",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "dist/cjs/index.cjs",
+        "import": "dist/esm/index.js"
+      }
+    }
   },
-  "engines": {
-    "node": ">=16.6.0"
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package"
   }
 }
