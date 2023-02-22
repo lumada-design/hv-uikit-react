@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvLink, HvTypography } from "components";
 
 export const StyledLink = styled((props) => <HvLink {...props} />)({
-  padding: `8px ${theme.spacing(1)}`,
+  padding: `8px ${theme.space.xs}`,
   textDecoration: "none",
   borderRadius: "2px",
   "&:hover": {

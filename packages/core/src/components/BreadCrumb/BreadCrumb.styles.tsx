@@ -11,9 +11,9 @@ export const StyledRoot = styled("nav")({
 export const StyledOrderedList = styled("ol")({
   display: "flex",
   paddingLeft: 0,
-  marginLeft: `-${theme.spacing(1)}`,
+  marginLeft: `-${theme.space.xs}`,
 });
 
 export const StyledTypography = styled((props) => <HvTypography {...props} />)({
-  padding: `8px ${theme.spacing(1)}`,
+  padding: `8px ${theme.space.xs}`,
 });

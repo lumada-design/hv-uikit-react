@@ -12,7 +12,7 @@ export const StyledFormElement = styled(HvFormElement)({
 });
 
 export const StyledLabel = styled(HvLabel)({
-  marginBottom: theme.spacing(1.25),
+  marginBottom: theme.space.xs,
 });
 
 export const StyledGroupContainer = styled(
@@ -51,12 +51,12 @@ export const StyledGroupContainer = styled(
       flexWrap: "wrap",
 
       "&>*:not(:first-child)": {
-        marginLeft: theme.spacing(2.5),
+        marginLeft: theme.space.sm,
       },
     }),
 
     ...($invalid && {
-      paddingBottom: theme.spacing(1.25),
+      paddingBottom: theme.space.xs,
       borderBottom: `1px solid ${theme.colors.sema4}`,
     }),
   })

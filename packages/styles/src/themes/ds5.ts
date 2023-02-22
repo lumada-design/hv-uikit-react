@@ -307,7 +307,7 @@ const ds5 = makeTheme((theme: Theme) => ({
     separatorDisplay: "flex",
     border: `1px solid ${theme.colors.atmo4}`,
     backgroundColor: theme.colors.atmo2,
-    padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
+    padding: `${theme.space.xs} ${theme.space.md}`,
     anySelectedBackgroundColor: theme.colors.acce2s,
     buttonSize: "md",
   },

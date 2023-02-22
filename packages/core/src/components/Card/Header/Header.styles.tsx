@@ -8,7 +8,7 @@ export const StyledHeader = styled(
   CardHeader,
   transientOptions
 )(({ $short }: { $short?: boolean }) => ({
-  padding: `15px ${theme.spacing(2)}`,
+  padding: `15px ${theme.space.sm}`,
   position: "relative",
 
   // https://mui.com/material-ui/api/card-header/#css
@@ -26,7 +26,7 @@ export const StyledHeader = styled(
     right: 20,
     marginTop: 0,
     marginRight: "0px",
-    paddingLeft: theme.spacing(1),
+    paddingLeft: theme.space.xs,
     top: "15px",
   },
 }));

@@ -27,8 +27,8 @@ export const getDocsStyles = (theme) => ({
         lineHeight: "30px",
         fontWeight: 600,
         borderBottomColor: theme.colors.atmo4,
-        paddingBottom: theme.spacing(1),
-        marginBottom: theme.spacing(2),
+        paddingBottom: theme.space.xs,
+        marginBottom: theme.space.sm,
       },
       "h3.sbdocs": {
         color: theme.colors.acce1,
@@ -36,7 +36,7 @@ export const getDocsStyles = (theme) => ({
         letterSpacing: "0.02em",
         lineHeight: "28px",
         fontWeight: 600,
-        paddingTop: theme.spacing(1),
+        paddingTop: theme.space.xs,
       },
       "a.sbdocs": {
         color: theme.colors.acce2,
@@ -61,7 +61,7 @@ export const getDocsStyles = (theme) => ({
       },
 
       "& .docblock-source": {
-        margin: `${theme.spacing(1)}px 0 ${theme.spacing(2)}px`,
+        margin: `${theme.space.xs}px 0 ${theme.space.sm}px`,
         border: `1px solid ${theme.colors.atmo4}`,
 
         "& > div": {

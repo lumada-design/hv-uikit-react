@@ -2,8 +2,8 @@ import {
   DeepString,
   Theme,
   ThemeComponents,
+  ThemeSpaceBreakpoints,
   ThemeTypography,
-  ThemeUtils,
   ThemeVars,
   TypographyProps,
 } from "./types";
@@ -247,11 +247,6 @@ const typographySpec: DeepString<ThemeTypography> = {
   },
 };
 
-const themeUtils: ThemeUtils = {
-  spacing: (factor: number): string =>
-    `calc(${tokens.space.base} * ${factor}px)`,
-};
-
 const themeVars: ThemeVars = mapCSSVars({
   ...tokens,
   colors: { ...tokens.colors.common, ...tokens.colors.light }, // Flatten colors
@@ -259,7 +254,39 @@ const themeVars: ThemeVars = mapCSSVars({
   ...typographySpec,
 });
 
+const spacing = (
+  value:
+    | string
+    | number
+    | ThemeSpaceBreakpoints
+    | (string | number | ThemeSpaceBreakpoints)[]
+): string => {
+  switch (typeof value) {
+    case "number":
+      return `calc(${themeVars.space.base} * ${value}px)`;
+    case "string":
+      return themeVars.space[value] || value;
+    case "object":
+      return value && value.length > 0
+        ? value
+            .map((x) => {
+              switch (typeof x) {
+                case "number":
+                  return `${x}px`;
+                case "string":
+                  return themeVars.space[x] || x;
+                default:
+                  return "0px";
+              }
+            })
+            .join(" ")
+        : "0px";
+    default:
+      return "0px";
+  }
+};
+
 export const theme: Theme = {
   ...themeVars,
-  ...themeUtils,
+  spacing,
 };

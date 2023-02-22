@@ -6,7 +6,7 @@ exports[`GlobalActions > should render correctly 1`] = `
     class="HvGlobalActions-root css-18nncdf-StyledRoot e13e65q53"
   >
     <div
-      class="HvGlobalActions-wrapper css-11ugc84-StyledWrapper e13e65q51"
+      class="HvGlobalActions-wrapper css-cortu8-StyledWrapper e13e65q51"
     />
   </div>
 </div>

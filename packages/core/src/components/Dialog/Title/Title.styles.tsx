@@ -7,7 +7,7 @@ export const StyledTitle = styled(
   DialogTitle,
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
-  padding: theme.spacing(2),
+  padding: theme.space.sm,
   margin: 0,
   ...(!$fullscreen && {
     flex: 1,
@@ -24,8 +24,8 @@ export const StyledTextWithIcon = styled(
   transientOptions
 )(({ $hasIcon }: { $hasIcon: boolean }) => ({
   ...($hasIcon && {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.space.xs,
     // 32px is the icon width
-    marginRight: `calc(32px + ${theme.spacing(1)})`,
+    marginRight: `calc(32px + ${theme.space.xs})`,
   }),
 }));

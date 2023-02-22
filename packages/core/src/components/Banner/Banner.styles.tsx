@@ -9,16 +9,16 @@ export const StyledSnackbar = styled(
 )(({ $isOpen }: { $isOpen: boolean }) => ({
   [`&.${snackbarClasses.root}`]: {
     ...($isOpen && {
-      minWidth: `calc(100% - ${theme.spacing(2)})`,
+      minWidth: `calc(100% - ${theme.space.sm})`,
     }),
     ...(!$isOpen && {
       display: "none",
     }),
   },
   [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
-    top: theme.spacing(1),
+    top: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
-    bottom: theme.spacing(1),
+    bottom: theme.space.xs,
   },
 }));

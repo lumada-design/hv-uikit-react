@@ -3,10 +3,10 @@
 exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcher-root HvAppSwitcher-open css-dp3omj-StyledRoot e1lxr4i84"
+    class="HvAppSwitcher-root HvAppSwitcher-open css-10i2o7y-StyledRoot e1lxr4i84"
   >
     <span
-      class="HvAppSwitcher-title e1lxr4i82 css-19o2ij3-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+      class="HvAppSwitcher-title e1lxr4i82 css-188yaha-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
       data-mui-internal-clone-element="true"
     >
       Mock title
@@ -15,11 +15,11 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
       class="HvAppSwitcher-actionsContainer css-91p7g3-StyledActionsContainer e1lxr4i81 HvListContainer-root"
     >
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e1palmq41"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-18m510c-StyledListItem-StyledListItem e1palmq41"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-17end2g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-1py8d1l-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp1/"
           tabindex="0"
           target="_top"
@@ -33,7 +33,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1vxa2bt-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
           >
             Mock App 1
@@ -41,11 +41,11 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e1palmq41"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-18m510c-StyledListItem-StyledListItem e1palmq41"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-17end2g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-1py8d1l-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp2/"
           tabindex="0"
           target="_blank"
@@ -60,7 +60,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1vxa2bt-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
           >
             Mock App 2
@@ -93,11 +93,11 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         </a>
       </li>
       <li
-        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-2v29qh-StyledListItem-StyledListItem e1palmq41"
+        class="HvAppSwitcher-Action-root HvAppSwitcher-item e187pp8e4 HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled css-18m510c-StyledListItem-StyledListItem e1palmq41"
         tabindex="-1"
       >
         <a
-          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-17end2g-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 css-1py8d1l-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp2/"
           tabindex="0"
           target="_top"
@@ -112,7 +112,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             />
           </div>
           <span
-            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1e3ul0y-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
+            class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 css-1vxa2bt-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
             data-mui-internal-clone-element="true"
           >
             Mock App 3

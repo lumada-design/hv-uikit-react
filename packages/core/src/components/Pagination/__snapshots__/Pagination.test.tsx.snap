@@ -3,7 +3,7 @@
 exports[`Pagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvPagination-root css-1ruqlwu-StyledRoot e1tn2n0k8"
+    class="HvPagination-root css-h3lih6-StyledRoot e1tn2n0k8"
   >
     <div
       class="HvPagination-pageSizeOptions css-191htxu-StyledPageSizeOptions e1tn2n0k7"
@@ -17,7 +17,7 @@ exports[`Pagination > should render correctly 1`] = `
           <div
             aria-expanded="false"
             aria-label="Select how many to display"
-            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor css-wqjf2g-StyledAnchor-StyledSelect eapzthe8"
+            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor css-f5hdyh-StyledAnchor-StyledSelect eapzthe8"
             role="combobox"
             tabindex="-1"
           >
@@ -28,7 +28,7 @@ exports[`Pagination > should render correctly 1`] = `
               tabindex="0"
             >
               <div
-                class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection eapzthe6"
+                class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
               >
                 <p
                   class="css-1mchk7j-getStyledComponent e1tnpalo0"
@@ -149,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root eryso6g0 css-cpmv9g-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-vw6roc-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
               >
                 <input
                   aria-label="Current page"
@@ -187,7 +187,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-mq4y8t-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-19k789t-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
               />

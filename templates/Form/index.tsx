@@ -23,7 +23,7 @@ const styles = {
   section: css({
     "&:nth-child(2)": {
       marginBottom: theme.spacing(4),
-      marginTop: theme.spacing(2),
+      marginTop: theme.space.sm,
     },
     marginTop: 0,
   }),
@@ -34,7 +34,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    paddingRight: theme.spacing(2),
+    paddingRight: theme.space.sm,
     position: "absolute",
     left: 0,
     bottom: 0,

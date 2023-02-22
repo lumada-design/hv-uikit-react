@@ -7,7 +7,7 @@ export const StyledRoot = styled("footer")(
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
-    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    padding: `${theme.space.xs} ${theme.space.sm}`,
     height: 40,
     bottom: 0,
     zIndex: theme.zIndices.base,
@@ -16,7 +16,7 @@ export const StyledRoot = styled("footer")(
     [breakpoints.down("sm")]: {
       height: "unset",
       flexDirection: "column",
-      padding: theme.spacing(1),
+      padding: theme.space.xs,
     },
   })
 );
@@ -24,7 +24,7 @@ export const StyledRoot = styled("footer")(
 export const StyledName = styled(HvTypography)(
   ({ breakpoints }: { breakpoints?: any }) => ({
     [breakpoints.down("sm")]: {
-      marginBottom: theme.spacing(1),
+      marginBottom: theme.space.xs,
     },
   })
 );
@@ -47,7 +47,7 @@ export const StyledCopyright = styled(HvTypography)(
   ({ breakpoints }: { breakpoints?: any }) => ({
     [breakpoints.down("sm")]: {
       flexDirection: "column",
-      marginBottom: theme.spacing(1),
+      marginBottom: theme.space.xs,
     },
   })
 );
@@ -57,7 +57,7 @@ export const StyledSeparator = styled("div")(
     width: 1,
     height: 16,
     backgroundColor: theme.colors.acce1,
-    margin: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    margin: `${theme.space.xs} ${theme.space.sm}`,
     [breakpoints.down("sm")]: {
       display: "none",
     },

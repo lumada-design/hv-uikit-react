@@ -5,7 +5,7 @@ exports[`File > should render correctly fail status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-xinaoy-StyledFail e6pb7kb8 css-du18qm"
+    class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
     name="Fail"
   >
     <svg
@@ -39,7 +39,7 @@ exports[`File > should render correctly fail status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-215oe8-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-iofzih-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -76,7 +76,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-1guhon3-StyledSuccess e6pb7kb9 css-du18qm"
+    class="HvFile-icon css-jwo9x1-StyledSuccess e6pb7kb9 css-du18qm"
     name="Success"
   >
     <svg
@@ -110,7 +110,7 @@ exports[`File > should render correctly success status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-215oe8-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-iofzih-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"

@@ -25,7 +25,7 @@ export const StyledRoot = styled(
     // padding: `${theme.spacing(2) - 4}px 0 ${theme.spacing(2) - 4}px ${
     //   theme.spacing(2) - 4
     // }px`,
-    padding: `${theme.spacing(2)} 0 ${theme.spacing(2)} ${theme.spacing(2)}`,
+    padding: `${theme.space.sm} 0 ${theme.space.sm} ${theme.space.sm}`,
 
     ...($open && {
       zIndex: "1200",
@@ -47,7 +47,7 @@ export const StyledTitle = styled("div")({
 
   // we need to play with the 4px because of the focus ring
   // padding: `4px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm - 4}px 4px`,
-  padding: `4px ${theme.spacing(2)} ${theme.spacing(2)} 4px`,
+  padding: `4px ${theme.space.sm} ${theme.space.sm} 4px`,
 
   overflow: "hidden",
   whiteSpace: "nowrap",
@@ -63,7 +63,7 @@ export const StyledTitleWithTooltip = styled(
 
     // we need to play with the 4px because of the focus ring
     // padding: `4px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm - 4}px 4px`,
-    padding: `4px ${theme.spacing(2)} ${theme.spacing(2)} 4px`,
+    padding: `4px ${theme.space.sm} ${theme.space.sm} 4px`,
 
     overflow: "hidden",
     whiteSpace: "nowrap",
@@ -71,7 +71,7 @@ export const StyledTitleWithTooltip = styled(
   }),
   ...($type === "action" && {
     flexGrow: 1,
-    margin: `0 ${theme.spacing(1)}`,
+    margin: `0 ${theme.space.xs}`,
 
     textAlign: "left",
 
@@ -102,7 +102,7 @@ export const StyledFooter = styled("div")({
 
   // we need to play with the 4px because of the focus ring
   // padding: `${theme.hv.spacing.sm - 4}px ${theme.hv.spacing.sm + 4}px 4px 4px`,
-  padding: `${theme.spacing(2)} ${theme.spacing(2)} 4px 4px`,
+  padding: `${theme.space.sm} ${theme.space.sm} 4px 4px`,
 
   ...(theme.typography.label as CSSProperties),
 });

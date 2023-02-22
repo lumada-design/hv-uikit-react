@@ -16,7 +16,7 @@ exports[`Kpi > should render correctly 1`] = `
       class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer e70l5p68"
     >
       <h1
-        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 css-1s6if3c-getStyledComponent-StyledIndicatorText e1tnpalo0"
+        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 css-k0wl8b-getStyledComponent-StyledIndicatorText e1tnpalo0"
       >
         Indicator
       </h1>
@@ -34,7 +34,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <label
-            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 css-q5j2r5-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
+            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 css-yg4le2-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
           >
             Visual comparison
           </label>

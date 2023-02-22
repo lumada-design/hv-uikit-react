@@ -6,7 +6,7 @@ exports[`DotPagination > should render correctly 1`] = `
     class="HvDotPagination-root e1buriah3 HvRadioGroup-root css-w7urnl-StyledFormElement-StyledRadioGroup e1qvmihv2 HvFormElement-root"
   >
     <div
-      class="HvRadioGroup-group HvDotPagination-horizontal HvRadioGroup-horizontal css-2e6w85-StyledGroup e1qvmihv0"
+      class="HvRadioGroup-group HvDotPagination-horizontal HvRadioGroup-horizontal css-374br7-StyledGroup e1qvmihv0"
       role="navigation"
     >
       <div

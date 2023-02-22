@@ -85,7 +85,7 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
 };
 const StyledButtonWrapper = styled("div")({
   "& button": {
-    marginRight: theme.spacing(1),
+    marginRight: theme.space.xs,
     marginBottom: theme.spacing(4),
   },
 });

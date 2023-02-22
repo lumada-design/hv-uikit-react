@@ -39,7 +39,7 @@ export const MenuItemLabel = styled("div")(
   ({ isSelected }: { isSelected?: boolean }) => ({
     border: "none",
     cursor: "pointer",
-    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    padding: `${theme.space.xs} ${theme.space.sm}`,
     height: "100%",
     display: "flex",
     alignItems: "center",
@@ -62,7 +62,7 @@ export const MenuItemLabel = styled("div")(
 export const MenuItemLink = styled("a")({
   border: "none",
   cursor: "pointer",
-  padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+  padding: `${theme.space.xs} ${theme.space.sm}`,
   display: "block",
   textDecoration: "none",
   "&:active": {

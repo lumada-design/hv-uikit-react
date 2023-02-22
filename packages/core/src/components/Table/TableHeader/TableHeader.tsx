@@ -116,7 +116,7 @@ const StyledTableHeader = (c: any) =>
       verticalAlign: "inherit",
       textAlign: "left",
       paddingTop: 0,
-      paddingRight: theme.spacing(1),
+      paddingRight: theme.space.xs,
       paddingBottom: 0,
       paddingLeft: 32,
       borderBottom: `1px solid ${theme.colors.atmo4}`,

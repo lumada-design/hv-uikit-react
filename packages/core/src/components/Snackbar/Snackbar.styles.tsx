@@ -4,25 +4,25 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledSnackbar = styled(Snackbar)({
   [`&.${snackbarClasses.anchorOriginTopRight}`]: {
-    top: theme.spacing(1),
-    right: theme.spacing(1),
+    top: theme.space.xs,
+    right: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginTopLeft}`]: {
-    top: theme.spacing(1),
-    left: theme.spacing(1),
+    top: theme.space.xs,
+    left: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
-    top: theme.spacing(1),
+    top: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
-    bottom: theme.spacing(1),
+    bottom: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginBottomLeft}`]: {
-    bottom: theme.spacing(1),
-    left: theme.spacing(1),
+    bottom: theme.space.xs,
+    left: theme.space.xs,
   },
   [`&.${snackbarClasses.anchorOriginBottomRight}`]: {
-    bottom: theme.spacing(1),
-    right: theme.spacing(1),
+    bottom: theme.space.xs,
+    right: theme.space.xs,
   },
 });

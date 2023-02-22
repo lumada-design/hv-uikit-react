@@ -1,6 +1,7 @@
 import { colors } from "./tokens/colors";
 import * as tokens from "./tokens";
 import * as themes from "./themes";
+import { CSSProperties } from "react";
 
 // Theme tokens
 const flattenTokens = {
@@ -217,14 +218,15 @@ export type ThemeComponents = {
 };
 
 // Theme typography
-export type TypographyProps = {
-  color?: string;
-  fontSize?: string;
-  letterSpacing?: string;
-  lineHeight?: string;
-  fontWeight?: string | number;
-  textTransform?: string;
-};
+export type TypographyProps = Pick<
+  CSSProperties,
+  | "color"
+  | "fontSize"
+  | "letterSpacing"
+  | "lineHeight"
+  | "fontWeight"
+  | "textTransform"
+>;
 
 export type ThemeTypography = {
   typography: {
@@ -250,9 +252,18 @@ export type ThemeTypography = {
   };
 };
 
+// Space breakpoints
+export type ThemeSpaceBreakpoints = Exclude<keyof typeof tokens.space, "base">;
+
 // Theme utils
 export type ThemeUtils = {
-  spacing: (factor: number) => string;
+  spacing: (
+    value:
+      | string
+      | number
+      | ThemeSpaceBreakpoints
+      | (string | number | ThemeSpaceBreakpoints)[]
+  ) => string;
 };
 
 // Theme colors

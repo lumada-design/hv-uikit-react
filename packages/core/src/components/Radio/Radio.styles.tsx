@@ -83,7 +83,7 @@ export const StyledHvLabel = styled(
   overflow: "hidden",
   textOverflow: "ellipsis",
   verticalAlign: "middle",
-  paddingRight: theme.spacing(1.25),
+  paddingRight: theme.space.xs,
   whiteSpace: "nowrap",
   ...(theme.typography.body as CSSProperties),
   cursor: "pointer",

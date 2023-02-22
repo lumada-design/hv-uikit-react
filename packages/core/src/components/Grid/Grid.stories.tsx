@@ -13,7 +13,7 @@ export default meta;
 export const Main: StoryObj<HvGridProps> = {
   render: () => {
     const StyledItem = styled("div")({
-      padding: theme.spacing(2),
+      padding: theme.space.sm,
       height: 150,
       textAlign: "center",
       backgroundColor: theme.colors.sema7,
@@ -73,7 +73,7 @@ export const The12Columns: StoryObj<HvGridProps> = {
       border: "1px solid",
       borderColor: theme.colors.atmo4,
       backgroundColor: theme.colors.atmo2,
-      marginTop: theme.spacing(1),
+      marginTop: theme.space.xs,
       marginLeft: 0,
       marginRight: 32,
       width: "100%",

@@ -104,8 +104,8 @@ export const StyledHeaderRoot = styled(
 export const StyledSelection = styled("div")({
   display: "flex",
   alignItems: "center",
-  height: theme.spacing(3.75),
-  padding: `0px ${theme.spacing(3.75)} 0px ${theme.spacing(1.25)}`,
+  height: "30px",
+  padding: `0px ${theme.space.md} 0px ${theme.space.xs}`,
 });
 
 export const StyledPlaceholder = styled(

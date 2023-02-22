@@ -10,7 +10,7 @@ export const StyledRoot = styled("div")({
 export const StyledSelectionList = styled(HvSelectionList)({
   backgroundColor: theme.colors.atmo1,
   boxShadow: theme.shadows.md,
-  padding: theme.spacing(1),
+  padding: theme.space.xs,
   width: "100%",
 });
 

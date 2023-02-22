@@ -78,8 +78,8 @@ export const StyledChip = styled(
     },
 
     "& .MuiChip-label": {
-      paddingLeft: theme.spacing(1),
-      paddingRight: theme.spacing(1),
+      paddingLeft: theme.space.xs,
+      paddingRight: theme.space.xs,
       ...(theme.typography.body as CSSProperties),
       color: theme.colors.base2,
       "& p": {

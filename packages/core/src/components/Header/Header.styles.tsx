@@ -33,7 +33,7 @@ export const HeaderRoot = styled("div")({
   alignItems: "center",
   width: "100%",
   height: "100%",
-  padding: `0 ${theme.spacing(2)}`,
+  padding: `0 ${theme.space.sm}`,
   boxShadow: theme.header.shadow,
   "& > *:not(nav)": {
     zIndex: 2,

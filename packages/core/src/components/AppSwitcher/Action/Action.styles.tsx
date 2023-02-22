@@ -8,7 +8,7 @@ export const StyledListItem = styled((props) => <HvListItem {...props} />)({
   width: "100%",
   maxWidth: 280,
   minHeight: 52,
-  marginRight: theme.spacing(2),
+  marginRight: theme.space.sm,
 });
 
 export const StyledTypography = styled(HvTypography)(() => ({
@@ -19,7 +19,7 @@ export const StyledTypography = styled(HvTypography)(() => ({
   width: "100%",
   minHeight: 52,
 
-  padding: `6px ${theme.spacing(1)}`,
+  padding: `6px ${theme.space.xs}`,
 
   border: "none",
   borderLeft: `solid 2px ${theme.colors.acce1}`,

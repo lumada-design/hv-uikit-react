@@ -3,7 +3,7 @@
 exports[`Tag > should render correctly 1`] = `
 <div>
   <div
-    class="MuiChip-root HvTag-chipRoot MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault HvTag-root e14hga4y2 css-oj1crs-MuiChip-root-StyledChip"
+    class="MuiChip-root HvTag-chipRoot MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault HvTag-root e14hga4y2 css-1ef7e1-MuiChip-root-StyledChip"
     tabindex="0"
   >
     <span

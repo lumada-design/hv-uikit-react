@@ -15,7 +15,7 @@ export const StyledTypography = styled(HvTypography)(
       color: theme.colors.atmo5,
     }),
     ...($gutter && {
-      padding: `0 0 6px ${theme.spacing(1)}`,
+      padding: `0 0 6px ${theme.space.xs}`,
     }),
   })
 );

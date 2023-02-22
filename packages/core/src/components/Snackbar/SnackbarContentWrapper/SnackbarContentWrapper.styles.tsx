@@ -26,7 +26,7 @@ export const StyledSnackbarContent = styled(
     width: "310px",
     minHeight: "52px",
     maxHeight: "92px",
-    padding: theme.spacing(1),
+    padding: theme.space.xs,
     boxShadow: "none",
   },
   [`& .${snackbarContentClasses.message}`]: {
@@ -43,7 +43,7 @@ export const StyledMessageSpan = styled("div")({
 
 export const StyledMessageText = styled("div")({
   ...(theme.typography.body as CSSProperties),
-  padding: `0 ${theme.spacing(1)}`,
+  padding: `0 ${theme.space.xs}`,
   color: theme.colors.base2,
   fontFamily: theme.fontFamily.body,
   maxHeight: "72px",

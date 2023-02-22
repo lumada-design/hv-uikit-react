@@ -21,7 +21,7 @@ export const StyledRoot = styled(
     border: theme.bulkActions.border,
     backgroundColor: theme.bulkActions.backgroundColor,
     padding: theme.bulkActions.padding,
-    marginBottom: theme.spacing(1.25),
+    marginBottom: theme.space.xs,
 
     ...($isSemantic && {
       backgroundColor: theme.bulkActions.anySelectedBackgroundColor,
@@ -66,5 +66,5 @@ export const StyledDivider = styled("div")({
   backgroundColor: theme.colors.atmo4,
   width: "1px",
   height: "32px",
-  marginLeft: theme.spacing(1.75),
+  marginLeft: theme.space.sm,
 });

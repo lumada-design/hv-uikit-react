@@ -40,7 +40,7 @@ export const StyledBadge = styled("div")(
     badgeOneDigit,
   }: StyledBadgeProps) => ({
     ...(badge && {
-      borderRadius: theme.spacing(1),
+      borderRadius: theme.space.xs,
       backgroundColor: theme.colors.acce1,
       float: "left",
       minHeight: "8px",

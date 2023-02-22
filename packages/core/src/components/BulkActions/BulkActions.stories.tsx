@@ -36,8 +36,8 @@ const StyledRoot = styled("div")({
   justifyContent: "center",
   "&>*": {
     width: 160,
-    padding: theme.spacing(1.25),
-    margin: theme.spacing(1.25),
+    padding: theme.space.xs,
+    margin: theme.space.xs,
     textAlign: "center",
     borderRadius: 4,
     backgroundColor: theme.colors.atmo1,

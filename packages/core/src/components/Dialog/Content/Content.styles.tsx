@@ -10,7 +10,7 @@ export const StyledTypography = styled(
   HvTypography,
   transientOptions
 )(({ $indentContent }: { $indentContent: boolean }) => ({
-  padding: `0 ${theme.spacing(2)} ${theme.spacing(2)} ${theme.spacing(2)}`,
+  padding: `0 ${theme.space.sm} ${theme.space.sm} ${theme.space.sm}`,
   flex: "none",
   ...($indentContent && {
     marginLeft: "42px",

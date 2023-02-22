@@ -19,11 +19,11 @@ export const StyledVisualIndicator = styled("div")({
   justifyContent: "center",
   height: "40px",
   backgroundColor: "transparent",
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
 });
 
 export const StyledIndicatorText = styled(HvTypography)({
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
 });
 
 export const StyledIndicatorUnit = styled(HvTypography)({
@@ -40,7 +40,7 @@ export const StyledComparisonComposition = styled("div")({
 });
 
 export const StyledTrendIndicator = styled("div")({
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
   float: "right",
 });
 
@@ -51,9 +51,9 @@ export const StyledComparisonContainer = styled("div")({
 });
 
 export const StyledInternalVisualComparisonDiv = styled("div")({
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
 });
 
 export const StyledInternalVisualComparisonTypography = styled(HvTypography)({
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
 });

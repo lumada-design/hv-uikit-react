@@ -16,7 +16,7 @@ export const StyledFormElement = styled(HvFormElement)({
 });
 
 export const StyledLabel = styled((props) => <HvLabel {...props} />)({
-  marginBottom: theme.spacing(1),
+  marginBottom: theme.space.xs,
   float: "left",
 });
 
@@ -47,7 +47,7 @@ export const StyledListContainer = styled(
     float: "left",
     clear: "both",
     width: "100%",
-    paddingBottom: theme.spacing(1),
+    paddingBottom: theme.space.xs,
     ...($orientation === "vertical" && {
       flexDirection: "column",
 
@@ -66,9 +66,9 @@ export const StyledListContainer = styled(
     ...($orientation === "horizontal" && {
       flexDirection: "row",
       flexWrap: "wrap",
-      marginLeft: -theme.spacing(2),
+      marginLeft: -theme.space.sm,
       "&>*": {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.space.sm,
       },
     }),
     ...($validationState === "invalid" && {

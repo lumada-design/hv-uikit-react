@@ -42,6 +42,6 @@ export const StyledClose = styled(HvButton)({
   padding: 0,
   minWidth: "inherit",
   position: "absolute",
-  top: theme.spacing(2),
-  right: theme.spacing(2),
+  top: theme.space.sm,
+  right: theme.space.sm,
 });

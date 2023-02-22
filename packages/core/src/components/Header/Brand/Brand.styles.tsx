@@ -8,7 +8,7 @@ export const BrandRoot = styled("div")({
 
 export const BrandSeparator = styled("div")({
   width: 1,
-  height: theme.spacing(2),
-  margin: theme.spacing(1),
+  height: theme.space.sm,
+  margin: theme.space.xs,
   backgroundColor: theme.colors.acce1,
 });

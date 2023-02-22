@@ -44,7 +44,7 @@ export const StyledListItem = styled(
     },
 
     ...($gutters && {
-      padding: `0 ${theme.spacing(1)}`,
+      padding: `0 ${theme.space.xs}`,
 
       [`&.${listItemClasses.withStartAdornment}`]: {
         paddingLeft: 0,
