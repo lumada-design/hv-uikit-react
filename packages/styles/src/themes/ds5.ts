@@ -6,10 +6,12 @@ const ds5 = makeTheme((theme: Theme) => ({
   colors: {
     modes: {
       dawn: {
+        backgroundColor: colors.light.atmo2,
         ...colors.common,
         ...colors.light,
       },
       wicked: {
+        backgroundColor: colors.dark.atmo2,
         ...colors.common,
         ...colors.dark,
       },

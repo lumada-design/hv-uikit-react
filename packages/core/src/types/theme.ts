@@ -2,10 +2,9 @@ import {
   BaseTheme,
   ThemeColorMode,
   ThemeStructure,
-  ThemeColors,
+  ThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
-
-import { HvExtraDeepPartialProps, HvExtraDeepProps, HvExtraProps } from "types";
+import { HvExtraDeepPartialProps, HvExtraDeepProps } from "../types";
 
 /**
  * Theme structure is be used on the `HvProvider` to set the theme and inject the customizations needed to meet the specific design needs.
@@ -38,9 +37,11 @@ export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
 > & {
   colors?: {
     modes?: {
-      [key: string]: Partial<ThemeColors> & { [key: string]: string };
+      [key: string]: Partial<ThemeColorModeStructure> & {
+        [key: string]: string;
+      };
     };
-  } & HvExtraProps;
+  };
 };
 
 // Customized theme
@@ -49,7 +50,7 @@ export type HvCustomizedTheme = HvExtraDeepProps<
 > & {
   colors: {
     modes: {
-      [key: string]: ThemeColors & { [key: string]: string };
+      [key: string]: ThemeColorModeStructure & { [key: string]: string };
     };
-  } & HvExtraProps;
+  };
 };

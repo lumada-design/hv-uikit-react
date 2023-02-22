@@ -70,8 +70,7 @@ export const parseTheme = (
   const selectedMode = colorModes.includes(colorMode)
     ? colorMode
     : colorModes[0];
-
-  const bgColor = themes[selected].colors.modes[selectedMode].atmo2;
+  const bgColor = themes[selected].colors.modes[selectedMode].backgroundColor;
 
   return { selected, selectedMode, colorModes, bgColor };
 };
@@ -91,7 +90,6 @@ export const getThemesList = (themes: object) => {
       list[themeName].colorModes[colorMode] = toCSSVars({
         ...theme,
         colors: {
-          ...theme.colors.common,
           ...theme.colors.modes[colorMode],
         },
       });

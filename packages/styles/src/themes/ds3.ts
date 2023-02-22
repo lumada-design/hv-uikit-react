@@ -6,8 +6,16 @@ import { Theme } from "../types";
 const ds3 = makeTheme((theme: Theme) => ({
   colors: {
     modes: {
-      dawn: { ...colors.common, ...colors.light },
-      wicked: { ...colors.common, ...colors.dark },
+      dawn: {
+        backgroundColor: colors.light.atmo2,
+        ...colors.common,
+        ...colors.light,
+      },
+      wicked: {
+        backgroundColor: colors.dark.atmo2,
+        ...colors.common,
+        ...colors.dark,
+      },
     },
   },
   space: {
