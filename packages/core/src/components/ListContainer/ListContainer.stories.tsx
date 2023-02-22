@@ -1,13 +1,16 @@
+import { useState, useEffect, CSSProperties } from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import styled from "@emotion/styled";
 import {
   HvListItem,
   HvListContainer,
   HvListContainerProps,
   HvTypography,
   HvLink,
+  HvTooltip,
+  HvPanel,
 } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useState, useEffect } from "react";
 import {
   Calendar,
   DropRightXS,
@@ -16,7 +19,35 @@ import {
   Plane,
   User,
 } from "@hitachivantara/uikit-react-icons";
-import styled from "@emotion/styled";
+
+// #region Styled components
+
+const StyledPanel = styled(HvPanel)({
+  width: 200,
+});
+
+const StyledOverflowTypography = styled(HvTypography)({
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap",
+  lineHeight: "32px",
+});
+
+const StyledTitlePanel = styled(HvPanel)({
+  float: "left",
+  minWidth: 200,
+});
+
+const StyledLink = styled(HvLink)({
+  ...(theme.typography.body as CSSProperties),
+  textDecoration: "none",
+
+  "&:focus": {
+    boxShadow: "unset !important",
+  },
+});
+
+// #endregion
 
 const meta: Meta<typeof HvListContainer> = {
   title: "Display/List",
@@ -264,15 +295,76 @@ export const WithNavigationIcons: StoryObj<HvListContainerProps> = {
   },
 };
 
+export const WithTextOverflow: StoryObj<HvListContainerProps> = {
+  render: () => {
+    return (
+      <StyledPanel>
+        <HvListContainer
+          condensed
+          interactive
+          aria-label="Single Selection List Title"
+        >
+          <HvListItem>Share</HvListItem>
+          <HvListItem>Edit</HvListItem>
+          <HvListItem>Remove</HvListItem>
+          <HvListItem>Delete</HvListItem>
+          <HvListItem>
+            <HvTooltip
+              title={
+                <HvTypography>
+                  The complete really big text that should be shown in the
+                  tooltip
+                </HvTypography>
+              }
+            >
+              <StyledOverflowTypography component="div">
+                Really big text that should be truncated
+              </StyledOverflowTypography>
+            </HvTooltip>
+          </HvListItem>
+        </HvListContainer>
+      </StyledPanel>
+    );
+  },
+};
+
+export const WithTitle: StoryObj<HvListContainerProps> = {
+  render: () => {
+    return (
+      <StyledTitlePanel>
+        <HvTypography variant="highlightText" style={{ margin: "0 10px 10px" }}>
+          Options
+        </HvTypography>
+        <HvListContainer
+          condensed
+          interactive
+          aria-label="Simple List With Title"
+        >
+          <HvListItem disabled>Share</HvListItem>
+          <HvListItem>Edit</HvListItem>
+          <HvListItem>
+            <StyledLink route="https://www.hitachivantara.com">
+              Remove
+            </StyledLink>
+          </HvListItem>
+          <HvListItem>Delete</HvListItem>
+          <HvListItem>
+            <StyledLink route="https://www.hitachivantara.com">
+              Update
+            </StyledLink>
+          </HvListItem>
+        </HvListContainer>
+      </StyledTitlePanel>
+    );
+  },
+};
+
 export const WithLink: StoryObj<HvListContainerProps> = {
   render: () => {
     // Style link to prevent double-focus ring, bold, and underline
     const StyledHvLink = styled(HvLink)({
       color: theme.colors.acce1,
-      fontSize: "12px",
-      letterSpacing: "0.02em",
-      lineHeight: "16px",
-      fontWeight: 400,
+      ...(theme.typography.body as CSSProperties),
       textDecoration: "none",
       "&:focus": {
         boxShadow: "unset !important",
