@@ -9,6 +9,7 @@ import { transientOptions } from "utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvThemeContext } from "providers";
+import { getBorderStyles } from "../utils/utils";
 
 export type HvTableRowProps = Omit<HvBaseProps, "children"> & {
   /** Content to be rendered */
@@ -54,6 +55,11 @@ const StyledTableRow = (c: any) =>
       $stripedColor: string;
     }) => ({
       backgroundColor: theme.table.rowBackgroundColor,
+      ":hover": {
+        ...($type === "body" && {
+          backgroundColor: theme.table.rowHoverColor,
+        }),
+      },
       ...($hover && {
         transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         "&:hover": {
@@ -99,13 +105,13 @@ const StyledTableRow = (c: any) =>
         }),
         height: 52,
         "&:hover": {
-          boxShadow: `1px 1px ${theme.colors.atmo4}, -1px -1px ${theme.colors.atmo4}, -1px 1px ${theme.colors.atmo4}, 1px -1px ${theme.colors.atmo4}`,
+          ...getBorderStyles("row", theme.table.rowHoverBorderColor),
         },
         [`&.${tableRowClasses.selected}`]: {
-          boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
+          ...getBorderStyles("row", theme.colors.acce1),
 
           "&:hover": {
-            boxShadow: `1px 1px ${theme.colors.acce1}, -1px -1px ${theme.colors.acce1}, -1px 1px ${theme.colors.acce1}, 1px -1px ${theme.colors.acce1}`,
+            ...getBorderStyles("row", theme.table.rowHoverBorderColor),
           },
         },
       }),

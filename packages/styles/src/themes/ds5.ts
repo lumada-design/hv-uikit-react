@@ -315,10 +315,13 @@ const ds5 = makeTheme((theme: Theme) => ({
     headerHoverColor: "transparent",
     headerBorderTopColor: "transparent",
     selectedRowBackgroundColor: theme.colors.acce2s,
+    rowBorderColor: theme.colors.atmo4,
     rowBackgroundColor: theme.colors.atmo1,
-    rowHoverColor: theme.colors.acce2s,
+    rowBorderRadius: theme.radii.md,
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo2,
+    rowHoverColor: theme.colors.acce2s,
+    rowHoverBorderColor: theme.colors.atmo4,
   },
 }));
 
