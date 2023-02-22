@@ -19,11 +19,11 @@ export const StyledRoot = styled("div")({
   [`& .${snackbarContentClasses.message}`]: {
     display: "flex",
     alignItems: "center",
-    padding: `${theme.spacing(1)} 0`,
-    paddingLeft: theme.spacing(2),
+    padding: `${theme.space.xs} 0`,
+    paddingLeft: theme.space.sm,
   },
   [`& .${snackbarContentClasses.action}`]: {
-    padding: theme.spacing(1),
+    padding: theme.space.xs,
     marginRight: 0,
     flex: "0 0 auto",
     placeSelf: "stretch",

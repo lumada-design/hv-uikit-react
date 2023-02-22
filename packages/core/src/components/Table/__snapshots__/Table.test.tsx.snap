@@ -6,7 +6,7 @@ exports[`List Row > should be defined 1`] = `
     class="HvTableContainer-root css-e7buj3-StyledTableContainer e12doz4i0"
   >
     <table
-      class="HvTable-root HvTable-listRow css-1gvkbh-StyledTable e12hqti90"
+      class="HvTable-root HvTable-listRow css-pnj7u-StyledTable e12hqti90"
     >
       <thead
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
@@ -15,7 +15,7 @@ exports[`List Row > should be defined 1`] = `
           class="HvTableRow-root HvTableRow-head HvTableRow-variantListHead css-f7bher-StyledTableRow e1cjstvf0"
         >
           <th
-            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-9wl04c-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-13fqqed-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -29,7 +29,7 @@ exports[`List Row > should be defined 1`] = `
             </div>
           </th>
           <th
-            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-9wl04c-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-13fqqed-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -43,7 +43,7 @@ exports[`List Row > should be defined 1`] = `
             </div>
           </th>
           <th
-            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-9wl04c-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head HvTableHeader-variantList css-13fqqed-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -187,7 +187,7 @@ exports[`Simple Table > should be defined 1`] = `
     class="HvTableContainer-root css-e7buj3-StyledTableContainer e12doz4i0"
   >
     <table
-      class="HvTable-root css-1rpuws7-StyledTable e12hqti90"
+      class="HvTable-root css-s44r9g-StyledTable e12hqti90"
     >
       <thead
         class="HvTableHead-root css-1c8o9gy-StyledTableHead e122w5bu0"
@@ -196,7 +196,7 @@ exports[`Simple Table > should be defined 1`] = `
           class="HvTableRow-root HvTableRow-head css-1uu8yhk-StyledTableRow e1cjstvf0"
         >
           <th
-            class="HvTableHeader-root HvTableHeader-head css-11yxkke-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head css-1j8mvy9-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -210,7 +210,7 @@ exports[`Simple Table > should be defined 1`] = `
             </div>
           </th>
           <th
-            class="HvTableHeader-root HvTableHeader-head css-11yxkke-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head css-1j8mvy9-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -224,7 +224,7 @@ exports[`Simple Table > should be defined 1`] = `
             </div>
           </th>
           <th
-            class="HvTableHeader-root HvTableHeader-head css-11yxkke-StyledTableHeader eopmu0i1"
+            class="HvTableHeader-root HvTableHeader-head css-1j8mvy9-StyledTableHeader eopmu0i1"
             scope="col"
           >
             <div
@@ -246,17 +246,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>
@@ -265,17 +265,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>
@@ -284,17 +284,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>
@@ -303,17 +303,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>
@@ -322,17 +322,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>
@@ -341,17 +341,17 @@ exports[`Simple Table > should be defined 1`] = `
           class="grid HvTableRow-root HvTableRow-body css-hu2oqd-StyledTableRow e1cjstvf0"
         >
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 0
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 1
           </td>
           <td
-            class="HvTableCell-root HvTableCell-body css-12lm5gq-StyledTableCell e8848lx0"
+            class="HvTableCell-root HvTableCell-body css-1sr21bn-StyledTableCell e8848lx0"
           >
             Sample Cell 2
           </td>

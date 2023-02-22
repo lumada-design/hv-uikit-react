@@ -63,7 +63,7 @@ export const StyledAdornmentButton = styled(HvAdornment)(
 );
 
 export const StyledInputExtension = styled("div")({
-  height: theme.spacing(1),
+  height: theme.space.xs,
   backgroundColor: theme.colors.atmo1,
   boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
 });

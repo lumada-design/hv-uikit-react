@@ -64,10 +64,7 @@ export const Typography = () => {
       <HvBox sx={{ marginBottom: theme.spacing(7) }}>
         {variants.map((variant: HvTypographyVariants) => {
           return (
-            <HvBox
-              key={`key_${variant}`}
-              sx={{ marginBottom: theme.spacing(1) }}
-            >
+            <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.space.xs }}>
               <HvTypography variant="label" key={`label_${variant}`}>
                 {variant}
               </HvTypography>
@@ -86,10 +83,7 @@ export const Typography = () => {
       <HvBox>
         {legacyVariants.map((variant: HvTypographyLegacyVariants) => {
           return (
-            <HvBox
-              key={`key_${variant}`}
-              sx={{ marginBottom: theme.spacing(1) }}
-            >
+            <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.space.xs }}>
               <HvTypography variant="label" key={`label_${variant}`}>
                 {variant}
               </HvTypography>

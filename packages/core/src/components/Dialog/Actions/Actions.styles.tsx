@@ -8,7 +8,7 @@ export const StyledActions = styled(
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
   margin: "0",
-  padding: theme.spacing(2),
+  padding: theme.space.sm,
   borderTop: `3px solid ${theme.colors.atmo2}`,
   height: 65,
   maxHeight: 65,
@@ -21,7 +21,7 @@ export const StyledActions = styled(
   }),
   "&.MuiDialogActions-spacing": {
     "& > :not(:first-of-type)": {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.space.xs,
     },
   },
 }));

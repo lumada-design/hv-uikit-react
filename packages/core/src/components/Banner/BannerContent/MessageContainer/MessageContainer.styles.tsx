@@ -3,8 +3,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "components";
 
 export const StyledIconContainer = styled("div")({
-  marginRight: theme.spacing(1),
-  marginLeft: -theme.spacing(1),
+  marginRight: theme.space.xs,
+  marginLeft: -theme.space.xs,
 });
 
 export const StyledTypography = styled((props) => <HvTypography {...props} />)({

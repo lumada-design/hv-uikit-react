@@ -19,7 +19,7 @@ export const StyledButton = styled((props: HvButtonProps) => (
   <HvButton {...props} />
 ))(({ $baseColor }: { $baseColor: string }) => ({
   "&:not(:last-child)": {
-    marginRight: theme.spacing(1),
+    marginRight: theme.space.xs,
   },
   "&:hover": {
     backgroundColor: fade($baseColor, 0.3),

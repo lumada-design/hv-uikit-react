@@ -16,7 +16,7 @@ exports[`FileUploader > should render correctly 1`] = `
         Label
       </label>
       <label
-        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-194mgmt-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
         id="-3-description"
       >
         Max. file size: 12.00B
@@ -39,10 +39,10 @@ exports[`FileUploader > should render correctly 1`] = `
         type="file"
       />
       <div
-        class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1r4xwg25"
+        class="HvDropZone-dropArea css-8dnir5-StyledDropArea e1r4xwg25"
       >
         <div
-          class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
+          class="HvDropZone-dropZoneAreaIcon css-1qa3nkj-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
           name="Doc"
         >
           <svg
@@ -76,13 +76,13 @@ exports[`FileUploader > should render correctly 1`] = `
       </div>
     </div>
     <ul
-      class="HvFileList-list css-1bo3zqs-StyledList e1u4sq610"
+      class="HvFileList-list css-1sgxeso-StyledList e1u4sq610"
     >
       <li
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
+          class="HvFile-icon css-dtyxpr-StyledEmptyIcon e6pb7kb7"
         />
         <label
           class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
@@ -101,7 +101,7 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 css-215oe8-StyledButton-StyledIconButton e138pvrm0"
+          class="HvFile-removeButton e6pb7kb0 css-iofzih-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div
@@ -136,7 +136,7 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvFileList-listItem HvFile-root"
       >
         <div
-          class="HvFile-icon css-11wunl3-StyledEmptyIcon e6pb7kb7"
+          class="HvFile-icon css-dtyxpr-StyledEmptyIcon e6pb7kb7"
         />
         <label
           class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
@@ -155,7 +155,7 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 css-215oe8-StyledButton-StyledIconButton e138pvrm0"
+          class="HvFile-removeButton e6pb7kb0 css-iofzih-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div

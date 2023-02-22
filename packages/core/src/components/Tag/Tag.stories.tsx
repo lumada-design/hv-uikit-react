@@ -20,8 +20,8 @@ const StyledListContainer = styled(HvListContainer)({
 
 const StyledListItem = styled(HvListItem)({
   padding: 0,
-  paddingRight: theme.spacing(1),
-  paddingBottom: theme.spacing(1),
+  paddingRight: theme.space.xs,
+  paddingBottom: theme.space.xs,
   height: "auto",
   lineHeight: "16px",
 });

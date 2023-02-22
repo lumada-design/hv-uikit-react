@@ -15,7 +15,7 @@ export const StyledRoot = styled("div")({
   justifyContent: "center",
   alignItems: "stretch",
   flexWrap: "wrap",
-  marginTop: theme.spacing(2),
+  marginTop: theme.space.sm,
   [`& .${paginationClasses.pageSizeInput}`]: {
     ...(theme.typography.label as CSSProperties),
   },
@@ -57,7 +57,7 @@ export const StyledPageSizePrev = styled("div")({
 
 export const StyledSelect = styled(Select)({
   display: "inline-block",
-  margin: `${theme.spacing(0)} ${theme.spacing(1)}`,
+  margin: `0px ${theme.space.xs}`,
   width: "auto",
 });
 

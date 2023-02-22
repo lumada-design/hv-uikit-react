@@ -167,8 +167,8 @@ export const StyledInput = styled(
 
     [`& .${MuiInputClasses.input}`]: {
       height: "21px",
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
+      marginLeft: theme.space.xs,
+      marginRight: theme.space.xs,
       padding: "6px 0 5px",
       overflow: "hidden",
       textOverflow: "ellipsis",

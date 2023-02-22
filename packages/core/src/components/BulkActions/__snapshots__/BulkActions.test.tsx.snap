@@ -3,7 +3,7 @@
 exports[`BulkActions > With actions > should render correctly 1`] = `
 <div>
   <div
-    class="HvBulkActions-root css-mjszyv-StyledRoot e1nka4cc3"
+    class="HvBulkActions-root css-wg3yax-StyledRoot e1nka4cc3"
   >
     <div
       class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer e1nka4cc2"
@@ -50,7 +50,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox18-input"
             id="hvcheckbox18-label"
           >
@@ -70,7 +70,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 css-3hcwx1-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 css-174h2n0-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -106,7 +106,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 css-3hcwx1-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 css-174h2n0-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -195,7 +195,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
 exports[`BulkActions > Without actions > should render correctly 1`] = `
 <div>
   <div
-    class="HvBulkActions-root css-mjszyv-StyledRoot e1nka4cc3"
+    class="HvBulkActions-root css-wg3yax-StyledRoot e1nka4cc3"
   >
     <div
       class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer e1nka4cc2"
@@ -242,7 +242,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-ceg28g-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
           >

@@ -46,7 +46,7 @@ export const StyledTextContainer = styled("div")(
     overflow: "hidden",
     fontFamily: theme.fontFamily.body,
     [breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.space.xs,
     },
     "& a": {
       color: theme.colors.acce2,
@@ -59,7 +59,7 @@ export const StyledTypography = styled(HvTypography)(
   ({ type, breakpoints }: { type: string; breakpoints?: any }) => ({
     ...(type === "title" && {
       marginTop: 4,
-      marginBottom: theme.spacing(1),
+      marginBottom: theme.space.xs,
     }),
     ...(type === "text" && {
       background: "transparent",
@@ -67,7 +67,7 @@ export const StyledTypography = styled(HvTypography)(
       overflow: "hidden",
       fontFamily: theme.fontFamily.body,
       [breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.space.xs,
       },
       "& a": {
         color: theme.colors.acce2,
@@ -75,7 +75,7 @@ export const StyledTypography = styled(HvTypography)(
       },
     }),
     ...(type === "action" && {
-      marginTop: theme.spacing(1),
+      marginTop: theme.space.xs,
     }),
   })
 );

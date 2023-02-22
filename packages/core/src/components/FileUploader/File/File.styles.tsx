@@ -6,7 +6,7 @@ import { HvButton, HvTypography } from "components";
 const iconStyles = {
   width: 32,
   height: 32,
-  margin: `0px ${theme.spacing(1.25)}`,
+  margin: `0px ${theme.space.xs}`,
 };
 
 export const StyledSuccess = styled(Success)({
@@ -58,7 +58,7 @@ export const StyledProgressTextContainer = styled("span")({
 
 export const StyledPreviewContainer = styled("div")({
   display: "flex",
-  margin: `0px ${theme.spacing(1.25)}`,
+  margin: `0px ${theme.space.xs}`,
   width: theme.fileUploader.file.previewContainerSize,
   height: theme.fileUploader.file.previewContainerSize,
   justifyContent: "center",
@@ -82,5 +82,5 @@ export const StyledPreviewContainer = styled("div")({
 });
 
 export const StyledIconButton = styled(HvButton)({
-  margin: `0px ${theme.spacing(1.25)}`,
+  margin: `0px ${theme.space.xs}`,
 });

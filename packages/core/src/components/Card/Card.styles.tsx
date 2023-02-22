@@ -66,6 +66,6 @@ export const StyledBar = styled("div")(
 );
 
 export const StyledIcon = styled("div")({
-  top: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
-  right: `calc(${theme.card.iconMargin} + ${theme.spacing(1)})`,
+  top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
+  right: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
 });

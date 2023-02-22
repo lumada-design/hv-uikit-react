@@ -10,8 +10,8 @@ export const StyledGroup = styled("div")({
 });
 
 export const StyledGroupName = styled(HvTypography)({
-  marginTop: theme.spacing(3),
-  marginBottom: theme.spacing(2),
+  marginTop: theme.space.md,
+  marginBottom: theme.space.sm,
 });
 
 export const StyledColors = styled("div")({
@@ -22,15 +22,15 @@ export const StyledColors = styled("div")({
 });
 
 export const StyledColorContainer = styled("div")({
-  marginRight: theme.spacing(3),
-  marginBottom: theme.spacing(3),
+  marginRight: theme.space.md,
+  marginBottom: theme.space.md,
 });
 
 export const StyledColorSquare = styled("div")({
   width: 130,
   height: 130,
   border: `1px solid ${theme.colors.atmo4}`,
-  marginBottom: theme.spacing(1),
+  marginBottom: theme.space.xs,
 });
 
 export const StyledColorName = styled("span")({

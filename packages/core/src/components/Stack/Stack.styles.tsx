@@ -21,10 +21,10 @@ export const StyledRoot = styled(
       flexDirection: "row",
     }),
     ...($breakpoint === "xs" && {
-      gap: theme.spacing(1),
+      gap: theme.space.xs,
     }),
     ...($breakpoint === "sm" && {
-      gap: theme.spacing(2),
+      gap: theme.space.sm,
     }),
     ...($breakpoint === "md" && {
       gap: theme.spacing(4),

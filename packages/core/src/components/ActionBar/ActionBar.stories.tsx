@@ -28,7 +28,7 @@ const StyledActionBar = styled(HvActionBar)({
 });
 
 const StyledButtonSeparator = styled(HvButton)({
-  marginRight: theme.spacing(1),
+  marginRight: theme.space.xs,
 });
 
 const meta: Meta<typeof HvActionBar> = {

@@ -22,7 +22,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection css-1n3tnd9-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
           >
             <p
               class="HvBaseDropdown-placeholder eapzthe5 css-17knwax-getStyledComponent-StyledPlaceholder e1tnpalo0"

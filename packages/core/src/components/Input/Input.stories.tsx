@@ -158,7 +158,7 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
     });
     const StyledWrapper = styled("div")({
       "& button": {
-        marginRight: theme.spacing(1),
+        marginRight: theme.space.xs,
       },
     });
 
@@ -611,7 +611,7 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
       alignItems: "baseline",
 
       "& > *": {
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.space.xs,
       },
       "& > *:first-child": {
         marginLeft: 0,

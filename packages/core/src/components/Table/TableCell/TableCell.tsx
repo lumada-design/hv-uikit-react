@@ -97,9 +97,9 @@ const StyledTableCell = (c: any) =>
       // root
       verticalAlign: "inherit",
       textAlign: "left",
-      paddingTop: theme.spacing(1),
-      paddingRight: theme.spacing(1),
-      paddingBottom: theme.spacing(1),
+      paddingTop: theme.space.xs,
+      paddingRight: theme.space.xs,
+      paddingBottom: theme.space.xs,
       paddingLeft: theme.spacing(4),
       borderBottom: `1px solid ${theme.colors.atmo4}`,
 

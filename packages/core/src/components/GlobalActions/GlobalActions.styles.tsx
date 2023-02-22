@@ -26,9 +26,9 @@ export const StyledRoot = styled("div")(
         marginRight: `${theme.spacing(4)}px`,
       },
       [breakpoints.down("sm")]: {
-        width: `calc(100% - 2*${theme.spacing(2)}px)`,
-        marginLeft: `${theme.spacing(2)}px`,
-        marginRight: `${theme.spacing(2)}px`,
+        width: `calc(100% - 2*${theme.space.sm}px)`,
+        marginLeft: `${theme.space.sm}px`,
+        marginRight: `${theme.space.sm}px`,
       },
     }),
     ...(variant === "global" && {
@@ -52,13 +52,13 @@ export const StyledRoot = styled("div")(
 );
 
 export const StyledBackButton = styled("div")({
-  marginRight: theme.spacing(1),
+  marginRight: theme.space.xs,
 });
 
 export const StyledWrapper = styled("div")(
   ({ variant }: { variant: string }) => ({
     height: 52,
-    paddingRight: theme.spacing(1),
+    paddingRight: theme.space.xs,
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
@@ -68,8 +68,8 @@ export const StyledWrapper = styled("div")(
       left: 0,
       background: theme.colors.atmo1,
       width: "100%",
-      padding: theme.spacing(1),
-      marginTop: theme.spacing(1),
+      padding: theme.space.xs,
+      marginTop: theme.space.xs,
     }),
     ...(variant === "section" && {
       background: "none",
@@ -84,6 +84,6 @@ export const StyledActions = styled("div")({
   justifyContent: "flex-end",
   marginLeft: "auto",
   "& > *:not(:first-child) ": {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.space.xs,
   },
 });

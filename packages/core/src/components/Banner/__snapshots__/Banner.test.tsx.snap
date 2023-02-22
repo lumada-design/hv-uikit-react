@@ -3,12 +3,12 @@
 exports[`Banner > should render correctly 1`] = `
 <div>
   <div
-    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter e14yk37x0 css-1ubopil-MuiSnackbar-root-StyledSnackbar"
+    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter e14yk37x0 css-1w5ebik-MuiSnackbar-root-StyledSnackbar"
     role="presentation"
     style="top: 60px;"
   >
     <div
-      class="HvBanner-Content-outContainer css-1xx0g7u-StyledRoot ey1hm771"
+      class="HvBanner-Content-outContainer css-1mkyl2g-StyledRoot ey1hm771"
     >
       <div
         class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant ey1hm770 css-1by1nec-MuiPaper-root-MuiSnackbarContent-root-StyledSnackbarContent"

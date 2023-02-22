@@ -20,9 +20,9 @@ export const StyledRoot = styled(
 export const StyledTypography = styled(HvTypography)(
   ({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
     color: theme.colors.sema4,
-    paddingRight: theme.spacing(1),
+    paddingRight: theme.space.xs,
     "&:first-child": {
-      paddingLeft: theme.spacing(1),
+      paddingLeft: theme.space.xs,
     },
     ...($topGutter && {
       paddingTop: 6,

@@ -91,7 +91,7 @@ const StyledTable = (c: any) =>
 
       "& caption": {
         ...(theme.typography.body as CSSProperties),
-        padding: theme.spacing(1),
+        padding: theme.space.xs,
         textAlign: "left",
         captionSide: "bottom",
       },
@@ -102,7 +102,7 @@ const StyledTable = (c: any) =>
       }),
       ...($listrow && {
         "table&": {
-          borderSpacing: `0 ${theme.spacing(1)}`,
+          borderSpacing: `0 ${theme.space.xs}`,
         },
       }),
     })

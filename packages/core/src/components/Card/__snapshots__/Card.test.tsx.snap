@@ -12,11 +12,11 @@ exports[`Card > should render all the compoents 1`] = `
         class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
       />
       <div
-        class="css-vz0gkq-StyledIcon e5h2ket0"
+        class="css-a1yx5f-StyledIcon e5h2ket0"
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zba4p5-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -39,7 +39,7 @@ exports[`Card > should render all the compoents 1`] = `
       role="img"
     />
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-a04jz9-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
     >
       <label
         class="css-ivbjlp-getStyledComponent e1tnpalo0"
@@ -63,11 +63,11 @@ exports[`Card > should render content 1`] = `
         class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
       />
       <div
-        class="css-vz0gkq-StyledIcon e5h2ket0"
+        class="css-a1yx5f-StyledIcon e5h2ket0"
       />
     </div>
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-a04jz9-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
     >
       <label
         class="css-ivbjlp-getStyledComponent e1tnpalo0"
@@ -91,7 +91,7 @@ exports[`Card > should render correctly 1`] = `
         class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
       />
       <div
-        class="css-vz0gkq-StyledIcon e5h2ket0"
+        class="css-a1yx5f-StyledIcon e5h2ket0"
       />
     </div>
   </div>
@@ -110,11 +110,11 @@ exports[`Card > should render header 1`] = `
         class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
       />
       <div
-        class="css-vz0gkq-StyledIcon e5h2ket0"
+        class="css-a1yx5f-StyledIcon e5h2ket0"
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zba4p5-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -147,7 +147,7 @@ exports[`Card > should render image 1`] = `
         class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
       />
       <div
-        class="css-vz0gkq-StyledIcon e5h2ket0"
+        class="css-a1yx5f-StyledIcon e5h2ket0"
       />
     </div>
     <img

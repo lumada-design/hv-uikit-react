@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const StyledItem = styled("div")({
-  padding: theme.spacing(2),
+  padding: theme.space.sm,
   height: 150,
   textAlign: "center",
   backgroundColor: theme.colors.sema7,

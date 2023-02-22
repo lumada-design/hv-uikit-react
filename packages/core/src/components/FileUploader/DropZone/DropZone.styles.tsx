@@ -97,7 +97,7 @@ export const StyledInput = styled("input")({
 
 export const StyledDropArea = styled("div")({
   display: "flex",
-  margin: `${theme.spacing(3.75)} auto`,
+  margin: `${theme.space.md} auto`,
   minHeight: 48,
 });
 
@@ -113,7 +113,7 @@ export const StyledDragText = styled(HvTypography)({
 
 export const StyledDropAreaIcon = styled(Doc)({
   margin: "auto",
-  marginRight: theme.spacing(1.25),
+  marginRight: theme.space.xs,
 });
 
 export const StyledDropAreaLabels = styled("div")({

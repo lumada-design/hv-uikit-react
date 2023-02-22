@@ -7,6 +7,6 @@ export const StyledDiv = styled.div({
   alignItems: "center",
   marginLeft: "auto",
   "& > *": {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.space.xs,
   },
 });

@@ -36,8 +36,8 @@ import leaf from "./assets/leaf.png";
 
 const StyledSubtitleLeft = styled("span")({
   borderRight: `1px solid ${theme.colors.acce1}`,
-  paddingRight: theme.spacing(1),
-  marginRight: theme.spacing(1),
+  paddingRight: theme.space.xs,
+  marginRight: theme.space.xs,
 });
 
 const StyledBottomItem = styled(Grid)({
@@ -45,14 +45,14 @@ const StyledBottomItem = styled(Grid)({
 });
 
 const StyledItem = styled(Grid)({
-  paddingTop: theme.spacing(2),
+  paddingTop: theme.space.sm,
   paddingRight: 0,
-  paddingBottom: theme.spacing(2),
+  paddingBottom: theme.space.sm,
   paddingLeft: 0,
 });
 
 const StyledCard = styled(HvCard)({
-  margin: theme.spacing(2),
+  margin: theme.space.sm,
   backgroundColor: theme.colors.atmo1,
 });
 

@@ -15,7 +15,7 @@ exports[`DropZone > should render correctly 1`] = `
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-4y784b-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-194mgmt-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -38,10 +38,10 @@ exports[`DropZone > should render correctly 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1r4xwg25"
+      class="HvDropZone-dropArea css-8dnir5-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-1qa3nkj-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
         name="Doc"
       >
         <svg
@@ -92,7 +92,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-1ypp4a9-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-1ru6e1c-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -116,10 +116,10 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-1gwzdkt-StyledDropArea e1r4xwg25"
+      class="HvDropZone-dropArea css-8dnir5-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-e01vc1-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-1qa3nkj-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
         name="Doc"
       >
         <svg
