@@ -20,6 +20,12 @@
   "ignorePatterns": ["*.d.ts", "dist", "node_modules"],
   "rules": {
     "react/jsx-filename-extension": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@hitachivantara/*/*"]
+      }
+    ]
   }
 }

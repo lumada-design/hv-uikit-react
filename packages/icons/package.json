@@ -24,14 +24,14 @@
   },
   "scripts": {
     "build": "run-s clean convert:* build:*",
-    "build:ts": "tsc -b",
+    "build:js": "vite build",
     "convert": "run-s clean convert:*",
     "convert:optimize": "svgo --config=./svgo.config.js -r -f assets assets",
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
-    "clean": "npx rimraf dist bin",
+    "clean": "npx rimraf dist bin package",
     "prepare": "pnpm convert",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build && npx clean-publish --fields main"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "by-node-env": "^2.0.1",
     "cpy-cli": "^4.2.0",
     "html-to-react": "^1.5.0",
     "jsdom-no-contextify": "^3.1.0",
@@ -59,10 +60,19 @@
   ],
   "publishConfig": {
     "access": "public",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts"
+    "directory": "package",
+    "main": "dist/cjs/index.cjs",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "dist/cjs/index.cjs",
+        "import": "dist/esm/index.js"
+      }
+    }
   },
-  "engines": {
-    "node": ">=16.6.0"
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package"
   }
 }
