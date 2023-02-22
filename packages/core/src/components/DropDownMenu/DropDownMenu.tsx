@@ -59,144 +59,139 @@ export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
-export const HvDropDownMenu = withId(
-  ({
-    id,
-    classes,
-    className,
-    icon,
-    placement = "right",
-    dataList,
-    disablePortal = false,
-    onToggle,
-    onClick,
-    keepOpened = true,
-    disabled = false,
-    expanded,
-    defaultExpanded = false,
-    category = "secondaryGhost",
-    ...others
-  }: HvDropDownMenuProps) => {
-    const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
-    const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
+const HvDropDownMenu = ({
+  id,
+  classes,
+  className,
+  icon,
+  placement = "right",
+  dataList,
+  disablePortal = false,
+  onToggle,
+  onClick,
+  keepOpened = true,
+  disabled = false,
+  expanded,
+  defaultExpanded = false,
+  category = "secondaryGhost",
+  ...others
+}: HvDropDownMenuProps) => {
+  const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
 
-    const listId = setId(id, "list");
+  const listId = setId(id, "list");
 
-    const handleClose = (event) => {
-      // this will only run if uncontrolled
-      setOpen(false);
-      onToggle?.(event, false);
-    };
+  const handleClose = (event) => {
+    // this will only run if uncontrolled
+    setOpen(false);
+    onToggle?.(event, false);
+  };
 
-    // If the ESCAPE key is pressed inside the list, the close handler must be called.
-    const handleKeyDown = (event) => {
-      if (isKeypress(event, keyboardCodes.Tab)) {
-        const node = event.shiftKey
-          ? focusNodes.prevFocus
-          : focusNodes.nextFocus;
-        if (node) setTimeout(() => node.focus(), 0);
-        handleClose(event);
-      }
-      event.preventDefault();
-    };
+  // If the ESCAPE key is pressed inside the list, the close handler must be called.
+  const handleKeyDown = (event) => {
+    if (isKeypress(event, keyboardCodes.Tab)) {
+      const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
+      if (node) setTimeout(() => node.focus(), 0);
+      handleClose(event);
+    }
+    event.preventDefault();
+  };
 
-    const setFocusToContent = (containerRef) => {
-      containerRef?.getElementsByTagName("li")[0]?.focus();
-    };
+  const setFocusToContent = (containerRef) => {
+    containerRef?.getElementsByTagName("li")[0]?.focus();
+  };
 
-    const headerComponent = (
-      <StyledButton
-        icon
-        variant={category}
-        id={setId(id, "icon-button")}
-        className={clsx(
-          dropDownMenuClasses.icon,
-          classes?.icon,
-          open && clsx(dropDownMenuClasses.iconSelected, classes?.iconSelected)
-        )}
-        aria-expanded={open}
-        disabled={disabled}
-        aria-label="Dropdown menu"
-        $open={open}
-      >
-        {icon || <MoreOptionsVertical color={disabled ? "atmo5" : undefined} />}
-      </StyledButton>
-    );
+  const headerComponent = (
+    <StyledButton
+      icon
+      variant={category}
+      id={setId(id, "icon-button")}
+      className={clsx(
+        dropDownMenuClasses.icon,
+        classes?.icon,
+        open && clsx(dropDownMenuClasses.iconSelected, classes?.iconSelected)
+      )}
+      aria-expanded={open}
+      disabled={disabled}
+      aria-label="Dropdown menu"
+      $open={open}
+    >
+      {icon || <MoreOptionsVertical color={disabled ? "atmo5" : undefined} />}
+    </StyledButton>
+  );
 
-    const condensed = useMemo(
-      () => dataList.every((el) => !el.icon),
-      [dataList]
-    );
-    const popperStyle = {
-      style: {
-        zIndex: theme.zIndices.tooltip,
-        width: "auto",
-        position: "relative",
-      },
-    };
+  const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
+  const popperStyle = {
+    style: {
+      zIndex: theme.zIndices.tooltip,
+      width: "auto",
+      position: "relative",
+    },
+  };
 
-    return (
-      <ClassNames>
-        {({ css }) => (
-          <StyledBaseDropDown
-            id={id}
-            className={clsx(
-              className,
-              dropDownMenuClasses.container,
-              classes?.container
-            )}
-            classes={{
-              root: clsx(
-                dropDownMenuClasses.root,
-                classes?.root,
-                css({
-                  display: "inline-block",
-                  width: "auto",
-                  "&.focus-visible $icon": {
-                    ...outlineStyles,
-                  },
-                })
-              ),
-              container: clsx(
-                dropDownMenuClasses.baseContainer,
-                classes?.baseContainer
-              ),
-            }}
-            expanded={open && !disabled}
-            component={headerComponent}
-            aria-haspopup="menu"
-            placement={placement}
-            variableWidth
-            disablePortal={disablePortal}
-            onToggle={(e, s) => {
-              // this will only run if uncontrolled
-              setOpen(s);
-              onToggle?.(e, s);
-            }}
-            disabled={disabled}
-            onContainerCreation={setFocusToContent}
-            popperProps={popperStyle}
-            {...others}
-          >
-            <StyledPanel>
-              <HvList
-                id={listId}
-                values={dataList}
-                selectable={false}
-                condensed={condensed}
-                onClick={(event, item) => {
-                  if (!keepOpened) handleClose(event);
-                  onClick?.(event, item);
-                }}
-                onKeyDown={handleKeyDown}
-                classes={{
-                  root: clsx(dropDownMenuClasses.menuList, classes?.menuList),
-                }}
-              />
-            </StyledPanel>
-          </StyledBaseDropDown>
-        )}
-      </ClassNames>
-    );
-  }
-);
+  return (
+    <ClassNames>
+      {({ css }) => (
+        <StyledBaseDropDown
+          id={id}
+          className={clsx(
+            className,
+            dropDownMenuClasses.container,
+            classes?.container
+          )}
+          classes={{
+            root: clsx(
+              dropDownMenuClasses.root,
+              classes?.root,
+              css({
+                display: "inline-block",
+                width: "auto",
+                "&.focus-visible $icon": {
+                  ...outlineStyles,
+                },
+              })
+            ),
+            container: clsx(
+              dropDownMenuClasses.baseContainer,
+              classes?.baseContainer
+            ),
+          }}
+          expanded={open && !disabled}
+          component={headerComponent}
+          aria-haspopup="menu"
+          placement={placement}
+          variableWidth
+          disablePortal={disablePortal}
+          onToggle={(e, s) => {
+            // this will only run if uncontrolled
+            setOpen(s);
+            onToggle?.(e, s);
+          }}
+          disabled={disabled}
+          onContainerCreation={setFocusToContent}
+          popperProps={popperStyle}
+          {...others}
+        >
+          <StyledPanel>
+            <HvList
+              id={listId}
+              values={dataList}
+              selectable={false}
+              condensed={condensed}
+              onClick={(event, item) => {
+                if (!keepOpened) handleClose(event);
+                onClick?.(event, item);
+              }}
+              onKeyDown={handleKeyDown}
+              classes={{
+                root: clsx(dropDownMenuClasses.menuList, classes?.menuList),
+              }}
+            />
+          </StyledPanel>
+        </StyledBaseDropDown>
+      )}
+    </ClassNames>
+  );
+};
+
+export default withId(HvDropDownMenu);

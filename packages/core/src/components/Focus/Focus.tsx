@@ -483,7 +483,9 @@ export const HvFocus = ({
       {React.cloneElement(children, {
         className: clsx(
           children.props.className,
-          [(focusClasses.root, classes?.root, filterClass)],
+          focusClasses.root,
+          classes?.root,
+          filterClass,
           selected && clsx(focusClasses.selected, classes?.selected),
           disabledClass && clsx(focusClasses.disabled, classes?.disabled),
           focusDisabled &&
