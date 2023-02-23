@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`Login > should render correctly 1`] = `
+<div>
+  <div
+    class=" css-v05m5x-StyledRoot e1jay62a1"
+  >
+    <div
+      class="css-104mhy4-StyledFormContainer e1jay62a0"
+    >
+      Login content
+    </div>
+  </div>
+</div>
+`;
