@@ -26,7 +26,7 @@
     "lint-staged": "lint-staged",
     "typecheck": "pnpm -r -F='./packages/**' typecheck",
     "publish:release": "lerna publish --conventional-graduate --create-release github --yes",
-    "publish:next": "lerna publish --conventional-prerelease --create-release github --yes",
+    "publish:next": "lerna publish --conventional-prerelease --create-release github --yes --dist-tag next",
     "preinstall": "npx only-allow pnpm",
     "prepare": "npx husky install .config/husky"
   },
