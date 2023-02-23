@@ -249,7 +249,11 @@ const typographySpec: DeepString<ThemeTypography> = {
 
 const themeVars: ThemeVars = mapCSSVars({
   ...tokens,
-  colors: { ...tokens.colors.common, ...tokens.colors.light }, // Flatten colors
+  colors: {
+    backgroundColor: tokens.colors.light.atmo2,
+    ...tokens.colors.common,
+    ...tokens.colors.light,
+  }, // Flatten colors and add background color
   ...componentsSpec,
   ...typographySpec,
 });

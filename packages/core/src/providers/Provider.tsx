@@ -1,7 +1,7 @@
 import { css, Global } from "@emotion/react";
 import { CssBaseline, getThemesVars } from "@hitachivantara/uikit-styles";
 import { parseThemes } from "utils";
-import { HvTheme } from "types/theme";
+import { HvTheme } from "../types/theme";
 import { HvThemeProvider } from "./ThemeProvider";
 
 // Provider props

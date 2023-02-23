@@ -1,4 +1,9 @@
-import { themes, BaseTheme, colors } from "@hitachivantara/uikit-styles";
+import {
+  themes,
+  BaseTheme,
+  colors,
+  ThemeColorModeStructure,
+} from "@hitachivantara/uikit-styles";
 import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
 
 /**
@@ -15,8 +20,6 @@ export const setElementAttrs = (
 
   element.setAttribute(`data-theme`, theme);
   element.setAttribute(`data-color-mode`, mode);
-
-  // TODO: maybe this should be set at theme level (e.g background-color)
   element.style.backgroundColor = bgColor;
 };
 
@@ -71,9 +74,12 @@ export const parseThemes = (
     Object.keys(customizedTheme.colors.modes).forEach((mode) => {
       if (!themes[baseTheme].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
+          backgroundColor: colors.light.atmo2,
           ...colors.common,
           ...colors.light,
-          ...customizedTheme.colors.modes[mode],
+          ...(customizedTheme.colors.modes[mode] as Partial<
+            ThemeColorModeStructure & { [key: string]: string }
+          >),
         };
       }
     });

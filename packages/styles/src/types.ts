@@ -6,7 +6,11 @@ import { CSSProperties } from "react";
 // Theme tokens
 const flattenTokens = {
   ...tokens,
-  colors: { ...tokens.colors.common, ...tokens.colors.light }, // Flatten colors
+  colors: {
+    backgroundColor: tokens.colors.light.atmo2,
+    ...tokens.colors.common,
+    ...tokens.colors.light,
+  }, // Flatten colors and add background color
 };
 
 export type ThemeTokens = typeof flattenTokens;
@@ -272,13 +276,16 @@ export type ThemeColors = typeof colors.common & typeof colors.light;
 // Theme color modes
 export type ThemeColorMode = "dawn" | "wicked";
 
+// Theme color mode structure
+export type ThemeColorModeStructure = ThemeColors & { backgroundColor: string };
+
 // Theme structure
 export type ThemeStructure = ThemeComponents &
   ThemeTypography &
   Omit<ThemeTokens, "colors"> & {
     colors: {
       modes: {
-        [key: string]: ThemeColors;
+        [key: string]: ThemeColorModeStructure;
       };
     };
   };
@@ -289,7 +296,7 @@ export type CustomTheme = ThemeComponents &
   Partial<Omit<ThemeTokens, "colors">> & {
     colors: {
       modes: {
-        [key: string]: ThemeColors;
+        [key: string]: ThemeColorModeStructure;
       };
     };
   };
