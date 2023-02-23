@@ -83,7 +83,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       className,
       startIcon,
       icon = false,
-      size = "md",
+      size,
       radius = "base",
       overrideIconColors = true,
       ...others

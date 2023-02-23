@@ -1,6 +1,5 @@
 import { Add, Delete, Preview, Lock } from "@hitachivantara/uikit-react-icons";
-import { render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { fireEvent, render } from "@testing-library/react";
 import { useState } from "react";
 import { describe, expect, it, vi } from "vitest";
 import { HvBulkActions } from "./BulkActions";
@@ -68,7 +67,7 @@ describe("BulkActions", () => {
       expect(getByLabelText("All (8)")).toBeInTheDocument();
 
       // Select all
-      await userEvent.click(checkbox);
+      await fireEvent.click(checkbox);
 
       expect(checkbox).toBeChecked();
       expect(getByLabelText("8 / 8")).toBeInTheDocument();
@@ -90,7 +89,7 @@ describe("BulkActions", () => {
       const selectAll = checkboxes[0];
 
       // Select all
-      await userEvent.click(selectAll);
+      await fireEvent.click(selectAll);
 
       expect(onSelectAllMock).toBeCalledTimes(1);
     });
@@ -139,14 +138,14 @@ describe("BulkActions", () => {
       const checkbox = getByRole("checkbox");
 
       // Select all
-      await userEvent.click(checkbox);
+      await fireEvent.click(checkbox);
 
       expect(button1).toBeEnabled();
       expect(button2).toBeEnabled();
       expect(button3).toBeEnabled();
 
       // Open tooltip
-      await userEvent.click(button3);
+      await fireEvent.click(button3);
 
       const tooltip = getByRole("tooltip");
 

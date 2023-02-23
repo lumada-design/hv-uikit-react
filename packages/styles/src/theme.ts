@@ -29,6 +29,7 @@ const componentsSpec: DeepString<ThemeComponents> = {
   },
   button: {
     borderRadius: "string",
+    padding: "string",
     marginIconRight: "string",
     marginIconLeft: "string",
     semanticColor: "string",
