@@ -25,7 +25,8 @@
     "lint:fix": "pnpm lint --fix",
     "lint-staged": "lint-staged",
     "typecheck": "pnpm -r -F='./packages/**' typecheck",
-    "publish:next": "npx lerna publish --yes --conventional-prerelease",
+    "publish:release": "lerna publish --conventional-graduate --yes",
+    "publish:next": "lerna publish --conventional-prerelease --yes",
     "preinstall": "npx only-allow pnpm",
     "prepare": "npx husky install .config/husky"
   },
