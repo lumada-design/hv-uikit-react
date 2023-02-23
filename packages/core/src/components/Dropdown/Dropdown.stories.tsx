@@ -22,7 +22,7 @@ const Decorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvDropdown> = {
-  title: "Inputs/Dropdown",
+  title: "Inputs/Dropdown/Dropdown",
   component: HvDropdown,
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
 };
