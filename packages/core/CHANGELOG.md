@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0-alpha.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.2.0-alpha.0...@hitachivantara/uikit-react-core@5.2.0-alpha.1) (2023-02-23)
+
+### Features
+
+- rollback new feat ([c8630a6](https://github.com/lumada-design/hv-uikit-react/commit/c8630a6be85a1d197bca736c8833e367ad3639dc))
+
 # [5.2.0-alpha.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.1.0...@hitachivantara/uikit-react-core@5.2.0-alpha.0) (2023-02-23)
 
 ### Features
