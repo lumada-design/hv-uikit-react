@@ -1,5 +1,7 @@
 export { makeTheme, theme, themes } from "@hitachivantara/uikit-styles";
 
+export default {};
+
 export * from "./components";
 export * from "./hooks";
 export * from "./providers";
