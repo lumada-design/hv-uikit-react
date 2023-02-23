@@ -154,7 +154,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           <button
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-1yumhuf-StyledButton-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-1rskd7h-StyledButton-StyledButton e138pvrm0"
             disabled=""
             id="hv-drop-down-menu-20-icon-button"
           >

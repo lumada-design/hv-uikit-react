@@ -68,7 +68,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="First Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-1hnbaxu-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -105,7 +105,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Previous Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-1hnbaxu-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -211,7 +211,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Next Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-1hnbaxu-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -248,7 +248,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Last Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-1hnbaxu-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div

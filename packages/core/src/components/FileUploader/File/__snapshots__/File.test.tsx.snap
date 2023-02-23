@@ -39,7 +39,7 @@ exports[`File > should render correctly fail status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-81suyw-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -110,7 +110,7 @@ exports[`File > should render correctly success status 1`] = `
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-81suyw-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
