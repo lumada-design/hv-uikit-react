@@ -15,7 +15,7 @@ export default { title: "Inputs/Button", component: HvButton };
 
 export const AMain: StoryObj<HvButtonProps> = {
   args: {
-    children: "Button",
+    children: "Primary",
   },
 };
 

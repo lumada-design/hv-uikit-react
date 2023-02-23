@@ -141,6 +141,7 @@ const ds5 = makeTheme((theme: Theme) => ({
   },
   button: {
     borderRadius: theme.radii.base,
+    padding: theme.spacing(["xs", "sm"]),
     marginIconRight: "0px",
     marginIconLeft: "-8px",
     semanticColor: "rgba(251, 252, 252, 0.3)",

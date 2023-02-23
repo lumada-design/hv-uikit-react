@@ -3,14 +3,14 @@ export const fontFamily = {
 };
 
 export const fontSizes = {
-  xs: "0.625rem",
-  sm: "0.75rem",
-  base: "0.875rem",
-  lg: "1rem",
-  xl: "1.25rem",
-  xl2: "1.5rem",
-  xl3: "2rem",
-  xl4: "2.625rem",
+  xs: "10px",
+  sm: "12px",
+  base: "14px",
+  lg: "16px",
+  xl: "20px",
+  xl2: "24px",
+  xl3: "32px",
+  xl4: "42px",
 };
 
 export const fontWeights = {
@@ -26,11 +26,11 @@ export const fontWeights = {
 };
 
 export const lineHeights = {
-  none: 1,
-  sm: "1rem",
-  base: "1.25rem",
-  lg: "1.5rem",
-  xl: "2rem",
-  xl2: "2.5rem",
-  xl3: "3rem",
+  none: "20px",
+  sm: "16px",
+  base: "20px",
+  lg: "24px",
+  xl: "32px",
+  xl2: "40px",
+  xl3: "48px",
 };
