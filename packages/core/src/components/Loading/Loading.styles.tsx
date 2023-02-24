@@ -2,6 +2,7 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "components";
+import { transientOptions } from "utils/transientOptions";
 
 const interval = 0.11;
 
@@ -89,22 +90,25 @@ export const StyledLabel = styled(HvTypography)({
   marginTop: "15px",
 });
 
-export const StyledBar = styled("div")(({ variant }: { variant: string }) => ({
+export const StyledBar = styled(
+  "div",
+  transientOptions
+)(({ $variant }: { $variant: string }) => ({
   display: "inline-block",
 
-  ...(variant === "regular" && {
+  ...($variant === "regular" && {
     animation: `${regularAnimation} 1s ease-in-out infinite`,
     ...regular,
   }),
-  ...(variant === "regularColor" && {
+  ...($variant === "regularColor" && {
     animation: `${regularColorAnimation} 1s ease-in-out infinite`,
     ...regular,
   }),
-  ...(variant === "small" && {
+  ...($variant === "small" && {
     animation: `${smallAnimation} 1s ease-in-out infinite`,
     ...small,
   }),
-  ...(variant === "smallColor" && {
+  ...($variant === "smallColor" && {
     animation: `${smallColorAnimation} 1s ease-in-out infinite`,
     ...small,
   }),

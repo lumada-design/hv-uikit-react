@@ -11,6 +11,7 @@ import {
 import inputClasses from "./inputClasses";
 import baseInputClasses from "../BaseInput/baseInputClasses";
 import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
+import { transientOptions } from "utils/transientOptions";
 
 export const StyledFormElement = styled(HvFormElement)({
   display: "block",
@@ -49,18 +50,19 @@ export const StyledAdornmentsBox = styled("div")({
   marginRight: 1,
 });
 
-export const StyledAdornmentButton = styled(HvAdornment)(
-  ({ $iconClear }: { $iconClear?: boolean }) => ({
-    backgroundColor: "transparent",
-    border: "none",
-    padding: 0,
-    margin: 0,
-    cursor: "pointer",
-    ...($iconClear && {
-      display: "none",
-    }),
-  })
-);
+export const StyledAdornmentButton = styled(
+  HvAdornment,
+  transientOptions
+)(({ $iconClear }: { $iconClear?: boolean }) => ({
+  backgroundColor: "transparent",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  cursor: "pointer",
+  ...($iconClear && {
+    display: "none",
+  }),
+}));
 
 export const StyledInputExtension = styled("div")({
   height: theme.space.xs,

@@ -72,22 +72,22 @@ export const HvGlobalActions = ({
 
   return (
     <StyledRoot
-      variant={variant}
-      position={position}
+      $variant={variant}
+      $position={position}
       className={clsx(className, globalActionsClasses.root, classes?.root)}
-      breakpoints={muiTheme.breakpoints}
+      $breakpoints={muiTheme.breakpoints}
       {...others}
     >
       <StyledWrapper
         className={clsx(globalActionsClasses.wrapper, classes?.wrapper)}
-        variant={variant}
+        $variant={variant}
       >
         {variant === "global" && backButtonRenderer()}
         {!isString(title) ? (
           title
         ) : (
           <HvTypography
-            variant={variant === "global" ? "title3" : "title4"} // "sectionTitle"
+            variant={variant === "global" ? "title3" : "title4"}
             component={`h${headingLevelToApply}`}
             className={clsx(globalActionsClasses.name, classes?.name)}
           >

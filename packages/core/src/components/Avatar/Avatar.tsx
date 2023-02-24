@@ -157,8 +157,8 @@ export const HvAvatar = ({
       <StyledStatus
         className={clsx(avatarClasses.status, classes?.status)}
         style={statusInlineStyle}
-        variant={variant}
-        size={size}
+        $variant={variant}
+        $size={size}
       >
         {badge && (
           <StyledBadge

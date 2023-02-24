@@ -63,7 +63,7 @@ export const HvCard = ({
       <StyledContainer>
         <StyledBar
           className={clsx(cardClasses.semanticBar, classes?.semanticBar)}
-          barColor={statusColor}
+          $barColor={statusColor}
         />
         <StyledIcon>{icon}</StyledIcon>
       </StyledContainer>

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Avatar as MuiAvatar } from "@mui/material";
+import { transientOptions } from "utils/transientOptions";
 import { outlineStyles } from "../../utils/focusUtils";
 import { HvAvatarSize, HvAvatarVariant } from "./Avatar";
 
@@ -28,35 +29,44 @@ export const StyledImg = styled("img")({
   textIndent: 10000,
 });
 
-export const StyledStatus = styled("div")(
-  ({ variant, size }: { variant: HvAvatarVariant; size: HvAvatarSize }) => ({
+export const StyledStatus = styled(
+  "div",
+  transientOptions
+)(
+  ({
+    $variant,
+    $size,
+  }: {
+    $variant: HvAvatarVariant;
+    $size: HvAvatarSize;
+  }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     position: "relative",
 
     // variant
-    ...(variant === "circular" && {
+    ...($variant === "circular" && {
       borderRadius: "50%",
     }),
     // size
-    ...(size === "XS" && {
+    ...($size === "XS" && {
       width: EXTRA_SMALL.container,
       height: EXTRA_SMALL.container,
     }),
-    ...(size === "SM" && {
+    ...($size === "SM" && {
       width: SMALL.container,
       height: SMALL.container,
     }),
-    ...(size === "MD" && {
+    ...($size === "MD" && {
       width: MEDIUM.container,
       height: MEDIUM.container,
     }),
-    ...(size === "LG" && {
+    ...($size === "LG" && {
       width: LARGE.container,
       height: LARGE.container,
     }),
-    ...(size === "XL" && {
+    ...($size === "XL" && {
       width: EXTRA_LARGE.container,
       height: EXTRA_LARGE.container,
     }),

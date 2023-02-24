@@ -34,27 +34,27 @@ export const HvFooter = (props: HvFooterProps) => {
 
   return (
     <StyledRoot
-      breakpoints={muiTheme.breakpoints}
+      $breakpoints={muiTheme.breakpoints}
       className={clsx(className, footerClasses.root, classes?.root)}
       {...others}
     >
       <StyledName
-        breakpoints={muiTheme.breakpoints}
+        $breakpoints={muiTheme.breakpoints}
         variant="label"
         className={clsx(footerClasses.name, classes?.name)}
       >
         {name}
       </StyledName>
-      <StyledRightContainer breakpoints={muiTheme.breakpoints}>
+      <StyledRightContainer $breakpoints={muiTheme.breakpoints}>
         <StyledCopyright
-          breakpoints={muiTheme.breakpoints}
+          $breakpoints={muiTheme.breakpoints}
           className={clsx(footerClasses.copyright, classes?.copyright)}
         >
           {copyright}
         </StyledCopyright>
         {links && (
           <StyledSeparator
-            breakpoints={muiTheme.breakpoints}
+            $breakpoints={muiTheme.breakpoints}
             className={clsx(footerClasses.separator, classes?.separator)}
           />
         )}

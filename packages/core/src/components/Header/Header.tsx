@@ -19,7 +19,7 @@ export type HvHeaderProps = HvBaseProps & {
 export const HvHeader = (props: HvHeaderProps) => {
   const { children, position = "fixed" } = props;
   return (
-    <StyledAppBar position={position}>
+    <StyledAppBar $position={position}>
       <HeaderRoot>{children}</HeaderRoot>
     </StyledAppBar>
   );

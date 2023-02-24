@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvTypography } from "components";
+import { transientOptions } from "utils/transientOptions";
 import { HvProgressBarStatus } from "./ProgressBar";
 
 export const StyledRoot = styled("div")({
@@ -30,15 +31,16 @@ export const StyledProgressBarContainer = styled("div")({
   backgroundColor: theme.colors.atmo4,
 });
 
-export const StyledProgressBar = styled("div")(
-  ({ status }: { status?: HvProgressBarStatus }) => ({
-    backgroundColor: "#000",
-    height: 4,
-    ...(status === "completed" && {
-      backgroundColor: theme.colors.sema1,
-    }),
-    ...(status === "error" && {
-      backgroundColor: theme.colors.sema4,
-    }),
-  })
-);
+export const StyledProgressBar = styled(
+  "div",
+  transientOptions
+)(({ $status }: { $status?: HvProgressBarStatus }) => ({
+  backgroundColor: "#000",
+  height: 4,
+  ...($status === "completed" && {
+    backgroundColor: theme.colors.sema1,
+  }),
+  ...($status === "error" && {
+    backgroundColor: theme.colors.sema4,
+  }),
+}));

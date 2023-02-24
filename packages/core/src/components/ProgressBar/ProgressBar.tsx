@@ -78,7 +78,7 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
               progressBarClasses.progressBar,
               classes?.progressBar
             )}
-            status={status}
+            $status={status}
           />
         </StyledProgressBarContainer>
       </StyledProgressContainer>

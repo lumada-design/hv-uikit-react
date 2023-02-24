@@ -70,7 +70,7 @@ export const HvBadge = (props: HvBadgeProps) => {
     >
       {Component}
       <StyledContainer
-        component={Component ? true : false}
+        $component={Component ? true : false}
         className={
           Component
             ? clsx(badgeClasses.badgeContainer, classes?.badgeContainer)
@@ -79,11 +79,11 @@ export const HvBadge = (props: HvBadgeProps) => {
       >
         <StyledBadge
           className={clsx(badgeClasses.badgePosition, classes?.badgePosition)}
-          badge={!!(count > 0 || renderedCountOrLabel)}
-          showCount={!!(!label && renderedCountOrLabel)}
-          showLabel={!!label}
-          badgeIcon={!!icon}
-          badgeOneDigit={String(renderedCountOrLabel).length === 1}
+          $badge={!!(count > 0 || renderedCountOrLabel)}
+          $showCount={!!(!label && renderedCountOrLabel)}
+          $showLabel={!!label}
+          $badgeIcon={!!icon}
+          $badgeOneDigit={String(renderedCountOrLabel).length === 1}
         >
           {renderedCountOrLabel}
         </StyledBadge>

@@ -17,27 +17,28 @@ export const StyledRoot = styled(
   }),
 }));
 
-export const StyledTypography = styled(HvTypography)(
-  ({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
-    color: theme.colors.sema4,
-    paddingRight: theme.space.xs,
-    "&:first-child": {
-      paddingLeft: theme.space.xs,
-    },
-    ...($topGutter && {
-      paddingTop: 6,
-    }),
-    ...($hideText && {
-      // display none or visibility hidden prevents
-      // browser to trigger the aria-alert
-      width: 0,
-      height: 0,
-      padding: 0,
-      margin: 0,
-      overflow: "hidden",
-    }),
-  })
-);
+export const StyledTypography = styled(
+  HvTypography,
+  transientOptions
+)(({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
+  color: theme.colors.sema4,
+  paddingRight: theme.space.xs,
+  "&:first-child": {
+    paddingLeft: theme.space.xs,
+  },
+  ...($topGutter && {
+    paddingTop: 6,
+  }),
+  ...($hideText && {
+    // display none or visibility hidden prevents
+    // browser to trigger the aria-alert
+    width: 0,
+    height: 0,
+    padding: 0,
+    margin: 0,
+    overflow: "hidden",
+  }),
+}));
 
 export const StyledIcon = styled(Fail)({
   minWidth: "32px",
