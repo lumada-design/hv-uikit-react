@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.3.3...@hitachivantara/uikit-react-lab@4.4.0) (2023-02-24)
+
+### Bug Fixes
+
+- corrected ts typings for VerticalNavigation ([#3156](https://github.com/lumada-design/hv-uikit-react/issues/3156)) ([0059c68](https://github.com/lumada-design/hv-uikit-react/commit/0059c68517b90d942c98e6de59ac262137b66149))
+
+### Features
+
+- **VerticalNavigation:** fixed collapsed panel with sub menu entries ([#3129](https://github.com/lumada-design/hv-uikit-react/issues/3129)) ([68504cb](https://github.com/lumada-design/hv-uikit-react/commit/68504cb637c6d4c7557219f757fdeaa4625ded8a))
+
 ## [4.3.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.3.2...@hitachivantara/uikit-react-lab@4.3.3) (2023-01-12)
 
 ### Bug Fixes
