@@ -3,7 +3,7 @@
 exports[`BaseInput > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseInput-root css-fp1w37-StyledRoot e8ibl7d2"
+    class="HvBaseInput-root css-18w8sys-StyledRoot e8ibl7d2"
   >
     <div
       class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
