@@ -60,7 +60,7 @@ export const HvLoading = (props: HvLoadingProps) => {
               classes?.loadingBar,
               variant
             )}
-            variant={variant}
+            $variant={variant}
           ></StyledBar>
         ))}
       </StyledBarContainer>

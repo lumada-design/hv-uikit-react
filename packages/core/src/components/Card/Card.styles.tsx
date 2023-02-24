@@ -52,18 +52,19 @@ export const StyledContainer = styled("div")({
   },
 });
 
-export const StyledBar = styled("div")(
-  ({ barColor }: { barColor: string }) => ({
-    width: "100%",
-    height: 2,
-    top: -1,
-    right: 0,
-    backgroundColor: theme.colors[barColor],
-    ...(barColor === "sema0" && {
-      backgroundColor: theme.colors.atmo4,
-    }),
-  })
-);
+export const StyledBar = styled(
+  "div",
+  transientOptions
+)(({ $barColor }: { $barColor: string }) => ({
+  width: "100%",
+  height: 2,
+  top: -1,
+  right: 0,
+  backgroundColor: theme.colors[$barColor],
+  ...($barColor === "sema0" && {
+    backgroundColor: theme.colors.atmo4,
+  }),
+}));
 
 export const StyledIcon = styled("div")({
   top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,

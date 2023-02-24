@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
 import { HvTypography } from "components";
 import { theme } from "@hitachivantara/uikit-styles";
+import { transientOptions } from "utils/transientOptions";
 
-export const StyledRoot = styled("div")(
+export const StyledRoot = styled(
+  "div",
+  transientOptions
+)(
   ({
     $counterDisabled,
     $gutter,
@@ -21,7 +25,10 @@ export const StyledRoot = styled("div")(
   })
 );
 
-export const StyledTypography = styled(HvTypography)(
+export const StyledTypography = styled(
+  HvTypography,
+  transientOptions
+)(
   ({
     $overloaded,
     $counterDisabled,

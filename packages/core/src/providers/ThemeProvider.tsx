@@ -18,8 +18,8 @@ interface HvThemeContextValue {
   selectedTheme: BaseTheme | string;
   selectedMode: ThemeColorMode | string;
   changeTheme: (
-    theme: BaseTheme | string,
-    mode: ThemeColorMode | string
+    theme?: BaseTheme | string,
+    mode?: ThemeColorMode | string
   ) => void;
   rootId?: string;
 }

@@ -66,7 +66,6 @@ const StyledRoot = styled(
 }));
 
 const StyledSnackbarProvider = styled(SnackbarProvider)({
-  // "&.SnackbarContent-root": {
   backgroundColor: "transparent !important",
   boxShadow: "none !important",
   "&&": {

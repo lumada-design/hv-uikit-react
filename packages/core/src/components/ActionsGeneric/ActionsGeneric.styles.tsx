@@ -15,9 +15,10 @@ export const StyledRoot = styled(
   }),
 }));
 
-export const StyledButton = styled((props: HvButtonProps) => (
-  <HvButton {...props} />
-))(({ $baseColor }: { $baseColor: string }) => ({
+export const StyledButton = styled(
+  (props: HvButtonProps) => <HvButton {...props} />,
+  transientOptions
+)(({ $baseColor }: { $baseColor: string }) => ({
   "&:not(:last-child)": {
     marginRight: theme.space.xs,
   },

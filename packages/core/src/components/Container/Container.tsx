@@ -38,7 +38,7 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
     return (
       <StyledRoot
         className={clsx(className, containerClasses.root, classes?.root)}
-        breakpoints={muiTheme.breakpoints}
+        $breakpoints={muiTheme.breakpoints}
         ref={ref}
         maxWidth={maxWidth}
         fixed={fixed}

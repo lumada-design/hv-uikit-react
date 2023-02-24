@@ -149,40 +149,45 @@ export const StyledError = styled(HvWarningText)({
   float: "left",
 });
 
-export const StyledListItem = styled(HvListItem)(
-  ({ $singleLine }: { $singleLine: boolean }) => ({
+export const StyledListItem = styled(
+  HvListItem,
+  transientOptions
+)(({ $singleLine }: { $singleLine: boolean }) => ({
+  marginBottom: 2,
+  height: 24,
+  lineHeight: "24px",
+  "&:not(:last-child)": {
     marginBottom: 2,
-    height: 24,
-    lineHeight: "24px",
-    "&:not(:last-child)": {
-      marginBottom: 2,
-    },
-    [`&.${listItemClasses.gutters}`]: {
-      padding: "0 5px",
-    },
-    ...($singleLine && {
-      display: "table-cell",
-      paddingTop: "2px!important",
-    }),
-  })
-);
+  },
+  [`&.${listItemClasses.gutters}`]: {
+    padding: "0 5px",
+  },
+  ...($singleLine && {
+    display: "table-cell",
+    paddingTop: "2px!important",
+  }),
+}));
 
-export const StyledTag = styled((props) => <HvTag {...props} />)(
-  ({ $selected }: { $selected: boolean }) => ({
-    [`& .${tagsInputClasses.chipRoot}`]: {
-      maxWidth: "none",
-    },
-    ...($selected && {
-      outlineColor: "#52A8EC",
-      outlineStyle: "solid",
-      outlineWidth: "0px",
-      outlineOffset: "-1px",
-      boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
-    }),
-  })
-);
+export const StyledTag = styled(
+  (props) => <HvTag {...props} />,
+  transientOptions
+)(({ $selected }: { $selected: boolean }) => ({
+  [`& .${tagsInputClasses.chipRoot}`]: {
+    maxWidth: "none",
+  },
+  ...($selected && {
+    outlineColor: "#52A8EC",
+    outlineStyle: "solid",
+    outlineWidth: "0px",
+    outlineOffset: "-1px",
+    boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+  }),
+}));
 
-export const StyledInputListItem = styled(HvListItem)(
+export const StyledInputListItem = styled(
+  HvListItem,
+  transientOptions
+)(
   ({
     $singleLine,
     $isTagSelected,
@@ -217,44 +222,45 @@ export const StyledInputListItem = styled(HvListItem)(
   })
 );
 
-export const StyledInput = styled(HvInput)(
-  ({ $singleLine }: { $singleLine: boolean }) => ({
-    [`& .${baseInputClasses.root}`]: {
-      width: "100%",
-      [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
-        background: "none",
-      },
-      [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
-        background: "none",
-      },
-    },
-    [`& .${baseInputClasses.inputRoot}`]: {
-      marginLeft: 0,
-      marginRight: 0,
-      width: 0,
-      flex: "1 1 auto",
-      minWidth: 48,
-      height: 24,
-      lineHeight: "24px",
-      padding: 0,
-    },
-    [`& .${baseInputClasses.inputBorderContainer}`]: {
-      border: "none",
+export const StyledInput = styled(
+  HvInput,
+  transientOptions
+)(({ $singleLine }: { $singleLine: boolean }) => ({
+  [`& .${baseInputClasses.root}`]: {
+    width: "100%",
+    [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
       background: "none",
     },
-    [`& .${baseInputClasses.inputRootFocused}`]: {
-      outline: "none!important",
-      boxShadow: "none!important",
+    [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
+      background: "none",
     },
-    [`& .${baseInputClasses.inputRootReadOnly}`]: {
+  },
+  [`& .${baseInputClasses.inputRoot}`]: {
+    marginLeft: 0,
+    marginRight: 0,
+    width: 0,
+    flex: "1 1 auto",
+    minWidth: 48,
+    height: 24,
+    lineHeight: "24px",
+    padding: 0,
+  },
+  [`& .${baseInputClasses.inputBorderContainer}`]: {
+    border: "none",
+    background: "none",
+  },
+  [`& .${baseInputClasses.inputRootFocused}`]: {
+    outline: "none!important",
+    boxShadow: "none!important",
+  },
+  [`& .${baseInputClasses.inputRootReadOnly}`]: {
+    border: "none",
+    "&:hover": {
       border: "none",
-      "&:hover": {
-        border: "none",
-      },
     },
-    ...($singleLine && {}),
-  })
-);
+  },
+  ...($singleLine && {}),
+}));
 
 export const StyledSuggestions = styled((props) => (
   <HvSuggestions {...props} />

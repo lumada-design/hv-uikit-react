@@ -1,14 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
-
-interface StyledBadgeProps {
-  badge?: boolean;
-  showCount?: boolean;
-  showLabel?: boolean;
-  badgeIcon?: boolean;
-  badgeOneDigit?: boolean;
-}
+import { transientOptions } from "utils/transientOptions";
 
 const labelBaseStyle = {
   ...theme.typography.label,
@@ -22,45 +15,55 @@ export const StyledRoot = styled("div")({
   "&>*": { float: "left" },
 });
 
-export const StyledContainer = styled("div")(
-  ({ component }: { component: boolean }) => ({
-    ...(component && {
-      width: 0,
-      backgroundColor: "red",
-    }),
-  })
-);
+export const StyledContainer = styled(
+  "div",
+  transientOptions
+)(({ $component }: { $component: boolean }) => ({
+  ...($component && {
+    width: 0,
+    backgroundColor: "red",
+  }),
+}));
 
-export const StyledBadge = styled("div")(
+export const StyledBadge = styled(
+  "div",
+  transientOptions
+)(
   ({
-    badge,
-    showCount,
-    showLabel,
-    badgeIcon,
-    badgeOneDigit,
-  }: StyledBadgeProps) => ({
-    ...(badge && {
+    $badge,
+    $showCount,
+    $showLabel,
+    $badgeIcon,
+    $badgeOneDigit,
+  }: {
+    $badge?: boolean;
+    $showCount?: boolean;
+    $showLabel?: boolean;
+    $badgeIcon?: boolean;
+    $badgeOneDigit?: boolean;
+  }) => ({
+    ...($badge && {
       borderRadius: theme.space.xs,
       backgroundColor: theme.colors.acce1,
       float: "left",
       minHeight: "8px",
       minWidth: "8px",
     }),
-    ...(showCount && {
+    ...($showCount && {
       ...(labelBaseStyle as CSSProperties),
       wordBreak: "keep-all",
       maxWidth: 30,
     }),
-    ...(showLabel && {
+    ...($showLabel && {
       ...(labelBaseStyle as CSSProperties),
       wordBreak: "keep-all",
     }),
-    ...(badgeIcon && {
+    ...($badgeIcon && {
       position: "relative",
       top: "1px",
       left: "-7px",
     }),
-    ...(badgeOneDigit && {
+    ...($badgeOneDigit && {
       padding: 0,
       width: "16px",
       textAlign: "center",

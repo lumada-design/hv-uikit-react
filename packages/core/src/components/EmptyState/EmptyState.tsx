@@ -33,8 +33,8 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
   const renderNode = (node, className, type, variant) =>
     node && (
       <StyledTypography
-        breakpoints={muiTheme.breakpoints}
-        type={type}
+        $breakpoints={muiTheme.breakpoints}
+        $type={type}
         variant={variant}
         className={className}
       >
@@ -50,8 +50,8 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
       {...others}
     >
       <StyledContainer
-        breakpoints={muiTheme.breakpoints}
-        messageOnly={!!(message && !(title || action))}
+        $breakpoints={muiTheme.breakpoints}
+        $messageOnly={!!(message && !(title || action))}
       >
         <StyledIconContainer
           className={clsx(
@@ -62,7 +62,7 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
           {icon}
         </StyledIconContainer>
         <StyledTextContainer
-          breakpoints={muiTheme.breakpoints}
+          $breakpoints={muiTheme.breakpoints}
           className={clsx(
             emptyStateClasses.textContainer,
             classes?.textContainer

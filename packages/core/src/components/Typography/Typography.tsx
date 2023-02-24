@@ -155,9 +155,9 @@ export type HvTypographyProps = HvBaseProps<HTMLElement, { disabled }> & {
   component?: React.ReactNode | React.ElementType;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: HvTypographyVariants | HvTypographyLegacyVariants;
-  /** If `true` the typogrpahy will display the look of a link. */
+  /** If `true` the typography will display the look of a link. */
   link?: boolean;
-  /** If `true` the typogrpahy will display the look of a disabled state. */
+  /** If `true` the typography will display the look of a disabled state. */
   disabled?: boolean;
   /** If `true`, the text will have a bottom margin. */
   paragraph?: boolean;

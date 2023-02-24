@@ -28,7 +28,7 @@ export const HvMultiButton = ({
   return (
     <StyledRoot
       className={clsx(className, multiButtonClasses.root, classes?.root)}
-      vertical={vertical}
+      $vertical={vertical}
       {...others}
     >
       {React.Children.map(children, (child) => {

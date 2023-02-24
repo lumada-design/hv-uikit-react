@@ -3,7 +3,6 @@
 exports[`Container > should render correctly 1`] = `
 <div>
   <div
-    breakpoints="[object Object]"
     class="MuiContainer-root HvContainer-root eq8pv0f0 css-48phru-MuiContainer-root-StyledRoot"
   />
 </div>

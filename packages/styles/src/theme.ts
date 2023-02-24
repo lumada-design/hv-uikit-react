@@ -2,7 +2,7 @@ import {
   DeepString,
   Theme,
   ThemeComponents,
-  ThemeSpaceBreakpoints,
+  ThemeBreakpoint,
   ThemeTypography,
   ThemeVars,
   TypographyProps,
@@ -263,8 +263,8 @@ const spacing = (
   value:
     | string
     | number
-    | ThemeSpaceBreakpoints
-    | (string | number | ThemeSpaceBreakpoints)[]
+    | ThemeBreakpoint
+    | (string | number | ThemeBreakpoint)[]
 ): string => {
   switch (typeof value) {
     case "number":

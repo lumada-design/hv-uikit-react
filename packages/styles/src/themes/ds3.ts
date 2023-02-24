@@ -39,18 +39,21 @@ const ds3 = makeTheme((theme: Theme) => ({
   },
   typography: {
     display: {
+      color: theme.colors.acce1,
       fontSize: "42px",
       letterSpacing: "0.02em",
       lineHeight: "52px",
       fontWeight: 600,
     },
     title1: {
+      color: theme.colors.acce1,
       fontSize: "32px",
       letterSpacing: "0.02em",
       lineHeight: "40px",
       fontWeight: 600,
     },
     title2: {
+      color: theme.colors.acce1,
       fontSize: "22px",
       letterSpacing: "0.02em",
       lineHeight: "30px",
@@ -64,6 +67,7 @@ const ds3 = makeTheme((theme: Theme) => ({
       fontWeight: 600,
     },
     title4: {
+      color: theme.colors.acce1,
       fontWeight: theme.fontWeights.semibold,
       fontSize: theme.fontSizes.lg,
       lineHeight: theme.lineHeights.lg,
@@ -90,6 +94,7 @@ const ds3 = makeTheme((theme: Theme) => ({
       fontWeight: 400,
     },
     caption2: {
+      color: theme.colors.acce1,
       fontWeight: theme.fontWeights.normal,
       fontSize: theme.fontSizes.xs,
       lineHeight: theme.lineHeights.sm,

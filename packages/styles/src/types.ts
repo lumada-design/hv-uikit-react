@@ -257,8 +257,8 @@ export type ThemeTypography = {
   };
 };
 
-// Space breakpoints
-export type ThemeSpaceBreakpoints = Exclude<keyof typeof tokens.space, "base">;
+// Breakpoints
+export type ThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
 
 // Theme utils
 export type ThemeUtils = {
@@ -266,8 +266,8 @@ export type ThemeUtils = {
     value:
       | string
       | number
-      | ThemeSpaceBreakpoints
-      | (string | number | ThemeSpaceBreakpoints)[]
+      | ThemeBreakpoint
+      | (string | number | ThemeBreakpoint)[]
   ) => string;
 };
 
