@@ -277,8 +277,14 @@ export type ThemeColors = typeof colors.common & typeof colors.light;
 // Theme color modes
 export type ThemeColorMode = "dawn" | "wicked";
 
+// Theme color mode type
+export type ThemeColorModeType = "light" | "dark";
+
 // Theme color mode structure
-export type ThemeColorModeStructure = ThemeColors & { backgroundColor: string };
+export type ThemeColorModeStructure = ThemeColors & {
+  backgroundColor: string;
+  type: ThemeColorModeType;
+};
 
 // Theme structure
 export type ThemeStructure = ThemeComponents &

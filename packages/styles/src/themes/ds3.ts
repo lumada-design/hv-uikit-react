@@ -7,11 +7,13 @@ const ds3 = makeTheme((theme: Theme) => ({
   colors: {
     modes: {
       dawn: {
+        type: "light",
         backgroundColor: colors.light.atmo2,
         ...colors.common,
         ...colors.light,
       },
       wicked: {
+        type: "dark",
         backgroundColor: colors.dark.atmo2,
         ...colors.common,
         ...colors.dark,
