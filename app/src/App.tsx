@@ -26,6 +26,7 @@ import { Header, ThemeSwitcher } from "./layout";
 import { Switch } from "./components/Switch";
 import { DropDownMenu } from "./components/DropDownMenu/DropDownMenu";
 import customTheme from "./customTheme";
+import { Controls } from "./components/Controls/Controls";
 
 const styles = {
   display: "flex",
@@ -43,6 +44,7 @@ const App = () => {
       <Header />
       <HvBox sx={styles}>
         <ThemeSwitcher />
+        <Controls />
         <Typography />
         <BaseDropdown />
         <DotPagination />

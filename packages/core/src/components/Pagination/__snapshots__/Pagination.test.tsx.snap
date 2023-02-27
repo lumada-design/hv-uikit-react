@@ -146,7 +146,7 @@ exports[`Pagination > should render correctly 1`] = `
             class="HvInput-root HvPagination-pageSizeInputContainer css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-cpmv9g-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root eryso6g0 css-zhlmer-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
                 class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"

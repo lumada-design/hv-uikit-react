@@ -36,7 +36,7 @@ exports[`TextArea > should render correctly 1`] = `
       </label>
     </div>
     <div
-      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-1pj9pub-StyledRoot-StyledBaseInput e8ibl7d2"
+      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-g20kzt-StyledRoot-StyledBaseInput e8ibl7d2"
     >
       <div
         class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e8ibl7d0 css-1e82wch-MuiInputBase-root-MuiInput-root-StyledInput"

@@ -450,8 +450,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
         component="div"
         $selectionDisabled={disabled}
         $isOpen={isOpen || hasSelection}
-        // variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
-        variant={"normalText"}
+        variant="body"
         className={clsx(
           dropdownClasses?.placeholder,
           classes?.placeholder,
@@ -471,7 +470,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
           disabled &&
             clsx(dropdownClasses?.selectionDisabled, classes?.selectionDisabled)
         )}
-        variant="normalText"
+        variant="body"
       >
         <b>{selectionLabel.selected}</b>
         {` ${labels?.multiSelectionConjunction} ${selectionLabel.total}`}

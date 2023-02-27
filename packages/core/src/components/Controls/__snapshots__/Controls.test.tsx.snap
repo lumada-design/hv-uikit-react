@@ -1,0 +1,2848 @@
+// Vitest Snapshot v1
+
+exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root css-10altj4-StyledRoot e1pt6zdq1"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
+        >
+          <div
+            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+          >
+            <div
+              class="HvBaseInput-root eryso6g0 css-zhlmer-StyledRoot-StyledBaseInput e8ibl7d2"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
+              >
+                <input
+                  aria-controls="cardsGrid itemList"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon css-1431vi8-StyledIcon ek2tbgi1"
+                    >
+                      <div
+                        class="css-du18qm"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
+                            fill="var(--colors-acce1)"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-u8jwkr-StyledInputBorderContainer e8ibl7d1"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
+        >
+          <div
+            aria-controls="cardsGrid itemList"
+            class="HvDropdown-root  e16dy5r70 css-u5677i-StyledHvFormElement-StyledDropdown etta2py4 HvFormElement-root"
+          >
+            <div
+              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe9"
+            >
+              <div
+                aria-expanded="false"
+                class="etta2py3 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown eapzthe8"
+                role="combobox"
+                tabindex="-1"
+              >
+                <div
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot eapzthe7"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <div
+                    class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
+                  >
+                    <div
+                      class="HvDropdown-placeholder etta2py0 css-4kh4g2-getStyledComponent-StyledTypography e1tnpalo0"
+                    >
+                      Select...
+                    </div>
+                  </div>
+                  <div
+                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="var(--colors-acce1)"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvMultiButton-root css-1bscudw-StyledRoot e17vrbb41"
+        >
+          <button
+            aria-label="Select card view"
+            aria-pressed="true"
+            class="button selected e17vrbb40 css-l7jzt6-StyledButton-StyledButton e138pvrm0"
+            id="card"
+            label="Select card view"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                <div
+                  class="css-du18qm"
+                  name="Cards"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                      fill="var(--colors-acce1)"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </button>
+          <button
+            aria-label="Select list view"
+            aria-pressed="false"
+            class="button e17vrbb40 css-l7jzt6-StyledButton-StyledButton e138pvrm0"
+            id="list"
+            label="Select list view"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                <div
+                  class="css-du18qm"
+                  name="List"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                      fill="var(--colors-acce1)"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1o1k8x2-StyledContainer e3u1m6d0"
+      cols="3"
+      id="cardsGrid"
+      spacing="sm"
+    >
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root css-10altj4-StyledRoot e1pt6zdq1"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
+        >
+          <div
+            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+          >
+            <div
+              class="HvBaseInput-root eryso6g0 css-zhlmer-StyledRoot-StyledBaseInput e8ibl7d2"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
+              >
+                <input
+                  aria-controls="controlledCardsGrid controlledItemList"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon css-1431vi8-StyledIcon ek2tbgi1"
+                    >
+                      <div
+                        class="css-du18qm"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
+                            fill="var(--colors-acce1)"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-u8jwkr-StyledInputBorderContainer e8ibl7d1"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
+        >
+          <div
+            aria-controls="controlledCardsGrid controlledItemList"
+            class="HvDropdown-root  e16dy5r70 css-u5677i-StyledHvFormElement-StyledDropdown etta2py4 HvFormElement-root"
+          >
+            <div
+              class="HvBaseDropdown-root HvDropdown-dropdown css-1nukton-StyledRoot eapzthe9"
+            >
+              <div
+                aria-expanded="false"
+                class="etta2py3 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown eapzthe8"
+                role="combobox"
+                tabindex="-1"
+              >
+                <div
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot eapzthe7"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <div
+                    class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
+                  >
+                    <div
+                      class="HvDropdown-placeholder etta2py0 css-fqfek5-getStyledComponent-StyledTypography e1tnpalo0"
+                    >
+                      Name Ascending
+                    </div>
+                  </div>
+                  <div
+                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="var(--colors-acce1)"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="HvMultiButton-root css-1bscudw-StyledRoot e17vrbb41"
+        >
+          <button
+            aria-label="Select card view"
+            aria-pressed="true"
+            class="button selected e17vrbb40 css-l7jzt6-StyledButton-StyledButton e138pvrm0"
+            id="card"
+            label="Select card view"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                <div
+                  class="css-du18qm"
+                  name="Cards"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
+                      fill="var(--colors-acce1)"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </button>
+          <button
+            aria-label="Select list view"
+            aria-pressed="false"
+            class="button e17vrbb40 css-l7jzt6-StyledButton-StyledButton e138pvrm0"
+            id="list"
+            label="Select list view"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                <div
+                  class="css-du18qm"
+                  name="List"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
+                      fill="var(--colors-acce1)"
+                    />
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1o1k8x2-StyledContainer e3u1m6d0"
+      cols="3"
+      spacing="sm"
+    >
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root css-10altj4-StyledRoot e1pt6zdq1"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
+          id="MultibuttonFilter"
+        >
+          <div
+            class="HvMultiButton-root css-1bscudw-StyledRoot e17vrbb41"
+            style="width: 350px;"
+          >
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="true"
+              class="button selected e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="all"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  All
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="critical"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Critical
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="major"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Major
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="average"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Average
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="CustomControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="minor"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Minor
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
+        />
+      </div>
+    </div>
+    <div
+      class="css-1o1k8x2-StyledContainer e3u1m6d0"
+      cols="3"
+      id="CustomControlsCardsId"
+      spacing="sm"
+    >
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          35
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          36
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          37
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          38
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          39
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          40
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          41
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          42
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          43
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          44
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 11
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          45
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 12
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          46
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 13
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          47
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 14
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          48
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 15
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          49
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
+<div>
+  <div
+    style="display: grid; gap: 8px;"
+  >
+    <div
+      class="HvControls-root css-10altj4-StyledRoot e1pt6zdq1"
+    >
+      <div
+        class="HvControls-section HvControls-leftSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
+          id="MultibuttonFilter"
+        >
+          <div
+            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+            id="MultibuttonFilter-search-input"
+          >
+            <div
+              class="HvBaseInput-root eryso6g0 css-zhlmer-StyledRoot-StyledBaseInput e8ibl7d2"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
+              >
+                <input
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  id="MultibuttonFilter-search-input-input"
+                  placeholder="Search"
+                  rows="10"
+                  type="search"
+                  value=""
+                />
+                <div
+                  aria-hidden="true"
+                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                >
+                  <div
+                    aria-label="Search"
+                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    role="presentation"
+                  >
+                    <div
+                      class="HvAdornment-icon css-1431vi8-StyledIcon ek2tbgi1"
+                    >
+                      <div
+                        class="css-du18qm"
+                        name="Search"
+                      >
+                        <svg
+                          focusable="false"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="color0"
+                            d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
+                            fill="var(--colors-acce1)"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-u8jwkr-StyledInputBorderContainer e8ibl7d1"
+                role="presentation"
+              />
+            </div>
+          </div>
+          <div
+            class="HvMultiButton-root css-1bscudw-StyledRoot e17vrbb41"
+            style="width: 350px;"
+          >
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="true"
+              class="button selected e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="all"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  All
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="critical"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Critical
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="major"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Major
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="average"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Average
+                </span>
+              </div>
+            </button>
+            <button
+              aria-controls="mixedControlsCardsId"
+              aria-pressed="false"
+              class="button e17vrbb40 css-1o3odqw-StyledButton-StyledButton e138pvrm0"
+              id="minor"
+            >
+              <div
+                class="css-1nxr552-StyledContentDiv e138pvrm3"
+              >
+                <span
+                  class="css-1o4qkkz-StyledChildren e138pvrm1"
+                >
+                  Minor
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="HvControls-section HvControls-rightSection css-1wge5cs-StyledSection e1pt6zdq0"
+      >
+        <div
+          class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
+        />
+      </div>
+    </div>
+    <div
+      class="css-1o1k8x2-StyledContainer e3u1m6d0"
+      cols="3"
+      id="mixedControlsCardsId"
+      spacing="sm"
+    >
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 1
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          35
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 2
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          36
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 3
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          37
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 4
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          38
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 5
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          39
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 6
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          40
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 7
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          41
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 8
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          42
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 9
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          43
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 10
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          44
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 11
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          45
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 12
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 3
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Minor
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          46
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 13
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 0
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Critical
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          47
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 14
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 1
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Major
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          48
+        </div>
+      </div>
+      <div
+        class="HvIsCardGridElement HvCard-root css-pygfxg-StyledRoot e5h2ket3"
+        style="width: 100%;"
+      >
+        <div
+          class="css-13ob5sy-StyledContainer e5h2ket2"
+        >
+          <div
+            class="HvCard-semanticBar css-mez56c-StyledBar e5h2ket1"
+          />
+          <div
+            class="css-a1yx5f-StyledIcon e5h2ket0"
+          />
+        </div>
+        <div
+          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-1giq1b2-MuiCardHeader-root-StyledHeader"
+        >
+          <div
+            class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+            >
+              Event 15
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Event: 
+          Anomaly detection 2
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Severity: 
+          Average
+        </div>
+        <div
+          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-2tr0ir-MuiCardContent-root-StyledContent"
+        >
+          Temperature: 
+          49
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

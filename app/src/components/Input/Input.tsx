@@ -32,6 +32,7 @@ export const Input = () => {
       }}
     >
       <HvInput placeholder="Insert text" />
+      <HvInput placeholder="Search" type="search" />
       <HvInput
         id="input-disabled-sample"
         disabled

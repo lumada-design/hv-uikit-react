@@ -21,7 +21,7 @@ export const StyledSearchContainer = styled("div")({
 });
 
 export const StyledList = styled(
-  HvList,
+  (props) => <HvList {...props} />,
   transientOptions
 )(
   ({

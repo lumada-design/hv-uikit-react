@@ -47,7 +47,9 @@ export const StyledCharCounter = styled((props) => (
   marginBottom: "6px",
 });
 
-export const StyledWarningText = styled(HvWarningText)({ float: "left" });
+export const StyledWarningText = styled((props) => (
+  <HvWarningText {...props} />
+))({ float: "left" });
 
 export const StyledBaseInput = styled(
   HvBaseInput,
