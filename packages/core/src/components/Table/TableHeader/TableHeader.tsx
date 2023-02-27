@@ -195,7 +195,7 @@ const StyledTableHeader = (c: any) =>
       }),
       // type
       ...($type === "head" && {
-        // ":first-child": {
+        // ":first-of-type": {
         height: "var(--first-row-cell-height)",
         borderTop: $variantList
           ? 0
@@ -249,7 +249,7 @@ const StyledTableHeader = (c: any) =>
         backgroundColor: "inherit",
         borderBottom: 0,
         height: 16,
-        ":first-child > &": {
+        ":first-of-type > &": {
           borderTop: 0,
           height: 16,
         },

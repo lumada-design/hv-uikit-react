@@ -22,7 +22,7 @@ export const StyledTabs = styled(MuiTabs)({
     overflow: "visible !important",
   },
   "& .MuiTabs-flexContainer": {
-    "& button:first-child": {
+    "& button:first-of-type": {
       marginLeft: "3px",
     },
   },

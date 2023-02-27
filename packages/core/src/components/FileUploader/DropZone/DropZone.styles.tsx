@@ -11,9 +11,9 @@ export const StyledDropZoneLabelsGroup = styled("div")({
   display: "flex",
   justifyContent: "start",
 
-  "& label:nth-child(1)": {},
+  "& label:nth-of-type(1)": {},
 
-  "& p:nth-child(2)": {
+  "& p:nth-of-type(2)": {
     marginLeft: "auto",
   },
 });

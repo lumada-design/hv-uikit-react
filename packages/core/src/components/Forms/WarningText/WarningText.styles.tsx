@@ -23,7 +23,7 @@ export const StyledTypography = styled(
 )(({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
   color: theme.colors.sema4,
   paddingRight: theme.space.xs,
-  "&:first-child": {
+  "&:first-of-type": {
     paddingLeft: theme.space.xs,
   },
   ...($topGutter && {

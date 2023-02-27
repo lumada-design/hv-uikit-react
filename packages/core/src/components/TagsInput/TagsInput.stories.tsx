@@ -40,6 +40,7 @@ export const Main: StoryObj<HvTagsInputProps> = {
   args: {
     label: "Enter your tags",
     description: "This is where you enter your tags",
+    placeholder: "Enter value",
     disabled: false,
     readOnly: false,
     required: false,

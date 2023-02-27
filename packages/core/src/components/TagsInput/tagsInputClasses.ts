@@ -70,6 +70,7 @@ const classKeys: string[] = [
   "tagSelected",
   "tagInputBorderContainer",
   "tagInputRootFocused",
+  "tagInputRootEmpty",
   "singleLine",
   "error",
   "inputExtension",

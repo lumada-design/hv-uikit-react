@@ -54,7 +54,7 @@ export const StyledCharCounter = styled((props) => (
 }));
 
 export const StyledTagsList = styled(
-  (props) => <HvListContainer {...props} />,
+  HvListContainer,
   transientOptions
 )(
   ({
@@ -232,6 +232,7 @@ export const StyledInput = styled(
 )(({ $singleLine }: { $singleLine: boolean }) => ({
   [`& .${baseInputClasses.root}`]: {
     width: "100%",
+    border: "none",
     [`&:hover .${tagsInputClasses.tagInputBorderContainer}`]: {
       background: "none",
     },
@@ -239,15 +240,15 @@ export const StyledInput = styled(
       background: "none",
     },
   },
-  [`& .${baseInputClasses.inputRoot}`]: {
+  [`&& .${baseInputClasses.inputRoot}`]: {
     marginLeft: 0,
     marginRight: 0,
-    width: 0,
     flex: "1 1 auto",
     minWidth: 48,
     height: 24,
     lineHeight: "24px",
     padding: 0,
+    border: "none",
   },
   [`& .${baseInputClasses.inputBorderContainer}`]: {
     border: "none",

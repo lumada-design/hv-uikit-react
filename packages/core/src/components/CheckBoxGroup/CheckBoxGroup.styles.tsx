@@ -50,7 +50,7 @@ export const StyledGroupContainer = styled(
       flexDirection: "row",
       flexWrap: "wrap",
 
-      "&>*:not(:first-child)": {
+      "&>*:not(:first-of-type)": {
         marginLeft: theme.space.sm,
       },
     }),

@@ -46,7 +46,7 @@ export const StyledRoot = styled(
           borderBottom: "solid 1px transparent",
         },
       },
-      "&:first-child": {
+      "&:first-of-type": {
         borderTop: `solid 1px ${theme.colors.atmo4}`,
         borderTopLeftRadius: "2px",
         borderTopRightRadius: "2px",
@@ -59,7 +59,7 @@ export const StyledRoot = styled(
           borderBottom: `solid 1px ${theme.colors.atmo4} !important`,
         },
       },
-      "&:not(:first-child)": {
+      "&:not(:first-of-type)": {
         marginLeft: 0,
         marginTop: -1,
       },
@@ -123,7 +123,7 @@ export const StyledButton = (Element) =>
         borderRight: "solid 1px transparent",
       },
     },
-    "&:first-child": {
+    "&:first-of-type": {
       borderLeft: `solid 1px ${theme.colors.atmo4}`,
       borderTopLeftRadius: "2px",
       borderBottomLeftRadius: "2px",
@@ -136,7 +136,7 @@ export const StyledButton = (Element) =>
         borderRight: `solid 1px ${theme.colors.atmo4} !important`,
       },
     },
-    "&:not(:first-child)": {
+    "&:not(:first-of-type)": {
       marginLeft: "-1px",
     },
     "&.selected": {
@@ -155,7 +155,7 @@ export const StyledButton = (Element) =>
           border: `solid 1px ${theme.colors.atmo4}`,
         },
       },
-      "&:first-child, &:last-child": {
+      "&:first-of-type, &:last-child": {
         border: `solid 1px ${theme.colors.acce1}`,
       },
 
