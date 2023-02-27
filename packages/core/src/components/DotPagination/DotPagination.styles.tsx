@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import dotPaginationClasses from "./dotPaginationClasses";
 import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 
-export const StyledRadioGroup = styled(HvRadioGroup)({
+export const StyledRadioGroup = styled((props) => <HvRadioGroup {...props} />)({
   display: "flex",
   justifyContent: "center",
 

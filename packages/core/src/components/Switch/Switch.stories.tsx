@@ -175,7 +175,7 @@ const StyledSwitchContainer = styled("div")({
   "& > *": {
     marginLeft: theme.space.xs,
   },
-  "& > *:first-child": {
+  "& > *:first-of-type": {
     marginLeft: 0,
   },
 });

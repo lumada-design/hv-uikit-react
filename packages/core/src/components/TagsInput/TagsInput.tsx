@@ -622,13 +622,12 @@ export const HvTagsInput = ({
           <StyledInputListItem
             className={clsx(
               !multiline &&
-                clsx(tagsInputClasses.singleLine, classes?.singleLine),
-              value.length === 0
-                ? clsx(
-                    tagsInputClasses.tagInputRootEmpty,
-                    classes?.tagInputRootEmpty
-                  )
-                : ""
+                clsx(
+                  tagsInputClasses.singleLine,
+                  classes?.singleLine,
+                  value.length === 0 && tagsInputClasses.tagInputRootEmpty,
+                  value.length === 0 && classes?.tagInputRootEmpty
+                )
             )}
             classes={{
               root: clsx(

@@ -187,7 +187,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-19k789t-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
               />

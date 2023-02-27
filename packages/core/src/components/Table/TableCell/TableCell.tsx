@@ -114,7 +114,7 @@ const StyledTableCell = (c: any) =>
       ...($groupColumnMostLeft && {
         borderLeft: `solid 1px ${theme.colors.atmo4}`,
 
-        "&:first-child": {
+        "&:first-of-type": {
           borderLeft: 0,
         },
       }),

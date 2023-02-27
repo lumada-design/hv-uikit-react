@@ -23,7 +23,7 @@ export const StyledRadio = styled(
     cursor: "not-allowed",
     pointerEvents: "initial",
     "& svg": {
-      "& path:nth-child(2)": {
+      "& path:nth-of-type(2)": {
         fill: theme.colors.atmo5,
       },
     },

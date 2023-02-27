@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const getBorderStyles = (type: string, color: string) => {
   if (type === "row") {
     return {
-      "& td:first-child": {
+      "& td:first-of-type": {
         borderLeft: `1px solid ${color}`,
         borderTop: `1px solid ${color}`,
         borderBottom: `1px solid ${color}`,
@@ -15,14 +15,14 @@ export const getBorderStyles = (type: string, color: string) => {
         borderBottom: `1px solid ${color}`,
         borderRadius: `0 ${theme.table.rowBorderRadius} ${theme.table.rowBorderRadius} 0`,
       },
-      "& td:not(:first-child):not(:last-child)": {
+      "& td:not(:first-of-type):not(:last-child)": {
         borderTop: `1px solid ${color}`,
         borderBottom: `1px solid ${color}`,
       },
     };
   } else if (type === "cell") {
     return {
-      ":first-child&": {
+      ":first-of-type&": {
         borderLeft: `1px solid ${theme.table.rowBorderColor}`,
         borderTop: `1px solid ${theme.table.rowBorderColor}`,
         borderBottom: `1px solid ${theme.table.rowBorderColor}`,
@@ -34,7 +34,7 @@ export const getBorderStyles = (type: string, color: string) => {
         borderBottom: `1px solid ${theme.table.rowBorderColor}`,
         borderRadius: `0 ${theme.table.rowBorderRadius} ${theme.table.rowBorderRadius} 0`,
       },
-      ":not(:first-child):not(:last-child)&": {
+      ":not(:first-of-type):not(:last-child)&": {
         borderTop: `1px solid ${theme.table.rowBorderColor}`,
         borderBottom: `1px solid ${theme.table.rowBorderColor}`,
       },

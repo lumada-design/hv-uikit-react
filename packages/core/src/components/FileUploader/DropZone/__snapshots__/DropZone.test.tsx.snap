@@ -4,7 +4,7 @@ exports[`DropZone > should render correctly 1`] = `
 <div>
   <div
     aria-label="File Dropzone"
-    class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1r4xwg210"
+    class="HvDropZone-dropZoneLabelsGroup css-713atf-StyledDropZoneLabelsGroup e1r4xwg210"
     id="dropzone-test"
   >
     <label
@@ -81,7 +81,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
 <div>
   <div
     aria-label="File Dropzone"
-    class="HvDropZone-dropZoneLabelsGroup css-qn1o70-StyledDropZoneLabelsGroup e1r4xwg210"
+    class="HvDropZone-dropZoneLabelsGroup css-713atf-StyledDropZoneLabelsGroup e1r4xwg210"
     id="dropzone-test"
   >
     <label

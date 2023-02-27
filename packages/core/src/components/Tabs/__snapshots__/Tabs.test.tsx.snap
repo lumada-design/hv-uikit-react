@@ -3,7 +3,7 @@
 exports[`Tabs > should render correctly 1`] = `
 <div>
   <div
-    class="MuiTabs-root HvTabs-root ex13pr80 css-mlk5wh-MuiTabs-root-StyledTabs"
+    class="MuiTabs-root HvTabs-root ex13pr80 css-7dmw98-MuiTabs-root-StyledTabs"
   >
     <div
       class="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
@@ -27,7 +27,7 @@ exports[`Tabs > should render correctly 1`] = `
 exports[`Tabs > should render correctly all components 1`] = `
 <div>
   <div
-    class="MuiTabs-root HvTabs-root ex13pr80 css-mlk5wh-MuiTabs-root-StyledTabs"
+    class="MuiTabs-root HvTabs-root ex13pr80 css-7dmw98-MuiTabs-root-StyledTabs"
   >
     <div
       class="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"

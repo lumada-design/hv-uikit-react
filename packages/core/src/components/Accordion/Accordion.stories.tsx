@@ -107,21 +107,27 @@ export const Controlled: StoryObj<HvAccordionProps> = {
           breakpoints={brk}
         >
           <HvButton
-            variant="secondary"
+            variant="secondarySubtle"
             onClick={() => handleToggle("analytics")}
           >
             Toggle Analytics
           </HvButton>
-          <HvButton variant="secondary" onClick={() => handleToggle("system")}>
+          <HvButton
+            variant="secondarySubtle"
+            onClick={() => handleToggle("system")}
+          >
             Toggle System
           </HvButton>
-          <HvButton variant="secondary" onClick={() => handleToggle("data")}>
+          <HvButton
+            variant="secondarySubtle"
+            onClick={() => handleToggle("data")}
+          >
             Toggle Data
           </HvButton>
-          <HvButton variant="secondary" onClick={() => handleAll(false)}>
+          <HvButton variant="secondarySubtle" onClick={() => handleAll(false)}>
             Close all
           </HvButton>
-          <HvButton variant="secondary" onClick={() => handleAll(true)}>
+          <HvButton variant="secondarySubtle" onClick={() => handleAll(true)}>
             Expand all
           </HvButton>
         </HvSimpleGrid>

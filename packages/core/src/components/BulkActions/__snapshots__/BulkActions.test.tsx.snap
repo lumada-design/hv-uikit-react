@@ -15,7 +15,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           class="HvCheckBox-container css-j79apy-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1q24rar-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -207,7 +207,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
           class="HvCheckBox-container css-j79apy-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1gqbdie-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1q24rar-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"

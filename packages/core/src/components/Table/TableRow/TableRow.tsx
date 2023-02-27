@@ -78,7 +78,7 @@ const StyledTableRow = (c: any) =>
         },
       }),
       ...($striped && {
-        "&:nth-child(even)": {
+        "&:nth-of-type(even)": {
           backgroundColor: $stripedColor,
           "&:hover": {
             backgroundColor: theme.table.rowHoverColor,
@@ -89,11 +89,11 @@ const StyledTableRow = (c: any) =>
       // type
       ...($type === "head" && {
         backgroundColor: "transparent",
-        "&:first-child": {
+        "&:first-of-type": {
           height: 52,
         },
 
-        "tr&:first-child": {
+        "tr&:first-of-type": {
           height: 52,
         },
       }),
@@ -117,11 +117,11 @@ const StyledTableRow = (c: any) =>
       }),
       ...($variantListHead && {
         height: 16,
-        "&:first-child": {
+        "&:first-of-type": {
           height: 16,
         },
 
-        "tr&:first-child": {
+        "tr&:first-of-type": {
           height: 16,
         },
       }),

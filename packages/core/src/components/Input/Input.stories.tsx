@@ -613,7 +613,7 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
       "& > *": {
         marginLeft: theme.space.xs,
       },
-      "& > *:first-child": {
+      "& > *:first-of-type": {
         marginLeft: 0,
       },
     });

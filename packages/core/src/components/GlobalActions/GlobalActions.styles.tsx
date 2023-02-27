@@ -88,7 +88,7 @@ export const StyledActions = styled("div")({
   alignItems: "center",
   justifyContent: "flex-end",
   marginLeft: "auto",
-  "& > *:not(:first-child) ": {
+  "& > *:not(:first-of-type) ": {
     marginLeft: theme.space.xs,
   },
 });
