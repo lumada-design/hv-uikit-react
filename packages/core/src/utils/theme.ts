@@ -74,6 +74,7 @@ export const parseThemes = (
     Object.keys(customizedTheme.colors.modes).forEach((mode) => {
       if (!themes[baseTheme].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
+          type: customizedTheme.colors.modes[mode].type || "light",
           backgroundColor: colors.light.atmo2,
           ...colors.common,
           ...colors.light,
