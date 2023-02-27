@@ -6,6 +6,7 @@ import HvSnackbarContentWrapper from "../SnackbarContentWrapper";
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { HvSnackbarVariant } from "../Snackbar";
 import { transientOptions } from "utils/transientOptions";
+import { HvSnackbarContentWrapperProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
 
 export type HvSnackbarProviderProps = {
   /** Your component tree. */
@@ -30,7 +31,7 @@ export type HvNotistackSnackMessageProps = {
   /** Variant of the snackbar. */
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
-  snackbarContentProps?: object;
+  snackbarContentProps?: HvSnackbarContentWrapperProps;
 };
 
 const HvNotistackSnackMessage = forwardRef<

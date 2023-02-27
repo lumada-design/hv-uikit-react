@@ -21,7 +21,7 @@ export type HvTableHeadProps = Omit<HvBaseProps, "children"> & {
    * The table has sticky headers.
    */
   stickyHeader?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableHeadClasses;
 };
 

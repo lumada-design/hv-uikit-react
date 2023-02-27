@@ -1,5 +1,4 @@
 import { getClasses } from "utils";
-import { HvDropdownListClasses } from "./List/dropdownListClasses";
 
 export type HvDropdownClasses = {
   root?: string;
@@ -14,7 +13,9 @@ export type HvDropdownClasses = {
   dropdownHeader?: string;
   dropdownHeaderInvalid?: string;
   dropdownHeaderOpen?: string;
-} & HvDropdownListClasses;
+  dropdownListContainer?: string;
+  rootList?: string;
+};
 
 const classKeys: string[] = [
   "root",
@@ -31,12 +32,6 @@ const classKeys: string[] = [
   "dropdownHeaderOpen",
   "rootList",
   "dropdownListContainer",
-  "searchContainer",
-  "listBorderDown",
-  "listContainer",
-  "selectAllContainer",
-  "selection",
-  "selectAll",
 ];
 
 const dropdownClasses = getClasses<HvDropdownClasses>(classKeys, "HvDropdown");

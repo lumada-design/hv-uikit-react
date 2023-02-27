@@ -12,6 +12,7 @@ import { SyntheticEvent } from "react";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import { setId } from "utils";
 import { HvActionGeneric } from "components";
+import { HvSnackbarContentWrapperProps } from "./SnackbarContentWrapper/SnackbarContentWrapper";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
@@ -53,8 +54,8 @@ export type HvSnackbarProps = Omit<MuiSnackbarProps, "action"> &
     /** Custom offset from top/bottom of the page, in px. */
     offset?: number;
     /** Others applied to the content of the snackbar. */
-    snackbarContentProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    snackbarContentProps?: HvSnackbarContentWrapperProps;
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvSnackbarClasses;
   };
 

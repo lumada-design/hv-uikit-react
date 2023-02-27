@@ -19,7 +19,7 @@ exports[`Banner > should render correctly 1`] = `
           class="MuiSnackbarContent-message HvBanner-Content-message css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
-            class="HvBanner-MessageContainer-message e3wuhfa1 css-1ib6p6l-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvBanner-MessageContainer-message e3wuhfa1 HvTypography-root HvTypography-body css-1ib6p6l-getStyledComponent-StyledTypography e1tnpalo0"
           />
         </div>
         <div

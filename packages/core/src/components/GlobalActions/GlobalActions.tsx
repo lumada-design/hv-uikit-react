@@ -33,7 +33,7 @@ export type HvGlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
    * Defaults to `sticky` when it is a global title and `relative` when it's a section title.
    */
   position?: HvGlobalActionsPosition;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvGlobalActionsClasses;
 };
 
@@ -74,12 +74,35 @@ export const HvGlobalActions = ({
     <StyledRoot
       $variant={variant}
       $position={position}
-      className={clsx(className, globalActionsClasses.root, classes?.root)}
+      className={clsx(
+        className,
+        globalActionsClasses.root,
+        classes?.root,
+        position === "sticky" &&
+          clsx(classes?.positionSticky, globalActionsClasses.positionSticky),
+        position === "fixed" &&
+          clsx(classes?.positionFixed, globalActionsClasses.positionFixed),
+        variant === "global" &&
+          clsx(classes?.global, globalActionsClasses.global)
+      )}
       $breakpoints={muiTheme.breakpoints}
       {...others}
     >
       <StyledWrapper
-        className={clsx(globalActionsClasses.wrapper, classes?.wrapper)}
+        className={clsx(
+          globalActionsClasses.wrapper,
+          classes?.wrapper,
+          variant === "global" &&
+            clsx(
+              classes?.globalWrapperComplement,
+              globalActionsClasses.globalWrapperComplement
+            ),
+          variant === "section" &&
+            clsx(
+              classes?.globalSectionArea,
+              globalActionsClasses.globalSectionArea
+            )
+        )}
         $variant={variant}
       >
         {variant === "global" && backButtonRenderer()}

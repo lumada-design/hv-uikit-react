@@ -1,8 +1,8 @@
 import {
   themes,
-  BaseTheme,
+  HvBaseTheme,
   colors,
-  ThemeColorModeStructure,
+  HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
 import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
 
@@ -57,7 +57,7 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
  * If a newThemeName is given, a new theme is created based on the base theme and customizations.
  */
 export const parseThemes = (
-  baseTheme: BaseTheme,
+  baseTheme: HvBaseTheme,
   newThemeName?: string,
   customizations?: HvThemeCustomizationProps
 ): { [themeName: string]: HvCustomizedTheme } => {
@@ -79,7 +79,7 @@ export const parseThemes = (
           ...colors.common,
           ...colors.light,
           ...(customizedTheme.colors.modes[mode] as Partial<
-            ThemeColorModeStructure & { [key: string]: string }
+            HvThemeColorModeStructure & { [key: string]: string }
           >),
         };
       }

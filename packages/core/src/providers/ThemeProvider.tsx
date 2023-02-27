@@ -1,8 +1,8 @@
 import { createContext, useEffect, useMemo, useState } from "react";
 import {
-  BaseTheme,
+  HvBaseTheme,
   parseTheme,
-  ThemeColorMode,
+  HvThemeColorMode,
 } from "@hitachivantara/uikit-styles";
 import {
   createTheme,
@@ -12,14 +12,14 @@ import { setElementAttrs } from "utils";
 import { HvCustomizedTheme } from "types/theme";
 
 interface HvThemeContextValue {
-  themes: (BaseTheme | string)[];
+  themes: (HvBaseTheme | string)[];
   activeTheme?: HvCustomizedTheme;
-  colorModes: (ThemeColorMode | string)[];
-  selectedTheme: BaseTheme | string;
-  selectedMode: ThemeColorMode | string;
+  colorModes: (HvThemeColorMode | string)[];
+  selectedTheme: HvBaseTheme | string;
+  selectedMode: HvThemeColorMode | string;
   changeTheme: (
-    theme?: BaseTheme | string,
-    mode?: ThemeColorMode | string
+    theme?: HvBaseTheme | string,
+    mode?: HvThemeColorMode | string
   ) => void;
   rootId?: string;
 }
@@ -27,8 +27,8 @@ interface HvThemeContextValue {
 interface HvThemeProviderProps {
   children: React.ReactNode;
   themes: { [themeName: string]: HvCustomizedTheme };
-  theme: BaseTheme | string;
-  colorMode: ThemeColorMode | string;
+  theme: HvBaseTheme | string;
+  colorMode: HvThemeColorMode | string;
   rootElementId?: string;
 }
 

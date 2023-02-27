@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { AriaAttributes, useEffect, useState } from "react";
 import { HvButton } from "components";
 import { HvProgressBar, HvProgressBarStatus } from "./ProgressBar";
 
@@ -10,8 +10,8 @@ export const ProgressBarSimulator = ({
 }: {
   inc: (v: number) => number;
   error?: number;
-  ariaLabel?: string;
-  ariaLive?: string;
+  ariaLabel?: AriaAttributes["aria-label"];
+  ariaLive?: AriaAttributes["aria-live"];
 }) => {
   const [status, setStatus] = useState("inProgress");
   const [value, setValue] = useState(0);

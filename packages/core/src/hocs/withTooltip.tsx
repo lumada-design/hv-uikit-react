@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HvTypography, HvTooltip } from "components";
 
 const styles = {

@@ -26,7 +26,7 @@ export type UseHvSortByProps = (<D extends object = Record<string, unknown>>(
 // #endregion ##### TYPES #####
 
 // props target: <table><thead><tr><th>
-export const getHeaderPropsHook = (props, { instance, column }) => {
+const getHeaderPropsHook = (props, { instance, column }) => {
   const { isMultiSortEvent = (e) => e.shiftKey } = instance;
 
   const sortDirection = column.isSortedDesc ? "descending" : "ascending";
@@ -51,7 +51,7 @@ export const getHeaderPropsHook = (props, { instance, column }) => {
 };
 
 // props target: <table><tbody><tr><td>
-export const getCellPropsHook = (props, { cell }) => {
+const getCellPropsHook = (props, { cell }) => {
   const nextProps: UseHvSortByTableCellProps = {
     sorted: cell.column.isSorted,
   };
@@ -59,7 +59,7 @@ export const getCellPropsHook = (props, { cell }) => {
   return [props, nextProps];
 };
 
-export const useInstanceHook = (instance) => {
+const useInstanceHook = (instance) => {
   ensurePluginOrder(instance.plugins, ["useSortBy"], "useHvSortBy");
 };
 

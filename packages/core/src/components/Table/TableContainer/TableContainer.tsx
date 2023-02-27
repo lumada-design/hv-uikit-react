@@ -14,7 +14,7 @@ export type HvTableContainerProps = Omit<HvBaseProps, "children"> & {
    * Defaults to tbody.
    */
   component?: React.ElementType;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableContainerClasses;
 };
 

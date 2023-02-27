@@ -14,7 +14,7 @@ export type HvLinkProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   route?: string;
   data?: any;
   children: any;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLinkClasses;
 };
 

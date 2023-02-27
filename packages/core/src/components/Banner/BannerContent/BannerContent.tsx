@@ -15,6 +15,7 @@ import {
 } from "components";
 import { forwardRef } from "react";
 import { iconVariant } from "utils";
+import { HvActionContainerProps } from "./ActionContainer/ActionContainer";
 
 export type HvBannerContentProps = Omit<MuiSnackbarContentProps, "variant"> &
   HvBaseProps & {
@@ -39,8 +40,8 @@ export type HvBannerContentProps = Omit<MuiSnackbarContentProps, "variant"> &
     /** The position property of the header. */
     actionsPosition?: HvBannerActionPosition;
     /** The props to pass down to the Action Container. */
-    actionProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    actionProps?: HvActionContainerProps;
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvBannerContentClasses;
   };
 

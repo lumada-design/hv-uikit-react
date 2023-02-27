@@ -1,6 +1,8 @@
 import React, { useMemo, useRef, useCallback } from "react";
 import { useTheme } from "@mui/material/styles";
-import Divider from "@mui/material/Divider";
+import MuiDivider, {
+  DividerProps as MuiDividerProps,
+} from "@mui/material/Divider";
 import clsx from "clsx";
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
@@ -25,10 +27,10 @@ export type HvStackProps = HvBaseProps & {
    */
   divider?: boolean | React.ReactNode;
   /** The properties to pass on to the Material-UI component. */
-  dividerProps?: object;
+  dividerProps?: MuiDividerProps;
   /** Sets whether or not there should be arrow navigation between the stack elements. */
   withNavigation?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvStackClasses;
 };
 
@@ -53,7 +55,7 @@ const getDirection = (direction, width, breakpoints) => {
 /**
  * A Stack component allows the organization of its children in a vertical or horizontal layout.
  *
- * It also allows the specification of the spacing between the stack elements and the adition of a divider between the elements.
+ * It also allows the specification of the spacing between the stack elements and the addition of a divider between the elements.
  */
 export const HvStack = ({
   classes,
@@ -83,7 +85,7 @@ export const HvStack = ({
   const getDividerComponent = useCallback(() => {
     if (isBoolean(divider) && divider) {
       return (
-        <Divider
+        <MuiDivider
           orientation={
             processedDirection === "column" ? "horizontal" : "vertical"
           }

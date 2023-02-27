@@ -1,6 +1,6 @@
 import { forwardRef, isValidElement, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps, HvExtraProps } from "../../types";
 import {
   StyledFixedSizeList,
   StyledSelectAllCheckBox,
@@ -33,12 +33,12 @@ export type HvListValue = {
   path?: string;
   params?: object;
   tabIndex?: number;
-};
+} & HvExtraProps;
 
 export type HvListLabels = {
   /** The label used for the All checkbox action. */
   selectAll?: string;
-  /** The label used in the middle of the multiselection count. */
+  /** The label used in the middle of the multi-selection count. */
   selectionConjunction?: string;
 };
 
@@ -89,7 +89,7 @@ export type HvListProps = HvBaseProps<
   height?: number;
   /** Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options. */
   virtualized?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state list. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListClasses;
 };
 

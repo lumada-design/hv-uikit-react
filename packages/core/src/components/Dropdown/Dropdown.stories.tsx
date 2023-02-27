@@ -409,7 +409,7 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
               required
               aria-errormessage="birth-error"
               onChange={(value) => {
-                if (value.length === 0) {
+                if ((value as HvListValue[]).length === 0) {
                   setBirthErrorMessage(
                     "Select at least one value from dropdown 1."
                   );
@@ -430,13 +430,15 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
               onChange={(value) => {
                 setDeathValidationState("invalid");
 
-                if (value.length === 0) {
+                if ((value as HvListValue[]).length === 0) {
                   setDeathErrorMessage(
                     "Select at least one value from dropdown 2."
                   );
                 } else {
                   setDeathErrorMessage(
-                    `Dropdown 2 is always invalid, even with ${value.length} items selected.`
+                    `Dropdown 2 is always invalid, even with ${
+                      (value as HvListValue[]).length
+                    } items selected.`
                   );
                 }
               }}

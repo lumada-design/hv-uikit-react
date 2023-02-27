@@ -2,7 +2,7 @@ import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import clsx from "clsx";
-import { CSSProperties } from "react";
+import { CSSProperties, HTMLAttributes } from "react";
 import { HvBaseProps } from "../../types";
 import { useImageLoaded } from "hooks";
 import { decreaseSize } from "utils";
@@ -19,46 +19,45 @@ export type HvAvatarVariant = "circular" | "square";
 
 export type HvAvatarSize = "XS" | "SM" | "MD" | "LG" | "XL";
 
-export type HvAvatarProps = MuiAvatarProps &
-  HvBaseProps & {
-    /** Inline styles to be applied to the root element. */
-    style?: object;
-    /** The component used for the root node. Either a string to use a DOM element or a component. */
-    component?: React.ElementType;
-    /** Sets one of the standard sizes of the icons */
-    size?: HvAvatarSize;
-    /**
-     * A String representing the foreground color of the avatar's
-     * letters or the generic User icon fallback.
-     * You can use either an HEX or color name from the palette.
-     */
-    color?: string;
-    /** A String representing the background color of the avatar. You can use either an HEX or color name from the palette. */
-    backgroundColor?: string;
-    /** The `src` attribute for the `img` element. */
-    src?: string;
-    /** The `srcSet` attribute for the `img` element. Use this attribute for responsive image display. */
-    srcSet?: string;
-    /** The `sizes` attribute for the `img` element. */
-    sizes?: string;
-    /** Used in combination with `src` or `srcSet` to provide an alt attribute for the rendered `img` element. */
-    alt?: string;
-    /**
-     * Attributes applied to the `img` element if the component is used to display an image.
-     * It can be used to listen for the loading error event.
-     */
-    imgProps?: object;
-    /** A string representing the type of avatar to display, circular or square. */
-    variant?: HvAvatarVariant;
-    /** A string representing the color of the avatar border that represents its status. */
-    status?: string;
-    /** A string representing the color of the avatar badge. */
-    badge?: string;
-    /** Attributes applied to the avatar element. */
-    avatarProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
-    classes?: HvAvatarClasses;
-  };
+export type HvAvatarProps = HvBaseProps & {
+  /** Inline styles to be applied to the root element. */
+  style?: CSSProperties;
+  /** The component used for the root node. Either a string to use a DOM element or a component. */
+  component?: React.ElementType;
+  /** Sets one of the standard sizes of the icons */
+  size?: HvAvatarSize;
+  /**
+   * A String representing the foreground color of the avatar's
+   * letters or the generic User icon fallback.
+   * You can use either an HEX or color name from the palette.
+   */
+  color?: string;
+  /** A String representing the background color of the avatar. You can use either an HEX or color name from the palette. */
+  backgroundColor?: string;
+  /** The `src` attribute for the `img` element. */
+  src?: string;
+  /** The `srcSet` attribute for the `img` element. Use this attribute for responsive image display. */
+  srcSet?: string;
+  /** The `sizes` attribute for the `img` element. */
+  sizes?: string;
+  /** Used in combination with `src` or `srcSet` to provide an alt attribute for the rendered `img` element. */
+  alt?: string;
+  /**
+   * Attributes applied to the `img` element if the component is used to display an image.
+   * It can be used to listen for the loading error event.
+   */
+  imgProps?: HTMLAttributes<HTMLImageElement>;
+  /** A string representing the type of avatar to display, circular or square. */
+  variant?: HvAvatarVariant;
+  /** A string representing the color of the avatar border that represents its status. */
+  status?: string;
+  /** A string representing the color of the avatar badge. */
+  badge?: string;
+  /** Attributes applied to the avatar element. */
+  avatarProps?: MuiAvatarProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvAvatarClasses;
+};
 
 /**
  * Get a color from the theme palette

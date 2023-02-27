@@ -16,7 +16,7 @@ export type HvLabelProps = HvBaseProps & {
   disabled?: boolean;
   /** If `true`, the label will indicate that the form element is required (an `*` after the label text). */
   required?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLabelClasses;
 };
 

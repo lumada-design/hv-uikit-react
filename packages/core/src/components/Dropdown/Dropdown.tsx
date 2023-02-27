@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { setId } from "utils";
 import { useLabels, useUniqueId, useControlled } from "hooks";
 import { isInvalid } from "../Forms/FormElement/validationStates";
-
 import { getSelected, getSelectionLabel } from "./utils";
 import dropdownClasses, { HvDropdownClasses } from "./dropdownClasses";
 import { HvDropdownList, HvDropdownListProps } from "./List";
@@ -22,7 +21,6 @@ import {
   HvListValue,
   HvWarningText,
 } from "components";
-import dropdownListClasses from "./List/dropdownListClasses";
 
 export type HvDropdownLabelsProps = {
   /**
@@ -53,7 +51,7 @@ export type HvDropdownLabelsProps = {
 
 export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
-export type HvDropdownProps = HvBaseProps<HTMLDivElement> & {
+export type HvDropdownProps = HvBaseProps<HTMLDivElement, { onChange }> & {
   /**
    * Class names to be applied.
    */
@@ -383,6 +381,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
     notifyChanges = true
   ) => {
     const selected = getSelected(listValues);
+
     if (commitChanges) {
       setInternalValues(listValues);
       setSelectionLabel(
@@ -547,12 +546,11 @@ export const HvDropdown = (props: HvDropdownProps) => {
           header: clsx(
             dropdownClasses.dropdownHeader,
             classes?.dropdownHeader,
-            isStateInvalid
-              ? clsx(
-                  dropdownClasses.dropdownHeaderInvalid,
-                  classes?.dropdownHeaderInvalid
-                )
-              : undefined
+            isStateInvalid &&
+              clsx(
+                dropdownClasses.dropdownHeaderInvalid,
+                classes?.dropdownHeaderInvalid
+              )
           ),
           headerOpen: clsx(
             dropdownClasses.dropdownHeaderOpen,
@@ -594,9 +592,9 @@ export const HvDropdown = (props: HvDropdownProps) => {
         <HvDropdownList
           id={setId(elementId, "values")}
           classes={{
-            rootList: clsx(dropdownListClasses.rootList, classes?.rootList),
+            rootList: clsx(dropdownClasses.rootList, classes?.rootList),
             dropdownListContainer: clsx(
-              dropdownListClasses.dropdownListContainer,
+              dropdownClasses.dropdownListContainer,
               classes?.dropdownListContainer
             ),
           }}

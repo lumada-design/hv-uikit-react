@@ -17,7 +17,7 @@ export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
   condensed?: boolean;
   /** If `true`, the list items' left and right padding is removed. */
   disableGutters?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListContainerClasses;
 };
 

@@ -13,10 +13,10 @@ const flattenTokens = {
   }, // Flatten colors and add background color
 };
 
-export type ThemeTokens = typeof flattenTokens;
+export type HvThemeTokens = typeof flattenTokens;
 
 // Theme components
-export type ThemeComponents = {
+export type HvThemeComponents = {
   dropdown: {
     borderRadius: string;
     headerBorder: string;
@@ -223,7 +223,7 @@ export type ThemeComponents = {
 };
 
 // Theme typography
-export type TypographyProps = Pick<
+export type HvTypographyProps = Pick<
   CSSProperties,
   | "color"
   | "fontSize"
@@ -233,77 +233,77 @@ export type TypographyProps = Pick<
   | "textTransform"
 >;
 
-export type ThemeTypography = {
+export type HvThemeTypography = {
   typography: {
     // DS5
-    display: TypographyProps;
-    title1: TypographyProps;
-    title2: TypographyProps;
-    title3: TypographyProps;
-    title4: TypographyProps;
-    label: TypographyProps;
-    body: TypographyProps;
-    caption1: TypographyProps;
-    caption2: TypographyProps;
+    display: HvTypographyProps;
+    title1: HvTypographyProps;
+    title2: HvTypographyProps;
+    title3: HvTypographyProps;
+    title4: HvTypographyProps;
+    label: HvTypographyProps;
+    body: HvTypographyProps;
+    caption1: HvTypographyProps;
+    caption2: HvTypographyProps;
     // LEGACY UNMAPPABLE (DS3)
-    ["5xlTitle"]: TypographyProps;
-    ["4xlTitle"]: TypographyProps;
-    xxlTitle: TypographyProps;
-    lTitle: TypographyProps;
-    sTitle: TypographyProps;
-    xxsTitle: TypographyProps;
-    sectionTitle: TypographyProps;
-    placeholderText: TypographyProps;
+    ["5xlTitle"]: HvTypographyProps;
+    ["4xlTitle"]: HvTypographyProps;
+    xxlTitle: HvTypographyProps;
+    lTitle: HvTypographyProps;
+    sTitle: HvTypographyProps;
+    xxsTitle: HvTypographyProps;
+    sectionTitle: HvTypographyProps;
+    placeholderText: HvTypographyProps;
   };
 };
 
 // Breakpoints
-export type ThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
+export type HvThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
 
 // Theme utils
-export type ThemeUtils = {
+export type HvThemeUtils = {
   spacing: (
     value:
       | string
       | number
-      | ThemeBreakpoint
-      | (string | number | ThemeBreakpoint)[]
+      | HvThemeBreakpoint
+      | (string | number | HvThemeBreakpoint)[]
   ) => string;
 };
 
 // Theme colors
-export type ThemeColors = typeof colors.common & typeof colors.light;
+export type HvThemeColors = typeof colors.common & typeof colors.light;
 
 // Theme color modes
-export type ThemeColorMode = "dawn" | "wicked";
+export type HvThemeColorMode = "dawn" | "wicked";
 
 // Theme color mode type
-export type ThemeColorModeType = "light" | "dark";
+export type HvThemeColorModeType = "light" | "dark";
 
 // Theme color mode structure
-export type ThemeColorModeStructure = ThemeColors & {
+export type HvThemeColorModeStructure = HvThemeColors & {
   backgroundColor: string;
-  type: ThemeColorModeType;
+  type: HvThemeColorModeType;
 };
 
 // Theme structure
-export type ThemeStructure = ThemeComponents &
-  ThemeTypography &
-  Omit<ThemeTokens, "colors"> & {
+export type HvThemeStructure = HvThemeComponents &
+  HvThemeTypography &
+  Omit<HvThemeTokens, "colors"> & {
     colors: {
       modes: {
-        [key: string]: ThemeColorModeStructure;
+        [key: string]: HvThemeColorModeStructure;
       };
     };
   };
 
 // Custom theme
-export type CustomTheme = ThemeComponents &
-  ThemeTypography &
-  Partial<Omit<ThemeTokens, "colors">> & {
+export type HvCustomTheme = HvThemeComponents &
+  HvThemeTypography &
+  Partial<Omit<HvThemeTokens, "colors">> & {
     colors: {
       modes: {
-        [key: string]: ThemeColorModeStructure;
+        [key: string]: HvThemeColorModeStructure;
       };
     };
   };
@@ -314,13 +314,13 @@ export type DeepString<T> = {
 };
 
 // Theme CSS vars
-export type ThemeVars = DeepString<ThemeTokens> &
-  DeepString<ThemeComponents> &
-  DeepString<ThemeTypography>;
+export type HvThemeVars = DeepString<HvThemeTokens> &
+  DeepString<HvThemeComponents> &
+  DeepString<HvThemeTypography>;
 
 // Theme: utils + CSS vars
-export type Theme = ThemeVars & ThemeUtils;
+export type HvTheme = HvThemeVars & HvThemeUtils;
 
 // Base themes: DS3 and DS5
 const baseThemes = { ...themes } as const;
-export type BaseTheme = keyof typeof baseThemes;
+export type HvBaseTheme = keyof typeof baseThemes;

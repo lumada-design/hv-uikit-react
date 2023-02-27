@@ -29,7 +29,7 @@ export type HvActionsGenericProps = HvBaseProps & {
   actionsCallback?: (event: Event, id: string, action: HvActionGeneric) => void;
   /**  The number of maximum visible actions before they're collapsed into a `DropDownMenu`. */
   maxVisibleActions?: number;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionsGenericClasses;
 };
 

@@ -31,7 +31,7 @@ export type HvBadgeProps = HvBaseProps & {
   text?: string;
   /** Text variant. */
   textVariant?: HvTypographyVariants;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBadgeClasses;
 };
 

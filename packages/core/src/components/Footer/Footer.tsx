@@ -14,7 +14,7 @@ export type HvFooterProps = HvBaseProps & {
   name?: React.ReactNode;
   copyright?: React.ReactNode;
   links?: React.ReactNode;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFooterClasses;
 };
 

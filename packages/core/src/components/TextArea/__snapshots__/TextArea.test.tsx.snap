@@ -9,7 +9,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvTextArea-labelContainer css-1rvt36b-StyledLabelContainer e1e5t49x5"
     >
       <label
-        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvtextarea3-input"
         id="hvformelement4-label"
       >
@@ -23,13 +23,13 @@ exports[`TextArea > should render correctly 1`] = `
       id="hvtextarea3-charCounter"
     >
       <label
-        class=" e11kw0680 css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
+        class=" e11kw0680 HvTypography-root HvTypography-label css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-currentQuantity"
       >
         0
       </label>
       <label
-        class=" e11kw0680 css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
+        class=" e11kw0680 HvTypography-root HvTypography-body css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-maxQuantity"
       >
          / 10
@@ -81,7 +81,7 @@ exports[`TextArea > should render correctly 1`] = `
       </div>
       <p
         aria-relevant="additions text"
-        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
+        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-error"
         role="status"
       />

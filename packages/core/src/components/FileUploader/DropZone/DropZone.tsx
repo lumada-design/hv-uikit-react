@@ -94,7 +94,7 @@ export type HvDropZoneProps = {
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   /**
-   * A Jss Object used to override or extend the styles applied to the Switch Component.
+   * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvDropZoneClasses;
 };

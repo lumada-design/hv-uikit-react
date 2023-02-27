@@ -52,7 +52,7 @@ export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   defaultExpanded?: boolean;
   /** The variant to be used in the header. */
   category?: HvButtonVariant;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
 };
 

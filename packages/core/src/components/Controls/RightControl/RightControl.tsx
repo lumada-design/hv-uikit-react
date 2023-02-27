@@ -21,7 +21,7 @@ export type HvRightControlProps = HvBaseProps & {
   onSort?: (selected: HvRightListControls | undefined) => void;
   /** Extra props passed to dropdown */
   sortProps?: HvDropdownProps;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvRightControlClasses;
 };
 

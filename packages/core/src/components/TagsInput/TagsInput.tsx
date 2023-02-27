@@ -96,7 +96,7 @@ export type HvTagsInputProps = HvBaseProps<
   commitOnBlur?: boolean;
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: Function;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagsInputClasses;
 };
 

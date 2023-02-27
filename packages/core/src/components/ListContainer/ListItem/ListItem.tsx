@@ -49,7 +49,7 @@ export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   endAdornment?: React.ReactNode;
   /** The value to be set on the 'li' element */
   value?: any;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListItemClasses;
 };
 

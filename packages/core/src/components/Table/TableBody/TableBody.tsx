@@ -28,7 +28,7 @@ export type HvTableBodyProps = Omit<HvBaseProps, "children"> & {
   component?: React.ElementType;
   /** Sets whether or not there should be arrow navigation between the table rows */
   withNavigation?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableBodyClasses;
 };
 

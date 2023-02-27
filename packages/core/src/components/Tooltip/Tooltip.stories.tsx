@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { HvBox, HvTypography } from "components";
-import { HvTooltip, TooltipProps } from "./Tooltip";
+import { HvTooltip, HvTooltipProps } from "./Tooltip";
 import tooltipClasses from "./tooltipClasses";
 
 const meta: Meta<typeof HvTooltip> = {
@@ -9,7 +9,7 @@ const meta: Meta<typeof HvTooltip> = {
 };
 export default meta;
 
-export const Main: StoryObj<TooltipProps> = {
+export const Main: StoryObj<HvTooltipProps> = {
   args: {
     open: true,
     title: <HvTypography>Grid View</HvTypography>,

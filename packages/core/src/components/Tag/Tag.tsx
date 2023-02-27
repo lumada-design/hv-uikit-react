@@ -6,7 +6,8 @@ import { HvBaseProps } from "../../types";
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/tokens";
-import { HvThemeContext } from "index";
+import { HvThemeContext } from "../../providers";
+import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 
 export type HvTagProps = Omit<MuiChipProps, "color"> &
@@ -35,8 +36,8 @@ export type HvTagProps = Omit<MuiChipProps, "color"> &
     /** Aria properties to apply to delete button in tag */
     deleteButtonArialLabel?: string;
     /** Props to apply to delete button */
-    deleteButtonProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    deleteButtonProps?: HvButtonProps;
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvTagClasses;
   };
 

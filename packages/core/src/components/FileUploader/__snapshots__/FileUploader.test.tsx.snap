@@ -9,14 +9,14 @@ exports[`FileUploader > should render correctly 1`] = `
       id="-3"
     >
       <label
-        class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="-3-input-file"
         id="-3-input-file-label"
       >
         Label
       </label>
       <label
-        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 css-194mgmt-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+        class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-194mgmt-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
         id="-3-description"
       >
         Max. file size: 12.00B
@@ -63,7 +63,7 @@ exports[`FileUploader > should render correctly 1`] = `
           class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
         >
           <p
-            class="HvDropZone-dragText e1r4xwg23 css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
+            class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
           >
             Drop files here or
             <span
@@ -85,7 +85,7 @@ exports[`FileUploader > should render correctly 1`] = `
           class="HvFile-icon css-dtyxpr-StyledEmptyIcon e6pb7kb7"
         />
         <label
-          class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+          class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
         >
           Screenshot 2019-12-05 at 17.15.43.png
         </label>
@@ -94,7 +94,7 @@ exports[`FileUploader > should render correctly 1`] = `
         >
            | 
           <p
-            class="css-1mchk7j-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
           >
             14.10MB
           </p>
@@ -139,7 +139,7 @@ exports[`FileUploader > should render correctly 1`] = `
           class="HvFile-icon css-dtyxpr-StyledEmptyIcon e6pb7kb7"
         />
         <label
-          class="HvFile-nameText e6pb7kb3 css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+          class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
         >
           Screenshot 2019-12-05 at 12.03.13.png
         </label>
@@ -148,7 +148,7 @@ exports[`FileUploader > should render correctly 1`] = `
         >
            | 
           <p
-            class="css-1mchk7j-getStyledComponent e1tnpalo0"
+            class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
           >
             875.00kB
           </p>

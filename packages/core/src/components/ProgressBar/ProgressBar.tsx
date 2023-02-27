@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { HvTypographyProps } from "../Typography";
 import clamp from "lodash/clamp";
 import { HvBaseProps } from "../../types";
 import {
@@ -27,8 +28,8 @@ export type HvProgressBarProps = HvBaseProps & {
    */
   status?: HvProgressBarStatus;
   /** Aria Properties passed on to the progress bar. */
-  labelProps?: object;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  labelProps?: HvTypographyProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvProgressBarClasses;
 };
 
