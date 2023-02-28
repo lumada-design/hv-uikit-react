@@ -332,7 +332,7 @@ export const WithTitle: StoryObj<HvListContainerProps> = {
   render: () => {
     return (
       <StyledTitlePanel>
-        <HvTypography variant="highlightText" style={{ margin: "0 10px 10px" }}>
+        <HvTypography variant="label" style={{ margin: "0 10px 10px" }}>
           Options
         </HvTypography>
         <HvListContainer

@@ -45,7 +45,7 @@ export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
     actions?: React.ReactNode | HvActionGeneric[];
     /** The callback function ran when an action is triggered, receiving `action` as param */
     actionsCallback?: (
-      event: Event,
+      event: React.SyntheticEvent,
       id: string,
       action: HvActionGeneric
     ) => void;

@@ -63,7 +63,10 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
     },
   },
   render: () => {
-    const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
+    const [currValueStr, setCurrValueStr] = useState<string[]>([
+      "tag 1",
+      "tag 2",
+    ]);
 
     return (
       <>
@@ -74,7 +77,7 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
           description="A list of strings will result in semantic tags"
           placeholder="Enter value"
           value={currValueStr}
-          onChange={(event, value) => {
+          onChange={(event, value: any) => {
             setCurrValueStr(value);
           }}
         />
@@ -158,7 +161,10 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
     },
   },
   render: () => {
-    const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
+    const [currValueStr, setCurrValueStr] = useState<string[]>([
+      "tag 1",
+      "tag 2",
+    ]);
     const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
@@ -182,7 +188,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
             } else {
               setStatus("valid");
               setStatusMsg("");
-              setCurrValueStr([...currValueStr, value]);
+              setCurrValueStr([...currValueStr, value.label as string]);
             }
           }}
           onDelete={(_, value) => {
@@ -397,7 +403,7 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     },
   },
   render: () => {
-    const [currValueStr, setCurrValueStr] = useState([]);
+    const [currValueStr, setCurrValueStr] = useState<HvTagProps[]>([]);
     const countries = countryNamesArray;
 
     const suggestionHandler = (val) => {

@@ -53,7 +53,9 @@ export type HvTooltipProps = MuiTooltipProps & {
   /**
    * The component used for the transition
    */
-  TransitionComponent?: any;
+  TransitionComponent?: React.JSXElementConstructor<
+    MuiTransitionProps & { children: React.ReactElement<any, any> }
+  >;
   /**
    * Properties applied to the Transition element.
    */

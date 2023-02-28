@@ -11,6 +11,7 @@ import {
   useHvSortBy,
   useHvTableSticky,
   useHvBulkActions,
+  HvCellProps,
 } from "../hooks";
 import {
   HvTable,
@@ -31,6 +32,7 @@ import {
   makeSelectedData,
   getGroupedRowsColumns,
   getGroupedColumns,
+  SampleDataProps,
 } from "./storiesUtils";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
@@ -306,7 +308,7 @@ export const UseHvPagination: StoryObj = {
 
                 return (
                   <HvTableRow {...row.getRowProps()}>
-                    {row.cells.map((cell: any) => {
+                    {row.cells.map((cell: HvCellProps<SampleDataProps>) => {
                       return (
                         <HvTableCell {...cell.getCellProps()}>
                           {cell.render("Cell")}
@@ -815,8 +817,6 @@ export const UseGroupBy: StoryObj = {
   render: () => {
     const columns = useMemo(() => getGroupedRowsColumns(), []);
     const data = useMemo(() => makeData(6), []);
-
-    console.log(data);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
       useHvData(

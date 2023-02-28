@@ -18,7 +18,11 @@ export type HvActionContainerProps = HvBaseProps & {
   /** Actions to display. */
   action?: React.ReactNode | HvActionGeneric[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */
-  actionCallback?: (event: Event, id: string, action: HvActionGeneric) => void;
+  actionCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionContainerClasses;
 };

@@ -18,7 +18,7 @@ export type HvMessageContainerProps = HvBaseProps & {
   actionsOnMessage?: React.ReactNode | HvActionGeneric[];
   /** The callback function ran when an action is triggered, receiving `actionsOnMessage` as param */
   actionsOnMessageCallback?: (
-    event: Event,
+    event: React.SyntheticEvent,
     id: string,
     action: HvActionGeneric
   ) => void;

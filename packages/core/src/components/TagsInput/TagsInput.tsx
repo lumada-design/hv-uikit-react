@@ -57,15 +57,41 @@ export type HvTagsInputProps = HvBaseProps<
   /** Indicates that the form element is required. */
   required?: boolean;
   /** The function that will be executed onChange. */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: any) => void;
+  onChange?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps[]
+  ) => void;
   /** The function that will be executed when the element is focused. */
-  onFocus?: Function;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
   /** The function that will be executed when the element is blurred. */
-  onBlur?: Function;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
   /** The function that will be executed when a tag is deleted. */
-  onDelete?: Function;
+  onDelete?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps,
+    index: number
+  ) => void;
   /** The function that will be executed when a tag is added. */
-  onAdd?: Function;
+  onAdd?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.KeyboardEventHandler<HTMLElement>,
+    value: HvTagProps,
+    index: number
+  ) => void;
   /** The placeholder value of the input. */
   placeholder?: string;
   /** If `true` the character counter isn't shown even if maxTagsQuantity is set. */
@@ -87,7 +113,7 @@ export type HvTagsInputProps = HvBaseProps<
   /** The status of the form element. */
   status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
-  statusMessage?: string;
+  statusMessage?: React.ReactNode;
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
   /** An array of strings that represent the character used to input a tag. This character is the string representation of the event.code from the input event. */
@@ -251,7 +277,7 @@ export const HvTagsInput = ({
     (event, tag) => {
       event.preventDefault();
       if (tag !== "") {
-        const newTag = { label: tag, type: "semantic" };
+        const newTag: HvTagProps = { label: tag, type: "semantic" };
         const newTagsArr = [...value, newTag];
         setValue(newTagsArr);
         performValidation(newTagsArr);

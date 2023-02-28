@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useTheme } from "@mui/material/styles";
+import { useTheme, Breakpoints as MuiBreakpoints } from "@mui/material/styles";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
@@ -39,7 +39,7 @@ const StyledResponsiveTable = styled(HvTable)({
 });
 
 const StyledResponsiveHead = styled(HvTableHead)(
-  ({ breakpoints }: { breakpoints: any }) => ({
+  ({ breakpoints }: { breakpoints: MuiBreakpoints }) => ({
     display: "flex",
     flexFlow: "column wrap",
 
@@ -60,11 +60,11 @@ const StyledResponsiveHead = styled(HvTableHead)(
 );
 
 const StyledResponsiveBody = styled(HvTableBody)(
-  ({ breakpoints }: { breakpoints: any }) => ({
+  ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
     display: "flex",
     flexFlow: "column wrap",
 
-    [breakpoints.only("md")]: {
+    [$breakpoints.only("md")]: {
       "&:first-of-type": {
         position: "sticky",
         top: -1,
@@ -72,7 +72,7 @@ const StyledResponsiveBody = styled(HvTableBody)(
       },
     },
 
-    [breakpoints.down("sm")]: {
+    [$breakpoints.down("sm")]: {
       "&:first-of-type": {
         display: "none",
       },
@@ -81,7 +81,7 @@ const StyledResponsiveBody = styled(HvTableBody)(
 );
 
 const StyledResponsiveTableRow = styled(HvTableRow)(
-  ({ breakpoints }: { breakpoints: any }) => ({
+  ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
     display: "flex",
     flexFlow: "row wrap",
 
@@ -91,7 +91,7 @@ const StyledResponsiveTableRow = styled(HvTableRow)(
       display: "flex",
       alignItems: "center",
 
-      [breakpoints.down("sm")]: {
+      [$breakpoints.down("sm")]: {
         width: "100%",
 
         "&:first-of-type": {
@@ -102,7 +102,7 @@ const StyledResponsiveTableRow = styled(HvTableRow)(
       },
     },
 
-    [breakpoints.down("sm")]: {
+    [$breakpoints.down("sm")]: {
       "& > div:not(:first-of-type)::before": {
         content: "attr(data-label) ",
         fontWeight: "bold",
@@ -368,7 +368,7 @@ export const ResponsiveTable = () => {
     <StyledResponsiveTableContainer>
       <StyledResponsiveTable component="div">
         <StyledResponsiveHead breakpoints={muiTheme.breakpoints}>
-          <StyledResponsiveTableRow breakpoints={muiTheme.breakpoints}>
+          <StyledResponsiveTableRow $breakpoints={muiTheme.breakpoints}>
             {columns.map((el) => (
               <StyledResponsiveTableHeader key={el.Header}>
                 {el.Header}
@@ -376,13 +376,13 @@ export const ResponsiveTable = () => {
             ))}
           </StyledResponsiveTableRow>
         </StyledResponsiveHead>
-        <StyledResponsiveBody breakpoints={muiTheme.breakpoints}>
+        <StyledResponsiveBody $breakpoints={muiTheme.breakpoints}>
           {data.map((row) => {
             return (
               <StyledResponsiveTableRow
                 key={row.id}
                 hover
-                breakpoints={muiTheme.breakpoints}
+                $breakpoints={muiTheme.breakpoints}
               >
                 {Object.keys(row)
                   .slice(1)

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import styled from "@emotion/styled";
 import { HvBaseProps } from "../../../types";
 import { tableBodyClasses, HvTableBodyClasses } from ".";
-import {
+import React, {
   Children,
   forwardRef,
   isValidElement,
@@ -11,7 +11,6 @@ import {
   useRef,
 } from "react";
 import TableContext from "../TableContext";
-// import { HvFocus } from "components";
 import { useForkRef } from "hooks";
 import TableSectionContext from "../TableSectionContext";
 import { HvFocus } from "components";

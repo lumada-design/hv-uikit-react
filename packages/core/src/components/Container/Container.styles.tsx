@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Container as MuiContainer } from "@mui/material";
+import {
+  Container as MuiContainer,
+  Breakpoints as MuiBreakpoints,
+} from "@mui/material";
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledRoot = styled(
   MuiContainer,
   transientOptions
-)(({ $breakpoints }: { $breakpoints: any }) => ({
+)(({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
   paddingLeft: theme.space.sm,
   paddingRight: theme.space.sm,
   [$breakpoints.up("md")]: {

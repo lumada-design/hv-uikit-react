@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Breakpoints as MuiBreakpoints } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 
@@ -13,7 +14,7 @@ export const StyledRoot = styled(
   }: {
     $position: string;
     $variant: string;
-    $breakpoints: any;
+    $breakpoints: MuiBreakpoints;
   }) => ({
     position: "relative",
     ...($position === "sticky" && {

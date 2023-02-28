@@ -28,9 +28,9 @@ export type HvTagProps = Omit<MuiChipProps, "color"> &
      * The callback fired when the delete icon is pressed.
      * This function has to be provided to the component, in order to render the delete icon
      * */
-    onDelete?: any;
+    onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
     /** Callback triggered when any item is clicked. */
-    onClick?: any;
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     /** The role of the element with an attributed event. */
     role?: string;
     /** Aria properties to apply to delete button in tag */
