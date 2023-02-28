@@ -13,7 +13,7 @@ import { HvBox, HvButton, HvButtonProps } from "components";
 
 export default { title: "Inputs/Button", component: HvButton };
 
-export const AMain: StoryObj<HvButtonProps> = {
+export const Main: StoryObj<HvButtonProps> = {
   args: {
     children: "Primary",
   },

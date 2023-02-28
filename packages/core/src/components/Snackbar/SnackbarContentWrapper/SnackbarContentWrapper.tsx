@@ -33,7 +33,7 @@ export type HvSnackbarContentWrapperProps = Omit<
     action?: React.ReactNode | HvActionGeneric;
     /** The callback function ran when an action is triggered, receiving `action` as param */
     actionCallback?: (
-      event: Event,
+      event: React.SyntheticEvent,
       id: string,
       action: HvActionGeneric
     ) => void;

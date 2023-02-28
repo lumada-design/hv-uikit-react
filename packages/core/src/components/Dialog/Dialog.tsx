@@ -24,7 +24,7 @@ export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
     /** Current state of the Dialog. */
     open?: boolean;
     /** Function executed on close. */
-    onClose?: any;
+    onClose?: (event: React.SyntheticEvent, reason?: string) => void;
     /** Element id that should be focus when the Dialog opens. */
     firstFocusable?: string;
     /** Title for the button close. */
@@ -55,8 +55,8 @@ export const HvDialog = ({
   const { activeTheme, selectedMode, rootId } = useContext(HvThemeContext);
 
   const [focusableQueue, setFocusableQueue] = useState<{
-    first: any;
-    last: any;
+    first?: HTMLElement;
+    last?: HTMLElement;
   }>({ first: undefined, last: undefined });
 
   // Because the `disableBackdropClick` property was deprecated in MUI5
@@ -101,11 +101,11 @@ export const HvDialog = ({
       !isNil(focusableQueue)
     ) {
       if (event.shiftKey && event.target === focusableQueue.first) {
-        focusableQueue.last.focus();
+        focusableQueue.last?.focus();
         event.preventDefault();
       }
       if (!event.shiftKey && event.target === focusableQueue.last) {
-        focusableQueue.first.focus();
+        focusableQueue.first?.focus();
         event.preventDefault();
       }
     }

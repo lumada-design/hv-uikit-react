@@ -62,7 +62,7 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
         {row.isExpanded ? <DropDownXS /> : <DropRightXS />}
       </HvButton>
       {cell?.value && (
-        <HvTypography variant="highlightText" component="span">
+        <HvTypography variant="label" component="span">
           {cell.value}
         </HvTypography>
       )}

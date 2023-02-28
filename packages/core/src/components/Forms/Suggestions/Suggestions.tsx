@@ -15,7 +15,7 @@ import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
 export type HvSuggestion = {
   id?: string;
   label: React.ReactNode;
-  value?: any;
+  value?: string;
   disabled?: boolean;
 };
 

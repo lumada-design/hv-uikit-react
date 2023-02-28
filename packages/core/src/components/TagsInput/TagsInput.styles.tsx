@@ -258,7 +258,8 @@ export const StyledInput = styled(
     outline: "none!important",
     boxShadow: "none!important",
   },
-  [`& .${baseInputClasses.inputRootReadOnly}`]: {
+  [`& .${baseInputClasses.root} .${baseInputClasses.inputRootReadOnly}`]: {
+    backgroundColor: "transparent ",
     border: "none",
     "&:hover": {
       border: "none",

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { HvButtonSize, HvButtonVariant, HvDropDownMenu } from "components";
 import { setId } from "utils";
-import { isValidElement, useContext } from "react";
+import React, { isValidElement, useContext } from "react";
 import { HvBaseProps } from "../../types";
 import { actionsGenericClasses, HvActionsGenericClasses } from ".";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
@@ -26,7 +26,11 @@ export type HvActionsGenericProps = HvBaseProps & {
   /** The renderable content inside the actions slot of the footer, or an Array of actions `{id, label, icon, disabled}` */
   actions: React.ReactNode | HvActionGeneric[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */
-  actionsCallback?: (event: Event, id: string, action: HvActionGeneric) => void;
+  actionsCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
   /**  The number of maximum visible actions before they're collapsed into a `DropDownMenu`. */
   maxVisibleActions?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -63,7 +67,9 @@ export const HvActionsGeneric = ({
         variant={category}
         className={clsx(actionsGenericClasses.button, classes?.button)}
         disabled={actDisabled ?? disabled}
-        onClick={(event: any) => actionsCallback?.(event, id || "", action)}
+        onClick={(event: React.SyntheticEvent) =>
+          actionsCallback?.(event, id || "", action)
+        }
         startIcon={renderedIcon}
         $baseColor={
           activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
@@ -107,7 +113,7 @@ export const HvActionsGeneric = ({
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
-          onClick={(event: Event, action: HvActionGeneric) =>
+          onClick={(event: React.SyntheticEvent, action: HvActionGeneric) =>
             actionsCallback?.(event, id || "", action)
           }
           dataList={actsDropdown}

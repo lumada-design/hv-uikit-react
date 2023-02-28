@@ -39,6 +39,7 @@ export const HvTitle = ({
 }: HvTitleProps) => {
   const isString = typeof children === "string";
   const { fullscreen } = others;
+  delete others.fullscreen;
 
   const icon = customIcon || (showIcon && iconVariant(variant, "", ""));
 

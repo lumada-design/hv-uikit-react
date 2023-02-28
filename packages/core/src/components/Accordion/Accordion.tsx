@@ -28,11 +28,11 @@ export type HvAccordionProps = HvBaseProps & {
   /**
    * The accordion label button.
    */
-  label?: any;
+  label?: string;
   /**
    * The function that will be executed whenever the accordion toggles it will receive the state of the accordion
    */
-  onChange?: any;
+  onChange?: (event: React.SyntheticEvent, value: boolean) => void;
   /**
    * Whether the accordion is open or not, if this property is defined the accordion must be fully controlled.
    */

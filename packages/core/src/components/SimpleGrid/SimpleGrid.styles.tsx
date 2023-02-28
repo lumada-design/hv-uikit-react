@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Spacing } from "./SimpleGrid";
+import { Spacing, Breakpoint } from "./SimpleGrid";
 
 function size(props) {
   if (typeof props.size === "number") {
@@ -31,7 +31,7 @@ export const StyledContainer = styled("div")(
     spacing,
     cols,
   }: {
-    breakpoints?: any;
+    breakpoints?: Breakpoint[];
     spacing: Spacing;
     cols?: number;
   }) => ({

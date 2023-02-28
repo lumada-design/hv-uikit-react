@@ -9,7 +9,7 @@ export type HvContentProps = MuiCardContentProps &
     /** Id to be applied to the root node. */
     id?: string;
     /** The function that will be executed when this section is clicked. */
-    onClick?: any;
+    onClick?: (event: React.SyntheticEvent) => void;
     /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvCardContentClasses;
   };
