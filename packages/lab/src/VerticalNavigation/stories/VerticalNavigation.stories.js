@@ -174,7 +174,7 @@ export const ExampleWithCustomHeader = () => {
 };
 
 export const ExampleWithMultipleLevels = () => {
-  const [selectedItem, setSelectedItem] = useState("menu1");
+  const [selectedItem, setSelectedItem] = useState("menu4-1");
   const [isExpanded, setIsExpanded] = useState(true);
 
   const navigationChangeHandler = (event, item) => {

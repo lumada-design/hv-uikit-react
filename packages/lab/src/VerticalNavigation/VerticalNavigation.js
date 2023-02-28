@@ -12,7 +12,7 @@ import {
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
 
 import useStyles from "./styles";
-import { getAllParents, findRootParentById, findItemById } from "./utils";
+import { findRootParentById, findItemById, pathToItem } from "./utils";
 
 const HvVerticalNavigation = ({
   onNavigationChange,
@@ -31,7 +31,7 @@ const HvVerticalNavigation = ({
 
   const noSubData = data.map(({ data: dataToRemove, ...rest }) => rest);
 
-  const [expandedItems, setExpandedItems] = useState(getAllParents(data).map((item) => item.id));
+  const [expandedItems, setExpandedItems] = useState(pathToItem(data, selected));
 
   const selectedTopParent = findRootParentById(data, selected)?.id;
 
