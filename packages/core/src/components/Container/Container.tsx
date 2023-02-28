@@ -28,7 +28,7 @@ export type HvContainerProps = MuiContainerProps &
      * It's fluid by default.
      */
     fixed?: boolean;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvContainerClasses;
   };
 

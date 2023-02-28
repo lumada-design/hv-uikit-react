@@ -13,7 +13,7 @@ import { hexToRgb, alpha } from "@mui/material";
 import {
   HvTableCellAlign,
   HvTableCellType,
-  HvTabelCellVariant,
+  HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
 import { transientOptions } from "utils/transientOptions";
@@ -30,11 +30,11 @@ export type HvTableCellProps = Omit<TdHTMLAttributes<HTMLElement>, "align"> &
     /** Content to be rendered */
     children?: React.ReactNode;
     /** Inline styles to be applied to the root element. */
-    style?: object;
+    style?: CSSProperties;
     /** Set the text-align on the table cell content. */
     align?: HvTableCellAlign;
     /** Sets the cell's variant. */
-    variant?: HvTabelCellVariant | "listcheckbox" | "listactions";
+    variant?: HvTableCellVariant | "listcheckbox" | "listactions";
     /** Specify the cell's type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
     type?: HvTableCellType;
     /** Whether or not the cell is part of a sorted column. */
@@ -53,7 +53,7 @@ export type HvTableCellProps = Omit<TdHTMLAttributes<HTMLElement>, "align"> &
     resizable?: boolean;
     /** Whether or not the cell is being resized */
     resizing?: boolean;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvTableCellClasses;
   };
 

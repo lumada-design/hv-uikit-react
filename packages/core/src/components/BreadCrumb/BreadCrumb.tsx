@@ -15,12 +15,13 @@ import {
   StyledTypography,
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
+import { HvDropDownMenuProps } from "../DropDownMenu";
 
-type Route = { label: string; path: string };
+export type HvBreadCrumbPathElement = { label: string; path: string };
 
 export type HvBreadCrumbProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   /** List of breadcrumb. */
-  listRoute?: Route[];
+  listRoute?: HvBreadCrumbPathElement[];
   /** URL to build the breadcrumb. */
   url?: string;
   /** Number of pages visible. */
@@ -33,8 +34,8 @@ export type HvBreadCrumbProps = HvBaseProps<HTMLDivElement, { onClick }> & {
     data: any
   ) => void | undefined;
   /** Props passed down to the DropDownMenu sub-menu component. */
-  dropDownMenuProps?: object;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  dropDownMenuProps?: HvDropDownMenuProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBreadCrumbClasses;
 };
 

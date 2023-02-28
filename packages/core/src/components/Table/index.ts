@@ -8,4 +8,5 @@ export * from "./TableHeader";
 export * from "./TableRow";
 export * from "./TableCell";
 export * from "./hooks";
+export * from "./renderers";
 export * from "./utils";

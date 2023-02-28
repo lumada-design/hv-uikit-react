@@ -75,7 +75,7 @@ export type HvSelectionListProps = HvBaseProps<
   orientation?: "vertical" | "horizontal";
   /** The callback fired when the value changes. */
   onChange?: Function;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSelectionListClasses;
 };
 

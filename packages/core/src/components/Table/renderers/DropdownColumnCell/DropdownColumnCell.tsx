@@ -1,7 +1,7 @@
 import { HvDropdownProps, HvDropdown, HvListValue } from "components";
 
 export interface HvDropdownColumnCellProp {
-  /** values to render in the dropdown. */
+  /** Values to render in the dropdown. */
   values: HvListValue[];
   /** Placeholder text for when the dropdown is empty. */
   placeholder: string;
@@ -23,7 +23,7 @@ const HvDateColumnCell = ({
   return (
     <HvDropdown
       onChange={(item) => {
-        onChange?.(item);
+        onChange?.(item as HvListValue);
       }}
       placeholder={placeholder}
       disabled={disabled}

@@ -24,7 +24,7 @@ export type HvAdornmentProps = HvBaseProps<
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
   /** If this property is defined the adornment visibility will be exclusively controlled by this value. */
   isVisible?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAdornmentClasses;
 };
 

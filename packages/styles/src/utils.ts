@@ -1,4 +1,4 @@
-import { DeepString, ThemeStructure } from "./types";
+import { DeepString, HvThemeStructure } from "./types";
 
 const toCSSVars = (obj: object, prefix = "-") => {
   const vars = {};
@@ -55,7 +55,7 @@ export const mergeTheme = (...objects) => {
 };
 
 export const parseTheme = (
-  themes: { [key: string]: ThemeStructure },
+  themes: { [key: string]: HvThemeStructure },
   theme: string = "",
   colorMode: string = ""
 ): {
@@ -99,7 +99,7 @@ export const getThemesList = (themes: object) => {
   return list;
 };
 
-export const getThemesVars = (themes: { [key: string]: ThemeStructure }) => {
+export const getThemesVars = (themes: { [key: string]: HvThemeStructure }) => {
   const vars = {};
 
   Object.keys(themes).forEach((themeName) => {

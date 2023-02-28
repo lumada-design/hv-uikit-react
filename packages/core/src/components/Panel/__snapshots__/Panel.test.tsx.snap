@@ -6,7 +6,7 @@ exports[`Panel > should render correctly 1`] = `
     class="HvPanel-root css-r49k44-StyledDiv e1yqctam0"
   >
     <p
-      class="css-1mchk7j-getStyledComponent e1tnpalo0"
+      class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
     >
       Panel Content
     </p>

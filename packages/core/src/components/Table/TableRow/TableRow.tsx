@@ -24,7 +24,7 @@ export type HvTableRowProps = Omit<HvBaseProps, "children"> & {
   expanded?: boolean;
   /** Whether the table row background is striped. */
   striped?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableRowClasses;
 };
 

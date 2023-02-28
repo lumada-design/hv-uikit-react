@@ -23,7 +23,7 @@ export type HvFileListProps = {
    * */
   removeFileButtonLabel?: string;
   /**
-   * A Jss Object used to override or extend the styles applied to the Switch Component.
+   * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvFileListClasses;
 };

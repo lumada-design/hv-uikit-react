@@ -23,7 +23,7 @@ export type HvCardProps = HvBaseProps & {
    *  To set another color, the borderTop should be override.
    */
   statusColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCardClasses;
 };
 

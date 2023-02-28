@@ -1,7 +1,7 @@
-import { useCallback, useEffect } from "react";
+import { HTMLAttributes, useCallback, useEffect } from "react";
 import clsx from "clsx";
 import { Hidden } from "@mui/material";
-import { HvInput, HvTypography } from "components";
+import { HvInput, HvInputProps, HvTypography } from "components";
 import {
   Start,
   End,
@@ -73,18 +73,18 @@ export type HvPaginationProps = HvBaseProps & {
   /** Controls whether the next/last page buttons are enabled. */
   canNext?: boolean;
   /** Function called when the page changes. */
-  onPageChange?: Function;
+  onPageChange?: (page: number) => void;
   /** Function called when the page size changes. */
-  onPageSizeChange?: Function;
+  onPageSizeChange?: (pageSize: number) => void;
   /** An object containing all the labels for the component. */
   labels?: HvPaginationLabels;
   /** Other props to show page component. */
-  showPageProps?: object;
+  showPageProps?: HTMLAttributes<HTMLDivElement>;
   /** Other props to pagination component. */
-  navigationProps?: object;
+  navigationProps?: HTMLAttributes<HTMLDivElement>;
   /** Extra properties passed to the input component representing the current pages. */
-  currentPageInputProps?: object;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  currentPageInputProps?: HvInputProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvPaginationClasses;
 };
 
@@ -135,7 +135,7 @@ export const HvPagination = ({
 
   const changePage = useCallback(
     (newPage) => {
-      const safePage = getSafePage(newPage, page, pages);
+      const safePage: number = getSafePage(newPage, page, pages);
 
       onPageChange?.(safePage);
       handleInputChange(null, safePage + 1);
@@ -155,11 +155,11 @@ export const HvPagination = ({
     }
 
     // we only want to "fix" the input's display value when `page` property changed
-    // (either externaly or when internally commited - onBlur or Enter),
+    // (either externally or when internally committed - onBlur or Enter),
     // not while editing the input.
     // breaking a rule of hooks isn't ideal and it's just a hack for fixing
-    // a bug preventing properly controling of the `page` property.
-    // fixing it some other way would potentialy introduce a breaking change.
+    // a bug preventing properly controlling of the `page` property.
+    // fixing it some other way would potentially introduce a breaking change.
   }, [handleInputChange, page]);
 
   const renderPageJump = () => (
@@ -234,7 +234,7 @@ export const HvPagination = ({
               )}
               classes={{}}
               aria-label={labels?.pageSizeSelectorDescription}
-              onChange={(evt, val) => onPageSizeChange?.(val)}
+              onChange={(evt, val: number) => onPageSizeChange?.(val)}
               value={pageSize}
             >
               {pageSizeOptions.map((option) => (

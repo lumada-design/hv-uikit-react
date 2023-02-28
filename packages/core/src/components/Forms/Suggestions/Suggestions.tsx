@@ -32,7 +32,7 @@ export type HvSuggestionsProps = HvBaseProps & {
   onSuggestionSelected?: Function;
   /** Function called when suggestion list is closed */
   onClose?: Function;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSuggestionsClasses;
 };
 

@@ -175,7 +175,7 @@ export const WithNavigation = () => {
           withNavigation
           direction={{ xs: "column", md: "row" }}
           divider={false}
-          dividerProps={{ variant: "middle", light: true, component: "p" }}
+          dividerProps={{ variant: "middle", light: true }}
         >
           <HvCard
             bgcolor="atmo1"

@@ -1,4 +1,9 @@
-import React, { SyntheticEvent, useCallback, useMemo } from "react";
+import React, {
+  SyntheticEvent,
+  useCallback,
+  useMemo,
+  HTMLAttributes,
+} from "react";
 import clsx from "clsx";
 import { useControlled } from "hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
@@ -39,7 +44,7 @@ export type HvAccordionProps = HvBaseProps & {
   /**
    * An object containing props to be passed onto container holding the accordion children.
    */
-  containerProps?: Object;
+  containerProps?: HTMLAttributes<HTMLDivElement>;
   /**
    * Heading Level to apply to accordion button if ´undefined´ the button won't have a header wrapper.
    */

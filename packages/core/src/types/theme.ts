@@ -1,8 +1,8 @@
 import {
-  BaseTheme,
-  ThemeColorMode,
-  ThemeStructure,
-  ThemeColorModeStructure,
+  HvBaseTheme,
+  HvThemeColorMode,
+  HvThemeStructure,
+  HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
 import { HvExtraDeepPartialProps, HvExtraDeepProps } from "../types";
 
@@ -15,7 +15,7 @@ export type HvTheme = {
    *
    * `"ds5"` will be used as default if no value is provided.
    */
-  baseTheme?: BaseTheme;
+  baseTheme?: HvBaseTheme;
   /**
    * The name used for the theme.
    *
@@ -28,16 +28,16 @@ export type HvTheme = {
    *
    * `"dawn"` will be used as default if no value is provided.
    */
-  baseColorMode?: ThemeColorMode | string;
+  baseColorMode?: HvThemeColorMode | string;
 } & HvThemeCustomizationProps;
 
 // Theme customization
 export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
-  Omit<ThemeStructure, "colors">
+  Omit<HvThemeStructure, "colors">
 > & {
   colors?: {
     modes?: {
-      [key: string]: Partial<ThemeColorModeStructure> & {
+      [key: string]: Partial<HvThemeColorModeStructure> & {
         [key: string]: string;
       };
     };
@@ -46,11 +46,11 @@ export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
 
 // Customized theme
 export type HvCustomizedTheme = HvExtraDeepProps<
-  Omit<ThemeStructure, "colors">
+  Omit<HvThemeStructure, "colors">
 > & {
   colors: {
     modes: {
-      [key: string]: ThemeColorModeStructure & { [key: string]: string };
+      [key: string]: HvThemeColorModeStructure & { [key: string]: string };
     };
   };
 };

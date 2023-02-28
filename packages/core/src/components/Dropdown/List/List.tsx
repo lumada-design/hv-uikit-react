@@ -19,9 +19,7 @@ import {
 } from "./List.styles";
 import { getSelected } from "../utils";
 import { HvDropdownLabelsProps } from "../Dropdown";
-import dropdownListClasses, {
-  HvDropdownListClasses,
-} from "./dropdownListClasses";
+import dropdownListClasses, { HvDropdownListClasses } from "./listClasses";
 
 export type HvDropdownListProps = {
   /**
@@ -261,7 +259,7 @@ export const HvDropdownList = ({
     return (
       <div
         className={clsx(
-          dropdownListClasses.searchContainer,
+          dropdownListClasses.selectAllContainer,
           classes?.selectAllContainer
         )}
       >

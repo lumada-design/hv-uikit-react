@@ -81,7 +81,7 @@ const getCellProps = (column, isHeaderCell = false) => ({
 });
 
 // props target: <table><thead><tr><th>
-export const getHeaderPropsHook = (props, { instance, column }) => {
+const getHeaderPropsHook = (props, { instance, column }) => {
   const nextProps: UseHvHeaderGroupsColumnProps = instance.hasGroupedColumns
     ? getCellProps(column, true)
     : {};
@@ -111,7 +111,7 @@ export const getHeaderPropsHook = (props, { instance, column }) => {
 };
 
 // props target: <table><tbody><tr><td>
-export const getCellPropsHook = (props, { instance, cell }) => {
+const getCellPropsHook = (props, { instance, cell }) => {
   const nextProps: UseHvHeaderGroupsCellProps = instance.hasGroupedColumns
     ? getCellProps(cell.column)
     : {};
@@ -119,7 +119,7 @@ export const getCellPropsHook = (props, { instance, cell }) => {
   return [props, nextProps];
 };
 
-export const visibleColumnsHook = (visibleColumns, { instance }) => {
+const visibleColumnsHook = (visibleColumns, { instance }) => {
   const parentList = new Set();
 
   visibleColumns.forEach(({ parent }) => {
@@ -146,7 +146,7 @@ export const visibleColumnsHook = (visibleColumns, { instance }) => {
   return visibleColumns;
 };
 
-export const useInstanceHook = (instance) => {
+const useInstanceHook = (instance) => {
   if (instance.hasGroupedColumns) {
     replaceHeaderPlaceholders(instance.headerGroups);
   }

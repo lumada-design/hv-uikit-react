@@ -26,6 +26,7 @@ import {
   HvSwitch,
   HvButton,
   HvDropDownMenu,
+  HvListValue,
 } from "components";
 import { makeData, getColumns, makeSelectedData } from "./storiesUtils";
 import {
@@ -506,7 +507,7 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
 
 export const AlternativeLayout: StoryObj = {
   render: () => {
-    const alternativeLayouts = useMemo(
+    const alternativeLayouts: HvListValue[] = useMemo(
       () => [
         {
           id: "0",
@@ -598,8 +599,8 @@ export const AlternativeLayout: StoryObj = {
           </StyledUl>
           <span>
             Note that not all built-in styles will apply when using any of the
-            alternative layouts, so aditional styling might be needed to
-            acomplish the same look. Also, styles affecting element's widths (
+            alternative layouts, so additional styling might be needed to
+            accomplish the same look. Also, styles affecting element's widths (
             <StyledCode>width</StyledCode>, <StyledCode>min-width</StyledCode>,{" "}
             <StyledCode>max-width</StyledCode> and flex properties) must be
             avoided and the core column options used instead.
@@ -607,12 +608,12 @@ export const AlternativeLayout: StoryObj = {
           <span>
             Most layouts work well with the default html table elements, keeping
             the semantics while loosing the table layout rules. Elements can be
-            changed (to <StyledCode>div</StyledCode> or any other apropriate
+            changed (to <StyledCode>div</StyledCode> or any other appropriate
             html element) by using the
             <StyledCode>component</StyledCode> property.
           </span>
           <span>
-            <StyledCode>useGridLayout</StyledCode> implies a totally diferent
+            <StyledCode>useGridLayout</StyledCode> implies a totally different
             dom structure and is currently not supported by the HvTable
             components.
           </span>
@@ -625,7 +626,9 @@ export const AlternativeLayout: StoryObj = {
               label="Select layout"
               values={alternativeLayouts}
               multiSelect={false}
-              onChange={(item) => setLayoutHook(() => item.hook)}
+              onChange={(item) =>
+                setLayoutHook(() => (item as HvListValue)?.hook)
+              }
             />
           </div>
           <div

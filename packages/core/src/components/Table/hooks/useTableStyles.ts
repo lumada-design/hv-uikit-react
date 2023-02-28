@@ -8,7 +8,6 @@ export type UseHvTableStylesTableOptions = {
   style?: CSSProperties;
   className?: string;
   classes?: Record<string, string>;
-
   component?: any;
 };
 
@@ -39,7 +38,6 @@ export interface UseHvTableStylesTableCellProps {
   style?: CSSProperties;
   className?: string;
   classes?: Record<string, string>;
-
   variant?: "checkbox" | "expand" | "actions" | "default" | "none";
   align?: "center" | "inherit" | "justify" | "left" | "right";
 }
@@ -51,7 +49,7 @@ export type UseTableStylesProps = (<D extends object = Record<string, unknown>>(
 // #endregion ##### TYPES #####
 
 // props target: <table>
-export const getTablePropsHook = (props, { instance }) => {
+const getTablePropsHook = (props, { instance }) => {
   const nextProps: UseHvTableStylesTableOptions = {
     component: instance.tableComponent,
   };
@@ -106,7 +104,7 @@ export const getHeaderFooterPropsHook = (props, { column }) => {
 };
 
 // props target: <table><tbody><tr>
-export const getRowPropsHook = (props) => {
+const getRowPropsHook = (props) => {
   const nextProps: UseHvTableStylesTableRowProps = {
     hover: true,
   };
@@ -115,7 +113,7 @@ export const getRowPropsHook = (props) => {
 };
 
 // props target: <table><tbody><tr><td>
-export const getCellPropsHook = (props, { cell }) => {
+const getCellPropsHook = (props, { cell }) => {
   const nextProps: UseHvTableStylesTableCellProps = {
     variant: cell.column.variant,
     align: cell.column.align,

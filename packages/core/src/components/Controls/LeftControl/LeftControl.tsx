@@ -19,7 +19,7 @@ export type HvLeftControlProps = HvBaseProps & {
   ) => void;
   /** Extra props passed to input */
   searchProps?: HvInputProps;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLeftControlClasses;
 };
 

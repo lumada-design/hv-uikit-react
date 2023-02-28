@@ -68,7 +68,7 @@ export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
   filterClass?: string;
   /** How much the navigation will skip when using the arrows. v*/
   navigationJump?: number;
-  /** A Jss Object used to override or extend the styles applied to the empty state Focus. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFocusClasses;
 };
 

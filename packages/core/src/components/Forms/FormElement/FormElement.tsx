@@ -51,7 +51,7 @@ export type HvFormElementProps = HvBaseProps & {
   statusMessage?: string;
   /** The callback fired when the value changes. */
   onChange?: Function;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFormElementClasses;
 };
 

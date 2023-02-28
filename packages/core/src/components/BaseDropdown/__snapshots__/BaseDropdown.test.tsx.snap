@@ -25,7 +25,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
             class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
           >
             <p
-              class="HvBaseDropdown-placeholder eapzthe5 css-17knwax-getStyledComponent-StyledPlaceholder e1tnpalo0"
+              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-17knwax-getStyledComponent-StyledPlaceholder e1tnpalo0"
             >
               Placeholder...
             </p>

@@ -47,7 +47,7 @@ export type UseBulkActionsProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-export const useInstanceHook = (instance) => {
+const useInstanceHook = (instance) => {
   const { plugins, page, toggleAllPageRowsSelected, toggleAllRowsSelected } =
     instance;
 

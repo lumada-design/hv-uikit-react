@@ -107,7 +107,7 @@ actions.toggleAllPageRowsSelected = "toggleAllPageRowsSelected";
 actions.resetLockedSelectionRows = "resetLockedSelectionRows";
 actions.toggleRowLockedSelection = "toggleRowLockedSelection";
 
-export const DEFAULT_LABELS = {
+const DEFAULT_LABELS = {
   selectRowCheckBoxAriaLabel: "Select this row",
 };
 
@@ -128,7 +128,7 @@ export const CellWithCheckBox = ({ row, labels: labelsProp }) => {
   );
 };
 
-export const visibleColumnsHook = (columns) => {
+const visibleColumnsHook = (columns) => {
   const selectionColumn = {
     id: "_hv_selection",
     variant: "checkbox",
@@ -145,7 +145,7 @@ export const visibleColumnsHook = (columns) => {
   return [selectionColumn, ...columns];
 };
 
-export const getRowPropsHook = (props, { row }) => {
+const getRowPropsHook = (props, { row }) => {
   const nextProps: UseHvRowSelectionTableRowProps = {
     selected: row.isSelected,
   };

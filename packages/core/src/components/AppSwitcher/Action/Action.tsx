@@ -23,7 +23,7 @@ export type HvActionProps = HvBaseProps & {
   onClickCallback?: Function;
   /** Must return a boolean stating if the action element is selected or not. */
   isSelectedCallback?: Function;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherActionClasses;
 };
 

@@ -10,7 +10,7 @@ import { HvThemeContext } from "providers";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 import clsx from "clsx";
 
-export type TooltipPlacementType =
+export type HvTooltipPlacementType =
   | "bottom-end"
   | "bottom-start"
   | "bottom"
@@ -24,7 +24,7 @@ export type TooltipPlacementType =
   | "top-start"
   | "top";
 
-export type TooltipProps = MuiTooltipProps & {
+export type HvTooltipProps = MuiTooltipProps & {
   /**
    * Class names to be applied.
    */
@@ -40,7 +40,7 @@ export type TooltipProps = MuiTooltipProps & {
   /**
    * Tooltip placement.
    */
-  placement?: TooltipPlacementType;
+  placement?: HvTooltipPlacementType;
   /**
    * The number of milliseconds to wait before showing the tooltip.
    * This property won't impact the enter touch delay (enterTouchDelay).
@@ -72,7 +72,7 @@ export type TooltipProps = MuiTooltipProps & {
  * Tooltips display informative text when users hover over, focus on, or tap an element.
  */
 
-export const HvTooltip = forwardRef((props: TooltipProps, ref) => {
+export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
   const {
     className,
     classes,

@@ -15,7 +15,7 @@ export type HvTableCellAlign =
   | "left"
   | "right";
 export type HvTableCellType = "body" | "footer" | "head";
-export type HvTabelCellVariant =
+export type HvTableCellVariant =
   | "checkbox"
   | "expand"
   | "actions"
@@ -38,7 +38,7 @@ export type HvTableProps = HvBaseProps & {
   stickyColumns?: boolean;
   /** Whether the `HvTable` has the list row styles or the default. */
   variant?: HvTableVariant;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableClasses;
 };
 

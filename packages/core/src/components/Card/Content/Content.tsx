@@ -10,7 +10,7 @@ export type HvContentProps = MuiCardContentProps &
     id?: string;
     /** The function that will be executed when this section is clicked. */
     onClick?: any;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvCardContentClasses;
   };
 

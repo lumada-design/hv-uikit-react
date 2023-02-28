@@ -6,7 +6,7 @@ import actionBarClasses, { HvActionBarClasses } from "./actionBarClasses";
 export type HvActionBarProps = HvBaseProps & {
   /** Id to be applied to the root node. */
   id?: string;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionBarClasses;
 };
 

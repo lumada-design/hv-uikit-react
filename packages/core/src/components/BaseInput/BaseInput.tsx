@@ -84,7 +84,7 @@ export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
     inputProps?: MuiInputBaseComponentProps;
     /** Allows passing a ref to the underlying input */
     inputRef?: RefObject<HTMLElement>;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvBaseInputClasses;
   };
 

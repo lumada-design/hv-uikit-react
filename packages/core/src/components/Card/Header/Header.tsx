@@ -14,7 +14,7 @@ export type HvHeaderProps = MuiCardHeaderProps &
     icon?: React.ReactNode;
     /** The function that will be executed when this section is clicked. */
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvCardHeaderClasses;
   };
 

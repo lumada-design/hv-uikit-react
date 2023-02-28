@@ -89,5 +89,13 @@ export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
 export type HvSupportColors = Record<HvSupportColorKeys, string>;
 
+export interface HvThemePalette {
+  accent: HvAccentColors;
+  atmosphere: HvAtmosphereColors;
+  base: HvBaseColors;
+  semantic: HvSemanticColors;
+  support: HvSupportColors;
+}
+
 // BREAKPOINTS
 export type HvBreakpoints = "xs" | "sm" | "md" | "lg" | "xl";

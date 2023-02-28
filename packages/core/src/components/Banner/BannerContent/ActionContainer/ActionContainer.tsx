@@ -19,7 +19,7 @@ export type HvActionContainerProps = HvBaseProps & {
   action?: React.ReactNode | HvActionGeneric[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */
   actionCallback?: (event: Event, id: string, action: HvActionGeneric) => void;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionContainerClasses;
 };
 

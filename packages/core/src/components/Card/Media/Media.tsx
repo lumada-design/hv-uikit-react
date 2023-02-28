@@ -18,7 +18,7 @@ export type HvMediaProps = MuiCardMediaProps &
     component?: React.ElementType;
     /** The image to display. */
     image?: string;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvCardMediaClasses;
   };
 

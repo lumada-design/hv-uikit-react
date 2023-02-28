@@ -155,7 +155,7 @@ export type HvInputProps = HvBaseProps<
   maxCharQuantity?: number;
   /** The minimum allowed length of the characters, if this value is null no check will be perform. */
   minCharQuantity?: number;
-  /** A Jss Object used to override or extend the styles applied to the empty state Input. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvInputClasses;
 };
 

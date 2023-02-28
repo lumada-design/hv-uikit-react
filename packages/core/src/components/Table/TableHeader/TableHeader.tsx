@@ -1,6 +1,7 @@
 import {
   CSSProperties,
   forwardRef,
+  HTMLAttributes,
   ThHTMLAttributes,
   useContext,
   useMemo,
@@ -25,9 +26,10 @@ import {
 import {
   HvTableCellAlign,
   HvTableCellType,
-  HvTabelCellVariant,
+  HvTableCellVariant,
 } from "../Table";
 import { HvThemeContext } from "providers";
+import { HvTypographyProps } from "../../Typography";
 
 export type HvTableHeaderProps = ThHTMLAttributes<HTMLElement> &
   Omit<HvBaseProps, "children"> & {
@@ -40,7 +42,7 @@ export type HvTableHeaderProps = ThHTMLAttributes<HTMLElement> &
     /** Set the text-align on the table cell content. */
     align?: HvTableCellAlign;
     /** Sets the cell's variant. */
-    variant?: HvTabelCellVariant;
+    variant?: HvTableCellVariant;
     /** Specify the cell type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
     type?: HvTableCellType;
     /** The cell is part of a sticky column. */
@@ -60,14 +62,14 @@ export type HvTableHeaderProps = ThHTMLAttributes<HTMLElement> &
     /** Set sort direction icon and aria-sort. */
     sortDirection?: "ascending" | "descending" | false;
     /** Extra props to be passed onto the text in the header. */
-    headerTextProps?: object;
+    headerTextProps?: HvTypographyProps;
     /** Whether or not the cell is resizable */
     resizable?: boolean;
     /** Whether or not the cell is being resized */
     resizing?: boolean;
     /** The resize props injected in the resize handler */
-    resizerProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    resizerProps?: HTMLAttributes<HTMLDivElement>;
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvTableHeaderClasses;
   };
 

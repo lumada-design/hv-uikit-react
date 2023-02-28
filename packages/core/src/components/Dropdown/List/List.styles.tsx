@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvList } from "components";
-
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledRootList = styled("div")({

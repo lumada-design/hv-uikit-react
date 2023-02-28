@@ -31,7 +31,7 @@ exports[`Pagination > should render correctly 1`] = `
                 class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
               >
                 <p
-                  class="css-1mchk7j-getStyledComponent e1tnpalo0"
+                  class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
                 >
                   1
                 </p>
@@ -187,7 +187,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
               />
@@ -195,12 +195,12 @@ exports[`Pagination > should render correctly 1`] = `
           </div>
         </div>
         <span
-          class="css-1mchk7j-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
         >
           / 
         </span>
         <span
-          class="css-1mchk7j-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
         >
           1
         </span>

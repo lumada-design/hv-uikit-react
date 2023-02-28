@@ -1,16 +1,16 @@
 import {
   DeepString,
-  Theme,
-  ThemeComponents,
-  ThemeBreakpoint,
-  ThemeTypography,
-  ThemeVars,
-  TypographyProps,
+  HvTheme,
+  HvThemeComponents,
+  HvThemeBreakpoint,
+  HvThemeTypography,
+  HvThemeVars,
+  HvTypographyProps,
 } from "./types";
 import * as tokens from "./tokens";
 import { mapCSSVars } from "./utils";
 
-const componentsSpec: DeepString<ThemeComponents> = {
+const componentsSpec: DeepString<HvThemeComponents> = {
   dropdown: {
     borderRadius: "string",
     headerBorder: "string",
@@ -216,7 +216,7 @@ const componentsSpec: DeepString<ThemeComponents> = {
   },
 };
 
-const typographyProps: DeepString<TypographyProps> = {
+const typographyProps: DeepString<HvTypographyProps> = {
   color: "string",
   fontSize: "string",
   letterSpacing: "string",
@@ -224,7 +224,7 @@ const typographyProps: DeepString<TypographyProps> = {
   fontWeight: "string",
 };
 
-const typographySpec: DeepString<ThemeTypography> = {
+const typographySpec: DeepString<HvThemeTypography> = {
   typography: {
     // DS5
     display: { ...typographyProps },
@@ -248,7 +248,7 @@ const typographySpec: DeepString<ThemeTypography> = {
   },
 };
 
-const themeVars: ThemeVars = mapCSSVars({
+const themeVars: HvThemeVars = mapCSSVars({
   ...tokens,
   colors: {
     backgroundColor: tokens.colors.light.atmo2,
@@ -263,8 +263,8 @@ const spacing = (
   value:
     | string
     | number
-    | ThemeBreakpoint
-    | (string | number | ThemeBreakpoint)[]
+    | HvThemeBreakpoint
+    | (string | number | HvThemeBreakpoint)[]
 ): string => {
   switch (typeof value) {
     case "number":
@@ -291,7 +291,7 @@ const spacing = (
   }
 };
 
-export const theme: Theme = {
+export const theme: HvTheme = {
   ...themeVars,
   spacing,
 };

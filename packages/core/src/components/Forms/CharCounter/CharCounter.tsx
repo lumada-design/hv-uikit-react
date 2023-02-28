@@ -17,7 +17,7 @@ export type HvCharCounterProps = HvBaseProps & {
   disabled?: boolean;
   /** If `true` the info message won't have margins. */
   disableGutter?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCharCounterClasses;
 };
 

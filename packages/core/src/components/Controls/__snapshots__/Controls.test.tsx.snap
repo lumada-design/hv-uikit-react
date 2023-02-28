@@ -101,7 +101,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
                   >
                     <div
-                      class="HvDropdown-placeholder etta2py0 css-4kh4g2-getStyledComponent-StyledTypography e1tnpalo0"
+                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-4kh4g2-getStyledComponent-StyledTypography e1tnpalo0"
                     >
                       Select...
                     </div>
@@ -715,7 +715,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
                   >
                     <div
-                      class="HvDropdown-placeholder etta2py0 css-fqfek5-getStyledComponent-StyledTypography e1tnpalo0"
+                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-fqfek5-getStyledComponent-StyledTypography e1tnpalo0"
                     >
                       Name Ascending
                     </div>

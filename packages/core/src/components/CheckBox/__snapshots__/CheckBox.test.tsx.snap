@@ -44,7 +44,7 @@ exports[`CheckBox > general > should render correctly 1`] = `
         </div>
       </span>
       <label
-        class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvcheckbox3-input"
         id="hvcheckbox3-label"
       >

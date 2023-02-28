@@ -97,7 +97,7 @@ const updateColumnAndParent = (column, props) => {
   }
 };
 
-export const visibleColumnsHook = (columns, { instance }) => {
+const visibleColumnsHook = (columns, { instance }) => {
   const toTheLeft: any[] = [];
   const toTheRight: any[] = [];
   const others: any[] = [];
@@ -164,7 +164,7 @@ const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
   }
 };
 
-export const useInstanceHook = (instance) => {
+const useInstanceHook = (instance) => {
   calculateHeaderWidthsToTheRight(instance.headers);
 
   const getInstance = useGetLatest(instance);
@@ -243,7 +243,7 @@ const getCellProps = (header, isHeaderCell) => {
  */
 
 // props target: <table>
-export const getTablePropsHook = (props, { instance }) => {
+const getTablePropsHook = (props, { instance }) => {
   const nextProps: UseHvTableStickyTableProps = {
     stickyHeader: instance.stickyHeader,
     stickyColumns: instance.hasStickyColumns,
@@ -269,21 +269,21 @@ export const getHeaderGroupPropsHook = (props, { instance }) => {
 };
 
 // props target: <table><thead><tr><th>
-export const getHeaderPropsHook = (props, { instance, column }) => {
+const getHeaderPropsHook = (props, { instance, column }) => {
   const nextProps = instance.hasStickyColumns ? getCellProps(column, true) : {};
 
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr>
-export const getRowPropsHook = (props, { instance }) => {
+const getRowPropsHook = (props, { instance }) => {
   const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr><td>
-export const getCellPropsHook = (props, { instance, cell }) => {
+const getCellPropsHook = (props, { instance, cell }) => {
   const nextProps: UseHvTableStickyCellProps = instance.hasStickyColumns
     ? getCellProps(cell.column, false)
     : {};

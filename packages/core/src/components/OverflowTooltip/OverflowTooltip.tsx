@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import { HvBaseProps } from "../../types/index";
-import { HvTooltip, HvTypography } from "components";
+import { HvTooltip, HvTooltipProps, HvTypography } from "components";
 import { StyledDataContainer } from "./OverflowTooltip.styles";
 import overflowTooltipClasses, {
   HvOverflowTooltipClasses,
@@ -30,8 +30,8 @@ export type HvOverflowTooltipProps = HvBaseProps & {
     | "top-start"
     | "top";
   /** Extra properties to add to the tooltip. */
-  tooltipsProps?: object;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  tooltipsProps?: HvTooltipProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvOverflowTooltipClasses;
 };
 

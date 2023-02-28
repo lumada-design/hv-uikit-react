@@ -33,7 +33,7 @@ export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
     fullscreen?: boolean;
     /** Prevent closing the dialog when clicking on the backdrop. */
     disableBackdropClick?: boolean;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvDialogClasses;
   } & HvExtraProps;
 

@@ -36,7 +36,7 @@ export type UseRowExpandProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-export const DEFAULT_LABELS = {
+const DEFAULT_LABELS = {
   expandRowButtonAriaLabel: "Expand this row",
   collapseRowButtonAriaLabel: "Collapse this row",
 };
@@ -70,7 +70,7 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
   );
 };
 
-export const visibleColumnsHook = (columns, { instance }) => {
+const visibleColumnsHook = (columns, { instance }) => {
   if (instance.disableCreateExpandButton) {
     return columns;
   }
@@ -115,7 +115,7 @@ export const visibleColumnsHook = (columns, { instance }) => {
   return columnsCopy;
 };
 
-export const getRowPropsHook = (props, { row }) => {
+const getRowPropsHook = (props, { row }) => {
   const nextProps: UseHvRowExpandTableRowProps = {
     expanded: row.isExpanded,
   };

@@ -22,7 +22,7 @@ exports[`List Row > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 0
               </div>
@@ -36,7 +36,7 @@ exports[`List Row > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 1
               </div>
@@ -50,7 +50,7 @@ exports[`List Row > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 2
               </div>
@@ -203,7 +203,7 @@ exports[`Simple Table > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 0
               </div>
@@ -217,7 +217,7 @@ exports[`Simple Table > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 1
               </div>
@@ -231,7 +231,7 @@ exports[`Simple Table > should be defined 1`] = `
               class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
             >
               <div
-                class="HvTableHeader-headerParagraph etcp1bl1 css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-lf7uy0-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 Sample Header 2
               </div>

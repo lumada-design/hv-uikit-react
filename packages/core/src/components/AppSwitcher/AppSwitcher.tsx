@@ -55,7 +55,7 @@ export type HvAppSwitcherProps = HvBaseProps & {
    * @deprecated This logic should be external, i.e. using the HvAppSwitcher inside a Drawer component.
    */
   isOpen?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the empty state component. */
+  /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherClasses;
 };
 

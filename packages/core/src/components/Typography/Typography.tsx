@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import { mapVariant } from "./utils";
+import typographyClasses, { HvTypographyClasses } from "./typographyClasses";
+import clsx from "clsx";
 
 export type HvTypographyVariants =
   | "display"
@@ -168,6 +170,8 @@ export type HvTypographyProps = HvBaseProps<HTMLElement, { disabled }> & {
    * (the element needs to have a width in order to overflow).
    */
   noWrap?: boolean;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvTypographyClasses;
 };
 
 /**
@@ -179,6 +183,7 @@ export const HvTypography = forwardRef(
       children,
       className,
       component,
+      classes,
       variant = "body",
       link = false,
       disabled = false,
@@ -200,7 +205,14 @@ export const HvTypography = forwardRef(
     return (
       <StyledComponent
         ref={ref}
-        className={className}
+        className={clsx(
+          className,
+          classes?.root,
+          typographyClasses.root,
+          classes?.[variant],
+          typographyClasses[variant],
+          noWrap && clsx(typographyClasses.noWrap, classes?.noWrap)
+        )}
         $variant={mappedVariant}
         $link={link}
         $disabled={disabled}

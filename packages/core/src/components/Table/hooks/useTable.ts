@@ -109,6 +109,7 @@ import {
   UseHvResizeColumnProps,
   UseHvResizeTableCellProps,
 } from "./useResizeColumns";
+import { HvExtraProps } from "../../../types";
 
 // #region ##### TYPES #####
 
@@ -432,7 +433,10 @@ const useHvTableSetup = (hooks) => {
 
 useHvTableSetup.pluginName = "useHvTableSetup";
 
-const useHvTable = (props, ...plugins) => {
+function useHvTable<D extends object = Record<string, unknown>>(
+  props: { data?: D[] } & HvExtraProps,
+  ...plugins: any
+) {
   const { data: dataProp, columns: columnsProp, ...others } = props;
 
   const data = useDefaultData(dataProp);
@@ -460,6 +464,6 @@ const useHvTable = (props, ...plugins) => {
     useHvTableSetup,
     ...plugins
   );
-};
+}
 
 export default useHvTable;

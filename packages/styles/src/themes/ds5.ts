@@ -1,8 +1,8 @@
 import { colors } from "../tokens/colors";
 import { makeTheme } from "../makeTheme";
-import { Theme } from "../types";
+import { HvTheme } from "../types";
 
-const ds5 = makeTheme((theme: Theme) => ({
+const ds5 = makeTheme((theme: HvTheme) => ({
   colors: {
     modes: {
       dawn: {

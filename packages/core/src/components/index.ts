@@ -44,7 +44,6 @@ export * from "./OverflowTooltip";
 export * from "./BaseCheckBox";
 export * from "./BaseRadio";
 export * from "./AppSwitcher";
-// export * from "./BaseDropdown";
 export * from "./BaseSwitch";
 export * from "./CheckBox";
 export * from "./Input";

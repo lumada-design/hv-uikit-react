@@ -10,7 +10,10 @@ import { HvBaseProps } from "../../types";
 import { StyledSnackbar } from "./Banner.styles";
 import { bannerClasses, HvBannerClasses } from ".";
 import { setId } from "utils";
-import { HvBannerContent } from "./BannerContent/BannerContent";
+import {
+  HvBannerContent,
+  HvBannerContentProps,
+} from "./BannerContent/BannerContent";
 import { HvActionGeneric } from "components";
 
 export type HvBannerVariant =
@@ -55,8 +58,8 @@ export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
     /** Offset from top/bottom of the page, in px. Defaults to 60px. */
     offset?: number;
     /** Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions. */
-    bannerContentProps?: object;
-    /** A Jss Object used to override or extend the styles applied to the empty state component. */
+    bannerContentProps?: HvBannerContentProps;
+    /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvBannerClasses;
   };
 
