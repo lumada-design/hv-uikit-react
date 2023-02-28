@@ -49,16 +49,34 @@ const findItemById = (data, itemId) => {
 };
 
 /**
- * Returns all the items that have chilren associated.
+ * Returns an array with all the parent item ids up until the target item is reached.
  *
  * @param {NavigationItem[]} data - The navigation data structure.
- * @returns All the items that have chilren associated.
+ * @param {string} itemId - The item id.
+ * @returns An array with all the parent item ids
  */
-const getAllParents = (items) => {
-  const parents = items.filter((item) => item.data != null && item.data.length > 0);
-  const childParents = parents.flatMap((item) => getAllParents(item.data));
+const pathToItem = (data, itemId) => {
+  const path = [];
 
-  return [...parents, ...childParents];
+  if (data != null && data.length > 0) {
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < data.length; ++i) {
+      const item = data[i];
+      if (item.id === itemId) {
+        path.push(item.id);
+        break;
+      }
+
+      const subPaths = pathToItem(item.data, itemId);
+      if (subPaths.length > 0) {
+        path.push(item.id);
+        path.push(...subPaths);
+        break;
+      }
+    }
+  }
+
+  return path;
 };
 
-export { findRootParentById, findItemById, getAllParents };
+export { findRootParentById, findItemById, pathToItem };
