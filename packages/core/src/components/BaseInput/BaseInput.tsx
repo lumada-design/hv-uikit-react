@@ -21,10 +21,10 @@ import { css, Global } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 // Global styles for the base input.
-const baseInputStyles = css({
+const baseInputStyles = css`
   "input:-webkit-autofill": {
-    "-webkit-box-shadow": `0 0 0px 1000px ${theme.colors.atmo1} inset`,
-    "-webkit-text-fill-color": theme.colors.acce1,
+    "-webkit-box-shadow": 0 0 0px 1000px ${theme.colors.atmo1} inset,
+    "-webkit-text-fill-color": ${theme.colors.acce1},
   },
 
   /* Clears input's clear and reveal buttons from IE */
@@ -48,7 +48,7 @@ const baseInputStyles = css({
   "input[type=search]::-webkit-search-results-decoration": {
     display: "none",
   },
-});
+}`;
 
 export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
   HvBaseProps<HTMLDivElement, { onChange }> & {
