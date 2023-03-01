@@ -31,7 +31,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 hv-uikit-css-du18qm"
             name="DropDownXS"
           >
             <svg
