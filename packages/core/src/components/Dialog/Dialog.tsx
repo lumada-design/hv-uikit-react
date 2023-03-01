@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useRef } from "react";
 import clsx from "clsx";
 import { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
@@ -54,7 +54,7 @@ export const HvDialog = ({
 
   const { activeTheme, selectedMode, rootId } = useContext(HvThemeContext);
 
-  const [focusableQueue, setFocusableQueue] = useState<{
+  const focusableQueue = useRef<{
     first?: HTMLElement;
     last?: HTMLElement;
   }>({ first: undefined, last: undefined });
@@ -74,10 +74,10 @@ export const HvDialog = ({
     (node) => {
       if (node) {
         const focusableList = getFocusableList(node);
-        setFocusableQueue({
+        focusableQueue.current = {
           first: focusableList[1],
           last: focusableList[focusableList.length - 2],
-        });
+        };
         if (isNil(firstFocusable)) focusableList[1].focus();
         else {
           const element =
@@ -100,12 +100,12 @@ export const HvDialog = ({
       !isNil(event.target) &&
       !isNil(focusableQueue)
     ) {
-      if (event.shiftKey && event.target === focusableQueue.first) {
-        focusableQueue.last?.focus();
+      if (event.shiftKey && event.target === focusableQueue.current.first) {
+        focusableQueue.current.last?.focus();
         event.preventDefault();
       }
-      if (!event.shiftKey && event.target === focusableQueue.last) {
-        focusableQueue.first?.focus();
+      if (!event.shiftKey && event.target === focusableQueue.current.last) {
+        focusableQueue.current.first?.focus();
         event.preventDefault();
       }
     }
