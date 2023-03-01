@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> with empty values should match the snapshot 1`] = `
+<div
+  className="makeStyles-menuContainer-9"
+>
+  <div
+    className="makeStyles-button-10"
+  />
+  <div
+    className="makeStyles-title-11 makeStyles-justifyContentCenter-12"
+  />
+</div>
+`;

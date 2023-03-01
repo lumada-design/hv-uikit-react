@@ -27,3 +27,6 @@ export * from "./Wizard";
 
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export * from "./VerticalNavigation";
+
+export { default as HvNavigationSlider } from "./NavigationSlider";
+export * from "./NavigationSlider";
