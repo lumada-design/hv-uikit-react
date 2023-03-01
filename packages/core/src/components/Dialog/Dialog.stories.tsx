@@ -261,7 +261,7 @@ export const LongContent: StoryObj<HvDialogProps> = {
           id="test"
           open={open}
           onClose={() => setOpen(false)}
-          firstFocusable="test-close"
+          firstFocusable="accept"
         >
           <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
           <HvDialogContent indentContent>
@@ -338,7 +338,11 @@ export const LongContent: StoryObj<HvDialogProps> = {
             venenatis mi et dapibus.
           </HvDialogContent>
           <HvDialogActions>
-            <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+            <HvButton
+              id="accept"
+              variant="secondaryGhost"
+              onClick={() => setOpen(false)}
+            >
               I Accept
             </HvButton>
           </HvDialogActions>
