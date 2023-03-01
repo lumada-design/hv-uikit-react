@@ -3,7 +3,7 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root css-uqb84k css-1nukton-StyledRoot eapzthe9"
+    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-uqb84k css-1nukton-StyledRoot eapzthe9"
   >
     <div
       aria-expanded="false"
@@ -25,7 +25,7 @@ exports[`DropDownMenu > should render correctly 1`] = `
             class="css-1o4qkkz-StyledChildren e138pvrm1"
           >
             <div
-              class="css-du18qm"
+              class="hv-uikit-css-du18qm"
               name="MoreOptionsVertical"
             >
               <svg

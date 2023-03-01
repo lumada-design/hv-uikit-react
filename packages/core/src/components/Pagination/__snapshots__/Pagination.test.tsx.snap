@@ -37,7 +37,7 @@ exports[`Pagination > should render correctly 1`] = `
                 </p>
               </div>
               <div
-                class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 hv-uikit-css-du18qm"
                 name="DropDownXS"
               >
                 <svg
@@ -78,7 +78,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon css-du18qm"
+                class="HvPagination-icon hv-uikit-css-du18qm"
                 name="Start"
               >
                 <svg
@@ -115,7 +115,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon css-du18qm"
+                class="HvPagination-icon hv-uikit-css-du18qm"
                 name="Backwards"
               >
                 <svg
@@ -168,7 +168,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvInput-error HvWarningText-root css-wyhb5v-StyledRoot e1jkc0dp2"
             >
               <div
-                class="HvWarningText-defaultIcon css-184echi-StyledIcon e1jkc0dp0 css-du18qm"
+                class="HvWarningText-defaultIcon css-184echi-StyledIcon e1jkc0dp0 hv-uikit-css-du18qm"
                 name="Fail"
               >
                 <svg
@@ -221,7 +221,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon css-du18qm"
+                class="HvPagination-icon hv-uikit-css-du18qm"
                 name="Forwards"
               >
                 <svg
@@ -258,7 +258,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon css-du18qm"
+                class="HvPagination-icon hv-uikit-css-du18qm"
                 name="End"
               >
                 <svg

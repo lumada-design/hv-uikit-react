@@ -55,6 +55,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "react-google-charts": "^4.0.0",
     "formik": "^2.2.9",
     "jsdom": "^20.0.3",
     "lerna": "^6.3.0",
