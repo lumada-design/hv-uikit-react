@@ -8,7 +8,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     modes: {
       dawn: {
         type: "light",
-        backgroundColor: colors.light.atmo2,
+        backgroundColor: "#F0F0F0",
         ...colors.common,
         ...colors.light,
         acce2h: "#477DBD",
@@ -235,6 +235,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     outline: "none",
     borderRadius: "0px",
     hoverColor: theme.colors.atmo4,
+    titleVariant: "title3",
+    subheaderVariant: "body",
+    subheaderColor: theme.colors.acce1,
   },
   tab: {
     padding: "0 20px",
@@ -249,6 +252,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   dialog: {
     borderRadius: "0",
     margin: "100px",
+    titleVariant: "xxsTitle",
   },
   baseCheckBox: {
     hoverColor: theme.colors.atmo3,
@@ -396,6 +400,13 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     rowExpandBackgroundColor: theme.colors.atmo1,
     rowHoverColor: theme.colors.atmo1,
     rowHoverBorderColor: theme.colors.atmo4,
+  },
+  globalActions: {
+    sectionVariant: "sectionTitle",
+  },
+  emptyState: {
+    titleVariant: "xxsTitle",
+    titleMarginTop: "2px",
   },
 }));
 

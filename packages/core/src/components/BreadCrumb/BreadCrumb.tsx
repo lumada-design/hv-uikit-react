@@ -107,11 +107,11 @@ export const HvBreadCrumb = ({
                 classes={{
                   centerContainer: clsx(
                     breadCrumbClasses.centerContainer,
-                    classes?.centerContainer || ""
+                    classes?.centerContainer
                   ),
                   separatorContainer: clsx(
                     breadCrumbClasses.separatorContainer,
-                    classes?.separatorContainer || ""
+                    classes?.separatorContainer
                   ),
                 }}
                 key={key}

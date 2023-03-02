@@ -1,16 +1,12 @@
 import styled from "@emotion/styled";
-import Backdrop from "@mui/material/Backdrop";
-import Dialog from "@mui/material/Dialog";
-import Paper from "@mui/material/Paper";
+import { Paper as MuiPaper, Backdrop as MuiBackdrop } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import fade from "utils/hexToRgbA";
 import { HvButton } from "components";
 
-export const StyledDialog = styled(Dialog)({});
-
 export const StyledPaper = styled(
-  Paper,
+  MuiPaper,
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
   color: theme.colors.acce1,
@@ -32,7 +28,7 @@ export const StyledPaper = styled(
 }));
 
 export const StyledBackdrop = styled(
-  Backdrop,
+  MuiBackdrop,
   transientOptions
 )(({ $backColor }: { $backColor: string }) => ({
   background: fade($backColor, 0.8),

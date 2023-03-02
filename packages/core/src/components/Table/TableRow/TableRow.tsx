@@ -167,8 +167,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
           tableRowClasses.root,
           classes?.root,
           tableRowClasses[type],
-          classes && classes[type],
-
+          classes?.[type],
           hover && clsx(tableRowClasses.hover, classes?.hover),
           selected && clsx(tableRowClasses.selected, classes?.selected),
           expanded && clsx(tableRowClasses.expanded, classes?.expanded),

@@ -6,17 +6,18 @@ import {
 } from "@mui/material/Snackbar";
 import { HvBaseProps } from "../../types";
 import { StyledSnackbar } from "./Snackbar.styles";
-import { HvSnackbarClasses } from "./snackbarClasses";
+import { HvSnackbarClasses, snackbarClasses } from "./snackbarClasses";
 import { capitalize } from "lodash";
 import { SyntheticEvent } from "react";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import { setId } from "utils";
 import { HvActionGeneric } from "components";
 import { HvSnackbarContentWrapperProps } from "./SnackbarContentWrapper/SnackbarContentWrapper";
+import clsx from "clsx";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
-export type HvSnackbarProps = Omit<MuiSnackbarProps, "action"> &
+export type HvSnackbarProps = Omit<MuiSnackbarProps, "action" | "classes"> &
   HvBaseProps & {
     /** If true, Snackbar is open. */
     open?: boolean;
@@ -120,7 +121,33 @@ export const HvSnackbar = ({
       style={
         anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
       }
-      classes={classes}
+      classes={{
+        root: clsx(classes?.root, snackbarClasses.root),
+        anchorOriginBottomCenter: clsx(
+          classes?.anchorOriginBottomCenter,
+          snackbarClasses.anchorOriginBottomCenter
+        ),
+        anchorOriginBottomLeft: clsx(
+          classes?.anchorOriginBottomLeft,
+          snackbarClasses.anchorOriginBottomLeft
+        ),
+        anchorOriginBottomRight: clsx(
+          classes?.anchorOriginBottomRight,
+          snackbarClasses.anchorOriginBottomRight
+        ),
+        anchorOriginTopCenter: clsx(
+          classes?.anchorOriginTopCenter,
+          snackbarClasses.anchorOriginTopCenter
+        ),
+        anchorOriginTopLeft: clsx(
+          classes?.anchorOriginTopLeft,
+          snackbarClasses.anchorOriginTopLeft
+        ),
+        anchorOriginTopRight: clsx(
+          classes?.anchorOriginTopRight,
+          snackbarClasses.anchorOriginTopRight
+        ),
+      }}
       className={className}
       id={id}
       anchorOrigin={anchorOrigin}

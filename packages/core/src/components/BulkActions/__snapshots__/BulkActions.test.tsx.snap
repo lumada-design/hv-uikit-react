@@ -77,7 +77,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           class="css-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="css-16uosol-StyledIconSpan e138pvrm2"
+            class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
               class="css-du18qm"
@@ -113,7 +113,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           class="css-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="css-16uosol-StyledIconSpan e138pvrm2"
+            class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
               class="css-du18qm"

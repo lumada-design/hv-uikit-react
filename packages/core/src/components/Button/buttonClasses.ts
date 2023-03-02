@@ -2,12 +2,11 @@ import { getClasses } from "utils";
 
 export type HvButtonClasses = {
   root?: string;
-  focusVisible?: string;
   startIcon?: string;
-  primary?: string;
+  focusVisible?: string;
 };
 
-const classKeys: string[] = ["root", "focusVisible", "startIcon", "primary"];
+const classKeys: string[] = ["root", "startIcon", "focusVisible"];
 
 const buttonClasses = getClasses<HvButtonClasses>(classKeys, "HvButton");
 

@@ -177,6 +177,9 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     outline: `1px solid ${theme.colors.atmo4}`,
     borderRadius: "0px 0px 6px 6px",
     hoverColor: theme.colors.acce2,
+    titleVariant: "label",
+    subheaderVariant: "caption1",
+    subheaderColor: theme.colors.acce4,
   },
   tab: {
     padding: "0 16px",
@@ -191,6 +194,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   dialog: {
     borderRadius: "6px",
     margin: "80px",
+    titleVariant: "title4",
   },
   baseCheckBox: {
     hoverColor: theme.colors.acce2s,
@@ -338,6 +342,13 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     rowExpandBackgroundColor: theme.colors.atmo2,
     rowHoverColor: theme.colors.acce2s,
     rowHoverBorderColor: theme.colors.atmo4,
+  },
+  globalActions: {
+    sectionVariant: "title4",
+  },
+  emptyState: {
+    titleVariant: "title4",
+    titleMarginTop: "4px",
   },
 }));
 

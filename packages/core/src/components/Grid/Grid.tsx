@@ -3,6 +3,7 @@ import { isString } from "lodash";
 import { forwardRef } from "react";
 import { useWidth } from "hooks";
 import { HvBaseProps } from "../../types";
+import { HvGridClasses } from "./gridClasses";
 
 const BREAKPOINT_GUTTERS = {
   xs: 2,
@@ -105,6 +106,8 @@ export type HvGridProps = MuiGridProps &
      * Refer to the limitations section of the documentation to better understand the use case.
      */
     zeroMinWidth?: boolean;
+    /** A Jss Object used to override or extend the styles applied to the component. */
+    classes?: HvGridClasses;
   };
 
 /**

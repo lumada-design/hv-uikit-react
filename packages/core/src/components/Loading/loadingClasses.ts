@@ -8,6 +8,10 @@ export type HvLoadingClasses = {
   overlay?: string;
   blur?: string;
   hidden?: string;
+  small?: string;
+  regular?: string;
+  smallColor?: string;
+  regularColor?: string;
 };
 
 const classKeys: string[] = [
@@ -18,6 +22,10 @@ const classKeys: string[] = [
   "overlay",
   "blur",
   "hidden",
+  "small",
+  "regular",
+  "smallColor",
+  "regularColor",
 ];
 
 const loadingClasses = getClasses<HvLoadingClasses>(classKeys, "HvLoading");

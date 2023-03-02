@@ -1,6 +1,5 @@
-import styled from "@emotion/styled";
-import CardMedia from "@mui/material/CardMedia";
+import { css } from "@emotion/css";
 
-export const StyledMedia = styled(CardMedia)({
-  width: "100%",
-});
+export const styles = {
+  root: css({ width: "100%" }),
+};

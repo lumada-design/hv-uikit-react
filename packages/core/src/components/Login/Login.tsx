@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { StyledFormContainer, StyledRoot } from "./Login.styles";
+import loginClasses, { HvLoginClasses } from "./loginClasses";
 
 export type HvLoginProps = HvBaseProps & {
   /**
@@ -10,16 +11,7 @@ export type HvLoginProps = HvBaseProps & {
   /**
    * Class names to be applied.
    */
-  classes?: {
-    /**
-     * Styles applied to root.
-     */
-    root?: string;
-    /**
-     * Styles applied to the form container.
-     */
-    formContainer?: string;
-  };
+  classes?: HvLoginClasses;
 };
 
 /**
@@ -36,13 +28,15 @@ export const HvLogin = ({
   return (
     <StyledRoot
       id={id}
-      className={clsx(className, classes?.root)}
+      className={clsx(className, loginClasses.root, classes?.root)}
       style={{
         backgroundImage: background && `url(${background})`,
       }}
       {...others}
     >
-      <StyledFormContainer className={classes?.formContainer}>
+      <StyledFormContainer
+        className={clsx(loginClasses.formContainer, classes?.formContainer)}
+      >
         {children}
       </StyledFormContainer>
     </StyledRoot>

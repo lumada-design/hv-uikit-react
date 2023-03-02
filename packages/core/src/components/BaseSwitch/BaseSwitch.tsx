@@ -2,10 +2,10 @@ import React, { useState, useCallback } from "react";
 import clsx from "clsx";
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 import { StyledSwitch } from "./BaseSwitch.styles";
-import { HvBaseProps, HvExtraProps } from "../../types";
+import { HvBaseProps } from "../../types";
 import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
 
-export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange"> &
+export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange" | "classes"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
     /**
      * Class names to be applied.
@@ -71,7 +71,7 @@ export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange"> &
      * @ignore
      */
     onBlur?: (event: React.FocusEvent<any>) => void;
-  } & HvExtraProps;
+  };
 
 /**
  * A Switch is <b>binary</b> and work as a digital on/off button.

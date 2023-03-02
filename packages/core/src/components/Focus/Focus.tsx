@@ -95,7 +95,7 @@ export const HvFocus = ({
     const focuses = rootRef?.current
       ? Array.from(
           rootRef.current.getElementsByClassName(
-            filterClass || focusClasses.root || "root"
+            filterClass || focusClasses.root || classes?.root || "root"
           )
         )
       : [];
@@ -115,7 +115,9 @@ export const HvFocus = ({
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
     const firstSelected = focuses.find((focus) =>
-      focus.classList.contains(focusClasses.selected || "selected")
+      focus.classList.contains(
+        focusClasses.selected || classes?.selected || "selected"
+      )
     );
 
     if (!firstSelected) return;
@@ -172,6 +174,9 @@ export const HvFocus = ({
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
       evt.currentTarget.classList.add(focusClasses.focused);
+      if (classes?.focused) {
+        evt.currentTarget.classList.add(classes.focused);
+      }
       // add global class HvIsFocused as a marker
       // not to be styled directly, only as helper in specific css queries
       evt.currentTarget.classList.add("HvIsFocused");
@@ -186,6 +191,9 @@ export const HvFocus = ({
       getFocuses().forEach((element) => {
         if (focusClasses.focused) {
           element.classList.remove(focusClasses.focused);
+        }
+        if (classes?.focused) {
+          element.classList.remove(classes.focused);
         }
         // remove the global class HvIsFocused
         element.classList.remove("HvIsFocused");

@@ -5,6 +5,10 @@ export type HvProgressBarClasses = {
   progress?: string;
   progressBar?: string;
   progressBarLabel?: string;
+  progressContainer?: string;
+  progressDone?: string;
+  progressBarContainer?: string;
+  progressError?: string;
 };
 
 const classKeys: string[] = [
@@ -12,6 +16,10 @@ const classKeys: string[] = [
   "progress",
   "progressBar",
   "progressBarLabel",
+  "progressContainer",
+  "progressDone",
+  "progressBarContainer",
+  "progressError",
 ];
 
 const progressBarClasses = getClasses<HvProgressBarClasses>(

@@ -42,8 +42,6 @@ export const StyledContainer = styled(
   })
 );
 
-export const StyledIconContainer = styled("div")({});
-
 export const StyledTextContainer = styled(
   "div",
   transientOptions
@@ -64,33 +62,12 @@ export const StyledTextContainer = styled(
 export const StyledTypography = styled(
   HvTypography,
   transientOptions
-)(
-  ({
-    $type,
-    $breakpoints,
-  }: {
-    $type: string;
-    $breakpoints: MuiBreakpoints;
-  }) => ({
-    ...($type === "title" && {
-      marginTop: 4,
-      marginBottom: theme.space.xs,
-    }),
-    ...($type === "text" && {
-      background: "transparent",
-      maxWidth: "510px",
-      overflow: "hidden",
-      fontFamily: theme.fontFamily.body,
-      [$breakpoints.up("sm")]: {
-        marginLeft: theme.space.xs,
-      },
-      "& a": {
-        color: theme.colors.acce2,
-        textDecoration: "none",
-      },
-    }),
-    ...($type === "action" && {
-      marginTop: theme.space.xs,
-    }),
-  })
-);
+)(({ $type }: { $type: "title" | "message" | "action" }) => ({
+  ...($type === "title" && {
+    marginTop: theme.emptyState.titleMarginTop,
+    marginBottom: theme.space.sm,
+  }),
+  ...($type === "action" && {
+    marginTop: theme.space.sm,
+  }),
+}));

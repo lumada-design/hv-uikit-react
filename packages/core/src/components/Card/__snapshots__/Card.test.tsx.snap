@@ -3,31 +3,31 @@
 exports[`Card > should render all the compoents 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement HvCard-root css-m08axw-StyledRoot e5h2ket3"
+    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
   >
     <div
-      class="css-13ob5sy-StyledContainer e5h2ket2"
+      class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
     >
       <div
-        class="HvCard-semanticBar css-zoemfr-StyledBar e5h2ket1"
+        class="css-1vb6mv5-semanticBar css-sfyg8u-HvCard HvCard-semanticBar"
       />
       <div
-        class="css-117c0kr-StyledIcon e5h2ket0"
+        class="css-6a05hj-icon HvCard-icon"
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root css-te5g2l-root HvCard-Header-root css-185gdzj-MuiCardHeader-root"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
       >
         <span
-          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1yl86h7-title HvCard-Header-title css-aqxmxp-title css-1qvr50w-MuiTypography-root"
         >
           mockTitle
         </span>
         <span
-          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader HvCard-Header-subheader css-nrdprl-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-wobott-subheader HvCard-Header-subheader css-1xilu94-subheader css-nrdprl-MuiTypography-root"
         >
           mockSubtitle
         </span>
@@ -35,11 +35,11 @@ exports[`Card > should render all the compoents 1`] = `
     </div>
     <img
       alt="mockImg"
-      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img e1r97lfn0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      class="MuiCardMedia-root css-abc58s-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
       role="img"
     />
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root css-m6635h-content HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
         class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
@@ -54,20 +54,20 @@ exports[`Card > should render all the compoents 1`] = `
 exports[`Card > should render content 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement HvCard-root css-m08axw-StyledRoot e5h2ket3"
+    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
   >
     <div
-      class="css-13ob5sy-StyledContainer e5h2ket2"
+      class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
     >
       <div
-        class="HvCard-semanticBar css-zoemfr-StyledBar e5h2ket1"
+        class="css-1vb6mv5-semanticBar css-sfyg8u-HvCard HvCard-semanticBar"
       />
       <div
-        class="css-117c0kr-StyledIcon e5h2ket0"
+        class="css-6a05hj-icon HvCard-icon"
       />
     </div>
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root css-m6635h-content HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
         class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
@@ -82,16 +82,16 @@ exports[`Card > should render content 1`] = `
 exports[`Card > should render correctly 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement HvCard-root css-m08axw-StyledRoot e5h2ket3"
+    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
   >
     <div
-      class="css-13ob5sy-StyledContainer e5h2ket2"
+      class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
     >
       <div
-        class="HvCard-semanticBar css-zoemfr-StyledBar e5h2ket1"
+        class="css-1vb6mv5-semanticBar css-sfyg8u-HvCard HvCard-semanticBar"
       />
       <div
-        class="css-117c0kr-StyledIcon e5h2ket0"
+        class="css-6a05hj-icon HvCard-icon"
       />
     </div>
   </div>
@@ -101,31 +101,31 @@ exports[`Card > should render correctly 1`] = `
 exports[`Card > should render header 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement HvCard-root css-m08axw-StyledRoot e5h2ket3"
+    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
   >
     <div
-      class="css-13ob5sy-StyledContainer e5h2ket2"
+      class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
     >
       <div
-        class="HvCard-semanticBar css-zoemfr-StyledBar e5h2ket1"
+        class="css-1vb6mv5-semanticBar css-sfyg8u-HvCard HvCard-semanticBar"
       />
       <div
-        class="css-117c0kr-StyledIcon e5h2ket0"
+        class="css-6a05hj-icon HvCard-icon"
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root css-te5g2l-root HvCard-Header-root css-185gdzj-MuiCardHeader-root"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
       >
         <span
-          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-1qvr50w-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1yl86h7-title HvCard-Header-title css-aqxmxp-title css-1qvr50w-MuiTypography-root"
         >
           mockTitle
         </span>
         <span
-          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader HvCard-Header-subheader css-nrdprl-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 MuiCardHeader-subheader css-wobott-subheader HvCard-Header-subheader css-1xilu94-subheader css-nrdprl-MuiTypography-root"
         >
           mockSubtitle
         </span>
@@ -138,21 +138,21 @@ exports[`Card > should render header 1`] = `
 exports[`Card > should render image 1`] = `
 <div>
   <div
-    class="HvIsCardGridElement HvCard-root css-m08axw-StyledRoot e5h2ket3"
+    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
   >
     <div
-      class="css-13ob5sy-StyledContainer e5h2ket2"
+      class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
     >
       <div
-        class="HvCard-semanticBar css-zoemfr-StyledBar e5h2ket1"
+        class="css-1vb6mv5-semanticBar css-sfyg8u-HvCard HvCard-semanticBar"
       />
       <div
-        class="css-117c0kr-StyledIcon e5h2ket0"
+        class="css-6a05hj-icon HvCard-icon"
       />
     </div>
     <img
       alt="mockImg"
-      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img e1r97lfn0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      class="MuiCardMedia-root css-abc58s-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
       role="img"
     />
   </div>

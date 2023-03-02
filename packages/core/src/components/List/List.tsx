@@ -295,7 +295,10 @@ export const HvList = ({
         disabled={item.disabled || undefined}
         className={clsx(listClasses.item, classes?.item)}
         classes={{
-          selected: clsx(listClasses.itemSelector, classes?.itemSelector),
+          selected:
+            useSelector || multiSelect
+              ? clsx(listClasses.itemSelector, classes?.itemSelector)
+              : undefined,
         }}
         selected={multiSelect || selected ? selected : undefined}
         onClick={(evt) => handleSelect(evt, item)}

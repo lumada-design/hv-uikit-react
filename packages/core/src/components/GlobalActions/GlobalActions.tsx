@@ -12,6 +12,8 @@ import {
 import globalActionsClasses, {
   HvGlobalActionsClasses,
 } from "./globalActionsClasses";
+import { useContext } from "react";
+import { HvThemeContext } from "providers";
 
 export type HvGlobalActionsVariant = "global" | "section";
 
@@ -52,7 +54,10 @@ export const HvGlobalActions = ({
   position: positionProp,
   ...others
 }: HvGlobalActionsProps) => {
+  const { activeTheme } = useContext(HvThemeContext);
+
   const muiTheme = useTheme();
+
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
   const backButtonRenderer = () => {
@@ -110,7 +115,11 @@ export const HvGlobalActions = ({
           title
         ) : (
           <HvTypography
-            variant={variant === "global" ? "title3" : "title4"}
+            variant={
+              variant === "global"
+                ? "title3"
+                : activeTheme?.globalActions.sectionVariant
+            }
             component={`h${headingLevelToApply}`}
             className={clsx(globalActionsClasses.name, classes?.name)}
           >

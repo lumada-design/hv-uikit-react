@@ -58,7 +58,8 @@ export const HvLoading = (props: HvLoadingProps) => {
             className={clsx(
               loadingClasses.loadingBar,
               classes?.loadingBar,
-              variant
+              loadingClasses[variant],
+              classes?.[variant]
             )}
             $variant={variant}
           ></StyledBar>

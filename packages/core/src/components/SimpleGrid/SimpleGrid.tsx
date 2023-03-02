@@ -1,25 +1,6 @@
 import { HvBaseProps } from "index";
 import { StyledContainer } from "./SimpleGrid.styles";
 
-export const HvSimpleGrid = ({
-  children,
-  breakpoints,
-  spacing = "sm",
-  cols,
-  ...others
-}: HvSimpleGridProps) => {
-  return (
-    <StyledContainer
-      spacing={spacing}
-      cols={cols}
-      breakpoints={breakpoints}
-      {...others}
-    >
-      {children}
-    </StyledContainer>
-  );
-};
-
 export type Spacing = "sm" | "md" | "lg" | "xl";
 
 export type Breakpoint = {
@@ -52,4 +33,23 @@ export type HvSimpleGridProps = HvBaseProps & {
    * Number of how many columns the content will be displayed
    */
   cols?: number;
+};
+
+export const HvSimpleGrid = ({
+  children,
+  breakpoints,
+  spacing = "sm",
+  cols,
+  ...others
+}: HvSimpleGridProps) => {
+  return (
+    <StyledContainer
+      spacing={spacing}
+      cols={cols}
+      breakpoints={breakpoints}
+      {...others}
+    >
+      {children}
+    </StyledContainer>
+  );
 };

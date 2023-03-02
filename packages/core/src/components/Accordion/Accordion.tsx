@@ -134,7 +134,11 @@ export const HvAccordion = ({
         id={accordionHeaderId}
         component="div"
         role="button"
-        className={clsx(accordionClasses.label, classes?.label)}
+        className={clsx(
+          accordionClasses.label,
+          classes?.label,
+          disabled && clsx(accordionClasses.disabled, classes?.disabled)
+        )}
         disabled={disabled}
         tabIndex={0}
         onKeyDown={handleKeyDown}
@@ -178,7 +182,11 @@ export const HvAccordion = ({
         id={accordionContainer}
         role="region"
         aria-labelledby={accordionHeaderId}
-        className={clsx(accordionClasses.container, classes?.container)}
+        className={clsx(
+          accordionClasses.container,
+          classes?.container,
+          !isOpen && clsx(accordionClasses.hidden, classes?.hidden)
+        )}
         hidden={!isOpen}
         {...containerProps}
       >

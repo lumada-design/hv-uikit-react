@@ -55,6 +55,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     outline: "string",
     borderRadius: "string",
     hoverColor: "string",
+    titleVariant: "string",
+    subheaderVariant: "string",
+    subheaderColor: "string",
   },
   tab: {
     padding: "string",
@@ -69,6 +72,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   dialog: {
     borderRadius: "string",
     margin: "string",
+    titleVariant: "string",
   },
   baseCheckBox: {
     hoverColor: "string",
@@ -217,6 +221,13 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     rowHoverColor: "string",
     rowHoverBorderColor: "string",
   },
+  globalActions: {
+    sectionVariant: "string",
+  },
+  emptyState: {
+    titleVariant: "string",
+    titleMarginTop: "string",
+  },
 };
 
 const typographyProps: DeepString<HvTypographyProps> = {
@@ -254,6 +265,7 @@ const typographySpec: DeepString<HvThemeTypography> = {
 const themeVars: HvThemeVars = mapCSSVars({
   ...tokens,
   colors: {
+    type: "light",
     backgroundColor: tokens.colors.light.atmo2,
     ...tokens.colors.common,
     ...tokens.colors.light,

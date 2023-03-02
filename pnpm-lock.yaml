@@ -126,6 +126,7 @@ importers:
   packages/core:
     specifiers:
       '@emotion/cache': ^11.10.5
+      '@emotion/css': ^11.10.6
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
       '@hitachivantara/uikit-react-icons': workspace:*
@@ -150,6 +151,7 @@ importers:
       tsc-alias: ^1.8.2
     dependencies:
       '@emotion/cache': 11.10.5
+      '@emotion/css': 11.10.6
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
       '@hitachivantara/uikit-react-icons': link:../icons
@@ -2294,6 +2296,16 @@ packages:
   /@emotion/core/11.0.0:
     resolution: {integrity: sha512-w4sE3AmHmyG6RDKf6mIbtHpgJUSJ2uGvPQb8VXFL7hFjMPibE8IiehG8cMX3Ztm4svfCQV6KqusQbeIOkurBcA==}
     dev: true
+
+  /@emotion/css/11.10.6:
+    resolution: {integrity: sha512-88Sr+3heKAKpj9PCqq5A1hAmAkoSIvwEq1O2TwDij7fUtsJpdkV4jMTISSTouFeRvsGvXIpuSuDQ4C1YdfNGXw==}
+    dependencies:
+      '@emotion/babel-plugin': 11.10.6
+      '@emotion/cache': 11.10.5
+      '@emotion/serialize': 1.1.1
+      '@emotion/sheet': 1.2.1
+      '@emotion/utils': 1.2.0
+    dev: false
 
   /@emotion/hash/0.9.0:
     resolution: {integrity: sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ==}

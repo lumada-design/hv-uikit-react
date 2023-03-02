@@ -6,7 +6,7 @@ import { StyledRoot } from "./Container.styles";
 import containerClasses, { HvContainerClasses } from "./containerClasses";
 import clsx from "clsx";
 
-export type HvContainerProps = MuiContainerProps &
+export type HvContainerProps = Omit<MuiContainerProps, "classes"> &
   HvBaseProps & {
     /**
      * The component used for the root node.
@@ -37,7 +37,20 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
     const muiTheme = useTheme();
     return (
       <StyledRoot
-        className={clsx(className, containerClasses.root, classes?.root)}
+        className={className}
+        classes={{
+          root: clsx(containerClasses.root, classes?.root),
+          disableGutters: clsx(
+            containerClasses.disableGutters,
+            classes?.disableGutters
+          ),
+          fixed: clsx(containerClasses.fixed, classes?.fixed),
+          maxWidthXs: clsx(containerClasses.maxWidthXs, classes?.maxWidthXs),
+          maxWidthSm: clsx(containerClasses.maxWidthSm, classes?.maxWidthSm),
+          maxWidthMd: clsx(containerClasses.maxWidthMd, classes?.maxWidthMd),
+          maxWidthLg: clsx(containerClasses.maxWidthLg, classes?.maxWidthLg),
+          maxWidthXl: clsx(containerClasses.maxWidthXl, classes?.maxWidthXl),
+        }}
         $breakpoints={muiTheme.breakpoints}
         ref={ref}
         maxWidth={maxWidth}

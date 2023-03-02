@@ -30,7 +30,7 @@ export const StyledAppBar = styled(
   ...($position === "sticky" && { position: "sticky" }),
 }));
 
-export const HeaderRoot = styled("div")({
+export const StyledHeaderRoot = styled("div")({
   display: "flex",
   alignItems: "center",
   width: "100%",

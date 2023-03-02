@@ -124,6 +124,8 @@ export const HvAppSwitcher = ({
         className,
         appSwitcherClasses.root,
         classes?.root,
+        appSwitcherClasses[layout],
+        classes?.[layout],
         isOpen && clsx(appSwitcherClasses.open, classes?.open),
         isOpen === false && clsx(appSwitcherClasses.closed, classes?.closed)
       )}

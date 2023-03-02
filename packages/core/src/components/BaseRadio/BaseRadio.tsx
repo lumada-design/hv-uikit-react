@@ -5,11 +5,11 @@ import {
   RadioButtonUnselected,
   RadioButtonSelected,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps, HvExtraProps } from "../../types";
+import { HvBaseProps } from "../../types";
 import { StyledRadio } from "./BaseRadio.styles";
 import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
 
-export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
+export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange" | "classes"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
     /**
      * Class names to be applied.
@@ -80,7 +80,7 @@ export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange"> &
      * @ignore
      */
     onBlur?: (event: React.FocusEvent<any>) => void;
-  } & HvExtraProps;
+  };
 
 export const getSelectorIcons = (
   options: { disabled: boolean; semantic: boolean },

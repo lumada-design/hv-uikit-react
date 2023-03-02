@@ -12,7 +12,10 @@ import baseCheckBoxClasses, {
   HvBaseCheckBoxClasses,
 } from "./baseCheckBoxClasses";
 
-export type HvBaseCheckBoxProps = Omit<MuiCheckboxProps, "onChange"> &
+export type HvBaseCheckBoxProps = Omit<
+  MuiCheckboxProps,
+  "onChange" | "classes"
+> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
     /**
      * The input name.

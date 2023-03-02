@@ -3,7 +3,7 @@
 exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`] = `
 <div>
   <div
-    class="HvAppSwitcher-root HvAppSwitcher-open css-1obxrpd-StyledRoot e1lxr4i84"
+    class="HvAppSwitcher-root HvAppSwitcher-single HvAppSwitcher-open css-1obxrpd-StyledRoot e1lxr4i84"
   >
     <span
       class="HvAppSwitcher-title e1lxr4i82 HvTypography-root HvTypography-label css-1vsygg1-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"

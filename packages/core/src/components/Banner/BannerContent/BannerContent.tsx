@@ -17,7 +17,10 @@ import { forwardRef } from "react";
 import { iconVariant } from "utils";
 import { HvActionContainerProps } from "./ActionContainer/ActionContainer";
 
-export type HvBannerContentProps = Omit<MuiSnackbarContentProps, "variant"> &
+export type HvBannerContentProps = Omit<
+  MuiSnackbarContentProps,
+  "variant" | "classes"
+> &
   HvBaseProps & {
     /** The message to display. */
     content?: React.ReactNode;
@@ -90,7 +93,9 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
           }}
           className={clsx(
             bannerContentClasses.baseVariant,
-            classes?.baseVariant
+            classes?.baseVariant,
+            bannerContentClasses[variant],
+            classes?.[variant]
           )}
           message={
             <HvMessageContainer

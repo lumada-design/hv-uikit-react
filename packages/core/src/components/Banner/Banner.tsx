@@ -25,7 +25,7 @@ export type HvBannerVariant =
 
 export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 
-export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin"> &
+export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin" | "classes"> &
   HvBaseProps & {
     /** If true | Snackbar is open. */
     open: boolean;

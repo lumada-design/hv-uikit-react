@@ -7,6 +7,10 @@ export type HvSnackbarContentWrapperClasses = {
   iconVariant?: string;
   messageText?: string;
   action?: string;
+  default?: string;
+  success?: string;
+  warning?: string;
+  error?: string;
 };
 
 const classKeys: string[] = [
@@ -16,6 +20,10 @@ const classKeys: string[] = [
   "iconVariant",
   "messageText",
   "action",
+  "default",
+  "success",
+  "warning",
+  "error",
 ];
 
 const snackbarContentWrapperClasses =
