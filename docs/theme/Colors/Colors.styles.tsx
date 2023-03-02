@@ -5,8 +5,7 @@ import { HvTypography } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledGroup = styled("div")({
-  paddingBottom: theme.spacing(4),
-  borderTop: `1px solid ${theme.colors.atmo4}`,
+  paddingBottom: theme.space.sm,
 });
 
 export const StyledGroupName = styled(HvTypography)({

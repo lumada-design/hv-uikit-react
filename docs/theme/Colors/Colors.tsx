@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
-// @ts-ignore
-import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
+import {
+  HvProvider,
+  HvThemeContext,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import {
   StyledGroup,
   StyledGroupName,
@@ -11,92 +14,92 @@ import {
   StyledColorSquare,
   StyledColorName,
 } from "./Colors.styles";
+import { themeColors } from "./themeColors";
 
-// Basic structure for the groups of colors
-const baseGroups = {
-  Base: {},
-  Accent: {},
-  Atmosphere: {},
-  Semantic: {},
-  Support: {},
-  Categorical: {},
-};
-
-// Get the actual value of a color from its CSS variable
-const getColor = (color: string) => {
-  const value = getComputedStyle(document.body).getPropertyValue(
-    `--colors-${color}`
-  );
-  return value;
-};
-
-// Populate the groups of colors
-const groupColors = (colors: string[]) => {
-  colors.map((c: string) => {
-    if (c.includes("base")) {
-      baseGroups.Base[c] = getColor(c);
-    } else if (c.includes("acce")) {
-      baseGroups.Accent[c] = getColor(c);
-    } else if (c.includes("atmo")) {
-      baseGroups.Atmosphere[c] = getColor(c);
-    } else if (c.includes("sema")) {
-      baseGroups.Semantic[c] = getColor(c);
-    } else if (c.includes("supp")) {
-      baseGroups.Support[c] = getColor(c);
-    } else if (c.includes("cviz")) {
-      baseGroups.Categorical[c] = getColor(c);
+function groupColors(colorsJson) {
+  const colorsMap = new Map();
+  for (const key in colorsJson) {
+    if (colorsJson.hasOwnProperty(key)) {
+      colorsMap.set(key, colorsJson[key]);
     }
-  });
-  return baseGroups;
-};
+  }
+  return colorsMap;
+}
 
-const Group = ({ name, colors }) => {
-  const keys = Object.keys(colors);
+const ColorsGroup = ({
+  selectedTheme = "ds5",
+  colors,
+}: {
+  selectedTheme: string;
+  colors: Map<string, string>;
+}) => {
   return (
     <div>
-      <StyledGroupName variant="title2">
-        {capitalize(startCase(name))}
-      </StyledGroupName>
-      <StyledColors>
-        {keys.map((color: string) => (
-          <StyledColorContainer key={color}>
-            <StyledColorSquare style={{ backgroundColor: colors[color] }} />
-            <StyledColorName>
-              <HvTypography variant="label">{color}</HvTypography>
-              &nbsp;
-              <HvTypography variant="caption1"> {colors[color]}</HvTypography>
-            </StyledColorName>
-          </StyledColorContainer>
-        ))}
-      </StyledColors>
+      {Object.keys(themeColors[selectedTheme]).map((group) => (
+        <>
+          <StyledGroup>
+            <div>
+              <StyledGroupName variant="title2">
+                {capitalize(startCase(group))}
+              </StyledGroupName>
+              <StyledColors>
+                {Object.values(themeColors[selectedTheme][group]).map(
+                  (color, idx) => (
+                    <>
+                      <div
+                        style={{
+                          width: 0,
+                          flexBasis:
+                            (color as string).includes("cviz") &&
+                            idx !== 0 &&
+                            idx % 6 === 0
+                              ? "100%"
+                              : "",
+                        }}
+                      />
+                      <StyledColorContainer>
+                        <StyledColorSquare
+                          style={{
+                            backgroundColor: colors.get(color as string),
+                          }}
+                        />
+                        <StyledColorName>
+                          <HvTypography variant="label">
+                            {color as string}
+                          </HvTypography>
+                          &nbsp;
+                          <HvTypography variant="caption1">
+                            {" "}
+                            {colors.get(color as string)}
+                          </HvTypography>
+                        </StyledColorName>
+                      </StyledColorContainer>
+                    </>
+                  )
+                )}
+              </StyledColors>
+            </div>
+          </StyledGroup>
+        </>
+      ))}
     </div>
   );
 };
 
-const ColorsGroup = ({ keys, colors }) => {
-  return (
-    <StyledGroup>
-      {keys.map((group: string) => (
-        <Group key={group} name={group} colors={colors[group]} />
-      ))}
-    </StyledGroup>
-  );
-};
-
 const Colors = () => {
-  const [allColors, setAllColors] = useState<typeof baseGroups>();
+  const [allColors, setAllColors] = useState<Map<string, string>>();
+  const { activeTheme, selectedTheme, selectedMode } =
+    useContext(HvThemeContext);
 
   useEffect(() => {
-    const groups = groupColors(Object.keys(theme.colors));
-    setAllColors(groups);
-  }, [theme]);
+    setAllColors(groupColors(activeTheme.colors.modes[selectedMode]));
+  }, [activeTheme, selectedTheme, selectedMode]);
 
   return (
     allColors && (
-      <div>
-        <HvTypography variant="title2">Main Palette</HvTypography>
-        <ColorsGroup keys={Object.keys(allColors)} colors={allColors} />
-      </div>
+      <HvProvider>
+        <ColorsGroup selectedTheme={selectedTheme} colors={allColors} />
+      </HvProvider>
     )
   );
 };
