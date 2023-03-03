@@ -5,7 +5,7 @@ exports[`File > should render correctly fail status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+    class="HvFile-icon css-1jef7hu-StyledFail e6pb7kb8 css-du18qm"
     name="Fail"
   >
     <svg
@@ -18,12 +18,12 @@ exports[`File > should render correctly fail status 1`] = `
       <path
         class="color0"
         d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-        fill="var(--colors-sema4)"
+        fill="var(--uikit-colors-sema4)"
       />
     </svg>
   </div>
   <label
-    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
   >
     somefile.png
   </label>
@@ -32,14 +32,14 @@ exports[`File > should render correctly fail status 1`] = `
   >
      | 
     <p
-      class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
+      class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-vv0550-getStyledComponent-StyledErrorMessage e1tnpalo0"
     >
       File type not allowed for upload
     </p>
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -61,7 +61,7 @@ exports[`File > should render correctly fail status 1`] = `
             <path
               class="color0"
               d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-              fill="var(--colors-acce1)"
+              fill="var(--uikit-colors-acce1)"
             />
           </svg>
         </div>
@@ -76,7 +76,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-jwo9x1-StyledSuccess e6pb7kb9 css-du18qm"
+    class="HvFile-icon css-1l3sx54-StyledSuccess e6pb7kb9 css-du18qm"
     name="Success"
   >
     <svg
@@ -89,12 +89,12 @@ exports[`File > should render correctly success status 1`] = `
       <path
         class="color0"
         d="M6.387 12 4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 0 1-4.943-2.057A7.023 7.023 0 1 1 8 15m8-7a8 8 0 1 0-8 8 8 8 0 0 0 8-8z"
-        fill="var(--colors-sema1)"
+        fill="var(--uikit-colors-sema1)"
       />
     </svg>
   </div>
   <label
-    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
   >
     somefile.png
   </label>
@@ -103,14 +103,14 @@ exports[`File > should render correctly success status 1`] = `
   >
      | 
     <p
-      class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+      class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
     >
       875.00B
     </p>
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -132,7 +132,7 @@ exports[`File > should render correctly success status 1`] = `
             <path
               class="color0"
               d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-              fill="var(--colors-acce1)"
+              fill="var(--uikit-colors-acce1)"
             />
           </svg>
         </div>

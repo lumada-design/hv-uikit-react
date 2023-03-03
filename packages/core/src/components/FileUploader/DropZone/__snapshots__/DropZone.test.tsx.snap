@@ -8,14 +8,14 @@ exports[`DropZone > should render correctly 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1juq47w-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1roatrt-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
     >
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-194mgmt-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1iahecy-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -23,7 +23,7 @@ exports[`DropZone > should render correctly 1`] = `
     </label>
   </div>
   <div
-    class="HvDropZone-dropZoneContainer css-w7n486-StyledDropZoneContainer e1r4xwg27"
+    class="HvDropZone-dropZoneContainer css-14gqe2s-StyledDropZoneContainer e1r4xwg27"
     id="dropzone-test-button"
     role="button"
     tabindex="0"
@@ -38,10 +38,10 @@ exports[`DropZone > should render correctly 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-8dnir5-StyledDropArea e1r4xwg25"
+      class="HvDropZone-dropArea css-tnj4j3-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-1qa3nkj-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-1v7e6z3-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
         name="Doc"
       >
         <svg
@@ -54,7 +54,7 @@ exports[`DropZone > should render correctly 1`] = `
           <path
             class="color0"
             d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-            fill="var(--colors-acce1)"
+            fill="var(--uikit-colors-acce1)"
           />
         </svg>
       </div>
@@ -62,11 +62,11 @@ exports[`DropZone > should render correctly 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
       >
         <p
-          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
+          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-1xibpeq-getStyledComponent-StyledDragText e1tnpalo0"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1r4xwg20"
+            class="HvDropZone-selectFilesText css-vkoe8m-StyledSelectedFilesText e1r4xwg20"
           >
              Select files
           </span>
@@ -85,14 +85,14 @@ exports[`DropZone > should render correctly when disabled 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1jlu4ud-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-pgpp4i-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
     >
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1ru6e1c-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1kyma7w-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -100,7 +100,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
     </label>
   </div>
   <div
-    class="HvDropZone-dropZoneContainer HvDropZone-dropZoneContainerDisabled css-193xdyp-StyledDropZoneContainer e1r4xwg27"
+    class="HvDropZone-dropZoneContainer HvDropZone-dropZoneContainerDisabled css-ozefkj-StyledDropZoneContainer e1r4xwg27"
     id="dropzone-test-button"
     role="button"
     tabindex="0"
@@ -116,10 +116,10 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       type="file"
     />
     <div
-      class="HvDropZone-dropArea css-8dnir5-StyledDropArea e1r4xwg25"
+      class="HvDropZone-dropArea css-tnj4j3-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon css-1qa3nkj-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
+        class="HvDropZone-dropZoneAreaIcon css-1v7e6z3-StyledDropAreaIcon e1r4xwg22 css-xq48n2"
         name="Doc"
       >
         <svg
@@ -132,7 +132,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
           <path
             class="color0"
             d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-            fill="var(--colors-atmo5)"
+            fill="var(--uikit-colors-atmo5)"
           />
         </svg>
       </div>
@@ -140,11 +140,11 @@ exports[`DropZone > should render correctly when disabled 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
       >
         <p
-          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-12v085h-getStyledComponent-StyledDragText e1tnpalo0"
+          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-1xibpeq-getStyledComponent-StyledDragText e1tnpalo0"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-vd5yui-StyledSelectedFilesText e1r4xwg20"
+            class="HvDropZone-selectFilesText css-vkoe8m-StyledSelectedFilesText e1r4xwg20"
           >
              Select files
           </span>

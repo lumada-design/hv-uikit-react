@@ -3,7 +3,7 @@
 exports[`Label > should render correctly 1`] = `
 <div>
   <label
-    class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1mcz2vv-getStyledComponent-StyledTypography e1tnpalo0"
+    class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-16m9e0e-getStyledComponent-StyledTypography e1tnpalo0"
   />
 </div>
 `;

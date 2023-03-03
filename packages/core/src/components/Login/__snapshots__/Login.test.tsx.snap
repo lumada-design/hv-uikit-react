@@ -6,7 +6,7 @@ exports[`Login > should render correctly 1`] = `
     class=" css-v05m5x-StyledRoot e1jay62a1"
   >
     <div
-      class="css-104mhy4-StyledFormContainer e1jay62a0"
+      class="css-81tf3b-StyledFormContainer e1jay62a0"
     >
       Login content
     </div>

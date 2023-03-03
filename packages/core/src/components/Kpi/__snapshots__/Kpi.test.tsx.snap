@@ -7,7 +7,7 @@ exports[`Kpi > should render correctly 1`] = `
   >
     <div>
       <label
-        class="HvTypography-root HvTypography-label css-ivbjlp-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
       >
         Title
       </label>
@@ -16,12 +16,12 @@ exports[`Kpi > should render correctly 1`] = `
       class="HvKpi-indicatorsContainer css-1a6w73h-StyledIndicatorsContainer e70l5p68"
     >
       <h1
-        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 HvTypography-root HvTypography-title1 css-k0wl8b-getStyledComponent-StyledIndicatorText e1tnpalo0"
+        class="HvKpi-spacingToTheRight HvKpi-indicatorText e70l5p66 HvTypography-root HvTypography-title1 css-5sfrle-getStyledComponent-StyledIndicatorText e1tnpalo0"
       >
         Indicator
       </h1>
       <h2
-        class="HvKpi-indicatorUnit e70l5p65 HvTypography-root HvTypography-title2 css-1r32d1h-getStyledComponent-StyledIndicatorUnit e1tnpalo0"
+        class="HvKpi-indicatorUnit e70l5p65 HvTypography-root HvTypography-title2 css-1octv75-getStyledComponent-StyledIndicatorUnit e1tnpalo0"
       >
         Unit
       </h2>
@@ -34,7 +34,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <label
-            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 HvTypography-root HvTypography-label css-yg4le2-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
+            class="HvKpi-comparisons HvKpi-spacingToTheRight e70l5p60 HvTypography-root HvTypography-label css-wjcwba-getStyledComponent-StyledInternalVisualComparisonTypography e1tnpalo0"
           >
             Visual comparison
           </label>
@@ -43,7 +43,7 @@ exports[`Kpi > should render correctly 1`] = `
           class="HvKpi-comparisonContainer css-1762388-StyledComparisonContainer e70l5p62"
         >
           <p
-            class="HvKpi-comparisons HvTypography-root HvTypography-caption2 css-20caqa-getStyledComponent e1tnpalo0"
+            class="HvKpi-comparisons HvTypography-root HvTypography-caption2 css-1uyrbdc-getStyledComponent e1tnpalo0"
           >
             Comparison indicator info
           </p>

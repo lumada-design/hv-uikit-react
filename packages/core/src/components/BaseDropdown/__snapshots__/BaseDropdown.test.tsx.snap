@@ -17,15 +17,15 @@ exports[`BaseDropDown > should render correctly 1`] = `
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header css-z15in3-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header css-56xk2b-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
           >
             <p
-              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-17knwax-getStyledComponent-StyledPlaceholder e1tnpalo0"
+              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-11r27gd-getStyledComponent-StyledPlaceholder e1tnpalo0"
             >
               Placeholder...
             </p>
@@ -44,7 +44,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
               <path
                 class="color0"
                 d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="var(--colors-acce1)"
+                fill="var(--uikit-colors-acce1)"
               />
             </svg>
           </div>

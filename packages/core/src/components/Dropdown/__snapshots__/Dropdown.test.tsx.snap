@@ -14,21 +14,21 @@ exports[`Dropdown > should render correctly 1`] = `
         <div
           aria-expanded="false"
           aria-label="Main sample"
-          class="etta2py3 HvBaseDropdown-anchor css-151d1mt-StyledAnchor-StyledDropdown eapzthe8"
+          class="etta2py3 HvBaseDropdown-anchor css-1hicrvg-StyledAnchor-StyledDropdown eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-label="Main sample"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-z15in3-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-56xk2b-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
+              class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
             >
               <div
-                class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-4kh4g2-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-15ognf8-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 <b>
                   1
@@ -50,7 +50,7 @@ exports[`Dropdown > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
