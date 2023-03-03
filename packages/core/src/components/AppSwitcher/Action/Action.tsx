@@ -110,7 +110,6 @@ export const HvAction = ({
     >
       <StyledTypography
         component={isLink ? "a" : "button"}
-        // @ts-ignore
         href={isLink ? url : undefined}
         target={isLink ? target || "_top" : undefined}
         className={clsx(

@@ -156,8 +156,9 @@ export const AllColumnRenderers: StoryObj = {
                 </HvTableCell>
               ))}
             </HvTableRow>
-            {/* @ts-ignore */}
-            <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
+            <HvTableRow
+              style={{ display: row.isExpanded ? undefined : "none" }}
+            >
               <HvTableCell
                 style={{
                   paddingBottom: 0,

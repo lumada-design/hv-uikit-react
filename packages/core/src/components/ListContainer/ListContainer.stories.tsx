@@ -572,11 +572,11 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
         }
       }, [selectedItems, selectionAnchor]);
 
-      return [selectedItems, handleListItemClick];
+      return { selectedItems, handleListItemClick };
     };
 
     const MultiSelectionWithShiftComponent = () => {
-      const [selectedItems, handleListItemClick] = useKeyboardSelection();
+      const { selectedItems, handleListItemClick } = useKeyboardSelection();
 
       return (
         <div
@@ -595,7 +595,6 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
             role="listbox"
           >
             <HvListItem
-              // @ts-ignore
               onClick={(event) => handleListItemClick(event, 0)}
               selected={selectedItems[0]}
               role="option"
@@ -604,7 +603,6 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
               98001, Store Manager
             </HvListItem>
             <HvListItem
-              // @ts-ignore
               onClick={(event) => handleListItemClick(event, 1)}
               selected={selectedItems[1]}
               role="option"
@@ -613,7 +611,6 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
               98002, Store Manager
             </HvListItem>
             <HvListItem
-              // @ts-ignore
               onClick={(event) => handleListItemClick(event, 2)}
               selected={selectedItems[2]}
               role="option"
@@ -631,7 +628,6 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
               98004, Store Manager
             </HvListItem>
             <HvListItem
-              // @ts-ignore
               onClick={(event) => handleListItemClick(event, 4)}
               selected={selectedItems[4]}
               role="option"

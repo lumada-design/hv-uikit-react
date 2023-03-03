@@ -58,12 +58,7 @@ describe("Card", () => {
     const { container, getByText, getByRole } = render(
       <HvCard>
         <HvCardHeader title="mockTitle" subheader="mockSubtitle" />
-        <HvCardMedia
-          component="img"
-          // @ts-ignore
-          alt="mockImg"
-          image={mockImg}
-        />
+        <HvCardMedia component="img" alt="mockImg" image={mockImg} />
         <HvCardContent>
           <HvTypography variant="label">mockCardContent</HvTypography>
         </HvCardContent>

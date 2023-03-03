@@ -86,7 +86,6 @@ export const HvTag = ({
 
   const getDeleteIcon = () => {
     const disabledSemanticColor = type === "semantic" ? "atmo5" : "base2";
-    // @ts-ignore
     const { tabIndex = 0 } = deleteButtonProps;
 
     return (

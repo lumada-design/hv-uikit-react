@@ -782,8 +782,7 @@ export const UseHvRowExpand: StoryObj = {
                     </HvTableRow>
                     <HvTableRow
                       style={{
-                        // @ts-ignore
-                        display: row.isExpanded ? null : "none",
+                        display: row.isExpanded ? undefined : "none",
                         background: theme.table.rowExpandBackgroundColor,
                       }}
                     >
