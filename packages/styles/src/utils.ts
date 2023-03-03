@@ -1,6 +1,6 @@
 import { DeepString, HvThemeStructure } from "./types";
 
-const toCSSVars = (obj: object, prefix = "-") => {
+const toCSSVars = (obj: object, prefix = "--uikit") => {
   const vars = {};
 
   for (const [key, value] of Object.entries(obj)) {
@@ -20,7 +20,7 @@ const toCSSVars = (obj: object, prefix = "-") => {
 
 export const mapCSSVars = <T extends object>(
   obj: T,
-  prefix: string = "-"
+  prefix: string = "--uikit"
 ): DeepString<T> => {
   const vars = {} as DeepString<T>;
 

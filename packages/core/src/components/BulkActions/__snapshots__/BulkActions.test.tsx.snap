@@ -3,7 +3,7 @@
 exports[`BulkActions > With actions > should render correctly 1`] = `
 <div>
   <div
-    class="HvBulkActions-root css-wg3yax-StyledRoot e1nka4cc3"
+    class="HvBulkActions-root css-ac2ydt-StyledRoot e1nka4cc3"
   >
     <div
       class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer e1nka4cc2"
@@ -12,10 +12,10 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         class="HvBulkActions-selectAll HvCheckBox-root css-1lst77x-StyledFormElement ezlsftu3 HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container css-j79apy-StyledLabelContainer ezlsftu2"
+          class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1q24rar-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1bci4p9-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -39,23 +39,23 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M0 0h16v16H0z"
-                  fill="var(--colors-atmo1)"
+                  fill="var(--uikit-colors-atmo1)"
                 />
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1ngkk4t-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox18-input"
             id="hvcheckbox18-label"
           >
             <span
-              class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
             >
               <b>
                 All
@@ -70,14 +70,14 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 css-yi5qls-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 css-112qj4-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="css-1bs0ujq-StyledIconSpan e138pvrm2"
+            class="css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
               class="css-du18qm"
@@ -93,7 +93,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
@@ -106,14 +106,14 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 css-yi5qls-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 css-112qj4-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
           class="css-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="css-1bs0ujq-StyledIconSpan e138pvrm2"
+            class="css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
               class="css-du18qm"
@@ -129,7 +129,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
@@ -154,7 +154,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           <button
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-1rskd7h-StyledButton-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 css-13vj977-StyledButton-StyledButton e138pvrm0"
             disabled=""
             id="hv-drop-down-menu-20-icon-button"
           >
@@ -178,7 +178,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                     <path
                       class="color0"
                       d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                      fill="var(--colors-atmo5)"
+                      fill="var(--uikit-colors-atmo5)"
                     />
                   </svg>
                 </div>
@@ -195,7 +195,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
 exports[`BulkActions > Without actions > should render correctly 1`] = `
 <div>
   <div
-    class="HvBulkActions-root css-wg3yax-StyledRoot e1nka4cc3"
+    class="HvBulkActions-root css-ac2ydt-StyledRoot e1nka4cc3"
   >
     <div
       class="HvBulkActions-selectAllContainer css-1hp2uh2-StyledSelectAllContainer e1nka4cc2"
@@ -204,10 +204,10 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
         class="HvBulkActions-selectAll HvCheckBox-root css-1lst77x-StyledFormElement ezlsftu3 HvFormElement-root"
       >
         <div
-          class="HvCheckBox-container css-j79apy-StyledLabelContainer ezlsftu2"
+          class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1q24rar-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root edk6te40 css-1bci4p9-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox-StyledBaseCheckBox"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -231,23 +231,23 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M0 0h16v16H0z"
-                  fill="var(--colors-atmo1)"
+                  fill="var(--uikit-colors-atmo1)"
                 />
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
           </span>
           <label
-            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-12os8g1-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+            class="HvCheckBox-label ezlsftu1 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1ngkk4t-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
             for="hvcheckbox3-input"
             id="hvcheckbox3-label"
           >
             <span
-              class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+              class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
             >
               <b>
                 All

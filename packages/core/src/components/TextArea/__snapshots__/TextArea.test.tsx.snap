@@ -9,7 +9,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvTextArea-labelContainer css-1rvt36b-StyledLabelContainer e1e5t49x5"
     >
       <label
-        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1moow8a-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+        class="HvTextArea-label e1e5t49x4 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-c6jazl-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
         for="hvtextarea3-input"
         id="hvformelement4-label"
       >
@@ -23,23 +23,23 @@ exports[`TextArea > should render correctly 1`] = `
       id="hvtextarea3-charCounter"
     >
       <label
-        class=" e11kw0680 HvTypography-root HvTypography-label css-gd6fvd-getStyledComponent-StyledTypography e1tnpalo0"
+        class=" e11kw0680 HvTypography-root HvTypography-label css-q6kxpq-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-currentQuantity"
       >
         0
       </label>
       <label
-        class=" e11kw0680 HvTypography-root HvTypography-body css-1iwt6gt-getStyledComponent-StyledTypography e1tnpalo0"
+        class=" e11kw0680 HvTypography-root HvTypography-body css-1s69chr-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-charCounter-maxQuantity"
       >
          / 10
       </label>
     </div>
     <div
-      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-g20kzt-StyledRoot-StyledBaseInput e8ibl7d2"
+      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-1lzob26-StyledRoot-StyledBaseInput e8ibl7d2"
     >
       <div
-        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e8ibl7d0 css-1e82wch-MuiInputBase-root-MuiInput-root-StyledInput"
+        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  e8ibl7d0 css-4i51my-MuiInputBase-root-MuiInput-root-StyledInput"
       >
         <textarea
           aria-controls="hvtextarea3-charCounter"
@@ -75,13 +75,13 @@ exports[`TextArea > should render correctly 1`] = `
           <path
             class="color0"
             d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-            fill="var(--colors-sema4)"
+            fill="var(--uikit-colors-sema4)"
           />
         </svg>
       </div>
       <p
         aria-relevant="additions text"
-        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
+        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-1bjvj2l-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-error"
         role="status"
       />

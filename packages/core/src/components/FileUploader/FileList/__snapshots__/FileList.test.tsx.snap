@@ -3,14 +3,14 @@
 exports[`FileList > should render correctly 1`] = `
 <div>
   <ul
-    class="HvFileList-list css-1sgxeso-StyledList e1u4sq610"
+    class="HvFileList-list css-1apcg9i-StyledList e1u4sq610"
     id="list-list"
   >
     <li
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+        class="HvFile-icon css-1jef7hu-StyledFail e6pb7kb8 css-du18qm"
         name="Fail"
       >
         <svg
@@ -23,12 +23,12 @@ exports[`FileList > should render correctly 1`] = `
           <path
             class="color0"
             d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-            fill="var(--colors-sema4)"
+            fill="var(--uikit-colors-sema4)"
           />
         </svg>
       </div>
       <label
-        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
       >
         Screenshot 2019-12-05 at 17.15.43.png
       </label>
@@ -37,14 +37,14 @@ exports[`FileList > should render correctly 1`] = `
       >
          | 
         <p
-          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
+          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-vv0550-getStyledComponent-StyledErrorMessage e1tnpalo0"
         >
           File type not allowed for upload
         </p>
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
+        class="HvFile-removeButton e6pb7kb0 css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
         id="list-values-remove-button"
       >
         <div
@@ -67,7 +67,7 @@ exports[`FileList > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>
@@ -79,7 +79,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+        class="HvFile-icon css-1jef7hu-StyledFail e6pb7kb8 css-du18qm"
         name="Fail"
       >
         <svg
@@ -92,12 +92,12 @@ exports[`FileList > should render correctly 1`] = `
           <path
             class="color0"
             d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-            fill="var(--colors-sema4)"
+            fill="var(--uikit-colors-sema4)"
           />
         </svg>
       </div>
       <label
-        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1rntirt-getStyledComponent-StyledNameText e1tnpalo0"
+        class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
       >
         Screenshot 2019-12-05 at 12.03.13.png
       </label>
@@ -106,14 +106,14 @@ exports[`FileList > should render correctly 1`] = `
       >
          | 
         <p
-          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-s37gxk-getStyledComponent-StyledErrorMessage e1tnpalo0"
+          class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-vv0550-getStyledComponent-StyledErrorMessage e1tnpalo0"
         >
           File type not allowed for upload
         </p>
       </span>
       <button
         aria-label="removeFileButtonLabel"
-        class="HvFile-removeButton e6pb7kb0 css-15eiyfz-StyledButton-StyledIconButton e138pvrm0"
+        class="HvFile-removeButton e6pb7kb0 css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
         id="list-values-remove-button"
       >
         <div
@@ -136,7 +136,7 @@ exports[`FileList > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                  fill="var(--colors-acce1)"
+                  fill="var(--uikit-colors-acce1)"
                 />
               </svg>
             </div>

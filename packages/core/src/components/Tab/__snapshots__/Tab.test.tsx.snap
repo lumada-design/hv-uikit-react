@@ -3,7 +3,7 @@
 exports[`Tab > should render correctly 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit evi6req0 css-dyt7y-MuiButtonBase-root-MuiTab-root-StyledTab"
+    class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit evi6req0 css-1pfulam-MuiButtonBase-root-MuiTab-root-StyledTab"
     role="tab"
     tabindex="-1"
     type="button"

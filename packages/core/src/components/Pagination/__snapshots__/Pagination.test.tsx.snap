@@ -3,13 +3,13 @@
 exports[`Pagination > should render correctly 1`] = `
 <div>
   <div
-    class="HvPagination-root css-h3lih6-StyledRoot e1tn2n0k8"
+    class="HvPagination-root css-xfhyjd-StyledRoot e1tn2n0k8"
   >
     <div
       class="HvPagination-pageSizeOptions css-191htxu-StyledPageSizeOptions e1tn2n0k7"
     >
       <div
-        class="css-1gue3w7-StyledRoot eakxe9u0"
+        class="css-7ddhyu-StyledRoot eakxe9u0"
       >
         <div
           class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
@@ -17,21 +17,21 @@ exports[`Pagination > should render correctly 1`] = `
           <div
             aria-expanded="false"
             aria-label="Select how many to display"
-            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor css-f5hdyh-StyledAnchor-StyledSelect eapzthe8"
+            class="HvPagination-pageSizeOptionsSelect e1tn2n0k5 HvBaseDropdown-anchor css-7v8964-StyledAnchor-StyledSelect eapzthe8"
             role="combobox"
             tabindex="-1"
           >
             <div
               aria-label="Select how many to display"
-              class="HvBaseDropdown-header css-z15in3-StyledHeaderRoot eapzthe7"
+              class="HvBaseDropdown-header css-56xk2b-StyledHeaderRoot eapzthe7"
               role="textbox"
               tabindex="0"
             >
               <div
-                class="HvBaseDropdown-selection css-k3f2pc-StyledSelection eapzthe6"
+                class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
               >
                 <p
-                  class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+                  class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
                 >
                   1
                 </p>
@@ -50,7 +50,7 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                    fill="var(--colors-acce1)"
+                    fill="var(--uikit-colors-acce1)"
                   />
                 </svg>
               </div>
@@ -68,7 +68,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="First Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-legypt-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -91,7 +91,7 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M2.98954 16.04533H2v-16h.98954zm2.96861-8 7.3421 7.41967L14 14.758 7.35759 8.04533 14 1.33268l-.69975-.707z"
-                    fill="var(--colors-atmo5)"
+                    fill="var(--uikit-colors-atmo5)"
                   />
                 </svg>
               </div>
@@ -105,7 +105,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Previous Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-legypt-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -128,7 +128,7 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M11.30863 15.5 4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                    fill="var(--colors-atmo5)"
+                    fill="var(--uikit-colors-atmo5)"
                   />
                 </svg>
               </div>
@@ -140,16 +140,16 @@ exports[`Pagination > should render correctly 1`] = `
         class="HvPagination-pageInfo css-1wjzhg6-StyledPageInfo e1tn2n0k1"
       >
         <div
-          class="HvPagination-pageJump css-1cwfk71-StyledPageJump e1tn2n0k0"
+          class="HvPagination-pageJump css-m3cag5-StyledPageJump e1tn2n0k0"
         >
           <div
             class="HvInput-root HvPagination-pageSizeInputContainer css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-zhlmer-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-1bokhiq-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
               >
                 <input
                   aria-label="Current page"
@@ -160,7 +160,7 @@ exports[`Pagination > should render correctly 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-u8jwkr-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
                 role="presentation"
               />
             </div>
@@ -181,13 +181,13 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-                    fill="var(--colors-sema4)"
+                    fill="var(--uikit-colors-sema4)"
                   />
                 </svg>
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-x9czmt-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-1bjvj2l-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
               />
@@ -195,12 +195,12 @@ exports[`Pagination > should render correctly 1`] = `
           </div>
         </div>
         <span
-          class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
         >
           / 
         </span>
         <span
-          class="HvTypography-root HvTypography-body css-1mchk7j-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
         >
           1
         </span>
@@ -211,7 +211,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Next Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-legypt-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -234,7 +234,7 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M4.79011 15.5 4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                    fill="var(--colors-atmo5)"
+                    fill="var(--uikit-colors-atmo5)"
                   />
                 </svg>
               </div>
@@ -248,7 +248,7 @@ exports[`Pagination > should render correctly 1`] = `
       >
         <button
           aria-label="Last Page"
-          class="HvPagination-iconContainer e1tn2n0k2 css-142wvw-StyledButton-StyledButtonIconTooltip e138pvrm0"
+          class="HvPagination-iconContainer e1tn2n0k2 css-legypt-StyledButton-StyledButtonIconTooltip e138pvrm0"
           disabled=""
         >
           <div
@@ -271,7 +271,7 @@ exports[`Pagination > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="M13 0h1v16h-1zM2.58026.58032l-.70715.707L8.58575 8l-6.71264 6.71265.70715.707L10 8z"
-                    fill="var(--colors-atmo5)"
+                    fill="var(--uikit-colors-atmo5)"
                   />
                 </svg>
               </div>
