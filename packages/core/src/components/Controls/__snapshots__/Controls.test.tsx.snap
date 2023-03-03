@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
 <div>
@@ -21,7 +21,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
@@ -107,7 +107,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1jdpeh4-StyledDropDownXS"
                     name="DropDownXS"
                   >
                     <svg
@@ -224,7 +224,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -237,13 +237,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -264,7 +264,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -277,13 +277,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -304,7 +304,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -317,13 +317,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
@@ -344,7 +344,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -357,13 +357,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
@@ -384,7 +384,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -397,13 +397,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -424,7 +424,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -437,13 +437,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -464,7 +464,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -477,13 +477,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
@@ -504,7 +504,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -517,13 +517,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
@@ -544,7 +544,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -557,13 +557,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -584,7 +584,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -597,13 +597,13 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -635,7 +635,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
@@ -721,7 +721,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1jdpeh4-StyledDropDownXS"
                     name="DropDownXS"
                   >
                     <svg
@@ -837,7 +837,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -850,7 +850,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -871,7 +871,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -884,7 +884,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -905,7 +905,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -918,7 +918,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
@@ -939,7 +939,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -952,7 +952,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
@@ -973,7 +973,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -986,7 +986,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -1007,7 +1007,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1020,7 +1020,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -1041,7 +1041,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1054,7 +1054,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
@@ -1075,7 +1075,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1088,7 +1088,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
@@ -1109,7 +1109,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1122,7 +1122,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
@@ -1143,7 +1143,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1156,7 +1156,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -1298,7 +1298,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1311,19 +1311,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           35
@@ -1344,7 +1344,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1357,19 +1357,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           36
@@ -1390,7 +1390,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1403,19 +1403,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           37
@@ -1436,7 +1436,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1449,19 +1449,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           38
@@ -1482,7 +1482,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1495,19 +1495,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           39
@@ -1528,7 +1528,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1541,19 +1541,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           40
@@ -1574,7 +1574,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1587,19 +1587,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           41
@@ -1620,7 +1620,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1633,19 +1633,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           42
@@ -1666,7 +1666,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1679,19 +1679,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           43
@@ -1712,7 +1712,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1725,19 +1725,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           44
@@ -1758,7 +1758,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1771,19 +1771,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           45
@@ -1804,7 +1804,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1817,19 +1817,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           46
@@ -1850,7 +1850,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1863,19 +1863,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           47
@@ -1896,7 +1896,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1909,19 +1909,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           48
@@ -1942,7 +1942,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -1955,19 +1955,19 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           49
@@ -2001,7 +2001,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
@@ -2167,7 +2167,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2180,19 +2180,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           35
@@ -2213,7 +2213,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2226,19 +2226,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           36
@@ -2259,7 +2259,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2272,19 +2272,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           37
@@ -2305,7 +2305,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2318,19 +2318,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           38
@@ -2351,7 +2351,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2364,19 +2364,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           39
@@ -2397,7 +2397,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2410,19 +2410,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           40
@@ -2443,7 +2443,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2456,19 +2456,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           41
@@ -2489,7 +2489,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2502,19 +2502,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           42
@@ -2535,7 +2535,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2548,19 +2548,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           43
@@ -2581,7 +2581,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2594,19 +2594,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           44
@@ -2627,7 +2627,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2640,19 +2640,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           45
@@ -2673,7 +2673,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2686,19 +2686,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           46
@@ -2719,7 +2719,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2732,19 +2732,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           47
@@ -2765,7 +2765,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2778,19 +2778,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           48
@@ -2811,7 +2811,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           />
         </div>
         <div
-          class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+          class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -2824,19 +2824,19 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           </div>
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+          class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           49

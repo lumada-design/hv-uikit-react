@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Card > should render all the compoents 1`] = `
 <div>
@@ -16,7 +16,7 @@ exports[`Card > should render all the compoents 1`] = `
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -35,11 +35,11 @@ exports[`Card > should render all the compoents 1`] = `
     </div>
     <img
       alt="mockImg"
-      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img e1r97lfn0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img css-naac46-StyledMedia e1r97lfn0 css-o69gx8-MuiCardMedia-root"
       role="img"
     />
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
     >
       <label
         class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
@@ -67,7 +67,7 @@ exports[`Card > should render content 1`] = `
       />
     </div>
     <div
-      class="MuiCardContent-root HvCard-Content-content e12hctsi0 css-v8uagb-MuiCardContent-root-StyledContent"
+      class="MuiCardContent-root HvCard-Content-content css-bng307-StyledContent e12hctsi0 css-46bh2p-MuiCardContent-root"
     >
       <label
         class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
@@ -114,7 +114,7 @@ exports[`Card > should render header 1`] = `
       />
     </div>
     <div
-      class="MuiCardHeader-root HvCard-Header-root e1xfuyqk0 css-zlagye-MuiCardHeader-root-StyledHeader"
+      class="MuiCardHeader-root HvCard-Header-root css-1y5bwtq-StyledHeader e1xfuyqk0 css-185gdzj-MuiCardHeader-root"
     >
       <div
         class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
@@ -152,7 +152,7 @@ exports[`Card > should render image 1`] = `
     </div>
     <img
       alt="mockImg"
-      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img e1r97lfn0 css-17tnzdv-MuiCardMedia-root-StyledMedia"
+      class="MuiCardMedia-root HvCard-Media-root MuiCardMedia-media HvCard-Media-media MuiCardMedia-img css-naac46-StyledMedia e1r97lfn0 css-o69gx8-MuiCardMedia-root"
       role="img"
     />
   </div>

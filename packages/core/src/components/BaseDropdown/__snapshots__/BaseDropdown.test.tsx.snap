@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`BaseDropDown > should render correctly 1`] = `
 <div>
@@ -6,32 +6,32 @@ exports[`BaseDropDown > should render correctly 1`] = `
     style="width: 121px;"
   >
     <div
-      class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
+      class="HvBaseDropdown-root hv-uikit-css-1nukton-StyledRoot eapzthe9"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        class="HvBaseDropdown-anchor hv-uikit-css-c41kvr-StyledAnchor eapzthe8"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header css-56xk2b-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header hv-uikit-css-56xk2b-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection hv-uikit-css-19txgg7-StyledSelection eapzthe6"
           >
             <p
-              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-11r27gd-getStyledComponent-StyledPlaceholder e1tnpalo0"
+              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body hv-uikit-css-11r27gd-getStyledComponent-StyledPlaceholder e1tnpalo0"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 hv-uikit-css-du18qm"
+            class="HvBaseDropdown-arrow eapzthe3 hv-uikit-css-1jdpeh4-StyledDropDownXS"
             name="DropDownXS"
           >
             <svg

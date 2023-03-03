@@ -300,6 +300,7 @@ describe("CheckBox", () => {
       );
 
       const checkbox = getByRole("checkbox");
+      checkbox.style["pointer-events"] = "auto";
 
       expect(checkbox).toBeInTheDocument();
 

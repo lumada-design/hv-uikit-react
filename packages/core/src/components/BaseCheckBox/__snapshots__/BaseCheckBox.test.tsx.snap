@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`BaseCheckBox > checked > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-checked MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-checked MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       checked=""
@@ -49,7 +49,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
 <div>
   <span
     aria-disabled="true"
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root HvBaseCheckBox-disabled edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root HvBaseCheckBox-disabled css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
     tabindex="-1"
   >
     <input
@@ -90,7 +90,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
 exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault HvBaseCheckBox-root edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -129,7 +129,7 @@ exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
 exports[`BaseCheckBox > read only > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -169,7 +169,7 @@ exports[`BaseCheckBox > read only > should render correctly 1`] = `
 exports[`BaseCheckBox > required > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -209,7 +209,7 @@ exports[`BaseCheckBox > required > should render correctly 1`] = `
 exports[`BaseCheckBox > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root edk6te40 css-jy2m1y-MuiButtonBase-root-MuiCheckbox-root-StyledCheckedBox"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"

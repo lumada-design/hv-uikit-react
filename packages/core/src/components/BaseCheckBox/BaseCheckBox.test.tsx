@@ -141,6 +141,7 @@ describe("BaseCheckBox", () => {
       const { getByRole } = render(<HvBaseCheckBox disabled />);
 
       const baseCheckbox = getByRole("checkbox");
+      baseCheckbox.style["pointer-events"] = "auto";
 
       expect(baseCheckbox).toBeInTheDocument();
 
