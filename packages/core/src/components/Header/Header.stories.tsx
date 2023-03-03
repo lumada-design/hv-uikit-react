@@ -56,11 +56,11 @@ const navigationData = [
     label: "Analytics",
     data: [
       {
-        id: "3-1",
+        id: "5-1",
         label: "Model Effectiveness 5-1",
       },
       {
-        id: "3-2",
+        id: "5-2",
         label: "Trend Analysis 5-2",
       },
     ],

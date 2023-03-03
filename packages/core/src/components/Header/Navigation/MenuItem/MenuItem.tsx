@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { HvHeaderNavigationItemProp, HvTypography } from "components";
 import { HvMenuBar } from "../MenuBar";
 import { HvBaseProps } from "../../../../types";
@@ -15,7 +15,6 @@ export type MenuItemProps = HvBaseProps<HTMLDivElement, { onClick }> & {
 
 export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);
-  // @ts-ignore
   const { dispatch } = useContext(FocusContext);
 
   const { data } = item;
@@ -37,8 +36,8 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
     }
   };
 
-  const handleFocus = (event) => {
-    dispatch({ type: "setItemFocused", itemFocused: event.currentTarget });
+  const handleFocus = (event: React.FocusEvent) => {
+    dispatch?.({ type: "setItemFocused", itemFocused: event.currentTarget });
   };
 
   const itemProps = {

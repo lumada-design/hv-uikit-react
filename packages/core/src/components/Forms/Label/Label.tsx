@@ -60,7 +60,6 @@ export const HvLabel = ({
         )}
         variant="label"
         component="label"
-        // @ts-ignore
         htmlFor={forId}
         $labelDisabled={!!localDisabled}
         $childGutter={!!(children && label)}

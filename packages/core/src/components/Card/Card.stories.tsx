@@ -105,7 +105,6 @@ export const Main: StoryObj<HvCardProps> = {
         />
         <HvCardMedia
           component="img"
-          // @ts-ignore
           alt="Compressor"
           height={140}
           image={compressor}

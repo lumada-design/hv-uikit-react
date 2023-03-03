@@ -11,6 +11,8 @@ export type HvToggleButtonProps = HvBaseProps<
   defaultSelected?: boolean;
   /** Defines if the button is selected. When defined the button state becomes controlled. */
   selected?: boolean;
+  /** Defines if the button is disabled. */
+  disabled?: boolean;
   /** Icon for when not selected. Ignored if the component has children. */
   notSelectedIcon?: React.ReactNode;
   /** Icon for when selected. Ignored if the component has children. */

@@ -1,4 +1,10 @@
-import { forwardRef, Ref, useMemo, CSSProperties } from "react";
+import {
+  forwardRef,
+  Ref,
+  useMemo,
+  CSSProperties,
+  AllHTMLAttributes,
+} from "react";
 import { HvBaseProps } from "../../types";
 import styled from "@emotion/styled";
 import { transientOptions } from "utils/transientOptions";
@@ -153,26 +159,30 @@ const getStyledComponent = (c: any) =>
     })
   );
 
-export type HvTypographyProps = HvBaseProps<HTMLElement, { disabled }> & {
-  component?: React.ReactNode | React.ElementType;
-  /** Use the variant prop to change the visual style of the Typography. */
-  variant?: HvTypographyVariants | HvTypographyLegacyVariants;
-  /** If `true` the typography will display the look of a link. */
-  link?: boolean;
-  /** If `true` the typography will display the look of a disabled state. */
-  disabled?: boolean;
-  /** If `true`, the text will have a bottom margin. */
-  paragraph?: boolean;
-  /**
-   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
-   *
-   * Note that text overflow can only happen with block or inline-block level elements
-   * (the element needs to have a width in order to overflow).
-   */
-  noWrap?: boolean;
-  /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvTypographyClasses;
-};
+export type HvTypographyProps = Omit<
+  AllHTMLAttributes<HTMLElement>,
+  "disabled"
+> &
+  HvBaseProps<HTMLElement, { disabled }> & {
+    component?: React.ReactNode | React.ElementType;
+    /** Use the variant prop to change the visual style of the Typography. */
+    variant?: HvTypographyVariants | HvTypographyLegacyVariants;
+    /** If `true` the typography will display the look of a link. */
+    link?: boolean;
+    /** If `true` the typography will display the look of a disabled state. */
+    disabled?: boolean;
+    /** If `true`, the text will have a bottom margin. */
+    paragraph?: boolean;
+    /**
+     * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+     *
+     * Note that text overflow can only happen with block or inline-block level elements
+     * (the element needs to have a width in order to overflow).
+     */
+    noWrap?: boolean;
+    /** A Jss Object used to override or extend the styles applied to the component. */
+    classes?: HvTypographyClasses;
+  };
 
 /**
  * Typography component is used to render text and paragraphs within an interface.

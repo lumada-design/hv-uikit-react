@@ -101,7 +101,6 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           selectedIcon={<UpSelected />}
         />
         <HvToggleButton
-          // @ts-ignore
           disabled
           aria-label="Down"
           notSelectedIcon={<DownEmpty />}
@@ -150,7 +149,6 @@ export const Disabled: StoryObj<HvToggleButtonProps> = {
     return (
       <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
         <span>
-          {/* @ts-ignore */}
           <HvToggleButton disabled aria-label="Light">
             <LightOff />
           </HvToggleButton>
