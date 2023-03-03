@@ -3,7 +3,7 @@
 exports[`Container > should render correctly 1`] = `
 <div>
   <div
-    class="MuiContainer-root HvContainer-root eq8pv0f0 css-48phru-MuiContainer-root-StyledRoot"
+    class="MuiContainer-root HvContainer-root css-igvr2j-StyledRoot eq8pv0f0 css-ur2jdm-MuiContainer-root"
   />
 </div>
 `;

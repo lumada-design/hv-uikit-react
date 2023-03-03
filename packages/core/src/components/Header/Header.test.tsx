@@ -73,14 +73,14 @@ describe("Header", () => {
             <HvButton
               onClick={() => {}}
               aria-label="Open Notifications panel"
-              variant="ghost"
+              variant="primaryGhost"
             >
               Badge
             </HvButton>
             <HvButton
               onClick={() => {}}
               aria-label="Open User panel"
-              variant="ghost"
+              variant="primaryGhost"
             >
               User
             </HvButton>

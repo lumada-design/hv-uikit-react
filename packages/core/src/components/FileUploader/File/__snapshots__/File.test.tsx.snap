@@ -1,11 +1,11 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`File > should render correctly fail status 1`] = `
 <li
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+    class="HvFile-icon e6pb7kb8 css-frv3zu-StyledFail"
     name="Fail"
   >
     <svg
@@ -76,7 +76,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon css-jwo9x1-StyledSuccess e6pb7kb9 css-du18qm"
+    class="HvFile-icon e6pb7kb9 css-1ffj1oj-StyledSuccess"
     name="Success"
   >
     <svg

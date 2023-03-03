@@ -2,7 +2,7 @@ const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   stories: [
-    "../docs/**/*.stories.@(tsx|mdx)",
+    "./**/*.stories.@(tsx|mdx)",
     "../templates/**/*.stories.@(tsx|mdx)",
     "../packages/**/*.stories.@(ts|tsx|mdx)",
   ],

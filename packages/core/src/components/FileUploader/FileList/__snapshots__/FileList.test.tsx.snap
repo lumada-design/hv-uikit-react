@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`FileList > should render correctly 1`] = `
 <div>
@@ -10,7 +10,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+        class="HvFile-icon e6pb7kb8 css-frv3zu-StyledFail"
         name="Fail"
       >
         <svg
@@ -79,7 +79,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon css-1qtaqme-StyledFail e6pb7kb8 css-du18qm"
+        class="HvFile-icon e6pb7kb8 css-frv3zu-StyledFail"
         name="Fail"
       >
         <svg

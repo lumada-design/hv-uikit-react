@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Tab > should render correctly 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit evi6req0 css-dyt7y-MuiButtonBase-root-MuiTab-root-StyledTab"
+    class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit css-1b9xyra-StyledTab evi6req0 css-cjctlb-MuiButtonBase-root-MuiTab-root"
     role="tab"
     tabindex="-1"
     type="button"
