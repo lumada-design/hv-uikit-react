@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React, { CSSProperties, forwardRef, ReactElement } from "react";
 import {
   StyledButton,
@@ -5,7 +6,7 @@ import {
   StyledContentDiv,
   StyledIconSpan,
 } from "./Button.styles";
-import { HvButtonClasses } from "./buttonClasses";
+import buttonClasses, { HvButtonClasses } from "./buttonClasses";
 
 export type HvButtonVariant =
   | "primary"
@@ -92,7 +93,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
     return (
       <StyledButton
         id={id}
-        className={className}
+        className={clsx(className, buttonClasses.root)}
         ref={ref}
         onClick={onClick}
         disabled={disabled}

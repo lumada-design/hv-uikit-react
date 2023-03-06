@@ -12,6 +12,7 @@ const show = {
   transition: ["top"],
   boxShadow: theme.header.shadow,
   transitionDuration: "500ms",
+  backgroundColor: theme.header.secondLevelBackgroundColor,
 };
 
 export const hide = {
@@ -31,13 +32,13 @@ export const MenuBarRoot = styled("div")(
     alignItems: "center",
     ...(type === "menubar" && {
       position: "relative",
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.header.backgroundColor,
     }),
     ...(type === "menu" && {
       position: "absolute",
       paddingTop: theme.header.selectedItemBorderBottomThickness,
       zIndex: -2,
-      backgroundColor: theme.colors.atmo2,
+      backgroundColor: theme.header.secondLevelBackgroundColor,
       "& li > div": {
         marginTop: 0,
       },

@@ -51,6 +51,7 @@ const ColorsGroup = ({
                           width: 0,
                           flexBasis:
                             (color as string).includes("cviz") &&
+                            selectedTheme === "ds5" &&
                             idx !== 0 &&
                             idx % 6 === 0
                               ? "100%"
