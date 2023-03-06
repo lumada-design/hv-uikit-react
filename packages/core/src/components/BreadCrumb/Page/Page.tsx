@@ -30,7 +30,7 @@ export const HvPage = ({ Component, onClick, elem, classes }: HvPageProps) => {
       classes={{ a: clsx(pageClasses.a, classes?.a) }}
     >
       <StyledTypography
-        // noWrap
+        noWrap
         component="div"
         variant="label"
         className={clsx(

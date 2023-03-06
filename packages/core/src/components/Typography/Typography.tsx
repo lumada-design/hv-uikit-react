@@ -1,9 +1,9 @@
 import {
   forwardRef,
-  Ref,
   useMemo,
   CSSProperties,
   AllHTMLAttributes,
+  Ref,
 } from "react";
 import { HvBaseProps } from "../../types";
 import styled from "@emotion/styled";
@@ -72,7 +72,7 @@ const HvTypographyMap = {
   xsInlineLink: "p",
 } as const;
 
-const getStyledComponent = (c: any) =>
+const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
   styled(
     c,
     transientOptions
@@ -188,7 +188,7 @@ export type HvTypographyProps = Omit<
  * Typography component is used to render text and paragraphs within an interface.
  */
 export const HvTypography = forwardRef(
-  (props: HvTypographyProps, ref: Ref<HTMLDivElement>) => {
+  (props: HvTypographyProps, ref: Ref<HTMLElement>) => {
     const {
       children,
       className,
@@ -223,7 +223,9 @@ export const HvTypography = forwardRef(
           typographyClasses[variant],
           noWrap && clsx(typographyClasses.noWrap, classes?.noWrap)
         )}
-        $variant={mappedVariant}
+        $variant={
+          mappedVariant as HvTypographyVariants | HvTypographyLegacyVariants
+        }
         $link={link}
         $disabled={disabled}
         $noWrap={noWrap}
