@@ -3,9 +3,9 @@ export const breakpoints = {
   step: 5,
   values: {
     xs: 0,
-    sm: 576,
-    md: 769,
-    lg: 992,
-    xl: 1200,
+    sm: 600,
+    md: 960,
+    lg: 1270,
+    xl: 1920,
   },
 };
