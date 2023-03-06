@@ -15,7 +15,11 @@ export type HvCardProps = HvBaseProps & {
   /** Whether the card is currently selected. */
   selected?: boolean;
   /** The background color of the card. */
-  bgcolor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
+  bgcolor?:
+    | "sema0"
+    | HvSemanticColorKeys
+    | HvAtmosphereColorKeys
+    | "transparent";
   /**
    *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
    *  To set another color, the borderTop should be override.
