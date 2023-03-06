@@ -23,7 +23,7 @@ exports[`File > should render correctly fail status 1`] = `
     </svg>
   </div>
   <label
-    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
+    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1fpz1dk-getStyledComponent-StyledNameText e1tnpalo0"
   >
     somefile.png
   </label>
@@ -32,14 +32,14 @@ exports[`File > should render correctly fail status 1`] = `
   >
      | 
     <p
-      class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-vv0550-getStyledComponent-StyledErrorMessage e1tnpalo0"
+      class="HvFile-fail e6pb7kb6 HvTypography-root HvTypography-body css-74yu0t-getStyledComponent-StyledErrorMessage e1tnpalo0"
     >
       File type not allowed for upload
     </p>
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 HvButton-root css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 HvButton-root css-7zbex5-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -94,7 +94,7 @@ exports[`File > should render correctly success status 1`] = `
     </svg>
   </div>
   <label
-    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-xx9dxq-getStyledComponent-StyledNameText e1tnpalo0"
+    class="HvFile-nameText e6pb7kb3 HvTypography-root HvTypography-label css-1fpz1dk-getStyledComponent-StyledNameText e1tnpalo0"
   >
     somefile.png
   </label>
@@ -103,14 +103,14 @@ exports[`File > should render correctly success status 1`] = `
   >
      | 
     <p
-      class="HvTypography-root HvTypography-body css-11nzje6-getStyledComponent e1tnpalo0"
+      class="HvTypography-root HvTypography-body css-y01gvs-getStyledComponent e1tnpalo0"
     >
       875.00B
     </p>
   </span>
   <button
     aria-label="removeFileButtonLabel"
-    class="HvFile-removeButton e6pb7kb0 HvButton-root css-15imtg3-StyledButton-StyledIconButton e138pvrm0"
+    class="HvFile-removeButton e6pb7kb0 HvButton-root css-7zbex5-StyledButton-StyledIconButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"

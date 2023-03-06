@@ -3,7 +3,7 @@
 exports[`Card > should render all the compoents 1`] = `
 <div>
   <div
-    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
+    class="css-4fb8k0-root css-bpz2ad-HvCard HvIsCardGridElement HvCard-root"
   >
     <div
       class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
@@ -42,7 +42,7 @@ exports[`Card > should render all the compoents 1`] = `
       class="MuiCardContent-root css-m6635h-content HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
-        class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label css-93trrd-getStyledComponent e1tnpalo0"
       >
         mockCardContent
       </label>
@@ -54,7 +54,7 @@ exports[`Card > should render all the compoents 1`] = `
 exports[`Card > should render content 1`] = `
 <div>
   <div
-    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
+    class="css-4fb8k0-root css-bpz2ad-HvCard HvIsCardGridElement HvCard-root"
   >
     <div
       class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
@@ -70,7 +70,7 @@ exports[`Card > should render content 1`] = `
       class="MuiCardContent-root css-m6635h-content HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
-        class="HvTypography-root HvTypography-label css-z0xwjc-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label css-93trrd-getStyledComponent e1tnpalo0"
       >
         mockCardContent
       </label>
@@ -82,7 +82,7 @@ exports[`Card > should render content 1`] = `
 exports[`Card > should render correctly 1`] = `
 <div>
   <div
-    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
+    class="css-4fb8k0-root css-bpz2ad-HvCard HvIsCardGridElement HvCard-root"
   >
     <div
       class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
@@ -101,7 +101,7 @@ exports[`Card > should render correctly 1`] = `
 exports[`Card > should render header 1`] = `
 <div>
   <div
-    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
+    class="css-4fb8k0-root css-bpz2ad-HvCard HvIsCardGridElement HvCard-root"
   >
     <div
       class="css-1kcigpt-semanticContainer HvCard-semanticContainer"
@@ -138,7 +138,7 @@ exports[`Card > should render header 1`] = `
 exports[`Card > should render image 1`] = `
 <div>
   <div
-    class="css-4fb8k0-root HvIsCardGridElement HvCard-root"
+    class="css-4fb8k0-root css-bpz2ad-HvCard HvIsCardGridElement HvCard-root"
   >
     <div
       class="css-1kcigpt-semanticContainer HvCard-semanticContainer"

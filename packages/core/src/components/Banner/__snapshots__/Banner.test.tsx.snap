@@ -19,7 +19,7 @@ exports[`Banner > should render correctly 1`] = `
           class="MuiSnackbarContent-message HvBanner-Content-message css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
-            class="HvBanner-MessageContainer-message e3wuhfa1 HvTypography-root HvTypography-body css-1y5sra1-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvBanner-MessageContainer-message e3wuhfa1 HvTypography-root HvTypography-body css-49vang-getStyledComponent-StyledTypography e1tnpalo0"
           />
         </div>
         <div
@@ -30,7 +30,7 @@ exports[`Banner > should render correctly 1`] = `
           >
             <button
               aria-label="Close"
-              class="HvBanner-ActionContainer-closeAction euz8sqk2 HvButton-root css-wnh2er-StyledButton-StyledButton e138pvrm0"
+              class="HvBanner-ActionContainer-closeAction euz8sqk2 HvButton-root css-1b09nt5-StyledButton-StyledButton e138pvrm0"
               tabindex="0"
             >
               <div

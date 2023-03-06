@@ -28,7 +28,7 @@ exports[`Dropdown > should render correctly 1`] = `
               class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
             >
               <div
-                class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-15ognf8-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-8bz325-getStyledComponent-StyledTypography e1tnpalo0"
               >
                 <b>
                   1

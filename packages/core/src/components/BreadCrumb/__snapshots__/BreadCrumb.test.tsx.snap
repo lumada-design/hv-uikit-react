@@ -16,7 +16,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route1"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -52,7 +52,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route2"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -88,7 +88,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route3"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -124,7 +124,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route4"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -160,7 +160,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route5"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -196,7 +196,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
           href="route6"
         >
           <div
-            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-1khkjup-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvPage-link HvBreadCrumb-link HvPage-label e8ovoy90 HvTypography-root HvTypography-label HvTypography-noWrap css-tmwn2b-getStyledComponent-StyledTypography e1tnpalo0"
           >
             <div
               class="HvOverflowTooltip-tooltipAnchor css-trvmb4-StyledDataContainer e199gfye0"
@@ -228,7 +228,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <p
-          class="HvBreadCrumb-currentPage e17idydo0 HvTypography-root HvTypography-body css-h7rrjz-getStyledComponent-StyledTypography e1tnpalo0"
+          class="HvBreadCrumb-currentPage e17idydo0 HvTypography-root HvTypography-body css-1sp3cjd-getStyledComponent-StyledTypography e1tnpalo0"
         >
           Label 7
         </p>
