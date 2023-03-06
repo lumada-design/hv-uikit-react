@@ -369,6 +369,7 @@ describe("CheckBoxGroup", () => {
       expect(checkboxes[2]).toBeDisabled();
 
       const dragons = getByLabelText("Dragons");
+      dragons.style.pointerEvents = "auto";
 
       // Try to check
       await userEvent.click(dragons);
@@ -404,6 +405,7 @@ describe("CheckBoxGroup", () => {
       expect(checkboxes[2]).toBeEnabled();
 
       const cats = getByLabelText("Cats");
+      cats.style.pointerEvents = "auto";
 
       // Try to check
       await userEvent.click(cats);

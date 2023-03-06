@@ -218,7 +218,7 @@ export const SnackbarVariations: StoryObj<HvSnackbarProps> = {
   render: () => {
     return (
       <div>
-        <HvTypography variant="mTitle">Semantics</HvTypography>
+        <HvTypography variant="title2">Semantics</HvTypography>
         <br />
         <HvSnackbarContent label="This is a snackbar." variant="default" />
         <br />
@@ -234,7 +234,7 @@ export const SnackbarVariations: StoryObj<HvSnackbarProps> = {
           showIcon
         />
         <br />
-        <HvTypography variant="mTitle">Custom icon</HvTypography>
+        <HvTypography variant="title2">Custom icon</HvTypography>
         <br />
         <HvSnackbarContent
           variant="default"

@@ -303,14 +303,14 @@ export const HvDropdownList = ({
         <HvButton
           id={setId(id, "actions-apply")}
           onClick={() => onChange(cleanHidden(list), true, true, true)}
-          variant="ghost"
+          variant="primaryGhost"
         >
           {applyLabel}
         </HvButton>
         <HvButton
           id={setId(id, "actions-cancel")}
           onClick={onCancel}
-          variant="ghost"
+          variant="primaryGhost"
         >
           {cancelLabel}
         </HvButton>

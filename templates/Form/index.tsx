@@ -1,52 +1,18 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-// eslint-disable-next-line
-import { jsx, css } from "@emotion/react";
+import isEmpty from "lodash/isEmpty";
 import { Formik } from "formik";
 import * as yup from "yup";
 import {
   HvGrid,
-  HvContainer,
   HvGlobalActions,
   HvButton,
   HvInput,
-  HvSwitch,
   HvTextArea,
   HvFormStatus,
 } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
-import { theme } from "@hitachivantara/uikit-styles";
-import isEmpty from "lodash/isEmpty";
-import { fields, allCountries } from "./utils";
 
-const styles = {
-  section: css({
-    "&:nth-child(2)": {
-      marginBottom: theme.spacing(4),
-      marginTop: theme.space.sm,
-    },
-    marginTop: 0,
-  }),
-  footer: css({
-    width: "100%",
-    height: 80,
-    backgroundColor: theme.colors.atmo1,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    paddingRight: theme.space.sm,
-    position: "absolute",
-    left: 0,
-    bottom: 0,
-    zIndex: 2,
-  }),
-  field: css({
-    height: 60,
-  }),
-  textArea: css({
-    height: 114,
-  }),
-};
+import { fields, allCountries } from "./utils";
+import classes from "./styles";
 
 /**
  * The validation schema used by Formik to validate the data inserted by the user.
@@ -102,8 +68,8 @@ const suggestionHandler = (val) => {
 
 const Form = () => {
   return (
-    <HvContainer>
-      <HvGlobalActions title="Deploy" backButton={false} />
+    <>
+      <HvGlobalActions title="Deploy" className={classes.section} />
 
       <Formik
         initialValues={{
@@ -156,14 +122,13 @@ const Form = () => {
 
           return (
             <form onSubmit={handleSubmit}>
-              <HvGrid container css={styles.section}>
+              <HvGrid container className={classes.section}>
                 <HvGrid item xs={12}>
                   <HvGlobalActions title="Project Details" variant="section" />
                 </HvGrid>
                 <HvGrid item md={6} xs={12}>
                   <HvInput
                     id={fields.asset.id}
-                    css={styles.field}
                     label={fields.asset.label}
                     required
                     placeholder={fields.asset.placeholder}
@@ -174,7 +139,6 @@ const Form = () => {
                 <HvGrid item md={6} xs={12}>
                   <HvInput
                     id={fields.location.id}
-                    css={styles.field}
                     label={fields.location.label}
                     required
                     placeholder={fields.location.placeholder}
@@ -187,7 +151,6 @@ const Form = () => {
                 <HvGrid item md={6} xs={12}>
                   <HvInput
                     id={fields.project.id}
-                    css={styles.field}
                     label={fields.project.label}
                     required
                     placeholder={fields.project.placeholder}
@@ -198,7 +161,6 @@ const Form = () => {
                 <HvGrid item md={6} xs={12}>
                   <HvInput
                     id={fields.version.id}
-                    css={styles.field}
                     label={fields.version.label}
                     required
                     placeholder={fields.version.placeholder}
@@ -210,7 +172,6 @@ const Form = () => {
                 <HvGrid item xs={12}>
                   <HvInput
                     id={fields.name.id}
-                    css={styles.field}
                     label={fields.name.label}
                     required
                     placeholder={fields.name.placeholder}
@@ -221,7 +182,6 @@ const Form = () => {
                 <HvGrid item xs={12}>
                   <HvTextArea
                     id={fields.description.id}
-                    css={styles.textArea}
                     label={fields.description.label}
                     required
                     rows={5}
@@ -232,21 +192,7 @@ const Form = () => {
                 </HvGrid>
               </HvGrid>
 
-              <HvGrid container css={styles.section}>
-                <HvGrid item xs={12}>
-                  <HvGlobalActions title="Deploy details" variant="section" />
-                </HvGrid>
-
-                <HvGrid item xs={12}>
-                  <HvSwitch
-                    id={fields.public.id}
-                    label={fields.public.label}
-                    {...fieldStatusProps(fields.public.id)}
-                  />
-                </HvGrid>
-              </HvGrid>
-
-              <div css={styles.footer}>
+              <div className={classes.footer}>
                 <HvButton
                   id="submit"
                   type="submit"
@@ -261,14 +207,14 @@ const Form = () => {
                     values.description.trim() ===
                       initialValues.description.trim()
                   }
-                  variant="ghost"
+                  variant="primaryGhost"
                 >
                   Submit
                 </HvButton>
                 <HvButton
                   id="cancel"
                   disabled={values === initialValues}
-                  variant="ghost"
+                  variant="primaryGhost"
                   type="reset"
                   onClick={() => alert("Cancelling from submission.")}
                 >
@@ -279,7 +225,7 @@ const Form = () => {
           );
         }}
       </Formik>
-    </HvContainer>
+    </>
   );
 };
 

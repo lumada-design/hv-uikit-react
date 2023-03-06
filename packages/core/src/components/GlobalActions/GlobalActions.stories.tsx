@@ -47,7 +47,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
           backButton={<BackButton />}
         >
           <HvButton variant="primary">Approve & Share</HvButton>
-          <HvButton variant="secondary">Reset</HvButton>
+          <HvButton variant="secondarySubtle">Reset</HvButton>
           <HvDropDownMenu
             id={`dropdownItem-${uniqueId()}`}
             aria-label="dropdownMenu-Items"
@@ -62,8 +62,8 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
 
         <div style={{ paddingBottom: 60 }}>
           <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondary">Remove</HvButton>
-            <HvButton variant="secondary">Share</HvButton>
+            <HvButton variant="secondarySubtle">Remove</HvButton>
+            <HvButton variant="secondarySubtle">Share</HvButton>
             <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -118,8 +118,8 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
           </HvTypography>
 
           <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondary">Remove</HvButton>
-            <HvButton variant="secondary">Share</HvButton>
+            <HvButton variant="secondarySubtle">Remove</HvButton>
+            <HvButton variant="secondarySubtle">Share</HvButton>
             <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -166,8 +166,8 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
           </HvTypography>
 
           <HvGlobalActions title="Section Title" variant="section">
-            <HvButton variant="secondary">Remove</HvButton>
-            <HvButton variant="secondary">Share</HvButton>
+            <HvButton variant="secondarySubtle">Remove</HvButton>
+            <HvButton variant="secondarySubtle">Share</HvButton>
             <HvDropDownMenu
               id={`dropdownItem-${uniqueId()}`}
               aria-label="dropdownMenu-Items"
@@ -312,8 +312,8 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<HvGlobalActions
       return (
         <HvGlobalActions title={CustomTitle} backButton={<BackButton />}>
           <HvButton variant="primary">Primary</HvButton>
-          <HvButton variant="secondary">Secondary</HvButton>
-          <HvButton variant="secondary">Secondary</HvButton>
+          <HvButton variant="secondarySubtle">Secondary</HvButton>
+          <HvButton variant="secondarySubtle">Secondary</HvButton>
         </HvGlobalActions>
       );
     },

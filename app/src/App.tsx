@@ -1,76 +1,24 @@
-import { HvBox, HvProvider, theme } from "@hitachivantara/uikit-react-core";
-import { CSSProperties } from "react";
-import {
-  Buttons,
-  EmptyState,
-  Grid,
-  Icons,
-  Cards,
-  Typography,
-  Tags,
-  CheckBox,
-  BaseDropdown,
-  BaseInput,
-  Radio,
-  TagsInput,
-  Input,
-  FileUploader,
-  Pagination,
-  DotPagination,
-  BulkActions,
-  BreadCrumb,
-} from "./components";
-import { Tooltip } from "./components/Tooltip/Tooltip";
-import { Dialogs } from "./components/Dialogs/Dialogs";
-import { Header, ThemeSwitcher } from "./layout";
-import { Switch } from "./components/Switch";
-import { DropDownMenu } from "./components/DropDownMenu/DropDownMenu";
-import customTheme from "./customTheme";
-import { Controls } from "./components/Controls/Controls";
+import { BrowserRouter as Router } from "react-router-dom";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-const styles = {
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.spacing(5),
-  maxWidth: "100%",
-  margin: `${theme.spacing(5)} auto`,
-  padding: `calc(${theme.header.height} + 50px) 20px 20px 20px`,
-  height: "100%",
-} as CSSProperties;
+import { Container } from "components/common";
+import { NavigationProvider } from "lib/context/NavigationContext";
+import navigation from "lib/navigation";
+import Routes from "lib/routes";
+import "lib/i18n";
 
-const App = () => {
-  return (
-    <HvProvider rootElementId="hv-root" theme={customTheme}>
-      <Header />
-      <HvBox sx={styles}>
-        <ThemeSwitcher />
-        <Controls />
-        <Typography />
-        <BaseDropdown />
-        <DotPagination />
-        <Pagination />
-        <DropDownMenu />
-        <Buttons />
-        <BaseInput />
-        <Input />
-        <TagsInput />
-        <FileUploader />
-        <CheckBox />
-        <Switch />
-        <Radio />
-        <Dialogs />
-        <Tags />
-        <Cards />
-        <Tooltip />
-        <Grid />
-        <EmptyState />
-        <Buttons />
-        <Icons />
-        <BreadCrumb />
-        <BulkActions />
-      </HvBox>
+// import customTheme from "./customTheme.json";
+
+const App = () => (
+  <Router>
+    <HvProvider rootElementId="hv-root">
+      <NavigationProvider navigation={navigation}>
+        <Container maxWidth="xl">
+          <Routes />
+        </Container>
+      </NavigationProvider>
     </HvProvider>
-  );
-};
+  </Router>
+);
 
 export default App;

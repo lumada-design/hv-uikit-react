@@ -187,6 +187,8 @@ describe("HvRadio", () => {
       const radioBtns = getAllByRole("radio");
 
       const [radioBtn1, radioBtn2] = [...radioBtns];
+      radioBtn1.style.pointerEvents = "auto";
+      radioBtn2.style.pointerEvents = "auto";
 
       expect(radioBtn1).toBeDisabled();
       expect(radioBtn2).toBeDisabled();

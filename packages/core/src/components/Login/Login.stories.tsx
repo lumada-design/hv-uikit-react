@@ -68,7 +68,7 @@ export const Main: StoryObj<HvLoginProps> = {
     return (
       <HvLogin background={background}>
         <StyledRoot>
-          <HvTypography variant="mTitle">Welcome</HvTypography>
+          <HvTypography variant="title2">Welcome</HvTypography>
 
           <StyledInput
             name="username"
@@ -127,7 +127,7 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
 
           <StyledCheckBox label="Remember me" />
 
-          <StyledButton type="submit" category="primary">
+          <StyledButton type="submit" variant="primary">
             Login
           </StyledButton>
         </StyledRoot>
