@@ -25,7 +25,7 @@ export const Main: StoryObj<HvLoadingProps> = {
 };
 
 export const Buttons = () => {
-  const ExampleBox = ({ label, category, color = "base2" }) => {
+  const Button = ({ label, variant, color = "base2" }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const activateTimer = () => {
@@ -47,7 +47,7 @@ export const Buttons = () => {
         >
           {label}
         </HvTypography>
-        <HvButton variant={category} onClick={activateTimer}>
+        <HvButton variant={variant} onClick={activateTimer}>
           {(!isLoading && "Submit") || (
             <HvLoading small hidden={!isLoading} color={color} />
           )}
@@ -57,15 +57,15 @@ export const Buttons = () => {
   };
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox category="primary" label="Primary button" color="base1" />
-      <ExampleBox category="secondarySubtle" label="Secondary Subtle button" />
-      <ExampleBox category="secondaryGhost" label="Secondary Ghost button" />
+      <Button variant="primary" label="Primary button" color="base1" />
+      <Button variant="secondarySubtle" label="Secondary Subtle button" />
+      <Button variant="secondaryGhost" label="Secondary Ghost button" />
     </div>
   );
 };
 
 export const Determinate = () => {
-  const ExampleBox = ({ label, children }) => (
+  const Button = ({ label, children }) => (
     <div>
       <HvTypography variant="caption1">{label}</HvTypography>
       <br />
@@ -88,15 +88,15 @@ export const Determinate = () => {
 
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox label="Determine w/ percentages">
+      <Button label="Determine w/ percentages">
         <Progress label={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
-      </ExampleBox>
-      <ExampleBox label="Determine w/ progress">
+      </Button>
+      <Button label="Determine w/ progress">
         <Progress
           label={(v) => `${v}M/75M`}
           inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))}
         />
-      </ExampleBox>
+      </Button>
     </div>
   );
 };

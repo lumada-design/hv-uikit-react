@@ -3,26 +3,26 @@
 exports[`DropDownMenu > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-uqb84k css-1nukton-StyledRoot eapzthe9"
+    class="HvBaseDropdown-root HvDropDownMenu-root hv-uikit-css-63m6l9-StyledRoot eapzthe9"
   >
     <div
       aria-expanded="false"
       aria-haspopup="menu"
-      class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor css-2kevrv-StyledAnchor-StyledBaseDropDown eapzthe8"
+      class="HvDropDownMenu-container e13q7myz2 HvBaseDropdown-anchor hv-uikit-css-2kevrv-StyledAnchor-StyledBaseDropDown eapzthe8"
       id="hv-drop-down-menu-2"
       tabindex="-1"
     >
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvDropDownMenu-icon e13q7myz1 HvButton-root css-11xyhri-StyledButton-StyledButton e138pvrm0"
+        class="HvDropDownMenu-icon e13q7myz1 HvButton-root hv-uikit-css-11xyhri-StyledButton-StyledButton e138pvrm0"
         id="hv-drop-down-menu-2-icon-button"
       >
         <div
-          class="css-1nxr552-StyledContentDiv e138pvrm3"
+          class="hv-uikit-css-1nxr552-StyledContentDiv e138pvrm3"
         >
           <span
-            class="css-1o4qkkz-StyledChildren e138pvrm1"
+            class="hv-uikit-css-1o4qkkz-StyledChildren e138pvrm1"
           >
             <div
               class="hv-uikit-css-du18qm"

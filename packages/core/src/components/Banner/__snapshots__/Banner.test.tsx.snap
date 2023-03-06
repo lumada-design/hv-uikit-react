@@ -3,7 +3,7 @@
 exports[`Banner > should render correctly 1`] = `
 <div>
   <div
-    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter e14yk37x0 css-5qqi9l-MuiSnackbar-root-StyledSnackbar"
+    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter css-16qewzr-StyledSnackbar e14yk37x0 css-zzms1-MuiSnackbar-root"
     role="presentation"
     style="top: 60px;"
   >
@@ -11,7 +11,7 @@ exports[`Banner > should render correctly 1`] = `
       class="HvBanner-Content-outContainer css-d89rls-StyledRoot ey1hm771"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant HvBanner-Content-default ey1hm770 css-1fz47rw-MuiPaper-root-MuiSnackbarContent-root-StyledSnackbarContent"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant HvBanner-Content-default css-yeaxvf-StyledSnackbarContent ey1hm770 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
         role="alert"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
@@ -40,7 +40,7 @@ exports[`Banner > should render correctly 1`] = `
                   class="css-1o4qkkz-StyledChildren e138pvrm1"
                 >
                   <div
-                    class="HvBanner-ActionContainer-iconContainer css-11ckr3u-StyledClose euz8sqk1 css-du18qm"
+                    class="HvBanner-ActionContainer-iconContainer euz8sqk1 css-1gb3xe9-StyledClose"
                     name="Close"
                   >
                     <svg

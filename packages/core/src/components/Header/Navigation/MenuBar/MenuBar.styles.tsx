@@ -23,7 +23,7 @@ export const hide = {
 };
 
 export const MenuBarRoot = styled("div")(
-  ({ type, hidden, active }: MenuBarRootProps) => ({
+  ({ type, hidden }: MenuBarRootProps) => ({
     left: 0,
     width: "100%",
     height: "100%",
@@ -44,7 +44,6 @@ export const MenuBarRoot = styled("div")(
       },
     }),
     ...(hidden && { ...hide }),
-    ...(active && { ...show }),
   })
 );
 

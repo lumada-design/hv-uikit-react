@@ -213,7 +213,7 @@ export const getDragAndDropColumns = (theme) => [
       return (
         <HvButton
           icon
-          category="ghost"
+          variant="primaryGhost"
           aria-label="Drag"
           {...{ component: "div" }}
           {...dragHandleProps}

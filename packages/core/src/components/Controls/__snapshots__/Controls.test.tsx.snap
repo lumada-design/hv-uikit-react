@@ -21,7 +21,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
@@ -107,7 +107,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1jdpeh4-StyledDropDownXS"
                     name="DropDownXS"
                   >
                     <svg
@@ -635,7 +635,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
@@ -721,7 +721,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     </div>
                   </div>
                   <div
-                    class="HvBaseDropdown-arrow HvDropdown-arrow css-tgcv4t-StyledDropDownXS eapzthe3 css-du18qm"
+                    class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1jdpeh4-StyledDropDownXS"
                     name="DropDownXS"
                   >
                     <svg
@@ -2001,7 +2001,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  e8ibl7d0 css-1jf0uu4-MuiInputBase-root-MuiInput-root-StyledInput"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
