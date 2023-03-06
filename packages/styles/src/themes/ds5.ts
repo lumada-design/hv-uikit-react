@@ -161,6 +161,9 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   header: {
     color: theme.colors.acce1,
     height: "64px",
+    backgroundColor: theme.colors.atmo1,
+    secondLevelBackgroundColor: theme.colors.atmo2,
+    hoverColor: theme.colors.atmo3,
     borderTopThickness: "0px",
     borderTopColor: "transparent",
     selectedItemBorderTopColor: "transparent",

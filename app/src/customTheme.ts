@@ -7,7 +7,7 @@ const customTheme: HvProviderProps["theme"] = {
   colors: {
     modes: {
       dawn: {
-        atmo1: "#A2ECE6",
+        // atmo1: "#A2ECE6",
         /* newColor: "#eee", */
       },
       salmon: {
@@ -17,9 +17,15 @@ const customTheme: HvProviderProps["theme"] = {
       },
     },
   },
-  checkbox: { hoverColor: "red" },
-  baseCheckBox: {
-    hoverColor: "red",
+  // checkbox: { hoverColor: "red" },
+  // baseCheckBox: {
+  //   hoverColor: "red",
+  // },
+  header: {
+    backgroundColor: "#abb5de",
+    secondLevelBackgroundColor: "#8f99c2",
+    hoverColor: "#bac2e6",
+    selectedItemBorderBottomColor: "#6d7182",
   },
   /* newProperty: {
       newValue1: "",

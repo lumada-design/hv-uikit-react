@@ -45,6 +45,9 @@ export type HvThemeComponents = {
   header: {
     color: string;
     height: string;
+    backgroundColor: string;
+    secondLevelBackgroundColor: string;
+    hoverColor: string;
     borderTopThickness: string;
     borderTopColor: string;
     selectedItemBorderTopColor: string;

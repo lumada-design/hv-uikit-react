@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { buttonClasses } from "components";
 
 export const StyledDiv = styled.div({
   backgroundColor: "transparent",
@@ -8,5 +9,8 @@ export const StyledDiv = styled.div({
   marginLeft: "auto",
   "& > *": {
     marginLeft: theme.space.xs,
+  },
+  [`& .${buttonClasses.root}`]: {
+    "&:hover": { backgroundColor: theme.header.hoverColor },
   },
 });

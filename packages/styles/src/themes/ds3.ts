@@ -219,6 +219,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   header: {
     color: theme.colors.sema4,
     height: "44px",
+    backgroundColor: theme.colors.atmo1,
+    secondLevelBackgroundColor: theme.colors.atmo2,
+    hoverColor: theme.colors.atmo3,
     borderTopThickness: "4px",
     borderTopColor: `${theme.colors.sema4}`,
     selectedItemBorderTopColor: theme.colors.acce3,

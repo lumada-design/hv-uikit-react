@@ -7,7 +7,7 @@ export const StyledAppBar = styled(
   transientOptions
 )(({ $position }: { $position?: string }) => ({
   height: theme.header.height,
-  backgroundColor: theme.colors.atmo1,
+  backgroundColor: theme.header.backgroundColor,
   display: "flex",
   flexDirection: "column",
   width: "100%",
