@@ -12,7 +12,7 @@ const openLink = (link: string) => () => window.open(link, "_blank");
 const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
   return (
     <HvCard
-      bgColor="atmo1"
+      bgcolor="atmo1"
       style={{
         maxWidth: "400px",
         width: "100%",
@@ -22,7 +22,7 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
       <HvCardMedia component="img" image={image} style={{ padding: 10 }} />
       <HvActionBar>
         <HvButton
-          variant="secondary"
+          variant="secondarySubtle"
           disabled={disabled}
           onClick={linkTo(kind, story)}
           aria-label="View Sample"
@@ -31,7 +31,7 @@ const TemplateItem = ({ kind, story, image, title, code, disabled }) => {
         </HvButton>
         <div style={{ flex: 1 }} />
         <HvButton
-          variant="secondary"
+          variant="secondarySubtle"
           disabled={disabled}
           onClick={openLink(code)}
           aria-label="View Code"
