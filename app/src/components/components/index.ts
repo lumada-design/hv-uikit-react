@@ -21,3 +21,4 @@ export * from "./Tags";
 export * from "./TagsInput";
 export * from "./Tooltip";
 export * from "./Typography";
+export * from "./Calendar";

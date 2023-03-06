@@ -231,6 +231,20 @@ export type HvThemeComponents = {
     rowHoverColor: string;
     rowHoverBorderColor: string;
   };
+  calendar: {
+    border: string;
+    borderRadius: string;
+    cellHoverColor: string;
+    headerInputBorderBottom: string;
+    headerInputBorderTop: string;
+    headerInputBorderLeft: string;
+    headerInputBorderRight: string;
+    headerInputFontColor: string;
+    headerInputFontSize: string;
+    headerInputFontLetterSpacing: string;
+    headerInputFontLineHeight: string;
+    headerInputFontWeight: string;
+  };
   globalActions: {
     sectionVariant: keyof HvThemeTypography["typography"];
   };

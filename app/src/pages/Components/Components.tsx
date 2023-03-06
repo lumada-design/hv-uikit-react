@@ -24,6 +24,7 @@ import {
   DropDownMenu,
   Switch,
   Snackbars,
+  Calendar,
 } from "components/components";
 
 const styles = {
@@ -59,6 +60,7 @@ const App = () => {
       <Icons />
       <BreadCrumb />
       <BulkActions />
+      <Calendar />
     </HvBox>
   );
 };

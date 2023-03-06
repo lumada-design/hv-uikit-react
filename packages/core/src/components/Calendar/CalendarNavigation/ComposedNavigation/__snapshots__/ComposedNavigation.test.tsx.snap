@@ -1,0 +1,120 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Navigation /> > should render correctly 1`] = `
+<div>
+  <div
+    class="HvComposedNavigation-navigationContainer css-1rxbfsa-StyledNavigationContainer es2ikxx1"
+  >
+    <div
+      class="HvComposedNavigation-navigationMonth css-11pr0v9-StyledNavigationMonth es2ikxx0"
+    >
+      <div
+        class="HvNavigation-root css-naomxv-StyledRoot e1ozyvih3"
+      >
+        <div
+          class="HvNavigation-icon e1ozyvih2 css-1nvi80g-StyledDropLeftIcon"
+          name="DropLeftXS"
+          tabindex="0"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m3.35 5.99994 4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
+              fill="var(--uikit-colors-acce1)"
+            />
+          </svg>
+        </div>
+        <div
+          class="HvNavigation-text css-q82srd-StyledText e1ozyvih0"
+          role="presentation"
+          tabindex="0"
+        >
+          <p
+            class="HvTypography-root HvTypography-normalText css-y01gvs-getStyledComponent e1tnpalo0"
+          >
+            April
+          </p>
+        </div>
+        <div
+          class="HvNavigation-icon  e1ozyvih1 css-16jdwg-StyledDropRightIcon"
+          name="DropRightXS"
+          tabindex="0"
+        >
+          <svg
+            focusable="false"
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+              fill="var(--uikit-colors-acce1)"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvNavigation-root css-naomxv-StyledRoot e1ozyvih3"
+    >
+      <div
+        class="HvNavigation-icon e1ozyvih2 css-1nvi80g-StyledDropLeftIcon"
+        name="DropLeftXS"
+        tabindex="0"
+      >
+        <svg
+          focusable="false"
+          height="12"
+          viewBox="0 0 12 12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="m3.35 5.99994 4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
+            fill="var(--uikit-colors-acce1)"
+          />
+        </svg>
+      </div>
+      <div
+        class="HvNavigation-textWithoutHover css-q82srd-StyledText e1ozyvih0"
+        role="presentation"
+        tabindex="-1"
+      >
+        <p
+          class="HvTypography-root HvTypography-normalText css-y01gvs-getStyledComponent e1tnpalo0"
+        >
+          2020
+        </p>
+      </div>
+      <div
+        class="HvNavigation-icon  e1ozyvih1 css-16jdwg-StyledDropRightIcon"
+        name="DropRightXS"
+        tabindex="0"
+      >
+        <svg
+          focusable="false"
+          height="12"
+          viewBox="0 0 12 12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+            fill="var(--uikit-colors-acce1)"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
