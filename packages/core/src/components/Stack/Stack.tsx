@@ -101,7 +101,7 @@ export const HvStack = ({
   return (
     <StyledRoot
       ref={containerRef}
-      className={clsx(stackClasses.root, classes?.root)}
+      className={clsx(className, stackClasses.root, classes?.root)}
       $direction={processedDirection}
       $breakpoint={spacing}
       {...others}

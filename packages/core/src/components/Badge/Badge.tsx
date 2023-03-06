@@ -65,7 +65,7 @@ export const HvBadge = (props: HvBadgeProps) => {
   return (
     <StyledRoot
       aria-label={renderedCountOrLabel?.toString()}
-      className={clsx(badgeClasses.root, classes?.root)}
+      className={clsx(className, badgeClasses.root, classes?.root)}
       {...others}
     >
       {Component}
@@ -78,7 +78,18 @@ export const HvBadge = (props: HvBadgeProps) => {
         }
       >
         <StyledBadge
-          className={clsx(badgeClasses.badgePosition, classes?.badgePosition)}
+          className={clsx(
+            badgeClasses.badgePosition,
+            classes?.badgePosition,
+            !!(count > 0 || renderedCountOrLabel) &&
+              clsx(badgeClasses.badge, classes?.badge),
+            !!(!label && renderedCountOrLabel) &&
+              clsx(badgeClasses.showCount, classes?.showCount),
+            !!label && clsx(badgeClasses.showLabel, classes?.showLabel),
+            !!icon && clsx(badgeClasses.badgeIcon, classes?.badgeIcon),
+            String(renderedCountOrLabel).length === 1 &&
+              clsx(badgeClasses.badgeOneDigit, classes?.badgeOneDigit)
+          )}
           $badge={!!(count > 0 || renderedCountOrLabel)}
           $showCount={!!(!label && renderedCountOrLabel)}
           $showLabel={!!label}

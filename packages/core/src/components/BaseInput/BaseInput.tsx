@@ -50,7 +50,7 @@ const baseInputStyles = css`
   },
 }`;
 
-export type HvBaseInputProps = Omit<MuiInputProps, "onChange"> &
+export type HvBaseInputProps = Omit<MuiInputProps, "onChange" | "classes"> &
   HvBaseProps<HTMLDivElement, { onChange }> & {
     /** The input name. */
     name?: string;
@@ -172,8 +172,16 @@ export const HvBaseInput = ({
           disabled={formElementProps.disabled}
           onChange={onChangeHandler}
           className={clsx(
-            localInvalid && baseInputClasses.inputRootInvalid,
-            readOnly && baseInputClasses.inputRootReadOnly
+            localInvalid &&
+              clsx(
+                baseInputClasses.inputRootInvalid,
+                classes?.inputRootInvalid
+              ),
+            readOnly &&
+              clsx(
+                baseInputClasses.inputRootReadOnly,
+                classes?.inputRootReadOnly
+              )
           )}
           classes={{
             root: clsx(baseInputClasses.inputRoot, classes?.inputRoot),

@@ -1,11 +1,13 @@
-import { CardMediaProps as MuiCardMediaProps } from "@mui/material/CardMedia";
-import { StyledMedia } from "./Media.styles";
+import MuiCardMedia, {
+  CardMediaProps as MuiCardMediaProps,
+} from "@mui/material/CardMedia";
+import { styles } from "./Media.styles";
 import { HvBaseProps } from "../../../types";
 import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import clsx from "clsx";
 import { ImgHTMLAttributes } from "react";
 
-export type HvMediaProps = MuiCardMediaProps &
+export type HvMediaProps = Omit<MuiCardMediaProps, "classes"> &
   ImgHTMLAttributes<HTMLImageElement> &
   HvBaseProps<HTMLDivElement, { onClick; title }> & {
     /** Id to be applied to the root node. */
@@ -32,10 +34,10 @@ export const HvMedia = ({
   ...others
 }: HvMediaProps) => {
   return (
-    <StyledMedia
+    <MuiCardMedia
       id={id}
       classes={{
-        root: clsx(cardMediaClasses.root, classes?.root),
+        root: clsx(styles.root, cardMediaClasses.root, classes?.root),
         media: clsx(cardMediaClasses.media, classes?.media),
       }}
       className={className}
@@ -45,6 +47,6 @@ export const HvMedia = ({
       {...others}
     >
       {children}
-    </StyledMedia>
+    </MuiCardMedia>
   );
 };

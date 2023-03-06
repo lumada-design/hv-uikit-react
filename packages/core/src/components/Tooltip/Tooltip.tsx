@@ -24,7 +24,7 @@ export type HvTooltipPlacementType =
   | "top-start"
   | "top";
 
-export type HvTooltipProps = MuiTooltipProps & {
+export type HvTooltipProps = Omit<MuiTooltipProps, "classes"> & {
   /**
    * Class names to be applied.
    */

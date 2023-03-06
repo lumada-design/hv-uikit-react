@@ -60,11 +60,18 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
       aria-valuenow={clampedValue}
       {...others}
     >
-      <StyledProgressContainer>
+      <StyledProgressContainer
+        className={clsx(
+          classes?.progressContainer,
+          progressBarClasses.progressContainer
+        )}
+      >
         <StyledValue
           className={clsx(
             progressBarClasses.progressBarLabel,
-            classes?.progressBarLabel
+            classes?.progressBarLabel,
+            status === "completed" &&
+              clsx(progressBarClasses.progressDone, classes?.progressDone)
           )}
           variant="caption2"
           style={{ width: `${clampedValue}%` }}
@@ -72,12 +79,21 @@ export const HvProgressBar = (props: HvProgressBarProps) => {
         >
           {`${clampedValue}%`}
         </StyledValue>
-        <StyledProgressBarContainer>
+        <StyledProgressBarContainer
+          className={clsx(
+            classes?.progressBarContainer,
+            progressBarClasses.progressBarContainer
+          )}
+        >
           <StyledProgressBar
             style={{ width: `${clampedValue}%` }}
             className={clsx(
               progressBarClasses.progressBar,
-              classes?.progressBar
+              classes?.progressBar,
+              status === "completed" &&
+                clsx(classes?.progressDone, progressBarClasses.progressDone),
+              status === "error" &&
+                clsx(classes?.progressError, progressBarClasses.progressError)
             )}
             $status={status}
           />

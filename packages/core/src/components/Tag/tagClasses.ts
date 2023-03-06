@@ -4,7 +4,7 @@ export type HvTagClasses = {
   root?: string;
   tagButton?: string;
   focusVisible?: string;
-  primaryButton?: string;
+  button?: string;
   label?: string;
   chipRoot?: string;
   categorical?: string;
@@ -20,7 +20,7 @@ const classKeys: string[] = [
   "root",
   "tagButton",
   "focusVisible",
-  "primaryButton",
+  "button",
   "label",
   "chipRoot",
   "categorical",

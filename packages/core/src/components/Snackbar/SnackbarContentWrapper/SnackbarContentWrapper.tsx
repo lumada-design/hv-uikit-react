@@ -18,7 +18,7 @@ import { HvActionsGeneric, HvActionGeneric } from "components";
 
 export type HvSnackbarContentWrapperProps = Omit<
   MuiSnackbarContentProps,
-  "variant" | "action"
+  "variant" | "action" | "classes"
 > &
   HvBaseProps & {
     /** The message to display. */
@@ -47,6 +47,7 @@ const HvSnackbarContentWrapper = forwardRef<
 >(
   (
     {
+      className,
       id,
       classes,
       label,
@@ -74,6 +75,11 @@ const HvSnackbarContentWrapper = forwardRef<
             classes?.message
           ),
         }}
+        className={clsx(
+          className,
+          classes?.[variant],
+          snackbarContentWrapperClasses[variant]
+        )}
         message={
           <StyledMessageSpan
             id={setId(id, "message")}

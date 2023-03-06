@@ -61,14 +61,6 @@ const mapVariant = (variant: HvButtonVariant): HvButtonVariant => {
   return variant;
 };
 
-const onFocusHandler = (event) => {
-  event.target.classList.add("HvIsFocusVisible");
-};
-
-const onBlurHandler = (event) => {
-  event.target.classList.remove("HvIsFocusVisible");
-};
-
 /**
  * Button component is used to trigger an action or event.
  */
@@ -90,10 +82,26 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       ...others
     }: HvButtonProps = props;
 
+    const onFocusHandler = (event) => {
+      event.target.classList.add("HvIsFocusVisible");
+      event.target.classList.add(buttonClasses.focusVisible);
+      if (classes?.focusVisible) {
+        event.target.classList.add(classes.focusVisible);
+      }
+    };
+
+    const onBlurHandler = (event) => {
+      event.target.classList.remove("HvIsFocusVisible");
+      event.target.classList.remove(buttonClasses.focusVisible);
+      if (classes?.focusVisible) {
+        event.target.classList.remove(classes.focusVisible);
+      }
+    };
+
     return (
       <StyledButton
         id={id}
-        className={clsx(className, buttonClasses.root)}
+        className={clsx(className, classes?.root, buttonClasses.root)}
         ref={ref}
         onClick={onClick}
         disabled={disabled}
@@ -108,7 +116,13 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         {...others}
       >
         <StyledContentDiv>
-          {startIcon && <StyledIconSpan>{startIcon}</StyledIconSpan>}
+          {startIcon && (
+            <StyledIconSpan
+              className={clsx(classes?.startIcon, buttonClasses.startIcon)}
+            >
+              {startIcon}
+            </StyledIconSpan>
+          )}
           {children && <StyledChildren>{children}</StyledChildren>}
         </StyledContentDiv>
       </StyledButton>

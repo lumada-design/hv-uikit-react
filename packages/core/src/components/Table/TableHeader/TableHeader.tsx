@@ -336,8 +336,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
           tableHeaderClasses.root,
           classes?.root,
           tableHeaderClasses[type],
-          classes && classes[type],
-
+          classes?.[type],
           groupColumnMostLeft &&
             clsx(
               tableHeaderClasses.groupColumnMostLeft,

@@ -1,10 +1,15 @@
 import clsx from "clsx";
-import { CardHeaderProps as MuiCardHeaderProps } from "@mui/material/CardHeader";
+import MuiCardHeader, {
+  CardHeaderProps as MuiCardHeaderProps,
+} from "@mui/material/CardHeader";
 import { HvBaseProps } from "../../../types";
-import { StyledHeader } from "./Header.styles";
 import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
+import { styles } from "./Header.styles";
+import { css } from "@emotion/css";
+import { HvThemeContext } from "providers";
+import { useContext } from "react";
 
-export type HvHeaderProps = MuiCardHeaderProps &
+export type HvHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
   HvBaseProps<HTMLDivElement, { title }> & {
     /** The renderable content inside the title slot of the header. */
     title: React.ReactNode;
@@ -27,20 +32,48 @@ export const HvHeader = ({
   onClick,
   ...others
 }: HvHeaderProps) => {
+  const { activeTheme } = useContext(HvThemeContext);
+
   return (
-    <StyledHeader
+    <MuiCardHeader
       title={title}
       subheader={subheader}
       action={icon}
       onClick={onClick}
-      className={clsx(classes?.root, cardHeaderClasses.root, className)}
-      $short={icon ? true : undefined}
+      className={clsx(
+        styles.root,
+        classes?.root,
+        cardHeaderClasses.root,
+        className
+      )}
       classes={{
         title: icon
-          ? clsx(cardHeaderClasses.titleShort, classes?.titleShort)
-          : clsx(cardHeaderClasses.title, classes?.title),
-        subheader: clsx(cardHeaderClasses.subheader, classes?.subheader),
-        action: clsx(cardHeaderClasses.action, classes?.action),
+          ? clsx(
+              styles.titleShort,
+              cardHeaderClasses.titleShort,
+              classes?.titleShort,
+              css({
+                ...activeTheme?.typography[activeTheme?.card.titleVariant],
+              })
+            )
+          : clsx(
+              styles.title,
+              cardHeaderClasses.title,
+              classes?.title,
+              css({
+                ...activeTheme?.typography[activeTheme?.card.titleVariant],
+              })
+            ),
+        subheader: clsx(
+          styles.subheader,
+          cardHeaderClasses.subheader,
+          classes?.subheader,
+          css({
+            ...activeTheme?.typography[activeTheme?.card.subheaderVariant],
+            color: activeTheme?.card.subheaderColor,
+          })
+        ),
+        action: clsx(styles.action, cardHeaderClasses.action, classes?.action),
         content: clsx(cardHeaderClasses.content, classes?.content),
       }}
       {...others}

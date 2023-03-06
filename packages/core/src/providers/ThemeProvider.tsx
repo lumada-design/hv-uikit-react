@@ -71,7 +71,7 @@ export const HvThemeProvider = ({
     setElementAttrs(
       pTheme.selected,
       pTheme.selectedMode,
-      pTheme.bgColor,
+      pTheme.styles,
       rootId
     );
   };

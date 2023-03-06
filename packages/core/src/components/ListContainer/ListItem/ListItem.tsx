@@ -137,7 +137,7 @@ export const HvListItem = ({
           listItemClasses.startAdornment,
           disabled && listItemClasses.disabled
         ),
-        classes?.startAdornment
+        clsx(classes?.startAdornment, disabled && classes?.disabled)
       ),
     [classes?.startAdornment, disabled, handleOnClick, selected, startAdornment]
   );
@@ -149,7 +149,7 @@ export const HvListItem = ({
           listItemClasses.endAdornment,
           disabled && listItemClasses.disabled
         ),
-        classes?.endAdornment
+        clsx(classes?.endAdornment, disabled && classes?.disabled)
       ),
     [classes?.endAdornment, endAdornment]
   );

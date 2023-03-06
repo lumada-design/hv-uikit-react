@@ -1,4 +1,16 @@
 export const CssBaseline = {
+  /* Clears input's clear and reveal buttons from IE */
+  "input[type=search]::-ms-clear": { display: "none", width: 0, height: 0 },
+  "input[type=search]::-ms-reveal": { display: "none", width: 0, height: 0 },
+
+  /* Clears input's clear button from Chrome */
+  'input[type="search"]::-webkit-search-decoration': { display: "none" },
+  'input[type="search"]::-webkit-search-cancel-button': { display: "none" },
+  'input[type="search"]::-webkit-search-results-button': { display: "none" },
+  'input[type="search"]::-webkit-search-results-decoration': {
+    display: "none",
+  },
+
   "*, ::before, ::after": {
     boxSizing: "border-box",
     borderWidth: "0",

@@ -7,6 +7,7 @@ import { CSSProperties } from "react";
 const flattenTokens = {
   ...tokens,
   colors: {
+    type: "light",
     backgroundColor: tokens.colors.light.atmo2,
     ...tokens.colors.common,
     ...tokens.colors.light,
@@ -61,6 +62,9 @@ export type HvThemeComponents = {
     outline: string;
     borderRadius: string;
     hoverColor: string;
+    titleVariant: keyof HvThemeTypography["typography"];
+    subheaderVariant: keyof HvThemeTypography["typography"];
+    subheaderColor: string;
   };
   tab: {
     padding: string;
@@ -75,6 +79,7 @@ export type HvThemeComponents = {
   dialog: {
     borderRadius: string;
     margin: string;
+    titleVariant: keyof HvThemeTypography["typography"];
   };
   baseCheckBox: {
     hoverColor: string;
@@ -222,6 +227,13 @@ export type HvThemeComponents = {
     rowExpandBackgroundColor: string;
     rowHoverColor: string;
     rowHoverBorderColor: string;
+  };
+  globalActions: {
+    sectionVariant: keyof HvThemeTypography["typography"];
+  };
+  emptyState: {
+    titleVariant: keyof HvThemeTypography["typography"];
+    titleMarginTop: string;
   };
 };
 

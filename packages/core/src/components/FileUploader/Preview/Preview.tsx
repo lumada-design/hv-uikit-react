@@ -10,7 +10,10 @@ import {
   StyledPreviewIcon,
 } from "./Preview.styles";
 
-export type HvFileUploaderPreviewProps = Omit<HvButtonProps, "children"> & {
+export type HvFileUploaderPreviewProps = Omit<
+  HvButtonProps,
+  "children" | "classes"
+> & {
   /**
    * Content that represents the preview of an uploaded file.
    */
@@ -38,6 +41,7 @@ export type HvFileUploaderPreviewProps = Omit<HvButtonProps, "children"> & {
  * of the button (when clickable) and the detection of image unloading.
  */
 export const HvFileUploaderPreview = ({
+  className,
   children,
   classes,
   disableOverlay = false,
@@ -56,6 +60,7 @@ export const HvFileUploaderPreview = ({
       <StyledButton
         icon
         className={clsx(
+          className,
           classes?.previewButton,
           fileUploaderPreviewClasses.previewButton
         )}

@@ -154,7 +154,14 @@ export const HvAvatar = ({
       {...others}
     >
       <StyledStatus
-        className={clsx(avatarClasses.status, classes?.status)}
+        className={clsx(
+          avatarClasses.status,
+          classes?.status,
+          avatarClasses[variant],
+          classes?.[variant],
+          avatarClasses[size],
+          classes?.[size]
+        )}
         style={statusInlineStyle}
         $variant={variant}
         $size={size}
@@ -172,7 +179,9 @@ export const HvAvatar = ({
             avatarClasses.root,
             classes?.root,
             avatarClasses.avatar,
-            classes?.avatar
+            classes?.avatar,
+            avatarClasses[size],
+            classes?.[size]
           )}
           style={inlineStyle}
           variant={variant}

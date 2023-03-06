@@ -1,12 +1,10 @@
+import { css } from "@emotion/css";
+import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
+import { HvBox } from "components";
 import { HvBaseProps } from "../../types";
 import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/tokens";
-import {
-  StyledRoot,
-  StyledContainer,
-  StyledBar,
-  StyledIcon,
-} from "./Card.styles";
+import { styles } from "./Card.styles";
 import cardClasses, { HvCardClasses } from "./cardClasses";
 
 export type HvCardProps = HvBaseProps & {
@@ -41,33 +39,57 @@ export const HvCard = ({
   selectable = false,
   selected = false,
   statusColor = "sema0",
-  bgcolor = "atmo1",
+  bgcolor,
   ...others
 }: HvCardProps) => {
   return (
-    <StyledRoot
+    <HvBox
       aria-selected={selectable ? selected : undefined}
       className={clsx(
+        styles.root,
+        bgcolor &&
+          css({
+            backgroundColor: theme.colors[bgcolor],
+          }),
         "HvIsCardGridElement",
         cardClasses.root,
         classes?.root,
         className,
-        selectable && clsx(cardClasses.selectable, classes?.selectable),
-        selected && clsx(cardClasses.selected, classes?.selected)
+        selectable &&
+          clsx(styles.selectable, cardClasses.selectable, classes?.selectable),
+        selected &&
+          clsx(styles.selected, cardClasses.selected, classes?.selected)
       )}
-      $selectable={selectable}
-      $selected={selected}
-      $bgcolor={bgcolor}
       {...others}
     >
-      <StyledContainer>
-        <StyledBar
-          className={clsx(cardClasses.semanticBar, classes?.semanticBar)}
-          $barColor={statusColor}
+      <div
+        className={clsx(
+          styles.semanticContainer,
+          cardClasses.semanticContainer,
+          classes?.semanticContainer
+        )}
+      >
+        <div
+          className={clsx(
+            styles.semanticBar,
+            css({
+              height: selected ? 4 : 2,
+              backgroundColor:
+                statusColor === "sema0"
+                  ? selected
+                    ? theme.colors.acce1
+                    : theme.colors.atmo4
+                  : theme.colors[statusColor],
+            }),
+            cardClasses.semanticBar,
+            classes?.semanticBar
+          )}
         />
-        <StyledIcon>{icon}</StyledIcon>
-      </StyledContainer>
+        <div className={clsx(styles.icon, cardClasses.icon, classes?.icon)}>
+          {icon}
+        </div>
+      </div>
       {children}
-    </StyledRoot>
+    </HvBox>
   );
 };

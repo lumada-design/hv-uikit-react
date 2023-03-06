@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import clsx from "clsx";
 import { RadioProps as MuiRadioProps } from "@mui/material";
-import { HvBaseProps, HvExtraProps } from "../../types";
+import { HvBaseProps } from "../../types";
 import { HvWarningText } from "components";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { useControlled, useUniqueId } from "hooks";
@@ -16,7 +16,7 @@ import radioClasses, { HvRadioClasses } from "./radioClasses";
 
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
-export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
+export type HvRadioProps = Omit<MuiRadioProps, "onChange" | "classes"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
     /**
      * Class names to be applied.
@@ -132,7 +132,7 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange"> &
      * @ignore
      */
     onBlur?: (event: React.FocusEvent<any>) => void;
-  } & HvExtraProps;
+  };
 
 /**
  * A Radio Button is a mechanism that allows user to select just an option from a group of options.

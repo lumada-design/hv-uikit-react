@@ -1,30 +1,29 @@
 import React, { useCallback, useContext, useRef } from "react";
 import clsx from "clsx";
-import { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
+import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { isNil } from "lodash";
-import { HvBaseProps, HvExtraProps } from "../../types";
-import {
-  StyledBackdrop,
-  StyledClose,
-  StyledDialog,
-  StyledPaper,
-} from "./Dialog.styles";
+import { HvBaseProps } from "../../types";
+import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
 import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { HvThemeContext } from "providers";
 import { withTooltip } from "hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
+import { css } from "@emotion/css";
 
-export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
+export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &
   HvBaseProps & {
     /** Id to be applied to the root node. */
     id?: string;
     /** Current state of the Dialog. */
     open?: boolean;
     /** Function executed on close. */
-    onClose?: (event: React.SyntheticEvent, reason?: string) => void;
+    onClose?: (
+      event: React.SyntheticEvent,
+      reason?: "escapeKeyDown" | "backdropClick"
+    ) => void;
     /** Element id that should be focus when the Dialog opens. */
     firstFocusable?: string;
     /** Title for the button close. */
@@ -35,7 +34,7 @@ export type HvDialogProps = Omit<MuiDialogProps, "fullScreen"> &
     disableBackdropClick?: boolean;
     /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvDialogClasses;
-  } & HvExtraProps;
+  };
 
 export const HvDialog = ({
   classes,
@@ -50,7 +49,7 @@ export const HvDialog = ({
   disableBackdropClick = false,
   ...others
 }: HvDialogProps) => {
-  delete others.fullScreen;
+  delete (others as any).fullScreen;
 
   const { activeTheme, selectedMode, rootId } = useContext(HvThemeContext);
 
@@ -60,9 +59,13 @@ export const HvDialog = ({
   }>({ first: undefined, last: undefined });
 
   // Because the `disableBackdropClick` property was deprecated in MUI5
-  // and we want to maintain that funcionality to the user we're wrapping
+  // and we want to maintain that functionality to the user we're wrapping
   // the onClose call here to make that check.
-  const wrappedClose = (event, reason = "", bypassValidation = false) => {
+  const wrappedClose = (
+    event,
+    bypassValidation: boolean = false,
+    reason?: "escapeKeyDown" | "backdropClick"
+  ) => {
     if (bypassValidation) {
       onClose?.(event, reason);
     } else if (!disableBackdropClick) {
@@ -111,7 +114,10 @@ export const HvDialog = ({
     }
     // Needed as this handler overrides the one in the material ui Modal.
     else if (isKeypress(event, keyboardCodes.Esc)) {
-      if ("onEscapeKeyDown" in others) {
+      if (
+        "onEscapeKeyDown" in others &&
+        typeof others.onEscapeKeyDown === "function"
+      ) {
         others.onEscapeKeyDown(event);
       }
 
@@ -119,7 +125,7 @@ export const HvDialog = ({
         // Swallow the event, in case someone is listening for the escape key on the body.
         event.stopPropagation();
 
-        wrappedClose(event, "escapeKeyDown", true);
+        wrappedClose(event, true, "escapeKeyDown");
       }
     }
   };
@@ -131,14 +137,14 @@ export const HvDialog = ({
     : closeButtonDisplay;
 
   return (
-    <StyledDialog
+    <MuiDialog
       container={document.getElementById(rootId || "") || document.body}
       className={clsx(dialogClasses.root, classes?.root, className)}
       id={id}
       ref={measuredRef}
       open={open}
       fullScreen={fullscreen}
-      onClose={(event, reason) => wrappedClose(event, reason)}
+      onClose={(event, reason) => wrappedClose(event, undefined, reason)}
       onKeyDown={keyDownHandler}
       fullWidth
       maxWidth={false}
@@ -155,24 +161,33 @@ export const HvDialog = ({
           />
         ),
       }}
+      classes={{ container: css({ position: "relative" }) }}
+      BackdropProps={{
+        classes: {
+          root: clsx(classes?.background, dialogClasses.background),
+        },
+      }}
       PaperComponent={(paperProps) => (
         <StyledPaper $fullscreen={fullscreen} {...paperProps} />
       )}
       PaperProps={{
         classes: {
-          root: fullscreen
-            ? clsx(dialogClasses.fullscreen, classes?.fullscreen)
-            : "",
+          root: clsx(
+            css({ position: "absolute" }),
+            classes?.paper,
+            dialogClasses.paper,
+            fullscreen && clsx(dialogClasses.fullscreen, classes?.fullscreen)
+          ),
         },
       }}
-      {...others}
       aria-modal
+      {...others}
     >
       <StyledClose
         id={setId(id, "close")}
         className={clsx(dialogClasses.closeButton, classes?.closeButton)}
         variant="secondaryGhost"
-        onClick={(event) => wrappedClose(event, undefined, true)}
+        onClick={(event) => wrappedClose(event, true, undefined)}
         aria-label={buttonTitle}
       >
         <CloseButtonTooltipWrapper />
@@ -184,6 +199,6 @@ export const HvDialog = ({
               c && React.cloneElement(c as React.ReactElement, { fullscreen })
           )
         : children}
-    </StyledDialog>
+    </MuiDialog>
   );
 };

@@ -506,7 +506,7 @@ export const HvDropdown = (props: HvDropdownProps) => {
       disabled={disabled}
       readOnly={readOnly}
       required={required}
-      className={clsx(dropdownClasses.root, className, classes?.root)}
+      className={clsx(className, dropdownClasses.root, classes?.root)}
       $selectionDisabled={disabled}
       {...others}
     >

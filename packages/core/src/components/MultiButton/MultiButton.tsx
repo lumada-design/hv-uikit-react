@@ -27,19 +27,34 @@ export const HvMultiButton = ({
 }: HvMultiButtonProps) => {
   return (
     <StyledRoot
-      className={clsx(className, multiButtonClasses.root, classes?.root)}
+      className={clsx(
+        className,
+        multiButtonClasses.root,
+        classes?.root,
+        vertical && clsx(classes?.vertical, multiButtonClasses.vertical)
+      )}
       $vertical={vertical}
       {...others}
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           const childIsSelected = !!child.props.selected;
+
           const btn = cloneElement(child as React.ReactElement, {
             variant,
             disabled: disabled || child.props.disabled,
             "aria-pressed": childIsSelected,
+            className: clsx(
+              child.props.className,
+              multiButtonClasses.button,
+              classes?.button,
+              childIsSelected &&
+                clsx(multiButtonClasses.selected, classes?.selected)
+            ),
           });
+
           const StyledBtn = StyledButton(btn);
+
           return React.createElement(StyledBtn);
         }
       })}

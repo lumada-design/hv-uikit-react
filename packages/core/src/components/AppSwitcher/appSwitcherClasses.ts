@@ -14,6 +14,9 @@ export type HvAppSwitcherClasses = {
   open?: string;
   closed?: string;
   title?: string;
+  single?: string;
+  dual?: string;
+  fluid?: string;
 };
 
 const classKeys: string[] = [
@@ -30,6 +33,9 @@ const classKeys: string[] = [
   "open",
   "closed",
   "title",
+  "single",
+  "dual",
+  "fluid",
 ];
 
 const appSwitcherClasses = getClasses<HvAppSwitcherClasses>(

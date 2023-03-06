@@ -15,10 +15,10 @@ import {
   StyledLabel,
   StyledSwitchContainer,
 } from "./Switch.styles";
-import { HvBaseProps, HvExtraProps } from "../../types";
+import { HvBaseProps } from "../../types";
 import switchClasses, { HvSwitchClasses } from "./switchClasses";
 
-export type HvSwitchProps = Omit<MuiSwitchProps, "onChange"> &
+export type HvSwitchProps = Omit<MuiSwitchProps, "onChange" | "classes"> &
   HvBaseProps<HTMLInputElement, { onChange }> & {
     /**
      * Class names to be applied.
@@ -119,7 +119,7 @@ export type HvSwitchProps = Omit<MuiSwitchProps, "onChange"> &
      * Properties passed on to the input element.
      */
     inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-  } & HvExtraProps;
+  };
 
 /**
  * A Switch is <b>binary</b> and work as a digital on/off button.

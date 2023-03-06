@@ -10,7 +10,7 @@ import { HvThemeContext } from "../../providers";
 import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 
-export type HvTagProps = Omit<MuiChipProps, "color"> &
+export type HvTagProps = Omit<MuiChipProps, "color" | "classes"> &
   HvBaseProps<HTMLDivElement, { children }> & {
     /** Inline styles to be applied to the root element. */
     style?: CSSProperties;
@@ -93,7 +93,7 @@ export const HvTag = ({
         classes={{
           startIcon: clsx(tagClasses.tagButton, classes?.tagButton),
           focusVisible: clsx(tagClasses.focusVisible, classes?.focusVisible),
-          primary: clsx(tagClasses.primaryButton, classes?.primaryButton),
+          root: clsx(tagClasses.button, classes?.button),
         }}
         aria-label={deleteButtonArialLabel}
         tabIndex={tabIndex}

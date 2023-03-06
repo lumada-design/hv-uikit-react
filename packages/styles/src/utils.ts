@@ -54,6 +54,17 @@ export const mergeTheme = (...objects) => {
   }, {});
 };
 
+export type HvParsedThemeStyles = {
+  bgColor: string;
+  color: string;
+  accentColor: string;
+  colorScheme: string;
+  fontSize: string;
+  letterSpacing: string;
+  lineHeight: string;
+  fontWeight: string;
+};
+
 export const parseTheme = (
   themes: { [key: string]: HvThemeStructure },
   theme: string = "",
@@ -62,7 +73,7 @@ export const parseTheme = (
   selected: string;
   selectedMode: string;
   colorModes: string[];
-  bgColor: string;
+  styles: HvParsedThemeStyles;
 } => {
   const names = Object.keys(themes);
   const selected = names.includes(theme) ? theme : names[0];
@@ -70,9 +81,27 @@ export const parseTheme = (
   const selectedMode = colorModes.includes(colorMode)
     ? colorMode
     : colorModes[0];
-  const bgColor = themes[selected].colors.modes[selectedMode].backgroundColor;
+  const styles: HvParsedThemeStyles = {
+    bgColor: themes[selected].colors.modes[selectedMode].backgroundColor,
+    color: themes[selected].colors.modes[selectedMode].acce1,
+    accentColor: themes[selected].colors.modes[selectedMode].acce1,
+    colorScheme: themes[selected].colors.modes[selectedMode].type,
+    fontSize: (typeof themes[selected].typography.body.fontSize === "string"
+      ? themes[selected].typography.body.fontSize
+      : `${themes[selected].typography.body.fontSize}px`) as string,
+    letterSpacing: (typeof themes[selected].typography.body.letterSpacing ===
+    "string"
+      ? themes[selected].typography.body.letterSpacing
+      : `${themes[selected].typography.body.letterSpacing}px`) as string,
+    lineHeight: (typeof themes[selected].typography.body.lineHeight === "string"
+      ? themes[selected].typography.body.lineHeight
+      : `${themes[selected].typography.body.lineHeight}px`) as string,
+    fontWeight: (typeof themes[selected].typography.body.fontWeight === "string"
+      ? themes[selected].typography.body.fontWeight
+      : `${themes[selected].typography.body.fontWeight}`) as string,
+  };
 
-  return { selected, selectedMode, colorModes, bgColor };
+  return { selected, selectedMode, colorModes, styles };
 };
 
 export const getThemesList = (themes: object) => {

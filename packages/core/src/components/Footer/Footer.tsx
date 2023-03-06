@@ -45,7 +45,10 @@ export const HvFooter = (props: HvFooterProps) => {
       >
         {name}
       </StyledName>
-      <StyledRightContainer $breakpoints={muiTheme.breakpoints}>
+      <StyledRightContainer
+        className={clsx(footerClasses.rightContainer, classes?.rightContainer)}
+        $breakpoints={muiTheme.breakpoints}
+      >
         <StyledCopyright
           $breakpoints={muiTheme.breakpoints}
           className={clsx(footerClasses.copyright, classes?.copyright)}

@@ -3,6 +3,7 @@ import {
   HvBaseTheme,
   colors,
   HvThemeColorModeStructure,
+  HvParsedThemeStyles,
 } from "@hitachivantara/uikit-styles";
 import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
 
@@ -12,7 +13,7 @@ import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
 export const setElementAttrs = (
   theme: string,
   mode: string,
-  bgColor: string,
+  styles: HvParsedThemeStyles,
   elementId?: string
 ) => {
   const element =
@@ -20,7 +21,16 @@ export const setElementAttrs = (
 
   element.setAttribute(`data-theme`, theme);
   element.setAttribute(`data-color-mode`, mode);
-  element.style.backgroundColor = bgColor;
+
+  // Set default properties for all components to inherit
+  element.style.backgroundColor = styles.bgColor;
+  element.style.colorScheme = styles.colorScheme;
+  element.style.accentColor = styles.accentColor;
+  element.style.color = styles.color;
+  element.style.fontSize = styles.fontSize;
+  element.style.fontWeight = styles.fontWeight;
+  element.style.lineHeight = styles.lineHeight;
+  element.style.letterSpacing = styles.letterSpacing;
 };
 
 /**

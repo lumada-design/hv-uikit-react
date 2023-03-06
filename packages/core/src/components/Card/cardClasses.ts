@@ -5,9 +5,18 @@ export type HvCardClasses = {
   selectable?: string;
   selected?: string;
   semanticBar?: string;
+  semanticContainer?: string;
+  icon?: string;
 };
 
-const classKeys: string[] = ["root", "selectable", "selected", "semanticBar"];
+const classKeys: string[] = [
+  "root",
+  "selectable",
+  "selected",
+  "semanticBar",
+  "semanticContainer",
+  "icon",
+];
 
 const cardClasses = getClasses<HvCardClasses>(classKeys, "HvCard");
 

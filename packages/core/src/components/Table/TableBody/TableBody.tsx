@@ -101,7 +101,6 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
                 }
               })
             : children}
-          {/* {children} */}
         </TableBody>
       </TableSectionContext.Provider>
     );

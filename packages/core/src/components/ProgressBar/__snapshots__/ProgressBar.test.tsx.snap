@@ -10,7 +10,7 @@ exports[`ProgressBar > should render correctly 1`] = `
     role="progressbar"
   >
     <div
-      class="css-1ezqlcy-StyledProgressContainer e1eucrrc3"
+      class="HvProgressBar-progressContainer css-1ezqlcy-StyledProgressContainer e1eucrrc3"
     >
       <p
         class="HvProgressBar-progressBarLabel e1eucrrc2 HvTypography-root HvTypography-caption2 css-1cy1v53-getStyledComponent-StyledValue e1tnpalo0"
@@ -19,7 +19,7 @@ exports[`ProgressBar > should render correctly 1`] = `
         0%
       </p>
       <div
-        class="css-1baf8nw-StyledProgressBarContainer e1eucrrc1"
+        class="HvProgressBar-progressBarContainer css-1baf8nw-StyledProgressBarContainer e1eucrrc1"
       >
         <div
           class="HvProgressBar-progressBar css-1q42i5j-StyledProgressBar e1eucrrc0"

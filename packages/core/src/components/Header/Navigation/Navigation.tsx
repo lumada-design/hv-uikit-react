@@ -31,7 +31,8 @@ export const HvNavigation = ({
   selected,
   onClick,
   className,
-  classes = {},
+  classes,
+  ...others
 }: HvNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
 
@@ -48,6 +49,7 @@ export const HvNavigation = ({
             headerNavigationClasses.root,
             classes?.root
           )}
+          {...others}
         >
           <HvMenuBar data={data} type="menubar" onClick={handleClick} />
         </StyledNav>

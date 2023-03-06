@@ -4,7 +4,7 @@ import { HvBaseProps } from "../../../types";
 import { StyledActions } from "./Actions.styles";
 import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
 
-export type HvActionsProps = MuiDialogActionsProps &
+export type HvActionsProps = Omit<MuiDialogActionsProps, "classes"> &
   HvBaseProps & {
     /** Set the dialog to fullscreen mode. */
     fullscreen?: boolean;

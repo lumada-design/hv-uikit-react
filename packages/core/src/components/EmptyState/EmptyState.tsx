@@ -1,15 +1,16 @@
 import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
-import React from "react";
+import React, { useContext } from "react";
 import { HvBaseProps } from "../../types";
 import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 import {
   StyledContainer,
-  StyledIconContainer,
   StyledRoot,
   StyledTextContainer,
   StyledTypography,
 } from "./EmptyState.styles";
+import { HvTypographyProps } from "components";
+import { HvThemeContext } from "index";
 
 export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** Icon to be presented. */
@@ -28,16 +29,18 @@ export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
 export const HvEmptyState = (props: HvEmptyStateProps) => {
+  const { activeTheme } = useContext(HvThemeContext);
+
   const muiTheme = useTheme();
 
-  const renderNode = (node, className, type, variant) =>
+  const renderNode = (
+    type: "action" | "message" | "title",
+    variant?: HvTypographyProps["variant"],
+    node?: string | React.ReactNode,
+    className?: string
+  ) =>
     node && (
-      <StyledTypography
-        $breakpoints={muiTheme.breakpoints}
-        $type={type}
-        variant={variant}
-        className={className}
-      >
+      <StyledTypography $type={type} variant={variant} className={className}>
         {node}
       </StyledTypography>
     );
@@ -50,17 +53,26 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
       {...others}
     >
       <StyledContainer
+        className={clsx(
+          emptyStateClasses.container,
+          classes?.container,
+          !!(message && !(title || action)) &&
+            clsx(
+              emptyStateClasses.containerMessageOnly,
+              classes?.containerMessageOnly
+            )
+        )}
         $breakpoints={muiTheme.breakpoints}
         $messageOnly={!!(message && !(title || action))}
       >
-        <StyledIconContainer
+        <div
           className={clsx(
             emptyStateClasses.iconContainer,
             classes?.iconContainer
           )}
         >
           {icon}
-        </StyledIconContainer>
+        </div>
         <StyledTextContainer
           $breakpoints={muiTheme.breakpoints}
           className={clsx(
@@ -69,22 +81,22 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
           )}
         >
           {renderNode(
-            title,
-            clsx(emptyStateClasses.titleContainer, classes?.titleContainer),
             "title",
-            "title4"
+            activeTheme?.emptyState.titleVariant,
+            title,
+            clsx(emptyStateClasses.titleContainer, classes?.titleContainer)
           )}
           {renderNode(
-            message,
-            clsx(emptyStateClasses.messageContainer, classes?.messageContainer),
             "message",
-            "body"
+            "body",
+            message,
+            clsx(emptyStateClasses.messageContainer, classes?.messageContainer)
           )}
           {renderNode(
-            action,
-            clsx(emptyStateClasses.actionContainer, classes?.actionContainer),
             "action",
-            "body"
+            "body",
+            action,
+            clsx(emptyStateClasses.actionContainer, classes?.actionContainer)
           )}
         </StyledTextContainer>
       </StyledContainer>

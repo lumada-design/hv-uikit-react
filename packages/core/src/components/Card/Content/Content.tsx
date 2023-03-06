@@ -1,10 +1,12 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types";
-import { StyledContent } from "./Content.styles";
-import { CardContentProps as MuiCardContentProps } from "@mui/material/CardContent";
+import { styles } from "./Content.styles";
+import MuiCardContent, {
+  CardContentProps as MuiCardContentProps,
+} from "@mui/material/CardContent";
 import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 
-export type HvContentProps = MuiCardContentProps &
+export type HvContentProps = Omit<MuiCardContentProps, "classes"> &
   HvBaseProps & {
     /** Id to be applied to the root node. */
     id?: string;
@@ -23,13 +25,18 @@ export const HvContent = ({
   ...others
 }: HvContentProps) => {
   return (
-    <StyledContent
+    <MuiCardContent
       id={id}
-      className={clsx(classes?.content, cardContentClasses.content, className)}
+      className={clsx(
+        styles.content,
+        classes?.content,
+        cardContentClasses.content,
+        className
+      )}
       onClick={onClick}
       {...others}
     >
       {children}
-    </StyledContent>
+    </MuiCardContent>
   );
 };

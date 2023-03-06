@@ -651,8 +651,11 @@ export const HvTagsInput = ({
                 clsx(
                   tagsInputClasses.singleLine,
                   classes?.singleLine,
-                  value.length === 0 && tagsInputClasses.tagInputRootEmpty,
-                  value.length === 0 && classes?.tagInputRootEmpty
+                  value.length === 0 &&
+                    clsx(
+                      tagsInputClasses.tagInputRootEmpty,
+                      classes?.tagInputRootEmpty
+                    )
                 )
             )}
             classes={{

@@ -5,9 +5,16 @@ export type HvFooterClasses = {
   name?: string;
   copyright?: string;
   separator?: string;
+  rightContainer?: string;
 };
 
-const classKeys: string[] = ["root", "name", "copyright", "separator"];
+const classKeys: string[] = [
+  "root",
+  "name",
+  "copyright",
+  "separator",
+  "rightContainer",
+];
 
 const footerClasses = getClasses<HvFooterClasses>(classKeys, "HvFooter");
 

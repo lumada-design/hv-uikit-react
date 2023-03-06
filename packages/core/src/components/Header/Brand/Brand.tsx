@@ -13,13 +13,24 @@ export type HvBrandProps = HvBaseProps & {
 /**
  * Header component is used to render a header bar with logo and brand name, navigation and actions.
  */
-export const HvBrand = ({ classes, logo, name, className }: HvBrandProps) => {
+export const HvBrand = ({
+  classes,
+  logo,
+  name,
+  className,
+  ...others
+}: HvBrandProps) => {
   return (
     <BrandRoot
       className={clsx(classes?.root, headerBrandClasses.root, className)}
+      {...others}
     >
       {logo}
-      {logo && name && <BrandSeparator />}
+      {logo && name && (
+        <BrandSeparator
+          className={clsx(classes?.separator, headerBrandClasses.separator)}
+        />
+      )}
       {name && <HvTypography variant="label">{name}</HvTypography>}
     </BrandRoot>
   );

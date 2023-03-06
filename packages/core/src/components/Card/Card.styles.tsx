@@ -1,33 +1,21 @@
-import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBox } from "components";
 import { outlineStyles } from "utils";
-import { transientOptions } from "utils/transientOptions";
-import cardClasses from "./cardClasses";
 
-const getColor = (c: string): string => theme.colors[c];
-
-export const StyledRoot = styled(
-  HvBox,
-  transientOptions
-)(({ $selectable, $selected, $bgcolor }) => ({
-  overflow: "visible",
-  position: "relative",
-  backgroundColor: getColor($bgcolor),
-  outline: theme.card.outline,
-  borderRadius: theme.card.borderRadius,
-  "&.focus-visible": {
-    ...outlineStyles,
-  },
-  "&:focus": {
-    outline: "none",
-  },
-  ...($selectable && {
-    "&:hover": {
-      outline: `1px solid ${theme.card.hoverColor}`,
+export const styles = {
+  root: css({
+    overflow: "visible",
+    position: "relative",
+    outline: theme.card.outline,
+    borderRadius: theme.card.borderRadius,
+    "&.focus-visible": {
+      ...outlineStyles,
+    },
+    "&:focus": {
+      outline: "none",
     },
   }),
-  ...($selected && {
+  selected: css({
     outline: `1px solid ${theme.colors.acce1}`,
     "&:hover": {
       outline: `1px solid ${theme.colors.acce1}`,
@@ -35,38 +23,26 @@ export const StyledRoot = styled(
     "&:focus": {
       outline: `1px solid ${theme.colors.acce1}`,
     },
-    [`& .${cardClasses.semanticBar}`]: {
-      height: 4,
-    },
-    "& .sema0": {
-      backgroundColor: theme.colors.acce1,
+  }),
+  selectable: css({
+    "&:hover": {
+      outline: `1px solid ${theme.card.hoverColor}`,
     },
   }),
-}));
-
-export const StyledContainer = styled("div")({
-  position: "relative",
-  "& > *": {
-    position: "absolute",
-    zIndex: 1,
-  },
-});
-
-export const StyledBar = styled(
-  "div",
-  transientOptions
-)(({ $barColor }: { $barColor: string }) => ({
-  width: "100%",
-  height: 2,
-  top: -1,
-  right: 0,
-  backgroundColor: theme.colors[$barColor],
-  ...($barColor === "sema0" && {
-    backgroundColor: theme.colors.atmo4,
+  semanticContainer: css({
+    position: "relative",
+    "& > *": {
+      position: "absolute",
+      zIndex: 1,
+    },
   }),
-}));
-
-export const StyledIcon = styled("div")({
-  top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
-  right: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
-});
+  icon: css({
+    top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
+    right: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
+  }),
+  semanticBar: css({
+    width: "100%",
+    top: -1,
+    right: 0,
+  }),
+};

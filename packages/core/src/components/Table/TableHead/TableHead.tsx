@@ -59,7 +59,13 @@ export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
     return (
       <TableSectionContext.Provider value={tableSectionContext}>
         <TableHead
-          className={clsx(tableHeadClasses.root, classes?.root, className)}
+          className={clsx(
+            tableHeadClasses.root,
+            classes?.root,
+            className,
+            stickyHeader &&
+              clsx(classes?.stickyHeader, tableHeadClasses.stickyHeader)
+          )}
           ref={externalRef}
           role={Component === defaultComponent ? null : "rowgroup"}
           $stickyHeader={stickyHeader}

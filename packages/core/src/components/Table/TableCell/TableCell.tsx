@@ -307,8 +307,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
           tableCellClasses.root,
           classes?.root,
           tableCellClasses[type],
-          classes && classes[type],
-
+          classes?.[type],
           align !== "inherit" &&
             clsx(
               tableCellClasses[`align${capitalize(align)}`],
@@ -319,14 +318,12 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
               tableCellClasses[`variant${capitalize(variant)}`],
               classes?.[`variant${capitalize(variant)}`]
             ),
-
           tableContext.variant === "listrow" &&
             clsx(tableCellClasses.variantList, classes?.variantList),
           tableContext.variant === "listrow" &&
             type !== "body" &&
             clsx(tableCellClasses.variantListHead, classes?.variantListHead),
           sorted && clsx(tableCellClasses.sorted, classes?.sorted),
-
           stickyColumn &&
             clsx(tableCellClasses.stickyColumn, classes?.stickyColumn),
           stickyColumnMostLeft &&
@@ -339,7 +336,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
               tableCellClasses.stickyColumnLeastRight,
               classes?.stickyColumnLeastRight
             ),
-
           groupColumnMostLeft &&
             clsx(
               tableCellClasses.groupColumnMostLeft,
@@ -350,7 +346,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
               tableCellClasses.groupColumnMostRight,
               classes?.groupColumnMostRight
             ),
-
           resizable && clsx(tableCellClasses.resizable, classes?.resizable),
           resizing && clsx(tableCellClasses.resizing, classes?.resizing)
         )}
