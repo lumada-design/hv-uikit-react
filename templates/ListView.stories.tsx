@@ -1,7 +1,7 @@
-import Form from "./Form";
+import ListView from "./ListView";
 
 export default {
-  title: "Templates/Form",
+  title: "Templates/ListView",
   parameters: {
     docs: {
       source: {
@@ -11,4 +11,4 @@ export default {
   },
 };
 
-export const Main = () => <Form />;
+export const Main = () => <ListView />;
