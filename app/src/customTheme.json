@@ -1,0 +1,12 @@
+{
+  "name": "custom-theme",
+  "baseColorMode": "blue",
+  "colors": {
+    "modes": {
+      "blue": {
+        "backgroundColor": "#fbfcfc",
+        "acce1": "#1a6bc8"
+      }
+    }
+  }
+}
