@@ -45,6 +45,7 @@ export const CardView = ({ instance }: CarViewProps) => {
             icon={getStatusIcon(
               row?.original?.statusColor as HvSemanticColorKeys
             )}
+            selectable
           >
             <HvCardHeader title={row?.values?.name} />
             <div

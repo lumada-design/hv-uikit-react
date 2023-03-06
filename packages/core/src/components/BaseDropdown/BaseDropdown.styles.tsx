@@ -153,6 +153,7 @@ export const StyledDropDownXS = styled(
 export const StyledContainer = styled("div")({
   zIndex: theme.zIndices.tooltip,
   width: "auto",
+  fontFamily: theme.fontFamily.body,
 });
 
 export const StyledExtension = styled(

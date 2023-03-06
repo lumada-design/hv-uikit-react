@@ -1,10 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
 import {
   HvProvider,
   HvThemeContext,
   HvTypography,
+  // @ts-ignore
 } from "@hitachivantara/uikit-react-core";
 import {
   StyledGroup,
@@ -36,7 +37,7 @@ const ColorsGroup = ({
   return (
     <div>
       {Object.keys(themeColors[selectedTheme]).map((group) => (
-        <>
+        <div key={group}>
           <StyledGroup>
             <div>
               <StyledGroupName variant="title2">
@@ -45,7 +46,7 @@ const ColorsGroup = ({
               <StyledColors>
                 {Object.values(themeColors[selectedTheme][group]).map(
                   (color, idx) => (
-                    <>
+                    <React.Fragment key={color as string}>
                       <div
                         style={{
                           width: 0,
@@ -75,13 +76,13 @@ const ColorsGroup = ({
                           </HvTypography>
                         </StyledColorName>
                       </StyledColorContainer>
-                    </>
+                    </React.Fragment>
                   )
                 )}
               </StyledColors>
             </div>
           </StyledGroup>
-        </>
+        </div>
       ))}
     </div>
   );

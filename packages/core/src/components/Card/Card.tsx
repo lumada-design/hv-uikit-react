@@ -51,10 +51,10 @@ export const HvCard = ({
       aria-selected={selectable ? selected : undefined}
       className={clsx(
         styles.root,
-        bgcolor &&
-          css({
-            backgroundColor: theme.colors[bgcolor],
-          }),
+        css({
+          backgroundColor:
+            (bgcolor && theme.colors[bgcolor]) || theme.card.backgroundColor,
+        }),
         "HvIsCardGridElement",
         cardClasses.root,
         classes?.root,

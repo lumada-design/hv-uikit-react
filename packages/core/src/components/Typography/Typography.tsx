@@ -141,7 +141,7 @@ const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
       ...($variant === "placeholderText" && {
         ...(theme.typography.placeholderText as CSSProperties),
       }),
-      color: theme.colors.acce1,
+      fontFamily: theme.fontFamily.body,
       // ADDED PROPS
       ...($link && {
         color: theme.colors.acce2,

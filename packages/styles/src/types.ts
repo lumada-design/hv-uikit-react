@@ -62,6 +62,7 @@ export type HvThemeComponents = {
     outline: string;
     borderRadius: string;
     hoverColor: string;
+    backgroundColor: string;
     titleVariant: keyof HvThemeTypography["typography"];
     subheaderVariant: keyof HvThemeTypography["typography"];
     subheaderColor: string;
