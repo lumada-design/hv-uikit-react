@@ -235,7 +235,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     outline: "none",
     borderRadius: "0px",
     hoverColor: theme.colors.atmo4,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: "transparent",
     titleVariant: "title3",
     subheaderVariant: "body",
     subheaderColor: theme.colors.acce1,

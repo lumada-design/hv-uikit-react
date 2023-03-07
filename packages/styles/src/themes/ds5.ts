@@ -177,7 +177,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     outline: `1px solid ${theme.colors.atmo4}`,
     borderRadius: "0px 0px 6px 6px",
     hoverColor: theme.colors.acce2,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: "transparent",
     titleVariant: "label",
     subheaderVariant: "caption1",
     subheaderColor: theme.colors.acce4,

@@ -9,7 +9,7 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import { setElementAttrs } from "utils";
-import { HvCustomizedTheme } from "types/theme";
+import { HvCustomizedTheme } from "../types/theme";
 
 interface HvThemeContextValue {
   themes: (HvBaseTheme | string)[];
