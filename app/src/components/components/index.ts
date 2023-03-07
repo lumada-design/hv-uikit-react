@@ -15,6 +15,7 @@ export * from "./Icons";
 export * from "./Input";
 export * from "./Pagination";
 export * from "./Radio";
+export * from "./Snackbars";
 export * from "./Switch";
 export * from "./Tags";
 export * from "./TagsInput";

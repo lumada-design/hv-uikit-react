@@ -1,4 +1,4 @@
-import { HvBox, HvSnackbar, theme } from "@hitachivantara/uikit-react-core";
+import { HvBox, theme } from "@hitachivantara/uikit-react-core";
 import { CSSProperties } from "react";
 import {
   Buttons,
@@ -23,6 +23,7 @@ import {
   Dialogs,
   DropDownMenu,
   Switch,
+  Snackbars,
 } from "components/components";
 
 const styles = {
@@ -34,15 +35,7 @@ const styles = {
 const App = () => {
   return (
     <HvBox sx={styles}>
-      <HvSnackbar
-        open={true}
-        variant={"default"}
-        label={"This is a snackbar"}
-        transitionDirection={"left"}
-        showIcon={true}
-        transitionDuration={300}
-        autoHideDuration={5000}
-      />
+      <Snackbars />
       <Typography />
       <BaseDropdown />
       <DotPagination />
