@@ -1,13 +1,14 @@
 import { useContext, MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { Menu } from "@hitachivantara/uikit-react-icons";
+import { Alert, Menu } from "@hitachivantara/uikit-react-icons";
 import {
   HvHeader,
   HvHeaderBrand,
   HvHeaderActions,
   HvHeaderNavigation,
   HvButton,
+  HvBadge,
 } from "@hitachivantara/uikit-react-core";
 
 import HitachiLogo from "assets/HitachiLogo";
@@ -52,6 +53,13 @@ export const Header = () => {
 
       {isMdUp && (
         <HvHeaderActions>
+          <HvBadge
+            id="badge7"
+            showCount
+            count={8}
+            icon={<Alert />}
+            style={{ marginRight: 10 }}
+          />
           <ThemeSwitcher />
         </HvHeaderActions>
       )}

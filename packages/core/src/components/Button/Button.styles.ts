@@ -64,7 +64,6 @@ export const StyledButton = styled(
     height: "32px",
     borderRadius: theme.button.borderRadius,
     padding: theme.button.padding,
-    fontFamily: theme.fontFamily.body,
 
     ...($overrideIconColors &&
       $variant === "primary" && {

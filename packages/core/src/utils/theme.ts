@@ -31,6 +31,7 @@ export const setElementAttrs = (
   element.style.fontWeight = styles.fontWeight;
   element.style.lineHeight = styles.lineHeight;
   element.style.letterSpacing = styles.letterSpacing;
+  element.style.fontFamily = styles.fontFamily;
 };
 
 /**
