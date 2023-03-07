@@ -14,7 +14,7 @@ import {
 import HitachiLogo from "assets/HitachiLogo";
 import { NavigationContext } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
-import { ThemeSwitcher } from "../../common/ThemeSwitcher";
+// import { ThemeSwitcher } from "../../common/ThemeSwitcher";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const Header = () => {
   };
 
   return (
-    <HvHeader>
+    <HvHeader position="relative">
       {!isMdUp && (
         <div>
           <HvButton variant="primaryGhost" icon>
@@ -60,7 +60,7 @@ export const Header = () => {
             icon={<Alert />}
             style={{ marginRight: 10 }}
           />
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
         </HvHeaderActions>
       )}
     </HvHeader>
