@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import { HvBox } from "components";
