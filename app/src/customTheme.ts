@@ -13,6 +13,11 @@ const customTheme: HvProviderProps["theme"] = {
         sema2: "#7699b8",
         sema3: "#d9905f",
         sema4: "#bf6060",
+        sema7: "#a4aeba",
+        sema8: "#b2bda6",
+        sema9: "#d19090",
+        acce2: "#536f8f",
+        acce2h: "#76a6db",
       },
     },
   },
@@ -40,6 +45,14 @@ const customTheme: HvProviderProps["theme"] = {
     secondLevelBackgroundColor: "#c7b69f",
     hoverColor: "#e6d5be",
     height: "52px",
+  },
+  bulkActions: {
+    backgroundColor: "#ebe4da",
+    anySelectedBackgroundColor: "#c9bdab",
+  },
+  table: {
+    selectedRowBackgroundColor: "#c9bdab",
+    rowHoverColor: "#ebe4da",
   },
 };
 

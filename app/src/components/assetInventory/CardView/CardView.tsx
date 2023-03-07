@@ -38,13 +38,14 @@ export const CardView = ({ instance }: CarViewProps) => {
       {instance.page.map((row) => {
         return (
           <HvCard
-            bgcolor="atmo1"
+            // bgcolor="atmo1"
             key={`${row?.values?.name}-row`}
             style={{ width: "100%" }}
             statusColor={row?.original?.statusColor}
             icon={getStatusIcon(
               row?.original?.statusColor as HvSemanticColorKeys
             )}
+            selected={instance.selectedFlatRows.some((r) => r.id === row.id)}
             selectable
           >
             <HvCardHeader title={row?.values?.name} />
