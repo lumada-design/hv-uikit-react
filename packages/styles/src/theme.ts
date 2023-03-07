@@ -55,6 +55,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     outline: "string",
     borderRadius: "string",
     hoverColor: "string",
+    backgroundColor: "string",
     titleVariant: "string",
     subheaderVariant: "string",
     subheaderColor: "string",

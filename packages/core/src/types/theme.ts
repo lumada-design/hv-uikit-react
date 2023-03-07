@@ -29,6 +29,10 @@ export type HvTheme = {
    * `"dawn"` will be used as default if no value is provided.
    */
   baseColorMode?: HvThemeColorMode | string;
+  /**
+   *
+   */
+  inheritColorModes?: boolean;
 } & HvThemeCustomizationProps;
 
 // Theme customization

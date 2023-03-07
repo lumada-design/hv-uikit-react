@@ -5,7 +5,6 @@ import { transientOptions } from "utils/transientOptions";
 
 const labelBaseStyle = {
   ...theme.typography.label,
-  fontFamily: theme.fontFamily.body,
   padding: "0 5px",
   color: theme.colors.atmo1,
 };

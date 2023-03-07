@@ -49,7 +49,6 @@ export const StyledTextContainer = styled(
   background: "transparent",
   maxWidth: "510px",
   overflow: "hidden",
-  fontFamily: theme.fontFamily.body,
   [$breakpoints.up("sm")]: {
     marginLeft: theme.space.xs,
   },

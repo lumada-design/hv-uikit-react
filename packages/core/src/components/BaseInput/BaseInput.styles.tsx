@@ -108,6 +108,7 @@ export const StyledInput = styled(
       borderRadius: "2px",
       border: `1px solid ${theme.baseInput.borderColor}`,
       backgroundColor: theme.colors.atmo1,
+      fontFamily: theme.fontFamily.body,
 
       ...($invalid && {
         borderColor: theme.colors.sema4,

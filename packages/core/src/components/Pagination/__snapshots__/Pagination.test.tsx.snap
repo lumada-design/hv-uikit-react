@@ -31,7 +31,7 @@ exports[`Pagination > should render correctly 1`] = `
                 class="HvBaseDropdown-selection hv-uikit-css-19txgg7-StyledSelection eapzthe6"
               >
                 <p
-                  class="HvTypography-root HvTypography-body hv-uikit-css-11nzje6-getStyledComponent e1tnpalo0"
+                  class="HvTypography-root HvTypography-body hv-uikit-css-y01gvs-getStyledComponent e1tnpalo0"
                 >
                   1
                 </p>
@@ -149,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root eryso6g0 hv-uikit-css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  hv-uikit-css-15lpeyl-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  hv-uikit-css-e8pzyh-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Current page"
@@ -187,7 +187,7 @@ exports[`Pagination > should render correctly 1`] = `
               </div>
               <p
                 aria-relevant="additions text"
-                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body hv-uikit-css-1bjvj2l-getStyledComponent-StyledTypography e1tnpalo0"
+                class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body hv-uikit-css-1usl12-getStyledComponent-StyledTypography e1tnpalo0"
                 id="hvinput9-error"
                 role="status"
               />
@@ -195,12 +195,12 @@ exports[`Pagination > should render correctly 1`] = `
           </div>
         </div>
         <span
-          class="HvTypography-root HvTypography-body hv-uikit-css-11nzje6-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body hv-uikit-css-y01gvs-getStyledComponent e1tnpalo0"
         >
           / 
         </span>
         <span
-          class="HvTypography-root HvTypography-body hv-uikit-css-11nzje6-getStyledComponent e1tnpalo0"
+          class="HvTypography-root HvTypography-body hv-uikit-css-y01gvs-getStyledComponent e1tnpalo0"
         >
           1
         </span>

@@ -63,6 +63,7 @@ export type HvParsedThemeStyles = {
   letterSpacing: string;
   lineHeight: string;
   fontWeight: string;
+  fontFamily: string;
 };
 
 export const parseTheme = (
@@ -99,6 +100,9 @@ export const parseTheme = (
     fontWeight: (typeof themes[selected].typography.body.fontWeight === "string"
       ? themes[selected].typography.body.fontWeight
       : `${themes[selected].typography.body.fontWeight}`) as string,
+    fontFamily: (typeof themes[selected].fontFamily.body === "string"
+      ? themes[selected].fontFamily.body
+      : `${themes[selected].fontFamily.body}`) as string,
   };
 
   return { selected, selectedMode, colorModes, styles };
