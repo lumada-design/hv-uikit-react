@@ -3,10 +3,11 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
 import { transientOptions } from "utils/transientOptions";
 
-const labelBaseStyle = {
+const labelBaseStyle: CSSProperties = {
   ...theme.typography.label,
   padding: "0 5px",
   color: theme.colors.atmo1,
+  lineHeight: "16px",
 };
 
 export const StyledRoot = styled("div")({

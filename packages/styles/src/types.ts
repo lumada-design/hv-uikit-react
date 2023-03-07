@@ -241,12 +241,7 @@ export type HvThemeComponents = {
 // Theme typography
 export type HvTypographyProps = Pick<
   CSSProperties,
-  | "color"
-  | "fontSize"
-  | "letterSpacing"
-  | "lineHeight"
-  | "fontWeight"
-  | "textTransform"
+  "color" | "fontSize" | "letterSpacing" | "lineHeight" | "fontWeight"
 >;
 
 export type HvThemeTypography = {
