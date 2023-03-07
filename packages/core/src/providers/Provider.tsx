@@ -3,7 +3,7 @@ import { CssBaseline, getThemesVars } from "@hitachivantara/uikit-styles";
 import { parseThemes } from "utils";
 import { HvTheme } from "../types/theme";
 import { HvThemeProvider } from "./ThemeProvider";
-import createCache from "@emotion/cache";
+import { emotionCache } from "emotion";
 
 // Provider props
 export type HvProviderProps = {
@@ -70,16 +70,7 @@ export const HvProvider = ({
   );
 
   return (
-    <CacheProvider
-      /**
-       * Moves UI Kit styles to the top of the <head> so they're loaded first.
-       * This enables users to override the UI Kit styles if necessary.
-       */
-      value={createCache({
-        key: "hv-uikit-css",
-        prepend: true,
-      })}
-    >
+    <CacheProvider value={emotionCache}>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}

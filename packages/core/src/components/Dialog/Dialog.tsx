@@ -11,7 +11,7 @@ import { isKeypress, keyboardCodes, setId } from "utils";
 import { HvThemeContext } from "providers";
 import { withTooltip } from "hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &
   HvBaseProps & {

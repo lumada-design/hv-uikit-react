@@ -136,6 +136,7 @@ importers:
   packages/core:
     specifiers:
       '@emotion/cache': ^11.10.5
+      '@emotion/css': ^11.10.6
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
       '@hitachivantara/uikit-react-icons': workspace:*
@@ -160,6 +161,7 @@ importers:
       tsc-alias: ^1.8.2
     dependencies:
       '@emotion/cache': 11.10.5
+      '@emotion/css': 11.10.6
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
       '@hitachivantara/uikit-react-icons': link:../icons

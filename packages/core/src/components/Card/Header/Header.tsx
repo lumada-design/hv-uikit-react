@@ -5,7 +5,7 @@ import MuiCardHeader, {
 import { HvBaseProps } from "../../../types";
 import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
 import { styles } from "./Header.styles";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import { HvThemeContext } from "providers";
 import { useContext } from "react";
 

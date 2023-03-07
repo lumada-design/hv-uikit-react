@@ -25,7 +25,7 @@ export const MenuItemLi = styled(
     borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
     paddingTop: theme.header.selectedItemBorderBottomThickness,
     height: "100%",
-    "& > div > p": {
+    "& > div > label": {
       color: theme.header.color,
     },
   }),
@@ -58,7 +58,7 @@ export const MenuItemLabel = styled(
     ...outlineStyles,
   },
   ...($isSelected && {
-    "& p": { color: theme.header.color },
+    "& label": { color: theme.header.color },
   }),
 }));
 
