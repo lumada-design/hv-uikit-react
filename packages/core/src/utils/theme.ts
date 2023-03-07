@@ -70,6 +70,7 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
 export const parseThemes = (
   baseTheme: HvBaseTheme,
   newThemeName?: string,
+  inheritColorModes?: boolean,
   customizations?: HvThemeCustomizationProps
 ): { [themeName: string]: HvCustomizedTheme } => {
   // Apply customizations to the base theme
@@ -98,11 +99,21 @@ export const parseThemes = (
   }
 
   // Create new themes list
-  const customizedThemes: {
+  let customizedThemes: {
     [themeName: string]: HvCustomizedTheme;
   } = newThemeName
     ? { ...themes, [newThemeName]: customizedTheme }
     : { ...themes, [baseTheme]: customizedTheme };
+
+  // If we have a new theme name and the flag `inheritColorModes` is false we're removing
+  // any color modes that might have been inherited and directly defined
+  if (!inheritColorModes && newThemeName && customizations) {
+    Object.keys(customizedThemes[newThemeName].colors.modes).forEach((m) => {
+      if (!Object.keys(customizations.colors?.modes || {}).includes(m)) {
+        delete customizedThemes[newThemeName].colors.modes[m];
+      }
+    });
+  }
 
   return customizedThemes;
 };

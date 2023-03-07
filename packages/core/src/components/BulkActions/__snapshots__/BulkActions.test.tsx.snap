@@ -70,7 +70,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rd4a8l-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-112qj4-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -106,7 +106,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-rd4a8l-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-112qj4-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -154,7 +154,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           <button
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-1txnpwp-StyledButton-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-13vj977-StyledButton-StyledButton e138pvrm0"
             disabled=""
             id="hv-drop-down-menu-20-icon-button"
           >

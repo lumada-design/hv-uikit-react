@@ -3,17 +3,11 @@ import { HvProviderProps } from "@hitachivantara/uikit-react-core";
 const customTheme: HvProviderProps["theme"] = {
   baseTheme: "ds5",
   baseColorMode: "dawn",
+  inheritColorModes: false,
   name: "custom-theme",
   colors: {
     modes: {
-      dawn: {
-        backgroundColor: "#EAE7DC",
-        sema1: "#738f54",
-        sema2: "#7699b8",
-        sema3: "#d9905f",
-        sema4: "#bf6060",
-      },
-      wicked: {
+      sand: {
         backgroundColor: "#EAE7DC",
         sema1: "#738f54",
         sema2: "#7699b8",

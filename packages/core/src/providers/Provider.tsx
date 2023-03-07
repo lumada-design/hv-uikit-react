@@ -56,12 +56,18 @@ export const HvProvider = ({
   const {
     baseTheme = "ds5",
     baseColorMode = "dawn",
+    inheritColorModes = true,
     name,
     ...customizations
   } = theme;
 
   // Get themes list
-  const themes = parseThemes(baseTheme, name, customizations);
+  const themes = parseThemes(
+    baseTheme,
+    name,
+    inheritColorModes,
+    customizations
+  );
 
   return (
     <CacheProvider
