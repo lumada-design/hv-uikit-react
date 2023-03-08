@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 
 export const StyledAppBar = styled(
-  "div",
+  "header",
   transientOptions
 )(({ $position }: { $position?: string }) => ({
   height: theme.header.height,
