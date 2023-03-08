@@ -30,7 +30,7 @@ export type HvBreadCrumbProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   component?: React.ElementType;
   /** Function passed to the component. If defined the component prop is used as the link node. */
   onClick?: (
-    event: MouseEventHandler<HTMLDivElement>,
+    event: MouseEventHandler<HTMLAnchorElement>,
     data: any
   ) => void | undefined;
   /** Props passed down to the DropDownMenu sub-menu component. */
@@ -81,7 +81,7 @@ export const HvBreadCrumb = ({
     maxVisibleElem && listPath.length > maxVisibleElem
       ? pathWithSubMenu(
           id,
-          classes,
+          onClick,
           listPath,
           maxVisibleElem,
           dropDownMenuProps

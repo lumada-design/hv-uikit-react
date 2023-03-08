@@ -16,6 +16,9 @@ const data = [
 const meta: Meta<typeof HvBreadCrumb> = {
   title: "Navigation/Breadcrumb",
   component: HvBreadCrumb,
+  argTypes: {
+    onClick: { action: "clicked" },
+  },
 };
 export default meta;
 
@@ -49,12 +52,13 @@ export const WithURL: StoryObj<HvBreadCrumbProps> = {
       },
     },
   },
-  render: () => {
+  render: (args) => {
     return (
       <HvBreadCrumb
         url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
         id="breadcrumb4"
         aria-label="Breadcrumb"
+        {...args}
       />
     );
   },
@@ -69,13 +73,14 @@ export const WithURLLimited: StoryObj<HvBreadCrumbProps> = {
       },
     },
   },
-  render: () => {
+  render: (args) => {
     return (
       <HvBreadCrumb
         url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
         id="breadcrumb5"
         maxVisible={2}
         aria-label="Breadcrumb"
+        {...args}
       />
     );
   },
@@ -109,7 +114,7 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
       },
     },
   },
-  render: () => {
+  render: (args) => {
     const longData = [
       { label: "Label 1 with some long text", path: "route1" },
       { label: "Label 2 with some long text", path: "route2" },
@@ -123,6 +128,7 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
         listRoute={longData}
         id="breadcrumb7"
         aria-label="Breadcrumb"
+        {...args}
       />
     );
   },

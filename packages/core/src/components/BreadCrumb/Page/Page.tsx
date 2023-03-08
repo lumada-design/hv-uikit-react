@@ -13,7 +13,7 @@ export type HvPageElement = {
 export type HvPageProps = {
   Component?: React.ElementType;
   onClick?: (
-    event: MouseEventHandler<HTMLDivElement>,
+    event: MouseEventHandler<HTMLAnchorElement>,
     data: any
   ) => void | undefined;
   elem: HvPageElement;
