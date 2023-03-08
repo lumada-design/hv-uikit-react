@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-next.11 (2023-03-08)
+
+### Bug Fixes
+
+- fix second level on Header component not staying visible ([#3183](https://github.com/lumada-design/hv-uikit-react/issues/3183)) ([02264d4](https://github.com/lumada-design/hv-uikit-react/commit/02264d435e758438745f40bb7e0c2fe225eff611))
+
 # 5.0.0-next.10 (2023-03-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons
