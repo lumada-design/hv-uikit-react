@@ -60,6 +60,25 @@ export const MenuItemLabel = styled(
   ...($isSelected && {
     "& span": { color: theme.header.color },
   }),
+  "& span": {
+    display: "inline-flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  "& span::after": {
+    content: "attr(data-text)",
+    height: 0,
+    visibility: "hidden",
+    overflow: "hidden",
+    userSelect: "none",
+    pointerEvents: "none",
+    fontWeight: theme.fontWeights.semibold,
+
+    "@media speech": {
+      display: "none",
+    },
+  },
 }));
 
 export const MenuItemLink = styled("a")(
@@ -84,5 +103,24 @@ export const MenuItemLink = styled("a")(
     ...($isSelected && {
       "& span": { color: theme.header.color },
     }),
+    "& span": {
+      display: "inline-flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+    "& span::after": {
+      content: "attr(data-text)",
+      height: 0,
+      visibility: "hidden",
+      overflow: "hidden",
+      userSelect: "none",
+      pointerEvents: "none",
+      fontWeight: theme.fontWeights.semibold,
+
+      "@media speech": {
+        display: "none",
+      },
+    },
   })
 );

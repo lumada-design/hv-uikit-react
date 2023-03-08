@@ -52,7 +52,11 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   };
 
   const label = (
-    <HvTypography component="span" variant={isSelected ? "label" : "body"}>
+    <HvTypography
+      component="span"
+      variant={isSelected ? "label" : "body"}
+      data-text={item.label}
+    >
       {item.label}
     </HvTypography>
   );
