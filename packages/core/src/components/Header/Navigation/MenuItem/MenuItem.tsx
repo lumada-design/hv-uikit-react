@@ -22,6 +22,11 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const isMenu = type === "menu";
   const isSelected =
     (selectionPath && selectionPath[isMenu ? 1 : 0] === item.id) || false;
+  const isCurrent = isSelected
+    ? selectionPath.length > (isMenu ? 2 : 1)
+      ? true
+      : "page"
+    : undefined;
 
   const actionHandler = (event) => {
     if (
@@ -85,6 +90,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           target={itemTarget}
           {...itemProps}
           $isSelected={isSelected}
+          aria-current={isCurrent}
         >
           {label}
         </MenuItemLink>
@@ -96,6 +102,7 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
           {...itemProps}
           tabIndex={0}
           $isSelected={isSelected}
+          aria-current={isCurrent}
         >
           {label}
         </MenuItemLabel>
