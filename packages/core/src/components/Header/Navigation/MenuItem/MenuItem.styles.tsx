@@ -58,24 +58,31 @@ export const MenuItemLabel = styled(
     ...outlineStyles,
   },
   ...($isSelected && {
-    "& label": { color: theme.header.color },
+    "& span": { color: theme.header.color },
   }),
 }));
 
-export const MenuItemLink = styled("a")({
-  border: "none",
-  cursor: "pointer",
-  padding: `${theme.space.xs} ${theme.space.sm}`,
-  display: "block",
-  textDecoration: "none",
-  "&:active": {
-    outline: "none",
-  },
-  "&:focus": {
-    outline: "none",
-    backgroundColor: hoverColor,
-  },
-  "&:focus-visible": {
-    ...outlineStyles,
-  },
-});
+export const MenuItemLink = styled("a")(
+  ({ $isSelected }: { $isSelected?: boolean }) => ({
+    border: "none",
+    cursor: "pointer",
+    padding: `${theme.space.xs} ${theme.space.sm}`,
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    textDecoration: "none",
+    "&:active": {
+      outline: "none",
+    },
+    "&:focus": {
+      outline: "none",
+      backgroundColor: hoverColor,
+    },
+    "&:focus-visible": {
+      ...outlineStyles,
+    },
+    ...($isSelected && {
+      "& span": { color: theme.header.color },
+    }),
+  })
+);
