@@ -15,6 +15,7 @@ export default defineConfig({
   plugins: [
     dts({
       outputDir: "dist/types",
+      rollupTypes: true,
     }),
     react({
       jsxImportSource: "@emotion/react",

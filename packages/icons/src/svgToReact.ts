@@ -96,7 +96,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
     if (subFolder === ".") {
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport * from "./icons";\nexport * as icons from "./icons";\n`,
+        `\nexport * from "./icons";\nimport * as icons from "./icons"; export { icons };\n`,
         () => {}
       );
       fs.appendFile(
@@ -105,12 +105,10 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
         () => {}
       );
     } else {
+      const subFolderName = subFolder.replace("./", "");
       fs.appendFile(
         path.resolve(componentOutputFolder, subFolder, "..", `index.ts`),
-        `\nexport * from "${subFolder}";\nexport * as ${subFolder.replace(
-          "./",
-          ""
-        )} from "${subFolder}"\n`,
+        `\nexport * from "${subFolder}";\nimport * as ${subFolderName} from "${subFolder}"; export { ${subFolderName} };\n`,
         () => {}
       );
     }
