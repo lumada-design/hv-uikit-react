@@ -64,7 +64,7 @@ exports[`Badge > should render correctly with maxCount 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-19arfk9-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-aqzyiy-StyledBadge e16y1fwq0"
       >
         99+
       </div>
@@ -83,7 +83,7 @@ exports[`Badge > should render correctly with showCount 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-19arfk9-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-aqzyiy-StyledBadge e16y1fwq0"
       >
         12
       </div>
@@ -102,7 +102,7 @@ exports[`Badge > should render correctly with showCount and one-digit count 1`] 
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeOneDigit css-5egl5s-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeOneDigit css-1ig4zil-StyledBadge e16y1fwq0"
       >
         9
       </div>
@@ -139,7 +139,7 @@ exports[`Badge > should render correctly with svg 1`] = `
       class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeIcon css-k85t9q-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeIcon css-178mr2j-StyledBadge e16y1fwq0"
       >
         99+
       </div>
@@ -163,7 +163,7 @@ exports[`Badge > should render correctly with text 1`] = `
       class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-19arfk9-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-aqzyiy-StyledBadge e16y1fwq0"
       >
         99+
       </div>
