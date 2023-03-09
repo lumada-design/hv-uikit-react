@@ -1,4 +1,4 @@
-import Chart from "react-google-charts";
+import { Chart } from "react-google-charts";
 
 const getRandom = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min) + min);

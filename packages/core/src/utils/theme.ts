@@ -1,3 +1,4 @@
+/*eslint import/namespace: [2, { allowComputed: true }]*/
 import {
   themes,
   HvBaseTheme,
