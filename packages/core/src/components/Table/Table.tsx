@@ -118,8 +118,6 @@ const StyledTable = (c: any) =>
  *
  * For better data handling and **advanced features** we recommend the use of the utility hooks collection .
  * See the <a href="?id=lab-table-hooks--main&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
- *
- * **PLEASE NOTE**: This Table implementation is still a WIP. There might be breaking changes.
  */
 export const HvTable = forwardRef<HTMLElement, HvTableProps>(
   (

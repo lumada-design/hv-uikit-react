@@ -16,12 +16,7 @@ import {
 } from "./BannerContent/BannerContent";
 import { HvActionGeneric } from "components";
 
-export type HvBannerVariant =
-  | "success"
-  | "warning"
-  | "error"
-  | "info"
-  | "default";
+export type HvBannerVariant = "success" | "warning" | "error" | "default";
 
 export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 

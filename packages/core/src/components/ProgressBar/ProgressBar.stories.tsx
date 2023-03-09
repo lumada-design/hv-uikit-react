@@ -21,7 +21,7 @@ export const Main: StoryObj<HvProgressBarProps> = {
   },
 };
 
-export const Indeterminate: StoryObj<HvProgressBarProps> = {
+export const Progressive: StoryObj<HvProgressBarProps> = {
   args: {
     value: 0,
   },
