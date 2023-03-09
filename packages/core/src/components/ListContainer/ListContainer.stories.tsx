@@ -619,7 +619,6 @@ export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
               98003, Store Manager
             </HvListItem>
             <HvListItem
-              // @ts-ignore
               onClick={(event) => handleListItemClick(event, 3)}
               selected={selectedItems[3]}
               role="option"

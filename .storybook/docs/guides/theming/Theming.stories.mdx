@@ -1,5 +1,245 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { Sample } from "./Sample";
+import { Spacing } from "./Spacing";
+import { Theme } from "./Theme";
+import { CssVariables } from "./CssVariables";
 
-<Meta title="Guides/Theming" />
+<Meta title="Guides/Theming/Default themes" />
 
-# Theming
+# Default themes
+
+The theme is the cornerstone of all components and it comprises all the styling specifications for the components, such as colors, font sizes, shadows, spacings,
+among others.
+
+The UI Kit provides by default two different themes compliant with the Design System. In this sense, the components are supported for the **Design System versions 3 and 5**.
+For each one of these versions, two different color modes are provided: **Dawn** and **Wicked**.
+
+<Story name="Main-DS5">
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+    <div id="hv-root-ds5-dawn-docs-default-themes">
+      <HvProvider
+        rootElementId="hv-root-ds5-dawn-docs-default-themes"
+        theme={{
+          baseColorMode: "dawn",
+        }}
+      >
+        <Sample title="Design System 5 - Dawn" />
+      </HvProvider>
+    </div>
+    <div id="hv-root-ds5-wicked-docs-default-themes">
+      <HvProvider
+        rootElementId="hv-root-ds5-wicked-docs-default-themes"
+        theme={{
+          baseColorMode: "wicked",
+        }}
+      >
+        <Sample title="Design System 5 - Wicked" />
+      </HvProvider>
+    </div>
+    <div id="hv-root-ds3-dawn-docs-default-themes">
+      <HvProvider
+        rootElementId="hv-root-ds3-dawn-docs-default-themes"
+        theme={{
+          baseTheme: "ds3",
+          baseColorMode: "dawn",
+        }}
+      >
+        <Sample title="Design System 3 - Dawn" />
+      </HvProvider>
+    </div>
+    <div id="hv-root-ds3-wicked-docs-default-themes">
+      <HvProvider
+        rootElementId="hv-root-ds3-wicked-docs-default-themes"
+        theme={{ baseTheme: "ds3", baseColorMode: "wicked" }}
+      >
+        <Sample title="Design System 3 - Wicked" />
+      </HvProvider>
+    </div>
+  </div>
+</Story>
+
+Although these two themes are provided out of the box and will most likely be sufficient in most cases, you have the complete freedom to customize these themes or
+create your own one depending on your design needs and requirements.
+
+## Default themes structure
+
+Find below the structure of the default themes and their default values.
+
+<Canvas>
+  <Story name="Theme">
+    <Theme />
+  </Story>
+</Canvas>
+
+## Theme configuration
+
+The active theme can be configured through the `HvProvider`'s `theme` property. This property is an object that enables you to set the theme and color mode you want
+as well as define customizations to meet your specific design needs. If no value is provided, UI Kit defaults to **Design System version 5** and to the **Dawn** color mode.
+Thus, through this object, you are able to create a new theme, new color modes, and/or customize an available theme by overriding the current styling values.
+
+The `HvProvider`'s `theme` property accepts the following properties:
+
+| Property                                                             | Definition                                                                                                                                                                                                     | Type                                                                      | Default |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------- |
+| `baseTheme`                                                          | The theme to initialize the UI Kit or to be used as base when a new theme should be created.                                                                                                                   | `ds5` or `ds3`                                                            | `ds5`   |
+| `baseColorMode`                                                      | The color mode to initialize the UI Kit.                                                                                                                                                                       | `dawn`, `wicked` or `string` of a new color mode                          | `dawn`  |
+| `name`                                                               | The name of the new theme. By providing a name, a new theme is created based on the `baseTheme` and the customizations injected. If no name is provided, the customizations will be merged to the `baseTheme`. | `string`                                                                  | -       |
+| `inheritColorModes`                                                  | Whether the default color modes (dawn and wicked) should be inherited while creating a new theme.                                                                                                              | `boolean`                                                                 | `true`  |
+| Any property from the default themes structure or any extra property | Customizations of the default themes structure properties or extra properties to be added to the theme.                                                                                                        | \* The complete structure of the default themes object can be found above | -       |
+
+### Initialize the UI Kit theme and color mode
+
+Using a Design System version and color mode is as simple as setting the `baseTheme` and `baseColorMode` properties inside the `HvProvider`'s `theme` property
+as shown below. If the `theme` property is not defined, the default values for `baseTheme` and `baseColorMode` will be `ds5` and `dawn`.
+
+```tsx
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+
+const MyApp = ({ children }) => (
+  <HvProvider
+    theme={{
+      baseTheme: "ds3",
+      baseColorMode: "wicked",
+    }}
+  >
+    {children}
+  </HvProvider>
+);
+```
+
+### Customize a default theme
+
+[TODO]
+
+### Create a new theme
+
+[TODO]
+
+## Theme context
+
+The `uikit-react-core` package provides a React context named `ThemeContext`. This context gives you access to all values related to the theme, namely:
+
+- `selectedTheme`: name of the current theme;
+- `selectedMode`: name of the current color mode;
+- `colorModes`: list of color modes available for the theme;
+- `themes`: list of the available themes;
+- `rootId`: id of your root element;
+- `activeTheme`: object with the current theme;
+- `changeTheme`: function to change the current theme and color mode.
+
+The values provided by `ThemeContext` can be accessed as follows.
+
+```tsx
+import { useContext } from "react";
+import { HvThemeContext } from "@hitachivantara/uikit-react-core";
+
+const {
+  selectedTheme,
+  selectedMode,
+  colorModes,
+  themes,
+  rootId,
+  activeTheme,
+  changeTheme,
+} = useContext(HvThemeContext);
+```
+
+## Color modes
+
+[TODO]
+
+## CSS variables
+
+All properties of the UI Kit default themes structure are available as CSS variables. Each one of these variables has the UI Kit prefix `uikit` and can easily be
+accessed through the `theme` object that can be imported from `@hitachivantara/uikit-react-core`.
+
+Find below an example on how this `theme` object can be used to style your application.
+
+```tsx
+import { theme, HvTypography } from "@hitachivantara/uikit-react-core";
+import styled from "@emotion/styled";
+
+export const MyComponent = () => {
+  const StyledHvTypography = styled(HvTypography)({
+    color: theme.colors.sema2, // Same as var(--uikit-colors-sema2)
+    fontWeight: theme.fontWeights.semibold, // Same as var(--uikit-fontWeights-semibold)
+    fontSize: theme.fontSizes.lg, // Same as var(--uikit-fontSizes-lg)
+  });
+
+  return <StyledHvTypography>CSS variables!</StyledHvTypography>;
+};
+```
+
+<Canvas>
+  <Story name="CssVariables">
+    <CssVariables />
+  </Story>
+</Canvas>
+
+## Spacing
+
+The UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
+and is contained within the `theme` object provided by the `@hitachivantara/uikit-react-core` package.
+
+This helper function can receive one of arguments below and returns the appropriate value in pixels to achieve the desired spacing.
+
+| Arguments                                                                           | Result                                                      | Example                       |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------- |
+| Number                                                                              | The number is multiplied by the theme's spacing base.       | `theme.spacing(5)`            |
+| One of the theme's spacing breakpoints: `xs`, `sm`, `md`, `lg`, or `xl`             | The corresponding breakpoint's spacing value for the theme. | `theme.spacing("sm")`         |
+| Value in pixels                                                                     | The value in pixels.                                        | `theme.spacing("16px")`       |
+| Array of four values: numbers, pixel values, and/or the theme's spacing breakpoints | It will generate the shorthand form of the values.          | `theme.spacing(["sm","0px"])` |
+
+The spacing base and breakpoints for each default theme are shown below.
+
+```tsx
+// Design System 5
+const ds5Spaces = {
+  base: 8,
+  xs: "8px",
+  sm: "16px",
+  md: "24px",
+  lg: "48px",
+  xl: "80px",
+};
+
+// Design System 3
+const ds3Spaces = {
+  base: 10,
+  xs: "10px",
+  sm: "20px",
+  md: "30px",
+  lg: "60px",
+  xl: "90px",
+};
+```
+
+Find below an example on how to use the spacing helper function.
+
+```tsx
+import styled from "@emotion/styled";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+
+export const Spacing = () => {
+  const StyledContainer = styled("div")({
+    "& > *": {
+      margin: theme.spacing(["xs", "6px"]),
+    },
+  });
+
+  return (
+    <StyledContainer>
+      <HvButton variant="primary">Button 1</HvButton>
+      <HvButton variant="primarySubtle">Button 2</HvButton>
+      <HvButton variant="primaryGhost">Button 3</HvButton>
+    </StyledContainer>
+  );
+};
+```
+
+<Canvas>
+  <Story name="Spacing">
+    <Spacing />
+  </Story>
+</Canvas>

@@ -1,9 +1,7 @@
-// @ts-ignore
-import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { HvTypography, HvDropdown } from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
-  // @ts-ignore
 } from "@hitachivantara/uikit-react-icons";
 import React, { useState } from "react";
 
@@ -65,34 +63,13 @@ const Library = ({ isIcons }) => {
   return (
     <>
       <div style={{ padding: "20px 0", width: 220 }}>
-        {/* <HvDropdown
+        <HvDropdown
           label="Select icon size"
           values={dropdownSizes}
           multiSelect={false}
           onChange={(item) => setIconSize(item)}
           notifyChangesOnFirstRender
-        /> */}
-        <label>Select icon size:</label>
-        <select
-          style={{
-            backgroundColor: "white",
-            padding: 5,
-            border: "1px solid #CCCED0",
-            borderRadius: 2,
-          }}
-          onChange={(item) => {
-            setIconSize(
-              dropdownSizes.filter(
-                (d) => d.id === item.target.selectedIndex.toString()
-              )[0]
-            );
-          }}
-        >
-          <option label="XS" id="0" />
-          <option label="S" id="1" selected />
-          <option label="M" id="2" />
-          <option label="L" id="3" />
-        </select>
+        />
       </div>
       <Group
         iconSize={iconSize}

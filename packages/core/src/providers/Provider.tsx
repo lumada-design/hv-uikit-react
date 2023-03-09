@@ -29,23 +29,7 @@ export type HvProviderProps = {
 };
 
 /**
- * This component makes cross-component theme properties available down the React tree thanks to React context.
- *
- * The `HvProvider` should preferably be used at **the root of your component tree** and
- * be unique in the App in most cases.
- *
- * ```jsx
- * <HvProvider>
- *   <MyApp />
- * <HvProvider/>
- * ```
- *
- * If several `HvProvider`'s are used in parallel, you'll need to create different root elements and
- * set the `rootElementId` property for each one of the providers. Otherwise, the styling will not work properly.
- *
- * **UI Kit components will not work at all if the `HvProvider` is not configured correctly**,
- * as they will not be able to access the properties of the active theme.
- *
+ * Enables theming capabilities and makes cross-component theme properties available down the tree.
  */
 export const HvProvider = ({
   children,

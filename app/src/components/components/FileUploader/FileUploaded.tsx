@@ -8,7 +8,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
-// @ts-ignore
 import rainbow from "./assets/rainbow.jpg";
 
 const uploadHandlers = new Map();

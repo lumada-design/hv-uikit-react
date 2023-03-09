@@ -10,7 +10,7 @@ import {
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof IconBase> = {
-  title: "Theme/Icons/Usage",
+  title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
   },

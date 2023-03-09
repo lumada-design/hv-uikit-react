@@ -5,7 +5,6 @@ import {
   HvProvider,
   HvThemeContext,
   HvTypography,
-  // @ts-ignore
 } from "@hitachivantara/uikit-react-core";
 import {
   StyledGroup,

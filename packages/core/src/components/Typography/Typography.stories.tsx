@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/react";
 import { HvTypography, HvTypographyProps } from "./Typography";
 
-export default { title: "Theme/Typography", component: HvTypography };
+export default { title: "Foundation/Typography", component: HvTypography };
 
 export const Main: StoryObj<HvTypographyProps> = {
   args: {
