@@ -52,7 +52,6 @@ export const StyledBadge = styled(
     ...($showCount && {
       ...(labelBaseStyle as CSSProperties),
       wordBreak: "keep-all",
-      maxWidth: 30,
     }),
     ...($showLabel && {
       ...(labelBaseStyle as CSSProperties),
