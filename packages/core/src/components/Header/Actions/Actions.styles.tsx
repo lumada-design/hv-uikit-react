@@ -5,6 +5,7 @@ import { buttonClasses } from "components";
 export const StyledDiv = styled.div({
   backgroundColor: "transparent",
   display: "flex",
+  gap: theme.space.xs,
   alignItems: "center",
   marginLeft: "auto",
   "& > *": {
