@@ -4,7 +4,6 @@
     "target": "ES2015",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,

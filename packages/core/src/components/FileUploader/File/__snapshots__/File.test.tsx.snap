@@ -5,7 +5,7 @@ exports[`File > should render correctly fail status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon e6pb7kb8 css-11psvlv-StyledFail"
+    class="HvFile-icon e6pb7kb8 css-1x1xcvg-StyledFail"
     name="Fail"
   >
     <svg
@@ -48,7 +48,7 @@ exports[`File > should render correctly fail status 1`] = `
         class="css-1o4qkkz-StyledChildren e138pvrm1"
       >
         <div
-          class="css-du18qm"
+          class="css-f95wjz"
           name="Close"
         >
           <svg
@@ -76,7 +76,7 @@ exports[`File > should render correctly success status 1`] = `
   class="HvFile-root"
 >
   <div
-    class="HvFile-icon e6pb7kb9 css-1ed4xfh-StyledSuccess"
+    class="HvFile-icon e6pb7kb9 css-13ouzip-StyledSuccess"
     name="Success"
   >
     <svg
@@ -119,7 +119,7 @@ exports[`File > should render correctly success status 1`] = `
         class="css-1o4qkkz-StyledChildren e138pvrm1"
       >
         <div
-          class="css-du18qm"
+          class="css-f95wjz"
           name="Close"
         >
           <svg

@@ -25,7 +25,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
               value="on"
             />
             <div
-              class="HvBaseCheckBox-icon css-du18qm"
+              class="HvBaseCheckBox-icon css-f95wjz"
               font-size="medium"
               name="Checkbox"
             >
@@ -80,7 +80,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
-              class="css-du18qm"
+              class="css-f95wjz"
               name="Add"
             >
               <svg
@@ -116,7 +116,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
           >
             <div
-              class="css-du18qm"
+              class="css-f95wjz"
               name="Delete"
             >
               <svg
@@ -165,7 +165,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 class="css-1o4qkkz-StyledChildren e138pvrm1"
               >
                 <div
-                  class="css-du18qm"
+                  class="css-f95wjz"
                   name="MoreOptionsVertical"
                 >
                   <svg
@@ -217,7 +217,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
               value="on"
             />
             <div
-              class="HvBaseCheckBox-icon css-du18qm"
+              class="HvBaseCheckBox-icon css-f95wjz"
               font-size="medium"
               name="Checkbox"
             >

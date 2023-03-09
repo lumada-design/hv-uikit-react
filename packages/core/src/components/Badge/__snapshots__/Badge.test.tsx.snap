@@ -118,7 +118,7 @@ exports[`Badge > should render correctly with svg 1`] = `
     class="HvBadgeClasses-root css-1q5qni0-StyledRoot e16y1fwq2"
   >
     <div
-      class="css-du18qm"
+      class="css-f95wjz"
       name="Alert"
     >
       <svg

@@ -37,7 +37,7 @@ exports[`Pagination > should render correctly 1`] = `
                 </p>
               </div>
               <div
-                class="HvBaseDropdown-arrow eapzthe3 hv-uikit-style-1jdpeh4-StyledDropDownXS"
+                class="HvBaseDropdown-arrow eapzthe3 hv-uikit-style-1ij2a3c-StyledDropDownXS"
                 name="DropDownXS"
               >
                 <svg
@@ -78,7 +78,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="hv-uikit-style-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-style-du18qm"
+                class="HvPagination-icon hv-uikit-style-f95wjz"
                 name="Start"
               >
                 <svg
@@ -115,7 +115,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="hv-uikit-style-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-style-du18qm"
+                class="HvPagination-icon hv-uikit-style-f95wjz"
                 name="Backwards"
               >
                 <svg
@@ -168,7 +168,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvInput-error HvWarningText-root hv-uikit-style-wyhb5v-StyledRoot e1jkc0dp2"
             >
               <div
-                class="HvWarningText-defaultIcon e1jkc0dp0 hv-uikit-style-7mfkjz-StyledIcon"
+                class="HvWarningText-defaultIcon e1jkc0dp0 hv-uikit-style-1en9bxk-StyledIcon"
                 name="Fail"
               >
                 <svg
@@ -221,7 +221,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="hv-uikit-style-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-style-du18qm"
+                class="HvPagination-icon hv-uikit-style-f95wjz"
                 name="Forwards"
               >
                 <svg
@@ -258,7 +258,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="hv-uikit-style-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="HvPagination-icon hv-uikit-style-du18qm"
+                class="HvPagination-icon hv-uikit-style-f95wjz"
                 name="End"
               >
                 <svg

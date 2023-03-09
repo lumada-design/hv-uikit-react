@@ -19,7 +19,7 @@ exports[`CheckBox > general > should render correctly 1`] = `
           value="dogs"
         />
         <div
-          class="HvBaseCheckBox-icon css-du18qm"
+          class="HvBaseCheckBox-icon css-f95wjz"
           font-size="medium"
           name="Checkbox"
         >

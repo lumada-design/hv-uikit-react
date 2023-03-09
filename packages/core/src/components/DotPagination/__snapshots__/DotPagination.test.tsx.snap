@@ -24,7 +24,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="0"
           />
           <div
-            class="HvDotPagination-icon e1buriah0 css-1y4xzkm-StyledCurrentStep"
+            class="HvDotPagination-icon e1buriah0 css-1gkhlau-StyledCurrentStep"
             font-size="medium"
             name="CurrentStep"
           >
@@ -58,7 +58,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="1"
           />
           <div
-            class="HvDotPagination-icon e1buriah1 css-w9mfhr-StyledOtherStep"
+            class="HvDotPagination-icon e1buriah1 css-1e3ta49-StyledOtherStep"
             font-size="medium"
             name="OtherStep"
           >
@@ -92,7 +92,7 @@ exports[`DotPagination > should render correctly 1`] = `
             value="2"
           />
           <div
-            class="HvDotPagination-icon e1buriah1 css-w9mfhr-StyledOtherStep"
+            class="HvDotPagination-icon e1buriah1 css-1e3ta49-StyledOtherStep"
             font-size="medium"
             name="OtherStep"
           >

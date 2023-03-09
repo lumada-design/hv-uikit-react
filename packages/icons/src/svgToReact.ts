@@ -101,7 +101,7 @@ const writeFile = (processedSVG, fileName, subFolder = ".") => {
       );
       fs.appendFile(
         path.resolve(componentOutputFolder, `index.ts`),
-        `\nexport { IconBase } from "./IconBase";\n`,
+        `\nexport * from "./IconBase";\n`,
         () => {}
       );
     } else {

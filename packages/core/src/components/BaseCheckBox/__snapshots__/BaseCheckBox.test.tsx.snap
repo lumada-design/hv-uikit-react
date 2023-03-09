@@ -13,7 +13,7 @@ exports[`BaseCheckBox > checked > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="CheckboxCheck"
     >
@@ -60,7 +60,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="Checkbox"
     >
@@ -99,7 +99,7 @@ exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="CheckboxPartial"
     >
@@ -139,7 +139,7 @@ exports[`BaseCheckBox > read only > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="Checkbox"
     >
@@ -179,7 +179,7 @@ exports[`BaseCheckBox > required > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="Checkbox"
     >
@@ -218,7 +218,7 @@ exports[`BaseCheckBox > should render correctly 1`] = `
       value="on"
     />
     <div
-      class="HvBaseCheckBox-icon css-du18qm"
+      class="HvBaseCheckBox-icon css-f95wjz"
       font-size="medium"
       name="Checkbox"
     >

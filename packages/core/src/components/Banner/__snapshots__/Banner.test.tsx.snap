@@ -40,7 +40,7 @@ exports[`Banner > should render correctly 1`] = `
                   class="css-1o4qkkz-StyledChildren e138pvrm1"
                 >
                   <div
-                    class="HvBanner-ActionContainer-iconContainer euz8sqk1 css-1gb3xe9-StyledClose"
+                    class="HvBanner-ActionContainer-iconContainer euz8sqk1 css-1q4rkgi-StyledClose"
                     name="Close"
                   >
                     <svg

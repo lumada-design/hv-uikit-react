@@ -361,5 +361,5 @@ export const SampleWithNoChildren: StoryObj<HvGlobalActionsProps> = {
       },
     },
   },
-  render: () => <HvGlobalActions title="Detail Page Title" backButton />,
+  render: () => <HvGlobalActions title="Detail Page Title" />,
 };

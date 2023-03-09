@@ -37,7 +37,7 @@ exports[`Dropdown > should render correctly 1`] = `
               </div>
             </div>
             <div
-              class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1jdpeh4-StyledDropDownXS"
+              class="HvBaseDropdown-arrow HvDropdown-arrow eapzthe3 css-1ij2a3c-StyledDropDownXS"
               name="DropDownXS"
             >
               <svg
