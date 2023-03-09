@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { RadioProps as MuiRadioProps } from "@mui/material";
 import { HvBaseProps } from "../../types";
 import { HvWarningText } from "components";
+import { HvLabelProps } from "../Forms/Label";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { useControlled, useUniqueId } from "hooks";
 import { setId } from "utils";
@@ -62,7 +63,7 @@ export type HvRadioProps = Omit<MuiRadioProps, "onChange" | "classes"> &
     /**
      * Properties passed on to the label element.
      */
-    labelProps?: any;
+    labelProps?: HvLabelProps;
     /**
      * Indicates that user input is required on the form element.
      *
