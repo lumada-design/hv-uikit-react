@@ -1,6 +1,6 @@
-import { HvProviderProps } from "@hitachivantara/uikit-react-core";
+import { HvTheme } from "@hitachivantara/uikit-react-core";
 
-const customTheme: HvProviderProps["theme"] = {
+const customTheme: HvTheme = {
   baseTheme: "ds5",
   baseColorMode: "dawn",
   inheritColorModes: false,
