@@ -7,6 +7,7 @@ export const singleStyle = {
   padding: "15px 20px",
   display: "flex",
   backgroundColor: theme.colors.atmo1,
+  borderRadius: theme.tooltip.borderRadius,
   boxShadow: theme.shadows.md,
   width: "fit-content",
   "& p": {
