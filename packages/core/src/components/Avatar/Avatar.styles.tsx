@@ -50,23 +50,23 @@ export const StyledStatus = styled(
       borderRadius: "50%",
     }),
     // size
-    ...($size === "XS" && {
+    ...($size === "xs" && {
       width: EXTRA_SMALL.container,
       height: EXTRA_SMALL.container,
     }),
-    ...($size === "SM" && {
+    ...($size === "sm" && {
       width: SMALL.container,
       height: SMALL.container,
     }),
-    ...($size === "MD" && {
+    ...($size === "md" && {
       width: MEDIUM.container,
       height: MEDIUM.container,
     }),
-    ...($size === "LG" && {
+    ...($size === "lg" && {
       width: LARGE.container,
       height: LARGE.container,
     }),
-    ...($size === "XL" && {
+    ...($size === "xl" && {
       width: EXTRA_LARGE.container,
       height: EXTRA_LARGE.container,
     }),
@@ -79,27 +79,27 @@ export const StyledAvatar = styled(MuiAvatar)(
     // root
     fontSize: "1rem",
     // avatar
-    ...(size === "XS" && {
+    ...(size === "xs" && {
       width: EXTRA_SMALL.avatar,
       height: EXTRA_SMALL.avatar,
       fontSize: "0.5rem",
     }),
-    ...(size === "SM" && {
+    ...(size === "sm" && {
       width: SMALL.avatar,
       height: SMALL.avatar,
       fontSize: "0.625rem",
     }),
-    ...(size === "MD" && {
+    ...(size === "md" && {
       width: MEDIUM.avatar,
       height: MEDIUM.avatar,
       fontSize: "1rem",
     }),
-    ...(size === "LG" && {
+    ...(size === "lg" && {
       width: LARGE.avatar,
       height: LARGE.avatar,
       fontSize: "1.5rem",
     }),
-    ...(size === "XL" && {
+    ...(size === "xl" && {
       width: EXTRA_LARGE.avatar,
       height: EXTRA_LARGE.avatar,
       fontSize: "2rem",

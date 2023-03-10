@@ -1,4 +1,4 @@
-import { HvBaseProps } from "index";
+import { HvBaseProps } from "../../types";
 import { StyledContainer } from "./SimpleGrid.styles";
 
 export type Spacing = "sm" | "md" | "lg" | "xl";
@@ -11,10 +11,6 @@ export type Breakpoint = {
 };
 
 export type HvSimpleGridProps = HvBaseProps & {
-  /**
-   * -
-   */
-  children: JSX.Element | JSX.Element[];
   /**
    * Spacing with pre-defined values according the values defined in the theme
    */

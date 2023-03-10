@@ -3,11 +3,7 @@ import { HvBaseProps } from "../../types";
 import { StyledDiv } from "./Panel.styles";
 import panelClasses, { HvPanelClasses } from "./panelClasses";
 
-export type PanelProps = HvBaseProps & {
-  /** Id to be applied to the root node. */
-  id?: string;
-  /** Class names to be applied. */
-  className?: string;
+export type HvPanelProps = HvBaseProps & {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvPanelClasses;
 };
@@ -17,9 +13,13 @@ export type PanelProps = HvBaseProps & {
  * It can be horizontal or vertical and its size is defined by its content and how it relates to surrounding patterns.
  * Regardless of its content, a panel look and feel should be consistent.
  */
-export const HvPanel = (props: PanelProps) => {
-  const { id, className, classes, children, ...others } = props;
-
+export const HvPanel = ({
+  id,
+  className,
+  classes,
+  children,
+  ...others
+}: HvPanelProps) => {
   return (
     <StyledDiv
       id={id}

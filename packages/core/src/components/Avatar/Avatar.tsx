@@ -17,7 +17,7 @@ import avatarClasses, { HvAvatarClasses } from "./avatarClasses";
 
 export type HvAvatarVariant = "circular" | "square";
 
-export type HvAvatarSize = "XS" | "SM" | "MD" | "LG" | "XL";
+export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 export type HvAvatarProps = HvBaseProps & {
   /** Inline styles to be applied to the root element. */
@@ -78,7 +78,7 @@ export const HvAvatar = ({
   classes,
   children: childrenProp,
   component = "div",
-  size = "SM",
+  size = "sm",
   backgroundColor = "acce1",
   color = "atmo1",
   src,

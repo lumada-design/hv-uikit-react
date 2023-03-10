@@ -1,3 +1,4 @@
+import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvSimpleGrid, HvSimpleGridProps } from "components";
 
@@ -5,7 +6,7 @@ const style = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "lightblue",
+  backgroundColor: theme.colors.sema7,
   minHeight: 80,
 };
 
@@ -20,10 +21,13 @@ export const Main: StoryObj<HvSimpleGridProps> = {
     spacing: "sm",
     cols: 2,
   },
-  render: ({ spacing, cols }) => {
+  argTypes: {
+    breakpoints: { control: { disable: true } },
+  },
+  render: (args) => {
     {
       return (
-        <HvSimpleGrid cols={cols} spacing={spacing}>
+        <HvSimpleGrid {...args}>
           <div style={style}>1</div>
           <div style={style}>2</div>
           <div style={style}>3</div>
