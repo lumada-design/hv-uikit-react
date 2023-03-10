@@ -180,7 +180,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     backgroundColor: "transparent",
     titleVariant: "label",
     subheaderVariant: "caption1",
-    subheaderColor: theme.colors.acce4,
+    subheaderColor: theme.colors.acce1,
   },
   tab: {
     padding: "0 16px",

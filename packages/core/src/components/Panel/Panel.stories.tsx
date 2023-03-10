@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvButton, HvTypography, theme } from "index";
-import { HvPanel, PanelProps } from "./Panel";
+import { HvPanel, HvPanelProps } from "./Panel";
 
 const meta: Meta<typeof HvPanel> = {
   title: "Layout/Panel",
@@ -10,7 +10,7 @@ const meta: Meta<typeof HvPanel> = {
 };
 export default meta;
 
-export const Main: StoryObj<PanelProps> = {
+export const Main: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <HvPanel>
@@ -20,7 +20,7 @@ export const Main: StoryObj<PanelProps> = {
   },
 };
 
-export const WithScroll: StoryObj<PanelProps> = {
+export const WithScroll: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <HvPanel style={{ width: "400px", height: "400px" }}>
@@ -40,7 +40,7 @@ const StyledButton = styled(HvButton)({
   height: "32px",
 });
 
-export const FullWidth: StoryObj<PanelProps> = {
+export const FullWidth: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <HvPanel style={{ width: "100%", height: "200px" }}>
@@ -68,7 +68,7 @@ const Overlay = styled("div")({
   padding: theme.space.md,
 });
 
-export const Modal: StoryObj<PanelProps> = {
+export const Modal: StoryObj<HvPanelProps> = {
   render: () => {
     return (
       <Overlay>

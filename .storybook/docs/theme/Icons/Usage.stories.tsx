@@ -21,7 +21,6 @@ export default meta;
 export const Main: StoryObj<IconBaseProps> = {
   args: {
     iconSize: "S",
-    color: "",
     inverted: false,
   },
   argTypes: {

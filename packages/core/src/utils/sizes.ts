@@ -1,18 +1,18 @@
 export const decreaseSize = (size: string) => {
   switch (size) {
-    case "XL":
+    case "xl":
       return "L";
 
-    case "L":
-    case "LG":
+    case "l":
+    case "lg":
       return "M";
 
-    case "M":
-    case "MD":
+    case "m":
+    case "md":
       return "S";
 
-    case "S":
-    case "SM":
+    case "s":
+    case "sm":
     default:
       return "XS";
   }
@@ -20,16 +20,16 @@ export const decreaseSize = (size: string) => {
 
 export const increaseSize = (size: string) => {
   switch (size) {
-    case "XS":
+    case "xs":
       return "S";
 
-    case "S":
+    case "s":
       return "M";
 
-    case "M":
+    case "m":
       return "L";
 
-    case "L":
+    case "l":
     default:
       return "XL";
   }

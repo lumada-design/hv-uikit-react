@@ -36,7 +36,7 @@ export default meta;
 
 export const Main: StoryObj<HvAvatarProps> = {
   args: {
-    size: "MD",
+    size: "md",
     backgroundColor: "acce1",
     color: "atmo1",
     variant: "circular",
@@ -163,22 +163,22 @@ export const Sizes: StoryObj<HvAvatarProps> = {
     docs: {
       description: {
         story:
-          "You can change the size of the avatar with the size property (XS SM MD LG and XL). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size.",
+          "You can change the size of the avatar with the size property (xs sm md lg and xl). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size.",
       },
     },
   },
   render: () => {
     return (
       <>
-        <HvAvatar size="XS" />
-        <HvAvatar backgroundColor="sema6" size="SM">
+        <HvAvatar size="xs" />
+        <HvAvatar backgroundColor="sema6" size="sm">
           NA
         </HvAvatar>
-        <HvAvatar size="MD" backgroundColor="sema3">
+        <HvAvatar size="md" backgroundColor="sema3">
           <Bookmark iconSize="S" color="atmo1" />
         </HvAvatar>
-        <HvAvatar size="LG" alt="Beatrice" src={woman1} />
-        <HvAvatar size="XL" alt="Beatrice" src={woman1} />
+        <HvAvatar size="lg" alt="Beatrice" src={woman1} />
+        <HvAvatar size="xl" alt="Beatrice" src={woman1} />
       </>
     );
   },
@@ -196,19 +196,19 @@ export const Status: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="status1" size="XS" status="sema1">
+        <HvAvatar id="status1" size="xs" status="sema1">
           AB
         </HvAvatar>
-        <HvAvatar id="status2" size="SM" status="sema2">
+        <HvAvatar id="status2" size="sm" status="sema2">
           AB
         </HvAvatar>
-        <HvAvatar id="status3" size="MD" status="sema4">
+        <HvAvatar id="status3" size="md" status="sema4">
           AB
         </HvAvatar>
-        <HvAvatar id="status4" size="LG" status="atmo4">
+        <HvAvatar id="status4" size="lg" status="atmo4">
           AB
         </HvAvatar>
-        <HvAvatar id="status5" size="XL" status="#8CEB34">
+        <HvAvatar id="status5" size="xl" status="#8CEB34">
           AB
         </HvAvatar>
       </>
@@ -228,19 +228,19 @@ export const Badge: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="badge1" size="XS" badge="sema1">
+        <HvAvatar id="badge1" size="xs" badge="sema1">
           AB
         </HvAvatar>
-        <HvAvatar id="badge2" size="SM" badge="sema2">
+        <HvAvatar id="badge2" size="sm" badge="sema2">
           AB
         </HvAvatar>
-        <HvAvatar id="badge3" size="MD" badge="sema4">
+        <HvAvatar id="badge3" size="md" badge="sema4">
           AB
         </HvAvatar>
-        <HvAvatar id="badge4" size="LG" badge="atmo4">
+        <HvAvatar id="badge4" size="lg" badge="atmo4">
           AB
         </HvAvatar>
-        <HvAvatar id="badge5" size="XL" badge="#8CEB34">
+        <HvAvatar id="badge5" size="xl" badge="#8CEB34">
           AB
         </HvAvatar>
       </>
@@ -262,7 +262,7 @@ export const ContainerProps: StoryObj<HvAvatarProps> = {
       <>
         <HvAvatar
           id="props2"
-          size="SM"
+          size="sm"
           role="button"
           aria-label="Login"
           tabIndex={0}
@@ -271,7 +271,7 @@ export const ContainerProps: StoryObj<HvAvatarProps> = {
         </HvAvatar>
         <HvAvatar
           id="props1"
-          size="MD"
+          size="md"
           status="sema1"
           alt="Ben"
           src={man1}
@@ -281,7 +281,7 @@ export const ContainerProps: StoryObj<HvAvatarProps> = {
         />
         <HvAvatar
           id="props3"
-          size="LG"
+          size="lg"
           badge="sema4"
           alt="Beatrice"
           src={woman1}
@@ -338,7 +338,7 @@ export const Buttons: StoryObj<HvAvatarProps> = {
           <HvAvatar
             id="letters"
             backgroundColor="sema19"
-            size="MD"
+            size="md"
             badge="sema4"
           >
             BM
@@ -355,7 +355,7 @@ export const Buttons: StoryObj<HvAvatarProps> = {
             id="image"
             alt="Clara Soul"
             src={woman2}
-            size="XL"
+            size="xl"
             status="sema1"
           />
         </HvButton>
