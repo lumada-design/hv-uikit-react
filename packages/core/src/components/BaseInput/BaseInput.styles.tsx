@@ -106,7 +106,9 @@ export const StyledInput = styled(
       margin: 0,
       width: "100%",
       borderRadius: "2px",
+      height: "32px",
       border: `1px solid ${theme.baseInput.borderColor}`,
+      boxSizing: "border-box",
       backgroundColor: theme.colors.atmo1,
       fontFamily: theme.fontFamily.body,
 
@@ -138,7 +140,6 @@ export const StyledInput = styled(
     },
 
     [`& .${MuiInputClasses.input}`]: {
-      height: "21px",
       marginLeft: theme.space.xs,
       marginRight: theme.space.xs,
       padding: "6px 0 5px",

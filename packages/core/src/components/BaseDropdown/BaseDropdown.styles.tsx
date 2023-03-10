@@ -47,6 +47,7 @@ export const StyledHeaderRoot = styled(
     userSelect: "none",
     position: "relative",
     background: theme.colors.atmo1,
+    boxSizing: "border-box",
     border: `1px solid ${theme.baseDropdown.borderColor}`,
     borderRadius: "2px",
     "&:hover": {
@@ -105,6 +106,7 @@ export const StyledSelection = styled("div")({
   display: "flex",
   alignItems: "center",
   height: "30px",
+  boxSizing: "border-box",
   padding: `0px ${theme.space.md} 0px ${theme.space.xs}`,
 });
 

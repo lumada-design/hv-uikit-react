@@ -23,6 +23,18 @@ export const fields = {
     placeholder: "Insert version number",
     required: "Version is required",
   },
+  tags: {
+    id: "tags",
+    label: "Tags",
+    placeholder: "Insert project tags",
+    required: "Tags is required",
+  },
+  release: {
+    id: "release",
+    label: "Release",
+    placeholder: "Insert release version",
+    required: "Release is required",
+  },
   name: {
     id: "name",
     label: "Name",

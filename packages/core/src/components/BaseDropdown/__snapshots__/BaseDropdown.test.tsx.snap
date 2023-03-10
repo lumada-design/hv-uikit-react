@@ -17,12 +17,12 @@ exports[`BaseDropDown > should render correctly 1`] = `
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header hv-uikit-style-56xk2b-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header hv-uikit-style-xmr0xz-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection hv-uikit-style-19txgg7-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection hv-uikit-style-b6yxdh-StyledSelection eapzthe6"
           >
             <p
               class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body hv-uikit-style-11m7nox-getStyledComponent-StyledPlaceholder e1tnpalo0"

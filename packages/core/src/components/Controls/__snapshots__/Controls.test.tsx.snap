@@ -21,7 +21,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-e8pzyh-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-1bagej8-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
@@ -93,12 +93,12 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                 tabindex="-1"
               >
                 <div
-                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-56xk2b-StyledHeaderRoot eapzthe7"
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-xmr0xz-StyledHeaderRoot eapzthe7"
                   role="textbox"
                   tabindex="0"
                 >
                   <div
-                    class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
+                    class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
                   >
                     <div
                       class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-8bz325-getStyledComponent-StyledTypography e1tnpalo0"
@@ -635,7 +635,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-e8pzyh-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-1bagej8-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
@@ -707,12 +707,12 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                 tabindex="-1"
               >
                 <div
-                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-56xk2b-StyledHeaderRoot eapzthe7"
+                  class="HvBaseDropdown-header HvDropdown-dropdownHeader css-xmr0xz-StyledHeaderRoot eapzthe7"
                   role="textbox"
                   tabindex="0"
                 >
                   <div
-                    class="HvBaseDropdown-selection css-19txgg7-StyledSelection eapzthe6"
+                    class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
                   >
                     <div
                       class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-y6881g-getStyledComponent-StyledTypography e1tnpalo0"
@@ -2001,7 +2001,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-e8pzyh-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-1bagej8-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
