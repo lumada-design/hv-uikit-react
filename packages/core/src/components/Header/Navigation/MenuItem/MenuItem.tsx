@@ -22,6 +22,11 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const isMenu = type === "menu";
   const isSelected =
     (selectionPath && selectionPath[isMenu ? 1 : 0] === item.id) || false;
+  const isCurrent = isSelected
+    ? selectionPath.length > (isMenu ? 2 : 1)
+      ? true
+      : "page"
+    : undefined;
 
   const actionHandler = (event) => {
     if (
@@ -43,15 +48,39 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const itemProps = {
     onClick: actionHandler,
     onKeyDown: actionHandler,
-    tabIndex: 0,
     onFocus: handleFocus,
   };
 
   const label = (
-    <HvTypography variant={isSelected ? "label" : "body"}>
+    <HvTypography
+      component="span"
+      variant={isSelected ? "label" : "body"}
+      data-text={item.label}
+    >
       {item.label}
     </HvTypography>
   );
+
+  let itemHref = item?.href;
+  let itemTarget = item?.target;
+  if (itemHref == null) {
+    // apps should configure the href even on parent items without content
+    // so the fallback logic is theirs, but if not we'll do our best to find a link
+    function traversePreOrder(node: HvHeaderNavigationItemProp) {
+      if (node?.href) {
+        itemHref = node?.href;
+        itemTarget = node?.target;
+      } else if (node?.data != null && node?.data?.length > 0) {
+        let i = 0;
+        while (itemHref == null && i < node.data.length) {
+          traversePreOrder(node?.data[i]);
+          i += 1;
+        }
+      }
+    }
+
+    traversePreOrder(item);
+  }
 
   return (
     <MenuItemLi
@@ -59,12 +88,26 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
       key={item.label}
       $selected={!isMenu && isSelected ? "selectedItem" : "notSelectedItem"}
     >
-      {item?.href ? (
-        <MenuItemLink href={item?.href} target={item?.target} {...itemProps}>
+      {itemHref ? (
+        <MenuItemLink
+          href={itemHref}
+          target={itemTarget}
+          {...itemProps}
+          $isSelected={isSelected}
+          aria-current={isCurrent}
+        >
           {label}
         </MenuItemLink>
       ) : (
-        <MenuItemLabel role="button" {...itemProps} $isSelected={isSelected}>
+        // keeping this code path for backwards compatibility, but
+        // shouldn't really be used as it's not accessible
+        <MenuItemLabel
+          role="button"
+          {...itemProps}
+          tabIndex={0}
+          $isSelected={isSelected}
+          aria-current={isCurrent}
+        >
           {label}
         </MenuItemLabel>
       )}

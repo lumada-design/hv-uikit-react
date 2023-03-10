@@ -6,4 +6,5 @@ export * from "./utils";
 export * from "./tokens";
 export * from "./CssBaseline";
 
-export * as themes from "./themes";
+import * as themes from "./themes";
+export { themes };

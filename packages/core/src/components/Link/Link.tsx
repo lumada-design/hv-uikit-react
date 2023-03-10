@@ -1,16 +1,14 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
-import { StyledA, StyledBox } from "./Link.styles";
+import { StyledA } from "./Link.styles";
 import { linkClasses, HvLinkClasses } from ".";
 import { MouseEventHandler } from "react";
 
-export type HvLinkProps = HvBaseProps<HTMLDivElement, { onClick }> & {
-  as?: React.ElementType;
+export type HvLinkProps = HvBaseProps<HTMLAnchorElement, { onClick }> & {
   onClick?: (
-    event: MouseEventHandler<HTMLDivElement>,
+    event: MouseEventHandler<HTMLAnchorElement>,
     data: any
   ) => void | undefined;
-  tabIndex?: number;
   route?: string;
   data?: any;
   children: any;
@@ -19,8 +17,6 @@ export type HvLinkProps = HvBaseProps<HTMLDivElement, { onClick }> & {
 };
 
 export const HvLink = ({
-  as = "div",
-  tabIndex = 0,
   onClick,
   classes,
   className,
@@ -29,21 +25,18 @@ export const HvLink = ({
   children,
   ...others
 }: HvLinkProps) => {
-  return onClick ? (
-    <StyledBox
-      role="button"
-      tabIndex={tabIndex}
-      onClick={(event) => onClick?.(event, data)}
-      className={clsx(className, linkClasses.a, classes?.a)}
-      component={as}
-      {...others}
-    >
-      {children}
-    </StyledBox>
-  ) : (
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    onClick?.(event, data);
+  };
+
+  return (
     <StyledA
       href={route}
+      onClick={onClick != null ? handleClick : undefined}
       className={clsx(className, linkClasses.a, classes?.a)}
+      {...others}
     >
       {children}
     </StyledA>

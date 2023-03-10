@@ -37,6 +37,8 @@ export const HvNavigation = ({
   const selectionPath = useSelectionPath(data, selected);
 
   const handleClick = (event, selection) => {
+    event.preventDefault();
+
     onClick?.(event, selection);
   };
 

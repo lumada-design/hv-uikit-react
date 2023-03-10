@@ -22,16 +22,19 @@ const navigationData = [
       {
         id: "1-1",
         label: "Model Effectiveness 1",
+        href: "/overview/model-effectiveness",
       },
       {
         id: "1-2",
         label: "Trend Analysis 1-2",
+        href: "/overview/trend-analysis",
       },
     ],
   },
   {
     id: "2",
     label: "Events",
+    href: "/events",
   },
   {
     id: "3",
@@ -40,16 +43,19 @@ const navigationData = [
       {
         id: "3-1",
         label: "Model Effectiveness 3-1",
+        href: "/work-orders/model-effectiveness",
       },
       {
         id: "3-2",
         label: "Trend Analysis 3-2",
+        href: "/work-orders/trend-analysis",
       },
     ],
   },
   {
     id: "4",
     label: "Assets",
+    href: "/assets",
   },
   {
     id: "5",
@@ -58,10 +64,12 @@ const navigationData = [
       {
         id: "5-1",
         label: "Model Effectiveness 5-1",
+        href: "/analytics/model-effectiveness",
       },
       {
         id: "5-2",
         label: "Trend Analysis 5-2",
+        href: "/analytics/trend-analysis",
       },
     ],
   },
@@ -85,7 +93,11 @@ export const Main: StoryObj<HvHeaderProps> = {
   render: ({ position }) => {
     const [selected, setSelected] = useState<string>("2");
     const handleChange = (e, selectedItem) => {
-      setSelected(selectedItem.id);
+      if (selectedItem.href) {
+        setSelected(selectedItem.id);
+      } else if (selectedItem.data?.length) {
+        setSelected(selectedItem.data[0].id);
+      }
     };
 
     const muiTheme = useTheme();

@@ -7,13 +7,19 @@ export const removeExtension = (label) =>
 
 export const pathWithSubMenu = (
   id,
-  classes,
+  onClick,
   listRoute,
   maxVisible,
   dropDownMenuProps
 ) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
+
+  const handleClick = (event, data) => {
+    event.preventDefault();
+
+    onClick?.(event, data);
+  };
 
   listRoute.splice(
     1,
@@ -23,6 +29,7 @@ export const pathWithSubMenu = (
       icon={<MoreOptionsHorizontal iconSize="S" color="acce1" />}
       dataList={subMenuList}
       {...dropDownMenuProps}
+      onClick={onClick != null ? handleClick : undefined}
     />
   );
 
