@@ -351,6 +351,9 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     titleVariant: "title4",
     titleMarginTop: "4px",
   },
+  tooltip: {
+    borderRadius: "6px",
+  },
 }));
 
 export default ds5;

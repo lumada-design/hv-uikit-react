@@ -409,6 +409,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     titleVariant: "xxsTitle",
     titleMarginTop: "2px",
   },
+  tooltip: {
+    borderRadius: "0px",
+  },
 }));
 
 export default ds3;

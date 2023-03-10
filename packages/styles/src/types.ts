@@ -236,6 +236,9 @@ export type HvThemeComponents = {
     titleVariant: keyof HvThemeTypography["typography"];
     titleMarginTop: string;
   };
+  tooltip: {
+    borderRadius: string;
+  };
 };
 
 // Theme typography

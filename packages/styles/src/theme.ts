@@ -229,6 +229,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     titleVariant: "string",
     titleMarginTop: "string",
   },
+  tooltip: {
+    borderRadius: "string",
+  },
 };
 
 const typographyProps: DeepString<HvTypographyProps> = {
