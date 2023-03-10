@@ -16,7 +16,7 @@ export const StyledFormElement = styled(
   display: "inline-block",
   width: "100%",
 
-  ...($resizable && { width: "auto" }),
+  ...($resizable && { width: "100%" }),
 }));
 
 export const StyledLabelContainer = styled("div")({
@@ -59,8 +59,7 @@ export const StyledBaseInput = styled(
   float: "left",
 
   ...($resizable && {
+    width: "100%",
     resize: "both",
-    minWidth: "150px",
-    maxWidth: "610px",
   }),
 }));
