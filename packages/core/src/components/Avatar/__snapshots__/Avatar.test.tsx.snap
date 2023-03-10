@@ -33,7 +33,7 @@ exports[`Avatar > should render correctly 1`] = `
         class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-SM css-1lnuk2l-StyledAvatar e1sw81qd1 css-2s90m6-MuiAvatar-root"
       >
         <div
-          class="HvAvatar-fallback css-du18qm"
+          class="HvAvatar-fallback css-f95wjz"
           name="User"
         >
           <svg

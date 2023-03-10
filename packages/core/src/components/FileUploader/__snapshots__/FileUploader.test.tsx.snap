@@ -42,7 +42,7 @@ exports[`FileUploader > should render correctly 1`] = `
         class="HvDropZone-dropArea css-tnj4j3-StyledDropArea e1r4xwg25"
       >
         <div
-          class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-pq8p29-StyledDropAreaIcon"
+          class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-ubf50j-StyledDropAreaIcon"
           name="Doc"
         >
           <svg
@@ -111,7 +111,7 @@ exports[`FileUploader > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="css-du18qm"
+                class="css-f95wjz"
                 name="Close"
               >
                 <svg
@@ -165,7 +165,7 @@ exports[`FileUploader > should render correctly 1`] = `
               class="css-1o4qkkz-StyledChildren e138pvrm1"
             >
               <div
-                class="css-du18qm"
+                class="css-f95wjz"
                 name="Close"
               >
                 <svg

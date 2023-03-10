@@ -10,7 +10,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon e6pb7kb8 css-11psvlv-StyledFail"
+        class="HvFile-icon e6pb7kb8 css-1x1xcvg-StyledFail"
         name="Fail"
       >
         <svg
@@ -54,7 +54,7 @@ exports[`FileList > should render correctly 1`] = `
             class="css-1o4qkkz-StyledChildren e138pvrm1"
           >
             <div
-              class="css-du18qm"
+              class="css-f95wjz"
               name="Close"
             >
               <svg
@@ -79,7 +79,7 @@ exports[`FileList > should render correctly 1`] = `
       class="HvFileList-listItem HvFile-root"
     >
       <div
-        class="HvFile-icon e6pb7kb8 css-11psvlv-StyledFail"
+        class="HvFile-icon e6pb7kb8 css-1x1xcvg-StyledFail"
         name="Fail"
       >
         <svg
@@ -123,7 +123,7 @@ exports[`FileList > should render correctly 1`] = `
             class="css-1o4qkkz-StyledChildren e138pvrm1"
           >
             <div
-              class="css-du18qm"
+              class="css-f95wjz"
               name="Close"
             >
               <svg

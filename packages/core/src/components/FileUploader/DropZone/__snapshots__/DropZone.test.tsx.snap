@@ -41,7 +41,7 @@ exports[`DropZone > should render correctly 1`] = `
       class="HvDropZone-dropArea css-tnj4j3-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-pq8p29-StyledDropAreaIcon"
+        class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-ubf50j-StyledDropAreaIcon"
         name="Doc"
       >
         <svg
@@ -119,7 +119,7 @@ exports[`DropZone > should render correctly when disabled 1`] = `
       class="HvDropZone-dropArea css-tnj4j3-StyledDropArea e1r4xwg25"
     >
       <div
-        class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-pq8p29-StyledDropAreaIcon"
+        class="HvDropZone-dropZoneAreaIcon e1r4xwg22 css-ubf50j-StyledDropAreaIcon"
         name="Doc"
       >
         <svg

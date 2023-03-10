@@ -1,25 +1,36 @@
 import {
   Bookmark,
   CheckboxCheck,
-  IconBase,
   Level4,
   Level5,
   Machine,
-  // @ts-ignore
+  IconBase,
+  IconBaseProps,
 } from "@hitachivantara/uikit-react-icons";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const meta: Meta<typeof IconBase> = {
   title: "Theme/Icons/Usage",
   parameters: {
     componentSubtitle: null,
-    usage:
-      "import { Bookmark, CheckboxCheck } from '@hitachivantara/uikit-react-icons'",
   },
   component: IconBase,
 };
+export default meta;
 
-export const Main = () => <CheckboxCheck />;
+export const Main: StoryObj<IconBaseProps> = {
+  args: {
+    iconSize: "S",
+    color: "",
+    inverted: false,
+  },
+  argTypes: {
+    svgProps: { control: { disable: true } },
+  },
+  render: (args) => {
+    return <CheckboxCheck {...args} />;
+  },
+};
 
 export const IconSize = () => <CheckboxCheck iconSize="M" />;
 

@@ -62,7 +62,7 @@ exports[`TextArea > should render correctly 1`] = `
       class="HvTextArea-error e1e5t49x1 HvWarningText-root css-1fh2wz-StyledRoot-StyledWarningText e1jkc0dp2"
     >
       <div
-        class="HvWarningText-defaultIcon e1jkc0dp0 css-7mfkjz-StyledIcon"
+        class="HvWarningText-defaultIcon e1jkc0dp0 css-1en9bxk-StyledIcon"
         name="Fail"
       >
         <svg

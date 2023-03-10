@@ -71,7 +71,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-19u57x0-StyledIconInfo"
+              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-1xjgxlv-StyledIconInfo"
               name="Info"
               role="img"
             >
@@ -123,7 +123,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           >
             <div
               aria-label="Mock App 2 Description"
-              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-19u57x0-StyledIconInfo"
+              class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-1xjgxlv-StyledIconInfo"
               name="Info"
               role="img"
             >

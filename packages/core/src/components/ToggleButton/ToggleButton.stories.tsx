@@ -61,13 +61,7 @@ export const Main: StoryObj<HvToggleButtonProps> = {
     selectedIcon: { control: { disable: true } },
     notSelectedIcon: { control: { disable: true } },
   },
-  decorators: [
-    (Story) => (
-      <FlexDecorator>
-        <Story />
-      </FlexDecorator>
-    ),
-  ],
+  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
   render: (args) => {
     return <HvToggleButton {...args} />;
   },

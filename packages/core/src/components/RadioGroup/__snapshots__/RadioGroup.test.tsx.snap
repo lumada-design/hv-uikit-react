@@ -33,7 +33,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
               value="1"
             />
             <div
-              class="HvBaseRadio-icon css-du18qm"
+              class="HvBaseRadio-icon css-f95wjz"
               font-size="medium"
               name="RadioButtonUnselected"
             >
@@ -84,7 +84,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
               value="2"
             />
             <div
-              class="HvBaseRadio-icon css-du18qm"
+              class="HvBaseRadio-icon css-f95wjz"
               font-size="medium"
               name="RadioButtonSelected"
             >
@@ -139,7 +139,7 @@ exports[`RadioGroup > general > should render correctly 1`] = `
               value="3"
             />
             <div
-              class="HvBaseRadio-icon css-du18qm"
+              class="HvBaseRadio-icon css-f95wjz"
               font-size="medium"
               name="RadioButtonUnselected"
             >

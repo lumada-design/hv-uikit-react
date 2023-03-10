@@ -33,7 +33,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="dogs"
             />
             <div
-              class="HvBaseCheckBox-icon css-du18qm"
+              class="HvBaseCheckBox-icon css-f95wjz"
               font-size="medium"
               name="Checkbox"
             >
@@ -83,7 +83,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="cats"
             />
             <div
-              class="HvBaseCheckBox-icon css-du18qm"
+              class="HvBaseCheckBox-icon css-f95wjz"
               font-size="medium"
               name="Checkbox"
             >
@@ -133,7 +133,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
               value="dragons"
             />
             <div
-              class="HvBaseCheckBox-icon css-du18qm"
+              class="HvBaseCheckBox-icon css-f95wjz"
               font-size="medium"
               name="Checkbox"
             >

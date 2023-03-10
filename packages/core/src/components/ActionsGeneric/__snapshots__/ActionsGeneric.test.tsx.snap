@@ -16,7 +16,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
         >
           <div
-            class="css-du18qm"
+            class="css-f95wjz"
             name="Add"
           >
             <svg
@@ -51,7 +51,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
         >
           <div
-            class="css-du18qm"
+            class="css-f95wjz"
             name="Upload"
           >
             <svg
@@ -86,7 +86,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
         >
           <div
-            class="css-du18qm"
+            class="css-f95wjz"
             name="Delete"
           >
             <svg
@@ -121,7 +121,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
           class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
         >
           <div
-            class="css-du18qm"
+            class="css-f95wjz"
             name="Preview"
           >
             <svg
