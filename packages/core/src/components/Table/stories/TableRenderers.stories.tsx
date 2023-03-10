@@ -512,108 +512,130 @@ export const DateColumnRenderer: StoryObj = {
   },
 };
 
-// export const ExpandColumnRenderer = () => {
-//   const getColumns = () => [
-//     hvTextColumn({ Header: "Event Type", accessor: "eventType", style: { maxWidth: 160 } }),
-//     hvExpandColumn(
-//       { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
-//       "expand",
-//       "collapse",
-//       (row) => row.values.eventType !== undefined
-//     ),
-//   ];
+export const ExpandColumnRenderer = () => {
+  const getColumns = () => [
+    hvTextColumn({
+      Header: "Event Type",
+      accessor: "eventType",
+      style: { maxWidth: 160 },
+    }),
+    hvExpandColumn(
+      { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
+      "expand",
+      "collapse",
+      (row) => row.values.eventType !== undefined
+    ),
+  ];
 
-//   const columns = useMemo(() => {
-//     return getColumns();
-//   }, []);
+  const columns = useMemo(() => {
+    return getColumns();
+  }, []);
 
-//   const initialData = useMemo(() => makeRenderersData(64), []);
+  const initialData = useMemo(() => makeRenderersData(64), []);
 
-//   const [data] = useState(initialData);
+  const [data] = useState(initialData);
 
-//   const EmptyRow = () => (
-//     <HvTableRow>
-//       <HvTableCell colSpan={100} style={{ height: 50 }}>
-//         <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
-//       </HvTableCell>
-//     </HvTableRow>
-//   );
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan={100} style={{ height: 50 }}>
+        <HvEmptyState
+          message="No data to display"
+          icon={<Ban role="presentation" />}
+        />
+      </HvTableCell>
+    </HvTableRow>
+  );
 
-//   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-//     useHvData(
-//       {
-//         columns,
-//         data,
-//         defaultColumn: {
-//           Cell: ({ value }) => value ?? "—",
-//         },
-//         disableCreateExpandButton: true,
-//       },
-//       useHvRowExpand,
-//       useHvPagination
-//     );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    getHvPaginationProps,
+  } = useHvData(
+    {
+      columns,
+      data,
+      defaultColumn: {
+        Cell: ({ value }) => value ?? "—",
+      },
+      disableCreateExpandButton: true,
+    },
+    useHvRowExpand,
+    useHvPagination
+  );
 
-//   const rowRenderer = (pages) => {
-//     return pages.map((row, index) => {
-//       prepareRow(row);
+  const rowRenderer = (pages) => {
+    return pages.map((row, index) => {
+      prepareRow(row);
 
-//       return (
-//         <React.Fragment key={row.id}>
-//           <HvTableRow
-//             key={row.Header}
-//             {...row.getRowProps({
-//               "aria-rowindex": index,
-//             })}
-//           >
-//             {row.cells.map((cell) => (
-//               <HvTableCell key={cell.Header} {...cell.getCellProps()}>
-//                 {cell.render("Cell")}
-//               </HvTableCell>
-//             ))}
-//           </HvTableRow>
-//           <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
-//             <HvTableCell
-//               style={{ paddingBottom: 0, paddingTop: 0, textAlign: "center", height: 100 }}
-//               colSpan="100%"
-//             >
-//               <HvTypography>Expanded content for: {row.values.name}</HvTypography>
-//             </HvTableCell>
-//           </HvTableRow>
-//         </React.Fragment>
-//       );
-//     });
-//   };
-//   return (
-//     <>
-//       <HvTableContainer>
-//         <HvTable
-//           {...getTableProps({
-//             "aria-rowcount": data.length,
-//             caption: "Table Caption",
-//           })}
-//           style={{
-//             width: 300,
-//           }}
-//         >
-//           <HvTableHead>
-//             <HvTableRow>
-//               {headers.map((col) => (
-//                 <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
-//                   {col.render("Header")}
-//                 </HvTableHeader>
-//               ))}
-//             </HvTableRow>
-//           </HvTableHead>
-//           <HvTableBody {...getTableBodyProps()}>
-//             {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
-//           </HvTableBody>
-//         </HvTable>
-//       </HvTableContainer>
+      return (
+        <React.Fragment key={row.id}>
+          <HvTableRow
+            key={row.Header}
+            {...row.getRowProps({
+              "aria-rowindex": index,
+            })}
+          >
+            {row.cells.map((cell) => (
+              <HvTableCell key={cell.Header} {...cell.getCellProps()}>
+                {cell.render("Cell")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+          {/* @ts-ignore */}
+          <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
+            <HvTableCell
+              style={{
+                paddingBottom: 0,
+                paddingTop: 0,
+                textAlign: "center",
+                height: 100,
+              }}
+              // @ts-ignore
+              colSpan="100%"
+            >
+              <HvTypography>
+                Expanded content for: {row.values.name}
+              </HvTypography>
+            </HvTableCell>
+          </HvTableRow>
+        </React.Fragment>
+      );
+    });
+  };
+  return (
+    <>
+      <HvTableContainer>
+        <HvTable
+          {...getTableProps({
+            "aria-rowcount": data.length,
+            caption: "Table Caption",
+          })}
+          style={{
+            width: 300,
+          }}
+        >
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableHeader>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
 
-//       <HvPagination {...getHvPaginationProps()} />
-//     </>
-//   );
-// };
+      <HvPagination {...getHvPaginationProps()} />
+    </>
+  );
+};
 
 export const SwitchColumnRenderer: StoryObj = {
   render: () => {
@@ -627,7 +649,7 @@ export const SwitchColumnRenderer: StoryObj = {
           {
             Header: "isDisabled",
             accessor: "isDisabled",
-            style: { minWidth: 130 },
+            style: { minWidth: 180 },
           },
           "default",
           "yes",
@@ -943,108 +965,117 @@ export const ProgressColumnRenderer = () => {
   );
 };
 
-// export const DropdownColumnRenderer = () => {
-//   const initialData = useMemo(() => makeRenderersData(64), []);
+export const DropdownColumnRenderer = () => {
+  const initialData = useMemo(() => makeRenderersData(64), []);
 
-//   const [data, setData] = useState(initialData);
+  const [data, setData] = useState(initialData);
 
-//   const columns = useMemo(() => {
-//     return [
-//       hvDropdownColumn(
-//         { Header: "Severity", accessor: "severity" },
-//         "Severity-id-101",
-//         "Select severity...",
-//         "Select severity...",
-//         (id, value) => {
-//           let newData = [...data];
-//           newData = newData.map((val, index) => {
-//             const newVal = { ...val };
-//             if (index.toString() === id) {
-//               newVal.severity = newVal.severity.map((sev) => {
-//                 const newSev = { ...sev };
-//                 newSev.selected = false;
-//                 if (newSev.id === value.id) newSev.selected = value.selected;
-//                 return newSev;
-//               });
-//             }
-//             return newVal;
-//           });
-//           setData(newData);
-//         }
-//       ),
-//     ];
-//   }, [data]);
+  const columns = useMemo(() => {
+    return [
+      hvDropdownColumn(
+        { Header: "Severity", accessor: "severity" },
+        "Severity-id-101",
+        "Select severity...",
+        "Select severity...",
+        (id, value) => {
+          let newData = [...data];
+          newData = newData.map((val, index) => {
+            const newVal = { ...val };
+            if (index.toString() === id) {
+              newVal.severity = newVal.severity.map((sev) => {
+                const newSev = { ...sev };
+                newSev.selected = false;
+                if (newSev.id === value.id) newSev.selected = value.selected;
+                return newSev;
+              });
+            }
+            return newVal;
+          });
+          setData(newData);
+        }
+      ),
+    ];
+  }, [data]);
 
-//   const EmptyRow = () => (
-//     <HvTableRow>
-//       <HvTableCell colSpan={100} style={{ height: 100 }}>
-//         <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
-//       </HvTableCell>
-//     </HvTableRow>
-//   );
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan={100} style={{ height: 100 }}>
+        <HvEmptyState
+          message="No data to display"
+          icon={<Ban role="presentation" />}
+        />
+      </HvTableCell>
+    </HvTableRow>
+  );
 
-//   const { getTableProps, getTableBodyProps, prepareRow, headers, page, getHvPaginationProps } =
-//     useHvData(
-//       {
-//         columns,
-//         data,
-//         defaultColumn: {
-//           Cell: ({ value }) => value ?? "—",
-//         },
-//       },
-//       useHvPagination
-//     );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    getHvPaginationProps,
+  } = useHvData(
+    {
+      columns,
+      data,
+      defaultColumn: {
+        Cell: ({ value }) => value ?? "—",
+      },
+    },
+    useHvPagination
+  );
 
-//   const rowRenderer = (pages) => {
-//     return pages.map((row, index) => {
-//       prepareRow(row);
+  const rowRenderer = (pages) => {
+    return pages.map((row, index) => {
+      prepareRow(row);
 
-//       return (
-//         <React.Fragment key={row.id}>
-//           <HvTableRow
-//             key={row.Header}
-//             {...row.getRowProps({
-//               "aria-rowindex": index,
-//             })}
-//           >
-//             {row.cells.map((cell) => (
-//               <HvTableCell key={cell.Header} {...cell.getCellProps()}>
-//                 {cell.render("Cell")}
-//               </HvTableCell>
-//             ))}
-//           </HvTableRow>
-//         </React.Fragment>
-//       );
-//     });
-//   };
-//   return (
-//     <>
-//       <HvTableContainer>
-//         <HvTable
-//           {...getTableProps({
-//             "aria-rowcount": data.length,
-//             caption: "Table Caption",
-//           })}
-//           style={{
-//             width: 230,
-//           }}
-//         >
-//           <HvTableHead>
-//             <HvTableRow>
-//               {headers.map((col) => (
-//                 <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
-//                   {col.render("Header")}
-//                 </HvTableHeader>
-//               ))}
-//             </HvTableRow>
-//           </HvTableHead>
-//           <HvTableBody {...getTableBodyProps()}>
-//             {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
-//           </HvTableBody>
-//         </HvTable>
-//       </HvTableContainer>
+      return (
+        <React.Fragment key={row.id}>
+          <HvTableRow
+            key={row.Header}
+            {...row.getRowProps({
+              "aria-rowindex": index,
+            })}
+          >
+            {row.cells.map((cell) => (
+              <HvTableCell key={cell.Header} {...cell.getCellProps()}>
+                {cell.render("Cell")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+        </React.Fragment>
+      );
+    });
+  };
+  return (
+    <>
+      <HvTableContainer>
+        <HvTable
+          {...getTableProps({
+            "aria-rowcount": data.length,
+            caption: "Table Caption",
+          })}
+          style={{
+            width: 230,
+          }}
+        >
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableHeader>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page.length === 0 ? <EmptyRow /> : rowRenderer(page)}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
 
-//       <HvPagination {...getHvPaginationProps()} />
-//     </>
-//   );
-// };
+      <HvPagination {...getHvPaginationProps()} />
+    </>
+  );
+};
