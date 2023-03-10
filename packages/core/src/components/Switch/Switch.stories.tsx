@@ -25,13 +25,7 @@ const meta: Meta<typeof HvSwitch> = {
   title: "Inputs/Switch",
   component: HvSwitch,
   subcomponents: { HvBaseSwitch },
-  decorators: [
-    (Story) => (
-      <StyledDecorator>
-        <Story />
-      </StyledDecorator>
-    ),
-  ],
+  decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };
 
 export default meta;

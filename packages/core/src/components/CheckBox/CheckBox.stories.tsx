@@ -18,13 +18,7 @@ const meta: Meta<typeof HvCheckBox> = {
   title: "Inputs/Checkbox/Checkbox",
   component: HvCheckBox,
   subcomponents: { HvBaseCheckBox },
-  decorators: [
-    (Story) => (
-      <StyledDecorator>
-        <Story />
-      </StyledDecorator>
-    ),
-  ],
+  decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };
 
 export default meta;

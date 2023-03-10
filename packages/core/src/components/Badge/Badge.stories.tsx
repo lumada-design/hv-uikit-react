@@ -63,11 +63,7 @@ export const WithIcon: StoryObj<HvBadgeProps> = {
     },
   },
   decorators: [
-    (Story) => (
-      <div style={{ ...container, width: 500 }}>
-        <Story />
-      </div>
-    ),
+    (Story) => <div style={{ ...container, width: 500 }}>{Story()}</div>,
   ],
   render: () => {
     return (
@@ -93,11 +89,7 @@ export const WithText: StoryObj<HvBadgeProps> = {
     },
   },
   decorators: [
-    (Story) => (
-      <div style={{ ...container, width: 650 }}>
-        <Story />
-      </div>
-    ),
+    (Story) => <div style={{ ...container, width: 650 }}>{Story()}</div>,
   ],
   render: () => {
     return (
@@ -148,11 +140,7 @@ export const WithState: StoryObj<HvBadgeProps> = {
     },
   },
   decorators: [
-    (Story) => (
-      <div style={{ ...container, width: 650 }}>
-        <Story />
-      </div>
-    ),
+    (Story) => <div style={{ ...container, width: 650 }}>{Story()}</div>,
   ],
   render: () => {
     const [count, setCount] = useState(1);

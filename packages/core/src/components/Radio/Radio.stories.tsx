@@ -22,13 +22,7 @@ const meta: Meta<typeof HvRadio> = {
   title: "Inputs/Radio Button",
   component: HvRadio,
   subcomponents: { HvBaseRadio },
-  decorators: [
-    (Story) => (
-      <FlexDecorator>
-        <Story />
-      </FlexDecorator>
-    ),
-  ],
+  decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
 };
 export default meta;
 

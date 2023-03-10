@@ -11,19 +11,31 @@ const StyledDecorator = styled("div")({
 const meta: Meta<typeof HvTextArea> = {
   title: "Inputs/Text Area",
   component: HvTextArea,
-  decorators: [
-    (Story) => (
-      <StyledDecorator>
-        <Story />
-      </StyledDecorator>
-    ),
-  ],
+  decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };
 
 export default meta;
 
 export const Main: StoryObj<HvTextAreaProps> = {
-  args: { label: "Label", placeholder: "Enter value", rows: 5 },
+  args: {
+    label: "Label",
+    placeholder: "Enter value",
+    rows: 5,
+    invalid: false,
+    resizable: false,
+    description: "Textarea description",
+    hideCounter: false,
+    blockMax: false,
+    autoScroll: false,
+    minCharQuantity: 0,
+    maxCharQuantity: 160,
+    middleCountLabel: "of",
+    statusMessage: "Oops, something's gone wrong!",
+  },
+  argTypes: {
+    countCharProps: { control: { disable: true } },
+    classes: { control: { disable: true } },
+  },
   render: (args) => {
     return <HvTextArea id="main" {...args} />;
   },

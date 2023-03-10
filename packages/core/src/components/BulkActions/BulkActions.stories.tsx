@@ -12,20 +12,17 @@ import { uniqueId } from "lodash";
 import { useState } from "react";
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
-const StyledDecorator = styled("div")({
-  padding: "10px",
-});
+const actions: HvActionGeneric[] = [
+  { id: "add", label: "Add", icon: <Add /> },
+  { id: "delete", label: "Delete", icon: <Delete /> },
+  { id: "lock", label: "Lock", icon: <Lock /> },
+  { id: "put", label: "Preview", icon: <Preview /> },
+];
 
 const meta: Meta<typeof HvBulkActions> = {
   title: "Structure/Bulk Actions",
   component: HvBulkActions,
-  decorators: [
-    (Story) => (
-      <StyledDecorator>
-        <Story />
-      </StyledDecorator>
-    ),
-  ],
+  decorators: [(Story) => <div style={{ padding: 10 }}>{Story()}</div>],
 };
 
 export default meta;
@@ -119,13 +116,6 @@ export const Main: StoryObj<HvBulkActionsProps> = {
 
 export const WithActions: StoryObj<HvBulkActionsProps> = {
   render: () => {
-    const actions: HvActionGeneric[] = [
-      { id: "add", label: "Add", icon: <Add /> },
-      { id: "delete", label: "Delete", icon: <Delete /> },
-      { id: "lock", label: "Lock", icon: <Lock /> },
-      { id: "put", label: "Preview", icon: <Preview /> },
-    ];
-
     const addEntry = (id: string | number): SampleComponentDatum => ({
       id: `Entry ${id}`,
       value: `Value ${id}`,
@@ -169,18 +159,20 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
     };
 
     return (
-      <div>
-        <HvBulkActions
-          id="bulkActions"
-          numTotal={data.length}
-          numSelected={data.filter((el) => el.checked).length}
-          onSelectAll={handleSelectAll}
-          actions={actions}
-          actionsCallback={handleAction}
-          maxVisibleActions={2}
-        />
-        <SampleComponent data={data} onChange={handleChange} />
-      </div>
+      actions && (
+        <div>
+          <HvBulkActions
+            id="bulkActions"
+            numTotal={data.length}
+            numSelected={data.filter((el) => el.checked).length}
+            onSelectAll={handleSelectAll}
+            actions={actions}
+            actionsCallback={handleAction}
+            maxVisibleActions={2}
+          />
+          <SampleComponent data={data} onChange={handleChange} />
+        </div>
+      )
     );
   },
 };
@@ -188,13 +180,6 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
 export const WithPagination: StoryObj<HvBulkActionsProps> = {
   render: () => {
     const pageSizeOptions: number[] = [4, 6, 12, 24, 48, 2000];
-
-    const actions: HvActionGeneric[] = [
-      { id: "add", label: "Add", icon: <Add /> },
-      { id: "delete", label: "Delete", icon: <Delete /> },
-      { id: "lock", label: "Lock", icon: <Lock /> },
-      { id: "put", label: "Preview", icon: <Preview /> },
-    ];
 
     const addEntry = (i: number | string): SampleComponentDatum => ({
       id: i,
