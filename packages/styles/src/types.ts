@@ -161,6 +161,7 @@ export type HvThemeComponents = {
     borderRadius: string;
   };
   tagsInput: {
+    borderColor: string;
     disabledBackgroundColor: string;
     readOnlyBackgroundColor: string;
     hoverColor: string;

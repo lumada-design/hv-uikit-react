@@ -334,6 +334,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     borderRadius: "0px",
   },
   tagsInput: {
+    borderColor: theme.colors.atmo4,
     disabledBackgroundColor: theme.colors.atmo1,
     readOnlyBackgroundColor: theme.colors.atmo1,
     hoverColor: theme.colors.acce1,

@@ -276,6 +276,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     borderRadius: "2px",
   },
   tagsInput: {
+    borderColor: theme.colors.acce4,
     disabledBackgroundColor: theme.colors.atmo2,
     readOnlyBackgroundColor: theme.colors.atmo2,
     hoverColor: theme.colors.acce2,

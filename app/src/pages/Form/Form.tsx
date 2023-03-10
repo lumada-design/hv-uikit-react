@@ -8,9 +8,10 @@ import {
   HvInput,
   HvTextArea,
   HvFormStatus,
+  HvDropdown,
+  HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
-
 import { fields, allCountries } from "lib/utils/form";
 import classes from "./styles";
 
@@ -166,6 +167,29 @@ const Form = () => {
                     placeholder={fields.version.placeholder}
                     type="number"
                     {...fieldStatusProps(fields.version.id)}
+                  />
+                </HvGrid>
+
+                <HvGrid item md={6} xs={12}>
+                  <HvDropdown
+                    id={fields.release.id}
+                    label={fields.release.label}
+                    required
+                    placeholder={fields.release.placeholder}
+                    values={[
+                      { id: "1", label: "1.0" },
+                      { id: "2", label: "2.0" },
+                      { id: "3", label: "3.0" },
+                    ]}
+                  />
+                </HvGrid>
+
+                <HvGrid item md={6} xs={12}>
+                  <HvTagsInput
+                    id={fields.tags.id}
+                    label={fields.tags.label}
+                    required
+                    placeholder={fields.tags.placeholder}
                   />
                 </HvGrid>
 

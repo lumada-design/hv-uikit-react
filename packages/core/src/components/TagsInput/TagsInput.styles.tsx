@@ -78,7 +78,7 @@ export const StyledTagsList = styled(
     clear: "both",
     width: "100%",
     maxWidth: "100%",
-    height: "100%",
+    height: "32px",
     padding: 5,
     overflow: "auto",
     position: "relative",
@@ -87,7 +87,7 @@ export const StyledTagsList = styled(
     flexWrap: "wrap",
 
     backgroundColor: theme.colors.atmo1,
-    border: `1px solid ${theme.colors.atmo4}`,
+    border: `1px solid ${theme.tagsInput.borderColor}`,
     borderRadius: "2px",
 
     "&:hover": {
