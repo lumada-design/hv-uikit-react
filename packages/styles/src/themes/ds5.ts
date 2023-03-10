@@ -157,6 +157,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     semanticColor: "rgba(251, 252, 252, 0.3)",
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
     hoverColor: theme.colors.acce2s,
+    secondaryBackgroundColor: "transparent",
   },
   header: {
     color: theme.colors.acce1,
