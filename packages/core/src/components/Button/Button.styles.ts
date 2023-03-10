@@ -140,7 +140,9 @@ export const StyledButton = styled(
     }),
     ...($variant === "secondarySubtle" && {
       color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
-      backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
+      backgroundColor: $disabled
+        ? theme.colors.atmo3
+        : theme.button.secondaryBackgroundColor,
       border: $disabled
         ? `1px solid ${theme.colors.atmo4}`
         : `1px solid ${theme.colors.atmo4}`,

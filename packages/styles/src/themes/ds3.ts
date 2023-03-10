@@ -215,6 +215,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     semanticColor: "rgba(251, 252, 252, 0.3)",
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
     hoverColor: theme.colors.atmo3,
+    secondaryBackgroundColor: theme.colors.atmo1,
   },
   header: {
     color: theme.colors.sema4,

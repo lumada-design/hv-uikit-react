@@ -42,6 +42,7 @@ export type HvThemeComponents = {
     semanticColor: string;
     semanticColorDisabled: string;
     hoverColor: string;
+    secondaryBackgroundColor: string;
   };
   header: {
     color: string;
