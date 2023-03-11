@@ -267,7 +267,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     disabledBackgroundColor: theme.colors.atmo2,
     readOnlyBorderColor: theme.colors.atmo5,
     readOnlyTextColor: theme.colors.acce4,
-    readOnlyBackgroundColor: theme.colors.atmo2,
+    readOnlyBackgroundColor: "transparent",
     multilineBorderColor: theme.colors.acce4,
     multilineDisabledBorderColor: theme.colors.atmo5,
   },

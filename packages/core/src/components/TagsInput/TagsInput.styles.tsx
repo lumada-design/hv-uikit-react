@@ -130,7 +130,6 @@ export const StyledTagsList = styled(
       height: 32,
       display: "table-row",
       paddingTop: 0,
-      paddingLeft: 4,
     }),
 
     ...($error && {
@@ -212,11 +211,6 @@ export const StyledInputListItem = styled(
       width: "100%",
       paddingTop: "3px!important",
       verticalAlign: "middle",
-      [`&.${tagsInputClasses.tagInputRootEmpty}`]: {
-        position: "absolute",
-        height: "100%",
-        paddingTop: "3px!important",
-      },
     }),
     ...($isTagSelected && {
       [`& .${baseInputClasses.inputRoot}`]: {
@@ -264,6 +258,9 @@ export const StyledInput = styled(
     "&:hover": {
       border: "none",
     },
+  },
+  [`&& .${baseInputClasses.input}`]: {
+    marginLeft: 0,
   },
   ...($singleLine && {}),
 }));
