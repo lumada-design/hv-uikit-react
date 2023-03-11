@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvGrid, HvListValue } from "components";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
 
 const Decorator = ({ children }) => {
@@ -394,9 +394,7 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
     const [birthErrorMessage, setBirthErrorMessage] = useState<string | null>(
       null
     );
-    const [deathErrorMessage, setDeathErrorMessage] = useState(
-      "Dropdown 2 is always invalid."
-    );
+    const deathErrorMessage = useRef("Dropdown 2 is always invalid");
 
     return (
       <HvGrid container>
@@ -431,15 +429,12 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
                 setDeathValidationState("invalid");
 
                 if ((value as HvListValue[]).length === 0) {
-                  setDeathErrorMessage(
-                    "Select at least one value from dropdown 2."
-                  );
+                  deathErrorMessage.current =
+                    "Select at least one value from dropdown 2.";
                 } else {
-                  setDeathErrorMessage(
-                    `Dropdown 2 is always invalid, even with ${
-                      (value as HvListValue[]).length
-                    } items selected.`
-                  );
+                  deathErrorMessage.current = `Dropdown 2 is always invalid, even with ${
+                    (value as HvListValue[]).length
+                  } items selected.`;
                 }
               }}
             />
@@ -464,7 +459,7 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
               )}
               {deathErrorMessage && (
                 <li id="death-error" aria-live="polite">
-                  {deathErrorMessage}
+                  {deathErrorMessage.current}
                 </li>
               )}
             </ul>
