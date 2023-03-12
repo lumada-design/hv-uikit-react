@@ -15,6 +15,10 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
     showSelectAll: true,
     label: "Choose your favorite checkboxes",
     name: "favorite",
+    description: "",
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
   },
   render: (args) => {
     return (

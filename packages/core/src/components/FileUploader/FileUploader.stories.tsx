@@ -18,6 +18,11 @@ export default meta;
 
 export const Main: StoryObj<HvFileUploaderProps> = {
   args: { disabled: false },
+  argTypes: {
+    fileList: { control: { disable: true } },
+    acceptedFiles: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
+  },
   render: (args) => {
     const [list, setList] = useState<HvFileData[]>([]);
 

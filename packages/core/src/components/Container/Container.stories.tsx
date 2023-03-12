@@ -13,10 +13,13 @@ export default meta;
 export const Main: StoryObj<HvContainerProps> = {
   args: {
     maxWidth: "md",
+    fixed: false,
+    disableGutters: false,
   },
   argTypes: {
     classes: { control: { disable: true } },
     component: { control: { disable: true } },
+    sx: { control: { disable: true } },
   },
   render: (args) => {
     const StyledContainer = styled(HvContainer)({

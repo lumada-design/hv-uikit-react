@@ -14,6 +14,7 @@ export const Main: StoryObj<HvProgressBarProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    labelProps: { control: { disable: true } },
     value: { control: { type: "range" } },
   },
   render: (args) => {

@@ -40,26 +40,12 @@ export const Main: StoryObj<HvSwitchProps> = {
     checked: false,
     defaultChecked: false,
   },
-  render: ({
-    value,
-    label,
-    required,
-    readOnly,
-    disabled,
-    checked,
-    defaultChecked,
-  }) => {
-    return (
-      <HvSwitch
-        value={value}
-        label={label}
-        required={required}
-        readOnly={readOnly}
-        disabled={disabled}
-        checked={checked}
-        defaultChecked={defaultChecked}
-      />
-    );
+  argTypes: {
+    classes: { control: { disable: true } },
+    labelProps: { control: { disable: true } },
+  },
+  render: (args) => {
+    return <HvSwitch {...args} />;
   },
 };
 

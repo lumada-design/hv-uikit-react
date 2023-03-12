@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   BackwardsEmpty,
@@ -30,16 +29,11 @@ import {
 import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {
-  const StyledRoot = styled("div")({
-    display: "flex",
-    alignItems: "end",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: "0 10px 5px 0",
-    },
-  });
-
-  return <StyledRoot>{children}</StyledRoot>;
+  return (
+    <div style={{ display: "flex", alignItems: "end", flexWrap: "wrap" }}>
+      {children}
+    </div>
+  );
 };
 
 const meta: Meta<typeof HvToggleButton> = {
@@ -52,7 +46,7 @@ export default meta;
 export const Main: StoryObj<HvToggleButtonProps> = {
   args: {
     defaultSelected: false,
-    selected: false,
+    disabled: false,
     notSelectedIcon: <Favorite />,
     selectedIcon: <FavoriteSelected />,
   },
@@ -83,47 +77,56 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           aria-label="Favorite"
           notSelectedIcon={<Favorite />}
           selectedIcon={<FavoriteSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Backwards"
           notSelectedIcon={<BackwardsEmpty />}
           selectedIcon={<BackwardsSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Up"
           notSelectedIcon={<UpEmpty />}
           selectedIcon={<UpSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           disabled
           aria-label="Down"
           notSelectedIcon={<DownEmpty />}
           selectedIcon={<DownSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Forward"
           notSelectedIcon={<ForwardsEmpty />}
           selectedIcon={<ForwardsSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Like"
           notSelectedIcon={<Like />}
           selectedIcon={<LikeSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Dislike"
           notSelectedIcon={<Dislike />}
           selectedIcon={<DislikeSelected />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Light"
           notSelectedIcon={<LightOff />}
           selectedIcon={<LightOn />}
+          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Lock"
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}
+          style={{ margin: "0 10px 5px 0" }}
         />
       </>
     );

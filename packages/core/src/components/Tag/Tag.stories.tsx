@@ -40,9 +40,16 @@ export const Main: StoryObj<HvTagProps> = {
     onDelete: () => console.log("delete"),
     type: "semantic",
     color: "sema7",
+    disabled: false,
+    clickable: false,
   },
   argTypes: {
     classes: { control: { disable: true } },
+    children: { control: { disable: true } },
+    sx: { control: { disable: true } },
+    icon: { control: { disable: true } },
+    deleteIcon: { control: { disable: true } },
+    deleteButtonProps: { control: { disable: true } },
     type: { control: { type: "radio", options: ["semantic", "categorical"] } },
   },
   render: (args) => {

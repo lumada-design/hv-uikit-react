@@ -48,6 +48,9 @@ export const Main: StoryObj<HvTagsInputProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
+    countCharProps: { control: { disable: true } },
+    suggestionListCallback: { control: { disable: true } },
   },
   render: (args) => {
     return <HvTagsInput {...args}>Tags Input</HvTagsInput>;

@@ -14,6 +14,9 @@ export const Main: StoryObj<HvTooltipProps> = {
     open: true,
     title: <HvTypography>Grid View</HvTypography>,
   },
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
   render: ({ title, open }) => {
     {
       const styling = {

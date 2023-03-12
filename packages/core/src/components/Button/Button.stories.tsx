@@ -16,6 +16,13 @@ export default { title: "Inputs/Button", component: HvButton };
 export const Main: StoryObj<HvButtonProps> = {
   args: {
     children: "Primary",
+    selected: false,
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    sx: { control: { disable: true } },
+    icon: { control: { disable: true } },
+    startIcon: { control: { disable: true } },
   },
 };
 

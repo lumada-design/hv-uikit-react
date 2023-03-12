@@ -9,16 +9,11 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvGrid, HvListValue } from "components";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
 
 const Decorator = ({ children }) => {
-  const StyledDiv = styled("div")({
-    padding: 10,
-    height: 800,
-  });
-
-  return <StyledDiv>{children}</StyledDiv>;
+  return <div style={{ padding: 10, height: 600 }}>{children}</div>;
 };
 
 const meta: Meta<typeof HvDropdown> = {
@@ -32,8 +27,22 @@ export const Main: StoryObj<HvDropdownProps> = {
   args: {
     multiSelect: true,
     showSearch: true,
+    disabled: false,
+    readOnly: false,
+    required: false,
+    expanded: false,
+    notifyChangesOnFirstRender: false,
+    hasTooltips: false,
+    variableWidth: false,
+    singleSelectionToggle: false,
+    virtualized: false,
+    status: "valid",
   },
-  argTypes: {},
+  argTypes: {
+    classes: { control: { disable: true } },
+    label: { control: { disable: true } },
+    popperProps: { control: { disable: true } },
+  },
   render: (args) => {
     return (
       <div style={{ width: 310 }}>
@@ -75,7 +84,7 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
       },
     },
   },
-  render: () => {
+  render: (args) => {
     const [values, setValues] = useState<HvListValue[]>([]);
 
     useEffect(() => {
@@ -93,7 +102,11 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
 
     return (
       <div style={{ width: 310 }}>
-        <HvDropdown aria-label="Dropdown With Icons" values={values} />
+        <HvDropdown
+          aria-label="Dropdown With Icons"
+          values={values}
+          {...args}
+        />
       </div>
     );
   },
@@ -581,27 +594,6 @@ export const WithMoreThan1000Items: StoryObj<HvDropdownProps> = {
           </HvGrid>
         </HvGrid>
       </HvGrid>
-    );
-  },
-};
-
-export const ReadOnly: StoryObj<HvDropdownProps> = {
-  render: () => {
-    return (
-      <div style={{ width: 310 }}>
-        <HvDropdown
-          id="dropdown10"
-          readOnly
-          aria-label="text"
-          disablePortal
-          values={[
-            { label: "value 1", selected: false },
-            { label: "value 2", selected: false },
-            { label: "value 3", selected: true },
-            { label: "value 4", selected: false },
-          ]}
-        />
-      </div>
     );
   },
 };

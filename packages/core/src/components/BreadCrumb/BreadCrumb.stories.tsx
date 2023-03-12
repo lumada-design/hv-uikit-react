@@ -28,6 +28,9 @@ export const Main: StoryObj<HvBreadCrumbProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    listRoute: { control: { disable: true } },
+    component: { control: { disable: true } },
+    dropDownMenuProps: { control: { disable: true } },
     maxVisible: { control: { type: "range", min: 0, max: data.length } },
   },
   render: (args) => {

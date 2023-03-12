@@ -11,7 +11,14 @@ const meta: Meta<typeof HvRadioGroup> = {
 export default meta;
 
 export const Main: StoryObj<HvRadioGroupProps> = {
-  args: { label: "Choose your favorite radio button", name: "favorite" },
+  args: {
+    label: "Choose your favorite radio button",
+    name: "favorite",
+    description: "",
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+  },
   render: (args) => {
     return (
       <HvRadioGroup {...args}>
