@@ -265,6 +265,7 @@ const typographySpec: DeepString<HvThemeTypography> = {
     xxsTitle: { ...typographyProps },
     sectionTitle: { ...typographyProps },
     placeholderText: { ...typographyProps },
+    link: { ...typographyProps },
   },
 };
 

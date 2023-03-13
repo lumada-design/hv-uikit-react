@@ -132,6 +132,13 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       lineHeight: "16px",
       fontWeight: 400,
     },
+    link: {
+      color: theme.colors.acce2,
+      fontSize: "12px",
+      letterSpacing: "0.02em",
+      lineHeight: "16px",
+      fontWeight: 600,
+    },
   },
   dropdown: {
     borderRadius: "2px",
