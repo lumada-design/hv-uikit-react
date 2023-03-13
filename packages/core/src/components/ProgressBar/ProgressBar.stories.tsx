@@ -3,7 +3,7 @@ import { HvTypography, HvProgressBar, HvProgressBarProps } from "components";
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 const meta: Meta<typeof HvProgressBar> = {
-  title: "Feedback/ProgressBar",
+  title: "Components/Loading/Progress Bar",
   component: HvProgressBar,
 };
 export default meta;

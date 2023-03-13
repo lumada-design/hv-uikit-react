@@ -6,7 +6,7 @@ import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 import { HvButton, HvMultiButton, HvMultiButtonProps } from "components";
 
 const meta: Meta<typeof HvMultiButton> = {
-  title: "Inputs/MultiButton",
+  title: "Components/Button/Multi Button",
   component: HvMultiButton,
 };
 export default meta;

@@ -24,7 +24,7 @@ const Container = ({ children }) => {
 };
 
 const meta: Meta<typeof HvOverflowTooltip> = {
-  title: "Overlay/OverflowTooltip",
+  title: "Components/Tooltip/Overflow Tooltip",
   component: HvOverflowTooltip,
   decorators: [(Story) => <Container>{Story()}</Container>],
 };

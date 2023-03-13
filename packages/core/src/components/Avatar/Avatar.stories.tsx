@@ -28,7 +28,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvAvatar> = {
-  title: "Display/Avatar",
+  title: "Components/Avatar",
   component: HvAvatar,
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
 };

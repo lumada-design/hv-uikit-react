@@ -29,7 +29,7 @@ import { makeRenderersData } from "./storiesUtils";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof HvTable> = {
-  title: "Display/Table Renderers",
+  title: "Guides/Table/Table Renderers",
   decorators: [(Story) => <Story />],
 };
 

@@ -72,7 +72,3 @@ export const HvProvider = ({
     </CacheProvider>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  HvProvider.displayName = "Provider";
-}

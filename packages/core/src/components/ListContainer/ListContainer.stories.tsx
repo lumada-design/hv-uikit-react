@@ -50,7 +50,7 @@ const StyledLink = styled(HvLink)({
 // #endregion
 
 const meta: Meta<typeof HvListContainer> = {
-  title: "Display/List",
+  title: "Components/List/List",
   component: HvListContainer,
   subcomponents: { HvListItem },
 };

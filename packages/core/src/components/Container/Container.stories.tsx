@@ -5,7 +5,7 @@ import { useWidth } from "hooks";
 import { HvContainer, HvContainerProps, HvTypography } from "components";
 
 const meta: Meta<typeof HvContainer> = {
-  title: "Layout/Container",
+  title: "Components/Container",
   component: HvContainer,
 };
 export default meta;

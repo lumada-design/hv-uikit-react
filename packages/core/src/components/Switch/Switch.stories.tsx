@@ -22,7 +22,7 @@ const StyledDecorator = styled("div")({
 });
 
 const meta: Meta<typeof HvSwitch> = {
-  title: "Inputs/Switch",
+  title: "Components/Switch",
   component: HvSwitch,
   subcomponents: { HvBaseSwitch },
   decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],

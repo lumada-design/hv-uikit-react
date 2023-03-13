@@ -10,7 +10,7 @@ const container = {
 };
 
 const meta: Meta<typeof HvBadge> = {
-  title: "Display/Badge",
+  title: "Components/Badge",
   component: HvBadge,
 };
 export default meta;

@@ -5,7 +5,7 @@ import { HvButton, HvTypography, theme } from "index";
 import { HvPanel, HvPanelProps } from "./Panel";
 
 const meta: Meta<typeof HvPanel> = {
-  title: "Layout/Panel",
+  title: "Components/Panel",
   component: HvPanel,
 };
 export default meta;

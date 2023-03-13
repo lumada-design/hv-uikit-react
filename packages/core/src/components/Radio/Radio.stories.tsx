@@ -19,7 +19,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvRadio> = {
-  title: "Inputs/Radio Button",
+  title: "Components/Radio/Radio",
   component: HvRadio,
   subcomponents: { HvBaseRadio },
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],

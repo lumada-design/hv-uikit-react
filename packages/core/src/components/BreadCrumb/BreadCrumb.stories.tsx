@@ -14,7 +14,7 @@ const data = [
 ];
 
 const meta: Meta<typeof HvBreadCrumb> = {
-  title: "Navigation/Breadcrumb",
+  title: "Widgets/Breadcrumb",
   component: HvBreadCrumb,
   argTypes: {
     onClick: { action: "clicked" },

@@ -84,7 +84,3 @@ export const Buttons = () => {
     </>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Buttons.displayName = "Buttons";
-}

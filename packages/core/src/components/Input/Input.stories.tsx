@@ -17,7 +17,7 @@ import {
 import countryNamesArray from "./countries";
 
 const meta: Meta<typeof HvInput> = {
-  title: "Inputs/Input",
+  title: "Components/Input",
   component: HvInput,
   subcomponents: { HvBaseInput },
 };

@@ -11,7 +11,7 @@ const StyledBanner = styled(HvBanner)({
   marginBottom: 10,
 });
 const meta: Meta<typeof HvBanner> = {
-  title: "Feedback/Banner",
+  title: "Components/Banner",
   component: HvBanner,
 };
 export default meta;

@@ -11,7 +11,7 @@ import { HvDotPagination, HvDotPaginationProps } from "./DotPagination";
 import dotPaginationClasses from "./dotPaginationClasses";
 
 const meta: Meta<typeof HvDotPagination> = {
-  title: "Navigation/DotPagination",
+  title: "Components/Pagination/Dot Pagination",
   component: HvDotPagination,
 };
 

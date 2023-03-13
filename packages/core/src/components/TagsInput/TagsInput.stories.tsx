@@ -28,7 +28,7 @@ const StyledSuggestionsTagsInput = styled(HvTagsInput)({
 });
 
 const meta: Meta<typeof HvTagsInput> = {
-  title: "Inputs/Tags Input",
+  title: "Components/Tag/Tags Input",
   component: HvTagsInput,
   decorators: [
     (storyFn) => <div style={{ maxWidth: "600px" }}>{storyFn()}</div>,

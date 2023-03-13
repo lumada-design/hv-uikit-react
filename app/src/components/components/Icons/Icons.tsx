@@ -25,7 +25,3 @@ export const Icons = () => {
     </HvBox>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Icons.displayName = "Icons";
-}

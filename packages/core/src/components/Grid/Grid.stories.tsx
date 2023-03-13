@@ -5,7 +5,7 @@ import { HvTypography, HvGrid, HvGridProps } from "components";
 import { useWidth } from "hooks";
 
 const meta: Meta<typeof HvGrid> = {
-  title: "Layout/Grid",
+  title: "Components/Grid/Grid",
   component: HvGrid,
 };
 export default meta;

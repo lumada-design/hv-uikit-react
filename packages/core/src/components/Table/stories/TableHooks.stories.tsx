@@ -50,7 +50,7 @@ import {
 } from "./StyledComponents";
 
 const meta: Meta<typeof HvTable> = {
-  title: "Display/Table Hooks",
+  title: "Guides/Table/Table Hooks",
   decorators: [(Story) => <Story />],
 };
 

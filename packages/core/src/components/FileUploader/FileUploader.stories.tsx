@@ -9,7 +9,7 @@ import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import { HvDialog, HvDialogContent, HvDialogTitle } from "components";
 
 const meta: Meta<typeof HvFileUploader> = {
-  title: "Inputs/File Uploader",
+  title: "Widgets/File Uploader",
   component: HvFileUploader,
   subcomponents: { HvFileUploaderPreview },
 };

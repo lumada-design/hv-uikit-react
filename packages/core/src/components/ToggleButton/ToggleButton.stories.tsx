@@ -37,7 +37,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvToggleButton> = {
-  title: "Inputs/ToggleButton",
+  title: "Components/Button/Toggle Button",
   component: HvToggleButton,
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
 };
