@@ -70,7 +70,7 @@ const SimpleDialog = ({
 };
 
 const meta: Meta<typeof HvDialog> = {
-  title: "Overlay/Dialog",
+  title: "Components/Dialog",
   component: HvDialog,
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
 };

@@ -20,7 +20,7 @@ const actions: HvActionGeneric[] = [
 ];
 
 const meta: Meta<typeof HvBulkActions> = {
-  title: "Structure/Bulk Actions",
+  title: "Widgets/Bulk Actions",
   component: HvBulkActions,
   decorators: [(Story) => <div style={{ padding: 10 }}>{Story()}</div>],
 };

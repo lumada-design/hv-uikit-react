@@ -4,7 +4,7 @@ import { HvTooltip, HvTooltipProps } from "./Tooltip";
 import tooltipClasses from "./tooltipClasses";
 
 const meta: Meta<typeof HvTooltip> = {
-  title: "Overlay/Tooltip",
+  title: "Components/Tooltip/Tooltip",
   component: HvTooltip,
 };
 export default meta;

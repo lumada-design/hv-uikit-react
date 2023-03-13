@@ -12,7 +12,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const meta: Meta<typeof HvTabs> = {
-  title: "Navigation/Tabs",
+  title: "Components/Tabs",
   component: HvTabs,
   subcomponents: { HvTab },
 };

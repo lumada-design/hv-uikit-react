@@ -9,7 +9,7 @@ import {
 } from "components";
 
 const meta: Meta<typeof HvEmptyState> = {
-  title: "Feedback/EmptyState",
+  title: "Components/Empty State",
   component: HvEmptyState,
 };
 export default meta;

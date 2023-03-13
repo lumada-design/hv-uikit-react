@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HvTypography, HvFooter, HvFooterProps } from "components";
 
 const meta: Meta<typeof HvFooter> = {
-  title: "Structure/Footer",
+  title: "Widgets/Footer",
   component: HvFooter,
 };
 export default meta;

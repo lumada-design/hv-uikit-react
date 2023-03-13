@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { HvRadioGroup, HvRadioGroupProps } from "./RadioGroup";
 
 const meta: Meta<typeof HvRadioGroup> = {
-  title: "Inputs/Radio Button Group",
+  title: "Components/Radio/Radio Group",
   component: HvRadioGroup,
 };
 

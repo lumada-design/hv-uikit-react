@@ -29,7 +29,7 @@ const StyledListItem = styled(HvListItem)({
 // #endregion
 
 const meta: Meta<typeof HvTag> = {
-  title: "Display/Tag",
+  title: "Components/Tag/Tag",
   component: HvTag,
 };
 export default meta;

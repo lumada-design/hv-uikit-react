@@ -72,7 +72,7 @@ const StyledButton = styled("button")({
 // #endregion
 
 const meta: Meta<typeof HvCard> = {
-  title: "Display/Card",
+  title: "Components/Card",
   component: HvCard,
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };

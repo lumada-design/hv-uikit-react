@@ -18,7 +18,7 @@ const StyledBox = styled(HvTypography)({
 });
 
 const meta: Meta<typeof HvPagination> = {
-  title: "Navigation/Pagination",
+  title: "Components/Pagination",
   component: HvPagination,
 };
 export default meta;

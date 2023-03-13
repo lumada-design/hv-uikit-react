@@ -10,7 +10,7 @@ import { useState } from "react";
 import { HvAccordionProps, HvAccordion } from "./Accordion";
 
 const meta: Meta<typeof HvAccordion> = {
-  title: "Display/Accordion",
+  title: "Components/Accordion",
   component: HvAccordion,
 };
 export default meta;

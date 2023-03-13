@@ -40,7 +40,7 @@ import {
 import { StyledCode, StyledContainer, StyledUl } from "./StyledComponents";
 
 const meta: Meta<typeof HvTable> = {
-  title: "Display/Table Samples",
+  title: "Guides/Table/Table Samples",
   decorators: [(Story) => <Story />],
 };
 

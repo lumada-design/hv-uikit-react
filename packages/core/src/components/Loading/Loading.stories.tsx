@@ -5,7 +5,7 @@ import { HvButton, HvTypography } from "components";
 import { HvLoading, HvLoadingProps } from "./Loading";
 
 const meta: Meta<typeof HvLoading> = {
-  title: "Feedback/Loading",
+  title: "Components/Loading/Loading",
   component: HvLoading,
 };
 export default meta;

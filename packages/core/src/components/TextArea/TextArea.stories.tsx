@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { HvTextArea, HvTextAreaProps } from "./TextArea";
 
 const meta: Meta<typeof HvTextArea> = {
-  title: "Inputs/Text Area",
+  title: "Components/Text Area",
   component: HvTextArea,
   decorators: [(Story) => <div style={{ maxWidth: 600 }}>{Story()}</div>],
 };

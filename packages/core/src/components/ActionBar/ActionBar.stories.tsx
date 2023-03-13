@@ -32,7 +32,7 @@ const StyledButtonSeparator = styled(HvButton)({
 });
 
 const meta: Meta<typeof HvActionBar> = {
-  title: "Structure/ActionBar",
+  title: "Components/Action Bar",
   component: HvActionBar,
 };
 

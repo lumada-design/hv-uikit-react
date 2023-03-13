@@ -11,7 +11,7 @@ const style = {
 };
 
 const meta: Meta<typeof HvSimpleGrid> = {
-  title: "Layout/SimpleGrid",
+  title: "Components/Grid/Simple Grid",
   component: HvSimpleGrid,
 };
 export default meta;

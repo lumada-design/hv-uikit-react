@@ -37,7 +37,7 @@ const StyledBox = styled("div")({
 const Box = ({ children }) => <StyledBox>{children}</StyledBox>;
 
 const meta: Meta<typeof HvStack> = {
-  title: "Layout/Stack",
+  title: "Components/Stack",
   component: HvStack,
 };
 export default meta;

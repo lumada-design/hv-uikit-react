@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 
 const meta: Meta<typeof HvSelectionList> = {
-  title: "Inputs/Selection List",
+  title: "Components/List/Selection List",
   component: HvSelectionList,
 };
 export default meta;

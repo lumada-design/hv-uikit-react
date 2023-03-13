@@ -4,7 +4,7 @@ import { useState } from "react";
 import { HvCheckBoxGroup, HvCheckBoxGroupProps } from "./CheckBoxGroup";
 
 const meta: Meta<typeof HvCheckBoxGroup> = {
-  title: "Inputs/Checkbox/Checkbox Group",
+  title: "Components/Checkbox/Checkbox Group",
   component: HvCheckBoxGroup,
 };
 

@@ -28,7 +28,7 @@ const StyledSnackBarContent = styled(HvSnackbarContent)({
 });
 
 const meta: Meta<typeof HvSnackbar> = {
-  title: "Feedback/Snackbar",
+  title: "Components/Snackbar",
   component: HvSnackbar,
 };
 export default meta;
