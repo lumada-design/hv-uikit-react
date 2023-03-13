@@ -1,16 +1,25 @@
 const tsconfigPaths = require("vite-tsconfig-paths");
+const path = require("path");
 
 module.exports = {
   stories: [
-    "./**/*.stories.@(tsx|mdx)",
-    "../templates/**/*.stories.@(tsx|mdx)",
+    "../docs/**/*.stories.@(tsx|mdx)",
     "../packages/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
-    "@storybook/addon-essentials",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        backgrounds: false,
+        viewport: false,
+        measure: false,
+        outline: false,
+      },
+    },
     "@storybook/addon-a11y",
     "@storybook/addon-links",
-    "../tools/addon-theme-switcher/preset.js",
+    __dirname + "/addons/version-selector/register",
+    __dirname + "/addons/theme-selector/register",
   ],
   framework: "@storybook/react",
   core: {
@@ -18,18 +27,21 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
+    uildStoriesJson: true,
   },
+  staticDirs: ["./assets"],
   async viteFinal(config, { configType }) {
     config.plugins.push(tsconfigPaths.default({ loose: true }));
+
     config.optimizeDeps = {
       ...config.optimizeDeps,
-      // Use this option to force linked packages to be pre-bundled.
       include: [
+        "@mdx-js/react",
+        "@storybook/api",
         "@storybook/theming",
         "@storybook/addon-docs",
-        "@mdx-js/react",
-        "lodash/capitalize",
-        "lodash/startCase",
+        "@storybook/addon-links/react",
+        "@storybook/addon-links",
       ],
     };
 
