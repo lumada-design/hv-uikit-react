@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { HvButton, HvTypography } from "components";
 import { transientOptions } from "utils/transientOptions";
 import tableHeaderClasses from "./tableHeaderClasses";
-// import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledHeaderContent = styled(
   "div",
@@ -11,6 +10,7 @@ export const StyledHeaderContent = styled(
   display: "flex",
   alignItems: "flex-start",
   paddingTop: 4,
+  width: "100%",
   // align
   ...($align === "center" && {
     justifyContent: "center",
@@ -27,8 +27,6 @@ export const StyledHeaderContent = styled(
 }));
 
 export const StyledButton = styled((props) => <HvButton {...props} />)({
-  // TODO
-  // "$root$sortable &": {
   [`.${tableHeaderClasses.root}.${tableHeaderClasses.sortable}`]: {
     boxShadow: "none",
     backgroundColor: "transparent",

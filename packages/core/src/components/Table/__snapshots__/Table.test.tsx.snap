@@ -19,7 +19,7 @@ exports[`List Row > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"
@@ -33,7 +33,7 @@ exports[`List Row > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"
@@ -47,7 +47,7 @@ exports[`List Row > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"
@@ -200,7 +200,7 @@ exports[`Simple Table > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"
@@ -214,7 +214,7 @@ exports[`Simple Table > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"
@@ -228,7 +228,7 @@ exports[`Simple Table > should be defined 1`] = `
             scope="col"
           >
             <div
-              class="HvTableHeader-headerContent css-kcxyuh-StyledHeaderContent etcp1bl3"
+              class="HvTableHeader-headerContent css-1tdvqey-StyledHeaderContent etcp1bl3"
             >
               <div
                 class="HvTableHeader-headerParagraph etcp1bl1 HvTypography-root HvTypography-label css-vwwkrm-getStyledComponent-StyledTypography e1tnpalo0"

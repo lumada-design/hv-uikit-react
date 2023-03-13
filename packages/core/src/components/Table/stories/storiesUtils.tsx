@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
 import { Random } from "utils";
-import { HvButton } from "components";
+import { HvButton, HvColumn } from "components";
 import { Delete, Drag } from "@hitachivantara/uikit-react-icons";
 
 export type SampleDataProps = {
@@ -116,7 +116,7 @@ export const makeSelectedData = (len = 10) =>
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
-export const getColumns = () => [
+export const getColumns = (): HvColumn<SampleDataProps>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
@@ -129,10 +129,13 @@ export const getColumns = () => [
     Cell: ({ value }) => `${value}%`,
   },
   { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
+  {
+    Header: "Priority with a very long name too big to fit",
+    accessor: "priority",
+  },
 ];
 
-export const getGroupedRowsColumns = () => [
+export const getGroupedRowsColumns = (): HvColumn<SampleDataProps>[] => [
   {
     Header: "Title",
     accessor: "name",
@@ -158,7 +161,7 @@ export const getGroupedRowsColumns = () => [
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const getLongNameColumns = () => [
+export const getLongNameColumns = (): HvColumn<SampleDataProps>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   {
     Header: "Time is always moving forward without stop",
@@ -178,7 +181,7 @@ export const getLongNameColumns = () => [
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const getGroupedColumns = () => [
+export const getGroupedColumns = (): HvColumn<SampleDataProps>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
