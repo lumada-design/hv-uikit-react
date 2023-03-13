@@ -1,19 +1,33 @@
-const getOption = (opts, i) => opts[i % opts.length];
+type Priority = "Low" | "High" | "Medium";
 
-const getTime = (priority, index) => {
+type NewEntry = {
+  id: string;
+  name: string;
+  eventType: string;
+  status: string;
+  severity: string;
+  priority: Priority;
+  time: string;
+  temperature: string;
+  statusColor: string;
+};
+
+const getOption = (opts: string[], i: number): string => opts[i % opts.length];
+
+const getTime = (priority: Priority, index: number): string => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
   return `${i % 12}:${i % 60}:${i % 60}`;
 };
 
-const getPriority = (i) =>
+const getPriority = (i: number): Priority =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const getRandomStatus = () => {
+const getRandomStatus = (): string => {
   return `sema${Math.floor(Math.random() * 4)}`;
 };
 
-const newEntry = (i) => {
+const newEntry = (i: number): NewEntry => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -27,10 +41,9 @@ const newEntry = (i) => {
   };
 };
 
-export const makeData = (len = 10) => {
-  const data = [];
+export const makeData = (len = 10): NewEntry[] => {
+  const data: NewEntry[] = [];
   for (let i = 0; i <= len; i += 1) {
-    // @ts-ignore
     data.push(newEntry(i));
   }
   return data;

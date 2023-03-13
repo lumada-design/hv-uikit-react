@@ -38,6 +38,14 @@ export const getDocsStyles = (theme) => ({
         fontWeight: 600,
         paddingTop: theme.space.xs,
       },
+      "h4.sbdocs": {
+        color: theme.colors.acce1,
+        fontSize: "16px",
+        letterSpacing: "0.02em",
+        lineHeight: "28px",
+        fontWeight: 600,
+        paddingTop: theme.space.xs,
+      },
       "a.sbdocs": {
         color: theme.colors.acce2,
         fontSize: "12px",

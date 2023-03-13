@@ -1,5 +1,31 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+import Colors from "./Colors";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-styles";
 
 <Meta title="Foundation/Colors" />
 
 # Colors
+
+The **Color Palette** was curated by the Design System team, providing a chromatic guidance for complex UIs in Data Analytics and IOT use cases.
+
+It produces positive and minimalistic work environments, leveraging an array of empathic gray shades. Each theme is able to produce high contrast when critical messaging is needed by combining light grays with contrasting status colors.
+
+Example of a color variable:
+
+<pre
+  style={{
+    border: `1px solid ${theme.colors.atmo4}`,
+    backgroundColor: theme.colors.atmo1,
+    padding: 20,
+    borderRadius: theme.radii.sm,
+    boxShadow: theme.shadows.sm,
+    fontSize: 12,
+  }}
+>
+  theme.colors.atmo5
+</pre>
+
+<Story name="Main">
+  <Colors />
+</Story>

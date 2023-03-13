@@ -29,12 +29,7 @@ describe("Card", () => {
     const mockImg = "";
     const { container, getByRole } = render(
       <HvCard>
-        <HvCardMedia
-          component="img"
-          // @ts-ignore
-          alt="mockImg"
-          image={mockImg}
-        />
+        <HvCardMedia component="img" alt="mockImg" image={mockImg} />
       </HvCard>
     );
     expect(getByRole("img", { name: /mockImg/ })).toBeInTheDocument();

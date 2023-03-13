@@ -37,7 +37,7 @@ export type HvGridSpacing =
   | 9
   | 10;
 
-export type HvGridProps = MuiGridProps &
+export type HvGridProps = Omit<MuiGridProps, "classes"> &
   HvBaseProps & {
     /**
      * If `true`, the component will have the flex *container* behavior.

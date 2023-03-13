@@ -5,7 +5,6 @@ import {
   HvCardMedia,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-// @ts-ignore
 import compressor from "./assets/compressor.png";
 
 export const Cards = () => {
@@ -23,7 +22,6 @@ export const Cards = () => {
       />
       <HvCardMedia
         component="img"
-        // @ts-ignore
         alt="Compressor"
         height={140}
         image={compressor}

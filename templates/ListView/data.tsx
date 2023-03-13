@@ -1,4 +1,16 @@
-const entries = [
+type Entry = { name: string; description: string };
+
+type NewEntry = {
+  id: string;
+  name: string;
+  description: string;
+  serverId: number;
+  created: string;
+  build: string;
+  status: number;
+};
+
+const entries: Entry[] = [
   { name: "Previous", description: "Clean Data Logs" },
   { name: "Home", description: "Review Log" },
   { name: "Carriage", description: "Deploy Cloud Run" },
@@ -6,7 +18,7 @@ const entries = [
   { name: "Forward", description: "Update Build" },
 ];
 
-const getDate = () => {
+const getDate = (): string => {
   const start = new Date(2018, 1, 1);
   const end = new Date();
   const date = new Date(
@@ -16,13 +28,14 @@ const getDate = () => {
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDay()}`;
 };
 
-const getRandomStatus = () => {
+const getRandomStatus = (): number => {
   return Math.floor(Math.random() * 4);
 };
 
-const getServerID = () => Math.floor(100000000 + Math.random() * 1000000000);
+const getServerID = (): number =>
+  Math.floor(100000000 + Math.random() * 1000000000);
 
-const getBuild = () => {
+const getBuild = (): string => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
@@ -33,10 +46,11 @@ const getBuild = () => {
   return result;
 };
 
-const getRandEntry = () => entries[Math.floor(Math.random() * entries.length)];
+const getRandEntry = (): Entry =>
+  entries[Math.floor(Math.random() * entries.length)];
 
-const getNewEntry = (i: number) => {
-  const entry = getRandEntry();
+const getNewEntry = (i: number): NewEntry => {
+  const entry: Entry = getRandEntry();
   return {
     id: `${i + 1}`,
     name: entry.name,
@@ -48,10 +62,9 @@ const getNewEntry = (i: number) => {
   };
 };
 
-export const makeData = (len = 10) => {
-  const data = [];
+export const makeData = (len = 10): NewEntry[] => {
+  const data: NewEntry[] = [];
   for (let i = 0; i <= len; i += 1) {
-    // @ts-ignore
     data.push(getNewEntry(i));
   }
   return data;

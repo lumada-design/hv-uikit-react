@@ -1,3 +1,4 @@
+import React from "react";
 import clsx from "clsx";
 import {
   HvCard,
@@ -25,7 +26,7 @@ interface KpiProps {
 /**
  * A KPI.
  *
- * @param {Object}   instance - Ttitle of the KPI.
+ * @param {Object}   instance - Title of the KPI.
  * @param {Integer}  count - The count of the KPI.
  * @param {String}   color - The color used on the KPI header bar.
  * @param {String}   variation - The value for the variation field.

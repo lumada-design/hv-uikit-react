@@ -1,4 +1,5 @@
-import { Chart } from "react-google-charts";
+import React from "react";
+import ReactChart from "react-google-charts";
 
 const getRandom = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min) + min);
@@ -29,7 +30,7 @@ interface IndicatorProps {
 
 export const Indicator = ({ variation }: IndicatorProps) => (
   <div style={{ pointerEvents: "none", marginRight: -4 }}>
-    <Chart
+    <ReactChart
       width="50px"
       height="32px"
       chartType="AreaChart"

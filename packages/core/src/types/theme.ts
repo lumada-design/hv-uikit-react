@@ -30,7 +30,8 @@ export type HvTheme = {
    */
   baseColorMode?: HvThemeColorMode | string;
   /**
-   *
+   * If `true` the default color modes will be inherited while creating a new theme. If `false`, the new theme doesn't inherit the color modes.
+   * By default the color modes are inherited.
    */
   inheritColorModes?: boolean;
 } & HvThemeCustomizationProps;
