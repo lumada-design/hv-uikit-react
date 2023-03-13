@@ -24,6 +24,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    backButton: { control: { disable: true } },
   },
   decorators: [(Story) => <div style={{ height: 300 }}>{Story()}</div>],
   render: ({ title, headingLevel, variant }) => {

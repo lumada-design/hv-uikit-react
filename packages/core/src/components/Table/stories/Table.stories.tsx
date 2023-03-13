@@ -133,6 +133,7 @@ export const Main: StoryObj<HvTableProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    component: { control: { disable: true } },
   },
   render: (args) => {
     const columns = getColumns();

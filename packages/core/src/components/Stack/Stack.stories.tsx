@@ -51,6 +51,7 @@ export const Main: StoryObj<HvStackProps> = {
   argTypes: {
     classes: { control: { disable: true } },
     children: { control: { disable: true } },
+    dividerProps: { control: { disable: true } },
     direction: { control: { type: "radio", options: ["column", "row"] } },
     spacing: {
       control: { type: "radio", options: ["xs", "sm", "md", "lg", "xl"] },

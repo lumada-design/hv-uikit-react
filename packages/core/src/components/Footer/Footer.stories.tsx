@@ -8,9 +8,13 @@ const meta: Meta<typeof HvFooter> = {
 export default meta;
 
 export const Main: StoryObj<HvFooterProps> = {
-  args: {},
+  args: {
+    name: "Hitachi Vantara",
+    copyright: "© Hitachi Vantara Corporation 2022",
+  },
   argTypes: {
     classes: { control: { disable: true } },
+    links: { control: { disable: true } },
   },
   render: (args) => {
     return <HvFooter {...args} />;

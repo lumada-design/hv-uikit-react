@@ -86,6 +86,7 @@ export const Main: StoryObj<HvHeaderProps> = {
     position: "relative",
   },
   argTypes: {
+    classes: { control: { disable: true } },
     position: {
       control: "select",
     },

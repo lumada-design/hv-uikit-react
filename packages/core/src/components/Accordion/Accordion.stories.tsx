@@ -20,16 +20,18 @@ export const Main: StoryObj<HvAccordionProps> = {
     label: "Analytics",
     headingLevel: 1,
     disabled: false,
+    expanded: false,
+    defaultExpanded: false,
+    defaultChecked: false,
   },
-  render: ({ label, headingLevel, disabled }) => {
+  argTypes: {
+    classes: { control: { disable: true } },
+    containerProps: { control: { disable: true } },
+  },
+  render: (args) => {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
-        <HvAccordion
-          id="item1"
-          label={label}
-          headingLevel={headingLevel}
-          disabled={disabled}
-        >
+        <HvAccordion id="item1" {...args}>
           <HvTypography>Views</HvTypography>
           <HvTypography>Parameters</HvTypography>
         </HvAccordion>

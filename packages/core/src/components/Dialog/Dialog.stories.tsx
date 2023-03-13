@@ -84,6 +84,11 @@ export const Main: StoryObj<HvDialogProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+    BackdropComponent: { control: { disable: true } },
+    BackdropProps: { control: { disable: true } },
+    slotProps: { control: { disable: true } },
+    components: { control: { disable: true } },
+    componentsProps: { control: { disable: true } },
   },
   render: ({ fullscreen, disableBackdropClick, buttonTitle }) => {
     const [open, setOpen] = useState(false);

@@ -51,6 +51,7 @@ export const Main: StoryObj<HvSnackbarProps> = {
     action: { control: { disable: true } },
     actionCallback: { control: { disable: true } },
     snackbarContentProps: { control: { disable: true } },
+    ref: { control: { disable: true } },
   },
   render: (args) => {
     return <HvSnackbar {...args}></HvSnackbar>;

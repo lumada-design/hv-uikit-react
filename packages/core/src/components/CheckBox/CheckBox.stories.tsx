@@ -25,6 +25,11 @@ export default meta;
 
 export const Main: StoryObj<HvCheckBoxProps> = {
   args: { label: "Checkbox 0" },
+  argTypes: {
+    classes: { control: { disable: true } },
+    action: { control: { disable: true } },
+    labelProps: { control: { disable: true } },
+  },
   render: (args) => {
     return (
       <>

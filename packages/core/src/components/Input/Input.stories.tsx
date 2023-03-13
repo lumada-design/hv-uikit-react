@@ -51,17 +51,14 @@ export const Main: StoryObj<HvInputProps> = {
     onKeyDown: { control: { disable: true } },
     validation: { control: { disable: true } },
     endAdornment: { control: { disable: true } },
+    inputProps: { control: { disable: true } },
+    suggestionListCallback: { control: { disable: true } },
+    inputRef: { control: { disable: true } },
+    validationMessages: { control: { disable: true } },
+    labels: { control: { disable: true } },
   },
   render: (args) => {
-    return (
-      <HvInput
-        id="input-simple-sample"
-        label="First name"
-        description="Please enter your first name"
-        placeholder="Insert first name"
-        {...args}
-      />
-    );
+    return <HvInput id="input-simple-sample" {...args} />;
   },
 };
 

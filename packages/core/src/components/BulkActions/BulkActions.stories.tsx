@@ -73,8 +73,15 @@ const SampleComponent = ({
 );
 
 export const Main: StoryObj<HvBulkActionsProps> = {
-  args: { showSelectAllPages: false },
-  argTypes: { classes: { control: { disable: true } } },
+  args: {
+    showSelectAllPages: false,
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    onSelectAll: { control: { disable: true } },
+    onSelectAllPages: { control: { disable: true } },
+    checkboxProps: { control: { disable: true } },
+  },
   render: (args) => {
     const addEntry = (i: number): SampleComponentDatum => ({
       id: `val${i + 1}`,
