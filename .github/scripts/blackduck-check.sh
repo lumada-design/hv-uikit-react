@@ -4,12 +4,16 @@ chmod 777 detect.sh
 DETECT_DIR=`pwd`
 echo "DETECT_DIR - ${DETECT_DIR}"
 
+BLACKDUCK_URL="https://uranus.hitachivantara.com/"
+BLACKDUCK_TOKEN=MTI0YTViNDgtYTgzMC00OWQ1LWFkMmEtMzhiZTIwMWUyNjJiOjcwOTBjYWI0LTkwZjktNGJkOC04YzZmLTk2ZTI1NzNlMDA4MQ==
+PROJECT_VERSION=v5.x
+
 declare -a packages=("core" "icons" "styles")
 
 DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.project.version.name=${PROJECT_VERSION}"
 
 for i in "${packages[@]}"
 do
-    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/packages/$i/dist 
-    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/packages/$i/src
+    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/../../packages/$i/dist 
+    ./detect.sh $DETECT_ARGS --detect.project.name=uikit-$i --detect.source.path=${DETECT_DIR}/../../packages/$i/src
 done
