@@ -1,13 +1,26 @@
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { setId } from "utils";
-import { HvOverflowTooltip, HvTag, HvTypography, HvButton } from "components";
+import {
+  HvOverflowTooltip,
+  HvTag,
+  HvTypography,
+  HvButton,
+  HvTableColumnConfig,
+  HvRowInstance,
+  HvTagProps,
+  HvBaseSwitchProps,
+  HvListValue,
+} from "components";
 import DateColumnCell from "./DateColumnCell/index";
 import SwitchColumnCell from "./SwitchColumnCell";
 import ProgressColumnCell from "./ProgressColumnCell";
 import DropdownColumnCell from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
 
-export function hvTextColumn(col) {
+export function hvTextColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(col: C): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => (
       <HvOverflowTooltip data={hvStringFallback(cellProps?.value)} />
@@ -17,7 +30,10 @@ export function hvTextColumn(col) {
   };
 }
 
-export function hvNumberColumn(col) {
+export function hvNumberColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(col: C): HvTableColumnConfig<D> {
   return {
     Cell: ({ value }) => hvNumberFallback(value),
     align: "right",
@@ -26,7 +42,10 @@ export function hvNumberColumn(col) {
   };
 }
 
-export function hvDateColumn(col, dateFormat) {
+export function hvDateColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(col: C, dateFormat?: string): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => (
       <DateColumnCell date={cellProps?.value} dateFormat={dateFormat} />
@@ -37,12 +56,12 @@ export function hvDateColumn(col, dateFormat) {
   };
 }
 
-export function hvExpandColumn(
-  col,
-  expandRowButtonAriaLabel,
-  collapseRowButtonAriaLabel,
-  getCanRowExpand
-) {
+export function hvExpandColumn<D extends Record<string, unknown>>(
+  col: HvTableColumnConfig<D>,
+  expandRowButtonAriaLabel: string,
+  collapseRowButtonAriaLabel: string,
+  getCanRowExpand?: (row: HvRowInstance<D>) => boolean
+): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => {
       const { value, row } = cellProps;
@@ -73,6 +92,7 @@ export function hvExpandColumn(
         </>
       );
     },
+    // @ts-ignore
     sortType: "alphanumeric",
     cellStyle: {
       position: "relative",
@@ -81,15 +101,18 @@ export function hvExpandColumn(
   };
 }
 
-export function hvTagColumn(
-  col,
-  valueDataKey,
-  colorDataKey,
-  textColorDataKey,
+export function hvTagColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(
+  col: C,
+  valueDataKey: keyof D,
+  colorDataKey: keyof D,
+  textColorDataKey: keyof D,
   // eslint-disable-next-line @typescript-eslint/default-param-last
-  fromRowData = false,
-  tagProps
-) {
+  fromRowData: boolean = false,
+  tagProps?: HvTagProps
+): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => {
       const { value, row } = cellProps;
@@ -122,13 +145,16 @@ export function hvTagColumn(
   };
 }
 
-export function hvSwitchColumn(
-  col,
-  switchLabel,
-  falseLabel,
-  trueLabel,
-  switchProps
-) {
+export function hvSwitchColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(
+  col: C,
+  switchLabel: string,
+  falseLabel?: string,
+  trueLabel?: string,
+  switchProps?: HvBaseSwitchProps
+): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => {
       const { value, row } = cellProps;
@@ -151,13 +177,16 @@ export function hvSwitchColumn(
   };
 }
 
-export function hvDropdownColumn(
-  col,
-  id,
-  placeholder,
-  disabledPlaceholder,
-  onChange
-) {
+export function hvDropdownColumn<
+  D extends Record<string, unknown>,
+  C extends HvTableColumnConfig<D>
+>(
+  col: C,
+  id: string,
+  placeholder: string,
+  disabledPlaceholder: string,
+  onChange?: (identifier: string, value: HvListValue) => void
+): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => {
       const { value, row, column } = cellProps;
@@ -182,11 +211,19 @@ export function hvDropdownColumn(
   };
 }
 
-export function hvProgressColumn(col, getPartial, getTotal, color) {
+export function hvProgressColumn<
+  D extends Record<string, number>,
+  C extends HvTableColumnConfig<D>
+>(
+  col: C,
+  getPartial?: (row: HvRowInstance<D>) => number,
+  getTotal?: (row: HvRowInstance<D>) => number,
+  color?: "primary" | "secondary"
+): HvTableColumnConfig<D> {
   return {
     Cell: (cellProps) => {
       const { row } = cellProps;
-      const partial = getPartial?.(row);
+      const partial = getPartial?.(row) || 0;
       const total = getTotal?.(row);
 
       if (total) {
