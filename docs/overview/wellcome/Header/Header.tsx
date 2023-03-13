@@ -1,15 +1,15 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import {
   HvButton,
   HvTypography,
-  HvThemeContext,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Wrapper, BackgroundWrapper, ContentWrapper } from "./styles";
 
 const getIsDark = (mode) => mode.includes("wicked");
 
 const Header = () => {
-  const { selectedMode } = useContext(HvThemeContext);
+  const { selectedMode } = useTheme();
   const [isDark, setIsDark] = useState(getIsDark(selectedMode));
 
   useEffect(() => {

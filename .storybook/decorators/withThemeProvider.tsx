@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { addons } from "@storybook/addons";
 import { Global } from "@storybook/theming";
-import { HvProvider, HvBaseTheme } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
-
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { ds3, ds5, theme } from "@hitachivantara/uikit-styles";
 import { getStoryStyles } from "../theme/styles/story";
 
 const withThemeProvider = (story) => {
@@ -28,10 +27,9 @@ const withThemeProvider = (story) => {
     <>
       <Global styles={storyStyles} />
       <HvProvider
-        theme={{
-          baseTheme: selectedTheme?.split("-")[0] as HvBaseTheme,
-          baseColorMode: selectedTheme?.split("-")[1],
-        }}
+        themes={[ds5, ds3]}
+        theme={selectedTheme?.split("-")[0]}
+        colorMode={selectedTheme?.split("-")[1]}
       >
         {story()}
       </HvProvider>

@@ -5,9 +5,8 @@ import MuiCardHeader, {
 import { HvBaseProps } from "../../../types";
 import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
 import { styles } from "./Header.styles";
-import { css } from "emotion";
-import { HvThemeContext } from "providers";
-import { useContext } from "react";
+import { css } from "utils/emotion";
+import { useTheme } from "hooks";
 
 export type HvHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
   HvBaseProps<HTMLDivElement, { title }> & {
@@ -32,7 +31,7 @@ export const HvHeader = ({
   onClick,
   ...others
 }: HvHeaderProps) => {
-  const { activeTheme } = useContext(HvThemeContext);
+  const { activeTheme } = useTheme();
 
   return (
     <MuiCardHeader

@@ -5,6 +5,7 @@ import {
   OverrideClasses,
   ReusableComponent,
   DynamicReusableComponent,
+  NestedClasses,
 } from "./Customization";
 
 <Meta title="Guides/Theming/Customization" />
@@ -20,7 +21,7 @@ Find below the ways you have at your disposal to style a single instance of a co
 
 ### Inline styles
 
-You can style a component by applying inline styles using the `style` attribute on the component. The value passed must be a Javascript object with all
+You can style a component by applying inline styles using the `style` property on the component. The value passed must be a Javascript object with all
 properties in camel case format.
 
 ```tsx
@@ -53,9 +54,9 @@ const MyComponent = () => (
 
 ### Custom classes
 
-#### Using the `classname` attribute
+#### Using the `classname` property
 
-It's also possible to customize a component providing a custom class to the `className` attribute on the component.
+It's also possible to customize a component providing a custom class to the `className` property on the component.
 
 One way of doing this is by creating your custom class inside a CSS file as follows:
 
@@ -67,7 +68,7 @@ One way of doing this is by creating your custom class inside a CSS file as foll
 }
 ```
 
-Then, you need to import the CSS file and use the custom class you created on the `className` attribute.
+Then, you need to import the CSS file and use the custom class you created on the `className` property.
 
 ```tsx
 // CustomButton.tsx file
@@ -115,11 +116,12 @@ const MyComponent = () => (
   </Story>
 </Canvas>
 
-#### Using the `classes` attribute
+#### Using the `classes` property
 
-Most UI Kit components have a `classes` attribute that exposes several classes that are used internally in the component. These classes can then be overridden from the outside by providing a custom class name. To create a custom class name you can use one of the patterns shown above.
+Most UI Kit components have a `classes` property that exposes several classes that are used internally in the component. These classes can then be overridden from the outside by providing a custom class name.
+To create a custom class name you can use one of the patterns that were shown above.
 
-Find below an example on how to override the `classes` attribute of a component. In this example, we are overriding the style of the `HvSwitch`'s label.
+Find below an example on how to override the `classes` property of a component. In this example, we are overriding the style of the `HvSwitch`'s label.
 
 ```tsx
 import { HvSwitch } from "@hitachivantara/uikit-react-core";
@@ -159,6 +161,61 @@ This way of styling components is very convenient since it allows you to easily 
 />
 ```
 
+##### Nested classes
+
+For each component, class names are provided to help you target specific parts of a component. Thus, all components can be customized by creating
+selectors that targets these class names. All classes begin with the name of the component they belong to.
+
+In order to understand in more detail where these class names are being used, you'll need to use the browser's developer tools. Once you identify the
+classes you want to override, you can target them in your CSS by creating a selector.
+
+In the example below, a selector was created to change the color of the indicator used on the selected tab.
+
+```tsx
+import {
+  HvTabs,
+  HvTab,
+  tabsClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+
+const classes = {
+  tabsIndicator: css({
+    [`& .${tabsClasses.indicator}`]: {
+      "& > div": {
+        backgroundColor: theme.colors.sema1,
+      },
+    },
+  }),
+};
+
+export const MyComponent = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (_, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <HvTabs
+      value={value}
+      onChange={handleChange}
+      className={classes.tabsIndicator}
+    >
+      <HvTab label="Tab 1" />
+      <HvTab label="Tab 2" />
+    </HvTabs>
+  );
+};
+```
+
+<Canvas>
+  <Story name="NestedClasses">
+    <NestedClasses />
+  </Story>
+</Canvas>
+
 ## Reusable components
 
 In order to have a cleaner and more maintainable code, you should always strive to promote code reusability by creating reusable components.
@@ -192,7 +249,7 @@ Then, you can import the component and use it like so:
 
 ### Dynamic styles
 
-The Emotion's `styled` utility also enables you to override a component's style based on the its properties.
+The Emotion's `styled` utility also enables you to override a component's style based on its properties.
 
 To achieve this, take a look at the example below where the `HvButton`'s label changes color based on the `variant` property.
 
@@ -213,13 +270,27 @@ export const ReusableComponent = (props: HvButtonProps) => (
 );
 ```
 
+Then, you can use the component the following way:
+
+```tsx
+<ReusableComponent id="dynamic-reusable-button-id" variant="secondaryGhost">
+  Click me!
+</ReusableComponent>
+```
+
 <Canvas>
   <Story name="DynamicReusableComponent">
     <DynamicReusableComponent
-      id="dynamic-reusable-button-id"
+      id="dynamic-reusable-button-sg-id"
       variant="secondaryGhost"
     >
-      Click me!
+      Secondary ghost!
+    </DynamicReusableComponent>
+    <DynamicReusableComponent
+      id="dynamic-reusable-button-pg-id"
+      variant="primaryGhost"
+    >
+      Primary ghost!
     </DynamicReusableComponent>
   </Story>
 </Canvas>

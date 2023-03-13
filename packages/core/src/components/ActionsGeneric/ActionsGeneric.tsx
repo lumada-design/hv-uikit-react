@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import { HvButtonSize, HvButtonVariant, HvDropDownMenu } from "components";
 import { setId } from "utils";
-import React, { isValidElement, useContext } from "react";
+import React, { isValidElement } from "react";
 import { HvBaseProps } from "../../types";
 import { actionsGenericClasses, HvActionsGenericClasses } from ".";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
-import { HvThemeContext } from "providers";
+import { useTheme } from "hooks";
 
 export type HvActionGeneric = {
   id: string;
@@ -48,7 +48,7 @@ export const HvActionsGeneric = ({
   maxVisibleActions = Infinity,
   ...others
 }: HvActionsGenericProps) => {
-  const { activeTheme, selectedMode } = useContext(HvThemeContext);
+  const { activeTheme, selectedMode } = useTheme();
 
   if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 

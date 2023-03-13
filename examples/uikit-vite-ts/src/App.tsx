@@ -1,11 +1,10 @@
 import {
   HvButton,
   HvContainer,
-  HvThemeContext,
   HvTypography,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { ThemeSwitcher } from "@hitachivantara/uikit-react-icons";
-import { useContext } from "react";
 import {
   StyledContainer,
   StyledLink,
@@ -13,8 +12,7 @@ import {
 } from "./App.styles";
 
 const App = () => {
-  const { selectedTheme, selectedMode, changeTheme } =
-    useContext(HvThemeContext);
+  const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const handleChangeTheme = () => {
     changeTheme(selectedTheme, selectedMode === "wicked" ? "dawn" : "wicked");

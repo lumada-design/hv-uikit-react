@@ -40,5 +40,19 @@ export const getDocsStyles = (theme) => {
       margin: "20px 0 15px 0",
       border: "none",
     },
+
+    "h4.sbdocs": {
+      fontSize: "18px",
+      fontWeight: "700",
+      margin: "20px 0 15px 0",
+      border: "none",
+    },
+
+    "h5.sbdocs": {
+      fontSize: "16px",
+      fontWeight: "700",
+      margin: "20px 0 15px 0",
+      border: "none",
+    },
   };
 };

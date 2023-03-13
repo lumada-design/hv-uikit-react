@@ -1,13 +1,8 @@
-import { useContext } from "react";
-import {
-  HvBox,
-  HvDropdown,
-  HvThemeContext,
-} from "@hitachivantara/uikit-react-core";
+import { HvBox, HvDropdown, useTheme } from "@hitachivantara/uikit-react-core";
 
 export const ThemeSwitcher = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
-    useContext(HvThemeContext);
+    useTheme();
 
   return (
     <HvBox css={{ display: "flex", gap: 20 }}>

@@ -28,8 +28,8 @@ import {
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
-import { HvThemeContext } from "providers";
 import { HvTypographyProps } from "../../Typography";
+import { useTheme } from "hooks";
 
 export type HvTableHeaderProps = ThHTMLAttributes<HTMLElement> &
   Omit<HvBaseProps, "children"> & {
@@ -296,7 +296,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
     },
     externalRef
   ) => {
-    const { activeTheme, selectedMode } = useContext(HvThemeContext);
+    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 

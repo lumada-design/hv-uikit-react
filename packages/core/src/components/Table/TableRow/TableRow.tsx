@@ -8,8 +8,8 @@ import TableContext from "../TableContext";
 import { transientOptions } from "utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvThemeContext } from "providers";
 import { getBorderStyles } from "../utils/utils";
+import { useTheme } from "hooks";
 
 export type HvTableRowProps = Omit<HvBaseProps, "children"> & {
   /** Content to be rendered */
@@ -145,7 +145,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     },
     externalRef
   ) => {
-    const { activeTheme, selectedMode } = useContext(HvThemeContext);
+    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 

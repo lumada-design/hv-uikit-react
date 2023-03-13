@@ -3,7 +3,7 @@ import { HvBaseProps } from "../../types";
 import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import bulkActionsClasses, { HvBulkActionsClasses } from "./bulkActionsClasses";
 import { HvButton, HvButtonProps, HvButtonSize } from "../Button";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { HvTypography } from "components";
 import {
   StyledGenericActions,
@@ -13,8 +13,8 @@ import {
 } from "./BulkActions.styles";
 import clsx from "clsx";
 import { setId } from "utils";
-import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
+import { useTheme } from "hooks";
 
 export type HvBulkActionsProps = HvBaseProps & {
   /**
@@ -105,7 +105,7 @@ export const HvBulkActions = ({
   onSelectAllPages,
   ...others
 }: HvBulkActionsProps) => {
-  const { activeTheme, selectedMode } = useContext(HvThemeContext);
+  const { activeTheme, selectedMode } = useTheme();
 
   const [anySelected, setAnySelected] = useState<boolean>(false);
 

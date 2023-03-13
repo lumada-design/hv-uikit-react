@@ -1,9 +1,13 @@
 import { css, Global, CacheProvider } from "@emotion/react";
-import { CssBaseline, getThemesVars } from "@hitachivantara/uikit-styles";
-import { parseThemes } from "utils";
+import {
+  CssBaseline,
+  getThemesVars,
+  HvThemeStructure,
+} from "@hitachivantara/uikit-styles";
+import { processThemes } from "utils";
 import { HvTheme } from "../types/theme";
 import { HvThemeProvider } from "./ThemeProvider";
-import { emotionCache } from "emotion";
+import { emotionCache } from "utils/emotion";
 
 // Provider props
 export type HvProviderProps = {
@@ -18,14 +22,30 @@ export type HvProviderProps = {
   enableCssBaseline?: boolean;
   /**
    * Id of your root element. The theme's attributes and CSS variables will be set in this element.
+   *
    * If no value is provided, the document's body will be used.
    */
   rootElementId?: string;
   /**
-   * The UI Kit theme object used to set the theme and inject the customizations needed to meet specific design needs.
-   * If no value is provided, the default theme and mode will be `"ds5"` and `"dawn"`, respectively.
+   * List of themes to be used by UI Kit.
+   * You can provide your own themes created with the `createTheme` utility and/or the default themes `ds3` and `ds5` provided by UI Kit.
+   *
+   * If no value is provided, the `ds5` theme will be used.
    */
-  theme?: HvTheme;
+  themes?: (HvTheme | HvThemeStructure)[];
+  /**
+   * The active theme. It must be one of the themes passed to `themes`.
+   *
+   * If no value is provided, the first theme from the `themes` list is used. If no `themes` list is provided, the `ds5` theme will be used.
+   */
+  theme?: string;
+  /**
+   * The active color mode. It must be one of the color modes of the selected theme.
+   *
+   * If no value is provided, the first color mode defined in the selected theme is used.
+   * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one selected.
+   */
+  colorMode?: string;
 };
 
 /**
@@ -35,36 +55,25 @@ export const HvProvider = ({
   children,
   rootElementId,
   enableCssBaseline = true,
-  theme = {},
+  themes,
+  theme,
+  colorMode,
 }: HvProviderProps) => {
-  const {
-    baseTheme = "ds5",
-    baseColorMode = "dawn",
-    inheritColorModes = true,
-    name,
-    ...customizations
-  } = theme;
-
-  // Get themes list
-  const themes = parseThemes(
-    baseTheme,
-    name,
-    inheritColorModes,
-    customizations
-  );
+  // Themes
+  const themesList: (HvTheme | HvThemeStructure)[] = processThemes(themes);
 
   return (
     <CacheProvider value={emotionCache}>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}
-          ${getThemesVars(themes)}
+          ${getThemesVars(themesList)}
         `}
       />
       <HvThemeProvider
-        themes={themes}
-        theme={name || baseTheme}
-        colorMode={baseColorMode}
+        themes={themesList}
+        theme={theme || themesList[0].name}
+        colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
         rootElementId={rootElementId}
       >
         {children}

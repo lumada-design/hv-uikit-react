@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import startCase from "lodash/startCase";
 import capitalize from "lodash/capitalize";
 import {
   HvProvider,
-  HvThemeContext,
   HvTypography,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   StyledGroup,
@@ -89,12 +89,11 @@ const ColorsGroup = ({
 
 const Colors = () => {
   const [allColors, setAllColors] = useState<Map<string, string>>();
-  const { activeTheme, selectedTheme, selectedMode } =
-    useContext(HvThemeContext);
+  const { activeTheme, selectedTheme, selectedMode } = useTheme();
 
   useEffect(() => {
-    setAllColors(groupColors(activeTheme.colors.modes[selectedMode]));
-  }, [activeTheme, selectedTheme, selectedMode]);
+    setAllColors(groupColors(activeTheme?.colors.modes[selectedMode]));
+  }, [activeTheme, selectedMode]);
 
   return (
     allColors && (

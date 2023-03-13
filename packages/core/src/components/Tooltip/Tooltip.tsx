@@ -3,12 +3,12 @@ import {
   Tooltip as MuiTooltip,
   TooltipProps as MuiTooltipProps,
 } from "@mui/material";
-import { forwardRef, ReactElement, useContext } from "react";
+import { forwardRef, ReactElement } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
-import { HvThemeContext } from "providers";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
 import clsx from "clsx";
+import { useTheme } from "hooks";
 
 export type HvTooltipPlacementType =
   | "bottom-end"
@@ -89,7 +89,7 @@ export const HvTooltip = forwardRef((props: HvTooltipProps, ref) => {
     ...others
   } = props;
 
-  const { rootId } = useContext(HvThemeContext);
+  const { rootId } = useTheme();
 
   return (
     <MuiTooltip

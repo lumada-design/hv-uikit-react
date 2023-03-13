@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useState } from "react";
+import { ReactElement, ReactNode, useState } from "react";
 import {
   HvDropdown,
   HvAccordion,
@@ -125,7 +125,7 @@ export const Theme = () => {
   );
 
   const renderLevel = (
-    value: unknown,
+    value: object | string | number,
     label: string,
     level: number
   ): ReactElement => {

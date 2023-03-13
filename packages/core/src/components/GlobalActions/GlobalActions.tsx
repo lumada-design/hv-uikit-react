@@ -1,4 +1,3 @@
-import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
 import { isString } from "lodash";
@@ -12,8 +11,8 @@ import {
 import globalActionsClasses, {
   HvGlobalActionsClasses,
 } from "./globalActionsClasses";
-import { useContext } from "react";
-import { HvThemeContext } from "providers";
+import { useTheme as useHvTheme } from "hooks";
+import { useTheme } from "@mui/material/styles";
 
 export type HvGlobalActionsVariant = "global" | "section";
 
@@ -54,7 +53,7 @@ export const HvGlobalActions = ({
   position: positionProp,
   ...others
 }: HvGlobalActionsProps) => {
-  const { activeTheme } = useContext(HvThemeContext);
+  const { activeTheme } = useHvTheme();
 
   const muiTheme = useTheme();
 

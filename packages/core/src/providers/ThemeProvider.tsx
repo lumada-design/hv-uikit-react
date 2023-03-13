@@ -1,34 +1,27 @@
 import { createContext, useEffect, useMemo, useState } from "react";
-import {
-  HvBaseTheme,
-  parseTheme,
-  HvThemeColorMode,
-} from "@hitachivantara/uikit-styles";
+import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import { setElementAttrs } from "utils";
-import { HvCustomizedTheme } from "../types/theme";
+import { HvTheme } from "../types/theme";
 
-interface HvThemeContextValue {
-  themes: (HvBaseTheme | string)[];
-  activeTheme?: HvCustomizedTheme;
-  colorModes: (HvThemeColorMode | string)[];
-  selectedTheme: HvBaseTheme | string;
-  selectedMode: HvThemeColorMode | string;
-  changeTheme: (
-    theme?: HvBaseTheme | string,
-    mode?: HvThemeColorMode | string
-  ) => void;
+export interface HvThemeContextValue {
+  themes: string[];
+  colorModes: string[];
+  activeTheme?: HvTheme | HvThemeStructure;
+  selectedTheme: string;
+  selectedMode: string;
+  changeTheme: (theme?: string, mode?: string) => void;
   rootId?: string;
 }
 
 interface HvThemeProviderProps {
   children: React.ReactNode;
-  themes: { [themeName: string]: HvCustomizedTheme };
-  theme: HvBaseTheme | string;
-  colorMode: HvThemeColorMode | string;
+  themes: (HvTheme | HvThemeStructure)[];
+  theme: string;
+  colorMode: string;
   rootElementId?: string;
 }
 
@@ -52,24 +45,26 @@ export const HvThemeProvider = ({
   let pTheme = parseTheme(themesList, theme, colorMode);
 
   const [rootId] = useState<string | undefined>(rootElementId);
-  const [activeTheme, setActiveTheme] = useState<HvCustomizedTheme>(
-    themesList[pTheme.selected]
+  const [activeTheme, setActiveTheme] = useState<HvTheme | HvThemeStructure>(
+    pTheme.theme
   );
-  const [selectedTheme, setSelectedTheme] = useState<string>(pTheme.selected);
+  const [selectedTheme, setSelectedTheme] = useState<string>(
+    pTheme.selectedTheme
+  );
   const [selectedMode, setThemeMode] = useState<string>(pTheme.selectedMode);
   const [colorModes, setColorModes] = useState<string[]>(pTheme.colorModes);
-  const [themes] = useState<string[]>(Object.keys(themesList));
+  const [themes] = useState<string[]>(themesList.map((t) => t.name));
 
   const changeTheme = (newTheme = selectedTheme, newMode = selectedMode) => {
     pTheme = parseTheme(themesList, newTheme, newMode);
 
-    setActiveTheme(themesList[pTheme.selected]);
-    setSelectedTheme(pTheme.selected);
+    setActiveTheme(pTheme.theme);
+    setSelectedTheme(pTheme.selectedTheme);
     setThemeMode(pTheme.selectedMode);
     setColorModes(pTheme.colorModes);
 
     setElementAttrs(
-      pTheme.selected,
+      pTheme.selectedTheme,
       pTheme.selectedMode,
       pTheme.styles,
       rootId
@@ -104,7 +99,7 @@ export const HvThemeProvider = ({
   const MuiTheme = createTheme({
     breakpoints: {
       values: {
-        ...themesList[selectedTheme].breakpoints.values,
+        ...activeTheme.breakpoints.values,
       },
     },
   });

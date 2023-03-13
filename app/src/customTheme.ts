@@ -1,10 +1,9 @@
-import { HvTheme } from "@hitachivantara/uikit-react-core";
+import { createTheme } from "@hitachivantara/uikit-react-core";
 
-const customTheme: HvTheme = {
-  baseTheme: "ds5",
-  baseColorMode: "dawn",
-  inheritColorModes: false,
+const customTheme = createTheme({
   name: "custom-theme",
+  base: "ds5",
+  inheritColorModes: false,
   colors: {
     modes: {
       sand: {
@@ -54,6 +53,6 @@ const customTheme: HvTheme = {
     selectedRowBackgroundColor: "#c9bdab",
     rowHoverColor: "#ebe4da",
   },
-};
+});
 
 export default customTheme;

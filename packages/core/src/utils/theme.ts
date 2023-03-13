@@ -1,12 +1,11 @@
 /*eslint import/namespace: [2, { allowComputed: true }]*/
 import {
   themes,
-  HvBaseTheme,
-  colors,
   HvThemeColorModeStructure,
   HvParsedThemeStyles,
+  HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
-import { HvThemeCustomizationProps, HvCustomizedTheme } from "types/theme";
+import { HvTheme, HvCreateThemeProps } from "../types/theme";
 
 /**
  * Sets the element attributes for a theme and color mode.
@@ -36,10 +35,11 @@ export const setElementAttrs = (
 };
 
 /**
- * Applies the customizations to a theme.
+ * Applies customizations to a theme.
  */
 const applyThemeCustomizations = (obj: object, customizations: object) => {
-  const isObject = (val: any) => val && typeof val === "object";
+  const isObject = (val: any) =>
+    val && typeof val === "object" && !Array.isArray(val);
 
   // Customized theme
   const customizedTheme = { ...obj };
@@ -64,33 +64,29 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
 };
 
 /**
- * Creates a list of customized themes based on the base theme and customizations given.
- *
- * If a newThemeName is given, a new theme is created based on the base theme and customizations.
+ * Creates a customized theme based on the base theme and customizations given.
+ * For the color modes, the colors that are not defined will be replaced by the values from the dawn mode of the base theme.
  */
-export const parseThemes = (
-  baseTheme: HvBaseTheme,
-  newThemeName?: string,
-  inheritColorModes?: boolean,
-  customizations?: HvThemeCustomizationProps
-): { [themeName: string]: HvCustomizedTheme } => {
+export const createTheme = ({
+  name,
+  base = "ds5",
+  inheritColorModes = true,
+  ...customizations
+}: HvCreateThemeProps): HvTheme | HvThemeStructure => {
   // Apply customizations to the base theme
-  const customizedTheme: HvCustomizedTheme = customizations
-    ? (applyThemeCustomizations(
-        themes[baseTheme],
-        customizations
-      ) as HvCustomizedTheme)
-    : { ...themes[baseTheme] };
+  const customizedTheme: HvTheme | HvThemeStructure = customizations
+    ? (applyThemeCustomizations(themes[base], customizations) as HvTheme)
+    : { ...themes[base] };
+
+  // Set theme name
+  customizedTheme.name = name.trim();
 
   // Fill new color modes with missing colors
   if (customizations) {
     Object.keys(customizedTheme.colors.modes).forEach((mode) => {
-      if (!themes[baseTheme].colors.modes[mode]) {
+      if (!themes[base].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
-          type: customizedTheme.colors.modes[mode].type || "light",
-          backgroundColor: colors.light.atmo2,
-          ...colors.common,
-          ...colors.light,
+          ...themes[base].colors.modes.dawn,
           ...(customizedTheme.colors.modes[mode] as Partial<
             HvThemeColorModeStructure & { [key: string]: string }
           >),
@@ -99,22 +95,48 @@ export const parseThemes = (
     });
   }
 
-  // Create new themes list
-  let customizedThemes: {
-    [themeName: string]: HvCustomizedTheme;
-  } = newThemeName
-    ? { ...themes, [newThemeName]: customizedTheme }
-    : { ...themes, [baseTheme]: customizedTheme };
-
-  // If we have a new theme name and the flag `inheritColorModes` is false we're removing
-  // any color modes that might have been inherited and directly defined
-  if (!inheritColorModes && newThemeName && customizations) {
-    Object.keys(customizedThemes[newThemeName].colors.modes).forEach((m) => {
-      if (!Object.keys(customizations.colors?.modes || {}).includes(m)) {
-        delete customizedThemes[newThemeName].colors.modes[m];
+  // If the flag `inheritColorModes` is false and customizations were given for the color modes,
+  // we're removing any color modes that might have been inherited
+  if (!inheritColorModes && customizations.colors?.modes) {
+    Object.keys(customizedTheme.colors.modes).forEach((mode) => {
+      if (!Object.keys(customizations.colors?.modes || {}).includes(mode)) {
+        delete customizedTheme.colors.modes[mode];
       }
     });
   }
 
-  return customizedThemes;
+  // Created theme
+  return customizedTheme;
+};
+
+/**
+ * Process the themes provided to the HvProvider:
+ *  - Cleans themes with the same name
+ *  - Returns the default if the list is empty (ds5)
+ */
+export const processThemes = (
+  themesList?: (HvTheme | HvThemeStructure)[]
+): (HvTheme | HvThemeStructure)[] => {
+  if (themesList && Array.isArray(themesList) && themesList.length > 0) {
+    const list: (HvTheme | HvThemeStructure)[] = [];
+
+    themesList.map((theme) => {
+      const i: number = list.findIndex(
+        (t) => t.name.trim() === theme.name.trim()
+      );
+
+      if (i !== -1) {
+        list.splice(i, 1);
+        list.push(theme);
+      } else {
+        list.push(theme);
+      }
+    });
+
+    // Cleaned themes
+    return list;
+  } else {
+    // DS5
+    return [themes.ds5];
+  }
 };

@@ -8,3 +8,4 @@ export * from "./useLabels";
 export { default as useUniqueId } from "./useUniqueId";
 export { default as useIsMounted } from "./useIsMounted";
 export { default as useComputation } from "./useComputation";
+export * from "./useTheme";

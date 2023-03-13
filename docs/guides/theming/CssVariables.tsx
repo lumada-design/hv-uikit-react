@@ -1,4 +1,3 @@
-import React from "react";
 import { theme, HvTypography } from "@hitachivantara/uikit-react-core";
 import styled from "@emotion/styled";
 
