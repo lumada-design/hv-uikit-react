@@ -206,6 +206,7 @@ export const StyledInput = styled(
       backgroundColor: "transparent",
       overflow: "auto",
       border: "none",
+      height: "auto",
 
       [`& .${baseInputClasses.input}`]: {
         border: `1px solid ${theme.baseInput.multilineBorderColor}`,
