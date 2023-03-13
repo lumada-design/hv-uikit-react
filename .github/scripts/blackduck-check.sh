@@ -1,10 +1,10 @@
 #!/bin/bash
-bash <(curl -k1 https://detect.synopsys.com/detect.sh -o detect.sh) 
+bash <(curl -k1 https://detect.synopsys.com/detect8.sh -o detect.sh) 
 chmod 777 detect.sh
 DETECT_DIR=`pwd`
 echo "DETECT_DIR - ${DETECT_DIR}"
 
-declare -a packages=("core" "lab" "icons" "themes" "code-editor")
+declare -a packages=("core" "icons" "styles")
 
 DETECT_ARGS="--blackduck.url=${BLACKDUCK_URL} --blackduck.api.token=${BLACKDUCK_TOKEN} --blackduck.trust.cert=true --detect.project.version.name=${PROJECT_VERSION}"
 
