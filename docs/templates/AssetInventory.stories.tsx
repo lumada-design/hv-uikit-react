@@ -1,4 +1,4 @@
-import AssetInventory from "./AssetInventory";
+import AssetInventory from "../../templates/AssetInventory";
 
 export default {
   title: "Templates/AssetInventory",

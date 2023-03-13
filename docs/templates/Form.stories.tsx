@@ -1,4 +1,4 @@
-import Form from "./Form";
+import Form from "../../templates/Form";
 
 export default {
   title: "Templates/Form",

@@ -1,4 +1,4 @@
-import DetailsView from "./DetailsView";
+import DetailsView from "../../templates/DetailsView";
 
 export default {
   title: "Templates/DetailsView",

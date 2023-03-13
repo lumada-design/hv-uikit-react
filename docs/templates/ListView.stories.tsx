@@ -1,4 +1,4 @@
-import ListView from "./ListView";
+import ListView from "../../templates/ListView";
 
 export default {
   title: "Templates/ListView",
