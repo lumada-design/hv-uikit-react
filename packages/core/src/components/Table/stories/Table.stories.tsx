@@ -17,6 +17,7 @@ import {
   HvTypography,
   HvDropDownMenu,
   HvButton,
+  HvOverflowTooltip,
 } from "components";
 import { useMemo } from "react";
 import {
@@ -42,6 +43,7 @@ const StyledResponsiveHead = styled(HvTableHead)(
   ({ breakpoints }: { breakpoints: MuiBreakpoints }) => ({
     display: "flex",
     flexFlow: "column wrap",
+    height: "auto",
 
     [breakpoints.only("md")]: {
       "&:first-of-type": {
@@ -372,7 +374,9 @@ export const ResponsiveTable = () => {
           <StyledResponsiveTableRow $breakpoints={muiTheme.breakpoints}>
             {columns.map((el) => (
               <StyledResponsiveTableHeader key={el.Header}>
-                {el.Header}
+                <HvOverflowTooltip data={el.Header}>
+                  {el.Header}
+                </HvOverflowTooltip>
               </StyledResponsiveTableHeader>
             ))}
           </StyledResponsiveTableRow>

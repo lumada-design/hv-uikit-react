@@ -1,5 +1,5 @@
 import range from "lodash/range";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, within } from "@testing-library/react";
 import { ResponsiveTable } from "./stories/Table.stories";
 import {
@@ -13,6 +13,21 @@ import {
 } from "components";
 
 describe("Table", () => {
+  beforeEach(() => {
+    // @ts-ignore
+    delete window.ResizeObserver;
+    window.ResizeObserver = vi.fn().mockImplementation(() => ({
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    vi.restoreAllMocks();
+  });
+
   it("can render a different component and sets roles", () => {
     const { getByRole, getAllByRole } = render(<ResponsiveTable />);
 

@@ -104,9 +104,8 @@ export const KitchenSink: StoryObj = {
           },
         },
       ];
-      // @ts-ignore
+
       cols[2].disableSortBy = true;
-      // @ts-ignore
       cols[5].sortType = colSort;
       return cols;
     }, [colSort]);

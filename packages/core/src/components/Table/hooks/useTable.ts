@@ -8,6 +8,7 @@ import {
   Cell,
   CellPropGetter,
   CellProps,
+  Column,
   ColumnInstance,
   ColumnInterface,
   FooterPropGetter,
@@ -298,6 +299,8 @@ export interface HvColumnInstance<D extends object = Record<string, unknown>>
   getHeaderProps: (propGetter?: HeaderPropGetter<D>) => HvUseTableHeaderProps;
   getFooterProps: (propGetter?: FooterPropGetter<D>) => HvUseTableFooterProps;
 }
+
+export type HvColumn<D extends object = Record<string, unknown>> = Column<D>;
 
 export interface HvRowInstance<D extends object = Record<string, unknown>>
   extends Row<D>,
