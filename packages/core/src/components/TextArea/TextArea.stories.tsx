@@ -1,17 +1,12 @@
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvTypography } from "components";
 import { useEffect, useState } from "react";
 import { HvTextArea, HvTextAreaProps } from "./TextArea";
 
-const StyledDecorator = styled("div")({
-  maxWidth: "600px",
-});
-
 const meta: Meta<typeof HvTextArea> = {
   title: "Inputs/Text Area",
   component: HvTextArea,
-  decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
+  decorators: [(Story) => <div style={{ maxWidth: 600 }}>{Story()}</div>],
 };
 
 export default meta;
