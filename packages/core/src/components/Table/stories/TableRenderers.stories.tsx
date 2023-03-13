@@ -523,7 +523,9 @@ export const ExpandColumnRenderer = () => {
       { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
       "expand",
       "collapse",
-      (row) => row.values.eventType !== undefined
+      (row) => {
+        return row.original.eventType !== undefined;
+      }
     ),
   ];
 
@@ -985,7 +987,7 @@ export const DropdownColumnRenderer = () => {
               newVal.severity = newVal.severity.map((sev) => {
                 const newSev = { ...sev };
                 newSev.selected = false;
-                if (newSev.id === value.id) newSev.selected = value.selected;
+                if (newSev.id === value.id) newSev.selected = !!value.selected;
                 return newSev;
               });
             }
