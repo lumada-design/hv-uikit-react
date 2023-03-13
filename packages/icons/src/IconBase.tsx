@@ -84,7 +84,3 @@ export const IconBase = ({
     </StyledIconBase>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  IconBase.displayName = "IconBase";
-}

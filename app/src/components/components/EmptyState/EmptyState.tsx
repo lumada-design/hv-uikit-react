@@ -20,7 +20,3 @@ export const EmptyState = () => {
     </HvBox>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  EmptyState.displayName = "EmptyState";
-}

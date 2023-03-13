@@ -20,7 +20,3 @@ export const Tags = () => {
     </div>
   );
 };
-
-if (process.env.NODE_ENV !== "production") {
-  Tags.displayName = "Tag";
-}
