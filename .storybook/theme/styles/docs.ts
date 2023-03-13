@@ -4,40 +4,41 @@ export const getDocsStyles = (theme) => {
       fontFamily: "'Open Sans',sans-serif !important",
     },
 
-    ".sbdocs a": {
-      color: "#2064B4 !important",
-    },
-
     ".sbdocs-content": {
       width: "940px !important",
       maxWidth: "90% !important",
     },
 
-    ".sbdocs-p": {
-      fontSize: "16px !important",
-      lineHeight: "1.7 !important",
+    "a.sbdocs": {
+      color: "#2064B4",
     },
 
-    ".sbdocs-li": {
-      fontSize: "16px !important",
-      lineHeight: "1.7 !important",
+    "p.sbdocs": {
+      fontSize: "16px",
+      lineHeight: "1.7",
     },
 
-    ".sbdocs-h1": {
-      marginBottom: "30px !important",
+    "li.sbdocs": {
+      fontSize: "16px",
+      lineHeight: "1.7",
     },
 
-    ".sbdocs-h2": {
-      fontSize: "26px !important",
-      fontWeight: "700 !important",
-      margin: "60px 0 15px 0 !important",
-      paddingBottom: 10,
+    "h1.sbdocs": {
+      marginBottom: "30px",
     },
 
-    ".sbdocs-h3": {
-      fontSize: "20px !important",
-      fontWeight: "700 !important",
-      margin: "20px 0 15px 0 !important",
+    "h2.sbdocs": {
+      fontSize: "26px",
+      fontWeight: "700",
+      margin: "50px 0 15px 0 !important",
+      border: "none",
+    },
+
+    "h3.sbdocs": {
+      fontSize: "20px",
+      fontWeight: "700",
+      margin: "20px 0 15px 0",
+      border: "none",
     },
   };
 };

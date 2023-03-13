@@ -4,12 +4,12 @@ export const getStoryStyles = (theme) => {
       padding: 0,
     },
 
-    ".docs-story": {
-      backgroundColor: theme.colors.atmo2,
-    },
-
     ".sbdocs": {
       fontFamily: "'Open Sans',sans-serif !important",
+    },
+
+    ".docs-story": {
+      backgroundColor: theme.colors.atmo2,
     },
   };
 };

@@ -1,5 +1,5 @@
-import DocsContainer from "./theme/blocks/DocsContainer";
-import withThemeProvider from "./theme/decorator/withThemeProvider";
+import DocsContainer from "./blocks/DocsContainer";
+import withThemeProvider from "./decorators/withThemeProvider";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

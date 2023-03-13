@@ -4,7 +4,7 @@ import { Global } from "@storybook/theming";
 import { HvProvider, HvBaseTheme } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { getStoryStyles } from "../styles/story";
+import { getStoryStyles } from "../theme/styles/story";
 
 const withThemeProvider = (story) => {
   const storyStyles = getStoryStyles(theme);
