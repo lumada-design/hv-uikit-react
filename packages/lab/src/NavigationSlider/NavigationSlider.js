@@ -18,8 +18,9 @@ const HvNavigationSlider = ({
   selected,
   topPosition,
   panelWidth,
+  position,
 }) => {
-  const classes = useStyles({ topPosition, panelWidth })();
+  const classes = useStyles({ topPosition, panelWidth, position })();
 
   const withParentData = useMemo(() => fillDataWithParentId(data), [data]);
 
@@ -119,11 +120,16 @@ HvNavigationSlider.propTypes = {
    * The width of the panel when expanded. Default value is 300.
    */
   panelWidth: PropTypes.number,
+  /**
+   * Position of the component.
+   */
+  position: PropTypes.oneOf(["static", "relative", "fixed", "absolute", "sticky"]),
 };
 
 HvNavigationSlider.defaultProps = {
   topPosition: 44,
   panelWidth: 300,
+  position: "fixed",
 };
 
 export default withStyles(useStyles, { name: "HvNavigationSlider" })(HvNavigationSlider);

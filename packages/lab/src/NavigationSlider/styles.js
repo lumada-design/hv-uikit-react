@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 const styles = (props) =>
   makeStyles(() => ({
     container: {
-      position: "fixed",
+      position: props.position,
       left: 0,
       top: props.topPosition,
     },
