@@ -1,0 +1,36 @@
+name: Security Scans
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: ["next*"]
+
+env:
+  BLACKDUCK_VERSION: 7
+
+jobs:
+  blackduck-scan:
+    name: BlackDuck Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+          distribution: "adopt"
+
+      - name: Build
+        run: pnpm build
+
+      - name: Run BlackDuck Scan
+        env:
+          BLACKDUCK_URL: ${{ secrets.BLACKDUCK_SERVER_URL }}
+          BLACKDUCK_TOKEN: ${{ secrets.BLACKDUCK_TOKEN }}
+          PROJECT_VERSION: next-mirage
+        run: ./.github/scripts/blackduck-check.sh
