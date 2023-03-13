@@ -286,6 +286,7 @@ export type HvThemeTypography = {
     xxsTitle: HvTypographyProps;
     sectionTitle: HvTypographyProps;
     placeholderText: HvTypographyProps;
+    link: HvTypographyProps;
   };
 };
 

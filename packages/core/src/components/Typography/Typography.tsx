@@ -141,6 +141,11 @@ const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
       ...($variant === "placeholderText" && {
         ...(theme.typography.placeholderText as CSSProperties),
       }),
+      ...($variant === "link" && {
+        ...(theme.typography.link as CSSProperties),
+        textDecoration: "underline",
+        cursor: "pointer",
+      }),
       fontFamily: theme.fontFamily.body,
       // ADDED PROPS
       ...($link && {
