@@ -45,6 +45,8 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     hoverColor: "string",
     borderTopThickness: "string",
     borderTopColor: "string",
+    selectedItemColor: "string",
+    selectedItemBackgroundColor: "string",
     selectedItemBorderTopColor: "string",
     selectedItemBorderTopThickness: "string",
     selectedItemBorderBottomColor: "string",

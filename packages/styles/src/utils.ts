@@ -83,7 +83,7 @@ export const parseTheme = (
     ? colorMode
     : colorModes[0];
   const styles: HvParsedThemeStyles = {
-    bgColor: themes[selected].colors.modes[selectedMode].backgroundColor,
+    bgColor: themes[selected].colors.modes[selectedMode]?.backgroundColor,
     color: themes[selected].colors.modes[selectedMode].acce1,
     accentColor: themes[selected].colors.modes[selectedMode].acce1,
     colorScheme: themes[selected].colors.modes[selectedMode].type,
