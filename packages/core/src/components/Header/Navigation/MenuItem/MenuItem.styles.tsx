@@ -10,6 +10,9 @@ export const MenuItemLi = styled(
   transientOptions
 )(({ $selected }: { $selected?: string }) => ({
   display: "inline",
+  "& span": {
+    color: theme.header.color,
+  },
   "&:hover": {
     "& > [role='button']": {
       backgroundColor: hoverColor,
@@ -25,8 +28,8 @@ export const MenuItemLi = styled(
     borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
     paddingTop: theme.header.selectedItemBorderBottomThickness,
     height: "100%",
-    "& > div > label": {
-      color: theme.header.color,
+    "& > div > span": {
+      color: theme.header.selectedItemColor,
     },
   }),
   ...($selected === "notSelectedItem" && {
@@ -47,6 +50,7 @@ export const MenuItemLabel = styled(
   height: "100%",
   display: "flex",
   alignItems: "center",
+  color: "inherit",
   "&:active": {
     outline: "none",
   },
@@ -57,14 +61,18 @@ export const MenuItemLabel = styled(
   "&:focus-visible": {
     ...outlineStyles,
   },
-  ...($isSelected && {
-    "& span": { color: theme.header.color },
-  }),
-  "& span": {
+
+  "&& span": {
     display: "inline-flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
+    ...($isSelected && {
+      backgroundColor: theme.header.selectedItemBackgroundColor,
+      borderRadius: theme.radii.full,
+      padding: theme.space.xs,
+      color: theme.header.selectedItemColor,
+    }),
   },
   "& span::after": {
     content: "attr(data-text)",
@@ -101,7 +109,7 @@ export const MenuItemLink = styled("a")(
       ...outlineStyles,
     },
     ...($isSelected && {
-      "& span": { color: theme.header.color },
+      "& > div > span": { color: theme.header.selectedItemColor },
     }),
     "& span": {
       display: "inline-flex",
