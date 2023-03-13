@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.4.0...@hitachivantara/uikit-react-lab@4.5.0) (2023-03-13)
+
+### Bug Fixes
+
+- applied changes after speaking with DS team ([#3165](https://github.com/lumada-design/hv-uikit-react/issues/3165)) ([f88ab25](https://github.com/lumada-design/hv-uikit-react/commit/f88ab256fda230855533d92c5ba1df826540843e))
+
+### Features
+
+- **NavigationSlider:** added the navigation slider component ([#3030](https://github.com/lumada-design/hv-uikit-react/issues/3030)) ([5a51e66](https://github.com/lumada-design/hv-uikit-react/commit/5a51e6626740b17115d586a5757be8db61a7d87a))
+
 # [4.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@4.3.3...@hitachivantara/uikit-react-lab@4.4.0) (2023-02-24)
 
 ### Bug Fixes
