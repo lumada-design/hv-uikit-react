@@ -2,6 +2,7 @@ import React from "react";
 
 export const HvFormElementDescriptorsContext = React.createContext<{
   input?: any;
+  label?: any;
 }>({});
 
 export const HvFormElementDescriptorsContextProvider =
