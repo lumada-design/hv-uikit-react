@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.0.0-next.12 (2023-03-13)
+
+### Bug Fixes
+
+- **TextArea:** fix incorrect height ([#3203](https://github.com/lumada-design/hv-uikit-react/issues/3203)) ([04382cf](https://github.com/lumada-design/hv-uikit-react/commit/04382cf64cc0aaefdbe92e5faece1c6471b8ab7e))
+
 # 5.0.0-next.11 (2023-03-08)
 
 ### Bug Fixes
