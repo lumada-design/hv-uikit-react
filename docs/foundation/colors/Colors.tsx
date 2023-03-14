@@ -53,7 +53,7 @@ const ColorsGroup = ({
                             (color as string).includes("cviz") &&
                             selectedTheme === "ds5" &&
                             idx !== 0 &&
-                            idx % 6 === 0
+                            idx % 9 === 0
                               ? "100%"
                               : "",
                         }}
@@ -93,7 +93,7 @@ const Colors = () => {
 
   useEffect(() => {
     setAllColors(groupColors(activeTheme?.colors.modes[selectedMode]));
-  }, [activeTheme, selectedMode]);
+  }, [activeTheme, selectedTheme, selectedMode]);
 
   return (
     allColors && (

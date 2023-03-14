@@ -26,11 +26,13 @@ export const fontWeights = {
 };
 
 export const lineHeights = {
-  none: "20px",
-  sm: "16px",
-  base: "20px",
+  none: "21px",
+  xs: "16px",
+  sm: "18px",
+  base: "21px",
   lg: "24px",
-  xl: "32px",
-  xl2: "40px",
+  xl: "30px",
+  xl2: "36px",
   xl3: "48px",
+  xl4: "63px",
 };

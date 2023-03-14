@@ -25,25 +25,25 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       color: theme.colors.acce1,
       fontWeight: theme.fontWeights.semibold,
       fontSize: theme.fontSizes.xl4,
-      lineHeight: theme.lineHeights.xl3,
+      lineHeight: theme.lineHeights.xl4,
     },
     title1: {
       color: theme.colors.acce1,
       fontWeight: theme.fontWeights.semibold,
       fontSize: theme.fontSizes.xl3,
-      lineHeight: theme.lineHeights.xl2,
+      lineHeight: theme.lineHeights.xl3,
     },
     title2: {
       color: theme.colors.acce1,
       fontWeight: theme.fontWeights.semibold,
       fontSize: theme.fontSizes.xl2,
-      lineHeight: theme.lineHeights.xl,
+      lineHeight: theme.lineHeights.xl2,
     },
     title3: {
       color: theme.colors.acce1,
       fontWeight: theme.fontWeights.semibold,
       fontSize: theme.fontSizes.xl,
-      lineHeight: theme.lineHeights.lg,
+      lineHeight: theme.lineHeights.xl,
     },
     title4: {
       color: theme.colors.acce1,
@@ -73,7 +73,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       color: theme.colors.acce1,
       fontWeight: theme.fontWeights.normal,
       fontSize: theme.fontSizes.xs,
-      lineHeight: theme.lineHeights.sm,
+      lineHeight: theme.lineHeights.xs,
     },
     // LEGACY
     ["5xlTitle"]: {
