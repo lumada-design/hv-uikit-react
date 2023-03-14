@@ -8,14 +8,14 @@ import {
 import { Level0Good, Level1 } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
-export const Sample = ({ title }: { title: string }) => {
+export const ThemeSample = ({ title }: { title: string }) => {
   const StyledPanel = styled(HvPanel)({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     margin: "10px",
-
+    flexWrap: "wrap",
     "& > *": {
       margin: "0px 10px",
     },
@@ -26,7 +26,7 @@ export const Sample = ({ title }: { title: string }) => {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
-    width: "580px",
+    maxWidth: "580px",
   });
 
   const StyledHvTypography = styled(HvTypography)({

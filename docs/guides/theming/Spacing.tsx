@@ -3,6 +3,7 @@ import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 
 export const Spacing = () => {
   const StyledContainer = styled("div")({
+    flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(["xs", "6px"]),
     },

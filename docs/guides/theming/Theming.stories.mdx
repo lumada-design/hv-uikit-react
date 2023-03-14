@@ -1,173 +1,362 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import { HvProvider } from "@hitachivantara/uikit-react-core";
-import { Sample } from "./Sample";
+import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
+import { ThemeSample } from "./ThemeSample";
 import { Spacing } from "./Spacing";
-import { Theme } from "./Theme";
+import { ThemeStructure } from "./ThemeStructure";
 import { CssVariables } from "./CssVariables";
+import { CreateTheme } from "./CreateTheme";
+import { ThemeContext } from "./ThemeContext";
 
-<Meta title="Guides/Theming/Default themes" />
+<Meta title="Guides/Theming" />
 
-# Default themes
+# Theming
+
+Here's what there is to know about the NEXT UI Kit theming:
+
+- [Default themes](/docs/guides-theming--main-ds-5)
+- [Theme structure](/docs/guides-theming--theme-structure)
+- [Theme configuration](/docs/guides-theming--create-theme)
+- [Theme context](/docs/guides-theming--theme-context)
+- [CSS variable](/docs/guides-theming--css-variables)
+- [Spacing](/docs/guides-theming--spacing)
+
+## Default themes
 
 The theme is the cornerstone of all components and it comprises all the styling specifications for the components, such as colors, font sizes, shadows, spacings,
 among others.
 
-The UI Kit provides by default two different themes compliant with the Design System. In this sense, the components are supported for the **Design System versions 3 and 5**.
-For each one of these versions, two different color modes are provided: **Dawn** and **Wicked**.
+The NEXT UI Kit provides two default themes compliant with the Design System. In this sense, the components are supported for the **Design System 3 and 5**.
+Each one of these versions has a specific theme with two different color modes: **Dawn**, a light theme, and **Wicked**, a dark theme.
 
 <Story name="Main-DS5">
   <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
     <div id="hv-root-ds5-dawn-docs-default-themes">
       <HvProvider
         rootElementId="hv-root-ds5-dawn-docs-default-themes"
-        theme={{
-          baseColorMode: "dawn",
-        }}
+        colorMode="dawn"
       >
-        <Sample title="Design System 5 - Dawn" />
+        <ThemeSample title="Design System 5 - Dawn" />
       </HvProvider>
     </div>
     <div id="hv-root-ds5-wicked-docs-default-themes">
       <HvProvider
         rootElementId="hv-root-ds5-wicked-docs-default-themes"
-        theme={{
-          baseColorMode: "wicked",
-        }}
+        colorMode="wicked"
       >
-        <Sample title="Design System 5 - Wicked" />
+        <ThemeSample title="Design System 5 - Wicked" />
       </HvProvider>
     </div>
     <div id="hv-root-ds3-dawn-docs-default-themes">
       <HvProvider
         rootElementId="hv-root-ds3-dawn-docs-default-themes"
-        theme={{
-          baseTheme: "ds3",
-          baseColorMode: "dawn",
-        }}
+        themes={[ds3]}
+        colorMode="dawn"
       >
-        <Sample title="Design System 3 - Dawn" />
+        <ThemeSample title="Design System 3 - Dawn" />
       </HvProvider>
     </div>
     <div id="hv-root-ds3-wicked-docs-default-themes">
       <HvProvider
         rootElementId="hv-root-ds3-wicked-docs-default-themes"
-        theme={{ baseTheme: "ds3", baseColorMode: "wicked" }}
+        themes={[ds3]}
+        colorMode="wicked"
       >
-        <Sample title="Design System 3 - Wicked" />
+        <ThemeSample title="Design System 3 - Wicked" />
       </HvProvider>
     </div>
   </div>
 </Story>
 
-Although these two themes are provided out of the box and will most likely be sufficient in most cases, you have the complete freedom to customize these themes or
-create your own one depending on your design needs and requirements.
+Although these two themes are provided out of the box and will most likely be sufficient in most cases, you have the complete freedom to customize these themes by
+creating your own ones depending on your design needs and requirements.
 
-## Default themes structure
+## Theme structure
 
-Find below the structure of the default themes and their default values.
+Find below the structure and values for each one of the default themes. Both themes have the same structure and only the values differ.
 
 <Canvas>
-  <Story name="Theme">
-    <Theme />
+  <Story name="ThemeStructure">
+    <ThemeStructure />
   </Story>
 </Canvas>
 
 ## Theme configuration
 
-The active theme can be configured through the `HvProvider`'s `theme` property. This property is an object that enables you to set the theme and color mode you want
-as well as define customizations to meet your specific design needs. If no value is provided, UI Kit defaults to **Design System version 5** and to the **Dawn** color mode.
-Thus, through this object, you are able to create a new theme, new color modes, and/or customize an available theme by overriding the current styling values.
+The themes you want to support in your application can be defined through the `HvProvider`'s `themes` property. This property accepts a list of themes, namely
+themes you created and/or the default themes provided by the NEXT UI Kit. If no value is provided to the `themes` property, UI Kit will use the DS5 theme by default.
 
-The `HvProvider`'s `theme` property accepts the following properties:
+The default themes can be imported from the `uikit-react-core` package. On the other hand, an utility called `createdTheme` is also available in the core package
+to help you create new themes.
 
-| Property                                                             | Definition                                                                                                                                                                                                     | Type                                                                      | Default |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------- |
-| `baseTheme`                                                          | The theme to initialize the UI Kit or to be used as base when a new theme should be created.                                                                                                                   | `ds5` or `ds3`                                                            | `ds5`   |
-| `baseColorMode`                                                      | The color mode to initialize the UI Kit.                                                                                                                                                                       | `dawn`, `wicked` or `string` of a new color mode                          | `dawn`  |
-| `name`                                                               | The name of the new theme. By providing a name, a new theme is created based on the `baseTheme` and the customizations injected. If no name is provided, the customizations will be merged to the `baseTheme`. | `string`                                                                  | -       |
-| `inheritColorModes`                                                  | Whether the default color modes (dawn and wicked) should be inherited while creating a new theme.                                                                                                              | `boolean`                                                                 | `true`  |
-| Any property from the default themes structure or any extra property | Customizations of the default themes structure properties or extra properties to be added to the theme.                                                                                                        | \* The complete structure of the default themes object can be found above | -       |
+The `createdTheme` utility accepts an object that enables you to create a brand new theme based on one of the default themes and by defining customizations
+to meet your specific design needs. Thus, with this utility, you are able to create new color modes and/or customize a default theme by overriding the current
+styling values.
+
+The `createdTheme` utility accepts an object with the following properties:
+
+| Property                                                             | Definition                                                                                              | Type                                                                  | Default |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------- |
+| `base`                                                               | The name of the default theme to be used as base for the new theme.                                     | `ds5` or `ds3`                                                        | `ds5`   |
+| `name*`                                                              | The name of the new theme.                                                                              | `string`                                                              | -       |
+| `inheritColorModes`                                                  | Whether the color modes (`dawn` and `wicked`) should be inherited from the base theme.                  | `boolean`                                                             | `true`  |
+| Any property from the default themes structure or any extra property | Customizations of the default themes structure properties or extra properties to be added to the theme. | \* The complete structure of the default themes object is shown above | -       |
 
 ### Initialize the UI Kit theme and color mode
 
-Using a Design System version and color mode is as simple as setting the `baseTheme` and `baseColorMode` properties inside the `HvProvider`'s `theme` property
-as shown below. If the `theme` property is not defined, the default values for `baseTheme` and `baseColorMode` will be `ds5` and `dawn`.
+Using one of the default themes and their color modes is as simple as setting the `themes`, `theme`, and `colorMode` properties of the `HvProvider`.
+
+The `theme` property is used to set the active theme and it accepts the name of one of themes passed to `themes`. The `colorMode` property is used to
+set the active color mode and accepts the name of one of the color modes of the active theme.
+
+In the example below, the `themes`, `theme`, and `colorMode` properties were not set. Thus, in this case, the `ds5` theme and the `dawn` color mode will
+be used by default.
+
+```tsx
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+
+const MyApp = ({ children }) => <HvProvider>{children}</HvProvider>;
+```
+
+In the following example, the `colorMode` property was set in order to specify the color mode to be used. Since the `themes` property is not set, the theme will
+default to `ds5`. For this theme, the following color modes are available: `wicked` and `dawn`.
 
 ```tsx
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 const MyApp = ({ children }) => (
-  <HvProvider
-    theme={{
-      baseTheme: "ds3",
-      baseColorMode: "wicked",
-    }}
-  >
+  <HvProvider colorMode="wicked">{children}</HvProvider>
+);
+```
+
+However, let's say you want to use the `ds3` theme. In this case, you'll need to import it from the `uikit-react-core` package and pass it to the `themes` property
+as shown in the example below. The `colorMode` can then be set to one of the `ds3` color modes: `wicked` and `dawn`. If the `colorMode` property is not defined,
+the color mode will default to `dawn`.
+
+```tsx
+import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
+
+const MyApp = ({ children }) => (
+  <HvProvider themes={[ds3]} colorMode="dawn">
     {children}
   </HvProvider>
 );
 ```
 
-### Customize a default theme
+In the example shown above, it was not necessary to set the `theme` property since only one theme was provided to `themes`. However, if more than one theme is provided,
+the `theme` property should be set to the name of the active theme.
 
-[TODO]
+In the example below, the `ds3` and `ds5` themes are provided to the `HvProvider`, and the UI Kit is initialized with the `ds3` theme and `dawn` color mode.
+If `theme` and `colorMode` were not set, the active theme would be the first theme from `themes`. The active color mode would also resolve to the first color
+mode defined in the active theme, which is the `dawn` color mode for `ds3` and `ds5`.
+
+```tsx
+import { HvProvider, ds3, ds5 } from "@hitachivantara/uikit-react-core";
+
+const MyApp = ({ children }) => (
+  <HvProvider themes={[ds3, ds5]} theme="ds3" colorMode="dawn">
+    {children}
+  </HvProvider>
+);
+```
 
 ### Create a new theme
 
-[TODO]
+Besides the default themes provided by the NEXT UI Kit, you can create a brand new theme to meet your specific design needs and pass it to the `themes` property.
+As mentioned, the `createTheme` utility is used to create a new theme.
+
+The `createTheme` utility requires you to name your theme. In the example below, the name chosen was `myTheme`. Then, the DS5 theme was used as base for the new theme,
+and we chose not inherit the DS5 color modes and instead create a new one called `sand`. For this new color mode, some colors were customized. All other colors will
+be set to the ones from the base theme `dawn` color mode. Finally, the font family was also customize to Courier New instead of Open Sans.
+
+```tsx
+import {
+  HvProvider,
+  HvTypography,
+  createTheme,
+} from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  inheritColorModes: false,
+  colors: {
+    modes: {
+      sand: {
+        backgroundColor: "#EAE7DC",
+        sema1: "#738f54",
+        sema2: "#7699b8",
+        sema3: "#d9905f",
+        sema4: "#bf6060",
+        sema7: "#a4aeba",
+        sema8: "#b2bda6",
+        sema9: "#d19090",
+        acce2: "#536f8f",
+        acce2h: "#76a6db",
+      },
+    },
+  },
+  fontFamily: {
+    body: "Courier New",
+  },
+});
+
+const MyApp = () => (
+  <HvProvider themes={[newTheme]} theme="myTheme" colorMode="sand">
+    <HvTypography>Hello from the UI Kit team!</HvTypography>
+  </HvProvider>
+);
+```
+
+<Canvas>
+  <Story name="CreateTheme">
+    <CreateTheme />
+  </Story>
+</Canvas>
+
+There is not a limit to the number of themes you can pass to the `themes` property and you can use new themes as well as the default ones. Just make sure they all
+have different names. If a name is used more than once, only the one that appears last in the `themes` list will remain.
+
+Besides overriding values from the base theme, you can also add new properties to the theme if you need to. In the example below, a new color called `brand` was added
+to the `dawn` and `wicked` color modes.
+
+```tsx
+import { createTheme } from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  inheritColorModes: true,
+  colors: {
+    modes: {
+      dawn: {
+        brand: "#738f54",
+      },
+      wicked: {
+        brand: "#738f54",
+      },
+    },
+  },
+});
+```
+
+To use the value from these new properties, you need to access the theme context as explained in more detail in the next section.
 
 ## Theme context
 
-The `uikit-react-core` package provides a React context named `ThemeContext`. This context gives you access to all values related to the theme, namely:
+The `uikit-react-core` package provides a React context named `HvThemeContext`. This context gives you access to all values related to the theme, namely:
 
-- `selectedTheme`: name of the current theme;
-- `selectedMode`: name of the current color mode;
-- `colorModes`: list of color modes available for the theme;
+- `selectedTheme`: name of the active theme;
+- `selectedMode`: name of the active color mode;
+- `colorModes`: list of color modes available for the active theme;
 - `themes`: list of the available themes;
 - `rootId`: id of your root element;
-- `activeTheme`: object with the current theme;
-- `changeTheme`: function to change the current theme and color mode.
+- `activeTheme`: object with the active theme;
+- `changeTheme`: method to change the active theme and color mode.
 
-The values provided by `ThemeContext` can be accessed as follows.
+These values can be accessed by using the `useTheme` hook.
+
+### Change the active theme and color mode
+
+The active theme and/or color mode can be changed with the `changeTheme` method as shown in the example below.
 
 ```tsx
-import { useContext } from "react";
-import { HvThemeContext } from "@hitachivantara/uikit-react-core";
+import { HvButton, useTheme } from "@hitachivantara/uikit-react-core";
+import { ThemeSwitcher } from "@hitachivantara/uikit-react-icons";
 
-const {
-  selectedTheme,
-  selectedMode,
-  colorModes,
-  themes,
-  rootId,
-  activeTheme,
-  changeTheme,
-} = useContext(HvThemeContext);
+const MyComponent = () => {
+  const { selectedTheme, selectedMode, changeTheme } = useTheme();
+
+  return (
+    <HvButton
+      icon
+      variant="secondaryGhost"
+      onClick={() =>
+        changeTheme(selectedTheme, selectedMode === "dawn" ? "wicked" : "dawn")
+      }
+    >
+      <ThemeSwitcher />
+    </HvButton>
+  );
+};
 ```
 
-## Color modes
+### Access the active theme
 
-[TODO]
+If you want to access a property from the theme, you can use the `activeTheme` as shown below.
+
+```tsx
+import {
+  createTheme,
+  HvProvider,
+  HvTypography,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  inheritColorModes: true,
+  colors: {
+    modes: {
+      dawn: {
+        brand: "#738f54",
+      },
+      wicked: {
+        brand: "#738f54",
+      },
+    },
+  },
+});
+
+const MyComponent = () => {
+  const { selectedMode, activeTheme } = useTheme();
+
+  return (
+    <HvTypography
+      style={{ color: activeTheme?.colors.modes[selectedMode].brand }}
+    >
+      Hello from the UI Kit team!
+    </HvTypography>
+  );
+};
+
+const MyApp = () => {
+  return (
+    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+      <MyComponent />
+    </HvProvider>
+  );
+};
+```
+
+<Canvas>
+  <Story name="ThemeContext">
+    <ThemeContext />
+  </Story>
+</Canvas>
 
 ## CSS variables
 
-All properties of the UI Kit default themes structure are available as CSS variables. Each one of these variables has the UI Kit prefix `uikit` and can easily be
-accessed through the `theme` object that can be imported from `@hitachivantara/uikit-react-core`.
+All properties from the NEXT UI Kit default themes are available as CSS variables. Each one of these variables has the prefix `uikit` and can easily be
+accessed through the `theme` object that can be imported from the `uikit-react-core` package.
 
 Find below an example on how this `theme` object can be used to style your application.
 
 ```tsx
 import { theme, HvTypography } from "@hitachivantara/uikit-react-core";
-import styled from "@emotion/styled";
 
-export const MyComponent = () => {
-  const StyledHvTypography = styled(HvTypography)({
-    color: theme.colors.sema2, // Same as var(--uikit-colors-sema2)
-    fontWeight: theme.fontWeights.semibold, // Same as var(--uikit-fontWeights-semibold)
-    fontSize: theme.fontSizes.lg, // Same as var(--uikit-fontSizes-lg)
-  });
-
-  return <StyledHvTypography>CSS variables!</StyledHvTypography>;
+const MyComponent = () => {
+  return (
+    <HvTypography
+      style={{
+        color: theme.colors.sema2, // Same as var(--uikit-colors-sema2)
+        fontWeight: theme.fontWeights.semibold, // Same as var(--uikit-fontWeights-semibold)
+        fontSize: theme.fontSizes.lg, // Same as var(--uikit-fontSizes-lg)
+      }}
+    >
+      CSS variables!
+    </HvTypography>
+  );
 };
 ```
 
@@ -179,12 +368,12 @@ export const MyComponent = () => {
 
 ## Spacing
 
-The UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
-and is contained within the `theme` object provided by the `@hitachivantara/uikit-react-core` package.
+The NEXT UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
+and is contained within the `theme` object provided by the `uikit-react-core` package.
 
-This helper function can receive one of arguments below and returns the appropriate value in pixels to achieve the desired spacing.
+This helper function can receive one of the arguments below and returns the appropriate value in pixels to achieve the desired spacing.
 
-| Arguments                                                                           | Result                                                      | Example                       |
+| Argument                                                                            | Result                                                      | Example                       |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------- |
 | Number                                                                              | The number is multiplied by the theme's spacing base.       | `theme.spacing(5)`            |
 | One of the theme's spacing breakpoints: `xs`, `sm`, `md`, `lg`, or `xl`             | The corresponding breakpoint's spacing value for the theme. | `theme.spacing("sm")`         |
@@ -194,7 +383,7 @@ This helper function can receive one of arguments below and returns the appropri
 The spacing base and breakpoints for each default theme are shown below.
 
 ```tsx
-// Design System 5
+// DS5
 const ds5Spaces = {
   base: 8,
   xs: "8px",
@@ -204,7 +393,7 @@ const ds5Spaces = {
   xl: "80px",
 };
 
-// Design System 3
+// DS3
 const ds3Spaces = {
   base: 10,
   xs: "10px",

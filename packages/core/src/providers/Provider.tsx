@@ -40,10 +40,10 @@ export type HvProviderProps = {
    */
   theme?: string;
   /**
-   * The active color mode. It must be one of the color modes of the selected theme.
+   * The active color mode. It must be one of the color modes of the active theme.
    *
-   * If no value is provided, the first color mode defined in the selected theme is used.
-   * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one selected.
+   * If no value is provided, the first color mode defined in the active theme is used.
+   * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one used.
    */
   colorMode?: string;
 };

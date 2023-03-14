@@ -35,7 +35,7 @@ const defaultThemes = [...Object.keys(themes)].map((name) => ({
   selected: name === "ds5" || false,
 }));
 
-export const Theme = () => {
+export const ThemeStructure = () => {
   const [selectedTheme, setSelectedTheme] = useState<string | undefined>(
     defaultThemes.find((t) => t.selected)?.id
   );
@@ -61,7 +61,8 @@ export const Theme = () => {
       justifyContent: "flex-start",
       alignItems: "center",
       marginBottom: theme.spacing("sm"),
-      columnGap: theme.spacing("sm"),
+      gap: theme.spacing("sm"),
+      flexWrap: "wrap",
     }),
     dropdown: css({ width: "200px" }),
     switchContainer: css({
@@ -101,7 +102,7 @@ export const Theme = () => {
   };
 
   const levelSpacing = (level: number): string => {
-    return theme.spacing(2 + level);
+    return theme.spacing(1 + level);
   };
 
   const ThemeValue = ({
@@ -210,9 +211,14 @@ export const Theme = () => {
       </div>
       {selectedTheme && (
         <div className={styles.tree}>
+          {themes[selectedTheme].name &&
+            typeof themes[selectedTheme].name === "string" &&
+            renderLevel(themes[selectedTheme].name, "name", 1)}
           {Object.keys(themes[selectedTheme])
-            .filter((p) => showComponents || tokens.includes(p))
-            .map((key) => renderLevel(themes[selectedTheme][key], key, 0))}
+            .filter(
+              (p) => (showComponents || tokens.includes(p)) && p !== "name"
+            )
+            .map((key) => renderLevel(themes[selectedTheme][key], key, 1))}
         </div>
       )}
     </div>
