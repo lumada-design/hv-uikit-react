@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback, useContext } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import clsx from "clsx";
 import BaseDropdownContext from "./BaseDropdownContext";
@@ -7,7 +7,7 @@ import {
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
-import { useControlled, useForkRef, useUniqueId } from "hooks";
+import { useControlled, useForkRef, useTheme, useUniqueId } from "hooks";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { getFirstAndLastFocus } from "utils/focusableElementFinder";
 import { HvBaseProps } from "../../types";
@@ -25,7 +25,6 @@ import {
 } from "./BaseDropdown.styles";
 import { usePopper } from "react-popper";
 import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
-import { HvThemeContext } from "providers";
 import baseDropdownClasses, {
   HvBaseDropdownClasses,
 } from "./baseDropdownClasses";
@@ -143,7 +142,7 @@ export const HvBaseDropdown = ({
   onContainerCreation,
   ...others
 }: HvBaseDropdownProps) => {
-  const { rootId } = useContext(HvThemeContext);
+  const { rootId } = useTheme();
 
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 

@@ -1,6 +1,5 @@
-import { useTheme } from "@mui/material/styles";
 import clsx from "clsx";
-import React, { useContext } from "react";
+import React from "react";
 import { HvBaseProps } from "../../types";
 import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 import {
@@ -10,7 +9,8 @@ import {
   StyledTypography,
 } from "./EmptyState.styles";
 import { HvTypographyProps } from "components";
-import { HvThemeContext } from "index";
+import { useTheme as useHvTheme } from "hooks";
+import { useTheme } from "@mui/material/styles";
 
 export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   /** Icon to be presented. */
@@ -29,7 +29,7 @@ export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
 export const HvEmptyState = (props: HvEmptyStateProps) => {
-  const { activeTheme } = useContext(HvThemeContext);
+  const { activeTheme } = useHvTheme();
 
   const muiTheme = useTheme();
 

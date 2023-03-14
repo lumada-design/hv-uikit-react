@@ -1,12 +1,13 @@
+import { ds3, ds5 } from "@hitachivantara/uikit-styles";
 import { queryHelpers, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { useContext } from "react";
+import { useTheme } from "hooks";
+import { createTheme } from "../utils/theme";
 import { describe, expect, it } from "vitest";
 import { HvProvider } from "./Provider";
-import { HvThemeContext } from "./ThemeProvider";
 
 const Main = () => {
-  const { changeTheme } = useContext(HvThemeContext);
+  const { changeTheme } = useTheme();
 
   return (
     <>
@@ -16,8 +17,25 @@ const Main = () => {
   );
 };
 
+const customThemeInherit = createTheme({
+  name: "custom-theme",
+  inheritColorModes: true,
+});
+
+const customThemeNoInherit = createTheme({
+  name: "custom-theme",
+  inheritColorModes: false,
+  colors: {
+    modes: {
+      purple: {
+        atmo1: "purple",
+      },
+    },
+  },
+});
+
 describe("Provider", () => {
-  it("should have the correct default theme and mode if no theme property is provided", () => {
+  it("should have the correct theme and color mode selected if no properties are provided", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider rootElementId="hv-root">
@@ -37,15 +55,10 @@ describe("Provider", () => {
     expect(mode).toBeInTheDocument();
   });
 
-  it("should have the correct default theme and selected mode if only baseColorMode property is provided", () => {
+  it("should have the correct theme and color mode selected if only the colorMode property is provided", () => {
     const { container } = render(
       <div id="hv-root">
-        <HvProvider
-          rootElementId="hv-root"
-          theme={{
-            baseColorMode: "wicked",
-          }}
-        >
+        <HvProvider rootElementId="hv-root" colorMode="wicked">
           <p>Theme provider test</p>
         </HvProvider>
       </div>
@@ -62,21 +75,24 @@ describe("Provider", () => {
     expect(mode).toBeInTheDocument();
   });
 
-  it("should have the correct selected theme and default mode if only baseTheme property is provided", () => {
+  it("should have the correct theme and color mode selected if the themes and theme properties are provided", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider
           rootElementId="hv-root"
-          theme={{
-            baseTheme: "ds3",
-          }}
+          themes={[ds3, customThemeInherit]}
+          theme="custom-theme"
         >
           <p>Theme provider test</p>
         </HvProvider>
       </div>
     );
 
-    const theme = queryHelpers.queryByAttribute("data-theme", container, "ds3");
+    const theme = queryHelpers.queryByAttribute(
+      "data-theme",
+      container,
+      "custom-theme"
+    );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
@@ -87,42 +103,14 @@ describe("Provider", () => {
     expect(mode).toBeInTheDocument();
   });
 
-  it("should have the correct selected theme and mode if baseTheme and baseColorMode are provided", () => {
+  it("should have the correct theme and color mode selected if themes, theme and colorMode are provided", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider
           rootElementId="hv-root"
-          theme={{
-            baseTheme: "ds3",
-            baseColorMode: "wicked",
-          }}
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>
-    );
-
-    const theme = queryHelpers.queryByAttribute("data-theme", container, "ds3");
-    const mode = queryHelpers.queryByAttribute(
-      "data-color-mode",
-      container,
-      "wicked"
-    );
-
-    expect(theme).toBeInTheDocument();
-    expect(mode).toBeInTheDocument();
-  });
-
-  it("should have the new theme and correct mode selected if name and baseColorMode are provided", () => {
-    const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          rootElementId="hv-root"
-          theme={{
-            baseTheme: "ds3",
-            baseColorMode: "wicked",
-            name: "new-theme",
-          }}
+          themes={[ds3, customThemeNoInherit]}
+          theme="custom-theme"
+          colorMode="purple"
         >
           <p>Theme provider test</p>
         </HvProvider>
@@ -132,45 +120,7 @@ describe("Provider", () => {
     const theme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "new-theme"
-    );
-    const mode = queryHelpers.queryByAttribute(
-      "data-color-mode",
-      container,
-      "wicked"
-    );
-
-    expect(theme).toBeInTheDocument();
-    expect(mode).toBeInTheDocument();
-  });
-
-  it("should have the new theme and mode selected if name, baseColorMode and customizations are provided", () => {
-    const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          rootElementId="hv-root"
-          theme={{
-            baseTheme: "ds5",
-            baseColorMode: "purple",
-            name: "new-theme",
-            colors: {
-              modes: {
-                purple: {
-                  atmo2: "#a32cc4",
-                },
-              },
-            },
-          }}
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>
-    );
-
-    const theme = queryHelpers.queryByAttribute(
-      "data-theme",
-      container,
-      "new-theme"
+      "custom-theme"
     );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
@@ -182,16 +132,37 @@ describe("Provider", () => {
     expect(mode).toBeInTheDocument();
   });
 
-  it("should update the theme and mode correctly", async () => {
+  it("should have the correct theme and color mode selected if only themes is provided", () => {
+    const { container } = render(
+      <div id="hv-root">
+        <HvProvider
+          rootElementId="hv-root"
+          themes={[ds3, ds5, customThemeInherit]}
+        >
+          <p>Theme provider test</p>
+        </HvProvider>
+      </div>
+    );
+
+    const theme = queryHelpers.queryByAttribute("data-theme", container, "ds3");
+    const mode = queryHelpers.queryByAttribute(
+      "data-color-mode",
+      container,
+      "dawn"
+    );
+
+    expect(theme).toBeInTheDocument();
+    expect(mode).toBeInTheDocument();
+  });
+
+  it("should update the theme and color mode correctly", async () => {
     const { container, getByRole } = render(
       <div id="hv-root">
         <HvProvider
           rootElementId="hv-root"
-          theme={{
-            baseTheme: "ds3",
-            baseColorMode: "dawn",
-            name: "new-theme",
-          }}
+          themes={[ds3, ds5, customThemeNoInherit]}
+          theme="custom-theme"
+          colorMode="purple"
         >
           <Main />
         </HvProvider>
@@ -201,12 +172,12 @@ describe("Provider", () => {
     const theme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "new-theme"
+      "custom-theme"
     );
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn"
+      "purple"
     );
 
     expect(theme).toBeInTheDocument();

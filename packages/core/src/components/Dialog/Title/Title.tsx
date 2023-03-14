@@ -9,8 +9,7 @@ import {
   StyledTextWithIcon,
 } from "./Title.styles";
 import dialogTitleClasses, { HvDialogTitleClasses } from "./titleClasses";
-import { useContext } from "react";
-import { HvThemeContext } from "providers";
+import { useTheme } from "hooks";
 
 export type HvDialogTitleVariant =
   | "success"
@@ -39,7 +38,7 @@ export const HvTitle = ({
   customIcon = null,
   ...others
 }: HvTitleProps) => {
-  const { activeTheme } = useContext(HvThemeContext);
+  const { activeTheme } = useTheme();
 
   const isString = typeof children === "string";
 

@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
-import { HvProvider, HvCheckBox } from "@hitachivantara/uikit-react-core";
+import { HvProvider, HvCheckBox, ds3 } from "@hitachivantara/uikit-react-core";
 
 <Meta title="Guides/Provider" component={HvProvider} />
 
@@ -22,8 +22,8 @@ const MyApp = ({ children }) => {
 
 <ArgsTable of={HvProvider} />
 
-The `HvProvider` enables you to override the default theme and provide your own customizations through the `theme` property. For more information,
-please read the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation.
+The `HvProvider` enables you to define your themes through the `themes` property. Then, the `theme` and `colorMode` properties are used to specify the active theme
+and color mode. For more information, please read the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation.
 
 If several `HvProvider`'s are used, you'll need to create different root elements and set the `rootElementId` property for each one of the providers.
 Otherwise, the styling will not work properly. Please, find an example below.
@@ -42,7 +42,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
       <div id="hv-root-ds5-dawn-docs-provider">
         <HvProvider
           rootElementId="hv-root-ds5-dawn-docs-provider"
-          theme={{ baseTheme: "ds5", baseColorMode: "dawn" }}
+          colorMode="dawn"
         >
           <HvCheckBox label="DS5 Dawn" />
         </HvProvider>
@@ -50,7 +50,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
       <div id="hv-root-ds5-wicked-docs-provider">
         <HvProvider
           rootElementId="hv-root-ds5-wicked-docs-provider"
-          theme={{ baseTheme: "ds5", baseColorMode: "wicked" }}
+          colorMode="wicked"
         >
           <HvCheckBox label="DS5 Wicked" />
         </HvProvider>
@@ -58,7 +58,8 @@ Otherwise, the styling will not work properly. Please, find an example below.
       <div id="hv-root-ds3-dawn-docs-provider">
         <HvProvider
           rootElementId="hv-root-ds3-dawn-docs-provider"
-          theme={{ baseTheme: "ds3", baseColorMode: "dawn" }}
+          themes={[ds3]}
+          colorMode="dawn"
         >
           <HvCheckBox label="DS3 Dawn" />
         </HvProvider>
@@ -66,7 +67,8 @@ Otherwise, the styling will not work properly. Please, find an example below.
       <div id="hv-root-ds3-wicked-docs-provider">
         <HvProvider
           rootElementId="hv-root-ds3-wicked-docs-provider"
-          theme={{ baseTheme: "ds3", baseColorMode: "wicked" }}
+          themes={[ds3]}
+          colorMode="wicked"
         >
           <HvCheckBox label="DS3 Wicked" />
         </HvProvider>

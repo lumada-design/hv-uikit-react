@@ -1,4 +1,4 @@
-import { css } from "emotion";
+import { css } from "utils/emotion";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const styles = {

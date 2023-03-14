@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import clsx from "clsx";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
@@ -8,10 +8,10 @@ import { HvBaseProps } from "../../types";
 import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
 import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
-import { HvThemeContext } from "providers";
 import { withTooltip } from "hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { css } from "emotion";
+import { css } from "utils/emotion";
+import { useTheme } from "hooks";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &
   HvBaseProps & {
@@ -51,7 +51,7 @@ export const HvDialog = ({
 }: HvDialogProps) => {
   delete (others as any).fullScreen;
 
-  const { activeTheme, selectedMode, rootId } = useContext(HvThemeContext);
+  const { activeTheme, selectedMode, rootId } = useTheme();
 
   const focusableQueue = useRef<{
     first?: HTMLElement;

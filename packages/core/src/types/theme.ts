@@ -1,36 +1,41 @@
 import {
   HvBaseTheme,
-  HvThemeColorMode,
   HvThemeStructure,
   HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
 import { HvExtraDeepPartialProps, HvExtraDeepProps } from "../types";
 
 /**
- * Theme structure is be used on the `HvProvider` to set the theme and inject the customizations needed to meet the specific design needs.
+ * Theme structure
  */
-export type HvTheme = {
-  /**
-   * The theme to be used as base for the customization.
-   *
-   * `"ds5"` will be used as default if no value is provided.
-   */
-  baseTheme?: HvBaseTheme;
+export type HvTheme = HvExtraDeepProps<Omit<HvThemeStructure, "colors">> & {
+  colors: {
+    modes: {
+      [key: string]: HvThemeColorModeStructure & { [key: string]: string };
+    };
+  };
+};
+
+/**
+ * Create theme props
+ */
+export type HvCreateThemeProps = {
   /**
    * The name used for the theme.
    *
-   * By providing a name, a new theme is created based on the base theme and the customizations provided.
-   * If no name is provided, the base theme is customized.
+   * This is a required property to create a theme.
    */
-  name?: string;
+  name: string;
   /**
-   * The color mode to initialize the UI Kit. It can be an existing one or a custom one.
+   * The theme to be used as base.
    *
-   * `"dawn"` will be used as default if no value is provided.
+   * `"ds5"` will be used as default if no value is provided.
    */
-  baseColorMode?: HvThemeColorMode | string;
+  base?: HvBaseTheme;
   /**
-   * If `true` the default color modes will be inherited while creating a new theme. If `false`, the new theme doesn't inherit the color modes.
+   * If `true` the default color modes (dawn and wicked) of the base theme will be inherited while creating the theme.
+   * If `false`, the new theme doesn't inherit the default color modes.
+   *
    * By default the color modes are inherited.
    */
   inheritColorModes?: boolean;
@@ -38,24 +43,13 @@ export type HvTheme = {
 
 // Theme customization
 export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
-  Omit<HvThemeStructure, "colors">
+  Omit<HvThemeStructure, "colors" | "name">
 > & {
   colors?: {
     modes?: {
       [key: string]: Partial<HvThemeColorModeStructure> & {
         [key: string]: string;
       };
-    };
-  };
-};
-
-// Customized theme
-export type HvCustomizedTheme = HvExtraDeepProps<
-  Omit<HvThemeStructure, "colors">
-> & {
-  colors: {
-    modes: {
-      [key: string]: HvThemeColorModeStructure & { [key: string]: string };
     };
   };
 };

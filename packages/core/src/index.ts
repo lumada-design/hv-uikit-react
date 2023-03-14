@@ -1,4 +1,4 @@
-export { makeTheme, theme, themes } from "@hitachivantara/uikit-styles";
+export { theme, themes, ds3, ds5 } from "@hitachivantara/uikit-styles";
 export type {
   HvThemeBreakpoint,
   HvThemeColorMode,

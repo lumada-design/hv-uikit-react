@@ -320,7 +320,7 @@ export type HvThemeColorModeStructure = HvThemeColors & {
 };
 
 // Theme structure
-export type HvThemeStructure = HvThemeComponents &
+export type HvThemeStructure = { name: string } & HvThemeComponents &
   HvThemeTypography &
   Omit<HvThemeTokens, "colors"> & {
     colors: {
@@ -331,7 +331,7 @@ export type HvThemeStructure = HvThemeComponents &
   };
 
 // Custom theme
-export type HvCustomTheme = HvThemeComponents &
+export type HvCustomTheme = { name: string } & HvThemeComponents &
   HvThemeTypography &
   Partial<Omit<HvThemeTokens, "colors">> & {
     colors: {

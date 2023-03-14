@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../../../types";
-import { actionContainerClasses, HvActionContainerClasses } from ".";
+import actionContainerClasses, {
+  HvActionContainerClasses,
+} from "./actionContainerClasses";
 import {
   StyledActionContainer,
   StyledButton,
@@ -8,9 +10,8 @@ import {
   StyledActionsInnerContainer,
 } from "./ActionContainer.styles";
 import { HvActionGeneric, HvActionsGeneric } from "components";
-import { useContext } from "react";
-import { HvThemeContext } from "providers";
 import { theme } from "@hitachivantara/uikit-styles";
+import { useTheme } from "hooks";
 
 export type HvActionContainerProps = HvBaseProps & {
   /** onClose function. */
@@ -35,7 +36,7 @@ export const HvActionContainer = ({
   actionCallback,
   ...others
 }: HvActionContainerProps) => {
-  const { activeTheme, selectedMode } = useContext(HvThemeContext);
+  const { activeTheme, selectedMode } = useTheme();
 
   return (
     <StyledActionContainer

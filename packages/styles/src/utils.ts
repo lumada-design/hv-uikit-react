@@ -67,45 +67,55 @@ export type HvParsedThemeStyles = {
 };
 
 export const parseTheme = (
-  themes: { [key: string]: HvThemeStructure },
+  themes: HvThemeStructure[],
   theme: string = "",
   colorMode: string = ""
 ): {
-  selected: string;
+  theme: HvThemeStructure;
+  selectedTheme: string;
   selectedMode: string;
   colorModes: string[];
   styles: HvParsedThemeStyles;
 } => {
-  const names = Object.keys(themes);
-  const selected = names.includes(theme) ? theme : names[0];
-  const colorModes = Object.keys(themes[selected].colors.modes);
-  const selectedMode = colorModes.includes(colorMode)
+  const names: string[] = themes.map((t) => t.name);
+  const selectedTheme: string = names.includes(theme) ? theme : names[0];
+  const themeStructure: HvThemeStructure =
+    themes.find((t) => t.name === selectedTheme) || themes[0];
+  const colorModes: string[] = Object.keys(themeStructure.colors.modes);
+  const selectedMode: string = colorModes.includes(colorMode)
     ? colorMode
     : colorModes[0];
+
   const styles: HvParsedThemeStyles = {
-    bgColor: themes[selected].colors.modes[selectedMode]?.backgroundColor,
-    color: themes[selected].colors.modes[selectedMode].acce1,
-    accentColor: themes[selected].colors.modes[selectedMode].acce1,
-    colorScheme: themes[selected].colors.modes[selectedMode].type,
-    fontSize: (typeof themes[selected].typography.body.fontSize === "string"
-      ? themes[selected].typography.body.fontSize
-      : `${themes[selected].typography.body.fontSize}px`) as string,
-    letterSpacing: (typeof themes[selected].typography.body.letterSpacing ===
+    bgColor: themeStructure.colors.modes[selectedMode]?.backgroundColor,
+    color: themeStructure.colors.modes[selectedMode].acce1,
+    accentColor: themeStructure.colors.modes[selectedMode].acce1,
+    colorScheme: themeStructure.colors.modes[selectedMode].type,
+    fontSize: (typeof themeStructure.typography.body.fontSize === "string"
+      ? themeStructure.typography.body.fontSize
+      : `${themeStructure.typography.body.fontSize}px`) as string,
+    letterSpacing: (typeof themeStructure.typography.body.letterSpacing ===
     "string"
-      ? themes[selected].typography.body.letterSpacing
-      : `${themes[selected].typography.body.letterSpacing}px`) as string,
-    lineHeight: (typeof themes[selected].typography.body.lineHeight === "string"
-      ? themes[selected].typography.body.lineHeight
-      : `${themes[selected].typography.body.lineHeight}px`) as string,
-    fontWeight: (typeof themes[selected].typography.body.fontWeight === "string"
-      ? themes[selected].typography.body.fontWeight
-      : `${themes[selected].typography.body.fontWeight}`) as string,
-    fontFamily: (typeof themes[selected].fontFamily.body === "string"
-      ? themes[selected].fontFamily.body
-      : `${themes[selected].fontFamily.body}`) as string,
+      ? themeStructure.typography.body.letterSpacing
+      : `${themeStructure.typography.body.letterSpacing}px`) as string,
+    lineHeight: (typeof themeStructure.typography.body.lineHeight === "string"
+      ? themeStructure.typography.body.lineHeight
+      : `${themeStructure.typography.body.lineHeight}px`) as string,
+    fontWeight: (typeof themeStructure.typography.body.fontWeight === "string"
+      ? themeStructure.typography.body.fontWeight
+      : `${themeStructure.typography.body.fontWeight}`) as string,
+    fontFamily: (typeof themeStructure.fontFamily.body === "string"
+      ? themeStructure.fontFamily.body
+      : `${themeStructure.fontFamily.body}`) as string,
   };
 
-  return { selected, selectedMode, colorModes, styles };
+  return {
+    theme: themeStructure,
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    styles,
+  };
 };
 
 export const getThemesList = (themes: object) => {
@@ -132,20 +142,21 @@ export const getThemesList = (themes: object) => {
   return list;
 };
 
-export const getThemesVars = (themes: { [key: string]: HvThemeStructure }) => {
+export const getThemesVars = (themes: HvThemeStructure[]) => {
   const vars = {};
 
-  Object.keys(themes).forEach((themeName) => {
-    const theme = themes[themeName];
+  themes.forEach((theme) => {
     const colorModes = Object.keys(theme.colors.modes);
 
     colorModes.forEach((colorMode) => {
-      const styleName = `[data-theme="${themeName}"][data-color-mode="${colorMode}"]`;
+      const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
+
+      const { name, ...rest } = theme;
 
       vars[styleName] = toCSSVars({
-        ...theme,
+        ...rest,
         colors: {
-          ...theme.colors.modes[colorMode],
+          ...rest.colors.modes[colorMode],
         },
       });
     });

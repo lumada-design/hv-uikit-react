@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 

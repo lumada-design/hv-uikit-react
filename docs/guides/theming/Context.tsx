@@ -1,16 +1,14 @@
-import React, { useContext } from "react";
 import {
-  HvThemeContext,
   HvTypography,
   HvButton,
   theme,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { ThemeSwitcher } from "@hitachivantara/uikit-react-icons";
 import styled from "@emotion/styled";
 
 export const Context = () => {
-  const { selectedTheme, selectedMode, changeTheme } =
-    useContext(HvThemeContext);
+  const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const StyledContainer = styled("div")({
     display: "flex",

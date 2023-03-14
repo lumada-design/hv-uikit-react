@@ -1,9 +1,8 @@
-import { HvTheme, theme } from "@hitachivantara/uikit-react-core";
+import { createTheme, theme } from "@hitachivantara/uikit-react-core";
 
-const customTheme: HvTheme = {
-  baseTheme: "ds5",
-  baseColorMode: "dawn",
+const headerTheme = createTheme({
   name: "header-theme",
+  base: "ds5",
   header: {
     color: "#B167EF",
     height: "60px",
@@ -15,6 +14,6 @@ const customTheme: HvTheme = {
     selectedItemBorderBottomColor: "transparent",
     selectedItemBorderBottomThickness: "0px",
   },
-};
+});
 
-export default customTheme;
+export default headerTheme;

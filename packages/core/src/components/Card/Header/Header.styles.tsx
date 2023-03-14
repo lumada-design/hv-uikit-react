@@ -1,5 +1,5 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { css } from "emotion";
+import { css } from "utils/emotion";
 
 export const styles = {
   root: css({ padding: `15px ${theme.space.sm}`, position: "relative" }),

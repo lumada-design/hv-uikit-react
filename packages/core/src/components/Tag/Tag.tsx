@@ -1,14 +1,14 @@
 import clsx from "clsx";
-import { CSSProperties, useState, useContext } from "react";
+import { CSSProperties, useState } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "../../types";
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvSemanticColorKeys, HvCategoricalColorKeys } from "types/tokens";
-import { HvThemeContext } from "../../providers";
 import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
+import { useTheme } from "hooks";
 
 export type HvTagProps = Omit<MuiChipProps, "color" | "classes"> &
   HvBaseProps<HTMLDivElement, { children }> & {
@@ -82,7 +82,7 @@ export const HvTag = ({
   deleteButtonProps = {},
   ...others
 }: HvTagProps) => {
-  const { activeTheme, selectedMode } = useContext(HvThemeContext);
+  const { activeTheme, selectedMode } = useTheme();
 
   const getDeleteIcon = () => {
     const disabledSemanticColor = type === "semantic" ? "atmo5" : "base2";

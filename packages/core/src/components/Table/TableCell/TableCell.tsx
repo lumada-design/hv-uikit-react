@@ -20,8 +20,8 @@ import { transientOptions } from "utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { capitalize } from "lodash";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvThemeContext } from "providers";
 import { getBorderStyles } from "../utils/utils";
+import { useTheme } from "hooks";
 
 export type HvTableCellProps = Omit<TdHTMLAttributes<HTMLElement>, "align"> &
   Omit<HvBaseProps, "children"> & {
@@ -286,7 +286,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     },
     externalRef
   ) => {
-    const { activeTheme, selectedMode } = useContext(HvThemeContext);
+    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 

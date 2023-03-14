@@ -2,8 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { HvTagsInput } from "components";
 import { ControlledTagArray } from "./TagsInput.stories";
-import { HvThemeProvider } from "providers";
-import { themes } from "@hitachivantara/uikit-styles";
+import { HvProvider } from "providers";
 
 describe("TagsInput examples", () => {
   describe("<Main />", () => {
@@ -16,9 +15,9 @@ describe("TagsInput examples", () => {
   describe("<ControlledTagArray />", () => {
     it("should clear the input whenever a tags gets added", async () => {
       const { getAllByRole, getByText, getByRole, findAllByRole } = render(
-        <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+        <HvProvider>
           <ControlledTagArray />
-        </HvThemeProvider>
+        </HvProvider>
       );
       const uncommittedText = "uncommitted text";
       let clickableButtons = getAllByRole("button");
@@ -39,9 +38,9 @@ describe("TagsInput examples", () => {
 
     it("should retain uncommitted text when deleting tags", async () => {
       const { getAllByRole, getByRole, findAllByRole } = render(
-        <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+        <HvProvider>
           <ControlledTagArray />
-        </HvThemeProvider>
+        </HvProvider>
       );
       const uncommittedText = "uncommitted text";
       let clickableButtons = getAllByRole("button");
@@ -73,27 +72,27 @@ describe("TagsInput Component", () => {
 
   it("should render the label correctly", () => {
     const { getByText } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
           classes={mockClasses}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
     expect(getByText("Custom label")).toBeInTheDocument();
   });
 
   it("should render the text area with tags when controlled and input value is an array of strings", () => {
     const { getByText, getAllByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
           classes={mockClasses}
           value={["tag1", "tag2"]}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -105,7 +104,7 @@ describe("TagsInput Component", () => {
 
   it("should render the text area with tags when controlled and input value is an array of tags", () => {
     const { getByText, getAllByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -115,7 +114,7 @@ describe("TagsInput Component", () => {
             { label: "tag2", type: "categorical", color: "#ff0000" },
           ]}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -131,7 +130,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = vi.fn();
     const onDeleteSpy = vi.fn();
     const { getByText, getAllByRole, findAllByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -140,7 +139,7 @@ describe("TagsInput Component", () => {
           onChange={onChangeSpy}
           onDelete={onDeleteSpy}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -179,7 +178,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = vi.fn();
     const onAddSpy = vi.fn();
     const { getByText, getAllByRole, findAllByRole, getByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -188,7 +187,7 @@ describe("TagsInput Component", () => {
           onChange={onChangeSpy}
           onAdd={onAddSpy}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     expect(getByText("tag1")).toBeInTheDocument();
@@ -220,7 +219,7 @@ describe("TagsInput Component", () => {
     const onChangeSpy = vi.fn();
     const onBlurSpy = vi.fn();
     const { getByText, getAllByRole, getByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -229,7 +228,7 @@ describe("TagsInput Component", () => {
           onChange={onChangeSpy}
           onBlur={onBlurSpy}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
     const { parentElement } = getByText("Custom label");
     // @ts-ignore
@@ -254,7 +253,7 @@ describe("TagsInput Component", () => {
 
   it("should have a disabled tag if the `disabled` property is set to true", () => {
     const { queryAllByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -262,7 +261,7 @@ describe("TagsInput Component", () => {
           disabled
           value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     const clickableButtons = queryAllByRole("button");
@@ -271,7 +270,7 @@ describe("TagsInput Component", () => {
 
   it("should not display close buttons on readOnly tags", () => {
     const { queryAllByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -279,7 +278,7 @@ describe("TagsInput Component", () => {
           readOnly
           value={[{ label: "tag1" }, { label: "tag2", type: "categorical" }]}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     const clickableButtons = queryAllByRole("button");
@@ -290,7 +289,7 @@ describe("TagsInput Component", () => {
     const suggestionHandler = vi.fn();
 
     const { getByRole } = render(
-      <HvThemeProvider themes={themes} theme="ds5" colorMode="dawn">
+      <HvProvider>
         <HvTagsInput
           id="tags-list"
           label="Custom label"
@@ -298,7 +297,7 @@ describe("TagsInput Component", () => {
           value={[{ label: "tag1" }, { label: "tag2" }]}
           suggestionListCallback={suggestionHandler}
         />
-      </HvThemeProvider>
+      </HvProvider>
     );
 
     const tagsInput = getByRole("textbox");

@@ -3,6 +3,7 @@ import { makeTheme } from "../makeTheme";
 import { HvTheme } from "../types";
 
 const ds5 = makeTheme((theme: HvTheme) => ({
+  name: "ds5",
   colors: {
     modes: {
       dawn: {
