@@ -68,7 +68,7 @@ export const StyledRoot = styled(
         width: `calc(100% + 2px) !important`,
         background: theme.colors.atmo1,
         ...(theme.typography.label as CSSProperties),
-        borderRadius: "2px",
+        borderRadius: theme.radii.base,
         border: `solid 1px ${theme.colors.acce1}`,
         zIndex: 2,
         "&:hover, &:focus": {
@@ -125,13 +125,13 @@ export const StyledButton = (Element) =>
     },
     "&:first-of-type": {
       borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      borderTopLeftRadius: "2px",
-      borderBottomLeftRadius: "2px",
+      borderTopLeftRadius: theme.radii.base,
+      borderBottomLeftRadius: theme.radii.base,
     },
     "&:last-child": {
       borderRight: `solid 1px ${theme.colors.atmo4}`,
-      borderTopRightRadius: "2px",
-      borderBottomRightRadius: "2px",
+      borderTopRightRadius: theme.radii.base,
+      borderBottomRightRadius: theme.radii.base,
       "&:disabled:hover": {
         borderRight: `solid 1px ${theme.colors.atmo4} !important`,
       },
@@ -143,7 +143,6 @@ export const StyledButton = (Element) =>
       background: theme.colors.atmo1,
       height: 34,
       ...(theme.typography.label as CSSProperties),
-      borderRadius: "2px",
       border: `solid 1px ${theme.colors.acce1}`,
       zIndex: 2,
       "&:hover": {

@@ -5,7 +5,7 @@ import { HvLink, HvTypography } from "components";
 export const StyledLink = styled((props) => <HvLink {...props} />)({
   padding: `8px ${theme.space.xs}`,
   textDecoration: "none",
-  borderRadius: "2px",
+  borderRadius: theme.radii.base,
   "&:hover": {
     backgroundColor: theme.colors.atmo3,
   },

@@ -105,7 +105,7 @@ export const StyledInput = styled(
     [`&.${MuiInputClasses.root}`]: {
       margin: 0,
       width: "100%",
-      borderRadius: "2px",
+      borderRadius: theme.radii.base,
       height: "32px",
       border: `1px solid ${theme.baseInput.borderColor}`,
       boxSizing: "border-box",
@@ -210,7 +210,7 @@ export const StyledInput = styled(
 
       [`& .${baseInputClasses.input}`]: {
         border: `1px solid ${theme.baseInput.multilineBorderColor}`,
-        borderRadius: "2px",
+        borderRadius: theme.radii.base,
         backgroundColor: theme.colors.atmo1,
         height: "auto",
         minHeight: "21px",

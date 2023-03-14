@@ -23,7 +23,7 @@ exports[`Pagination > should render correctly 1`] = `
           >
             <div
               aria-label="Select how many to display"
-              class="HvBaseDropdown-header hv-uikit-style-xmr0xz-StyledHeaderRoot eapzthe7"
+              class="HvBaseDropdown-header hv-uikit-style-4bvoko-StyledHeaderRoot eapzthe7"
               role="textbox"
               tabindex="0"
             >
@@ -140,7 +140,7 @@ exports[`Pagination > should render correctly 1`] = `
         class="HvPagination-pageInfo hv-uikit-style-1wjzhg6-StyledPageInfo e1tn2n0k1"
       >
         <div
-          class="HvPagination-pageJump hv-uikit-style-m3cag5-StyledPageJump e1tn2n0k0"
+          class="HvPagination-pageJump hv-uikit-style-bz8qz2-StyledPageJump e1tn2n0k0"
         >
           <div
             class="HvInput-root HvPagination-pageSizeInputContainer hv-uikit-style-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
@@ -149,7 +149,7 @@ exports[`Pagination > should render correctly 1`] = `
               class="HvBaseInput-root eryso6g0 hv-uikit-style-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  hv-uikit-style-l9bv42-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  hv-uikit-style-6atnmb-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Current page"

@@ -142,7 +142,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     },
   },
   dropdown: {
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
     headerBorder: `1px solid ${theme.colors.acce4}`,
     headerBorderHover: `1px solid ${theme.colors.acce4}`,
     disabledColor: theme.colors.atmo5,
@@ -153,7 +153,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     dropdownHeaderOpenBorder: `1px solid ${theme.colors.acce1}`,
     listBackgroundColor: theme.colors.atmo1,
     listBorder: `1px solid ${theme.colors.acce1}`,
-    listBorderRadius: `0px 0px ${theme.radii.sm} ${theme.radii.sm}`,
+    listBorderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
     listContainerPadding: theme.space.sm,
     searchContainerMargin: theme.space.xs,
   },
@@ -197,7 +197,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   tab: {
     padding: "0 16px",
     hoverBackgroundColor: theme.colors.acce2s,
-    hoverBackgroundBorderRadius: "2px",
+    hoverBackgroundBorderRadius: theme.radii.base,
     hoverUnderlineBackgroundColor: theme.colors.atmo4,
   },
   list: {
@@ -211,11 +211,11 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   baseCheckBox: {
     hoverColor: theme.colors.acce2s,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
   },
   checkbox: {
     hoverColor: theme.colors.acce2s,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
   },
   baseDropdown: {
     shadow: "none",
@@ -230,7 +230,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   baseRadio: {
     hoverColor: theme.colors.acce2s,
-    hoverBorderRadius: "2px",
+    hoverBorderRadius: theme.radii.base,
   },
   baseSwitch: {
     padding: 0,
@@ -266,7 +266,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     hoverBackgroundColor: theme.colors.acce2s,
     hoverBaseBackgroundColor: "transparent",
     checkedOpacity: 1,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
     focusBorderRadius: "8px",
   },
   baseInput: {
@@ -285,7 +285,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   radio: {
     hoverColor: theme.colors.acce2s,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
   },
   tagsInput: {
     borderColor: theme.colors.acce4,
@@ -320,11 +320,11 @@ const ds5 = makeTheme((theme: HvTheme) => ({
       buttonSize: "48px",
       overlayColor: theme.colors.acce2s,
       overlayOpacity: "0.6", // TODO: Change to 1 when acce2s is fixed and has an alpha value
-      overlayBorderRadius: "2px",
+      overlayBorderRadius: theme.radii.base,
     },
   },
   dropDownMenu: {
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
     hoverColor: theme.colors.acce2s,
     borderOpened: `1px solid ${theme.colors.acce4}`,
     borderClosed: "1px solid transparent",
@@ -333,7 +333,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   pagination: {
     pageSizeBorderColor: theme.colors.acce1,
-    pageSizeBorderRadius: "2px",
+    pageSizeBorderRadius: theme.radii.base,
     pageJumpTextAlign: "center",
   },
   actionsGeneric: { buttonSize: "md" },

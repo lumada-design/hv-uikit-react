@@ -49,7 +49,7 @@ export const StyledHeaderRoot = styled(
     background: theme.colors.atmo1,
     boxSizing: "border-box",
     border: `1px solid ${theme.baseDropdown.borderColor}`,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
     "&:hover": {
       border: `1px solid ${theme.baseDropdown.hoverBorderColor}`,
     },
@@ -93,11 +93,11 @@ export const StyledHeaderRoot = styled(
     }),
 
     ...($openedUp && {
-      borderRadius: "0px 0px 2px 2px",
+      borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
     }),
 
     ...($openedDown && {
-      borderRadius: "2px 2px 0px 0px",
+      borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     }),
   })
 );

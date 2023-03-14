@@ -12,7 +12,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route1"
         >
           <div
@@ -48,7 +48,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route2"
         >
           <div
@@ -84,7 +84,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route3"
         >
           <div
@@ -120,7 +120,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route4"
         >
           <div
@@ -156,7 +156,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route5"
         >
           <div
@@ -192,7 +192,7 @@ exports[`BreadCrumb > should render correctly 1`] = `
         class="HvPathElement-centerContainer HvBreadCrumb-centerContainer css-1sm7i34-StyledLi e14mbcex0"
       >
         <a
-          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-tkb3xd-StyledA-StyledLink e18zed7a0"
+          class="e8ovoy91 HvLink-a HvPage-a HvBreadCrumb-a css-ra1djb-StyledA-StyledLink e18zed7a0"
           href="route6"
         >
           <div

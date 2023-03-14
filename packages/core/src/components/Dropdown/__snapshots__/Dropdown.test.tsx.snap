@@ -20,7 +20,7 @@ exports[`Dropdown > should render correctly 1`] = `
         >
           <div
             aria-label="Main sample"
-            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-xmr0xz-StyledHeaderRoot eapzthe7"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
