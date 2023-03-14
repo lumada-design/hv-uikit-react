@@ -1,6 +1,5 @@
-import { HvTypography as HvTypography } from "components";
 import { HvBaseProps } from "../../../types";
-import { BrandRoot, BrandSeparator } from "./Brand.styles";
+import { BrandRoot, BrandSeparator, BrandName } from "./Brand.styles";
 import headerBrandClasses, { HvHeaderBrandClasses } from "./brandClasses";
 import clsx from "clsx";
 
@@ -31,7 +30,7 @@ export const HvBrand = ({
           className={clsx(classes?.separator, headerBrandClasses.separator)}
         />
       )}
-      {name && <HvTypography variant="label">{name}</HvTypography>}
+      {name && <BrandName variant="label">{name}</BrandName>}
     </BrandRoot>
   );
 };

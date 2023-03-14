@@ -227,6 +227,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   },
   header: {
     color: theme.colors.acce1,
+    brandColor: theme.colors.acce1,
     height: "44px",
     backgroundColor: theme.colors.atmo1,
     secondLevelBackgroundColor: theme.colors.atmo2,
