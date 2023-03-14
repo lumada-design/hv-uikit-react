@@ -34,8 +34,8 @@
     "types": "dist/types/index.d.ts",
     "exports": {
       ".": {
-        "require": "dist/cjs/index.cjs",
-        "import": "dist/esm/index.js"
+        "require": "./dist/cjs/index.cjs",
+        "import": "./dist/esm/index.js"
       }
     }
   },
