@@ -1,5 +1,11 @@
 import { StoryObj } from "@storybook/react";
-import { HvTypography, HvTypographyProps } from "./Typography";
+import { HvBox } from "components";
+import {
+  HvTypography,
+  HvTypographyProps,
+  HvTypographyVariants,
+} from "./Typography";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export default { title: "Foundation/Typography", component: HvTypography };
 
@@ -14,25 +20,34 @@ export const Main: StoryObj<HvTypographyProps> = {
   decorators: [(Story) => <div style={{ width: 400 }}>{Story()}</div>],
 };
 
-const Link = ({ children }) => (
-  <a href="http://www.google.com" target="_blank">
-    {children}
-  </a>
-);
+const variants = [
+  "display",
+  "title1",
+  "title2",
+  "title3",
+  "title4",
+  "body",
+  "label",
+  "caption1",
+  "caption2",
+] as HvTypographyVariants[];
 
-export const Samples = () => {
+export const Variants = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      <HvTypography>This is a link!</HvTypography>
-      <HvTypography variant="title3">This is a link!</HvTypography>
-      <HvTypography component="a">This is a link!</HvTypography>
-      <HvTypography component="a" variant="title4">
-        This is a link!
-      </HvTypography>
-      <HvTypography component={Link}>This is a link!</HvTypography>
-      <HvTypography component="label" variant="label">
-        This is a link!
-      </HvTypography>
-    </div>
+    <HvBox sx={{ marginBottom: theme.spacing(7) }}>
+      {variants.map((variant: HvTypographyVariants) => {
+        return (
+          <HvBox key={`key_${variant}`} sx={{ marginBottom: theme.space.sm }}>
+            <HvTypography variant="label" key={`label_${variant}`}>
+              {variant}
+            </HvTypography>
+            <br />
+            <HvTypography variant={variant} key={variant}>
+              Welcome to NEXT Design System!
+            </HvTypography>
+          </HvBox>
+        );
+      })}
+    </HvBox>
   );
 };

@@ -1,0 +1,132 @@
+import { Meta, Canvas, Preview, Story } from "@storybook/addon-docs";
+import { HvButton, HvTypography, HvTooltip } from "components";
+import { PopUp } from "@hitachivantara/uikit-react-icons";
+
+<Meta title="Foundation/Typography/Usage" />
+
+# Usage
+
+The UI-Kit uses **[Open Sans](https://fonts.google.com/specimen/Open+Sans)** as the default font, according to the Design System guidelines. Open Sans is an open source font that was designed and optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.
+
+You will need to ensure that the font link is referenced in your application's code, since it cannot be loaded automatically by the UI Kit.
+
+### Setup
+
+The **Open Sans font** can be loaded from a CDN, using the following markup:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+/>
+```
+
+## Typography Usage
+
+The Typography component can be composed with other elements that require typographic styling to match design specs.
+
+- In the following example, the Typography component is passed as a property to the Tooltip component,
+  The tooltip will then use the provided component as its content, allowing the styling of the text inside with the help of the typography component.
+
+```html
+<HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
+```
+
+<Preview>
+  <Story name="Usage">
+    <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
+      <HvButton icon variant="secondaryGhost" aria-label="Popup">
+        <a href="#">
+          <PopUp />
+        </a>
+      </HvButton>
+    </HvTooltip>
+  </Story>
+</Preview>
+
+## Variants
+
+The typography object comes with 9 variants that are mapped to an html element:
+
+| Variant Name | Html element |
+| ------------ | ------------ |
+| display      | h1           |
+| title1       | h1           |
+| title2       | h2           |
+| title3       | h3           |
+| title4       | h4           |
+| body         | p            |
+| label        | label        |
+| caption1     | p            |
+| caption2     | p            |
+
+If no variant is specified, the Typography element applies the **body** variant, by default.
+
+Although deprecated UI Kit 5 supports the legacy DS3 variants. Where possible, these legacy variants are mapped to DS5 variants as per the table below:
+
+| DS 3 Variant  | DS 5 Variant |
+| ------------- | ------------ |
+| 3xlTitle      | display      |
+| xlTitle       | title1       |
+| mTitle        | title2       |
+| xsTitle       | title3       |
+| highlightText | label        |
+| normalText    | body         |
+| vizText       | caption1     |
+
+All the other DS3 variants that are not mappable to DS5 variants are still supported, but are considered deprecated and support for those could be removed at any time.
+We strongly advise to update these to appropriate DS5 variants.
+
+| Legacy DS 3 Variants |
+| -------------------- |
+| 5xlTitle             |
+| 4xlTitle             |
+| xxlTitle             |
+| lTitle               |
+| sTitle               |
+| xxsTitle             |
+| sectionTitle         |
+| placeholderText      |
+
+### Changing the semantic element
+
+The Typography component uses the variant property to associate a UI variant with a semantic element. The style of a typography is independent from the semantic underlying element.
+You can change the underlying element for the component property:
+
+```html
+<HvTypography variant="display" component="h3"></HvTypography>
+```
+
+This is useful in situations, where you want to have the same style applied to various elements of the page, but do not want to use the same underlying semantics. In the following example, the style used for a ` display` typography is applied by default to an `h1`element. The typography can be applied to the same page, specifying a different variant, in this case an`h3`.
+
+<Preview>
+  <Story name="Semantic">
+    <HvTypography variant="display">
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+    <HvTypography variant="display" component="h3">
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+  </Story>
+</Preview>
+
+### Properties
+
+Any `Typography` variant can be complemented with styles for `link` and `disabled` states.
+
+<Preview>
+  <Story name="Properties">
+    <HvTypography variant="display" link>
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+    <HvTypography variant="body" link>
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+    <HvTypography variant="display" disabled>
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+    <HvTypography variant="body" disabled>
+      The quick brown fox jumps over the lazy dog.
+    </HvTypography>
+  </Story>
+</Preview>
