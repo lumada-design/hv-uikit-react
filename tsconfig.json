@@ -16,6 +16,7 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": ".",
     "paths": {
+      "@hitachivantara/uikit-react-shared": ["packages/shared/src"],
       "@hitachivantara/uikit-react-core": ["packages/core/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/bin"],
       "@hitachivantara/uikit-react-icons/dist/*": ["packages/icons/bin/*"],

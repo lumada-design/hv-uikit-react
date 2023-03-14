@@ -3,18 +3,10 @@ import {
   HvThemeStructure,
   HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
-import { HvExtraDeepPartialProps, HvExtraDeepProps } from "../types";
+import type { HvTheme } from "@hitachivantara/uikit-react-shared";
+import { HvExtraDeepPartialProps } from "../types";
 
-/**
- * Theme structure
- */
-export type HvTheme = HvExtraDeepProps<Omit<HvThemeStructure, "colors">> & {
-  colors: {
-    modes: {
-      [key: string]: HvThemeColorModeStructure & { [key: string]: string };
-    };
-  };
-};
+export type { HvTheme };
 
 /**
  * Create theme props

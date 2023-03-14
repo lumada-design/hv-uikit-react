@@ -1,5 +1,7 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { parseTheme, HvThemeStructure } from "@hitachivantara/uikit-styles";
+import { HvThemeContext } from "@hitachivantara/uikit-react-shared";
+import type { HvThemeContextValue } from "@hitachivantara/uikit-react-shared";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
@@ -7,15 +9,8 @@ import {
 import { setElementAttrs } from "utils";
 import { HvTheme } from "../types/theme";
 
-export interface HvThemeContextValue {
-  themes: string[];
-  colorModes: string[];
-  activeTheme?: HvTheme | HvThemeStructure;
-  selectedTheme: string;
-  selectedMode: string;
-  changeTheme: (theme?: string, mode?: string) => void;
-  rootId?: string;
-}
+export { HvThemeContext };
+export type { HvThemeContextValue };
 
 interface HvThemeProviderProps {
   children: React.ReactNode;
@@ -24,16 +19,6 @@ interface HvThemeProviderProps {
   colorMode: string;
   rootElementId?: string;
 }
-
-export const HvThemeContext = createContext<HvThemeContextValue>({
-  themes: [],
-  activeTheme: undefined,
-  colorModes: [],
-  selectedTheme: "",
-  selectedMode: "",
-  changeTheme: () => {},
-  rootId: undefined,
-});
 
 export const HvThemeProvider = ({
   children,

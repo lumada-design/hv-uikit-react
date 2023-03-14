@@ -140,6 +140,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5
       '@hitachivantara/uikit-react-icons': workspace:*
+      '@hitachivantara/uikit-react-shared': workspace:*
       '@hitachivantara/uikit-styles': workspace:*
       '@mui/material': ^5.11.0
       '@popperjs/core': ^2.11.6
@@ -165,6 +166,7 @@ importers:
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
       '@hitachivantara/uikit-react-icons': link:../icons
+      '@hitachivantara/uikit-react-shared': link:../shared
       '@hitachivantara/uikit-styles': link:../styles
       '@mui/material': 5.11.12_xqeqsl5kvjjtyxwyi3jhw3yuli
       '@popperjs/core': 2.11.6
@@ -223,6 +225,22 @@ importers:
       ts-node: 10.9.1_alpjt73dvgv6kni625hu7f2l4m
       tsconfig-paths: 4.1.2
       yargs: 17.7.1
+    publishDirectory: package
+
+  packages/shared:
+    specifiers:
+      '@hitachivantara/uikit-styles': workspace:*
+      '@types/react': ^18.0.28
+      '@types/react-dom': ^18.0.11
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hitachivantara/uikit-styles': link:../styles
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@types/react': 18.0.28
+      '@types/react-dom': 18.0.11
     publishDirectory: package
 
   packages/styles:
