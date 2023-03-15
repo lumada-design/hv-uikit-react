@@ -5,6 +5,7 @@ const headerTheme = createTheme({
   base: "ds5",
   header: {
     color: "#B167EF",
+    brandColor: "#B167EF",
     height: "60px",
     hoverColor: "transparent",
     selectedItemColor: theme.colors.atmo1,

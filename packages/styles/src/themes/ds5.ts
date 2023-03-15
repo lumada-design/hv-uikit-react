@@ -169,6 +169,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   },
   header: {
     color: theme.colors.acce1,
+    brandColor: theme.colors.acce1,
     textColor: "string",
     height: "64px",
     backgroundColor: theme.colors.atmo1,

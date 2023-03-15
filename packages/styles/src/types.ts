@@ -46,6 +46,7 @@ export type HvThemeComponents = {
   };
   header: {
     color: string;
+    brandColor: string;
     height: string;
     backgroundColor: string;
     secondLevelBackgroundColor: string;
