@@ -15,6 +15,7 @@ export const StyledRoot = styled("div")({
     display: "flex",
     flexWrap: "nowrap",
     boxShadow: "none",
+    borderRadius: theme.radii.none,
   },
   [`& .${snackbarContentClasses.message}`]: {
     display: "flex",

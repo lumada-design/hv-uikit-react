@@ -1,10 +1,11 @@
 import { createTheme, theme } from "@hitachivantara/uikit-react-core";
 
 const headerTheme = createTheme({
-  name: "header-theme",
+  name: "purple",
   base: "ds5",
   radii: {
     base: "20px",
+    round: "20px",
   },
   header: {
     color: "#B167EF",

@@ -8,7 +8,7 @@ exports[`Banner > should render correctly 1`] = `
     style="top: 60px;"
   >
     <div
-      class="HvBanner-Content-outContainer css-d89rls-StyledRoot ey1hm771"
+      class="HvBanner-Content-outContainer css-2xe4f4-StyledRoot ey1hm771"
     >
       <div
         class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant HvBanner-Content-default css-yeaxvf-StyledSnackbarContent ey1hm770 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"

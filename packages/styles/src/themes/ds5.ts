@@ -188,7 +188,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   card: {
     iconMargin: "0px",
     outline: `1px solid ${theme.colors.atmo4}`,
-    borderRadius: "0px 0px 6px 6px",
+    borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
     hoverColor: theme.colors.acce2,
     backgroundColor: "transparent",
     titleVariant: "label",
@@ -206,7 +206,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     disabledBackgroundColor: theme.colors.atmo3,
   },
   dialog: {
-    borderRadius: "6px",
+    borderRadius: theme.radii.round,
     margin: "80px",
     titleVariant: "title4",
   },
@@ -302,14 +302,14 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     dropZone: {
       borderColor: theme.colors.atmo5,
       backgroundColor: theme.colors.atmo1,
-      borderRadius: "6px",
+      borderRadius: theme.radii.round,
       borderColorDrag: theme.colors.acce2,
       borderColorDisabled: theme.colors.atmo5,
       borderType: "dashed",
     },
     fileList: {
       itemBorder: `1px solid ${theme.colors.atmo4}`,
-      itemBorderRadius: "0px 0px 6px 6px",
+      itemBorderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
     },
     file: {
       progressHeight: "4px",
@@ -352,7 +352,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     selectedRowBackgroundColor: theme.colors.acce2s,
     rowBorderColor: theme.colors.atmo4,
     rowBackgroundColor: theme.colors.atmo1,
-    rowBorderRadius: theme.radii.md,
+    rowBorderRadius: theme.radii.base,
     rowStripedBackgroundColor: theme.colors.atmo1,
     rowExpandBackgroundColor: theme.colors.atmo2,
     rowHoverColor: theme.colors.acce2s,
@@ -380,7 +380,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     titleMarginTop: "4px",
   },
   tooltip: {
-    borderRadius: "6px",
+    borderRadius: theme.radii.round,
   },
 }));
 
