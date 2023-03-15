@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
+    "@hitachivantara/uikit-react-shared": "workspace:*",
     "@hitachivantara/uikit-react-icons": "workspace:*",
     "@hitachivantara/uikit-styles": "workspace:*",
     "@popperjs/core": "^2.11.6",
@@ -74,8 +75,8 @@
     "types": "dist/types/index.d.ts",
     "exports": {
       ".": {
-        "require": "dist/cjs/index.cjs",
-        "import": "dist/esm/index.js"
+        "require": "./dist/cjs/index.cjs",
+        "import": "./dist/esm/index.js"
       }
     }
   },

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import hoistNonReactStatics from "hoist-non-react-statics";
 import uniqueId from "lodash/uniqueId";
-import { HvExtraProps } from "types";
+import { HvExtraProps } from "../types";
 import { getComponentName } from "utils";
 
 const pascalToKebab = (string = "") =>
   string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
+export interface WithIdProps extends HvExtraProps {
+  id?: string;
+}
+
 const withId = (Component) => {
-  const WithId = ({ id, ...others }: { id?: string } & HvExtraProps) => {
+  const WithId = ({ id, ...others }: WithIdProps) => {
     const [internalId] = useState(
       id || uniqueId(`${pascalToKebab(getComponentName(Component))}-`)
     );

@@ -1,5 +1,12 @@
 import { HTMLAttributes } from "react";
 
+import type {
+  HvExtraProps,
+  HvExtraDeepProps,
+} from "@hitachivantara/uikit-react-shared";
+
+export type { HvExtraProps, HvExtraDeepProps };
+
 type AsProp<C extends React.ElementType> = {
   as?: C;
 };
@@ -26,19 +33,11 @@ export type HvBaseProps<E = HTMLDivElement, P = {}> = Omit<
   keyof P
 >;
 
-// This type allows to pass undetermined extra props to components
-export type HvExtraProps = { [key: string]: any };
-
 // This type allows to do a deep partial by applying the Partial type to each key recursively
-export type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
+type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
 
 // This type combines the HvExtraProps and DeepPartial types
 export type HvExtraDeepPartialProps<T> = Partial<{
   [P in keyof T]: DeepPartial<T[P]> & HvExtraProps;
 }> &
   HvExtraProps;
-
-// This type allows to pass undetermined extra props to components recursively
-export type HvExtraDeepProps<T> = {
-  [P in keyof T]: T[P] & HvExtraProps;
-} & HvExtraProps;
