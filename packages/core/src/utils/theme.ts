@@ -67,12 +67,16 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
  * Creates a customized theme based on the base theme and customizations given.
  * For the color modes, the colors that are not defined will be replaced by the values from the dawn mode of the base theme.
  */
-export const createTheme = ({
-  name,
-  base = "ds5",
-  inheritColorModes = true,
-  ...customizations
-}: HvCreateThemeProps): HvTheme | HvThemeStructure => {
+export const createTheme = (
+  theme: HvCreateThemeProps
+): HvTheme | HvThemeStructure => {
+  const {
+    name,
+    base = "ds5",
+    inheritColorModes = true,
+    ...customizations
+  } = theme;
+
   // Apply customizations to the base theme
   const customizedTheme: HvTheme | HvThemeStructure = customizations
     ? (applyThemeCustomizations(themes[base], customizations) as HvTheme)
