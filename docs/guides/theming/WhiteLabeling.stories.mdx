@@ -1,7 +1,79 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Canvas } from "@storybook/addon-docs";
+import { WhiteLabeling } from "./WhiteLabeling";
 
 <Meta title="Guides/Theming/White labeling" />
 
 # White labeling
 
-[TODO]
+A major feature of the NEXT UI Kit is white labeling. This feature enhances the customization capabilities in a way that enables you to keep
+using the UI Kit in a multitude of design scenarios when there's a need to meet different UI guidelines from the NEXT Design System. Thus, it's possible to
+customize the current Design System patterns in order to meet specific client's needs.
+
+This feature has some limitations since it doesn't allow to change the chore structure of a component. What you are able to do is customize
+specific properties of a component as well as global properties of the theme. This will be enough in most cases and is on its own very powerful since
+one small change can drastically change an entire application.
+
+The white labeling customizations can be implemented at the theme level with the `createTheme` utility. With this utility you are able to create a new theme based on
+one of the default Design System themes (DS3 or DS5) by customizing its global properties, such as font family, colors, shadows, among others, and specific properties
+of the components.
+
+The [theming](/docs/guides-theming-default-themes--main-ds-5) documentation offers more detailed information on the default themes' structures and
+the properties that are customizable as well as the `createTheme` utility.
+
+The example below clearly shows how a theme from the NEXT Design System can be customized to meet different UI guidelines.
+
+```tsx
+import {
+  createTheme,
+  HvProvider,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+
+const turquoiseTheme = createTheme({
+  name: "turquoise",
+  base: "ds5",
+  inheritColorModes: true,
+  colors: {
+    modes: {
+      dawn: { acce1: "#484349", acce2: "#18A999" },
+    },
+  },
+  fontFamily: {
+    body: "Gill Sans",
+  },
+  button: { hoverColor: "#ecfcfa" },
+  header: {
+    backgroundColor: theme.colors.acce2,
+    color: "#F6F8FF",
+    brandColor: "#F6F8FF",
+    height: "60px",
+    hoverColor: "transparent",
+    selectedItemColor: "#F6F8FF",
+    selectedItemBackgroundColor: theme.colors.acce1,
+    selectedItemBorderTopColor: "transparent",
+    selectedItemBorderTopThickness: "0px",
+    selectedItemBorderBottomColor: "transparent",
+    selectedItemBorderBottomThickness: "0px",
+  },
+});
+
+const MyApp = ({ children }) => {
+  return (
+    <HvProvider themes={[turquoiseTheme]} theme="turquoise" colorMode="dawn">
+      {children}
+    </HvProvider>
+  );
+};
+```
+
+Only by customizing the theme, the `HvHeader`, `HvButton`, `HvHeaderBrand`, `HvHeaderNavigation`, `HvGlobalActions`, `HvTypography`, and `HvContainer`
+components were able change their default styling.
+
+<Canvas>
+  <Story name="WhiteLabeling">
+    <WhiteLabeling />
+  </Story>
+</Canvas>
+
+Implementing deeper customizations to an element than the ones presented above requires you to use others types of customization.
+For more information on how you can customize components, report to the [customization](/docs/guides-theming-customization--inline-styles) documentation.

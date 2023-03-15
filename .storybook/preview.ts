@@ -29,8 +29,9 @@ export const parameters = {
         [
           "Provider",
           "Theming",
-          ["Default themes", "Customization", "White labeling"],
+          ["White labeling"],
           "Styling",
+          ["Customization"],
           "Forms",
         ],
         "Components",

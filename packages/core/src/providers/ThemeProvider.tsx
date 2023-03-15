@@ -64,7 +64,7 @@ export const HvThemeProvider = ({
     () => ({
       themes,
       colorModes,
-      activeTheme,
+      activeTheme: activeTheme as HvTheme,
       selectedTheme,
       selectedMode,
       changeTheme,

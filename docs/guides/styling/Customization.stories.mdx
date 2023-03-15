@@ -1,0 +1,396 @@
+import { Meta, Canvas } from "@storybook/addon-docs";
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+import {
+  OverrideClassName,
+  OverrideClasses,
+  ReusableComponent,
+  DynamicReusableComponent,
+  NestedClasses,
+  InlineStyles,
+  ThemeOverride,
+  GlobalOverride,
+} from "./Customization";
+
+<Meta title="Guides/Styling/Customization" />
+
+# Customization
+
+Even though all components are compliant with the Design System specifications, it is expected you'll need to customize them in order to meet your specific needs.
+In this sense, the UI Kit components can be customized the following ways:
+
+- [Single instance customization](/docs/guides-styling-customization--inline-styles)
+- [Reusable components](/docs/guides-styling-customization--reusable-component)
+- [Theme override](/docs/guides-styling-customization--theme-override)
+- [Global override](/docs/guides-styling-customization--global-override)
+
+## Single instance customization
+
+Find below the ways you have at your disposal to style a single instance of a component.
+
+### Inline styles
+
+You can style a component by applying inline styles using the `style` property. The value passed must be a JavaScript object with all
+properties in camel case format.
+
+```tsx
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => (
+  <HvButton
+    variant="secondaryGhost"
+    onClick={() => {}}
+    style={{ backgroundColor: theme.colors.sema3 }}
+  >
+    Click me!
+  </HvButton>
+);
+```
+
+<Canvas>
+  <Story name="InlineStyles">
+    <InlineStyles />
+  </Story>
+</Canvas>
+
+### Custom classes
+
+#### Using the `className` property
+
+It's also possible to customize a component providing a custom class to the `className` property.
+
+One way of doing this is by creating your custom class inside a CSS file as follows:
+
+```css
+// CustomButton.css file
+
+.custom-button {
+  color: rosybrown;
+}
+```
+
+Then, you need to import the CSS file and use the custom class you created on the `className` property.
+
+```tsx
+// CustomButton.tsx file
+
+import "./CustomButton.css";
+import { HvButton } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => (
+  <HvButton
+    variant="secondaryGhost"
+    onClick={() => {}}
+    className="custom-button"
+  >
+    Click me!
+  </HvButton>
+);
+```
+
+It's also possible to use **Emotion** to achieve the same result using the `css` utility as shown in the example below.
+
+```tsx
+import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+
+const classes = {
+  customButton: css({ color: theme.colors.sema6 }),
+};
+
+const MyComponent = () => (
+  <HvButton
+    variant="secondaryGhost"
+    onClick={() => {}}
+    className={classes.customButton}
+  >
+    Click me!
+  </HvButton>
+);
+```
+
+<Canvas>
+  <Story name="OverrideClassName">
+    <OverrideClassName />
+  </Story>
+</Canvas>
+
+##### Nested classes
+
+For each component, class names are provided to help you target specific parts of a component. Thus, all components can be customized by creating
+selectors that targets these class names. All classes begin with the name of the component they belong to.
+
+In order to understand in more detail where these class names are being used, you'll need to use the browser's developer tools. Once you identify the
+classes you want to override, you can target them in your CSS by creating a selector.
+
+In the example below, a selector was created to change the color of the indicator used on the selected tab.
+
+```tsx
+import {
+  HvTabs,
+  HvTab,
+  tabsClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+
+const classes = {
+  tabsIndicator: css({
+    [`& .${tabsClasses.indicator}`]: {
+      "& > div": {
+        backgroundColor: theme.colors.sema1,
+      },
+    },
+  }),
+};
+
+const MyComponent = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (_, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <HvTabs
+      value={value}
+      onChange={handleChange}
+      className={classes.tabsIndicator}
+    >
+      <HvTab label="Tab 1" />
+      <HvTab label="Tab 2" />
+    </HvTabs>
+  );
+};
+```
+
+<Canvas>
+  <Story name="NestedClasses">
+    <NestedClasses />
+  </Story>
+</Canvas>
+
+#### Using the `classes` property
+
+Most UI Kit components have a `classes` property that exposes several classes that are used internally in the component. These classes can then be overridden from the outside by providing a custom class name.
+To create a custom class name you can use one of the patterns that were shown above.
+
+Find below an example on how to override the `classes` property of a component. In this example, we are overriding the style of the `HvSwitch`'s label.
+
+```tsx
+import { HvSwitch } from "@hitachivantara/uikit-react-core";
+import { css } from "@emotion/css";
+
+const classes = {
+  label: css({ textTransform: "uppercase" }),
+};
+
+const MyComponent = () => (
+  <HvSwitch
+    id="override-classes-switch-id"
+    label="Switch"
+    classes={{
+      label: classes.label,
+    }}
+  />
+);
+```
+
+<Canvas>
+  <Story name="OverrideClasses">
+    <OverrideClasses />
+  </Story>
+</Canvas>
+
+This way of styling components is very convenient since it allows you to easily access classes of internal components and style them. For example, UI Kit's `HvDropDownMenu` component internally uses a UI Kit `HvButton` with an icon that can be styled through the `icon` and `iconSelected` classes.
+
+```tsx
+<HvDropDownMenu
+  classes={{
+    root: classes.dropDownMenu,
+    icon: classes.dropDownMenuButton,
+    iconSelected: classes.dropDownMenuButtonSelected,
+  }}
+  (...)
+/>
+```
+
+## Reusable components
+
+In order to have a cleaner and more maintainable code, you should always strive to promote code reusability by creating reusable components.
+
+To achieve this, you can use the `styled` utility from Emotion as shown in the example below. In this example, we are overriding UI Kit's `HvButton`.
+
+```tsx
+import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
+import styled from "@emotion/styled";
+
+const StyledHvButton = styled(HvButton)({
+  textTransform: "uppercase",
+});
+
+export const ReusableComponent = (props: HvButtonProps) => (
+  <StyledHvButton {...props} />
+);
+```
+
+Then, you can import the component and use it like so:
+
+```tsx
+<ReusableComponent>Click me!</ReusableComponent>
+```
+
+<Canvas>
+  <Story name="ReusableComponent">
+    <ReusableComponent id="reusable-button-id">Click me!</ReusableComponent>
+  </Story>
+</Canvas>
+
+### Dynamic styles
+
+The Emotion's `styled` utility also enables you to override a component's style based on its properties.
+
+To achieve this, take a look at the example below where the `HvButton`'s label changes color based on the `variant` property.
+
+```tsx
+import {
+  HvButton,
+  HvButtonProps,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import styled from "@emotion/styled";
+
+const StyledHvButton = styled(HvButton)(({ variant }: HvButtonProps) => ({
+  color: variant === "secondaryGhost" ? theme.colors.sema1 : theme.colors.sema4,
+}));
+
+const ReusableComponent = (props: HvButtonProps) => (
+  <StyledHvButton {...props} />
+);
+```
+
+Then, you can use the component the following way:
+
+```tsx
+<ReusableComponent variant="secondaryGhost">Secondary ghost!</ReusableComponent>
+```
+
+<Canvas>
+  <Story name="DynamicReusableComponent">
+    <DynamicReusableComponent
+      id="dynamic-reusable-button-sg-id"
+      variant="secondaryGhost"
+    >
+      Secondary ghost!
+    </DynamicReusableComponent>
+    <DynamicReusableComponent
+      id="dynamic-reusable-button-pg-id"
+      variant="primaryGhost"
+    >
+      Primary ghost!
+    </DynamicReusableComponent>
+  </Story>
+</Canvas>
+
+## Theme override
+
+Components can also be styled by providing customizations to them through the theme with the `createTheme` utility. Customizing components using this method enables
+to change specific parts of a component at a global scale in your application applying these changes to all instances of the component.
+
+Only very specific properties of a component can be customized using the `createTheme` utility varying from component to component.
+Overtime time we will work toward providing more customizable properties for components. However, at the moment, only some components can be customized
+through the theme. For more information, please read the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation where a structure of the theme with
+the components that are customizable is provided.
+
+In the example below, the border radius and background color of the `HvCard` component was customized.
+
+```tsx
+import {
+  createTheme,
+  HvProvider,
+  HvCard,
+  HvCardHeader,
+  HvCardContent,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  inheritColorModes: true,
+  card: {
+    borderRadius: "0px 0px 20px 20px",
+    backgroundColor: "#fbfaf8",
+  },
+});
+
+const MyApp = () => {
+  return (
+    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+      <HvCard selectable>
+        <HvCardHeader title="NEXT UI Kit" subheader="React UI library" />
+        <HvCardContent>
+          <HvTypography>Hello from the team!</HvTypography>
+        </HvCardContent>
+      </HvCard>
+    </HvProvider>
+  );
+};
+```
+
+<Canvas>
+  <Story name="ThemeOverride">
+    <ThemeOverride />
+  </Story>
+</Canvas>
+
+## Global override
+
+The components can also be customized by overriding global properties of the theme that are used by various elements throughout the application such as colors,
+font sizes, shadows, spaces, among others.
+
+This type of customization is very powerful since one small change can drastically change an application.
+
+The example below shows how the `HvTypography` and `HvButton` components can be customized only by overriding the theme's font family and the value for the
+`acce1` color.
+
+```tsx
+import {
+  createTheme,
+  HvProvider,
+  HvCard,
+  HvCardHeader,
+  HvCardContent,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+
+const newTheme = createTheme({
+  name: "myTheme",
+  base: "ds5",
+  inheritColorModes: true,
+  colors: {
+    modes: {
+      dawn: { acce1: "#bf6060" },
+    },
+  },
+  fontFamily: {
+    body: "Courier New",
+  },
+});
+
+const MyApp = () => {
+  return (
+    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+      <HvTypography>Hello from the UI Kit team.</HvTypography>
+      <HvButton variant="secondaryGhost">Click me!</HvButton>
+    </HvProvider>
+  );
+};
+```
+
+<Canvas>
+  <Story name="GlobalOverride">
+    <GlobalOverride />
+  </Story>
+</Canvas>
+
+Please report to the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation for more information.
