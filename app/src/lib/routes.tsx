@@ -10,7 +10,7 @@ const NotFound = lazy(() => import("pages/NotFound"));
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Navigate to="/components" replace />} />
+    <Route path="/" element={<Navigate to="/templates/list-view" replace />} />
     <Route path="/components" element={<Components />} />
     <Route
       path="/templates"

@@ -7,7 +7,7 @@ import theme from "./theme";
 addons.setConfig({
   theme: theme,
   panelPosition: "bottom",
-  enableShortcuts: false,
+  enableShortcuts: true,
   showNav: true,
   showPanel: true,
 });

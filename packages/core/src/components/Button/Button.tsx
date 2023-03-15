@@ -21,7 +21,7 @@ export type HvButtonVariant =
 
 export type HvButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type HvButtonRadius = "xs" | "sm" | "md" | "lg" | "xl" | "none" | "base";
+export type HvButtonRadius = "none" | "base" | "round" | "circle" | "full";
 
 export interface HvButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

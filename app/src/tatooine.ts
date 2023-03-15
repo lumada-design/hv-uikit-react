@@ -1,7 +1,7 @@
 import { createTheme } from "@hitachivantara/uikit-react-core";
 
 const customTheme = createTheme({
-  name: "custom-theme",
+  name: "tatooine",
   base: "ds5",
   inheritColorModes: false,
   colors: {
