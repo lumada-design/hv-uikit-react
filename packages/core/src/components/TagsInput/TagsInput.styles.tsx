@@ -88,7 +88,7 @@ export const StyledTagsList = styled(
 
     backgroundColor: theme.colors.atmo1,
     border: `1px solid ${theme.tagsInput.borderColor}`,
-    borderRadius: "2px",
+    borderRadius: theme.radii.base,
 
     "&:hover": {
       cursor: "text",

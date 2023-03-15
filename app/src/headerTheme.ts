@@ -3,6 +3,9 @@ import { createTheme, theme } from "@hitachivantara/uikit-react-core";
 const headerTheme = createTheme({
   name: "header-theme",
   base: "ds5",
+  radii: {
+    base: "20px",
+  },
   header: {
     color: "#B167EF",
     brandColor: "#B167EF",

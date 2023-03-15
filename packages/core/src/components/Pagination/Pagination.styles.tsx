@@ -98,7 +98,7 @@ export const StyledPageJump = styled("div")({
       paddingRight: `4px`,
       margin: 0,
       textAlign: "center",
-      // textAlign: theme.pagination.pageJumpTextAlign, TODO: fix this
+      borderRadius: theme.radii.base,
       MozAppearance: "textfield",
       "&:focus": {
         backgroundColor: hoverColor,

@@ -17,7 +17,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header hv-uikit-style-xmr0xz-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header hv-uikit-style-4bvoko-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
