@@ -2,9 +2,6 @@
   "useWorkspaces": true,
   "version": "independent",
   "command": {
-    "publish": {
-      "npmClient": "npm"
-    },
     "version": {
       "allowBranch": ["master", "next*", "feat/*", "fix/*", "bug/*"],
       "message": "chore(release): publish",
