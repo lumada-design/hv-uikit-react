@@ -21,13 +21,13 @@ jobs:
 
       - name: License Check
         run: |
-          pnpm -r exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }}
+          npm exec npx license-checker --onlyAllow ${{ env.LICENSES_WHITELIST }} --workspaces
 
       - name: Run Lint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Run Typecheck
-        run: pnpm typecheck
+        run: npm run typecheck
 
       - name: Run Test
-        run: pnpm test
+        run: npm run test

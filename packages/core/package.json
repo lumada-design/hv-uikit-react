@@ -31,7 +31,7 @@
     "coverage": "vitest run --coverage",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm build && npx clean-publish --fields main"
+    "prepublishOnly": "npm run build && npx clean-publish --fields main --files tsconfig.json"
   },
   "peerDependencies": {
     "@emotion/css": "^11.10.6",
@@ -43,9 +43,9 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
-    "@hitachivantara/uikit-react-shared": "workspace:*",
-    "@hitachivantara/uikit-react-icons": "workspace:*",
-    "@hitachivantara/uikit-styles": "workspace:*",
+    "@hitachivantara/uikit-react-shared": "*",
+    "@hitachivantara/uikit-react-icons": "*",
+    "@hitachivantara/uikit-styles": "*",
     "@popperjs/core": "^2.11.6",
     "attr-accept": "^2.2.2",
     "clsx": "^1.2.1",

@@ -30,8 +30,8 @@
     "convert:svg": "ts-node -r tsconfig-paths/register src/svgToReact.ts dir --input assets --output bin --force",
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
-    "prepare": "pnpm convert",
-    "prepublishOnly": "pnpm build && npx clean-publish --fields main"
+    "prepare": "npm run convert",
+    "prepublishOnly": "npm run build && npx clean-publish --fields main --files tsconfig.json"
   },
   "peerDependencies": {
     "@emotion/styled": "^11.10.6",
@@ -39,7 +39,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "workspace:*"
+    "@hitachivantara/uikit-styles": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

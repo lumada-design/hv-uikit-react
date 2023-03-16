@@ -13,21 +13,20 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "pnpm -F='./app' dev",
+    "dev": "npm run dev --workspace=app",
     "doc": "start-storybook -p 6006 --no-manager-cache",
-    "build": "pnpm -r -F='./packages/**' build",
+    "build": "npm run build --workspace=packages",
     "build:doc": "build-storybook --docs -o dist --quiet",
-    "test": "pnpm -F='./packages/**' test",
+    "test": "npm run test --workspace=packages --if-present",
     "test:pa11y": "npx pa11y-ci -c config/pa11yci.config.js",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint": "eslint . --ext .ts,.tsx --cache",
-    "lint:fix": "pnpm lint --fix",
+    "lint:fix": "npm run lint --fix",
     "lint-staged": "lint-staged",
-    "typecheck": "pnpm -r -F='./packages/**' typecheck",
+    "typecheck": "npm run typecheck --workspace=packages --if-present",
     "publish:release": "lerna publish --conventional-graduate --create-release github --yes",
     "publish:next": "lerna publish --conventional-prerelease --create-release github --yes --dist-tag next",
-    "preinstall": "npx only-allow pnpm",
     "prepare": "npx husky install .config/husky"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@emotion/core": "^11.0.0",
+    "@mdx-js/react": "^1.6.22",
     "@mui/material": "^5.11.12",
     "@playwright/test": "^1.31.2",
     "@storybook/addon-a11y": "^6.5.16",
@@ -87,5 +87,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "app"
+  ]
 }
