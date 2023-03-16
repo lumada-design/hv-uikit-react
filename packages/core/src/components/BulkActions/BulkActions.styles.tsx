@@ -56,7 +56,9 @@ export const StyledSelectAllContainer = styled("div")({
   alignItems: "center",
 });
 
-export const StyledGenericActions = styled(HvActionsGeneric)({
+export const StyledGenericActions = styled((props) => (
+  <HvActionsGeneric {...props} />
+))({
   display: "inline-flex",
   marginLeft: "auto",
 });
