@@ -38,7 +38,11 @@ export const HvThemeProvider = ({
   );
   const [selectedMode, setThemeMode] = useState<string>(pTheme.selectedMode);
   const [colorModes, setColorModes] = useState<string[]>(pTheme.colorModes);
-  const [themes] = useState<string[]>(themesList.map((t) => t.name));
+  const [themes, setThemes] = useState<string[]>(themesList.map((t) => t.name));
+
+  useEffect(() => {
+    setThemes(themesList.map((t) => t.name));
+  }, [themesList]);
 
   const changeTheme = (newTheme = selectedTheme, newMode = selectedMode) => {
     pTheme = parseTheme(themesList, newTheme, newMode);
