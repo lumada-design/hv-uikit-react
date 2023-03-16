@@ -5,7 +5,7 @@ export const parameters = {
   viewMode: process.env.STORYBOOK_VIEW_MODE,
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
-  docs: { container: DocsContainer },
+  docs: { container: DocsContainer, source: { type: "dynamic" } },
   controls: {
     matchers: {
       color: /(background|color)$/i,

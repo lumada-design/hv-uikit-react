@@ -38,8 +38,8 @@ export const CardView = ({ instance }: CarViewProps) => {
       {instance.page.map((row) => {
         return (
           <HvCard
-            // bgcolor="atmo1"
-            key={`${row?.values?.name}-row`}
+            bgcolor="atmo1"
+            key={`${row?.original?.name}-row`}
             style={{ width: "100%" }}
             statusColor={row?.original?.statusColor}
             icon={getStatusIcon(
@@ -48,7 +48,7 @@ export const CardView = ({ instance }: CarViewProps) => {
             selected={instance.selectedFlatRows.some((r) => r.id === row.id)}
             selectable
           >
-            <HvCardHeader title={row?.values?.name} />
+            <HvCardHeader title={row?.original?.name} />
             <div
               style={{
                 display: "flex",
@@ -59,21 +59,21 @@ export const CardView = ({ instance }: CarViewProps) => {
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Event</HvTypography>
-                  <HvTypography noWrap>{row?.values?.eventType}</HvTypography>
+                  <HvTypography noWrap>{row?.original?.eventType}</HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Severity</HvTypography>
-                  <HvTypography noWrap>{row?.values?.severity}</HvTypography>
+                  <HvTypography noWrap>{row?.original?.severity}</HvTypography>
                 </HvCardContent>
               </div>
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Status</HvTypography>
-                  <HvTypography noWrap>{row?.values?.status}</HvTypography>
+                  <HvTypography noWrap>{row?.original?.status}</HvTypography>
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Priority</HvTypography>
-                  <HvTypography noWrap>{row?.values?.priority}</HvTypography>
+                  <HvTypography noWrap>{row?.original?.priority}</HvTypography>
                 </HvCardContent>
               </div>
             </div>
@@ -85,7 +85,10 @@ export const CardView = ({ instance }: CarViewProps) => {
                 inputProps={{ "aria-label": "leaf input" }}
               />
               <div style={{ flex: 1 }} />
-              <HvActionsGeneric actions={[{ id: "view1", label: "View" }]} />
+              <HvActionsGeneric
+                actions={[{ id: "view1", label: "View" }]}
+                category="secondarySubtle"
+              />
             </HvActionBar>
           </HvCard>
         );
