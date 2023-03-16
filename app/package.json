@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.6",
-    "@hitachivantara/uikit-react-core": "workspace:*",
-    "@hitachivantara/uikit-react-icons": "workspace:*",
-    "@hitachivantara/uikit-styles": "workspace:*",
+    "@hitachivantara/uikit-react-core": "*",
+    "@hitachivantara/uikit-react-icons": "*",
+    "@hitachivantara/uikit-styles": "*",
     "formik": "^2.2.9",
     "i18next": "^22.4.10",
     "i18next-browser-languagedetector": "^7.0.1",

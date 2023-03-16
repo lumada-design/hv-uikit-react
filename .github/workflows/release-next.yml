@@ -35,4 +35,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          pnpm publish:next
+          npm run publish:next
+
+  documentation:
+    name: Documentation
+    uses: ./.github/workflows/documentation.yml
+    needs: [release]
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      publish-folder: next

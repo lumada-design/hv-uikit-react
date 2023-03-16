@@ -12,21 +12,9 @@ runs:
       with:
         node-version: 16
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        run_install: false
-        version: 7
-
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      shell: bash
-      run: |
-        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
     - name: Install dependencies
       env:
         # ensure dev dependencies are installed
         NODE_ENV: development
-      run: pnpm install
+      run: npm i --force
       shell: bash

@@ -1,9 +1,10 @@
 {
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": true,
   "version": "independent",
-  "npmClient": "pnpm",
   "command": {
+    "publish": {
+      "npmClient": "npm"
+    },
     "version": {
       "allowBranch": ["master", "next*", "feat/*", "fix/*", "bug/*"],
       "message": "chore(release): publish",

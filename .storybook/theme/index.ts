@@ -2,6 +2,8 @@ import { create } from "@storybook/theming/create";
 
 export default create({
   // UI
+  appBg: "#FBFCFC",
+  appContentBg: "#FBFCFC",
   appBorderRadius: 0,
 
   // Typography

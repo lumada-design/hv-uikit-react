@@ -1,3 +1,5 @@
+/* eslint-disable import/namespace */
+
 import { ReactElement, ReactNode, useState } from "react";
 import {
   HvDropdown,
