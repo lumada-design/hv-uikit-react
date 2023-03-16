@@ -4,13 +4,23 @@ description: Deploy UI Kit documentation
 runs:
   using: "composite"
   steps:
+    - name: Set Deployment Ref
+      shell: bash
+      run: |
+        if [[ ${{ github.event.number }} ]]; then
+          echo "DEPLOYMENT_REF=refs/pull/${{ env.PUBLISH_FOLDER }}/head" >> $GITHUB_ENV
+        else
+          echo "DEPLOYMENT_REF=${{ github.ref }}" >> $GITHUB_ENV
+        fi
+        echo "${{ DEPLOYMENT_REF }}"
+        
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Build Documentation
       uses: ./.github/actions/build-documentation
       if: github.event_name == 'workflow_dispatch'
-
+    
     - name: Start Documentation Deployment
       uses: bobheadxi/deployments@v1
       id: deployment
@@ -18,7 +28,7 @@ runs:
         step: start
         token: ${{ env.GITHUB_TOKEN }}
         env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-        ref: ${{ github.event.number && refs/pull/${{ env.PUBLISH_FOLDER }}/head || github.ref }} 
+        ref: ${{ DEPLOYMENT_REF }}
         desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
     - name: Checkout Documentation Repository
