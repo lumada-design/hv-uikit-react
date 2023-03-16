@@ -1,13 +1,13 @@
 import { useEffect, RefObject } from "react";
 
-type Event = MouseEvent | KeyboardEvent | TouchEvent;
+export type HvClickOutsideEvent = MouseEvent | KeyboardEvent | TouchEvent;
 
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
-  handler: (event: Event) => void
+  handler: (event: HvClickOutsideEvent) => void
 ) => {
   useEffect(() => {
-    const listener = (event: Event) => {
+    const listener = (event: HvClickOutsideEvent) => {
       const el = ref?.current;
       const isKeyUp = event.type === "keyup";
       const isEscape = (event as KeyboardEvent).key === "Escape";

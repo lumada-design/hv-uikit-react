@@ -2,7 +2,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvAvatar, HvTooltip, HvTypography } from "components";
-import { HvApplication } from "..";
+import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import { HvBaseProps } from "../../../types";
 import TitleWithTooltip from "../TitleWithTooltip";
 import {
@@ -18,11 +18,14 @@ import appSwitcherActionClasses, {
 
 export type HvActionProps = HvBaseProps & {
   /** The application data to be used to render the Action object. */
-  application: HvApplication;
+  application: HvAppSwitcherActionApplication;
   /** Callback triggered when the action is clicked. */
-  onClickCallback?: Function;
+  onClickCallback?: (
+    event: React.MouseEvent,
+    application: HvAppSwitcherActionApplication
+  ) => void;
   /** Must return a boolean stating if the action element is selected or not. */
-  isSelectedCallback?: Function;
+  isSelectedCallback?: (application: HvAppSwitcherActionApplication) => boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherActionClasses;
 };
@@ -45,7 +48,7 @@ export const HvAction = ({
     ? theme.colors.atmo5
     : getColor(application?.color, theme.colors.acce1);
 
-  const [validIconUrl, setValidIconUrl] = useState(true);
+  const [validIconUrl, setValidIconUrl] = useState<boolean>(true);
 
   const renderApplicationIcon = () => {
     if (iconElement) {
@@ -82,7 +85,7 @@ export const HvAction = ({
   /**
    * Handles the onClick event and triggers the appropriate callback if it exists.
    */
-  const handleOnClick = (event) => {
+  const handleOnClick = (event: React.MouseEvent) => {
     if (disabled) {
       event.preventDefault();
       return;

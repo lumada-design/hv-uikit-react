@@ -7,8 +7,11 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { HvValidationMessages } from "types/forms";
-import { HvBaseProps } from "../../types";
+import {
+  HvBaseProps,
+  HvTagSuggestion,
+  HvValidationMessages,
+} from "../../types";
 import {
   StyledCharCounter,
   StyledDescription,
@@ -25,9 +28,9 @@ import {
 } from "./TagsInput.styles";
 import validationStates from "../Forms/FormElement/validationStates";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
-import { useControlled, useIsMounted, useUniqueId } from "hooks";
-import { isKeypress, keyboardCodes, setId } from "utils";
-import { HvTagProps } from "components";
+import { useControlled, useIsMounted, useUniqueId } from "../../hooks";
+import { isKeypress, keyboardCodes, setId } from "../../utils";
+import { HvTagProps } from "../Tag";
 import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
 import { HvCharCounterProps, HvFormStatus } from "../Forms";
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
@@ -121,7 +124,7 @@ export type HvTagsInputProps = HvBaseProps<
   /** If `true` the tag will be committed when the blur event occurs. */
   commitOnBlur?: boolean;
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
-  suggestionListCallback?: Function;
+  suggestionListCallback?: (value: string) => HvTagSuggestion[] | null;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagsInputClasses;
 };
@@ -196,7 +199,9 @@ export const HvTagsInput = ({
   const hasCounter = maxTagsQuantity != null && !hideCounter;
 
   // suggestions related state
-  const [suggestionValues, setSuggestionValues] = useState(null);
+  const [suggestionValues, setSuggestionValues] = useState<
+    HvTagSuggestion[] | null
+  >(null);
 
   const isStateInvalid = useMemo(() => {
     return hasCounter && value.length > maxTagsQuantity;

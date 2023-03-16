@@ -171,7 +171,7 @@ export const HvPagination = ({
         labels={labels}
         inputProps={{
           "aria-label": labels?.paginationInputLabel,
-          // we really want the native number input
+          // We really want the native number input
           type: "number",
         }}
         classes={{
@@ -185,11 +185,11 @@ export const HvPagination = ({
             classes?.pageSizeInputRoot
           ),
         }}
-        onChange={handleInputChange}
+        onChange={(event, value) => handleInputChange(event, Number(value))}
         value={String(pageInput)}
-        onBlur={(evt, value) => changePage(value - 1)}
+        onBlur={(evt, value) => changePage(Number(value) - 1)}
         onKeyDown={(evt, value) =>
-          isKeypress(evt, Enter) && changePage(value - 1)
+          isKeypress(evt, Enter) && changePage(Number(value) - 1)
         }
         disabled={pageSize === 0}
         disableClear

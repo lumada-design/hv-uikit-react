@@ -23,3 +23,11 @@ export type HvInputLabels = {
   /** The label of the search button. */
   searchButtonLabel?: string;
 };
+
+export type HvInputSuggestion = {
+  id: string;
+  label: string;
+  value?: string;
+};
+
+export type HvTagSuggestion = HvInputSuggestion;

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
-import { HvButton } from "components";
-import { useControlled } from "hooks";
+import { HvButton } from "../Button";
+import { useControlled } from "../../hooks";
 import { HvBaseProps } from "../../types";
 
 export type HvToggleButtonProps = HvBaseProps<
@@ -18,7 +18,10 @@ export type HvToggleButtonProps = HvBaseProps<
   /** Icon for when selected. Ignored if the component has children. */
   selectedIcon?: React.ReactNode;
   /** Function called when icon is clicked. */
-  onClick?: Function;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    selected: boolean
+  ) => void;
 };
 
 export const HvToggleButton = forwardRef<
@@ -40,9 +43,9 @@ export const HvToggleButton = forwardRef<
     Boolean(defaultSelected)
   );
 
-  const onClickHandler = (e) => {
+  const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     setIsSelected(!isSelected);
-    onClick?.(e, !isSelected);
+    onClick?.(event, !isSelected);
   };
 
   return (

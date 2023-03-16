@@ -1,12 +1,11 @@
 import clsx from "clsx";
 import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
 import { HvBaseProps } from "../../../types";
-import {
-  bannerContentClasses,
+import bannerContentClasses, {
   HvBannerContentClasses,
-  HvMessageContainer,
-  HvActionContainer,
-} from ".";
+} from "./bannerContentClasses";
+import { HvActionContainer } from "./ActionContainer";
+import { HvMessageContainer } from "./MessageContainer";
 import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
 import {
   HvActionGeneric,
@@ -14,12 +13,12 @@ import {
   HvBannerVariant,
 } from "components";
 import { forwardRef } from "react";
-import { iconVariant } from "utils";
+import { iconVariant } from "../../../utils";
 import { HvActionContainerProps } from "./ActionContainer/ActionContainer";
 
 export type HvBannerContentProps = Omit<
   MuiSnackbarContentProps,
-  "variant" | "classes"
+  "variant" | "classes" | "onClose"
 > &
   HvBaseProps & {
     /** The message to display. */
@@ -31,7 +30,7 @@ export type HvBannerContentProps = Omit<
     /** Custom icon to replace the variant default. */
     customIcon?: React.ReactNode;
     /** onClose function. */
-    onClose?: Function;
+    onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     /** Actions to display on the right side. */
     actions?: React.ReactNode | HvActionGeneric[];
     /**  The callback function ran when an action is triggered, receiving `action` as param */

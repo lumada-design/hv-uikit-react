@@ -8,24 +8,27 @@ import {
 import capitalize from "lodash/capitalize";
 import { HvBaseProps } from "../../types";
 import { StyledSnackbar } from "./Banner.styles";
-import { bannerClasses, HvBannerClasses } from ".";
-import { setId } from "utils";
+import bannerClasses, { HvBannerClasses } from "./bannerClasses";
+import { setId } from "../../utils";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
-import { HvActionGeneric } from "components";
+import { HvActionGeneric } from "../ActionsGeneric";
 
 export type HvBannerVariant = "success" | "warning" | "error" | "default";
 
 export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 
-export type HvBannerProps = Omit<MuiSnackbarProps, "anchorOrigin" | "classes"> &
+export type HvBannerProps = Omit<
+  MuiSnackbarProps,
+  "anchorOrigin" | "classes" | "onClose"
+> &
   HvBaseProps & {
     /** If true | Snackbar is open. */
     open: boolean;
     /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
-    onClose?: Function;
+    onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     /** The message to display. */
     label?: React.ReactNode;
     /** The anchor of the Snackbar. */

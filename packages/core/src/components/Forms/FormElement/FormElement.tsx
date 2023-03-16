@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import clsx from "clsx";
-import { HvBaseProps } from "../../../types/index";
-import { useUniqueId } from "hooks";
+import { HvBaseProps } from "../../../types";
+import { useUniqueId } from "../../../hooks";
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
@@ -10,7 +10,7 @@ import formElementClasses, { HvFormElementClasses } from "./formElementClasses";
 
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
-export type HvFormElementProps = HvBaseProps & {
+export type HvFormElementProps = HvBaseProps<HTMLDivElement, { onChange }> & {
   /**
    * Name of the form element.
    *
@@ -50,7 +50,7 @@ export type HvFormElementProps = HvBaseProps & {
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
   /** The callback fired when the value changes. */
-  onChange?: Function;
+  onChange?: (event: React.FormEvent<HTMLDivElement>) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFormElementClasses;
 };

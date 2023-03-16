@@ -11,7 +11,7 @@ import {
 import TitleWithTooltip from "./TitleWithTooltip";
 import appSwitcherClasses, { HvAppSwitcherClasses } from "./appSwitcherClasses";
 
-export type HvApplication = {
+export type HvAppSwitcherActionApplication = {
   /** Id of the application. */
   id?: string;
   /** Name of the application, this is the value that will be displayed on the component. */
@@ -40,11 +40,16 @@ export type HvAppSwitcherProps = HvBaseProps & {
   /** Title to be displayed on the header of the component. */
   title?: string;
   /** The list of applications to be used to render the actions on the component. */
-  applications?: HvApplication[];
+  applications?: HvAppSwitcherActionApplication[];
   /** Triggered when an action is clicked. */
-  onActionClickedCallback?: Function;
+  onActionClickedCallback?: (
+    event: React.MouseEvent,
+    application: HvAppSwitcherActionApplication
+  ) => void;
   /** Must return a boolean stating if the action element is selected or not. */
-  isActionSelectedCallback?: Function;
+  isActionSelectedCallback?: (
+    application: HvAppSwitcherActionApplication
+  ) => boolean;
   /** Element to be added to the header container, if none is provided a label with the title will be added. */
   header?: React.ReactNode;
   /** Element to be added to the footer container. */
@@ -72,7 +77,10 @@ export const HvAppSwitcher = ({
   footer,
   isOpen,
 }: HvAppSwitcherProps) => {
-  const actionClicked = (event, application) => {
+  const actionClicked = (
+    event: React.MouseEvent,
+    application: HvAppSwitcherActionApplication
+  ) => {
     onActionClickedCallback?.(event, application);
   };
 
