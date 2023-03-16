@@ -201,7 +201,7 @@ const newTheme = createTheme({
 });
 
 const MyApp = () => (
-  <HvProvider themes={[newTheme]} theme="myTheme" colorMode="sand">
+  <HvProvider themes={[newTheme]}>
     <HvTypography>Hello from the UI Kit team!</HvTypography>
   </HvProvider>
 );
@@ -322,7 +322,7 @@ const MyComponent = () => {
 
 const MyApp = () => {
   return (
-    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+    <HvProvider themes={[newTheme]}>
       <MyComponent />
     </HvProvider>
   );

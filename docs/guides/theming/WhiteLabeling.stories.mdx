@@ -58,11 +58,7 @@ const turquoiseTheme = createTheme({
 });
 
 const MyApp = ({ children }) => {
-  return (
-    <HvProvider themes={[turquoiseTheme]} theme="turquoise" colorMode="dawn">
-      {children}
-    </HvProvider>
-  );
+  return <HvProvider themes={[turquoiseTheme]}>{children}</HvProvider>;
 };
 ```
 

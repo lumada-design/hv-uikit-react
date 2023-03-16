@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
-import { HvProvider, HvCheckBox, ds3 } from "@hitachivantara/uikit-react-core";
+import { HvProvider, ds3 } from "@hitachivantara/uikit-react-core";
+import { ProviderSample } from "./ProviderSample";
 
 <Meta title="Guides/Provider" component={HvProvider} />
 
@@ -45,7 +46,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
           rootElementId="hv-root-ds5-dawn-docs-provider"
           colorMode="dawn"
         >
-          <HvCheckBox label="DS5 Dawn" />
+          <ProviderSample label="DS5 Dawn" />
         </HvProvider>
       </div>
       <div id="hv-root-ds5-wicked-docs-provider">
@@ -53,7 +54,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
           rootElementId="hv-root-ds5-wicked-docs-provider"
           colorMode="wicked"
         >
-          <HvCheckBox label="DS5 Wicked" />
+          <ProviderSample label="DS5 Wicked" />
         </HvProvider>
       </div>
       <div id="hv-root-ds3-dawn-docs-provider">
@@ -62,7 +63,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
           themes={[ds3]}
           colorMode="dawn"
         >
-          <HvCheckBox label="DS3 Dawn" />
+          <ProviderSample label="DS3 Dawn" />
         </HvProvider>
       </div>
       <div id="hv-root-ds3-wicked-docs-provider">
@@ -71,7 +72,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
           themes={[ds3]}
           colorMode="wicked"
         >
-          <HvCheckBox label="DS3 Wicked" />
+          <ProviderSample label="DS3 Wicked" />
         </HvProvider>
       </div>
     </div>
