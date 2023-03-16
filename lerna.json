@@ -2,6 +2,9 @@
   "useWorkspaces": true,
   "version": "independent",
   "command": {
+    "publish": {
+      "npmClientArgs": ["--legacy-peer-deps"]
+    },
     "version": {
       "allowBranch": ["master", "next*", "feat/*", "fix/*", "bug/*"],
       "message": "chore(release): publish",
