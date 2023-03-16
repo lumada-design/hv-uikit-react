@@ -31,7 +31,7 @@ const withThemeProvider = (story) => {
         theme={selectedTheme?.split("-")[0]}
         colorMode={selectedTheme?.split("-")[1]}
       >
-        {story()}
+        <div style={{ padding: 20 }}>{story()}</div>
       </HvProvider>
     </>
   );

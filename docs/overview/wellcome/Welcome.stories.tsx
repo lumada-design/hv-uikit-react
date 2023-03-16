@@ -21,6 +21,12 @@ export default {
         hidden: true,
       },
     },
+    docs: {
+      page: null,
+    },
+    options: {
+      showPanel: false,
+    },
     viewMode: "story",
   },
 };

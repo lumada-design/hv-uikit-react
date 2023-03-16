@@ -2,6 +2,8 @@ import DocsContainer from "./blocks/DocsContainer";
 import withThemeProvider from "./decorators/withThemeProvider";
 
 export const parameters = {
+  viewMode: process.env.STORYBOOK_VIEW_MODE,
+  layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { container: DocsContainer },
   controls: {
