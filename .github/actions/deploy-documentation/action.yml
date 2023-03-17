@@ -7,20 +7,19 @@ runs:
     - name: Set Deployment Ref
       shell: bash
       run: |
-        if [[ ${{ github.event.number }} ]]; then
-          echo "DEPLOYMENT_REF=refs/pull/${{ env.PUBLISH_FOLDER }}/head" >> $GITHUB_ENV
+        if [ "${{ github.event.number }}" ]; then
+          echo "DEPLOYMENT_REF=refs/pull/${{ github.event.number }}/head" >> $GITHUB_ENV
         else
           echo "DEPLOYMENT_REF=${{ github.ref }}" >> $GITHUB_ENV
         fi
-        echo "${{ env.DEPLOYMENT_REF }}"
-        
+
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Build Documentation
       uses: ./.github/actions/build-documentation
       if: github.event_name == 'workflow_dispatch'
-    
+
     - name: Start Documentation Deployment
       uses: bobheadxi/deployments@v1
       id: deployment
