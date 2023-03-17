@@ -19,7 +19,7 @@ import {
 import clsx from "clsx";
 import { isKeypress, keyboardCodes, setId } from "utils";
 import { convertUnits } from "../utils";
-import { withId } from "hocs";
+import withId from "../../../hocs/withId";
 
 export type HvDropZoneLabels = {
   /**

@@ -439,6 +439,14 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   tooltip: {
     borderRadius: "0px",
   },
+  verticalNavigation: {
+    justifyContent: "space-between",
+    hoverColor: theme.colors.atmo3,
+    activeBorderLeft: `2px solid ${theme.colors.acce3}`,
+    inactiveBorderLeft: `2px solid transparent`,
+    actionsMarginTop: "none",
+    // expandendFontWeight: string,
+  },
 }));
 
 export default ds3;

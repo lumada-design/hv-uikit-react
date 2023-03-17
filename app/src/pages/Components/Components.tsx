@@ -26,6 +26,7 @@ import {
   Snackbars,
   Calendar,
 } from "components/components";
+import { VerticalNavigation } from "components/components/VerticalNavigation";
 
 const styles = {
   display: "flex",
@@ -61,6 +62,7 @@ const App = () => {
       <BreadCrumb />
       <BulkActions />
       <Calendar />
+      <VerticalNavigation />
     </HvBox>
   );
 };
