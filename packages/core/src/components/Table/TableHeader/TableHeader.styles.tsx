@@ -9,7 +9,6 @@ export const StyledHeaderContent = styled(
 )(({ $align }: { $align: string }) => ({
   display: "flex",
   alignItems: "flex-start",
-  paddingTop: 4,
   width: "100%",
   // align
   ...($align === "center" && {
