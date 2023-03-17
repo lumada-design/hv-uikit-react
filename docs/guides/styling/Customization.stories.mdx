@@ -325,7 +325,7 @@ const newTheme = createTheme({
 
 const MyApp = () => {
   return (
-    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+    <HvProvider themes={[newTheme]}>
       <HvCard selectable>
         <HvCardHeader title="NEXT UI Kit" subheader="React UI library" />
         <HvCardContent>
@@ -379,7 +379,7 @@ const newTheme = createTheme({
 
 const MyApp = () => {
   return (
-    <HvProvider themes={[newTheme]} theme="myTheme" colorMode="dawn">
+    <HvProvider themes={[newTheme]}>
       <HvTypography>Hello from the UI Kit team.</HvTypography>
       <HvButton variant="secondaryGhost">Click me!</HvButton>
     </HvProvider>

@@ -39,12 +39,7 @@ export const ThemeContext = () => {
   const id = "hv-root-theme-context-use-theme-hook";
   return (
     <div id={id}>
-      <HvProvider
-        rootElementId={id}
-        themes={[newTheme]}
-        theme="myTheme"
-        colorMode="dawn"
-      >
+      <HvProvider rootElementId={id} themes={[newTheme]}>
         <Content />
       </HvProvider>
     </div>

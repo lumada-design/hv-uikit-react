@@ -102,12 +102,7 @@ export const WhiteLabeling = () => {
 
   return (
     <div id={id}>
-      <HvProvider
-        rootElementId={id}
-        themes={[turquoiseTheme]}
-        theme="turquoise"
-        colorMode="dawn"
-      >
+      <HvProvider rootElementId={id} themes={[turquoiseTheme]}>
         <HvHeader position="relative">
           <HvButton
             icon
