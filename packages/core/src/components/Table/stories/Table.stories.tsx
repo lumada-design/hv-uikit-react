@@ -40,12 +40,12 @@ const StyledResponsiveTable = styled(HvTable)({
 });
 
 const StyledResponsiveHead = styled(HvTableHead)(
-  ({ breakpoints }: { breakpoints: MuiBreakpoints }) => ({
+  ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
     display: "flex",
     flexFlow: "column wrap",
     height: "auto",
 
-    [breakpoints.only("md")]: {
+    [$breakpoints.only("md")]: {
       "&:first-of-type": {
         position: "sticky",
         top: -1,
@@ -53,7 +53,7 @@ const StyledResponsiveHead = styled(HvTableHead)(
       },
     },
 
-    [breakpoints.down("sm")]: {
+    [$breakpoints.down("sm")]: {
       "&:first-of-type": {
         display: "none",
       },
@@ -370,7 +370,7 @@ export const ResponsiveTable = () => {
   return (
     <StyledResponsiveTableContainer>
       <StyledResponsiveTable component="div">
-        <StyledResponsiveHead breakpoints={muiTheme.breakpoints}>
+        <StyledResponsiveHead $breakpoints={muiTheme.breakpoints}>
           <StyledResponsiveTableRow $breakpoints={muiTheme.breakpoints}>
             {columns.map((el) => (
               <StyledResponsiveTableHeader key={el.Header}>

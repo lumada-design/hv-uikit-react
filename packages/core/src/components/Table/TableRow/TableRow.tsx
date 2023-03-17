@@ -55,6 +55,14 @@ const StyledTableRow = (c: any) =>
       $stripedColor: string;
     }) => ({
       backgroundColor: theme.table.rowBackgroundColor,
+      color: "inherit",
+      verticalAlign: "middle",
+      outline: 0,
+      minHeight: 32,
+      "tr&": {
+        height: 32,
+      },
+
       ":hover": {
         ...($type === "body" && {
           backgroundColor: theme.table.rowHoverColor,

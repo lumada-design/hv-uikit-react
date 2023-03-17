@@ -117,10 +117,7 @@ const StyledTableHeader = (c: any) =>
       height: "var(--cell-height)",
       verticalAlign: "inherit",
       textAlign: "left",
-      paddingTop: 0,
-      paddingRight: theme.space.xs,
-      paddingBottom: 0,
-      paddingLeft: 32,
+      padding: theme.spacing([0, "xs", 0, 32]),
       borderBottom: `1px solid ${theme.colors.atmo4}`,
 
       ...($sorted && {
@@ -197,12 +194,12 @@ const StyledTableHeader = (c: any) =>
       }),
       // type
       ...($type === "head" && {
-        // ":first-of-type": {
-        height: "var(--first-row-cell-height)",
-        borderTop: $variantList
-          ? 0
-          : `1px solid ${theme.table.headerBorderTopColor}`,
-        // },
+        "*:first-of-type > &": {
+          height: "var(--first-row-cell-height)",
+          borderTop: $variantList
+            ? 0
+            : `1px solid ${theme.table.headerBorderTopColor}`,
+        },
 
         paddingTop: 8,
         verticalAlign: "top",
