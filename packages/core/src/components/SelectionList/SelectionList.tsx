@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useEffect } from "react";
 import clsx from "clsx";
-import { HvBaseProps } from "../../types/index";
+import { HvBaseProps } from "../../types";
 import {
   StyledListContainer,
   StyledFormElement,
@@ -13,9 +13,9 @@ import {
   keyboardCodes,
   setId,
   multiSelectionEventHandler,
-} from "utils";
-import { useControlled, useUniqueId } from "hooks";
-import { HvFormStatus } from "components";
+} from "../../utils";
+import { useControlled, useUniqueId } from "../../hooks";
+import { HvFormStatus } from "../Forms/FormElement";
 import selectionListClasses, {
   HvSelectionListClasses,
 } from "./selectionListClasses";
@@ -74,7 +74,7 @@ export type HvSelectionListProps = HvBaseProps<
   /** Indicates whether the list orientation is horizontal or vertical. Defaults to vertical. */
   orientation?: "vertical" | "horizontal";
   /** The callback fired when the value changes. */
-  onChange?: Function;
+  onChange?: (event: React.MouseEvent, value: any) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSelectionListClasses;
 };
@@ -198,10 +198,15 @@ export const HvSelectionList = ({
   }, [allValues, selectedState, setValue, ArrowUp, ArrowDown]);
 
   const onChildChangeInterceptor = useCallback(
-    (index, childOnClick, evt) => {
+    (
+      index: number,
+      childOnClick: (e: React.MouseEvent) => void,
+      evt: React.MouseEvent
+    ) => {
       childOnClick?.(evt);
+
       if (!readOnly && !disabled) {
-        let newValue;
+        let newValue: any;
         if (multiple) {
           newValue = multiSelectionEventHandler(
             evt,
@@ -221,7 +226,7 @@ export const HvSelectionList = ({
         onChange?.(evt, newValue);
 
         setValue(() => {
-          // this will only run if uncontrolled
+          // This will only run if uncontrolled
 
           if (required && newValue.length === 0) {
             setValidationState("invalid");
@@ -249,7 +254,7 @@ export const HvSelectionList = ({
   );
 
   const modifiedChildren = useMemo(() => {
-    return React.Children.map(children, (child: any, i) => {
+    return React.Children.map(children, (child: any, i: number) => {
       const childIsSelected = selectedState[i];
 
       return React.cloneElement(child, {
@@ -262,7 +267,7 @@ export const HvSelectionList = ({
     });
   }, [children, disabled, onChildChangeInterceptor, selectedState]);
 
-  // the error message area will only be created if:
+  // The error message area will only be created if:
   // - an external element that provides an error message isn't identified via aria-errormessage AND
   //   - both status and statusMessage properties are being controlled OR
   //   - status is uncontrolled and required is true

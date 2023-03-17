@@ -9,13 +9,13 @@ import {
   StyledClose,
   StyledActionsInnerContainer,
 } from "./ActionContainer.styles";
-import { HvActionGeneric, HvActionsGeneric } from "components";
+import { HvActionGeneric, HvActionsGeneric } from "../../../ActionsGeneric";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "hooks";
+import { useTheme } from "../../../../hooks";
 
 export type HvActionContainerProps = HvBaseProps & {
   /** onClose function. */
-  onClose?: Function;
+  onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Actions to display. */
   action?: React.ReactNode | HvActionGeneric[];
   /**  The callback function ran when an action is triggered, receiving `action` as param */

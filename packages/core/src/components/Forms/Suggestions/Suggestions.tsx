@@ -8,8 +8,8 @@ import {
 } from "./Suggestions.styles";
 import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
-import { HvListItem } from "components";
-import { useClickOutside } from "hooks";
+import { HvListItem } from "../../ListContainer/ListItem";
+import { HvClickOutsideEvent, useClickOutside } from "../../../hooks";
 import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
 
 export type HvSuggestion = {
@@ -26,12 +26,10 @@ export type HvSuggestionsProps = HvBaseProps & {
   anchorEl?: HTMLElement | null;
   /** Array of { id, label, ...others } values to display in the suggestion list */
   suggestionValues?: HvSuggestion[] | null;
-  /** Function called when suggestion list is closed */
-  // onClose: Function,
   /** Function called when a suggestion is selected */
-  onSuggestionSelected?: Function;
+  onSuggestionSelected?: (event: React.MouseEvent, value: HvSuggestion) => void;
   /** Function called when suggestion list is closed */
-  onClose?: Function;
+  onClose?: (event: HvClickOutsideEvent) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSuggestionsClasses;
 };
@@ -53,9 +51,9 @@ export const HvSuggestions = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(expanded);
 
-  useClickOutside(ref, (e) => {
+  useClickOutside(ref, (event: HvClickOutsideEvent) => {
     setIsOpen(false);
-    onClose?.(e);
+    onClose?.(event);
   });
 
   useEffect(() => {

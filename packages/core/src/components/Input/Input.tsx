@@ -14,7 +14,13 @@ import {
   Preview,
   Search,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps, HvExtraProps } from "../../types";
+import {
+  HvBaseProps,
+  HvExtraProps,
+  HvInputLabels,
+  HvInputSuggestion,
+  HvValidationMessages,
+} from "../../types";
 import {
   StyledFormElement,
   StyledLabelContainer,
@@ -37,8 +43,9 @@ import {
   validateInput,
   computeValidationState,
   computeValidationMessage,
+  HvInputValidity,
 } from "../BaseInput/validations";
-import { isBrowser, isKeypress, keyboardCodes, setId } from "utils";
+import { isBrowser, isKeypress, keyboardCodes, setId } from "../../utils";
 import {
   HvFormStatus,
   HvInfoMessage,
@@ -47,8 +54,12 @@ import {
   HvTypography,
   HvWarningText,
 } from "components";
-import { useControlled, useIsMounted, useLabels, useUniqueId } from "hooks";
-import { HvInputLabels, HvValidationMessages } from "types/forms";
+import {
+  useControlled,
+  useIsMounted,
+  useLabels,
+  useUniqueId,
+} from "../../hooks";
 import inputClasses, { HvInputClasses } from "./inputClasses";
 import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
@@ -92,28 +103,44 @@ export type HvInputProps = HvBaseProps<
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.
    */
-  onChange?: Function;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => void;
   /**
    * Callback called when the user submits the value by pressing Enter/Return.
    *
    * Also called when the search button is clicked (when type is "search").
    */
-  onEnter?: Function;
+  onEnter?: (
+    event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent,
+    value: string
+  ) => void;
   /**
    * The function that will be executed onBlur, allows checking the validation state,
-   * it receives the value and the validation state (`invalid`, `valid`).
+   * it receives the value and the validation state.
    */
-  onBlur?: Function;
+  onBlur?: (
+    event: React.FocusEvent<HTMLInputElement>,
+    value: string,
+    validationState: HvInputValidity
+  ) => void;
   /**
    * The function that will be executed onBlur, allows checking the value state,
    * it receives the value.
    */
-  onFocus?: Function;
+  onFocus?: (
+    event: React.FocusEventHandler<HTMLInputElement>,
+    value: string
+  ) => void;
   /**
    * The function that will be executed onKeyDown, allows checking the value state,
    * it receives the event and value.
    */
-  onKeyDown?: Function;
+  onKeyDown?: (
+    event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent,
+    value: string
+  ) => void;
   /** The input type. */
   type?: HTMLInputTypeAttribute;
   /** The placeholder value of the input. */
@@ -127,13 +154,13 @@ export type HvInputProps = HvBaseProps<
   /** Allows passing a ref to the underlying input */
   inputRef?: any;
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
-  suggestionListCallback?: Function;
+  suggestionListCallback?: (value: string) => HvInputSuggestion[] | null;
   /**
    * The custom validation function, it receives the value and must return
    * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
-  validation?: Function;
+  validation?: (value: string) => boolean;
   /** If `true` it should autofocus. */
   autoFocus?: boolean;
   /** If `true` the clear button is disabled. */
@@ -161,11 +188,9 @@ export type HvInputProps = HvBaseProps<
 
 const DEFAULT_LABELS = {
   clearButtonLabel: "Clear the text",
-
   revealPasswordButtonLabel: "Reveal password",
   revealPasswordButtonClickToShowTooltip: "Click to show password.",
   revealPasswordButtonClickToHideTooltip: "Click to hide password.",
-
   searchButtonLabel: "Search",
 };
 
@@ -376,7 +401,7 @@ export const HvInput = ({
   /**
    * Fills of the suggestion array.
    */
-  const suggestionHandler = (val) => {
+  const suggestionHandler = (val: string) => {
     const suggestionsArray = suggestionListCallback?.(val);
     if (suggestionsArray?.[0]?.label) {
       setSuggestionValues(suggestionsArray);
@@ -389,7 +414,7 @@ export const HvInput = ({
    * Executes the user callback adds the selection to the state and clears the suggestions.
    */
   const suggestionSelectedHandler = (event, item) => {
-    const newValue = item.value || item.label;
+    const newValue: string = item.value || item.label;
 
     // set the input value (only when value is uncontrolled)
     setValue(newValue);

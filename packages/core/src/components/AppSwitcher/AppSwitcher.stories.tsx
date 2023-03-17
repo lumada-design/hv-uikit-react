@@ -3,12 +3,12 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvAppSwitcher,
   HvAppSwitcherProps,
-  HvApplication,
+  HvAppSwitcherActionApplication,
   HvTypography,
 } from "components";
 import { useState } from "react";
 
-const applicationsList: HvApplication[] = [
+const applicationsList: HvAppSwitcherActionApplication[] = [
   {
     name: "UI Kit Storybook",
     color: "#FF4785",
@@ -92,7 +92,7 @@ export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
     };
 
     const getDummyApplicationsList = () => {
-      const dummyApplicationsList: HvApplication[] = [];
+      const dummyApplicationsList: HvAppSwitcherActionApplication[] = [];
 
       for (let index = 1; index <= 100; index += 1) {
         dummyApplicationsList.push({

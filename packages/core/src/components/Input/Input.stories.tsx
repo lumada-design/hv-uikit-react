@@ -15,6 +15,7 @@ import {
   HvBaseInput,
 } from "components";
 import countryNamesArray from "./countries";
+import { HvInputSuggestion } from "../../types";
 
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input",
@@ -228,7 +229,7 @@ export const InvalidState: StoryObj<HvInputProps> = {
         defaultValue="Not a name!"
         status={validationState}
         statusMessage={errorMessage}
-        onFocus={(value) => setValidationState(value ? "standBy" : "empty")}
+        onFocus={(_, value) => setValidationState(value ? "standBy" : "empty")}
         onBlur={() => {
           setValidationState("invalid");
           setErrorMessage(
@@ -291,7 +292,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
               required
               status={lastNameValidationState}
               aria-errormessage="lastName-error"
-              onFocus={(value) => {
+              onFocus={(_, value) => {
                 setLastNameValidationState(value ? "standBy" : "empty");
               }}
               onBlur={(_e, _value, inputValidity) => {
@@ -486,7 +487,7 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
 
     return (
       <HvInput
-        id="event-demostration-input"
+        id="event-demonstration-input"
         label="Text I will modify"
         description="Look at the browser's developer console to see the event handlers output"
         placeholder="Insert text"
@@ -545,7 +546,7 @@ export const Suggestion: StoryObj<HvInputProps> = {
 
     const countries = countryNamesArray;
 
-    const suggestionHandler = (val) => {
+    const suggestionHandler = (val: string): HvInputSuggestion[] | null => {
       if (typeof val !== "string" || val === "") return null;
       const foundCountries = countries.filter((country) =>
         country.toUpperCase().startsWith(val.toUpperCase())

@@ -97,8 +97,7 @@ export const BannerController: StoryObj<HvBannerProps> = {
 
       const handleOpen = () => setOpen(true);
 
-      const handleClose = (event, reason) => {
-        if (reason === "clickaway") return;
+      const handleClose = () => {
         setOpen(false);
       };
 
