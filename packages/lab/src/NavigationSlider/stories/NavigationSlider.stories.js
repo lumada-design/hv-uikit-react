@@ -122,9 +122,21 @@ export const Main = () => {
       selected={selectedItem}
       topPosition={0}
       onNavigationChange={navigationChangeHandler}
+      position="absolute"
     />
   );
 };
+
+const DefaultHeader = () => (
+  <HvHeader position="absolute">
+    <HvHeaderNavigation data={headerNavigationData} />
+    <HvHeaderActions>
+      <HvButton icon>
+        <User />
+      </HvButton>
+    </HvHeaderActions>
+  </HvHeader>
+);
 
 export const ExampleWithDefaultHeader = () => {
   const [selectedItem, setSelectedItem] = useState("menu1");
@@ -133,27 +145,32 @@ export const ExampleWithDefaultHeader = () => {
     setSelectedItem(item.id);
   };
 
-  const Header = () => (
-    <HvHeader position="fixed">
-      <HvHeaderNavigation data={headerNavigationData} />
-      <HvHeaderActions>
-        <HvButton icon>
-          <User />
-        </HvButton>
-      </HvHeaderActions>
-    </HvHeader>
-  );
-
   return (
     <>
-      <Header />
+      <DefaultHeader />
       <HvNavigationSlider
         data={verticalNavigationData}
         selected={selectedItem}
         onNavigationChange={navigationChangeHandler}
+        position="absolute"
       />
     </>
   );
+};
+
+const CustomHeader = ({ headerHeight }) => {
+  const styles = {
+    width: "100%",
+    left: 0,
+    top: 0,
+    position: "absolute",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: `${headerHeight}px`,
+    backgroundColor: "lightblue",
+  };
+  return <header style={styles}>This is a custom header</header>;
 };
 
 export const ExampleWithCustomHeader = () => {
@@ -164,31 +181,34 @@ export const ExampleWithCustomHeader = () => {
     setSelectedItem(item.id);
   };
 
-  const Header = () => {
-    const styles = {
-      width: "100%",
-      left: 0,
-      top: 0,
-      position: "fixed",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: `${headerHeight}px`,
-      backgroundColor: "lightblue",
-    };
-    return <header style={styles}>This is a custom header</header>;
-  };
-
   return (
     <>
-      <Header />
+      <CustomHeader headerHeight={headerHeight} />
       <HvNavigationSlider
         topPosition={headerHeight}
         data={verticalNavigationData}
         selected={selectedItem}
         onNavigationChange={navigationChangeHandler}
+        position="absolute"
       />
     </>
+  );
+};
+
+const HeaderWithToggle = ({ onToggle }) => {
+  return (
+    <HvHeader position="absolute">
+      <HvButton style={{ width: 32, height: 32 }} icon onClick={() => onToggle && onToggle()}>
+        <Menu />
+      </HvButton>
+
+      <HvHeaderNavigation data={headerNavigationData} />
+      <HvHeaderActions>
+        <HvButton icon>
+          <User />
+        </HvButton>
+      </HvHeaderActions>
+    </HvHeader>
   );
 };
 
@@ -200,38 +220,36 @@ export const ExampleWithToggle = () => {
     setSelectedItem(item.id);
   };
 
-  const Header = () => {
-    return (
-      <HvHeader position="fixed">
-        <HvButton
-          style={{ width: 32, height: 32 }}
-          icon
-          onClick={() => setIsPanelOpen((prevState) => !prevState)}
-        >
-          <Menu />
-        </HvButton>
-
-        <HvHeaderNavigation data={headerNavigationData} />
-        <HvHeaderActions>
-          <HvButton icon>
-            <User />
-          </HvButton>
-        </HvHeaderActions>
-      </HvHeader>
-    );
-  };
-
   return (
     <>
-      <Header />
+      <HeaderWithToggle onToggle={() => setIsPanelOpen((prevState) => !prevState)} />
       {isPanelOpen && (
         <HvNavigationSlider
           data={verticalNavigationData}
           selected={selectedItem}
           onNavigationChange={navigationChangeHandler}
+          position="absolute"
         />
       )}
     </>
+  );
+};
+
+const HeaderResponsive = ({ onToggle, isMdUp }) => {
+  return (
+    <HvHeader position="absolute">
+      {!isMdUp && (
+        <HvButton style={{ width: 32, height: 32 }} icon onClick={() => onToggle && onToggle()}>
+          <Menu />
+        </HvButton>
+      )}
+      {isMdUp && <HvHeaderNavigation data={headerNavigationData} />}
+      <HvHeaderActions>
+        <HvButton icon>
+          <User />
+        </HvButton>
+      </HvHeaderActions>
+    </HvHeader>
   );
 };
 
@@ -245,36 +263,18 @@ export const ExampleResponsive = () => {
     setSelectedItem(item.id);
   };
 
-  const Header = () => {
-    return (
-      <HvHeader position="fixed">
-        {!isMdUp && (
-          <HvButton
-            style={{ width: 32, height: 32 }}
-            icon
-            onClick={() => setIsPanelOpen((prevState) => !prevState)}
-          >
-            <Menu />
-          </HvButton>
-        )}
-        {isMdUp && <HvHeaderNavigation data={headerNavigationData} />}
-        <HvHeaderActions>
-          <HvButton icon>
-            <User />
-          </HvButton>
-        </HvHeaderActions>
-      </HvHeader>
-    );
-  };
-
   return (
     <>
-      <Header />
+      <HeaderResponsive
+        onToggle={() => setIsPanelOpen((prevState) => !prevState)}
+        isMdUp={isMdUp}
+      />
       {isPanelOpen && !isMdUp && (
         <HvNavigationSlider
           data={headerNavigationData}
           selected={selectedItem}
           onNavigationChange={navigationChangeHandler}
+          position="absolute"
         />
       )}
     </>
