@@ -18,7 +18,7 @@
     "build:js": "vite build",
     "clean": "npx rimraf dist package",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npx clean-publish --fields main --files tsconfig.json"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
@@ -41,6 +41,12 @@
   },
   "clean-publish": {
     "withoutPublish": true,
-    "tempDir": "package"
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
   }
 }

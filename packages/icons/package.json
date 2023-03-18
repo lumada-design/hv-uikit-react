@@ -31,7 +31,7 @@
     "convert:copy": "npx cpy-cli \"src/IconBase*\" \"bin\"",
     "clean": "npx rimraf dist bin package",
     "prepare": "npm run convert",
-    "prepublishOnly": "npm run build && npx clean-publish --fields main --files tsconfig.json"
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
     "@emotion/styled": "^11.10.6",
@@ -73,6 +73,12 @@
   },
   "clean-publish": {
     "withoutPublish": true,
-    "tempDir": "package"
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
   }
 }
