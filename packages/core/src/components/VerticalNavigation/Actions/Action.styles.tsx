@@ -5,44 +5,44 @@ import { outlineStyles } from "utils";
 import actionClasses from "./actionClasses";
 
 const hover = () => ({
+  background: theme.verticalNavigation.hoverColor,
+  "& *": {
     background: theme.verticalNavigation.hoverColor,
-    "& *": {
-      background: theme.verticalNavigation.hoverColor,
-    },
-  });
+  },
+});
 
 export const StyledAction = styled(HvTypography)({
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "32px",
-    color: theme.colors.acce1,
+  width: "100%",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  height: "32px",
+  color: theme.colors.acce1,
 
-    // hover
-    "&:hover": hover(),
+  // hover
+  "&:hover": hover(),
 
-    "&:focus": {
-      outline: "none",
-      ...hover(),
-    },
+  "&:focus": {
+    outline: "none",
+    ...hover(),
+  },
 
-    "&:focus-visible": {
-      ...outlineStyles,
-    },
+  "&:focus-visible": {
+    ...outlineStyles,
+  },
 
-    // cursor
+  // cursor
+  cursor: "pointer",
+  "& *": {
     cursor: "pointer",
-    "& *": {
-      cursor: "pointer",
-    },    
+  },
 
-    [`& .${actionClasses.noIcon}`] : {
-        paddingLeft: theme.space.xs
-    },
+  [`& .${actionClasses.noIcon}`]: {
+    paddingLeft: theme.space.xs,
+  },
 
-    [`&.${actionClasses.minimized}`]: {
-      justifyContent: "center",
-      paddingRight: 0,
-    },
-})
+  [`&.${actionClasses.minimized}`]: {
+    justifyContent: "center",
+    paddingRight: 0,
+  },
+});

@@ -1,99 +1,112 @@
-import { BarChart, Deploy, LogOut, Open, User } from "@hitachivantara/uikit-react-icons";
+import {
+  BarChart,
+  Deploy,
+  LogOut,
+  Open,
+  User,
+} from "@hitachivantara/uikit-react-icons";
 import { StoryObj } from "@storybook/react";
 import { useEffect, useMemo, useState } from "react";
 import { HvVerticalNavigationAction } from "./Actions/Action";
 import { HvVerticalNavigationActions } from "./Actions/Actions";
 import { HvVerticalNavigationHeader } from "./Header/Header";
-import { HvVerticalNavigationTree, NavigationData } from "./Navigation/Navigation";
-import { HvVerticalNavigation, HvVerticalNavigationProps } from "./VerticalNavigation";
+import {
+  HvVerticalNavigationTree,
+  NavigationData,
+} from "./Navigation/Navigation";
+import {
+  HvVerticalNavigation,
+  HvVerticalNavigationProps,
+} from "./VerticalNavigation";
 
-export default { title: "Structure/Vertical Navigation", component: HvVerticalNavigation };
+export default {
+  title: "Components/Vertical Navigation",
+  component: HvVerticalNavigation,
+};
 
-export const Main: StoryObj<HvVerticalNavigationProps> =  {
-    args: {},
-    argTypes: {},
-    render: () => {
+export const Main: StoryObj<HvVerticalNavigationProps> = {
+  args: {},
+  argTypes: {},
+  render: () => {
+    const navigationData = useMemo(
+      () => [
+        { id: "00", label: "Overview" },
+        { id: "01", label: "Analytics", selectable: false },
+        {
+          id: "02",
+          label: "Storage",
+          data: [
+            {
+              id: "02-01",
+              label: "Cloud",
+              data: [
+                {
+                  id: "02-01-01",
+                  label: "Servers",
+                  href: "https://www.hitachivantara.com/en-us/news.html",
+                },
+                {
+                  id: "02-01-02",
+                  label: "HCP Anywhere",
+                  href: "/?path=/story/structure-vertical-navigation--main",
+                },
+                {
+                  id: "02-01-03",
+                  label: "This Computer",
+                  disabled: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "03",
+          label: "Administration",
+          data: [
+            {
+              id: "03-01",
+              label: "Rest API",
+              data: [
+                {
+                  id: "03-01-01",
+                  label: "Log Bundle",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      []
+    );
 
-        const navigationData = useMemo(
-            () => [
-              { id: "00", label: "Overview" },
-              { id: "01", label: "Analytics", selectable: false },
-              {
-                id: "02",
-                label: "Storage",
-                data: [
-                  {
-                    id: "02-01",
-                    label: "Cloud",
-                    data: [
-                      {
-                        id: "02-01-01",
-                        label: "Servers",
-                        href: "https://www.hitachivantara.com/en-us/news.html",
-                      },
-                      {
-                        id: "02-01-02",
-                        label: "HCP Anywhere",
-                        href: "/?path=/story/structure-vertical-navigation--main",
-                      },
-                      {
-                        id: "02-01-03",
-                        label: "This Computer",
-                        disabled: true,
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                id: "03",
-                label: "Administration",
-                data: [
-                  {
-                    id: "03-01",
-                    label: "Rest API",
-                    data: [
-                      {
-                        id: "03-01-01",
-                        label: "Log Bundle",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-            []
-          );
-        
-          const [value, setValue] = useState("00");
-        return (
-            <div style={{ display: "flex", width: 220, height: 530 }}>
-                <HvVerticalNavigation id="sample1">
-                    <HvVerticalNavigationTree
-                        aria-label="Example 1 navigation"
-                        selected={value}
-                        onChange={(event, data) => {
-                        console.log(data);
-                        if (data.id === "02-01-01") {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        setValue(data.id);
-                        }}
-                        data={navigationData}
-                    />
-                <HvVerticalNavigationActions>
-                    <HvVerticalNavigationAction label="Profile" icon={<User />} />
-                    <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
-                </HvVerticalNavigationActions>
-            </HvVerticalNavigation>
-          </div>
-        )
-    }
-}
+    const [value, setValue] = useState("00");
+    return (
+      <div style={{ display: "flex", width: 220, height: 530 }}>
+        <HvVerticalNavigation id="sample1">
+          <HvVerticalNavigationTree
+            aria-label="Example 1 navigation"
+            selected={value}
+            onChange={(event, data) => {
+              console.log(data);
+              if (data.id === "02-01-01") {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              setValue(data.id);
+            }}
+            data={navigationData}
+          />
+          <HvVerticalNavigationActions>
+            <HvVerticalNavigationAction label="Profile" icon={<User />} />
+            <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+          </HvVerticalNavigationActions>
+        </HvVerticalNavigation>
+      </div>
+    );
+  },
+};
 
-export const TreeViewMode: StoryObj<HvVerticalNavigationProps> =  {
-
+export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
   render: () => {
     const navigationData = useMemo(
       () => [
@@ -143,9 +156,9 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> =  {
       ],
       []
     );
-  
+
     const [value, setValue] = useState("01-01");
-  
+
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
         <HvVerticalNavigation>
@@ -168,12 +181,10 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> =  {
         </HvVerticalNavigation>
       </div>
     );
+  },
+};
 
-  }
-}
-
-export const WithoutActions: StoryObj<HvVerticalNavigationProps> =  {
-
+export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
   render: () => {
     const navigationData = useMemo(
       () => [
@@ -241,9 +252,9 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> =  {
       ],
       []
     );
-  
+
     const [value, setValue] = useState("02-03-02");
-  
+
     return (
       <div style={{ display: "flex", width: 220 }}>
         <HvVerticalNavigation id="sample2">
@@ -258,81 +269,83 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> =  {
         </HvVerticalNavigation>
       </div>
     );
+  },
+};
 
-  }
-}
-
-export const Collapsible: StoryObj<HvVerticalNavigationProps> =  {
-
+export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
   render: () => {
-
-    const [ navigationDataState, setNavigationDataState] = useState<NavigationData[]>([]);
+    const [navigationDataState, setNavigationDataState] = useState<
+      NavigationData[]
+    >([]);
 
     useEffect(() => {
-      setNavigationDataState(
-        [
-          { id: "00", label: "Instalation Overview"},
-          {
-            id: "01",
-            label: "Hardware",
-            icon: <BarChart />,
-            data: [
-              {
-                id: "01-01",
-                label: "Ambient Monitoring",
-              },
-              {
-                id: "01-02",
-                label: "Server Status Summary",
-              },
-            ],
-          },
-          {
-            id: "02",
-            label: "System",
-            data: [
-              {
-                id: "02-01",
-                label: "Buckets",
-              },
-              {
-                id: "02-02",
-                label: "Admin Users",
-              },
-              {
-                id: "02-03",
-                label: "Log Bundle",
-                data: [
-                  {
-                    id: "02-03-01",
-                    label: "Rest API",
-                  },
-                  {
-                    id: "02-03-02",
-                    label: "License",
-                  },
-                ],
-              },
-            ],
-          },
-        ]       
-      )
-    },[])
-  
+      setNavigationDataState([
+        { id: "00", label: "Instalation Overview" },
+        {
+          id: "01",
+          label: "Hardware",
+          icon: <BarChart />,
+          data: [
+            {
+              id: "01-01",
+              label: "Ambient Monitoring",
+            },
+            {
+              id: "01-02",
+              label: "Server Status Summary",
+            },
+          ],
+        },
+        {
+          id: "02",
+          label: "System",
+          data: [
+            {
+              id: "02-01",
+              label: "Buckets",
+            },
+            {
+              id: "02-02",
+              label: "Admin Users",
+            },
+            {
+              id: "02-03",
+              label: "Log Bundle",
+              data: [
+                {
+                  id: "02-03-01",
+                  label: "Rest API",
+                },
+                {
+                  id: "02-03-02",
+                  label: "License",
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    }, []);
+
     const [value, setValue] = useState("01-01");
 
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
 
     const handleIsExpanded = () => {
-        setShow(!show)
-    }
+      setShow(!show);
+    };
 
-
-  
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
         <HvVerticalNavigation open={show} collapsedMode={"simple"}>
-          <HvVerticalNavigationHeader title="Menu" onClick={handleIsExpanded} buttonProps={{ "aria-label" : "collapseButton", "aria-expanded" : show}}/>
+          <HvVerticalNavigationHeader
+            title="Menu"
+            onClick={handleIsExpanded}
+            buttonProps={{
+              "aria-label": "collapseButton",
+              "aria-expanded": show,
+            }}
+          />
           <HvVerticalNavigationTree
             mode="treeview"
             collapsible
@@ -346,121 +359,123 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> =  {
             data={navigationDataState}
           />
           <HvVerticalNavigationActions>
-            <HvVerticalNavigationAction label="Profile" icon={<User />}/>
-            <HvVerticalNavigationAction label="Logout" icon={<LogOut />}/>
+            <HvVerticalNavigationAction label="Profile" icon={<User />} />
+            <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
           </HvVerticalNavigationActions>
         </HvVerticalNavigation>
       </div>
     );
+  },
+};
 
-  }
-}
-
-export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> =  {
-
+export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
   render: () => {
-
-    const [ navigationDataState, setNavigationDataState] = useState<NavigationData[]>([]);
+    const [navigationDataState, setNavigationDataState] = useState<
+      NavigationData[]
+    >([]);
 
     useEffect(() => {
-      setNavigationDataState(
-        [
-          { id: "00", label: "Instalation Overview" , icon: <Open />},
-          {
-            id: "01",
-            label: "Hardware",
-            icon: <BarChart />,
-            selectable: true,
-            data: [
-              {
-                id: "01-01",
-                label: "Ambient Monitoring",
-              },
-              {
-                id: "01-02",
-                label: "Server Status Summary",
-              },
-            ],
-          },
-          {
-            id: "02",
-            label: "System",
-            icon: <Deploy />,
-            selectable: true,
-            data: [
-              {
-                id: "02-01",
-                label: "Buckets",
-                icon: <Deploy />,
-              },
-              {
-                id: "02-02",
-                label: "Admin Users",
-              },
-              {
-                id: "02-03",
-                label: "Log Bundle",
-                data: [
-                  {
-                    id: "02-03-01",
-                    label: "Rest API",
-                  },
-                  {
-                    id: "02-03-02",
-                    label: "License",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "03",
-            label: "System 2",
-            // icon: <Deploy />,
-            selectable: true,
-            data: [
-              {
-                id: "03-01",
-                label: "Buckets",
-              },
-              {
-                id: "03-02",
-                label: "Admin Users",
-              },
-              {
-                id: "03-03",
-                label: "Log Bundle",
-                data: [
-                  {
-                    id: "03-03-01",
-                    label: "Rest API",
-                  },
-                  {
-                    id: "03-03-02",
-                    label: "License",
-                  },
-                ],
-              },
-            ],
-          },
-        ]       
-      )
-    },[])
-  
+      setNavigationDataState([
+        { id: "00", label: "Instalation Overview", icon: <Open /> },
+        {
+          id: "01",
+          label: "Hardware",
+          icon: <BarChart />,
+          selectable: true,
+          data: [
+            {
+              id: "01-01",
+              label: "Ambient Monitoring",
+            },
+            {
+              id: "01-02",
+              label: "Server Status Summary",
+            },
+          ],
+        },
+        {
+          id: "02",
+          label: "System",
+          icon: <Deploy />,
+          selectable: true,
+          data: [
+            {
+              id: "02-01",
+              label: "Buckets",
+              icon: <Deploy />,
+            },
+            {
+              id: "02-02",
+              label: "Admin Users",
+            },
+            {
+              id: "02-03",
+              label: "Log Bundle",
+              data: [
+                {
+                  id: "02-03-01",
+                  label: "Rest API",
+                },
+                {
+                  id: "02-03-02",
+                  label: "License",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "03",
+          label: "System 2",
+          // icon: <Deploy />,
+          selectable: true,
+          data: [
+            {
+              id: "03-01",
+              label: "Buckets",
+            },
+            {
+              id: "03-02",
+              label: "Admin Users",
+            },
+            {
+              id: "03-03",
+              label: "Log Bundle",
+              data: [
+                {
+                  id: "03-03-01",
+                  label: "Rest API",
+                },
+                {
+                  id: "03-03-02",
+                  label: "License",
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    }, []);
+
     const [value, setValue] = useState("01-01");
 
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
 
     const handleIsExpanded = () => {
-        setShow(!show)
-    }
+      setShow(!show);
+    };
 
-
-  
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
         <HvVerticalNavigation open={show} collapsedMode={"icon"}>
-          <HvVerticalNavigationHeader title="Menu" onClick={handleIsExpanded} buttonProps={{ "aria-label" : "collapseButton", "aria-expanded" : show}}/>
+          <HvVerticalNavigationHeader
+            title="Menu"
+            onClick={handleIsExpanded}
+            buttonProps={{
+              "aria-label": "collapseButton",
+              "aria-expanded": show,
+            }}
+          />
           <HvVerticalNavigationTree
             mode="treeview"
             collapsible
@@ -474,12 +489,11 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> =  {
             data={navigationDataState}
           />
           <HvVerticalNavigationActions>
-            <HvVerticalNavigationAction label="Profile" icon={<User />}/>
-            <HvVerticalNavigationAction label="Logout" icon={<LogOut />}/>
+            <HvVerticalNavigationAction label="Profile" icon={<User />} />
+            <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
           </HvVerticalNavigationActions>
         </HvVerticalNavigation>
       </div>
     );
-
-  }
-}
+  },
+};

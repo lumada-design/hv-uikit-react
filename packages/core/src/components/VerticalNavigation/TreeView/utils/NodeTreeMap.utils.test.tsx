@@ -66,10 +66,15 @@ describe("NodeTreeMapUtils", () => {
 
   describe("addNodeToNodeMap", () => {
     it("should add", () => {
-      const result = NodeTreeMapUtils.addNodeToNodeMap(nodeMap, "Z", ["Z1", "Z2"], {
-        label: "Z",
-        path: "something",
-      });
+      const result = NodeTreeMapUtils.addNodeToNodeMap(
+        nodeMap,
+        "Z",
+        ["Z1", "Z2"],
+        {
+          label: "Z",
+          path: "something",
+        }
+      );
 
       expect(Object.is(nodeMap, result)).toBe(false);
       expect(result).toEqual({

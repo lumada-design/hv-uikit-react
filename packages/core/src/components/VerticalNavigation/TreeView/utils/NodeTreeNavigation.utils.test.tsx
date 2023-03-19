@@ -62,13 +62,21 @@ describe("NodeTreeNavigationUtils", () => {
 
   describe("getNextNode", () => {
     it("no children, should return next sibling", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "B");
+      const foundNodeId = NodeTreeNavigationUtils.getNextNode(
+        () => false,
+        nodeMap,
+        "B"
+      );
 
       expect(foundNodeId).toEqual("C");
     });
 
     it("with children but collapsed, should return next sibling", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A");
+      const foundNodeId = NodeTreeNavigationUtils.getNextNode(
+        () => false,
+        nodeMap,
+        "A"
+      );
 
       expect(foundNodeId).toEqual("B");
     });
@@ -84,13 +92,21 @@ describe("NodeTreeNavigationUtils", () => {
     });
 
     it("if last child, should return parent's next sibling", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A3");
+      const foundNodeId = NodeTreeNavigationUtils.getNextNode(
+        () => false,
+        nodeMap,
+        "A3"
+      );
 
       expect(foundNodeId).toEqual("B");
     });
 
     it("if last grandchild, should return grandparent's next sibling", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A3c");
+      const foundNodeId = NodeTreeNavigationUtils.getNextNode(
+        () => false,
+        nodeMap,
+        "A3c"
+      );
 
       expect(foundNodeId).toEqual("B");
     });
@@ -108,13 +124,21 @@ describe("NodeTreeNavigationUtils", () => {
     });
 
     it("if previous sibling has no children, should return it", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(() => false, nodeMap, "C");
+      const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
+        () => false,
+        nodeMap,
+        "C"
+      );
 
       expect(foundNodeId).toEqual("B");
     });
 
     it("if previous sibling has children but is collapsed, should return it", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(() => false, nodeMap, "B");
+      const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
+        () => false,
+        nodeMap,
+        "B"
+      );
 
       expect(foundNodeId).toEqual("A");
     });
@@ -152,25 +176,39 @@ describe("NodeTreeNavigationUtils", () => {
 
   describe("getLastNode", () => {
     it("if last top node is collapsed or childless, return last node", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getLastNode(() => false, nodeMap);
+      const foundNodeId = NodeTreeNavigationUtils.getLastNode(
+        () => false,
+        nodeMap
+      );
 
       expect(foundNodeId).toEqual("C");
     });
 
     it("if last top node is expanded, return last child", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getLastNode((nodeId) => nodeId === "C", nodeMap);
+      const foundNodeId = NodeTreeNavigationUtils.getLastNode(
+        (nodeId) => nodeId === "C",
+        nodeMap
+      );
 
       expect(foundNodeId).toEqual("C3");
     });
 
     it("if collapsed, return itself", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getLastNode(() => false, nodeMap, "A");
+      const foundNodeId = NodeTreeNavigationUtils.getLastNode(
+        () => false,
+        nodeMap,
+        "A"
+      );
 
       expect(foundNodeId).toEqual("A");
     });
 
     it("if childless, return itself", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getLastNode(() => false, nodeMap, "B");
+      const foundNodeId = NodeTreeNavigationUtils.getLastNode(
+        () => false,
+        nodeMap,
+        "B"
+      );
 
       expect(foundNodeId).toEqual("B");
     });
@@ -200,7 +238,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("if not found, should return null", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A",
         "z"
       );
@@ -222,7 +273,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("if found should return it", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A",
         "j"
       );
@@ -233,7 +297,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("if found should return it (uppercase)", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A",
         "J"
       );
@@ -244,7 +321,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("if multiple should return first after current node", () => {
       let foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A",
         "b"
       );
@@ -253,7 +343,20 @@ describe("NodeTreeNavigationUtils", () => {
 
       foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A3c",
         "b"
       );
@@ -264,7 +367,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("must not return current node", () => {
       let foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "C1",
         "g"
       );
@@ -273,7 +389,20 @@ describe("NodeTreeNavigationUtils", () => {
 
       foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "A3a",
         "i"
       );
@@ -284,7 +413,20 @@ describe("NodeTreeNavigationUtils", () => {
     it("should start from top if not found after current node", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,
-        ["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C", "C1", "C2", "C3"],
+        [
+          "A",
+          "A1",
+          "A2",
+          "A3",
+          "A3a",
+          "A3b",
+          "A3c",
+          "B",
+          "C",
+          "C1",
+          "C2",
+          "C3",
+        ],
         "C",
         "d"
       );

@@ -7,15 +7,11 @@ export type HvVerticalNavigationClasses = {
   collapsed?: string;
 };
 
-const classKeys: string[] = [
-  "root",
-  "collapsed",
-];
+const classKeys: string[] = ["root", "collapsed"];
 
-const verticalNavigationClasses =
-  getClasses<HvVerticalNavigationClasses>(
-    classKeys,
-    "HvVerticalNavigation"
-  );
+const verticalNavigationClasses = getClasses<HvVerticalNavigationClasses>(
+  classKeys,
+  "HvVerticalNavigation"
+);
 
 export default verticalNavigationClasses;

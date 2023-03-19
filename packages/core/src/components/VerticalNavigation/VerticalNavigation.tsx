@@ -1,17 +1,20 @@
 import clsx from "clsx";
 import { createContext, useMemo } from "react";
 import { StyledRoot } from "./VerticalNavigation.styles";
-import verticalNavigationClasses, { HvVerticalNavigationClasses } from "./verticalNavigationClasses";
+import verticalNavigationClasses, {
+  HvVerticalNavigationClasses,
+} from "./verticalNavigationClasses";
 
 interface VerticalNavigationContextValue {
-  isOpen: boolean,
-  collapsedMode: HvVerticalNavigationMode,
+  isOpen: boolean;
+  collapsedMode: HvVerticalNavigationMode;
 }
 
-export const VerticalNavigationContext = createContext<VerticalNavigationContextValue>({
-  isOpen: true,
-  collapsedMode: "simple",
-})
+export const VerticalNavigationContext =
+  createContext<VerticalNavigationContextValue>({
+    isOpen: true,
+    collapsedMode: "simple",
+  });
 
 /**
  * Navigation enables users to move through an app to complete tasks.
@@ -41,22 +44,26 @@ export const HvVerticalNavigation = ({
   collapsedMode = "simple",
 
   ...others
-}:HvVerticalNavigationProps) => {
-
+}: HvVerticalNavigationProps) => {
   const value = useMemo(
     () => ({
       isOpen: open,
-      collapsedMode
-    }),[open]
-  )
+      collapsedMode,
+    }),
+    [open]
+  );
 
   const content = (
     <VerticalNavigationContext.Provider value={value}>
       <StyledRoot
         id={id}
-        className={clsx(className, verticalNavigationClasses.root, classes?.root,
-          !open && verticalNavigationClasses.collapsed, classes?.collapsed,
-          )}
+        className={clsx(
+          className,
+          verticalNavigationClasses.root,
+          classes?.root,
+          !open && verticalNavigationClasses.collapsed,
+          classes?.collapsed
+        )}
         {...others}
       >
         {children}
@@ -67,35 +74,37 @@ export const HvVerticalNavigation = ({
   return content;
 };
 
-
-
 export type HvVerticalNavigationProps = {
-    /**
-     * Id to be applied to the root node.
-     */
-    id?: string,
-    /**
-     * Class names to be applied.
-     */
-    className?: string,
-    /**
-     * A Jss Object used to override or extend the styles applied to the component.
-     */
-    classes?: HvVerticalNavigationClasses,
-    /**
-     * Current State of the Vertical Navigation Collapse
-     */
-    open?: boolean,
-    /**
-     *  Collpased Mode for the Vertical Navigation, the default value is "simple".
-     */
-    collapsedMode?: HvVerticalNavigationMode,
-    /**
-     * The content inside the actions container.
-     */
-    children?: React.ReactNode,
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the component.
+   */
+  classes?: HvVerticalNavigationClasses;
+  /**
+   * Current State of the Vertical Navigation Collapse
+   */
+  open?: boolean;
+  /**
+   *  Collpased Mode for the Vertical Navigation, the default value is "simple".
+   */
+  collapsedMode?: HvVerticalNavigationMode;
+  /**
+   * The content inside the actions container.
+   */
+  children?: React.ReactNode;
 };
 
-export type HvVerticalNavigationMode = "icon" | "simple" ;
+export type HvVerticalNavigationMode = "icon" | "simple";
 
-export type HvVerticalNavigationPosition = "static" | "relative" | "fixed" | "absolute";
+export type HvVerticalNavigationPosition =
+  | "static"
+  | "relative"
+  | "fixed"
+  | "absolute";
