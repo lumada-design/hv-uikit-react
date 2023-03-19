@@ -25,8 +25,8 @@ import {
   Switch,
   Snackbars,
   Calendar,
+  VerticalNavigation,
 } from "components/components";
-import { VerticalNavigation } from "components/components/VerticalNavigation";
 
 const styles = {
   display: "flex",
