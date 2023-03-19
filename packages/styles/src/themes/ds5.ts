@@ -381,6 +381,14 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   tooltip: {
     borderRadius: theme.radii.round,
   },
+  verticalNavigation: {
+    justifyContent: "flex-start",
+    hoverColor: theme.colors.acce2s,
+    activeBorderLeft: `4px solid ${theme.colors.acce1}`,
+    inactiveBorderLeft: `4px solid transparent`,
+    actionsMarginTop: "auto",
+    // expandendFontWeight: string,
+  },
 }));
 
 export default ds5;

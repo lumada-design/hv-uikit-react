@@ -15,7 +15,7 @@ import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { HvButtonVariant, HvList, HvListValue } from "components";
 import { useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
-import { withId } from "hocs";
+import withId from "../../hocs/withId";
 import { ClassNames } from "@emotion/react";
 
 export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {

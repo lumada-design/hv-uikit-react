@@ -10,3 +10,5 @@ export { default as multiSelectionEventHandler } from "./multiSelectionEventHand
 export * from "./classes";
 export { default as getComponentName } from "./getComponentName";
 export { default as Random } from "./Random";
+export * from "./focusableElementFinder";
+export * from "./wrapperTooltip";

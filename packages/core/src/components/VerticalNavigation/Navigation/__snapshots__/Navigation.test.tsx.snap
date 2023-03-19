@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VerticalNavigation - Navigation > should render correctly 1`] = `
+<div>
+  <nav
+    aria-label="Example 1 navigation"
+    class="HvVerticalNavigationTree-root css-ovxg28-StyledNav ejose0b0"
+  >
+    <ul
+      class="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list css-1xsm1gc-StyledRoot e7gq1cg0"
+    />
+  </nav>
+</div>
+`;

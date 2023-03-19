@@ -1,0 +1,422 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VerticalNavigation > should render correctly 1`] = `
+<div>
+  <div
+    style="display: flex; width: 220px; height: 530px;"
+  >
+    <div
+      class="HvVerticalNavigation-root css-1400ftt-StyledRoot eyka99t0"
+      id="sample1"
+    >
+      <div
+        class="HvVerticalNavigationHeader-root css-12dbsib-StyledHeader e1arrhkt0"
+      >
+        <h3
+          class="HvTypography-root HvTypography-title3 css-ywsy37-getStyledComponent e1tnpalo0"
+        >
+          Menu
+        </h3>
+        <button
+          aria-expanded="true"
+          aria-label="collapseButton"
+          class="HvButton-root css-r4biv1-StyledButton e138pvrm0"
+        >
+          <div
+            class="css-1nxr552-StyledContentDiv e138pvrm3"
+          >
+            <span
+              class="css-1o4qkkz-StyledChildren e138pvrm1"
+            >
+              <div
+                class="css-f95wjz"
+                name="Backwards"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M11.30863 15.5 4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                    fill="var(--uikit-colors-acce1)"
+                  />
+                </svg>
+              </div>
+            </span>
+          </div>
+        </button>
+      </div>
+      <nav
+        aria-label="Example 1 navigation"
+        class="HvVerticalNavigationTree-root css-ovxg28-StyledNav ejose0b0"
+      >
+        <ul
+          class="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list css-1xsm1gc-StyledRoot e7gq1cg0"
+        >
+          <li
+            class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected css-1y9s9wc-StyledNode er1eqbm1"
+            id="hvtreeview2-00"
+          >
+            <div
+              aria-current="page"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+              id="hvtreeview2-00-button"
+              role="button"
+              style="padding-left: 10px;"
+              tabindex="0"
+            >
+              <div
+                class=""
+                data-mui-internal-clone-element="true"
+                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+              >
+                Overview
+              </div>
+            </div>
+          </li>
+          <li
+            class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
+            id="hvtreeview2-01"
+          >
+            <div
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+              id="hvtreeview2-01-button"
+              role="button"
+              style="padding-left: 10px;"
+              tabindex="-1"
+            >
+              <div
+                class=""
+                data-mui-internal-clone-element="true"
+                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+              >
+                Analytics
+              </div>
+            </div>
+          </li>
+          <li
+            class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
+            id="hvtreeview2-02"
+          >
+            <div
+              aria-controls="hvtreeview2-02-group"
+              aria-expanded="false"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+              id="hvtreeview2-02-button"
+              role="button"
+              style="padding-left: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="css-f95wjz"
+                name="DropDownXS"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="var(--uikit-colors-acce1)"
+                  />
+                </svg>
+              </div>
+              <div
+                class=""
+                data-mui-internal-clone-element="true"
+                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+              >
+                Storage
+              </div>
+            </div>
+            <ul
+              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+              id="hvtreeview2-02-group"
+            >
+              <li
+                class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
+                id="hvtreeview2-02-01"
+              >
+                <div
+                  aria-controls="hvtreeview2-02-01-group"
+                  aria-expanded="false"
+                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+                  id="hvtreeview2-02-01-button"
+                  role="button"
+                  style="padding-left: 32px;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-f95wjz"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="var(--uikit-colors-acce1)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class=""
+                    data-mui-internal-clone-element="true"
+                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                  >
+                    Cloud
+                  </div>
+                </div>
+                <ul
+                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+                  id="hvtreeview2-02-01-group"
+                >
+                  <li
+                    class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
+                    id="hvtreeview2-02-01-01"
+                  >
+                    <a
+                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+                      href="https://www.hitachivantara.com/en-us/news.html"
+                      id="hvtreeview2-02-01-01-button"
+                      role="button"
+                      style="padding-left: 74px;"
+                      tabindex="0"
+                    >
+                      <div
+                        class=""
+                        data-mui-internal-clone-element="true"
+                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                      >
+                        Servers
+                      </div>
+                    </a>
+                  </li>
+                  <li
+                    class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
+                    id="hvtreeview2-02-01-02"
+                  >
+                    <a
+                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+                      href="/?path=/story/structure-vertical-navigation--main"
+                      id="hvtreeview2-02-01-02-button"
+                      role="button"
+                      style="padding-left: 74px;"
+                      tabindex="0"
+                    >
+                      <div
+                        class=""
+                        data-mui-internal-clone-element="true"
+                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                      >
+                        HCP Anywhere
+                      </div>
+                    </a>
+                  </li>
+                  <li
+                    class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-disabled css-1y9s9wc-StyledNode er1eqbm1"
+                    id="hvtreeview2-02-01-03"
+                  >
+                    <div
+                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-mbbta7-getStyledComponent-StyledContent e1tnpalo0"
+                      id="hvtreeview2-02-01-03-button"
+                      role="button"
+                      style="padding-left: 74px;"
+                      tabindex="0"
+                    >
+                      <div
+                        class=""
+                        data-mui-internal-clone-element="true"
+                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                      >
+                        This Computer
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
+            id="hvtreeview2-03"
+          >
+            <div
+              aria-controls="hvtreeview2-03-group"
+              aria-expanded="false"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+              id="hvtreeview2-03-button"
+              role="button"
+              style="padding-left: 0px;"
+              tabindex="0"
+            >
+              <div
+                class="css-f95wjz"
+                name="DropDownXS"
+              >
+                <svg
+                  focusable="false"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="var(--uikit-colors-acce1)"
+                  />
+                </svg>
+              </div>
+              <div
+                class=""
+                data-mui-internal-clone-element="true"
+                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+              >
+                Administration
+              </div>
+            </div>
+            <ul
+              class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+              id="hvtreeview2-03-group"
+            >
+              <li
+                class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
+                id="hvtreeview2-03-01"
+              >
+                <div
+                  aria-controls="hvtreeview2-03-01-group"
+                  aria-expanded="false"
+                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+                  id="hvtreeview2-03-01-button"
+                  role="button"
+                  style="padding-left: 32px;"
+                  tabindex="0"
+                >
+                  <div
+                    class="css-f95wjz"
+                    name="DropDownXS"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="var(--uikit-colors-acce1)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class=""
+                    data-mui-internal-clone-element="true"
+                    style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                  >
+                    Rest API
+                  </div>
+                </div>
+                <ul
+                  class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
+                  id="hvtreeview2-03-01-group"
+                >
+                  <li
+                    class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
+                    id="hvtreeview2-03-01-01"
+                  >
+                    <div
+                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1yu9rnx-getStyledComponent-StyledContent e1tnpalo0"
+                      id="hvtreeview2-03-01-01-button"
+                      role="button"
+                      style="padding-left: 74px;"
+                      tabindex="0"
+                    >
+                      <div
+                        class=""
+                        data-mui-internal-clone-element="true"
+                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                      >
+                        Log Bundle
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="HvVerticalNavigationActions-root css-btrerb-StyledRoot e11q2fjk0"
+      >
+        <div
+          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-prxfu3-getStyledComponent-StyledAction e1tnpalo0"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="css-f95wjz"
+            name="User"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M9.6 8.7A4.49656 4.49656 0 0 0 8.03809 0Q8.019-.00007 8 0a4.481 4.481 0 0 0-4.5 4.46194q-.00009.019 0 .03808A4.563 4.563 0 0 0 6.4 8.7 7.687 7.687 0 0 0 .5 16h1a6.487 6.487 0 0 1 6.474-6.5H8a6.487 6.487 0 0 1 6.5 6.474V16h1a7.493 7.493 0 0 0-5.9-7.3zM4.5 4.5A3.543 3.543 0 0 1 8 1a3.543 3.543 0 0 1 3.5 3.5A3.543 3.543 0 0 1 8 8a3.543 3.543 0 0 1-3.5-3.5z"
+                fill="var(--uikit-colors-acce1)"
+              />
+            </svg>
+          </div>
+          Profile
+        </div>
+        <div
+          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-prxfu3-getStyledComponent-StyledAction e1tnpalo0"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="css-f95wjz"
+            name="LogOut"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M16 16H6v-1h9V1H6V0h10zm-3-7.5v-1H2.7l3-3-.7-.7L.7 8 5 12.2l.7-.7-3-3z"
+                fill="var(--uikit-colors-acce1)"
+              />
+            </svg>
+          </div>
+          Logout
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

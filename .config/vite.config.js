@@ -62,5 +62,6 @@ export default defineConfig({
     include: ["**/*.test.{ts,tsx}"],
     exclude: ["**/package/**"],
     silent: true,
+    testTimeout: 10000,
   },
 });

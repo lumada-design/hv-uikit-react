@@ -69,3 +69,4 @@ export * from "./Table";
 export * from "./Login";
 export * from "./Controls";
 export * from "./Calendar";
+export * from "./VerticalNavigation";

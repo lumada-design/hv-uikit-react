@@ -12,9 +12,9 @@ import {
 } from "./List.styles";
 import listClasses, { HvListClasses } from "./listClasses";
 import useSelectableList from "./useSelectableList";
-import { parseList, wrapperTooltip } from "./utils";
+import { parseList } from "./utils";
 import { HvListContainer, HvTypography } from "components";
-import { setId } from "utils";
+import { setId, wrapperTooltip } from "utils";
 
 export type HvListValue = {
   id?: string | number;

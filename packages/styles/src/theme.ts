@@ -251,6 +251,14 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   tooltip: {
     borderRadius: "string",
   },
+  verticalNavigation: {
+    justifyContent: "string",
+    hoverColor: "string",
+    activeBorderLeft: "string",
+    inactiveBorderLeft: "string",
+    actionsMarginTop: "string",
+    // expandendFontWeight: "string",
+  },
 };
 
 const typographyProps: DeepString<HvTypographyProps> = {

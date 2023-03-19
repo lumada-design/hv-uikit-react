@@ -258,6 +258,14 @@ export type HvThemeComponents = {
   tooltip: {
     borderRadius: string;
   };
+  verticalNavigation: {
+    justifyContent: string;
+    hoverColor: string;
+    activeBorderLeft: string;
+    inactiveBorderLeft: string;
+    actionsMarginTop: string;
+    // expandendFontWeight: string,
+  };
 };
 
 // Theme typography
