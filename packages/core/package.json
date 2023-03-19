@@ -3,7 +3,7 @@
   "version": "5.0.0-next.17",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
-  "description": "UI Kit core React components for the Next Design System.",
+  "description": "Core React components for the NEXT Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "main": "./src/index.ts",
   "sideEffects": false,

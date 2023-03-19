@@ -1,6 +1,6 @@
 # @hitachivantara/uikit-react-icons
 
-This package provides the Next Design System icons packaged as a set of React components.
+NEXT Design System icons packaged as a set of React components.
 
 ## Installation
 
