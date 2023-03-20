@@ -34,10 +34,9 @@ jobs:
 
       - name: Publish Next
         env:
-          # ensure dev dependencies are installed
-          NODE_ENV: development
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
+          npm ci --include=dev 
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm run publish:next
 
