@@ -3,7 +3,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "npmClientArgs": ["--legacy-peer-deps"]
+      "npmClientArgs": ["--legacy-peer-deps", "--production=false"]
     },
     "version": {
       "allowBranch": ["master", "next*", "feat/*", "fix/*", "bug/*"],
