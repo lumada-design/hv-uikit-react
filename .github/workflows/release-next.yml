@@ -6,9 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  static-checks:
+    name: Static Checks
+    uses: ./.github/workflows/static-checks.yml
+
   release:
     name: Release Next
     runs-on: ubuntu-latest
+    needs: [static-checks]
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -22,9 +27,6 @@ jobs:
       - name: Fetch git tags
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
         
-      - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
-
       - name: Publish Setup
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -32,6 +34,8 @@ jobs:
 
       - name: Publish Next
         env:
+          # ensure dev dependencies are installed
+          NODE_ENV: development
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
