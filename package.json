@@ -18,7 +18,7 @@
     "build": "npm run build -w packages",
     "build:doc": "build-storybook --docs -o dist --quiet",
     "test": "npm run test -w packages --if-present",
-    "test:pa11y": "npx pa11y-ci -c config/pa11yci.config.js",
+    "test:pa11y": "npx pa11y-ci -c .config/pa11yci.config.js",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint": "eslint . --ext .ts,.tsx --cache",
