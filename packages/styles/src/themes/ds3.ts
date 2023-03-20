@@ -198,6 +198,35 @@ const ds3 = makeTheme((theme: HvTheme) => ({
       lineHeight: "16px",
       fontWeight: 600,
     },
+    disabledText: {
+      color: theme.colors.atmo5,
+      fontSize: "12px",
+      letterSpacing: "0.02em",
+      lineHeight: "16px",
+      fontWeight: 600,
+    },
+    selectedNavText: {
+      color: theme.colors.acce3,
+      fontSize: "12px",
+      letterSpacing: "0.02em",
+      lineHeight: "16px",
+      fontWeight: 600,
+    },
+    vizTextDisabled: {
+      color: theme.colors.atmo5,
+      fontSize: "10px",
+      letterSpacing: "0.02em",
+      lineHeight: "15px",
+      fontWeight: 400,
+    },
+    xsInlineLink: {
+      color: theme.colors.acce2,
+      fontSize: "10px",
+      letterSpacing: "0.02em",
+      lineHeight: "15px",
+      fontWeight: 600,
+      textDecoration: "underline",
+    },
   },
   dropdown: {
     borderRadius: "2px",
@@ -445,7 +474,6 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     activeBorderLeft: `2px solid ${theme.colors.acce3}`,
     inactiveBorderLeft: `2px solid transparent`,
     actionsMarginTop: "none",
-    // expandendFontWeight: string,
   },
 }));
 

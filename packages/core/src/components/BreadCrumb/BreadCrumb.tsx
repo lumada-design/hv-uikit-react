@@ -2,13 +2,10 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import startCase from "lodash/startCase";
 import { isValidElement, MouseEventHandler } from "react";
-import { HvBaseProps } from "../../types";
-import {
-  HvBreadCrumbClasses,
-  breadCrumbClasses,
-  HvPathElement,
-  HvPage,
-} from ".";
+import { HvBaseProps } from "../../types/generic";
+import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
+import { HvPathElement } from "./PathElement";
+import { HvPage } from "./Page";
 import {
   StyledOrderedList,
   StyledRoot,

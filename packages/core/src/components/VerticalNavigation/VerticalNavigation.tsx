@@ -92,7 +92,7 @@ export type HvVerticalNavigationProps = {
    */
   open?: boolean;
   /**
-   *  Collpased Mode for the Vertical Navigation, the default value is "simple".
+   *  Collapsed Mode for the Vertical Navigation, the default value is "simple".
    */
   collapsedMode?: HvVerticalNavigationMode;
   /**

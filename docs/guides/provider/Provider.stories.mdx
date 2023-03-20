@@ -4,7 +4,7 @@ import { ProviderSample } from "./ProviderSample";
 
 <Meta title="Guides/Provider" component={HvProvider} />
 
-# Provider
+# Provider <a id="provider" />
 
 The `HvProvider` component is responsible for the theming capabilities, making cross-component theme properties available down the React tree through React context.
 
@@ -24,7 +24,7 @@ const MyApp = ({ children }) => {
 <ArgsTable of={HvProvider} />
 
 The `HvProvider` enables you to define your themes through the `themes` property which accepts a list of themes. Then, the `theme` and `colorMode` properties
-are used to specify the active theme and color mode. For more information, please read the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation.
+are used to specify the active theme and color mode. For more information, please read the [theming](/docs/guides-theming-theming--main#theming) documentation.
 
 If several `HvProvider`'s are used, you'll need to create different root elements and set the `rootElementId` property for each one of the providers.
 Otherwise, the styling will not work properly. Please, find an example below.

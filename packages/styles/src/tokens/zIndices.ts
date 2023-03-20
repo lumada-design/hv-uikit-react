@@ -3,6 +3,7 @@ export const zIndices = {
   base: 0,
   docked: 10,
   sticky: 1000,
+  fab: 1050,
   banner: 1100,
   overlay: 1200,
   modal: 1300,

@@ -18,7 +18,10 @@ export type HvDialogTitleVariant =
   | "info"
   | "default";
 
-export type HvTitleProps = Omit<MuiDialogTitleProps, "variant" | "classes"> &
+export type HvDialogTitleProps = Omit<
+  MuiDialogTitleProps,
+  "variant" | "classes"
+> &
   HvBaseProps & {
     /** Variant of the Dialog. */
     variant?: HvDialogTitleVariant;
@@ -29,7 +32,7 @@ export type HvTitleProps = Omit<MuiDialogTitleProps, "variant" | "classes"> &
     classes?: HvDialogTitleClasses;
   };
 
-export const HvTitle = ({
+export const HvDialogTitle = ({
   classes,
   className,
   children,
@@ -37,7 +40,7 @@ export const HvTitle = ({
   showIcon = true,
   customIcon = null,
   ...others
-}: HvTitleProps) => {
+}: HvDialogTitleProps) => {
   const { activeTheme } = useTheme();
 
   const isString = typeof children === "string";

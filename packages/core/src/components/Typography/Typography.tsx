@@ -146,6 +146,18 @@ const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
         textDecoration: "underline",
         cursor: "pointer",
       }),
+      ...($variant === "disabledText" && {
+        ...(theme.typography.disabledText as CSSProperties),
+      }),
+      ...($variant === "selectedNavText" && {
+        ...(theme.typography.selectedNavText as CSSProperties),
+      }),
+      ...($variant === "vizTextDisabled" && {
+        ...(theme.typography.vizTextDisabled as CSSProperties),
+      }),
+      ...($variant === "xsInlineLink" && {
+        ...(theme.typography.xsInlineLink as CSSProperties),
+      }),
       fontFamily: theme.fontFamily.body,
       // ADDED PROPS
       ...($link && {

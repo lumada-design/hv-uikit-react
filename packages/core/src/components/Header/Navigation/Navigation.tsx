@@ -10,30 +10,33 @@ import headerNavigationClasses, {
   HvHeaderNavigationClasses,
 } from "./navigationClasses";
 
-export interface HvNavigationItemProp {
+export interface HvHeaderNavigationItemProp {
   id: string;
   label: string;
   path?: string;
   href?: string;
   target?: string;
-  data?: HvNavigationItemProp[];
+  data?: HvHeaderNavigationItemProp[];
 }
 
-export type HvNavigationProps = HvBaseProps<HTMLDivElement, { onClick }> & {
-  data: HvNavigationItemProp[];
+export type HvHeaderNavigationProps = HvBaseProps<
+  HTMLDivElement,
+  { onClick }
+> & {
+  data: HvHeaderNavigationItemProp[];
   selected?: string;
-  onClick?: (event: MouseEvent, selection: HvNavigationItemProp) => void;
+  onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
   classes?: HvHeaderNavigationClasses;
 };
 
-export const HvNavigation = ({
+export const HvHeaderNavigation = ({
   data,
   selected,
   onClick,
   className,
   classes,
   ...others
-}: HvNavigationProps) => {
+}: HvHeaderNavigationProps) => {
   const selectionPath = useSelectionPath(data, selected);
 
   const handleClick = (event, selection) => {

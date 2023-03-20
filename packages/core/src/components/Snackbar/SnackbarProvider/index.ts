@@ -1,2 +1,2 @@
-export { default } from "./SnackbarProvider";
+export { default as HvSnackbarProvider } from "./SnackbarProvider";
 export * from "./SnackbarProvider";

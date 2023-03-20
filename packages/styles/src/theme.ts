@@ -257,7 +257,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     activeBorderLeft: "string",
     inactiveBorderLeft: "string",
     actionsMarginTop: "string",
-    // expandendFontWeight: "string",
   },
 };
 
@@ -267,6 +266,7 @@ const typographyProps: DeepString<HvThemeTypographyProps> = {
   letterSpacing: "string",
   lineHeight: "string",
   fontWeight: "string",
+  textDecoration: "string",
 };
 
 const typographySpec: DeepString<HvThemeTypography> = {
@@ -291,6 +291,10 @@ const typographySpec: DeepString<HvThemeTypography> = {
     sectionTitle: { ...typographyProps },
     placeholderText: { ...typographyProps },
     link: { ...typographyProps },
+    disabledText: { ...typographyProps },
+    selectedNavText: { ...typographyProps },
+    vizTextDisabled: { ...typographyProps },
+    xsInlineLink: { ...typographyProps },
   },
 };
 

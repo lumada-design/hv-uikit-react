@@ -2,11 +2,11 @@ import { forwardRef, useCallback, useMemo } from "react";
 import { SnackbarContent, SnackbarProvider, useSnackbar } from "notistack";
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import HvSnackbarContentWrapper from "../SnackbarContentWrapper";
+import { HvSnackbarContent } from "../SnackbarContentWrapper";
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { HvSnackbarVariant } from "../Snackbar";
 import { transientOptions } from "utils/transientOptions";
-import { HvSnackbarContentWrapperProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
+import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
 
 export type HvSnackbarProviderProps = {
   /** Your component tree. */
@@ -31,7 +31,7 @@ export type HvNotistackSnackMessageProps = {
   /** Variant of the snackbar. */
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
-  snackbarContentProps?: HvSnackbarContentWrapperProps;
+  snackbarContentProps?: HvSnackbarContentProps;
 };
 
 const HvNotistackSnackMessage = forwardRef<
@@ -40,7 +40,7 @@ const HvNotistackSnackMessage = forwardRef<
 >(({ id, message, variant = "success", snackbarContentProps }, ref) => {
   return (
     <SnackbarContent ref={ref}>
-      <HvSnackbarContentWrapper
+      <HvSnackbarContent
         id={id}
         variant={variant}
         showIcon

@@ -10,13 +10,12 @@ import {
   StyledMessageText,
   StyledAction,
 } from "./SnackbarContentWrapper.styles";
-import {
-  snackbarContentWrapperClasses,
-  HvSnackbarContentWrapperClasses,
-} from ".";
+import snackbarContentClasses, {
+  HvSnackbarContentClasses,
+} from "./snackbarContentWrapperClasses";
 import { HvActionsGeneric, HvActionGeneric } from "components";
 
-export type HvSnackbarContentWrapperProps = Omit<
+export type HvSnackbarContentProps = Omit<
   MuiSnackbarContentProps,
   "variant" | "action" | "classes"
 > &
@@ -38,13 +37,10 @@ export type HvSnackbarContentWrapperProps = Omit<
       action: HvActionGeneric
     ) => void;
     /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvSnackbarContentWrapperClasses;
+    classes?: HvSnackbarContentClasses;
   };
 
-const HvSnackbarContentWrapper = forwardRef<
-  HTMLDivElement,
-  HvSnackbarContentWrapperProps
->(
+const HvSnackbarContent = forwardRef<HTMLDivElement, HvSnackbarContentProps>(
   (
     {
       className,
@@ -69,29 +65,26 @@ const HvSnackbarContentWrapper = forwardRef<
         ref={ref}
         id={id}
         classes={{
-          root: clsx(snackbarContentWrapperClasses.root, classes?.root),
-          message: clsx(
-            snackbarContentWrapperClasses.message,
-            classes?.message
-          ),
+          root: clsx(snackbarContentClasses.root, classes?.root),
+          message: clsx(snackbarContentClasses.message, classes?.message),
         }}
         className={clsx(
           className,
           classes?.[variant],
-          snackbarContentWrapperClasses[variant]
+          snackbarContentClasses[variant]
         )}
         message={
           <StyledMessageSpan
             id={setId(id, "message")}
             className={clsx(
-              snackbarContentWrapperClasses.messageSpan,
+              snackbarContentClasses.messageSpan,
               classes?.messageSpan
             )}
           >
             {icon && (
               <div
                 className={clsx(
-                  snackbarContentWrapperClasses.iconVariant,
+                  snackbarContentClasses.iconVariant,
                   classes?.iconVariant
                 )}
               >
@@ -100,7 +93,7 @@ const HvSnackbarContentWrapper = forwardRef<
             )}
             <StyledMessageText
               className={clsx(
-                snackbarContentWrapperClasses.messageText,
+                snackbarContentClasses.messageText,
                 classes?.messageText
               )}
             >
@@ -109,10 +102,7 @@ const HvSnackbarContentWrapper = forwardRef<
             {action && (
               <StyledAction
                 id={setId(id, "action")}
-                className={clsx(
-                  snackbarContentWrapperClasses.action,
-                  classes?.action
-                )}
+                className={clsx(snackbarContentClasses.action, classes?.action)}
               >
                 <HvActionsGeneric
                   id={id}
@@ -131,4 +121,4 @@ const HvSnackbarContentWrapper = forwardRef<
   }
 );
 
-export default HvSnackbarContentWrapper;
+export default HvSnackbarContent;

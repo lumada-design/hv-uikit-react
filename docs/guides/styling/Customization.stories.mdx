@@ -13,17 +13,17 @@ import {
 
 <Meta title="Guides/Styling/Customization" />
 
-# Customization
+# Customization <a id="customization" />
 
 Even though all components are compliant with the Design System specifications, it is expected you'll need to customize them in order to meet your specific needs.
 In this sense, the UI Kit components can be customized the following ways:
 
-- [Single instance customization](/docs/guides-styling-customization--inline-styles)
-- [Reusable components](/docs/guides-styling-customization--reusable-component)
-- [Theme override](/docs/guides-styling-customization--theme-override)
-- [Global override](/docs/guides-styling-customization--global-override)
+- [Single instance customization](#single-instance-customization)
+- [Reusable components](#reusable-components)
+- [Theme override](#theme-override)
+- [Global override](#global-override)
 
-## Single instance customization
+## Single instance customization <a id="single-instance-customization" />
 
 Find below the ways you have at your disposal to style a single instance of a component.
 
@@ -214,7 +214,7 @@ This way of styling components is very convenient since it allows you to easily 
 />
 ```
 
-## Reusable components
+## Reusable components <a id="reusable-components" />
 
 In order to have a cleaner and more maintainable code, you should always strive to promote code reusability by creating reusable components.
 
@@ -291,14 +291,14 @@ Then, you can use the component the following way:
   </Story>
 </Canvas>
 
-## Theme override
+## Theme override <a id="theme-override" />
 
 Components can also be styled by providing customizations to them through the theme with the `createTheme` utility. Customizing components using this method enables
 to change specific parts of a component at a global scale in your application applying these changes to all instances of the component.
 
 Only very specific properties of a component can be customized using the `createTheme` utility varying from component to component.
 Overtime time we will work toward providing more customizable properties for components. However, at the moment, only some components can be customized
-through the theme. For more information, please read the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation where a structure of the theme with
+through the theme. For more information, please read the [theming](/docs/guides-theming-theming--main#theme-structure) documentation where a structure of the theme with
 the components that are customizable is provided.
 
 In the example below, the border radius and background color of the `HvCard` component was customized.
@@ -343,7 +343,7 @@ const MyApp = () => {
   </Story>
 </Canvas>
 
-## Global override
+## Global override <a id="global-override" />
 
 The components can also be customized by overriding global properties of the theme that are used by various elements throughout the application such as colors,
 font sizes, shadows, spaces, among others.
@@ -393,4 +393,4 @@ const MyApp = () => {
   </Story>
 </Canvas>
 
-Please report to the [theming](/docs/guides-theming-default-themes--main-ds-5) documentation for more information.
+Please report to the [theming](/docs/guides-theming-theming--main#theming) documentation for more information.

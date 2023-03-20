@@ -1,7 +1,5 @@
-export { default as HvSnackbarContent } from "./SnackbarContentWrapper";
-export {
-  default as HvSnackbarProvider,
-  useHvSnackbar,
-} from "./SnackbarProvider";
-export * from "./SnackbarContentWrapper";
+export { default as snackbarClasses } from "./snackbarClasses";
+export * from "./snackbarClasses";
 export * from "./Snackbar";
+export * from "./SnackbarProvider";
+export * from "./SnackbarContentWrapper";

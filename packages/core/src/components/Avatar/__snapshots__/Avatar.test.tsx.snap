@@ -6,13 +6,13 @@ exports[`Avatar > letter avatar > should render the avatar as text 1`] = `
     class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
   >
     <div
-      class="HvAvatar-status HvAvatar-circular css-pfc2yb-StyledStatus e1sw81qd2"
+      class="HvAvatar-status HvAvatar-circular HvAvatar-sm css-pfc2yb-StyledStatus e1sw81qd2"
     >
       <div
         class="HvAvatar-badge css-y4cyfh-StyledBadge e1sw81qd0"
       />
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar css-1lnuk2l-StyledAvatar e1sw81qd1 css-2s90m6-MuiAvatar-root"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-sm css-1lnuk2l-StyledAvatar e1sw81qd1 css-2s90m6-MuiAvatar-root"
       >
         AB
       </div>
@@ -27,10 +27,10 @@ exports[`Avatar > should render correctly 1`] = `
     class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
   >
     <div
-      class="HvAvatar-status HvAvatar-circular css-pfc2yb-StyledStatus e1sw81qd2"
+      class="HvAvatar-status HvAvatar-circular HvAvatar-sm css-pfc2yb-StyledStatus e1sw81qd2"
     >
       <div
-        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar css-1lnuk2l-StyledAvatar e1sw81qd1 css-2s90m6-MuiAvatar-root"
+        class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-sm css-1lnuk2l-StyledAvatar e1sw81qd1 css-2s90m6-MuiAvatar-root"
       >
         <div
           class="HvAvatar-fallback css-f95wjz"

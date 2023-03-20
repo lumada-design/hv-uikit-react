@@ -39,7 +39,7 @@ exports[`Tabs > should render correctly all components 1`] = `
       >
         <button
           aria-selected="true"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary Mui-selected HvTab-selected css-mxbnpo-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary Mui-selected HvTab-selected css-x7y2xx-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="0"
           type="button"
@@ -48,7 +48,7 @@ exports[`Tabs > should render correctly all components 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-mxbnpo-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-x7y2xx-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="-1"
           type="button"
@@ -57,7 +57,7 @@ exports[`Tabs > should render correctly all components 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-mxbnpo-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+          class="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorPrimary css-x7y2xx-StyledTab evi6req0 css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
           role="tab"
           tabindex="-1"
           type="button"

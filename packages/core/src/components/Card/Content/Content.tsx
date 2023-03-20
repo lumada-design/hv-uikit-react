@@ -6,7 +6,7 @@ import MuiCardContent, {
 } from "@mui/material/CardContent";
 import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 
-export type HvContentProps = Omit<MuiCardContentProps, "classes"> &
+export type HvCardContentProps = Omit<MuiCardContentProps, "classes"> &
   HvBaseProps & {
     /** Id to be applied to the root node. */
     id?: string;
@@ -16,14 +16,14 @@ export type HvContentProps = Omit<MuiCardContentProps, "classes"> &
     classes?: HvCardContentClasses;
   };
 
-export const HvContent = ({
+export const HvCardContent = ({
   id,
   classes,
   className,
   children,
   onClick,
   ...others
-}: HvContentProps) => {
+}: HvCardContentProps) => {
   return (
     <MuiCardContent
       id={id}

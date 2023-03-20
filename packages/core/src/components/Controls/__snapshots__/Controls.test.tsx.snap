@@ -21,7 +21,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-6atnmb-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
@@ -101,7 +101,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
                   >
                     <div
-                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-8bz325-getStyledComponent-StyledTypography e1tnpalo0"
+                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-1mbgbjx-getStyledComponent-StyledTypography e1tnpalo0"
                     >
                       Select...
                     </div>
@@ -135,7 +135,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="button selected e17vrbb40 HvButton-root css-z0fa0y-StyledButton-StyledButton e138pvrm0"
+            class="button selected e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
           >
@@ -169,7 +169,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="button e17vrbb40 HvButton-root css-z0fa0y-StyledButton-StyledButton e138pvrm0"
+            class="button e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
           >
@@ -635,7 +635,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-6atnmb-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
@@ -715,7 +715,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
                   >
                     <div
-                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-y6881g-getStyledComponent-StyledTypography e1tnpalo0"
+                      class="HvDropdown-placeholder etta2py0 HvTypography-root HvTypography-body css-uq00g8-getStyledComponent-StyledTypography e1tnpalo0"
                     >
                       Name Ascending
                     </div>
@@ -749,7 +749,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="button selected e17vrbb40 HvButton-root css-z0fa0y-StyledButton-StyledButton e138pvrm0"
+            class="button selected e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
           >
@@ -783,7 +783,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="button e17vrbb40 HvButton-root css-z0fa0y-StyledButton-StyledButton e138pvrm0"
+            class="button e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
           >
@@ -1189,7 +1189,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="true"
-              class="button selected e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button selected e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="all"
             >
               <div
@@ -1205,7 +1205,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="critical"
             >
               <div
@@ -1221,7 +1221,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="major"
             >
               <div
@@ -1237,7 +1237,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="average"
             >
               <div
@@ -1253,7 +1253,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="minor"
             >
               <div
@@ -2001,7 +2001,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
               class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-6atnmb-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
@@ -2058,7 +2058,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="true"
-              class="button selected e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button selected e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="all"
             >
               <div
@@ -2074,7 +2074,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="critical"
             >
               <div
@@ -2090,7 +2090,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="major"
             >
               <div
@@ -2106,7 +2106,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="average"
             >
               <div
@@ -2122,7 +2122,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-l60rih-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
               id="minor"
             >
               <div

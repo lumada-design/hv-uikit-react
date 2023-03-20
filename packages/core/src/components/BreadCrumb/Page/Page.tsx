@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { HvOverflowTooltip } from "components";
 import { startCase } from "lodash";
 import { MouseEventHandler } from "react";
-import { HvPageClasses, pageClasses } from ".";
+import pageClasses, { HvPageClasses } from "./pageClasses";
 import { StyledLink, StyledTypography } from "./Page.styles";
 
 export type HvPageElement = {

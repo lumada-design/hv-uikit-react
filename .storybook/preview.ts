@@ -31,7 +31,7 @@ export const parameters = {
         [
           "Provider",
           "Theming",
-          ["White labeling"],
+          ["Theming", "White labeling"],
           "Styling",
           ["Customization"],
           "Forms",

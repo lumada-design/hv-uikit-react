@@ -16,6 +16,25 @@ import {
 } from "./Kpi.styles";
 import kpiClasses, { HvKpiClasses } from "./kpiClasses";
 
+export type HvKpiLabelProps = {
+  /**
+   * The text at the top of the kpi.
+   */
+  title?: string;
+  /**
+   * The text in the middle of the kpi.
+   */
+  indicator?: string;
+  /**
+   * The text to the right of the indicator.
+   */
+  unit?: string;
+  /**
+   * The text to the right of the visual comparison.
+   */
+  comparisonIndicatorInfo?: string;
+};
+
 export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
@@ -32,12 +51,7 @@ export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
   /**
    * The object that contains the different labels inside the kpi.
    */
-  labels?: {
-    title?: string;
-    indicator?: string;
-    unit?: string;
-    comparisonIndicatorInfo?: string;
-  };
+  labels?: HvKpiLabelProps;
   /**
    *  The typography variant used in the main text indicator of the KPI
    */

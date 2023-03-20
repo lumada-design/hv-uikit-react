@@ -7,20 +7,20 @@ import { CssVariables } from "./CssVariables";
 import { CreateTheme } from "./CreateTheme";
 import { ThemeContext } from "./ThemeContext";
 
-<Meta title="Guides/Theming" />
+<Meta title="Guides/Theming/Theming" />
 
-# Theming
+# Theming <a id="theming" />
 
 Here's what there is to know about the NEXT UI Kit theming:
 
-- [Default themes](/docs/guides-theming--main-ds-5)
-- [Theme structure](/docs/guides-theming--theme-structure)
-- [Theme configuration](/docs/guides-theming--create-theme)
-- [Theme context](/docs/guides-theming--theme-context)
-- [CSS variable](/docs/guides-theming--css-variables)
-- [Spacing](/docs/guides-theming--spacing)
+- [Default themes](#default-themes)
+- [Theme structure](#theme-structure)
+- [Theme configuration](#theme-configuration)
+- [Theme context](#theme-context)
+- [CSS variable](#css-variables)
+- [Spacing](#spacing)
 
-## Default themes
+## Default themes <a id="default-themes" />
 
 The theme is the cornerstone of all components and it comprises all the styling specifications for the components, such as colors, font sizes, shadows, spacings,
 among others.
@@ -28,7 +28,7 @@ among others.
 The NEXT UI Kit provides two default themes compliant with the Design System. In this sense, the components are supported for the **Design System 3 and 5**.
 Each one of these versions has a specific theme with two different color modes: **Dawn**, a light theme, and **Wicked**, a dark theme.
 
-<Story name="Main-DS5">
+<Story name="Main">
   <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
     <div id="hv-root-ds5-dawn-docs-default-themes">
       <HvProvider
@@ -70,7 +70,7 @@ Each one of these versions has a specific theme with two different color modes: 
 Although these two themes are provided out of the box and will most likely be sufficient in most cases, you have the complete freedom to customize these themes by
 creating your own ones depending on your design needs and requirements.
 
-## Theme structure
+## Theme structure <a id="theme-structure" />
 
 Find below the structure and values for each one of the default themes. Both themes have the same structure and only the values differ.
 
@@ -80,7 +80,7 @@ Find below the structure and values for each one of the default themes. Both the
   </Story>
 </Canvas>
 
-## Theme configuration
+## Theme configuration <a id="theme-configuration" />
 
 The themes you want to support in your application can be defined through the `HvProvider`'s `themes` property. This property accepts a list of themes, namely
 themes you created and/or the default themes provided by the NEXT UI Kit. If no value is provided to the `themes` property, UI Kit will use the DS5 theme by default.
@@ -241,7 +241,7 @@ const newTheme = createTheme({
 
 To use the value from these new properties, you need to access the theme context as explained in more detail in the next section.
 
-## Theme context
+## Theme context <a id="theme-context" />
 
 The `uikit-react-core` package provides a React context named `HvThemeContext`. This context gives you access to all values related to the theme, namely:
 
@@ -335,7 +335,7 @@ const MyApp = () => {
   </Story>
 </Canvas>
 
-## CSS variables
+## CSS variables <a id="css-variables" />
 
 All properties from the NEXT UI Kit default themes are available as CSS variables. Each one of these variables has the prefix `uikit` and can easily be
 accessed through the `theme` object that can be imported from the `uikit-react-core` package.
@@ -366,7 +366,7 @@ const MyComponent = () => {
   </Story>
 </Canvas>
 
-## Spacing
+## Spacing <a id="spacing" />
 
 The NEXT UI Kit provides a spacing helper function named `spacing`. This function helps generate the spacing values for the UI elements when required
 and is contained within the `theme` object provided by the `uikit-react-core` package.
