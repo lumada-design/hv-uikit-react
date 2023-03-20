@@ -133,6 +133,10 @@ const StyledTableRow = (c: any) =>
           height: 16,
         },
       }),
+
+      "&.HvIsFocused": {
+        borderRadius: theme.table.rowBorderRadius,
+      },
     })
   );
 
