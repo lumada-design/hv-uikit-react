@@ -16,10 +16,6 @@ runs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Build Documentation
-      uses: ./.github/actions/build-documentation
-      if: github.event_name == 'workflow_dispatch'
-
     - name: Start Documentation Deployment
       uses: bobheadxi/deployments@v1
       id: deployment
