@@ -21,8 +21,7 @@ import {
 
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
-import { getColumns, actions } from "./utils";
-import { makeData } from "./data";
+import { getColumns, actions, makeData } from "./utils";
 import classes from "./styles";
 
 const idsToControl = {

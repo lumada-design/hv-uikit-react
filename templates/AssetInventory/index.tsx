@@ -22,8 +22,8 @@ import {
   idsToControl,
   rightControlValues,
   getColumns,
+  makeData,
 } from "./utils";
-import { makeData } from "./data";
 import classes from "./styles";
 
 const AssetInventory = () => {

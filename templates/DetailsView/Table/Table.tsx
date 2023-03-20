@@ -12,8 +12,7 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns } from "../utils";
-import { makeData } from "../data";
+import { getColumns, makeData } from "../utils";
 import classes from "./styles";
 
 export const Table = () => {
