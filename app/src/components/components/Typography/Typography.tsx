@@ -68,6 +68,7 @@ export const Typography = () => {
               <HvTypography variant="label" key={`label_${variant}`}>
                 {variant}
               </HvTypography>
+              <br />
               <HvTypography
                 variant={variant}
                 key={variant}

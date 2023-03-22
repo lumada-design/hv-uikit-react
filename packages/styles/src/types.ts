@@ -269,7 +269,7 @@ export type HvThemeComponents = {
 };
 
 // Theme typography
-export type HvTypographyProps = Pick<
+export type HvThemeTypographyProps = Pick<
   CSSProperties,
   "color" | "fontSize" | "letterSpacing" | "lineHeight" | "fontWeight"
 >;
@@ -277,25 +277,25 @@ export type HvTypographyProps = Pick<
 export type HvThemeTypography = {
   typography: {
     // DS5
-    display: HvTypographyProps;
-    title1: HvTypographyProps;
-    title2: HvTypographyProps;
-    title3: HvTypographyProps;
-    title4: HvTypographyProps;
-    label: HvTypographyProps;
-    body: HvTypographyProps;
-    caption1: HvTypographyProps;
-    caption2: HvTypographyProps;
+    display: HvThemeTypographyProps;
+    title1: HvThemeTypographyProps;
+    title2: HvThemeTypographyProps;
+    title3: HvThemeTypographyProps;
+    title4: HvThemeTypographyProps;
+    label: HvThemeTypographyProps;
+    body: HvThemeTypographyProps;
+    caption1: HvThemeTypographyProps;
+    caption2: HvThemeTypographyProps;
     // LEGACY UNMAPPABLE (DS3)
-    ["5xlTitle"]: HvTypographyProps;
-    ["4xlTitle"]: HvTypographyProps;
-    xxlTitle: HvTypographyProps;
-    lTitle: HvTypographyProps;
-    sTitle: HvTypographyProps;
-    xxsTitle: HvTypographyProps;
-    sectionTitle: HvTypographyProps;
-    placeholderText: HvTypographyProps;
-    link: HvTypographyProps;
+    ["5xlTitle"]: HvThemeTypographyProps;
+    ["4xlTitle"]: HvThemeTypographyProps;
+    xxlTitle: HvThemeTypographyProps;
+    lTitle: HvThemeTypographyProps;
+    sTitle: HvThemeTypographyProps;
+    xxsTitle: HvThemeTypographyProps;
+    sectionTitle: HvThemeTypographyProps;
+    placeholderText: HvThemeTypographyProps;
+    link: HvThemeTypographyProps;
   };
 };
 

@@ -5,7 +5,7 @@ import {
   HvThemeBreakpoint,
   HvThemeTypography,
   HvThemeVars,
-  HvTypographyProps,
+  HvThemeTypographyProps,
 } from "./types";
 import * as tokens from "./tokens";
 import { mapCSSVars } from "./utils";
@@ -261,7 +261,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
 };
 
-const typographyProps: DeepString<HvTypographyProps> = {
+const typographyProps: DeepString<HvThemeTypographyProps> = {
   color: "string",
   fontSize: "string",
   letterSpacing: "string",
