@@ -7,11 +7,11 @@ type GeneratorContextProp = {
   updateCustomTheme: (newTheme: any) => void;
 
   changedValues?: Partial<HvTheme | HvThemeStructure>;
-  updateChangedValues?: (path: any, key: any) => void;
+  updateChangedValues?: (path: any, key: any, reset?: boolean) => void;
 };
 
 export const GeneratorContext = createContext<GeneratorContextProp>({
-  customTheme: createTheme({ name: "", base: "ds5" }),
+  customTheme: createTheme({ name: "customTheme", base: "ds5" }),
   updateCustomTheme: () => {},
 });
 
@@ -19,29 +19,34 @@ const GeneratorProvider = ({ children }) => {
   const [changedValues, setChangedValues] = useState({});
 
   const [customTheme, setCustomTheme] = useState(
-    createTheme({ name: "", base: "ds5" })
+    createTheme({ name: "customTheme", base: "ds5" })
   );
 
   const updateCustomTheme = (newTheme) => {
+    console.log(newTheme);
     setCustomTheme(newTheme);
   };
 
-  const updateChangedValues = (path, value) => {
-    setChangedValues((prevState) => {
-      const newState = { ...prevState };
-      let node = newState;
-      path.forEach((key, index) => {
-        if (!node[key]) {
-          node[key] = {};
-        }
-        if (index === path.length - 1) {
-          node[key] = value;
-        } else {
-          node = node[key];
-        }
+  const updateChangedValues = (path, value, reset = false) => {
+    if (reset) {
+      setChangedValues({ name: "customTheme", base: "ds5" });
+    } else {
+      setChangedValues((prevState) => {
+        const newState = { ...prevState };
+        let node = newState;
+        path.forEach((key, index) => {
+          if (!node[key]) {
+            node[key] = {};
+          }
+          if (index === path.length - 1) {
+            node[key] = value;
+          } else {
+            node = node[key];
+          }
+        });
+        return newState;
       });
-      return newState;
-    });
+    }
   };
 
   return (

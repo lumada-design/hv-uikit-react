@@ -18,7 +18,7 @@ import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
 import { FontSizes } from "generator/FontSizes";
 import { FontFamily } from "generator/FontFamily";
-import { Duplicate } from "@hitachivantara/uikit-react-icons";
+import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 import { Radii } from "generator/Radii";
 import { Spacing } from "generator/Spacing";
 
@@ -79,12 +79,21 @@ export default ${themeName};`
     setCopied(true);
   };
 
+  const onResetHandler = () => {
+    const newTheme = createTheme({
+      name: "customTheme",
+      base: selectedTheme as HvBaseTheme,
+    });
+    console.log(newTheme);
+    updateCustomTheme(newTheme);
+    updateChangedValues?.([], "", true);
+  };
+
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
     setCopied(false);
   };
 
-  console.log("open", open);
   return (
     <>
       {!open && <div className={styles.closed}></div>}
@@ -134,6 +143,20 @@ export default ${themeName};`
             </HvBox>
           </HvBox>
           <HvBox css={{ position: "relative" }}>
+            <HvBox css={{ position: "absolute", top: 10, right: 46 }}>
+              <HvTooltip
+                placement="bottom-end"
+                title={<HvTypography>Reset</HvTypography>}
+              >
+                <HvButton
+                  variant="secondarySubtle"
+                  icon
+                  onClick={onResetHandler}
+                >
+                  <Reset />
+                </HvButton>
+              </HvTooltip>
+            </HvBox>
             <HvBox css={{ position: "absolute", top: 10, right: 10 }}>
               <HvTooltip
                 placement="bottom-end"

@@ -30,12 +30,13 @@ const App = () => {
     >
       <HvBox
         sx={{
-          position: "absolute",
+          position: "fixed",
           top: "calc(50% - 16px)",
           right: open ? 375 : 14,
           zIndex: theme.zIndices.tooltip,
           backgroundColor: theme.colors.atmo1,
           borderRadius: theme.radii.circle,
+          boxShadow: "-10px 0px 10px 1px rgba(65,65,65,0.12)",
         }}
       >
         <HvTooltip
