@@ -19,6 +19,8 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
+          aria-describedby="hvAction-description1"
+          aria-label="Mock App 1"
           class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-t4szxu-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp1/"
           tabindex="0"
@@ -45,6 +47,8 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
+          aria-describedby="hvAction-description2"
+          aria-label="Mock App 2"
           class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-t4szxu-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp2/"
           tabindex="0"
@@ -72,6 +76,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             <div
               aria-label="Mock App 2 Description"
               class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-1xjgxlv-StyledIconInfo"
+              id="hvAction-description2"
               name="Info"
               role="img"
             >
@@ -97,6 +102,8 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
         tabindex="-1"
       >
         <a
+          aria-describedby="hvAction-description3"
+          aria-label="Mock App 3"
           class="HvAppSwitcher-Action-typography HvAppSwitcher-itemTrigger e187pp8e3 HvTypography-root HvTypography-body css-t4szxu-getStyledComponent-StyledTypography e1tnpalo0"
           href="http://mockapp2/"
           tabindex="0"
@@ -124,6 +131,7 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
             <div
               aria-label="Mock App 2 Description"
               class="HvAppSwitcher-Action-iconInfo HvAppSwitcher-itemInfoIcon e187pp8e1 css-1xjgxlv-StyledIconInfo"
+              id="hvAction-description3"
               name="Info"
               role="img"
             >
