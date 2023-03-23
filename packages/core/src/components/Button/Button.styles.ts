@@ -57,6 +57,7 @@ export const StyledButton = styled(
     "&:active": {},
 
     // default button - no size specified
+    fontFamily: theme.fontFamily.body,
     fontSize: theme.fontSizes.base,
     fontWeight: 600,
     lineHeight: "11px",
