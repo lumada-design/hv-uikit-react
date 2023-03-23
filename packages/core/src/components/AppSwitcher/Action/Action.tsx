@@ -15,6 +15,7 @@ import {
 import appSwitcherActionClasses, {
   HvAppSwitcherActionClasses,
 } from "./actionClasses";
+import { useUniqueId } from "../../../hooks";
 
 export type HvAppSwitcherActionProps = HvBaseProps & {
   /** The application data to be used to render the Action object. */
@@ -95,6 +96,7 @@ export const HvAppSwitcherAction = ({
   };
 
   const isLink = url != null;
+  const descriptionElementId = useUniqueId(id, "hvAction-description");
 
   return (
     <StyledListItem
@@ -111,6 +113,8 @@ export const HvAppSwitcherAction = ({
         isSelected && clsx(appSwitcherActionClasses.selected, classes?.selected)
       )}
     >
+      {/*As HvTooltip don't have the id prop, is not possible to use the aria-labelledby to reference it.
+       In substitution is used the aria-label with the "title" value*/}
       <StyledTypography
         component={isLink ? "a" : "button"}
         href={isLink ? url : undefined}
@@ -121,6 +125,8 @@ export const HvAppSwitcherAction = ({
         )}
         onClick={handleOnClick}
         style={{ borderColor: color }}
+        aria-describedby={descriptionElementId}
+        aria-label={name}
       >
         <StyledIcon
           className={clsx(appSwitcherActionClasses.icon, classes?.icon)}
@@ -148,6 +154,7 @@ export const HvAppSwitcherAction = ({
                 )}
                 role="img"
                 aria-label={description}
+                id={descriptionElementId}
               />
             </div>
           </HvTooltip>
