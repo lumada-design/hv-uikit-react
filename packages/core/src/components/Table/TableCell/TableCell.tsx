@@ -204,6 +204,7 @@ const StyledTableCell = (c: any) =>
         },
         backgroundColor: "inherit",
         ...(theme.typography.body as CSSProperties),
+        fontFamily: theme.fontFamily.body,
 
         [`&.${tableCellClasses.sorted}`]: {
           backgroundColor: alpha(hexToRgb($atmo1Color), 0.4),
