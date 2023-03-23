@@ -1,43 +1,93 @@
-import { HvBox, theme } from "@hitachivantara/uikit-react-core";
-import { CSSProperties } from "react";
+import {
+  HvBox,
+  HvContainer,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import {
   Buttons,
-  EmptyState,
-  Grid,
-  Icons,
   Cards,
-  Typography,
-  Tags,
-  CheckBox,
-  BaseDropdown,
-  BaseInput,
-  Radio,
-  TagsInput,
-  Input,
   FileUploader,
-  Pagination,
-  DotPagination,
-  BulkActions,
-  BreadCrumb,
-  Tooltip,
-  Dialogs,
-  DropDownMenu,
-  Switch,
-  Snackbars,
-  Calendar,
-  VerticalNavigation,
+  // EmptyState,
+  // Grid,
+  // Icons,
+  // Typography,
+  // Tags,
+  // CheckBox,
+  // BaseDropdown,
+  // BaseInput,
+  // Radio,
+  // TagsInput,
+  // Input,
+  // Pagination,
+  // DotPagination,
+  // BulkActions,
+  // BreadCrumb,
+  // Tooltip,
+  // Dialogs,
+  // DropDownMenu,
+  // Switch,
+  // Snackbars,
+  // Calendar,
+  // VerticalNavigation,
 } from "components/components";
-
-const styles = {
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.spacing(5),
-} as CSSProperties;
+import { styles } from "./Components.styles";
 
 const App = () => {
   return (
-    <HvBox sx={styles}>
-      <Snackbars />
+    <HvContainer maxWidth="md">
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">Button</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/inputs-button--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <Buttons />
+        </HvBox>
+      </HvBox>
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">Cards</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/display-card--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <Cards />
+        </HvBox>
+      </HvBox>
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">FileUploader</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/inputs-file-uploader--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <FileUploader />
+        </HvBox>
+      </HvBox>
+    </HvContainer>
+  );
+  {
+    /*<HvBox sx={styles}>
+       <Snackbars />
       <Typography />
       <BaseDropdown />
       <DotPagination />
@@ -47,7 +97,6 @@ const App = () => {
       <BaseInput />
       <Input />
       <TagsInput />
-      <FileUploader />
       <CheckBox />
       <Switch />
       <Radio />
@@ -57,14 +106,13 @@ const App = () => {
       <Tooltip />
       <Grid />
       <EmptyState />
-      <Buttons />
       <Icons />
       <BreadCrumb />
       <BulkActions />
       <Calendar />
       <VerticalNavigation />
-    </HvBox>
-  );
+    </HvBox> */
+  }
 };
 
 export default App;
