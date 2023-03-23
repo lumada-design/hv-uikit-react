@@ -13,7 +13,6 @@ describe("<AppSwitcher /> with minimum configuration", () => {
       {
         id: "app-1",
         name: "Mock App 1",
-        iconUrl: "http://mockapp1/icon",
         url: "http://mockapp1/",
         target: "_top",
       },
@@ -63,5 +62,24 @@ describe("<AppSwitcher /> with minimum configuration", () => {
     );
     const images = getAllByLabelText("Description", { exact: false });
     expect(images.length).toBe(2);
+  });
+
+  it("should use an avatar for actions without icon", () => {
+    const { getAllByText } = render(
+      <HvAppSwitcher {...mockAppSwitcherProps} />
+    );
+    const avatars = getAllByText("MA", { exact: true });
+    expect(avatars.length).toBe(1);
+  });
+
+  it('should have "aria-hidden" for avatars', () => {
+    const { getAllByRole } = render(
+      <HvAppSwitcher {...mockAppSwitcherProps} />
+    );
+
+    const hiddenAvatar = getAllByRole("listitem")[0].querySelector(
+      '[aria-hidden="true"]'
+    );
+    expect(hiddenAvatar).not.toBeNull();
   });
 });

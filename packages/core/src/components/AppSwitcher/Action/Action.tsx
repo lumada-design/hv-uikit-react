@@ -74,7 +74,7 @@ export const HvAction = ({
       (brokenTitle[1] ? brokenTitle[1].substring(0, 1) : "");
 
     return (
-      <HvAvatar size="sm" backgroundColor={color} variant="square">
+      <HvAvatar size="sm" backgroundColor={color} variant="square" aria-hidden>
         {initials}
       </HvAvatar>
     );

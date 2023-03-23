@@ -27,10 +27,20 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
           <div
             class="HvAppSwitcher-Action-icon HvAppSwitcher-itemIcon css-14gx8az-StyledIcon e187pp8e0"
           >
-            <img
-              class="HvAppSwitcher-Action-iconUrl css-lotzyn-StyledImg e187pp8e2"
-              src="http://mockapp1/icon"
-            />
+            <div
+              aria-hidden="true"
+              class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
+            >
+              <div
+                class="HvAvatar-status HvAvatar-square css-vfafbb-StyledStatus e1sw81qd2"
+              >
+                <div
+                  class="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar css-1lnuk2l-StyledAvatar e1sw81qd1 css-18gxrea-MuiAvatar-root"
+                >
+                  MA
+                </div>
+              </div>
+            </div>
           </div>
           <span
             class="HvAppSwitcher-Action-title HvAppSwitcher-itemTitle e1lxr4i82 HvTypography-root HvTypography-label css-9n4p48-getStyledComponent-StyledTitleWithTooltip e1tnpalo0"
