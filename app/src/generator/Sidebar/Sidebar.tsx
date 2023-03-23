@@ -19,6 +19,8 @@ import debounce from "lodash/debounce";
 import { FontSizes } from "generator/FontSizes";
 import { FontFamily } from "generator/FontFamily";
 import { Duplicate } from "@hitachivantara/uikit-react-icons";
+import { Radii } from "generator/Radii";
+import { Spacing } from "generator/Spacing";
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -30,12 +32,17 @@ const Sidebar = () => {
   const [fullCode, setFullCode] = useState("");
   const [copied, setCopied] = useState(false);
 
+  // the `replace` bit below is just a regex to remove the quotes from
+  // the properties names, for displaying effect only.
   useEffect(() => {
     setFullCode(
       `import { createTheme } from "@hitachivantara/uikit-react-core";
 
 const ${themeName} = createTheme(` +
-        JSON.stringify(changedValues, null, 2) +
+        JSON.stringify(changedValues, null, 2).replace(
+          /\"([^(\")"]+)\":/g,
+          "$1:"
+        ) +
         `)
     
 export default ${themeName};`
@@ -141,6 +148,16 @@ export default ${themeName};`
       <HvAccordion id="fonts" label="fonts" classes={{ label: styles.label }}>
         <FontFamily />
         <FontSizes />
+      </HvAccordion>
+      <HvAccordion id="radii" label="radii" classes={{ label: styles.label }}>
+        <Radii />
+      </HvAccordion>
+      <HvAccordion
+        id="spacing"
+        label="spacing"
+        classes={{ label: styles.label }}
+      >
+        <Spacing />
       </HvAccordion>
       {/* <HvAccordion
         id="typography"
