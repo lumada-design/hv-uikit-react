@@ -1,3 +1,5 @@
+export * from "./Avatar";
+export * from "./Badge";
 export * from "./BaseDropdown";
 export * from "./BaseInput";
 export * from "./BreadCrumb";

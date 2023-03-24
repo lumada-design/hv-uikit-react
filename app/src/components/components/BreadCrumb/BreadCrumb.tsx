@@ -13,5 +13,5 @@ const data = [
 ];
 
 export const BreadCrumb = () => {
-  return <HvBreadCrumb listRoute={data} />;
+  return <HvBreadCrumb listRoute={data} maxVisible={7} />;
 };

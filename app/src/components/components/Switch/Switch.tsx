@@ -1,16 +1,12 @@
-import { HvBaseSwitch } from "@hitachivantara/uikit-react-core";
+import { HvSwitch } from "@hitachivantara/uikit-react-core";
 
 export const Switch = () => {
   return (
     <div style={{ display: "flex", gap: "20px" }}>
-      <HvBaseSwitch />
-      <HvBaseSwitch />
-      <HvBaseSwitch defaultChecked />
-      <HvBaseSwitch readOnly />
-      <HvBaseSwitch />
-      <HvBaseSwitch disabled />
-      <HvBaseSwitch defaultChecked disabled />
-      <HvBaseSwitch required />
+      <HvSwitch label="Default" />
+      <HvSwitch label="Disabled" disabled />
+      <HvSwitch label="Readonly" readOnly />
+      <HvSwitch label="Invalid" status={"invalid"} />
     </div>
   );
 };

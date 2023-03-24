@@ -1,16 +1,12 @@
-import { HvBaseRadio } from "@hitachivantara/uikit-react-core";
+import { HvRadio } from "@hitachivantara/uikit-react-core";
 
 export const Radio = () => {
   return (
     <div style={{ display: "flex", gap: "20px" }}>
-      <HvBaseRadio />
-      <HvBaseRadio />
-      <HvBaseRadio defaultChecked />
-      <HvBaseRadio readOnly />
-      <HvBaseRadio />
-      <HvBaseRadio disabled />
-      <HvBaseRadio defaultChecked disabled />
-      <HvBaseRadio required />
+      <HvRadio label="Default" />
+      <HvRadio label="Disabled" disabled />
+      <HvRadio label="Readonly" readOnly />
+      <HvRadio label="Invalid" status="invalid" />
     </div>
   );
 };

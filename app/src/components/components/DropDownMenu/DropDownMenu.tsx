@@ -3,7 +3,7 @@ import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
 
 export const DropDownMenu = () => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(true);
   const iconSelectedColor =
     (Icon) =>
     ({ isSelected }) =>
