@@ -34,10 +34,10 @@ exports[`<AppSwitcher /> with minimum configuration > should render correctly 1`
               class="HvAvatar-container css-1a4hhck-StyledContainer e1sw81qd4"
             >
               <div
-                class="HvAvatar-status HvAvatar-square css-vfafbb-StyledStatus e1sw81qd2"
+                class="HvAvatar-status HvAvatar-square HvAvatar-sm css-vfafbb-StyledStatus e1sw81qd2"
               >
                 <div
-                  class="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar css-1lnuk2l-StyledAvatar e1sw81qd1 css-18gxrea-MuiAvatar-root"
+                  class="MuiAvatar-root MuiAvatar-square MuiAvatar-colorDefault HvAvatar-root HvAvatar-avatar HvAvatar-sm css-1lnuk2l-StyledAvatar e1sw81qd1 css-18gxrea-MuiAvatar-root"
                 >
                   MA
                 </div>
