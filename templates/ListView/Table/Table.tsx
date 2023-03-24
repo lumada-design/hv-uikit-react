@@ -11,10 +11,10 @@ import {
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
 
-import { getColumns } from "../utils";
+import { getColumns, NewEntry } from "../utils";
 
 interface TableProps {
-  instance: HvTableInstance;
+  instance: HvTableInstance<NewEntry>;
   isLoading: boolean;
 }
 
@@ -34,7 +34,9 @@ export const Table = ({ instance, isLoading }: TableProps) => {
           <HvTableRow>
             <HvTableCell variant="listcheckbox" />
             {columns.map((col) => (
-              <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
+              <HvTableHeader key={col.Header as string}>
+                {col.Header as string}
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>

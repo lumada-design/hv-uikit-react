@@ -47,7 +47,11 @@ const AssetInventory = () => {
 
   const bulkActionProps = instance.getHvBulkActionsProps?.();
 
-  const handleAction = (event: Event, id: string, action: HvActionGeneric) =>
+  const handleAction = (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) =>
     alert(
       `Callback for action ${action.label} on items ${instance.selectedFlatRows
         .map((r) => r.id)

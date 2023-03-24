@@ -8,7 +8,6 @@ import {
   Cell,
   CellPropGetter,
   CellProps,
-  Column,
   ColumnInstance,
   ColumnInterface,
   FooterPropGetter,
@@ -188,7 +187,12 @@ export type HvTableColumnConfig<D extends object = Record<string, unknown>> =
 
 // #region HOOKS
 export interface HvHooks<D extends object = Record<string, unknown>>
-  extends Hooks<D>,
+  extends Omit<
+      Hooks<D>,
+      | "getToggleRowSelectedProps"
+      | "getToggleAllRowsSelectedProps"
+      | "getToggleAllPageRowsSelectedProps"
+    >,
     UseExpandedHooks<D>,
     UseGroupByHooks<D>,
     UseSortByHooks<D>,
@@ -232,9 +236,7 @@ export interface HvTableOptions<D extends object>
     UseHvRowExpandTableOptions {
   columns?: Array<HvTableColumnConfig<D>>;
   data?: D[];
-
   initialState?: Partial<HvTableState<D>>;
-
   labels?: Record<string, string>;
 }
 
@@ -250,16 +252,19 @@ export interface HvTableColumnOptions<
 
 // #region INSTANCE
 export interface HvTableInstance<D extends object = Record<string, unknown>>
-  extends TableInstance<D>,
+  extends Omit<
+      TableInstance<D>,
+      "getToggleAllRowsSelectedProps" | "getToggleAllPageRowsSelectedProps"
+    >,
     Omit<HvTableOptions<D>, "columns" | "pageCount" | "initialState" | "data">,
     UseColumnOrderInstanceProps<D>,
-    UseExpandedInstanceProps<D>,
-    UseFiltersInstanceProps<D>,
-    UseGlobalFiltersInstanceProps<D>,
-    UseGroupByInstanceProps<D>,
-    UsePaginationInstanceProps<D>,
-    UseSortByInstanceProps<D>,
-    UseHvRowSelectionTableInstance<D>,
+    Omit<UseExpandedInstanceProps<D>, "rows">,
+    Omit<UseFiltersInstanceProps<D>, "rows" | "rowsById" | "flatRows">,
+    Omit<UseGlobalFiltersInstanceProps<D>, "rows" | "rowsById" | "flatRows">,
+    Omit<UseGroupByInstanceProps<D>, "rows" | "rowsById" | "flatRows">,
+    Omit<UsePaginationInstanceProps<D>, "page">,
+    Omit<UseSortByInstanceProps<D>, "rows">,
+    Omit<UseHvRowSelectionTableInstance<D>, "selectedFlatRows">,
     UseHvTableStickyTableInstance<D>,
     UseHvHeaderGroupsInstance,
     UseHvPaginationTableInstance<D>,
@@ -276,17 +281,20 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
   rowsById: Record<string, HvRowInstance<D>>;
   flatRows: Array<HvRowInstance<D>>;
   getHooks: () => HvHooks<D>;
-  getTableProps: (propGetter?: TablePropGetter<D>) => HvUseTableProps;
+  getTableProps: (
+    propGetter?: TablePropGetter<D> & HvExtraProps
+  ) => HvUseTableProps;
   selectedFlatRows: Array<HvRowInstance<D>>;
-
   initialRows: Array<HvRowInstance<D>>;
   initialRowsById: Record<string, HvRowInstance<D>>;
-
   labels: Record<string, string>;
 }
 
 export interface HvColumnInstance<D extends object = Record<string, unknown>>
-  extends ColumnInstance<D>,
+  extends Omit<
+      ColumnInstance<D>,
+      "Cell" | "columns" | "parent" | "placeholderOf"
+    >,
     Omit<HvTableColumnOptions<D>, "id">,
     UseFiltersColumnProps<D>,
     UseGroupByColumnProps<D>,
@@ -300,13 +308,18 @@ export interface HvColumnInstance<D extends object = Record<string, unknown>>
   getFooterProps: (propGetter?: FooterPropGetter<D>) => HvUseTableFooterProps;
 }
 
-export type HvColumn<D extends object = Record<string, unknown>> = Column<D>;
-
 export interface HvRowInstance<D extends object = Record<string, unknown>>
-  extends Row<D>,
-    UseGroupByRowProps<D>,
-    UseHvRowSelectionRowInstance,
-    UseHvRowExpandRowInstance<D> {
+  extends Omit<
+      Row<D>,
+      | "getToggleRowExpandedProps"
+      | "getToggleRowSelectedProps"
+      | "cells"
+      | "allCells"
+      | "subRows"
+    >,
+    Omit<UseGroupByRowProps<D>, "subRows">,
+    Omit<UseHvRowSelectionRowInstance, "subRows">,
+    Omit<UseHvRowExpandRowInstance<D>, "subRows"> {
   cells: Array<HvCellInstance<D>>;
   allCells: Array<HvCellInstance<D>>;
   getRowProps: (propGetter?: RowPropGetter<D>) => HvUseTableRowProps;
@@ -319,11 +332,13 @@ export interface HvRowInstance<D extends object = Record<string, unknown>>
 export interface HvCellInstance<
   D extends object = Record<string, unknown>,
   V = any
-> extends Cell<D, V>,
+> extends Omit<Cell<D, V>, "column" | "row">,
     UseGroupByCellProps<D> {
   column: HvColumnInstance<D>;
   row: HvRowInstance<D>;
-  getCellProps: (propGetter?: CellPropGetter<D>) => HvUseTableCellProps;
+  getCellProps: (
+    propGetter?: CellPropGetter<D> & HvExtraProps
+  ) => HvUseTableCellProps;
 }
 // #endregion
 
@@ -437,10 +452,10 @@ const useHvTableSetup = (hooks) => {
 useHvTableSetup.pluginName = "useHvTableSetup";
 
 function useHvTable<D extends object = Record<string, unknown>>(
-  props: { data?: D[] } & HvExtraProps,
-  ...plugins: any
-) {
-  const { data: dataProp, columns: columnsProp, ...others } = props;
+  options: HvTableOptions<D>,
+  ...plugins: Array<PluginHook<D>>
+): HvTableInstance<D> {
+  const { data: dataProp, columns: columnsProp, ...others } = options;
 
   const data = useDefaultData(dataProp);
   const columns = useDefaultColumns(columnsProp, data);
@@ -457,8 +472,8 @@ function useHvTable<D extends object = Record<string, unknown>>(
     plugins.push(useHvTableStyles);
   }
 
-  // main hook call
-  return useTable(
+  // Main hook call
+  return useTable<D>(
     {
       data,
       columns,
@@ -466,7 +481,7 @@ function useHvTable<D extends object = Record<string, unknown>>(
     },
     useHvTableSetup,
     ...plugins
-  );
+  ) as any;
 }
 
 export default useHvTable;

@@ -15,7 +15,10 @@ import { useForkRef } from "hooks";
 import TableSectionContext from "../TableSectionContext";
 import { HvFocus } from "components";
 
-export type HvTableBodyProps = Omit<HvBaseProps, "children"> & {
+export type HvTableBodyProps = HvBaseProps<
+  HTMLTableSectionElement,
+  { children }
+> & {
   /**
    * Content to be rendered
    */

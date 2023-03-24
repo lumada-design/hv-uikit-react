@@ -1,8 +1,13 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "../../types";
 import { tableClasses, HvTableClasses } from ".";
-import { CSSProperties, forwardRef, useMemo, useRef } from "react";
+import {
+  CSSProperties,
+  forwardRef,
+  TableHTMLAttributes,
+  useMemo,
+  useRef,
+} from "react";
 import TableContext from "./TableContext";
 import { transientOptions } from "utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -22,7 +27,7 @@ export type HvTableCellVariant =
   | "default"
   | "none";
 
-export type HvTableProps = HvBaseProps & {
+export type HvTableProps = TableHTMLAttributes<HTMLTableElement> & {
   /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to `table`.

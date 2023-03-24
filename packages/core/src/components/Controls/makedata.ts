@@ -1,6 +1,8 @@
+import { HvTableColumnConfig } from "../Table/hooks/useTable";
 import range from "lodash/range";
 
 const getOption = (opts, i) => opts[i % opts.length];
+
 const getTime = (priority, index) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
@@ -10,6 +12,7 @@ const getTime = (priority, index) => {
     seconds: i % 60,
   };
 };
+
 const getPriority = (i) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
@@ -28,7 +31,7 @@ const newEntry = (i) => {
 
 export const makeData = (len = 10) => range(len).map(newEntry);
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },

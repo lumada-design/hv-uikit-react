@@ -28,7 +28,13 @@ import {
   HvDropDownMenu,
   HvListValue,
 } from "components";
-import { makeData, getColumns, makeSelectedData } from "./storiesUtils";
+import {
+  makeData,
+  getColumns,
+  makeSelectedData,
+  SampleColumn,
+  SampleDataProps,
+} from "./storiesUtils";
 import {
   Ban,
   Delete,
@@ -61,7 +67,7 @@ export const KitchenSink: StoryObj = {
     }, []);
 
     const columns = useMemo(() => {
-      const cols = [
+      const cols: SampleColumn[] = [
         ...getColumns(),
         {
           id: "actions",
@@ -107,10 +113,11 @@ export const KitchenSink: StoryObj = {
 
       cols[2].disableSortBy = true;
       cols[5].sortType = colSort;
+
       return cols;
     }, [colSort]);
 
-    const initialData = useMemo(
+    const initialData: SampleDataProps[] = useMemo(
       () =>
         makeSelectedData(64).map((entry) => ({
           ...entry,
@@ -142,7 +149,7 @@ export const KitchenSink: StoryObj = {
       toggleAllRowsSelected,
       getHvBulkActionsProps,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -260,15 +267,15 @@ export const KitchenSink: StoryObj = {
 
 export const EmptyCells: StoryObj = {
   render: () => {
-    const columns = getColumns();
-    const data = makeData(6).map((entry) => ({
+    const columns: SampleColumn[] = getColumns();
+    const data: SampleDataProps[] = makeData(6).map((entry) => ({
       ...entry,
       // make some entries empty
       status: entry.status === "Closed" ? null : entry.status,
     }));
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData({
+      useHvData<SampleDataProps>({
         columns,
         data,
         defaultColumn: {
@@ -331,9 +338,9 @@ export const EmptyCells: StoryObj = {
 
 export const LockedSelection: StoryObj = {
   render: () => {
-    const data = useMemo(() => makeData(64), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(64), []);
 
-    const columns = useMemo(
+    const columns: SampleColumn[] = useMemo(
       () => [
         ...getColumns(),
         {
@@ -365,7 +372,7 @@ export const LockedSelection: StoryObj = {
       selectedFlatRows,
       getHvBulkActionsProps,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -523,9 +530,9 @@ export const AlternativeLayout: StoryObj = {
     const [layoutHook, setLayoutHook] = useState(() => useFlexLayout);
     const [tableElements, setTableElements] = useState(false);
 
-    const data = useMemo(() => makeData(64), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(64), []);
 
-    const columns = useMemo(
+    const columns: SampleColumn[] = useMemo(
       () => [
         { Header: "Title", accessor: "name", minWidth: 120 },
         { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -534,7 +541,7 @@ export const AlternativeLayout: StoryObj = {
           Header: "Probability",
           accessor: "riskScore",
           align: "right",
-          Cell: ({ value }) => `${value}%`,
+          Cell: ({ value }) => <>{value}%</>,
         },
         { Header: "Priority", accessor: "priority" },
         {
@@ -560,9 +567,9 @@ export const AlternativeLayout: StoryObj = {
           data={data}
           layoutHook={layoutHook}
           component={tableElements ? "table" : "div"}
-          // key ensures a new context for the SampleTable's
+          // Key ensures a new context for the SampleTable's
           // useHvTable call when React reconciles the tree
-          key={layoutHook}
+          key={layoutHook as any}
         />
       ),
       [columns, data, layoutHook, tableElements]
@@ -662,7 +669,7 @@ export const AlternativeLayout: StoryObj = {
 
 export const ColumnResize: StoryObj = {
   render: () => {
-    const columns = useMemo(
+    const columns: SampleColumn[] = useMemo(
       () => [
         { Header: "Title", accessor: "name", minWidth: 120 },
         { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -676,13 +683,13 @@ export const ColumnResize: StoryObj = {
           Header: "Probability",
           accessor: "riskScore",
           align: "right",
-          Cell: ({ value }) => `${value}%`,
+          Cell: ({ value }) => <>{value}%</>,
         },
         { Header: "Priority", accessor: "priority" },
       ],
       []
     );
-    const data = useMemo(() => makeData(6), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(6), []);
 
     const defaultColumn = useMemo(
       () => ({
@@ -694,7 +701,7 @@ export const ColumnResize: StoryObj = {
     );
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-      useHvData(
+      useHvData<SampleDataProps>(
         {
           columns,
           data,

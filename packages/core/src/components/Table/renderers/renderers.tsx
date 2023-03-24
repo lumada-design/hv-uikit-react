@@ -103,13 +103,13 @@ export function hvExpandColumn<D extends Record<string, unknown>>(
 
 export function hvTagColumn<
   D extends Record<string, unknown>,
-  C extends HvTableColumnConfig<D>
+  C extends HvTableColumnConfig<D>,
+  A extends Record<string, unknown>
 >(
   col: C,
-  valueDataKey: keyof D,
-  colorDataKey: keyof D,
-  textColorDataKey: keyof D,
-  // eslint-disable-next-line @typescript-eslint/default-param-last
+  valueDataKey: keyof A,
+  colorDataKey: keyof A,
+  textColorDataKey: keyof A,
   fromRowData: boolean = false,
   tagProps?: HvTagProps
 ): HvTableColumnConfig<D> {
@@ -212,7 +212,7 @@ export function hvDropdownColumn<
 }
 
 export function hvProgressColumn<
-  D extends Record<string, number>,
+  D extends Record<string, unknown>,
   C extends HvTableColumnConfig<D>
 >(
   col: C,

@@ -1,3 +1,4 @@
+import { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
 import {
   Cards,
   List,
@@ -10,7 +11,7 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },
@@ -94,7 +95,7 @@ export const rightControlValues = [
 
 type Priority = "Low" | "High" | "Medium";
 
-type NewEntry = {
+export type NewEntry = {
   id: string;
   name: string;
   eventType: string;

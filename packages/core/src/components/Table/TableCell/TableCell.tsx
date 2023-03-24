@@ -23,7 +23,10 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "hooks";
 
-export type HvTableCellProps = Omit<TdHTMLAttributes<HTMLElement>, "align"> &
+export type HvTableCellProps = Omit<
+  TdHTMLAttributes<HTMLTableCellElement>,
+  "align"
+> &
   Omit<HvBaseProps, "children"> & {
     /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to td. */
     component?: React.ElementType;

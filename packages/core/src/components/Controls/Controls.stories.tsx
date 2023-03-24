@@ -15,6 +15,7 @@ import {
   HvPanel,
   HvRightControl,
   HvSimpleGrid,
+  HvTableColumnConfig,
   useHvData,
   useHvFilters,
   useHvGlobalFilter,
@@ -223,7 +224,7 @@ export const ControlsControlled = () => {
           onSort={(value) =>
             setSortBy([
               {
-                id: value?.accessor,
+                id: value?.accessor as string,
                 desc: value?.desc,
               },
             ])
@@ -270,7 +271,6 @@ export const ControlsControlled = () => {
             {rows?.map((row) => {
               return (
                 <HvListItem
-                  // bgcolor="atmo1"
                   key={`${row?.values?.name}-row`}
                   style={{ width: "100%" }}
                 >
@@ -311,7 +311,7 @@ export const CustomControls = () => {
     [temperatureSelection]
   );
 
-  const columns = useMemo(
+  const columns: HvTableColumnConfig[] = useMemo(
     () => [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
@@ -437,7 +437,7 @@ export const MixedControls = () => {
     [temperatureSelection]
   );
 
-  const columns = useMemo(
+  const columns: HvTableColumnConfig[] = useMemo(
     () => [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
@@ -485,7 +485,7 @@ export const MixedControls = () => {
         views={singleView}
         defaultView="card"
         hideViewSwitcher
-        callbacks={{ setGlobalFilter: setGlobalFilter, setSortBy: undefined }}
+        callbacks={{ setGlobalFilter: setGlobalFilter }}
       >
         <HvLeftControl id="MultibuttonFilter" placeholder="Search">
           <HvMultiButton style={{ width: "350px" }}>

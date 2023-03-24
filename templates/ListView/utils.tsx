@@ -1,7 +1,8 @@
 import {
   HvTooltip,
   HvTypography,
-  HvCellInstance,
+  HvTableColumnConfig,
+  HvCellProps,
 } from "@hitachivantara/uikit-react-core";
 import {
   Level0Good,
@@ -24,12 +25,12 @@ export const getStatusIcon = (status: number) => {
   }
 };
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig<NewEntry>[] => [
   {
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: (cellData: HvCellInstance) => {
+    Cell: (cellData: HvCellProps<NewEntry>) => {
       switch (cellData.row.original.status) {
         case 0:
           return (
@@ -71,7 +72,7 @@ export const actions = [{ id: "refresh", label: "Refresh", icon: <Refresh /> }];
 
 type Entry = { name: string; description: string };
 
-type NewEntry = {
+export type NewEntry = {
   id: string;
   name: string;
   description: string;

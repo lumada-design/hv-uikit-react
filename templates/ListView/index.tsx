@@ -21,7 +21,7 @@ import {
 
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
-import { getColumns, actions, makeData } from "./utils";
+import { getColumns, actions, makeData, NewEntry } from "./utils";
 import classes from "./styles";
 
 const idsToControl = {
@@ -30,14 +30,14 @@ const idsToControl = {
 };
 
 const ListView = () => {
-  const originalData = useMemo(() => makeData(25), []);
+  const originalData: NewEntry[] = useMemo(() => makeData(25), []);
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
   const [isLoading, setIsLoading] = useState(false);
   const [kpiSelection, setKpiSelection] = useState<number | undefined>();
   const breakpoints = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 } as HvGridProps;
 
-  const instance = useHvData(
+  const instance = useHvData<NewEntry>(
     {
       data,
       columns,
@@ -59,7 +59,11 @@ const ListView = () => {
     instance.setFilter("status", "");
   };
 
-  const handleAction = (event: Event, id: string, action: HvActionGeneric) => {
+  const handleAction = (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => {
     if (action.id === "refresh") {
       doRefresh();
     }

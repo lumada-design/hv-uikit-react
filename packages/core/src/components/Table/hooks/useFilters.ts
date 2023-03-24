@@ -6,6 +6,6 @@ export type UseFiltersProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-useHvFilters.pluginName = "useHvFilters";
+(useHvFilters.pluginName as string) = "useHvFilters";
 
 export default useHvFilters as UseFiltersProps;
