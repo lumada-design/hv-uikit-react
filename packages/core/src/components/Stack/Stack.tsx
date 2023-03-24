@@ -13,12 +13,12 @@ import { HvFocus } from "components";
 import { HvBreakpoints } from "types/tokens";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 
-export type HvStackDirection = "column" | "row";
+export type HvStackDirection = "column" | "row" | Partial<HvStackBreakpoints>;
 export type HvStackBreakpoints = Record<HvBreakpoints, string>;
 
 export type HvStackProps = HvBaseProps & {
   /** The direction of the stack. Can be either a string or an object that states the direction for each breakpoint. */
-  direction?: HvStackDirection | Partial<HvStackBreakpoints>;
+  direction?: HvStackDirection;
   /** The spacing between elements of the stack. */
   spacing?: HvBreakpoints;
   /** The divider component to be used between the stack elements.

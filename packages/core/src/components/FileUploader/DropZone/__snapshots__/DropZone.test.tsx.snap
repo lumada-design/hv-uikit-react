@@ -8,14 +8,14 @@ exports[`DropZone > should render correctly 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1ql6ffc-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1yqg2xh-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
     >
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-c9andj-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1jz6fnw-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -62,11 +62,11 @@ exports[`DropZone > should render correctly 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
       >
         <p
-          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-1ftieet-getStyledComponent-StyledDragText e1tnpalo0"
+          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-16pixaq-getStyledComponent-StyledDragText e1tnpalo0"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-vkoe8m-StyledSelectedFilesText e1r4xwg20"
+            class="HvDropZone-selectFilesText css-1wb4dkx-StyledSelectedFilesText e1r4xwg20"
           >
              Select files
           </span>
@@ -85,14 +85,14 @@ exports[`DropZone > should render correctly when disabled 1`] = `
     id="dropzone-test"
   >
     <label
-      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-qw4fvm-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
+      class="HvDropZone-dropZoneLabel e1r4xwg29 HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1qwbbry-getStyledComponent-StyledTypography-StyledLabel e1tnpalo0"
       for="dropzone-test-input-file"
       id="dropzone-test-input-file-label"
     >
       Label
     </label>
     <label
-      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-1qzoyak-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
+      class="e1r4xwg28 HvInfoMessage-root HvInfoMessage-gutter e5krntv0 HvTypography-root HvTypography-body css-75w5g7-getStyledComponent-StyledTypography-StyledInfoMessage e1tnpalo0"
       id="dropzone-test-description"
     >
       Max. file size: 1.00B
@@ -140,11 +140,11 @@ exports[`DropZone > should render correctly when disabled 1`] = `
         class="HvDropZone-dropZoneAreaLabels css-1kosfbb-StyledDropAreaLabels e1r4xwg21"
       >
         <p
-          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-1ftieet-getStyledComponent-StyledDragText e1tnpalo0"
+          class="HvDropZone-dragText e1r4xwg23 HvTypography-root HvTypography-body css-16pixaq-getStyledComponent-StyledDragText e1tnpalo0"
         >
           Drag and drop or
           <span
-            class="HvDropZone-selectFilesText css-vkoe8m-StyledSelectedFilesText e1r4xwg20"
+            class="HvDropZone-selectFilesText css-1wb4dkx-StyledSelectedFilesText e1r4xwg20"
           >
              Select files
           </span>

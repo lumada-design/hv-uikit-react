@@ -1,3 +1,4 @@
-export { default as snackbarContentWrapperClasses } from "./snackbarContentWrapperClasses";
+export { default as snackbarContentClasses } from "./snackbarContentWrapperClasses";
 export * from "./snackbarContentWrapperClasses";
-export { default } from "./SnackbarContentWrapper";
+export { default as HvSnackbarContent } from "./SnackbarContentWrapper";
+export * from "./SnackbarContentWrapper";

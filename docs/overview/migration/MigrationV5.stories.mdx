@@ -1,0 +1,590 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Overview/Migration/From v4.x" />
+
+# Migration from v4.x to v5.x
+
+The NEXT UI Kit v5 is one of our most ambitious release to date. In this version, we **implemented our own theming system** to help reduce the gap between the
+Design System and UI Kit releases as well as improve our customization capabilities. In this sense, UI Kit v5 introduces the concept of **white labeling**
+which enables the use of the UI Kit in different design scenarios to seamlessly meet clients' needs.
+
+In this new version, we also reviewed the **components to be fully compliant with the most recent guidelines of the latest Design System v5 release**. Furthermore,
+we also took the opportunity to **migrate our packages from MUI's JSS styling system to Emotion**. This change was due mainly to performance benefits
+introduced by using Emotion over JSS.
+
+Thus, in this page, you'll learn how to migrate from v4.x to v5.x. **If you are using UI Kit versions prior to v4.x, we encourage you to sequentially migrate
+your project and go back to this page once you are on v4.x.**
+
+Here's what there is to know about this migration:
+
+- [React packages](#react-packages)
+- [UI Kit packages](#ui-kit-packages)
+- [Emotion packages](#emotion-packages)
+- [MUI packages](#mui-packages)
+  - [Breaking changes in the theme object](#theme-object)
+  - [Update styling and theme utilities](#update-utilities)
+- [Renamed components and types](#renamed-components-types)
+- [Breaking changes and deprecated values in components](#breaking-changes-deprecated-components)
+  - [Provider](#provider)
+  - [Button](#button)
+  - [Typography](#typography)
+  - [Card](#card)
+  - [Global actions](#global-actions)
+  - [Dropdown menu](#dropdown-menu)
+  - [Dot pagination](#dot-pagination)
+  - [Avatar](#avatar)
+  - [Panel](#panel)
+  - [Vertical navigation](#vertical-navigation)
+
+## React packages <a id="react-packages" />
+
+UI Kit v5.x supports versions 17.x and 18.x of `react` and `react-dom`. Thus, if you are using older versions, you should upgrade
+them to avoid errors while using this new UI Kit version.
+
+## UI Kit packages <a id="ui-kit-packages" />
+
+Before proceeding to this upgrade, you should also note that **you can't use UI Kit packages v4.x and v5.x simultaneously** due to the introduction of a new theming
+system not compatible with v4.x components. Thus, if your application relies on the following packages, you'll not be able to migrate your application at the moment:
+
+- `@hitachivantara/uikit-react-viz`
+- `@hitachivantara/uikit-react-compat`
+- `@hitachivantara/uikit-react-code-editor`
+- `@hitachivantara/uikit-react-lab`
+- `@hitachivantara/uikit-common-themes`: this package will not evolve beyond v4.x since it was replaced by `@hitachivantara/uikit-styles` in v5.x.
+
+The `@hitachivantara/uikit-react-icons` package is already available on v5.x.
+
+Regarding `@hitachivantara/uikit-react-core`, v5.x is also available but is missing the following components: `HvDatePicker`, `HvSlider`, `HvTimePicker`,
+`HvScrollToHorizontal`, `HvScrollToVertical`, `HvFilterGroup`, and the user preferences components `HvUserPreferences`, `HvUserPreferencesActions`,
+`HvUserPreferencesAction`, `HvUserPreferencesOptions`, `HvUserPreferencesOption`, `HvUserPreferencesOptionsGroup`, and `HvUserPreferencesOptionsGroupLabel`.
+
+Over time, we will align these packages with v5 and add the missing components.
+
+If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
+using the command below.
+
+```
+npm install @hitachivantara/uikit-react-core@latest
+```
+
+Use the same command for all UI Kit packages you need to upgrade.
+
+## Emotion packages <a id="emotion-packages" />
+
+In UI Kit v5.x, `@emotion/css` is a new peer dependency of `uikit-react-core`. Thus, you'll need to install it with the following command
+to run your application:
+
+```
+npm install @emotion/css
+```
+
+The `@emotion/react` and `@emotion/styled` packages are also peer dependencies of `uikit-react-core` and the styled package from Emotion is also a peer dependency of
+`uikit-react-icons`. However, it is expected that you already have them installed in your project since UI Kit v4.x already required them.
+
+## MUI packages <a id="mui-packages" />
+
+Even though we created a new theming system in this new version, we are still relying on some of the solutions provided by [MUI](https://mui.com/) as we have been
+in previous versions. Our approach has always been to use the features we find value and enable them to our users. This philosophy did not change, and `@mui/material`
+is still needed in v5.x as a peer dependency to run the `uikit-react-core` package.
+
+In v5, MUI has migrated their styling solution from [JSS to Emotion](https://mui.com/blog/mui-core-v5/#migration-from-jss-to-emotion). Since previous versions of
+the UI Kit were relying entirely on [MUI's JSS styling system](https://mui.com/system/styles/basics/), we decided to keep using this system in v4.x to give
+us the time needed to do our own evaluation.
+
+In the NEXT UI Kit v5, the necessary evaluations were made, and we decided to also make the switch to Emotion to style our components. Thus, the `@mui/styles` package
+is no longer a peer dependency for the `uikit-react-core` package.
+
+Since we are no longer using JSS styling system in our packages, we recommend that you also make the transition to Emotion. However, the NEXT UI Kit was not built
+to be used with one specific styling library so you can keep using the one best suited for your needs.
+
+### Breaking changes in the theme object <a id="theme-object" />
+
+As mentioned, with UI Kit v5 we introduced our own theming system dropping the one from MUI. Due to this breaking change it's **no longer possible to solely
+rely on MUI to access the `theme` object where all the theme's properties are stored**.
+
+Thus, to access these properties, you now need to import the `theme` object from the `uikit-react-core` package. You can also access them through the `useTheme`
+hook also imported from the `core` package. While the values of the former are CSS variables and will be enough in most cases, the later are exact values that you
+can use in cases where the usage of CSS variables is not possible. Find more information about the `theme` object and the `useTheme` hook on the
+[theming](/docs/guides-theming-theming--theme-context#theming) documentation.
+
+**Note that there is currently an exception and you'll need to continue using the theme object from MUI for [CSS media queries](https://mui.com/material-ui/customization/breakpoints/#css-media-queries).**
+In future versions we expect these media queries to be added to our own theme but until then use the ones from MUI.
+
+Because of these changes, it's necessary to update the styling MUI utilities used in your application, namely `useTheme`, `withStyles`, and `makeStyles`.
+This will be more thoroughly discussed in the [next section](#update-utilities).
+
+Since the theme has a different structure from the one provided on v4.x, find below a mapping of the `theme` object where changes were introduced.
+
+| MUI theme object                                                                                                                                                                                                                                                                                     | UI Kit theme object from `core` package | UI Kit theme object from `useTheme` hook   |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------ |
+| `theme.hv.palette.accent.*` `theme.hv.palette.atmosphere.*` `theme.hv.palette.base.*` `theme.hv.palette.semantic.*` `theme.hv.palette.support.*` `theme.hv.viz.palette.categorical.*` `theme.hv.viz.palette.sequential.*` `theme.hv.viz.palette.polarized.*` `theme.hv.viz.palette.undefinedState.*` | `theme.colors.*`                        | `activeTheme.colors.modes[selectedMode].*` |
+| `theme.hv.spacing.*`                                                                                                                                                                                                                                                                                 | `theme.space.*`                         | `activeTheme.space.*`                      |
+| `theme.hv.shadows[*]`                                                                                                                                                                                                                                                                                | `theme.shadows.*`                       | `activeTheme.shadows.*`                    |
+| `theme.hv.typography.fontFamily`                                                                                                                                                                                                                                                                     | `theme.fontFamily`                      | `activeTheme.fontFamily`                   |
+| `theme.hv.typography["3xlTitle"]`                                                                                                                                                                                                                                                                    | `theme.typography.display`              | `activeTheme.typography.display`           |
+| `theme.hv.typography.xlTitle`                                                                                                                                                                                                                                                                        | `theme.typography.title1`               | `activeTheme.typography.title1`            |
+| `theme.hv.typography.mTitle`                                                                                                                                                                                                                                                                         | `theme.typography.title2`               | `activeTheme.typography.title2`            |
+| `theme.hv.typography.xsTitle`                                                                                                                                                                                                                                                                        | `theme.typography.title3`               | `activeTheme.typography.title3`            |
+| `theme.hv.typography.highlightText`                                                                                                                                                                                                                                                                  | `theme.typography.label`                | `activeTheme.typography.label`             |
+| `theme.hv.typography.normalText`                                                                                                                                                                                                                                                                     | `theme.typography.body`                 | `activeTheme.typography.body`              |
+| `theme.hv.typography.vizText`                                                                                                                                                                                                                                                                        | `theme.typography.caption1`             | `activeTheme.typography.caption1`          |
+| `theme.hv.typography.*`                                                                                                                                                                                                                                                                              | `theme.typography.*`                    | `activeTheme.typography.*`                 |
+| `theme.zIndex.appBar`                                                                                                                                                                                                                                                                                | `theme.zIndices.banner`                 | `activeTheme.zIndices.banner`              |
+| `theme.zIndex.mobileStepper`                                                                                                                                                                                                                                                                         | `theme.zIndices.sticky`                 | `activeTheme.zIndices.sticky`              |
+| `theme.zIndex.drawer`                                                                                                                                                                                                                                                                                | `theme.zIndices.overlay`                | `activeTheme.zIndices.overlay`             |
+| `theme.zIndex.snackbar`                                                                                                                                                                                                                                                                              | `theme.zIndices.dropdown`               | `activeTheme.zIndices.dropdown`            |
+| `theme.zIndex.tooltip`                                                                                                                                                                                                                                                                               | `theme.zIndices.popover`                | `activeTheme.zIndices.popover`             |
+| `theme.zIndex.speedDial`                                                                                                                                                                                                                                                                             | `theme.zIndices.fab`                    | `activeTheme.zIndices.fab`                 |
+| `theme.zIndex.*`                                                                                                                                                                                                                                                                                     | `theme.zIndices.*`                      | `activeTheme.zIndices.*`                   |
+| `theme.hvSpacing()`                                                                                                                                                                                                                                                                                  | `theme.spacing()`                       | NA                                         |
+| `theme.breakpoints.up()`                                                                                                                                                                                                                                                                             | NA                                      | NA                                         |
+| `theme.breakpoints.down()`                                                                                                                                                                                                                                                                           | NA                                      | NA                                         |
+| `theme.breakpoints.between()`                                                                                                                                                                                                                                                                        | NA                                      | NA                                         |
+| `theme.breakpoints.only()`                                                                                                                                                                                                                                                                           | NA                                      | NA                                         |
+| `theme.breakpoints.not()`                                                                                                                                                                                                                                                                            | NA                                      | NA                                         |
+
+#### Typography
+
+New variants where added to the typography and, when possible, the DS3 variants where mapped to the new DS5 variants as shown above. However, DS3 variants are
+still available in cases where mapping was not possible. Learn more about the new variants on the [typography page](/docs/foundation-typography-usage--usage).
+
+#### zIndices
+
+Most of the zIndex values changed on this new version so you'll need to update your application where you were using them using the mapping above.
+
+#### Breakpoints
+
+As mentioned, you'll need to continue using the theme object from MUI to create CSS media queries with the `up`, `down`, `between`, `only`, and `not` utilities.
+We expected to add these media queries to our own theme in future versions.
+
+#### Colors
+
+Changes were introduced to the colors in Design System v5.x. To have a better understanding of the changes between DS3 and DS5 report to the
+[colors page](/docs/foundation-colors--main) where you can switch between the design systems.
+
+#### Spacing methods
+
+Regarding the spacing methods, we only have one in v5.x when there were previously two in v4.x, `theme.spacing()` and `theme.hvSpacing()`. We decided to combine
+both methods and create a `theme.spacing()` method in the new theme object. Note that while the previously base used for the `theme.spacing()` function was 7.5px,
+we now use different ones for the DS5 and DS3 themes. Read more about this on this [page](/docs/guides-theming-theming--main#spacing).
+
+### Update styling and theme utilities <a id="update-utilities" />
+
+Due to the breaking changes introduced with UI Kit v5.x, all the MUI's utilities used to access the theme object and style your components must be updated.
+
+Thus, you'll need to:
+
+- Remove MUI's types definitions for the theme;
+- Review the `useTheme`, `makeStyles`, and `withStyles` MUI utilities.
+
+#### Remove types definition
+
+You'll need to remove all TypeScript types definitions previously defined for MUI since they are no longer needed.
+
+In your project you most likely have definitions like the one below and they should be removed.
+
+```ts
+- declare module "@mui/material/styles" {
+-   interface Theme {
+-     hv: HvTheme;
+-     hvSpacing?: SpacingOptions;
+-   }
+- }
+```
+
+#### Review `useTheme` utility
+
+The theme object returned from MUI's `useTheme` utility is no longer accurate since we dropped MUI's theming system. Thus, to access the theme's properties you'll
+need to use the `theme` object imported from `uikit-react-core` as shown below.
+
+```diff
+- import { useTheme } from "@mui/material/styles";
++ import { theme } from "@hitachivantara/uikit-react-core";
+
+  const Component = () => {
+-   const theme = useTheme();
+-   const backgroundColor = theme.hv.palette.atmosphere.atmo1;
++   const backgroundColor = theme.colors.atmo1;
+
+    return (...)
+  };
+```
+
+However, if you are creating CSS media queries through MUI's theme, you must continue to do so since we don't support this feature yet. Find an example below.
+
+```diff
++ import { theme } from "@hitachivantara/uikit-react-core";
+  import { useTheme } from "@mui/material/styles";
+  import { useMediaQuery } from "@mui/material";
+
+  const Component = () => {
+-   const theme = useTheme();
++   const muiTheme = useTheme();
+-   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
++   const isMdUp = useMediaQuery(muiTheme.breakpoints.up("md"));
+-   const backgroundColor = theme.hv.palette.atmosphere.atmo1;
++   const backgroundColor = theme.colors.atmo1;
+
+    return (...)
+  };
+```
+
+Note that the values inside this `theme` object are CSS variables. In some situations it's possible you'll need to use the exact values instead of these variables. In
+those cases, you can access the theme context through the `useTheme` hook from the `core` package. Please find an example below.
+
+```diff
+- import { useTheme } from "@mui/material/styles";
++ import { useTheme } from "@hitachivantara/uikit-react-core";
+
+  const Component = () => {
+-   const theme = useTheme();
++   const { selectedMode, activeTheme } = useTheme();
+-   const backgroundColor = theme.hv.palette.atmosphere.atmo1;
++   const backgroundColor = activeTheme?.colors.modes[selectedMode].atmo1;
+
+    return (...);
+  };
+```
+
+#### Keep using `@mui/styles` and update `makeStyles` and `withStyles` utilities
+
+If you want to keep using `@mui/styles` in your project to use the JSS styling system, bear in mind that they are now limitations when using it with UI Kit v5.x.
+
+The `theme` object returned from MUI's utilities can no longer be used to access the theme's variables. Instead this object should be imported from
+the `uikit-react-core` package.
+
+##### Update `makeStyles` utility
+
+If you are using the `makeStyles` utility from MUI to style your components in your application, you'll need to update the references to the `theme` object
+like shown below.
+
+```diff
++ import { theme } from "@hitachivantara/uikit-react-core";
+  import { makeStyles } from "@mui/styles";
+
+- const useStyles = makeStyles((theme) => ({
++ const useStyles = makeStyles({
+    button: {
+-     backgroundColor: theme.hv.palette.atmosphere.atmo1,
++     backgroundColor: theme.colors.atmo1,
+    },
+- }));
++ });
+
+  export default styles;
+```
+
+```diff
+import { HvButton } from "@hitachivantara/uikit-react-core";
+import useStyles from "./styles";
+
+const CustomButton = ({ buttonLabel }) => {
+  const classes = useStyles();
+
+  return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
+};
+```
+
+If you are using MUI's theme object to create CSS media queries, you must continue to do so. Find an example below.
+
+```diff
++ import { theme } from "@hitachivantara/uikit-react-core";
+  import { makeStyles } from "@mui/styles";
+
+- const useStyles = makeStyles((theme) => ({
++ const useStyles = makeStyles((muiTheme) => ({
+    button: {
+-     backgroundColor: theme.hv.palette.atmosphere.atmo1,
++     backgroundColor: theme.colors.atmo1,
+-     [theme.breakpoints.down("md")]: {
++     [muiTheme.breakpoints.down("md")]: {
+        minWidth: 100,
+      }
+    },
+  }));
+
+  export default styles;
+```
+
+##### Update `withStyles` utility
+
+If you were previously using the `withStyles` utility to wrap it around higher-order components, you'll also need to update the references to the `theme` object.
+However, note that if you are relying on MUI's theme object to create CSS media queries, you must continue to do so.
+
+```diff
++ import { theme } from "@hitachivantara/uikit-react-core";
+
+- const styles = (theme) => ({
++ const styles = () => ({
+    button: {
+-     backgroundColor: theme.hv.viz.palette.categorical.cviz1,
+-     paddingBottom: theme.hv.spacing.sm,
++     backgroundColor: theme.colors.cviz1,
++     paddingBottom: theme.space.sm,
+    },
+  });
+
+  export default styles;
+```
+
+```diff
+import { HvButton } from "@hitachivantara/uikit-react-core";
+import { withStyles } from "@mui/styles";
+import styles from "./styles";
+
+const CustomButton = ({ classes, buttonLabel }) => {
+  return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
+};
+
+export default withStyles(styles)(CustomButton);
+```
+
+#### Stop using `@mui/styles` and remove `makeStyles` and `withStyles` utilities
+
+If you want to stop using MUI's JSS styling system, you'll need to uninstall `@mui/styles` from your project by running the command below. Ensure that
+you are not using this package for other purposes on your project and that you'll only need to use the UI Kit theme object on your application.
+
+```
+npm uninstall @mui/styles
+```
+
+Then, you'll need to remove all references to the `makeStyles` and `withStyles` utilities.
+
+##### Remove `makeStyles` utility
+
+Removing all references to the `makeStyles` utility implies that you'll need to use another styling method to create custom classes. Since UI Kit is now using Emotion,
+we will show you how to do so with `@emotion/css`. However, you are free to use any other styling library/method you want.
+
+```diff
+- import { makeStyles } from "@mui/styles";
++ import { theme } from "@hitachivantara/uikit-react-core";
++ import { css } from "@emotion/css";
+
+- const useStyles = makeStyles((theme) => ({
++ const styles = {
+-   button: {
++   button: css({
+-     backgroundColor: theme.hv.palette.atmosphere.atmo1,
++     backgroundColor: theme.colors.atmo1,
+-   },
++   }),
+- }));
++ };
+
+  export default styles;
+```
+
+```diff
+- import useStyles from "./styles";
++ import styles from "./styles";
+  import { HvButton } from "@hitachivantara/uikit-react-core";
+
+  const CustomButton = ({ buttonLabel }) => {
+-   const classes = useStyles();
+
+-   return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
++   return <HvButton className={styles.button}>{buttonLabel}</HvButton>;
+  };
+```
+
+##### Remove the `withStyles` utility
+
+The `withStyles` utility can be removed by creating higher-order components with the `styled` utility from Emotion. This will enable you to create reusable components
+that can be consumed all over your code. Furthermore, your components can continue to receive classes to override the components' styling.
+
+```diff
++ import { theme, HvButton } from "@hitachivantara/uikit-react-core";
++ import styled from "@emotion/styled";
+
+- const styles = (theme) => ({
+-   button: {
+-     backgroundColor: theme.hv.viz.palette.categorical.cviz1,
+-     paddingBottom: theme.hv.spacing.sm,
+-   },
+- });
+
++ const StyledButton = styled(HvButton)({
++   backgroundColor: theme.colors.cviz1,
++   paddingBottom: theme.space.sm,
++ });
+
+- export default styles;
++ export default StyledButton;
+```
+
+```diff
+- import { HvButton } from "@hitachivantara/uikit-react-core";
+- import { withStyles } from "@mui/styles";
+- import styles from "./styles";
++ import StyledButton from "./styles";
+
+  const CustomButton = ({ classes, buttonLabel }) => {
+-   return <HvButton className={classes.button}>{buttonLabel}</HvButton>;
++   return <StyledButton className={classes.button}>{buttonLabel}</StyledButton>;
+  };
+
+- export default withStyles(styles)(CustomButton);
++ export default CustomButton;
+```
+
+## Renamed components and types <a id="renamed-components-types" />
+
+In v5.x, some components and types were renamed as detailed in the table below.
+
+| Type or component | v4.x                   | v5.x                       |
+| ----------------- | ---------------------- | -------------------------- |
+| Component         | HvBreadcrumb           | HvBreadCrumb               |
+| Type              | NavigationItemProp     | HvHeaderNavigationItemProp |
+| Type              | ListValueProp          | HvListValue                |
+| Type              | ListLabelsProp         | HvListLabels               |
+| Type              | BreadCrumbPathElement  | HvBreadCrumbPathElement    |
+| Type              | HvActionContainerProps | HvActionBarProps           |
+| Type              | ActionGeneric          | HvActionGeneric            |
+| Type              | FileUploaderProps      | HvFileUploaderProps        |
+| Type              | FileUploaderLabelsProp | HvFileUploaderLabels       |
+| Type              | FilesAddedEvent        | HvFilesAddedEvent          |
+| Type              | FilesRemovedEvent      | HvFilesRemovedEvent        |
+| Type              | File                   | HvFileData                 |
+| Type              | FileProps              | HvFileProps                |
+| Type              | PaginationLabelsProp   | HvPaginationLabels         |
+| Type              | SimpleGridProps        | HvSimpleGridProps          |
+| Type              | StackDirection         | HvStackDirection           |
+| Type              | InputSuggestion        | HvInputSuggestion          |
+| Type              | TagSuggestion          | HvTagSuggestion            |
+| Type              | HvUiKitThemeNames      | HvThemeColorMode           |
+
+## Breaking changes and deprecated values in components <a id="breaking-changes-deprecated-components" />
+
+### Provider <a id="provider" />
+
+Since we implemented our new theming system, the `HvProvider` API changed significantly. Because of this we recommend that you read the [provider](/docs/guides-provider--main)
+and [theming](/docs/guides-theming-theming--main) documentation where the new API is thoroughly explained.
+
+Briefly, the following properties where removed and/or updated:
+
+- `locale`: removed;
+- `generateClassNameOptions`: removed;
+- `generateClassName`: removed;
+- `disableStylesGeneration`: removed;
+- `uiKitTheme`: renamed to `colorMode`;
+- `theme`: the `themes` property is now used to define your themes and the `theme` only accepts the name of the active theme;
+- `cssBaseline`: renamed to `enableCssBaseline` to choose if the CSS should be applied globally or not applied at all. The concept of scoped CSS baseline
+  was lost but we are working toward incorporating it again;
+- `changeTheme`: removed from the provider and added to the `useTheme` hook from the `react-core-package`.
+
+### Button <a id="button" />
+
+The `HvButton` API suffered some changes: the `category` property was renamed `variant` and the variants `secondary` and `ghost` are now deprecated. Thus, you
+should update these variants to the following values:
+
+- `secondary` to `secondarySubtle`
+- `ghost` to `primaryGhost`
+
+Furthermore, the default `variant` is always `primary` even though the button is an icon.
+
+The following `classes` were also removed:
+
+- `icon`
+- `ghost`
+- `ghostDisabled`
+- `primary`
+- `primaryDisabled`
+- `secondary`
+- `secondaryDisabled`
+- `semantic`
+- `semanticDisabled`
+
+You can have a better overview of the button's API on this [page](/docs/components-button-button--main).
+
+### Typography <a id="typography" />
+
+In DS5, new variants were added to the `HvTypography` component and all the DS3 variants are now considered deprecated. You can still use DS3 variants and,
+when possible, they are mapped to a corresponding DS5 variant. However, since the support for these deprecated variants could be removed at any time, we strongly
+advise to update them to appropriate DS5 variants.
+
+The `link` and `disabled` properties were also added to the component.
+
+Learn more about the typography variants on this [page](/docs/foundation-typography-usage--usage).
+
+### Card <a id="card" />
+
+The `semantic` property was removed and the border color at the top of the card must be set with the `statusColor` instead.
+
+### Global actions <a id="global-action" />
+
+The properties `backButtonAction`, `backButtonAriaLabel`, and `backwardsIcon` were removed from `HvGlobalActions` and the `backButton` property must be used
+instead to pass in the button for the back action.
+
+### Dropdown menu <a id="dropdown-menu" />
+
+The `onToggleOpen` property was removed from the `HvDropdownMenu` and `onToggle` must be used instead. Furthermore, the `disablePortal` is now `true` by default.
+
+### Dot pagination <a id="dot-pagination" />
+
+The `HvDotPagination` component has different specifications for DS3 and DS5. However, due to limitations, it was only possible to implement the component with
+the DS5 specifications. Thus, if you are using the DS3 theme on your application, the `HvDotPagination` component will be the one from DS5. However, the new properties
+`unselectedIcon` and `selectedIcon` were added to the component in order to easily customize it and meet the DS3 guidelines.
+Learn how to do this on this [page](/docs/components-pagination-dot-pagination--customized-dot-pagination).
+
+### Avatar <a id="avatar" />
+
+The `size` property values from the `HvAvatar` component were updated to the values below and the corresponding `classes` were also updated to the same values.
+
+- `XS` to `xs`
+- `SM` to `sm`
+- `MD` to `md`
+- `LG` to `lg`
+- `XL` to `xl`
+
+The values `S`, `M`, and `L` were removed since they were already deprecated in previous versions.
+
+The `containerProps` property was removed and a new `avatarProps` property was added. All properties that were previously defined inside `containerProps`
+must be directly used on the component. On the other hand, the properties that should be used on the avatar and not the container must now be defined
+inside `avatarProps`.
+
+### Panel <a id="panel" />
+
+Since the `HvPanel` component was previously using MUI's `Box` component as its root element it was possible to use CSS properties directly on the
+component as properties. This is no longer possible and you must style the panel using the `style`, `classes`, or `className` properties.
+
+```tsx
++ import { css } from "@emotion/css";
+  import { HvPanel } from "@hitachivantara/uikit-react-core";
+
++ const classes = {
++   panel: css({ maxWidth: "610px", marginTop: "20px", padding: "5px" }),
++ };
+
+  const Component = () => {
+    return (
+-     <HvPanel maxWidth="610px" marginTop="20px" padding="5px">
++     <HvPanel className={classes.panel}>
+        (...)
+      </HvPanel>
+    );
+  };
+```
+
+### Vertical navigation <a id="vertical-navigation" />
+
+The properties below were removed from the `HvVerticalNavigation` component since all the logic of opening and closing the navigation should be external
+to the component. For example, the `HvVerticalNavigation` could be used inside a drawer component.
+
+- `isCollapsable`
+- `isOpen`
+- `toggleOpenCallback`
+- `position`
+- `closeOnExit`
+- `buttonAriaLabel`
+
+Then, the open state of the navigation can be set by the new `open` property.
+
+The following `classes` were also removed:
+
+- `noCollapsable`
+- `legacyMode`
+
+Furthermore, on the `HvVerticalNavigationTree` component, the following properties were removed:
+
+- `onClick`: Use `onChange` for selection and `onToggle` for node expansion/collapse;
+- `label`: Use directly the `aria-label` property instead.

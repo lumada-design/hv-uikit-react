@@ -26,7 +26,6 @@ const classKeys: string[] = [
   "anchorOriginBottomRight",
 ];
 
-export const snackbarClasses = getClasses<HvSnackbarClasses>(
-  classKeys,
-  "HvSnackbar"
-);
+const snackbarClasses = getClasses<HvSnackbarClasses>(classKeys, "HvSnackbar");
+
+export default snackbarClasses;

@@ -4,20 +4,20 @@ import { HvBaseProps } from "../../../types";
 import { StyledActions } from "./Actions.styles";
 import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
 
-export type HvActionsProps = Omit<MuiDialogActionsProps, "classes"> &
+export type HvDialogActionsProps = Omit<MuiDialogActionsProps, "classes"> &
   HvBaseProps & {
     /** Set the dialog to fullscreen mode. */
     fullscreen?: boolean;
     classes?: HvDialogActionClasses;
   };
 
-export const HvActions = ({
+export const HvDialogActions = ({
   classes,
   className,
   children,
   fullscreen = false,
   ...others
-}: HvActionsProps) => {
+}: HvDialogActionsProps) => {
   return (
     <StyledActions
       className={className}

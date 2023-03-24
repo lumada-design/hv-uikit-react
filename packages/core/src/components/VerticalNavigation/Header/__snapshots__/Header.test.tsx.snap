@@ -6,7 +6,7 @@ exports[`VerticalNavigation - Header > should render correctly 1`] = `
     class="HvVerticalNavigationHeader-root css-12dbsib-StyledHeader e1arrhkt0"
   >
     <h3
-      class="HvTypography-root HvTypography-title3 css-ywsy37-getStyledComponent e1tnpalo0"
+      class="HvTypography-root HvTypography-title3 css-bj1yqo-getStyledComponent e1tnpalo0"
     >
       Menu
     </h3>

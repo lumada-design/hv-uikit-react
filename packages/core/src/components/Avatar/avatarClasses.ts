@@ -8,11 +8,11 @@ export type HvAvatarClasses = {
   badge?: string;
   avatar?: string;
   status?: string;
-  XS?: string;
-  SM?: string;
-  MD?: string;
-  LG?: string;
-  XL?: string;
+  xs?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+  xl?: string;
   circular?: string;
   square?: string;
 };
@@ -25,11 +25,11 @@ const classKeys: string[] = [
   "badge",
   "avatar",
   "status",
-  "XS",
-  "SM",
-  "MD",
-  "LG",
-  "XL",
+  "xs",
+  "sm",
+  "md",
+  "lg",
+  "xl",
   "circular",
   "square",
 ];

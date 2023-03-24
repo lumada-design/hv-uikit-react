@@ -7,7 +7,7 @@ import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import clsx from "clsx";
 import { ImgHTMLAttributes } from "react";
 
-export type HvMediaProps = Omit<MuiCardMediaProps, "classes"> &
+export type HvCardMediaProps = Omit<MuiCardMediaProps, "classes"> &
   ImgHTMLAttributes<HTMLImageElement> &
   HvBaseProps<HTMLDivElement, { onClick; title }> & {
     /** Id to be applied to the root node. */
@@ -24,7 +24,7 @@ export type HvMediaProps = Omit<MuiCardMediaProps, "classes"> &
     classes?: HvCardMediaClasses;
   };
 
-export const HvMedia = ({
+export const HvCardMedia = ({
   id,
   classes,
   className,
@@ -32,7 +32,7 @@ export const HvMedia = ({
   title,
   onClick,
   ...others
-}: HvMediaProps) => {
+}: HvCardMediaProps) => {
   return (
     <MuiCardMedia
       id={id}

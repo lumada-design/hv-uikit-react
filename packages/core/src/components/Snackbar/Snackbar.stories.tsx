@@ -9,7 +9,7 @@ import {
   HvTypography,
   HvSnackbarContent,
   HvTooltip,
-  snackbarContentWrapperClasses,
+  snackbarContentClasses,
 } from "components";
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ const StyledSnackbar = styled(HvSnackbar)({
 });
 
 const StyledSnackBarContent = styled(HvSnackbarContent)({
-  [`& .${snackbarContentWrapperClasses.messageText}`]: {
+  [`& .${snackbarContentClasses.messageText}`]: {
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",

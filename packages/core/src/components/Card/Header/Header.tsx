@@ -8,7 +8,7 @@ import { styles } from "./Header.styles";
 import { css } from "utils/emotion";
 import { useTheme } from "hooks";
 
-export type HvHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
+export type HvCardHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
   HvBaseProps<HTMLDivElement, { title }> & {
     /** The renderable content inside the title slot of the header. */
     title: React.ReactNode;
@@ -22,7 +22,7 @@ export type HvHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
     classes?: HvCardHeaderClasses;
   };
 
-export const HvHeader = ({
+export const HvCardHeader = ({
   classes,
   className,
   title,
@@ -30,7 +30,7 @@ export const HvHeader = ({
   icon,
   onClick,
   ...others
-}: HvHeaderProps) => {
+}: HvCardHeaderProps) => {
   const { activeTheme } = useTheme();
 
   return (

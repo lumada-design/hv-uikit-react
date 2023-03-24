@@ -1,6 +1,6 @@
 import { getClasses } from "utils";
 
-export type HvSnackbarContentWrapperClasses = {
+export type HvSnackbarContentClasses = {
   root?: string;
   message?: string;
   messageSpan?: string;
@@ -26,10 +26,9 @@ const classKeys: string[] = [
   "error",
 ];
 
-const snackbarContentWrapperClasses =
-  getClasses<HvSnackbarContentWrapperClasses>(
-    classKeys,
-    "HvSnackbar-ContentWrapper"
-  );
+const snackbarContentClasses = getClasses<HvSnackbarContentClasses>(
+  classKeys,
+  "HvSnackbar-Content"
+);
 
-export default snackbarContentWrapperClasses;
+export default snackbarContentClasses;

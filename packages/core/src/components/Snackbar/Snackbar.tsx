@@ -6,13 +6,15 @@ import {
 } from "@mui/material/Snackbar";
 import { HvBaseProps } from "../../types";
 import { StyledSnackbar } from "./Snackbar.styles";
-import { HvSnackbarClasses, snackbarClasses } from "./snackbarClasses";
+import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
 import { capitalize } from "lodash";
 import { SyntheticEvent } from "react";
-import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import { setId } from "utils";
 import { HvActionGeneric } from "components";
-import { HvSnackbarContentWrapperProps } from "./SnackbarContentWrapper/SnackbarContentWrapper";
+import {
+  HvSnackbarContentProps,
+  HvSnackbarContent,
+} from "./SnackbarContentWrapper";
 import clsx from "clsx";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
@@ -55,7 +57,7 @@ export type HvSnackbarProps = Omit<MuiSnackbarProps, "action" | "classes"> &
     /** Custom offset from top/bottom of the page, in px. */
     offset?: number;
     /** Others applied to the content of the snackbar. */
-    snackbarContentProps?: HvSnackbarContentWrapperProps;
+    snackbarContentProps?: HvSnackbarContentProps;
     /** A Jss Object used to override or extend the styles applied to the component. */
     classes?: HvSnackbarClasses;
   };
@@ -158,7 +160,7 @@ export const HvSnackbar = ({
       TransitionComponent={snackBarDirComponent(transitionDirection)}
       {...others}
     >
-      <HvSnackBarContentWrapper
+      <HvSnackbarContent
         id={setId(id, "content")}
         label={label}
         variant={variant}

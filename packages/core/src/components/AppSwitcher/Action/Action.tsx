@@ -16,7 +16,7 @@ import appSwitcherActionClasses, {
   HvAppSwitcherActionClasses,
 } from "./actionClasses";
 
-export type HvActionProps = HvBaseProps & {
+export type HvAppSwitcherActionProps = HvBaseProps & {
   /** The application data to be used to render the Action object. */
   application: HvAppSwitcherActionApplication;
   /** Callback triggered when the action is clicked. */
@@ -33,14 +33,14 @@ export type HvActionProps = HvBaseProps & {
 const getColor = (color, defaultColor) =>
   theme.colors[color] || color || defaultColor;
 
-export const HvAction = ({
+export const HvAppSwitcherAction = ({
   id,
   className,
   classes,
   application,
   onClickCallback = () => {},
   isSelectedCallback = () => false,
-}: HvActionProps) => {
+}: HvAppSwitcherActionProps) => {
   const { name, description, disabled, iconElement, iconUrl, url, target } =
     application;
 

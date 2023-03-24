@@ -264,14 +264,18 @@ export type HvThemeComponents = {
     activeBorderLeft: string;
     inactiveBorderLeft: string;
     actionsMarginTop: string;
-    // expandendFontWeight: string,
   };
 };
 
 // Theme typography
 export type HvThemeTypographyProps = Pick<
   CSSProperties,
-  "color" | "fontSize" | "letterSpacing" | "lineHeight" | "fontWeight"
+  | "color"
+  | "fontSize"
+  | "letterSpacing"
+  | "lineHeight"
+  | "fontWeight"
+  | "textDecoration"
 >;
 
 export type HvThemeTypography = {
@@ -296,6 +300,10 @@ export type HvThemeTypography = {
     sectionTitle: HvThemeTypographyProps;
     placeholderText: HvThemeTypographyProps;
     link: HvThemeTypographyProps;
+    disabledText: HvThemeTypographyProps;
+    selectedNavText: HvThemeTypographyProps;
+    vizTextDisabled: HvThemeTypographyProps;
+    xsInlineLink: HvThemeTypographyProps;
   };
 };
 

@@ -40,6 +40,8 @@ const focusStyles = css`
   }
 `;
 
+export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
+
 export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
   children: React.ReactElement;
   /** Extra configuration for the child element. */
@@ -61,7 +63,7 @@ export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
   /** Use up/ down keyboard arrows to control focus. */
   useArrows?: boolean;
   /** Focus and navigation strategy to be used. v*/
-  strategy?: "listbox" | "menu" | "card" | "grid";
+  strategy?: HvFocusStrategies;
   /** Uses an absolute positioned div as a focus. v*/
   useFalseFocus?: boolean;
   /** Narrows the results of the focus to only theses class v*/

@@ -42,7 +42,7 @@ exports[`Card > should render all the compoents 1`] = `
       class="MuiCardContent-root hv-uikit-css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
-        class="HvTypography-root HvTypography-label css-93trrd-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
       >
         mockCardContent
       </label>
@@ -70,7 +70,7 @@ exports[`Card > should render content 1`] = `
       class="MuiCardContent-root hv-uikit-css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
     >
       <label
-        class="HvTypography-root HvTypography-label css-93trrd-getStyledComponent e1tnpalo0"
+        class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
       >
         mockCardContent
       </label>

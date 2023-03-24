@@ -27,15 +27,22 @@ export interface HvButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Use the variant prop to change the visual style of the Button. */
   variant?: HvButtonVariant;
-  sx?: CSSProperties;
+  /** Whether the Button is an icon-only button. */
   icon?: boolean;
+  /** Class names to be applied. */
   className?: string;
+  /** Element placed before the children. */
   startIcon?: ReactElement;
+  /** Button size. */
   size?: HvButtonSize;
+  /** Button border radius. */
   radius?: HvButtonRadius;
+  /** Defines the default colors of the button are forced into the icon. */
   overrideIconColors?: boolean;
-  selected?: boolean;
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvButtonClasses;
+  selected?: boolean;
+  sx?: CSSProperties;
 }
 
 /**

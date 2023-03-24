@@ -1,0 +1,476 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Overview/Migration/From v2.x" />
+
+# Migration from v2.x to v3.x
+
+Here's what there is to know about migrating from v2.x to v3.x:
+
+- [Icons](#icons)
+- [Theme](#theme)
+  - [Typography](#typography)
+- [Components](#components)
+- [Templates](#templates)
+
+## Icons <a id="icons" />
+
+- `UpXS` renamed to `DropUpXS`
+- `AppleLogo` renamed to `AppleLogoFilled`
+- `LocatinTarget` renamed to `LocationTarget`
+- `ShowMargins` renamed to `MarginsOn`
+- `WindowsLogo` renamed to `WindowsLogoFilled`
+
+Icons no longer have a `boxStyles` property. For styling the svg container use the `style` property directly.
+
+```diff
+<MoreOptionsVertical
+-  boxStyles={{ width: "30px", height: "30px" }}
++  style={{ width: "30px", height: "30px" }}
+/>
+```
+
+## Theme <a id="theme" />
+
+### Typography <a id="typography" />
+
+- `selectedText` removed, the responsibility should lie on CSS of the component.
+- `inlineLink` renamed to `link`
+- `disabledLabelText` renamed to `disabledText`
+- `disabledButtonText` renamed to `disabledText`
+- `labelText` renamed to `highlightText`
+- `infoText` renamed to `normalText`
+- `sLink` renamed to `xsInlineLink`
+- `sText` renamed to `normalText`
+
+## Components <a id="components" />
+
+### Asset inventory
+
+The view icons must now be passed to the `multibuttonProps` prop, via the `icon` key instead of the views (`CardView`/`ListView`).
+
+The `selectedView` prop now receives the view **index**, instead of the MultiButton button `id` passed in `multibuttonProps`. The `id` key is no longer strictly necessary.
+
+- `iconCallback` renamed to `icon`. You can now pass a React element directly, as well as the callback.
+
+```diff
+<HvAssetInventory
+-  multibuttonProps={[{id: "cardV"}, {id: "listV"}]}
+-  selectedView="cardV"
++  multibuttonProps={[{icon: <Cards />}, {icon: <List />}]}
++  selectedView={0}
+>
+-  <HvCardView icon={<Cards />} />
+-  <HvListView icon={<List />} />
++  <HvCardView />
++  <HvListView />
+</HvAssetInventory>
+```
+
+The `emptyComponent` prop present in the `CardView`/`ListView` should be used in the `AssetInventory` instead.
+
+```diff
+<HvAssetInventory
++  emptyComponent={<EmptyState />}
+>
+-  <HvCardView emptyComponent={<EmptyState />} />
+-  <HvListView emptyComponent={<EmptyState />} />
++  <HvCardView />
++  <HvListView />
+</HvAssetInventory>
+```
+
+#### CardView
+
+- `icon` removed, pass it via `multibuttonProps` as described above.
+
+#### ListView
+
+- `icon` removed, pass it via `multibuttonProps` as described above.
+
+### Badge
+
+- `count` is not longer required, and will be ignored if `label` is defined.
+
+### Bulk actions
+
+- `labels` removed. Use `selectAllLabel`, `selectAllPagesLabel` props instead.
+
+### Button
+
+The icon `category` (`category="icon"`) was promoted to a prop, so it's possible to use icon Buttons with a category other than ghost (still defaults to ghost).
+
+```diff
+<HvButton
+-  category="icon"
++  icon
++  category="ghost" // or any other category
+>
+  Button
+</HvButton>
+```
+
+- `rootIcon` class renamed to `icon`.
+
+### Card
+
+`HvCard` must now be built using `children` composition, and as so, all the "hoisted" props from `HvCard`'s sub-components were removed.
+
+We recommend you build it using `HvCardHeader`, `HvCardContent` and `HvCardMedia`, although it's not strictly necessary.
+`HvCardFooter` was removed, and we recommend you replace it with `HvActionBar`.
+
+Its internal selection control was also removed, and you can control the selection mechanism using the `selectable`, `selected`.
+
+- `isSelectable` renamed to `selectable`.
+- `checked` renamed to `selected`, and is no longer tied to a selection checkbox.
+
+- `cardButtonProps` removed.
+- `checkboxProps` removed.
+- `footerProps` removed, build the card with `HvActionBar`.
+- `contentProps` removed, pass these props directly to `HvCardContent`.
+
+- `innerCardContent` removed, pass `children` instead.
+- `noHeader` removed.
+- `noFooter` removed.
+- `selectOnClickAction` removed.
+
+#### Card header
+
+- `headerTitle` removed, pass `title` to `HvCardHeader` instead.
+- `subheader` removed, pass `subheader` to `HvCardHeader` instead.
+- `headerProps` removed, pass these props directly to `HvCardHeader`.
+
+```diff
+<HvCard
+-  headerTitle="Title"
+-  subheader="subtitle"
+>
++  <HvCardHeader title="Title" subheader="subtitle" />
+</HvCard>
+```
+
+#### Card footer
+
+This component has been removed.
+
+You can use `HvActionsGeneric` to obtain a similar container, and `HvActionsGeneric` to get the same API actions.
+The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` "hoisted" from `HvActionsGeneric` were removed from `HvCard`.
+
+```diff
+<HvCard
+-  actions=[]
+-  actionsCallback={() => {}}
+-  maxVisibleActions={1}
+-  actionsAlignment="left"
+>
++  <HvActionBar>
++    <HvActionsGeneric
++      actions=[]
++      actionsCallback={() => {}}
++      maxVisibleActions={1}
++      actionsAlignment="left"
++    />
++  </HvActionBar>
+</HvCard>
+```
+
+#### Card media
+
+- `mediaPath` removed, pass `image` to `HvCardMedia`
+- `mediaTitle` removed, pass `title` to `HvCardMedia`
+- `mediaHeight` removed, pass `height` to `HvCardMedia`
+- `mediaProps` removed, pass these props directly to `HvCardMedia`.
+
+#### Card content
+
+- `innerCardContent` removed.
+- `needsBorder` removed.
+- `onClickAction` removed.
+
+### Checkbox
+
+The Checkbox is now a form element. Check [Form Element](#formelement) for more information.
+
+- `disabledFocus` class removed.
+- `truncate` class removed.
+- `container` class removed.
+- `icon` class removed.
+- `labelTypography` class removed.
+- `labelEnd` class removed.
+- `labelStart` class removed.
+- `truncate` class removed.
+- `root` class added.
+- `disabled` class added.
+- `focusVisible` class added.
+- `label` class added.
+
+- `formControlLabelProps` removed use `labelProps` instead
+- `labelPlacement` removed if a different label placement is needed it can be constructed with an `HvLabel` and a `HvBaseCheckbox`
+- `onChange` receives the future value of the checkbox, rather than the present value.
+
+### DatePicker
+
+This component now only accepts `Date` objects. `Date` internally uses time values in UTC, but the basic methods to fetch the date and time or its components all work in the local time zone and offset. When generating dates, remember that parsing strings is strongly discouraged, due to browser differences and inconsistencies; i.e., `new Date("YYYY-MM-DD")` does not produce the same time value as `new Date("MM/DD/YYYY")` when the local time zone is not UTC.
+
+- `value`, `startValue`, and `endValue` changed from date `string` to `Date` object
+
+```diff
+<HvDatePicker
+-  value="2020-10-18"
++  value={new Date(2020, 9, 18)}
+/>
+```
+
+### Dropdown
+
+The Dropdown is now a form element. Check [Form Element](#formelement) for more information.
+
+The following `classes` were removed:
+
+```
+header
+headerDisabled
+icon
+list
+rootDisabled
+rootOpen
+selection
+```
+
+The `selectDefault` prop was removed instead pass a default selected `value`
+
+### DropDownMenu
+
+The following `classes` were removed:
+
+```
+inputExtensionFloatLeft
+inputExtensionFloatRight
+inputExtensionLeftPosition
+inputExtensionOpen
+inputExtensionOpenShadow
+menuList
+popper
+```
+
+### FormElement
+
+Some components have been been adapted to work as a form element to ensure consistency in forms.
+Components that follows this API will possess the following props:
+
+- `label` renders an HvLabel to identify the element
+- `name` Name of the form element for accesibility
+- `status` the current status of the element used to trigger validation messages
+- `statusMessage` the message show when the `status` prop is invalid
+- `value` the current value of the element if declared the element starts behaving as a controlled component.
+- `disabled` whether the element is interactable.
+
+as for the component itself:
+
+- `HelperText` prop was removed use `statusMessage`.
+
+### Input
+
+The input is now a form element check. Check [Form Element](#formelement) for more information.
+
+- `Labels` prop was reworked:
+  - `infoText` subProp was removed use `description` instead.
+  - `inputLabel` subProp was removed use `label` instead.
+  - `maxCharQuantityWarningText` subProp was removed use `validationMessage` prop instead.
+  - `minCharQuantityWarningText` subProp was removed use `validationMessage` prop instead.
+  - `placeholder` subProp was removed use `placeholder` prop instead.
+  - `requiredWarningText` subProp was removed use `validationMessage` prop instead.
+  - `warningText` subProp was removed use `validationMessage` prop instead.
+- `customFixedIcon` prop was removed use `endAdornment`
+- `externalWarningTextOverride` prop was removed use `statusMessage` instead.
+- `infoIcon` prop was removed use `statusMessage`instead if a icon is needed it needs to be custom made.
+- `initialValue` prop was removed use `defaultValue`instead.
+- `password` prop was removed use `type="password"` instead.
+- `showInfo` prop was removed use `description`prop instead, if defined it will show the text.
+- `suggestionSelectedCallback`prop was removed selection is received through `onChange``
+- `validationState` prop was removed use `status` instead.
+- `validationType`prop was removed use `type` instead to access built-in validations.
+
+- `infoIconContainer` classes removed.
+- `onChange` the provided function no longer returns anything.
+
+### KPI
+
+Component was removed. Construct KPIs using the `HvCard` component
+
+### List
+
+We encourage the use of the `HvListContainer` component to achieve the use cases covered
+by the list.
+Use cases related with selections like a list with checkbox, radio-buttons
+please check the `HvRadioGroup` and/or `HvCheckBoxGroup`
+
+The following `classes` were removed:
+
+```
+condensed
+disabled
+focus
+label
+labelIconLeftPadding
+link
+list
+listItem
+noIconLeftPadding
+selectAll
+selected
+selector
+textDisabled
+```
+
+The `selectDefault` prop was removed
+
+### Loading
+
+Loading is now visible by default. To hide it, use `hidden` prop.
+Removed option to pass `children` and use component as a wrapper "HOC". We still provide a [sample](http://lumada-design.github.io/uikit/master/?path=/docs/components-loading--main#with-children) of an `HvLoading` wrapping a component.
+
+- `text` renamed to `label`
+- `isActive` renamed to `hidden`, and is not visible by default (`hidden=false`)
+- `loadingText` class renamed to `label` (`classes.label`)
+
+### Login
+
+Component was replaced for `HvLoginContainer`.
+
+### LoginContainer
+
+Component was renamed to `HvLogin`.
+
+- `customBackground` renamed to `background`.
+
+### Modal
+
+- `HvModal` renamed to `HvDialog`
+- `HvModalTitle` renamed to `HvDialogTitle`
+- `HvModalContent` renamed to `HvDialogContent`
+- `HvModalActions` renamed to `HvDialogActions`
+
+### Multi-button
+
+The Multi-button is now built through composition and offers no control.
+
+```diff
+<HvMultiButton
+-  buttons={[
+-    { id: "map", value: "Map", icon: <Map />, selected: true },
+-    { id: "location", value: "Location", icon: <LocationPin /> }
+-  ]}
+>
++  <HvButton icon selected>
++    <Map />
++  </HvButton>
++  <HvButton icon>
++    <LocationPin />
++  </HvButton>
+</HvMultiButton>
+```
+
+### Pagination
+
+- `selectDownIcon` class removed.
+
+### Radio
+
+The Radio is now a form element. Check [Form Element](#formelement) for more information.
+
+- `disabledFocus` class removed.
+- `truncate` class removed.
+- `container` class removed.
+- `icon` class removed.
+- `labelTypography` class removed.
+- `labelEnd` class removed.
+- `labelStart` class removed.
+- `truncate` class removed.
+- `root` class added.
+- `disabled` class added.
+- `focusVisible` class added.
+- `label` class added.
+
+- `formControlLabelProps` removed use `labelProps` instead
+- `labelPlacement` removed if a different label placement is needed it can be constructed with an `HvLabel` and a `HvBaseRadio`
+
+### Searchbox
+
+The `HvSearchbox` was removed to construct a searchbox use the `HvInput`.
+
+- `ariaLabel` removed, you can pass `aria-*` props directly to the component.
+
+```diff
+- <HvSearchbox
+-   ariaLabel="Select country"
+-   placeholder="Search"
+- />
++ <HvInput
++   type="search"
++   aria-label="Select country"
++   placeholder="Search"
++ />
+```
+
+for more information check the searchbox [sample](https://lumada-design.github.io/uikit/master/?path=/docs/forms-search-box--main)
+
+### Switch
+
+The Switch is now a form element. Check [Form Element](#formelement) for more information.
+
+- `checked` class removed.
+- `checkedIcon` class removed.
+- `disabled` class removed.
+- `disabledLabel` class removed.
+- `labelDeselected` class removed.
+- `labelSelected` class removed.
+- `switch` class removed.
+- `switchBase` class removed.
+- `thumb` class removed.
+- `track` class removed.
+- `label` class added.
+- `error` class added.
+
+- `displayIconChecked` removed, internal icons are not supported in the design system v3.
+- `showLabels`removed, labels on the side are not longer supported if required it can be constructed with an `HvLabel` and a `HvBaseSwitch`.
+
+### ToggleButton
+
+- `root` class removed.
+- `disabled` class removed.
+- `icon` class removed.
+
+- `animated` removed animated icons should be implemented externally check [sample](https://lumada-design.github.io/uikit/master/?path=/docs/components-toggle-button--main#animated)
+- `labels` removed, apply the accessibility labels directly, check the toggleButton [sample](https://lumada-design.github.io/uikit/master/?path=/docs/components-toggle-button--main)
+
+### TextArea
+
+- `startCount` removed.
+- `endCount` removed.
+
+### ToggleButton
+
+- no longer adds a tooltip, which means it needs to be configured externally through composition. Example added to explain how to do it
+- built using the Button component, rather than customizing a button element
+
+### Tooltip
+
+- `tooltipData` renamed to `title`.
+
+### Code editor
+
+Lab's Code editor was promoted to core but shipped in a separate package (@hv/uikit-react-code-editor), as it requires the instalation
+of the react-monaco-editor package and specific build configurations (in webpack or equivalent).
+
+For that reason, the old version of the component was removed from the lab package to avoid the setup even when not using the Code Editor.
+
+If you are using the Code Editor, install @hv/uikit-react-code-editor and change the import statement:
+
+```diff
+-import { HvCodeEditor } from "@hv/uikit-react-lab";
++import { HvCodeEditor } from "@hv/uikit-react-code-editor";
+```
+
+## Templates <a id="templates" />
+
+The template section has been removed, as we considered that the [Adoption project](https://github.com/lumada-design/hv-uikit-adoption) does a better job of showing how to use the UI Kit project.

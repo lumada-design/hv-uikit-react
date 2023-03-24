@@ -1,7 +1,7 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
 import { StyledLi } from "./PathElement.styles";
-import { HvPathElementClasses, pathElementClasses } from ".";
+import pathElementClasses, { HvPathElementClasses } from "./pathElementClasses";
 
 export type HvPathElementProps = {
   last?: boolean;

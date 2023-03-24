@@ -6,19 +6,19 @@ import { HvBaseProps } from "../../../types";
 import { StyledTypography } from "./Content.styles";
 import dialogContentClasses, { HvDialogContentClasses } from "./contentClasses";
 
-export type HvContentProps = Omit<MuiDialogContentProps, "classes"> &
+export type HvDialogContentProps = Omit<MuiDialogContentProps, "classes"> &
   HvBaseProps & {
     /** Content should be indented in relationship to the Dialog title. */
     indentContent?: boolean;
     classes?: HvDialogContentClasses;
   };
 
-export const HvContent = ({
+export const HvDialogContent = ({
   classes,
   className,
   children,
   indentContent = false,
-}: HvContentProps) => {
+}: HvDialogContentProps) => {
   return (
     <StyledTypography
       component={MuiDialogContent}

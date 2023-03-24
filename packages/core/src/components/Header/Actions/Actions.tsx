@@ -3,16 +3,16 @@ import { HvBaseProps } from "../../../types";
 import { StyledDiv } from "./Actions.styles";
 import headerActionsClasses, { HvHeaderActionsClasses } from "./actionsClasses";
 
-export type HvActionsProps = HvBaseProps & {
+export type HvHeaderActionsProps = HvBaseProps & {
   classes?: HvHeaderActionsClasses;
 };
 
-export const HvActions = ({
+export const HvHeaderActions = ({
   classes,
   className,
   children,
   ...others
-}: HvActionsProps) => {
+}: HvHeaderActionsProps) => {
   return (
     <StyledDiv
       className={clsx(className, headerActionsClasses.root, classes?.root)}

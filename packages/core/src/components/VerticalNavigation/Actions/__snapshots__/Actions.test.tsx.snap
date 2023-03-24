@@ -6,7 +6,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
     class="HvVerticalNavigationActions-root css-btrerb-StyledRoot e11q2fjk0"
   >
     <div
-      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-prxfu3-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >
@@ -31,14 +31,14 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
       Action 1
     </div>
     <div
-      class="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon e13j4on70 HvTypography-root HvTypography-body css-prxfu3-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >
       Action 2
     </div>
     <div
-      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-prxfu3-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >

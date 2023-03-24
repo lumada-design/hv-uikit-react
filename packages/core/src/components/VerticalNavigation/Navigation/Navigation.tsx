@@ -11,6 +11,7 @@ import verticalNavigationTreeClasses, {
 } from "./navigationClasses";
 import { StyledNav } from "./Navigation.styles";
 import { VerticalNavigationContext } from "../VerticalNavigation";
+import { HvBaseProps } from "types/generic";
 
 export interface NavigationData {
   /**
@@ -227,12 +228,14 @@ export const HvVerticalNavigationTree = ({
   );
 };
 
-export type HvVerticalNavigationTreeProps = {
+export type HvVerticalNavigationTreeProps = HvBaseProps<
+  HTMLDivElement,
+  { onChange }
+> & {
   /**
    * Id to be applied to the root node.
    */
   id?: string;
-
   /**
    * Class names to be applied.
    */
