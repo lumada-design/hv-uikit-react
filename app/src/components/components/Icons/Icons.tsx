@@ -9,18 +9,14 @@ import {
 export const Icons = () => {
   return (
     <HvBox sx={{ display: "flex", gap: 20 }}>
-      <CheckboxCheck iconSize="M" />
+      <CheckboxCheck iconSize="XS" />
       <Bookmark
         color={["acce3", "acce1"]}
-        iconSize="M"
+        iconSize="S"
         aria-label="Click to bookmark"
       />
       <Machine role="presentation" iconSize="M" />
-      <CheckboxCheck
-        height={200}
-        width={200}
-        style={{ width: 240, height: 240 }}
-      />
+      <CheckboxCheck height={60} width={60} style={{ width: 80, height: 80 }} />
       <Level5 iconSize="L" inverted role="img" title="Critical!" />
     </HvBox>
   );

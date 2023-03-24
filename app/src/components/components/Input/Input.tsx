@@ -1,4 +1,4 @@
-import { HvInput } from "@hitachivantara/uikit-react-core";
+import { HvBox, HvInput } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
 import { useState } from "react";
 import countryNamesArray from "./countries";
@@ -25,46 +25,59 @@ export const Input = () => {
   return (
     <div
       style={{
-        width: "50%",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
+        flexWrap: "wrap",
         gap: 10,
+        alignItems: "flex-start",
       }}
     >
-      <HvInput placeholder="Insert text" />
-      <HvInput placeholder="Search" type="search" />
-      <HvInput
-        id="input-disabled-sample"
-        disabled
-        label="First name"
-        description="Please enter your first name"
-        placeholder="Insert first name"
-      />
-      <HvInput
-        readOnly
-        label="First name"
-        description="Please enter your first name"
-        placeholder="Insert first name"
-        defaultValue="You can't change this..."
-      />
-      <HvInput
-        id="invalid-state-input"
-        label="Last name"
-        description="Please enter your last name"
-        placeholder="Insert last name"
-        status={"invalid"}
-        statusMessage={"Oh no!"}
-      />
-      <HvInput
-        id="suggestions"
-        label="Select a country"
-        placeholder="Country"
-        value={value}
-        onChange={(_e, val) => setValue(val)}
-        validation={(val) => val.includes("a")}
-        suggestionListCallback={suggestionHandler}
-        endAdornment={<Map />}
-      />
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput label="Default" placeholder="Insert text" />
+      </HvBox>
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput label="Search" placeholder="Search" type="search" />
+      </HvBox>
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput
+          id="input-disabled-sample"
+          disabled
+          label="Disabled"
+          description="Please enter your name"
+          placeholder="Insert name"
+        />
+      </HvBox>
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput
+          readOnly
+          label="Readonly"
+          description="Please enter your name"
+          placeholder="Insert name"
+          defaultValue="You can't change this..."
+        />
+      </HvBox>
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput
+          id="invalid-state-input"
+          label="Invalid"
+          description="Please enter your last name"
+          placeholder="Insert last name"
+          status={"invalid"}
+          statusMessage={"Oh no!"}
+        />
+      </HvBox>
+      <HvBox sx={{ width: "31%" }}>
+        <HvInput
+          id="suggestions"
+          label="Select a country"
+          placeholder="Country"
+          value={value}
+          onChange={(_e, val) => setValue(val)}
+          validation={(val) => val.includes("a")}
+          suggestionListCallback={suggestionHandler}
+          endAdornment={<Map />}
+        />
+      </HvBox>
     </div>
   );
 };

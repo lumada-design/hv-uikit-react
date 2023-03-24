@@ -1,20 +1,8 @@
-import { css } from "@emotion/css";
 import { HvSnackbar } from "@hitachivantara/uikit-react-core";
 
 export const Snackbars = () => {
   return (
     <>
-      <HvSnackbar
-        open={true}
-        variant={"default"}
-        label={"This is the default snackbar"}
-        transitionDirection={"left"}
-        showIcon={true}
-        offset={60}
-        transitionDuration={300}
-        autoHideDuration={5000}
-        classes={{ root: css({ marginRight: 400 }) }}
-      />
       <HvSnackbar
         open={true}
         variant={"success"}
@@ -24,7 +12,11 @@ export const Snackbars = () => {
         offset={120}
         transitionDuration={300}
         autoHideDuration={5000}
-        classes={{ root: css({ marginRight: 400 }) }}
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
       />
       <HvSnackbar
         open={true}
@@ -35,7 +27,29 @@ export const Snackbars = () => {
         offset={180}
         transitionDuration={300}
         autoHideDuration={5000}
-        classes={{ root: css({ marginRight: 400 }) }}
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
+      />
+      <HvSnackbar
+        action={{
+          disabled: false,
+          id: "post",
+          label: "Action",
+        }}
+        actionCallback={() => {}}
+        id="actionStructure"
+        label="This is a snackbar."
+        offset={0}
+        open
+        showIcon
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
       />
     </>
   );

@@ -1,0 +1,29 @@
+import { HvAvatar, theme } from "@hitachivantara/uikit-react-core";
+import { LogIn } from "@hitachivantara/uikit-react-icons";
+import man1 from "./resources/man-1.png";
+import woman1 from "./resources/woman-1.png";
+
+export const Avatar = () => {
+  return (
+    <div style={{ display: "flex", gap: theme.space.md }}>
+      <HvAvatar>
+        <LogIn color="atmo1" iconSize="XS" />
+      </HvAvatar>
+      <HvAvatar id="status1" size="sm" status="sema4">
+        AB
+      </HvAvatar>
+      <HvAvatar id="badge1" size="lg" status="sema2" alt="Ben" src={man1}>
+        AB
+      </HvAvatar>
+      <HvAvatar
+        id="status2"
+        size="lg"
+        badge="sema1"
+        alt="Beatrice"
+        src={woman1}
+      >
+        AB
+      </HvAvatar>
+    </div>
+  );
+};

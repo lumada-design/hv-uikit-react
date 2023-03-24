@@ -31,10 +31,12 @@ export const StyledChip = styled(
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
+
       [`& .${tagClasses.focusVisible}`]: {
         backgroundColor: fade(theme.colors.base1, 0.3),
       },
       ...($type === "categorical" && {
+        backgroundColor: "red",
         borderRadius: 8,
         [`&.${tagClasses.clickable}`]: {
           cursor: "pointer",
@@ -80,7 +82,7 @@ export const StyledChip = styled(
     "& .MuiChip-label": {
       paddingLeft: theme.space.xs,
       paddingRight: theme.space.xs,
-      ...(theme.typography.body as CSSProperties),
+      ...(theme.typography.caption1 as CSSProperties),
       color: theme.colors.base2,
       "& p": {
         color: theme.colors.base2,

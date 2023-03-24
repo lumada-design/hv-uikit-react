@@ -23,7 +23,6 @@ const GeneratorProvider = ({ children }) => {
   );
 
   const updateCustomTheme = (newTheme) => {
-    console.log(newTheme);
     setCustomTheme(newTheme);
   };
 

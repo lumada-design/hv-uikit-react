@@ -1,16 +1,12 @@
-import { HvBaseCheckBox } from "@hitachivantara/uikit-react-core";
+import { HvCheckBox } from "@hitachivantara/uikit-react-core";
 
 export const CheckBox = () => {
   return (
     <div>
-      <HvBaseCheckBox />
-      <HvBaseCheckBox semantic />
-      <HvBaseCheckBox defaultChecked />
-      <HvBaseCheckBox readOnly />
-      <HvBaseCheckBox indeterminate />
-      <HvBaseCheckBox disabled />
-      <HvBaseCheckBox defaultChecked disabled />
-      <HvBaseCheckBox required />
+      <HvCheckBox label="Default" />
+      <HvCheckBox label="Disabled" disabled />
+      <HvCheckBox label="Readonly" readOnly />
+      <HvCheckBox label="Invalid" status="invalid" />
     </div>
   );
 };
