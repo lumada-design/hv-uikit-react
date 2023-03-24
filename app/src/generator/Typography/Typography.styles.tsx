@@ -1,0 +1,15 @@
+import { css } from "@emotion/css";
+import { theme } from "@hitachivantara/uikit-react-core";
+
+export const styles = {
+  root: css({
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    paddingLeft: theme.space.xs,
+  }),
+  label: css({
+    ...theme.typography.label,
+    textTransform: "capitalize",
+  }),
+};

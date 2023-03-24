@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 const styles = {
   root: css({
     display: "flex",
-    paddingTop: `calc(2 * ${theme.header.height} + ${theme.space.lg})`,
+    paddingTop: `calc(${theme.header.height} + ${theme.space.sm})`,
     paddingBottom: theme.space.lg,
     minHeight: "100vh",
   }),
