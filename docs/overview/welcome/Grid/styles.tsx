@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export const Wrapper = styled.div`
   display: flex;
-  background: ${theme.colors.atmo1};
   h3 {
     margin: 20px auto;
     max-width: 1000px;

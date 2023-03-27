@@ -20,7 +20,7 @@ import {
 } from "./VerticalNavigation";
 
 export default {
-  title: "Components/Vertical Navigation",
+  title: "Widgets/Vertical Navigation",
   component: HvVerticalNavigation,
 };
 

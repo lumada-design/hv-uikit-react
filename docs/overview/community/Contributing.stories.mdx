@@ -18,13 +18,12 @@ We welcome contributions to our project. Here are a few guidelines that will hel
 
 ## Getting started <a id="getting-started" />
 
-### Clone the hv-uikit-react repository and bootstrap the project
+### Clone the hv-uikit-react and setup all the dependencies and packages
 
 ```shell
 git clone git@github.com:lumada-design/hv-uikit-react.git
 cd hv-uikit-react
 npm ci
-npm run bootstrap
 ```
 
 #### Start the storybook dev environment
@@ -33,7 +32,7 @@ npm run bootstrap
 npm run doc
 ```
 
-By default it will run in [http://localhost:9001](http://localhost:9001).
+By default it will run in [http://localhost:6006](http://localhost:6006).
 
 ## Question or problem? <a id="question-or-problem" />
 
@@ -45,7 +44,7 @@ When contributing with a new component, please add it to the **lab** in `package
 
 In order to make your component available in the Storybook you also need to add:
 
-- A **story** in `packages/lab/src/<YOUR_COMPONENT>/stories/<YOUR_STORY>.stories.js`
+- A **story** in `packages/lab/src/<YOUR_COMPONENT>/<YOUR_STORY>.stories.js`
 
 ### Running the generate utility tool
 
@@ -67,15 +66,15 @@ Alternatively you can use [yalc](https://github.com/wclr/yalc).
 
 ## Bugs <a id="bugs" />
 
-If you find a bug in the source code, you can help us by [submitting an issue](#submitting-an-issue) to this repo.
-Even better you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
+If you find a bug in the source code, you can help us by submitting an issue to this repo.
+Even better you can submit a Pull Request with a fix.
 
 ## Feature requests <a id="feature-requests" />
 
-You can request a new feature by [submitting an issue](#submitting-an-issue) to this repo.
+You can request a new feature by submitting an issue to this repo.
 Features can be **new components** or changes to **existing**.
 
-Please make sure your features are compliant with the [Design System](https://hitachivantara.sharepoint.com/sites/DesignSystem/SitePages/Home.aspx) guidelines.
+Please make sure your features are compliant with the [NEXT Design System](https://designsystem.hitachivantara.com/) guidelines.
 
 ## Submission guidelines <a id="submission-guidelines" />
 
@@ -162,20 +161,12 @@ fix: minor typos in code, fixes issue #12
 
 ## Testing <a id="testing" />
 
-If you add any features to our code, make sure to add tests so that your changes are covered. You can see how well your code is covered by looking at the `coverage/lcov-report/index.html` file after running the coverage command.
+If you add any features to our code, make sure to add tests so that your changes are covered.
 
 Test your changes by running our test commands:
 
-- Run unit tests and generate code coverage report (stored in `coverage` folder):
-
-  ```
-  npm run test
-  ```
-
-- Watching unit tests:
-
-  ```
-  npm run test:watch
-  ```
+```
+npm run test
+```
 
 We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), end-to-end tests (using Playwright) and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.

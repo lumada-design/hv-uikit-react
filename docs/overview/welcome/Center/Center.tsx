@@ -5,12 +5,12 @@ const Header = () => (
   <Wrapper>
     <>
       <HvTypography variant="title2">
-        The building blocks of awesome UI
+        The building blocks of NEXT UI
       </HvTypography>
       <Separator />
       <HvTypography variant="body">
-        Powerful components, flexible configurations, easy code, and great user
-        experience - all working together to build your application.
+        Composable and accessible component library that gives you the
+        foundation to build your NEXT application faster and consistently.
       </HvTypography>
     </>
   </Wrapper>

@@ -28,15 +28,25 @@ const Header = () => {
         <ContentWrapper>
           <>
             <HvTypography variant="title1">NEXT UI Kit</HvTypography>
+            <div></div>
             <HvTypography variant="title3">
               React UI library for the Next Design System
             </HvTypography>
           </>
           <div>
-            <HvButton variant="secondarySubtle" style={{ marginRight: 10 }}>
-              View on GitHub
+            <HvButton variant="primary" style={{ marginRight: 10 }}>
+              <a href="../?path=/story/overview-get-started--page">
+                Get Started
+              </a>
             </HvButton>
-            <HvButton variant="secondarySubtle">Install UI Kit</HvButton>
+            <HvButton variant="primarySubtle">
+              <a
+                href="https://github.com/lumada-design/hv-uikit-react"
+                target="_blank"
+              >
+                View on GitHub
+              </a>
+            </HvButton>
           </div>
         </ContentWrapper>
       </Wrapper>

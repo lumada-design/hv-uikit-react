@@ -5,6 +5,9 @@ export const BackgroundWrapper = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  @media (max-width: 600px) {
+    background-image: none !important;
+  }
 `;
 
 export const Wrapper = styled.div`

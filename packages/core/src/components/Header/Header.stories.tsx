@@ -76,7 +76,7 @@ const navigationData = [
 ];
 
 export default {
-  title: "Components/Header",
+  title: "Widgets/Header",
   component: HvHeader,
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
 };

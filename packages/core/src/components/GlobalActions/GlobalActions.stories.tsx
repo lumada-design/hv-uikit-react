@@ -11,7 +11,7 @@ import {
 } from "components";
 
 const meta: Meta<typeof HvGlobalActions> = {
-  title: "Components/Global Actions",
+  title: "Widgets/Global Actions",
   component: HvGlobalActions,
 };
 export default meta;

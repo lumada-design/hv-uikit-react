@@ -1,15 +1,7 @@
 import { Meta } from "@storybook/addon-docs";
-import { Tetris, Ungroup, Table } from "@hitachivantara/uikit-react-icons";
+import Resources from "./Resources";
 
-<Meta
-  title="Overview/Introduction"
-  parameters={{
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-    viewMode: "docs",
-  }}
-/>
+<Meta title="Overview/Introduction" />
 
 # Introduction
 
@@ -33,72 +25,22 @@ NEXT UI Kit provides developers with the tools they need to build more product i
 
 ### Components, Widgets and Templates
 
-NEXT UI Kit provides a collection of components, widgets and templates that can be used to build a wide range of products and digital solutions.
+NEXT UI Kit provides a collection of Components, Widgets and Templates that can be used to build a wide range of products and digital solutions.
 All are important elements, but they differ in their function and purpose:
 
-<div
-  style={{
-    display: "flex",
-    flexDirection: "row",
-    gap: "30px",
-    marginTop: "40px",
-    marginBottom: "40px",
-  }}
->
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    }}
-  >
-    <Tetris iconSize="L" />
-    <h3>Components</h3>
-    <p style={{ fontSize: 14, textAlign: "left" }}>
-      Building blocks of the UI that can be used in various combinations to
-      create a larger user interface.
-    </p>
-  </div>
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    }}
-  >
-    <Ungroup iconSize="L" />
-    <h3>Widgets</h3>
-    <p style={{ fontSize: 14, textAlign: "left" }}>
-      Specialized components that address specific use cases and can be used as
-      base to support other scenarios.
-    </p>
-  </div>
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    }}
-  >
-    <Table iconSize="L" />
-    <h3>Templates</h3>
-    <p style={{ fontSize: 14, textAlign: "left" }}>
-      Pre-designed layouts or pages that address common UI patterns and can be
-      used to quickly create a consistent design for multiple pages or
-    </p>
-  </div>
-</div>
+<Resources />
 
 ### Packages
 
 NEXT UI Kit resources are distributed across multiple npm packages. This allows greater flexibility, easier management of the dependencies and ensures that the library remains maintainable and scalable over time.
 
 - **Core** - Core React components for the Next Design System.
-- **Icons** - Next Design System icons packaged as a set of React components.
-- **Styles** - Emotion based styling system for the Next UI Kit.
+- **Icons** - NEXT Design System icons packaged as a set of React components.
+- **Shared** - Shared React contexts for the NEXT UI Kit.
+- **Styles** - NEXT UI Kit styling solution for the Next Design System.
+- **Lab** - Contributed React components for the NEXT UI Kit.
+- **Viz** - React visualizations for the NEXT Design System.
+- **Code Editor** - React Monaco editor for the NEXT Design System.
 
 ## Accessibility
 
@@ -119,4 +61,4 @@ Even though we're focused on developing a component library that is compliant wi
 - Chat with us in the [#ui-kit Hitachi Vantara](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) Slack Engineering channel.
 - Take a look to our detailed [Releases Change Logs](https://github.com/lumada-design/hv-uikit-react/releases).
 - Dive into our issues in the [github](https://github.com/lumada-design/hv-uikit-react/issues) repository.
-- Discover the [Design System](https://hitachivantara.sharepoint.com/sites/DesignSystem/UI%20KIT/Home.aspx) resources.
+- Discover the [NEXT Design System](https://designsystem.hitachivantara.com) resources.

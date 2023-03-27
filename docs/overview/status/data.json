@@ -1,0 +1,240 @@
+{
+  "Core": [
+    {
+      "name": "Accordion",
+      "status": "✅"
+    },
+    {
+      "name": "ActionBar",
+      "status": "✅"
+    },
+    {
+      "name": "Avatar",
+      "status": "✅"
+    },
+    {
+      "name": "Badge",
+      "status": "✅"
+    },
+    {
+      "name": "Banner",
+      "status": "✅"
+    },
+    {
+      "name": "Button",
+      "status": "✅"
+    },
+    {
+      "name": "Card",
+      "status": "✅"
+    },
+    {
+      "name": "Checkbox",
+      "status": "✅"
+    },
+    {
+      "name": "Container",
+      "status": "✅"
+    },
+    {
+      "name": "Dialog",
+      "status": "✅"
+    },
+    {
+      "name": "Pagination",
+      "status": "✅"
+    },
+    {
+      "name": "Dropdown",
+      "status": "✅"
+    },
+    {
+      "name": "Empty State",
+      "status": "✅"
+    },
+    {
+      "name": "Global Actions",
+      "status": "✅"
+    },
+    {
+      "name": "Grid",
+      "status": "✅"
+    },
+    {
+      "name": "Header",
+      "status": "✅"
+    },
+    {
+      "name": "Input",
+      "status": "✅"
+    },
+    {
+      "name": "Search Box",
+      "status": "✅"
+    },
+    {
+      "name": "List",
+      "status": "✅"
+    },
+    {
+      "name": "Loading",
+      "status": "✅"
+    },
+    {
+      "name": "Tooltip",
+      "status": "✅"
+    },
+    {
+      "name": "Panel",
+      "status": "✅"
+    },
+    {
+      "name": "Radio",
+      "status": "✅"
+    },
+    {
+      "name": "Snackbar",
+      "status": "✅"
+    },
+    {
+      "name": "Stack",
+      "status": "✅"
+    },
+    {
+      "name": "Switch",
+      "status": "✅"
+    },
+    {
+      "name": "Tabs",
+      "status": "✅"
+    },
+    {
+      "name": "Tag",
+      "status": "✅"
+    },
+    {
+      "name": "Text Area",
+      "status": "✅"
+    },
+    {
+      "name": "Vertical Navigation",
+      "status": "✅"
+    }
+  ],
+  "Visualizations": [
+    {
+      "name": "Bar Chart",
+      "status": "in progress"
+    },
+    {
+      "name": "Confusion Matrix",
+      "status": "in progress"
+    },
+    {
+      "name": "Donut Chart",
+      "status": "in progress"
+    },
+    {
+      "name": "KPI",
+      "status": "✅"
+    },
+    {
+      "name": "Line Chart",
+      "status": "in progress"
+    }
+  ],
+  "Widgets": [
+    {
+      "name": "App Switcher",
+      "status": "✅"
+    },
+    {
+      "name": "Breadcrumb",
+      "status": "✅"
+    },
+    {
+      "name": "Bulk Actions",
+      "status": "✅"
+    },
+    {
+      "name": "Controls",
+      "status": "✅"
+    },
+    {
+      "name": "File Uploader",
+      "status": "✅"
+    },
+    {
+      "name": "Filter Group",
+      "status": "in progress"
+    },
+    {
+      "name": "Footer",
+      "status": "✅"
+    },
+    {
+      "name": "Login",
+      "status": "✅"
+    },
+    {
+      "name": "Query Builder",
+      "status": "in progress"
+    },
+    {
+      "name": "User Preferences",
+      "status": "in progress"
+    }
+  ],
+  "Templates": [
+    {
+      "name": "Asset Inventory",
+      "status": "✅"
+    },
+    {
+      "name": "Details View",
+      "status": "✅"
+    },
+    {
+      "name": "Form",
+      "status": "✅"
+    },
+    {
+      "name": "List View",
+      "status": "✅"
+    }
+  ],
+  "Lab": [
+    {
+      "name": "Color Picker",
+      "status": "in progress"
+    },
+    {
+      "name": "Drawer",
+      "status": "in progress"
+    },
+    {
+      "name": "Image Carrousel",
+      "status": "in progress"
+    },
+    {
+      "name": "Inline Editor",
+      "status": "in progress"
+    },
+    {
+      "name": "Navigation Anchors",
+      "status": "in progress"
+    },
+    {
+      "name": "Notification Panel",
+      "status": "in progress"
+    },
+    {
+      "name": "Step Navigation",
+      "status": "in progress"
+    },
+    {
+      "name": "Wizard",
+      "status": "in progress"
+    }
+  ]
+}

@@ -4,62 +4,19 @@ import { Meta } from "@storybook/addon-docs";
 
 # Get Started
 
-All UI Kit packages are available through **npm**. The main package you'll need to install to get started with the UI Kit is `@hitachivantara/uikit-react-core`,
-which includes all the core components that are fully compliant with the **Design System**.
+## Installation
 
-You can install the core package by running the following command inside your React project:
+NEXT UI Kit uses [Emotion](https://emotion.sh/) as its default styling engine and [MUI](https://mui.com/) as a core dependency.
+
+To use NEXT UI Kit in your project, run the following command:
 
 ```
 npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @emotion/css @mui/material
 ```
 
-By running this command, you are installing the UI Kit core package as well as all its peer dependencies.
+### Peer dependencies
 
-`react` and `react-dom`, which should already be included in your React project, are also peer dependencies of the `@hitachivantara/uikit-react-core` package.
-For UI Kit v5.x, versions 17.x and 18.x are currently supported for both `react` and `react-dom`.
-
-### Install other UI Kit packages
-
-The UI Kit core package is not the only one provided by our team. You can also install the following ones depending one your project's needs and requirements:
-
-```
-npm install @hitachivantara/uikit-react-icons
-npm install @hitachivantara/uikit-styles
-```
-
-The peer dependencies for `@hitachivantara/uikit-react-icons` include `@emotion/styled`, `react`, and `react-dom`, and this package is also used internally by the
-`uikit-react-core` package.
-
-Regarding `@hitachivantara/uikit-styles`, it's not expected you'll need to install it in your project. This is mainly a package created for internal use
-where all the Design System theming specifications are kept and is currently being used inside our packages.
-
-At the moment, UI Kit v5.x is still not available for the following packages:
-
-- `@hitachivantara/uikit-react-viz`
-- `@hitachivantara/uikit-react-compat`
-- `@hitachivantara/uikit-react-code-editor`
-- `@hitachivantara/uikit-react-lab`
-- `@hitachivantara/uikit-common-themes`: this package will not evolve beyond v4.x since it was replaced by `@hitachivantara/uikit-styles`
-
-Over time, we will keep working toward aligning these packages with v5.x. However, until then, v4.x and v5.x packages can't be used simultaneously due to the
-introduction of a new theming system not compatible with the v4.x components.
-
-### Install older UI Kit packages versions
-
-#### UI Kit v4.x
-
-If your application needs to meet the specifications defined by **Design System 3.x**, you should use the UI Kit v4.x release. For more information, report to this
-[page](https://lumada-design.github.io/uikit/master/?path=/docs/overview-installation--page).
-
-#### UI Kit v3.x
-
-UI Kit v3.x targets earlier versions of **Design System 3.x** and uses a different registry and import names. If needed, please follow the documentation
-available on this [page](https://lumada-design.github.io/uikit/v3-old-registry/?path=/docs/get-started-installation--page).
-
-#### UI Kit v2.x
-
-If your application follows **Design System 1.x**, you must use the UI Kit v2.x release. Please, check this
-[page](https://lumada-design.github.io/uikit/v2.x/?path=/docs/get-started-installation--page) for detailed instructions.
+`react` >= 17.0.0 and `react-dom` >= 17.0.0 are also peer dependencies and should already be included in your project.
 
 ## Usage
 
@@ -76,10 +33,10 @@ const MyApp = ({ children }) => {
 };
 ```
 
-The example shown above illustrates the most simple setup to get you started with the UI Kit. This will initialize the UI Kit with the Design System 5
-and the dawn color mode. However, depending on your design requirements, you may need to use other themes. This can be achieved by applying the necessary
-changes to the `HvProvider`. For more information on how to customize your themes, please report to the [provider](/docs/guides-provider--main#provider)
-and [theming](/docs/guides-theming-theming--main#theming) documentation.
+This will initialize the UI Kit with the `Design System 5`theme and the `dawn` color mode by default. Depending on your design requirements, you may need to customize or use other themes.
+
+For more information, please report to the [**provider**](/docs/guides-provider--main#provider)
+and [**theming**](/docs/guides-theming-theming--main#theming) documentation.
 
 ### 2. Load the default font
 
@@ -95,11 +52,11 @@ This can be achieved through the **Google Web Fonts CDN** by using the following
 />
 ```
 
-Please, report to the [typography](/docs/foundation-typography--main) documentation for more information.
+Please, report to the [**typography**](/docs/foundation-typography--main) documentation for more information.
 
 ### 3. Use the components
 
-After setting up the provider and load the font, you start using the components provided by the UI Kit core package like so:
+After setting up the provider and load the font, you can start using the components provided by the UI Kit core package like so:
 
 ```tsx
 import { HvTypography } from "@hitachivantara/uikit-react-core";
