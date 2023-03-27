@@ -39,17 +39,17 @@ const Radii = () => {
     for (const [key, val] of currValues.entries()) {
       currRadii[key] = val;
     }
-    const spacingValue = currValues.get(radii) || 0;
+    const radiiValue = currValues.get(radii) || 0;
 
     const newTheme = createTheme({
       ...customTheme,
       radii: {
         ...currRadii,
-        [radii]: radii === "base" ? spacingValue : spacingValue,
+        [radii]: radii === "base" ? radiiValue : radiiValue,
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["radii", radii], spacingValue);
+    updateChangedValues?.(["radii", radii], radiiValue);
   };
 
   return (

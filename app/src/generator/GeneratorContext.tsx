@@ -1,6 +1,6 @@
 import { createTheme, HvTheme } from "@hitachivantara/uikit-react-core";
 import { HvThemeStructure } from "@hitachivantara/uikit-styles";
-import { createContext, useState } from "react";
+import { createContext, useState, Dispatch, SetStateAction } from "react";
 
 type GeneratorContextProp = {
   customTheme: HvTheme | HvThemeStructure;
@@ -8,6 +8,9 @@ type GeneratorContextProp = {
 
   changedValues?: Partial<HvTheme | HvThemeStructure>;
   updateChangedValues?: (path: any, key: any, reset?: boolean) => void;
+
+  open?: boolean;
+  setOpen?: Dispatch<SetStateAction<boolean>>;
 };
 
 export const GeneratorContext = createContext<GeneratorContextProp>({
@@ -16,6 +19,8 @@ export const GeneratorContext = createContext<GeneratorContextProp>({
 });
 
 const GeneratorProvider = ({ children }) => {
+  const [open, setOpen] = useState(true);
+
   const [changedValues, setChangedValues] = useState({});
 
   const [customTheme, setCustomTheme] = useState(
@@ -55,6 +60,8 @@ const GeneratorProvider = ({ children }) => {
         updateCustomTheme,
         changedValues,
         updateChangedValues,
+        open,
+        setOpen,
       }}
     >
       {children}

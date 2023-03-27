@@ -9,17 +9,19 @@ import {
   HvHeaderNavigation,
   HvButton,
   HvBadge,
+  HvTooltip,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
 import HitachiLogo from "assets/HitachiLogo";
 import { NavigationContext } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
-// import { ThemeSwitcher } from "../../common/ThemeSwitcher";
+import { GeneratorContext } from "generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const { activePath } = useContext(NavigationContext);
+  const { setOpen, open } = useContext(GeneratorContext);
 
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
@@ -29,7 +31,7 @@ export const Header = () => {
   };
 
   return (
-    <HvHeader position="relative">
+    <HvHeader position="fixed">
       {!isMdUp && (
         <div>
           <HvButton variant="primaryGhost" icon>
@@ -60,7 +62,21 @@ export const Header = () => {
             icon={<Alert />}
             style={{ marginRight: 10 }}
           />
-          {/* <ThemeSwitcher /> */}
+          <HvTooltip
+            title={
+              <HvTypography>
+                {open ? "Close Theme Generator" : "Open Theme Generator"}
+              </HvTypography>
+            }
+          >
+            <HvButton
+              variant="secondaryGhost"
+              icon
+              onClick={() => setOpen?.((prev) => !prev)}
+            >
+              <Menu />
+            </HvButton>
+          </HvTooltip>
         </HvHeaderActions>
       )}
     </HvHeader>

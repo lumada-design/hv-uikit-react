@@ -43,7 +43,6 @@ const Spacing = () => {
       spacing === "base"
         ? parseInt(currValues.get(spacing)?.toString() || "")
         : currValues.get(spacing) || 0;
-    console.log(typeof spacingValue);
 
     const newTheme = createTheme({
       ...customTheme,
