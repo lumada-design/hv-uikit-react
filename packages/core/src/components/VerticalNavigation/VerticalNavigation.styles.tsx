@@ -10,7 +10,7 @@ export const StyledRoot = styled("div")({
   width: "100%",
 
   background: theme.colors.atmo1,
-  boxShadow: theme.shadows[1],
+  boxShadow: theme.colors.shadow,
   clipPath: "inset(0px -12px 0px 0px)",
 
   [`&.${verticalNavigationClasses.collapsed}`]: {

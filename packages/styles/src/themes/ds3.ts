@@ -1,5 +1,4 @@
 import { colors } from "../tokens/colors";
-import { shadows } from "../tokens/shadows";
 import { makeTheme } from "../makeTheme";
 import { HvTheme } from "../types";
 
@@ -269,7 +268,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     selectedItemBorderTopThickness: "2px",
     selectedItemBorderBottomColor: "transparent",
     selectedItemBorderBottomThickness: "0px",
-    shadow: theme.shadows.md,
+    shadow: theme.colors.shadow,
   },
   card: {
     iconMargin: "-24px",
@@ -305,7 +304,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     borderRadius: "0px",
   },
   baseDropdown: {
-    shadow: shadows.md,
+    shadow: theme.colors.shadow,
     placeholderColor: theme.colors.atmo5,
     borderColor: theme.colors.atmo4,
     hoverBorderColor: theme.colors.acce1,

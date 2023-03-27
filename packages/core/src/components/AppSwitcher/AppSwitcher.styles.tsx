@@ -32,7 +32,7 @@ export const StyledRoot = styled(
       position: "absolute",
       top: "50px",
       overflowX: "hidden",
-      boxShadow: theme.shadows[1],
+      boxShadow: theme.colors.shadow,
     }),
     ...($closed && {
       display: "none",

@@ -9,7 +9,7 @@ export const StyledRoot = styled("div")({
 
 export const StyledSelectionList = styled(HvSelectionList)({
   backgroundColor: theme.colors.atmo1,
-  boxShadow: theme.shadows.md,
+  boxShadow: theme.colors.shadow,
   padding: theme.space.xs,
   width: "100%",
 });
