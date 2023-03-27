@@ -21,7 +21,7 @@ import countryNamesArray, { continents, countries } from "./countries";
 const SearchBox = () => <></>;
 
 const meta: Meta<typeof HvInput> = {
-  title: "Components/Search Box",
+  title: "Components/Input/Search Box",
   component: SearchBox,
   decorators: [(Story) => <div style={{ height: "300px" }}>{Story()}</div>],
 };

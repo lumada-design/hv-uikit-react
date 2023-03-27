@@ -1,7 +1,7 @@
 import AssetInventory from "../../templates/AssetInventory";
 
 export default {
-  title: "Templates/AssetInventory",
+  title: "Templates/Asset Inventory",
   parameters: {
     docs: {
       source: {

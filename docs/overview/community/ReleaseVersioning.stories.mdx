@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Overview/Community/Releases" />
+
+# Releases and Versioning
+
+We are commited to providing a stable and reliable product that is easy to use and upgrade, ensuring that future changes are always introduced predictably.
+
+Here you can find the practices that are followed to provide you a stable and reliable product to use.
+
+## Releases
+
+Since day one we have a CI/ CD process in place to ensure that every change is validated and tested before being released to the public.
+
+We trigger a release build of all our active branches every day. This means that all code merged during that day will be validated against our tests and a new release will be made public. If needed we can also trigger a release build manually for critical fixes.
+
+When working on a major version, preview builds (alpha, beta or rc) should be available whenever we feel we have a good subset of things for teams to try out.
+
+Every release changelogs will be available in the [github releases section](https://github.com/lumada-design/hv-uikit-react/releases) and our [documentation](https://lumada-design.github.io) updated.
+
+## Versioning
+
+NEXT UI Kit follows [Semantic Versioning Guidelines](https://semver.org/). Version numbers have three parts: major.minor.patch. The version number is incremented based on the level of change included in the release.
+
+- **Major releases** contain significant new features. These releases include breaking changes. When updating to a new major release, you may need to refactor code, run additional tests, and learn new APIs.
+- **Minor releases** contain important new features. Minor releases are fully backward-compatible, you can modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
+- **Patch releases** are low risk, contain bug fixes and small new features.
+
+## Long-term support (LTS)
+
+NEXT UI Kit will continue to provide security updates and support for regressions for two versions prior to the current major version, for example regressions caused by external factors such as browser updates, or changes to upstream dependencies.
+
+## Deprecation policy
+
+- Deprecated features are announced in the changelog, and when possible, with warnings at runtime.
+- When a deprecation is announced, recommended update path is provided.
+- Existing use of a stable API during the deprecation period is supported, so your code will keep working during that period.

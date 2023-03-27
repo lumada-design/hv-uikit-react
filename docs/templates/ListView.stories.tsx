@@ -1,7 +1,7 @@
 import ListView from "../../templates/ListView";
 
 export default {
-  title: "Templates/ListView",
+  title: "Templates/List View",
   parameters: {
     docs: {
       source: {

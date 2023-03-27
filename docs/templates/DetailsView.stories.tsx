@@ -1,7 +1,7 @@
 import DetailsView from "../../templates/DetailsView";
 
 export default {
-  title: "Templates/DetailsView",
+  title: "Templates/Details View",
   parameters: {
     docs: {
       source: {
