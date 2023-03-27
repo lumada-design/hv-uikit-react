@@ -94,8 +94,8 @@ const Typography = () => {
           const parsedHeight = customTheme?.typography[
             typographyName
           ].lineHeight
-            .replace("var(--uikit-lineHeights-", "")
-            .replace(")", "");
+            ?.replace("var(--uikit-lineHeights-", "")
+            ?.replace(")", "");
           if (parsedHeight === h) {
             selected = true;
           }
@@ -125,8 +125,9 @@ const Typography = () => {
           const parsedWeight = customTheme?.typography[
             typographyName
           ].fontWeight
-            .replace("var(--uikit-fontWeights-", "")
-            .replace(")", "");
+            .toString()
+            ?.replace("var(--uikit-fontWeights-", "")
+            ?.replace(")", "");
           if (parsedWeight === w) {
             selected = true;
           }
