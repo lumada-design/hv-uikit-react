@@ -1,11 +1,12 @@
 import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
-import { styles } from "./Media.styles";
-import { HvBaseProps } from "../../../types";
+import { createClasses } from "./Media.styles";
+import { HvBaseProps } from "../../../types/generic";
 import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
 import clsx from "clsx";
 import { ImgHTMLAttributes } from "react";
+import { useCreateEmotion } from "hooks/useCreateEmotion";
 
 export type HvCardMediaProps = Omit<MuiCardMediaProps, "classes"> &
   ImgHTMLAttributes<HTMLImageElement> &
@@ -33,6 +34,9 @@ export const HvCardMedia = ({
   onClick,
   ...others
 }: HvCardMediaProps) => {
+  const { css } = useCreateEmotion();
+  const styles = createClasses(css);
+
   return (
     <MuiCardMedia
       id={id}

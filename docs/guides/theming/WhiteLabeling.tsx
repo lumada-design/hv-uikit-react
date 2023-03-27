@@ -12,7 +12,7 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { Menu } from "@hitachivantara/uikit-react-icons";
-import { css } from "packages/core/src/utils/emotion";
+import { css } from "@emotion/css";
 import { useState } from "react";
 
 const navigationData = [
@@ -102,7 +102,11 @@ export const WhiteLabeling = () => {
 
   return (
     <div id={id}>
-      <HvProvider rootElementId={id} themes={[turquoiseTheme]}>
+      <HvProvider
+        classNameKey={id}
+        rootElementId={id}
+        themes={[turquoiseTheme]}
+      >
         <HvHeader position="relative">
           <HvButton
             icon

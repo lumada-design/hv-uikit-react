@@ -17,6 +17,7 @@ interface HvThemeProviderProps {
   themes: (HvTheme | HvThemeStructure)[];
   theme: string;
   colorMode: string;
+  classNameKey: string;
   rootElementId?: string;
 }
 
@@ -26,6 +27,7 @@ export const HvThemeProvider = ({
   theme,
   colorMode,
   rootElementId,
+  classNameKey,
 }: HvThemeProviderProps) => {
   let pTheme = parseTheme(themesList, theme, colorMode);
 
@@ -72,6 +74,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
+      classNameKey,
       rootId,
     }),
     [
@@ -81,6 +84,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
+      classNameKey,
       rootId,
     ]
   );

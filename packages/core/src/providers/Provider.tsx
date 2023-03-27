@@ -7,7 +7,8 @@ import {
 import { processThemes } from "utils";
 import { HvTheme } from "../types/theme";
 import { HvThemeProvider } from "./ThemeProvider";
-import { emotionCache } from "utils/emotion";
+import { useMemo } from "react";
+import createCache from "@emotion/cache";
 
 // Provider props
 export type HvProviderProps = {
@@ -46,6 +47,13 @@ export type HvProviderProps = {
    * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one used.
    */
   colorMode?: string;
+  /**
+   * The string used to prefix the class names and uniquely identify them. The key can only contain lower case alphabetical characters.
+   * This is useful to avoid class name collisions.
+   *
+   * If no value is provided, the default is `hv-uikit-css`.
+   */
+  classNameKey?: string;
 };
 
 /**
@@ -58,9 +66,22 @@ export const HvProvider = ({
   themes,
   theme,
   colorMode,
+  classNameKey = "hv-uikit-css",
 }: HvProviderProps) => {
   // Themes
   const themesList: (HvTheme | HvThemeStructure)[] = processThemes(themes);
+
+  // Emotion cache
+  // Moves UI Kit styles to the top of the <head> so they're loaded first.
+  // This enables users to override the UI Kit styles if necessary.
+  const emotionCache = useMemo(
+    () =>
+      createCache({
+        key: classNameKey,
+        prepend: true,
+      }),
+    [classNameKey]
+  );
 
   return (
     <CacheProvider value={emotionCache}>
@@ -75,6 +96,7 @@ export const HvProvider = ({
         theme={theme || themesList[0].name}
         colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
         rootElementId={rootElementId}
+        classNameKey={classNameKey}
       >
         {children}
       </HvThemeProvider>

@@ -4,14 +4,14 @@ import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { isNil } from "lodash";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "../../types/generic";
 import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
 import { getFocusableList } from "utils/focusableElementFinder";
 import { isKeypress, keyboardCodes, setId } from "utils";
-import { withTooltip } from "hocs";
+import withTooltip from "hocs/withTooltip";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { css } from "utils/emotion";
-import { useTheme } from "hooks";
+import { useTheme } from "hooks/useTheme";
+import { useCreateEmotion } from "hooks/useCreateEmotion";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &
   HvBaseProps & {
@@ -53,6 +53,8 @@ export const HvDialog = ({
 
   const { activeTheme, selectedMode, rootId } = useTheme();
 
+  const { css } = useCreateEmotion();
+
   const focusableQueue = useRef<{
     first?: HTMLElement;
     last?: HTMLElement;
@@ -87,8 +89,8 @@ export const HvDialog = ({
             firstFocusable && document.getElementById(firstFocusable);
           if (element) element.focus();
           else {
-            // eslint-disable-next-line no-console
             console.warn(`firstFocusable element ${firstFocusable} not found.`);
+
             focusableList[1].focus();
           }
         }

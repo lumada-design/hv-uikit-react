@@ -1,7 +1,9 @@
 import { theme } from "@hitachivantara/uikit-styles";
-import { css } from "utils/emotion";
+import { CSSInterpolation } from "@emotion/css";
 
-export const styles = {
+export const createClasses = (
+  css: (...args: CSSInterpolation[]) => string
+) => ({
   root: css({ padding: `15px ${theme.space.sm}`, position: "relative" }),
   titleShort: css({
     fontFamily: theme.fontFamily.body,
@@ -21,4 +23,4 @@ export const styles = {
     paddingLeft: theme.space.xs,
     top: "15px",
   }),
-};
+});

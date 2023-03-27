@@ -1,10 +1,10 @@
-import { css } from "utils/emotion";
 import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import { HvBox } from "components";
-import { HvBaseProps } from "../../types";
+import { useCreateEmotion } from "hooks/useCreateEmotion";
+import { HvBaseProps } from "../../types/generic";
 import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/tokens";
-import { styles } from "./Card.styles";
+import { createClasses } from "./Card.styles";
 import cardClasses, { HvCardClasses } from "./cardClasses";
 
 export type HvCardProps = HvBaseProps & {
@@ -46,6 +46,9 @@ export const HvCard = ({
   bgcolor,
   ...others
 }: HvCardProps) => {
+  const { css } = useCreateEmotion();
+  const styles = createClasses(css);
+
   return (
     <HvBox
       aria-selected={selectable ? selected : undefined}

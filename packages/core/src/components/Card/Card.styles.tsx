@@ -1,8 +1,10 @@
-import { css } from "utils/emotion";
+import { CSSInterpolation } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "utils";
+import { outlineStyles } from "utils/focusUtils";
 
-export const styles = {
+export const createClasses = (
+  css: (...args: CSSInterpolation[]) => string
+) => ({
   root: css({
     overflow: "visible",
     position: "relative",
@@ -45,4 +47,4 @@ export const styles = {
     top: -1,
     right: 0,
   }),
-};
+});
