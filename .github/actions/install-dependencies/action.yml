@@ -16,5 +16,5 @@ runs:
       env:
         # ensure dev dependencies are installed
         NODE_ENV: development
-      run: npm i --legacy-peer-deps
+      run: npm ci
       shell: bash

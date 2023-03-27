@@ -10,10 +10,17 @@ jobs:
     name: Static Checks
     uses: ./.github/workflows/static-checks.yml
 
+  applitools:
+    name: Applitools
+    uses: ./.github/workflows/tests-applitools.yml
+    needs: [static-checks]
+    secrets:
+      APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+
   release:
     name: Release Next
     runs-on: ubuntu-latest
-    needs: [static-checks]
+    needs: [applitools]
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

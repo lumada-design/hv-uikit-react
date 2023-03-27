@@ -1,6 +1,5 @@
 const isExcludedPath = (kind) => {
-  console.log('kind: ', kind);
-  const excludePaths = ["Templates/", "Components/Tags Input"];
+  const excludePaths = ["Overview/", "Foundation/", "Guides/", "Templates/"];
 
   return excludePaths.some((p) => kind.includes(p));
 };
