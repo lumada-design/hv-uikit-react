@@ -192,6 +192,10 @@ const supportLight = {
   supp5: "#546B6B",
 };
 
+const shadowLight = {
+  shadow: "0 2px 12px rgba(65,65,65,0.12)",
+};
+
 /* -------------------------------------------------------------------------------------------------
  * Dark palette
  * -----------------------------------------------------------------------------------------------*/
@@ -252,6 +256,10 @@ const supportDark = {
   supp1: "#0F8B8D",
 };
 
+const shadowDark = {
+  shadow: "0 3px 5px rgba(0,0,0,.16)",
+};
+
 export const colors = {
   common,
   light: {
@@ -259,11 +267,13 @@ export const colors = {
     ...atmosphereLight,
     ...semanticLight,
     ...supportLight,
+    ...shadowLight,
   },
   dark: {
     ...accentDark,
     ...atmosphereDark,
     ...semanticDark,
     ...supportDark,
+    ...shadowDark,
   },
 };

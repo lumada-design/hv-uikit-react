@@ -8,7 +8,7 @@ export const singleStyle = {
   display: "flex",
   backgroundColor: theme.colors.atmo1,
   borderRadius: theme.tooltip.borderRadius,
-  boxShadow: theme.shadows.md,
+  boxShadow: theme.colors.shadow,
   width: "fit-content",
   "& p": {
     display: "-webkit-box",
@@ -26,7 +26,7 @@ export const multiStyle = {
   padding: 0,
   display: "flex",
   backgroundColor: theme.colors.atmo1,
-  boxShadow: theme.shadows.sm,
+  boxShadow: theme.colors.shadow,
   width: "fit-content",
   "& p": {
     display: "-webkit-box",

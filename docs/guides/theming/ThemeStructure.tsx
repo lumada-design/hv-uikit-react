@@ -17,7 +17,6 @@ const tokens: string[] = [
   "breakpoints",
   "colors",
   "radii",
-  "shadows",
   "sizes",
   "zIndices",
   "space",

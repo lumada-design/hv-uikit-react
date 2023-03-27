@@ -23,7 +23,7 @@ export const StyledButton = styled(
 
   ...($open && {
     backgroundColor: theme.colors.atmo1,
-    boxShadow: theme.shadows[1],
+    boxShadow: theme.colors.shadow,
 
     "&:hover": {
       backgroundColor: theme.colors.atmo1,

@@ -76,7 +76,7 @@ export const Modal: StoryObj<HvPanelProps> = {
           style={{
             width: "100%",
             height: "200px",
-            boxShadow: theme.shadows.sm,
+            boxShadow: theme.colors.shadow,
           }}
         >
           <HvTypography>Panel Content</HvTypography>

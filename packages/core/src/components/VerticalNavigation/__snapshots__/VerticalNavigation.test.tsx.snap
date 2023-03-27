@@ -6,7 +6,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
     style="display: flex; width: 220px; height: 530px;"
   >
     <div
-      class="HvVerticalNavigation-root css-1400ftt-StyledRoot eyka99t0"
+      class="HvVerticalNavigation-root css-1nhy07j-StyledRoot eyka99t0"
       id="sample1"
     >
       <div
