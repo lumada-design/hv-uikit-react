@@ -48,7 +48,7 @@ export const KPIs = () => {
     <HvGrid container style={{ paddingTop: theme.space.lg }}>
       <HvGrid item xs={12} md={3} lg={2} style={{ paddingTop: theme.space.xl }}>
         <HvGrid container justifyContent="center">
-          <HvAvatar id="status5" size="XL" status="atmo4">
+          <HvAvatar id="status5" size="xl" status="atmo4">
             LS
           </HvAvatar>
         </HvGrid>

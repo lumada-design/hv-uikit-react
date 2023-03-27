@@ -11,7 +11,6 @@ import {
   useHvSortBy,
   useHvTableSticky,
   useHvBulkActions,
-  HvCellProps,
 } from "../hooks";
 import {
   HvTable,
@@ -32,6 +31,7 @@ import {
   makeSelectedData,
   getGroupedRowsColumns,
   getGroupedColumns,
+  SampleColumn,
   SampleDataProps,
 } from "./storiesUtils";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -62,7 +62,7 @@ export const UseHvHooks: StoryObj = {
   },
   name: "useHv* Hooks",
   render: () => {
-    const data = useMemo(() => makeData(6), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(6), []);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
       useHvData({
@@ -247,8 +247,8 @@ export const UseHvHooks: StoryObj = {
 export const UseHvPagination: StoryObj = {
   name: "useHvPagination",
   render: () => {
-    const columns = useMemo(() => getColumns(), []);
-    const data = useMemo(() => makeData(32), []);
+    const columns: SampleColumn[] = useMemo(() => getColumns(), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(32), []);
 
     const {
       getTableProps,
@@ -258,7 +258,7 @@ export const UseHvPagination: StoryObj = {
       page,
       state: { pageSize },
       getHvPaginationProps,
-    } = useHvData({ columns, data }, useHvPagination);
+    } = useHvData<SampleDataProps>({ columns, data }, useHvPagination);
 
     const EmptyRow = () => (
       <HvTableRow>
@@ -308,7 +308,7 @@ export const UseHvPagination: StoryObj = {
 
                 return (
                   <HvTableRow {...row.getRowProps()}>
-                    {row.cells.map((cell: HvCellProps<SampleDataProps>) => {
+                    {row.cells.map((cell) => {
                       return (
                         <HvTableCell {...cell.getCellProps()}>
                           {cell.render("Cell")}
@@ -332,11 +332,11 @@ export const UseHvPagination: StoryObj = {
 export const UseHvSelection: StoryObj = {
   name: "useHvSelection",
   render: () => {
-    const columns = useMemo(() => getColumns(), []);
-    const data = useMemo(() => makeData(6), []);
+    const columns: SampleColumn[] = useMemo(() => getColumns(), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(6), []);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData({ columns, data }, useHvRowSelection);
+      useHvData<SampleDataProps>({ columns, data }, useHvRowSelection);
 
     return (
       <>
@@ -401,12 +401,15 @@ export const UseHvSelection: StoryObj = {
 export const ControlledSelection: StoryObj = {
   name: "useHvRowSelection Controlled",
   render: () => {
-    const columns = useMemo(() => getColumns(), []);
-    const initialData = useMemo(() => makeSelectedData(6), []);
+    const columns: SampleColumn[] = useMemo(() => getColumns(), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeSelectedData(6),
+      []
+    );
     const [data, setData] = useState(initialData);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData(
+      useHvData<SampleDataProps>(
         { columns, data, manualRowSelectedKey: "selected" },
         useHvRowSelection
       );
@@ -466,7 +469,7 @@ export const ControlledSelection: StoryObj = {
 export const UseHvBulkActions: StoryObj = {
   name: "useHvBulkActions",
   render: () => {
-    const columns = useMemo(() => getColumns(), []);
+    const columns: SampleColumn[] = useMemo(() => getColumns(), []);
     const [data, setData] = useState(makeData(64));
 
     const {
@@ -479,7 +482,7 @@ export const UseHvBulkActions: StoryObj = {
       toggleAllRowsSelected,
       getHvBulkActionsProps,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       { columns, data },
       useHvPagination,
       useHvRowSelection,
@@ -620,7 +623,7 @@ export const UseHvSortBy: StoryObj = {
       };
     }, []);
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       const cols = getColumns();
       cols[2].disableSortBy = true;
       cols[5].sortType = colSort;
@@ -630,7 +633,7 @@ export const UseHvSortBy: StoryObj = {
     const data = useMemo(() => makeData(5), []);
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-      useHvData({ columns, data }, useHvSortBy);
+      useHvData<SampleDataProps>({ columns, data }, useHvSortBy);
 
     return (
       <>
@@ -705,8 +708,8 @@ export const UseHvSortBy: StoryObj = {
 export const UseHvRowExpand: StoryObj = {
   name: "useHvRowExpand",
   render: () => {
-    const columns = useMemo(() => getColumns(), []);
-    const data = useMemo(() => makeData(6), []);
+    const columns: SampleColumn[] = useMemo(() => getColumns(), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(6), []);
     const i18n = useMemo(
       () => ({
         expandRowButtonAriaLabel: "Click to expand this row",
@@ -716,7 +719,10 @@ export const UseHvRowExpand: StoryObj = {
     );
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData({ columns, data, labels: i18n }, useHvRowExpand);
+      useHvData<SampleDataProps>(
+        { columns, data, labels: i18n },
+        useHvRowExpand
+      );
 
     return (
       <>
@@ -812,11 +818,11 @@ export const UseHvRowExpand: StoryObj = {
 export const UseGroupBy: StoryObj = {
   name: "useGroupBy",
   render: () => {
-    const columns = useMemo(() => getGroupedRowsColumns(), []);
-    const data = useMemo(() => makeData(6), []);
+    const columns: SampleColumn[] = useMemo(() => getGroupedRowsColumns(), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(6), []);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData(
+      useHvData<SampleDataProps>(
         {
           columns,
           data,
@@ -914,7 +920,7 @@ export const UseGroupBy: StoryObj = {
 export const UseHvTableSticky: StoryObj = {
   name: "useHvTableSticky",
   render: () => {
-    const columns = useMemo(
+    const columns: SampleColumn[] = useMemo(
       () => [
         { Header: "Title", accessor: "name", sticky: "left", width: 120 },
         {
@@ -929,7 +935,7 @@ export const UseHvTableSticky: StoryObj = {
           Header: "Probability",
           accessor: "riskScore",
           align: "right",
-          Cell: ({ value }) => `${value}%`,
+          Cell: ({ value }) => <>{value}%</>,
           width: 80,
         },
         {
@@ -942,7 +948,7 @@ export const UseHvTableSticky: StoryObj = {
       ],
       []
     );
-    const data = useMemo(() => makeData(100), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(100), []);
 
     const {
       getTableProps,
@@ -951,7 +957,7 @@ export const UseHvTableSticky: StoryObj = {
       prepareRow,
       headerGroups,
       rows,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -1079,11 +1085,11 @@ export const UseHvTableSticky: StoryObj = {
 export const UseHvHeaderGroups: StoryObj = {
   name: "useHvHeaderGroups",
   render: () => {
-    const columns = useMemo(() => getGroupedColumns(), []);
-    const data = useMemo(() => makeData(), []);
+    const columns: SampleColumn[] = useMemo(() => getGroupedColumns(), []);
+    const data: SampleDataProps[] = useMemo(() => makeData(), []);
 
     const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-      useHvData(
+      useHvData<SampleDataProps>(
         {
           columns,
           data,

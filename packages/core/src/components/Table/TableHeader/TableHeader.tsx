@@ -31,7 +31,10 @@ import {
 import { HvTypographyProps } from "../../Typography";
 import { useTheme } from "hooks";
 
-export type HvTableHeaderProps = ThHTMLAttributes<HTMLElement> &
+export type HvTableHeaderProps = Omit<
+  ThHTMLAttributes<HTMLTableCellElement>,
+  "align"
+> &
   Omit<HvBaseProps, "children"> & {
     /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to th. */
     component?: React.ElementType;

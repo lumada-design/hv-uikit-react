@@ -153,7 +153,8 @@ const getRowPropsHook = (props, { row }) => {
   return [props, nextProps];
 };
 
-export const defaultGetToggleRowSelectedProps = (props, { instance, row }) => {
+export const defaultGetToggleRowSelectedProps = (props, meta) => {
+  const { instance, row } = meta;
   const { manualRowSelectedKey = "isSelected" } = instance;
   let checked = false;
 

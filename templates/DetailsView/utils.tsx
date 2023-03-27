@@ -1,4 +1,6 @@
-export const getColumns = () => [
+import { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
+
+export const getColumns = (): HvTableColumnConfig<NewEntry>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },
@@ -12,7 +14,7 @@ export const getColumns = () => [
 
 type Priority = "Low" | "High" | "Medium";
 
-type NewEntry = {
+export type NewEntry = {
   id: string;
   name: string;
   eventType: string;

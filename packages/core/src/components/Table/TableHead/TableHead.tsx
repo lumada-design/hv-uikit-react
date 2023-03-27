@@ -7,7 +7,10 @@ import TableContext from "../TableContext";
 import { transientOptions } from "utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 
-export type HvTableHeadProps = Omit<HvBaseProps, "children"> & {
+export type HvTableHeadProps = HvBaseProps<
+  HTMLTableSectionElement,
+  { children }
+> & {
   /**
    * Content to be rendered
    */

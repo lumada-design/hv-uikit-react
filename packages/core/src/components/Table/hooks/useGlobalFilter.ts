@@ -8,6 +8,6 @@ export type UseGlobalFilterProps = (<
 
 // #endregion ##### TYPES #####
 
-useHvGlobalFilter.pluginName = "useHvGlobalFilter";
+(useHvGlobalFilter.pluginName as string) = "useHvGlobalFilter";
 
 export default useHvGlobalFilter as UseGlobalFilterProps;

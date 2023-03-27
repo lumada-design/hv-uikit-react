@@ -31,7 +31,9 @@ export const ListView = ({ instance }: ListViewProps) => {
           <HvTableRow>
             <HvTableCell variant="listcheckbox" />
             {columns.map((col) => (
-              <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
+              <HvTableHeader key={col.Header as string}>
+                {col.Header as string}
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>

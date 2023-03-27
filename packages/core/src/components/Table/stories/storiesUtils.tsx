@@ -1,21 +1,41 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
 import { Random } from "utils";
-import { HvButton, HvColumn } from "components";
+import { HvButton, HvTableColumnConfig } from "components";
 import { Delete, Drag } from "@hitachivantara/uikit-react-icons";
 
+export type SampleStatusProps = {
+  status_name?: string;
+  status_color?: string;
+  status_text_color?: string;
+};
+
 export type SampleDataProps = {
-  id?: any;
-  name?: string;
-  createdDate?: any;
-  eventType?: string;
-  eventQuantity?: any;
-  status?: any;
-  riskScore?: number;
-  severity?: any;
+  id: string;
+  name: string;
+  createdDate: string;
+  eventType: string;
+  riskScore: number;
+  status?: string | SampleStatusProps | null;
+  severity?:
+    | string
+    | {
+        id?: string;
+        label?: string;
+        selected?: boolean;
+      }[];
   priority?: string;
   isDisabled?: boolean;
+  link?: string;
+  selected?: boolean;
+  eventQuantity?: number;
 };
+
+// Sets Header to string since it can have multiple types
+export type SampleColumn = HvTableColumnConfig<SampleDataProps>;
+
+// If a Cell gets a value, it has to return a react element
+const getCell = (value: string) => <>{value}</>;
 
 const rand = new Random();
 
@@ -27,7 +47,7 @@ const getTagColor = (status) => (status === "Closed" ? "sema9" : "sema8");
 
 const generateLongString = (value, i) =>
   i === 6
-    ? "very long string that should be cut if it doesnt fit in the column"
+    ? "very long string that should be cut if it doesn't fit in the column"
     : value;
 
 const generateEmptyDate = (value, i) => (i === 7 ? undefined : value);
@@ -48,7 +68,7 @@ const getDropdownOptions = (options: string[] = [], selected = "") => {
   });
 };
 
-const newEntry = (i) => {
+const newEntry = (i: number): SampleDataProps => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2023].map((y) => new Date(y, 0).getTime());
 
@@ -64,7 +84,7 @@ const newEntry = (i) => {
   };
 };
 
-const newRendererEntry = (i) => {
+const newRendererEntry = (i: number): SampleDataProps => {
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   let eventTypeText = generateEmptyString("Anomaly detection", i);
   eventTypeText = generateLongString(eventTypeText, i);
@@ -91,7 +111,7 @@ const newRendererEntry = (i) => {
   };
 };
 
-const controlledSelectedEntry = (i) => {
+const controlledSelectedEntry = (i: number): SampleDataProps => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   return {
@@ -116,7 +136,7 @@ export const makeSelectedData = (len = 10) =>
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
-export const getColumns = (): HvColumn<SampleDataProps> => [
+export const getColumns = (): SampleColumn[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
@@ -126,7 +146,7 @@ export const getColumns = (): HvColumn<SampleDataProps> => [
     Header: "Probability",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => `${value}%`,
+    Cell: ({ value }) => getCell(`${value}%`),
   },
   { Header: "Severity", accessor: "severity" },
   {
@@ -135,7 +155,7 @@ export const getColumns = (): HvColumn<SampleDataProps> => [
   },
 ];
 
-export const getGroupedRowsColumns = (): HvColumn<SampleDataProps>[] => [
+export const getGroupedRowsColumns = (): SampleColumn[] => [
   {
     Header: "Title",
     accessor: "name",
@@ -153,15 +173,15 @@ export const getGroupedRowsColumns = (): HvColumn<SampleDataProps>[] => [
     Header: "Probability",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => `${value}%`,
+    Cell: ({ value }) => getCell(`${value}%`),
     aggregate: "average",
-    Aggregated: ({ value }) => `Avg. ${value}%`,
+    Aggregated: ({ value }) => getCell(`Avg. ${value}%`),
   },
   { Header: "Severity", accessor: "severity" },
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const getLongNameColumns = (): HvColumn<SampleDataProps>[] => [
+export const getLongNameColumns = (): SampleColumn[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   {
     Header: "Time is always moving forward without stop",
@@ -175,13 +195,13 @@ export const getLongNameColumns = (): HvColumn<SampleDataProps>[] => [
     Header: "ProbabilityIsAParameterThatDescribeUncertainty",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => `${value}%`,
+    Cell: ({ value }) => getCell(`${value}%`),
   },
   { Header: "Severity", accessor: "severity" },
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const getGroupedColumns = (): HvColumn<SampleDataProps>[] => [
+export const getGroupedColumns = (): SampleColumn[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
@@ -194,7 +214,7 @@ export const getGroupedColumns = (): HvColumn<SampleDataProps>[] => [
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }) => `${value}%`,
+        Cell: ({ value }) => getCell(`${value}%`),
       },
       { Header: "Severity", accessor: "severity" },
     ],
@@ -233,7 +253,7 @@ export const getDragAndDropColumns = (theme) => [
     Header: "Probability",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => `${value}%`,
+    Cell: ({ value }) => getCell(`${value}%`),
   },
   { Header: "Priority", accessor: "priority" },
   {

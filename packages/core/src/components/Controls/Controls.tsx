@@ -20,7 +20,10 @@ export type HvControlsProps = HvBaseProps & {
    * An instance of useHvTable or useTable used to manage the data
    * if this is not provided data sorting and search must be handled externally
    */
-  callbacks?: Pick<HvTableInstance, "setSortBy" | "setGlobalFilter">;
+  callbacks?: {
+    setSortBy?: HvTableInstance["setSortBy"];
+    setGlobalFilter?: HvTableInstance["setGlobalFilter"];
+  };
   /**
    * Views configuration required for the view buttons
    */
@@ -69,9 +72,9 @@ export const HvControls = ({
     onViewChange?.(evt, btnId);
   };
 
-  const onSearchHandler = (value) => callbacks?.setGlobalFilter(value);
+  const onSearchHandler = (value) => callbacks?.setGlobalFilter?.(value);
   const onSortHandler = (value) =>
-    callbacks?.setSortBy([
+    callbacks?.setSortBy?.([
       {
         id: value?.accessor,
         desc: value?.desc,

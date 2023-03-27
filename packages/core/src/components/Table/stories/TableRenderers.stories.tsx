@@ -25,7 +25,12 @@ import {
   hvDropdownColumn,
   hvProgressColumn,
 } from "../renderers/renderers";
-import { makeRenderersData } from "./storiesUtils";
+import {
+  makeRenderersData,
+  SampleColumn,
+  SampleDataProps,
+  SampleStatusProps,
+} from "./storiesUtils";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof HvTable> = {
@@ -37,7 +42,7 @@ export default meta;
 
 export const AllColumnRenderers: StoryObj = {
   render: () => {
-    const getColumns = () => [
+    const getColumns = (): SampleColumn[] => [
       hvSwitchColumn(
         {
           Header: "isDisabled",
@@ -71,7 +76,7 @@ export const AllColumnRenderers: StoryObj = {
         accessor: "eventType",
         style: { maxWidth: 160 },
       }),
-      hvTagColumn(
+      hvTagColumn<SampleDataProps, SampleColumn, SampleStatusProps>(
         { Header: "Status", accessor: "status", style: { width: 20 } },
         "status_name",
         "status_color",
@@ -99,11 +104,14 @@ export const AllColumnRenderers: StoryObj = {
       ),
     ];
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return getColumns();
     }, []);
 
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data] = useState(initialData);
 
@@ -125,7 +133,7 @@ export const AllColumnRenderers: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -189,7 +197,10 @@ export const AllColumnRenderers: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -209,7 +220,7 @@ export const AllColumnRenderers: StoryObj = {
 
 export const TextColumnRenderer: StoryObj = {
   render: () => {
-    const getColumns = () => [
+    const getColumns = (): SampleColumn[] => [
       hvTextColumn({
         Header: "Event Type",
         accessor: "eventType",
@@ -217,11 +228,14 @@ export const TextColumnRenderer: StoryObj = {
       }),
     ];
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return getColumns();
     }, []);
 
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data] = useState(initialData);
 
@@ -243,7 +257,7 @@ export const TextColumnRenderer: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -291,7 +305,10 @@ export const TextColumnRenderer: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -311,7 +328,7 @@ export const TextColumnRenderer: StoryObj = {
 
 export const NumberColumnRenderer: StoryObj = {
   render: () => {
-    const getColumns = () => [
+    const getColumns = (): SampleColumn[] => [
       hvNumberColumn({
         Header: "Quantity",
         accessor: "eventQuantity",
@@ -319,11 +336,14 @@ export const NumberColumnRenderer: StoryObj = {
       }),
     ];
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return getColumns();
     }, []);
 
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data] = useState(initialData);
 
@@ -345,7 +365,7 @@ export const NumberColumnRenderer: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -393,7 +413,10 @@ export const NumberColumnRenderer: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -413,18 +436,21 @@ export const NumberColumnRenderer: StoryObj = {
 
 export const DateColumnRenderer: StoryObj = {
   render: () => {
-    const getColumns = () => [
+    const getColumns = (): SampleColumn[] => [
       hvDateColumn(
         { Header: "Time", accessor: "createdDate", style: { minWidth: 80 } },
         "DD/MM/YYYY"
       ),
     ];
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return getColumns();
     }, []);
 
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data] = useState(initialData);
 
@@ -446,7 +472,7 @@ export const DateColumnRenderer: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -494,7 +520,10 @@ export const DateColumnRenderer: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -513,7 +542,7 @@ export const DateColumnRenderer: StoryObj = {
 };
 
 export const ExpandColumnRenderer = () => {
-  const getColumns = () => [
+  const getColumns = (): SampleColumn[] => [
     hvTextColumn({
       Header: "Event Type",
       accessor: "eventType",
@@ -527,11 +556,14 @@ export const ExpandColumnRenderer = () => {
     ),
   ];
 
-  const columns = useMemo(() => {
+  const columns: SampleColumn[] = useMemo(() => {
     return getColumns();
   }, []);
 
-  const initialData = useMemo(() => makeRenderersData(64), []);
+  const initialData: SampleDataProps[] = useMemo(
+    () => makeRenderersData(64),
+    []
+  );
 
   const [data] = useState(initialData);
 
@@ -553,7 +585,7 @@ export const ExpandColumnRenderer = () => {
     headers,
     page,
     getHvPaginationProps,
-  } = useHvData(
+  } = useHvData<SampleDataProps>(
     {
       columns,
       data,
@@ -584,8 +616,7 @@ export const ExpandColumnRenderer = () => {
               </HvTableCell>
             ))}
           </HvTableRow>
-          {/* @ts-ignore */}
-          <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
+          <HvTableRow style={{ display: row.isExpanded ? undefined : "none" }}>
             <HvTableCell
               style={{
                 paddingBottom: 0,
@@ -620,7 +651,10 @@ export const ExpandColumnRenderer = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header as string}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -639,11 +673,14 @@ export const ExpandColumnRenderer = () => {
 
 export const SwitchColumnRenderer: StoryObj = {
   render: () => {
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data, setData] = useState(initialData);
 
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return [
         hvSwitchColumn(
           {
@@ -689,7 +726,7 @@ export const SwitchColumnRenderer: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -737,7 +774,10 @@ export const SwitchColumnRenderer: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -757,9 +797,9 @@ export const SwitchColumnRenderer: StoryObj = {
 
 export const TagColumnRenderer: StoryObj = {
   render: () => {
-    const columns = useMemo(() => {
+    const columns: SampleColumn[] = useMemo(() => {
       return [
-        hvTagColumn(
+        hvTagColumn<SampleDataProps, SampleColumn, SampleStatusProps>(
           { Header: "Status", accessor: "status", style: { width: 20 } },
           "status_name",
           "status_color",
@@ -773,7 +813,10 @@ export const TagColumnRenderer: StoryObj = {
       ];
     }, []);
 
-    const initialData = useMemo(() => makeRenderersData(64), []);
+    const initialData: SampleDataProps[] = useMemo(
+      () => makeRenderersData(64),
+      []
+    );
 
     const [data] = useState(initialData);
 
@@ -795,7 +838,7 @@ export const TagColumnRenderer: StoryObj = {
       headers,
       page,
       getHvPaginationProps,
-    } = useHvData(
+    } = useHvData<SampleDataProps>(
       {
         columns,
         data,
@@ -843,7 +886,10 @@ export const TagColumnRenderer: StoryObj = {
             <HvTableHead>
               <HvTableRow>
                 {headers.map((col) => (
-                  <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.Header as string}
+                  >
                     {col.render("Header")}
                   </HvTableHeader>
                 ))}
@@ -862,7 +908,7 @@ export const TagColumnRenderer: StoryObj = {
 };
 
 export const ProgressColumnRenderer = () => {
-  const columns = useMemo(() => {
+  const columns: SampleColumn[] = useMemo(() => {
     return [
       hvProgressColumn(
         {
@@ -878,7 +924,10 @@ export const ProgressColumnRenderer = () => {
     ];
   }, []);
 
-  const initialData = useMemo(() => makeRenderersData(64), []);
+  const initialData: SampleDataProps[] = useMemo(
+    () => makeRenderersData(64),
+    []
+  );
 
   const [data] = useState(initialData);
 
@@ -900,7 +949,7 @@ export const ProgressColumnRenderer = () => {
     headers,
     page,
     getHvPaginationProps,
-  } = useHvData(
+  } = useHvData<SampleDataProps>(
     {
       columns,
       data,
@@ -948,7 +997,10 @@ export const ProgressColumnRenderer = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header as string}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -966,11 +1018,14 @@ export const ProgressColumnRenderer = () => {
 };
 
 export const DropdownColumnRenderer = () => {
-  const initialData = useMemo(() => makeRenderersData(64), []);
+  const initialData: SampleDataProps[] = useMemo(
+    () => makeRenderersData(64),
+    []
+  );
 
   const [data, setData] = useState(initialData);
 
-  const columns = useMemo(() => {
+  const columns: SampleColumn[] = useMemo(() => {
     return [
       hvDropdownColumn(
         { Header: "Severity", accessor: "severity" },
@@ -982,12 +1037,15 @@ export const DropdownColumnRenderer = () => {
           newData = newData.map((val, index) => {
             const newVal = { ...val };
             if (index.toString() === id) {
-              newVal.severity = newVal.severity.map((sev) => {
-                const newSev = { ...sev };
-                newSev.selected = false;
-                if (newSev.id === value.id) newSev.selected = !!value.selected;
-                return newSev;
-              });
+              newVal.severity = (newVal.severity as [])?.map(
+                (sev: { id?: string; label?: string; selected?: boolean }) => {
+                  const newSev = { ...sev };
+                  newSev.selected = false;
+                  if (newSev.id === value.id)
+                    newSev.selected = !!value.selected;
+                  return newSev;
+                }
+              );
             }
             return newVal;
           });
@@ -1063,7 +1121,10 @@ export const DropdownColumnRenderer = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
+                <HvTableHeader
+                  {...col.getHeaderProps()}
+                  key={col.Header as string}
+                >
                   {col.render("Header")}
                 </HvTableHeader>
               ))}

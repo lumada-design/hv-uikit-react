@@ -4,7 +4,10 @@ import { HvBaseProps } from "../../../types";
 import { tableContainerClasses, HvTableContainerClasses } from ".";
 import { forwardRef, useMemo } from "react";
 
-export type HvTableContainerProps = Omit<HvBaseProps, "children"> & {
+export type HvTableContainerProps = HvBaseProps<
+  HTMLDivElement,
+  { children }
+> & {
   /**
    * Content to be rendered
    */
