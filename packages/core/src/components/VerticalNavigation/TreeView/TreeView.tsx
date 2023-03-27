@@ -11,6 +11,96 @@ import { StyledRoot } from "./TreeView.styles";
 import { NavigationMode } from "../Navigation";
 import treeViewClasses from "./treeViewClasses";
 
+export type HvVerticalNavigationTreeViewProps = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the Radio button.
+   */
+  classes?: HvVerticalNavigationTreeClasses;
+  /**
+   * Modus operandi (role) of the widget instance.
+   */
+  mode?: NavigationMode;
+  /**
+   * Enables selection.
+   * @default false
+   */
+  selectable?: boolean;
+  /**
+   * Enables the simultaneous selection of multiple items.
+   * @default false
+   */
+  multiSelect?: boolean;
+  /**
+   * The selected nodes' ids.
+   *
+   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
+   */
+  selected?: string[] | string;
+  /**
+   * When uncontrolled, defines the initial selected nodes' ids.
+   *
+   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
+   * @default []
+   */
+  defaultSelected?: string[] | string;
+  /**
+   * Can non-leaf nodes be collapsed / expanded.
+   */
+  collapsible?: boolean;
+  /**
+   * Callback fired when a tree item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} nodeId The id of the selected node.
+   */
+  onChange?: any;
+  /**
+   * Expanded nodes' ids.
+   */
+  expanded?: string[];
+  /**
+   * When uncontrolled, defines the initial expanded nodes' ids.
+   * @default []
+   */
+  defaultExpanded?: string[];
+  /**
+   * Callback fired when tree items are expanded/collapsed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {array} nodeIds The ids of the expanded nodes (old and new).
+   */
+  onToggle?: (event, nodeIds) => void;
+  /**
+   * If `true`, will allow focus on disabled items.
+   * @default false
+   */
+  disabledItemsFocusable?: boolean;
+  /**
+   * @ignore
+   */
+  onFocus?: (event: React.FocusEvent<any>) => void;
+  /**
+   * @ignore
+   */
+  onBlur?: (event: any) => void;
+  /**
+   * @ignore
+   */
+  onKeyDown?: (event: KeyboardEvent) => void;
+  /**
+   * The content of the component.
+   */
+  children?: React.ReactNode;
+};
+
 function isPrintableCharacter(string) {
   return string && string.length === 1 && string.match(/\S/);
 }
@@ -945,93 +1035,3 @@ export const HvVerticalNavigationTreeView = forwardRef(
     );
   }
 );
-
-export type HvVerticalNavigationTreeViewProps = {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the Radio button.
-   */
-  classes?: HvVerticalNavigationTreeClasses;
-  /**
-   * Modus operandi (role) of the widget instance.
-   */
-  mode?: NavigationMode;
-  /**
-   * Enables selection.
-   * @default false
-   */
-  selectable?: boolean;
-  /**
-   * Enables the simultaneous selection of multiple items.
-   * @default false
-   */
-  multiSelect?: boolean;
-  /**
-   * The selected nodes' ids.
-   *
-   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
-   */
-  selected?: string[] | string;
-  /**
-   * When uncontrolled, defines the initial selected nodes' ids.
-   *
-   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
-   * @default []
-   */
-  defaultSelected?: string[] | string;
-  /**
-   * Can non-leaf nodes be collapsed / expanded.
-   */
-  collapsible?: boolean;
-  /**
-   * Callback fired when a tree item is selected.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {string} nodeId The id of the selected node.
-   */
-  onChange?: any;
-  /**
-   * Expanded nodes' ids.
-   */
-  expanded?: string[];
-  /**
-   * When uncontrolled, defines the initial expanded nodes' ids.
-   * @default []
-   */
-  defaultExpanded?: string[];
-  /**
-   * Callback fired when tree items are expanded/collapsed.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {array} nodeIds The ids of the expanded nodes (old and new).
-   */
-  onToggle?: (event, nodeIds) => void;
-  /**
-   * If `true`, will allow focus on disabled items.
-   * @default false
-   */
-  disabledItemsFocusable?: boolean;
-  /**
-   * @ignore
-   */
-  onFocus?: (event: React.FocusEvent<any>) => void;
-  /**
-   * @ignore
-   */
-  onBlur?: (event: any) => void;
-  /**
-   * @ignore
-   */
-  onKeyDown?: (event: KeyboardEvent) => void;
-  /**
-   * The content of the component.
-   */
-  children?: React.ReactNode;
-};

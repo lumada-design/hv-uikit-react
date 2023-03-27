@@ -5,9 +5,11 @@ export type HvVerticalNavigationClasses = {
   root?: string;
   /** Style applied to the root of the component when its collapsed. */
   collapsed?: string;
+  /** Style applied to the root of the component when its in slider mode. */
+  slider?;
 };
 
-const classKeys: string[] = ["root", "collapsed"];
+const classKeys: string[] = ["root", "collapsed", "slider"];
 
 const verticalNavigationClasses = getClasses<HvVerticalNavigationClasses>(
   classKeys,

@@ -20,8 +20,71 @@ import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { VerticalNavigationContext } from "../VerticalNavigation";
 import { HvAvatar } from "components";
+import { VerticalNavigationContext } from "../";
+
+export type HvVerticalNavigationTreeViewItemProps = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the Radio button.
+   */
+  classes?: HvVerticalNavigationTreeViewItemClasses;
+  /**
+   * Is the node disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Can the node be selected.
+   */
+  selectable?: boolean;
+  /**
+   * The id of the node.
+   */
+  nodeId?: string;
+  /**
+   * The icon to display next to the node's label.
+   */
+  icon?: React.ReactNode;
+  /**
+   * The item label.
+   */
+  label?: React.ReactNode;
+  /**
+   * The url for the link.
+   */
+  href?: string;
+  /**
+   * The behavior when opening a link.
+   */
+  target?: string;
+  /**
+   * The node payload.
+   */
+  payload?: any;
+  /**
+   * @ignore
+   */
+  onClick?: any;
+  /**
+   * @ignore
+   */
+  onMouseDown?: any;
+  /**
+   * @ignore
+   */
+  onFocus?: any;
+  /**
+   * The content of the component.
+   */
+  children?: React.ReactNode;
+};
 
 const preventSelection = (event, disabled) => {
   if (event.shiftKey || event.ctrlKey || event.metaKey || disabled) {
@@ -494,66 +557,3 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     );
   }
 );
-
-export type HvVerticalNavigationTreeViewItemProps = {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the Radio button.
-   */
-  classes?: HvVerticalNavigationTreeViewItemClasses;
-  /**
-   * Is the node disabled.
-   */
-  disabled?: boolean;
-  /**
-   * Can the node be selected.
-   */
-  selectable?: boolean;
-  /**
-   * The id of the node.
-   */
-  nodeId?: string;
-  /**
-   * The icon to display next to the node's label.
-   */
-  icon?: React.ReactNode;
-  /**
-   * The item label.
-   */
-  label?: React.ReactNode;
-  /**
-   * The url for the link.
-   */
-  href?: string;
-  /**
-   * The behavior when opening a link.
-   */
-  target?: string;
-  /**
-   * The node payload.
-   */
-  payload?: any;
-  /**
-   * @ignore
-   */
-  onClick?: any;
-  /**
-   * @ignore
-   */
-  onMouseDown?: any;
-  /**
-   * @ignore
-   */
-  onFocus?: any;
-  /**
-   * The content of the component.
-   */
-  children?: React.ReactNode;
-};

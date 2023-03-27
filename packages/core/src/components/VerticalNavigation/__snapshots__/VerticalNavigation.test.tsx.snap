@@ -6,11 +6,11 @@ exports[`VerticalNavigation > should render correctly 1`] = `
     style="display: flex; width: 220px; height: 530px;"
   >
     <div
-      class="HvVerticalNavigation-root css-1nhy07j-StyledRoot eyka99t0"
+      class="HvVerticalNavigation-root css-1ksbuk-StyledRoot eyka99t0"
       id="sample1"
     >
       <div
-        class="HvVerticalNavigationHeader-root css-12dbsib-StyledHeader e1arrhkt0"
+        class="HvVerticalNavigationHeader-root css-7xt91a-StyledHeader e1arrhkt1"
       >
         <h3
           class="HvTypography-root HvTypography-title3 css-bj1yqo-getStyledComponent e1tnpalo0"
@@ -20,7 +20,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
         <button
           aria-expanded="true"
           aria-label="collapseButton"
-          class="HvButton-root css-1910alx-StyledButton e138pvrm0"
+          class="e1arrhkt0 HvButton-root css-bpxuw3-StyledButton-StyledCollapseButton e138pvrm0"
         >
           <div
             class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -59,12 +59,12 @@ exports[`VerticalNavigation > should render correctly 1`] = `
         >
           <li
             class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected css-1y9s9wc-StyledNode er1eqbm1"
-            id="hvtreeview2-00"
+            id="hvtreeview3-00"
           >
             <div
               aria-current="page"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-              id="hvtreeview2-00-button"
+              id="hvtreeview3-00-button"
               role="button"
               style="padding-left: 10px;"
               tabindex="0"
@@ -80,11 +80,11 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           </li>
           <li
             class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
-            id="hvtreeview2-01"
+            id="hvtreeview3-01"
           >
             <div
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-              id="hvtreeview2-01-button"
+              id="hvtreeview3-01-button"
               role="button"
               style="padding-left: 10px;"
               tabindex="-1"
@@ -100,13 +100,13 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           </li>
           <li
             class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
-            id="hvtreeview2-02"
+            id="hvtreeview3-02"
           >
             <div
-              aria-controls="hvtreeview2-02-group"
+              aria-controls="hvtreeview3-02-group"
               aria-expanded="false"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-              id="hvtreeview2-02-button"
+              id="hvtreeview3-02-button"
               role="button"
               style="padding-left: 0px;"
               tabindex="0"
@@ -139,17 +139,17 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             </div>
             <ul
               class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
-              id="hvtreeview2-02-group"
+              id="hvtreeview3-02-group"
             >
               <li
                 class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
-                id="hvtreeview2-02-01"
+                id="hvtreeview3-02-01"
               >
                 <div
-                  aria-controls="hvtreeview2-02-01-group"
+                  aria-controls="hvtreeview3-02-01-group"
                   aria-expanded="false"
                   class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-                  id="hvtreeview2-02-01-button"
+                  id="hvtreeview3-02-01-button"
                   role="button"
                   style="padding-left: 32px;"
                   tabindex="0"
@@ -182,16 +182,16 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 </div>
                 <ul
                   class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
-                  id="hvtreeview2-02-01-group"
+                  id="hvtreeview3-02-01-group"
                 >
                   <li
                     class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
-                    id="hvtreeview2-02-01-01"
+                    id="hvtreeview3-02-01-01"
                   >
                     <a
                       class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                       href="https://www.hitachivantara.com/en-us/news.html"
-                      id="hvtreeview2-02-01-01-button"
+                      id="hvtreeview3-02-01-01-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"
@@ -207,12 +207,12 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   </li>
                   <li
                     class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
-                    id="hvtreeview2-02-01-02"
+                    id="hvtreeview3-02-01-02"
                   >
                     <a
                       class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                       href="/?path=/story/structure-vertical-navigation--main"
-                      id="hvtreeview2-02-01-02-button"
+                      id="hvtreeview3-02-01-02-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"
@@ -228,11 +228,11 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   </li>
                   <li
                     class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-disabled css-1y9s9wc-StyledNode er1eqbm1"
-                    id="hvtreeview2-02-01-03"
+                    id="hvtreeview3-02-01-03"
                   >
                     <div
                       class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1k3b862-getStyledComponent-StyledContent e1tnpalo0"
-                      id="hvtreeview2-02-01-03-button"
+                      id="hvtreeview3-02-01-03-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"
@@ -252,13 +252,13 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           </li>
           <li
             class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
-            id="hvtreeview2-03"
+            id="hvtreeview3-03"
           >
             <div
-              aria-controls="hvtreeview2-03-group"
+              aria-controls="hvtreeview3-03-group"
               aria-expanded="false"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-              id="hvtreeview2-03-button"
+              id="hvtreeview3-03-button"
               role="button"
               style="padding-left: 0px;"
               tabindex="0"
@@ -291,17 +291,17 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             </div>
             <ul
               class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
-              id="hvtreeview2-03-group"
+              id="hvtreeview3-03-group"
             >
               <li
                 class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-expandable HvVerticalNavigationTreeViewItem-collapsed HvVerticalNavigationTreeViewItem-unselectable css-1y9s9wc-StyledNode er1eqbm1"
-                id="hvtreeview2-03-01"
+                id="hvtreeview3-03-01"
               >
                 <div
-                  aria-controls="hvtreeview2-03-01-group"
+                  aria-controls="hvtreeview3-03-01-group"
                   aria-expanded="false"
                   class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-                  id="hvtreeview2-03-01-button"
+                  id="hvtreeview3-03-01-button"
                   role="button"
                   style="padding-left: 32px;"
                   tabindex="0"
@@ -334,15 +334,15 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 </div>
                 <ul
                   class="HvVerticalNavigationTreeViewItem-group css-zinev9-StyledGroup er1eqbm2"
-                  id="hvtreeview2-03-01-group"
+                  id="hvtreeview3-03-01-group"
                 >
                   <li
                     class="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected css-1y9s9wc-StyledNode er1eqbm1"
-                    id="hvtreeview2-03-01-01"
+                    id="hvtreeview3-03-01-01"
                   >
                     <div
                       class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
-                      id="hvtreeview2-03-01-01-button"
+                      id="hvtreeview3-03-01-01-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"

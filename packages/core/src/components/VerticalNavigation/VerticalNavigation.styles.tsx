@@ -37,4 +37,10 @@ export const StyledRoot = styled("div")({
     borderTop: "none",
     padding: theme.spacing(["sm", "sm", "xs", "sm"]),
   },
+
+  [`&.${verticalNavigationClasses.slider}`]: {
+    "& > div:first-of-type": {
+      borderBottom: `3px solid ${theme.colors.atmo2}`,
+    },
+  },
 });
