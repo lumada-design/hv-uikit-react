@@ -37,6 +37,10 @@
       "status": "✅"
     },
     {
+      "name": "Date Picker",
+      "status": "in progress"
+    },
+    {
       "name": "Dialog",
       "status": "✅"
     },
@@ -93,6 +97,18 @@
       "status": "✅"
     },
     {
+      "name": "Scroll To horizontal",
+      "status": "in progress"
+    },
+    {
+      "name": "Scroll To vertical",
+      "status": "in progress"
+    },
+    {
+      "name": "Slider",
+      "status": "in progress"
+    },
+    {
       "name": "Snackbar",
       "status": "✅"
     },
@@ -115,6 +131,10 @@
     {
       "name": "Text Area",
       "status": "✅"
+    },
+    {
+      "name": "Time Picker",
+      "status": "in progress"
     },
     {
       "name": "Vertical Navigation",
