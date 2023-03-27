@@ -12,4 +12,11 @@ export const styles = {
     ...theme.typography.label,
     textTransform: "capitalize",
   }),
+  color: css({
+    width: 20,
+    height: 25,
+    marginLeft: 5,
+    padding: 0,
+    backgroundColor: "transparent",
+  }),
 };

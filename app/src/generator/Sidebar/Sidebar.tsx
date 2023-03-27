@@ -21,12 +21,13 @@ import { FontFamily } from "generator/FontFamily";
 import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 import { Radii } from "generator/Radii";
 import { Spacing } from "generator/Spacing";
+import { Typography } from "generator/Typography";
 
-const Sidebar = ({ open }) => {
+const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
     useTheme();
 
-  const { updateCustomTheme, changedValues, updateChangedValues } =
+  const { updateCustomTheme, changedValues, updateChangedValues, open } =
     useContext(GeneratorContext);
   const [themeName, setThemeName] = useState("customTheme");
   const [fullCode, setFullCode] = useState("");
@@ -84,7 +85,6 @@ export default ${themeName};`
       name: "customTheme",
       base: selectedTheme as HvBaseTheme,
     });
-    console.log(newTheme);
     updateCustomTheme(newTheme);
     updateChangedValues?.([], "", true);
   };
@@ -177,35 +177,51 @@ export default ${themeName};`
               value={fullCode}
             ></textarea>
           </HvBox>
-          <HvAccordion
-            id="colors"
-            label="colors"
-            classes={{ label: styles.label }}
+          <HvBox
+            css={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 10,
+              marginBottom: 20,
+            }}
           >
-            <Colors />
-          </HvAccordion>
-          <HvAccordion
-            id="fonts"
-            label="fonts"
-            classes={{ label: styles.label }}
-          >
-            <FontFamily />
-            <FontSizes />
-          </HvAccordion>
-          <HvAccordion
-            id="radii"
-            label="radii"
-            classes={{ label: styles.label }}
-          >
-            <Radii />
-          </HvAccordion>
-          <HvAccordion
-            id="spacing"
-            label="spacing"
-            classes={{ label: styles.label }}
-          >
-            <Spacing />
-          </HvAccordion>
+            <HvAccordion
+              id="colors"
+              label="colors"
+              classes={{ label: styles.label }}
+            >
+              <Colors />
+            </HvAccordion>
+            <HvAccordion
+              id="typography"
+              label="typography"
+              classes={{ label: styles.label }}
+            >
+              <Typography />
+            </HvAccordion>
+            <HvAccordion
+              id="fonts"
+              label="fonts"
+              classes={{ label: styles.label }}
+            >
+              <FontFamily />
+              <FontSizes />
+            </HvAccordion>
+            <HvAccordion
+              id="radii"
+              label="radii"
+              classes={{ label: styles.label }}
+            >
+              <Radii />
+            </HvAccordion>
+            <HvAccordion
+              id="spacing"
+              label="spacing"
+              classes={{ label: styles.label }}
+            >
+              <Spacing />
+            </HvAccordion>
+          </HvBox>
         </div>
       )}
     </>
