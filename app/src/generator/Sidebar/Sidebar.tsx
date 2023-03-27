@@ -107,6 +107,9 @@ export default ${themeName};`
             autoHideDuration={2000}
             offset={20}
           />
+          <HvBox css={{ display: "flex", justifyContent: "center" }}>
+            <HvTypography variant="title2">Theme Generator</HvTypography>
+          </HvBox>
           <HvBox className={styles.themeName}>
             <HvTypography variant="label">Name: </HvTypography>
             <HvBox className={styles.themeNameInput}>

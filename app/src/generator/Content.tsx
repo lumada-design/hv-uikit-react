@@ -9,10 +9,10 @@ import { useContext } from "react";
 
 const Content = () => {
   const { selectedMode } = useTheme();
-  const { customTheme } = useContext(GeneratorContext);
+  const { customTheme, open } = useContext(GeneratorContext);
 
   return (
-    <div id="gen-root">
+    <div id="gen-root" style={{ width: open ? "calc(100% - 390px)" : "100%" }}>
       <Router>
         <HvProvider
           rootElementId="gen-root"
