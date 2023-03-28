@@ -30,6 +30,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # Pulls all commits (needed for semantic release to correctly version)
+          # See https://github.com/semantic-release/semantic-release/issues/1526
+          fetch-depth: "0"
       
       - name: Fetch git tags
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
