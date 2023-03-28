@@ -1,13 +1,21 @@
+import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   Breakpoint,
   HvBox,
   HvButton,
+  HvListContainer,
+  HvListItem,
   HvSimpleGrid,
-  HvTypography,
 } from "components";
 import { useState } from "react";
 import { HvAccordionProps, HvAccordion } from "./Accordion";
+
+const StyledListContainer = styled(HvListContainer)({
+  "& > li": {
+    paddingLeft: 32,
+  },
+});
 
 const meta: Meta<typeof HvAccordion> = {
   title: "Components/Accordion",
@@ -22,7 +30,6 @@ export const Main: StoryObj<HvAccordionProps> = {
     disabled: false,
     expanded: false,
     defaultExpanded: false,
-    defaultChecked: false,
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -32,8 +39,10 @@ export const Main: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" {...args}>
-          <HvTypography>Views</HvTypography>
-          <HvTypography>Parameters</HvTypography>
+          <StyledListContainer interactive condensed>
+            <HvListItem>Views</HvListItem>
+            <HvListItem>Parameters</HvListItem>
+          </StyledListContainer>
         </HvAccordion>
       </HvBox>
     );
@@ -45,16 +54,22 @@ export const Disabled: StoryObj<HvAccordionProps> = {
     return (
       <HvBox sx={{ maxWidth: 300 }}>
         <HvAccordion id="item1" label="Analytics" headingLevel={3} disabled>
-          <HvTypography>Views</HvTypography>
-          <HvTypography>Parameters</HvTypography>
+          <StyledListContainer interactive condensed>
+            <HvListItem>Views</HvListItem>
+            <HvListItem>Parameters</HvListItem>
+          </StyledListContainer>
         </HvAccordion>
         <HvAccordion id="item2" label="System" headingLevel={3}>
-          <HvTypography>Settings</HvTypography>
-          <HvTypography>Network</HvTypography>
+          <StyledListContainer interactive condensed>
+            <HvListItem>Settings</HvListItem>
+            <HvListItem>Network</HvListItem>
+          </StyledListContainer>
         </HvAccordion>
         <HvAccordion id="item3" label="Data" headingLevel={3} disabled>
-          <HvTypography>Storage</HvTypography>
-          <HvTypography>Memory</HvTypography>
+          <StyledListContainer interactive condensed>
+            <HvListItem>Storage</HvListItem>
+            <HvListItem>Memory</HvListItem>
+          </StyledListContainer>
         </HvAccordion>
       </HvBox>
     );
@@ -143,8 +158,10 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("analytics")}
             expanded={expandedState.analytics}
           >
-            <HvTypography>Views</HvTypography>
-            <HvTypography>Parameters</HvTypography>
+            <StyledListContainer interactive condensed>
+              <HvListItem>Views</HvListItem>
+              <HvListItem>Parameters</HvListItem>
+            </StyledListContainer>
           </HvAccordion>
           <HvAccordion
             id="controlled-item2"
@@ -152,8 +169,10 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("system")}
             expanded={expandedState.system}
           >
-            <HvTypography>Settings</HvTypography>
-            <HvTypography>Network</HvTypography>
+            <StyledListContainer interactive condensed>
+              <HvListItem>Settings</HvListItem>
+              <HvListItem>Network</HvListItem>
+            </StyledListContainer>
           </HvAccordion>
           <HvAccordion
             id="controlled-item3"
@@ -161,8 +180,10 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             onChange={() => handleToggle("data")}
             expanded={expandedState.data}
           >
-            <HvTypography>Storage</HvTypography>
-            <HvTypography>Memory</HvTypography>
+            <StyledListContainer interactive condensed>
+              <HvListItem>Storage</HvListItem>
+              <HvListItem>Memory</HvListItem>
+            </StyledListContainer>
           </HvAccordion>
         </HvBox>
       </>
