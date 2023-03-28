@@ -42,8 +42,41 @@ const Colors = (): JSX.Element => {
 
   const debouncedHandler = debounce(colorChangedHandler, 250);
 
+  console.log(customTheme);
+
   return (
     <div className={styles.root}>
+      <div className={styles.group}>
+        <div className={styles.groupName}>
+          <HvTypography variant="label">Background</HvTypography>
+        </div>
+        <div className={styles.groupColors}>
+          <HvTooltip
+            title={
+              <div className={styles.tooltip}>
+                <HvTypography variant="label">Background color</HvTypography>
+                <HvTypography>
+                  {customTheme?.colors?.modes?.[selectedMode]?.backgroundColor}
+                </HvTypography>
+              </div>
+            }
+          >
+            <input
+              type="color"
+              className={styles.color}
+              value={
+                customTheme &&
+                customTheme.colors &&
+                customTheme.colors.modes[selectedMode] &&
+                customTheme.colors.modes?.[selectedMode].backgroundColor
+              }
+              onChange={(e) => {
+                debouncedHandler("backgroundColor", e.target.value);
+              }}
+            />
+          </HvTooltip>
+        </div>
+      </div>
       {groupsToShow.map((group) => {
         const groupColors = getColors(colors, group);
         return (

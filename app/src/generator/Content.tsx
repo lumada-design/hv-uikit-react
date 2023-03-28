@@ -12,7 +12,13 @@ const Content = () => {
   const { customTheme, open } = useContext(GeneratorContext);
 
   return (
-    <div id="gen-root" style={{ width: open ? "calc(100% - 390px)" : "100%" }}>
+    <div
+      id="gen-root"
+      style={{
+        width: open ? "calc(100% - 390px)" : "100%",
+        backgroundColor: customTheme.colors.modes[selectedMode].backgroundColor,
+      }}
+    >
       <Router>
         <HvProvider
           rootElementId="gen-root"
