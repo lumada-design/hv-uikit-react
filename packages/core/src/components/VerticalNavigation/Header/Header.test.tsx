@@ -9,7 +9,10 @@ const Sample = () => {
       title={"Menu"}
       openIcon={<Play />}
       closeIcon={<Stop />}
-      buttonProps={{ "aria-label": "collapseButton", "aria-expanded": true }}
+      collapseButtonProps={{
+        "aria-label": "collapseButton",
+        "aria-expanded": true,
+      }}
     />
   );
 };

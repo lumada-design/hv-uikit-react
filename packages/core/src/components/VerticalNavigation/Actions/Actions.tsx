@@ -1,10 +1,29 @@
 import clsx from "clsx";
 import { useContext } from "react";
-import { VerticalNavigationContext } from "../VerticalNavigation";
+import { VerticalNavigationContext } from "../";
 import { StyledRoot } from "./Actions.styles";
 import actionsClasses, {
   HvVerticalNavigationActionsClasses,
 } from "./actionsClasses";
+
+export type HvVerticalNavigationActionsProps = {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the component.
+   */
+  classes?: HvVerticalNavigationActionsClasses;
+  /**
+   * Id to be applied to the actions container.
+   */
+  id?: string;
+  /**
+   * Node to be rendered
+   */
+  children?: React.ReactNode;
+};
 
 export const HvVerticalNavigationActions = ({
   className,
@@ -31,23 +50,4 @@ export const HvVerticalNavigationActions = ({
       {children}
     </StyledRoot>
   );
-};
-
-export type HvVerticalNavigationActionsProps = {
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
-  classes?: HvVerticalNavigationActionsClasses;
-  /**
-   * Id to be applied to the actions container.
-   */
-  id?: string;
-  /**
-   * Node to be rendered
-   */
-  children?: React.ReactNode;
 };

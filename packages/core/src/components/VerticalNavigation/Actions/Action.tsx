@@ -1,11 +1,38 @@
 import clsx from "clsx";
 import { MouseEventHandler, useCallback, useContext } from "react";
 import { isKeypress, keyboardCodes, setId } from "utils";
-import { VerticalNavigationContext } from "../VerticalNavigation";
+import { VerticalNavigationContext } from "../";
 import { StyledAction } from "./Action.styles";
 import actionClasses, {
   HvVerticalNavigationActionClasses,
 } from "./actionClasses";
+
+export type HvVerticalNavigationActionProps = {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the component.
+   */
+  classes?: HvVerticalNavigationActionClasses;
+  /**
+   * Id to be applied to the action.
+   */
+  id?: string;
+  /**
+   * Visual label.
+   */
+  label?: string;
+  /**
+   * Icon.
+   */
+  icon?: React.ReactNode;
+  /**
+   * Callback called when clicked.
+   */
+  onClick?: MouseEventHandler<HTMLElement>;
+};
 
 export const HvVerticalNavigationAction = ({
   className,
@@ -54,31 +81,4 @@ export const HvVerticalNavigationAction = ({
       {isOpen && label}
     </StyledAction>
   );
-};
-
-export type HvVerticalNavigationActionProps = {
-  /**
-   * Class names to be applied.
-   */
-  className?: string;
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
-  classes?: HvVerticalNavigationActionClasses;
-  /**
-   * Id to be applied to the action.
-   */
-  id?: string;
-  /**
-   * Visual label.
-   */
-  label?: string;
-  /**
-   * Icon.
-   */
-  icon?: React.ReactNode;
-  /**
-   * Callback called when clicked.
-   */
-  onClick?: MouseEventHandler<HTMLElement>;
 };

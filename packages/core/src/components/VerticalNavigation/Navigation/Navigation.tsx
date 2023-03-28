@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useContext } from "react";
+import { useCallback, useMemo, useContext, useEffect } from "react";
 import clsx from "clsx";
 import { setId, wrapperTooltip } from "utils";
 import { useControlled } from "hooks";
@@ -10,8 +10,9 @@ import verticalNavigationTreeClasses, {
   HvVerticalNavigationTreeClasses,
 } from "./navigationClasses";
 import { StyledNav } from "./Navigation.styles";
-import { VerticalNavigationContext } from "../VerticalNavigation";
-import { HvBaseProps } from "types/generic";
+import { HvVerticalNavigationSlider } from "../";
+import { HvBaseProps } from "../../../types";
+import { VerticalNavigationContext } from "../VerticalNavigationContext";
 
 export interface NavigationData {
   /**
@@ -191,12 +192,36 @@ export const HvVerticalNavigationTree = ({
     [onToggle, setExpanded]
   );
 
-  const { isOpen, collapsedMode } = useContext(VerticalNavigationContext);
+  const {
+    isOpen,
+    collapsedMode,
+    slider,
+
+    parentItem,
+    withParentData,
+    navigateToChildHandler,
+
+    setParentData,
+    setParentSelected,
+  } = useContext(VerticalNavigationContext);
 
   const children = useMemo(
     () => data && createListHierarchy(data, id, classes),
     [classes, data, id]
   );
+
+  useEffect(() => {
+    if (setParentSelected) setParentSelected(selected);
+  }, [selected, setSelected]);
+
+  useEffect(() => {
+    if (setParentData) setParentData(data);
+  }, [data]);
+
+  //navigation slider
+  const navigateToTargetHandler = (event, selectedItem) => {
+    handleChange(event, selectedItem.id, selectedItem);
+  };
 
   return (
     <StyledNav
@@ -211,19 +236,28 @@ export const HvVerticalNavigationTree = ({
       )}
       {...others}
     >
-      <HvVerticalNavigationTreeView
-        id={setId(id, "tree")}
-        className={clsx(verticalNavigationTreeClasses.list, classes?.list)}
-        selectable
-        mode={mode}
-        collapsible={collapsible}
-        selected={selected}
-        onChange={handleChange}
-        expanded={expanded}
-        onToggle={handleToggle}
-      >
-        {children}
-      </HvVerticalNavigationTreeView>
+      {slider ? (
+        <HvVerticalNavigationSlider
+          data={parentItem.data || withParentData}
+          selected={selected}
+          onNavigateToTarget={navigateToTargetHandler}
+          onNavigateToChild={navigateToChildHandler}
+        />
+      ) : (
+        <HvVerticalNavigationTreeView
+          id={setId(id, "tree")}
+          className={clsx(verticalNavigationTreeClasses.list, classes?.list)}
+          selectable
+          mode={mode}
+          collapsible={collapsible}
+          selected={selected}
+          onChange={handleChange}
+          expanded={expanded}
+          onToggle={handleToggle}
+        >
+          {children}
+        </HvVerticalNavigationTreeView>
+      )}
     </StyledNav>
   );
 };
@@ -299,4 +333,4 @@ export type HvVerticalNavigationTreeProps = HvBaseProps<
   data?: NavigationData[];
 };
 
-export type NavigationMode = "treeview" | "navigation";
+export type NavigationMode = "treeview" | "navigation" | "slider";

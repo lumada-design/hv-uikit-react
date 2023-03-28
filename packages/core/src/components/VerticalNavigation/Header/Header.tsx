@@ -2,37 +2,75 @@ import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 import clsx from "clsx";
 import { HvButton, HvButtonProps, HvTypography } from "components";
 import { MouseEventHandler, useContext } from "react";
-import { VerticalNavigationContext } from "../VerticalNavigation";
-import { StyledHeader } from "./Header.styles";
+import { VerticalNavigationContext } from "../VerticalNavigationContext";
+import { StyledCollapseButton, StyledHeader } from "./Header.styles";
 import verticalNavigationHeaderClasses, {
   HvVerticalNavigationHeaderClasses,
 } from "./headerClasses";
 
 export type HvVerticalNavigationHeaderProps = {
-  id?;
-  title?;
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * The title text to show on Header.
+   */
+  title?: string;
+  /**
+   * Icon to show when Vertical Navigation is collapsed.
+   */
   openIcon?: React.ReactNode;
+  /**
+   * Icon to show when Vertical Navigation is expanded.
+   */
   closeIcon?: React.ReactNode;
-  buttonProps?: HvButtonProps;
+  /**
+   * Props for the collapse button.
+   */
+  collapseButtonProps?: HvButtonProps;
+  /**
+   * Props for the back button.
+   */
+  backButtonProps?: HvButtonProps;
+  /**
+   * Class names to be applied.
+   */
   className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the component.
+   */
   classes?: HvVerticalNavigationHeaderClasses;
-  onClick?: MouseEventHandler<HTMLElement>;
+  /**
+   * Handler for the collapse button.
+   */
+  onCollapseButtonClick?: MouseEventHandler<HTMLElement>;
 };
 
 export const HvVerticalNavigationHeader = ({
   title,
   openIcon = <Forwards />,
   closeIcon = <Backwards />,
-  buttonProps,
-
+  collapseButtonProps,
+  backButtonProps,
   className,
   classes,
-  onClick,
+  onCollapseButtonClick,
   ...others
 }: HvVerticalNavigationHeaderProps) => {
-  const { isOpen, collapsedMode } = useContext(VerticalNavigationContext);
+  const {
+    isOpen,
+    collapsedMode,
+    headerTitle,
+    slider,
+    navigateToParentHandler,
+  } = useContext(VerticalNavigationContext);
 
   openIcon = collapsedMode === "simple" ? <Menu /> : openIcon;
+
+  const backButtonClickHandler = () => {
+    if (navigateToParentHandler) navigateToParentHandler();
+  };
 
   return (
     <StyledHeader
@@ -45,15 +83,34 @@ export const HvVerticalNavigationHeader = ({
       )}
       {...others}
     >
-      {isOpen && <HvTypography variant="title3">{title}</HvTypography>}
-      <HvButton
-        icon
-        variant="secondaryGhost"
-        onClick={onClick}
-        {...buttonProps}
-      >
-        {isOpen ? closeIcon : openIcon}
-      </HvButton>
+      {isOpen && headerTitle && slider && (
+        <HvButton
+          icon
+          variant="secondaryGhost"
+          onClick={backButtonClickHandler}
+          {...backButtonProps}
+        >
+          <Backwards iconSize="XS" />
+        </HvButton>
+      )}
+      {isOpen && (
+        <HvTypography variant={slider ? "label" : "title3"}>
+          {headerTitle && slider ? headerTitle : title}
+        </HvTypography>
+      )}
+      {onCollapseButtonClick && (
+        <StyledCollapseButton
+          icon
+          variant="secondaryGhost"
+          onClick={onCollapseButtonClick}
+          classes={{
+            root: isOpen ? "" : verticalNavigationHeaderClasses.minimized,
+          }}
+          {...collapseButtonProps}
+        >
+          {isOpen ? closeIcon : openIcon}
+        </StyledCollapseButton>
+      )}
     </StyledHeader>
   );
 };

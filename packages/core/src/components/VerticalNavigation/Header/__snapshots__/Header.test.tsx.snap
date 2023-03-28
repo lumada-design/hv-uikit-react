@@ -3,45 +3,13 @@
 exports[`VerticalNavigation - Header > should render correctly 1`] = `
 <div>
   <div
-    class="HvVerticalNavigationHeader-root css-12dbsib-StyledHeader e1arrhkt0"
+    class="HvVerticalNavigationHeader-root css-7xt91a-StyledHeader e1arrhkt1"
   >
     <h3
       class="HvTypography-root HvTypography-title3 css-bj1yqo-getStyledComponent e1tnpalo0"
     >
       Menu
     </h3>
-    <button
-      aria-expanded="true"
-      aria-label="collapseButton"
-      class="HvButton-root css-1910alx-StyledButton e138pvrm0"
-    >
-      <div
-        class="css-1nxr552-StyledContentDiv e138pvrm3"
-      >
-        <span
-          class="css-1o4qkkz-StyledChildren e138pvrm1"
-        >
-          <div
-            class="css-f95wjz"
-            name="Stop"
-          >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="color0"
-                d="M14 14H2V2h12zM3 13h10V3H3z"
-                fill="var(--uikit-colors-acce1)"
-              />
-            </svg>
-          </div>
-        </span>
-      </div>
-    </button>
   </div>
 </div>
 `;

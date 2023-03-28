@@ -1,15 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { HvLogin } from "./";
+import { HvVerticalNavigationSlider } from "./NavigationSlider";
 
-describe("Login", () => {
+const Sample = () => {
+  return <HvVerticalNavigationSlider />;
+};
+
+describe("NavigationSlider", () => {
   it("should be defined", () => {
-    const { container } = render(<HvLogin>Login content</HvLogin>);
+    const { container } = render(<Sample />);
     expect(container).toBeDefined();
   });
 
   it("should render correctly", () => {
-    const { container } = render(<HvLogin>Login content</HvLogin>);
+    const { container } = render(<Sample />);
     expect(container).toMatchSnapshot();
   });
 });
