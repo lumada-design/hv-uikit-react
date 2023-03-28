@@ -5,15 +5,6 @@ import { HvTypography } from "components";
 export const BrandRoot = styled("div")({
   display: "flex",
   alignItems: "center",
-
-  "&& svg": {
-    "& path": {
-      fill: theme.header.brandColor,
-    },
-    "& rect": {
-      fill: theme.header.brandColor,
-    },
-  },
 });
 
 export const BrandSeparator = styled("div")({
