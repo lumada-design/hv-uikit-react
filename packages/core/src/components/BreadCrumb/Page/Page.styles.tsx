@@ -16,7 +16,6 @@ export const StyledLink = styled((props) => <HvLink {...props} />)({
 
 export const StyledTypography = styled((props) => <HvTypography {...props} />)({
   maxWidth: "170px",
-  color: theme.colors.acce1,
   textTransform: "capitalize",
   "&:hover": {
     cursor: "pointer",
