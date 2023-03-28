@@ -22,6 +22,8 @@ import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 import { Radii } from "generator/Radii";
 import { Spacing } from "generator/Spacing";
 import { Typography } from "generator/Typography";
+import { Zindices } from "generator/Zindices";
+import { Sizes } from "generator/Sizes";
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -107,6 +109,9 @@ export default ${themeName};`
             autoHideDuration={2000}
             offset={20}
           />
+          <HvBox css={{ display: "flex", justifyContent: "center" }}>
+            <HvTypography variant="title2">Theme Generator</HvTypography>
+          </HvBox>
           <HvBox className={styles.themeName}>
             <HvTypography variant="label">Name: </HvTypography>
             <HvBox className={styles.themeNameInput}>
@@ -208,6 +213,13 @@ export default ${themeName};`
               <FontSizes />
             </HvAccordion>
             <HvAccordion
+              id="sizes"
+              label="sizes"
+              classes={{ label: styles.label }}
+            >
+              <Sizes />
+            </HvAccordion>
+            <HvAccordion
               id="radii"
               label="radii"
               classes={{ label: styles.label }}
@@ -220,6 +232,13 @@ export default ${themeName};`
               classes={{ label: styles.label }}
             >
               <Spacing />
+            </HvAccordion>
+            <HvAccordion
+              id="zindices"
+              label="zindices"
+              classes={{ label: styles.label }}
+            >
+              <Zindices />
             </HvAccordion>
           </HvBox>
         </div>

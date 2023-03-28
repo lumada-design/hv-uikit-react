@@ -31,7 +31,10 @@ export const Header = () => {
   };
 
   return (
-    <HvHeader position="fixed">
+    <HvHeader
+      position="fixed"
+      style={{ width: open ? "calc(100% - 390px)" : "100%", left: 0 }}
+    >
       {!isMdUp && (
         <div>
           <HvButton variant="primaryGhost" icon>

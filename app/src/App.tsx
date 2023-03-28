@@ -15,7 +15,12 @@ const App = () => {
     >
       <HvProvider themes={[ds3, ds5]} theme="ds5">
         <GeneratorProvider>
-          <div style={{ flexGrow: 1 }}>
+          <div
+            style={{
+              flex: 1,
+              overflowY: "auto",
+            }}
+          >
             <Content />
           </div>
           <Sidebar />

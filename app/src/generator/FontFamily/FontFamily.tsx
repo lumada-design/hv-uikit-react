@@ -12,7 +12,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./FontFamily.styles";
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
-import { extractFontName } from "generator/utils";
+import { extractFontsNames } from "generator/utils";
 
 const FontFamily = () => {
   const { customTheme, updateCustomTheme, updateChangedValues } =
@@ -38,12 +38,15 @@ const FontFamily = () => {
   };
 
   const onAddHandler = () => {
-    const name = extractFontName(fontName);
-    setFontAdded(true);
-    setFontAddedMsg(`Font "${name}" added!`);
+    const names = extractFontsNames(fontName);
 
-    setFontName("");
-    setFontValues((prev) => [...prev, { label: name }]);
+    for (const n in names) {
+      setFontAdded(true);
+      setFontAddedMsg(`Fonts "${names.join(", ")}" added!`);
+
+      setFontName("");
+      setFontValues((prev) => [...prev, { label: names[n] }]);
+    }
 
     const link = document.createElement("link");
     link.rel = "stylesheet";

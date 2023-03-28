@@ -11,5 +11,25 @@ export const getVarValue = (cssVar: string): string => {
   return computedValue;
 };
 
-export const extractFontName = (fontLink) =>
-  fontLink.substring(fontLink.indexOf("family=") + 7, fontLink.indexOf("&"));
+export const extractFontsNames = (webfontLink: string): string[] => {
+  const fontNames: string[] = [];
+
+  const queryIndex = webfontLink.indexOf("?");
+  if (queryIndex === -1) {
+    return fontNames;
+  }
+
+  const query = webfontLink.substring(queryIndex + 1);
+  const params = new URLSearchParams(query);
+
+  params.forEach((value, key) => {
+    if (key === "family") {
+      value.split(",").forEach((fontNameWithVariants) => {
+        const fontName = fontNameWithVariants.split(":")[0];
+        fontNames.push(fontName.trim().replace(/ /g, "+"));
+      });
+    }
+  });
+
+  return fontNames;
+};
