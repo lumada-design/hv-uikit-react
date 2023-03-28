@@ -42,8 +42,6 @@ const Colors = (): JSX.Element => {
 
   const debouncedHandler = debounce(colorChangedHandler, 250);
 
-  console.log(customTheme);
-
   return (
     <div className={styles.root}>
       <div className={styles.group}>
