@@ -25,7 +25,7 @@ export type HvVerticalNavigationSliderProps = {
    * href - the url used for navigation.
    * target - the behavior when opening an url.
    */
-  data?: NavigationData;
+  data?: NavigationData[];
   /**
    * The selected item id.
    */
@@ -33,11 +33,17 @@ export type HvVerticalNavigationSliderProps = {
   /**
    * Triggered when the item is clicked.
    */
-  onNavigateToTarget?: any;
+  onNavigateToTarget?: (
+    event: React.MouseEvent<HTMLLIElement>,
+    item: NavigationData
+  ) => void;
   /**
    * Triggered when the navigate to child button is clicked.
    */
-  onNavigateToChild?: any;
+  onNavigateToChild?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    item: NavigationData
+  ) => void;
 };
 
 export const HvVerticalNavigationSlider = ({
@@ -61,7 +67,9 @@ export const HvVerticalNavigationSlider = ({
                 verticalNavigationSliderClasses.listItemSelected
               ),
             }}
-            onClick={(event) => onNavigateToTarget(event, item)}
+            onClick={(event) => {
+              if (onNavigateToTarget) onNavigateToTarget(event, item);
+            }}
             selected={selected === item.id}
             startAdornment={item.icon}
             endAdornment={
@@ -69,7 +77,9 @@ export const HvVerticalNavigationSlider = ({
                 <HvButton
                   variant="secondaryGhost"
                   icon
-                  onClick={(event) => onNavigateToChild(event, item)}
+                  onClick={(event) => {
+                    if (onNavigateToChild) onNavigateToChild(event, item);
+                  }}
                 >
                   <DropRightXS />
                 </HvButton>
