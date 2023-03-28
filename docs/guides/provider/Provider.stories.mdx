@@ -26,7 +26,8 @@ const MyApp = ({ children }) => {
 The `HvProvider` enables you to define your themes through the `themes` property which accepts a list of themes. Then, the `theme` and `colorMode` properties
 are used to specify the active theme and color mode. For more information, please read the [theming](/docs/guides-theming-theming--main#theming) documentation.
 
-If several `HvProvider`'s are used, you'll need to create different root elements and set the `rootElementId` property for each one of the providers.
+If several `HvProvider`'s are used, you'll need to create different root elements, set the `rootElementId` property for each one of the providers, and scope the
+theme styles to the root element with the `cssTheme` property.
 Otherwise, the styling will not work properly. Please, find an example below.
 
 <Canvas>
@@ -45,6 +46,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
         <HvProvider
           classNameKey="hv-root-ds-five-dawn-docs-provider"
           rootElementId="hv-root-ds5-dawn-docs-provider"
+          cssTheme="scoped"
           colorMode="dawn"
         >
           <ProviderSample label="DS5 Dawn" />
@@ -54,6 +56,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
         <HvProvider
           classNameKey="hv-root-ds-five-wicked-docs-provider"
           rootElementId="hv-root-ds5-wicked-docs-provider"
+          cssTheme="scoped"
           colorMode="wicked"
         >
           <ProviderSample label="DS5 Wicked" />
@@ -63,6 +66,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
         <HvProvider
           classNameKey="hv-root-ds-three-dawn-docs-provider"
           rootElementId="hv-root-ds3-dawn-docs-provider"
+          cssTheme="scoped"
           themes={[ds3]}
           colorMode="dawn"
         >
@@ -73,6 +77,7 @@ Otherwise, the styling will not work properly. Please, find an example below.
         <HvProvider
           classNameKey="hv-root-ds-three-wicked-docs-provider"
           rootElementId="hv-root-ds3-wicked-docs-provider"
+          cssTheme="scoped"
           themes={[ds3]}
           colorMode="wicked"
         >

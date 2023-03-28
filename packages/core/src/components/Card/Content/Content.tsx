@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../../types/generic";
-import { createClasses } from "./Content.styles";
+import { styles } from "./Content.styles";
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
 import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
-import { useCreateEmotion } from "hooks/useCreateEmotion";
+import { ClassNames } from "@emotion/react";
 
 export type HvCardContentProps = Omit<MuiCardContentProps, "classes"> &
   HvBaseProps & {
@@ -25,22 +25,23 @@ export const HvCardContent = ({
   onClick,
   ...others
 }: HvCardContentProps) => {
-  const { css } = useCreateEmotion();
-  const styles = createClasses(css);
-
   return (
-    <MuiCardContent
-      id={id}
-      className={clsx(
-        styles.content,
-        classes?.content,
-        cardContentClasses.content,
-        className
+    <ClassNames>
+      {({ css }) => (
+        <MuiCardContent
+          id={id}
+          className={clsx(
+            css(styles.content),
+            classes?.content,
+            cardContentClasses.content,
+            className
+          )}
+          onClick={onClick}
+          {...others}
+        >
+          {children}
+        </MuiCardContent>
       )}
-      onClick={onClick}
-      {...others}
-    >
-      {children}
-    </MuiCardContent>
+    </ClassNames>
   );
 };

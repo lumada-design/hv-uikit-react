@@ -21,7 +21,9 @@ const Content = () => {
     >
       <Router>
         <HvProvider
+          classNameKey="gen-root"
           rootElementId="gen-root"
+          cssTheme="scoped"
           themes={[customTheme]}
           colorMode={selectedMode}
         >

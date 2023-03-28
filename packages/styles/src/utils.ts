@@ -54,18 +54,6 @@ export const mergeTheme = (...objects) => {
   }, {});
 };
 
-export type HvParsedThemeStyles = {
-  bgColor: string;
-  color: string;
-  accentColor: string;
-  colorScheme: string;
-  fontSize: string;
-  letterSpacing: string;
-  lineHeight: string;
-  fontWeight: string;
-  fontFamily: string;
-};
-
 export const parseTheme = (
   themes: HvThemeStructure[],
   theme: string = "",
@@ -75,7 +63,7 @@ export const parseTheme = (
   selectedTheme: string;
   selectedMode: string;
   colorModes: string[];
-  styles: HvParsedThemeStyles;
+  colorScheme: string;
 } => {
   const names: string[] = themes.map((t) => t.name);
   const selectedTheme: string = names.includes(theme) ? theme : names[0];
@@ -85,36 +73,14 @@ export const parseTheme = (
   const selectedMode: string = colorModes.includes(colorMode)
     ? colorMode
     : colorModes[0];
-
-  const styles: HvParsedThemeStyles = {
-    bgColor: themeStructure.colors.modes[selectedMode]?.backgroundColor,
-    color: themeStructure.colors.modes[selectedMode].secondary,
-    accentColor: themeStructure.colors.modes[selectedMode].secondary,
-    colorScheme: themeStructure.colors.modes[selectedMode].type,
-    fontSize: (typeof themeStructure.typography.body.fontSize === "string"
-      ? themeStructure.typography.body.fontSize
-      : `${themeStructure.typography.body.fontSize}px`) as string,
-    letterSpacing: (typeof themeStructure.typography.body.letterSpacing ===
-    "string"
-      ? themeStructure.typography.body.letterSpacing
-      : `${themeStructure.typography.body.letterSpacing}px`) as string,
-    lineHeight: (typeof themeStructure.typography.body.lineHeight === "string"
-      ? themeStructure.typography.body.lineHeight
-      : `${themeStructure.typography.body.lineHeight}px`) as string,
-    fontWeight: (typeof themeStructure.typography.body.fontWeight === "string"
-      ? themeStructure.typography.body.fontWeight
-      : `${themeStructure.typography.body.fontWeight}`) as string,
-    fontFamily: (typeof themeStructure.fontFamily.body === "string"
-      ? themeStructure.fontFamily.body
-      : `${themeStructure.fontFamily.body}`) as string,
-  };
+  const colorScheme = themeStructure.colors.modes[selectedMode].type;
 
   return {
     theme: themeStructure,
     selectedTheme,
     selectedMode,
     colorModes,
-    styles,
+    colorScheme,
   };
 };
 

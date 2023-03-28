@@ -113,8 +113,8 @@ export const VerticalNavigation = () => {
       <HvVerticalNavigation open={show} collapsedMode={"icon"}>
         <HvVerticalNavigationHeader
           title="Menu"
-          onExpandButtonClick={handleIsExpanded}
-          buttonProps={{
+          onCollapseButtonClick={handleIsExpanded}
+          collapseButtonProps={{
             "aria-label": "collapseButton",
             "aria-expanded": show,
           }}

@@ -105,6 +105,7 @@ export const WhiteLabeling = () => {
       <HvProvider
         classNameKey={id}
         rootElementId={id}
+        cssTheme="scoped"
         themes={[turquoiseTheme]}
       >
         <HvHeader position="relative">

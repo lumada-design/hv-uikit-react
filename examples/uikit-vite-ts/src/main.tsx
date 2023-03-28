@@ -5,7 +5,7 @@ import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <HvProvider rootElementId="root">
+    <HvProvider>
       <App />
     </HvProvider>
   </React.StrictMode>

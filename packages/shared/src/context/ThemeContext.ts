@@ -9,7 +9,6 @@ export interface HvThemeContextValue {
   selectedTheme: string;
   selectedMode: string;
   changeTheme: (theme?: string, mode?: string) => void;
-  classNameKey: string;
   rootId?: string;
 }
 
@@ -20,6 +19,5 @@ export const HvThemeContext = createContext<HvThemeContextValue>({
   selectedTheme: "",
   selectedMode: "",
   changeTheme: () => {},
-  classNameKey: "",
   rootId: undefined,
 });

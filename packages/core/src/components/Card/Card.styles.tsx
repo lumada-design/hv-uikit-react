@@ -1,11 +1,9 @@
-import { CSSInterpolation } from "@emotion/css";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "utils/focusUtils";
 
-export const createClasses = (
-  css: (...args: CSSInterpolation[]) => string
-) => ({
-  root: css({
+export const styles: { [key: string]: CSSInterpolation } = {
+  root: {
     overflow: "visible",
     position: "relative",
     outline: theme.card.outline,
@@ -16,8 +14,8 @@ export const createClasses = (
     "&:focus": {
       outline: "none",
     },
-  }),
-  selected: css({
+  },
+  selected: {
     outline: `1px solid ${theme.colors.secondary}`,
     "&:hover": {
       outline: `1px solid ${theme.colors.secondary}`,
@@ -25,26 +23,26 @@ export const createClasses = (
     "&:focus": {
       outline: `1px solid ${theme.colors.secondary}`,
     },
-  }),
-  selectable: css({
+  },
+  selectable: {
     "&:hover": {
       outline: `1px solid ${theme.card.hoverColor}`,
     },
-  }),
-  semanticContainer: css({
+  },
+  semanticContainer: {
     position: "relative",
     "& > *": {
       position: "absolute",
       zIndex: 1,
     },
-  }),
-  icon: css({
+  },
+  icon: {
     top: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
     right: `calc(${theme.card.iconMargin} + ${theme.space.xs})`,
-  }),
-  semanticBar: css({
+  },
+  semanticBar: {
     width: "100%",
     top: -1,
     right: 0,
-  }),
-});
+  },
+};

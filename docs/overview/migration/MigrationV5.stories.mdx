@@ -45,21 +45,25 @@ them to avoid errors while using this new UI Kit version.
 ## UI Kit packages <a id="ui-kit-packages" />
 
 Before proceeding to this upgrade, you should also note that **you can't use UI Kit packages v4.x and v5.x simultaneously** due to the introduction of a new theming
-system not compatible with v4.x components. Thus, if your application relies on the following packages, you'll not be able to migrate your application at the moment:
+system not compatible with v4.x components. Thus, if your application relies on the packages or components below, you'll not be able to migrate your
+application at the moment since their development are still in progress. Over time, we will align these packages with v5 and add the missing components.
 
 - `@hitachivantara/uikit-react-viz`
-- `@hitachivantara/uikit-react-compat`
 - `@hitachivantara/uikit-react-code-editor`
 - `@hitachivantara/uikit-react-lab`
-- `@hitachivantara/uikit-common-themes`: this package will not evolve beyond v4.x since it was replaced by `@hitachivantara/uikit-styles` in v5.x.
+- The following components from `@hitachivantara/uikit-react-core` are missing:
+  - `HvDatePicker`
+  - `HvSlider`
+  - `HvTimePicker`
+  - `HvScrollToHorizontal`
+  - `HvScrollToVertical`
+  - `HvFilterGroup`
+  - User preferences components: `HvUserPreferences`, `HvUserPreferencesActions`, `HvUserPreferencesAction`, `HvUserPreferencesOptions`,
+    `HvUserPreferencesOption`, `HvUserPreferencesOptionsGroup`, and `HvUserPreferencesOptionsGroupLabel`
 
-The `@hitachivantara/uikit-react-icons` package is already available on v5.x.
+The `@hitachivantara/uikit-react-compat` and `@hitachivantara/uikit-common-themes` packages are **deprecated** in v5.
 
-Regarding `@hitachivantara/uikit-react-core`, v5.x is also available but is missing the following components: `HvDatePicker`, `HvSlider`, `HvTimePicker`,
-`HvScrollToHorizontal`, `HvScrollToVertical`, `HvFilterGroup`, and the user preferences components `HvUserPreferences`, `HvUserPreferencesActions`,
-`HvUserPreferencesAction`, `HvUserPreferencesOptions`, `HvUserPreferencesOption`, `HvUserPreferencesOptionsGroup`, and `HvUserPreferencesOptionsGroupLabel`.
-
-Over time, we will align these packages with v5 and add the missing components.
+Learn more about the project status on this [page](/story/overview-project-status--page#packages).
 
 If you are able to upgrade your application despite the limitations discussed above, upgrade the UI Kit packages to the latest v5.x versions
 using the command below.
@@ -68,19 +72,10 @@ using the command below.
 npm install @hitachivantara/uikit-react-core@latest
 ```
 
-Use the same command for all UI Kit packages you need to upgrade.
-
 ## Emotion packages <a id="emotion-packages" />
 
-In UI Kit v5.x, `@emotion/css` is a new peer dependency of `uikit-react-core`. Thus, you'll need to install it with the following command
-to run your application:
-
-```
-npm install @emotion/css
-```
-
-The `@emotion/react` and `@emotion/styled` packages are also peer dependencies of `uikit-react-core` and the styled package from Emotion is also a peer dependency of
-`uikit-react-icons`. However, it is expected that you already have them installed in your project since UI Kit v4.x already required them.
+In UI Kit v5.x, the `@emotion/react` and `@emotion/styled` packages are still peer dependencies. However, it is expected that you already have them installed
+in your project since UI Kit v4.x already required them.
 
 ## MUI packages <a id="mui-packages" />
 
@@ -162,7 +157,8 @@ We expected to add these media queries to our own theme in future versions.
 #### Colors
 
 Changes were introduced to the colors in Design System v5.x. To have a better understanding of the changes between DS3 and DS5 report to the
-[colors page](/docs/foundation-colors--main) where you can switch between the design systems.
+[colors page](/docs/foundation-colors--main) where you can switch between the design systems and to this [table](#colors) where the breaking changes are
+highlighted.
 
 Regarding the shadows, you have to explicitly use the value `none` where you were previously using `theme.hv.shadows[0]`. Only the value for `theme.hv.shadows[1]` was
 added to theme and you can access it through `theme.colors.shadow` as shown in the table above.
@@ -504,8 +500,6 @@ Briefly, the following properties where removed and/or updated:
 - `disableStylesGeneration`: removed;
 - `uiKitTheme`: renamed to `colorMode`;
 - `theme`: the `themes` property is now used to define your themes and the `theme` only accepts the name of the active theme;
-- `cssBaseline`: renamed to `enableCssBaseline` to choose if the CSS should be applied globally or not applied at all. The concept of scoped CSS baseline
-  was lost but we are working toward incorporating it again;
 - `changeTheme`: removed from the provider and added to the `useTheme` hook from the `react-core-package`.
 
 ### Button <a id="button" />

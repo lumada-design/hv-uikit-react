@@ -28,7 +28,6 @@ const App = () => {
         <HvTypography variant="body">
           Find more information about Hitachi Vantara UI Kit{" "}
           <StyledLink
-            // TODO: Update link to next-mirage when available
             href="https://lumada-design.github.io/uikit/master"
             target="_blank"
           >
