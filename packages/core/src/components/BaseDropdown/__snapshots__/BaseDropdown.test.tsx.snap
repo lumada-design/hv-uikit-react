@@ -6,32 +6,32 @@ exports[`BaseDropDown > should render correctly 1`] = `
     style="width: 121px;"
   >
     <div
-      class="HvBaseDropdown-root hv-uikit-style-1nukton-StyledRoot eapzthe9"
+      class="HvBaseDropdown-root hv-uikit-css-1nukton-StyledRoot eapzthe9"
     >
       <div
         aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-anchor hv-uikit-style-c41kvr-StyledAnchor eapzthe8"
+        class="HvBaseDropdown-anchor hv-uikit-css-c41kvr-StyledAnchor eapzthe8"
         role="combobox"
         tabindex="-1"
       >
         <div
           aria-label="Main sample"
-          class="HvBaseDropdown-header hv-uikit-style-4bvoko-StyledHeaderRoot eapzthe7"
+          class="HvBaseDropdown-header hv-uikit-css-4bvoko-StyledHeaderRoot eapzthe7"
           role="textbox"
           tabindex="0"
         >
           <div
-            class="HvBaseDropdown-selection hv-uikit-style-b6yxdh-StyledSelection eapzthe6"
+            class="HvBaseDropdown-selection hv-uikit-css-b6yxdh-StyledSelection eapzthe6"
           >
             <p
-              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body hv-uikit-style-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
+              class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body hv-uikit-css-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
             >
               Placeholder...
             </p>
           </div>
           <div
-            class="HvBaseDropdown-arrow eapzthe3 hv-uikit-style-1ij2a3c-StyledDropDownXS"
+            class="HvBaseDropdown-arrow eapzthe3 hv-uikit-css-1ij2a3c-StyledDropDownXS"
             name="DropDownXS"
           >
             <svg
