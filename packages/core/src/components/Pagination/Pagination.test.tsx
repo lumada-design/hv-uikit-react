@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { HvProvider } from "index";
+import { HvProvider } from "providers";
 import { describe, expect, it } from "vitest";
 import { HvPagination } from "./Pagination";
 
