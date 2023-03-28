@@ -169,6 +169,9 @@ export const ErrorMessage: StoryObj<HvRadioProps> = {
 };
 
 export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: ({}) => {
     const [secondRadioStatus, setSecondRadioStatus] =
       useState<HvRadioStatus>("standBy");

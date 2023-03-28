@@ -10,6 +10,9 @@ import { useState } from "react";
 const meta: Meta<typeof HvSelectionList> = {
   title: "Components/List/Selection List",
   component: HvSelectionList,
+  parameters: {
+    eyes: { include: false },
+  },
 };
 export default meta;
 

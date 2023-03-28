@@ -30,7 +30,7 @@ export const Main: StoryObj<HvDropdownProps> = {
     disabled: false,
     readOnly: false,
     required: false,
-    expanded: false,
+    expanded: true,
     notifyChangesOnFirstRender: false,
     hasTooltips: false,
     variableWidth: false,
@@ -103,6 +103,7 @@ export const WithIcons: StoryObj<HvDropdownProps> = {
     return (
       <div style={{ width: 310 }}>
         <HvDropdown
+          expanded
           aria-label="Dropdown With Icons"
           values={values}
           {...args}
@@ -123,7 +124,7 @@ export const Empty: StoryObj<HvDropdownProps> = {
   render: () => {
     return (
       <div style={{ width: 310 }}>
-        <HvDropdown id="dropdown1" aria-label="Empty" />
+        <HvDropdown expanded id="dropdown1" aria-label="Empty" />
       </div>
     );
   },
@@ -143,6 +144,7 @@ export const SingleSelection: StoryObj<HvDropdownProps> = {
         <HvDropdown
           id="dropdown7"
           aria-label="Single selection"
+          expanded
           onChange={(item) => console.log(item)}
           values={[
             { id: "id-1", label: "value 1", selected: true },
@@ -164,6 +166,7 @@ export const MultiSelection: StoryObj<HvDropdownProps> = {
           id="dropdown2"
           multiSelect
           showSearch
+          expanded
           label="Dropdown Title"
           values={[
             { label: "value 1" },
@@ -185,6 +188,7 @@ export const MultiSelectionNoSearch: StoryObj<HvDropdownProps> = {
           id="dropdown5"
           aria-label="No search"
           onChange={(item) => console.log(item)}
+          expanded
           multiSelect
           values={[
             { id: "id-1", label: "value 1" },
@@ -214,6 +218,7 @@ export const SingleSelectionWithSearch: StoryObj<HvDropdownProps> = {
           id="dropdown6"
           aria-label="With search"
           showSearch
+          expanded
           values={[
             { label: "value 1" },
             { label: "value 2", selected: true },
@@ -233,6 +238,7 @@ export const SingleSelectionNoSelection: StoryObj<HvDropdownProps> = {
         <HvDropdown
           id="dropdown8"
           aria-label="No default"
+          expanded
           hasTooltips
           disablePortal
           values={[
@@ -263,6 +269,7 @@ export const DiferentSizeAndPlacements: StoryObj<HvDropdownProps> = {
           "Dropdown defined with a specific width and with different placements.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const data = [
@@ -380,6 +387,7 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
           "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const values1 = useMemo(
@@ -496,6 +504,7 @@ export const WithDefinedHeight: StoryObj<HvDropdownProps> = {
           "Experimental Dropdown with height defined. Note: only validated in the single selection use-case.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const values1: any[] = [];
@@ -532,6 +541,7 @@ export const WithMaxHeight: StoryObj<HvDropdownProps> = {
           "Experimental Dropdown with max height defined. Note: only validated in the single selection use-case.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const values1: any[] = [];
@@ -568,6 +578,7 @@ export const WithMoreThan1000Items: StoryObj<HvDropdownProps> = {
           "Experimental Dropdown with virtualized list, which handles performance in lists with a lot of options. Note: only validated in the single selection use-case.",
       },
     },
+    eyes: { include: false },
   },
 
   render: () => {

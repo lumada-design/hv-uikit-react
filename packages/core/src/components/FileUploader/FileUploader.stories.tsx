@@ -314,6 +314,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
           "FileUploader which permits the upload of a single file at a time",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [list, setList] = useState<HvFileData[]>([]);

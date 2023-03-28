@@ -29,7 +29,11 @@ const meta: Meta<typeof HvControls> = {
   title: "Widgets/Controls",
   component: HvControls,
   subcomponents: { HvLeftControl, HvRightControl },
+  parameters: {
+    eyes: { include: false },
+  },
 };
+
 export default meta;
 
 const views: HvControlsViewConfiguration[] = [

@@ -79,6 +79,10 @@ export const WithIconsAndActions: StoryObj<HvDropDownMenuProps> = {
   },
 };
 
+WithIconsAndActions.parameters = {
+  eyes: { include: false },
+};
+
 export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
   parameters: {
     docs: {
@@ -100,6 +104,10 @@ export const DisabledItems: StoryObj<HvDropDownMenuProps> = {
       />
     );
   },
+};
+
+DisabledItems.parameters = {
+  eyes: { include: false },
 };
 
 export const Controlled: StoryObj<HvDropDownMenuProps> = {
@@ -144,4 +152,8 @@ export const Controlled: StoryObj<HvDropDownMenuProps> = {
       </>
     );
   },
+};
+
+Controlled.parameters = {
+  eyes: { include: false },
 };

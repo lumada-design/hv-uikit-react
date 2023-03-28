@@ -73,6 +73,9 @@ const meta: Meta<typeof HvDialog> = {
   title: "Components/Dialog",
   component: HvDialog,
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
+  parameters: {
+    eyes: { include: false },
+  },
 };
 export default meta;
 

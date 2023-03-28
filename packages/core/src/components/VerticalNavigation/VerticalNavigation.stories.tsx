@@ -329,7 +329,7 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
 
     const [value, setValue] = useState("01-01");
 
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     const handleIsExpanded = () => {
       setShow(!show);
@@ -459,7 +459,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
 
     const [value, setValue] = useState("01-01");
 
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     const handleIsExpanded = () => {
       setShow(!show);

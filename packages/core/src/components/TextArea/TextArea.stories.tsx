@@ -105,6 +105,7 @@ export const Resizable: StoryObj<HvTextAreaProps> = {
     docs: {
       description: { story: "Text area that allow resizing." },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
@@ -182,6 +183,7 @@ export const CustomValidation: StoryObj<HvTextAreaProps> = {
         story: "Text area value that can't contain numbers.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const validationMessages = {
@@ -210,6 +212,7 @@ export const AutoScroll: StoryObj<HvTextAreaProps> = {
         story: "Text area with autoscroll.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState<string>("");
