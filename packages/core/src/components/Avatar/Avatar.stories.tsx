@@ -31,6 +31,11 @@ const meta: Meta<typeof HvAvatar> = {
   title: "Components/Avatar",
   component: HvAvatar,
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
+  parameters: {
+    eyes: {
+      waitBeforeCapture: 1500,
+    },
+  },
 };
 export default meta;
 
@@ -136,7 +141,6 @@ export const Fallbacks: StoryObj<HvAvatarProps> = {
           "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon.",
       },
     },
-    eyes: { include: false },
   },
   render: () => {
     return (
