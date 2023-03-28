@@ -23,6 +23,7 @@ import { Radii } from "generator/Radii";
 import { Spacing } from "generator/Spacing";
 import { Typography } from "generator/Typography";
 import { Zindices } from "generator/Zindices";
+import { Sizes } from "generator/Sizes";
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -210,6 +211,13 @@ export default ${themeName};`
             >
               <FontFamily />
               <FontSizes />
+            </HvAccordion>
+            <HvAccordion
+              id="sizes"
+              label="sizes"
+              classes={{ label: styles.label }}
+            >
+              <Sizes />
             </HvAccordion>
             <HvAccordion
               id="radii"
