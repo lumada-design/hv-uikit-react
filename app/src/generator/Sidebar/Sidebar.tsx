@@ -22,6 +22,7 @@ import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 import { Radii } from "generator/Radii";
 import { Spacing } from "generator/Spacing";
 import { Typography } from "generator/Typography";
+import { Zindices } from "generator/Zindices";
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -223,6 +224,13 @@ export default ${themeName};`
               classes={{ label: styles.label }}
             >
               <Spacing />
+            </HvAccordion>
+            <HvAccordion
+              id="zindices"
+              label="zindices"
+              classes={{ label: styles.label }}
+            >
+              <Zindices />
             </HvAccordion>
           </HvBox>
         </div>
