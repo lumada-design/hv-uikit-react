@@ -48,7 +48,13 @@ export const CardView = ({ instance }: CarViewProps) => {
             selected={instance.selectedFlatRows.some((r) => r.id === row.id)}
             selectable
           >
-            <HvCardHeader title={row?.original?.name} />
+            <HvCardHeader
+              title={
+                <HvTypography variant="label">
+                  {row?.original?.name}
+                </HvTypography>
+              }
+            />
             <div
               style={{
                 display: "flex",
