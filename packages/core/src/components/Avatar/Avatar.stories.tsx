@@ -33,7 +33,7 @@ const meta: Meta<typeof HvAvatar> = {
   decorators: [(Story) => <FlexDecorator>{Story()}</FlexDecorator>],
   parameters: {
     eyes: {
-      waitBeforeCapture: 1500,
+      waitBeforeCapture: 5000,
     },
   },
 };
