@@ -40,6 +40,10 @@ export const Main: StoryObj<HvOverflowTooltipProps> = {
     classes: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvOverflowTooltip {...args}>List</HvOverflowTooltip>;
+    return (
+      <HvOverflowTooltip open {...args}>
+        List
+      </HvOverflowTooltip>
+    );
   },
 };

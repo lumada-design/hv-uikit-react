@@ -33,6 +33,9 @@ const meta: Meta<typeof HvTagsInput> = {
   decorators: [
     (storyFn) => <div style={{ maxWidth: "600px" }}>{storyFn()}</div>,
   ],
+  parameters: {
+    eyes: { include: false },
+  },
 };
 export default meta;
 

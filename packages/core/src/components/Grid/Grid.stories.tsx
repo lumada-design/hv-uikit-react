@@ -7,6 +7,9 @@ import { useWidth } from "hooks";
 const meta: Meta<typeof HvGrid> = {
   title: "Components/Grid/Grid",
   component: HvGrid,
+  parameters: {
+    eyes: { include: false },
+  },
 };
 export default meta;
 

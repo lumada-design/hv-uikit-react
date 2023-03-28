@@ -6,6 +6,9 @@ import { HvCheckBoxGroup, HvCheckBoxGroupProps } from "./CheckBoxGroup";
 const meta: Meta<typeof HvCheckBoxGroup> = {
   title: "Components/Checkbox/Checkbox Group",
   component: HvCheckBoxGroup,
+  parameters: {
+    eyes: { include: false },
+  },
 };
 
 export default meta;

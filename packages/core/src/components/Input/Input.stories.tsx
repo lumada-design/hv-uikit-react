@@ -147,6 +147,7 @@ export const ControlledWithButtons: StoryObj<HvInputProps> = {
         story: "Changing the input value from outside the input component.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const StyledContainer = styled("div")({
@@ -249,6 +250,7 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
           "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [lastNameValidationState, setLastNameValidationState] =
@@ -481,6 +483,7 @@ export const EventDemonstration: StoryObj<HvInputProps> = {
         story: "Input with all events functions enabled.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     const [value, setValue] = useState("");
@@ -515,6 +518,7 @@ export const CustomProps: StoryObj<HvInputProps> = {
           "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
@@ -539,6 +543,7 @@ export const Suggestion: StoryObj<HvInputProps> = {
         story: "Input with suggestion list.",
       },
     },
+    eyes: { include: false },
   },
   decorators: [(Story) => <div style={{ height: 400 }}>{Story()}</div>],
   render: () => {

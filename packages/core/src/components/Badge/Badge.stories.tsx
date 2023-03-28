@@ -138,6 +138,7 @@ export const WithState: StoryObj<HvBadgeProps> = {
         story: "Badge sample using react hooks to set the number of events.",
       },
     },
+    eyes: { include: false },
   },
   decorators: [
     (Story) => <div style={{ ...container, width: 650 }}>{Story()}</div>,

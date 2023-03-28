@@ -25,13 +25,13 @@ export const Main: StoryObj<HvTooltipProps> = {
           justifyContent: "space-between",
           maxWidth: 600,
           margin: "0 auto",
-          paddingTop: 0,
+          paddingTop: 80,
         },
       };
 
       return (
         <HvBox sx={styling.placeholder}>
-          <HvTooltip title={title}>
+          <HvTooltip title={title} open>
             <HvTypography>Hover here</HvTypography>
           </HvTooltip>
           <HvTooltip title={title} open={open}>
@@ -61,7 +61,7 @@ export const LongText = () => {
 
   return (
     <HvBox sx={styling.longTextContainer}>
-      <HvTooltip title={data}>
+      <HvTooltip open title={data}>
         <HvTypography id="placeholder" tabIndex={0}>
           Hover here
         </HvTypography>
@@ -83,7 +83,7 @@ export const Multiline = () => {
     longTextContainer: {
       display: "flex",
       justifyContent: "center",
-      paddingTop: 90,
+      paddingTop: 170,
     },
   };
 
@@ -115,7 +115,11 @@ export const Multiline = () => {
 
   return (
     <HvBox sx={styling.longTextContainer}>
-      <HvTooltip title={<TooltipContent classes={classes} />} useSingle={false}>
+      <HvTooltip
+        open
+        title={<TooltipContent classes={classes} />}
+        useSingle={false}
+      >
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
     </HvBox>
@@ -159,7 +163,11 @@ export const MultilineWithoutHeader = () => {
 
   return (
     <HvBox sx={styling.container}>
-      <HvTooltip title={<TooltipContent classes={classes} />} useSingle={false}>
+      <HvTooltip
+        open
+        title={<TooltipContent classes={classes} />}
+        useSingle={false}
+      >
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
     </HvBox>

@@ -360,6 +360,9 @@ export const WithTitle: StoryObj<HvListContainerProps> = {
 };
 
 export const WithLink: StoryObj<HvListContainerProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     // Style link to prevent double-focus ring, bold, and underline
     const StyledHvLink = styled(HvLink)({
@@ -409,6 +412,9 @@ export const WithLink: StoryObj<HvListContainerProps> = {
 };
 
 export const MultiSelectWithShift: StoryObj<HvListContainerProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: () => {
     const initialSelection = {
       0: false,

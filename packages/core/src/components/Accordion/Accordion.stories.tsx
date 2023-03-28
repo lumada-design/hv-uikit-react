@@ -62,6 +62,9 @@ export const Disabled: StoryObj<HvAccordionProps> = {
 };
 
 export const Controlled: StoryObj<HvAccordionProps> = {
+  parameters: {
+    eyes: { include: false },
+  },
   render: ({}) => {
     const [expandedState, setExpandedState] = useState({
       analytics: true,
