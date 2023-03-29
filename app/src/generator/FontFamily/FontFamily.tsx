@@ -85,7 +85,7 @@ const FontFamily = () => {
           <HvInput
             value={fontName}
             onChange={(event, value) => setFontName(value)}
-            label="Enter google font link"
+            label="Font name or Google font link"
             classes={{ root: css({ width: "100%" }) }}
           />
         </HvBox>
