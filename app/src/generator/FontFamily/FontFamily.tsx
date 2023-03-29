@@ -38,20 +38,24 @@ const FontFamily = () => {
   };
 
   const onAddHandler = () => {
-    const names = extractFontsNames(fontName);
+    if (fontName.includes("http")) {
+      const names = extractFontsNames(fontName);
 
-    for (const n in names) {
-      setFontAdded(true);
-      setFontAddedMsg(`Fonts "${names.join(", ")}" added!`);
+      for (const n in names) {
+        setFontAddedMsg(`Fonts "${names.join(", ")}" added!`);
+        setFontValues((prev) => [...prev, { label: names[n] }]);
 
-      setFontName("");
-      setFontValues((prev) => [...prev, { label: names[n] }]);
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = fontName;
+        document.head.appendChild(link);
+      }
+    } else {
+      setFontAddedMsg(`Fonts "${fontName}" added!`);
+      setFontValues((prev) => [...prev, { label: fontName }]);
     }
-
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = fontName;
-    document.head.appendChild(link);
+    setFontName("");
+    setFontAdded(true);
   };
 
   const handleClose = (event, reason) => {
