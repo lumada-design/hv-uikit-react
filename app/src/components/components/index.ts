@@ -16,6 +16,7 @@ export * from "./FileUploader";
 export * from "./Grid";
 export * from "./Icons";
 export * from "./Input";
+export * from "./Loading";
 export * from "./Pagination";
 export * from "./ProgressBar";
 export * from "./Radio";

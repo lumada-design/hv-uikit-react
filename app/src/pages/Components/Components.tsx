@@ -29,6 +29,7 @@ import {
   VerticalNavigation,
   Avatar,
   ProgressBar,
+  Loading,
 } from "components/components";
 import { styles } from "./Components.styles";
 
@@ -273,6 +274,22 @@ const App = () => {
         </HvBox>
         <HvBox className={styles.content}>
           <Input />
+        </HvBox>
+      </HvBox>
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">Loading</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/components-loading-loading--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <Loading />
         </HvBox>
       </HvBox>
       <HvBox className={styles.component}>
