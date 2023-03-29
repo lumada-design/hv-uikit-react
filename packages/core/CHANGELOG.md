@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-next.21](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.0-next.20...@hitachivantara/uikit-react-core@5.0.0-next.21) (2023-03-29)
+
+### Bug Fixes
+
+- **BreadCrumb:** remove color ([5c4eb7d](https://github.com/lumada-design/hv-uikit-react/commit/5c4eb7df3b59157b10814f2772dd45cb72aa1590))
+- **Header:** remove CSS to override logo colors with header color ([#3254](https://github.com/lumada-design/hv-uikit-react/issues/3254)) ([15362ae](https://github.com/lumada-design/hv-uikit-react/commit/15362ae41d0a09a35a37b1f8798525f5923e23b2))
+- **navigationSlider:** add correct types to props ([60352d1](https://github.com/lumada-design/hv-uikit-react/commit/60352d16e3f2867ebc08b35f5a2c36db4d5ce796))
+- react table types ([928b5d5](https://github.com/lumada-design/hv-uikit-react/commit/928b5d59a34ebf74d227b6d610da154b0e31ae28))
+- shadows ([297e96d](https://github.com/lumada-design/hv-uikit-react/commit/297e96d45fcdd879782b7f3c71020979f91febc9))
+
+### Features
+
+- class names key added to provider ([e03b46f](https://github.com/lumada-design/hv-uikit-react/commit/e03b46f06435b96f85ca1117e6290efd12f163a7))
+- **verticalNavigation:** add slider navigation feature ([0e9f470](https://github.com/lumada-design/hv-uikit-react/commit/0e9f47058656b2c53d3fc0379c7c43d9a73e957d))
+
 # 5.0.0-next.20 (2023-03-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

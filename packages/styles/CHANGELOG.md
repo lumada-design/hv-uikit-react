@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-next.21](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.0.0-next.20...@hitachivantara/uikit-styles@5.0.0-next.21) (2023-03-29)
+
+### Bug Fixes
+
+- shadows ([297e96d](https://github.com/lumada-design/hv-uikit-react/commit/297e96d45fcdd879782b7f3c71020979f91febc9))
+
 # 5.0.0-next.20 (2023-03-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

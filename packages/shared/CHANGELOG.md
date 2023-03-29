@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-next.19](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.0-next.18...@hitachivantara/uikit-react-shared@5.0.0-next.19) (2023-03-29)
+
+### Features
+
+- class names key added to provider ([e03b46f](https://github.com/lumada-design/hv-uikit-react/commit/e03b46f06435b96f85ca1117e6290efd12f163a7))
+
 # 5.0.0-next.18 (2023-03-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared
