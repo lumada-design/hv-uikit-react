@@ -82,7 +82,6 @@ export const HvTag = ({
   deleteButtonProps = {},
   ...others
 }: HvTagProps) => {
-  console.log(type);
   const { activeTheme, selectedMode } = useTheme();
 
   const getDeleteIcon = () => {

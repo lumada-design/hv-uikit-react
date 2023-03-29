@@ -33,7 +33,7 @@ export const StyledButton = styled(
       fill: theme.colors.acce1,
     },
 
-    borderRadius: "2px 2px 0px 0px",
+    borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     border: theme.dropDownMenu.borderOpened,
     borderBottom: "none",
   }),
