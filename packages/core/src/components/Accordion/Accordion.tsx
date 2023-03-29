@@ -11,6 +11,7 @@ import { HvBaseProps } from "../../types";
 import { setId } from "utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
+import { HvTypographyVariants } from "index";
 
 export type HvAccordionProps = HvBaseProps & {
   /**
@@ -53,6 +54,8 @@ export type HvAccordionProps = HvBaseProps & {
    * Is the accordion disabled.
    */
   disabled?: boolean;
+
+  labelVariant?: HvTypographyVariants;
 };
 
 /**
@@ -70,6 +73,7 @@ export const HvAccordion = ({
   headingLevel,
   defaultExpanded = false,
   containerProps,
+  labelVariant,
   ...others
 }: HvAccordionProps) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -129,6 +133,9 @@ export const HvAccordion = ({
   const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
     const color = (disabled && ["atmo5"]) || undefined;
+
+    const variantToApply = labelVariant ? labelVariant : "label";
+
     const accordionButton = (
       <StyledLabel
         id={accordionHeaderId}
@@ -143,7 +150,7 @@ export const HvAccordion = ({
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        variant={"label"}
+        variant={variantToApply}
         aria-expanded={isOpen}
         aria-disabled={disabled}
       >
@@ -155,7 +162,7 @@ export const HvAccordion = ({
       headingLevel === undefined ? (
         accordionButton
       ) : (
-        <StyledLabel component={`h${headingLevel}`}>
+        <StyledLabel component={`h${headingLevel}`} variant={variantToApply}>
           {accordionButton}
         </StyledLabel>
       );
