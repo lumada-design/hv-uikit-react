@@ -20,7 +20,6 @@ export const Main: StoryObj<HvButtonProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    sx: { control: { disable: true } },
     icon: { control: { disable: true } },
     startIcon: { control: { disable: true } },
   },

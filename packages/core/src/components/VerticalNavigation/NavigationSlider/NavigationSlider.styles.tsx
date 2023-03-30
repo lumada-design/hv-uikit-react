@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { HvListItem, listItemClasses, theme } from "index";
+import { HvListItem, listItemClasses } from "components";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledListItem = styled(HvListItem)({
   display: "flex",
