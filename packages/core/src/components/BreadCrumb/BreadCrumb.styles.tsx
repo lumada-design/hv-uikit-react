@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "index";
+import { HvTypography } from "components";
 
 export const StyledRoot = styled("nav")({
   display: "flex",

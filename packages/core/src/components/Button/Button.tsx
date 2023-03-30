@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import React, { CSSProperties, forwardRef, ReactElement } from "react";
+import { useTheme } from "hooks";
+import React, { forwardRef, ReactElement } from "react";
 import {
   StyledButton,
   StyledChildren,
@@ -41,8 +42,8 @@ export interface HvButtonProps
   overrideIconColors?: boolean;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvButtonClasses;
+  /** Whether the Button is selected or not. */
   selected?: boolean;
-  sx?: CSSProperties;
 }
 
 /**
@@ -52,18 +53,23 @@ export interface HvButtonProps
  * @param variant the variant of the button
  * @returns       the normalized variant in DS 5 API
  */
-const mapVariant = (variant: HvButtonVariant): HvButtonVariant => {
-  if (variant === "secondary") {
-    console.warn(
-      "Button variant 'secondary' is deprecated. Please use 'secondarySubtle'."
-    );
-    return "secondarySubtle";
-  }
-  if (variant === "ghost") {
-    console.warn(
-      "Button variant 'ghost' is deprecated. Please use 'primaryGhost'."
-    );
-    return "primaryGhost";
+const mapVariant = (
+  variant: HvButtonVariant,
+  theme?: string
+): HvButtonVariant => {
+  if (theme !== "ds3") {
+    if (variant === "secondary") {
+      console.warn(
+        "Button variant 'secondary' is deprecated. Please use 'secondarySubtle'."
+      );
+      return "secondarySubtle";
+    }
+    if (variant === "ghost") {
+      console.warn(
+        "Button variant 'ghost' is deprecated. Please use 'primaryGhost'."
+      );
+      return "primaryGhost";
+    }
   }
   return variant;
 };
@@ -88,6 +94,8 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       overrideIconColors = true,
       ...others
     }: HvButtonProps = props;
+
+    const { activeTheme } = useTheme();
 
     const onFocusHandler = (event) => {
       event.target.classList.add("HvIsFocusVisible");
@@ -114,7 +122,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         disabled={disabled}
         onFocus={onFocusHandler}
         onBlur={onBlurHandler}
-        $variant={mapVariant(variant)}
+        $variant={mapVariant(variant, activeTheme?.name)}
         $iconOnly={!!icon}
         $size={size}
         $radius={radius}

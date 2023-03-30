@@ -12,6 +12,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { mapVariant } from "./utils";
 import typographyClasses, { HvTypographyClasses } from "./typographyClasses";
 import clsx from "clsx";
+import { useTheme } from "hooks";
 
 export type HvTypographyVariants =
   | "display"
@@ -218,8 +219,9 @@ export const HvTypography = forwardRef(
       paragraph = false,
       ...others
     } = props;
+    const { activeTheme } = useTheme();
 
-    const mappedVariant = mapVariant(variant);
+    const mappedVariant = mapVariant(variant, activeTheme?.name);
 
     const comp =
       component || (paragraph ? "p" : HvTypographyMap[mappedVariant] || "span");

@@ -294,7 +294,7 @@ export const SampleWithCustomTitleAndAdditionalActions: StoryObj<HvGlobalActions
     },
     render: () => {
       const CustomTitle = (
-        <HvTypography variant="sectionTitle" component="h1">
+        <HvTypography variant="title3" component="h1">
           A Custom Title
         </HvTypography>
       );

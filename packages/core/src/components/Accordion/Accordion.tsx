@@ -11,7 +11,7 @@ import { HvBaseProps } from "../../types";
 import { setId } from "utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
-import { HvTypographyVariants } from "index";
+import { HvTypographyVariants } from "components";
 
 export type HvAccordionProps = HvBaseProps & {
   /**

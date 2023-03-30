@@ -33,16 +33,20 @@ const isLegacyVariant = (variant: string) => {
   ].includes(variant);
 };
 
-export const mapVariant = (variant: string) => {
+export const mapVariant = (variant: string, theme?: string) => {
   const mappedVariant = mappableVariants.get(variant);
-  if (mappedVariant) {
-    console.warn(
-      `The typography variant ${variant} is deprecated. You should use ${mappedVariant} instead.`
-    );
-    return mappedVariant;
+
+  if (theme !== "ds3") {
+    if (mappedVariant) {
+      console.warn(
+        `The typography variant ${variant} is deprecated. You should use ${mappedVariant} instead.`
+      );
+      return mappedVariant;
+    }
+    if (isLegacyVariant(variant)) {
+      console.warn(`The typography variant ${variant} is deprecated.`);
+    }
   }
-  if (isLegacyVariant(variant)) {
-    console.warn(`The typography variant ${variant} is deprecated.`);
-  }
+
   return variant;
 };
