@@ -132,7 +132,7 @@ export const HvAccordion = ({
   const accordionHeaderId = setId(id, "button");
   const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
-    const color = (disabled && ["atmo5"]) || undefined;
+    const color = (disabled && ["secondary_60"]) || undefined;
 
     const variantToApply = labelVariant ? labelVariant : "label";
 

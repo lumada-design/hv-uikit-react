@@ -121,7 +121,7 @@ export const Main: StoryObj<HvFormElementProps> = {
                 />
                 <HvAdornment
                   showWhen="valid"
-                  icon={<Success semantic="sema1" />}
+                  icon={<Success semantic="positive" />}
                 />
               </>
             }
@@ -181,7 +181,7 @@ export const FormElementValid: StoryObj<HvFormElementProps> = {
             endAdornment={
               <HvAdornment
                 showWhen="valid"
-                icon={<Success semantic="sema1" />}
+                icon={<Success semantic="positive" />}
               />
             }
           />

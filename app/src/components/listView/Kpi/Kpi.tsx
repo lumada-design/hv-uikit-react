@@ -79,9 +79,9 @@ export const Kpi = ({
           <div className={classes.variation}>
             <Indicator variation={variation} />
             {variation === "up" ? (
-              <TopXS title="Up" semantic="sema1" />
+              <TopXS title="Up" semantic="positive" />
             ) : (
-              <BottomXS title="Up" semantic="sema4" />
+              <BottomXS title="Up" semantic="negative" />
             )}
             <div>
               <HvTypography variant="caption1">vs last 24h.</HvTypography>

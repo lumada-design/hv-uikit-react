@@ -15,7 +15,7 @@ exports[`DropDownMenu > should render correctly 1`] = `
       <button
         aria-expanded="false"
         aria-label="Dropdown menu"
-        class="HvDropDownMenu-icon e13q7myz1 HvButton-root hv-uikit-css-ek8rhr-StyledButton-StyledButton e138pvrm0"
+        class="HvDropDownMenu-icon e13q7myz1 HvButton-root hv-uikit-css-jt0ozn-StyledButton-StyledButton e138pvrm0"
         id="hv-drop-down-menu-2-icon-button"
       >
         <div
@@ -38,7 +38,7 @@ exports[`DropDownMenu > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>

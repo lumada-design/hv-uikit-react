@@ -16,7 +16,7 @@ describe("Avatar", () => {
   describe("letter avatar", () => {
     it("should render the avatar as text", () => {
       const { container, getByText } = render(
-        <HvAvatar badge="sema4">AB</HvAvatar>
+        <HvAvatar badge="negative">AB</HvAvatar>
       );
 
       expect(container).toMatchSnapshot();

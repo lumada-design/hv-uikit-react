@@ -445,7 +445,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             <HvAvatar
               variant="square"
               size="xs"
-              backgroundColor="acce4"
+              backgroundColor="secondary_80"
               style={{ fontSize: "15px" }}
             >
               {contentRef.current?.textContent.substring(0, 1)}

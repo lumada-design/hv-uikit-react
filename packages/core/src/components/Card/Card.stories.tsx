@@ -35,7 +35,7 @@ import leaf from "./assets/leaf.png";
 // #region Styled Components
 
 const StyledSubtitleLeft = styled("span")({
-  borderRight: `1px solid ${theme.colors.acce1}`,
+  borderRight: `1px solid ${theme.colors.secondary}`,
   paddingRight: theme.space.xs,
   marginRight: theme.space.xs,
 });
@@ -81,7 +81,7 @@ export default meta;
 export const Main: StoryObj<HvCardProps> = {
   args: {
     bgcolor: "atmo1",
-    statusColor: "sema4",
+    statusColor: "negative",
     selectable: false,
     selected: false,
   },
@@ -135,13 +135,13 @@ export const AllComponents: StoryObj<HvCardProps> = {
         {
           id: "get",
           label: "Preview",
-          icon: <Preview color="atmo5" />,
+          icon: <Preview color="secondary_60" />,
           disabled: true,
         },
         {
           id: "put",
           label: "Add",
-          icon: <Add color="atmo5" />,
+          icon: <Add color="secondary_60" />,
           disabled: true,
         },
         { id: "delete", label: "Delete", icon: <Delete />, disabled: false },
@@ -162,8 +162,8 @@ export const AllComponents: StoryObj<HvCardProps> = {
       <HvCard
         style={{ width: 360 }}
         bgcolor="atmo1"
-        icon={<Level3Bad semantic="sema4" />}
-        statusColor="sema4"
+        icon={<Level3Bad semantic="negative" />}
+        statusColor="negative"
         selected={checked}
         selectable
         // @ts-ignore
@@ -342,23 +342,30 @@ export const KPICard: StoryObj<HvCardProps> = {
     return (
       <Grid container>
         <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard statusColor="sema2" selectable selected={checked === 1}>
+          <StyledCard statusColor="neutral" selectable selected={checked === 1}>
             <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="85" icon={<Level1 semantic="sema2" />} />
+            <CardContent value="85" icon={<Level1 semantic="neutral" />} />
             <CardFooter n={1} />
           </StyledCard>
         </Grid>
         <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard statusColor="sema3" selectable selected={checked === 2}>
+          <StyledCard statusColor="warning" selectable selected={checked === 2}>
             <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="45" icon={<Level2Average semantic="sema3" />} />
+            <CardContent
+              value="45"
+              icon={<Level2Average semantic="warning" />}
+            />
             <CardFooter n={2} />
           </StyledCard>
         </Grid>
         <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-          <StyledCard statusColor="sema4" selectable selected={checked === 3}>
+          <StyledCard
+            statusColor="negative"
+            selectable
+            selected={checked === 3}
+          >
             <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="19" icon={<Level3Bad semantic="sema4" />} />
+            <CardContent value="19" icon={<Level3Bad semantic="negative" />} />
             <CardFooter n={3} />
           </StyledCard>
         </Grid>
@@ -496,7 +503,7 @@ export const SelectableNoFooter: StoryObj<HvCardProps> = {
         aria-pressed={selected}
         aria-selected={undefined}
         onClick={() => setSelected(!selected)}
-        statusColor="sema4"
+        statusColor="negative"
       >
         <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
         <SingleContent />

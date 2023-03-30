@@ -24,6 +24,7 @@ Here's what there is to know about this migration:
   - [Breaking changes in the theme object](#theme-object)
   - [Update styling and theme utilities](#update-utilities)
 - [Renamed components and types](#renamed-components-types)
+- [Colors](#colors)
 - [Breaking changes and deprecated values in components](#breaking-changes-deprecated-components)
   - [Provider](#provider)
   - [Button](#button)
@@ -456,6 +457,37 @@ In v5.x, some components and types were renamed as detailed in the table below.
 | Type              | InputSuggestion        | HvInputSuggestion          |
 | Type              | TagSuggestion          | HvTagSuggestion            |
 | Type              | HvUiKitThemeNames      | HvThemeColorMode           |
+
+## Colors <a id="colors" />
+
+Colors names have changed in v5.x from previous versions. The table below maps the previous names to the new ones. Note that even if you're using DS3, you'll have to update the colors to the new names.
+
+| Color Group | v4.x   | v5.x         |
+| ----------- | ------ | ------------ |
+| Base        | base1  | base_light   |
+| Base        | base2  | base_dark    |
+| Accent      | acce1  | secondary    |
+| Accent      | acce2  | primary      |
+| Accent      | acce2h | primary_80   |
+| Accent      | acce2s | primary_20   |
+| Accent      | acce3  | brand        |
+| Accent      | acce4  | secondary_80 |
+| Semantic    | sema1  | positive     |
+| Semantic    | sema1m | positive_80  |
+| Semantic    | sema1h | positive_120 |
+| Semantic    | sema2  | neutral      |
+| Semantic    | sema3  | warning      |
+| Semantic    | sema3m | warning_120  |
+| Semantic    | sema3h | warning_140  |
+| Semantic    | sema4  | negative     |
+| Semantic    | sema4m | negative_80  |
+| Semantic    | sema4h | negative_120 |
+| Semantic    | sema5  | catastrophic |
+| Semantic    | sema7  | neutral_20   |
+| Semantic    | sema8  | positive_20  |
+| Semantic    | sema9  | critical_20  |
+| Semantic    | sema20 | warning_20   |
+| Categorical | cviz\* | cat\*        |
 
 ## Breaking changes and deprecated values in components <a id="breaking-changes-deprecated-components" />
 

@@ -30,7 +30,7 @@ export const StyledButton = styled(
     },
 
     "& svg .color0": {
-      fill: theme.colors.acce1,
+      fill: theme.colors.secondary,
     },
 
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,

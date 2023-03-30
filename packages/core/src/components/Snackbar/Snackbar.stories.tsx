@@ -180,7 +180,7 @@ export const CustomIcon: StoryObj<HvSnackbarProps> = {
           style={{ position: "relative" }}
           id="snackbar2"
           label="This is a snackbar with a custom icon."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
         />
       </div>
     );
@@ -241,19 +241,19 @@ export const SnackbarVariations: StoryObj<HvSnackbarProps> = {
         <HvSnackbarContent
           variant="default"
           label="This is a snackbar."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
         />
         <br />
         <HvSnackbarContent
           variant="success"
           label="This is a success message."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
         />
         <br />
         <HvSnackbarContent
           variant="error"
           label="This is an error message."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
         />
         <br />
         <HvTypography variant="xsTitle">Custom content</HvTypography>
@@ -270,7 +270,7 @@ export const SnackbarVariations: StoryObj<HvSnackbarProps> = {
             <StyledSnackBarContent
               variant="error"
               label="This is an very very very very long long long long error message."
-              customIcon={<Info color="base2" />}
+              customIcon={<Info color="base_dark" />}
             />
           </div>
         </HvTooltip>

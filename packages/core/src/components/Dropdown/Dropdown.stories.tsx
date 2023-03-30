@@ -471,8 +471,8 @@ export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
             style={{
               paddingTop: "10px",
               paddingLeft: "20px",
-              backgroundColor: theme.colors.sema9,
-              color: theme.colors.base2,
+              backgroundColor: theme.colors.negative_20,
+              color: theme.colors.base_dark,
               height: "100%",
             }}
           >

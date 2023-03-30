@@ -17,7 +17,7 @@ export const StyledRoot = styled(
     display: "inline-block",
     float: "right",
     ...($counterDisabled && {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     }),
     ...($gutter && {
       paddingLeft: `6px`,
@@ -37,10 +37,10 @@ export const StyledTypography = styled(
     $counterDisabled: boolean;
   }) => ({
     ...($overloaded && {
-      color: theme.colors.sema4,
+      color: theme.colors.negative,
     }),
     ...($counterDisabled && {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     }),
   })
 );

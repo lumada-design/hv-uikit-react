@@ -26,7 +26,7 @@ export const pathWithSubMenu = (
     nbrElemToSubMenu,
     <HvDropDownMenu
       id={setId(id, "submenu")}
-      icon={<MoreOptionsHorizontal iconSize="S" color="acce1" />}
+      icon={<MoreOptionsHorizontal iconSize="S" color="secondary" />}
       dataList={subMenuList}
       {...dropDownMenuProps}
       onClick={onClick != null ? handleClick : undefined}

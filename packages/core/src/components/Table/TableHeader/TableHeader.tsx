@@ -132,7 +132,7 @@ const StyledTableHeader = (c: any) =>
         borderRight: `solid 1px ${theme.colors.atmo4}`,
       }),
       ...($resizing && {
-        borderRight: `solid 2px ${theme.colors.acce1}`,
+        borderRight: `solid 2px ${theme.colors.secondary}`,
       }),
       ...($groupColumnMostLeft && {
         borderLeft: `solid 1px ${theme.colors.atmo4}`,

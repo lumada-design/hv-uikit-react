@@ -22,7 +22,7 @@ export const StyledEmptyIcon = styled("div")({
 });
 
 export const StyledErrorMessage = styled(HvTypography)({
-  color: theme.colors.sema4,
+  color: theme.colors.negative,
 });
 
 export const StyledProgressBarBack = styled("span")({
@@ -37,10 +37,10 @@ export const StyledProgressBar = styled("progress")({
   top: "-1px",
   width: "80%",
   height: theme.fileUploader.file.progressHeight,
-  border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.acce1}`,
+  border: `${theme.fileUploader.file.borderWidth} solid ${theme.colors.secondary}`,
 
   "&::-moz-progress-bar": {
-    background: theme.colors.acce1,
+    background: theme.colors.secondary,
   },
 });
 

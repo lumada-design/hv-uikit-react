@@ -67,7 +67,7 @@ export const StyledListItem = styled(
       backgroundColor: theme.list.hoverColor,
     }),
     ...($disabled && {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
       backgroundColor: theme.list.disabledBackgroundColor,
     }),
     ...($startAdornment && {
@@ -80,7 +80,7 @@ export const StyledListItem = styled(
         outline: "none !important",
       },
       [`.${listItemClasses.disabled} > svg *.color0`]: {
-        fill: theme.colors.atmo5,
+        fill: theme.colors.secondary_60,
       },
     }),
     ...($endAdornment && {
@@ -91,7 +91,7 @@ export const StyledListItem = styled(
         outline: "none !important",
       },
       [`.${listItemClasses.disabled} > svg *.color0`]: {
-        fill: theme.colors.atmo5,
+        fill: theme.colors.secondary_60,
       },
     }),
     "&.HvIsFocused": {

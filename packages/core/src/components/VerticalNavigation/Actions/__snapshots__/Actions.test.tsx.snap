@@ -6,7 +6,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
     class="HvVerticalNavigationActions-root css-btrerb-StyledRoot e11q2fjk0"
   >
     <div
-      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-mbo5qa-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >
@@ -24,21 +24,21 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           <path
             class="color0"
             d="M12.984 8 2 1.723v12.554L12.984 8M15 8 1 16V0z"
-            fill="var(--uikit-colors-acce1)"
+            fill="var(--uikit-colors-secondary)"
           />
         </svg>
       </div>
       Action 1
     </div>
     <div
-      class="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon e13j4on70 HvTypography-root HvTypography-body css-mbo5qa-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >
       Action 2
     </div>
     <div
-      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-hf0eve-getStyledComponent-StyledAction e1tnpalo0"
+      class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-mbo5qa-getStyledComponent-StyledAction e1tnpalo0"
       role="button"
       tabindex="0"
     >
@@ -56,7 +56,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           <path
             class="color0"
             d="M14 14H2V2h12zM3 13h10V3H3z"
-            fill="var(--uikit-colors-acce1)"
+            fill="var(--uikit-colors-secondary)"
           />
         </svg>
       </div>

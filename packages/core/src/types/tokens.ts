@@ -1,22 +1,26 @@
 // COLORS
-export type HvAccentColorKeys = "acce1" | "acce2" | "acce2h" | "acce3";
+export type HvAccentColorKeys =
+  | "secondary"
+  | "primary"
+  | "primary_80"
+  | "brand";
 export type HvAtmosphereColorKeys =
   | "atmo1"
   | "atmo2"
   | "atmo3"
   | "atmo4"
-  | "atmo5";
-export type HvBaseColorKeys = "base1" | "base2";
+  | "secondary_60";
+export type HvBaseColorKeys = "base_light" | "base_dark";
 export type HvSemanticColorKeys =
-  | "sema1"
-  | "sema2"
-  | "sema3"
-  | "sema4"
-  | "sema5"
+  | "positive"
+  | "neutral"
+  | "warning"
+  | "negative"
+  | "catastrophic"
   | "sema6"
-  | "sema7"
-  | "sema8"
-  | "sema9"
+  | "neutral_20"
+  | "positive_20"
+  | "negative_20"
   | "sema10"
   | "sema11"
   | "sema12"
@@ -27,7 +31,7 @@ export type HvSemanticColorKeys =
   | "sema17"
   | "sema18"
   | "sema19"
-  | "sema20";
+  | "warning_20";
 export type HvSupportColorKeys =
   | "supp1"
   | "supp2"
@@ -36,47 +40,47 @@ export type HvSupportColorKeys =
   | "supp5";
 export type HvUndefinedStateColorKeys = "atmo4";
 export type HvCategoricalColorKeys =
-  | "cviz1"
-  | "cviz2"
-  | "cviz3"
-  | "cviz4"
-  | "cviz5"
-  | "cviz6"
-  | "cviz7"
-  | "cviz8"
-  | "cviz9"
-  | "cviz10"
-  | "cviz11"
-  | "cviz12"
-  | "cviz13"
-  | "cviz14"
-  | "cviz15"
-  | "cviz16"
-  | "cviz17"
-  | "cviz18"
-  | "cviz19"
-  | "cviz20";
+  | "cat1"
+  | "cat2"
+  | "cat3"
+  | "cat4"
+  | "cat5"
+  | "cat6"
+  | "cat7"
+  | "cat8"
+  | "cat9"
+  | "cat10"
+  | "cat11"
+  | "cat12"
+  | "cat13"
+  | "cat14"
+  | "cat15"
+  | "cat16"
+  | "cat17"
+  | "cat18"
+  | "cat19"
+  | "cat20";
 export type HvSequentialColorKeys =
-  | "cviz1"
-  | "cviz1_100"
-  | "cviz1_200"
-  | "cviz1_300"
-  | "cviz1_400"
-  | "cviz1_500"
-  | "cviz1_600"
-  | "cviz1_700"
-  | "cviz1_800"
-  | "cviz1_900";
+  | "cat1"
+  | "cat1_100"
+  | "cat1_200"
+  | "cat1_300"
+  | "cat1_400"
+  | "cat1_500"
+  | "cat1_600"
+  | "cat1_700"
+  | "cat1_800"
+  | "cat1_900";
 export type HvPolarizedColorKeys =
   | "sema1"
-  | "cviz21"
-  | "cviz22"
-  | "cviz23"
-  | "cviz24"
-  | "cviz25"
-  | "cviz26"
-  | "cviz27"
-  | "cviz28"
+  | "cat21"
+  | "cat22"
+  | "cat23"
+  | "cat24"
+  | "cat25"
+  | "cat26"
+  | "cat27"
+  | "cat28"
   | "sema5";
 
 export type HvAccentColors = Record<HvAccentColorKeys, string>;

@@ -16,7 +16,7 @@ export const StyledTypography = styled(
   }) => ({
     display: "inline-block",
     ...($infoDisabled && {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     }),
     ...($gutter && {
       padding: `0 0 6px ${theme.space.xs}`,

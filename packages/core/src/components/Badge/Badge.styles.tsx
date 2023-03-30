@@ -44,7 +44,7 @@ export const StyledBadge = styled(
   }) => ({
     ...($badge && {
       borderRadius: theme.space.xs,
-      backgroundColor: theme.colors.acce1,
+      backgroundColor: theme.colors.secondary,
       float: "left",
       minHeight: "8px",
       minWidth: "8px",

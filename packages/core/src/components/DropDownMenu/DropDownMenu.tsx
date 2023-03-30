@@ -116,7 +116,9 @@ const HvDropDownMenu = ({
       aria-label="Dropdown menu"
       $open={open}
     >
-      {icon || <MoreOptionsVertical color={disabled ? "atmo5" : undefined} />}
+      {icon || (
+        <MoreOptionsVertical color={disabled ? "secondary_60" : undefined} />
+      )}
     </StyledButton>
   );
 

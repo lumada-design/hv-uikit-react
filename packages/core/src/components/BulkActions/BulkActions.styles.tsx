@@ -27,14 +27,14 @@ export const StyledRoot = styled(
       backgroundColor: theme.bulkActions.anySelectedBackgroundColor,
 
       [`& .${bulkActionsClasses.selectAll} div`]: {
-        color: theme.colors.base2,
+        color: theme.colors.base_dark,
 
         "&:hover:not(:disabled)": {
           backgroundColor: fade($baseColor, 0.3),
         },
 
         "& *": {
-          color: theme.colors.base2,
+          color: theme.colors.base_dark,
           backgroundColor: "transparent",
         },
       },

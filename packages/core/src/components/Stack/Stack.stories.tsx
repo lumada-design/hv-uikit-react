@@ -22,7 +22,7 @@ import styled from "@emotion/styled";
 const StyledBox = styled("div")({
   display: "flex",
   border: `1px solid ${theme.colors.sema15}`,
-  backgroundColor: theme.colors.sema7,
+  backgroundColor: theme.colors.neutral_20,
   width: 150,
   height: 50,
   alignItems: "center",
@@ -122,7 +122,7 @@ export const CustomDivider = () => {
   const StyledDivider = styled("div")({
     width: "85%",
     height: 5,
-    border: `1px solid ${theme.colors.atmo5}`,
+    border: `1px solid ${theme.colors.secondary_60}`,
     borderRadius: 5,
     backgroundColor: theme.colors.atmo4,
     alignSelf: "center",
@@ -180,7 +180,7 @@ export const WithNavigation = () => {
         >
           <HvCard
             bgcolor="atmo1"
-            statusColor="sema4"
+            statusColor="negative"
             style={{ width: 275 }}
             selectable
           >
@@ -214,7 +214,7 @@ export const WithNavigation = () => {
           </HvCard>
           <HvCard
             bgcolor="atmo1"
-            statusColor="sema1"
+            statusColor="positive"
             style={{ width: 275 }}
             selectable
           >
@@ -268,7 +268,7 @@ export const WithNavigation = () => {
           </HvCard>
           <HvCard
             bgcolor="atmo1"
-            statusColor="sema7"
+            statusColor="neutral_20"
             style={{ width: 275 }}
             selectable
           >

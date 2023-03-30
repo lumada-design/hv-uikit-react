@@ -38,27 +38,27 @@ export const StyledCalendarDate = styled(HvTypography)({
   width: "40px",
   [`&.${calendarCellClasses.calendarDateSelected}`]: {
     backgroundColor: theme.colors.atmo3,
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
     "&:hover": {
       ...hover,
     },
   },
   [`&.${calendarCellClasses.calendarDateNotInMonth}`]: {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
     cursor: "not-allowed",
   },
   [`&.${calendarCellClasses.calendarDateInSelectionRange}`]: {
     backgroundColor: theme.colors.atmo3,
   },
   [`&.${calendarCellClasses.calendarDateDisabled}`]: {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
     cursor: "no-drop",
   },
   [`&.${calendarCellClasses.startBookend}`]: {
-    borderLeft: `1px solid ${theme.colors.acce1}`,
+    borderLeft: `1px solid ${theme.colors.secondary}`,
   },
   [`&.${calendarCellClasses.endBookend}`]: {
-    borderRight: `1px solid ${theme.colors.acce1}`,
+    borderRight: `1px solid ${theme.colors.secondary}`,
   },
 });
 

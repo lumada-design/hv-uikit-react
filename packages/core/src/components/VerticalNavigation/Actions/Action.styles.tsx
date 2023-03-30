@@ -17,7 +17,7 @@ export const StyledAction = styled(HvTypography)({
   justifyContent: "flex-start",
   alignItems: "center",
   height: "32px",
-  color: theme.colors.acce1,
+  color: theme.colors.secondary,
 
   // hover
   "&:hover": hover(),

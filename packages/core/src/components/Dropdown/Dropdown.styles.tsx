@@ -40,7 +40,7 @@ export const StyledDropdown = styled(
     [`& .${dropdownClasses.dropdownHeader}`]: {
       border: theme.dropdown.headerBorder,
       "&:hover": {
-        border: `1px solid ${theme.colors.acce4}`,
+        border: `1px solid ${theme.colors.secondary_80}`,
       },
       ...($dropdownHeaderInvalid && {
         border: "none",

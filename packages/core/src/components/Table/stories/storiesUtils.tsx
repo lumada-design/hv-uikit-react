@@ -43,7 +43,8 @@ const formatDate = (date) => date.toISOString().split("T")[0];
 
 const getOption = (opts, i) => opts[i % opts.length];
 
-const getTagColor = (status) => (status === "Closed" ? "sema9" : "sema8");
+const getTagColor = (status) =>
+  status === "Closed" ? "negative_20" : "positive_20";
 
 const generateLongString = (value, i) =>
   i === 6

@@ -203,7 +203,7 @@ export const HvCalendarHeader = ({
               classes?.invalidMessageStyling
             )}
           >
-            <Info color="acce3" iconSize="S" />
+            <Info color="brand" iconSize="S" />
             Invalid date
           </HvTypography>
         )}

@@ -12,12 +12,12 @@ export const StyledRoot = styled("div")({
   borderRight: theme.calendar.headerInputBorderRight,
   borderRadius: theme.calendar.borderRadius,
   "&:hover, &:focus": {
-    borderBottom: `1px solid ${theme.colors.acce1}`,
+    borderBottom: `1px solid ${theme.colors.secondary}`,
   },
 });
 
 export const StyledInputBorderContainer = styled("div")({
-  backgroundColor: theme.colors.sema4,
+  backgroundColor: theme.colors.negative,
   height: 1,
   marginTop: -1,
 });
@@ -35,7 +35,7 @@ export const StyledInput = styled((props) => <input {...props} />)({
   fontWeight: theme.calendar.headerInputFontWeight,
   width: "100%",
   "&::placeholder": {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
   },
   "&::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator": {
     " -webkit-appearance": "none",

@@ -4,7 +4,7 @@ export const CssVariables = () => {
   return (
     <HvTypography
       style={{
-        color: theme.colors.sema2,
+        color: theme.colors.neutral,
         fontWeight: theme.fontWeights.semibold,
         fontSize: theme.fontSizes.lg,
       }}

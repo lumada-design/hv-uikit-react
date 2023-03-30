@@ -14,7 +14,7 @@ export const Cards = () => {
     <HvBox sx={{ display: "flex", flexDirection: "row", gap: theme.space.md }}>
       <HvCard
         bgcolor="atmo1"
-        statusColor="sema4"
+        statusColor="negative"
         style={{ width: 360 }}
         selectable
       >
@@ -46,7 +46,7 @@ export const Cards = () => {
         tabIndex={0}
         role="button"
         aria-selected={undefined}
-        statusColor="sema1"
+        statusColor="positive"
       >
         <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
         <HvCardContent>

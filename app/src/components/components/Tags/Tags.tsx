@@ -19,11 +19,11 @@ export const Tags = () => {
       >
         <HvTypography variant="title4">Categorical</HvTypography>
         <HvBox css={{ display: "flex", gap: theme.space.md }}>
-          <HvTag label="Label" type="categorical" color="cviz1" />
-          <HvTag label="Label" type="categorical" color="cviz2" />
-          <HvTag label="Label" type="categorical" color="cviz3" />
-          <HvTag label="Label" type="categorical" color="cviz4" />
-          <HvTag label="Label" type="categorical" color="cviz5" />
+          <HvTag label="Label" type="categorical" color="cat1" />
+          <HvTag label="Label" type="categorical" color="cat2" />
+          <HvTag label="Label" type="categorical" color="cat3" />
+          <HvTag label="Label" type="categorical" color="cat4" />
+          <HvTag label="Label" type="categorical" color="cat5" />
           <HvTag label="Label" type="categorical" color="#22FF45" />
         </HvBox>
       </HvBox>
@@ -36,10 +36,10 @@ export const Tags = () => {
       >
         <HvTypography variant="title4">Semantic</HvTypography>
         <HvBox css={{ display: "flex", gap: theme.space.md }}>
-          <HvTag label="Label" type="semantic" color="sema7" />
-          <HvTag label="Label" type="semantic" color="sema8" />
-          <HvTag label="Label" type="semantic" color="sema9" />
-          <HvTag label="Label" type="semantic" color="sema20" />
+          <HvTag label="Label" type="semantic" color="neutral_20" />
+          <HvTag label="Label" type="semantic" color="positive_20" />
+          <HvTag label="Label" type="semantic" color="negative_20" />
+          <HvTag label="Label" type="semantic" color="warning_20" />
         </HvBox>
       </HvBox>
     </HvBox>

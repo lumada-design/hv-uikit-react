@@ -40,10 +40,10 @@ export const ThemeSample = ({ title }: { title: string }) => {
         <HvCheckBox label="Checkbox" />
         <HvRadio label="Radio" />
         <HvSwitch aria-label="Switch" />
-        <Level0Good semantic="sema1" />
-        <Level1 semantic="sema2" />
-        <Level1 semantic="cviz4" />
-        <Level1 semantic="sema5" />
+        <Level0Good semantic="positive" />
+        <Level1 semantic="neutral" />
+        <Level1 semantic="negative" />
+        <Level1 semantic="catastrophic" />
       </StyledPanel>
       <StyledHvTypography>{title}</StyledHvTypography>
     </StyledContainer>

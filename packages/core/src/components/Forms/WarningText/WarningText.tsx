@@ -55,7 +55,7 @@ export const HvWarningText = ({
   const localAdornment = adornment || (
     <StyledIcon
       className={clsx(warningTextClasses.defaultIcon, classes?.defaultIcon)}
-      semantic="sema4"
+      semantic="negative"
     />
   );
 

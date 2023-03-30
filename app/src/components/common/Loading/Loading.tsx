@@ -42,7 +42,7 @@ export const Loading = (props: LoadingProps) => {
       title={errorTitle}
       message={errorMessage}
       action={errorAction}
-      icon={<Info semantic="sema4" />}
+      icon={<Info semantic="negative" />}
       {...rest}
     />
   );

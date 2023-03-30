@@ -84,7 +84,7 @@ export const HvCard = ({
               backgroundColor:
                 statusColor === "sema0"
                   ? selected
-                    ? theme.colors.acce1
+                    ? theme.colors.secondary
                     : theme.colors.atmo4
                   : theme.colors[statusColor],
             }),

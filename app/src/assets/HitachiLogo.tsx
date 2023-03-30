@@ -1,7 +1,7 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
 const HitachiLogo = (props) => {
-  const color = theme.colors.acce1;
+  const color = theme.colors.secondary;
   return (
     <svg
       version="1.1"

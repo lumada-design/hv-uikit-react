@@ -55,7 +55,7 @@ export const getManagerStyles = (theme) => {
         borderBottomColor: theme.colors.atmo6,
 
         "&:hover, &:focus-within": {
-          borderBottomColor: theme.colors.acce1,
+          borderBottomColor: theme.colors.secondary,
         },
       },
     },

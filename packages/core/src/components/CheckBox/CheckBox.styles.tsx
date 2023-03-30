@@ -50,7 +50,7 @@ export const StyledLabelContainer = styled(
   }),
 
   ...($invalid && {
-    borderBottom: `1px solid ${theme.colors.sema4}`,
+    borderBottom: `1px solid ${theme.colors.negative}`,
   }),
 }));
 
@@ -70,7 +70,7 @@ export const StyledLabel = styled(
   width: "100%",
 
   ...($disabled && {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
     cursor: "not-allowed",
   }),
 }));
@@ -82,7 +82,7 @@ export const StyledBaseCheckBox = styled(
   height: "32px",
 
   ...($invalid && {
-    borderBottom: `1px solid ${theme.colors.sema4}`,
+    borderBottom: `1px solid ${theme.colors.negative}`,
     borderBottomLeftRadius: "0px",
     borderBottomRightRadius: "0px",
   }),

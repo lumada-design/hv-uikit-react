@@ -133,7 +133,7 @@ export const StyledTagsList = styled(
     }),
 
     ...($error && {
-      border: `1px solid ${theme.colors.sema4}`,
+      border: `1px solid ${theme.colors.negative}`,
     }),
 
     ...($resizable && {
@@ -143,7 +143,7 @@ export const StyledTagsList = styled(
     }),
 
     ...($invalid && {
-      border: `1px solid ${theme.colors.sema4}!important`,
+      border: `1px solid ${theme.colors.negative}!important`,
     }),
   })
 );

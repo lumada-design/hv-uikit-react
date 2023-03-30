@@ -56,7 +56,8 @@ export const HvActionContainer = ({
         onClick={onClose}
         tabIndex={0}
         $baseColor={
-          activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+          activeTheme?.colors?.modes[selectedMode].base_light ||
+          theme.colors.base_light
         }
         {...others}
       >
@@ -66,7 +67,7 @@ export const HvActionContainer = ({
             actionContainerClasses.iconContainer,
             classes?.iconContainer
           )}
-          color="base2"
+          color="base_dark"
         />
       </StyledButton>
       {action && (

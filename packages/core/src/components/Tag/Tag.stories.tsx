@@ -39,7 +39,7 @@ export const Main: StoryObj<HvTagProps> = {
     label: "Tag Label",
     onDelete: () => console.log("delete"),
     type: "semantic",
-    color: "sema7",
+    color: "neutral_20",
     disabled: false,
     clickable: false,
   },
@@ -81,9 +81,9 @@ export const Semantical: StoryObj<HvTagProps> = {
         }}
       >
         <HvTag label="Informational" />
-        <HvTag color="sema8" label="Success" />
-        <HvTag color="sema9" label="Warning" />
-        <HvTag color="sema20" label="Error" />
+        <HvTag color="positive_20" label="Success" />
+        <HvTag color="negative_20" label="Warning" />
+        <HvTag color="warning_20" label="Error" />
       </div>
     );
   },
@@ -104,25 +104,25 @@ export const Categorial: StoryObj<HvTagProps> = {
           label="Docs"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz2"
+          color="cat2"
         />
         <HvTag
           label="Fix"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz3"
+          color="cat3"
         />
         <HvTag
           label="New"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz4"
+          color="cat4"
         />
         <HvTag
           label="Deprecated"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz5"
+          color="cat5"
         />
         <HvTag label="No Click" type="categorical" color="#22FF45" />
       </div>
@@ -176,7 +176,7 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
         />
         <HvTag
           label="Success"
-          color="sema8"
+          color="positive_20"
           onDelete={() => {
             alert("On Delete Action");
           }}
@@ -186,7 +186,7 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
         />
         <HvTag
           label="Warning"
-          color="sema9"
+          color="negative_20"
           onDelete={() => {
             alert("On Delete Action");
           }}
@@ -196,7 +196,7 @@ export const WithDeleteAction: StoryObj<HvTagProps> = {
         />
         <HvTag
           label="Error"
-          color="sema20"
+          color="warning_20"
           onDelete={() => {
             alert("On Delete Action");
           }}
@@ -226,28 +226,28 @@ export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
           label="Docs"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz2"
+          color="cat2"
           disabled
         />
         <HvTag
           label="Fix"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz3"
+          color="cat3"
           disabled
         />
         <HvTag
           label="New"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz4"
+          color="cat4"
           disabled
         />
         <HvTag
           label="Deprecated"
           onClick={() => alert("Hello")}
           type="categorical"
-          color="cviz5"
+          color="cat5"
           disabled
         />
       </div>

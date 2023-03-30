@@ -17,7 +17,7 @@ export const singleStyle = {
     textOverflow: "ellipsis",
     overflow: "hidden",
     wordBreak: "break-word",
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
   },
 };
 
@@ -34,7 +34,7 @@ export const multiStyle = {
     boxOrient: "vertical",
     textOverflow: "ellipsis",
     overflow: "hidden",
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
   },
 };
 

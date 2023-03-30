@@ -9,11 +9,11 @@ import {
 const iconVariant = (variant, color, semantic) => {
   switch (variant) {
     case "success":
-      return <Success color={color} semantic={semantic && "sema1"} />;
+      return <Success color={color} semantic={semantic && "positive"} />;
     case "warning":
-      return <Caution color={color} semantic={semantic && "sema3"} />;
+      return <Caution color={color} semantic={semantic && "warning"} />;
     case "error":
-      return <Fail color={color} semantic={semantic && "sema4"} />;
+      return <Fail color={color} semantic={semantic && "negative"} />;
     case "info":
       return <Info color={color} />;
     default:

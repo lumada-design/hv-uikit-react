@@ -28,7 +28,7 @@ export const HvPathElement = ({
             pathElementClasses.separatorContainer,
             classes?.separatorContainer
           )}
-          color="atmo5"
+          color="secondary_60"
         />
       )}
     </StyledLi>

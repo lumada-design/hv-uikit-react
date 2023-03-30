@@ -23,8 +23,8 @@ export const styles = {
     border: `1px solid ${theme.colors.atmo4}`,
     padding: `${theme.space.xs} ${theme.space.md}`,
     "&:hover": {
-      borderColor: theme.colors.acce1,
-      backgroundColor: theme.colors.acce2s,
+      borderColor: theme.colors.secondary,
+      backgroundColor: theme.colors.primary_20,
     },
   }),
 };

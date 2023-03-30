@@ -366,7 +366,7 @@ export const WithLink: StoryObj<HvListContainerProps> = {
   render: () => {
     // Style link to prevent double-focus ring, bold, and underline
     const StyledHvLink = styled(HvLink)({
-      color: theme.colors.acce1,
+      color: theme.colors.secondary,
       ...(theme.typography.body as CSSProperties),
       textDecoration: "none",
       "&:focus": {

@@ -14,7 +14,7 @@ export const StyledTabs = styled(MuiTabs)({
     backgroundColor: "transparent",
     "& > div": {
       width: "100%",
-      backgroundColor: theme.colors.acce1,
+      backgroundColor: theme.colors.secondary,
     },
     height: 2,
   },

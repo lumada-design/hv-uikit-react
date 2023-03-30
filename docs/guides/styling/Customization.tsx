@@ -24,7 +24,7 @@ export const InlineStyles = () => (
     id="inline-styles-button-id"
     variant="secondaryGhost"
     onClick={() => {}}
-    style={{ backgroundColor: theme.colors.sema3 }}
+    style={{ backgroundColor: theme.colors.warning }}
   >
     Click me!
   </HvButton>
@@ -38,7 +38,7 @@ const classes = {
   tabsIndicator: css({
     [`& .${tabsClasses.indicator}`]: {
       "& > div": {
-        backgroundColor: theme.colors.sema1,
+        backgroundColor: theme.colors.positive,
       },
     },
   }),
@@ -97,7 +97,9 @@ export const ReusableComponent = (props: HvButtonProps) => (
 const StyledDynamicHvButton = styled(HvButton)(
   ({ variant }: HvButtonProps) => ({
     color:
-      variant === "secondaryGhost" ? theme.colors.sema1 : theme.colors.sema4,
+      variant === "secondaryGhost"
+        ? theme.colors.positive
+        : theme.colors.negative,
     marginLeft: theme.space.xs,
   })
 );
@@ -148,7 +150,7 @@ const globalTheme = createTheme({
   inheritColorModes: true,
   colors: {
     modes: {
-      dawn: { acce1: "#bf6060" },
+      dawn: { secondary: "#bf6060" },
     },
   },
   fontFamily: {

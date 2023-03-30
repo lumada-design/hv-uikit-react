@@ -122,7 +122,7 @@ export const StyledPlaceholder = styled(
   color: theme.baseDropdown.placeholderColor,
 
   ...($disabled && {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
   }),
 }));
 
@@ -146,7 +146,7 @@ export const StyledDropDownXS = styled(
   ...($disabled && {
     "& svg": {
       "& path": {
-        fill: theme.colors.atmo5,
+        fill: theme.colors.secondary_60,
       },
     },
   }),

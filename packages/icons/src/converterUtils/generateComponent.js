@@ -54,7 +54,7 @@ const generateComponent = (
   const calcSize = (size) => (hasSpecialSize ? size + 8 : size);
 
   const themedPalette = colors
-    .replace(/"#414141"/g, "theme.colors.acce1")
+    .replace(/"#414141"/g, "theme.colors.secondary")
     .replace(/"#fff"/g, `theme.colors.${isSelector ? "atmo1" : "acce0"}`);
   const palette = replaceColorsWithTheme(themedPalette, lightPalette);
 

@@ -25,7 +25,7 @@ export const Main: StoryObj<HvLoadingProps> = {
 };
 
 export const Buttons = () => {
-  const Button = ({ label, variant, color = "base2" }) => {
+  const Button = ({ label, variant, color = "base_dark" }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const activateTimer = () => {
@@ -57,7 +57,7 @@ export const Buttons = () => {
   };
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <Button variant="primary" label="Primary button" color="base1" />
+      <Button variant="primary" label="Primary button" color="base_light" />
       <Button variant="secondarySubtle" label="Secondary Subtle button" />
       <Button variant="secondaryGhost" label="Secondary Ghost button" />
     </div>

@@ -4,7 +4,7 @@ exports[`ToggleButton > should render correctly 1`] = `
 <div>
   <button
     aria-pressed="false"
-    class="HvButton-root css-1910alx-StyledButton e138pvrm0"
+    class="HvButton-root css-1711hqm-StyledButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"

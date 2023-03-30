@@ -6,7 +6,7 @@ exports[`HvRadio > sample snapshot testing > should match the snapshot 1`] = `
     class="HvRadio-root css-1rzqrp5-StyledHvFormElement e11n8xyl2 HvFormElement-root"
   >
     <span
-      class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root css-1x2drb2-StyledRadio-StyledHvBaseRadio e1sbb5xr0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
+      class="MuiButtonBase-root MuiRadio-root MuiRadio-colorDefault PrivateSwitchBase-root MuiRadio-root MuiRadio-colorDefault MuiRadio-root MuiRadio-colorDefault HvRadio-radio e11n8xyl3 HvBaseRadio-root css-daifdf-StyledRadio-StyledHvBaseRadio e1sbb5xr0 css-wxwe5p-MuiButtonBase-root-MuiRadio-root"
     >
       <input
         class="PrivateSwitchBase-input css-1m9pwf3"
@@ -33,7 +33,7 @@ exports[`HvRadio > sample snapshot testing > should match the snapshot 1`] = `
           <path
             class="color1"
             d="M8 15a7.023 7.023 0 1 0-4.943-2.057A6.953 6.953 0 0 0 8 15m0 1a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
-            fill="var(--uikit-colors-acce1)"
+            fill="var(--uikit-colors-secondary)"
           />
         </svg>
       </div>

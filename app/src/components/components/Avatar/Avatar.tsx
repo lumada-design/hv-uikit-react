@@ -9,16 +9,16 @@ export const Avatar = () => {
       <HvAvatar>
         <LogIn color="atmo1" iconSize="XS" />
       </HvAvatar>
-      <HvAvatar id="status1" size="sm" status="sema4">
+      <HvAvatar id="status1" size="sm" status="negative">
         AB
       </HvAvatar>
-      <HvAvatar id="badge1" size="lg" status="sema2" alt="Ben" src={man1}>
+      <HvAvatar id="badge1" size="lg" status="neutral" alt="Ben" src={man1}>
         AB
       </HvAvatar>
       <HvAvatar
         id="status2"
         size="lg"
-        badge="sema1"
+        badge="positive"
         alt="Beatrice"
         src={woman1}
       >

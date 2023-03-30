@@ -40,13 +40,13 @@ export const StyledTab = styled(MuiTab)({
 
   // Override Mui styling: https://mui.com/material-ui/api/tab/#css
   "&.Mui-selected": {
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
     letterSpacing: theme.typography.label.letterSpacing,
     lineHeight: theme.typography.label.lineHeight,
     fontWeight: theme.typography.label.fontWeight,
   },
   "&.Mui-disabled": {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
     cursor: "not-allowed",
     pointerEvents: "all",
     opacity: 1,

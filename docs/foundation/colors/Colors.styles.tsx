@@ -33,4 +33,5 @@ export const StyledColorSquare = styled("div")({
 export const StyledColorName = styled("span")({
   display: "flex",
   alignItems: "baseline",
+  flexDirection: "column",
 });

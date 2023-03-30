@@ -806,7 +806,7 @@ export const TagColumnRenderer: StoryObj = {
           "status_text_color",
           false,
           {
-            color: "cviz5",
+            color: "cat5",
             type: "categorical",
           }
         ),

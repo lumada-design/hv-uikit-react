@@ -20,7 +20,7 @@ export const getColorGroupName = (color) => {
       return "Semantic";
     case "sup":
       return "Support";
-    case "cviz":
+    case "cat":
       return "Visualizations";
     default:
       return "";

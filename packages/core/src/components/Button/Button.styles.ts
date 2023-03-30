@@ -69,55 +69,57 @@ export const StyledButton = styled(
     ...($overrideIconColors &&
       $variant === "primary" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.atmo1,
         },
       }),
     ...($overrideIconColors &&
       $variant === "primarySubtle" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.primary,
         },
       }),
     ...($overrideIconColors &&
       $variant === "primaryGhost" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.primary,
         },
       }),
     ...($overrideIconColors &&
       $variant === "secondarySubtle" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.secondary,
         },
       }),
     ...($overrideIconColors &&
       $variant === "secondaryGhost" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.secondary,
         },
       }),
     ...($overrideIconColors &&
       $variant === "semantic" && {
         "& svg .color0": {
-          fill: $disabled ? theme.colors.atmo5 : theme.colors.base2,
+          fill: $disabled ? theme.colors.secondary_60 : theme.colors.base_dark,
         },
       }),
     ...($variant === "primary" && {
-      color: $disabled ? theme.colors.atmo5 : theme.colors.atmo1,
-      backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.acce2,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.atmo1,
+      backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.primary,
       "&:hover": {
-        backgroundColor: $disabled ? theme.colors.atmo3 : theme.colors.acce2h,
+        backgroundColor: $disabled
+          ? theme.colors.atmo3
+          : theme.colors.primary_80,
       },
       "&:focus-visible": {
-        backgroundColor: theme.colors.acce2h,
+        backgroundColor: theme.colors.primary_80,
       },
     }),
     ...($variant === "primarySubtle" && {
       backgroundColor: $disabled ? theme.colors.atmo3 : "transparent",
       border: $disabled
         ? `1px solid ${theme.colors.atmo4}`
-        : `1px solid ${theme.colors.acce2}`,
-      color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
+        : `1px solid ${theme.colors.primary}`,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.primary,
       "&:hover": {
         backgroundColor: $disabled
           ? theme.colors.atmo3
@@ -130,7 +132,7 @@ export const StyledButton = styled(
       },
     }),
     ...($variant === "primaryGhost" && {
-      color: $disabled ? theme.colors.atmo5 : theme.colors.acce2,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.primary,
       backgroundColor: "transparent",
       "&:hover": {
         backgroundColor: $disabled ? "transparent" : theme.button.hoverColor,
@@ -140,7 +142,7 @@ export const StyledButton = styled(
       },
     }),
     ...($variant === "secondarySubtle" && {
-      color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.secondary,
       backgroundColor: $disabled
         ? theme.colors.atmo3
         : theme.button.secondaryBackgroundColor,
@@ -160,7 +162,7 @@ export const StyledButton = styled(
       },
     }),
     ...($variant === "secondaryGhost" && {
-      color: $disabled ? theme.colors.atmo5 : theme.colors.acce1,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.secondary,
       backgroundColor: "transparent",
       "&:hover": {
         backgroundColor: $disabled ? "transparent" : theme.button.hoverColor,
@@ -170,7 +172,7 @@ export const StyledButton = styled(
       },
     }),
     ...($variant === "semantic" && {
-      color: $disabled ? theme.colors.atmo5 : theme.colors.base2,
+      color: $disabled ? theme.colors.secondary_60 : theme.colors.base_dark,
       backgroundColor: $disabled
         ? theme.button.semanticColorDisabled
         : "transparent",

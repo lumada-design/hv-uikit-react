@@ -75,13 +75,13 @@ exports[`TextArea > should render correctly 1`] = `
           <path
             class="color0"
             d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 1 0-8 8 8 8 0 0 0 8-8zm-1 0a7 7 0 1 1-7-7 7 7 0 0 1 7 7z"
-            fill="var(--uikit-colors-sema4)"
+            fill="var(--uikit-colors-negative)"
           />
         </svg>
       </div>
       <p
         aria-relevant="additions text"
-        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-sd0xtv-getStyledComponent-StyledTypography e1tnpalo0"
+        class="HvWarningText-warningText HvWarningText-topGutter e1jkc0dp1 HvTypography-root HvTypography-body css-1x6n3lw-getStyledComponent-StyledTypography e1tnpalo0"
         id="hvtextarea3-error"
         role="status"
       />

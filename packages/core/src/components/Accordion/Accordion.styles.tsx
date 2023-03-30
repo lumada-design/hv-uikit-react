@@ -54,7 +54,7 @@ export const StyledLabel = styled(HvTypography)(
     cursor: "pointer",
     ...(disabled && {
       cursor: "not-allowed",
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     }),
   })
 );

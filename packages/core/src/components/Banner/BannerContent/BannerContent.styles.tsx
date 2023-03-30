@@ -37,15 +37,15 @@ export const StyledSnackbarContent = styled(
 )(({ $variant }: { $variant: HvBannerVariant }) => ({
   padding: 0,
   ...($variant === "success" && {
-    backgroundColor: theme.colors.sema8,
+    backgroundColor: theme.colors.positive_20,
   }),
   ...($variant === "warning" && {
-    backgroundColor: theme.colors.sema20,
+    backgroundColor: theme.colors.warning_20,
   }),
   ...($variant === "error" && {
-    backgroundColor: theme.colors.sema9,
+    backgroundColor: theme.colors.negative_20,
   }),
   ...($variant === "default" && {
-    backgroundColor: theme.colors.sema7,
+    backgroundColor: theme.colors.neutral_20,
   }),
 }));

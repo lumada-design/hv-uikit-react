@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
 export const setColor = (condition: boolean): string | undefined =>
-  condition ? "atmo5" : undefined;
+  condition ? "secondary_60" : undefined;
 
 export const getSafePage = (
   inPage: number,

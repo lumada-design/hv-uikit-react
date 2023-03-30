@@ -66,7 +66,7 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
     ref
   ) => {
     const icon =
-      customIcon || (showIcon && iconVariant(variant, "base2", undefined));
+      customIcon || (showIcon && iconVariant(variant, "base_dark", undefined));
 
     // default to inline
     // this might try to be more intelligent in the future,

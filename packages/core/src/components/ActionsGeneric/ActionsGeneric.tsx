@@ -72,7 +72,8 @@ export const HvActionsGeneric = ({
         }
         startIcon={renderedIcon}
         $baseColor={
-          activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+          activeTheme?.colors?.modes[selectedMode].base_light ||
+          theme.colors.base_light
         }
         size={(activeTheme?.actionsGeneric?.buttonSize as HvButtonSize) || "md"}
         {...other}
@@ -88,7 +89,7 @@ export const HvActionsGeneric = ({
 
     const semantic = category === "semantic";
     const iconColor =
-      (disabled && "atmo5") || (semantic && "base2") || undefined;
+      (disabled && "secondary_60") || (semantic && "base_dark") || undefined;
 
     return (
       <>

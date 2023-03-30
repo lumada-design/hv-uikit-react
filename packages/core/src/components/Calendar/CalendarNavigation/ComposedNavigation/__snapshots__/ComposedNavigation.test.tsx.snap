@@ -26,7 +26,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
             <path
               class="color0"
               d="m3.35 5.99994 4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
-              fill="var(--uikit-colors-acce1)"
+              fill="var(--uikit-colors-secondary)"
             />
           </svg>
         </div>
@@ -56,7 +56,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
             <path
               class="color0"
               d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-              fill="var(--uikit-colors-acce1)"
+              fill="var(--uikit-colors-secondary)"
             />
           </svg>
         </div>
@@ -80,7 +80,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
           <path
             class="color0"
             d="m3.35 5.99994 4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
-            fill="var(--uikit-colors-acce1)"
+            fill="var(--uikit-colors-secondary)"
           />
         </svg>
       </div>
@@ -110,7 +110,7 @@ exports[`<Navigation /> > should render correctly 1`] = `
           <path
             class="color0"
             d="m4.05 10.6-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-            fill="var(--uikit-colors-acce1)"
+            fill="var(--uikit-colors-secondary)"
           />
         </svg>
       </div>

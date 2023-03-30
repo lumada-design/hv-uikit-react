@@ -12,7 +12,7 @@ export const StyledHvBaseRadio = styled(
   height: "32px",
 
   ...($invalid && {
-    borderBottom: `1px solid ${theme.colors.sema4}`,
+    borderBottom: `1px solid ${theme.colors.negative}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -66,7 +66,7 @@ export const StyledDivContainer = styled(
     }),
 
     ...($invalid && {
-      borderBottom: `1px solid ${theme.colors.sema4}`,
+      borderBottom: `1px solid ${theme.colors.negative}`,
     }),
 
     ...($focusVisible && {
@@ -92,7 +92,7 @@ export const StyledHvLabel = styled(
   width: "100%",
 
   ...($disabled && {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
     cursor: "not-allowed",
   }),
 }));
