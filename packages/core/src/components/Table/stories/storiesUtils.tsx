@@ -150,7 +150,7 @@ export const getColumns = (): SampleColumn[] => [
   },
   { Header: "Severity", accessor: "severity" },
   {
-    Header: "Priority with a very long name too big to fit",
+    Header: "Priority",
     accessor: "priority",
   },
 ];

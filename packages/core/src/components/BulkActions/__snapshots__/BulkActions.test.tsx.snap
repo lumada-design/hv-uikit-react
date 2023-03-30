@@ -57,9 +57,11 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
             <span
               class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
             >
-              <b>
+              <label
+                class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
+              >
                 All
-              </b>
+              </label>
                (8)
             </span>
           </label>
@@ -249,9 +251,11 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
             <span
               class="HvTypography-root HvTypography-body css-1fbl1cl-getStyledComponent e1tnpalo0"
             >
-              <b>
+              <label
+                class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
+              >
                 All
-              </b>
+              </label>
                (8)
             </span>
           </label>

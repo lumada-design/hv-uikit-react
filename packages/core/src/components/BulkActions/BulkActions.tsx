@@ -123,12 +123,12 @@ export const HvBulkActions = ({
     >
       {!anySelected ? (
         <>
-          <b>{selectAllLabel}</b>
+          <HvTypography variant="label">{selectAllLabel}</HvTypography>
           {` (${numTotal})`}
         </>
       ) : (
         <>
-          <b>{numSelected}</b>
+          <HvTypography variant="label">{numSelected}</HvTypography>
           {` ${selectAllConjunctionLabel} ${numTotal}`}
         </>
       )}

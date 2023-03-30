@@ -28,6 +28,8 @@ import {
   TagsInput,
   VerticalNavigation,
   Avatar,
+  ProgressBar,
+  Loading,
 } from "components/components";
 import { styles } from "./Components.styles";
 
@@ -276,10 +278,10 @@ const App = () => {
       </HvBox>
       <HvBox className={styles.component}>
         <HvBox className={styles.header}>
-          <HvTypography variant="title2">Snackbar</HvTypography>
+          <HvTypography variant="title2">Loading</HvTypography>
           <HvTypography
             component="a"
-            href="https://lumada-design.github.io/uikit/master/?path=/docs/components-snackbar--main"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/components-loading-loading--main"
             target="_blank"
             className={styles.docs}
           >
@@ -287,7 +289,7 @@ const App = () => {
           </HvTypography>
         </HvBox>
         <HvBox className={styles.content}>
-          <Snackbars />
+          <Loading />
         </HvBox>
       </HvBox>
       <HvBox className={styles.component}>
@@ -304,6 +306,38 @@ const App = () => {
         </HvBox>
         <HvBox className={styles.content}>
           <Pagination />
+        </HvBox>
+      </HvBox>
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">Progress Bar</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/components-loading-progress-bar--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <ProgressBar />
+        </HvBox>
+      </HvBox>
+      <HvBox className={styles.component}>
+        <HvBox className={styles.header}>
+          <HvTypography variant="title2">Snackbar</HvTypography>
+          <HvTypography
+            component="a"
+            href="https://lumada-design.github.io/uikit/master/?path=/docs/components-snackbar--main"
+            target="_blank"
+            className={styles.docs}
+          >
+            Docs
+          </HvTypography>
+        </HvBox>
+        <HvBox className={styles.content}>
+          <Snackbars />
         </HvBox>
       </HvBox>
       <HvBox className={styles.component}>

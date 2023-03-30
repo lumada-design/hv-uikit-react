@@ -1,9 +1,7 @@
 import { HvDropDownMenu } from "@hitachivantara/uikit-react-core";
 import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
-import { useState } from "react";
 
 export const DropDownMenu = () => {
-  const [open, setOpen] = useState<boolean>(true);
   const iconSelectedColor =
     (Icon) =>
     ({ isSelected }) =>
@@ -19,13 +17,12 @@ export const DropDownMenu = () => {
       }}
     >
       <HvDropDownMenu
-        expanded={open}
+        expanded={true}
         dataList={[
           { label: "Label 1", icon: iconSelectedColor(User) },
           { label: "Label 2", icon: iconSelectedColor(Calendar) },
           { label: "Label 3", icon: iconSelectedColor(Plane) },
         ]}
-        onToggle={() => setOpen((o) => !o)}
       />
     </div>
   );
