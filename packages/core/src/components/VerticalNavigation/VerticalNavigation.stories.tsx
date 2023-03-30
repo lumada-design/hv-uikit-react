@@ -129,6 +129,16 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
 };
 
 export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Usage of the [Treeview Design Pattern](https://w3c.github.io/aria-practices/#TreeView) to build a navigation tree for a set of hierarchically organized web pages. " +
+          "Instead of TAB, use the arrow keys to navigate through items. Enter performs its default action (i.e. open/close parent nodes, select otherwise).",
+      },
+    },
+  },
+
   render: () => {
     const navigationData = useMemo(
       () => [
@@ -369,7 +379,6 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
             }}
           />
           <HvVerticalNavigationTree
-            mode="treeview"
             collapsible
             defaultExpanded
             aria-label="Example 3 navigation"
@@ -391,6 +400,15 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
 };
 
 export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When collapsed in icon mode only the icons are visible, if an icon is not provided one will be generated based on the first letter of the label.",
+      },
+    },
+  },
+
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
@@ -499,7 +517,6 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
             }}
           />
           <HvVerticalNavigationTree
-            mode="treeview"
             collapsible
             defaultExpanded
             aria-label="Example 3 navigation"
@@ -624,6 +641,14 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
 };
 
 export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Example of an implementation of the Design System Mobile Navigation pattern: the Vertical Navigation component changes to Slider mode when the window is in a smaller size.",
+      },
+    },
+  },
   render: () => {
     const [navigationDataState, setNavigationDataState] = useState<
       NavigationData[]
