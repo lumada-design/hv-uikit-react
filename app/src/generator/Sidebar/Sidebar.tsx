@@ -11,19 +11,20 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { Colors } from "generator/Colors";
+import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { useContext, useEffect, useState } from "react";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
-import { FontSizes } from "generator/FontSizes";
-import { FontFamily } from "generator/FontFamily";
 import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
-import { Radii } from "generator/Radii";
-import { Spacing } from "generator/Spacing";
-import { Typography } from "generator/Typography";
-import { Zindices } from "generator/Zindices";
-import { Sizes } from "generator/Sizes";
+
+const Colors = lazy(() => import("generator/Colors"));
+const FontSizes = lazy(() => import("generator/FontSizes"));
+const FontFamily = lazy(() => import("generator/FontFamily"));
+const Radii = lazy(() => import("generator/Radii"));
+const Spacing = lazy(() => import("generator/Spacing"));
+const Typography = lazy(() => import("generator/Typography"));
+const Zindices = lazy(() => import("generator/Zindices"));
+const Sizes = lazy(() => import("generator/Sizes"));
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -34,6 +35,14 @@ const Sidebar = () => {
   const [themeName, setThemeName] = useState("customTheme");
   const [fullCode, setFullCode] = useState("");
   const [copied, setCopied] = useState(false);
+
+  const [colorsOpen, setColorsOpen] = useState(false);
+  const [fontsOpen, setFontsOpen] = useState(false);
+  const [radiiOpen, setRadiiOpen] = useState(false);
+  const [spacingOpen, setSpacingOpen] = useState(false);
+  const [typographyOpen, setTypographyOpen] = useState(false);
+  const [indicesOpen, setIndicesOpen] = useState(false);
+  const [sizesOpen, setSizesOpen] = useState(false);
 
   // the `replace` bit below is just a regex to remove the quotes from
   // the properties names, for displaying effect only.
@@ -190,56 +199,88 @@ export default ${themeName};`
               marginBottom: 20,
             }}
           >
-            <HvAccordion
-              id="colors"
-              label="colors"
-              classes={{ label: styles.label }}
-            >
-              <Colors />
-            </HvAccordion>
-            <HvAccordion
-              id="typography"
-              label="typography"
-              classes={{ label: styles.label }}
-            >
-              <Typography />
-            </HvAccordion>
-            <HvAccordion
-              id="fonts"
-              label="fonts"
-              classes={{ label: styles.label }}
-            >
-              <FontFamily />
-              <FontSizes />
-            </HvAccordion>
-            <HvAccordion
-              id="sizes"
-              label="sizes"
-              classes={{ label: styles.label }}
-            >
-              <Sizes />
-            </HvAccordion>
-            <HvAccordion
-              id="radii"
-              label="radii"
-              classes={{ label: styles.label }}
-            >
-              <Radii />
-            </HvAccordion>
-            <HvAccordion
-              id="spacing"
-              label="spacing"
-              classes={{ label: styles.label }}
-            >
-              <Spacing />
-            </HvAccordion>
-            <HvAccordion
-              id="zindices"
-              label="zindices"
-              classes={{ label: styles.label }}
-            >
-              <Zindices />
-            </HvAccordion>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="colors"
+                label="colors"
+                expanded={colorsOpen}
+                onChange={() => setColorsOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {colorsOpen && <Colors />}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="typography"
+                label="typography"
+                expanded={typographyOpen}
+                onChange={() => setTypographyOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {typographyOpen && <Typography />}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="fonts"
+                label="fonts"
+                expanded={fontsOpen}
+                onChange={() => setFontsOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {fontsOpen && (
+                  <>
+                    <FontFamily />
+                    <FontSizes />
+                  </>
+                )}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="sizes"
+                label="sizes"
+                expanded={sizesOpen}
+                onChange={() => setSizesOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {sizesOpen && <Sizes />}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="radii"
+                label="radii"
+                expanded={radiiOpen}
+                onChange={() => setRadiiOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {radiiOpen && <Radii />}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="spacing"
+                label="spacing"
+                expanded={spacingOpen}
+                onChange={() => setSpacingOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {spacingOpen && <Spacing />}
+              </HvAccordion>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <HvAccordion
+                id="zindices"
+                label="zindices"
+                expanded={indicesOpen}
+                onChange={() => setIndicesOpen((prev) => !prev)}
+                classes={{ label: styles.label }}
+              >
+                {indicesOpen && <Zindices />}
+              </HvAccordion>
+            </Suspense>
           </HvBox>
         </div>
       )}
