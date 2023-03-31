@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
-import { Paper as MuiPaper, Backdrop as MuiBackdrop } from "@mui/material";
+import {
+  Paper as MuiPaper,
+  paperClasses as MuiPaperClasses,
+  Backdrop as MuiBackdrop,
+} from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "utils/transientOptions";
 import fade from "utils/hexToRgbA";
@@ -10,8 +14,7 @@ export const StyledPaper = styled(
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
   color: theme.colors.secondary,
-  flex: $fullscreen ? "1" : "0 0 66.66667%",
-  maxWidth: $fullscreen ? "100%" : "66.66667%",
+  flex: $fullscreen ? "1" : "0 0 83.3333333%",
   backgroundColor: theme.colors.atmo1,
   padding: "0px",
   overflow: "auto",
@@ -25,6 +28,11 @@ export const StyledPaper = styled(
   "& svg *.color0": {
     fill: theme.colors.secondary,
   },
+  [`&.${MuiPaperClasses.root}`]: {
+    width: "inherit",
+    minWidth: $fullscreen ? "100%" : "33.3333333%",
+    maxWidth: $fullscreen ? "100%" : "83.3333333%",
+  },
 }));
 
 export const StyledBackdrop = styled(
@@ -36,8 +44,10 @@ export const StyledBackdrop = styled(
 
 export const StyledClose = styled(HvButton)({
   padding: 0,
-  minWidth: "inherit",
+  minWidth: "auto",
   position: "absolute",
   top: theme.space.sm,
   right: theme.space.sm,
+  width: 32,
+  height: 32,
 });
