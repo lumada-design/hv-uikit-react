@@ -19,7 +19,7 @@ export const GeneratorContext = createContext<GeneratorContextProp>({
 });
 
 const GeneratorProvider = ({ children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const [changedValues, setChangedValues] = useState({});
 
