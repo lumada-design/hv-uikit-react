@@ -57,7 +57,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                           <path
                             class="color0"
                             d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
-                            fill="var(--uikit-colors-acce1)"
+                            fill="var(--uikit-colors-secondary)"
                           />
                         </svg>
                       </div>
@@ -88,7 +88,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
             >
               <div
                 aria-expanded="false"
-                class="etta2py3 HvBaseDropdown-anchor css-1hicrvg-StyledAnchor-StyledDropdown eapzthe8"
+                class="etta2py3 HvBaseDropdown-anchor css-hfl5st-StyledAnchor-StyledDropdown eapzthe8"
                 role="combobox"
                 tabindex="-1"
               >
@@ -120,7 +120,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                       <path
                         class="color0"
                         d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="var(--uikit-colors-acce1)"
+                        fill="var(--uikit-colors-secondary)"
                       />
                     </svg>
                   </div>
@@ -135,7 +135,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="button selected e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
+            class="button selected e17vrbb40 HvButton-root css-kr5uhi-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
           >
@@ -159,7 +159,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     <path
                       class="color0"
                       d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
-                      fill="var(--uikit-colors-acce1)"
+                      fill="var(--uikit-colors-secondary)"
                     />
                   </svg>
                 </div>
@@ -169,7 +169,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="button e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
+            class="button e17vrbb40 HvButton-root css-kr5uhi-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
           >
@@ -193,7 +193,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                     <path
                       class="color0"
                       d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
-                      fill="var(--uikit-colors-acce1)"
+                      fill="var(--uikit-colors-secondary)"
                     />
                   </svg>
                 </div>
@@ -671,7 +671,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                           <path
                             class="color0"
                             d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
-                            fill="var(--uikit-colors-acce1)"
+                            fill="var(--uikit-colors-secondary)"
                           />
                         </svg>
                       </div>
@@ -702,7 +702,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
             >
               <div
                 aria-expanded="false"
-                class="etta2py3 HvBaseDropdown-anchor css-1hicrvg-StyledAnchor-StyledDropdown eapzthe8"
+                class="etta2py3 HvBaseDropdown-anchor css-hfl5st-StyledAnchor-StyledDropdown eapzthe8"
                 role="combobox"
                 tabindex="-1"
               >
@@ -734,7 +734,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                       <path
                         class="color0"
                         d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="var(--uikit-colors-acce1)"
+                        fill="var(--uikit-colors-secondary)"
                       />
                     </svg>
                   </div>
@@ -749,7 +749,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           <button
             aria-label="Select card view"
             aria-pressed="true"
-            class="button selected e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
+            class="button selected e17vrbb40 HvButton-root css-kr5uhi-StyledButton-StyledButton e138pvrm0"
             id="card"
             label="Select card view"
           >
@@ -773,7 +773,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     <path
                       class="color0"
                       d="M2 14h5V9H2zm1-4h3v3H3zM2 7h5V2H2zm1-4h3v3H3zm6 11h5V9H9zm1-4h3v3h-3zM9 2v5h5V2zm4 4h-3V3h3z"
-                      fill="var(--uikit-colors-acce1)"
+                      fill="var(--uikit-colors-secondary)"
                     />
                   </svg>
                 </div>
@@ -783,7 +783,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           <button
             aria-label="Select list view"
             aria-pressed="false"
-            class="button e17vrbb40 HvButton-root css-1p0hnby-StyledButton-StyledButton e138pvrm0"
+            class="button e17vrbb40 HvButton-root css-kr5uhi-StyledButton-StyledButton e138pvrm0"
             id="list"
             label="Select list view"
           >
@@ -807,7 +807,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                     <path
                       class="color0"
                       d="M0 7h2v2H0zm0-3h2V2H0zm0 10h2v-2H0zm4-5.6h12v-1H4zm0-5h12v-1H4zm0 10h12v-1H4z"
-                      fill="var(--uikit-colors-acce1)"
+                      fill="var(--uikit-colors-secondary)"
                     />
                   </svg>
                 </div>
@@ -1189,7 +1189,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="true"
-              class="button selected e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button selected e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="all"
             >
               <div
@@ -1205,7 +1205,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="critical"
             >
               <div
@@ -1221,7 +1221,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="major"
             >
               <div
@@ -1237,7 +1237,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="average"
             >
               <div
@@ -1253,7 +1253,7 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
             <button
               aria-controls="CustomControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="minor"
             >
               <div
@@ -2037,7 +2037,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
                           <path
                             class="color0"
                             d="m15.06836 14.51807-4.569-4.56885a5.96162 5.96162 0 1 0-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 0 1 1 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 0 1 6 1q.04926-.00073.09851 0A4.95079 4.95079 0 0 1 11 6q.00056.04906 0 .09839A4.95109 4.95109 0 0 1 6 11q-.04917.00036-.09845 0z"
-                            fill="var(--uikit-colors-acce1)"
+                            fill="var(--uikit-colors-secondary)"
                           />
                         </svg>
                       </div>
@@ -2058,7 +2058,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="true"
-              class="button selected e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button selected e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="all"
             >
               <div
@@ -2074,7 +2074,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="critical"
             >
               <div
@@ -2090,7 +2090,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="major"
             >
               <div
@@ -2106,7 +2106,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="average"
             >
               <div
@@ -2122,7 +2122,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
             <button
               aria-controls="mixedControlsCardsId"
               aria-pressed="false"
-              class="button e17vrbb40 HvButton-root css-19r7aux-StyledButton-StyledButton e138pvrm0"
+              class="button e17vrbb40 HvButton-root css-wfrnbr-StyledButton-StyledButton e138pvrm0"
               id="minor"
             >
               <div

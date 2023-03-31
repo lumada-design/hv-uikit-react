@@ -18,12 +18,12 @@ export const createClasses = (
     },
   }),
   selected: css({
-    outline: `1px solid ${theme.colors.acce1}`,
+    outline: `1px solid ${theme.colors.secondary}`,
     "&:hover": {
-      outline: `1px solid ${theme.colors.acce1}`,
+      outline: `1px solid ${theme.colors.secondary}`,
     },
     "&:focus": {
-      outline: `1px solid ${theme.colors.acce1}`,
+      outline: `1px solid ${theme.colors.secondary}`,
     },
   }),
   selectable: css({

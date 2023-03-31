@@ -11,16 +11,16 @@ export const StyledSnackbarContent = styled(
   transientOptions
 )(({ $variant }: { $variant: string }) => ({
   ...($variant === "success" && {
-    backgroundColor: theme.colors.sema8,
+    backgroundColor: theme.colors.positive_20,
   }),
   ...($variant === "error" && {
-    backgroundColor: theme.colors.sema9,
+    backgroundColor: theme.colors.negative_20,
   }),
   ...($variant === "default" && {
-    backgroundColor: theme.colors.sema7,
+    backgroundColor: theme.colors.neutral_20,
   }),
   ...($variant === "warning" && {
-    backgroundColor: theme.colors.sema20,
+    backgroundColor: theme.colors.warning_20,
   }),
   [`&.${snackbarContentClasses.root}`]: {
     width: "310px",
@@ -44,7 +44,7 @@ export const StyledMessageSpan = styled("div")({
 export const StyledMessageText = styled("div")({
   ...(theme.typography.body as CSSProperties),
   padding: `0 ${theme.space.xs}`,
-  color: theme.colors.base2,
+  color: theme.colors.base_dark,
   fontFamily: theme.fontFamily.body,
   maxHeight: "72px",
   wordBreak: "break-word",

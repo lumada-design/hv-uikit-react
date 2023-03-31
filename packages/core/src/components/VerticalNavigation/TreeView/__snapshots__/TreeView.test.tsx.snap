@@ -31,7 +31,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <path
               class="color0"
               d="M12.984 8 2 1.723v12.554L12.984 8M15 8 1 16V0z"
-              fill="var(--uikit-colors-acce1)"
+              fill="var(--uikit-colors-secondary)"
             />
           </svg>
         </div>
@@ -144,7 +144,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             <path
               class="color0"
               d="M14 14H2V2h12zM3 13h10V3H3z"
-              fill="var(--uikit-colors-acce1)"
+              fill="var(--uikit-colors-secondary)"
             />
           </svg>
         </div>

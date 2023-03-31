@@ -11,7 +11,7 @@ export const BrandSeparator = styled("div")({
   width: 1,
   height: theme.space.sm,
   margin: theme.space.xs,
-  backgroundColor: theme.colors.acce1,
+  backgroundColor: theme.colors.secondary,
 });
 
 export const BrandName = styled((props) => <HvTypography {...props} />)({

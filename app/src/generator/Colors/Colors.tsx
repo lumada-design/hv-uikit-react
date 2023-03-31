@@ -10,7 +10,7 @@ import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors } from "./utils";
 import debounce from "lodash/debounce";
 
-const groupsToShow = ["acce", "atmo", "base", "sema"]; // "sup", "cviz"
+const groupsToShow = ["acce", "atmo", "base", "sema"]; // "sup", "cat"
 
 const Colors = (): JSX.Element => {
   const { activeTheme, selectedMode } = useTheme();

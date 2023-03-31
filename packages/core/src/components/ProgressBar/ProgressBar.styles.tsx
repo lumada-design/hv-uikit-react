@@ -38,9 +38,9 @@ export const StyledProgressBar = styled(
   backgroundColor: "#000",
   height: 4,
   ...($status === "completed" && {
-    backgroundColor: theme.colors.sema1,
+    backgroundColor: theme.colors.positive,
   }),
   ...($status === "error" && {
-    backgroundColor: theme.colors.sema4,
+    backgroundColor: theme.colors.negative,
   }),
 }));

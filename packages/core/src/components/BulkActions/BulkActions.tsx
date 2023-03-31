@@ -146,7 +146,8 @@ export const HvBulkActions = ({
       )}
       $isSemantic={isSemantic}
       $baseColor={
-        activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+        activeTheme?.colors?.modes[selectedMode].base_light ||
+        theme.colors.base_light
       }
       {...others}
     >

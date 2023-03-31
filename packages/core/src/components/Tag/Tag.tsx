@@ -42,8 +42,8 @@ export type HvTagProps = Omit<MuiChipProps, "color" | "classes"> &
   };
 
 const getColor = (customColor, type, colors) => {
-  const defaultSemanticColor = theme.colors.sema7;
-  const defaultCategoricalColor = colors.cviz1;
+  const defaultSemanticColor = theme.colors.neutral_20;
+  const defaultCategoricalColor = colors.cat1;
 
   let backgroundColor;
 
@@ -85,7 +85,8 @@ export const HvTag = ({
   const { activeTheme, selectedMode } = useTheme();
 
   const getDeleteIcon = () => {
-    const disabledSemanticColor = type === "semantic" ? "atmo5" : "base2";
+    const disabledSemanticColor =
+      type === "semantic" ? "secondary_60" : "base_dark";
     const { tabIndex = 0 } = deleteButtonProps;
 
     return (
@@ -106,8 +107,8 @@ export const HvTag = ({
             ...(disabled ? { cursor: "not-allowed" } : undefined),
             height: 16,
           }}
-          color={disabled ? disabledSemanticColor : "base2"}
-          $color={disabled ? disabledSemanticColor : "base2"}
+          color={disabled ? disabledSemanticColor : "base_dark"}
+          $color={disabled ? disabledSemanticColor : "base_dark"}
         />
       </StyledButton>
     );
@@ -181,8 +182,9 @@ export const HvTag = ({
       $disabled={disabled || false}
       $categoricalFocus={type === "categorical" && !disabled}
       $categoricalDisabled={(type === "categorical" && disabled) || false}
-      $base1Color={
-        activeTheme?.colors?.modes[selectedMode].base1 || theme.colors.base1
+      $baseLightColor={
+        activeTheme?.colors?.modes[selectedMode].base_light ||
+        theme.colors.base_light
       }
       {...others}
     />

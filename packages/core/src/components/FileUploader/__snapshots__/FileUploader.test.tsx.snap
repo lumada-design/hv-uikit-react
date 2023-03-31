@@ -24,7 +24,7 @@ exports[`FileUploader > should render correctly 1`] = `
       </label>
     </div>
     <div
-      class="HvDropZone-dropZoneContainer css-14gqe2s-StyledDropZoneContainer e1r4xwg27"
+      class="HvDropZone-dropZoneContainer css-1w8y3mk-StyledDropZoneContainer e1r4xwg27"
       id="-3-button"
       role="button"
       tabindex="0"
@@ -55,7 +55,7 @@ exports[`FileUploader > should render correctly 1`] = `
             <path
               class="color0"
               d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-              fill="var(--uikit-colors-acce1)"
+              fill="var(--uikit-colors-secondary)"
             />
           </svg>
         </div>
@@ -101,7 +101,7 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 HvButton-root css-jjk7b2-StyledButton-StyledIconButton e138pvrm0"
+          class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div
@@ -124,7 +124,7 @@ exports[`FileUploader > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                    fill="var(--uikit-colors-acce1)"
+                    fill="var(--uikit-colors-secondary)"
                   />
                 </svg>
               </div>
@@ -155,7 +155,7 @@ exports[`FileUploader > should render correctly 1`] = `
         </span>
         <button
           aria-label="Remove File"
-          class="HvFile-removeButton e6pb7kb0 HvButton-root css-jjk7b2-StyledButton-StyledIconButton e138pvrm0"
+          class="HvFile-removeButton e6pb7kb0 HvButton-root css-6nk431-StyledButton-StyledIconButton e138pvrm0"
           id="hvfilelist4-values-remove-button"
         >
           <div
@@ -178,7 +178,7 @@ exports[`FileUploader > should render correctly 1`] = `
                   <path
                     class="color0"
                     d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                    fill="var(--uikit-colors-acce1)"
+                    fill="var(--uikit-colors-secondary)"
                   />
                 </svg>
               </div>

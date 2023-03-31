@@ -15,7 +15,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1nz5gso-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1r9xpm8-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -44,7 +44,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>
@@ -72,7 +72,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1tkd5e4-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-octfpv-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -95,7 +95,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>
@@ -108,7 +108,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1tkd5e4-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-octfpv-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -131,7 +131,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                 <path
                   class="color0"
                   d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>
@@ -156,7 +156,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
           <button
             aria-expanded="false"
             aria-label="Dropdown menu"
-            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-1392php-StyledButton-StyledButton e138pvrm0"
+            class="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton e13q7myz1 HvButton-root css-8lowi7-StyledButton-StyledButton e138pvrm0"
             disabled=""
             id="hv-drop-down-menu-20-icon-button"
           >
@@ -180,7 +180,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
                     <path
                       class="color0"
                       d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                      fill="var(--uikit-colors-atmo5)"
+                      fill="var(--uikit-colors-secondary_60)"
                     />
                   </svg>
                 </div>
@@ -209,7 +209,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
           class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1nz5gso-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1r9xpm8-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -238,7 +238,7 @@ exports[`BulkActions > Without actions > should render correctly 1`] = `
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>

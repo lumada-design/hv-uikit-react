@@ -9,7 +9,7 @@ export const StyledPaper = styled(
   MuiPaper,
   transientOptions
 )(({ $fullscreen }: { $fullscreen: boolean }) => ({
-  color: theme.colors.acce1,
+  color: theme.colors.secondary,
   flex: $fullscreen ? "1" : "0 0 66.66667%",
   maxWidth: $fullscreen ? "100%" : "66.66667%",
   backgroundColor: theme.colors.atmo1,
@@ -23,7 +23,7 @@ export const StyledPaper = styled(
     flexDirection: "column",
   }),
   "& svg *.color0": {
-    fill: theme.colors.acce1,
+    fill: theme.colors.secondary,
   },
 }));
 

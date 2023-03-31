@@ -13,7 +13,7 @@ export const StyledRoot = styled(
     display: "flex",
   }),
   ...($topBorder && {
-    borderTop: `solid 1px ${theme.colors.sema4}`,
+    borderTop: `solid 1px ${theme.colors.negative}`,
   }),
 }));
 
@@ -21,7 +21,7 @@ export const StyledTypography = styled(
   HvTypography,
   transientOptions
 )(({ $topGutter, $hideText }: { $topGutter: boolean; $hideText: boolean }) => ({
-  color: theme.colors.sema4,
+  color: theme.colors.negative,
   paddingRight: theme.space.xs,
   "&:first-of-type": {
     paddingLeft: theme.space.xs,

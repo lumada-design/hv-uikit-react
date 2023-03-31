@@ -57,7 +57,7 @@ export const StyledGroupContainer = styled(
 
     ...($invalid && {
       paddingBottom: theme.space.xs,
-      borderBottom: `1px solid ${theme.colors.sema4}`,
+      borderBottom: `1px solid ${theme.colors.negative}`,
     }),
   })
 );

@@ -84,14 +84,14 @@ const getStatusIcon = (
       return (
         <StyledSuccess
           className={clsx(classes?.icon, fileClasses.icon)}
-          color="sema1"
+          color="positive"
         />
       );
     case "fail":
       return (
         <StyledFail
           className={clsx(classes?.icon, fileClasses.icon)}
-          color="sema4"
+          color="negative"
         />
       );
     default:

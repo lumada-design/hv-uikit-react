@@ -29,7 +29,7 @@ export const styles = {
     height: 260,
     fontFamily: "Courier New",
     fontSize: "12px",
-    border: `1px solid ${theme.colors.acce4}`,
+    border: `1px solid ${theme.colors.secondary_80}`,
   }),
   themeName: css({
     display: "flex",

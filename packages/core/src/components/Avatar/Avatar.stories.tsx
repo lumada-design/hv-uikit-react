@@ -42,7 +42,7 @@ export default meta;
 export const Main: StoryObj<HvAvatarProps> = {
   args: {
     size: "md",
-    backgroundColor: "acce1",
+    backgroundColor: "secondary",
     color: "atmo1",
     variant: "circular",
     badge: "",
@@ -119,13 +119,13 @@ export const IconAvatars: StoryObj<HvAvatarProps> = {
         <HvAvatar>
           <LogIn color="atmo1" iconSize="XS" />
         </HvAvatar>
-        <HvAvatar backgroundColor="sema1">
+        <HvAvatar backgroundColor="positive">
           <Archives color="atmo1" iconSize="XS" />
         </HvAvatar>
-        <HvAvatar backgroundColor="sema2">
+        <HvAvatar backgroundColor="neutral">
           <Search color="atmo1" iconSize="XS" />
         </HvAvatar>
-        <HvAvatar backgroundColor="sema3">
+        <HvAvatar backgroundColor="warning">
           <Bookmark color="atmo1" iconSize="XS" />
         </HvAvatar>
       </>
@@ -179,7 +179,7 @@ export const Sizes: StoryObj<HvAvatarProps> = {
         <HvAvatar backgroundColor="sema6" size="sm">
           NA
         </HvAvatar>
-        <HvAvatar size="md" backgroundColor="sema3">
+        <HvAvatar size="md" backgroundColor="warning">
           <Bookmark iconSize="S" color="atmo1" />
         </HvAvatar>
         <HvAvatar size="lg" alt="Beatrice" src={woman1} />
@@ -201,13 +201,13 @@ export const Status: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="status1" size="xs" status="sema1">
+        <HvAvatar id="status1" size="xs" status="positive">
           AB
         </HvAvatar>
-        <HvAvatar id="status2" size="sm" status="sema2">
+        <HvAvatar id="status2" size="sm" status="neutral">
           AB
         </HvAvatar>
-        <HvAvatar id="status3" size="md" status="sema4">
+        <HvAvatar id="status3" size="md" status="negative">
           AB
         </HvAvatar>
         <HvAvatar id="status4" size="lg" status="atmo4">
@@ -233,13 +233,13 @@ export const Badge: StoryObj<HvAvatarProps> = {
   render: () => {
     return (
       <>
-        <HvAvatar id="badge1" size="xs" badge="sema1">
+        <HvAvatar id="badge1" size="xs" badge="positive">
           AB
         </HvAvatar>
-        <HvAvatar id="badge2" size="sm" badge="sema2">
+        <HvAvatar id="badge2" size="sm" badge="neutral">
           AB
         </HvAvatar>
-        <HvAvatar id="badge3" size="md" badge="sema4">
+        <HvAvatar id="badge3" size="md" badge="negative">
           AB
         </HvAvatar>
         <HvAvatar id="badge4" size="lg" badge="atmo4">
@@ -277,7 +277,7 @@ export const ContainerProps: StoryObj<HvAvatarProps> = {
         <HvAvatar
           id="props1"
           size="md"
-          status="sema1"
+          status="positive"
           alt="Ben"
           src={man1}
           role="button"
@@ -287,7 +287,7 @@ export const ContainerProps: StoryObj<HvAvatarProps> = {
         <HvAvatar
           id="props3"
           size="lg"
-          badge="sema4"
+          badge="negative"
           alt="Beatrice"
           src={woman1}
           role="button"
@@ -320,8 +320,8 @@ export const Buttons: StoryObj<HvAvatarProps> = {
           onClick={doAlert}
           variant="secondaryGhost"
         >
-          <HvAvatar id="icon" backgroundColor="sema1">
-            <LogIn semantic="sema8" iconSize="XS" />
+          <HvAvatar id="icon" backgroundColor="positive">
+            <LogIn semantic="positive_20" iconSize="XS" />
           </HvAvatar>
         </HvButton>
         <HvButton
@@ -344,7 +344,7 @@ export const Buttons: StoryObj<HvAvatarProps> = {
             id="letters"
             backgroundColor="sema19"
             size="md"
-            badge="sema4"
+            badge="negative"
           >
             BM
           </HvAvatar>
@@ -361,7 +361,7 @@ export const Buttons: StoryObj<HvAvatarProps> = {
             alt="Clara Soul"
             src={woman2}
             size="xl"
-            status="sema1"
+            status="positive"
           />
         </HvButton>
       </>

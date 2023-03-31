@@ -34,7 +34,7 @@ export const StyledCheckedBox = styled(
 
     "& svg": {
       "& path:nth-of-type(2)": {
-        fill: theme.colors.atmo5,
+        fill: theme.colors.secondary_60,
       },
     },
   },

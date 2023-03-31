@@ -67,11 +67,11 @@ export const StyledRoot = styled(
     ...($invalid && {
       "&:not(.disabled)": {
         [`& .${baseInputClasses.inputBorderContainer}`]: {
-          backgroundColor: theme.colors.sema4,
+          backgroundColor: theme.colors.negative,
         },
 
         [`&:hover .${baseInputClasses.inputBorderContainer}`]: {
-          backgroundColor: theme.colors.sema4,
+          backgroundColor: theme.colors.negative,
         },
       },
     }),
@@ -113,7 +113,7 @@ export const StyledInput = styled(
       fontFamily: theme.fontFamily.body,
 
       ...($invalid && {
-        borderColor: theme.colors.sema4,
+        borderColor: theme.colors.negative,
       }),
 
       ...($readOnly && {
@@ -249,14 +249,14 @@ export const StyledInput = styled(
         }),
 
         ...($invalid && {
-          border: `1px solid ${theme.colors.sema4}`,
+          border: `1px solid ${theme.colors.negative}`,
 
           "&:hover": {
-            border: `1px solid ${theme.colors.sema4}`,
+            border: `1px solid ${theme.colors.negative}`,
           },
 
           "&:focus-within": {
-            border: `1px solid ${theme.colors.sema4}`,
+            border: `1px solid ${theme.colors.negative}`,
           },
         }),
       },

@@ -24,7 +24,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 const baseInputStyles = css`
   "input:-webkit-autofill": {
     "-webkit-box-shadow": 0 0 0px 1000px ${theme.colors.atmo1} inset,
-    "-webkit-text-fill-color": ${theme.colors.acce1},
+    "-webkit-text-fill-color": ${theme.colors.secondary},
   },
 
   /* Clears input's clear and reveal buttons from IE */

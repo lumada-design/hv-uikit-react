@@ -692,7 +692,7 @@ export const HvInput = ({
 
     return (
       <StyledSuccess
-        semantic="sema1"
+        semantic="positive"
         className={clsx(inputClasses.icon, classes?.icon)}
       />
     );

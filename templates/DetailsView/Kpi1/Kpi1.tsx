@@ -13,7 +13,10 @@ export const Kpi1 = ({ title, count, diff }) => {
           <HvTypography variant="title2">{count}</HvTypography>
           {diff > 0 && (
             <>
-              <Top color={theme.colors.sema1} className={classes.indicator} />
+              <Top
+                color={theme.colors.positive}
+                className={classes.indicator}
+              />
               <HvTypography variant="caption1">{`${diff.toFixed(2)}
                more`}</HvTypography>
             </>
@@ -21,7 +24,7 @@ export const Kpi1 = ({ title, count, diff }) => {
           {diff < 0 && (
             <>
               <Bottom
-                color={theme.colors.sema3}
+                color={theme.colors.warning}
                 className={classes.indicator}
               />
               <HvTypography variant="caption1">{`${Math.abs(diff).toFixed(2)}

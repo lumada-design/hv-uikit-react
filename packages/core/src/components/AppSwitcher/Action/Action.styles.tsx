@@ -22,7 +22,7 @@ export const StyledTypography = styled(HvTypography)(() => ({
   padding: `6px ${theme.space.xs}`,
 
   border: "none",
-  borderLeft: `solid 2px ${theme.colors.acce1}`,
+  borderLeft: `solid 2px ${theme.colors.secondary}`,
 
   cursor: "pointer",
 

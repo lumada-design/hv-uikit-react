@@ -41,7 +41,7 @@ IconSize.parameters = {
 
 export const CustomColors = () => (
   <Bookmark
-    color={["acce3", "acce1"]}
+    color={["brand", "secondary"]}
     iconSize="M"
     aria-label="Click to bookmark"
   />
@@ -67,7 +67,7 @@ DecorativeIcon.parameters = {
 };
 
 export const SemanticIcon = () => (
-  <Level4 role="img" title="Warning!" iconSize="M" semantic="sema4" />
+  <Level4 role="img" title="Warning!" iconSize="M" semantic="negative" />
 );
 
 SemanticIcon.parameters = {

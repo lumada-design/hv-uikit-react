@@ -9,7 +9,7 @@ exports[`Badge > should render a small dot when count>0 without showCount 1`] = 
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge css-q9c65s-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge css-135k3e0-StyledBadge e16y1fwq0"
       />
     </div>
   </div>
@@ -26,7 +26,7 @@ exports[`Badge > should render correctly with custom label 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel css-1345ic2-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel css-1njxn4g-StyledBadge e16y1fwq0"
       >
         New!
       </div>
@@ -45,7 +45,7 @@ exports[`Badge > should render correctly with custom one-character label 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel HvBadgeClasses-badgeOneDigit css-14jlues-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel HvBadgeClasses-badgeOneDigit css-gf2eeo-StyledBadge e16y1fwq0"
       >
         !
       </div>
@@ -64,7 +64,7 @@ exports[`Badge > should render correctly with maxCount 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1345ic2-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1njxn4g-StyledBadge e16y1fwq0"
       >
         99+
       </div>
@@ -83,7 +83,7 @@ exports[`Badge > should render correctly with showCount 1`] = `
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1345ic2-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1njxn4g-StyledBadge e16y1fwq0"
       >
         12
       </div>
@@ -102,7 +102,7 @@ exports[`Badge > should render correctly with showCount and one-digit count 1`] 
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeOneDigit css-14jlues-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeOneDigit css-gf2eeo-StyledBadge e16y1fwq0"
       >
         9
       </div>
@@ -131,7 +131,7 @@ exports[`Badge > should render correctly with svg 1`] = `
         <path
           class="color0"
           d="M14 12V8a5.884 5.884 0 0 0-4-5.666V2a2 2 0 0 0-4 0v.334A5.884 5.884 0 0 0 2 8v4H0v1h6v1a2 2 0 0 0 4 0v-1h6v-1zM7 2a1 1 0 0 1 2 0v.086a5.85679 5.85679 0 0 0-2 0zm2 12a1 1 0 0 1-2 0v-1h2zm-6-2V8a5 5 0 0 1 10 0v4z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
       </svg>
     </div>
@@ -139,7 +139,7 @@ exports[`Badge > should render correctly with svg 1`] = `
       class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeIcon css-oawgqx-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount HvBadgeClasses-badgeIcon css-b2r6nz-StyledBadge e16y1fwq0"
       >
         99+
       </div>
@@ -163,7 +163,7 @@ exports[`Badge > should render correctly with text 1`] = `
       class="HvBadgeClasses-badgeContainer css-1ab0lly-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1345ic2-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showCount css-1njxn4g-StyledBadge e16y1fwq0"
       >
         99+
       </div>
@@ -182,7 +182,7 @@ exports[`Badge > should render custom label but not count when both are specifie
       class=" css-27p99g-StyledContainer e16y1fwq1"
     >
       <div
-        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel css-1345ic2-StyledBadge e16y1fwq0"
+        class="HvBadgeClasses-badgePosition HvBadgeClasses-badge HvBadgeClasses-showLabel css-1njxn4g-StyledBadge e16y1fwq0"
       >
         New!
       </div>

@@ -8,7 +8,7 @@ export const StyledIconContainer = styled("div")({
 });
 
 export const StyledTypography = styled((props) => <HvTypography {...props} />)({
-  color: theme.colors.base2,
+  color: theme.colors.base_dark,
   wordBreak: "break-word",
   maxWidth: "700px",
   overflow: "hidden",

@@ -47,10 +47,10 @@ export const StyledCalendarMonthlyCell = styled(HvTypography)({
   },
   [`&.${monthSelectorClasses.calendarMonthlyCellSelected}`]: {
     backgroundColor: theme.colors.atmo3,
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
     "&:hover": {
       backgroundColor: theme.colors.atmo3,
-      color: theme.colors.acce1,
+      color: theme.colors.secondary,
     },
   },
 });

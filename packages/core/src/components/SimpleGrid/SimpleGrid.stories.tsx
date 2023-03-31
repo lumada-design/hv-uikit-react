@@ -6,7 +6,7 @@ const style = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: theme.colors.sema7,
+  backgroundColor: theme.colors.neutral_20,
   minHeight: 80,
 };
 

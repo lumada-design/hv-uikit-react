@@ -22,7 +22,7 @@ const styles = {
     alignItems: "center",
   }),
   selected: css({
-    outline: `1px solid ${theme.colors.atmo5}`,
+    outline: `1px solid ${theme.colors.secondary_60}`,
   }),
 };
 

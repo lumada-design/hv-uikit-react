@@ -316,8 +316,8 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
             style={{
               paddingTop: "20px",
               paddingLeft: "30px",
-              backgroundColor: theme.colors.sema9,
-              color: theme.colors.base2,
+              backgroundColor: theme.colors.negative_20,
+              color: theme.colors.base_dark,
               height: "100%",
             }}
           >

@@ -3,7 +3,7 @@
 exports[`BaseCheckBox > checked > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-checked MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-checked MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       checked=""
@@ -27,12 +27,12 @@ exports[`BaseCheckBox > checked > should render correctly 1`] = `
         <path
           class="color0"
           d="M0 0h16v16H0z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
         <path
           class="color0"
           d="M16 16H0V0h16zM1 15h14V1H1z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
         <path
           class="color1"
@@ -49,7 +49,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
 <div>
   <span
     aria-disabled="true"
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root HvBaseCheckBox-disabled css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault Mui-disabled MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root HvBaseCheckBox-disabled css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
     tabindex="-1"
   >
     <input
@@ -79,7 +79,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
         <path
           class="color1"
           d="M16 16H0V0h16zM1 15h14V1H1z"
-          fill="var(--uikit-colors-atmo5)"
+          fill="var(--uikit-colors-secondary_60)"
         />
       </svg>
     </div>
@@ -90,7 +90,7 @@ exports[`BaseCheckBox > disabled > should render correctly 1`] = `
 exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-indeterminate MuiCheckbox-colorDefault HvBaseCheckBox-root css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -118,7 +118,7 @@ exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
         <path
           class="color1"
           d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
       </svg>
     </div>
@@ -129,7 +129,7 @@ exports[`BaseCheckBox > indeterminate > should render correctly 1`] = `
 exports[`BaseCheckBox > read only > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -158,7 +158,7 @@ exports[`BaseCheckBox > read only > should render correctly 1`] = `
         <path
           class="color1"
           d="M16 16H0V0h16zM1 15h14V1H1z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
       </svg>
     </div>
@@ -169,7 +169,7 @@ exports[`BaseCheckBox > read only > should render correctly 1`] = `
 exports[`BaseCheckBox > required > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -198,7 +198,7 @@ exports[`BaseCheckBox > required > should render correctly 1`] = `
         <path
           class="color1"
           d="M16 16H0V0h16zM1 15h14V1H1z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
       </svg>
     </div>
@@ -209,7 +209,7 @@ exports[`BaseCheckBox > required > should render correctly 1`] = `
 exports[`BaseCheckBox > should render correctly 1`] = `
 <div>
   <span
-    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-1bk84p2-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+    class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvBaseCheckBox-root css-kjqhjg-StyledCheckedBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
   >
     <input
       class="PrivateSwitchBase-input css-1m9pwf3"
@@ -237,7 +237,7 @@ exports[`BaseCheckBox > should render correctly 1`] = `
         <path
           class="color1"
           d="M16 16H0V0h16zM1 15h14V1H1z"
-          fill="var(--uikit-colors-acce1)"
+          fill="var(--uikit-colors-secondary)"
         />
       </svg>
     </div>

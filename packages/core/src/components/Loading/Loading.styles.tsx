@@ -35,11 +35,11 @@ const regular = {
 const regularAnimation = keyframes`
   0% { 
     transform: scale(1);
-    background-color: ${theme.colors.acce3};
+    background-color: ${theme.colors.brand};
   }
   50% { 
     transform: scale(1, 0.6); 
-    background-color: ${theme.colors.acce1};
+    background-color: ${theme.colors.secondary};
   }
 `;
 

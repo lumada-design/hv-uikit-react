@@ -9,9 +9,9 @@ export const StyledContainer = styled("div")({
 });
 
 export const StyledCode = styled("code")({
-  border: `1px solid ${theme.colors.atmo5}`,
+  border: `1px solid ${theme.colors.secondary_60}`,
   backgroundColor: theme.colors.atmo3,
-  color: theme.colors.acce1,
+  color: theme.colors.secondary,
   lineHeight: 1,
   margin: "0px 2px",
   padding: "3px 5px",
@@ -21,7 +21,7 @@ export const StyledCode = styled("code")({
 });
 
 export const StyledLink = styled("a")({
-  color: theme.colors.acce2,
+  color: theme.colors.primary,
   cursor: "pointer",
   fontWeight: 600,
 });

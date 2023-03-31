@@ -162,12 +162,12 @@ const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
       fontFamily: theme.fontFamily.body,
       // ADDED PROPS
       ...($link && {
-        color: theme.colors.acce2,
+        color: theme.colors.primary,
         textDecoration: "underline",
         cursor: "pointer",
       }),
       ...($disabled && {
-        color: theme.colors.atmo5,
+        color: theme.colors.secondary_60,
       }),
       ...($noWrap && {
         overflow: "hidden",

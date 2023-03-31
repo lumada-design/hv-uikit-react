@@ -23,7 +23,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1nz5gso-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1r9xpm8-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -52,7 +52,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>
@@ -73,7 +73,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1nz5gso-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1r9xpm8-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -102,7 +102,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>
@@ -123,7 +123,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
           class="HvCheckBox-container css-13jbcv2-StyledLabelContainer ezlsftu2"
         >
           <span
-            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1nz5gso-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
+            class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorDefault PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorDefault MuiCheckbox-root MuiCheckbox-colorDefault HvCheckBox-checkbox ezlsftu0 HvBaseCheckBox-root css-1r9xpm8-StyledCheckedBox-StyledBaseCheckBox edk6te40 css-balhlm-MuiButtonBase-root-MuiCheckbox-root"
           >
             <input
               class="PrivateSwitchBase-input css-1m9pwf3"
@@ -152,7 +152,7 @@ exports[`CheckBoxGroup > general > should render correctly 1`] = `
                 <path
                   class="color1"
                   d="M16 16H0V0h16zM1 15h14V1H1z"
-                  fill="var(--uikit-colors-acce1)"
+                  fill="var(--uikit-colors-secondary)"
                 />
               </svg>
             </div>

@@ -11,7 +11,7 @@ const styles = {
     paddingBottom: 5,
   }),
   headerTitle: css({
-    color: theme.colors.acce1,
+    color: theme.colors.secondary,
     fontSize: "18px",
     letterSpacing: "0.02em",
     lineHeight: "28px",

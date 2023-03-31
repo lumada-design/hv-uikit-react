@@ -164,7 +164,7 @@ export const CustomIcon: StoryObj<HvBannerProps> = {
         open
         offset={0}
         label="This is a banner with a custom icon."
-        customIcon={<Info color="base2" />}
+        customIcon={<Info color="base_dark" />}
       />
     );
   },
@@ -263,12 +263,12 @@ export const BannerVariations: StoryObj<HvBannerProps> = {
         <HvTypography variant="xsTitle">Custom icon</HvTypography>
         <BannerContent
           content="This is a default banner."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
           onClose={() => {}}
         />
         <BannerContent
           content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-          customIcon={<Info color="base2" />}
+          customIcon={<Info color="base_dark" />}
           onClose={() => {}}
         />
       </div>

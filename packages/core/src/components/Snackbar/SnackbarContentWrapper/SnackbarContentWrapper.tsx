@@ -57,7 +57,7 @@ const HvSnackbarContent = forwardRef<HTMLDivElement, HvSnackbarContentProps>(
     ref
   ) => {
     const icon =
-      customIcon || (showIcon && iconVariant(variant, "base2", undefined));
+      customIcon || (showIcon && iconVariant(variant, "base_dark", undefined));
     const innerAction: any = isValidElement(action) ? action : [action];
 
     return (

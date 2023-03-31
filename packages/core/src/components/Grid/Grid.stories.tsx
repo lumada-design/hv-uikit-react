@@ -19,12 +19,12 @@ export const Main: StoryObj<HvGridProps> = {
       padding: theme.space.sm,
       height: 150,
       textAlign: "center",
-      backgroundColor: theme.colors.sema7,
+      backgroundColor: theme.colors.neutral_20,
       fontSize: "12px",
       letterSpacing: "0.02em",
       lineHeight: "16px",
       fontWeight: 400,
-      color: theme.colors.base2,
+      color: theme.colors.base_dark,
       display: "flex",
       alignItems: "center",
     });
@@ -89,7 +89,7 @@ export const The12Columns: StoryObj<HvGridProps> = {
     });
 
     const StyledBox = styled("div")({
-      backgroundColor: theme.colors.sema7,
+      backgroundColor: theme.colors.neutral_20,
       display: "flex",
       height: "150px",
       width: "100%",
@@ -99,7 +99,7 @@ export const The12Columns: StoryObj<HvGridProps> = {
       paddingTop: 0,
       "&>*": {
         margin: "auto",
-        color: theme.colors.base2,
+        color: theme.colors.base_dark,
       },
     });
 

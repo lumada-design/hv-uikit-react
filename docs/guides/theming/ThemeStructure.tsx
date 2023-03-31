@@ -92,13 +92,13 @@ export const ThemeStructure = () => {
       height: "16px",
       width: "16px",
       marginRight: theme.space.xs,
-      border: `1px solid ${theme.colors.acce1}`,
+      border: `1px solid ${theme.colors.secondary}`,
     }),
-    sema1: css({
-      color: theme.colors.sema1,
+    positive: css({
+      color: theme.colors.positive,
     }),
-    sema2: css({
-      color: theme.colors.sema2,
+    neutral: css({
+      color: theme.colors.neutral,
     }),
   };
 
@@ -157,7 +157,7 @@ export const ThemeStructure = () => {
       return (
         <ThemeValue key={`${label}-${level}`} level={level} label={label}>
           <div className={styles.colorBox} style={{ backgroundColor: value }} />
-          <HvTypography variant="label" classes={{ root: styles.sema1 }}>
+          <HvTypography variant="label" classes={{ root: styles.positive }}>
             {value}
           </HvTypography>
         </ThemeValue>
@@ -174,7 +174,7 @@ export const ThemeStructure = () => {
         // String value
         return (
           <ThemeValue key={`${label}-${level}`} level={level} label={label}>
-            <HvTypography variant="label" classes={{ root: styles.sema1 }}>
+            <HvTypography variant="label" classes={{ root: styles.positive }}>
               "{processedValue}"
             </HvTypography>
           </ThemeValue>
@@ -184,7 +184,7 @@ export const ThemeStructure = () => {
       // Other value: number, etc
       return (
         <ThemeValue key={`${label}-${level}`} level={level} label={label}>
-          <HvTypography variant="label" classes={{ root: styles.sema2 }}>
+          <HvTypography variant="label" classes={{ root: styles.neutral }}>
             {value}
           </HvTypography>
         </ThemeValue>

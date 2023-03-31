@@ -22,10 +22,10 @@ export const StyledCalendarGrid = styled("div")({
   [`& .${singleCalendarClasses.cellsInRange}`]: {
     backgroundColor: theme.colors.atmo3,
     [`& .${singleCalendarClasses.startBookend}`]: {
-      borderLeft: `1px solid ${theme.colors.acce1}`,
+      borderLeft: `1px solid ${theme.colors.secondary}`,
       backgroundColor: theme.colors.atmo3,
       "&:hover": {
-        borderRight: `1px solid ${theme.colors.acce1}`,
+        borderRight: `1px solid ${theme.colors.secondary}`,
       },
     },
   },
@@ -33,7 +33,7 @@ export const StyledCalendarGrid = styled("div")({
   [`&:hover .${singleCalendarClasses.cellsInRange}`]: {
     backgroundColor: theme.colors.atmo3,
     [`& .${singleCalendarClasses.startBookend}`]: {
-      borderLeft: `1px solid ${theme.colors.acce1}`,
+      borderLeft: `1px solid ${theme.colors.secondary}`,
       borderRight: "inherit",
     },
   },
@@ -41,7 +41,7 @@ export const StyledCalendarGrid = styled("div")({
   [`& .${singleCalendarClasses.cellsInRange}:hover`]: {
     backgroundColor: theme.colors.atmo3,
     [`& .${singleCalendarClasses.calendarDate}`]: {
-      borderRight: `1px solid ${theme.colors.acce1}`,
+      borderRight: `1px solid ${theme.colors.secondary}`,
     },
   },
 

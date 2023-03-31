@@ -72,7 +72,7 @@ export const StyledListContainer = styled(
       },
     }),
     ...($validationState === "invalid" && {
-      borderBottom: `1px solid ${theme.colors.sema4}`,
+      borderBottom: `1px solid ${theme.colors.negative}`,
     }),
   })
 );

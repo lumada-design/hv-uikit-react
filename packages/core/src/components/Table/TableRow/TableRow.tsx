@@ -116,7 +116,7 @@ const StyledTableRow = (c: any) =>
           ...getBorderStyles("row", theme.table.rowHoverBorderColor),
         },
         [`&.${tableRowClasses.selected}`]: {
-          ...getBorderStyles("row", theme.colors.acce1),
+          ...getBorderStyles("row", theme.colors.secondary),
 
           "&:hover": {
             ...getBorderStyles("row", theme.table.rowHoverBorderColor),

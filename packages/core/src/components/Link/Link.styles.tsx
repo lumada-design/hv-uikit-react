@@ -6,6 +6,6 @@ import { outlineStyles } from "utils";
 export const StyledA = styled("a")({
   ...(theme.typography.label as CSSProperties),
   textDecoration: "underline",
-  color: theme.colors.acce2,
+  color: theme.colors.primary,
   "&:focus-visible": { ...outlineStyles },
 });

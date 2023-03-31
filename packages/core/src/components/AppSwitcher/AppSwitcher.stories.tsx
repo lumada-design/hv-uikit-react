@@ -27,19 +27,19 @@ const applicationsList: HvAppSwitcherActionApplication[] = [
   },
   {
     name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcher",
-    color: "acce2",
-    iconElement: <LeftAlign color="acce2" />,
+    color: "primary",
+    iconElement: <LeftAlign color="primary" />,
     description: "App 1 description",
   },
   {
     name: "No Icon App",
-    color: "acce3",
+    color: "brand",
     description: "This is a disabled App without an icon",
     disabled: true,
   },
   {
     name: "No Description App",
-    color: "acce3",
+    color: "brand",
   },
 ];
 

@@ -23,7 +23,7 @@ export const StyledRadio = styled((props) => <HvRadio {...props} />)({
     height: "16px",
 
     "&:hover": {
-      backgroundColor: theme.colors.sema7,
+      backgroundColor: theme.colors.neutral_20,
       borderRadius: "100%",
     },
   },

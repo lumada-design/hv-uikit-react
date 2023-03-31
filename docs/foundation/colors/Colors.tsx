@@ -4,6 +4,7 @@ import capitalize from "lodash/capitalize";
 import {
   HvProvider,
   HvTypography,
+  theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -34,7 +35,12 @@ const ColorsGroup = ({
   colors: Map<string, string>;
 }) => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: theme.colors.backgroundColor,
+        padding: theme.space.xs,
+      }}
+    >
       {Object.keys(themeColors[selectedTheme]).map((group) => (
         <div key={group}>
           <StyledGroup>
@@ -50,7 +56,7 @@ const ColorsGroup = ({
                         style={{
                           width: 0,
                           flexBasis:
-                            (color as string).includes("cviz") &&
+                            (color as string).includes("cat") &&
                             selectedTheme === "ds5" &&
                             idx !== 0 &&
                             idx % 9 === 0
@@ -68,9 +74,7 @@ const ColorsGroup = ({
                           <HvTypography variant="label">
                             {color as string}
                           </HvTypography>
-                          &nbsp;
                           <HvTypography variant="caption1">
-                            {" "}
                             {colors.get(color as string)}
                           </HvTypography>
                         </StyledColorName>

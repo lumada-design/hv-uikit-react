@@ -96,7 +96,7 @@ export const Required: StoryObj<HvSwitchProps> = {
 
 const StyledTypography = styled(HvTypography)(
   ({ state }: { state: boolean }) => ({
-    color: state ? theme.colors.sema1 : theme.colors.sema14,
+    color: state ? theme.colors.positive : theme.colors.sema14,
   })
 );
 
@@ -270,8 +270,8 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
           item
           xs={7}
           style={{
-            backgroundColor: theme.colors.sema9,
-            color: theme.colors.base2,
+            backgroundColor: theme.colors.negative_20,
+            color: theme.colors.base_dark,
           }}
         >
           <h4>Form errors:</h4>

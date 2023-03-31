@@ -49,7 +49,7 @@ const turquoiseTheme = createTheme({
   inheritColorModes: true,
   colors: {
     modes: {
-      dawn: { acce1: "#484349", acce2: "#18A999" },
+      dawn: { secondary: "#484349", primary: "#18A999" },
     },
   },
   fontFamily: {
@@ -57,13 +57,13 @@ const turquoiseTheme = createTheme({
   },
   button: { hoverColor: "#ecfcfa" },
   header: {
-    backgroundColor: theme.colors.acce2,
+    backgroundColor: theme.colors.primary,
     color: "#F6F8FF",
     brandColor: "#F6F8FF",
     height: "60px",
     hoverColor: "transparent",
     selectedItemColor: "#F6F8FF",
-    selectedItemBackgroundColor: theme.colors.acce1,
+    selectedItemBackgroundColor: theme.colors.secondary,
     selectedItemBorderTopColor: "transparent",
     selectedItemBorderTopThickness: "0px",
     selectedItemBorderBottomColor: "transparent",

@@ -11,7 +11,7 @@ export const Icons = () => {
     <HvBox sx={{ display: "flex", gap: 20 }}>
       <CheckboxCheck iconSize="XS" />
       <Bookmark
-        color={["acce3", "acce1"]}
+        color={["brand", "secondary"]}
         iconSize="S"
         aria-label="Click to bookmark"
       />

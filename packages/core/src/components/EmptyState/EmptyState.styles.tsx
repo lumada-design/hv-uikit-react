@@ -53,7 +53,7 @@ export const StyledTextContainer = styled(
     marginLeft: theme.space.xs,
   },
   "& a": {
-    color: theme.colors.acce2,
+    color: theme.colors.primary,
     textDecoration: "none",
   },
 }));

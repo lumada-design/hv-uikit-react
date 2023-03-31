@@ -3,7 +3,7 @@
 exports[`Button > sample snapshot testing > should match the snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="HvButton-root css-9lpic9-StyledButton e138pvrm0"
+    class="HvButton-root css-or2r1m-StyledButton e138pvrm0"
   >
     <div
       class="css-1nxr552-StyledContentDiv e138pvrm3"

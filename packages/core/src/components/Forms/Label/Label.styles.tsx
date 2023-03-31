@@ -16,7 +16,7 @@ export const StyledTypography = styled(
   }) => ({
     display: "inline-block",
     ...($labelDisabled && {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     }),
     ...($childGutter && {
       paddingBottom: "6px",

@@ -75,9 +75,9 @@ export const AverageService: StoryObj<HvKpiProps> = {
     return (
       <HvCard
         style={{ width: 280 }}
-        statusColor="sema1"
+        statusColor="positive"
         bgcolor="atmo2"
-        icon={<Level0Good title="Good" semantic="sema1" />}
+        icon={<Level0Good title="Good" semantic="positive" />}
       >
         <StyledContainer>
           <HvTypography
@@ -97,7 +97,7 @@ export const AverageService: StoryObj<HvKpiProps> = {
             >
               12 414
             </HvTypography>
-            <TopXS title="Up" semantic="sema1" />
+            <TopXS title="Up" semantic="positive" />
             <HvTypography>10%</HvTypography>
           </StyledBottomContainer>
         </StyledContainer>
@@ -184,8 +184,8 @@ export const IOPS: StoryObj<HvKpiProps> = {
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
-        statusColor="sema4"
-        icon={<Level2Average title="Bad" semantic="sema4" />}
+        statusColor="negative"
+        icon={<Level2Average title="Bad" semantic="negative" />}
       >
         <StyledContainer>
           <HvTypography
@@ -204,7 +204,7 @@ export const IOPS: StoryObj<HvKpiProps> = {
                 <HvTypography variant="caption2">-0,15%</HvTypography>
                 <HvTypography
                   variant="caption2"
-                  style={{ color: theme.colors.acce4 }}
+                  style={{ color: theme.colors.secondary_80 }}
                 >
                   Last 24h
                 </HvTypography>
@@ -330,7 +330,7 @@ export const Selectable: StoryObj<HvKpiProps> = {
               <HvTypography variant="caption2">+82,15%</HvTypography>
               <HvTypography
                 variant="caption2"
-                style={{ color: theme.colors.acce4 }}
+                style={{ color: theme.colors.secondary_80 }}
               >
                 Last 24h
               </HvTypography>
@@ -421,7 +421,7 @@ export const SelectableSemantic: StoryObj<HvKpiProps> = {
         selectable
         selected={selected}
         onClick={() => setSelected(!selected)}
-        statusColor="sema4"
+        statusColor="negative"
       >
         <StyledContainer>
           <HvTypography
@@ -439,7 +439,7 @@ export const SelectableSemantic: StoryObj<HvKpiProps> = {
               <HvTypography variant="caption2">-82,15%</HvTypography>
               <HvTypography
                 variant="caption2"
-                style={{ color: theme.colors.acce4 }}
+                style={{ color: theme.colors.secondary_80 }}
               >
                 Last 24h
               </HvTypography>
@@ -561,9 +561,9 @@ export const Gauge: StoryObj<HvKpiProps> = {
     return (
       <HvCard
         style={{ width: 222 }}
-        statusColor="sema1"
+        statusColor="positive"
         bgcolor="atmo2"
-        icon={<Level0Good title="Good" semantic="sema1" />}
+        icon={<Level0Good title="Good" semantic="positive" />}
       >
         <StyledContainer>
           <HvTypography
@@ -579,7 +579,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
             indicator="3,460"
             unit="t/h"
             percentage={125}
-            statusColor="sema1"
+            statusColor="positive"
             bgcolor="atmo2"
           />
         </StyledContainer>

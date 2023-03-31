@@ -44,7 +44,7 @@ exports[`BaseDropDown > should render correctly 1`] = `
               <path
                 class="color0"
                 d="M5.99994 8.65 1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="var(--uikit-colors-acce1)"
+                fill="var(--uikit-colors-secondary)"
               />
             </svg>
           </div>

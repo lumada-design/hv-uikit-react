@@ -88,8 +88,8 @@ export const parseTheme = (
 
   const styles: HvParsedThemeStyles = {
     bgColor: themeStructure.colors.modes[selectedMode]?.backgroundColor,
-    color: themeStructure.colors.modes[selectedMode].acce1,
-    accentColor: themeStructure.colors.modes[selectedMode].acce1,
+    color: themeStructure.colors.modes[selectedMode].secondary,
+    accentColor: themeStructure.colors.modes[selectedMode].secondary,
     colorScheme: themeStructure.colors.modes[selectedMode].type,
     fontSize: (typeof themeStructure.typography.body.fontSize === "string"
       ? themeStructure.typography.body.fontSize

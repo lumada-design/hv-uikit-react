@@ -24,7 +24,7 @@ export const StyledRadio = styled(
     pointerEvents: "initial",
     "& svg": {
       "& path:nth-of-type(2)": {
-        fill: theme.colors.atmo5,
+        fill: theme.colors.secondary_60,
       },
     },
   },

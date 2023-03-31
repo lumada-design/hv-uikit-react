@@ -27,10 +27,10 @@ export const StyledLinearProgress = styled(MuiLinearProgress)({
   },
 
   [`& .${MuiLinearProgressClasses.barColorPrimary}`]: {
-    backgroundColor: theme.colors.sema1,
+    backgroundColor: theme.colors.positive,
   },
 
   [`& .${MuiLinearProgressClasses.barColorSecondary}`]: {
-    backgroundColor: theme.colors.acce1,
+    backgroundColor: theme.colors.secondary,
   },
 });

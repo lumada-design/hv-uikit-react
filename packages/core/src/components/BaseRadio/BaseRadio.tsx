@@ -88,12 +88,12 @@ export const getSelectorIcons = (
 ) => {
   const { disabled, semantic } = options;
   const color =
-    (disabled && ["atmo3", "atmo5"]) ||
-    (semantic && ["base1", "base2"]) ||
+    (disabled && ["atmo3", "secondary_60"]) ||
+    (semantic && ["base_light", "base_dark"]) ||
     undefined;
   const checkedColor =
-    (disabled && ["atmo3", "atmo5"]) ||
-    (semantic && ["base2", "base1"]) ||
+    (disabled && ["atmo3", "secondary_60"]) ||
+    (semantic && ["base_dark", "base_light"]) ||
     undefined;
 
   return {

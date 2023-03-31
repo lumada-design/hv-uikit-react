@@ -18,13 +18,13 @@ export const StyledChip = styled(
     $disabled,
     $categoricalFocus,
     $categoricalDisabled,
-    $base1Color,
+    $baseLightColor,
   }: {
     $type: string;
     $disabled: boolean;
     $categoricalFocus: boolean;
     $categoricalDisabled: boolean;
-    $base1Color: string;
+    $baseLightColor: string;
   }) => ({
     "&.MuiChip-root": {
       height: 16,
@@ -33,7 +33,7 @@ export const StyledChip = styled(
       fontFamily: theme.fontFamily.body,
 
       [`& .${tagClasses.focusVisible}`]: {
-        backgroundColor: fade(theme.colors.base1, 0.3),
+        backgroundColor: fade(theme.colors.base_light, 0.3),
       },
       ...($type === "categorical" && {
         backgroundColor: "red",
@@ -45,7 +45,7 @@ export const StyledChip = styled(
           borderRadius: 8,
         },
         [`& .${tagClasses.label}`]: {
-          color: theme.colors.acce1,
+          color: theme.colors.secondary,
         },
         "&:focus:not(:focus-visible)": {
           outline: "0 !important",
@@ -56,7 +56,7 @@ export const StyledChip = styled(
         backgroundColor: theme.colors.atmo3,
         cursor: "not-allowed",
         [`& .${tagClasses.label}`]: {
-          color: theme.colors.atmo5,
+          color: theme.colors.secondary_60,
         },
       }),
       ...($categoricalFocus && {
@@ -68,7 +68,7 @@ export const StyledChip = styled(
         backgroundColor: theme.colors.atmo3,
         cursor: "not-allowed",
         [`& .${tagClasses.label}`]: {
-          color: theme.colors.atmo5,
+          color: theme.colors.secondary_60,
         },
         "&:hover": {
           backgroundColor: theme.colors.atmo3,
@@ -83,9 +83,9 @@ export const StyledChip = styled(
       paddingLeft: theme.space.xs,
       paddingRight: theme.space.xs,
       ...(theme.typography.caption1 as CSSProperties),
-      color: theme.colors.base2,
+      color: theme.colors.base_dark,
       "& p": {
-        color: theme.colors.base2,
+        color: theme.colors.base_dark,
       },
     },
 
@@ -97,7 +97,7 @@ export const StyledChip = styled(
       minHeight: 16,
       padding: 0,
       "&:hover": {
-        backgroundColor: `${$base1Color}30`,
+        backgroundColor: `${$baseLightColor}30`,
       },
       "&:focus": {
         ...outlineStyles,

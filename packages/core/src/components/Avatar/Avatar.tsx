@@ -79,7 +79,7 @@ export const HvAvatar = ({
   children: childrenProp,
   component = "div",
   size = "sm",
-  backgroundColor = "acce1",
+  backgroundColor = "secondary",
   color = "atmo1",
   src,
   srcSet,
@@ -134,7 +134,10 @@ export const HvAvatar = ({
   }
 
   if (!hasImgNotFailing) {
-    inlineStyle.backgroundColor = getColor(backgroundColor, theme.colors.acce1);
+    inlineStyle.backgroundColor = getColor(
+      backgroundColor,
+      theme.colors.secondary
+    );
     inlineStyle.color = getColor(color, theme.colors.atmo1);
   }
 
@@ -142,11 +145,11 @@ export const HvAvatar = ({
   if (status) {
     // set the status border. we're using the boxShadow property to set the border
     // to be inside the container and not on its edge.
-    const statusColor = getColor(status, theme.colors.sema1);
+    const statusColor = getColor(status, theme.colors.positive);
     statusInlineStyle.boxShadow = `inset 0px 0px 0px 2px ${statusColor}`;
   }
 
-  const badgeColor = getColor(badge || "", theme.colors.sema1);
+  const badgeColor = getColor(badge || "", theme.colors.positive);
 
   return (
     <StyledContainer

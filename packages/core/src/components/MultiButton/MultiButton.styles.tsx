@@ -34,7 +34,7 @@ export const StyledRoot = styled(
       borderTop: "solid 1px transparent",
       borderBottom: "solid 1px transparent",
       "&:disabled": {
-        color: theme.colors.atmo5,
+        color: theme.colors.secondary_60,
         borderLeft: `solid 1px ${theme.colors.atmo4}`,
         borderRight: `solid 1px ${theme.colors.atmo4}`,
         borderTop: "solid 1px transparent",
@@ -69,14 +69,14 @@ export const StyledRoot = styled(
         background: theme.colors.atmo1,
         ...(theme.typography.label as CSSProperties),
         borderRadius: theme.radii.base,
-        border: `solid 1px ${theme.colors.acce1}`,
+        border: `solid 1px ${theme.colors.secondary}`,
         zIndex: 2,
         "&:hover, &:focus": {
           background: theme.colors.atmo3,
         },
         "&:disabled": {
           zIndex: 1,
-          color: theme.colors.atmo5,
+          color: theme.colors.secondary_60,
           background: theme.colors.atmo1,
           border: `solid 1px ${theme.colors.atmo4}`,
         },
@@ -113,7 +113,7 @@ export const StyledButton = (Element) =>
       backgroundColor: `${theme.colors.atmo3}`,
     },
     "&:disabled": {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
       borderTop: `solid 1px ${theme.colors.atmo4}`,
       borderBottom: `solid 1px ${theme.colors.atmo4}`,
       "&:hover": {
@@ -143,19 +143,19 @@ export const StyledButton = (Element) =>
       background: theme.colors.atmo1,
       height: 34,
       ...(theme.typography.label as CSSProperties),
-      border: `solid 1px ${theme.colors.acce1}`,
+      border: `solid 1px ${theme.colors.secondary}`,
       zIndex: 2,
       "&:hover": {
         background: theme.colors.atmo3,
         "&:not(:disabled)": {
-          border: `solid 1px ${theme.colors.acce1}`,
+          border: `solid 1px ${theme.colors.secondary}`,
         },
         "&:disabled": {
           border: `solid 1px ${theme.colors.atmo4}`,
         },
       },
       "&:first-of-type, &:last-child": {
-        border: `solid 1px ${theme.colors.acce1}`,
+        border: `solid 1px ${theme.colors.secondary}`,
       },
 
       // prevent the focus ring to be hidden by sibling hover background
@@ -165,7 +165,7 @@ export const StyledButton = (Element) =>
       },
       "&:disabled": {
         zIndex: 1,
-        color: theme.colors.atmo5,
+        color: theme.colors.secondary_60,
         background: theme.colors.atmo1,
         border: `solid 1px ${theme.colors.atmo4}`,
       },

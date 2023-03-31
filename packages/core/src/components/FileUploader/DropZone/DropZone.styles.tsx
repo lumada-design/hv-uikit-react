@@ -25,7 +25,7 @@ export const StyledLabel = styled(
   paddingBottom: 6,
 
   ...($disabled && {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
   }),
 }));
 
@@ -34,7 +34,7 @@ export const StyledInfoMessage = styled(
   transientOptions
 )(({ $disabled }: { $disabled: boolean }) => ({
   ...($disabled && {
-    color: theme.colors.atmo5,
+    color: theme.colors.secondary_60,
   }),
 }));
 
@@ -52,12 +52,12 @@ export const StyledDropZoneContainer = styled(
 
   "&:hover": {
     background: `${theme.colors.atmo1}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.acce1}`,
+    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
   },
 
   "&:focus": {
     background: `${theme.colors.atmo1}`,
-    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.acce1}`,
+    border: `1px ${theme.fileUploader.dropZone.borderType} ${theme.colors.secondary}`,
     ...outlineStyles,
   },
 
@@ -74,11 +74,11 @@ export const StyledDropZoneContainer = styled(
     },
 
     [`& .${dropZoneClasses.dragText}`]: {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     },
 
     [`& .${dropZoneClasses.selectFilesText}`]: {
-      color: theme.colors.atmo5,
+      color: theme.colors.secondary_60,
     },
   }),
 }));

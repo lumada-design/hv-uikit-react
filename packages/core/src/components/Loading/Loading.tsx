@@ -36,7 +36,7 @@ export const HvLoading = (props: HvLoadingProps) => {
   const colorVariant = color ? "Color" : "";
   const variant = `${size}${colorVariant}`;
 
-  const inline = { backgroundColor: getColor(small ? "acce1" : "acce3") };
+  const inline = { backgroundColor: getColor(small ? "secondary" : "brand") };
   return (
     <StyledRoot
       hidden={!!hidden}

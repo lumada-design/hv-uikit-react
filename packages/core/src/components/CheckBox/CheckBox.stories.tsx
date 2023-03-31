@@ -175,7 +175,7 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
     });
 
     const StyledTitle = styled(HvTypography)({
-      color: theme.colors.base2,
+      color: theme.colors.base_dark,
     });
 
     return (
@@ -214,8 +214,8 @@ export const ExternalErrorMessage: StoryObj<HvCheckBoxProps> = {
         <HvGrid item xs={7} container>
           <HvGrid
             style={{
-              backgroundColor: theme.colors.sema9,
-              color: theme.colors.base2,
+              backgroundColor: theme.colors.negative_20,
+              color: theme.colors.base_dark,
             }}
             item
             xs={12}

@@ -80,7 +80,7 @@ const ListView = () => {
           <Kpi
             title="Sucess Requests"
             count={getRequestCount(0)}
-            color="sema1"
+            color="positive"
             variation="up"
             status={0}
             instance={instance}
@@ -92,7 +92,7 @@ const ListView = () => {
           <Kpi
             title="Error Requests"
             count={getRequestCount(1)}
-            color="sema4"
+            color="negative"
             variation="down"
             status={1}
             instance={instance}
@@ -104,7 +104,7 @@ const ListView = () => {
           <Kpi
             title="Open Requests"
             count={getRequestCount(2)}
-            color="sema3"
+            color="warning"
             variation="down"
             status={2}
             instance={instance}
@@ -116,7 +116,7 @@ const ListView = () => {
           <Kpi
             title="Unassigned Requests"
             count={getRequestCount(3)}
-            color="sema2"
+            color="neutral"
             variation="up"
             status={3}
             instance={instance}

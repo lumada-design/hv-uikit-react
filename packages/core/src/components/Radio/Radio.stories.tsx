@@ -224,8 +224,8 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
         <HvGrid container item xs={7}>
           <HvGrid
             style={{
-              backgroundColor: theme.colors.sema9,
-              color: theme.colors.base2,
+              backgroundColor: theme.colors.negative_20,
+              color: theme.colors.base_dark,
             }}
             item
             xs={12}

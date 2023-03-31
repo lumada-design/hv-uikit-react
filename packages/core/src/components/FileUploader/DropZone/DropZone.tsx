@@ -283,7 +283,7 @@ export const HvDropZone = withId(
                     classes?.dropZoneAreaIcon,
                     dropZoneClasses.dropZoneAreaIcon
                   )}
-                  color={disabled ? "atmo5" : "acce1"}
+                  color={disabled ? "secondary_60" : "secondary"}
                 />
                 <StyledDropAreaLabels
                   className={clsx(

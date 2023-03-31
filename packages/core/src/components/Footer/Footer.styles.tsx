@@ -62,7 +62,7 @@ export const StyledSeparator = styled("div")(
   ({ $breakpoints }: { $breakpoints: MuiBreakpoints }) => ({
     width: 1,
     height: 16,
-    backgroundColor: theme.colors.acce1,
+    backgroundColor: theme.colors.secondary,
     margin: `${theme.space.xs} ${theme.space.sm}`,
     [$breakpoints.down("sm")]: {
       display: "none",
