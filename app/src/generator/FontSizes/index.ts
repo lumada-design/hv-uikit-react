@@ -1,1 +1,1 @@
-export { default as FontSizes } from "./FontSizes";
+export { default } from "./FontSizes";

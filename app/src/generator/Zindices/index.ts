@@ -1,1 +1,1 @@
-export { default as Zindices } from "./Zindices";
+export { default } from "./Zindices";

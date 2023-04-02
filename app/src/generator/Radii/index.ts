@@ -1,1 +1,1 @@
-export { default as Radii } from "./Radii";
+export { default } from "./Radii";

@@ -84,22 +84,24 @@ export const HvProvider = ({
   );
 
   return (
-    <CacheProvider value={emotionCache}>
+    <>
       <Global
         styles={css`
           ${enableCssBaseline && CssBaseline}
           ${getThemesVars(themesList)}
         `}
       />
-      <HvThemeProvider
-        themes={themesList}
-        theme={theme || themesList[0].name}
-        colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
-        rootElementId={rootElementId}
-        classNameKey={classNameKey}
-      >
-        {children}
-      </HvThemeProvider>
-    </CacheProvider>
+      <CacheProvider value={emotionCache}>
+        <HvThemeProvider
+          themes={themesList}
+          theme={theme || themesList[0].name}
+          colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
+          rootElementId={rootElementId}
+          classNameKey={classNameKey}
+        >
+          {children}
+        </HvThemeProvider>
+      </CacheProvider>
+    </>
   );
 };
