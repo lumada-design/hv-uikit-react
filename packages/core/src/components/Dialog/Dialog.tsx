@@ -3,7 +3,7 @@ import clsx from "clsx";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { HvBaseProps } from "../../types/generic";
 import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
 import { getFocusableList } from "utils/focusableElementFinder";

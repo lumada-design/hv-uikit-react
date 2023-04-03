@@ -25,7 +25,7 @@ import {
   validationTypes,
 } from "../BaseInput/validations";
 import { setId } from "utils";
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { HvValidationMessages } from "types/forms";
 import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
 

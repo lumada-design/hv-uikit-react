@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { range } from "lodash";
+import range from "lodash/range";
 import { Meta, StoryObj } from "@storybook/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
 

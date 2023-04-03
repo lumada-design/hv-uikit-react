@@ -7,7 +7,7 @@ import {
 import { HvBaseProps } from "../../types";
 import { StyledSnackbar } from "./Snackbar.styles";
 import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
-import { capitalize } from "lodash";
+import capitalize from "lodash/capitalize";
 import { SyntheticEvent } from "react";
 import { setId } from "utils";
 import { HvActionGeneric } from "components";
