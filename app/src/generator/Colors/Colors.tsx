@@ -10,7 +10,7 @@ import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors } from "./utils";
 import debounce from "lodash/debounce";
 
-const groupsToShow = ["acce", "atmo", "base", "sema"]; // "sup", "cat"
+export const groupsToShow = ["acce", "atmo", "base", "sema"] as const; // "sup", "cat"
 
 const Colors = (): JSX.Element => {
   const { activeTheme, selectedMode } = useTheme();
@@ -76,7 +76,7 @@ const Colors = (): JSX.Element => {
         </div>
       </div>
       {groupsToShow.map((group) => {
-        const groupColors = getColors(colors, group);
+        const groupColors = getColors(group, colors);
         return (
           <div className={styles.group} key={group}>
             <div className={styles.groupName}>

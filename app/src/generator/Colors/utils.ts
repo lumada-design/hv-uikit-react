@@ -1,15 +1,64 @@
-export const getColors = (colors, type) => {
+import { HvTheme } from "@hitachivantara/uikit-react-core";
+import { groupsToShow } from "./Colors";
+
+const accentColors = [
+  "primary",
+  "primary_80",
+  "primary_20",
+  "brand",
+  "secondary",
+  "secondary_60",
+  "secondary_80",
+];
+
+const semanticColors = [
+  "positive",
+  "neutral",
+  "warning",
+  "negative",
+  "catastrophic",
+  "sema6",
+  "neutral_20",
+  "positive_80",
+  "positive_120",
+  "positive_20",
+  "negative_20",
+  "negative_120",
+  "negative_80",
+  "sema10",
+  "sema11",
+  "sema12",
+  "sema13",
+  "sema14",
+  "sema15",
+  "sema16",
+  "sema17",
+  "sema18",
+  "sema19",
+  "warning_20",
+  "warning_140",
+  "warning_120",
+];
+
+export const getColors = (
+  type: (typeof groupsToShow)[number],
+  colors?: HvTheme["colors"]["modes"][number]
+) => {
   const res = {};
   for (const key in colors) {
-    if (key.includes(type)) {
+    if (
+      key.includes(type) ||
+      (type === "acce" && accentColors.includes(key)) ||
+      (type === "sema" && semanticColors.includes(key))
+    ) {
       res[key] = colors[key];
     }
   }
   return res;
 };
 
-export const getColorGroupName = (color) => {
-  switch (color) {
+export const getColorGroupName = (type: (typeof groupsToShow)[number]) => {
+  switch (type) {
     case "acce":
       return "Accent";
     case "atmo":
@@ -18,10 +67,10 @@ export const getColorGroupName = (color) => {
       return "Base";
     case "sema":
       return "Semantic";
-    case "sup":
+    /* case "sup":
       return "Support";
     case "cat":
-      return "Visualizations";
+      return "Visualizations"; */
     default:
       return "";
   }

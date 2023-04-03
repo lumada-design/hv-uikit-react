@@ -39,7 +39,7 @@ const MyComponent = () => (
   <HvButton
     variant="secondaryGhost"
     onClick={() => {}}
-    style={{ backgroundColor: theme.colors.sema3 }}
+    style={{ backgroundColor: theme.colors.warning }}
   >
     Click me!
   </HvButton>
@@ -94,7 +94,7 @@ import { HvButton, theme } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
 
 const classes = {
-  customButton: css({ color: theme.colors.sema6 }),
+  customButton: css({ color: theme.colors.negative }),
 };
 
 const MyComponent = () => (
@@ -137,7 +137,7 @@ const classes = {
   tabsIndicator: css({
     [`& .${tabsClasses.indicator}`]: {
       "& > div": {
-        backgroundColor: theme.colors.sema1,
+        backgroundColor: theme.colors.positive,
       },
     },
   }),
@@ -260,7 +260,10 @@ import {
 import styled from "@emotion/styled";
 
 const StyledHvButton = styled(HvButton)(({ variant }: HvButtonProps) => ({
-  color: variant === "secondaryGhost" ? theme.colors.sema1 : theme.colors.sema4,
+  color:
+    variant === "secondaryGhost"
+      ? theme.colors.positive
+      : theme.colors.negative,
 }));
 
 const ReusableComponent = (props: HvButtonProps) => (
@@ -351,7 +354,7 @@ font sizes, shadows, spaces, among others.
 This type of customization is very powerful since one small change can drastically change an application.
 
 The example below shows how the `HvTypography` and `HvButton` components can be customized only by overriding the theme's font family and the value for the
-`acce1` color.
+`secondary` color.
 
 ```tsx
 import {
@@ -369,7 +372,7 @@ const newTheme = createTheme({
   inheritColorModes: true,
   colors: {
     modes: {
-      dawn: { acce1: "#bf6060" },
+      dawn: { secondary: "#bf6060" },
     },
   },
   fontFamily: {
