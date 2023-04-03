@@ -1,7 +1,7 @@
 import { HvFileData, HvFilesAddedEvent } from "../File";
 import dropZoneClasses, { HvDropZoneClasses } from "./dropZoneClasses";
 import React, { useRef, useState } from "react";
-import { uniqueId } from "lodash";
+import uniqueId from "lodash/uniqueId";
 import accept from "attr-accept";
 import {
   StyledDragText,

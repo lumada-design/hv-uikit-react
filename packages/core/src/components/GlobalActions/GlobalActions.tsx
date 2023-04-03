@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { HvBaseProps } from "../../types";
-import { isString } from "lodash";
+import isString from "lodash/isString";
 import { HvTypography } from "components";
 import {
   StyledActions,

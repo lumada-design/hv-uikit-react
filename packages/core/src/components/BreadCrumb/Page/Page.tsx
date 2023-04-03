@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { HvOverflowTooltip } from "components";
-import { startCase } from "lodash";
+import startCase from "lodash/startCase";
 import { MouseEventHandler } from "react";
 import pageClasses, { HvPageClasses } from "./pageClasses";
 import { StyledLink, StyledTypography } from "./Page.styles";

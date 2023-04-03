@@ -9,7 +9,7 @@ import {
   HvTagProps,
   HvFormStatus,
 } from "components";
-import { isEmpty } from "lodash";
+import isEmpty from "lodash/isEmpty";
 import { useState } from "react";
 import countryNamesArray from "./countries";
 import tagsInputClasses from "./tagsInputClasses";

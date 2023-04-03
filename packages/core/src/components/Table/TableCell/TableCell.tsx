@@ -18,7 +18,7 @@ import {
 import TableContext from "../TableContext";
 import { transientOptions } from "utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
-import { capitalize } from "lodash";
+import capitalize from "lodash/capitalize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "hooks";

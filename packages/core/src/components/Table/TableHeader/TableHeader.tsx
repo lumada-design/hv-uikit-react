@@ -7,7 +7,7 @@ import {
   useMemo,
 } from "react";
 import clsx from "clsx";
-import { capitalize } from "lodash";
+import capitalize from "lodash/capitalize";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";

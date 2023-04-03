@@ -8,7 +8,7 @@ import {
   HvPagination,
   HvActionGeneric,
 } from "components";
-import { uniqueId } from "lodash";
+import uniqueId from "lodash/uniqueId";
 import { useState } from "react";
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 

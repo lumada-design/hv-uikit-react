@@ -1,5 +1,5 @@
 import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
-import { isString } from "lodash";
+import isString from "lodash/isString";
 import { forwardRef } from "react";
 import { useWidth } from "hooks";
 import { HvBaseProps } from "../../types";

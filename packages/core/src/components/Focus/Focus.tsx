@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import React, { RefObject, useState } from "react";
 import { HvBaseProps } from "../../types";
 import { keyboardCodes, isBrowser } from "utils";
