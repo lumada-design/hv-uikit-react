@@ -47,6 +47,7 @@ export const themeColors = {
       "cat19",
       "cat20",
     ],
+    Support: ["supp1", "supp2", "supp3", "supp4", "supp5"],
     Polarized: [
       "positive",
       "cat21",
