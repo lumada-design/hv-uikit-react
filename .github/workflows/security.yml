@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  codedx-scan:
-    name: Run CodeDx Scan
+  codedx-scans:
+    name: Run CodeDx Scans
     runs-on: [self-hosted, Linux]
 
     env:
@@ -38,24 +38,19 @@ jobs:
       - name: Upload Reports to CodeDX
         run: .github/scripts/codedx-upload.sh
 
-  blackduck-scan:
-    name: Run BlackDuck Scan
+  black-duck-scans:
+    name: Run Black Duck Scans
     runs-on: [self-hosted, Linux]
 
-    env:
-      PROJECT_NAME: "UI Kit"
-      BLACKDUCK_VERSION: 7
-      BLACKDUCK_PACKAGES_PARAM: '[{"name":"uikit-react-core", "paths":[{"path":"/packages/core/dist"}, {"path": "/packages/core/src"}], "exceptions":[{"component":"@hitachivantara/uikit-react-core"}]}]'
-
     steps:
-      - name: Discover current branch
-        run: |
-          REF=$( echo "${{ github.ref }}" ) # gets the branch or tag ref that triggered the workflow (something like 'refs/heads/branch-name')
-          REF=$( echo ${REF##*/} ) # removes the 'refs/heads/' reference
-          echo "CURRENT_BRANCH=$REF" >> $GITHUB_ENV
-
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+          distribution: "adopt"
 
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
@@ -63,10 +58,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run Blackduck Scan
-        uses: ./.github/actions/blackduck-scan
-        with:
-          server-url: '${{ secrets.BLACKDUCK_SERVER_URL }}'
-          key: '${{ secrets.BLACKDUCK_TOKEN }}'
-          version: '${{ env.CURRENT_BRANCH }}'
-          packages: '${{ env.BLACKDUCK_PACKAGES_PARAM }}'
+      - name: Run Detect Scans
+        run: .github/scripts/blackduck-detect.sh
+        env:
+          BLACKDUCK_URL: '${{ secrets.BLACKDUCK_SERVER_URL }}'
+          BLACKDUCK_TOKEN: '${{ secrets.BLACKDUCK_TOKEN }}'
+          DETECT_VERSION: 8

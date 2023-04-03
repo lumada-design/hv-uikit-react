@@ -34,4 +34,9 @@ coverage
 # typescript
 *.tsbuildinfo
 
+# clean-publish
 package
+
+# blackduck
+detect.sh
+output
