@@ -33,7 +33,7 @@ export const InlineStyles = () => (
 // ----- Custom classes -----
 
 const classes = {
-  customButton: css({ color: theme.colors.sema6 }),
+  customButton: css({ color: theme.colors.negative }),
   label: css({ textTransform: "uppercase" }),
   tabsIndicator: css({
     [`& .${tabsClasses.indicator}`]: {

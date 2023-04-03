@@ -12,10 +12,10 @@ const newTheme = createTheme({
   colors: {
     modes: {
       dawn: {
-        brand: "#738f54",
+        green: "#738f54",
       },
       wicked: {
-        brand: "#738f54",
+        green: "#738f54",
       },
     },
   },
@@ -27,7 +27,7 @@ const Content = () => {
   return (
     <HvTypography
       style={{
-        color: activeTheme?.colors.modes[selectedMode].brand,
+        color: activeTheme?.colors.modes[selectedMode].green,
       }}
     >
       Hello from the UI Kit team!

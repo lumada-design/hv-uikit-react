@@ -187,15 +187,15 @@ const newTheme = createTheme({
     modes: {
       sand: {
         backgroundColor: "#EAE7DC",
-        sema1: "#738f54",
-        sema2: "#7699b8",
-        sema3: "#d9905f",
-        sema4: "#bf6060",
-        sema7: "#a4aeba",
-        sema8: "#b2bda6",
-        sema9: "#d19090",
-        acce2: "#536f8f",
-        acce2h: "#76a6db",
+        positive: "#738f54",
+        neutral: "#7699b8",
+        warning: "#d9905f",
+        negative: "#bf6060",
+        neutral_20: "#a4aeba",
+        positive_20: "#b2bda6",
+        negative_20: "#d19090",
+        primary: "#536f8f",
+        primary_80: "#76a6db",
       },
     },
   },
@@ -220,7 +220,7 @@ const MyApp = () => (
 There is not a limit to the number of themes you can pass to the `themes` property and you can use new themes as well as the default ones. Just make sure they all
 have different names. If a name is used more than once, only the one that appears last in the `themes` list will remain.
 
-Besides overriding values from the base theme, you can also add new properties to the theme if you need to. In the example below, a new color called `brand` was added
+Besides overriding values from the base theme, you can also add new properties to the theme if you need to. In the example below, a new color called `green` was added
 to the `dawn` and `wicked` color modes.
 
 ```tsx
@@ -233,10 +233,10 @@ const newTheme = createTheme({
   colors: {
     modes: {
       dawn: {
-        brand: "#738f54",
+        green: "#738f54",
       },
       wicked: {
-        brand: "#738f54",
+        green: "#738f54",
       },
     },
   },
@@ -303,10 +303,10 @@ const newTheme = createTheme({
   colors: {
     modes: {
       dawn: {
-        brand: "#738f54",
+        green: "#738f54",
       },
       wicked: {
-        brand: "#738f54",
+        green: "#738f54",
       },
     },
   },
@@ -317,7 +317,7 @@ const MyComponent = () => {
 
   return (
     <HvTypography
-      style={{ color: activeTheme?.colors.modes[selectedMode].brand }}
+      style={{ color: activeTheme?.colors.modes[selectedMode].green }}
     >
       Hello from the UI Kit team!
     </HvTypography>
@@ -353,7 +353,7 @@ const MyComponent = () => {
   return (
     <HvTypography
       style={{
-        color: theme.colors.sema2, // Same as var(--uikit-colors-sema2)
+        color: theme.colors.neutral, // Same as var(--uikit-colors-neutral)
         fontWeight: theme.fontWeights.semibold, // Same as var(--uikit-fontWeights-semibold)
         fontSize: theme.fontSizes.lg, // Same as var(--uikit-fontSizes-lg)
       }}
