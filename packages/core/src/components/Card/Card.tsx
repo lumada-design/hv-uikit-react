@@ -1,10 +1,10 @@
+import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
 import { HvBox } from "components";
-import { useCreateEmotion } from "hooks/useCreateEmotion";
 import { HvBaseProps } from "../../types/generic";
 import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/tokens";
-import { createClasses } from "./Card.styles";
+import { styles } from "./Card.styles";
 import cardClasses, { HvCardClasses } from "./cardClasses";
 
 export type HvCardProps = HvBaseProps & {
@@ -46,57 +46,73 @@ export const HvCard = ({
   bgcolor,
   ...others
 }: HvCardProps) => {
-  const { css } = useCreateEmotion();
-  const styles = createClasses(css);
-
   return (
-    <HvBox
-      aria-selected={selectable ? selected : undefined}
-      className={clsx(
-        styles.root,
-        css({
-          backgroundColor:
-            (bgcolor && theme.colors[bgcolor]) || theme.card.backgroundColor,
-        }),
-        "HvIsCardGridElement",
-        cardClasses.root,
-        classes?.root,
-        className,
-        selectable &&
-          clsx(styles.selectable, cardClasses.selectable, classes?.selectable),
-        selected &&
-          clsx(styles.selected, cardClasses.selected, classes?.selected)
-      )}
-      {...others}
-    >
-      <div
-        className={clsx(
-          styles.semanticContainer,
-          cardClasses.semanticContainer,
-          classes?.semanticContainer
-        )}
-      >
-        <div
+    <ClassNames>
+      {({ css }) => (
+        <HvBox
+          aria-selected={selectable ? selected : undefined}
           className={clsx(
-            styles.semanticBar,
+            css(styles.root),
             css({
-              height: selected ? 4 : 2,
               backgroundColor:
-                statusColor === "sema0"
-                  ? selected
-                    ? theme.colors.secondary
-                    : theme.colors.atmo4
-                  : theme.colors[statusColor],
+                (bgcolor && theme.colors[bgcolor]) ||
+                theme.card.backgroundColor,
             }),
-            cardClasses.semanticBar,
-            classes?.semanticBar
+            "HvIsCardGridElement",
+            cardClasses.root,
+            classes?.root,
+            className,
+            selectable &&
+              clsx(
+                css(styles.selectable),
+                cardClasses.selectable,
+                classes?.selectable
+              ),
+            selected &&
+              clsx(
+                css(styles.selected),
+                cardClasses.selected,
+                classes?.selected
+              )
           )}
-        />
-        <div className={clsx(styles.icon, cardClasses.icon, classes?.icon)}>
-          {icon}
-        </div>
-      </div>
-      {children}
-    </HvBox>
+          {...others}
+        >
+          <div
+            className={clsx(
+              css(styles.semanticContainer),
+              cardClasses.semanticContainer,
+              classes?.semanticContainer
+            )}
+          >
+            <div
+              className={clsx(
+                css(styles.semanticBar),
+                css({
+                  height: selected ? 4 : 2,
+                  backgroundColor:
+                    statusColor === "sema0"
+                      ? selected
+                        ? theme.colors.secondary
+                        : theme.colors.atmo4
+                      : theme.colors[statusColor],
+                }),
+                cardClasses.semanticBar,
+                classes?.semanticBar
+              )}
+            />
+            <div
+              className={clsx(
+                css(styles.icon),
+                cardClasses.icon,
+                classes?.icon
+              )}
+            >
+              {icon}
+            </div>
+          </div>
+          {children}
+        </HvBox>
+      )}
+    </ClassNames>
   );
 };

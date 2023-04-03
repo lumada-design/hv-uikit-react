@@ -2,36 +2,51 @@
 import {
   themes,
   HvThemeColorModeStructure,
-  HvParsedThemeStyles,
   HvThemeStructure,
+  theme,
 } from "@hitachivantara/uikit-styles";
+import { CSSProperties } from "react";
 import { HvTheme, HvCreateThemeProps } from "../types/theme";
 
 /**
- * Sets the element attributes for a theme and color mode.
+ * Sets the element style properties.
+ */
+const setElementStyle = (element: HTMLElement, style: CSSProperties) => {
+  for (const property in style) {
+    element.style[property] = style[property];
+  }
+};
+
+/**
+ * Sets the element attributes and style for a theme and color mode.
  */
 export const setElementAttrs = (
-  theme: string,
-  mode: string,
-  styles: HvParsedThemeStyles,
-  elementId?: string
+  themeName: string,
+  modeName: string,
+  colorScheme: string,
+  themeRootId?: string
 ) => {
-  const element =
-    (elementId && document.getElementById(elementId)) || document.body;
+  const element = themeRootId
+    ? document.getElementById(themeRootId)
+    : document.body;
 
-  element.setAttribute(`data-theme`, theme);
-  element.setAttribute(`data-color-mode`, mode);
+  if (element) {
+    element.setAttribute(`data-theme`, themeName);
+    element.setAttribute(`data-color-mode`, modeName);
 
-  // Set default properties for all components to inherit
-  element.style.backgroundColor = styles.bgColor;
-  element.style.colorScheme = styles.colorScheme;
-  element.style.accentColor = styles.accentColor;
-  element.style.color = styles.color;
-  element.style.fontSize = styles.fontSize;
-  element.style.fontWeight = styles.fontWeight;
-  element.style.lineHeight = styles.lineHeight;
-  element.style.letterSpacing = styles.letterSpacing;
-  element.style.fontFamily = styles.fontFamily;
+    // Set default properties for all components to inherit
+    setElementStyle(element, {
+      colorScheme: colorScheme,
+      backgroundColor: theme.colors.backgroundColor,
+      accentColor: theme.colors.secondary,
+      color: theme.colors.secondary,
+      fontSize: theme.typography.body.fontSize,
+      fontWeight: theme.typography.body.fontWeight,
+      lineHeight: theme.typography.body.lineHeight,
+      letterSpacing: theme.typography.body.letterSpacing,
+      fontFamily: theme.fontFamily.body,
+    });
+  }
 };
 
 /**
@@ -68,14 +83,14 @@ const applyThemeCustomizations = (obj: object, customizations: object) => {
  * For the color modes, the colors that are not defined will be replaced by the values from the dawn mode of the base theme.
  */
 export const createTheme = (
-  theme: HvCreateThemeProps
+  props: HvCreateThemeProps
 ): HvTheme | HvThemeStructure => {
   const {
     name,
     base = "ds5",
     inheritColorModes = true,
     ...customizations
-  } = theme;
+  } = props;
 
   // Apply customizations to the base theme
   const customizedTheme: HvTheme | HvThemeStructure = customizations
@@ -124,16 +139,16 @@ export const processThemes = (
   if (themesList && Array.isArray(themesList) && themesList.length > 0) {
     const list: (HvTheme | HvThemeStructure)[] = [];
 
-    themesList.map((theme) => {
+    themesList.map((thm) => {
       const i: number = list.findIndex(
-        (t) => t.name.trim() === theme.name.trim()
+        (t) => t.name.trim() === thm.name.trim()
       );
 
       if (i !== -1) {
         list.splice(i, 1);
-        list.push(theme);
+        list.push(thm);
       } else {
-        list.push(theme);
+        list.push(thm);
       }
     });
 

@@ -130,7 +130,12 @@ export const ThemeOverride = () => {
   const id = "hv-root-theme-override";
   return (
     <div id={id}>
-      <HvProvider classNameKey={id} rootElementId={id} themes={[themeOverride]}>
+      <HvProvider
+        classNameKey={id}
+        rootElementId={id}
+        cssTheme="scoped"
+        themes={[themeOverride]}
+      >
         <HvCard id={id} selectable>
           <HvCardHeader title="NEXT UI Kit" subheader="React UI library" />
           <HvCardContent>
@@ -162,7 +167,12 @@ export const GlobalOverride = () => {
   const id = "hv-root-global-override";
   return (
     <div id={id}>
-      <HvProvider classNameKey={id} rootElementId={id} themes={[globalTheme]}>
+      <HvProvider
+        classNameKey={id}
+        rootElementId={id}
+        cssTheme="scoped"
+        themes={[globalTheme]}
+      >
         <div
           style={{
             padding: "15px",

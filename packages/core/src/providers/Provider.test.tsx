@@ -38,7 +38,7 @@ describe("Provider", () => {
   it("should have the correct theme and color mode selected if no properties are provided", () => {
     const { container } = render(
       <div id="hv-root">
-        <HvProvider rootElementId="hv-root">
+        <HvProvider cssTheme="scoped" rootElementId="hv-root">
           <p>Theme provider test</p>
         </HvProvider>
       </div>
@@ -58,7 +58,11 @@ describe("Provider", () => {
   it("should have the correct theme and color mode selected if only the colorMode property is provided", () => {
     const { container } = render(
       <div id="hv-root">
-        <HvProvider rootElementId="hv-root" colorMode="wicked">
+        <HvProvider
+          cssTheme="scoped"
+          rootElementId="hv-root"
+          colorMode="wicked"
+        >
           <p>Theme provider test</p>
         </HvProvider>
       </div>
@@ -79,6 +83,7 @@ describe("Provider", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider
+          cssTheme="scoped"
           rootElementId="hv-root"
           themes={[ds3, customThemeInherit]}
           theme="custom-theme"
@@ -107,6 +112,7 @@ describe("Provider", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider
+          cssTheme="scoped"
           rootElementId="hv-root"
           themes={[ds3, customThemeNoInherit]}
           theme="custom-theme"
@@ -136,6 +142,7 @@ describe("Provider", () => {
     const { container } = render(
       <div id="hv-root">
         <HvProvider
+          cssTheme="scoped"
           rootElementId="hv-root"
           themes={[ds3, ds5, customThemeInherit]}
         >
@@ -159,6 +166,7 @@ describe("Provider", () => {
     const { container, getByRole } = render(
       <div id="hv-root">
         <HvProvider
+          cssTheme="scoped"
           rootElementId="hv-root"
           themes={[ds3, ds5, customThemeNoInherit]}
           theme="custom-theme"

@@ -1,7 +1,5 @@
-import { CSSInterpolation } from "@emotion/css";
+import { CSSInterpolation } from "@emotion/serialize";
 
-export const createClasses = (
-  css: (...args: CSSInterpolation[]) => string
-) => ({
-  root: css({ width: "100%" }),
-});
+export const styles: { [key: string]: CSSInterpolation } = {
+  root: { width: "100%" },
+};

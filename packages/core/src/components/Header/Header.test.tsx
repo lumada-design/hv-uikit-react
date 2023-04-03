@@ -13,7 +13,7 @@ import HitachiLogo from "./assets/HitachiLogo";
 describe("Header", () => {
   it("should render correctly with no data", () => {
     const { container } = render(
-      <HvProvider enableCssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvHeader />
       </HvProvider>
     );
@@ -22,7 +22,7 @@ describe("Header", () => {
 
   it("should render correctly the brand data", () => {
     const { getByText, getByTestId } = render(
-      <HvProvider enableCssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvHeader>
           <HvHeaderBrand
             logo={<HitachiLogo data-testid="logo" />}
@@ -55,7 +55,7 @@ describe("Header", () => {
     ];
 
     const { getAllByText, getAllByRole } = render(
-      <HvProvider enableCssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvHeader>
           <HvHeaderNavigation data={navigationData} />
         </HvHeader>
@@ -67,7 +67,7 @@ describe("Header", () => {
 
   it("should render correctly the actions elements", () => {
     const { getAllByRole } = render(
-      <HvProvider enableCssBaseline={false}>
+      <HvProvider cssBaseline="none">
         <HvHeader>
           <HvHeaderActions aria-label="My-aria-label">
             <HvButton

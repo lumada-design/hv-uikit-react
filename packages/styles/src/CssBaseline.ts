@@ -1,4 +1,4 @@
-export const CssBaseline = {
+const baseline = {
   /* Clears input's clear and reveal buttons from IE */
   "input[type=search]::-ms-clear": { display: "none", width: 0, height: 0 },
   "input[type=search]::-ms-reveal": { display: "none", width: 0, height: 0 },
@@ -20,23 +20,6 @@ export const CssBaseline = {
   /* Remove default margin. */
   "*": {
     margin: 0,
-  },
-
-  /* Allow percentage-based heights in the application. */
-  "html, body": {
-    height: "100%",
-  },
-
-  html: {
-    fontFamily:
-      "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-  },
-
-  body: {
-    fontFamily: "inherit",
-    lineHeight: "inherit",
-    WebkitFontSmoothing: "antialiased",
-    MozOsxFontSmoothing: "grayscale",
   },
 
   /* Headings are unstyled. */
@@ -92,4 +75,34 @@ export const CssBaseline = {
     color: "inherit",
     textDecoration: "inherit",
   },
+} as const;
+
+export const CssScopedBaseline = {
+  height: "100%",
+  fontFamily: "inherit",
+  lineHeight: "inherit",
+  WebkitFontSmoothing: "antialiased",
+  MozOsxFontSmoothing: "grayscale",
+  ...baseline,
+} as const;
+
+export const CssBaseline = {
+  /* Allow percentage-based heights in the application. */
+  "html, body": {
+    height: "100%",
+  },
+
+  html: {
+    fontFamily:
+      "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+  },
+
+  body: {
+    fontFamily: "inherit",
+    lineHeight: "inherit",
+    WebkitFontSmoothing: "antialiased",
+    MozOsxFontSmoothing: "grayscale",
+  },
+
+  ...baseline,
 } as const;

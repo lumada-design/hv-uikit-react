@@ -1,13 +1,11 @@
-import { CSSInterpolation } from "@emotion/css";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const createClasses = (
-  css: (...args: CSSInterpolation[]) => string
-) => ({
-  content: css({
+export const styles: { [key: string]: CSSInterpolation } = {
+  content: {
     padding: `0 ${theme.space.sm} 15px ${theme.space.sm}`,
     "&:last-child": {
       paddingBottom: theme.space.sm,
     },
-  }),
-});
+  },
+};
