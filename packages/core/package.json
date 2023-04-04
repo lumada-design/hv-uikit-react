@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "5.0.0-next.23",
+  "version": "5.0.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Core React components for the NEXT Design System.",
@@ -42,9 +42,9 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
-    "@hitachivantara/uikit-react-icons": "^5.0.0-next.22",
-    "@hitachivantara/uikit-react-shared": "^5.0.0-next.20",
-    "@hitachivantara/uikit-styles": "^5.0.0-next.22",
+    "@hitachivantara/uikit-react-icons": "^5.0.0",
+    "@hitachivantara/uikit-react-shared": "^5.0.0",
+    "@hitachivantara/uikit-styles": "^5.0.0",
     "@popperjs/core": "^2.11.6",
     "@types/react-table": "^7.7.14",
     "attr-accept": "^2.2.2",
@@ -91,5 +91,6 @@
     "files": [
       "tsconfig.json"
     ]
-  }
+  },
+  "gitHead": "c040141e323ce6aed12fd7ca98ddb3720f78141a"
 }
