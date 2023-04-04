@@ -451,9 +451,7 @@ return (
             <HvTableRow
               onChange={(event) => {
                 const newData = [...data];
-                newData[index].selected = (
-                  event.target as HTMLInputElement
-                ).checked;
+                newData[index].selected = event.target.checked;
                 setData(newData);
               }}
               {...row.getRowProps()}
