@@ -1018,7 +1018,7 @@ return (
           values={alternativeLayouts}
           multiSelect={false}
           onChange={(item) =>
-            setLayoutHook(() => (item as HvListValue)?.hook)
+            setLayoutHook(() => item?.hook)
           }
         />
       </div>

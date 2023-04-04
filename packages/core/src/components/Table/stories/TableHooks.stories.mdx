@@ -24,17 +24,17 @@ and provides the following functionality:
 
 The following plugin hooks are available:
 
-- `useHvTableStyles`: ensures the correct styling of the table by injecting the column's `variant` and `align` options into the `HvTableHeader` and
+- `useHvTableStyles`: Ensures the correct styling of the table by injecting the column's `variant` and `align` options into the `HvTableHeader` and
   `HvTableCell` components (via `getHeaderProps` and `getCellProps`, respectively). Also adds support for injecting the `styles`, `className` and
   `classes` into the `HvTable`, `HvTableHeader`, and `HvTableCell` components.
-- `useHvPagination`: eases the wiring of the `HvPagination` component when using pagination. [See pagination](#use-hv-pagination).
-- `useHvRowSelection`: creates and manages the UI for selecting rows. [See selection](#use-hv-row-selection).
-- `useHvBulkActions`: eases the wiring of the `HvBulkActions` component. [See bulk selection and actions](#use-hv-bulk-actions).
-- `useHvSortBy`: manages the table's header sorting functionality. [See sorting](#use-hv-sort-by).
-- `useHvRowExpand`: manages the row expanding functionality. [See row expanding](#use-hv-row-expand).
-- `useHvGroupBy`: allows defining header groups. [See selection](#use-hv-group-by).
-- `useHvTableSticky`: allows defining sticky headers and columns. [See sticky headers and columns](#use-hv-table-sticky).
-- `useHvHeaderGroups`: allows defining grouped headers. [See grouped headers](#use-hv-header-groups).
+- `useHvPagination`: Eases the wiring of the `HvPagination` component when using pagination. [See pagination](#use-hv-pagination).
+- `useHvRowSelection`: Creates and manages the UI for selecting rows. [See selection](#use-hv-row-selection).
+- `useHvBulkActions`: Eases the wiring of the `HvBulkActions` component. [See bulk selection and actions](#use-hv-bulk-actions).
+- `useHvSortBy`: Manages the table's header sorting functionality. [See sorting](#use-hv-sort-by).
+- `useHvRowExpand`: Manages the row expanding functionality. [See row expanding](#use-hv-row-expand).
+- `useHvGroupBy`: Allows defining header groups. [See selection](#use-hv-group-by).
+- `useHvTableSticky`: Allows defining sticky headers and columns. [See sticky headers and columns](#use-hv-table-sticky).
+- `useHvHeaderGroups`: Allows defining grouped headers. [See grouped headers](#use-hv-header-groups).
 
 <Canvas>
   <Story name="useHv* Hooks" story={TableHooksStories.UseHvHooksStory} />
@@ -65,7 +65,7 @@ Check [React Table's `useRowSelect` documentation](https://react-table.tanstack.
 The `useHvRowSelection` hook injects a new column with a `HvCheckBox` to select each row. It also manages the `HvTableRow's` `isSelected` property via the
 `getRowProps`.
 
-This hook is originally based on the code useRowSelect hook from react-table and implements its API, but extends it with support for locking the selection
+This hook is originally based on the code `useRowSelect` hook from react-table and implements its API, but extends it with support for locking the selection
 state of individual rows.
 
 <Canvas>
@@ -158,7 +158,7 @@ The following options are supported via the main options object passed to `useTa
 
 The following options are supported on any `Column` object passed to the `columns` options in `useTable()`:
 
-- `sticky: left | right`: Sticks this column to the defined side. Columns will be re-orderer if needed.
+- `sticky: "left" | "right"`: Sticks this column to the defined side. Columns will be re-orderer if needed.
 - `width: number`: Specifies the width for the column. Defaults to 150.
 - `minWidth: number`: Specifies the minimum width for the column. Defaults to 0.
 

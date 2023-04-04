@@ -1,0 +1,212 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import * as TableRenderersStories from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers" />
+
+# Table Renderers
+
+The UI Kit library provides a collection of utility functions that, together with the [Table Hooks](/docs/guides-table-table-hooks--use-hv-hooks-story),
+ease the setup of common column configurations, including the render function, alignment, missing data fallbacks and cell overflow.
+
+They add a set of out of the box features, not meant to be 100% feature complete, but instead, ease the majority of use-cases we have been encountering.
+If you need any customization or extension to these renderers, please feel free to copy and customize them.
+
+The following renderers are available:
+
+- `hvTextColumn`: Renders a string and includes an overflow tooltip.
+- `hvNumberColumn`: Renders a number aligning it correctly and includes an overflow tooltip.
+- `hvDateColumn`: Renders a date and formats it.
+- `hvExpandColumn`: Renders a column that includes an expand button.
+- `hvTagColumn`: Renders a column with a tag component inside the cell.
+- `hvSwitchColumn`: Renders a column that includes a switch to toggle between two values.
+- `hvDropdownColumn`: Renders a column that include a dropdown select between various values.
+- `hvProgressColumn`: Renders a progress bar to compare between a current value and max value.
+
+## All Renderers Table
+
+Complete sample table that uses most of the provided renderers.
+
+<Canvas>
+  <Story
+    name="All Column Renderers"
+    story={TableRenderersStories.AllColumnRenderersStory}
+  />
+</Canvas>
+
+## Text Column Renderer
+
+This functions renders text in the table. The column generated will have the text truncated with a tooltip if too long or if missing it will be
+replaced with a long dash.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Text Column Renderer"
+    story={TableRenderersStories.TextColumnRendererStory}
+  />
+</Canvas>
+
+## Number column renderer
+
+This functions renders numeric values in the table. The column generated will be right aligned and in case the value is missing it will be
+substituted by a long dash.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Number Column Renderer"
+    story={TableRenderersStories.NumberColumnRendererStory}
+  />
+</Canvas>
+
+## Date Column Renderer
+
+This functions renders a string formatted as a date. in case the value is missing it will be substituted by a long dash.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `format: string`: The parameter used as a reference to format the value. The default value is ISO8601.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Date Column Renderer"
+    story={TableRenderersStories.DateColumnRendererStory}
+  />
+</Canvas>
+
+## Expand Column Renderer
+
+This functions in conjunction with the `useHvRowExpand` hook renders a column with a button to open additional content in the table.
+Using the renderer allows the `useHvRowExpand` to render an expander in any column, instead of only in the first one. But the property
+`disableCreateExpandButton` must be true. The text rendered next to the expander button will have the same properties as the `hvTextColumn` column.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `expandRowButtonAriaLabel: string`: The aria label for the button when the expander is closed.
+- `collapseRowButtonAriaLabel: string`: The aria label for the button when the expander is open.
+- `getCanRowExpand: (row: HvRowInstance) => boolean`: The function executed to determine whether the expander button is able to be opened.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Expand Column Renderer"
+    story={TableRenderersStories.ExpandColumnRendererStory}
+  />
+</Canvas>
+
+## Switch Column Renderer
+
+This functions renders a column with a switch component embedded that follows the state of a boolean value. To change the value of the switch,
+the data in the table must be changed.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `switchLabel: string`: The aria label for the switch.
+- `falseLabel: string`: The label for the left side of the switch.
+- `trueLabel: string`: The label for the right side of the switch.
+- `switchProps: HvBaseSwitchProps`: Extra props passed to the switch. These values correspond to the `HvBaseSwitch` props.
+
+Output:
+
+- `col: HvTableColumnConfig`: the modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Switch Column Renderer"
+    story={TableRenderersStories.SwitchColumnRendererStory}
+  />
+</Canvas>
+
+## Tag Column Renderer
+
+This functions renders a column with a tag component embedded that follows the state of a json value. To change the value color and styles of the tag
+the data in the table must be changed. The function receives 3 key values that correspond to properties present in the table cell value or in the whole row.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `valueDataKey: string`: The property to use as text for the tag.
+- `colorDataKey: string`: The property to use as color for the tag this property.
+- `textColorDataKey: string`: The property to use as color for the text of the tag.
+- `fromRowData: boolean`: If `true` it will extract the `valueDataKey`, `colorDataKey`, and `textColorDataKey` from the row data. If `false`, it will extract the aforementioned properties from the cell value.
+- `tagProps: HvTagProps`: Extra props passed to the tag. These values correspond to the `HvTagProps` props.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Tag Column Renderer"
+    story={TableRenderersStories.TagColumnRendererStory}
+  />
+</Canvas>
+
+## Progress Column Renderer
+
+This functions renders a column with a progress bar embedded. The function receives a pair of callbacks to specify the status of the bar.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `getPartial: (row: HvRowInstance) => number`: A function that returns the current value of the bar.
+- `getTotal: (row: HvRowInstance) => number`: A function that returns the current max value of the bar.
+- `color: "primary" | "secondary"`: Which color to use for the bar.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Progress Column Renderer"
+    story={TableRenderersStories.ProgressColumnRendererStory}
+  />
+</Canvas>
+
+## Dropdown Column Renderer
+
+This functions renders a dropdown component embedded into a column. The function receives an `onChange` callback to communicate the selected value of the dropdown.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `id: string`: The dropdown id.
+- `placeholder: string`: The dropdown placeholder when nothing is selected.
+- `disabledPlaceholder: string`: The dropdown placeholder when is disabled.
+- `onChange: (identifier: string, value: ListValueProp) => void`: The function called when the dropdown value is changed.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story
+    name="Dropdown Column Renderer"
+    story={TableRenderersStories.DropdownColumnRendererStory}
+  />
+</Canvas>

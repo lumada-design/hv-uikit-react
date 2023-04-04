@@ -41,9 +41,9 @@ the bulk actions to change the row state.
 react-table provides some layout plugin hooks useful for instance when needing to virtualize rows and cells for performance or enabling user resizable
 tables/columns. They rely on the core column options `width`, `minWidth`, and `maxWidth`, that are used to calculate column and cell widths.
 
-- `useBlockLayout` renders headers and cells as inline-block elements with explicit width.
-- `useAbsoluteLayout` renders headers and cells as absolutely positioned elements with explicit width.
-- `useFlexLayout` renders headers and cells as inline-block elements, with the `width` being used as the `flex-basis` and `flex-grow`.
+- `useBlockLayout` Renders headers and cells as inline-block elements with explicit width.
+- `useAbsoluteLayout` Renders headers and cells as absolutely positioned elements with explicit width.
+- `useFlexLayout` Renders headers and cells as inline-block elements, with the `width` being used as the `flex-basis` and `flex-grow`.
 
 Note that not all built-in styles will apply when using any of the alternative layouts, so additional styling might be needed to
 accomplish the same look. Also, styles affecting element's widths (`width`, `min-width`, `max-width` and flex properties) must be
