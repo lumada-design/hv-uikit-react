@@ -25,7 +25,7 @@
     "lint:fix": "npm run lint --fix",
     "lint-staged": "lint-staged",
     "typecheck": "npm run typecheck -w packages --if-present",
-    "publish:release": "lerna publish --conventional-graduate --yes",
+    "publish": "lerna publish --conventional-graduate --yes",
     "publish:next": "lerna publish --conventional-prerelease --yes --preid next --dist-tag next",
     "prepare": "npx husky install .config/husky"
   },

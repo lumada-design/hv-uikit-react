@@ -14,7 +14,6 @@ on:
         type: string
 
 env:
-  ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
 
 jobs:
@@ -33,7 +32,7 @@ jobs:
         uses: ./.github/actions/deploy-documentation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG_GHPAGES_DEPLOY_KEY: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
+          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
           DOCUMENTATION_PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
           DOCUMENTATION_PUBLISH_MESSAGE: "docs: documentation for ${{ env.PUBLISH_FOLDER }} of ${{ github.repository }}"

@@ -36,15 +36,3 @@ jobs:
         with:
           name: applitools-logs
           path: ${{ github.workspace }}/applitools-logs.txt
-
-  complete:
-    name: Complete
-    runs-on: ubuntu-latest
-    needs: [run-tests]
-
-    steps:
-      - name: Notify Applitools Finish
-        run: |
-          curl -X POST \
-            https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${{env.APPLITOOLS_BATCH_ID}}/complete?apiKey=${{env.APPLITOOLS_API_KEY}} \
-            -H "accept:*/*" \

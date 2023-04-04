@@ -6,6 +6,15 @@ on:
       - master
       - "next*"
   workflow_call:
+    secrets:
+      CODE_DX_URL:
+        required: true
+      CODE_DX_API_KEY:
+        required: true
+      BLACKDUCK_URL:
+        required: true
+      BLACKDUCK_TOKEN:
+        required: true
 
 jobs:
   codedx-scans:
@@ -63,6 +72,6 @@ jobs:
       - name: Run Detect Scans
         run: .github/scripts/blackduck-detect.sh
         env:
-          BLACKDUCK_URL: "${{ secrets.BLACKDUCK_SERVER_URL }}"
+          BLACKDUCK_URL: "${{ secrets.BLACKDUCK_URL }}"
           BLACKDUCK_TOKEN: "${{ secrets.BLACKDUCK_TOKEN }}"
           DETECT_VERSION: 8

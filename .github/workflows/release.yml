@@ -10,12 +10,12 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    needs: [applitools]
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
-
+      CHECKOUT_REF: ${{ github.event.client_payload.ref }}
+      RELEASE_TYPE: ${{ github.event.client_payload.type }}
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -43,13 +43,12 @@ jobs:
         run: |
           npm ci --include=dev 
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-
-          if [[ "${{ env.RELEASE_BRANCH }}" == "master" ]]; then
+          if [[ "${{ github.ref_name }}" == "master" ]]; then
             npm run publish
-          elif [[ "${{ env.RELEASE_BRANCH }}" == "next"* ]]; then
+          elif [[ "${{ github.ref_name }}" == "next"* ]]; then
             npm run publish:next
           else
-            echo "Invalid event type: ${{ env.RELEASE_BRANCH }}"
+            echo "Invalid event type: ${{ github.ref_name }}"
             exit 1
           fi
 
@@ -57,10 +56,11 @@ jobs:
     name: Documentation
     uses: ./.github/workflows/documentation.yml
     needs: [release]
+    if: ${{ contains(needs.release.outputs.packages_published, 'true') }}
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
     with:
-      publish-folder: ${{ env.RELEASE_BRANCH }}
+      publish-folder: ${{ github.ref_name }}
 
   notify-release:
     name: Notify release
@@ -68,7 +68,7 @@ jobs:
     needs: [documentation]
 
     env:
-      DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.RELEASE_BRANCH }}/
+      DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
 
     steps:
       - name: Checkout
@@ -82,7 +82,7 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: ${{ env.RELEASE_BRANCH }}
+              branch: ${{ github.ref_name }}
             })
             const commitMessage = branch.data.commit.commit.message
             const slackMessage = commitMessage.replace('chore(release): publish', '')
