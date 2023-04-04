@@ -15,36 +15,34 @@ import {
 import { forwardRef } from "react";
 import { iconVariant } from "~/utils";
 
-export type HvBannerContentProps = Omit<
-  MuiSnackbarContentProps,
-  "variant" | "classes" | "onClose"
-> &
-  HvBaseProps & {
-    /** The message to display. */
-    content?: React.ReactNode;
-    /** Variant of the snackbar. */
-    variant?: HvBannerVariant;
-    /** Controls if the associated icon to the variant should be shown. */
-    showIcon?: boolean;
-    /** Custom icon to replace the variant default. */
-    customIcon?: React.ReactNode;
-    /** onClose function. */
-    onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    /** Actions to display on the right side. */
-    actions?: React.ReactNode | HvActionGeneric[];
-    /**  The callback function ran when an action is triggered, receiving `action` as param */
-    actionsCallback?: (
-      event: React.SyntheticEvent,
-      id: string,
-      action: HvActionGeneric
-    ) => void;
-    /** The position property of the header. */
-    actionsPosition?: HvBannerActionPosition;
-    /** The props to pass down to the Action Container. */
-    actionProps?: HvActionContainerProps;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvBannerContentClasses;
-  };
+export interface HvBannerContentProps
+  extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose">,
+    HvBaseProps {
+  /** The message to display. */
+  content?: React.ReactNode;
+  /** Variant of the snackbar. */
+  variant?: HvBannerVariant;
+  /** Controls if the associated icon to the variant should be shown. */
+  showIcon?: boolean;
+  /** Custom icon to replace the variant default. */
+  customIcon?: React.ReactNode;
+  /** onClose function. */
+  onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /** Actions to display on the right side. */
+  actions?: React.ReactNode | HvActionGeneric[];
+  /**  The callback function ran when an action is triggered, receiving `action` as param */
+  actionsCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
+  /** The position property of the header. */
+  actionsPosition?: HvBannerActionPosition;
+  /** The props to pass down to the Action Container. */
+  actionProps?: HvActionContainerProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvBannerContentClasses;
+}
 
 export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
   (

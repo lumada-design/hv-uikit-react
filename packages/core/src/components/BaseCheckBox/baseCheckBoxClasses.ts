@@ -1,11 +1,11 @@
 import { getClasses } from "~/utils";
 
-export type HvBaseCheckBoxClasses = {
+export interface HvBaseCheckBoxClasses {
   root?: string;
   disabled?: string;
   focusVisible?: string;
   icon?: string;
-};
+}
 
 const classKeys: string[] = ["root", "disabled", "focusVisible", "icon"];
 

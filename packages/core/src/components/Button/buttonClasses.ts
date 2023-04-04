@@ -1,10 +1,10 @@
 import { getClasses } from "~/utils";
 
-export type HvButtonClasses = {
+export interface HvButtonClasses {
   root?: string;
   startIcon?: string;
   focusVisible?: string;
-};
+}
 
 const classKeys: string[] = ["root", "startIcon", "focusVisible"];
 

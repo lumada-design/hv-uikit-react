@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvBaseDropdownClasses = {
+export interface HvBaseDropdownClasses {
   root?: string;
   rootDisabled?: string;
   anchor?: string;
@@ -21,7 +21,7 @@ export type HvBaseDropdownClasses = {
   inputExtensionOpenShadow?: string;
   inputExtensionFloatRight?: string;
   inputExtensionFloatLeft?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

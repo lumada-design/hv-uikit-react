@@ -3,11 +3,11 @@ import clsx from "clsx";
 import { StyledLi } from "./PathElement.styles";
 import pathElementClasses, { HvPathElementClasses } from "./pathElementClasses";
 
-export type HvPathElementProps = {
+export interface HvPathElementProps {
   last?: boolean;
   classes?: HvPathElementClasses;
   children: React.ReactElement;
-};
+}
 
 export const HvPathElement = ({
   classes,

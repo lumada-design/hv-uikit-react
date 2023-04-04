@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvActionsGenericClasses = {
+export interface HvActionsGenericClasses {
   /** Styles applied to element root. */
   root?: string;
   /** Styles applied to the visible buttons. */
@@ -13,7 +13,7 @@ export type HvActionsGenericClasses = {
   dropDownMenuButton?: string;
   /** Styles applied to the DropDownMenu IconButton component when it is selected. */
   dropDownMenuButtonSelected?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

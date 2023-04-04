@@ -13,7 +13,7 @@ import { HvActionGeneric, HvActionsGeneric } from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { useTheme } from "~/hooks";
 
-export type HvActionContainerProps = HvBaseProps & {
+export interface HvActionContainerProps extends HvBaseProps<HTMLButtonElement> {
   /** onClose function. */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Actions to display. */
@@ -26,7 +26,7 @@ export type HvActionContainerProps = HvBaseProps & {
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionContainerClasses;
-};
+}
 
 export const HvActionContainer = ({
   id,

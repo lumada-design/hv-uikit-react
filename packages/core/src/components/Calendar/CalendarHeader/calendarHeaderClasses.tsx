@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvCalendarHeaderClasses = {
+export interface HvCalendarHeaderClasses {
   root?: string;
   invalid?: string;
   headerDayOfWeek?: string;
@@ -8,7 +8,7 @@ export type HvCalendarHeaderClasses = {
   input?: string;
   inputBorderContainer?: string;
   invalidMessageStyling?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

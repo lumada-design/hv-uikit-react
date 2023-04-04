@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvAvatarClasses = {
+export interface HvAvatarClasses {
   root?: string;
   container?: string;
   img?: string;
@@ -15,7 +15,7 @@ export type HvAvatarClasses = {
   xl?: string;
   circular?: string;
   square?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

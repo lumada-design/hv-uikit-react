@@ -7,7 +7,7 @@ export const StyledIconContainer = styled("div")({
   marginLeft: -theme.space.xs,
 });
 
-export const StyledTypography = styled((props) => <HvTypography {...props} />)({
+export const StyledTypography = styled(HvTypography)({
   color: theme.colors.base_dark,
   wordBreak: "break-word",
   maxWidth: "700px",

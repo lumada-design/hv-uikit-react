@@ -1,10 +1,10 @@
 import { getClasses } from "~/utils";
 
-export type HvPageClasses = {
+export interface HvPageClasses {
   a?: string;
   link?: string;
   label?: string;
-};
+}
 
 const classKeys: string[] = ["a", "link", "label"];
 

@@ -11,7 +11,7 @@ import {
 } from "./MessageContainer.styles";
 import { setId } from "~/utils";
 
-export type HvMessageContainerProps = HvBaseProps & {
+export interface HvMessageContainerProps extends HvBaseProps {
   /** Icon to be presented. */
   icon?: React.ReactNode;
   /** The message to display. */
@@ -26,7 +26,7 @@ export type HvMessageContainerProps = HvBaseProps & {
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMessageContainerClasses;
-};
+}
 
 export const HvMessageContainer = ({
   id,

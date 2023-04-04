@@ -1,11 +1,11 @@
 import { getClasses } from "~/utils";
 
-export type HvActionContainerClasses = {
+export interface HvActionContainerClasses {
   actionContainer?: string;
   closeAction?: string;
   iconContainer?: string;
   actionsInnerContainer?: string;
-};
+}
 
 const classKeys: string[] = [
   "actionContainer",

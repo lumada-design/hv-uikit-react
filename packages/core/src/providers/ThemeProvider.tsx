@@ -7,7 +7,7 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import { setElementAttrs } from "~/utils";
-import { HvTheme } from "../types/theme";
+import { HvTheme } from "~/types";
 
 export { HvThemeContext };
 export type { HvThemeContextValue };

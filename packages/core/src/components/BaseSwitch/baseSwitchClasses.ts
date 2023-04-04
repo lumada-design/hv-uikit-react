@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvBaseSwitchClasses = {
+export interface HvBaseSwitchClasses {
   /** Styles applied to the component. */
   root?: string;
   /** Styles applied to the switch when it is disabled. */
@@ -19,7 +19,7 @@ export type HvBaseSwitchClasses = {
   thumb?: string;
   /** Class applied to the root element if keyboard focused. */
   focusVisible?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

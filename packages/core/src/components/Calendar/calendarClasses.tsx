@@ -1,13 +1,13 @@
 import { getClasses } from "~/utils";
 
-export type HvCalendarClasses = {
+export interface HvCalendarClasses {
   root?: string;
   rangeCalendarContainer?: string;
   singleCalendar?: string;
   focusSelection?: string;
   calendarMonthlyCell?: string;
   calendarMonthlyCellSelected?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

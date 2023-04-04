@@ -5,82 +5,83 @@ import {
   RadioButtonUnselected,
   RadioButtonSelected,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import { StyledRadio } from "./BaseRadio.styles";
 import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
 
-export type HvBaseRadioProps = Omit<MuiRadioProps, "onChange" | "classes"> &
-  HvBaseProps<HTMLInputElement, { onChange }> & {
-    /**
-     * Class names to be applied.
-     */
-    className?: string;
-    /**
-     * A Jss Object used to override or extend the styles applied to the radio button.
-     */
-    classes?: HvBaseRadioClasses;
-    /**
-     * Id to be applied to the root node.
-     */
-    id?: string;
-    /**
-     * The input name.
-     */
-    name?: string;
-    /**
-     * The value of the input.
-     *
-     * The default value is "on".
-     */
-    value?: any;
-    /**
-     * Indicates that user input is required.
-     */
-    required?: boolean;
-    /**
-     * Indicates that the input is not editable.
-     */
-    readOnly?: boolean;
-    /**
-     * Indicates that the input is disabled.
-     */
-    disabled?: boolean;
-    /**
-     * If `true` the radio button is selected, if set to `false` the radio button is not selected.
-     *
-     * When defined the radio button state becomes controlled.
-     */
-    checked?: boolean;
-    /**
-     * When uncontrolled, defines the initial checked state.
-     */
-    defaultChecked?: boolean;
-    /**
-     * The callback fired when the radio button is pressed.
-     */
-    onChange?: (
-      event: React.ChangeEvent<HTMLInputElement>,
-      checked: boolean,
-      value: any
-    ) => void;
-    /**
-     * Whether the selector should use semantic colors.
-     */
-    semantic?: boolean;
-    /**
-     * Properties passed on to the input element.
-     */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-    /**
-     * Callback fired when the component is focused with a keyboard.
-     * We trigger a `onFocus` callback too.
-     */
-    onFocusVisible?: (event: React.FocusEvent<any>) => void;
-    /**
-     * @ignore
-     */
-    onBlur?: (event: React.FocusEvent<any>) => void;
-  };
+export interface HvBaseRadioProps
+  extends Omit<MuiRadioProps, "onChange" | "classes">,
+    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the radio button.
+   */
+  classes?: HvBaseRadioClasses;
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * The input name.
+   */
+  name?: string;
+  /**
+   * The value of the input.
+   *
+   * The default value is "on".
+   */
+  value?: any;
+  /**
+   * Indicates that user input is required.
+   */
+  required?: boolean;
+  /**
+   * Indicates that the input is not editable.
+   */
+  readOnly?: boolean;
+  /**
+   * Indicates that the input is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * If `true` the radio button is selected, if set to `false` the radio button is not selected.
+   *
+   * When defined the radio button state becomes controlled.
+   */
+  checked?: boolean;
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked?: boolean;
+  /**
+   * The callback fired when the radio button is pressed.
+   */
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    value: any
+  ) => void;
+  /**
+   * Whether the selector should use semantic colors.
+   */
+  semantic?: boolean;
+  /**
+   * Properties passed on to the input element.
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible?: (event: React.FocusEvent<any>) => void;
+  /**
+   * @ignore
+   */
+  onBlur?: (event: React.FocusEvent<any>) => void;
+}
 
 export const getSelectorIcons = (
   options: { disabled: boolean; semantic: boolean },

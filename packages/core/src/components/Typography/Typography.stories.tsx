@@ -11,13 +11,16 @@ export default { title: "Foundation/Typography", component: HvTypography };
 
 export const Main: StoryObj<HvTypographyProps> = {
   args: {
-    children: "Welcome to NEXT Design System!",
     variant: "title1",
     link: false,
     disabled: false,
     noWrap: false,
+    paragraph: false,
   },
   decorators: [(Story) => <div style={{ width: 400 }}>{Story()}</div>],
+  render: (args) => (
+    <HvTypography {...args}>Welcome to NEXT Design System!</HvTypography>
+  ),
 };
 
 const variants = [

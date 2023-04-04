@@ -9,7 +9,8 @@ import {
   checkIfDateIsDisabled,
   isDateRangeProp,
 } from "../utils";
-import { DateRangeProp, HvTooltip, HvTypography } from "../..";
+import { DateRangeProp } from "../Calendar";
+import { HvTooltip, HvTypography } from "~/components";
 import { useComputation } from "~/hooks";
 import calendarCellClasses, {
   HvCalendarCellClasses,
@@ -162,7 +163,7 @@ export const HvCalendarCell = ({
   );
 };
 
-export type HvCalendarCellProps = {
+export interface HvCalendarCellProps {
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -202,6 +203,6 @@ export type HvCalendarCellProps = {
   isDateSelectionMode?: boolean;
   rangeMode?: boolean;
   tabIndex?: number;
-};
+}
 
 export default HvCalendarCell;

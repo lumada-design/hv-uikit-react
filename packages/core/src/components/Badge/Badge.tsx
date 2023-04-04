@@ -1,10 +1,10 @@
 import { HvTypography, HvTypographyVariants } from "~/components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import badgeClasses, { HvBadgeClasses } from "./badgeClasses";
 import clsx from "clsx";
 
-export type HvBadgeProps = HvBaseProps & {
+export interface HvBadgeProps extends HvBaseProps {
   /**
    * Count is the number of unread notifications.
    * Note count and label are mutually exclusive.
@@ -33,7 +33,7 @@ export type HvBadgeProps = HvBaseProps & {
   textVariant?: HvTypographyVariants;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBadgeClasses;
-};
+}
 
 /**
  * The badge is a component used to notify the user that something has occurred, in the app context.

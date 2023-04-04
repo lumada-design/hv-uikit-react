@@ -1,13 +1,13 @@
 import { getClasses } from "~/utils";
 
-export type HvMonthSelectorClasses = {
+export interface HvMonthSelectorClasses {
   calendarMonthlyGrid?: string;
   rangeModeWidth?: string;
   normalWidth?: string;
   focusSelection?: string;
   calendarMonthlyCell?: string;
   calendarMonthlyCellSelected?: string;
-};
+}
 
 const classKeys: string[] = [
   "calendarMonthlyGrid",

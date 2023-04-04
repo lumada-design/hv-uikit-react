@@ -41,7 +41,7 @@ export interface IconBaseProps extends HTMLDivProps {
    */
   inverted?: boolean;
   /**
-   * * Props passed down to the svg element..
+   * Props passed down to the svg element.
    */
   svgProps?: React.SVGProps<SVGSVGElement>;
 }

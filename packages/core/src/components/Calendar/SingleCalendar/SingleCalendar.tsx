@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-
 import { VIEW_MODE, DATETIMEFORMAT_OPTIONS } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
@@ -196,7 +195,7 @@ export const HvSingleCalendar = ({
   );
 };
 
-export type HvSingleCalendarProps = {
+export interface HvSingleCalendarProps {
   /**
    * Styles applied from the theme.
    */
@@ -282,4 +281,4 @@ export type HvSingleCalendarProps = {
    * Content on the upper part of the calendar.
    */
   children?: React.ReactNode;
-};
+}

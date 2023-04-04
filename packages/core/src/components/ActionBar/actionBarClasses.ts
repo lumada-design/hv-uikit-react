@@ -1,8 +1,8 @@
 import { getClasses } from "~/utils";
 
-export type HvActionBarClasses = {
+export interface HvActionBarClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

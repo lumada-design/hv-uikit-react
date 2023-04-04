@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvAppSwitcherActionClasses = {
+export interface HvAppSwitcherActionClasses {
   root?: string;
   icon?: string;
   iconUrl?: string;
@@ -9,7 +9,7 @@ export type HvAppSwitcherActionClasses = {
   selected?: string;
   typography?: string;
   title?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

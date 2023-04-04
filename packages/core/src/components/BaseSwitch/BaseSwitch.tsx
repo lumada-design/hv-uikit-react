@@ -2,76 +2,77 @@ import React, { useState, useCallback } from "react";
 import clsx from "clsx";
 import { SwitchProps as MuiSwitchProps } from "@mui/material";
 import { StyledSwitch } from "./BaseSwitch.styles";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
 
-export type HvBaseSwitchProps = Omit<MuiSwitchProps, "onChange" | "classes"> &
-  HvBaseProps<HTMLInputElement, { onChange }> & {
-    /**
-     * Class names to be applied.
-     */
-    className?: string;
-    /**
-     * A Jss Object used to override or extend the styles applied to the switch.
-     */
-    classes?: HvBaseSwitchClasses;
-    /**
-     * Id to be applied to the root node.
-     */
-    id?: string;
-    /**
-     * The input name.
-     */
-    name?: string;
-    /**
-     * The value of the input.
-     *
-     * Is up to the application's logic when to consider the submission of this value.
-     * Generally it should be used only when the switch is neither unchecked nor indeterminate.
-     *
-     * The default value is "on".
-     */
-    value?: any;
-    /**
-     * Indicates that user input is required.
-     */
-    required?: boolean;
-    /**
-     * Indicates that the input is not editable.
-     */
-    readOnly?: boolean;
-    /**
-     * Indicates that the input is disabled.
-     */
-    disabled?: boolean;
-    /**
-     * If `true` the switch is selected, if set to `false` the switch is not selected.
-     *
-     * When defined the switch state becomes controlled.
-     */
-    checked?: boolean;
-    /**
-     * When uncontrolled, defines the initial checked state.
-     */
-    defaultChecked?: boolean;
-    /**
-     * The callback fired when the switch is pressed.
-     */
-    onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
-    /**
-     * Properties passed on to the input element.
-     */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-    /**
-     * Callback fired when the component is focused with a keyboard.
-     * We trigger a `onFocus` callback too.
-     */
-    onFocusVisible?: (event: React.FocusEvent<any>) => void;
-    /**
-     * @ignore
-     */
-    onBlur?: (event: React.FocusEvent<any>) => void;
-  };
+export interface HvBaseSwitchProps
+  extends Omit<MuiSwitchProps, "onChange" | "classes">,
+    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the switch.
+   */
+  classes?: HvBaseSwitchClasses;
+  /**
+   * Id to be applied to the root node.
+   */
+  id?: string;
+  /**
+   * The input name.
+   */
+  name?: string;
+  /**
+   * The value of the input.
+   *
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the switch is neither unchecked nor indeterminate.
+   *
+   * The default value is "on".
+   */
+  value?: any;
+  /**
+   * Indicates that user input is required.
+   */
+  required?: boolean;
+  /**
+   * Indicates that the input is not editable.
+   */
+  readOnly?: boolean;
+  /**
+   * Indicates that the input is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * If `true` the switch is selected, if set to `false` the switch is not selected.
+   *
+   * When defined the switch state becomes controlled.
+   */
+  checked?: boolean;
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked?: boolean;
+  /**
+   * The callback fired when the switch is pressed.
+   */
+  onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+  /**
+   * Properties passed on to the input element.
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible?: (event: React.FocusEvent<any>) => void;
+  /**
+   * @ignore
+   */
+  onBlur?: (event: React.FocusEvent<any>) => void;
+}
 
 /**
  * A Switch is <b>binary</b> and work as a digital on/off button.

@@ -1,10 +1,16 @@
-import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
-import { HvBaseProps } from "../../types";
-import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
+import { HvBaseProps } from "~/types";
 import bulkActionsClasses, { HvBulkActionsClasses } from "./bulkActionsClasses";
-import { HvButton, HvButtonProps, HvButtonSize } from "../Button";
+import {
+  HvButton,
+  HvButtonProps,
+  HvButtonSize,
+  HvCheckBox,
+  HvCheckBoxProps,
+  HvActionGeneric,
+  HvActionsGenericProps,
+  HvTypography,
+} from "~/components";
 import { useEffect, useState } from "react";
-import { HvTypography } from "~/components";
 import {
   StyledGenericActions,
   StyledRoot,
@@ -16,7 +22,7 @@ import { setId } from "~/utils";
 import { theme } from "@hitachivantara/uikit-styles";
 import { useTheme } from "~/hooks";
 
-export type HvBulkActionsProps = HvBaseProps & {
+export interface HvBulkActionsProps extends HvBaseProps {
   /**
    * Custom label for select all checkbox
    */
@@ -79,7 +85,7 @@ export type HvBulkActionsProps = HvBaseProps & {
    * A Jss Object used to override or extend the styles applied.
    */
   classes?: HvBulkActionsClasses;
-};
+}
 
 /**
  * Bulk Actions allow users to perform an action on a single or multiple items.

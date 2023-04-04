@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { setId } from "~/utils";
-import {
-  HvFormElementContext,
-  HvFormElementValueContext,
-} from "../Forms/FormElement";
+import { HvFormElementContext, HvFormElementValueContext } from "~/components";
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";
 import calendarClasses, { HvCalendarClasses } from "./calendarClasses";
@@ -116,10 +113,10 @@ export const HvCalendar = ({
   );
 };
 
-export type DateRangeProp = {
+export interface DateRangeProp {
   startDate: Date;
   endDate?: Date;
-};
+}
 
 export type VisibilitySelectorActions =
   | "previous_month"
@@ -129,7 +126,7 @@ export type VisibilitySelectorActions =
   | "month"
   | "month_year";
 
-export type HvCalendarProps = {
+export interface HvCalendarProps {
   /**
    * Styles applied from the theme.
    */
@@ -214,4 +211,4 @@ export type HvCalendarProps = {
    * Indicates if header should display the day of week.
    */
   showDayOfWeek?: boolean;
-};
+}

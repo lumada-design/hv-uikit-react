@@ -2,7 +2,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import startCase from "lodash/startCase";
 import { isValidElement, MouseEventHandler } from "react";
-import { HvBaseProps } from "../../types/generic";
+import { HvBaseProps } from "~/types/generic";
 import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
 import { HvPathElement } from "./PathElement";
 import { HvPage } from "./Page";
@@ -12,11 +12,15 @@ import {
   StyledTypography,
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
-import { HvDropDownMenuProps } from "../DropDownMenu";
+import { HvDropDownMenuProps } from "~/components";
 
-export type HvBreadCrumbPathElement = { label: string; path: string };
+export interface HvBreadCrumbPathElement {
+  label: string;
+  path: string;
+}
 
-export type HvBreadCrumbProps = HvBaseProps<HTMLDivElement, { onClick }> & {
+export interface HvBreadCrumbProps
+  extends HvBaseProps<HTMLDivElement, { onClick }> {
   /** List of breadcrumb. */
   listRoute?: HvBreadCrumbPathElement[];
   /** URL to build the breadcrumb. */
@@ -34,7 +38,7 @@ export type HvBreadCrumbProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   dropDownMenuProps?: HvDropDownMenuProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBreadCrumbClasses;
-};
+}
 
 /**
  * A breadcrumb is a graphical control element frequently used as a navigational aid.

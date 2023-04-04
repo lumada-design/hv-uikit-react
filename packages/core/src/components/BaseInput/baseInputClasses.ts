@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvBaseInputClasses = {
+export interface HvBaseInputClasses {
   /** Styles applied to the root container of the input. */
   root?: string;
   /** Styles applied to the root container of the input when it is disabled. */
@@ -33,7 +33,7 @@ export type HvBaseInputClasses = {
   inputBorderContainer?: string;
   /** Styles applied to the container of the border element, when in read only mode. */
   readOnly?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { isKeypress, keyboardCodes, setId } from "~/utils";
 import { HvTypography } from "~/components";
-import { HvBaseProps } from "../../../../types";
+import { HvBaseProps } from "~/types";
 import {
   StyledDropLeftIcon,
   StyledDropRightIcon,
@@ -87,7 +87,7 @@ export const Navigation = ({
   );
 };
 
-export type NavigationProps = HvBaseProps & {
+export interface NavigationProps extends HvBaseProps {
   /**
    * Identifier.
    */
@@ -120,4 +120,4 @@ export type NavigationProps = HvBaseProps & {
    * Flag stating if the next button should be enabled or disabled.
    */
   isNextEnabled?: boolean;
-};
+}

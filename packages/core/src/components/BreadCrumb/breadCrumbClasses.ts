@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvBreadCrumbClasses = {
+export interface HvBreadCrumbClasses {
   root?: string;
   link?: string;
   orderedList?: string;
@@ -8,7 +8,7 @@ export type HvBreadCrumbClasses = {
   centerContainer?: string;
   separatorContainer?: string;
   a?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

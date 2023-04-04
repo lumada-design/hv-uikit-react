@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvAccordionClasses = {
+export interface HvAccordionClasses {
   /** Styles applied to the component root of the accordion. */
   root?: string;
   /** Styles applied to the content when it is hidden. */
@@ -11,7 +11,7 @@ export type HvAccordionClasses = {
   label?: string;
   /** Styles applied to the label button when it is disabled. */
   disabled?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

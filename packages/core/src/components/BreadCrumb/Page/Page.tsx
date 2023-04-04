@@ -5,12 +5,12 @@ import { MouseEventHandler } from "react";
 import pageClasses, { HvPageClasses } from "./pageClasses";
 import { StyledLink, StyledTypography } from "./Page.styles";
 
-export type HvPageElement = {
+export interface HvPageElement {
   path?: string;
   label?: string;
-};
+}
 
-export type HvPageProps = {
+export interface HvPageProps {
   Component?: React.ElementType;
   onClick?: (
     event: MouseEventHandler<HTMLAnchorElement>,
@@ -18,13 +18,17 @@ export type HvPageProps = {
   ) => void | undefined;
   elem: HvPageElement;
   classes?: HvPageClasses;
-};
+}
 
-export const HvPage = ({ Component, onClick, elem, classes }: HvPageProps) => {
+export const HvPage = ({
+  /* Component, */ onClick,
+  elem,
+  classes,
+}: HvPageProps) => {
   return (
     <StyledLink
       route={elem.path}
-      component={Component}
+      //component={Component}
       onClick={onClick}
       data={elem}
       classes={{ a: clsx(pageClasses.a, classes?.a) }}

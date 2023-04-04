@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvBadgeClasses = {
+export interface HvBadgeClasses {
   root?: string;
   badgeContainer?: string;
   badgePosition?: string;
@@ -9,7 +9,7 @@ export type HvBadgeClasses = {
   showLabel?: string;
   badgeIcon?: string;
   badgeOneDigit?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

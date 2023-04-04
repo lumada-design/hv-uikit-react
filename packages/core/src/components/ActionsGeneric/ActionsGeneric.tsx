@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { HvButtonSize, HvButtonVariant, HvDropDownMenu } from "~/components";
 import { setId } from "~/utils";
 import React, { isValidElement } from "react";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import actionsGenericClasses, {
   HvActionsGenericClasses,
 } from "./actionsGenericClasses";
@@ -11,16 +11,16 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
 import { useTheme } from "~/hooks";
 
-export type HvActionGeneric = {
+export interface HvActionGeneric {
   id: string;
   label: string;
   icon?:
     | React.ReactNode
     | ((params: { isDisabled?: boolean }) => React.ReactNode);
   disabled?: boolean;
-};
+}
 
-export type HvActionsGenericProps = HvBaseProps & {
+export interface HvActionsGenericProps extends HvBaseProps {
   /** Button category. */
   category?: HvButtonVariant;
   /**  Whether actions should be all disabled */
@@ -37,7 +37,7 @@ export type HvActionsGenericProps = HvBaseProps & {
   maxVisibleActions?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionsGenericClasses;
-};
+}
 
 export const HvActionsGeneric = ({
   id,

@@ -78,7 +78,7 @@ export const HvMonthSelector = ({
   );
 };
 
-export type HvMonthSelectorProps = {
+export interface HvMonthSelectorProps {
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -112,4 +112,4 @@ export type HvMonthSelectorProps = {
    */
   visibleYear?: number;
   rangeMode?: boolean;
-};
+}

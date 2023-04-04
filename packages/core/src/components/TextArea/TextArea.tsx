@@ -340,7 +340,7 @@ export const HvTextArea = ({
         setAutoScrolling(isScrolledDown());
       },
     };
-    inputRef.current.addEventListener("scroll", scrollHandler);
+    inputRef.current?.addEventListener("scroll", scrollHandler);
   }, [inputRef, isScrolledDown]);
 
   useEffect(() => {

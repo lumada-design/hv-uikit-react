@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 import { Alert } from "@hitachivantara/uikit-react-icons";
-
 import { HvBadge } from "./Badge";
 
 describe("Badge", () => {
