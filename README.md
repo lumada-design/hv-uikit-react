@@ -114,4 +114,4 @@ Join and support the project!
 
 ## License
 
-This project is licensed under the terms of the [Apache 2.0 license](/LICENSE.md).
+This project is licensed under the terms of the [Apache 2.0 license](/LICENSE).
