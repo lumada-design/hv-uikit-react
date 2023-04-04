@@ -114,15 +114,14 @@ const StyledTable = (c: any) =>
   );
 
 /**
- * A Table gathers relational data, it displays values arranged to allow quick numerical analysis
- * like comparison and sorting.
+ * A table gathers relational data. It displays values arranged to allow quick numerical analysis like comparison and sorting.
  *
- * **HvTable** component offers a set of HTML-equivalent elements, **styled to Design System's specification**,
+ * The **HvTable** component offers a set of HTML-equivalent elements, **styled to Design System's specification**,
  * for building tables.
  * You can rely on these **elements** when your table doesn’t have many interactions or you need it to be very lightweight.
  *
- * For better data handling and **advanced features** we recommend the use of the utility hooks collection .
- * See the <a href="?id=lab-table-hooks--main&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
+ * For better data handling and **advanced features** we recommend the use of the utility hooks collection.
+ * See the <a href="?id=guides-table-table-hooks--use-hv-hooks&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
  */
 export const HvTable = forwardRef<HTMLElement, HvTableProps>(
   (

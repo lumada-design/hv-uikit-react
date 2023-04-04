@@ -216,7 +216,7 @@ export const SimpleTable: StoryObj<HvTableProps> = {
     docs: {
       description: {
         story:
-          "Simple table that uses HvTable features in order to style checkbox and secondary actions columns.",
+          "Simple table that uses `HvTable` features in order to style checkbox and secondary actions columns.",
       },
     },
   },
@@ -515,7 +515,7 @@ export const ListRow = () => {
 ListRow.parameters = {
   docs: {
     description: {
-      story: "List Row variant of the table.",
+      story: "List row variant of the table.",
     },
   },
 };
