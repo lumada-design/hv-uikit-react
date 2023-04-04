@@ -33,7 +33,7 @@ jobs:
     secrets:
       CODE_DX_URL: ${{ secrets.CODE_DX_URL }}
       CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
-      BLACKDUCK_URL: "${{ secrets.BLACKDUCK_SERVER_URL }}"
+      BLACKDUCK_URL: "${{ secrets.BLACKDUCK_URL }}"
       BLACKDUCK_TOKEN: "${{ secrets.BLACKDUCK_TOKEN }}"
 
   notify-end-internal:

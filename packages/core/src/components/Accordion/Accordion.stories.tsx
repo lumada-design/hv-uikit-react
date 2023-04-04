@@ -101,8 +101,8 @@ export const Controlled: StoryObj<HvAccordionProps> = {
   render: ({}) => {
     const [expandedState, setExpandedState] = useState({
       personalInformation: true,
-      billingAddress: true,
-      shippingAddress: true,
+      billingAddress: false,
+      shippingAddress: false,
     });
     const handleToggle = (key) => {
       const newValue = { ...expandedState };
@@ -152,19 +152,19 @@ export const Controlled: StoryObj<HvAccordionProps> = {
             variant="secondarySubtle"
             onClick={() => handleToggle("personalInformation")}
           >
-            Toggle Personal Information
+            Personal Information
           </HvButton>
           <HvButton
             variant="secondarySubtle"
             onClick={() => handleToggle("billingAddress")}
           >
-            Toggle Billing Address
+            Billing Address
           </HvButton>
           <HvButton
             variant="secondarySubtle"
             onClick={() => handleToggle("shippingAddress")}
           >
-            Toggle Shipping Address
+            Shipping Address
           </HvButton>
           <HvButton variant="secondarySubtle" onClick={() => handleAll(false)}>
             Close all
@@ -380,6 +380,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
           label="Films"
           labelVariant={"title4"}
           headingLevel={2}
+          expanded
         >
           <HvTable id="accordion-table" {...getTableProps()}>
             <HvTableHead {...getTableHeadProps()}>

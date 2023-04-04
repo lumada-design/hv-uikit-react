@@ -4,7 +4,7 @@ import { HvButton, HvDropDownMenu, HvDropDownMenuProps } from "components";
 import { useState } from "react";
 
 const meta: Meta<typeof HvDropDownMenu> = {
-  title: "Components/Dropdown/Dropdown Menu",
+  title: "Components/Dropdown Menu",
   component: HvDropDownMenu,
   decorators: [
     (storyFn) => (

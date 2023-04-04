@@ -1,4 +1,4 @@
-name: Applitools Tests
+name: Applitools
 
 on:
   workflow_dispatch:

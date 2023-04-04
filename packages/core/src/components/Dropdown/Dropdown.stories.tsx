@@ -17,7 +17,7 @@ const Decorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvDropdown> = {
-  title: "Components/Dropdown/Dropdown",
+  title: "Components/Dropdown",
   component: HvDropdown,
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
 };

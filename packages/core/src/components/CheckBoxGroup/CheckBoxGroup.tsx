@@ -127,8 +127,6 @@ export type HvCheckBoxGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
 };
 
 /**
- * A group of checkboxes.
- *
  * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.
  */
 export const HvCheckBoxGroup = ({

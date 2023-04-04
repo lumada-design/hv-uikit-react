@@ -1,4 +1,4 @@
-name: Pa11y Tests
+name: Pa11y
 
 on:
   workflow_dispatch:

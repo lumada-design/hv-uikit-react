@@ -74,6 +74,7 @@ const StyledButton = styled("button")({
 const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
   component: HvCard,
+  subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };
 export default meta;

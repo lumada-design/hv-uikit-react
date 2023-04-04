@@ -11,7 +11,7 @@ import {
 
 import { HvBox, HvButton, HvButtonProps } from "components";
 
-export default { title: "Components/Button/Button", component: HvButton };
+export default { title: "Components/Button", component: HvButton };
 
 export const Main: StoryObj<HvButtonProps> = {
   args: {
