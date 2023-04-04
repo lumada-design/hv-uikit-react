@@ -44,7 +44,7 @@ jobs:
           npm ci --include=dev 
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           if [[ "${{ github.ref_name }}" == "master" ]]; then
-            npm run publish
+            npm run publish:release
           elif [[ "${{ github.ref_name }}" == "next"* ]]; then
             npm run publish:next
           else
