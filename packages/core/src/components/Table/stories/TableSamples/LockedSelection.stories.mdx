@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { LockedSelectionStory } from "./TableSamples.stories";
+
+<Meta title="Guides/Table/Table Samples/Locked Selection" />
+
+# Locked Selection
+
+Individual rows can have its selection state locked (becoming either not selectable or not unselectable), disabling the selection checkbox and also preventing
+the bulk actions to change the row state.
+
+<Canvas>
+  <Story name="Locked Selection" story={LockedSelectionStory} />
+</Canvas>

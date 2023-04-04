@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { UseHvHooksStory } from "./TableHooks.stories";
+
+<Meta title="Guides/Table/Table Hooks" />
+
+# Table Hooks
+
+The UI Kit library provides a collection of custom hooks that ease the integration with the [HvTable elements](/docs/guides-table--main) and allows more advanced
+use cases and better data handling. Our custom hooks are built on top of [React Table](https://tanstack.com/table/v8/?from=reactTableV7&original=https://react-table-v7.tanstack.com/)
+which is an "headless" UI utility library to build data tables while retaining control over markup and styles. It consists of a collection of lightweight,
+composable, and extensible custom React hooks.
+
+## useHv\* Hooks
+
+For further ease, you can use the provided `useHvData` hook that wraps the
+[React Table's `useTable` hook](https://tanstack.com/table/v8/docs/guide/tables?from=reactTableV7&original=https://react-table-v7.tanstack.com/docs/api/useTable)
+and provides the following functionality:
+
+- Ensures the use of the needed core and layout plugins when using any of the UI Kit custom hooks (e.g. adding `useHvPagination` implies the installation of
+  React Table's `usePagination` hook).
+- Automatically installs the `useHvTableStyles` hook.
+- Generates default column metadata from the data fields, if the `columns` option is missing.
+- Defaults to an empty array if no `data` is provided.
+
+The following plugin hooks are available:
+
+- `useHvTableStyles`: Ensures the correct styling of the table by injecting the column's `variant` and `align` options into the `HvTableHeader` and
+  `HvTableCell` components (via `getHeaderProps` and `getCellProps`, respectively). Also adds support for injecting the `styles`, `className` and
+  `classes` into the `HvTable`, `HvTableHeader`, and `HvTableCell` components.
+- `useHvPagination`: Eases the wiring of the `HvPagination` component when using pagination. [See pagination](/docs/guides-table-table-hooks-hooks-usehvpagination--use-hv-pagination-story).
+- `useHvRowSelection`: Creates and manages the UI for selecting rows. [See selection](/docs/guides-table-table-hooks-hooks-usehvrowselection--use-hv-selection-story).
+- `useHvBulkActions`: Eases the wiring of the `HvBulkActions` component. [See bulk selection and actions](/docs/guides-table-table-hooks-hooks-usehvbulkactions--use-hv-bulk-actions-story).
+- `useHvSortBy`: Manages the table's header sorting functionality. [See sorting](/docs/guides-table-table-hooks-hooks-usehvsortby--use-hv-sort-by-story).
+- `useHvRowExpand`: Manages the row expanding functionality. [See row expanding](/docs/guides-table-table-hooks-hooks-usehvrowexpand--use-hv-row-expand-story).
+- `useHvGroupBy`: Allows defining header groups. [See selection](/docs/guides-table-table-hooks-hooks-usehvgroupby--use-hv-group-by-story).
+- `useHvTableSticky`: Allows defining sticky headers and columns. [See sticky headers and columns](/docs/guides-table-table-hooks-hooks-usehvtablesticky--use-hv-table-sticky-story).
+- `useHvHeaderGroups`: Allows defining grouped headers. [See grouped headers](/docs/guides-table-table-hooks-hooks-usehvheadergroups--use-hv-header-groups-story).
+
+<Canvas>
+  <Story name="Table Hooks" story={UseHvHooksStory} />
+</Canvas>

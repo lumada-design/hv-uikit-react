@@ -1,0 +1,21 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { TextColumnRendererStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers/Renderers/Text Column Renderer" />
+
+# Text Column Renderer
+
+This functions renders text in the table. The column generated will have the text truncated with a tooltip if too long or if missing it will be
+replaced with a long dash.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story name="Text Column Renderer" story={TextColumnRendererStory} />
+</Canvas>
