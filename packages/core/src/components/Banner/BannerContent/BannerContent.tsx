@@ -1,20 +1,19 @@
 import clsx from "clsx";
 import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
-import { HvBaseProps } from "../../../types";
 import bannerContentClasses, {
   HvBannerContentClasses,
 } from "./bannerContentClasses";
-import { HvActionContainer } from "./ActionContainer";
+import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
 import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
+import { HvBaseProps } from "~/types";
 import {
   HvActionGeneric,
   HvBannerActionPosition,
   HvBannerVariant,
-} from "components";
+} from "~/components";
 import { forwardRef } from "react";
-import { iconVariant } from "../../../utils";
-import { HvActionContainerProps } from "./ActionContainer/ActionContainer";
+import { iconVariant } from "~/utils";
 
 export type HvBannerContentProps = Omit<
   MuiSnackbarContentProps,

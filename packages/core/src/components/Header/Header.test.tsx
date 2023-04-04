@@ -1,13 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { HvButton } from "components";
-import { HvProvider } from "providers";
-import {
-  HvHeaderActions,
-  HvHeaderBrand,
-  HvHeader,
-  HvHeaderNavigation,
-} from ".";
+import { HvButton } from "~/components";
+import { HvProvider } from "~/providers";
+import { HvHeader } from "./Header";
+import { HvHeaderNavigation } from "./Navigation";
+import { HvHeaderBrand } from "./Brand";
+import { HvHeaderActions } from "./Actions";
 import HitachiLogo from "./assets/HitachiLogo";
 
 describe("Header", () => {

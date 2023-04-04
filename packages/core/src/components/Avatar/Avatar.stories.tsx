@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvButton } from "../index";
-import { HvAvatar, HvAvatarProps } from "components";
+import { HvAvatar, HvAvatarProps } from "~/components";
 
 import man1 from "./resources/man-1.png";
 import man2 from "./resources/man-2.png";

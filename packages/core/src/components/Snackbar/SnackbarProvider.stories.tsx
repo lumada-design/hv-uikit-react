@@ -8,7 +8,7 @@ import {
   HvSnackbarProps,
   HvSnackbarProvider,
   useHvSnackbar,
-} from "components";
+} from "~/components";
 
 const Button = ({ onClick, variant }) => (
   <HvButton

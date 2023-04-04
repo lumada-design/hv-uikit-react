@@ -6,27 +6,37 @@ import {
   HvLabel,
   HvInfoMessage,
   HvWarningText,
-} from "components";
-import { transientOptions } from "utils/transientOptions";
+  HvLabelProps,
+  HvWarningTextProps,
+  HvInfoMessageProps,
+  HvFormElementProps,
+} from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 
-export const StyledFormElement = styled(HvFormElement)({
+export const StyledFormElement = styled((props: HvFormElementProps) => (
+  <HvFormElement {...props} />
+))({
   display: "inline-block",
   padding: 0,
   margin: 0,
 });
 
-export const StyledLabel = styled((props) => <HvLabel {...props} />)({
+export const StyledLabel = styled((props: HvLabelProps) => (
+  <HvLabel {...props} />
+))({
   marginBottom: theme.space.xs,
   float: "left",
 });
 
-export const StyledInfoMessage = styled((props) => (
+export const StyledInfoMessage = styled((props: HvInfoMessageProps) => (
   <HvInfoMessage {...props} />
 ))({
   float: "left",
 });
 
-export const StyledError = styled((props) => <HvWarningText {...props} />)({
+export const StyledError = styled((props: HvWarningTextProps) => (
+  <HvWarningText {...props} />
+))({
   width: "100%",
   float: "left",
   clear: "both",

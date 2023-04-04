@@ -25,7 +25,7 @@ import {
   HvToggleButtonProps,
   HvTooltip,
   HvTypography,
-} from "components";
+} from "~/components";
 import { ToggleEye } from "./ToggleEye";
 
 const FlexDecorator = ({ children }) => {

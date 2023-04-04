@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
-import { HvButton } from "components";
+import { HvButton, HvButtonProps } from "~/components";
 import { CSSProperties } from "react";
-import { outlineStyles } from "utils";
-import fade from "utils/hexToRgbA";
-import { transientOptions } from "utils/transientOptions";
+import { outlineStyles } from "~/utils";
+import fade from "~/utils/hexToRgbA";
+import { transientOptions } from "~/utils/transientOptions";
 import tagClasses from "./tagClasses";
 
 export const StyledChip = styled(
@@ -122,7 +122,9 @@ export const StyledChip = styled(
   })
 );
 
-export const StyledButton = styled(HvButton)({
+export const StyledButton = styled((props: HvButtonProps) => (
+  <HvButton {...props} />
+))({
   "& .MuiButton-startIcon": {
     width: 16,
     height: 16,

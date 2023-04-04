@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
-import { HvListItem, HvTypography } from "components";
+import { HvListItem, HvListItemProps, HvTypography } from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import appSwitcherActionClasses from "./actionClasses";
 
-export const StyledListItem = styled((props) => <HvListItem {...props} />)({
+export const StyledListItem = styled((props: HvListItemProps) => (
+  <HvListItem {...props} />
+))({
   width: "100%",
   maxWidth: 280,
   minHeight: 52,

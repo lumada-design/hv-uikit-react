@@ -9,8 +9,8 @@ import {
 } from "react";
 import clsx from "clsx";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { useForkRef } from "hooks";
-import { setId } from "utils";
+import { useForkRef } from "~/hooks";
+import { setId } from "~/utils";
 import treeViewItemClasses, {
   HvVerticalNavigationTreeViewItemClasses,
 } from "./treeViewItemClasses";
@@ -20,8 +20,8 @@ import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { HvAvatar } from "components";
-import { VerticalNavigationContext } from "../";
+import { HvAvatar } from "~/components";
+import { VerticalNavigationContext } from "../VerticalNavigationContext";
 
 export type HvVerticalNavigationTreeViewItemProps = {
   /**

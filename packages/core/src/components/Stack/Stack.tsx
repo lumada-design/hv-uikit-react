@@ -6,11 +6,11 @@ import MuiDivider, {
 import clsx from "clsx";
 import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
-import { useWidth } from "hooks";
+import { useWidth } from "~/hooks";
 import { HvBaseProps } from "../../types";
 import { StyledRoot } from "./Stack.styles";
-import { HvFocus } from "components";
-import { HvBreakpoints } from "types/tokens";
+import { HvFocus } from "~/components";
+import { HvBreakpoints } from "~/types/tokens";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 
 export type HvStackDirection = "column" | "row" | Partial<HvStackBreakpoints>;

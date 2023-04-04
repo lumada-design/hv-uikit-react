@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
-import { outlineStyles } from "utils";
+import { HvTypography } from "~/components";
+import { outlineStyles } from "~/utils";
 import treeViewItemClasses from "./treeViewItemClasses";
 
 const selected = () => ({

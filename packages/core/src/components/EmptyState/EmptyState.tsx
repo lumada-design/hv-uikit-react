@@ -8,8 +8,8 @@ import {
   StyledTextContainer,
   StyledTypography,
 } from "./EmptyState.styles";
-import { HvTypographyProps } from "components";
-import { useTheme as useHvTheme } from "hooks";
+import { HvTypographyProps } from "~/components";
+import { useTheme as useHvTheme } from "~/hooks";
 import { useTheme } from "@mui/material/styles";
 
 export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {

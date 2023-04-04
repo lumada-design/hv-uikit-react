@@ -1,7 +1,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvAvatar, HvTooltip, HvTypography } from "components";
+import { HvAvatar, HvTooltip, HvTypography } from "~/components";
 import { HvAppSwitcherActionApplication } from "../AppSwitcher";
 import { HvBaseProps } from "../../../types";
 import TitleWithTooltip from "../TitleWithTooltip";

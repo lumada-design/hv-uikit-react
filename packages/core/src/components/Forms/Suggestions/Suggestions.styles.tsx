@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { PopperUnstyled } from "@mui/base";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvSelectionList } from "components";
+import { HvSelectionList } from "~/components";
 
 export const StyledRoot = styled("div")({
   position: "relative",

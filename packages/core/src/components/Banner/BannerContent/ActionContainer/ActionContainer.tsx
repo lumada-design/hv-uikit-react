@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HvBaseProps } from "../../../../types";
+import { HvBaseProps } from "~/types";
 import actionContainerClasses, {
   HvActionContainerClasses,
 } from "./actionContainerClasses";
@@ -9,9 +9,9 @@ import {
   StyledClose,
   StyledActionsInnerContainer,
 } from "./ActionContainer.styles";
-import { HvActionGeneric, HvActionsGeneric } from "../../../ActionsGeneric";
+import { HvActionGeneric, HvActionsGeneric } from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "../../../../hooks";
+import { useTheme } from "~/hooks";
 
 export type HvActionContainerProps = HvBaseProps & {
   /** onClose function. */

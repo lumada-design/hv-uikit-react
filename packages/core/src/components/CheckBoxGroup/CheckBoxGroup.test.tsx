@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HvCheckBox } from "components";
+import { HvCheckBox } from "~/components";
 import { describe, expect, it, vi } from "vitest";
 import { HvCheckBoxGroup } from "./CheckBoxGroup";
 

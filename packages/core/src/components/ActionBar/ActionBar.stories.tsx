@@ -7,7 +7,7 @@ import {
   HvActionBar,
   HvActionBarProps,
   HvDropDownMenu,
-} from "components";
+} from "~/components";
 
 // Common styles
 const StyledContainer = styled("div")({

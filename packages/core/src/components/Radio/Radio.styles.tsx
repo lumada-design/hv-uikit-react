@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBaseRadio, HvFormElement, HvLabel } from "components";
+import {
+  HvBaseRadio,
+  HvFormElement,
+  HvFormElementProps,
+  HvLabel,
+} from "~/components";
 import { CSSProperties } from "react";
-import { outlineStyles } from "utils";
-import { transientOptions } from "utils/transientOptions";
+import { outlineStyles } from "~/utils";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledHvBaseRadio = styled(
   HvBaseRadio,
@@ -26,7 +31,9 @@ export const StyledHvBaseRadio = styled(
   },
 }));
 
-export const StyledHvFormElement = styled(HvFormElement)({
+export const StyledHvFormElement = styled((props: HvFormElementProps) => (
+  <HvFormElement {...props} />
+))({
   display: "inline-block",
 });
 

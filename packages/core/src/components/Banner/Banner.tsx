@@ -6,15 +6,15 @@ import {
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
 import capitalize from "lodash/capitalize";
-import { HvBaseProps } from "../../types";
+import { HvActionGeneric } from "~/components";
+import { HvBaseProps } from "~/types";
+import { setId } from "~/utils";
 import { StyledSnackbar } from "./Banner.styles";
 import bannerClasses, { HvBannerClasses } from "./bannerClasses";
-import { setId } from "../../utils";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
-import { HvActionGeneric } from "../ActionsGeneric";
 
 export type HvBannerVariant = "success" | "warning" | "error" | "default";
 

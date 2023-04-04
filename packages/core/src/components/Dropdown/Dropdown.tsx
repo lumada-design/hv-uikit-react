@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { PopperProps } from "@mui/material";
 import clsx from "clsx";
-import { setId } from "utils";
-import { useLabels, useUniqueId, useControlled } from "hooks";
+import { setId } from "~/utils";
+import { useLabels, useUniqueId, useControlled } from "~/hooks";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { getSelected, getSelectionLabel } from "./utils";
 import dropdownClasses, { HvDropdownClasses } from "./dropdownClasses";
@@ -20,7 +20,7 @@ import {
   HvInfoMessage,
   HvListValue,
   HvWarningText,
-} from "components";
+} from "~/components";
 
 export type HvDropdownLabelsProps = {
   /**

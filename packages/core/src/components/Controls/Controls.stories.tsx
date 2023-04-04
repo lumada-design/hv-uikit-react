@@ -21,7 +21,7 @@ import {
   useHvGlobalFilter,
   useHvSortBy,
   useHvTable,
-} from "components";
+} from "~/components";
 import { useMemo, useState, useCallback } from "react";
 import { getColumns, makeData } from "./makedata";
 

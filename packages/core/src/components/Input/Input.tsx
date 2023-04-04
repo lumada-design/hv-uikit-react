@@ -53,7 +53,7 @@ import {
   HvTooltip,
   HvTypography,
   HvWarningText,
-} from "components";
+} from "~/components";
 import {
   useControlled,
   useIsMounted,

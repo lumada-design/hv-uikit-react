@@ -1,4 +1,4 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
 export type HvTableClasses = {
   /** Styles applied to the component root class. */

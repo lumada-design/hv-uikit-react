@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { HvTooltip, HvTypography } from "components";
+import { HvTooltip, HvTypography } from "~/components";
 import { StyledTitleWithTooltip } from "./AppSwitcher.styles";
 
 const TitleWithTooltip = ({ className, title, type }) => {

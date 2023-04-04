@@ -1,8 +1,8 @@
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
-import { transientOptions } from "utils/transientOptions";
+import { HvTypography } from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 
 const interval = 0.11;
 

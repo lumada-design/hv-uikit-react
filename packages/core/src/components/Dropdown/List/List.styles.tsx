@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvList } from "components";
-import { transientOptions } from "utils/transientOptions";
+import { HvList, HvListProps } from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledRootList = styled("div")({
   width: "100%",
@@ -20,7 +20,7 @@ export const StyledSearchContainer = styled("div")({
 });
 
 export const StyledList = styled(
-  (props) => <HvList {...props} />,
+  (props: HvListProps) => <HvList {...props} />,
   transientOptions
 )(
   ({

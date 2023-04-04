@@ -7,12 +7,12 @@ import {
 } from "react";
 import { HvBaseProps } from "../../types";
 import styled from "@emotion/styled";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import { mapVariant } from "./utils";
 import typographyClasses, { HvTypographyClasses } from "./typographyClasses";
 import clsx from "clsx";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 
 export type HvTypographyVariants =
   | "display"

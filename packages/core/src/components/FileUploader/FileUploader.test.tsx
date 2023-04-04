@@ -1,6 +1,7 @@
 import { fireEvent, render, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { HvFileData, HvFileUploader, HvFileUploaderProps } from ".";
+import { HvFileUploader, HvFileUploaderProps } from "./FileUploader";
+import { HvFileData } from "./File";
 
 const fileList: HvFileData[] = [
   {

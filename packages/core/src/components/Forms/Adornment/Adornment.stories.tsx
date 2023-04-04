@@ -15,7 +15,7 @@ import {
   HvFormElement,
   HvFormStatus,
   HvLabel,
-} from "components";
+} from "~/components";
 
 const StyledButton = styled(HvButton)({
   width: "250px",

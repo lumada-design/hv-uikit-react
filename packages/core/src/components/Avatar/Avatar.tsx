@@ -4,8 +4,8 @@ import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import clsx from "clsx";
 import { CSSProperties, HTMLAttributes } from "react";
 import { HvBaseProps } from "../../types";
-import { useImageLoaded } from "hooks";
-import { decreaseSize } from "utils";
+import { useImageLoaded } from "~/hooks";
+import { decreaseSize } from "~/utils";
 import {
   StyledAvatar,
   StyledBadge,

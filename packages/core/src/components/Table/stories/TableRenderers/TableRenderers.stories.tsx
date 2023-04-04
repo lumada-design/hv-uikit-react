@@ -14,7 +14,7 @@ import {
   HvEmptyState,
   HvPagination,
   HvTypography,
-} from "components";
+} from "~/components";
 import {
   hvTextColumn,
   hvDateColumn,

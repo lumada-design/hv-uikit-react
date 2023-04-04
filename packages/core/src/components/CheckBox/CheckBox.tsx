@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { useControlled, useUniqueId } from "hooks";
+import { useControlled, useUniqueId } from "~/hooks";
 import { useCallback, useState } from "react";
-import { setId } from "utils";
+import { setId } from "~/utils";
 import { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import { HvLabelProps, HvFormStatus, HvWarningText, isInvalid } from "../Forms";
 import {

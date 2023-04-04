@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { isKeypress, keyboardCodes } from "utils";
+import { isKeypress, keyboardCodes } from "~/utils";
 import { getMonthNamesList } from "../../utils";
 import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
 import monthSelectorClasses, {

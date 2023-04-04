@@ -17,7 +17,7 @@ import {
   StyledSelectedFilesText,
 } from "./DropZone.styles";
 import clsx from "clsx";
-import { isKeypress, keyboardCodes, setId } from "utils";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
 import { convertUnits } from "../utils";
 import withId from "../../../hocs/withId";
 

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
+import { HvTypography, HvTypographyProps } from "~/components";
 
 export const StyledRoot = styled("nav")({
   display: "flex",
@@ -14,6 +14,8 @@ export const StyledOrderedList = styled("ol")({
   marginLeft: `-${theme.space.xs}`,
 });
 
-export const StyledTypography = styled((props) => <HvTypography {...props} />)({
+export const StyledTypography = styled((props: HvTypographyProps) => (
+  <HvTypography {...props} />
+))({
   padding: `8px ${theme.space.xs}`,
 });

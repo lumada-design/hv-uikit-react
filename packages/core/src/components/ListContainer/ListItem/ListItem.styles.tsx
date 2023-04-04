@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
-import { HvFocus } from "components";
-import { outlineStyles } from "utils";
+import { transientOptions } from "~/utils/transientOptions";
+import { HvFocus } from "~/components";
+import { outlineStyles } from "~/utils";
 import listItemClasses from "./listItemClasses";
 import { CSSProperties } from "react";
 

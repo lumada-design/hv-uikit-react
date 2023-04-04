@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvLabel, HvLabelProps } from "components";
+import { HvLabel, HvLabelProps } from "~/components";
 
 const meta: Meta<typeof HvLabel> = {
   title: "Guides/Forms/Form Element Blocks/Label",

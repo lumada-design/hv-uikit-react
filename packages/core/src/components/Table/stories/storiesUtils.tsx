@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
-import { Random } from "utils";
-import { HvButton, HvTableColumnConfig } from "components";
+import { Random } from "~/utils";
+import { HvButton, HvTableColumnConfig } from "~/components";
 import { Delete, Drag } from "@hitachivantara/uikit-react-icons";
 
 export type SampleStatusProps = {

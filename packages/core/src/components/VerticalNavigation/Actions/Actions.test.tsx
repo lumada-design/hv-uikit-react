@@ -4,7 +4,7 @@ import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 import {
   HvVerticalNavigationAction,
   HvVerticalNavigationActions,
-} from "components";
+} from "~/components";
 
 const Sample = () => (
   <HvVerticalNavigationActions>

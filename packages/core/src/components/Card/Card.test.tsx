@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { HvTypography } from "components";
+import { HvTypography } from "~/components";
 import { describe, expect, it } from "vitest";
 import { HvCard, HvCardContent, HvCardHeader, HvCardMedia } from "./";
 

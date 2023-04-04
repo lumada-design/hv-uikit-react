@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvCheckBox } from "components";
+import { HvCheckBox } from "~/components";
 import { useState } from "react";
 import { HvCheckBoxGroup, HvCheckBoxGroupProps } from "./CheckBoxGroup";
 

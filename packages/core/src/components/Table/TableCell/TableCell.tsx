@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
 import { HvBaseProps } from "../../../types";
-import { tableCellClasses, HvTableCellClasses } from ".";
+import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import {
   CSSProperties,
   forwardRef,
@@ -16,12 +16,12 @@ import {
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import capitalize from "lodash/capitalize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 
 export type HvTableCellProps = Omit<
   TdHTMLAttributes<HTMLTableCellElement>,

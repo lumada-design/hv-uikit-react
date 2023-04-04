@@ -4,7 +4,7 @@ import { StyledTypography } from "./Label.styles";
 import { HvBaseProps } from "../../../types";
 import { HvFormElementContext } from "../FormElement";
 import { findDescriptors } from "../FormElement/utils/FormUtils";
-import { setId } from "utils";
+import { setId } from "~/utils";
 import labelClasses, { HvLabelClasses } from "./labelClasses";
 
 export type HvLabelProps = HvBaseProps & {

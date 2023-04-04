@@ -1,5 +1,5 @@
 import { StoryObj } from "@storybook/react";
-import { HvBox } from "components";
+import { HvBox } from "~/components";
 import {
   HvTypography,
   HvTypographyProps,

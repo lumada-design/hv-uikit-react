@@ -1,4 +1,4 @@
-import { HvTypography, HvTypographyVariants } from "components";
+import { HvTypography, HvTypographyVariants } from "~/components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 import { HvBaseProps } from "../../types";
 import badgeClasses, { HvBadgeClasses } from "./badgeClasses";

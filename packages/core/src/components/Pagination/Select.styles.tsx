@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { baseDropdownClasses } from "components";
+import { baseDropdownClasses } from "~/components";
 
 export const StyledRoot = styled("div")({
   [`& .${baseDropdownClasses.root}`]: {

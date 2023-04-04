@@ -8,7 +8,7 @@ import {
   HvDropDownMenu,
   HvGlobalActions,
   HvGlobalActionsProps,
-} from "components";
+} from "~/components";
 
 const meta: Meta<typeof HvGlobalActions> = {
   title: "Widgets/Global Actions",

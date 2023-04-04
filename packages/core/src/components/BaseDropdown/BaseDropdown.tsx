@@ -7,9 +7,9 @@ import {
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
-import { useControlled, useForkRef, useTheme, useUniqueId } from "hooks";
-import { isKeypress, keyboardCodes, setId } from "utils";
-import { getFirstAndLastFocus } from "utils/focusableElementFinder";
+import { useControlled, useForkRef, useTheme, useUniqueId } from "~/hooks";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { getFirstAndLastFocus } from "~/utils/focusableElementFinder";
 import { HvBaseProps } from "../../types";
 import {
   StyledAnchor,

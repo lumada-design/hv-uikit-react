@@ -1,19 +1,27 @@
 import styled from "@emotion/styled";
 import { FixedSizeList } from "react-window";
-import { HvCheckBox, HvLink, HvListItem, HvRadio } from "components";
+import {
+  HvCheckBox,
+  HvLink,
+  HvListItem,
+  HvRadio,
+  checkBoxClasses,
+  radioClasses,
+  listItemClasses,
+  HvCheckBoxProps,
+  HvLinkProps,
+  HvRadioProps,
+} from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
-import checkBoxClasses from "../CheckBox/checkBoxClasses";
-import radioClasses from "../Radio/radioClasses";
-import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 import { CSSProperties } from "react";
 
 export const StyledFixedSizeList = styled(FixedSizeList)({
   marginBottom: 5,
 });
 
-export const StyledSelectAllCheckBox = styled((props) => (
+export const StyledSelectAllCheckBox = styled((props: HvCheckBoxProps) => (
   <HvCheckBox {...props} />
 ))({
   width: "100%",
@@ -32,14 +40,14 @@ export const StyledSelectAllCheckBox = styled((props) => (
   },
 });
 
-export const StyledMultiSelectCheckBox = styled((props) => (
+export const StyledMultiSelectCheckBox = styled((props: HvCheckBoxProps) => (
   <HvCheckBox {...props} />
 ))({
-  [`& .${checkBoxClasses.root}`]: {
+  [`& .${checkBoxClasses?.root}`]: {
     width: "100%",
     zIndex: 0,
   },
-  [`& .${checkBoxClasses.container}`]: {
+  [`& .${checkBoxClasses?.container}`]: {
     "&:hover": {
       backgroundColor: "transparent",
     },
@@ -56,7 +64,7 @@ export const StyledMultiSelectCheckBox = styled((props) => (
       boxShadow: "none",
     },
   },
-  [`& .${checkBoxClasses.label}`]: {
+  [`& .${checkBoxClasses?.label}`]: {
     display: "inline-block",
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -64,16 +72,18 @@ export const StyledMultiSelectCheckBox = styled((props) => (
   },
 });
 
-export const StyledLink = styled((props) => <HvLink {...props} />)({
-  ...(theme.typography.body as CSSProperties),
-  textDecoration: "none",
+export const StyledLink = styled((props: HvLinkProps) => <HvLink {...props} />)(
+  {
+    ...(theme.typography.body as CSSProperties),
+    textDecoration: "none",
 
-  "&:focus": {
-    boxShadow: "unset !important",
-  },
-});
+    "&:focus": {
+      boxShadow: "unset !important",
+    },
+  }
+);
 
-export const StyledSingleSelectRadio = styled((props) => (
+export const StyledSingleSelectRadio = styled((props: HvRadioProps) => (
   <HvRadio {...props} />
 ))({
   [`& .${radioClasses.root}`]: {

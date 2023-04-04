@@ -5,9 +5,9 @@ import {
   HvLabel,
   HvSuggestions,
   HvSuggestionsProps,
-} from "components";
+} from "~/components";
 import { useRef, useState } from "react";
-import { isKeypress, keyboardCodes } from "utils";
+import { isKeypress, keyboardCodes } from "~/utils";
 import countryList from "../../Input/countries";
 
 const { Esc, Tab } = keyboardCodes;

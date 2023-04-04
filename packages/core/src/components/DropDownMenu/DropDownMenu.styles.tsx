@@ -1,16 +1,23 @@
 import styled from "@emotion/styled";
-import { HvBaseDropdown, HvButton, HvPanel } from "components";
-import { transientOptions } from "utils/transientOptions";
+import {
+  HvBaseDropdown,
+  HvBaseDropdownProps,
+  HvButton,
+  HvButtonProps,
+  HvPanel,
+  HvPanelProps,
+} from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const StyledBaseDropDown = styled((props) => (
+export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
   <HvBaseDropdown {...props} />
 ))({
   width: 32,
 });
 
 export const StyledButton = styled(
-  HvButton,
+  (props: HvButtonProps) => <HvButton {...props} />,
   transientOptions
 )(({ $open }: { $open: boolean }) => ({
   position: "relative",
@@ -39,7 +46,9 @@ export const StyledButton = styled(
   }),
 }));
 
-export const StyledPanel = styled(HvPanel)({
+export const StyledPanel = styled((props: HvPanelProps) => (
+  <HvPanel {...props} />
+))({
   border: theme.dropDownMenu.borderOpened,
   borderRadius: theme.dropDownMenu.borderRadius,
 });

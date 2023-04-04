@@ -5,7 +5,7 @@ import {
   Upload,
 } from "@hitachivantara/uikit-react-icons";
 import { fireEvent, render } from "@testing-library/react";
-import { HvProvider } from "providers";
+import { HvProvider } from "~/providers";
 import { describe, expect, it, vi } from "vitest";
 import { HvActionsGeneric } from "./ActionsGeneric";
 

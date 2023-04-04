@@ -7,7 +7,7 @@ import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
 import { DateRangeProp, VisibilitySelectorActions } from "../Calendar";
-import { setId, keyboardCodes, isKeypress } from "utils";
+import { setId, keyboardCodes, isKeypress } from "~/utils";
 import {
   StyledCalendarContainer,
   StyledCalendarGrid,

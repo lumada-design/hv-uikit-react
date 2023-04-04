@@ -4,8 +4,8 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
-import { outlineStyles } from "utils";
+import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "~/utils";
 
 export const StyledCheckedBox = styled(
   MuiCheckBox,

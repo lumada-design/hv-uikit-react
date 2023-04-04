@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
-import { outlineStyles } from "utils";
+import { outlineStyles } from "~/utils";
 
 export const StyledA = styled("a")({
   ...(theme.typography.label as CSSProperties),

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Avatar as MuiAvatar } from "@mui/material";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import { outlineStyles } from "../../utils/focusUtils";
 import { HvAvatarSize, HvAvatarVariant } from "./Avatar";
 

@@ -1,4 +1,4 @@
-import { HvTypography } from "components";
+import { HvTypography } from "~/components";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { HvTooltip } from "./Tooltip";

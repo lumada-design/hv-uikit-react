@@ -17,7 +17,7 @@ import {
   HvTableRow,
   useHvData,
   useHvTableSticky,
-} from "components";
+} from "~/components";
 import { useMemo, useState } from "react";
 import { HvAccordionProps, HvAccordion } from "./Accordion";
 

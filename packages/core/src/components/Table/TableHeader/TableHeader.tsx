@@ -12,9 +12,9 @@ import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvBaseProps } from "../../../types";
-import { tableHeaderClasses, HvTableHeaderClasses } from ".";
+import tableHeaderClasses, { HvTableHeaderClasses } from "./tableHeaderClasses";
 import TableContext from "../TableContext";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { getSortIcon, isParagraph } from "./utils";
 import {
@@ -29,7 +29,7 @@ import {
   HvTableCellVariant,
 } from "../Table";
 import { HvTypographyProps } from "../../Typography";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 
 export type HvTableHeaderProps = Omit<
   ThHTMLAttributes<HTMLTableCellElement>,
@@ -441,7 +441,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             variant="label"
             $headerText={!paragraph}
             $headerParagraph={paragraph}
-            $sortableHeaderText={sortable}
+            $sortableHeaderText={!!sortable}
             {...headerTextProps}
           >
             {children}

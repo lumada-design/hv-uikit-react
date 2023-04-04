@@ -1,6 +1,6 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "utils/focusUtils";
+import { outlineStyles } from "~/utils/focusUtils";
 
 export const styles: { [key: string]: CSSInterpolation } = {
   root: {

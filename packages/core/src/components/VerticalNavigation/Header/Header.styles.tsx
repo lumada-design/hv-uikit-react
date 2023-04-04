@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvButton } from "components";
+import { HvButton, HvButtonProps } from "~/components";
 import verticalNavigationHeaderClasses from "./headerClasses";
 
 export const StyledHeader = styled("div")({
@@ -14,7 +14,9 @@ export const StyledHeader = styled("div")({
   },
 });
 
-export const StyledCollapseButton = styled(HvButton)({
+export const StyledCollapseButton = styled((props: HvButtonProps) => (
+  <HvButton {...props} />
+))({
   marginLeft: "auto",
 
   [`&.${verticalNavigationHeaderClasses.minimized}`]: {

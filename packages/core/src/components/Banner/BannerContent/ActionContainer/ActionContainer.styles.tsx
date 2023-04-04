@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { HvButton } from "components";
-import { outlineStyles } from "utils";
-import fade from "utils/hexToRgbA";
-import { transientOptions } from "utils/transientOptions";
+import { HvButton, HvButtonProps } from "~/components";
+import { outlineStyles } from "~/utils";
+import fade from "~/utils/hexToRgbA";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledActionContainer = styled("div")({
   display: "flex",
@@ -13,7 +13,7 @@ export const StyledActionContainer = styled("div")({
 });
 
 export const StyledButton = styled(
-  (props) => <HvButton {...props} />,
+  (props: HvButtonProps) => <HvButton {...props} />,
   transientOptions
 )(({ $baseColor }: { $baseColor: string }) => ({
   alignSelf: "flex-end",

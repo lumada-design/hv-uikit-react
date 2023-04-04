@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
+import { HvTypography, HvTypographyProps } from "~/components";
 
 export const BrandRoot = styled("div")({
   display: "flex",
@@ -14,6 +14,8 @@ export const BrandSeparator = styled("div")({
   backgroundColor: theme.colors.secondary,
 });
 
-export const BrandName = styled((props) => <HvTypography {...props} />)({
+export const BrandName = styled((props: HvTypographyProps) => (
+  <HvTypography {...props} />
+))({
   color: theme.header.brandColor,
 });

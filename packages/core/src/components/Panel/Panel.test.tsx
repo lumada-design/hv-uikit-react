@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import { HvPanel } from "./";
-import { HvTypography } from "components";
+import { HvPanel } from "./Panel";
+import { HvTypography } from "~/components";
 
 describe("Panel", () => {
   it("should be defined", () => {

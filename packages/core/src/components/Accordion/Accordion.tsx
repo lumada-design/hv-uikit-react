@@ -5,13 +5,13 @@ import React, {
   HTMLAttributes,
 } from "react";
 import clsx from "clsx";
-import { useControlled } from "hooks";
+import { useControlled } from "~/hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "../../types";
-import { setId } from "utils";
+import { HvBaseProps } from "~/types";
+import { setId } from "~/utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
-import { HvTypographyVariants } from "components";
+import { HvTypographyVariants } from "~/components";
 
 export type HvAccordionProps = HvBaseProps & {
   /**

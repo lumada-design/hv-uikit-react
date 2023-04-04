@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { MouseEventHandler, useCallback, useContext } from "react";
-import { isKeypress, keyboardCodes, setId } from "utils";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
 import { VerticalNavigationContext } from "../";
 import { StyledAction } from "./Action.styles";
 import actionClasses, {

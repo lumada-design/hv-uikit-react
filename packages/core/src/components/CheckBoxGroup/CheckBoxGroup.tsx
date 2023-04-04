@@ -6,9 +6,9 @@ import {
   StyledLabel,
 } from "./CheckBoxGroup.styles";
 import clsx from "clsx";
-import { useControlled, useUniqueId } from "hooks";
-import { multiSelectionEventHandler, setId } from "utils";
-import { HvCheckBox, HvInfoMessage, HvWarningText } from "components";
+import { useControlled, useUniqueId } from "~/hooks";
+import { multiSelectionEventHandler, setId } from "~/utils";
+import { HvCheckBox, HvInfoMessage, HvWarningText } from "~/components";
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
 import checkBoxGroupClasses, {
   HvCheckBoxGroupClasses,

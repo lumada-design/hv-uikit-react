@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useContext, useEffect } from "react";
 import clsx from "clsx";
-import { setId, wrapperTooltip } from "utils";
-import { useControlled } from "hooks";
+import { setId, wrapperTooltip } from "~/utils";
+import { useControlled } from "~/hooks";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,

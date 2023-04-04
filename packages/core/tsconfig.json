@@ -2,9 +2,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": ["src"],
   "references": [
@@ -13,6 +16,9 @@
     },
     {
       "path": "../styles/tsconfig.json"
+    },
+    {
+      "path": "../shared/tsconfig.json"
     }
   ]
 }

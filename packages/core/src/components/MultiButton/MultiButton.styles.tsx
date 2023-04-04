@@ -2,7 +2,7 @@ import clsx from "clsx";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledRoot = styled(
   "div",

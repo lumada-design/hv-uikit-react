@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvSimpleGrid, HvSimpleGridProps } from "components";
+import { HvSimpleGrid, HvSimpleGridProps } from "~/components";
 
 const style = {
   display: "flex",

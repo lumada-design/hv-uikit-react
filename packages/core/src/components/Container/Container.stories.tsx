@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { useWidth } from "hooks";
-import { HvContainer, HvContainerProps, HvTypography } from "components";
+import { useWidth } from "~/hooks";
+import { HvContainer, HvContainerProps, HvTypography } from "~/components";
 
 const meta: Meta<typeof HvContainer> = {
   title: "Components/Container",

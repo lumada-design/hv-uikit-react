@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography, HvProgressBar, HvProgressBarProps } from "components";
+import { HvTypography, HvProgressBar, HvProgressBarProps } from "~/components";
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 const meta: Meta<typeof HvProgressBar> = {

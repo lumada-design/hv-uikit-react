@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
-import { HvVerticalNavigationHeader } from "components";
+import { HvVerticalNavigationHeader } from "~/components";
 
 const Sample = () => {
   return (

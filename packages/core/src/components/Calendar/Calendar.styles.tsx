@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import calendarClasses from "./calendarClasses";
-import { HvSingleCalendar } from "./SingleCalendar/SingleCalendar";
+import {
+  HvSingleCalendar,
+  HvSingleCalendarProps,
+} from "./SingleCalendar/SingleCalendar";
 
 export const StyledRoot = styled("div")({
   display: "flex",
@@ -12,7 +15,7 @@ export const StyledRangeCalendarContainer = styled("div")({
   display: "flex",
 });
 
-export const StyledSingleCalendar = styled((props) => (
+export const StyledSingleCalendar = styled((props: HvSingleCalendarProps) => (
   <HvSingleCalendar {...props} />
 ))({
   "&:hover": {

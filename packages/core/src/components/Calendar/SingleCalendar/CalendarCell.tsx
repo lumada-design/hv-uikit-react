@@ -10,7 +10,7 @@ import {
   isDateRangeProp,
 } from "../utils";
 import { DateRangeProp, HvTooltip, HvTypography } from "../..";
-import { useComputation } from "hooks";
+import { useComputation } from "~/hooks";
 import calendarCellClasses, {
   HvCalendarCellClasses,
 } from "./calendarCellClasses";

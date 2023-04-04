@@ -11,7 +11,7 @@
     "airbnb-typescript",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "import"],
   "env": {
     "es2021": true,
     "browser": true,
@@ -27,5 +27,16 @@
         "patterns": ["@hitachivantara/*/*"]
       }
     ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": ["tsconfig.json", "packages/*/tsconfig.json"]
+      }
+    }
   }
 }

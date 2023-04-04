@@ -8,7 +8,7 @@ import {
   HvDialogTitle,
   HvDialogActions,
   HvTypography,
-} from "components";
+} from "~/components";
 import { useState } from "react";
 
 type SimpleDialogProps = {

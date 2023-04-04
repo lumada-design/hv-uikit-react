@@ -11,8 +11,8 @@ import {
   HvFormElementDescriptorsContext,
 } from "../../Forms/FormElement";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
-import { isKeypress, keyboardCodes, setId } from "utils";
-import { HvTypography } from "components";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { HvTypography } from "~/components";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { DateRangeProp } from "../Calendar";
 import calendarHeaderClasses, {
