@@ -11,7 +11,7 @@ import {
   useHvSortBy,
   useHvTableSticky,
   useHvBulkActions,
-} from "../hooks";
+} from "../../hooks";
 import {
   HvTable,
   HvTableBody,
@@ -33,7 +33,7 @@ import {
   getGroupedColumns,
   SampleColumn,
   SampleDataProps,
-} from "./storiesUtils";
+} from "../storiesUtils";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   Ban,

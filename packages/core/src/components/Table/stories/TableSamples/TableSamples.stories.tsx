@@ -8,7 +8,7 @@ import {
   useHvSortBy,
   useHvBulkActions,
   useHvResizeColumns,
-} from "../hooks/index";
+} from "../../hooks";
 import {
   HvTable,
   HvTableBody,
@@ -34,7 +34,7 @@ import {
   makeSelectedData,
   SampleColumn,
   SampleDataProps,
-} from "./storiesUtils";
+} from "../storiesUtils";
 import {
   Ban,
   Delete,

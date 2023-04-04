@@ -24,13 +24,13 @@ import {
   hvTagColumn,
   hvDropdownColumn,
   hvProgressColumn,
-} from "../renderers/renderers";
+} from "../../renderers/renderers";
 import {
   makeRenderersData,
   SampleColumn,
   SampleDataProps,
   SampleStatusProps,
-} from "./storiesUtils";
+} from "../storiesUtils";
 import { StoryObj } from "@storybook/react";
 
 const AllColumnRenderers = () => {

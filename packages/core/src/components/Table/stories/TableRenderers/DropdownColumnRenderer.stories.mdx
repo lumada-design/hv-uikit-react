@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { DropdownColumnRendererStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers/Renderers/Dropdown Column Renderer" />
+
+# Dropdown Column Renderer
+
+This functions renders a dropdown component embedded into a column. The function receives an `onChange` callback to communicate the selected value of the dropdown.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `id: string`: The dropdown id.
+- `placeholder: string`: The dropdown placeholder when nothing is selected.
+- `disabledPlaceholder: string`: The dropdown placeholder when is disabled.
+- `onChange: (identifier: string, value: ListValueProp) => void`: The function called when the dropdown value is changed.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story name="Dropdown Column Renderer" story={DropdownColumnRendererStory} />
+</Canvas>

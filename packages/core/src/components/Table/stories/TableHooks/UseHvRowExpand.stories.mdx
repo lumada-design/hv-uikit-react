@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { UseHvRowExpandStory } from "./TableHooks.stories";
+
+<Meta title="Guides/Table/Table Hooks/Hooks/useHvRowExpand" />
+
+# useHvRowExpand
+
+Tables rows can have the capability of being expanded to show more details.
+
+Check [React Table's `useExpanded` documentation](https://react-table.tanstack.com/docs/api/useExpanded) for configuration details.
+
+The `useHvRowExpand` hook injects a `HvButton` into the first data column that toggles each row expansion. If the column has a custom renderer, an
+extra column is created instead.
+
+_Note: This hook depends on the `useExpanded` hook from `react-table`, but when using `useHvData` only `useHvRowExpand` needs to be installed._
+
+<Canvas>
+  <Story name="useHvRowExpand" story={UseHvRowExpandStory} />
+</Canvas>

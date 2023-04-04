@@ -1,0 +1,34 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import {
+  UseHvSelectionStory,
+  UseHvSelectionControlledStory,
+} from "./TableHooks.stories";
+
+<Meta title="Guides/Table/Table Hooks/Hooks/useHvRowSelection" />
+
+# useHvRowSelection
+
+Rows can be selected individually.
+
+Check [React Table's `useRowSelect` documentation](https://react-table.tanstack.com/docs/api/useRowSelect) for configuration details.
+
+The `useHvRowSelection` hook injects a new column with a `HvCheckBox` to select each row. It also manages the `HvTableRow's` `isSelected` property via the
+`getRowProps`.
+
+This hook is originally based on the code `useRowSelect` hook from react-table and implements its API, but extends it with support for locking the selection
+state of individual rows.
+
+<Canvas>
+  <Story name="useHvSelection" story={UseHvSelectionStory} />
+</Canvas>
+
+## Controlled
+
+A selection state can also be included in the data and toggled externally.
+
+<Canvas>
+  <Story
+    name="useHvRowSelection controlled"
+    story={UseHvSelectionControlledStory}
+  />
+</Canvas>

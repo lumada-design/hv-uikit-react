@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { UseHvPaginationStory } from "./TableHooks.stories";
+
+<Meta title="Guides/Table/Table Hooks/Hooks/useHvPagination" />
+
+# useHvPagination
+
+Data can be paginated. Optionally, empty lines can be added to the last page to avoid changes in height.
+
+Check [React Table's `usePagination` documentation](https://react-table.tanstack.com/docs/api/usePagination) for configuration details.
+
+The useHvPagination hook makes the `getHvPaginationProps` function available on the table instance returned that can be used to setup a
+`HvPagination` component.
+
+<Canvas>
+  <Story name="useHvPagination" story={UseHvPaginationStory} />
+</Canvas>
