@@ -2,6 +2,9 @@ name: Pa11y Tests
 
 on:
   workflow_dispatch:
+    branches:
+      - master
+      - "next*"
   workflow_call:
 
 jobs:
@@ -30,4 +33,4 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "npx http-server dist --port 6006 --silent" \
-          "npx wait-on tcp:6006 && pnpm test:pa11y"
+          "npx wait-on tcp:6006 && npm run test:pa11y"

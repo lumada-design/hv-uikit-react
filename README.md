@@ -44,7 +44,7 @@ Check the other available [packages](https://lumada-design.github.io/uikit/maste
 
 #### Migrating to v5
 
-This [guide]((https://lumada-design.github.io/uikit/master/?path=/story/overview-migration-from-v4-x--pages)) explains how and why to migrate from UI Kit v4 to v5.
+This [guide](<(https://lumada-design.github.io/uikit/master/?path=/story/overview-migration-from-v4-x--pages)>) explains how and why to migrate from UI Kit v4 to v5.
 If you are using an older version follow the documentation for the supported [versions](https://lumada-design.github.io/uikit/master/?path=/docs/overview-project-status--page#versions).
 
 ## Usage

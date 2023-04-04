@@ -1,0 +1,74 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # daily at 05:00
+  workflow_dispatch:
+    branches:
+      - master
+      - "next*"
+
+env:
+  RELEASE_COMMIT_MESSAGE: "chore(release): publish"
+  RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
+
+jobs:
+  static-checks:
+    name: Static Checks
+    uses: ./.github/workflows/static-checks.yml
+
+  applitools:
+    name: Applitools Tests
+    uses: ./.github/workflows/tests-applitools.yml
+    needs: [static-checks]
+    secrets:
+      APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
+
+  pa11y:
+    name: Accessibility Tests
+    uses: ./.github/workflows/tests-pa11y.yml
+    needs: [static-checks]
+
+  security-scans:
+    name: Security Scans
+    uses: ./.github/workflows/security.yml
+
+  notify-end-internal:
+    name: Notify End Internal
+    needs: [static-checks, applitools, pa11y]
+    if: failure()
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+
+      - name: generate conclusion color
+        id: conclusion_color
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
+
+      - name: Notify Fail
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
