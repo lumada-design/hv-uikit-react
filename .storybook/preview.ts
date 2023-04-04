@@ -20,7 +20,7 @@ export const parameters = {
           "Welcome",
           "Introduction",
           "Get Started",
-          "Changelogs",
+          "Change Logs",
           "Community",
           "Migration",
           "Roadmap",
