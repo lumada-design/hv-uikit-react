@@ -126,6 +126,14 @@ const StyledResponsiveTableHeader = styled(HvTableHeader)({
 const meta: Meta<typeof HvTable> = {
   title: "Guides/Table",
   component: HvTable,
+  subcomponents: {
+    HvTableContainer,
+    HvTableRow,
+    HvTableHead,
+    HvTableHeader,
+    HvTableBody,
+    HvTableCell,
+  },
 };
 export default meta;
 
