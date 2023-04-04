@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-next.22](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.0-next.21...@hitachivantara/uikit-react-core@5.0.0-next.22) (2023-04-04)
+
+### Bug Fixes
+
+- **Dialog:** fix the width of the Dialog component ([56b1654](https://github.com/lumada-design/hv-uikit-react/commit/56b16544363ee478b6684a95745b9e709495744b))
+- tokens types ([7865ec4](https://github.com/lumada-design/hv-uikit-react/commit/7865ec47f2d67e991c6a28d0f9a8197949cacb8d))
+
+### Features
+
+- **accordion:** add labelvariant prop ([47bf491](https://github.com/lumada-design/hv-uikit-react/commit/47bf49125444139acef7d5176aa51f3039a54d53))
+- scoped css baseline ([7b93bc5](https://github.com/lumada-design/hv-uikit-react/commit/7b93bc55375dd1d8ed97281ce6afa8233bb9095c))
+- **Theme:** update colors ([1fb5608](https://github.com/lumada-design/hv-uikit-react/commit/1fb560820ec2e20d7e557271cb21debcb84d799d))
+
 # [5.0.0-next.21](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.0-next.20...@hitachivantara/uikit-react-core@5.0.0-next.21) (2023-03-29)
 
 ### Bug Fixes
