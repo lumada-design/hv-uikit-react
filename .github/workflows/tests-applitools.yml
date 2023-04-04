@@ -2,6 +2,9 @@ name: Applitools Tests
 
 on:
   workflow_dispatch:
+    branches:
+      - master
+      - "next*"
   workflow_call:
     secrets:
       APPLITOOLS_API_KEY:

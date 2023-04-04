@@ -26,8 +26,3 @@ jobs:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
     with:
       publish-folder: pr-${{ github.event.number }}
-
-  # pa11y:
-  #   name: Pa11y
-  #   uses: ./.github/workflows/tests-pa11y.yml
-  #   needs: [documentation]

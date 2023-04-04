@@ -1,9 +1,11 @@
 name: Security Scans
 
 on:
-  schedule:
-    - cron: "30 6 * * 1-5" # week days at 06:30 AM
   workflow_dispatch:
+    branches:
+      - master
+      - "next*"
+  workflow_call:
 
 jobs:
   codedx-scans:
@@ -61,6 +63,6 @@ jobs:
       - name: Run Detect Scans
         run: .github/scripts/blackduck-detect.sh
         env:
-          BLACKDUCK_URL: '${{ secrets.BLACKDUCK_SERVER_URL }}'
-          BLACKDUCK_TOKEN: '${{ secrets.BLACKDUCK_TOKEN }}'
+          BLACKDUCK_URL: "${{ secrets.BLACKDUCK_SERVER_URL }}"
+          BLACKDUCK_TOKEN: "${{ secrets.BLACKDUCK_TOKEN }}"
           DETECT_VERSION: 8

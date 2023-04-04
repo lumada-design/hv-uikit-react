@@ -32,7 +32,7 @@ module.exports = (async () => {
         ignoreHTTPSErrors: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },
-      ignore: ["color-contrast"]
+      ignore: ["color-contrast"],
     },
     urls: storiesUrls,
   };

@@ -2,6 +2,9 @@ name: Documentation
 
 on:
   workflow_dispatch:
+    branches:
+      - master
+      - "next*"
   workflow_call:
     secrets:
       ORG_GHPAGES_DEPLOY_KEY:
