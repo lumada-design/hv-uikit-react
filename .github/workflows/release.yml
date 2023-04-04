@@ -1,0 +1,113 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    branches:
+      - master
+      - "next*"
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [applitools]
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_BRANCH: ${{ github.event.client_payload.branch }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # Pulls all commits (needed for semantic release to correctly version)
+          # See https://github.com/semantic-release/semantic-release/issues/1526
+          fetch-depth: "0"
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Fetch git tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+
+      - name: Publish Setup
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Publish NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
+        run: |
+          npm ci --include=dev 
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+
+          if [[ "${{ env.RELEASE_BRANCH }}" == "master" ]]; then
+            npm run publish
+          elif [[ "${{ env.RELEASE_BRANCH }}" == "next"* ]]; then
+            npm run publish:next
+          else
+            echo "Invalid event type: ${{ env.RELEASE_BRANCH }}"
+            exit 1
+          fi
+
+  documentation:
+    name: Documentation
+    uses: ./.github/workflows/documentation.yml
+    needs: [release]
+    secrets:
+      ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+    with:
+      publish-folder: ${{ env.RELEASE_BRANCH }}
+
+  notify-release:
+    name: Notify release
+    runs-on: ubuntu-latest
+    needs: [documentation]
+
+    env:
+      DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ env.RELEASE_BRANCH }}/
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get Release Message
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const branch = await github.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: ${{ env.RELEASE_BRANCH }}
+            })
+            const commitMessage = branch.data.commit.commit.message
+            const slackMessage = commitMessage.replace('chore(release): publish', '')
+              .replace(/\n/g, "\\n")
+              .replace(/\r/g, "\\r")
+              .replace(/\t/g, "\\t")
+              .replace(/\f/g, "\\f")
+            core.exportVariable("SLACK_MESSAGE", slackMessage)
+
+      - name: Notify release
+        uses: hbfernandes/slack-action@1.0
+        if: success()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "author_name": "New UI-Kit artifacts are available",
+                  "title": "More details https://github.com/${{github.repository}}/releases",
+                  "text": "${{env.SLACK_MESSAGE}}",
+                  "footer": "${{env.DOCUMENTATION_URL}}"
+                }
+              ]
+            }
