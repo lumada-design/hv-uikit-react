@@ -1,0 +1,25 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { SwitchColumnRendererStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers/Renderers/Switch Column Renderer" />
+
+# Switch Column Renderer
+
+This functions renders a column with a switch component embedded that follows the state of a boolean value. To change the value of the switch,
+the data in the table must be changed.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `switchLabel: string`: The aria label for the switch.
+- `falseLabel: string`: The label for the left side of the switch.
+- `trueLabel: string`: The label for the right side of the switch.
+- `switchProps: HvBaseSwitchProps`: Extra props passed to the switch. These values correspond to the `HvBaseSwitch` props.
+
+Output:
+
+- `col: HvTableColumnConfig`: the modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story name="Switch Column Renderer" story={SwitchColumnRendererStory} />
+</Canvas>

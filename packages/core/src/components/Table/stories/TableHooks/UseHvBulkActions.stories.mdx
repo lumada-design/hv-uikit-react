@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { UseHvBulkActionsStory } from "./TableHooks.stories";
+
+<Meta title="Guides/Table/Table Hooks/Hooks/useHvBulkActions" />
+
+# useHvBulkActions
+
+Rows can also be selected in bulk and actions can be performed on the current selection.
+
+The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available on the table instance returned that can be used to setup a `HvBulkActions` component.
+
+_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvData` only `useHvBulkActions` needs to be installed._
+
+<Canvas>
+  <Story name="useHvBulkActions" story={UseHvBulkActionsStory} />
+</Canvas>

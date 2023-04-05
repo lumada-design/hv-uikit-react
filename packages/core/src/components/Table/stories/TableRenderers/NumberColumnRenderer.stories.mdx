@@ -1,0 +1,21 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { NumberColumnRendererStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers/Renderers/Number Column Renderer" />
+
+# Number Column Renderer
+
+This functions renders numeric values in the table. The column generated will be right aligned and in case the value is missing it will be
+substituted by a long dash.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story name="Number Column Renderer" story={NumberColumnRendererStory} />
+</Canvas>

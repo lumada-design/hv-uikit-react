@@ -1,0 +1,31 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { AllColumnRenderersStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers" />
+
+# Table Renderers
+
+The UI Kit library provides a collection of utility functions that, together with the [Table Hooks](/docs/guides-table-table-hooks--use-hv-hooks-story),
+ease the setup of common column configurations, including the render function, alignment, missing data fallbacks and cell overflow.
+
+They add a set of out of the box features, not meant to be 100% feature complete, but instead, ease the majority of use-cases we have been encountering.
+If you need any customization or extension to these renderers, please feel free to copy and customize them.
+
+The following renderers are available:
+
+- `hvTextColumn`: Renders a string and includes an overflow tooltip. [More details here](/docs/guides-table-table-renderers-renderers-text-column-renderer--text-column-renderer-story).
+- `hvNumberColumn`: Renders a number aligning it correctly and includes an overflow tooltip. [More details here](/docs/guides-table-table-renderers-renderers-number-column-renderer--number-column-renderer-story).
+- `hvDateColumn`: Renders a date and formats it. [More details here](/docs/guides-table-table-renderers-renderers-date-column-renderer--date-column-renderer-story).
+- `hvExpandColumn`: Renders a column that includes an expand button. [More details here](/docs/guides-table-table-renderers-renderers-expand-column-renderer--expand-column-renderer-story).
+- `hvTagColumn`: Renders a column with a tag component inside the cell. [More details here](/docs/guides-table-table-renderers-renderers-tag-column-renderer--tag-column-renderer-story).
+- `hvSwitchColumn`: Renders a column that includes a switch to toggle between two values. [More details here](/docs/guides-table-table-renderers-renderers-switch-column-renderer--switch-column-renderer-story).
+- `hvDropdownColumn`: Renders a column that include a dropdown select between various values. [More details here](/docs/guides-table-table-renderers-renderers-dropdown-column-renderer--dropdown-column-renderer-story).
+- `hvProgressColumn`: Renders a progress bar to compare between a current value and max value. [More details here](/docs/guides-table-table-renderers-renderers-progress-column-renderer--progress-column-renderer-story).
+
+## All Renderers Table
+
+Complete sample table that uses most of the provided renderers.
+
+<Canvas>
+  <Story name="Table Renderers" story={AllColumnRenderersStory} />
+</Canvas>

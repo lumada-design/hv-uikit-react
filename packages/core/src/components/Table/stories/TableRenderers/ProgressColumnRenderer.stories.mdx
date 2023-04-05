@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
+import { ProgressColumnRendererStory } from "./TableRenderers.stories";
+
+<Meta title="Guides/Table/Table Renderers/Renderers/Progress Column Renderer" />
+
+# Progress Column Renderer
+
+This functions renders a column with a progress bar embedded. The function receives a pair of callbacks to specify the status of the bar.
+
+Parameters:
+
+- `col: HvTableColumnConfig`: The column configuration to modify.
+- `getPartial: (row: HvRowInstance) => number`: A function that returns the current value of the bar.
+- `getTotal: (row: HvRowInstance) => number`: A function that returns the current max value of the bar.
+- `color: "primary" | "secondary"`: Which color to use for the bar.
+
+Output:
+
+- `col: HvTableColumnConfig`: The modified column configuration with the parameters required to render the text.
+
+<Canvas>
+  <Story name="Progress Column Renderer" story={ProgressColumnRendererStory} />
+</Canvas>
