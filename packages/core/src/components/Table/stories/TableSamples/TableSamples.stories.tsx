@@ -464,12 +464,16 @@ return (
 };
 
 const EmptyCells = () => {
-  const columns: SampleColumn[] = getColumns();
-  const data: SampleDataProps[] = makeData(6).map((entry) => ({
-    ...entry,
-    // make some entries empty
-    status: entry.status === "Closed" ? null : entry.status,
-  }));
+  const columns: SampleColumn[] = useMemo(() => getColumns(), []);
+  const data: SampleDataProps[] = useMemo(
+    () =>
+      makeData(6).map((entry) => ({
+        ...entry,
+        // make some entries empty
+        status: entry.status === "Closed" ? null : entry.status,
+      })),
+    []
+  );
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
     useHvData<SampleDataProps>({
@@ -521,11 +525,16 @@ export const EmptyCellsStory: StoryObj = {
     docs: {
       source: {
         code: `
-const columns = getColumns();
-const data = makeData(6).map((entry) => ({
-  ...entry,
-  status: entry.status === "Closed" ? null : entry.status,
-}));
+const columns = useMemo(() => getColumns(), []);
+const data = useMemo(
+  () =>
+    makeData(6).map((entry) => ({
+      ...entry,
+      // make some entries empty
+      status: entry.status === "Closed" ? null : entry.status,
+    })),
+  []
+);
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
   useHvData({
