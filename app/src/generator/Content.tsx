@@ -26,6 +26,7 @@ const Content = () => {
           cssTheme="scoped"
           themes={[customTheme]}
           colorMode={selectedMode}
+          cssBaseline="none" // the main provider already applies the baseline styles globally
         >
           <NavigationProvider navigation={navigation}>
             <Container maxWidth="xl">
