@@ -13,7 +13,12 @@ const App = () => {
         borderRadius: theme.radii.circle,
       }}
     >
-      <HvProvider themes={[ds3, ds5]} theme="ds5">
+      <HvProvider
+        themes={[ds3, ds5]}
+        theme="ds5"
+        rootElementId="hv-root"
+        cssTheme="scoped"
+      >
         <GeneratorProvider>
           <div
             style={{
