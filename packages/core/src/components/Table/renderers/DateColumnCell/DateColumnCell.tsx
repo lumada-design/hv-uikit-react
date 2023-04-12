@@ -12,7 +12,7 @@ export interface HvDateColumnCellProp {
 const HvDateColumnCell = ({
   date,
   dateFormat,
-}: HvDateColumnCellProp): JSX.Element | null => {
+}: HvDateColumnCellProp): JSX.Element => {
   const formattedDate = useMemo(() => {
     if (date)
       return dayjs(date).format(

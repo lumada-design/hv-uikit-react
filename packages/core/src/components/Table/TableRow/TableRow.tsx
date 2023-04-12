@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
-import { HvBaseProps } from "../../../types/index";
+import { HvBaseProps } from "~/types";
 import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import { forwardRef, useContext, useMemo } from "react";
 import TableContext from "../TableContext";
@@ -11,7 +11,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "~/hooks";
 
-export type HvTableRowProps = HvBaseProps<HTMLTableRowElement, { children }> & {
+export interface HvTableRowProps
+  extends HvBaseProps<HTMLTableRowElement, { children }> {
   /** Content to be rendered */
   children: React.ReactNode;
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to tbody. */
@@ -26,7 +27,7 @@ export type HvTableRowProps = HvBaseProps<HTMLTableRowElement, { children }> & {
   striped?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableRowClasses;
-};
+}
 
 const defaultComponent = "tr";
 

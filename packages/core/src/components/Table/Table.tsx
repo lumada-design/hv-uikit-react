@@ -27,7 +27,7 @@ export type HvTableCellVariant =
   | "default"
   | "none";
 
-export type HvTableProps = TableHTMLAttributes<HTMLTableElement> & {
+export interface HvTableProps extends TableHTMLAttributes<HTMLTableElement> {
   /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to `table`.
@@ -45,7 +45,7 @@ export type HvTableProps = TableHTMLAttributes<HTMLTableElement> & {
   variant?: HvTableVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableClasses;
-};
+}
 
 const defaultComponent = "table";
 

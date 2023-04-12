@@ -1,16 +1,14 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import tableHeadClasses, { HvTableHeadClasses } from "./tableHeadClasses";
 import { forwardRef, useContext, useMemo } from "react";
 import TableContext from "../TableContext";
 import { transientOptions } from "~/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 
-export type HvTableHeadProps = HvBaseProps<
-  HTMLTableSectionElement,
-  { children }
-> & {
+export interface HvTableHeadProps
+  extends HvBaseProps<HTMLTableSectionElement, { children }> {
   /**
    * Content to be rendered
    */
@@ -26,7 +24,7 @@ export type HvTableHeadProps = HvBaseProps<
   stickyHeader?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableHeadClasses;
-};
+}
 
 const tableSectionContext = {
   type: "head",

@@ -11,7 +11,7 @@ import capitalize from "lodash/capitalize";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import tableHeaderClasses, { HvTableHeaderClasses } from "./tableHeaderClasses";
 import TableContext from "../TableContext";
 import { transientOptions } from "~/utils/transientOptions";
@@ -28,57 +28,55 @@ import {
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
-import { HvTypographyProps } from "../../Typography";
+import { HvTypographyProps } from "~/components";
 import { useTheme } from "~/hooks";
 
-export type HvTableHeaderProps = Omit<
-  ThHTMLAttributes<HTMLTableCellElement>,
-  "align"
-> &
-  Omit<HvBaseProps, "children"> & {
-    /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to th. */
-    component?: React.ElementType;
-    /** Content to be rendered */
-    children?: React.ReactNode;
-    /** The scope of cells that the header element relates to. */
-    scope?: "col" | "row" | "colgroup" | "rowgroup";
-    /** Set the text-align on the table cell content. */
-    align?: HvTableCellAlign;
-    /** Sets the cell's variant. */
-    variant?: HvTableCellVariant;
-    /** Specify the cell type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
-    type?: HvTableCellType;
-    /** The cell is part of a sticky column. */
-    stickyColumn?: boolean;
-    /** The cell is part of the last sticky to the left column. */
-    stickyColumnMostLeft?: boolean;
-    /** The cell is part of the first sticky to the right column. */
-    stickyColumnLeastRight?: boolean;
-    /** The cell is part of the first column in the group. */
-    groupColumnMostLeft?: boolean;
-    /** The cell is part of the last column in the group. */
-    groupColumnMostRight?: boolean;
-    /** Whether or not the cell is sorted */
-    sorted?: boolean;
-    /** Whether or not the cell is sortable */
-    sortable?: boolean;
-    /** Set sort direction icon and aria-sort. */
-    sortDirection?: "ascending" | "descending" | false;
-    /** Extra props to be passed onto the text in the header. */
-    headerTextProps?: HvTypographyProps;
-    /** Whether or not the cell is resizable */
-    resizable?: boolean;
-    /** Whether or not the cell is being resized */
-    resizing?: boolean;
-    /** The resize props injected in the resize handler */
-    resizerProps?: HTMLAttributes<HTMLDivElement>;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvTableHeaderClasses;
-  };
+export interface HvTableHeaderProps
+  extends Omit<ThHTMLAttributes<HTMLTableCellElement>, "align">,
+    Omit<HvBaseProps<HTMLTableCellElement>, "children"> {
+  /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to th. */
+  component?: React.ElementType;
+  /** Content to be rendered */
+  children?: React.ReactNode;
+  /** The scope of cells that the header element relates to. */
+  scope?: "col" | "row" | "colgroup" | "rowgroup";
+  /** Set the text-align on the table cell content. */
+  align?: HvTableCellAlign;
+  /** Sets the cell's variant. */
+  variant?: HvTableCellVariant;
+  /** Specify the cell type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
+  type?: HvTableCellType;
+  /** The cell is part of a sticky column. */
+  stickyColumn?: boolean;
+  /** The cell is part of the last sticky to the left column. */
+  stickyColumnMostLeft?: boolean;
+  /** The cell is part of the first sticky to the right column. */
+  stickyColumnLeastRight?: boolean;
+  /** The cell is part of the first column in the group. */
+  groupColumnMostLeft?: boolean;
+  /** The cell is part of the last column in the group. */
+  groupColumnMostRight?: boolean;
+  /** Whether or not the cell is sorted */
+  sorted?: boolean;
+  /** Whether or not the cell is sortable */
+  sortable?: boolean;
+  /** Set sort direction icon and aria-sort. */
+  sortDirection?: "ascending" | "descending" | false;
+  /** Extra props to be passed onto the text in the header. */
+  headerTextProps?: HvTypographyProps;
+  /** Whether or not the cell is resizable */
+  resizable?: boolean;
+  /** Whether or not the cell is being resized */
+  resizing?: boolean;
+  /** The resize props injected in the resize handler */
+  resizerProps?: HTMLAttributes<HTMLDivElement>;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvTableHeaderClasses;
+}
 
 const defaultComponent = "th";
 
-type StyledTableHeaderProps = {
+interface StyledTableHeaderProps {
   $sorted: boolean;
   $resizable: boolean;
   $resizing: boolean;
@@ -92,7 +90,7 @@ type StyledTableHeaderProps = {
   $variant: string;
   $type: string;
   $atmo1Color: string;
-};
+}
 
 const StyledTableHeader = (c: any) =>
   styled(

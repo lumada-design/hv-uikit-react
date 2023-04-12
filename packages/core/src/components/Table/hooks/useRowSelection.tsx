@@ -84,6 +84,8 @@ export interface UseHvRowSelectionTableInstance<D extends object> {
 export interface UseHvRowSelectionRowInstance {
   isSelected: boolean;
   isSomeSelected: boolean;
+  isSelectionLocked: boolean;
+  toggleRowLockedSelection: (set?: boolean) => void;
   toggleRowSelected: (set?: boolean) => void;
   getToggleRowSelectedProps: (
     props?: Partial<UseHvRowSelectionRowCheckboxProps>

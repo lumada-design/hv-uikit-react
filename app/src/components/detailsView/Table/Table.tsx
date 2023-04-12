@@ -20,7 +20,7 @@ export const Table = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvData(
+  const instance = useHvData<NewEntry, string>(
     {
       data,
       columns,

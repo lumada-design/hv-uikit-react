@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import {
   CSSProperties,
@@ -23,46 +23,44 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "~/hooks";
 
-export type HvTableCellProps = Omit<
-  TdHTMLAttributes<HTMLTableCellElement>,
-  "align"
-> &
-  Omit<HvBaseProps, "children"> & {
-    /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to td. */
-    component?: React.ElementType;
-    /** Content to be rendered */
-    children?: React.ReactNode;
-    /** Inline styles to be applied to the root element. */
-    style?: CSSProperties;
-    /** Set the text-align on the table cell content. */
-    align?: HvTableCellAlign;
-    /** Sets the cell's variant. */
-    variant?: HvTableCellVariant | "listcheckbox" | "listactions";
-    /** Specify the cell's type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
-    type?: HvTableCellType;
-    /** Whether or not the cell is part of a sorted column. */
-    sorted?: boolean;
-    /** The cell is part of a sticky column. */
-    stickyColumn?: boolean;
-    /** The cell is part of the last sticky to the left column. */
-    stickyColumnMostLeft?: boolean;
-    /** The cell is part of the first sticky to the right column. */
-    stickyColumnLeastRight?: boolean;
-    /** The cell is part of the first column in the group. */
-    groupColumnMostLeft?: boolean;
-    /** The cell is part of the last column in the group. */
-    groupColumnMostRight?: boolean;
-    /** Whether or not the cell is resizable */
-    resizable?: boolean;
-    /** Whether or not the cell is being resized */
-    resizing?: boolean;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvTableCellClasses;
-  };
+export interface HvTableCellProps
+  extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align">,
+    Omit<HvBaseProps<HTMLTableCellElement>, "children"> {
+  /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to td. */
+  component?: React.ElementType;
+  /** Content to be rendered */
+  children?: React.ReactNode;
+  /** Inline styles to be applied to the root element. */
+  style?: CSSProperties;
+  /** Set the text-align on the table cell content. */
+  align?: HvTableCellAlign;
+  /** Sets the cell's variant. */
+  variant?: HvTableCellVariant | "listcheckbox" | "listactions";
+  /** Specify the cell's type. The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components. */
+  type?: HvTableCellType;
+  /** Whether or not the cell is part of a sorted column. */
+  sorted?: boolean;
+  /** The cell is part of a sticky column. */
+  stickyColumn?: boolean;
+  /** The cell is part of the last sticky to the left column. */
+  stickyColumnMostLeft?: boolean;
+  /** The cell is part of the first sticky to the right column. */
+  stickyColumnLeastRight?: boolean;
+  /** The cell is part of the first column in the group. */
+  groupColumnMostLeft?: boolean;
+  /** The cell is part of the last column in the group. */
+  groupColumnMostRight?: boolean;
+  /** Whether or not the cell is resizable */
+  resizable?: boolean;
+  /** Whether or not the cell is being resized */
+  resizing?: boolean;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvTableCellClasses;
+}
 
 const defaultComponent = "td";
 
-type StyledTableCellProps = {
+interface StyledTableCellProps {
   $variantList: boolean;
   $variantListHead: boolean;
   $stickyColumn: boolean;
@@ -76,7 +74,7 @@ type StyledTableCellProps = {
   $variant: string;
   $type: string;
   $atmo1Color: string;
-};
+}
 
 const StyledTableCell = (c: any) =>
   styled(
