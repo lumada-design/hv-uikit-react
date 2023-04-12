@@ -31,4 +31,5 @@ interface TreeViewControlContextValue {
   mapFirstChar?: (id, firstChar) => void;
   unMapFirstChar?: (id, firstChar?) => void;
   focus?: (id, firstChar) => void;
+  hasExpandableItems?: boolean;
 }

@@ -6,7 +6,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
     style="display: flex; width: 220px; height: 530px;"
   >
     <div
-      class="HvVerticalNavigation-root css-1ksbuk-StyledRoot eyka99t0"
+      class="HvVerticalNavigation-root css-4wdqf0-StyledRoot eyka99t0"
       id="sample1"
     >
       <div
@@ -52,7 +52,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
       </div>
       <nav
         aria-label="Example 1 navigation"
-        class="HvVerticalNavigationTree-root css-ovxg28-StyledNav ejose0b0"
+        class="HvVerticalNavigationTree-root css-1m5708s-StyledNav ejose0b0"
       >
         <ul
           class="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list css-1xsm1gc-StyledRoot e7gq1cg0"
@@ -69,6 +69,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               style="padding-left: 10px;"
               tabindex="0"
             >
+              <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
               <div
                 class=""
                 data-mui-internal-clone-element="true"
@@ -89,6 +92,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               style="padding-left: 10px;"
               tabindex="-1"
             >
+              <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
               <div
                 class=""
                 data-mui-internal-clone-element="true"
@@ -129,6 +135,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   />
                 </svg>
               </div>
+              <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
               <div
                 class=""
                 data-mui-internal-clone-element="true"
@@ -173,6 +182,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     </svg>
                   </div>
                   <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
                     class=""
                     data-mui-internal-clone-element="true"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -197,6 +209,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       tabindex="0"
                     >
                       <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
+                      <div
                         class=""
                         data-mui-internal-clone-element="true"
                         style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -218,6 +233,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       tabindex="0"
                     >
                       <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
+                      <div
                         class=""
                         data-mui-internal-clone-element="true"
                         style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -237,6 +255,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"
@@ -282,6 +303,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 </svg>
               </div>
               <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
+              <div
                 class=""
                 data-mui-internal-clone-element="true"
                 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -325,6 +349,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     </svg>
                   </div>
                   <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
                     class=""
                     data-mui-internal-clone-element="true"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -347,6 +374,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"

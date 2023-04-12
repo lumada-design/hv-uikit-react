@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useContext, useEffect } from "react";
+import { useCallback, useMemo, useContext, useEffect, useState } from "react";
 import clsx from "clsx";
 import { setId, wrapperTooltip } from "~/utils";
 import { useControlled } from "~/hooks";
@@ -13,6 +13,7 @@ import { StyledNav } from "./Navigation.styles";
 import { HvVerticalNavigationSlider } from "../";
 import { HvBaseProps } from "../../../types";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
+import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
 
 export interface NavigationData {
   /**
@@ -170,12 +171,43 @@ export const HvVerticalNavigationTree = ({
     return defaultExpanded;
   });
 
+  const {
+    isOpen,
+    collapsedMode,
+    slider,
+
+    parentItem,
+    withParentData,
+    navigateToChildHandler,
+
+    setParentData,
+    setParentSelected,
+  } = useContext(VerticalNavigationContext);
+
+  const [navigationPopup, setNavigationPopup] = useState<{
+    anchorEl: HTMLButtonElement | null;
+    data: NavigationData[];
+  } | null>(null);
+
   const handleChange = useCallback(
     (event, selectedId, selectedItem) => {
-      setSelected(selectedId);
+      if (collapsedMode === "icon" && !isOpen && selectedItem.data) {
+        const currentEventTarget = event.currentTarget;
+        setNavigationPopup((prevState) => {
+          // We want to close the popup in case the clicked element is the same as the previous one
+          return prevState?.anchorEl === currentEventTarget
+            ? null
+            : { anchorEl: currentEventTarget, data: selectedItem.data };
+        });
 
-      if (onChange) {
-        onChange(event, selectedItem);
+        // We need this stopPropagation or else the Popup will close due to the clickaway being triggered
+        event.stopPropagation();
+      } else {
+        setSelected(selectedId);
+        setNavigationPopup(null);
+        if (onChange) {
+          onChange(event, selectedItem);
+        }
       }
     },
     [onChange, setSelected]
@@ -191,19 +223,6 @@ export const HvVerticalNavigationTree = ({
     },
     [onToggle, setExpanded]
   );
-
-  const {
-    isOpen,
-    collapsedMode,
-    slider,
-
-    parentItem,
-    withParentData,
-    navigateToChildHandler,
-
-    setParentData,
-    setParentSelected,
-  } = useContext(VerticalNavigationContext);
 
   const children = useMemo(
     () => data && createListHierarchy(data, id, classes),
@@ -221,6 +240,10 @@ export const HvVerticalNavigationTree = ({
   //navigation slider
   const navigateToTargetHandler = (event, selectedItem) => {
     handleChange(event, selectedItem.id, selectedItem);
+  };
+
+  const handleNavigationPopupClose = () => {
+    setNavigationPopup(null);
   };
 
   return (
@@ -255,6 +278,16 @@ export const HvVerticalNavigationTree = ({
           expanded={expanded}
           onToggle={handleToggle}
         >
+          {collapsedMode === "icon" && !isOpen && navigationPopup && (
+            <HvVerticalNavigationPopup
+              id={setId(id, "navigation-popup")}
+              anchorEl={navigationPopup?.anchorEl}
+              onClose={handleNavigationPopupClose}
+              selected={selected}
+              data={navigationPopup?.data}
+              onChange={handleChange}
+            />
+          )}
           {children}
         </HvVerticalNavigationTreeView>
       )}

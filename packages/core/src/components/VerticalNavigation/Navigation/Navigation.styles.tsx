@@ -11,4 +11,8 @@ export const StyledNav = styled("nav")({
   [`&.${navigationClasses.collapsed}`]: {
     display: "none",
   },
+
+  [`&.${navigationClasses.popup}`]: {
+    boxShadow: "inset 5px 0 5px -3px rgb(65 65 65 / 12%)",
+  },
 });

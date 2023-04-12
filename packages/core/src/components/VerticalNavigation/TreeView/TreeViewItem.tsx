@@ -20,8 +20,8 @@ import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { HvAvatar } from "~/components";
-import { VerticalNavigationContext } from "../VerticalNavigationContext";
+import { VerticalNavigationContext } from "../";
+import { IconWrapper } from "./IconWrapper";
 
 export type HvVerticalNavigationTreeViewItemProps = {
   /**
@@ -138,6 +138,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       mapFirstChar,
       unMapFirstChar,
       focus,
+      hasExpandableItems,
     } = treeViewControlContext;
 
     const treeviewMode = mode === "treeview";
@@ -437,22 +438,18 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               })}
         >
           {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
-          {!icon &&
-          level === 0 &&
-          !isOpen &&
-          collapsedMode === "icon" &&
-          contentRef.current?.textContent ? (
-            <HvAvatar
-              variant="square"
-              size="xs"
-              backgroundColor="secondary_80"
-              style={{ fontSize: "15px" }}
-            >
-              {contentRef.current?.textContent.substring(0, 1)}
-            </HvAvatar>
-          ) : (
-            icon
-          )}
+
+          <IconWrapper
+            icon={icon}
+            label={payload?.label}
+            hasChildren={Boolean(children)}
+            hasExpandableItems={hasExpandableItems}
+            showAvatar={
+              !icon && level === 0 && !isOpen && collapsedMode === "icon"
+            }
+            isOpen={isOpen}
+          />
+
           {isOpen && label}
         </StyledContent>
       ),
