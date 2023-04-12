@@ -13,11 +13,11 @@ import {
   HvTypography,
   useHvGlobalFilter,
   useHvSortBy,
-  useHvTable,
+  useHvData,
 } from "@hitachivantara/uikit-react-core";
 import { Cards, List } from "@hitachivantara/uikit-react-icons";
 import { useMemo, useState } from "react";
-import { getColumns, makeData } from "./makedata";
+import { getColumns, makeData, NewEntry } from "./makedata";
 
 export const Controls = () => {
   const originalData = useMemo(() => makeData(10), []);
@@ -25,7 +25,7 @@ export const Controls = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvTable(
+  const instance = useHvData<NewEntry, string>(
     {
       data,
       columns,
@@ -38,13 +38,11 @@ export const Controls = () => {
     {
       id: "card",
       icon: <Cards />,
-      // // "aria-label": "Select card view",
       label: "Select card view",
     },
     {
       id: "list",
       icon: <List />,
-      // // "aria-label": "Select list view",
       label: "Select list view",
     },
   ];
@@ -65,7 +63,7 @@ export const Controls = () => {
         views={views}
         defaultView="card"
         callbacks={instance}
-        onViewChange={(evt, id) => setCurrentView(id)}
+        onViewChange={(_, id) => setCurrentView(id)}
       >
         <HvLeftControl
           placeholder="Search"
@@ -152,7 +150,6 @@ export const Controls = () => {
             {instance?.rows?.map((row) => {
               return (
                 <HvListItem
-                  // bgcolor="atmo1"
                   key={`${row?.values?.name}-row`}
                   style={{ width: "100%" }}
                 >

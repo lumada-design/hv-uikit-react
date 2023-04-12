@@ -1,4 +1,8 @@
 import {
+  HvSemanticColorKeys,
+  HvTableColumnConfig,
+} from "@hitachivantara/uikit-react-core";
+import {
   Cards,
   List,
   Level0Good,
@@ -10,36 +14,30 @@ import {
   Preview,
 } from "@hitachivantara/uikit-react-icons";
 
-type Priority = "Low" | "High" | "Medium";
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
-type NewEntry = {
-  id: string;
-  name: string;
-  eventType: string;
-  status: string;
-  severity: string;
-  priority: Priority;
-  time: string;
-  temperature: string;
-  statusColor: string;
-};
-
-const getOption = (opts: string[], i: number): string => opts[i % opts.length];
-
-const getTime = (priority: Priority, index: number): string => {
+const getTime = (priority: string, index: number) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
   return `${i % 12}:${i % 60}:${i % 60}`;
 };
 
-const getPriority = (i: number): Priority =>
+const getPriority = (i: number) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const getRandomStatus = (): string => {
-  return `sema${Math.floor(Math.random() * 4)}`;
+const getRandomStatus = (): HvSemanticColorKeys | "sema0" => {
+  const colors: (HvSemanticColorKeys | "sema0")[] = [
+    "sema0",
+    "positive",
+    "neutral",
+    "warning",
+    "negative",
+  ];
+
+  return colors[Math.floor(Math.random() * 4)];
 };
 
-const getNewEntry = (i: number): NewEntry => {
+const getNewEntry = (i: number): AssetInventoryModel => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -53,8 +51,8 @@ const getNewEntry = (i: number): NewEntry => {
   };
 };
 
-export const makeData = (len = 10): NewEntry[] => {
-  const data: NewEntry[] = [];
+export const makeData = (len = 10): AssetInventoryModel[] => {
+  const data: AssetInventoryModel[] = [];
   for (let i = 0; i <= len; i += 1) {
     data.push(getNewEntry(i));
   }
@@ -63,7 +61,10 @@ export const makeData = (len = 10): NewEntry[] => {
 
 // Config Utils
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig<
+  AssetInventoryModel,
+  string
+>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },

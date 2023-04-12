@@ -1,7 +1,8 @@
 import {
   HvTooltip,
   HvTypography,
-  HvCellInstance,
+  HvTableColumnConfig,
+  HvCellProps,
 } from "@hitachivantara/uikit-react-core";
 import {
   Level0Good,
@@ -48,8 +49,9 @@ const getBuild = () => {
 
 const getRandEntry = () => entries[Math.floor(Math.random() * entries.length)];
 
-const getNewEntry = (i: number) => {
+const getNewEntry = (i: number): ListViewModel => {
   const entry = getRandEntry();
+
   return {
     id: `${i + 1}`,
     name: entry.name,
@@ -61,8 +63,8 @@ const getNewEntry = (i: number) => {
   };
 };
 
-export const makeData = (len = 10) => {
-  const data = [];
+export const makeData = (len = 10): ListViewModel[] => {
+  const data: ListViewModel[] = [];
   for (let i = 0; i <= len; i += 1) {
     data.push(getNewEntry(i));
   }
@@ -84,12 +86,12 @@ export const getStatusIcon = (status: number) => {
   }
 };
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig<ListViewModel, string>[] => [
   {
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: (cellData: HvCellInstance) => {
+    Cell: (cellData: HvCellProps<ListViewModel, string>) => {
       switch (cellData.row.original.status) {
         case 0:
           return (

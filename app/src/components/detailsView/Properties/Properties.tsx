@@ -5,7 +5,6 @@ import {
   HvTagsInput,
   HvGlobalActions,
 } from "@hitachivantara/uikit-react-core";
-
 import { Kpi3 } from "../Kpi3/index.js";
 import classes from "./styles.js";
 
