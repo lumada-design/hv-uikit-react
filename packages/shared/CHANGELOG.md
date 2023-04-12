@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.0-next.20...@hitachivantara/uikit-react-shared@5.0.1) (2023-04-12)
+
+### Bug Fixes
+
+- aliases for core package ([0fe50ac](https://github.com/lumada-design/hv-uikit-react/commit/0fe50ac9cb7fb6c33a0f8f33cd6dab4ebdcefc45))
+- aliases for shared package ([a9e2f07](https://github.com/lumada-design/hv-uikit-react/commit/a9e2f07e4315fd5641495a4482ca0378cad8afe0))
+
 # [5.0.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.0-next.20...@hitachivantara/uikit-react-shared@5.0.0) (2023-04-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared
