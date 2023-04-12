@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvFormElement, HvLabel } from "components";
-import { transientOptions } from "utils/transientOptions";
+import { HvFormElement, HvFormElementProps, HvLabel } from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 
-export const StyledFormElement = styled(HvFormElement)({
+export const StyledFormElement = styled((props: HvFormElementProps) => (
+  <HvFormElement {...props} />
+))({
   display: "inline-block",
   padding: 0,
   margin: 0,

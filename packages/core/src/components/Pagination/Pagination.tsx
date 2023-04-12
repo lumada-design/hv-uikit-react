@@ -1,7 +1,7 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
 import clsx from "clsx";
 import { Hidden } from "@mui/material";
-import { HvInput, HvInputProps, HvTypography } from "components";
+import { HvInput, HvInputProps, HvTypography } from "~/components";
 import {
   Start,
   End,
@@ -21,10 +21,10 @@ import {
   StyledPageJump,
   StyledPageInfo,
 } from "./Pagination.styles";
-import { paginationClasses, HvPaginationClasses } from ".";
-import { isKeypress, keyboardCodes, setId } from "utils";
+import paginationClasses, { HvPaginationClasses } from "./paginationClasses";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
 import { usePageInput, getSafePage, setColor } from "./utils";
-import { useLabels } from "hooks";
+import { useLabels } from "~/hooks";
 
 export type HvPaginationLabels = {
   /** The show label. */

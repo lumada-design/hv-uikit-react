@@ -1,9 +1,9 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvComposedNavigationClasses = {
+export interface HvComposedNavigationClasses {
   navigationContainer?: string;
   navigationMonth?: string;
-};
+}
 
 const classKeys: string[] = ["navigationContainer", "navigationMonth"];
 

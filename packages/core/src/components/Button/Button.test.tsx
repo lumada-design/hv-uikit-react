@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-
 import { Disabled, Icons, Semantic } from "./Button.stories";
 import { HvButton } from "./Button";
 

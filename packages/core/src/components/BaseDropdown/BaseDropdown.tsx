@@ -7,10 +7,10 @@ import {
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
-import { useControlled, useForkRef, useTheme, useUniqueId } from "hooks";
-import { isKeypress, keyboardCodes, setId } from "utils";
-import { getFirstAndLastFocus } from "utils/focusableElementFinder";
-import { HvBaseProps } from "../../types";
+import { useControlled, useForkRef, useTheme, useUniqueId } from "~/hooks";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { getFirstAndLastFocus } from "~/utils/focusableElementFinder";
+import { HvBaseProps } from "~/types";
 import {
   StyledAnchor,
   StyledContainer,
@@ -31,10 +31,8 @@ import baseDropdownClasses, {
 
 const { Tab, Enter, Esc, Space, ArrowDown } = keyboardCodes;
 
-export type HvBaseDropdownProps = HvBaseProps<
-  HTMLDivElement,
-  { placeholder }
-> & {
+export interface HvBaseDropdownProps
+  extends HvBaseProps<HTMLDivElement, { placeholder }> {
   /**
    * The role of the element that triggers the popup.
    *
@@ -116,7 +114,7 @@ export type HvBaseDropdownProps = HvBaseProps<
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvBaseDropdownClasses;
-};
+}
 
 export const HvBaseDropdown = ({
   id,

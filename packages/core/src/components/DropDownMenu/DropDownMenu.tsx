@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useControlled } from "hooks";
+import { useControlled } from "~/hooks";
 import { HvBaseProps } from "../../types";
 import {
   StyledBaseDropDown,
@@ -9,10 +9,15 @@ import {
 import dropDownMenuClasses, {
   HvDropDownMenuClasses,
 } from "./dropDownMenuClasses";
-import { isKeypress, keyboardCodes, outlineStyles, setId } from "utils";
-import getPrevNextFocus from "utils/focusableElementFinder";
+import { isKeypress, keyboardCodes, outlineStyles, setId } from "~/utils";
+import getPrevNextFocus from "~/utils/focusableElementFinder";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import { HvButtonVariant, HvList, HvListValue } from "components";
+import {
+  HvBaseDropdownProps,
+  HvButtonVariant,
+  HvList,
+  HvListValue,
+} from "~/components";
 import { useMemo } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import withId from "../../hocs/withId";
@@ -123,7 +128,7 @@ const HvDropDownMenu = ({
   );
 
   const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
-  const popperStyle = {
+  const popperStyle: HvBaseDropdownProps["popperProps"] = {
     style: {
       zIndex: theme.zIndices.tooltip,
       width: "auto",

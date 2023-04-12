@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvAppSwitcherClasses = {
+export interface HvAppSwitcherClasses {
   root?: string;
   item?: string;
   itemSelected?: string;
@@ -17,7 +17,7 @@ export type HvAppSwitcherClasses = {
   single?: string;
   dual?: string;
   fluid?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

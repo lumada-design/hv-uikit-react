@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { outlineStyles } from "utils";
-import { transientOptions } from "utils/transientOptions";
+import { outlineStyles } from "~/utils";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledRoot = styled(
   "div",

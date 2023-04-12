@@ -35,7 +35,9 @@ const Header = () => {
           </>
           <div>
             <HvButton variant="primary" style={{ marginRight: 10 }}>
-              <a href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page">Get Started</a>
+              <a href="https://lumada-design.github.io/uikit/master/?path=/docs/overview-get-started--page">
+                Get Started
+              </a>
             </HvButton>
             <HvButton variant="primarySubtle">
               <a

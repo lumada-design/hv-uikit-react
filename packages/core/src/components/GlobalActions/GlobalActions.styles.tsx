@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Breakpoints as MuiBreakpoints } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledRoot = styled(
   "div",

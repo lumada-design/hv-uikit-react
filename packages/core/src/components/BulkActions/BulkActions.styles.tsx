@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import bulkActionsClasses from "./bulkActionsClasses";
-import fade from "utils/hexToRgbA";
-import { HvActionsGeneric } from "components";
+import fade from "~/utils/hexToRgbA";
+import { HvActionsGeneric, HvActionsGenericProps } from "~/components";
 
 export const StyledRoot = styled(
   "div",
@@ -56,7 +56,7 @@ export const StyledSelectAllContainer = styled("div")({
   alignItems: "center",
 });
 
-export const StyledGenericActions = styled((props) => (
+export const StyledGenericActions = styled((props: HvActionsGenericProps) => (
   <HvActionsGeneric {...props} />
 ))({
   display: "inline-flex",

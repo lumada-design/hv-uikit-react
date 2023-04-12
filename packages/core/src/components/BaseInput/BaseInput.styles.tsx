@@ -4,8 +4,8 @@ import {
   inputClasses as MuiInputClasses,
 } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
-import { outlineStyles } from "utils";
+import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "~/utils";
 import baseInputClasses from "./baseInputClasses";
 import { CSSProperties } from "react";
 

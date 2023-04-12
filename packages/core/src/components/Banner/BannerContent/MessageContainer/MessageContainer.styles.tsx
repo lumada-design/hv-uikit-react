@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
+import { HvTypography } from "~/components";
 
 export const StyledIconContainer = styled("div")({
   marginRight: theme.space.xs,
   marginLeft: -theme.space.xs,
 });
 
-export const StyledTypography = styled((props) => <HvTypography {...props} />)({
+export const StyledTypography = styled(HvTypography)({
   color: theme.colors.base_dark,
   wordBreak: "break-word",
   maxWidth: "700px",

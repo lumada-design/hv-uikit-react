@@ -1,6 +1,6 @@
 import { getMonthNamesList } from "../../utils";
 import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
-import { setId } from "utils";
+import { setId } from "~/utils";
 import { Navigation } from "../Navigation";
 import clsx from "clsx";
 import composedNavigationClasses, {
@@ -75,7 +75,7 @@ export const HvComposedNavigation = ({
   );
 };
 
-export type HvComposedNavigationProps = {
+export interface HvComposedNavigationProps {
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -104,4 +104,4 @@ export type HvComposedNavigationProps = {
    * Controls the visible month of the Calendar
    */
   visibleYear: number;
-};
+}

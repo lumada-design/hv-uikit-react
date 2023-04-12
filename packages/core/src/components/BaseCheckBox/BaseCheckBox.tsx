@@ -6,86 +6,84 @@ import {
 import { CheckboxProps as MuiCheckboxProps } from "@mui/material";
 import clsx from "clsx";
 import React, { useCallback, useState } from "react";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import { StyledCheckedBox } from "./BaseCheckBox.styles";
 import baseCheckBoxClasses, {
   HvBaseCheckBoxClasses,
 } from "./baseCheckBoxClasses";
 
-export type HvBaseCheckBoxProps = Omit<
-  MuiCheckboxProps,
-  "onChange" | "classes"
-> &
-  HvBaseProps<HTMLInputElement, { onChange }> & {
-    /**
-     * The input name.
-     */
-    name?: string;
-    /**
-     * The value of the input.
-     *
-     * Is up to the application's logic when to consider the submission of this value.
-     * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
-     *
-     * The default value is "on".
-     */
-    value?: any;
-    /**
-     * Indicates that the input is disabled.
-     */
-    disabled?: boolean;
-    /**
-     * Indicates that the input is not editable.
-     */
-    readOnly?: boolean;
-    /**
-     * Indicates that user input is required.
-     */
-    required?: boolean;
-    /**
-     * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
-     *
-     * When defined the checkbox state becomes controlled.
-     */
-    checked?: boolean;
-    /**
-     * When uncontrolled, defines the initial checked state.
-     */
-    defaultChecked?: boolean;
-    /**
-     * If `true` the checkbox visually shows the indeterminate state.
-     */
-    indeterminate?: boolean;
-    /**
-     * The callback fired when the checkbox is pressed.
-     */
-    onChange?: (
-      event: React.ChangeEvent<HTMLInputElement>,
-      checked: boolean,
-      value: any
-    ) => void;
-    /**
-     * Whether the selector should use semantic colors.
-     */
-    semantic?: boolean;
-    /**
-     * Properties passed on to the input element.
-     */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-    /**
-     * Callback fired when the component is focused with a keyboard.
-     * We trigger a `onFocus` callback too.
-     */
-    onFocusVisible?: (event: React.FocusEvent<any>) => void;
-    /**
-     * Callback fired when the component is blurred.
-     */
-    onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
-    /**
-     * A Jss Object used to override or extend the styles applied to the checkbox.
-     */
-    classes?: HvBaseCheckBoxClasses;
-  };
+export interface HvBaseCheckBoxProps
+  extends Omit<MuiCheckboxProps, "onChange" | "classes">,
+    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+  /**
+   * The input name.
+   */
+  name?: string;
+  /**
+   * The value of the input.
+   *
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
+   *
+   * The default value is "on".
+   */
+  value?: any;
+  /**
+   * Indicates that the input is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Indicates that the input is not editable.
+   */
+  readOnly?: boolean;
+  /**
+   * Indicates that user input is required.
+   */
+  required?: boolean;
+  /**
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   *
+   * When defined the checkbox state becomes controlled.
+   */
+  checked?: boolean;
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked?: boolean;
+  /**
+   * If `true` the checkbox visually shows the indeterminate state.
+   */
+  indeterminate?: boolean;
+  /**
+   * The callback fired when the checkbox is pressed.
+   */
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    value: any
+  ) => void;
+  /**
+   * Whether the selector should use semantic colors.
+   */
+  semantic?: boolean;
+  /**
+   * Properties passed on to the input element.
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible?: (event: React.FocusEvent<any>) => void;
+  /**
+   * Callback fired when the component is blurred.
+   */
+  onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+  /**
+   * A Jss Object used to override or extend the styles applied to the checkbox.
+   */
+  classes?: HvBaseCheckBoxClasses;
+}
 
 const getSelectorIcons = (
   options: {

@@ -2,15 +2,17 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBaseDropdown,
+  HvBaseDropdownProps,
   HvFormElement,
+  HvFormElementProps,
   HvLabel,
   HvTypography,
-} from "components";
-import { transientOptions } from "utils/transientOptions";
+} from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 import dropdownClasses from "./dropdownClasses";
 
 export const StyledHvFormElement = styled(
-  HvFormElement,
+  (props: HvFormElementProps) => <HvFormElement {...props} />,
   transientOptions
 )(({ $selectionDisabled }: { $selectionDisabled?: boolean }) => ({
   width: "100%",
@@ -24,7 +26,7 @@ export const StyledHvFormElement = styled(
 }));
 
 export const StyledDropdown = styled(
-  (props) => <HvBaseDropdown {...props} />,
+  (props: HvBaseDropdownProps) => <HvBaseDropdown {...props} />,
   transientOptions
 )(
   ({

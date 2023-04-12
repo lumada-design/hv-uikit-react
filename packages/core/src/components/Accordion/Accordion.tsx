@@ -5,15 +5,16 @@ import React, {
   HTMLAttributes,
 } from "react";
 import clsx from "clsx";
-import { useControlled } from "hooks";
+import { useControlled } from "~/hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "../../types";
-import { setId } from "utils";
+import { HvBaseProps } from "~/types";
+import { setId } from "~/utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
-import { HvTypographyVariants } from "components";
+import { HvTypographyVariants } from "~/components";
 
-export type HvAccordionProps = HvBaseProps & {
+export interface HvAccordionProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * Id to be applied to the root node of the accordion.
    */
@@ -54,9 +55,11 @@ export type HvAccordionProps = HvBaseProps & {
    * Is the accordion disabled.
    */
   disabled?: boolean;
-
+  /**
+   * Typography variant for the label.
+   */
   labelVariant?: HvTypographyVariants;
-};
+}
 
 /**
  * A accordion is a design element that expands in place to expose hidden information.
@@ -73,7 +76,7 @@ export const HvAccordion = ({
   headingLevel,
   defaultExpanded = false,
   containerProps,
-  labelVariant,
+  labelVariant = "label",
   ...others
 }: HvAccordionProps) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -134,8 +137,6 @@ export const HvAccordion = ({
   const accordionHeader = useMemo(() => {
     const color = (disabled && ["secondary_60"]) || undefined;
 
-    const variantToApply = labelVariant ? labelVariant : "label";
-
     const accordionButton = (
       <StyledLabel
         id={accordionHeaderId}
@@ -150,7 +151,7 @@ export const HvAccordion = ({
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        variant={variantToApply}
+        variant={labelVariant}
         aria-expanded={isOpen}
         aria-disabled={disabled}
       >
@@ -162,7 +163,7 @@ export const HvAccordion = ({
       headingLevel === undefined ? (
         accordionButton
       ) : (
-        <StyledLabel component={`h${headingLevel}`} variant={variantToApply}>
+        <StyledLabel component={`h${headingLevel}`} variant={labelVariant}>
           {accordionButton}
         </StyledLabel>
       );

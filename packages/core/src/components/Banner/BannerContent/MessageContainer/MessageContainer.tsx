@@ -1,15 +1,17 @@
 import clsx from "clsx";
-import { HvBaseProps } from "../../../../types";
-import { HvActionGeneric, HvActionsGeneric } from "components";
-import { messageContainerClasses, HvMessageContainerClasses } from ".";
+import { HvBaseProps } from "~/types";
+import { HvActionGeneric, HvActionsGeneric } from "~/components";
+import messageContainerClasses, {
+  HvMessageContainerClasses,
+} from "./messageContainerClasses";
 import {
   StyledIconContainer,
   StyledTypography,
   StyledMessageContainer,
 } from "./MessageContainer.styles";
-import { setId } from "utils";
+import { setId } from "~/utils";
 
-export type HvMessageContainerProps = HvBaseProps & {
+export interface HvMessageContainerProps extends HvBaseProps {
   /** Icon to be presented. */
   icon?: React.ReactNode;
   /** The message to display. */
@@ -24,7 +26,7 @@ export type HvMessageContainerProps = HvBaseProps & {
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMessageContainerClasses;
-};
+}
 
 export const HvMessageContainer = ({
   id,

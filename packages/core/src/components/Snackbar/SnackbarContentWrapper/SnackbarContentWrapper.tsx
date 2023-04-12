@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
-import { iconVariant, setId } from "utils";
+import { iconVariant, setId } from "~/utils";
 import { forwardRef, isValidElement } from "react";
 import { HvBaseProps } from "../../../types";
 import { HvSnackbarVariant } from "../Snackbar";
@@ -13,7 +13,7 @@ import {
 import snackbarContentClasses, {
   HvSnackbarContentClasses,
 } from "./snackbarContentWrapperClasses";
-import { HvActionsGeneric, HvActionGeneric } from "components";
+import { HvActionsGeneric, HvActionGeneric } from "~/components";
 
 export type HvSnackbarContentProps = Omit<
   MuiSnackbarContentProps,

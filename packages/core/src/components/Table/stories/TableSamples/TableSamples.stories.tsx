@@ -27,7 +27,7 @@ import {
   HvButton,
   HvDropDownMenu,
   HvListValue,
-} from "components";
+} from "~/components";
 import {
   makeData,
   getColumns,

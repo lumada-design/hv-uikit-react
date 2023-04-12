@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { setId } from "utils";
+import { setId } from "~/utils";
 import {
   HvActionBar,
   HvButton,
@@ -9,7 +9,7 @@ import {
   HvInput,
   HvListValue,
   HvTypography,
-} from "components";
+} from "~/components";
 import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
 import {
   StyledList,

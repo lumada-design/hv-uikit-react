@@ -1,4 +1,4 @@
-import { withTooltip } from "hocs";
+import { withTooltip } from "~/hocs";
 
 const hideTooltip = (evt) => {
   const isOverFlow =

@@ -7,13 +7,18 @@ import {
   HvFormElement,
   HvLabel,
   HvSuggestions,
-} from "components";
+  HvSuggestionsProps,
+  baseInputClasses,
+  suggestionsClasses,
+  HvBaseInputProps,
+  HvFormElementProps,
+} from "~/components";
 import inputClasses from "./inputClasses";
-import baseInputClasses from "../BaseInput/baseInputClasses";
-import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 
-export const StyledFormElement = styled(HvFormElement)({
+export const StyledFormElement = styled((props: HvFormElementProps) => (
+  <HvFormElement {...props} />
+))({
   display: "block",
 });
 
@@ -32,7 +37,7 @@ export const StyledSuccess = styled(Success)({
   height: "30px",
 });
 
-export const StyledSuggestions = styled((props) => (
+export const StyledSuggestions = styled((props: HvSuggestionsProps) => (
   <HvSuggestions {...props} />
 ))({
   width: "100%",
@@ -70,7 +75,9 @@ export const StyledInputExtension = styled("div")({
   boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
 });
 
-export const StyledBaseInput = styled(HvBaseInput)(() => ({
+export const StyledBaseInput = styled((props: HvBaseInputProps) => (
+  <HvBaseInput {...props} />
+))(() => ({
   [`& .${baseInputClasses.input}`]: {
     "&::-ms-clear": {
       display: "none",

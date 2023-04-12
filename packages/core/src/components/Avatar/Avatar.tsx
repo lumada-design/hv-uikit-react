@@ -3,9 +3,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 import clsx from "clsx";
 import { CSSProperties, HTMLAttributes } from "react";
-import { HvBaseProps } from "../../types";
-import { useImageLoaded } from "hooks";
-import { decreaseSize } from "utils";
+import { HvBaseProps } from "~/types";
+import { useImageLoaded } from "~/hooks";
+import { decreaseSize } from "~/utils";
 import {
   StyledAvatar,
   StyledBadge,
@@ -19,7 +19,7 @@ export type HvAvatarVariant = "circular" | "square";
 
 export type HvAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type HvAvatarProps = HvBaseProps & {
+export interface HvAvatarProps extends HvBaseProps {
   /** Inline styles to be applied to the root element. */
   style?: CSSProperties;
   /** The component used for the root node. Either a string to use a DOM element or a component. */
@@ -27,7 +27,7 @@ export type HvAvatarProps = HvBaseProps & {
   /** Sets one of the standard sizes of the icons */
   size?: HvAvatarSize;
   /**
-   * A String representing the foreground color of the avatar's
+   * A string representing the foreground color of the avatar's
    * letters or the generic User icon fallback.
    * You can use either an HEX or color name from the palette.
    */
@@ -57,7 +57,7 @@ export type HvAvatarProps = HvBaseProps & {
   avatarProps?: MuiAvatarProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAvatarClasses;
-};
+}
 
 /**
  * Get a color from the theme palette

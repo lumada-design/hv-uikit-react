@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Breakpoints as MuiBreakpoints } from "@mui/material";
-import { HvTypography } from "components";
-import { transientOptions } from "utils/transientOptions";
+import { HvTypography } from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 import emptyStateClasses from "./emptyStateClasses";
 
 export const StyledRoot = styled("div")({

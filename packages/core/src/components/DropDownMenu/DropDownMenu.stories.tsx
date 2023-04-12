@@ -1,6 +1,6 @@
 import { Calendar, Plane, User } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, HvDropDownMenu, HvDropDownMenuProps } from "components";
+import { HvButton, HvDropDownMenu, HvDropDownMenuProps } from "~/components";
 import { useState } from "react";
 
 const meta: Meta<typeof HvDropDownMenu> = {

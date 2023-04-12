@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { HvTypography } from "components/Typography";
-import { HvTooltip } from "components/Tooltip";
+import { HvTypography, HvTooltip } from "~/components";
 
 const styles = {
   truncate: {

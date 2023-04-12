@@ -13,7 +13,7 @@ import {
   HvInfoMessage,
   HvTypography,
   HvBaseInput,
-} from "components";
+} from "~/components";
 import countryNamesArray from "./countries";
 import { HvInputSuggestion } from "../../types";
 

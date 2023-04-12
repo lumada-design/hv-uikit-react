@@ -1,7 +1,7 @@
 import { HvFile, HvFileData, HvFileRemovedEvent } from "../File";
 import fileListClasses, { HvFileListClasses } from "./fileListClasses";
-import { useUniqueId } from "hooks";
-import { setId } from "utils";
+import { useUniqueId } from "~/hooks";
+import { setId } from "~/utils";
 import { StyledList } from "./FileList.styles";
 import clsx from "clsx";
 

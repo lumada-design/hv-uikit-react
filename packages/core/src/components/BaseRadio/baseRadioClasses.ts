@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvBaseRadioClasses = {
+export interface HvBaseRadioClasses {
   /** Styles applied to the component. */
   root?: string;
   /** Styles applied to the radio button when it is disabled. */
@@ -9,7 +9,7 @@ export type HvBaseRadioClasses = {
   focusVisible?: string;
   /** Class applied top the icon element. */
   icon?: string;
-};
+}
 
 const classKeys: string[] = ["root", "disabled", "focusVisible", "icon"];
 

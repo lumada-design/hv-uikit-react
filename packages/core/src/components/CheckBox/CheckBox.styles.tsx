@@ -1,13 +1,19 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "utils";
-import { transientOptions } from "utils/transientOptions";
-import { HvBaseCheckBox, HvLabel, HvFormElement } from "components";
-import checkBoxClasses from "./checkBoxClasses";
+import { outlineStyles } from "~/utils";
+import { transientOptions } from "~/utils/transientOptions";
+import {
+  HvBaseCheckBox,
+  HvLabel,
+  HvFormElement,
+  checkBoxClasses,
+  HvBaseCheckBoxProps,
+  HvFormElementProps,
+} from "~/components";
 import { CSSProperties } from "react";
 
 export const StyledFormElement = styled(
-  HvFormElement,
+  (props: HvFormElementProps) => <HvFormElement {...props} />,
   transientOptions
 )(({ $focusVisible }: { $focusVisible: boolean }) => ({
   display: "inline-block",
@@ -76,7 +82,7 @@ export const StyledLabel = styled(
 }));
 
 export const StyledBaseCheckBox = styled(
-  HvBaseCheckBox,
+  (props: HvBaseCheckBoxProps) => <HvBaseCheckBox {...props} />,
   transientOptions
 )(({ $invalid }: { $invalid: boolean }) => ({
   height: "32px",

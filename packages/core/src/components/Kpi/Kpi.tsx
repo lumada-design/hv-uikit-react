@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useLabels } from "hooks";
+import { useLabels } from "~/hooks";
 import { HvTypography } from "../../components";
 import { HvBaseProps } from "../../types";
 import {

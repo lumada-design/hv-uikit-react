@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvKpi } from "components";
+import { HvKpi } from "~/components";
 import { TopXS } from "@hitachivantara/uikit-react-icons";
 
 describe("Kpi", () => {

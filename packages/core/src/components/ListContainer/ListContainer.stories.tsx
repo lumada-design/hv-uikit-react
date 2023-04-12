@@ -9,7 +9,7 @@ import {
   HvLink,
   HvTooltip,
   HvPanel,
-} from "components";
+} from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   Calendar,

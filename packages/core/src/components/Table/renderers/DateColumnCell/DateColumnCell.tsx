@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import dayjs from "dayjs";
-import { HvOverflowTooltip } from "components";
+import { HvOverflowTooltip } from "~/components";
 
 export interface HvDateColumnCellProp {
   /** The date's text representation format. */

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvInfoMessage, HvInfoMessageProps } from "components";
+import { HvInfoMessage, HvInfoMessageProps } from "~/components";
 
 const meta: Meta<typeof HvInfoMessage> = {
   title: "Guides/Forms/Form Element Blocks/Info Message",

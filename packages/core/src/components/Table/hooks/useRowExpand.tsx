@@ -5,8 +5,8 @@ import {
   UseExpandedRowProps,
 } from "react-table";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
-import { HvButton, HvTypography } from "components";
-import { useLabels } from "hooks";
+import { HvButton, HvTypography } from "~/components";
+import { useLabels } from "~/hooks";
 
 // #region ##### TYPES #####
 

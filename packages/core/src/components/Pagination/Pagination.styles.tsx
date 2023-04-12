@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import Select from "./Select";
 import ButtonIconTooltip from "./ButtonIconTooltip";
-import { inputClasses } from "components";
-import { paginationClasses } from ".";
+import { inputClasses } from "~/components";
+import paginationClasses from "./paginationClasses";
 import { CSSProperties } from "react";
 
 const hoverColor = theme.colors.atmo3;

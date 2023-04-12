@@ -1,13 +1,13 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvBulkActionsClasses = {
+export interface HvBulkActionsClasses {
   root?: string;
   semantic?: string;
   actions?: string;
   selectAllContainer?: string;
   selectAll?: string;
   selectAllPages?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

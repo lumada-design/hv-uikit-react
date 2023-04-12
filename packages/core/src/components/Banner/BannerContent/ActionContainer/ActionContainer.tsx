@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HvBaseProps } from "../../../../types";
+import { HvBaseProps } from "~/types";
 import actionContainerClasses, {
   HvActionContainerClasses,
 } from "./actionContainerClasses";
@@ -9,11 +9,11 @@ import {
   StyledClose,
   StyledActionsInnerContainer,
 } from "./ActionContainer.styles";
-import { HvActionGeneric, HvActionsGeneric } from "../../../ActionsGeneric";
+import { HvActionGeneric, HvActionsGeneric } from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "../../../../hooks";
+import { useTheme } from "~/hooks";
 
-export type HvActionContainerProps = HvBaseProps & {
+export interface HvActionContainerProps extends HvBaseProps<HTMLButtonElement> {
   /** onClose function. */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Actions to display. */
@@ -26,7 +26,7 @@ export type HvActionContainerProps = HvBaseProps & {
   ) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionContainerClasses;
-};
+}
 
 export const HvActionContainer = ({
   id,

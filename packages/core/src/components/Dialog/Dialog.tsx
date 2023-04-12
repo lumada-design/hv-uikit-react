@@ -6,10 +6,10 @@ import { theme } from "@hitachivantara/uikit-styles";
 import isNil from "lodash/isNil";
 import { HvBaseProps } from "../../types/generic";
 import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
-import { isKeypress, keyboardCodes, setId, getFocusableList } from "utils";
-import { withTooltip } from "hocs";
+import { isKeypress, keyboardCodes, setId, getFocusableList } from "~/utils";
+import { withTooltip } from "~/hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 import { ClassNames } from "@emotion/react";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &

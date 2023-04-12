@@ -1,9 +1,9 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvPathElementClasses = {
+export interface HvPathElementClasses {
   centerContainer?: string;
   separatorContainer?: string;
-};
+}
 
 const classKeys: string[] = ["centerContainer", "separatorContainer"];
 

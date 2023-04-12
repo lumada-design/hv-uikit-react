@@ -9,8 +9,8 @@ import { StyledSnackbar } from "./Snackbar.styles";
 import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
 import capitalize from "lodash/capitalize";
 import { SyntheticEvent } from "react";
-import { setId } from "utils";
-import { HvActionGeneric } from "components";
+import { setId } from "~/utils";
+import { HvActionGeneric } from "~/components";
 import {
   HvSnackbarContentProps,
   HvSnackbarContent,

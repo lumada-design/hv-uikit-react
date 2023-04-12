@@ -1,16 +1,22 @@
 import styled from "@emotion/styled";
 import {
   HvBaseInput,
+  HvBaseInputProps,
   HvCharCounter,
+  HvCharCounterProps,
   HvFormElement,
+  HvFormElementProps,
   HvInfoMessage,
+  HvInfoMessageProps,
   HvLabel,
+  HvLabelProps,
   HvWarningText,
-} from "components";
-import { transientOptions } from "utils/transientOptions";
+  HvWarningTextProps,
+} from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 
 export const StyledFormElement = styled(
-  HvFormElement,
+  (props: HvFormElementProps) => <HvFormElement {...props} />,
   transientOptions
 )(({ $resizable }: { $resizable: boolean }) => ({
   display: "inline-block",
@@ -25,20 +31,22 @@ export const StyledLabelContainer = styled("div")({
   alignItems: "flex-start",
 });
 
-export const StyledLabel = styled((props) => <HvLabel {...props} />)({
+export const StyledLabel = styled((props: HvLabelProps) => (
+  <HvLabel {...props} />
+))({
   display: "block",
   float: "left",
   paddingBottom: "6px",
 });
 
-export const StyledInfoMessage = styled((props) => (
+export const StyledInfoMessage = styled((props: HvInfoMessageProps) => (
   <HvInfoMessage {...props} />
 ))({
   display: "block",
   float: "left",
 });
 
-export const StyledCharCounter = styled((props) => (
+export const StyledCharCounter = styled((props: HvCharCounterProps) => (
   <HvCharCounter {...props} />
 ))({
   display: "block",
@@ -47,12 +55,12 @@ export const StyledCharCounter = styled((props) => (
   marginBottom: "6px",
 });
 
-export const StyledWarningText = styled((props) => (
+export const StyledWarningText = styled((props: HvWarningTextProps) => (
   <HvWarningText {...props} />
 ))({ float: "left" });
 
 export const StyledBaseInput = styled(
-  HvBaseInput,
+  (props: HvBaseInputProps) => <HvBaseInput {...props} />,
   transientOptions
 )(({ $resizable }: { $resizable: boolean }) => ({
   clear: "both",

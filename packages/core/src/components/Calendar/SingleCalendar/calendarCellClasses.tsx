@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvCalendarCellClasses = {
+export interface HvCalendarCellClasses {
   cellContainer?: string;
   focusSelection?: string;
   calendarDate?: string;
@@ -13,7 +13,7 @@ export type HvCalendarCellClasses = {
   dateWrapper?: string;
   cellsInRange?: string;
   cellsOutsideRange?: string;
-};
+}
 
 const classKeys: string[] = [
   "cellContainer",

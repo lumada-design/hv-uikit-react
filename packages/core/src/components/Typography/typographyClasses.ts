@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvTypographyClasses = {
+export interface HvTypographyClasses {
   root?: string;
   noWrap?: string;
   // Variants
@@ -33,7 +33,7 @@ export type HvTypographyClasses = {
   vizText?: string;
   vizTextDisabled?: string;
   xsInlineLink?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

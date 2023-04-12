@@ -7,11 +7,13 @@ import {
   HvDropdown,
   HvInput,
   HvTypography,
-} from "components";
-import { HvLogin, HvLoginProps } from ".";
+  dropdownClasses,
+  HvInputProps,
+  HvButtonProps,
+} from "~/components";
+import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
-import dropdownClasses from "components/Dropdown/dropdownClasses";
 
 // #region Styled components
 
@@ -24,11 +26,11 @@ const StyledRoot = styled("div")({
   },
 });
 
-const StyledInput = styled((props) => <HvInput {...props} />)({
+const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
   marginTop: 40,
 });
 
-const StyledButton = styled((props) => <HvButton {...props} />)({
+const StyledButton = styled((props: HvButtonProps) => <HvButton {...props} />)({
   width: 120,
   float: "right",
   marginTop: theme.spacing(8),

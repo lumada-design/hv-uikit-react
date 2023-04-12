@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
-import { HvButton, HvTypography } from "components";
-import { transientOptions } from "utils/transientOptions";
+import {
+  HvButton,
+  HvButtonProps,
+  HvTypography,
+  HvTypographyProps,
+} from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 import tableHeaderClasses from "./tableHeaderClasses";
 
 export const StyledHeaderContent = styled(
@@ -25,7 +30,9 @@ export const StyledHeaderContent = styled(
   }),
 }));
 
-export const StyledButton = styled((props) => <HvButton {...props} />)({
+export const StyledButton = styled((props: HvButtonProps) => (
+  <HvButton {...props} />
+))({
   [`.${tableHeaderClasses.root}.${tableHeaderClasses.sortable}`]: {
     boxShadow: "none",
     backgroundColor: "transparent",
@@ -36,7 +43,7 @@ export const StyledButton = styled((props) => <HvButton {...props} />)({
 });
 
 export const StyledTypography = styled(
-  (props) => <HvTypography {...props} />,
+  (props: HvTypographyProps) => <HvTypography {...props} />,
   transientOptions
 )(
   ({

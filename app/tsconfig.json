@@ -23,6 +23,18 @@
   "references": [
     {
       "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "../packages/icons/tsconfig.json"
+    },
+    {
+      "path": "../packages/styles/tsconfig.json"
+    },
+    {
+      "path": "../packages/core/tsconfig.json"
+    },
+    {
+      "path": "../packages/shared/tsconfig.json"
     }
   ]
 }

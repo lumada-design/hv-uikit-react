@@ -4,13 +4,15 @@ import { css } from "@emotion/css";
 import parser from "html-react-parser";
 import { Fail } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvPanel } from "components/Panel";
-import { HvInput } from "components/Input";
-import { HvTypography } from "components/Typography";
-import { HvEmptyState } from "components/EmptyState";
-import { HvDropdown } from "components/Dropdown";
-import { HvListValue } from "components/List";
-import { HvInputSuggestion } from "types/forms";
+import {
+  HvDropdown,
+  HvListValue,
+  HvEmptyState,
+  HvPanel,
+  HvTypography,
+  HvInput,
+} from "~/components";
+import { HvInputSuggestion } from "~/types";
 import countryNamesArray, { continents, countries } from "./countries";
 
 /**

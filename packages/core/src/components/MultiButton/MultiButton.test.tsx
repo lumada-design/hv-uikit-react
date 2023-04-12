@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render } from "@testing-library/react";
 import { LocationPin, Map } from "@hitachivantara/uikit-react-icons";
-import { HvButton } from "components";
+import { HvButton } from "~/components";
 import { HvMultiButton } from "./MultiButton";
 
 describe("MultiButton", () => {

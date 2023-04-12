@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
-import { HvLabel, HvFormElement } from "components";
+import { transientOptions } from "~/utils/transientOptions";
+import { HvLabel, HvFormElement, HvFormElementProps } from "~/components";
 
-export const StyledFormElement = styled(HvFormElement)({
+export const StyledFormElement = styled((props: HvFormElementProps) => (
+  <HvFormElement {...props} />
+))({
   display: "inline-flex",
   flexDirection: "column",
   alignItems: "flex-start",

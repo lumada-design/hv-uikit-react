@@ -8,8 +8,8 @@ import {
   Priority5,
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvGrid, HvListValue } from "components";
-import React, { useEffect, useMemo, useState } from "react";
+import { HvGrid, HvListValue } from "~/components";
+import { useEffect, useMemo, useState } from "react";
 import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
 
 const Decorator = ({ children }) => {

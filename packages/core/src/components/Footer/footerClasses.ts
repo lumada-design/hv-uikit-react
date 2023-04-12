@@ -1,4 +1,4 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
 export type HvFooterClasses = {
   root?: string;

@@ -10,15 +10,24 @@ import {
   HvListItem,
   HvSuggestions,
   HvWarningText,
-} from "components";
+  HvFormElementProps,
+  HvLabelProps,
+  HvInfoMessageProps,
+  HvCharCounterProps,
+  HvWarningTextProps,
+  HvListItemProps,
+  HvTagProps,
+  HvInputProps,
+  HvSuggestionsProps,
+} from "~/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import tagsInputClasses from "./tagsInputClasses";
 import baseInputClasses from "../BaseInput/baseInputClasses";
 import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";
 import listItemClasses from "../ListContainer/ListItem/listItemClasses";
 
-export const StyledFormElement = styled((props) => (
+export const StyledFormElement = styled((props: HvFormElementProps) => (
   <HvFormElement {...props} />
 ))({
   display: "inline-block",
@@ -31,20 +40,22 @@ export const StyledLabelContainer = styled("div")({
   alignItems: "flex-start",
 });
 
-export const StyledLabel = styled((props) => <HvLabel {...props} />)({
+export const StyledLabel = styled((props: HvLabelProps) => (
+  <HvLabel {...props} />
+))({
   display: "block",
   float: "left",
   paddingBottom: "6px",
 });
 
-export const StyledDescription = styled((props) => (
+export const StyledDescription = styled((props: HvInfoMessageProps) => (
   <HvInfoMessage {...props} />
 ))({
   display: "block",
   float: "left",
 });
 
-export const StyledCharCounter = styled((props) => (
+export const StyledCharCounter = styled((props: HvCharCounterProps) => (
   <HvCharCounter {...props} />
 ))(() => ({
   display: "block",
@@ -148,12 +159,14 @@ export const StyledTagsList = styled(
   })
 );
 
-export const StyledError = styled((props) => <HvWarningText {...props} />)({
+export const StyledError = styled((props: HvWarningTextProps) => (
+  <HvWarningText {...props} />
+))({
   float: "left",
 });
 
 export const StyledListItem = styled(
-  (props) => <HvListItem {...props} />,
+  (props: HvListItemProps) => <HvListItem {...props} />,
   transientOptions
 )(({ $singleLine }: { $singleLine: boolean }) => ({
   marginBottom: 2,
@@ -172,7 +185,7 @@ export const StyledListItem = styled(
 }));
 
 export const StyledTag = styled(
-  (props) => <HvTag {...props} />,
+  (props: HvTagProps) => <HvTag {...props} />,
   transientOptions
 )(({ $selected }: { $selected: boolean }) => ({
   [`& .${tagsInputClasses.chipRoot}`]: {
@@ -188,7 +201,7 @@ export const StyledTag = styled(
 }));
 
 export const StyledInputListItem = styled(
-  (props) => <HvListItem {...props} />,
+  (props: HvListItemProps) => <HvListItem {...props} />,
   transientOptions
 )(
   ({
@@ -221,7 +234,7 @@ export const StyledInputListItem = styled(
 );
 
 export const StyledInput = styled(
-  (props) => <HvInput {...props} />,
+  (props: HvInputProps) => <HvInput {...props} />,
   transientOptions
 )(({ $singleLine }: { $singleLine: boolean }) => ({
   [`& .${baseInputClasses.root}`]: {
@@ -265,7 +278,7 @@ export const StyledInput = styled(
   ...($singleLine && {}),
 }));
 
-export const StyledSuggestions = styled((props) => (
+export const StyledSuggestions = styled((props: HvSuggestionsProps) => (
   <HvSuggestions {...props} />
 ))({
   width: "100%",

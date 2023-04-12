@@ -1,10 +1,10 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvMessageContainerClasses = {
+export interface HvMessageContainerClasses {
   iconContainer?: string;
   message?: string;
   actionMessageContainer?: string;
-};
+}
 
 const classKeys: string[] = [
   "iconContainer",

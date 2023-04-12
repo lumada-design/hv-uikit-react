@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
 import { HvBaseProps } from "../../../types";
-import { tableContainerClasses, HvTableContainerClasses } from ".";
+import tableContainerClasses, {
+  HvTableContainerClasses,
+} from "./tableContainerClasses";
 import { forwardRef, useMemo } from "react";
 
 export type HvTableContainerProps = HvBaseProps<

@@ -7,8 +7,8 @@ import {
   StyledLabel,
 } from "./RadioGroup.styles";
 import clsx from "clsx";
-import { useControlled, useUniqueId } from "hooks";
-import { setId } from "utils";
+import { useControlled, useUniqueId } from "~/hooks";
+import { setId } from "~/utils";
 import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
 export type HvRadioGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {

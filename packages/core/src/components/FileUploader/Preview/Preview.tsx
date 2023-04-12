@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { HvButtonProps } from "components";
+import { HvButtonProps } from "~/components";
 import { useEffect } from "react";
 import fileUploaderPreviewClasses, {
   HvFileUploaderPreviewClasses,

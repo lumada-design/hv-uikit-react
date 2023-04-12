@@ -13,8 +13,8 @@ import {
 import listClasses, { HvListClasses } from "./listClasses";
 import useSelectableList from "./useSelectableList";
 import { parseList } from "./utils";
-import { HvListContainer, HvTypography } from "components";
-import { setId, wrapperTooltip } from "utils";
+import { HvListContainer, HvTypography } from "~/components";
+import { setId, wrapperTooltip } from "~/utils";
 
 export type HvListValue = {
   id?: string | number;

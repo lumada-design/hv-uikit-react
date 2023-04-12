@@ -1,9 +1,9 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvAvatar, HvTooltip, HvTypography } from "components";
+import { HvAvatar, HvTooltip, HvTypography } from "~/components";
 import { HvAppSwitcherActionApplication } from "../AppSwitcher";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import TitleWithTooltip from "../TitleWithTooltip";
 import {
   StyledIcon,
@@ -15,9 +15,9 @@ import {
 import appSwitcherActionClasses, {
   HvAppSwitcherActionClasses,
 } from "./actionClasses";
-import { useUniqueId } from "../../../hooks";
+import { useUniqueId } from "~/hooks";
 
-export type HvAppSwitcherActionProps = HvBaseProps & {
+export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** The application data to be used to render the Action object. */
   application: HvAppSwitcherActionApplication;
   /** Callback triggered when the action is clicked. */
@@ -29,7 +29,7 @@ export type HvAppSwitcherActionProps = HvBaseProps & {
   isSelectedCallback?: (application: HvAppSwitcherActionApplication) => boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherActionClasses;
-};
+}
 
 const getColor = (color, defaultColor) =>
   theme.colors[color] || color || defaultColor;

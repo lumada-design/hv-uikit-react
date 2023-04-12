@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvSingleCalendarClasses = {
+export interface HvSingleCalendarClasses {
   calendarContainer?: string;
   calendarWrapper?: string;
   calendarGrid?: string;
@@ -17,7 +17,7 @@ export type HvSingleCalendarClasses = {
   cellsInRange?: string;
   cellsOutsideRange?: string;
   cellContainer?: string;
-};
+}
 
 const classKeys: string[] = [
   "calendarContainer",

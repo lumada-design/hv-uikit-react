@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { HvButton, HvButtonProps } from "components";
-import { transientOptions } from "utils/transientOptions";
+import { HvButton, HvButtonProps } from "~/components";
+import { transientOptions } from "~/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
-import fade from "utils/hexToRgbA";
+import fade from "~/utils/hexToRgbA";
 
 export const StyledRoot = styled(
   "div",

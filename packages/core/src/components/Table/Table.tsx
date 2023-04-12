@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { tableClasses, HvTableClasses } from ".";
+import tableClasses, { HvTableClasses } from "./tableClasses";
 import {
   CSSProperties,
   forwardRef,
@@ -9,7 +9,7 @@ import {
   useRef,
 } from "react";
 import TableContext from "./TableContext";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvTableVariant = "listrow" | "default";

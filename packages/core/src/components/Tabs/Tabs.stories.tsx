@@ -1,5 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTab, HvTypography, HvBadge, HvTabs, HvTabsProps } from "components";
+import {
+  HvTab,
+  HvTypography,
+  HvBadge,
+  HvTabs,
+  HvTabsProps,
+} from "~/components";
 import { useState } from "react";
 import {
   Helicopter,

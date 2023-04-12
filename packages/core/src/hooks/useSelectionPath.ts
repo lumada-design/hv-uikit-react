@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HvHeaderNavigationItemProp } from "components";
+import { HvHeaderNavigationItemProp } from "~/components";
 
 const getSelectionPath = (
   data: HvHeaderNavigationItemProp[] | undefined,

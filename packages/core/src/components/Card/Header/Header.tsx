@@ -5,7 +5,7 @@ import MuiCardHeader, {
 import { HvBaseProps } from "../../../types/generic";
 import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
 import { styles } from "./Header.styles";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 import { ClassNames } from "@emotion/react";
 
 export type HvCardHeaderProps = Omit<MuiCardHeaderProps, "classes"> &

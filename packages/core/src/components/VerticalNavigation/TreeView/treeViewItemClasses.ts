@@ -1,4 +1,4 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
 export type HvVerticalNavigationTreeViewItemClasses = {
   /** Style applied to the root of the component. */

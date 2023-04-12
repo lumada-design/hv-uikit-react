@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useMemo } from "react";
 import { useResizeDetector } from "react-resize-detector";
 import { HvBaseProps } from "../../types/index";
-import { HvTooltip, HvTooltipProps, HvTypography } from "components";
+import { HvTooltip, HvTooltipProps, HvTypography } from "~/components";
 import { StyledDataContainer } from "./OverflowTooltip.styles";
 import overflowTooltipClasses, {
   HvOverflowTooltipClasses,

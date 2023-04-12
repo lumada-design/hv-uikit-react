@@ -1,8 +1,8 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvCalendarWeekLabelsClasses = {
+export interface HvCalendarWeekLabelsClasses {
   calendarDay?: string;
-};
+}
 
 const classKeys: string[] = ["calendarDay"];
 

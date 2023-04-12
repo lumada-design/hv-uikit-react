@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useMemo } from "react";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "~/types";
 import { HvAppSwitcherAction } from "./Action";
 import {
   StyledRoot,
@@ -11,7 +11,7 @@ import {
 import TitleWithTooltip from "./TitleWithTooltip";
 import appSwitcherClasses, { HvAppSwitcherClasses } from "./appSwitcherClasses";
 
-export type HvAppSwitcherActionApplication = {
+export interface HvAppSwitcherActionApplication {
   /** Id of the application. */
   id?: string;
   /** Name of the application, this is the value that will be displayed on the component. */
@@ -32,9 +32,9 @@ export type HvAppSwitcherActionApplication = {
   isSelected?: boolean;
   /** The color of the application. */
   color?: string;
-};
+}
 
-export type HvAppSwitcherProps = HvBaseProps & {
+export interface HvAppSwitcherProps extends HvBaseProps {
   /** Number of columns to render. One, two, or whatever fits the component's width. */
   layout?: "single" | "dual" | "fluid";
   /** Title to be displayed on the header of the component. */
@@ -62,7 +62,7 @@ export type HvAppSwitcherProps = HvBaseProps & {
   isOpen?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAppSwitcherClasses;
-};
+}
 
 export const HvAppSwitcher = ({
   id,

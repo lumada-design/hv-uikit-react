@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "components";
+import { HvTypography } from "~/components";
 
 export const StyledRoot = styled("div")({
   width: "100%",

@@ -1,15 +1,15 @@
 import { DialogTitleProps as MuiDialogTitleProps } from "@mui/material/DialogTitle";
 import clsx from "clsx";
-import { HvTypography } from "components";
+import { HvTypography } from "~/components";
 import { HvBaseProps } from "../../../types";
-import { iconVariant } from "utils";
+import { iconVariant } from "~/utils";
 import {
   StyledTitle,
   StyledMessageContainer,
   StyledTextWithIcon,
 } from "./Title.styles";
 import dialogTitleClasses, { HvDialogTitleClasses } from "./titleClasses";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 
 export type HvDialogTitleVariant =
   | "success"

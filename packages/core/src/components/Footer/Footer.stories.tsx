@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography, HvFooter, HvFooterProps } from "components";
+import { HvTypography, HvFooter, HvFooterProps } from "~/components";
 
 const meta: Meta<typeof HvFooter> = {
   title: "Widgets/Footer",

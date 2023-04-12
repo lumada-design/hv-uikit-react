@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvBannerContentClasses = {
+export interface HvBannerContentClasses {
   outContainer?: string;
   root?: string;
   message?: string;
@@ -11,7 +11,7 @@ export type HvBannerContentClasses = {
   error?: string;
   info?: string;
   default?: string;
-};
+}
 
 const classKeys: string[] = [
   "outContainer",

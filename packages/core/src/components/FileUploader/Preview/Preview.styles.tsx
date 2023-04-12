@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvButton } from "components";
+import { HvButton, HvButtonProps } from "~/components";
 import fileUploaderPreviewClasses from "./previewClasses";
 
 export const StyledOverlay = styled("div")({
@@ -34,7 +34,9 @@ export const StyledPreviewIcon = styled(Preview)({
   },
 });
 
-export const StyledButton = styled(HvButton)({
+export const StyledButton = styled((props: HvButtonProps) => (
+  <HvButton {...props} />
+))({
   position: "relative",
   width: theme.fileUploader.preview.buttonSize,
   height: theme.fileUploader.preview.buttonSize,

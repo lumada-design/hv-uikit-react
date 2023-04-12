@@ -9,10 +9,10 @@ import {
   HvFormElementContext,
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
-} from "../../Forms/FormElement";
+  HvTypography,
+} from "~/components";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
-import { isKeypress, keyboardCodes, setId } from "utils";
-import { HvTypography } from "components";
+import { isKeypress, keyboardCodes, setId } from "~/utils";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { DateRangeProp } from "../Calendar";
 import calendarHeaderClasses, {
@@ -215,7 +215,7 @@ export const HvCalendarHeader = ({
 // TODO: refactor this out
 HvCalendarHeader.formElementType = "HvCalendarHeader";
 
-export type HvCalendarHeaderProps = {
+export interface HvCalendarHeaderProps {
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -256,4 +256,4 @@ export type HvCalendarHeaderProps = {
    * Indicates if header should display the day of week.
    */
   showDayOfWeek?: boolean;
-};
+}

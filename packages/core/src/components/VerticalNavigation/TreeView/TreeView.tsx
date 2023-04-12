@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
-import { useControlled, useForkRef, useUniqueId } from "hooks";
+import { useControlled, useForkRef, useUniqueId } from "~/hooks";
 import { HvVerticalNavigationTreeClasses } from "../Navigation/navigationClasses";
 import {
   TreeViewControlContext,

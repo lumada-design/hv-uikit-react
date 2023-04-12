@@ -1,6 +1,6 @@
 import { MoreOptionsHorizontal } from "@hitachivantara/uikit-react-icons";
-import { HvDropDownMenu } from "components";
-import { setId } from "utils";
+import { HvDropDownMenu } from "~/components";
+import { setId } from "~/utils";
 
 export const removeExtension = (label) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;

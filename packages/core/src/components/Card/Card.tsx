@@ -1,7 +1,7 @@
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import clsx from "clsx";
-import { HvBox } from "components";
+import { HvBox } from "~/components";
 import { HvBaseProps } from "../../types/generic";
 import { HvAtmosphereColorKeys, HvSemanticColorKeys } from "../../types/tokens";
 import { styles } from "./Card.styles";

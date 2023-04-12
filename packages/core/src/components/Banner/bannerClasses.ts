@@ -1,6 +1,6 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvBannerClasses = {
+export interface HvBannerClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the component root class when the component is closed. */
@@ -9,7 +9,7 @@ export type HvBannerClasses = {
   anchorOriginTopCenter?: string;
   /** Styles applied to the component when define as bottom. */
   anchorOriginBottomCenter?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

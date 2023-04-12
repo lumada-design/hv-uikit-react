@@ -1,12 +1,12 @@
-import { getClasses } from "utils";
+import { getClasses } from "~/utils";
 
-export type HvNavigationClasses = {
+export interface HvNavigationClasses {
   root?: string;
   icon?: string;
   disabled?: string;
   text?: string;
   textWithoutHover?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

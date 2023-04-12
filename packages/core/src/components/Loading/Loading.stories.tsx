@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-
-import { HvButton, HvTypography } from "components";
+import { HvButton, HvTypography } from "~/components";
 import { HvLoading, HvLoadingProps } from "./Loading";
 
 const meta: Meta<typeof HvLoading> = {

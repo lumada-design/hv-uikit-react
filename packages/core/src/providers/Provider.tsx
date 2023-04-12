@@ -10,15 +10,15 @@ import {
   getThemesVars,
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
-import { processThemes } from "utils";
-import { HvTheme } from "../types/theme";
+import { processThemes } from "~/utils";
+import { HvTheme } from "~/types";
 import { HvThemeProvider } from "./ThemeProvider";
 import React, { useMemo } from "react";
 import createCache from "@emotion/cache";
-import { useUniqueId } from "hooks";
+import { useUniqueId } from "~/hooks";
 
 // Provider props
-export type HvProviderProps = {
+export interface HvProviderProps {
   /**
    * Your component tree.
    */
@@ -69,7 +69,7 @@ export type HvProviderProps = {
    * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one used.
    */
   colorMode?: string;
-};
+}
 
 const scopedRootPrefix = "hv-uikit-scoped-root" as const;
 

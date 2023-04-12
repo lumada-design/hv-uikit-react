@@ -2,14 +2,14 @@ import clsx from "clsx";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { HvBaseProps } from "../../../types/index";
-import { tableRowClasses, HvTableRowClasses } from ".";
+import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
 import { forwardRef, useContext, useMemo } from "react";
 import TableContext from "../TableContext";
-import { transientOptions } from "utils/transientOptions";
+import { transientOptions } from "~/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import { useTheme } from "hooks";
+import { useTheme } from "~/hooks";
 
 export type HvTableRowProps = HvBaseProps<HTMLTableRowElement, { children }> & {
   /** Content to be rendered */
