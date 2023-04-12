@@ -24,8 +24,6 @@ import {
   getColumns,
   getGroupedRowsColumns,
   makeData,
-  SampleColumn,
-  SampleDataProps,
   useToggleIndex,
 } from "./storiesUtils";
 
@@ -148,8 +146,8 @@ export const Main: StoryObj<HvTableProps> = {
     component: { control: { disable: true } },
   },
   render: (args) => {
-    const columns: SampleColumn[] = getColumns();
-    const data: SampleDataProps[] = makeData(6);
+    const columns = getColumns();
+    const data = makeData(6);
 
     return (
       <HvTableContainer>
@@ -157,9 +155,7 @@ export const Main: StoryObj<HvTableProps> = {
           <HvTableHead>
             <HvTableRow>
               {columns.map((el) => (
-                <HvTableHeader key={el.Header as string}>
-                  {el.Header as string}
-                </HvTableHeader>
+                <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -169,9 +165,9 @@ export const Main: StoryObj<HvTableProps> = {
                 <HvTableCell>{el.name}</HvTableCell>
                 <HvTableCell>{el.createdDate}</HvTableCell>
                 <HvTableCell>{el.eventType}</HvTableCell>
-                <HvTableCell>{el.status as string}</HvTableCell>
+                <HvTableCell>{el.status}</HvTableCell>
                 <HvTableCell>{el.riskScore}</HvTableCell>
-                <HvTableCell>{el.severity as string}</HvTableCell>
+                <HvTableCell>{el.severity}</HvTableCell>
                 <HvTableCell>{el.priority}</HvTableCell>
               </HvTableRow>
             ))}
@@ -197,9 +193,7 @@ export const NoData: StoryObj<HvTableProps> = {
           <HvTableHead>
             <HvTableRow>
               {getColumns().map((el) => (
-                <HvTableHeader key={el.Header as string}>
-                  {el.Header as string}
-                </HvTableHeader>
+                <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -231,7 +225,7 @@ export const SimpleTable: StoryObj<HvTableProps> = {
   render: () => {
     const [checkedIdx, toggleChecked] = useToggleIndex(0);
 
-    const columns: SampleColumn[] = useMemo(() => {
+    const columns = useMemo(() => {
       const initialColumns = getColumns();
 
       initialColumns.push({
@@ -242,7 +236,7 @@ export const SimpleTable: StoryObj<HvTableProps> = {
       return initialColumns;
     }, []);
 
-    const data: SampleDataProps[] = useMemo(
+    const data = useMemo(
       () =>
         makeData(6).map((row) => ({
           ...row,
@@ -258,9 +252,7 @@ export const SimpleTable: StoryObj<HvTableProps> = {
             <HvTableRow>
               <HvTableCell variant="checkbox" />
               {columns.map((el) => (
-                <HvTableHeader key={el.Header as string}>
-                  {el.Header as string}
-                </HvTableHeader>
+                <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
               ))}
               <HvTableCell variant="actions" />
             </HvTableRow>
@@ -277,9 +269,9 @@ export const SimpleTable: StoryObj<HvTableProps> = {
                 <HvTableCell>{el.name}</HvTableCell>
                 <HvTableCell>{el.createdDate}</HvTableCell>
                 <HvTableCell>{el.eventType}</HvTableCell>
-                <HvTableCell>{el.status as string}</HvTableCell>
+                <HvTableCell>{el.status}</HvTableCell>
                 <HvTableCell align="center">{el.riskScore}</HvTableCell>
-                <HvTableCell>{el.severity as string}</HvTableCell>
+                <HvTableCell>{el.severity}</HvTableCell>
                 <HvTableCell>{el.priority}</HvTableCell>
                 <HvTableCell>
                   <HvTypography
@@ -326,8 +318,8 @@ export const GroupedRows: StoryObj<HvTableProps> = {
     },
   },
   render: () => {
-    const columns: SampleColumn[] = getGroupedRowsColumns();
-    const data: SampleDataProps[] = makeData(8);
+    const columns = getGroupedRowsColumns();
+    const data = makeData(8);
 
     const style = {
       borderRight: `solid 1px ${theme.colors.atmo4}`,
@@ -340,10 +332,10 @@ export const GroupedRows: StoryObj<HvTableProps> = {
             <HvTableRow>
               {columns.map((el, index) => (
                 <HvTableHeader
-                  key={el.Header as string}
+                  key={el.Header}
                   {...(index === 0 && { ...style })}
                 >
-                  {el.Header as string}
+                  {el.Header}
                 </HvTableHeader>
               ))}
             </HvTableRow>
@@ -364,9 +356,9 @@ export const GroupedRows: StoryObj<HvTableProps> = {
                 )}
                 <HvTableCell>{el.createdDate}</HvTableCell>
                 <HvTableCell>{el.eventType}</HvTableCell>
-                <HvTableCell>{el.status as string}</HvTableCell>
+                <HvTableCell>{el.status}</HvTableCell>
                 <HvTableCell>{el.riskScore}</HvTableCell>
-                <HvTableCell>{el.severity as string}</HvTableCell>
+                <HvTableCell>{el.severity}</HvTableCell>
                 <HvTableCell>{el.priority}</HvTableCell>
               </HvTableRow>
             ))}
@@ -378,8 +370,8 @@ export const GroupedRows: StoryObj<HvTableProps> = {
 };
 
 export const ResponsiveTable = () => {
-  const columns: SampleColumn[] = useMemo(() => getColumns(), []);
-  const data: SampleDataProps[] = useMemo(() => makeData(20), []);
+  const columns = useMemo(() => getColumns(), []);
+  const data = useMemo(() => makeData(20), []);
   const muiTheme = useTheme();
 
   return (
@@ -388,9 +380,9 @@ export const ResponsiveTable = () => {
         <StyledResponsiveHead $breakpoints={muiTheme.breakpoints}>
           <StyledResponsiveTableRow $breakpoints={muiTheme.breakpoints}>
             {columns.map((el) => (
-              <StyledResponsiveTableHeader key={el.Header as string}>
-                <HvOverflowTooltip data={el.Header as string}>
-                  {el.Header as string}
+              <StyledResponsiveTableHeader key={el.Header}>
+                <HvOverflowTooltip data={el.Header}>
+                  {el.Header}
                 </HvOverflowTooltip>
               </StyledResponsiveTableHeader>
             ))}
@@ -435,7 +427,7 @@ ResponsiveTable.parameters = {
 export const ListRow = () => {
   const [checkedIdx, toggleChecked] = useToggleIndex(0);
 
-  const columns: SampleColumn[] = useMemo(() => {
+  const columns = useMemo(() => {
     const initialColumns = getColumns();
 
     initialColumns.push({
@@ -446,7 +438,7 @@ export const ListRow = () => {
     return initialColumns;
   }, []);
 
-  const data: SampleDataProps[] = useMemo(
+  const data = useMemo(
     () =>
       makeData(4).map((row) => ({
         ...row,
@@ -463,9 +455,7 @@ export const ListRow = () => {
             <HvTableRow>
               <HvTableCell variant="listcheckbox" />
               {columns.map((el) => (
-                <HvTableHeader key={el.Header as string}>
-                  {el.Header as string}
-                </HvTableHeader>
+                <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -482,9 +472,9 @@ export const ListRow = () => {
                   <HvTableCell>{el.name}</HvTableCell>
                   <HvTableCell>{el.createdDate}</HvTableCell>
                   <HvTableCell>{el.eventType}</HvTableCell>
-                  <HvTableCell>{el.status as string}</HvTableCell>
+                  <HvTableCell>{el.status}</HvTableCell>
                   <HvTableCell align="center">{el.riskScore}</HvTableCell>
-                  <HvTableCell>{el.severity as string}</HvTableCell>
+                  <HvTableCell>{el.severity}</HvTableCell>
                   <HvTableCell>{el.priority}</HvTableCell>
                   <HvTableCell variant="listactions">
                     <HvButton
@@ -496,7 +486,7 @@ export const ListRow = () => {
                     <HvDropDownMenu
                       keepOpened={false}
                       placement="left"
-                      onClick={(e, item) => alert(item.label)}
+                      onClick={(_, item) => alert(item.label)}
                       dataList={[
                         {
                           label: "Share",

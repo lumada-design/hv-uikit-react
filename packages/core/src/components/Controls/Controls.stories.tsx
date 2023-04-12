@@ -20,10 +20,9 @@ import {
   useHvFilters,
   useHvGlobalFilter,
   useHvSortBy,
-  useHvTable,
 } from "~/components";
 import { useMemo, useState, useCallback } from "react";
-import { getColumns, makeData } from "./makedata";
+import { getColumns, makeData, NewEntry } from "./makedata";
 
 const meta: Meta<typeof HvControls> = {
   title: "Widgets/Controls",
@@ -65,7 +64,7 @@ export const Controls = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const { rows, setGlobalFilter, setSortBy } = useHvData(
+  const { rows, setGlobalFilter, setSortBy } = useHvData<NewEntry, string>(
     {
       data,
       columns,
@@ -167,7 +166,6 @@ export const Controls = () => {
             {rows?.map((row) => {
               return (
                 <HvListItem
-                  // bgcolor="atmo1"
                   key={`${row?.values?.name}-row`}
                   style={{ width: "100%" }}
                 >
@@ -188,7 +186,7 @@ export const ControlsControlled = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const { rows, setGlobalFilter, setSortBy } = useHvData(
+  const { rows, setGlobalFilter, setSortBy } = useHvData<NewEntry, string>(
     {
       data,
       columns,
@@ -217,7 +215,7 @@ export const ControlsControlled = () => {
       >
         <HvLeftControl
           placeholder="Search"
-          onSearch={(e, value) => setGlobalFilter(value)}
+          onSearch={(e, value) => setGlobalFilter?.(value)}
           searchProps={{
             inputProps: {
               "aria-controls": `${idsToControl.cards} ${idsToControl.list}`,
@@ -226,9 +224,9 @@ export const ControlsControlled = () => {
         />
         <HvRightControl
           onSort={(value) =>
-            setSortBy([
+            setSortBy?.([
               {
-                id: value?.accessor as string,
+                id: value?.accessor || "",
                 desc: value?.desc,
               },
             ])
@@ -315,7 +313,7 @@ export const CustomControls = () => {
     [temperatureSelection]
   );
 
-  const columns: HvTableColumnConfig[] = useMemo(
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
@@ -331,7 +329,7 @@ export const CustomControls = () => {
     [filterSeverity, sliderTemperature]
   );
 
-  const { rows, setFilter } = useHvData(
+  const { rows, setFilter } = useHvData<NewEntry, string>(
     {
       data,
       columns,
@@ -339,9 +337,9 @@ export const CustomControls = () => {
     useHvFilters
   );
 
-  const handleChange = (event, idx) => {
+  const handleChange = (_, idx) => {
     setSeveritySelection(idx);
-    setFilter("severity", buttons[idx]);
+    setFilter?.("severity", buttons[idx]);
   };
 
   // const onSliderChange = (values) => {
@@ -441,7 +439,7 @@ export const MixedControls = () => {
     [temperatureSelection]
   );
 
-  const columns: HvTableColumnConfig[] = useMemo(
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name" },
       { Header: "Event Type", accessor: "eventType" },
@@ -457,7 +455,7 @@ export const MixedControls = () => {
     [filterSeverity, sliderTemperature]
   );
 
-  const { rows, setFilter, setGlobalFilter } = useHvTable(
+  const { rows, setFilter, setGlobalFilter } = useHvData<NewEntry, string>(
     {
       data,
       columns,
@@ -466,9 +464,9 @@ export const MixedControls = () => {
     useHvGlobalFilter
   );
 
-  const handleChange = (event, idx) => {
+  const handleChange = (_, idx) => {
     setSeveritySelection(idx);
-    setFilter("severity", buttons[idx]);
+    setFilter?.("severity", buttons[idx]);
   };
 
   // const onSliderChange = (values) => {

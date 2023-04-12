@@ -10,6 +10,7 @@ import {
   HvTagProps,
   HvBaseSwitchProps,
   HvListValue,
+  HvCellProps,
 } from "~/components";
 import { HvTableHeaderRenderer, HvCellProps } from "../hooks/useTable";
 import DateColumnCell from "./DateColumnCell/index";

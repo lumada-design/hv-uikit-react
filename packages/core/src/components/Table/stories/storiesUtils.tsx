@@ -1,63 +1,67 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
 import { Random } from "~/utils";
-import { HvButton, HvTableColumnConfig } from "~/components";
-import { Delete, Drag } from "@hitachivantara/uikit-react-icons";
+import { HvCellProps, HvTableColumnConfig } from "~/components";
 
-export type SampleStatusProps = {
-  status_name?: string;
-  status_color?: string;
-  status_text_color?: string;
-};
+export interface NewRendererEntry {
+  id: string;
+  name: string;
+  createdDate?: string;
+  eventType?: string;
+  riskScore: number;
+  status: {
+    status_name?: string;
+    status_color?: string;
+    status_text_color?: string;
+  };
+  severity: {
+    id?: string;
+    label?: string;
+    selected?: boolean;
+  }[];
+  isDisabled: boolean;
+  eventQuantity?: number;
+}
 
-export type SampleDataProps = {
+export interface NewEntry {
   id: string;
   name: string;
   createdDate: string;
   eventType: string;
   riskScore: number;
-  status?: string | SampleStatusProps | null;
-  severity?:
-    | string
-    | {
-        id?: string;
-        label?: string;
-        selected?: boolean;
-      }[];
-  priority?: string;
-  isDisabled?: boolean;
+  status: string | null;
+  severity: string;
+  priority: string;
   link?: string;
   selected?: boolean;
-  eventQuantity?: number;
-};
-
-// Sets Header to string since it can have multiple types
-export type SampleColumn = HvTableColumnConfig<SampleDataProps>;
+}
 
 // If a Cell gets a value, it has to return a react element
 const getCell = (value: string) => <>{value}</>;
 
 const rand = new Random();
 
-const formatDate = (date) => date.toISOString().split("T")[0];
+const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
-const getOption = (opts, i) => opts[i % opts.length];
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
 
-const getTagColor = (status) =>
+const getTagColor = (status: string) =>
   status === "Closed" ? "negative_20" : "positive_20";
 
-const generateLongString = (value, i) =>
+const generateLongString = (value: string | undefined, i: number) =>
   i === 6
     ? "very long string that should be cut if it doesn't fit in the column"
     : value;
 
-const generateEmptyDate = (value, i) => (i === 7 ? undefined : value);
+const generateEmptyDate = (value: string, i: number) =>
+  i === 7 ? undefined : value;
 
-const generateEmptyString = (value, i) => (i === 3 ? undefined : value);
+const generateEmptyString = (value: string, i: number) =>
+  i === 3 ? undefined : value;
 
-const generateLargeNumber = (i) => (i === 6 ? undefined : i);
+const generateLargeNumber = (i: number) => (i === 6 ? undefined : i);
 
-const generateBooleanState = (i) => i % 3 === 0;
+const generateBooleanState = (i: number) => i % 3 === 0;
 
 const getDropdownOptions = (options: string[] = [], selected = "") => {
   return options.map((option, index) => {
@@ -69,7 +73,7 @@ const getDropdownOptions = (options: string[] = [], selected = "") => {
   });
 };
 
-const newEntry = (i: number): SampleDataProps => {
+const newEntry = (i: number): NewEntry => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2023].map((y) => new Date(y, 0).getTime());
 
@@ -85,7 +89,7 @@ const newEntry = (i: number): SampleDataProps => {
   };
 };
 
-const newRendererEntry = (i: number): SampleDataProps => {
+const newRendererEntry = (i: number): NewRendererEntry => {
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   let eventTypeText = generateEmptyString("Anomaly detection", i);
   eventTypeText = generateLongString(eventTypeText, i);
@@ -112,7 +116,7 @@ const newRendererEntry = (i: number): SampleDataProps => {
   };
 };
 
-const controlledSelectedEntry = (i: number): SampleDataProps => {
+const controlledSelectedEntry = (i: number): NewEntry => {
   const r = rand.next();
   const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   return {
@@ -128,16 +132,17 @@ const controlledSelectedEntry = (i: number): SampleDataProps => {
   };
 };
 
-export const makeRenderersData = (len = 10) => range(len).map(newRendererEntry);
+export const makeRenderersData = (len: number = 10) =>
+  range(len).map(newRendererEntry);
 
-export const makeData = (len = 10) => range(len).map(newEntry);
+export const makeData = (len: number = 10) => range(len).map(newEntry);
 
-export const makeSelectedData = (len = 10) =>
+export const makeSelectedData = (len: number = 10) =>
   range(len).map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
-export const getColumns = (): SampleColumn[] => [
+export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
@@ -147,7 +152,7 @@ export const getColumns = (): SampleColumn[] => [
     Header: "Probability",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => getCell(`${value}%`),
+    Cell: ({ value }: HvCellProps<NewEntry, string>) => getCell(`${value}%`),
   },
   { Header: "Severity", accessor: "severity" },
   {
@@ -156,7 +161,10 @@ export const getColumns = (): SampleColumn[] => [
   },
 ];
 
-export const getGroupedRowsColumns = (): SampleColumn[] => [
+export const getGroupedRowsColumns = (): HvTableColumnConfig<
+  NewEntry,
+  string
+>[] => [
   {
     Header: "Title",
     accessor: "name",
@@ -174,7 +182,7 @@ export const getGroupedRowsColumns = (): SampleColumn[] => [
     Header: "Probability",
     accessor: "riskScore",
     align: "right",
-    Cell: ({ value }) => getCell(`${value}%`),
+    Cell: ({ value }: HvCellProps<NewEntry, string>) => getCell(`${value}%`),
     aggregate: "average",
     Aggregated: ({ value }) => getCell(`Avg. ${value}%`),
   },
@@ -182,27 +190,10 @@ export const getGroupedRowsColumns = (): SampleColumn[] => [
   { Header: "Priority", accessor: "priority" },
 ];
 
-export const getLongNameColumns = (): SampleColumn[] => [
-  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
-  {
-    Header: "Time is always moving forward without stop",
-    accessor: "createdDate",
-    style: { minWidth: 100 },
-  },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 120 } },
-  // numeric values should be right-aligned
-  {
-    Header: "ProbabilityIsAParameterThatDescribeUncertainty",
-    accessor: "riskScore",
-    align: "right",
-    Cell: ({ value }) => getCell(`${value}%`),
-  },
-  { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
-];
-
-export const getGroupedColumns = (): SampleColumn[] => [
+export const getGroupedColumns = (): HvTableColumnConfig<
+  NewEntry,
+  string
+>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
@@ -215,60 +206,13 @@ export const getGroupedColumns = (): SampleColumn[] => [
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }) => getCell(`${value}%`),
+        Cell: ({ value }: HvCellProps<NewEntry, string>) =>
+          getCell(`${value}%`),
       },
       { Header: "Severity", accessor: "severity" },
     ],
   },
   { Header: "Priority", accessor: "priority" },
-];
-
-export const getDragAndDropColumns = (theme) => [
-  {
-    id: "dragAndDrop",
-    style: {
-      borderLeft: "none",
-      borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
-      padding: 0,
-      width: 34,
-      maxWidth: 34,
-    },
-    Cell: ({ dragHandleProps }) => {
-      return (
-        <HvButton
-          icon
-          variant="primaryGhost"
-          aria-label="Drag"
-          {...{ component: "div" }}
-          {...dragHandleProps}
-        >
-          <Drag />
-        </HvButton>
-      );
-    },
-  },
-  { Header: "Title", accessor: "name", minWidth: 120 },
-  { Header: "Time", accessor: "createdDate", minWidth: 100 },
-  { Header: "Status", accessor: "status", width: 120 },
-  {
-    Header: "Probability",
-    accessor: "riskScore",
-    align: "right",
-    Cell: ({ value }) => getCell(`${value}%`),
-  },
-  { Header: "Priority", accessor: "priority" },
-  {
-    id: "actions",
-    variant: "actions",
-    width: 34,
-    Cell: () => {
-      return (
-        <HvButton aria-label="Delete" icon>
-          <Delete />
-        </HvButton>
-      );
-    },
-  },
 ];
 
 export const useToggleIndex = (initialState) => {

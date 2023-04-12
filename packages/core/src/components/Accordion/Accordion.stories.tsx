@@ -142,12 +142,7 @@ export const Controlled: StoryObj<HvAccordionProps> = {
 
     return (
       <>
-        <HvSimpleGrid
-          // cols={5}
-          spacing="sm"
-          style={{ maxWidth: 1050 }}
-          breakpoints={brk}
-        >
+        <HvSimpleGrid spacing="sm" style={{ maxWidth: 1050 }} breakpoints={brk}>
           <HvButton
             variant="secondarySubtle"
             onClick={() => handleToggle("personalInformation")}
@@ -289,6 +284,14 @@ export const Controlled: StoryObj<HvAccordionProps> = {
   },
 };
 
+interface SampleDataProps {
+  id: number;
+  title: string;
+  director: string;
+  producer: string;
+  release: string;
+}
+
 export const Typography: StoryObj<HvAccordionProps> = {
   parameters: {
     eyes: { include: false },
@@ -323,17 +326,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
       },
     ];
 
-    type SampleDataProps = {
-      id: number;
-      title: string;
-      director: string;
-      producer: string;
-      release: string;
-    };
-
-    type SampleColumn = HvTableColumnConfig<SampleDataProps>;
-
-    const getColumns = (): SampleColumn[] => [
+    const getColumns = (): HvTableColumnConfig<SampleDataProps, string>[] => [
       {
         Header: "Title",
         accessor: "title",
@@ -364,7 +357,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
       prepareRow,
       headerGroups,
       rows,
-    } = useHvData(
+    } = useHvData<SampleDataProps, string>(
       {
         columns,
         data,
@@ -383,7 +376,7 @@ export const Typography: StoryObj<HvAccordionProps> = {
           expanded
         >
           <HvTable id="accordion-table" {...getTableProps()}>
-            <HvTableHead {...getTableHeadProps()}>
+            <HvTableHead {...getTableHeadProps?.()}>
               {headerGroups.map((headerGroup) => (
                 <HvTableRow {...headerGroup.getHeaderGroupProps()}>
                   {headerGroup.headers.map((col) => (
