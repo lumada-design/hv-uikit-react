@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 import {
   HvCard,
@@ -7,7 +6,6 @@ import {
   HvSemanticColorKeys,
 } from "@hitachivantara/uikit-react-core";
 import { TopXS, BottomXS } from "@hitachivantara/uikit-react-icons";
-
 import { Indicator } from "../Indicator";
 import { getStatusIcon } from "../utils";
 import classes from "./styles";

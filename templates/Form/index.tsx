@@ -10,7 +10,6 @@ import {
   HvFormStatus,
 } from "@hitachivantara/uikit-react-core";
 import { Map } from "@hitachivantara/uikit-react-icons";
-
 import { fields, allCountries } from "./utils";
 import classes from "./styles";
 

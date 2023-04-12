@@ -25,12 +25,12 @@ export const getStatusIcon = (status: number) => {
   }
 };
 
-export const getColumns = (): HvTableColumnConfig<NewEntry>[] => [
+export const getColumns = (): HvTableColumnConfig<ListViewModel, string>[] => [
   {
     Header: "Status",
     accessor: "status",
     style: { width: 40 },
-    Cell: (cellData: HvCellProps<NewEntry>) => {
+    Cell: (cellData: HvCellProps<ListViewModel, string>) => {
       switch (cellData.row.original.status) {
         case 0:
           return (
@@ -70,19 +70,7 @@ export const actions = [{ id: "refresh", label: "Refresh", icon: <Refresh /> }];
 
 // ---- Data Utils
 
-type Entry = { name: string; description: string };
-
-export type NewEntry = {
-  id: string;
-  name: string;
-  description: string;
-  serverId: number;
-  created: string;
-  build: string;
-  status: number;
-};
-
-const entries: Entry[] = [
+const entries = [
   { name: "Previous", description: "Clean Data Logs" },
   { name: "Home", description: "Review Log" },
   { name: "Carriage", description: "Deploy Cloud Run" },
@@ -118,11 +106,10 @@ const getBuild = (): string => {
   return result;
 };
 
-const getRandEntry = (): Entry =>
-  entries[Math.floor(Math.random() * entries.length)];
+const getRandEntry = () => entries[Math.floor(Math.random() * entries.length)];
 
-const getNewEntry = (i: number): NewEntry => {
-  const entry: Entry = getRandEntry();
+const getNewEntry = (i: number): ListViewModel => {
+  const entry = getRandEntry();
   return {
     id: `${i + 1}`,
     name: entry.name,
@@ -134,8 +121,8 @@ const getNewEntry = (i: number): NewEntry => {
   };
 };
 
-export const makeData = (len = 10): NewEntry[] => {
-  const data: NewEntry[] = [];
+export const makeData = (len = 10): ListViewModel[] => {
+  const data: ListViewModel[] = [];
   for (let i = 0; i <= len; i += 1) {
     data.push(getNewEntry(i));
   }

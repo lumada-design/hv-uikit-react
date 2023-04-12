@@ -11,11 +11,10 @@ import {
   HvSemanticColorKeys,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
-
 import { getStatusIcon } from "../utils";
 
 interface CarViewProps {
-  instance: HvTableInstance<AssetInventoryModel>;
+  instance: HvTableInstance<AssetInventoryModel, string>;
 }
 
 /**
@@ -77,7 +76,7 @@ export const CardView = ({ instance }: CarViewProps) => {
             </div>
             <HvActionBar>
               <HvCheckBox
-                onChange={() => instance.toggleRowSelected(row.id)}
+                onChange={() => instance.toggleRowSelected?.(row.id)}
                 checked={instance.selectedFlatRows.some((r) => r.id === row.id)}
                 value="value"
                 inputProps={{ "aria-label": "leaf input" }}

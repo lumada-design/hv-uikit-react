@@ -21,7 +21,7 @@ import {
 
 import { Kpi } from "./Kpi";
 import { Table } from "./Table";
-import { getColumns, actions, makeData, NewEntry } from "./utils";
+import { getColumns, actions, makeData } from "./utils";
 import classes from "./styles";
 
 const idsToControl = {
@@ -30,14 +30,14 @@ const idsToControl = {
 };
 
 const ListView = () => {
-  const originalData: NewEntry[] = useMemo(() => makeData(25), []);
+  const originalData = useMemo(() => makeData(25), []);
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
   const [isLoading, setIsLoading] = useState(false);
   const [kpiSelection, setKpiSelection] = useState<number | undefined>();
   const breakpoints = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 } as HvGridProps;
 
-  const instance = useHvData<NewEntry>(
+  const instance = useHvData<ListViewModel, string>(
     {
       data,
       columns,
@@ -56,7 +56,7 @@ const ListView = () => {
   const doRefresh = () => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 2000);
-    instance.setFilter("status", "");
+    instance.setFilter?.("status", "");
   };
 
   const handleAction = (
@@ -154,8 +154,8 @@ const ListView = () => {
         numTotal={data.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps.onSelectAllPages()}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsDisabled={false}
         actionsCallback={handleAction}
@@ -167,7 +167,7 @@ const ListView = () => {
       <div className={classes.marginTop}>
         <Table instance={instance} isLoading={isLoading} />
         {instance.page?.length ? (
-          <HvPagination {...instance.getHvPaginationProps()} />
+          <HvPagination {...instance.getHvPaginationProps?.()} />
         ) : undefined}
       </div>
     </>
