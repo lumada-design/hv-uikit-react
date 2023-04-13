@@ -6,23 +6,25 @@ import {
   HvVerticalNavigationTree,
   HvVerticalNavigation,
   verticalNavigationTreeClasses,
-} from "components";
-import { setId } from "utils";
+} from "~/components";
+import { setId } from "~/utils";
 
 import { StyledPopupContainer } from "./NavigationPopup.styles";
 
 export type HvVerticalNavigationPopupProps = {
   id?: string;
   anchorEl?: HTMLElement | null;
-  onClose?: () => void;
+  fixedMode?: boolean;
   data?: NavigationData[];
   selected?: string;
+  onClose?: () => void;
   onChange?: any;
 };
 
 export const HvVerticalNavigationPopup = ({
   id,
   anchorEl,
+  fixedMode,
   onClose,
   data,
   selected,
@@ -34,6 +36,12 @@ export const HvVerticalNavigationPopup = ({
 
   const handleChange = (event, selectedItem) => {
     onChange(event, selectedItem.id, selectedItem);
+  };
+
+  const handleMouseLeave = () => {
+    if (!fixedMode) {
+      onClose?.();
+    }
   };
 
   return (
@@ -49,6 +57,7 @@ export const HvVerticalNavigationPopup = ({
               selected={selected}
               onChange={handleChange}
               data={data}
+              onMouseLeave={handleMouseLeave}
             />
           </HvVerticalNavigation>
         </StyledPopupContainer>

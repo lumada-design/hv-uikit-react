@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useContext, useEffect, useState } from "react";
 import clsx from "clsx";
+import uniqueId from "lodash/uniqueId";
 import { setId, wrapperTooltip } from "~/utils";
 import { useControlled } from "~/hooks";
 import {
@@ -57,7 +58,9 @@ export interface NavigationData {
 const createListHierarchy = (
   items,
   id,
-  classes?: HvVerticalNavigationTreeClasses
+  classes?: HvVerticalNavigationTreeClasses,
+  mouseEnterHandler?: (event, item) => void,
+  disableTooltip = false
 ) =>
   items.map((item) => {
     const {
@@ -73,6 +76,10 @@ const createListHierarchy = (
 
     const ItemText = wrapperTooltip(true, itemLabel, itemLabel);
 
+    const itemMouseEnterHandler = (event) => {
+      mouseEnterHandler?.(event, item);
+    };
+
     return (
       <HvVerticalNavigationTreeViewItem
         id={setId(id, itemId)}
@@ -86,8 +93,18 @@ const createListHierarchy = (
         payload={item}
         selectable={selectable}
         disabled={disabled}
+        onMouseEnter={itemMouseEnterHandler}
+        disableTooltip={disableTooltip}
       >
-        {children ? createListHierarchy(children, id, classes) : undefined}
+        {children
+          ? createListHierarchy(
+              children,
+              id,
+              classes,
+              mouseEnterHandler,
+              disableTooltip
+            )
+          : undefined}
       </HvVerticalNavigationTreeViewItem>
     );
   });
@@ -185,7 +202,10 @@ export const HvVerticalNavigationTree = ({
   } = useContext(VerticalNavigationContext);
 
   const [navigationPopup, setNavigationPopup] = useState<{
+    // This value is needed to guarantee that the NavigationPopup is fully re-rendered with keeping any previous values
+    uniqueKey: string;
     anchorEl: HTMLButtonElement | null;
+    fixedMode: boolean;
     data: NavigationData[];
   } | null>(null);
 
@@ -197,7 +217,12 @@ export const HvVerticalNavigationTree = ({
           // We want to close the popup in case the clicked element is the same as the previous one
           return prevState?.anchorEl === currentEventTarget
             ? null
-            : { anchorEl: currentEventTarget, data: selectedItem.data };
+            : {
+                uniqueKey: uniqueId(),
+                anchorEl: currentEventTarget,
+                fixedMode: true,
+                data: selectedItem.data,
+              };
         });
 
         // We need this stopPropagation or else the Popup will close due to the clickaway being triggered
@@ -213,6 +238,23 @@ export const HvVerticalNavigationTree = ({
     [onChange, setSelected]
   );
 
+  const treeViewItemMouseEnterHandler = (event, item) => {
+    const isCollapsedMode = collapsedMode === "icon" && !isOpen;
+
+    if (isCollapsedMode && item.data && !navigationPopup?.fixedMode) {
+      const currentEventTarget = event.currentTarget;
+
+      setNavigationPopup?.({
+        uniqueKey: uniqueId(),
+        anchorEl: currentEventTarget,
+        fixedMode: false,
+        data: item.data,
+      });
+    } else if (isCollapsedMode && !item.data && !navigationPopup?.fixedMode) {
+      setNavigationPopup(null);
+    }
+  };
+
   const handleToggle = useCallback(
     (event, newExpanded) => {
       setExpanded(newExpanded);
@@ -225,9 +267,23 @@ export const HvVerticalNavigationTree = ({
   );
 
   const children = useMemo(
-    () => data && createListHierarchy(data, id, classes),
-    [classes, data, id]
+    () =>
+      data &&
+      createListHierarchy(
+        data,
+        id,
+        classes,
+        treeViewItemMouseEnterHandler,
+        navigationPopup?.fixedMode
+      ),
+    [classes, data, id, navigationPopup, isOpen]
   );
+
+  useEffect(() => {
+    if (!isOpen) {
+      setNavigationPopup?.(null);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (setParentSelected) setParentSelected(selected);
@@ -246,6 +302,12 @@ export const HvVerticalNavigationTree = ({
     setNavigationPopup(null);
   };
 
+  const handleStyledNavMouseLeave = () => {
+    if (collapsedMode === "icon" && !isOpen && !navigationPopup?.fixedMode) {
+      setNavigationPopup(null);
+    }
+  };
+
   return (
     <StyledNav
       id={id}
@@ -257,6 +319,7 @@ export const HvVerticalNavigationTree = ({
           collapsedMode == "simple" &&
           clsx(verticalNavigationTreeClasses.collapsed, classes?.collapsed)
       )}
+      onMouseLeave={handleStyledNavMouseLeave}
       {...others}
     >
       {slider ? (
@@ -281,10 +344,12 @@ export const HvVerticalNavigationTree = ({
           {collapsedMode === "icon" && !isOpen && navigationPopup && (
             <HvVerticalNavigationPopup
               id={setId(id, "navigation-popup")}
-              anchorEl={navigationPopup?.anchorEl}
-              onClose={handleNavigationPopupClose}
+              key={navigationPopup.uniqueKey}
+              anchorEl={navigationPopup.anchorEl}
               selected={selected}
-              data={navigationPopup?.data}
+              fixedMode={navigationPopup.fixedMode}
+              data={navigationPopup.data}
+              onClose={handleNavigationPopupClose}
               onChange={handleChange}
             />
           )}

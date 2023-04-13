@@ -129,6 +129,7 @@ export const HvVerticalNavigation = ({
       setParentData,
       parentSelected,
       setParentSelected,
+      hasAnyChildWithData,
     }),
     [
       open,
@@ -140,6 +141,7 @@ export const HvVerticalNavigation = ({
       withParentData,
       navigateToChildHandler,
       navigateToParentHandler,
+      hasAnyChildWithData,
     ]
   );
 

@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 
 interface StyledIconsContainerProps {
-  hasExpandableItems?: boolean;
+  hasAnyChildWithData?: boolean;
 }
 
 export const StyledIconsContainer = styled("div")(
-  ({ hasExpandableItems }: StyledIconsContainerProps) => ({
+  ({ hasAnyChildWithData }: StyledIconsContainerProps) => ({
     display: "flex",
 
     [`> div:first-of-type`]: {
-      marginLeft: hasExpandableItems ? "auto" : "unset",
+      marginLeft: hasAnyChildWithData ? "auto" : "unset",
     },
 
     [`> div:nth-of-type(2)`]: {

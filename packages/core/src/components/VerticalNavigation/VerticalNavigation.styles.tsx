@@ -12,7 +12,7 @@ export const StyledRoot = styled("div")(
     flexDirection: "column",
     justifyContent: theme.verticalNavigation.justifyContent,
 
-    width: "100%",
+    width: "220px",
 
     background: theme.colors.atmo1,
     boxShadow: theme.colors.shadow,

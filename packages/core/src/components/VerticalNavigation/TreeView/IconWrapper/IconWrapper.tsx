@@ -1,6 +1,7 @@
 import { Forwards } from "@hitachivantara/uikit-react-icons";
+import { useContext } from "react";
 
-import { HvAvatar } from "components";
+import { HvAvatar, VerticalNavigationContext } from "~/components";
 
 import { TooltipWrapper } from "../TooltipWrapper";
 import { SpacerDiv, StyledIconsContainer } from "./IconWrapper.styles";
@@ -9,13 +10,17 @@ export const IconWrapper = ({
   icon,
   label,
   hasChildren,
-  hasExpandableItems,
   showAvatar,
   isOpen,
+  disableTooltip,
 }) => {
+  const { hasAnyChildWithData } = useContext(VerticalNavigationContext);
   return (
-    <TooltipWrapper showTooltip={!hasChildren && !isOpen} label={label}>
-      <StyledIconsContainer hasExpandableItems={hasExpandableItems}>
+    <TooltipWrapper
+      showTooltip={!hasChildren && !isOpen && !disableTooltip}
+      label={label}
+    >
+      <StyledIconsContainer hasAnyChildWithData={hasAnyChildWithData}>
         {showAvatar ? (
           <HvAvatar
             variant="square"
@@ -32,7 +37,7 @@ export const IconWrapper = ({
         {hasChildren && !isOpen ? (
           <Forwards iconSize="XS" />
         ) : (
-          hasExpandableItems && !isOpen && <SpacerDiv />
+          hasAnyChildWithData && !isOpen && <SpacerDiv />
         )}
       </StyledIconsContainer>
     </TooltipWrapper>

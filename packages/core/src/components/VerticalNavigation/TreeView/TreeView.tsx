@@ -319,12 +319,6 @@ export const HvVerticalNavigationTreeView = forwardRef(
     const getFirstNode = () => getNavigableChildrenIds(null)[0];
     const getParent = (id) => nodeMap.current[id].parentId;
 
-    const hasExpandableItems = () => {
-      return Object.keys(nodeMap.current).some((key) => {
-        return nodeMap.current[key].expandable === true;
-      });
-    };
-
     /**
      * This is used to determine the start and end of a selection range so
      * we can get the nodes between the two border nodes.
@@ -984,7 +978,6 @@ export const HvVerticalNavigationTreeView = forwardRef(
         mapFirstChar,
         unMapFirstChar,
         focus,
-        hasExpandableItems: hasExpandableItems(),
       }),
       [
         registerNode,
@@ -1000,7 +993,6 @@ export const HvVerticalNavigationTreeView = forwardRef(
         multiSelect,
         disabledItemsFocusable,
         treeId,
-        hasExpandableItems,
       ]
     );
 

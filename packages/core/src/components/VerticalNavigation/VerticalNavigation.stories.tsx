@@ -422,7 +422,6 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
           id: "01",
           label: "Hardware",
           icon: <BarChart />,
-          selectable: true,
           data: [
             {
               id: "01-01",
@@ -438,7 +437,6 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
           id: "02",
           label: "System",
           icon: <Deploy />,
-          selectable: true,
           data: [
             {
               id: "02-01",
@@ -469,7 +467,6 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
           id: "03",
           label: "System 2",
           // icon: <Deploy />,
-          selectable: true,
           data: [
             {
               id: "03-01",
@@ -561,19 +558,16 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
             id: "01",
             label: "Hardware",
             icon: <BarChart />,
-            selectable: true,
           },
           {
             id: "02",
             label: "System",
             icon: <Deploy />,
-            selectable: true,
           },
           {
             id: "03",
             label: "System 2",
             icon: <Cloud />,
-            selectable: true,
           },
         ]);
       }, []);
