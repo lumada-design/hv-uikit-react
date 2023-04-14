@@ -6,6 +6,7 @@ import {
   HvButton,
   HvDropdown,
   HvInput,
+  HvLoading,
   HvSnackbar,
   HvTooltip,
   HvTypography,
@@ -199,7 +200,13 @@ export default ${themeName};`
               marginBottom: 20,
             }}
           >
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="colors"
                 label="colors"
@@ -210,7 +217,13 @@ export default ${themeName};`
                 {colorsOpen && <Colors />}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="typography"
                 label="typography"
@@ -221,7 +234,13 @@ export default ${themeName};`
                 {typographyOpen && <Typography />}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="fonts"
                 label="fonts"
@@ -237,7 +256,13 @@ export default ${themeName};`
                 )}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="sizes"
                 label="sizes"
@@ -248,7 +273,13 @@ export default ${themeName};`
                 {sizesOpen && <Sizes />}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="radii"
                 label="radii"
@@ -259,7 +290,13 @@ export default ${themeName};`
                 {radiiOpen && <Radii />}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="spacing"
                 label="spacing"
@@ -270,7 +307,13 @@ export default ${themeName};`
                 {spacingOpen && <Spacing />}
               </HvAccordion>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  <HvLoading label="Loading..." />
+                </div>
+              }
+            >
               <HvAccordion
                 id="zindices"
                 label="zindices"
