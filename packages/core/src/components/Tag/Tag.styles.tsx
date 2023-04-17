@@ -3,7 +3,7 @@ import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import Chip from "@mui/material/Chip";
 import { HvButton, HvButtonProps } from "~/components";
-import { CSSProperties } from "react";
+import { CSSProperties, Ref, forwardRef } from "react";
 import { outlineStyles } from "~/utils";
 import fade from "~/utils/hexToRgbA";
 import { transientOptions } from "~/utils/transientOptions";
@@ -122,9 +122,11 @@ export const StyledChip = styled(
   })
 );
 
-export const StyledButton = styled((props: HvButtonProps) => (
-  <HvButton {...props} />
-))({
+export const StyledButton = styled(
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  })
+)({
   "& .MuiButton-startIcon": {
     width: 16,
     height: 16,

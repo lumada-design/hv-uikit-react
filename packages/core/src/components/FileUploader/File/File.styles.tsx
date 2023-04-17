@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
+import { forwardRef, Ref } from "react";
 import { HvButton, HvButtonProps, HvTypography } from "~/components";
 
 const iconStyles = {
@@ -81,8 +82,10 @@ export const StyledPreviewContainer = styled("div")({
   },
 });
 
-export const StyledIconButton = styled((props: HvButtonProps) => (
-  <HvButton {...props} />
-))({
+export const StyledIconButton = styled(
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  })
+)({
   margin: `0px ${theme.space.xs}`,
 });

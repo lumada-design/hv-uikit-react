@@ -7,6 +7,7 @@ import {
 } from "~/components";
 import { transientOptions } from "~/utils/transientOptions";
 import tableHeaderClasses from "./tableHeaderClasses";
+import { Ref, forwardRef } from "react";
 
 export const StyledHeaderContent = styled(
   "div",
@@ -30,9 +31,11 @@ export const StyledHeaderContent = styled(
   }),
 }));
 
-export const StyledButton = styled((props: HvButtonProps) => (
-  <HvButton {...props} />
-))({
+export const StyledButton = styled(
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  })
+)({
   [`.${tableHeaderClasses.root}.${tableHeaderClasses.sortable}`]: {
     boxShadow: "none",
     backgroundColor: "transparent",
@@ -43,7 +46,9 @@ export const StyledButton = styled((props: HvButtonProps) => (
 });
 
 export const StyledTypography = styled(
-  (props: HvTypographyProps) => <HvTypography {...props} />,
+  forwardRef((props: HvTypographyProps, ref?: Ref<HTMLElement>) => {
+    return <HvTypography {...props} ref={ref} />;
+  }),
   transientOptions
 )(
   ({

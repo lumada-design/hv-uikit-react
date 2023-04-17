@@ -9,6 +9,7 @@ import {
 } from "~/components";
 import { transientOptions } from "~/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
+import { Ref, forwardRef } from "react";
 
 export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
   <HvBaseDropdown {...props} />
@@ -17,7 +18,9 @@ export const StyledBaseDropDown = styled((props: HvBaseDropdownProps) => (
 });
 
 export const StyledButton = styled(
-  (props: HvButtonProps) => <HvButton {...props} />,
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  }),
   transientOptions
 )(({ $open }: { $open: boolean }) => ({
   position: "relative",
