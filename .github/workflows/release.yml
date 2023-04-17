@@ -17,7 +17,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
-      
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -59,7 +59,7 @@ jobs:
           latest_package=$(npm view <package-name> version)
           if [[ ! -z "$latest_package" ]]; then
             echo "New package $latest_package published"
-            echo "PUBLISH_DOC=true" >> $GITHUB_ENV
+            echo "::set-output name=publish-doc::true"
           else
             echo "No new package published"
           fi
@@ -67,7 +67,7 @@ jobs:
   publish-doc:
     name: Publish Doc
     needs: [publish]
-    if: env.PUBLISH_DOC == "true"
+    if: needs.publish.outputs.publish-doc == 'true'
     uses: ./.github/workflows/documentation.yml
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
