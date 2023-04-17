@@ -55,7 +55,9 @@ const generateComponent = (
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.colors.secondary")
-    .replace(/"#fff"/g, `theme.colors.${isSelector ? "atmo1" : "acce0"}`);
+    .replace(/"#fff"/g, `theme.colors.${isSelector ? "atmo1" : "acce0"}`)
+    .replace(/"#f0f0f0"/g, "theme.colors.atmo2")
+    .replace(/"#ccced0"/g, "theme.colors.atmo4");
   const palette = replaceColorsWithTheme(themedPalette, lightPalette);
 
   return `
