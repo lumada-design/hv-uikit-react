@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "~/types";
 import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import {
   CSSProperties,
@@ -24,8 +23,7 @@ import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "~/hooks";
 
 export interface HvTableCellProps
-  extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align">,
-    Omit<HvBaseProps<HTMLTableCellElement>, "children"> {
+  extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to td. */
   component?: React.ElementType;
   /** Content to be rendered */

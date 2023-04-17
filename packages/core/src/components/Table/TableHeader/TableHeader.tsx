@@ -11,7 +11,6 @@ import capitalize from "lodash/capitalize";
 import styled from "@emotion/styled";
 import { hexToRgb, alpha } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvBaseProps } from "~/types";
 import tableHeaderClasses, { HvTableHeaderClasses } from "./tableHeaderClasses";
 import TableContext from "../TableContext";
 import { transientOptions } from "~/utils/transientOptions";
@@ -32,8 +31,7 @@ import { HvTypographyProps } from "~/components";
 import { useTheme } from "~/hooks";
 
 export interface HvTableHeaderProps
-  extends Omit<ThHTMLAttributes<HTMLTableCellElement>, "align">,
-    Omit<HvBaseProps<HTMLTableCellElement>, "children"> {
+  extends Omit<ThHTMLAttributes<HTMLTableCellElement>, "align"> {
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to th. */
   component?: React.ElementType;
   /** Content to be rendered */
