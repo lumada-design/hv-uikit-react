@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.1...@hitachivantara/uikit-react-core@5.0.2) (2023-04-17)
+
+### Bug Fixes
+
+- **DropDown:** fix incorrect borders ([f8868ee](https://github.com/lumada-design/hv-uikit-react/commit/f8868ee01b7354795f0605b36c8a281eae537f7f))
+- missing forwardRef added ([85bb6d6](https://github.com/lumada-design/hv-uikit-react/commit/85bb6d610cea386b8e3f7436299c17ee406a3629))
+- table types ([2f7e654](https://github.com/lumada-design/hv-uikit-react/commit/2f7e654d5c31c885cb6df979077991a5a2987dd2))
+- table types ([44c77d8](https://github.com/lumada-design/hv-uikit-react/commit/44c77d8fb0f9ecc66cf2b334a41d3a2e0bb467b3))
+- table types in stories ([0c79746](https://github.com/lumada-design/hv-uikit-react/commit/0c79746198dcd98be2b07d67fe8e92bfc5bdc276))
+
 ## [5.0.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.0-next.22...@hitachivantara/uikit-react-core@5.0.1) (2023-04-12)
 
 ### Bug Fixes
