@@ -8,6 +8,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { transientOptions } from "~/utils/transientOptions";
 import fade from "~/utils/hexToRgbA";
 import { HvButton, HvButtonProps } from "~/components";
+import { forwardRef, Ref } from "react";
 
 export const StyledPaper = styled(
   MuiPaper,
@@ -42,9 +43,11 @@ export const StyledBackdrop = styled(
   background: fade($backColor, 0.8),
 }));
 
-export const StyledClose = styled((props: HvButtonProps) => (
-  <HvButton {...props} />
-))({
+export const StyledClose = styled(
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  })
+)({
   padding: 0,
   minWidth: "auto",
   position: "absolute",

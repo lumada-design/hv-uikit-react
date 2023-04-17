@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Close } from "@hitachivantara/uikit-react-icons";
+import { forwardRef, Ref } from "react";
 import { HvButton, HvButtonProps } from "~/components";
 import { outlineStyles } from "~/utils";
 import fade from "~/utils/hexToRgbA";
@@ -13,7 +14,9 @@ export const StyledActionContainer = styled("div")({
 });
 
 export const StyledButton = styled(
-  (props: HvButtonProps) => <HvButton {...props} />,
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  }),
   transientOptions
 )(({ $baseColor }: { $baseColor: string }) => ({
   alignSelf: "flex-end",

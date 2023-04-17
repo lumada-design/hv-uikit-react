@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { Ref, forwardRef } from "react";
 import { HvTypography, HvTypographyProps } from "~/components";
 
 export const StyledRoot = styled("nav")({
@@ -14,8 +15,10 @@ export const StyledOrderedList = styled("ol")({
   marginLeft: `-${theme.space.xs}`,
 });
 
-export const StyledTypography = styled((props: HvTypographyProps) => (
-  <HvTypography {...props} />
-))({
+export const StyledTypography = styled(
+  forwardRef((props: HvTypographyProps, ref?: Ref<HTMLElement>) => {
+    return <HvTypography {...props} ref={ref} />;
+  })
+)({
   padding: `8px ${theme.space.xs}`,
 });

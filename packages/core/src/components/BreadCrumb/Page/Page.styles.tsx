@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import { forwardRef, Ref } from "react";
 import {
   HvLink,
   HvLinkProps,
@@ -21,9 +22,11 @@ export const StyledLink = styled((props: HvLinkProps) => <HvLink {...props} />)(
   }
 );
 
-export const StyledTypography = styled((props: HvTypographyProps) => (
-  <HvTypography {...props} />
-))({
+export const StyledTypography = styled(
+  forwardRef((props: HvTypographyProps, ref?: Ref<HTMLElement>) => {
+    return <HvTypography {...props} ref={ref} />;
+  })
+)({
   maxWidth: "170px",
   textTransform: "capitalize",
   "&:hover": {

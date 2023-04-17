@@ -14,6 +14,7 @@ import {
 import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";
+import { forwardRef, Ref } from "react";
 
 // #region Styled components
 
@@ -30,7 +31,11 @@ const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
   marginTop: 40,
 });
 
-const StyledButton = styled((props: HvButtonProps) => <HvButton {...props} />)({
+const StyledButton = styled(
+  forwardRef((props: HvButtonProps, ref?: Ref<HTMLButtonElement>) => {
+    return <HvButton {...props} ref={ref} />;
+  })
+)({
   width: 120,
   float: "right",
   marginTop: theme.spacing(8),
