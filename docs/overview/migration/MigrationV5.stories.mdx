@@ -36,6 +36,7 @@ Here's what there is to know about this migration:
   - [Avatar](#avatar)
   - [Panel](#panel)
   - [Vertical navigation](#vertical-navigation)
+  - [Table](#table)
 
 ## React packages <a id="react-packages" />
 
@@ -619,3 +620,29 @@ Furthermore, on the `HvVerticalNavigationTree` component, the following properti
 
 - `onClick`: Use `onChange` for selection and `onToggle` for node expansion/collapse;
 - `label`: Use directly the `aria-label` property instead.
+
+### Table <a id="table" />
+
+The following types and utilities were reviewed and type definitions changes were introduced to enable the definition of the columns' header type:
+
+- `hvTextColumn`
+- `hvNumberColumn`
+- `hvDateColumn`
+- `hvExpandColumn`
+- `hvTagColumn`
+- `hvSwitchColumn`
+- `hvDropdownColumn`
+- `hvProgressColumn`
+- `useHvTable`
+- `useHvData`
+- `HvCellProps`
+- `HvTableDefinitionConfig`
+- `HvTableColumnConfig`
+- `HvHooks`
+- `HvTableState`
+- `HvTableOptions`
+- `HvTableColumnOptions`
+- `HvTableInstance`
+- `HvColumnInstance`
+- `HvRowInstance`
+- `HvCellInstance`
