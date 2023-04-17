@@ -18,6 +18,9 @@ jobs:
       CHECKOUT_REF: ${{ github.event.client_payload.ref }}
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
+    outputs:
+      packages_published: ${{ steps.check-updates.outputs.published }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,6 +43,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish to NPM
+        id: publish-npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
@@ -54,20 +58,21 @@ jobs:
             exit 1
           fi
 
-      - name: Check for new package
+      - name: Check if packages were updated
+        id: check-updates
         run: |
-          latest_package=$(npm view <package-name> version)
-          if [[ ! -z "$latest_package" ]]; then
-            echo "New package $latest_package published"
-            echo "::set-output name=publish-doc::true"
+          if [[ `echo ${{ steps.publish-npm.outputs.stdout }}` == *"new version"* ]]; then
+            echo "New packages were published"
+            echo "published=true" >> "$GITHUB_OUTPUT"
           else
-            echo "No new package published"
+            echo "No packages were updated"
+            echo "published=false" >> "$GITHUB_OUTPUT"
           fi
 
   publish-doc:
     name: Publish Doc
     needs: [publish]
-    if: needs.publish.outputs.publish-doc == 'true'
+    if: needs.publish.outputs.packages_published == 'true'
     uses: ./.github/workflows/documentation.yml
     secrets:
       ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
