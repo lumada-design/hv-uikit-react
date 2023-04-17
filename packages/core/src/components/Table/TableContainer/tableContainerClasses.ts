@@ -1,9 +1,9 @@
 import { getClasses } from "~/utils";
 
-export type HvTableContainerClasses = {
+export interface HvTableContainerClasses {
   /** Styles applied to the component root class. */
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

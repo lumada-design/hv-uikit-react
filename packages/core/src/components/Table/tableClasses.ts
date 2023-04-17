@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvTableClasses = {
+export interface HvTableClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the component root class when it has a sticky header. */
@@ -9,7 +9,7 @@ export type HvTableClasses = {
   stickyColumns?: string;
   /** Styles applied to the component root class when it has sticky columns. */
   listRow?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

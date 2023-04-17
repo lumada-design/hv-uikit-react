@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvTableRowClasses = {
+export interface HvTableRowClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the component root when selected. */
@@ -21,7 +21,7 @@ export type HvTableRowClasses = {
   variantList?: string;
   /** Styles applied to the component root when its table variant is list. */
   variantListHead?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",
