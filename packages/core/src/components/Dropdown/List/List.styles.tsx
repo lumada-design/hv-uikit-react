@@ -7,7 +7,6 @@ export const StyledRootList = styled("div")({
   width: "100%",
   backgroundColor: theme.dropdown.listBackgroundColor,
   border: theme.dropdown.listBorder,
-  borderTop: "none",
   borderRadius: theme.dropdown.listBorderRadius,
 });
 

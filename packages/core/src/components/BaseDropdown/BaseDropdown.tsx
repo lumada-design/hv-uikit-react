@@ -465,6 +465,9 @@ export const HvBaseDropdown = ({
               <StyledPanel
                 id={setId(elementId, "children-container")}
                 className={clsx(baseDropdownClasses.panel, classes?.panel)}
+                $popperPlacement={
+                  popperPlacement.includes("top") ? "top" : "bottom"
+                }
               >
                 {children}
               </StyledPanel>

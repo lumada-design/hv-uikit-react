@@ -197,7 +197,16 @@ export const StyledExtension = styled(
   })
 );
 
-export const StyledPanel = styled("div")({
+export const StyledPanel = styled(
+  "div",
+  transientOptions
+)(({ $popperPlacement }: { $popperPlacement: string }) => ({
   position: "relative",
   boxShadow: theme.baseDropdown.shadow,
-});
+  ...($popperPlacement === "top" && {
+    top: "1px",
+  }),
+  ...($popperPlacement === "bottom" && {
+    top: "-1px",
+  }),
+}));
