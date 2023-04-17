@@ -500,7 +500,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     return (
       <StyledNode
         ref={handleRef}
-        id={id as string}
+        id={id ?? undefined}
         className={clsx(
           treeViewItemClasses?.node,
           classes?.node,

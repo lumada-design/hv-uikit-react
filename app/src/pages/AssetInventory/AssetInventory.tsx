@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, SyntheticEvent } from "react";
 import {
   HvBulkActions,
   HvPagination,
@@ -13,7 +13,6 @@ import {
   useHvBulkActions,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
-
 import { ListView, CardView } from "components/assetInventory";
 import {
   getColumns,
@@ -31,7 +30,7 @@ const AssetInventory = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvData(
+  const instance = useHvData<AssetInventoryModel, string>(
     {
       data,
       columns,
@@ -46,7 +45,11 @@ const AssetInventory = () => {
 
   const bulkActionProps = instance.getHvBulkActionsProps?.();
 
-  const handleAction = (event: Event, id: string, action: HvActionGeneric) =>
+  const handleAction = (
+    event: SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) =>
     alert(
       `Callback for action ${action.label} on items ${instance.selectedFlatRows
         .map((r) => r.id)
@@ -59,7 +62,7 @@ const AssetInventory = () => {
         views={views}
         defaultView="card"
         callbacks={instance}
-        onViewChange={(evt, id) => setCurrentView(id)}
+        onViewChange={(_, id) => setCurrentView(id)}
       >
         <HvLeftControl
           placeholder="Search"
@@ -82,8 +85,8 @@ const AssetInventory = () => {
         numTotal={data.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps.onSelectAllPages()}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsCallback={handleAction}
         checkboxProps={{
@@ -96,7 +99,7 @@ const AssetInventory = () => {
 
       {instance.page?.length ? (
         <HvPagination
-          {...instance.getHvPaginationProps()}
+          {...instance.getHvPaginationProps?.()}
           pageSizeOptions={[8, 16, 32]}
         />
       ) : undefined}

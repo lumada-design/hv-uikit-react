@@ -13,7 +13,6 @@ import {
   useHvBulkActions,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
-
 import { ListView } from "./ListView";
 import { CardView } from "./CardView";
 import {
@@ -32,7 +31,7 @@ const AssetInventory = () => {
   const [data] = useState(originalData);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useHvData(
+  const instance = useHvData<AssetInventoryModel, string>(
     {
       data,
       columns,
@@ -87,8 +86,8 @@ const AssetInventory = () => {
         numTotal={data.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps.onSelectAllPages()}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsCallback={handleAction}
         checkboxProps={{
@@ -101,7 +100,7 @@ const AssetInventory = () => {
 
       {instance.page?.length ? (
         <HvPagination
-          {...instance.getHvPaginationProps()}
+          {...instance.getHvPaginationProps?.()}
           pageSizeOptions={[8, 16, 32]}
         />
       ) : undefined}

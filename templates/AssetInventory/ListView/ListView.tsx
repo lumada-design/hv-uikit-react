@@ -9,11 +9,10 @@ import {
   HvTableCell,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
-
 import { getColumns, idsToControl } from "../utils";
 
 interface ListViewProps {
-  instance: HvTableInstance<AssetInventoryModel>;
+  instance: HvTableInstance<AssetInventoryModel, string>;
 }
 
 /**
@@ -31,9 +30,7 @@ export const ListView = ({ instance }: ListViewProps) => {
           <HvTableRow>
             <HvTableCell variant="listcheckbox" />
             {columns.map((col) => (
-              <HvTableHeader key={col.Header as string}>
-                {col.Header as string}
-              </HvTableHeader>
+              <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>

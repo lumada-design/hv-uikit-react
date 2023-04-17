@@ -10,11 +10,10 @@ import {
   HvTableBody,
   HvTableInstance,
 } from "@hitachivantara/uikit-react-core";
-
 import { getColumns } from "lib/utils/listView";
 
 interface TableProps {
-  instance: HvTableInstance;
+  instance: HvTableInstance<ListViewModel, string>;
   isLoading: boolean;
 }
 

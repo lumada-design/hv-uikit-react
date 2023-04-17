@@ -7,11 +7,7 @@ export interface UseHvSortByColumnProps {
   sortable?: boolean;
   sorted?: boolean;
   sortDirection?: "descending" | "ascending";
-  onClick:
-    | ((
-        e: React.MouseEvent<HTMLTableHeaderCellElement | HTMLTableCellElement>
-      ) => void)
-    | undefined;
+  onClick?: (e: React.MouseEvent<HTMLTableCellElement>) => void;
 }
 
 // getCellProps:

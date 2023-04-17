@@ -8,6 +8,8 @@ import {
   useHvSortBy,
   useHvBulkActions,
   useHvResizeColumns,
+  HvTableColumnConfig,
+  HvCellProps,
 } from "../../hooks";
 import {
   HvTable,
@@ -32,8 +34,7 @@ import {
   makeData,
   getColumns,
   makeSelectedData,
-  SampleColumn,
-  SampleDataProps,
+  NewEntry,
 } from "../storiesUtils";
 import {
   Ban,
@@ -57,19 +58,19 @@ const Complete = () => {
   }, []);
 
   const columns = useMemo(() => {
-    const cols: SampleColumn[] = [
+    const cols: HvTableColumnConfig<NewEntry, string>[] = [
       ...getColumns(),
       {
         id: "actions",
         variant: "actions",
-        Cell: ({ row }) => {
+        Cell: ({ row }: HvCellProps<NewEntry, string>) => {
           return (
             <HvToggleButton
               aria-label="Lock"
               notSelectedIcon={<Unlock />}
               selectedIcon={<Lock />}
               selected={row.isSelectionLocked}
-              onClick={() => row.toggleRowLockedSelection()}
+              onClick={() => row.toggleRowLockedSelection?.()}
             />
           );
         },
@@ -107,7 +108,7 @@ const Complete = () => {
     return cols;
   }, [colSort]);
 
-  const initialData: SampleDataProps[] = useMemo(
+  const initialData = useMemo(
     () =>
       makeSelectedData(64).map((entry) => ({
         ...entry,
@@ -139,7 +140,7 @@ const Complete = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvData<SampleDataProps>(
+  } = useHvData<NewEntry, string>(
     {
       columns,
       data,
@@ -151,7 +152,7 @@ const Complete = () => {
         lockedSelectionRowIds: { 1: true, 6: true },
       },
       defaultColumn: {
-        Cell: ({ value }) => value ?? "—",
+        Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
       },
     },
     useHvSortBy,
@@ -175,7 +176,7 @@ const Complete = () => {
       }
       case "delete": {
         const selectedIds = selected.map((el) => el.id);
-        toggleAllRowsSelected(false);
+        toggleAllRowsSelected?.(false);
         setData(data.filter((el) => !selectedIds.includes(el.id)));
         break;
       }
@@ -210,7 +211,7 @@ const Complete = () => {
   return (
     <>
       <HvBulkActions
-        {...getHvBulkActionsProps()}
+        {...getHvBulkActionsProps?.()}
         maxVisibleActions={1}
         actionsCallback={handleAction}
         actions={[
@@ -225,7 +226,6 @@ const Complete = () => {
         <HvTable
           {...getTableProps({
             "aria-rowcount": data.length,
-            caption: "Table Caption",
           })}
         >
           <HvTableHead>
@@ -245,7 +245,7 @@ const Complete = () => {
         </HvTable>
       </HvTableContainer>
 
-      <HvPagination {...getHvPaginationProps()} />
+      <HvPagination {...getHvPaginationProps?.()} />
     </>
   );
 };
@@ -267,19 +267,19 @@ const colSort = useMemo(() => {
 }, []);
 
 const columns = useMemo(() => {
-  const cols = [
+  const cols: HvTableColumnConfig<NewEntry, string>[] = [
     ...getColumns(),
     {
       id: "actions",
       variant: "actions",
-      Cell: ({ row }) => {
+      Cell: ({ row }: HvCellProps<NewEntry, string>) => {
         return (
           <HvToggleButton
             aria-label="Lock"
             notSelectedIcon={<Unlock />}
             selectedIcon={<Lock />}
             selected={row.isSelectionLocked}
-            onClick={() => row.toggleRowLockedSelection()}
+            onClick={() => row.toggleRowLockedSelection?.()}
           />
         );
       },
@@ -321,6 +321,7 @@ const initialData = useMemo(
   () =>
     makeSelectedData(64).map((entry) => ({
       ...entry,
+      // make some entries empty
       status: entry.status === "Closed" ? null : entry.status,
     })),
   []
@@ -348,7 +349,7 @@ const {
   toggleAllRowsSelected,
   getHvBulkActionsProps,
   getHvPaginationProps,
-} = useHvData(
+} = useHvData<NewEntry, string>(
   {
     columns,
     data,
@@ -360,7 +361,7 @@ const {
       lockedSelectionRowIds: { 1: true, 6: true },
     },
     defaultColumn: {
-      Cell: ({ value }) => value ?? "—",
+      Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
     },
   },
   useHvSortBy,
@@ -384,7 +385,7 @@ const handleAction = (evt, id, action) => {
     }
     case "delete": {
       const selectedIds = selected.map((el) => el.id);
-      toggleAllRowsSelected(false);
+      toggleAllRowsSelected?.(false);
       setData(data.filter((el) => !selectedIds.includes(el.id)));
       break;
     }
@@ -419,7 +420,7 @@ const rowRenderer = (pages) => {
 return (
   <>
     <HvBulkActions
-      {...getHvBulkActionsProps()}
+      {...getHvBulkActionsProps?.()}
       maxVisibleActions={1}
       actionsCallback={handleAction}
       actions={[
@@ -434,7 +435,6 @@ return (
       <HvTable
         {...getTableProps({
           "aria-rowcount": data.length,
-          caption: "Table Caption",
         })}
       >
         <HvTableHead>
@@ -454,7 +454,7 @@ return (
       </HvTable>
     </HvTableContainer>
 
-    <HvPagination {...getHvPaginationProps()} />
+    <HvPagination {...getHvPaginationProps?.()} />
   </>
 );`,
       },
@@ -464,8 +464,8 @@ return (
 };
 
 const EmptyCells = () => {
-  const columns: SampleColumn[] = useMemo(() => getColumns(), []);
-  const data: SampleDataProps[] = useMemo(
+  const columns = useMemo(() => getColumns(), []);
+  const data = useMemo(
     () =>
       makeData(6).map((entry) => ({
         ...entry,
@@ -476,11 +476,11 @@ const EmptyCells = () => {
   );
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<SampleDataProps>({
+    useHvData<NewEntry, string>({
       columns,
       data,
       defaultColumn: {
-        Cell: ({ value }) => value ?? "—",
+        Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
       },
     });
 
@@ -537,11 +537,11 @@ const data = useMemo(
 );
 
 const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-  useHvData({
+  useHvData<NewEntry, string>({
     columns,
     data,
     defaultColumn: {
-      Cell: ({ value }) => value ?? "—",
+      Cell: ({ value }: HvCellProps<NewEntry, string>) => value ?? "—",
     },
   });
 
@@ -587,22 +587,22 @@ return (
 };
 
 const LockedSelection = () => {
-  const data: SampleDataProps[] = useMemo(() => makeData(64), []);
+  const data = useMemo(() => makeData(64), []);
 
-  const columns: SampleColumn[] = useMemo(
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
     () => [
       ...getColumns(),
       {
         id: "actions",
         variant: "actions",
-        Cell: ({ row }) => {
+        Cell: ({ row }: HvCellProps<NewEntry, string>) => {
           return (
             <HvToggleButton
               aria-label="Lock"
               notSelectedIcon={<Unlock />}
               selectedIcon={<Lock />}
               selected={row.isSelectionLocked}
-              onClick={() => row.toggleRowLockedSelection()}
+              onClick={() => row.toggleRowLockedSelection?.()}
             />
           );
         },
@@ -621,7 +621,7 @@ const LockedSelection = () => {
     selectedFlatRows,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvData<SampleDataProps>(
+  } = useHvData<NewEntry, string>(
     {
       columns,
       data,
@@ -640,7 +640,7 @@ const LockedSelection = () => {
   return (
     <>
       <HvBulkActions
-        {...getHvBulkActionsProps()}
+        {...getHvBulkActionsProps?.()}
         numTotal={rows.length}
         numSelected={selectedFlatRows.length}
         showSelectAllPages
@@ -674,7 +674,9 @@ const LockedSelection = () => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
+      {page?.length ? (
+        <HvPagination {...getHvPaginationProps?.()} />
+      ) : undefined}
     </>
   );
 };
@@ -686,20 +688,20 @@ export const LockedSelectionStory: StoryObj = {
         code: `
 const data = useMemo(() => makeData(64), []);
 
-const columns = useMemo(
+const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
   () => [
     ...getColumns(),
     {
       id: "actions",
       variant: "actions",
-      Cell: ({ row }) => {
+      Cell: ({ row }: HvCellProps<NewEntry, string>) => {
         return (
           <HvToggleButton
             aria-label="Lock"
             notSelectedIcon={<Unlock />}
             selectedIcon={<Lock />}
             selected={row.isSelectionLocked}
-            onClick={() => row.toggleRowLockedSelection()}
+            onClick={() => row.toggleRowLockedSelection?.()}
           />
         );
       },
@@ -718,7 +720,7 @@ const {
   selectedFlatRows,
   getHvBulkActionsProps,
   getHvPaginationProps,
-} = useHvData(
+} = useHvData<NewEntry, string>(
   {
     columns,
     data,
@@ -737,7 +739,7 @@ const {
 return (
   <>
     <HvBulkActions
-      {...getHvBulkActionsProps()}
+      {...getHvBulkActionsProps?.()}
       numTotal={rows.length}
       numSelected={selectedFlatRows.length}
       showSelectAllPages
@@ -771,7 +773,9 @@ return (
         </HvTableBody>
       </HvTable>
     </HvTableContainer>
-    {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
+    {page?.length ? (
+      <HvPagination {...getHvPaginationProps?.()} />
+    ) : undefined}
   </>
 );`,
       },
@@ -805,7 +809,7 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
   return (
     <>
       <HvBulkActions
-        {...getHvBulkActionsProps()}
+        {...getHvBulkActionsProps?.()}
         numTotal={rows.length}
         numSelected={selectedFlatRows.length}
         showSelectAllPages
@@ -839,7 +843,9 @@ const SampleTable = ({ columns, data, layoutHook, component }) => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
+      {page?.length ? (
+        <HvPagination {...getHvPaginationProps?.()} />
+      ) : undefined}
     </>
   );
 };
@@ -862,9 +868,9 @@ const AlternativeLayout = () => {
   const [layoutHook, setLayoutHook] = useState(() => useFlexLayout);
   const [tableElements, setTableElements] = useState(false);
 
-  const data: SampleDataProps[] = useMemo(() => makeData(64), []);
+  const data = useMemo(() => makeData(64), []);
 
-  const columns: SampleColumn[] = useMemo(
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name", minWidth: 120 },
       { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -873,7 +879,7 @@ const AlternativeLayout = () => {
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }) => <>{value}%</>,
+        Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
       },
       { Header: "Priority", accessor: "priority" },
       {
@@ -954,7 +960,7 @@ export const AlternativeLayoutStory: StoryObj = {
     docs: {
       source: {
         code: `
-const alternativeLayouts = useMemo(
+const alternativeLayouts: HvListValue[] = useMemo(
   () => [
     {
       id: "0",
@@ -973,7 +979,7 @@ const [tableElements, setTableElements] = useState(false);
 
 const data = useMemo(() => makeData(64), []);
 
-const columns = useMemo(
+const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
   () => [
     { Header: "Title", accessor: "name", minWidth: 120 },
     { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -982,7 +988,7 @@ const columns = useMemo(
       Header: "Probability",
       accessor: "riskScore",
       align: "right",
-      Cell: ({ value }) => <>{value}%</>,
+      Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
     },
     { Header: "Priority", accessor: "priority" },
     {
@@ -1010,7 +1016,7 @@ const table = useMemo(
       component={tableElements ? "table" : "div"}
       // Key ensures a new context for the SampleTable's
       // useHvTable call when React reconciles the tree
-      key={layoutHook}
+      key={layoutHook as any}
     />
   ),
   [columns, data, layoutHook, tableElements]
@@ -1027,7 +1033,7 @@ return (
           values={alternativeLayouts}
           multiSelect={false}
           onChange={(item) =>
-            setLayoutHook(() => item?.hook)
+            setLayoutHook(() => (item as HvListValue)?.hook)
           }
         />
       </div>
@@ -1063,7 +1069,7 @@ return (
 };
 
 const ColumnResize = () => {
-  const columns: SampleColumn[] = useMemo(
+  const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
     () => [
       { Header: "Title", accessor: "name", minWidth: 120 },
       { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -1077,13 +1083,13 @@ const ColumnResize = () => {
         Header: "Probability",
         accessor: "riskScore",
         align: "right",
-        Cell: ({ value }) => <>{value}%</>,
+        Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
       },
       { Header: "Priority", accessor: "priority" },
     ],
     []
   );
-  const data: SampleDataProps[] = useMemo(() => makeData(6), []);
+  const data = useMemo(() => makeData(6), []);
 
   const defaultColumn = useMemo(
     () => ({
@@ -1095,7 +1101,7 @@ const ColumnResize = () => {
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useHvData<SampleDataProps>(
+    useHvData<NewEntry, string>(
       {
         columns,
         data,
@@ -1146,7 +1152,7 @@ export const ColumnResizeStory: StoryObj = {
     docs: {
       source: {
         code: `
-const columns = useMemo(
+const columns: HvTableColumnConfig<NewEntry, string>[] = useMemo(
   () => [
     { Header: "Title", accessor: "name", minWidth: 120 },
     { Header: "Time", accessor: "createdDate", minWidth: 100 },
@@ -1160,7 +1166,7 @@ const columns = useMemo(
       Header: "Probability",
       accessor: "riskScore",
       align: "right",
-      Cell: ({ value }) => <>{value}%</>,
+      Cell: ({ value }: HvCellProps<NewEntry, string>) => <>{value}%</>,
     },
     { Header: "Priority", accessor: "priority" },
   ],
@@ -1178,7 +1184,7 @@ const defaultColumn = useMemo(
 );
 
 const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  useHvData(
+  useHvData<NewEntry, string>(
     {
       columns,
       data,

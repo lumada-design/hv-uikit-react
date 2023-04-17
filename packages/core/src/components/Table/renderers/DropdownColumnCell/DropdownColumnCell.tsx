@@ -19,7 +19,7 @@ const HvDateColumnCell = ({
   onChange,
   placeholder,
   dropdownProps,
-}: HvDropdownColumnCellProp): JSX.Element | null => {
+}: HvDropdownColumnCellProp): JSX.Element => {
   return (
     <HvDropdown
       onChange={(item) => {

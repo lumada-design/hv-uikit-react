@@ -23,7 +23,7 @@ const HvSwitchColumnCell = ({
   falseLabel,
   trueLabel,
   switchProps,
-}: HvSwitchColumnCellProp): JSX.Element | null => {
+}: HvSwitchColumnCellProp): JSX.Element => {
   return (
     <>
       {falseLabel != null && (

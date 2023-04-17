@@ -1,9 +1,24 @@
 import { HvTableColumnConfig } from "../Table/hooks/useTable";
 import range from "lodash/range";
 
-const getOption = (opts, i) => opts[i % opts.length];
+export interface NewEntry {
+  id: string;
+  name: string;
+  eventType: string;
+  status: string;
+  severity: string;
+  priority: string;
+  time: {
+    hours: number;
+    minutes: number;
+    seconds: number;
+  };
+  temperature: string;
+}
 
-const getTime = (priority, index) => {
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
+
+const getTime = (priority: string, index: number) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
   return {
@@ -13,10 +28,10 @@ const getTime = (priority, index) => {
   };
 };
 
-const getPriority = (i) =>
+const getPriority = (i: number) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const newEntry = (i) => {
+const newEntry = (i: number): NewEntry => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -31,7 +46,7 @@ const newEntry = (i) => {
 
 export const makeData = (len = 10) => range(len).map(newEntry);
 
-export const getColumns = (): HvTableColumnConfig[] => [
+export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 220 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },

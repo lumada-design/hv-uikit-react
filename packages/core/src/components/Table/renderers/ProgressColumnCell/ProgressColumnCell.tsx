@@ -21,7 +21,7 @@ const HvProgressColumnCell = ({
   partial,
   total,
   color = "primary",
-}: HvProgressColumnCellProp): JSX.Element | null => {
+}: HvProgressColumnCellProp): JSX.Element => {
   const percentage = normalizeProgressBar(partial, total);
 
   return (

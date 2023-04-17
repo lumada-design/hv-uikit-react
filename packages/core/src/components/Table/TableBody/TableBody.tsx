@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import tableBodyClasses, { HvTableBodyClasses } from "./tableBodyClasses";
 import React, {
   Children,
@@ -15,10 +15,8 @@ import { useForkRef } from "~/hooks";
 import TableSectionContext from "../TableSectionContext";
 import { HvFocus } from "~/components";
 
-export type HvTableBodyProps = HvBaseProps<
-  HTMLTableSectionElement,
-  { children }
-> & {
+export interface HvTableBodyProps
+  extends HvBaseProps<HTMLTableSectionElement, { children }> {
   /**
    * Content to be rendered
    */
@@ -32,7 +30,7 @@ export type HvTableBodyProps = HvBaseProps<
   withNavigation?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableBodyClasses;
-};
+}
 
 const tableSectionContext = {
   type: "body",

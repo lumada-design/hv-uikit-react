@@ -1,19 +1,44 @@
-const getOption = (opts, i) => opts[i % opts.length];
+import {
+  HvSemanticColorKeys,
+  HvTableColumnConfig,
+} from "@hitachivantara/uikit-react-core";
 
-const getTime = (priority, index) => {
+export interface NewEntry {
+  id: string;
+  name: string;
+  eventType: string;
+  status: string;
+  severity: string;
+  priority: string;
+  time: string;
+  temperature: string;
+  statusColor: HvSemanticColorKeys | "sema0";
+}
+
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
+
+const getTime = (priority: string, index: number) => {
   let i = priority === "High" ? index + 4 : index + 3;
   i = priority === "Medium" ? i + 30 : index + 20;
   return `${i % 12}:${i % 60}:${i % 60}`;
 };
 
-const getPriority = (i) =>
+const getPriority = (i: number) =>
   (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
 
-const getRandomStatus = () => {
-  return `sema${Math.floor(Math.random() * 4)}`;
+const getRandomStatus = (): HvSemanticColorKeys | "sema0" => {
+  const colors: (HvSemanticColorKeys | "sema0")[] = [
+    "sema0",
+    "positive",
+    "neutral",
+    "warning",
+    "negative",
+  ];
+
+  return colors[Math.floor(Math.random() * 4)];
 };
 
-const newEntry = (i) => {
+const newEntry = (i: number): NewEntry => {
   return {
     id: `${i + 1}`,
     name: `Event ${i + 1}`,
@@ -27,15 +52,15 @@ const newEntry = (i) => {
   };
 };
 
-export const makeData = (len = 10) => {
-  const data = [];
+export const makeData = (len = 10): NewEntry[] => {
+  const data: NewEntry[] = [];
   for (let i = 0; i <= len; i += 1) {
     data.push(newEntry(i));
   }
   return data;
 };
 
-export const getColumns = () => [
+export const getColumns = (): HvTableColumnConfig<NewEntry, string>[] => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },

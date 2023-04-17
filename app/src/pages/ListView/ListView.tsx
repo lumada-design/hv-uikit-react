@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, SyntheticEvent } from "react";
 import {
   HvGrid,
   HvGridProps,
@@ -18,7 +18,6 @@ import {
   useHvPagination,
   useHvFilters,
 } from "@hitachivantara/uikit-react-core";
-
 import { Kpi, Table } from "components/listView";
 import { getColumns, makeData, actions } from "lib/utils/listView";
 import classes from "./styles";
@@ -36,7 +35,7 @@ const ListView = () => {
   const [kpiSelection, setKpiSelection] = useState<number | undefined>();
   const breakpoints = { xl: 3, lg: 3, md: 3, sm: 6, xs: 12 } as HvGridProps;
 
-  const instance = useHvData(
+  const instance = useHvData<ListViewModel, string>(
     {
       data,
       columns,
@@ -55,10 +54,14 @@ const ListView = () => {
   const doRefresh = () => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 2000);
-    instance.setFilter("status", "");
+    instance.setFilter?.("status", "");
   };
 
-  const handleAction = (event: Event, id: string, action: HvActionGeneric) => {
+  const handleAction = (
+    event: SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => {
     if (action.id === "refresh") {
       doRefresh();
     }
@@ -149,8 +152,8 @@ const ListView = () => {
         numTotal={data.length}
         numSelected={instance.selectedFlatRows.length}
         maxVisibleActions={2}
-        onSelectAll={() => bulkActionProps.onSelectAll()}
-        onSelectAllPages={() => bulkActionProps.onSelectAllPages()}
+        onSelectAll={() => bulkActionProps?.onSelectAll()}
+        onSelectAllPages={() => bulkActionProps?.onSelectAllPages()}
         actions={actions}
         actionsDisabled={false}
         actionsCallback={handleAction}
@@ -162,7 +165,7 @@ const ListView = () => {
       <div className={classes.marginTop}>
         <Table instance={instance} isLoading={isLoading} />
         {instance.page?.length ? (
-          <HvPagination {...instance.getHvPaginationProps()} />
+          <HvPagination {...instance.getHvPaginationProps?.()} />
         ) : undefined}
       </div>
     </>

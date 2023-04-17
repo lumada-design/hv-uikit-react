@@ -1,4 +1,3 @@
-import React from "react";
 import ReactChart from "react-google-charts";
 
 const getRandom = (min: number, max: number) => {

@@ -1,15 +1,13 @@
 import clsx from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "~/types";
 import tableContainerClasses, {
   HvTableContainerClasses,
 } from "./tableContainerClasses";
 import { forwardRef, useMemo } from "react";
 
-export type HvTableContainerProps = HvBaseProps<
-  HTMLDivElement,
-  { children }
-> & {
+export interface HvTableContainerProps
+  extends HvBaseProps<HTMLDivElement, { children }> {
   /**
    * Content to be rendered
    */
@@ -21,7 +19,7 @@ export type HvTableContainerProps = HvBaseProps<
   component?: React.ElementType;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableContainerClasses;
-};
+}
 
 const StyledTableContainer = (c: any) =>
   styled(c)({
