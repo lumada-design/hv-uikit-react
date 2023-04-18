@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs";
 import IconLibrary from "./Library";
 import { ActualSize, FemaleRunning } from "@hitachivantara/uikit-react-icons";
+import IconCategories from "./IconCategories";
 
 <Meta title="Foundation/Icons" />
 
@@ -26,7 +27,7 @@ This final result will be:
 
 <Preview>
   <Story name="Icons">
-    <IconLibrary isIcons />
+    <IconLibrary isIcons search sizeDropdown />
   </Story>
 </Preview>
 
@@ -52,6 +53,14 @@ This final result will be:
 
 <Preview>
   <Story name="Pictograms">
-    <IconLibrary isIcons={false} />
+    <IconLibrary isIcons={false} search sizeDropdown />
+  </Story>
+</Preview>
+
+For a easier search, the icons can be divided in the following categories:
+
+<Preview>
+  <Story name="Icon Categories">
+    <IconCategories />
   </Story>
 </Preview>

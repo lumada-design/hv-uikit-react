@@ -1,9 +1,14 @@
-import { HvTypography, HvDropdown } from "@hitachivantara/uikit-react-core";
+import {
+  HvDropdown,
+  HvInput,
+  HvStack,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const iconContainer = {
   margin: "5px",
@@ -32,7 +37,7 @@ const dropdownSizes = [
 
 const Icon = ({ widerSpacing, name, Component, iconSize }) => (
   <div style={widerSpacing ? widerIconContainer : iconContainer}>
-    <Component iconSize={iconSize && iconSize.label} />
+    <Component iconSize={iconSize} />
     <HvTypography style={{ margin: "6px 0" }} variant="caption1">
       {name}
     </HvTypography>
@@ -56,25 +61,64 @@ const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
   );
 };
 
-const Library = ({ isIcons }) => {
-  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
-
+const Library = ({
+  isIcons,
+  search,
+  sizeDropdown,
+  size,
+  iconList,
+}: {
+  isIcons?: boolean;
+  search?: boolean;
+  sizeDropdown?: boolean;
+  size?: string;
+  iconList?;
+}) => {
+  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>({
+    id: "1",
+    label: "S",
+    selected: true,
+  });
   const library = isIcons ? iconComponentList : pictogramComponentList;
+
+  const [libraryResults, setLibraryResults] = useState<any>(library);
+
+  const handleIconSearch = (searchTerm: string) => {
+    const filteredLibrary = Object.keys(library)
+      .filter((key) => key.toLowerCase().includes(searchTerm.toLowerCase()))
+      .reduce((obj, key) => {
+        return Object.assign(obj, {
+          [key]: library[key],
+        });
+      }, {});
+    setLibraryResults(filteredLibrary);
+  };
+
   return (
     <>
-      <div style={{ padding: "20px 0", width: 220 }}>
-        <HvDropdown
-          label="Select icon size"
-          values={dropdownSizes}
-          multiSelect={false}
-          onChange={(item) => setIconSize(item)}
-          notifyChangesOnFirstRender
-        />
-      </div>
+      <HvStack style={{ padding: "20px 0", width: 220 }}>
+        {sizeDropdown && (
+          <HvDropdown
+            label="Select icon size"
+            values={dropdownSizes}
+            multiSelect={false}
+            onChange={(item) => setIconSize(item)}
+            notifyChangesOnFirstRender
+          />
+        )}
+        {search && (
+          <HvInput
+            aria-label="Search Icons"
+            onChange={(e, value) => handleIconSearch(value)}
+            placeholder="Search"
+            type="search"
+          />
+        )}
+      </HvStack>
       <Group
-        iconSize={iconSize}
+        iconSize={size ? size : iconSize.label}
         widerSpacing={!isIcons}
-        iconsLibrary={library}
+        iconsLibrary={iconList ? iconList : libraryResults}
       />
     </>
   );
