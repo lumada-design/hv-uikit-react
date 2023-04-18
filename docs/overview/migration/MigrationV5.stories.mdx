@@ -37,6 +37,7 @@ Here's what there is to know about this migration:
   - [Panel](#panel)
   - [Vertical navigation](#vertical-navigation)
   - [Table](#table)
+  - [Slider](#slider)
 
 ## React packages <a id="react-packages" />
 
@@ -54,7 +55,6 @@ application at the moment since their development are still in progress. Over ti
 - `@hitachivantara/uikit-react-lab`
 - The following components from `@hitachivantara/uikit-react-core` are missing:
   - `HvDatePicker`
-  - `HvSlider`
   - `HvTimePicker`
   - `HvScrollToHorizontal`
   - `HvScrollToVertical`
@@ -454,6 +454,8 @@ In v5.x, some components and types were renamed as detailed in the table below.
 | Type              | InputSuggestion        | HvInputSuggestion          |
 | Type              | TagSuggestion          | HvTagSuggestion            |
 | Type              | HvUiKitThemeNames      | HvThemeColorMode           |
+| Type              | KnobProperty           | HvKnobProperty             |
+| Type              | MarkProperty           | HvMarkProperty             |
 
 ## Colors <a id="colors" />
 
@@ -646,3 +648,7 @@ The following types and utilities were reviewed and type definitions changes wer
 - `HvColumnInstance`
 - `HvRowInstance`
 - `HvCellInstance`
+
+### Slider <a id="slider" />
+
+The `theme` property was removed since the component accesses the theme object internally.
