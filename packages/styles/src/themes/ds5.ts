@@ -348,7 +348,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     preview: {
       buttonSize: "48px",
       overlayColor: theme.colors.primary_20,
-      overlayOpacity: "0.6", // TODO: Change to 1 when primary_20 is fixed and has an alpha value
+      overlayOpacity: "1",
       overlayBorderRadius: theme.radii.base,
     },
   },
@@ -416,6 +416,11 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     activeBorderLeft: `4px solid ${theme.colors.secondary}`,
     inactiveBorderLeft: `4px solid transparent`,
     actionsMarginTop: "auto",
+  },
+  slider: {
+    dragBarColor: theme.colors.primary_20,
+    ringColor: theme.colors.primary_20,
+    ringOpacity: "100%",
   },
 }));
 

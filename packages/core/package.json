@@ -54,6 +54,8 @@
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
     "notistack": "^2.0.8",
+    "rc-slider": "^10.1.1",
+    "rc-tooltip": "^6.0.1",
     "react-popper": "^2.3.0",
     "react-resize-detector": "^8.0.4",
     "react-table": "^7.8.0",

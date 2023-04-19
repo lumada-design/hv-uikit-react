@@ -258,6 +258,11 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     inactiveBorderLeft: "string",
     actionsMarginTop: "string",
   },
+  slider: {
+    dragBarColor: "string",
+    ringColor: "string",
+    ringOpacity: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

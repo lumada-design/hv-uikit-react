@@ -1,6 +1,6 @@
 import { getClasses } from "~/utils";
 
-export type HvTableHeaderClasses = {
+export interface HvTableHeaderClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the cell when it's in the table head. */
@@ -67,7 +67,7 @@ export type HvTableHeaderClasses = {
   resizing?: string;
   /** Styles applied to the resizer object when column is resizable. */
   resizer?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",
