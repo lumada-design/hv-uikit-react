@@ -1,14 +1,14 @@
 import { HvFormStatus } from "../Forms";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import {
   StyledFormElement,
   StyledGroupContainer,
   StyledLabel,
 } from "./CheckBoxGroup.styles";
-import clsx from "clsx";
-import { useControlled, useUniqueId } from "~/hooks";
-import { multiSelectionEventHandler, setId } from "~/utils";
-import { HvCheckBox, HvInfoMessage, HvWarningText } from "~/components";
+import { clsx } from "clsx";
+import { useControlled, useUniqueId } from "@core/hooks";
+import { multiSelectionEventHandler, setId } from "@core/utils";
+import { HvCheckBox, HvInfoMessage, HvWarningText } from "@core/components";
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
 import checkBoxGroupClasses, {
   HvCheckBoxGroupClasses,

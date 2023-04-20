@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { RadioProps as MuiRadioProps } from "@mui/material";
-import { HvBaseProps } from "../../types";
-import { HvWarningText } from "~/components";
+import { HvBaseProps } from "@core/types";
+import { HvWarningText } from "@core/components";
 import { HvLabelProps } from "../Forms/Label";
 import { isInvalid } from "../Forms/FormElement/validationStates";
-import { useControlled, useUniqueId } from "~/hooks";
-import { setId } from "~/utils";
+import { useControlled, useUniqueId } from "@core/hooks";
+import { setId } from "@core/utils";
 import {
   StyledDivContainer,
   StyledHvBaseRadio,

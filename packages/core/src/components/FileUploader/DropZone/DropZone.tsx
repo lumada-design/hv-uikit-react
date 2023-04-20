@@ -16,10 +16,10 @@ import {
   StyledLabel,
   StyledSelectedFilesText,
 } from "./DropZone.styles";
-import clsx from "clsx";
-import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { clsx } from "clsx";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { convertUnits } from "../utils";
-import withId from "../../../hocs/withId";
+import withId from "@core/hocs/withId";
 
 export type HvDropZoneLabels = {
   /**

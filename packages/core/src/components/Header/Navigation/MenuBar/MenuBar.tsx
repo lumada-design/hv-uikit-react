@@ -1,7 +1,7 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useContext } from "react";
-import { HvHeaderNavigationItemProp } from "~/components";
-import { HvBaseProps } from "../../../../types";
+import { HvHeaderNavigationItemProp } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import { HvMenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";

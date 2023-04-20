@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { HvOverflowTooltip } from "~/components";
+import { clsx } from "clsx";
+import { HvOverflowTooltip } from "@core/components";
 import startCase from "lodash/startCase";
 import { MouseEventHandler } from "react";
 import pageClasses, { HvPageClasses } from "./pageClasses";

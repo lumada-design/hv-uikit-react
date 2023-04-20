@@ -5,7 +5,7 @@ import {
   HvBadge,
   HvTabs,
   HvTabsProps,
-} from "~/components";
+} from "@core/components";
 import { useState } from "react";
 import {
   Helicopter,

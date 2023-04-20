@@ -1,6 +1,6 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import React from "react";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 import {
   StyledContainer,
@@ -8,8 +8,8 @@ import {
   StyledTextContainer,
   StyledTypography,
 } from "./EmptyState.styles";
-import { HvTypographyProps } from "~/components";
-import { useTheme as useHvTheme } from "~/hooks";
+import { HvTypographyProps } from "@core/components";
+import { useTheme as useHvTheme } from "@core/hooks";
 import { useTheme } from "@mui/material/styles";
 
 export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {

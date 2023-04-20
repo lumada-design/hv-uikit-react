@@ -1,6 +1,6 @@
 import { TabProps as MuiTabProps } from "@mui/material";
-import clsx from "clsx";
-import { HvBaseProps } from "../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { StyledTab } from "./Tab.styles";
 import tabClasses, { HvTabClasses } from "./tabClasses";
 

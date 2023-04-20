@@ -13,9 +13,9 @@ import {
   HvInfoMessage,
   HvTypography,
   HvBaseInput,
-} from "~/components";
+} from "@core/components";
 import countryNamesArray from "./countries";
-import { HvInputSuggestion } from "../../types";
+import { HvInputSuggestion } from "@core/types";
 
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input",

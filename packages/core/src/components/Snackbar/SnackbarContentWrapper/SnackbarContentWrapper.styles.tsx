@@ -4,7 +4,7 @@ import SnackbarContent, {
   snackbarContentClasses,
 } from "@mui/material/SnackbarContent";
 import { CSSProperties } from "react";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledSnackbarContent = styled(
   SnackbarContent,

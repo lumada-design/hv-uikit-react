@@ -1,7 +1,7 @@
-import { HvBaseProps } from "../../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { BrandRoot, BrandSeparator, BrandName } from "./Brand.styles";
 import headerBrandClasses, { HvHeaderBrandClasses } from "./brandClasses";
-import clsx from "clsx";
 
 export type HvHeaderBrandProps = HvBaseProps & {
   logo?: React.ReactNode;

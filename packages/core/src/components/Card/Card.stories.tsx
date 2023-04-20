@@ -26,8 +26,8 @@ import {
   HvActionsGeneric,
   HvKpi,
   HvToggleButton,
-} from "~/components";
-import { isKeypress, keyboardCodes } from "~/utils";
+} from "@core/components";
+import { isKeypress, keyboardCodes } from "@core/utils";
 import { useEffect, useState } from "react";
 import compressor from "./assets/compressor.png";
 import leaf from "./assets/leaf.png";

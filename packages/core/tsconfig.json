@@ -2,23 +2,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "rootDir": "src",
     "outDir": "dist",
     "paths": {
-      "~/*": ["src/*"]
+      "@core/*": ["./*"]
     }
   },
-  "include": ["src"],
-  "references": [
-    {
-      "path": "../icons/tsconfig.json"
-    },
-    {
-      "path": "../styles/tsconfig.json"
-    },
-    {
-      "path": "../shared/tsconfig.json"
-    }
-  ]
+  "include": ["src"]
 }

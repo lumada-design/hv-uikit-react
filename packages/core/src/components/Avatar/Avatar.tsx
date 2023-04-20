@@ -1,11 +1,11 @@
 import { User } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { CSSProperties, HTMLAttributes } from "react";
-import { HvBaseProps } from "~/types";
-import { useImageLoaded } from "~/hooks";
-import { decreaseSize } from "~/utils";
+import { HvBaseProps } from "@core/types";
+import { useImageLoaded } from "@core/hooks";
+import { decreaseSize } from "@core/utils";
 import {
   StyledAvatar,
   StyledBadge,

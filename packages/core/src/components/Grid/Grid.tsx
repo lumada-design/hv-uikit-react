@@ -1,8 +1,8 @@
 import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 import isString from "lodash/isString";
 import { forwardRef } from "react";
-import { useWidth } from "~/hooks";
-import { HvBaseProps } from "../../types";
+import { useWidth } from "@core/hooks";
+import { HvBaseProps } from "@core/types";
 import { HvGridClasses } from "./gridClasses";
 
 const BREAKPOINT_GUTTERS = {

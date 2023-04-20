@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography } from "~/components";
+import { HvTypography } from "@core/components";
 import { useEffect, useState } from "react";
 import { HvTextArea, HvTextAreaProps } from "./TextArea";
 

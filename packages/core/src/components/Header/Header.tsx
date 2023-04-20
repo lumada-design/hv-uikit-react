@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { HvBaseProps } from "../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { StyledHeaderRoot, StyledAppBar } from "./Header.styles";
 import headerClasses, { HvHeaderClasses } from "./headerClasses";
 

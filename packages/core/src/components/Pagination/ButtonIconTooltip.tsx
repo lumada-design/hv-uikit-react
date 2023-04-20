@@ -1,4 +1,4 @@
-import { HvButton, HvTooltip, HvTypography } from "~/components";
+import { HvButton, HvTooltip, HvTypography } from "@core/components";
 
 const ButtonIconTooltip = ({ tooltip, children, ...buttonProps }) => {
   return (

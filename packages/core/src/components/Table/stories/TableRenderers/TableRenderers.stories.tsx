@@ -16,7 +16,7 @@ import {
   HvTypography,
   HvRowInstance,
   HvCellProps,
-} from "~/components";
+} from "@core/components";
 import {
   hvTextColumn,
   hvDateColumn,

@@ -6,8 +6,8 @@ import {
   HvButtonProps,
   HvPanel,
   HvPanelProps,
-} from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
+} from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Ref, forwardRef } from "react";
 

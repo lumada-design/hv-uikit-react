@@ -1,8 +1,8 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import startCase from "lodash/startCase";
 import { isValidElement, MouseEventHandler } from "react";
-import { HvBaseProps } from "~/types/generic";
+import { HvBaseProps } from "@core/types/generic";
 import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
 import { HvPathElement } from "./PathElement";
 import { HvPage } from "./Page";
@@ -12,7 +12,7 @@ import {
   StyledTypography,
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
-import { HvDropDownMenuProps } from "~/components";
+import { HvDropDownMenuProps } from "@core/components";
 
 export interface HvBreadCrumbPathElement {
   label: string;

@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { RadioProps as MuiRadioProps } from "@mui/material";
 import {
   RadioButtonUnselected,
   RadioButtonSelected,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import { StyledRadio } from "./BaseRadio.styles";
 import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
 

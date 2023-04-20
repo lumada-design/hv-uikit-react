@@ -1,6 +1,6 @@
+import { clsx } from "clsx";
 import { DialogActionsProps as MuiDialogActionsProps } from "@mui/material/DialogActions";
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "@core/types";
 import { StyledActions } from "./Actions.styles";
 import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
 

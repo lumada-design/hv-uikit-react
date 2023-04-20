@@ -8,7 +8,7 @@ import {
   Priority5,
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvGrid, HvListValue } from "~/components";
+import { HvGrid, HvListValue } from "@core/components";
 import { useEffect, useMemo, useState } from "react";
 import { HvDropdown, HvDropdownProps, HvDropdownStatus } from "./Dropdown";
 

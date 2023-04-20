@@ -6,7 +6,7 @@ import {
   HvLinkProps,
   HvTypography,
   HvTypographyProps,
-} from "~/components";
+} from "@core/components";
 
 export const StyledLink = styled((props: HvLinkProps) => <HvLink {...props} />)(
   {

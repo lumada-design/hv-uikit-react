@@ -12,9 +12,9 @@ import {
   suggestionsClasses,
   HvBaseInputProps,
   HvFormElementProps,
-} from "~/components";
+} from "@core/components";
 import inputClasses from "./inputClasses";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledFormElement = styled((props: HvFormElementProps) => (
   <HvFormElement {...props} />

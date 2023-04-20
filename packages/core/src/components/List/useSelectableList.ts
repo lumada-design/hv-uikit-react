@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HvListValue } from "./List";
+import { HvListValue } from ".";
 
 export default function useSelectableList(defaultList: HvListValue[] = []) {
   const [list, setList] = useState<HvListValue[]>(defaultList);

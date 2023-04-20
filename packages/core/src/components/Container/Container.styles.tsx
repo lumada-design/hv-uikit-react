@@ -4,7 +4,7 @@ import {
   Container as MuiContainer,
   Breakpoints as MuiBreakpoints,
 } from "@mui/material";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRoot = styled(
   MuiContainer,

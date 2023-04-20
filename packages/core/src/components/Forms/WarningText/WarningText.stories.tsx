@@ -5,7 +5,7 @@ import {
   HvFormStatus,
   HvWarningText,
   HvWarningTextProps,
-} from "~/components";
+} from "@core/components";
 import { useState } from "react";
 
 const meta: Meta<typeof HvWarningText> = {

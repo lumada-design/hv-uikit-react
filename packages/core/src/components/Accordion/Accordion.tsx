@@ -4,14 +4,14 @@ import React, {
   useMemo,
   HTMLAttributes,
 } from "react";
-import clsx from "clsx";
-import { useControlled } from "~/hooks";
+import { clsx } from "clsx";
+import { useControlled } from "@core/hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "~/types";
-import { setId } from "~/utils";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
-import { HvTypographyVariants } from "~/components";
+import { HvTypographyVariants } from "@core/components";
 
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, { onChange }> {

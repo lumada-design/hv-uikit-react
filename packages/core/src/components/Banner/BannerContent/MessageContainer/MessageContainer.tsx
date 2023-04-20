@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { HvBaseProps } from "~/types";
-import { HvActionGeneric, HvActionsGeneric } from "~/components";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
+import { HvActionGeneric, HvActionsGeneric } from "@core/components";
 import messageContainerClasses, {
   HvMessageContainerClasses,
 } from "./messageContainerClasses";
@@ -9,7 +9,7 @@ import {
   StyledTypography,
   StyledMessageContainer,
 } from "./MessageContainer.styles";
-import { setId } from "~/utils";
+import { setId } from "@core/utils";
 
 export interface HvMessageContainerProps extends HvBaseProps {
   /** Icon to be presented. */

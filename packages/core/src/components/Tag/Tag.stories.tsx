@@ -7,7 +7,7 @@ import {
   HvOverflowTooltip,
   HvTag,
   HvTagProps,
-} from "~/components";
+} from "@core/components";
 
 // #region styled components
 

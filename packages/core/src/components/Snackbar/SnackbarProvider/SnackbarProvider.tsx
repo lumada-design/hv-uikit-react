@@ -1,11 +1,11 @@
 import { forwardRef, useCallback, useMemo } from "react";
 import { SnackbarContent, SnackbarProvider, useSnackbar } from "notistack";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import styled from "@emotion/styled";
 import { HvSnackbarContent } from "../SnackbarContentWrapper";
 import { SnackbarOrigin } from "@mui/material/Snackbar";
 import { HvSnackbarVariant } from "../Snackbar";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
 
 export type HvSnackbarProviderProps = {

@@ -20,7 +20,7 @@ import {
   useHvFilters,
   useHvGlobalFilter,
   useHvSortBy,
-} from "~/components";
+} from "@core/components";
 import { useMemo, useState, useCallback } from "react";
 import { getColumns, makeData, NewEntry } from "./makedata";
 

@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import { HvListItem } from "~/components";
+import { HvListItem } from "@core/components";
 import { describe, expect, it } from "vitest";
 import { HvSelectionList } from "./SelectionList";
 

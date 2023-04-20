@@ -1,6 +1,26 @@
-import clsx from "clsx";
-import { useControlled } from "~/hooks";
-import { HvBaseProps } from "../../types";
+import { clsx } from "clsx";
+import { useMemo } from "react";
+import { ClassNames } from "@emotion/react";
+import { theme } from "@hitachivantara/uikit-styles";
+import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
+
+import { useControlled } from "@core/hooks";
+import { HvBaseProps } from "@core/types";
+import withId from "@core/hocs/withId";
+import {
+  isKeypress,
+  keyboardCodes,
+  outlineStyles,
+  setId,
+  getPrevNextFocus,
+} from "@core/utils";
+
+import {
+  HvBaseDropdownProps,
+  HvButtonVariant,
+  HvList,
+  HvListValue,
+} from "@core/components";
 import {
   StyledBaseDropDown,
   StyledButton,
@@ -9,19 +29,6 @@ import {
 import dropDownMenuClasses, {
   HvDropDownMenuClasses,
 } from "./dropDownMenuClasses";
-import { isKeypress, keyboardCodes, outlineStyles, setId } from "~/utils";
-import getPrevNextFocus from "~/utils/focusableElementFinder";
-import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-import {
-  HvBaseDropdownProps,
-  HvButtonVariant,
-  HvList,
-  HvListValue,
-} from "~/components";
-import { useMemo } from "react";
-import { theme } from "@hitachivantara/uikit-styles";
-import withId from "../../hocs/withId";
-import { ClassNames } from "@emotion/react";
 
 export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   /** Icon. */

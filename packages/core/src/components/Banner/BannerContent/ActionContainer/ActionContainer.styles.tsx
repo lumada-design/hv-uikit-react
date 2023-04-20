@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { forwardRef, Ref } from "react";
-import { HvButton, HvButtonProps } from "~/components";
-import { outlineStyles } from "~/utils";
-import fade from "~/utils/hexToRgbA";
-import { transientOptions } from "~/utils/transientOptions";
+import { HvButton, HvButtonProps } from "@core/components";
+import { outlineStyles } from "@core/utils";
+import fade from "@core/utils/hexToRgbA";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledActionContainer = styled("div")({
   display: "flex",

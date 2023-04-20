@@ -4,7 +4,7 @@ import {
   DropRightXS as DropRightIcon,
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "~/utils";
+import { outlineStyles } from "@core/utils";
 import navigationClasses from "./navigationClasses";
 
 export const StyledRoot = styled("div")({

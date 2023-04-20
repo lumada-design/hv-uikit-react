@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvOverflowTooltip, HvOverflowTooltipProps } from "~/components";
+import { HvOverflowTooltip, HvOverflowTooltipProps } from "@core/components";
 
 const Container = ({ children }) => {
   const StyledContainer = styled("div")({ display: "flex" });

@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import clsx from "clsx";
-import { StyledTypography } from "./Label.styles";
-import { HvBaseProps } from "../../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
 import { HvFormElementContext } from "../FormElement";
 import { findDescriptors } from "../FormElement/utils/FormUtils";
-import { setId } from "~/utils";
+import { StyledTypography } from "./Label.styles";
 import labelClasses, { HvLabelClasses } from "./labelClasses";
 
 export type HvLabelProps = HvBaseProps & {

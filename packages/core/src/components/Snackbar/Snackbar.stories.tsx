@@ -10,7 +10,7 @@ import {
   HvSnackbarContent,
   HvTooltip,
   snackbarContentClasses,
-} from "~/components";
+} from "@core/components";
 import { useState } from "react";
 
 const StyledSnackbar = styled(HvSnackbar)({

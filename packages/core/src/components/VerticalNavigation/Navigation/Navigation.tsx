@@ -1,8 +1,9 @@
 import { useCallback, useMemo, useContext, useEffect, useState } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import uniqueId from "lodash/uniqueId";
-import { setId, wrapperTooltip } from "~/utils";
-import { useControlled } from "~/hooks";
+import { setId, wrapperTooltip } from "@core/utils";
+import { useControlled } from "@core/hooks";
+import { HvBaseProps } from "@core/types";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
@@ -12,7 +13,6 @@ import verticalNavigationTreeClasses, {
 } from "./navigationClasses";
 import { StyledNav } from "./Navigation.styles";
 import { HvVerticalNavigationSlider } from "../";
-import { HvBaseProps } from "../../../types";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
 

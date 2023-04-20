@@ -1,7 +1,11 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvPagination, HvPaginationProps, HvTypography } from "~/components";
+import {
+  HvPagination,
+  HvPaginationProps,
+  HvTypography,
+} from "@core/components";
 import { useState } from "react";
 
 const StyledBox = styled(HvTypography)({

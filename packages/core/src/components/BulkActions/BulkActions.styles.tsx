@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import bulkActionsClasses from "./bulkActionsClasses";
-import fade from "~/utils/hexToRgbA";
-import { HvActionsGeneric, HvActionsGenericProps } from "~/components";
+import fade from "@core/utils/hexToRgbA";
+import { HvActionsGeneric, HvActionsGenericProps } from "@core/components";
 
 export const StyledRoot = styled(
   "div",

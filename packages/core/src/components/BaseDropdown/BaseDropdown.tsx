@@ -1,16 +1,16 @@
 import React, { useMemo, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import BaseDropdownContext from "./BaseDropdownContext";
 import {
   ClickAwayListener,
   PopperPlacementType,
   PopperProps,
 } from "@mui/material";
-import { useControlled, useForkRef, useTheme, useUniqueId } from "~/hooks";
-import { isKeypress, keyboardCodes, setId } from "~/utils";
-import { getFirstAndLastFocus } from "~/utils/focusableElementFinder";
-import { HvBaseProps } from "~/types";
+import { useControlled, useForkRef, useTheme, useUniqueId } from "@core/hooks";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
+import { HvBaseProps } from "@core/types";
 import {
   StyledAnchor,
   StyledContainer,

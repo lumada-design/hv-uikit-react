@@ -1,5 +1,5 @@
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
-import { setId } from "~/utils";
+import { setId } from "@core/utils";
 import {
   HvOverflowTooltip,
   HvTag,
@@ -10,7 +10,7 @@ import {
   HvTagProps,
   HvBaseSwitchProps,
   HvListValue,
-} from "~/components";
+} from "@core/components";
 import { HvTableHeaderRenderer, HvCellProps } from "../hooks/useTable";
 import DateColumnCell from "./DateColumnCell/index";
 import SwitchColumnCell from "./SwitchColumnCell";

@@ -10,12 +10,12 @@ import {
   getThemesVars,
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
-import { processThemes } from "~/utils";
-import { HvTheme } from "~/types";
+import { processThemes } from "@core/utils";
+import { HvTheme } from "@core/types";
 import { HvThemeProvider } from "./ThemeProvider";
 import React, { useMemo } from "react";
 import createCache from "@emotion/cache";
-import { useUniqueId } from "~/hooks";
+import { useUniqueId } from "@core/hooks";
 
 // Provider props
 export interface HvProviderProps {

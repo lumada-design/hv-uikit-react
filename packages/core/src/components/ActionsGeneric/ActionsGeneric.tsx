@@ -1,15 +1,19 @@
-import clsx from "clsx";
-import { HvButtonSize, HvButtonVariant, HvDropDownMenu } from "~/components";
-import { setId } from "~/utils";
+import { clsx } from "clsx";
+import {
+  HvButtonSize,
+  HvButtonVariant,
+  HvDropDownMenu,
+} from "@core/components";
+import { setId } from "@core/utils";
 import React, { isValidElement } from "react";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import actionsGenericClasses, {
   HvActionsGenericClasses,
 } from "./actionsGenericClasses";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { StyledButton, StyledRoot } from "./ActionsGeneric.styles";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 
 export interface HvActionGeneric {
   id: string;

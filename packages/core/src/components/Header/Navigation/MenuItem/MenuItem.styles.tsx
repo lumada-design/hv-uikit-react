@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 
 const hoverColor = theme.header.hoverColor;
 

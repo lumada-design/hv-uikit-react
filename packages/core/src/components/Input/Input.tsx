@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import React, {
   HTMLInputTypeAttribute,
   isValidElement,
@@ -7,20 +8,35 @@ import React, {
   useRef,
   useState,
 } from "react";
-import clsx from "clsx";
+import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 import {
   CloseXS,
   PreviewOff,
   Preview,
   Search,
 } from "@hitachivantara/uikit-react-icons";
+import { isBrowser, isKeypress, keyboardCodes, setId } from "@core/utils";
 import {
   HvBaseProps,
   HvExtraProps,
   HvInputLabels,
   HvInputSuggestion,
   HvValidationMessages,
-} from "../../types";
+} from "@core/types";
+import {
+  HvFormStatus,
+  HvInfoMessage,
+  HvSuggestion,
+  HvTooltip,
+  HvTypography,
+  HvWarningText,
+} from "@core/components";
+import {
+  useControlled,
+  useIsMounted,
+  useLabels,
+  useUniqueId,
+} from "@core/hooks";
 import {
   StyledFormElement,
   StyledLabelContainer,
@@ -45,23 +61,7 @@ import {
   computeValidationMessage,
   HvInputValidity,
 } from "../BaseInput/validations";
-import { isBrowser, isKeypress, keyboardCodes, setId } from "../../utils";
-import {
-  HvFormStatus,
-  HvInfoMessage,
-  HvSuggestion,
-  HvTooltip,
-  HvTypography,
-  HvWarningText,
-} from "~/components";
-import {
-  useControlled,
-  useIsMounted,
-  useLabels,
-  useUniqueId,
-} from "../../hooks";
 import inputClasses, { HvInputClasses } from "./inputClasses";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
 export type HvInputProps = HvBaseProps<
   HTMLElement,

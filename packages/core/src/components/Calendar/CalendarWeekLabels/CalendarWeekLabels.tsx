@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { DateRangeProp } from "../Calendar";
 import { StyledCalendarDay } from "./CalendarWeekLabels.styles";
 import calendarWeekLabelsClasses, {

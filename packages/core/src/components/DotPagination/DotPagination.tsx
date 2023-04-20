@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { HvRadioGroupProps } from "../RadioGroup";
 import dotPaginationClasses, {
   HvDotPaginationClasses,

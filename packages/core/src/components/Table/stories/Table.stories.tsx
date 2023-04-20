@@ -18,7 +18,7 @@ import {
   HvDropDownMenu,
   HvButton,
   HvOverflowTooltip,
-} from "~/components";
+} from "@core/components";
 import { useMemo } from "react";
 import {
   getColumns,

@@ -4,7 +4,7 @@ import {
   HvListItem,
   HvSelectionList,
   HvSelectionListProps,
-} from "~/components";
+} from "@core/components";
 import { useState } from "react";
 
 const meta: Meta<typeof HvSelectionList> = {

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HvFormStatus, HvRadio } from "~/components";
+import { HvFormStatus, HvRadio } from "@core/components";
 import { useState } from "react";
 import { describe, expect, it, vi } from "vitest";
 import { HvRadioGroup } from "./RadioGroup";

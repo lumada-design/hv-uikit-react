@@ -10,7 +10,7 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-} from "~/components";
+} from "@core/components";
 
 describe("Table", () => {
   beforeEach(() => {

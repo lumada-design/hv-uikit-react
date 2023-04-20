@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import calendarClasses from "./calendarClasses";
-import {
-  HvSingleCalendar,
-  HvSingleCalendarProps,
-} from "./SingleCalendar/SingleCalendar";
+import { HvSingleCalendar, HvSingleCalendarProps } from "./SingleCalendar";
 
 export const StyledRoot = styled("div")({
   display: "flex",

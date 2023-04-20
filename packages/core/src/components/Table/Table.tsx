@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import styled from "@emotion/styled";
 import tableClasses, { HvTableClasses } from "./tableClasses";
 import {
@@ -9,7 +9,7 @@ import {
   useRef,
 } from "react";
 import TableContext from "./TableContext";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export type HvTableVariant = "listrow" | "default";

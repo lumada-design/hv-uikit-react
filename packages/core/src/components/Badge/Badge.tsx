@@ -1,8 +1,8 @@
-import { HvTypography, HvTypographyVariants } from "~/components";
+import { HvTypography, HvTypographyVariants } from "@core/components";
 import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import badgeClasses, { HvBadgeClasses } from "./badgeClasses";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export interface HvBadgeProps extends HvBaseProps {
   /**

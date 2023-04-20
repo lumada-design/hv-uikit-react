@@ -1,4 +1,4 @@
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import { StyledContainer } from "./SimpleGrid.styles";
 
 export type Spacing = "sm" | "md" | "lg" | "xl";

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import hoistNonReactStatics from "hoist-non-react-statics";
 import uniqueId from "lodash/uniqueId";
-import { HvExtraProps } from "../types";
-import { getComponentName } from "~/utils";
+import { HvExtraProps } from "@core/types";
+import { getComponentName } from "@core/utils";
 
 const pascalToKebab = (string = "") =>
   string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();

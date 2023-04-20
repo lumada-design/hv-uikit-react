@@ -4,8 +4,8 @@ import {
   HvButtonProps,
   HvTypography,
   HvTypographyProps,
-} from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
+} from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
 import tableHeaderClasses from "./tableHeaderClasses";
 import { Ref, forwardRef } from "react";
 

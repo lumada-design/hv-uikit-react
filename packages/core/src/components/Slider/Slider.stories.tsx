@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
-import { HvButton } from "~/components";
+import { HvButton } from "@core/components";
 import { HvSlider, HvSliderProps } from "./Slider";
 
 const meta: Meta<typeof HvSlider> = {

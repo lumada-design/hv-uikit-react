@@ -5,9 +5,9 @@ import {
   Backdrop as MuiBackdrop,
 } from "@mui/material";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "~/utils/transientOptions";
-import fade from "~/utils/hexToRgbA";
-import { HvButton, HvButtonProps } from "~/components";
+import { transientOptions } from "@core/utils/transientOptions";
+import fade from "@core/utils/hexToRgbA";
+import { HvButton, HvButtonProps } from "@core/components";
 import { forwardRef, Ref } from "react";
 
 export const StyledPaper = styled(

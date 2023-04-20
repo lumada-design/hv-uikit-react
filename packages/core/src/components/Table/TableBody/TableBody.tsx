@@ -1,6 +1,6 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import tableBodyClasses, { HvTableBodyClasses } from "./tableBodyClasses";
 import React, {
   Children,
@@ -11,9 +11,9 @@ import React, {
   useRef,
 } from "react";
 import TableContext from "../TableContext";
-import { useForkRef } from "~/hooks";
+import { useForkRef } from "@core/hooks";
 import TableSectionContext from "../TableSectionContext";
-import { HvFocus } from "~/components";
+import { HvFocus } from "@core/components";
 
 export interface HvTableBodyProps
   extends HvBaseProps<HTMLTableSectionElement, { children }> {

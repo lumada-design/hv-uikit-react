@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Preview } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvButton, HvButtonProps } from "~/components";
+import { HvButton, HvButtonProps } from "@core/components";
 import fileUploaderPreviewClasses from "./previewClasses";
 import { forwardRef, Ref } from "react";
 

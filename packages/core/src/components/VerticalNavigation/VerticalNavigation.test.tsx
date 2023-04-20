@@ -9,7 +9,7 @@ import {
   HvVerticalNavigationActions,
   HvVerticalNavigationHeader,
   HvVerticalNavigationTree,
-} from "~/components";
+} from "@core/components";
 
 const Sample = ({
   collapsedMode,

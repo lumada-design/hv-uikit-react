@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography, HvGrid, HvGridProps } from "~/components";
-import { useWidth } from "~/hooks";
+import { HvTypography, HvGrid, HvGridProps } from "@core/components";
+import { useWidth } from "@core/hooks";
 
 const meta: Meta<typeof HvGrid> = {
   title: "Components/Grid/Grid",

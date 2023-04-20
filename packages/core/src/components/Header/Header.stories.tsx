@@ -11,7 +11,7 @@ import {
   HvHeaderActions,
   HvHeaderBrand,
   HvHeaderNavigation,
-} from "~/components";
+} from "@core/components";
 import HitachiLogo from "./assets/HitachiLogo";
 
 const navigationData = [

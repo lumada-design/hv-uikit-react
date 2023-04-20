@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { Doc } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvInfoMessage, HvLabel, HvTypography } from "~/components";
+import { HvInfoMessage, HvLabel, HvTypography } from "@core/components";
 import { CSSProperties } from "react";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 import dropZoneClasses from "./dropZoneClasses";
 
 export const StyledDropZoneLabelsGroup = styled("div")({

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { forwardRef, Ref } from "react";
-import { HvButton, HvButtonProps, HvTypography } from "~/components";
+import { HvButton, HvButtonProps, HvTypography } from "@core/components";
 
 const iconStyles = {
   width: 32,

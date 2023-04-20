@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
-} from "~/components";
+} from "@core/components";
 import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 const Sample = () => (

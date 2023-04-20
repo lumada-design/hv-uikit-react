@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { Spacing, Breakpoint } from "./SimpleGrid";
+import { Spacing, Breakpoint } from ".";
 
 function size(props) {
   if (typeof props.size === "number") {

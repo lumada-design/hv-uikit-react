@@ -1,12 +1,12 @@
 import { useState, useMemo } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import isNil from "lodash/isNil";
+import { setId, keyboardCodes, isKeypress } from "@core/utils";
 import { VIEW_MODE, DATETIMEFORMAT_OPTIONS } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
-import { DateRangeProp, VisibilitySelectorActions } from "../Calendar";
-import { setId, keyboardCodes, isKeypress } from "~/utils";
+import { DateRangeProp, VisibilitySelectorActions } from "..";
 import {
   StyledCalendarContainer,
   StyledCalendarGrid,
