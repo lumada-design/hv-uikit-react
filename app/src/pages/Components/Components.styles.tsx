@@ -27,4 +27,12 @@ export const styles = {
       backgroundColor: theme.colors.primary_20,
     },
   }),
+  label: css({
+    width: "100%",
+    cursor: "pointer",
+    padding: 5,
+    "&:hover": {
+      backgroundColor: theme.colors.primary_20,
+    },
+  }),
 };

@@ -6,6 +6,7 @@ import {
   HvButton,
   HvDropdown,
   HvInput,
+  HvListValue,
   HvLoading,
   HvSnackbar,
   HvTooltip,
@@ -39,11 +40,10 @@ const Sidebar = () => {
 
   const [colorsOpen, setColorsOpen] = useState(false);
   const [fontsOpen, setFontsOpen] = useState(false);
-  const [radiiOpen, setRadiiOpen] = useState(false);
-  const [spacingOpen, setSpacingOpen] = useState(false);
   const [typographyOpen, setTypographyOpen] = useState(false);
-  const [indicesOpen, setIndicesOpen] = useState(false);
-  const [sizesOpen, setSizesOpen] = useState(false);
+  const [layoutOpen, setLayoutOpen] = useState(false);
+
+  console.log(themes);
 
   // the `replace` bit below is just a regex to remove the quotes from
   // the properties names, for displaying effect only.
@@ -120,7 +120,7 @@ export default ${themeName};`
             offset={20}
           />
           <HvBox css={{ display: "flex", justifyContent: "center" }}>
-            <HvTypography variant="title2">Theme Generator</HvTypography>
+            <HvTypography variant="title2">Theme Creator</HvTypography>
           </HvBox>
           <HvBox className={styles.themeName}>
             <HvTypography variant="label">Name: </HvTypography>
@@ -141,7 +141,9 @@ export default ${themeName};`
                   label: name,
                   selected: name === selectedTheme,
                 }))}
-                onChange={(t) => changeTheme(t.value, selectedMode)}
+                onChange={(t) =>
+                  changeTheme((t as HvListValue)?.value, selectedMode)
+                }
               />
             </HvBox>
             <HvBox>
@@ -153,7 +155,9 @@ export default ${themeName};`
                   label: name,
                   selected: name === selectedMode,
                 }))}
-                onChange={(mode) => changeTheme(selectedTheme, mode.value)}
+                onChange={(mode) =>
+                  changeTheme(selectedTheme, (mode as HvListValue)?.value)
+                }
               />
             </HvBox>
           </HvBox>
@@ -265,15 +269,22 @@ export default ${themeName};`
             >
               <HvAccordion
                 id="sizes"
-                label="sizes"
-                expanded={sizesOpen}
-                onChange={() => setSizesOpen((prev) => !prev)}
+                label="layout"
+                expanded={layoutOpen}
+                onChange={() => setLayoutOpen((prev) => !prev)}
                 classes={{ label: styles.label }}
               >
-                {sizesOpen && <Sizes />}
+                {layoutOpen && (
+                  <>
+                    <Sizes />
+                    <Radii />
+                    <Spacing />
+                    <Zindices />
+                  </>
+                )}
               </HvAccordion>
             </Suspense>
-            <Suspense
+            {/* <Suspense
               fallback={
                 <div>
                   <HvLoading label="Loading..." />
@@ -323,7 +334,7 @@ export default ${themeName};`
               >
                 {indicesOpen && <Zindices />}
               </HvAccordion>
-            </Suspense>
+            </Suspense> */}
           </HvBox>
         </div>
       )}

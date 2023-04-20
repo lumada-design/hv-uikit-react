@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Components = lazy(() => import("pages/Components"));
+const Instructions = lazy(() => import("pages/Instructions"));
 const AssetInventory = lazy(() => import("pages/AssetInventory"));
 const ListView = lazy(() => import("pages/ListView"));
 const Form = lazy(() => import("pages/Form"));
@@ -14,8 +15,9 @@ const AppRoutes = () => (
     <Route path="/components" element={<Components />} />
     <Route
       path="/templates"
-      element={<Navigate to="/templates/asset-inventory" replace />}
+      element={<Navigate to="/templates/instructions" replace />}
     />
+    <Route path="/templates/instructions" element={<Instructions />} />
     <Route path="/templates/asset-inventory" element={<AssetInventory />} />
     <Route path="/templates/list-view" element={<ListView />} />
     <Route path="/templates/form" element={<Form />} />

@@ -50,13 +50,13 @@ const Typography = () => {
     }
   }, [customTheme]);
 
-  const valueChangedHandler = (typographyName: string, value) => {
+  const sizeChangedHandler = (typographyName: string, value) => {
     let map = new Map<string, string>(updatedSizes);
     map.set(typographyName, value);
     setUpdatedSizes(map);
   };
 
-  const setValueHandler = (typographyName: string) => {
+  const setSizeHandler = (typographyName: string) => {
     let currSize = {};
     for (const [key, val] of updatedSizes.entries()) {
       currSize[key] = val;
@@ -260,14 +260,17 @@ const Typography = () => {
                     <HvTypography variant="label">Size</HvTypography>
                     <HvInput
                       classes={{ root: css({ width: 100, marginRight: 5 }) }}
-                      value={updatedSizes?.get(t)?.toString() || ""}
-                      onChange={(event, value) => valueChangedHandler(t, value)}
+                      value={
+                        updatedSizes?.get(t)?.toString() ||
+                        getVarValue(customTheme.typography[t].fontSize)
+                      }
+                      onChange={(event, value) => sizeChangedHandler(t, value)}
                     />
                   </HvBox>
                   <HvButton
                     variant="secondarySubtle"
                     classes={{ root: css({ minWidth: 50 }) }}
-                    onClick={() => setValueHandler(t)}
+                    onClick={() => setSizeHandler(t)}
                   >
                     Set
                   </HvButton>
@@ -285,13 +288,17 @@ const Typography = () => {
                   label="Line height"
                   values={getLineHeights(t)}
                   classes={{ root: css({ width: 130 }) }}
-                  onChange={(item) => lineHeightChangedHandler(t, item.value)}
+                  onChange={(item) =>
+                    lineHeightChangedHandler(t, (item as HvListValue)?.label)
+                  }
                 />
                 <HvDropdown
                   label="Font weight"
                   values={getFontWeights(t)}
                   classes={{ root: css({ width: 130 }) }}
-                  onChange={(item) => fontWeightChangedHandler(t, item.value)}
+                  onChange={(item) =>
+                    fontWeightChangedHandler(t, (item as HvListValue)?.value)
+                  }
                 />
               </HvBox>
             </HvBox>

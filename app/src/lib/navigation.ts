@@ -2,9 +2,14 @@ const navigation = [
   { id: "components", label: "Components", path: "/components" },
   {
     id: "templates",
-    label: "Templates",
+    label: "Preview",
     path: "/templates",
     data: [
+      {
+        id: "instuctions",
+        label: "Instructions",
+        path: "/templates/instructions",
+      },
       {
         id: "asset-inventory",
         label: "Asset Inventory",

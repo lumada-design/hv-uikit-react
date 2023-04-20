@@ -54,6 +54,7 @@ const Radii = () => {
 
   return (
     <div className={styles.root}>
+      <HvTypography variant="title4">Radii</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.radii).map((r) => {
           return (

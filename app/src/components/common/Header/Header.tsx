@@ -12,7 +12,7 @@ import {
   HvTooltip,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import HitachiLogo from "assets/HitachiLogo";
+import logo from "assets/logo.png";
 import { NavigationContext } from "lib/context/NavigationContext";
 import navigation from "lib/navigation";
 import { GeneratorContext } from "generator/GeneratorContext";
@@ -33,7 +33,10 @@ export const Header = () => {
   return (
     <HvHeader
       position="fixed"
-      style={{ width: open ? "calc(100% - 390px)" : "100%", left: 0 }}
+      style={{
+        width: open ? "calc(100% - 390px)" : "100%",
+        left: 0,
+      }}
     >
       {!isMdUp && (
         <div>
@@ -44,8 +47,8 @@ export const Header = () => {
       )}
 
       <HvHeaderBrand
-        logo={<HitachiLogo style={{ width: 72, height: 20 }} />}
-        name={!isXs ? "Lumada App" : undefined}
+        logo={<img src={logo} style={{ height: 20 }} />}
+        name={!isXs ? "Theme Creator" : undefined}
       />
 
       {isMdUp && (
@@ -68,7 +71,7 @@ export const Header = () => {
           <HvTooltip
             title={
               <HvTypography>
-                {open ? "Close Theme Generator" : "Open Theme Generator"}
+                {open ? "Close Theme Creator" : "Open Theme Creator"}
               </HvTypography>
             }
           >

@@ -54,6 +54,7 @@ const Zindices = () => {
 
   return (
     <div className={styles.root}>
+      <HvTypography variant="title4">zIndices</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.zIndices).map((r) => {
           return (
