@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.2...@hitachivantara/uikit-react-core@5.1.0) (2023-04-20)
+
+### Features
+
+- **Slider:** add Slider component ([1754d0e](https://github.com/lumada-design/hv-uikit-react/commit/1754d0efb51ff064098d7f13a686898703647005))
+- **VerticalNavigation:** added popup navigation to collapsed mode ([5816208](https://github.com/lumada-design/hv-uikit-react/commit/5816208cf62e0065830cd1ae92a03f7ebc04c5ec))
+- **VerticalNavigation:** popup on mouse hover ([99ad989](https://github.com/lumada-design/hv-uikit-react/commit/99ad9899cb51015053cc410dc71579335a1557a6))
+
 ## [5.0.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.0.1...@hitachivantara/uikit-react-core@5.0.2) (2023-04-17)
 
 ### Bug Fixes
