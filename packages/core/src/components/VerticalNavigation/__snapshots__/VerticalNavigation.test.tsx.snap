@@ -6,7 +6,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
     style="display: flex; width: 220px; height: 530px;"
   >
     <div
-      class="HvVerticalNavigation-root css-1ksbuk-StyledRoot eyka99t0"
+      class="HvVerticalNavigation-root css-18tuupo-StyledRoot eyka99t0"
       id="sample1"
     >
       <div
@@ -52,7 +52,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
       </div>
       <nav
         aria-label="Example 1 navigation"
-        class="HvVerticalNavigationTree-root css-ovxg28-StyledNav ejose0b0"
+        class="HvVerticalNavigationTree-root css-1m5708s-StyledNav ejose0b0"
       >
         <ul
           class="HvVerticalNavigationTreeView-root HvVerticalNavigationTree-list css-1xsm1gc-StyledRoot e7gq1cg0"
@@ -63,12 +63,16 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           >
             <div
               aria-current="page"
+              aria-label="Overview"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-00-button"
               role="button"
               style="padding-left: 10px;"
               tabindex="0"
             >
+              <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
               <div
                 class=""
                 data-mui-internal-clone-element="true"
@@ -83,12 +87,16 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             id="hvtreeview3-01"
           >
             <div
+              aria-label="Analytics"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-01-button"
               role="button"
               style="padding-left: 10px;"
               tabindex="-1"
             >
+              <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
               <div
                 class=""
                 data-mui-internal-clone-element="true"
@@ -105,6 +113,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             <div
               aria-controls="hvtreeview3-02-group"
               aria-expanded="false"
+              aria-label="Storage"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-02-button"
               role="button"
@@ -130,6 +139,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 </svg>
               </div>
               <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
+              <div
                 class=""
                 data-mui-internal-clone-element="true"
                 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -148,6 +160,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 <div
                   aria-controls="hvtreeview3-02-01-group"
                   aria-expanded="false"
+                  aria-label="Cloud"
                   class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                   id="hvtreeview3-02-01-button"
                   role="button"
@@ -173,6 +186,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     </svg>
                   </div>
                   <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
                     class=""
                     data-mui-internal-clone-element="true"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -189,6 +205,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     id="hvtreeview3-02-01-01"
                   >
                     <a
+                      aria-label="Servers"
                       class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                       href="https://www.hitachivantara.com/en-us/news.html"
                       id="hvtreeview3-02-01-01-button"
@@ -196,6 +213,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"
@@ -210,6 +230,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     id="hvtreeview3-02-01-02"
                   >
                     <a
+                      aria-label="HCP Anywhere"
                       class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                       href="/?path=/story/structure-vertical-navigation--main"
                       id="hvtreeview3-02-01-02-button"
@@ -217,6 +238,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"
@@ -231,12 +255,16 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     id="hvtreeview3-02-01-03"
                   >
                     <div
+                      aria-label="This Computer"
                       class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1k3b862-getStyledComponent-StyledContent e1tnpalo0"
                       id="hvtreeview3-02-01-03-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"
@@ -257,6 +285,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             <div
               aria-controls="hvtreeview3-03-group"
               aria-expanded="false"
+              aria-label="Administration"
               class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-03-button"
               role="button"
@@ -282,6 +311,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 </svg>
               </div>
               <div
+                class="css-vykerq-StyledIconsContainer emephz1"
+              />
+              <div
                 class=""
                 data-mui-internal-clone-element="true"
                 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -300,6 +332,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                 <div
                   aria-controls="hvtreeview3-03-01-group"
                   aria-expanded="false"
+                  aria-label="Rest API"
                   class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                   id="hvtreeview3-03-01-button"
                   role="button"
@@ -325,6 +358,9 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     </svg>
                   </div>
                   <div
+                    class="css-vykerq-StyledIconsContainer emephz1"
+                  />
+                  <div
                     class=""
                     data-mui-internal-clone-element="true"
                     style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
@@ -341,12 +377,16 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                     id="hvtreeview3-03-01-01"
                   >
                     <div
+                      aria-label="Log Bundle"
                       class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
                       id="hvtreeview3-03-01-01-button"
                       role="button"
                       style="padding-left: 74px;"
                       tabindex="0"
                     >
+                      <div
+                        class="css-vykerq-StyledIconsContainer emephz1"
+                      />
                       <div
                         class=""
                         data-mui-internal-clone-element="true"

@@ -10,6 +10,7 @@ import {
   getNavigationItemById,
   getParentItemById,
 } from "./NavigationSlider/utils";
+import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
 
 export type HvVerticalNavigationProps = {
   /**
@@ -92,6 +93,11 @@ export const HvVerticalNavigation = ({
 
   const [parentItem, setParentItem] = useState(initialParentItem);
 
+  const hasAnyChildWithData = useMemo(
+    () => hasChildNavigationItems(parentData),
+    [parentData]
+  );
+
   useEffect(
     () => setHeaderTitle(parentItem?.label),
     [parentItem, setParentItem]
@@ -123,6 +129,7 @@ export const HvVerticalNavigation = ({
       setParentData,
       parentSelected,
       setParentSelected,
+      hasAnyChildWithData,
     }),
     [
       open,
@@ -134,6 +141,7 @@ export const HvVerticalNavigation = ({
       withParentData,
       navigateToChildHandler,
       navigateToParentHandler,
+      hasAnyChildWithData,
     ]
   );
 
@@ -149,6 +157,7 @@ export const HvVerticalNavigation = ({
           slider && verticalNavigationClasses.slider,
           classes?.collapsed
         )}
+        hasAnyChildWithData={hasAnyChildWithData}
         {...others}
       >
         {children}

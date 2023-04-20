@@ -18,22 +18,26 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         tabindex="0"
       >
         <div
-          class="css-f95wjz"
-          name="Play"
+          class="css-n1g5h0-StyledIconsContainer emephz1"
         >
-          <svg
-            focusable="false"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="css-f95wjz"
+            name="Play"
           >
-            <path
-              class="color0"
-              d="M12.984 8 2 1.723v12.554L12.984 8M15 8 1 16V0z"
-              fill="var(--uikit-colors-secondary)"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M12.984 8 2 1.723v12.554L12.984 8M15 8 1 16V0z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
         </div>
         System
       </div>
@@ -52,6 +56,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             style="padding-left: 20px;"
             tabindex="0"
           >
+            <div
+              class="css-n1g5h0-StyledIconsContainer emephz1"
+            />
             SCPodF
           </div>
           <ul
@@ -69,6 +76,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 style="padding-left: 30px;"
                 tabindex="0"
               >
+                <div
+                  class="css-n1g5h0-StyledIconsContainer emephz1"
+                />
                 Compute
               </div>
             </li>
@@ -83,6 +93,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 style="padding-left: 30px;"
                 tabindex="0"
               >
+                <div
+                  class="css-n1g5h0-StyledIconsContainer emephz1"
+                />
                 Storage
               </div>
             </li>
@@ -97,6 +110,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 style="padding-left: 30px;"
                 tabindex="-1"
               >
+                <div
+                  class="css-n1g5h0-StyledIconsContainer emephz1"
+                />
                 Ethernet
               </div>
             </li>
@@ -111,6 +127,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
                 style="padding-left: 30px;"
                 tabindex="0"
               >
+                <div
+                  class="css-n1g5h0-StyledIconsContainer emephz1"
+                />
                 Fiber Channel
               </div>
             </li>
@@ -131,22 +150,26 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
         tabindex="0"
       >
         <div
-          class="css-f95wjz"
-          name="Stop"
+          class="css-n1g5h0-StyledIconsContainer emephz1"
         >
-          <svg
-            focusable="false"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="css-f95wjz"
+            name="Stop"
           >
-            <path
-              class="color0"
-              d="M14 14H2V2h12zM3 13h10V3H3z"
-              fill="var(--uikit-colors-secondary)"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M14 14H2V2h12zM3 13h10V3H3z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
         </div>
         Administration
       </div>
@@ -165,6 +188,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             style="padding-left: 20px;"
             tabindex="0"
           >
+            <div
+              class="css-n1g5h0-StyledIconsContainer emephz1"
+            />
             Rest API
           </div>
         </li>
@@ -179,6 +205,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             style="padding-left: 20px;"
             tabindex="0"
           >
+            <div
+              class="css-n1g5h0-StyledIconsContainer emephz1"
+            />
             License
           </div>
         </li>
@@ -193,6 +222,9 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
             style="padding-left: 20px;"
             tabindex="0"
           >
+            <div
+              class="css-n1g5h0-StyledIconsContainer emephz1"
+            />
             Log Bundle
           </div>
         </li>

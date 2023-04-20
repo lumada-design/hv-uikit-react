@@ -20,8 +20,8 @@ import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { HvAvatar } from "~/components";
-import { VerticalNavigationContext } from "../VerticalNavigationContext";
+import { VerticalNavigationContext } from "../";
+import { IconWrapper } from "./IconWrapper";
 
 export type HvVerticalNavigationTreeViewItemProps = {
   /**
@@ -84,6 +84,14 @@ export type HvVerticalNavigationTreeViewItemProps = {
    * The content of the component.
    */
   children?: React.ReactNode;
+  /**
+   * @ignore
+   */
+  onMouseEnter?: any;
+  /**
+   * Disables the appearence of a tooltip on hovering an element ( Only applicable when the in collapsed mode)
+   */
+  disableTooltip?: boolean;
 };
 
 const preventSelection = (event, disabled) => {
@@ -116,6 +124,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       onFocus,
 
       children,
+
+      disableTooltip,
 
       ...others
     } = props;
@@ -173,7 +183,9 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     const disabled = isDisabled ? isDisabled(nodeId) : false;
 
     const selectable =
-      selectableProp != null ? selectableProp : !collapsible || !expandable;
+      selectableProp != null
+        ? selectableProp
+        : !collapsible || !expandable || !isOpen;
 
     useEffect(() => {
       // On the first render a node's index will be -1. We want to wait for the real index.
@@ -275,7 +287,11 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             multiSelect && (event.shiftKey || event.ctrlKey || event.metaKey);
 
           // If already expanded and trying to toggle selection don't close
-          if (expandable && !(multiple && isExpanded && isExpanded(nodeId))) {
+          if (
+            expandable &&
+            isOpen &&
+            !(multiple && isExpanded && isExpanded(nodeId))
+          ) {
             if (toggleExpansion) toggleExpansion(event, nodeId);
           }
         }
@@ -343,7 +359,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
     const handleClick = useCallback(
       (event) => {
         if (!disabled) {
-          if (expandable) {
+          if (expandable && isOpen) {
             handleExpansion(event);
           }
 
@@ -381,7 +397,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         }
         if (contentRef.current === event.currentTarget) {
           if (key === "Enter" || key === " ") {
-            if (expandable) {
+            if (expandable && isOpen) {
               isEventHandled = handleExpansion(event) as unknown as boolean;
             }
 
@@ -434,25 +450,22 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 "aria-current": selectable && selected ? "page" : undefined,
                 "aria-expanded": expandable ? expanded : undefined,
                 "aria-controls": expandable ? setId(id, "group") : undefined,
+                "aria-label": payload?.label,
               })}
         >
           {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
-          {!icon &&
-          level === 0 &&
-          !isOpen &&
-          collapsedMode === "icon" &&
-          contentRef.current?.textContent ? (
-            <HvAvatar
-              variant="square"
-              size="xs"
-              backgroundColor="secondary_80"
-              style={{ fontSize: "15px" }}
-            >
-              {contentRef.current?.textContent.substring(0, 1)}
-            </HvAvatar>
-          ) : (
-            icon
-          )}
+
+          <IconWrapper
+            icon={icon}
+            label={payload?.label}
+            hasChildren={Boolean(children)}
+            showAvatar={
+              !icon && level === 0 && !isOpen && collapsedMode === "icon"
+            }
+            isOpen={isOpen}
+            disableTooltip={disableTooltip}
+          />
+
           {isOpen && label}
         </StyledContent>
       ),
@@ -480,6 +493,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         selected,
         expanded,
         label,
+        disableTooltip,
       ]
     );
 

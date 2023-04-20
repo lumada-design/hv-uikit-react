@@ -17,6 +17,8 @@ interface VerticalNavigationContextValue {
   setParentData?: React.Dispatch<React.SetStateAction<any>>;
   parentSelected?;
   setParentSelected?: React.Dispatch<React.SetStateAction<any>>;
+
+  hasAnyChildWithData?: boolean;
 }
 
 const VerticalNavigationContext = createContext<VerticalNavigationContextValue>(
