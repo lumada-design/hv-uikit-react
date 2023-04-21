@@ -17,123 +17,124 @@ import radioClasses, { HvRadioClasses } from "./radioClasses";
 
 export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
-export type HvRadioProps = Omit<MuiRadioProps, "onChange" | "classes"> &
-  HvBaseProps<HTMLInputElement, { onChange }> & {
-    /**
-     * Class names to be applied.
-     */
-    className?: string;
-    /**
-     * A Jss Object used to override or extend the styles applied to the radio button.
-     */
-    classes?: HvRadioClasses;
-    /**
-     * Id to be applied to the form element root node.
-     */
-    id?: string;
-    /**
-     * The form element name.
-     */
-    name?: string;
-    /**
-     * The value of the form element.
-     *
-     * The default value is "on".
-     */
-    value?: any;
-    /**
-     * The label of the form element.
-     *
-     * The form element must be labeled for accessibility reasons.
-     * If not provided, an aria-label or aria-labelledby must be provided.
-     */
-    label?: React.ReactNode;
-    /**
-     * @ignore
-     */
-    "aria-label"?: string;
-    /**
-     * @ignore
-     */
-    "aria-labelledby"?: string;
-    /**
-     * @ignore
-     */
-    "aria-describedby"?: string;
-    /**
-     * Properties passed on to the label element.
-     */
-    labelProps?: HvLabelProps;
-    /**
-     * Indicates that user input is required on the form element.
-     *
-     * If a single radio button in a group has the required attribute, a radio button in
-     * that group must be check, though it doesn't have to be the one with the attribute is applied.
-     *
-     * For that reason, the component doesn't make any uncontrolled changes to its validation status.
-     * That should ideally be managed in the context of a radio button group.
-     */
-    required?: boolean;
-    /**
-     * Indicates that the form element is not editable.
-     */
-    readOnly?: boolean;
-    /**
-     * Indicates that the form element is disabled.
-     */
-    disabled?: boolean;
-    /**
-     * If `true` the radio button is selected, if set to `false` the radio button is not selected.
-     *
-     * When defined the radio button state becomes controlled.
-     */
-    checked?: boolean;
-    /**
-     * When uncontrolled, defines the initial checked state.
-     */
-    defaultChecked?: boolean;
-    /**
-     * The status of the form element.
-     *
-     * Valid is correct, invalid is incorrect and standBy means no validations have run.
-     */
-    status?: HvRadioStatus;
-    /**
-     * The error message to show when `status` is "invalid".
-     */
-    statusMessage?: string;
-    /**
-     * Identifies the element that provides an error message for the radio button.
-     *
-     * Will only be used when the validation status is invalid.
-     */
-    "aria-errormessage"?: string;
-    /**
-     * The callback fired when the radio button is pressed.
-     */
-    onChange?: (
-      event: React.ChangeEvent<HTMLInputElement>,
-      checked: boolean,
-      value: any
-    ) => void;
-    /**
-     * Whether the selector should use semantic colors.
-     */
-    semantic?: boolean;
-    /**
-     * Properties passed on to the input element.
-     */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-    /**
-     * Callback fired when the component is focused with a keyboard.
-     * We trigger a `onFocus` callback too.
-     */
-    onFocusVisible?: (event: React.FocusEvent<any>) => void;
-    /**
-     * @ignore
-     */
-    onBlur?: (event: React.FocusEvent<any>) => void;
-  };
+export interface HvRadioProps
+  extends Omit<MuiRadioProps, "onChange" | "classes">,
+    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the radio button.
+   */
+  classes?: HvRadioClasses;
+  /**
+   * Id to be applied to the form element root node.
+   */
+  id?: string;
+  /**
+   * The form element name.
+   */
+  name?: string;
+  /**
+   * The value of the form element.
+   *
+   * The default value is "on".
+   */
+  value?: any;
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided.
+   */
+  label?: React.ReactNode;
+  /**
+   * @ignore
+   */
+  "aria-label"?: string;
+  /**
+   * @ignore
+   */
+  "aria-labelledby"?: string;
+  /**
+   * @ignore
+   */
+  "aria-describedby"?: string;
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps?: HvLabelProps;
+  /**
+   * Indicates that user input is required on the form element.
+   *
+   * If a single radio button in a group has the required attribute, a radio button in
+   * that group must be check, though it doesn't have to be the one with the attribute is applied.
+   *
+   * For that reason, the component doesn't make any uncontrolled changes to its validation status.
+   * That should ideally be managed in the context of a radio button group.
+   */
+  required?: boolean;
+  /**
+   * Indicates that the form element is not editable.
+   */
+  readOnly?: boolean;
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * If `true` the radio button is selected, if set to `false` the radio button is not selected.
+   *
+   * When defined the radio button state becomes controlled.
+   */
+  checked?: boolean;
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked?: boolean;
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   */
+  status?: HvRadioStatus;
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage?: string;
+  /**
+   * Identifies the element that provides an error message for the radio button.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
+  /**
+   * The callback fired when the radio button is pressed.
+   */
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+    value: any
+  ) => void;
+  /**
+   * Whether the selector should use semantic colors.
+   */
+  semantic?: boolean;
+  /**
+   * Properties passed on to the input element.
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible?: (event: React.FocusEvent<any>) => void;
+  /**
+   * @ignore
+   */
+  onBlur?: (event: React.FocusEvent<any>) => void;
+}
 
 /**
  * A Radio Button is a mechanism that allows user to select just an option from a group of options.

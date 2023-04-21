@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvPaginationClasses = {
+export interface HvPaginationClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the page size selector container. */
@@ -25,7 +25,7 @@ export type HvPaginationClasses = {
   iconContainer?: string;
   /** Styles applied to each navigation icon. */
   icon?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

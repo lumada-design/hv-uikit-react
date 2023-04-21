@@ -7,11 +7,12 @@ import { FocusContext } from "../utils/FocusContext";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuItemLabel, MenuItemLi, MenuItemLink } from "./MenuItem.styles";
 
-export type MenuItemProps = HvBaseProps<HTMLDivElement, { onClick }> & {
+export interface MenuItemProps
+  extends HvBaseProps<HTMLDivElement, { onClick }> {
   item: HvHeaderNavigationItemProp;
   type?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;
-};
+}
 
 export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
   const selectionPath = useContext(SelectionContext);

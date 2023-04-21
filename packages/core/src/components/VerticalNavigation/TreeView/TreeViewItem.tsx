@@ -23,7 +23,7 @@ import {
 import { VerticalNavigationContext } from "../";
 import { IconWrapper } from "./IconWrapper";
 
-export type HvVerticalNavigationTreeViewItemProps = {
+export interface HvVerticalNavigationTreeViewItemProps {
   /**
    * Id to be applied to the root node.
    */
@@ -92,7 +92,7 @@ export type HvVerticalNavigationTreeViewItemProps = {
    * Disables the appearence of a tooltip on hovering an element ( Only applicable when the in collapsed mode)
    */
   disableTooltip?: boolean;
-};
+}
 
 const preventSelection = (event, disabled) => {
   if (event.shiftKey || event.ctrlKey || event.metaKey || disabled) {

@@ -6,7 +6,7 @@ import { StyledRoot, StyledTypography } from "./CharCounter.styles";
 import { HvFormElementContext } from "../FormElement";
 import charCounterClasses, { HvCharCounterClasses } from "./charCounterClasses";
 
-export type HvCharCounterProps = HvBaseProps & {
+export interface HvCharCounterProps extends HvBaseProps {
   /** The string that separates the current char quantity from the max quantity. */
   separator?: string;
   /** The maximum allowed length of the characters. */
@@ -19,7 +19,7 @@ export type HvCharCounterProps = HvBaseProps & {
   disableGutter?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCharCounterClasses;
-};
+}
 
 /**
  * Displays the capacity and current usage of a text input box (character count by default).

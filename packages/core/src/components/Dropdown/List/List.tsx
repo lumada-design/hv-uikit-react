@@ -21,7 +21,7 @@ import { getSelected } from "../utils";
 import { HvDropdownLabelsProps } from "../Dropdown";
 import dropdownListClasses, { HvDropdownListClasses } from "./listClasses";
 
-export type HvDropdownListProps = {
+export interface HvDropdownListProps {
   /**
    * Id to be applied to the root node.
    */
@@ -79,7 +79,7 @@ export type HvDropdownListProps = {
    * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
    */
   virtualized?: boolean;
-};
+}
 
 /**
  * The values property was being deeply cloned. That created a significant performance

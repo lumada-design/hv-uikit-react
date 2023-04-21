@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvListItemClasses = {
+export interface HvListItemClasses {
   root?: string;
   focus?: string;
   startAdornment?: string;
@@ -12,7 +12,7 @@ export type HvListItemClasses = {
   disabled?: string;
   withStartAdornment?: string;
   withEndAdornment?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

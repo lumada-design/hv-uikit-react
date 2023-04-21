@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvRadioClasses = {
+export interface HvRadioClasses {
   /** Styles applied to the component. */
   root?: string;
   /** Styles applied to the radio button+label container (only when a label is provided). */
@@ -17,7 +17,7 @@ export type HvRadioClasses = {
   label?: string;
   /** Class applied to the root element if keyboard focused. */
   focusVisible?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

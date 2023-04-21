@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvFileUploaderPreviewClasses = {
+export interface HvFileUploaderPreviewClasses {
   previewButton?: string;
   overlay?: string;
-};
+}
 
 const classKeys: string[] = ["previewButton", "overlay"];
 

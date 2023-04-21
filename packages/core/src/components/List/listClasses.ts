@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvListClasses = {
+export interface HvListClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the component root class in virtualized form. */
@@ -21,7 +21,7 @@ export type HvListClasses = {
   link?: string;
   /** Styles applied to the select all selector. */
   selectAllSelector?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

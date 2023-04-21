@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvTagClasses = {
+export interface HvTagClasses {
   root?: string;
   tagButton?: string;
   focusVisible?: string;
@@ -14,7 +14,7 @@ export type HvTagClasses = {
   categoricalDisabled?: string;
   deleteIcon?: string;
   disabledDeleteIcon?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

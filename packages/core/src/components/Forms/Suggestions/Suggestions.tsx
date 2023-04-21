@@ -12,14 +12,14 @@ import { HvListItem } from "../../ListContainer/ListItem";
 import { HvClickOutsideEvent, useClickOutside } from "../../../hooks";
 import suggestionsClasses, { HvSuggestionsClasses } from "./suggestionsClasses";
 
-export type HvSuggestion = {
+export interface HvSuggestion {
   id?: string;
   label: React.ReactNode;
   value?: string;
   disabled?: boolean;
-};
+}
 
-export type HvSuggestionsProps = HvBaseProps & {
+export interface HvSuggestionsProps extends HvBaseProps {
   /** Whether suggestions is visible. */
   expanded?: boolean;
   /** The HTML element Suggestions attaches to. */
@@ -32,7 +32,7 @@ export type HvSuggestionsProps = HvBaseProps & {
   onClose?: (event: HvClickOutsideEvent) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSuggestionsClasses;
-};
+}
 
 export const HvSuggestions = ({
   id,

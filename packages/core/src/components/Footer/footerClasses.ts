@@ -1,12 +1,12 @@
 import { getClasses } from "@core/utils";
 
-export type HvFooterClasses = {
+export interface HvFooterClasses {
   root?: string;
   name?: string;
   copyright?: string;
   separator?: string;
   rightContainer?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

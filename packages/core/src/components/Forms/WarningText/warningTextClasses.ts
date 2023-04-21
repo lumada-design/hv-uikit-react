@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvWarningTextClasses = {
+export interface HvWarningTextClasses {
   root?: string;
   defaultIcon?: string;
   warningText?: string;
@@ -8,7 +8,7 @@ export type HvWarningTextClasses = {
   topGutter?: string;
   hideText?: string;
   topBorder?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

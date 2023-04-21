@@ -4,7 +4,8 @@ import { StyledA } from "./Link.styles";
 import linkClasses, { HvLinkClasses } from "./linkClasses";
 import { MouseEventHandler } from "react";
 
-export type HvLinkProps = HvBaseProps<HTMLAnchorElement, { onClick }> & {
+export interface HvLinkProps
+  extends HvBaseProps<HTMLAnchorElement, { onClick }> {
   onClick?: (
     event: MouseEventHandler<HTMLAnchorElement>,
     data: any
@@ -14,7 +15,7 @@ export type HvLinkProps = HvBaseProps<HTMLAnchorElement, { onClick }> & {
   children: any;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLinkClasses;
-};
+}
 
 export const HvLink = ({
   onClick,

@@ -20,10 +20,8 @@ import selectionListClasses, {
   HvSelectionListClasses,
 } from "./selectionListClasses";
 
-export type HvSelectionListProps = HvBaseProps<
-  HTMLUListElement,
-  { onChange }
-> & {
+export interface HvSelectionListProps
+  extends HvBaseProps<HTMLUListElement, { onChange }> {
   /** The form element name. */
   name?: string;
   /**
@@ -77,7 +75,7 @@ export type HvSelectionListProps = HvBaseProps<
   onChange?: (event: React.MouseEvent, value: any) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSelectionListClasses;
-};
+}
 
 const getValueFromSelectedChildren = (children, multiple) => {
   const selectedValues = React.Children.toArray(children)

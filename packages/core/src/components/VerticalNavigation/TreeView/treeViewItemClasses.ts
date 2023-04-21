@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationTreeViewItemClasses = {
+export interface HvVerticalNavigationTreeViewItemClasses {
   /** Style applied to the root of the component. */
   node?: string;
   /** Style applied to the content. */
@@ -30,7 +30,7 @@ export type HvVerticalNavigationTreeViewItemClasses = {
   /** Styled applied when navigation open is false */
   minimized?: string;
   hide?: string;
-};
+}
 
 const classKeys: string[] = [
   "node",

@@ -1,11 +1,11 @@
 import { getClasses } from "@core/utils";
 
-export type HvOverflowTooltipClasses = {
+export interface HvOverflowTooltipClasses {
   root?: string;
   tooltipAnchor?: string;
   tooltipAnchorParagraph?: string;
   tooltipData?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

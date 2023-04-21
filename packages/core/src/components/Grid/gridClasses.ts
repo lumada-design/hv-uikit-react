@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvGridClasses = {
+export interface HvGridClasses {
   root?: string;
   container?: string;
   item?: string;
@@ -34,7 +34,7 @@ export type HvGridClasses = {
   "grid-xs-10"?: string;
   "grid-xs-11"?: string;
   "grid-xs-12"?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

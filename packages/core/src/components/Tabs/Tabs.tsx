@@ -5,21 +5,22 @@ import tabsClasses, { HvTabsClasses } from "./tabsClasses";
 import { clsx } from "clsx";
 
 // Mui Tabs props: https://mui.com/material-ui/api/tabs/#props
-export type HvTabsProps = MuiTabsProps &
-  HvBaseProps<HTMLButtonElement, { onChange }> & {
-    /**
-     * The value of the currently selected Tab. If you don't want any selected Tab, you can set this property to `false`.
-     */
-    value?: any;
-    /**
-     * Callback fired when the value changes.
-     */
-    onChange?: (event: React.SyntheticEvent, value: any) => void;
-    /**
-     * A Jss Object used to override or extend the component styles.
-     */
-    classes?: HvTabsClasses;
-  };
+export interface HvTabsProps
+  extends MuiTabsProps,
+    HvBaseProps<HTMLButtonElement, { onChange }> {
+  /**
+   * The value of the currently selected Tab. If you don't want any selected Tab, you can set this property to `false`.
+   */
+  value?: any;
+  /**
+   * Callback fired when the value changes.
+   */
+  onChange?: (event: React.SyntheticEvent, value: any) => void;
+  /**
+   * A Jss Object used to override or extend the component styles.
+   */
+  classes?: HvTabsClasses;
+}
 
 /**
  * A Tab is a graphical control element that allows multiple documents or panels to be contained within a single window.

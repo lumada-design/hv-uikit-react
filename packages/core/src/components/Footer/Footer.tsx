@@ -10,13 +10,13 @@ import {
   StyledSeparator,
 } from "./Footer.styles";
 
-export type HvFooterProps = HvBaseProps & {
+export interface HvFooterProps extends HvBaseProps {
   name?: React.ReactNode;
   copyright?: React.ReactNode;
   links?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFooterClasses;
-};
+}
 
 /**
  * A Footer is a way of providing extra information at the end of a page.

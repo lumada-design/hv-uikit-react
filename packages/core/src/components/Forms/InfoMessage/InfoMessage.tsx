@@ -6,14 +6,14 @@ import { StyledTypography } from "./InfoMessage.styles";
 import { HvFormElementContext } from "../FormElement";
 import infoMessageClasses, { HvInfoMessageClasses } from "./infoMessageClasses";
 
-export type HvInfoMessageProps = HvBaseProps & {
+export interface HvInfoMessageProps extends HvBaseProps {
   /** If `true` the label is disabled. */
   disabled?: boolean;
   /** If `true` the info message won't have margins. */
   disableGutter?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvInfoMessageClasses;
-};
+}
 
 /**
  * Provides the user with additional descriptive text for the form element.

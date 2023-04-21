@@ -11,7 +11,7 @@ export type { HvTheme };
 /**
  * Create theme props
  */
-export type HvCreateThemeProps = {
+export interface HvCreateThemeProps extends HvThemeCustomizationProps {
   /**
    * The name used for the theme.
    *
@@ -31,7 +31,7 @@ export type HvCreateThemeProps = {
    * By default the color modes are inherited.
    */
   inheritColorModes?: boolean;
-} & HvThemeCustomizationProps;
+}
 
 // Theme customization
 export type HvThemeCustomizationProps = HvExtraDeepPartialProps<

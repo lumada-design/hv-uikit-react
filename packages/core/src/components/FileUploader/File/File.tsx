@@ -17,7 +17,7 @@ import {
   StyledEmptyIcon,
 } from "./File.styles";
 
-export type HvFileData = File & {
+export interface HvFileData extends Omit<File, "name" | "size"> {
   /**
    * The file id.
    */
@@ -46,7 +46,7 @@ export type HvFileData = File & {
    * Error message when the upload failed.
    */
   errorMessage?: string;
-};
+}
 
 export type HvFilesAddedEvent = (files: HvFileData[]) => void;
 

@@ -7,7 +7,7 @@ import listContainerClasses, {
   HvListContainerClasses,
 } from "./listContainerClasses";
 
-export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
+export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
   /**
    * If the list items should be focusable and react to mouse over events.
    * Defaults to true if the list is selectable, false otherwise.
@@ -19,7 +19,7 @@ export type HvListContainerProps = HvBaseProps<HTMLUListElement> & {
   disableGutters?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListContainerClasses;
-};
+}
 
 /**
  * A <b>list</b> is any enumeration of a set of items.

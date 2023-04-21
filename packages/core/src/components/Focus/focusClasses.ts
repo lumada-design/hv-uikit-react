@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvFocusClasses = {
+export interface HvFocusClasses {
   root?: string;
   selected?: string;
   focused?: string;
@@ -9,7 +9,7 @@ export type HvFocusClasses = {
   externalReference?: string;
   falseFocus?: string;
   focusDisabled?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

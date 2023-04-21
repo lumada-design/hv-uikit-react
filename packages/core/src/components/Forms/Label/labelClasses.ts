@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvLabelClasses = {
+export interface HvLabelClasses {
   root?: string;
   labelDisabled?: string;
   childGutter?: string;
-};
+}
 
 const classKeys: string[] = ["root", "labelDisabled", "childGutter"];
 

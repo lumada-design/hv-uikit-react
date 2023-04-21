@@ -3,10 +3,10 @@ import { HvBaseProps } from "@core/types";
 import { StyledDiv } from "./Panel.styles";
 import panelClasses, { HvPanelClasses } from "./panelClasses";
 
-export type HvPanelProps = HvBaseProps & {
+export interface HvPanelProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvPanelClasses;
-};
+}
 
 /**
  * A panel is a container used in a variety of patterns (e.g. dropdown, filter group, details section).

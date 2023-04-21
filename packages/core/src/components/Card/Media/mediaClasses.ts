@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvCardMediaClasses = {
+export interface HvCardMediaClasses {
   root?: string;
   media?: string;
-};
+}
 
 const classKeys: string[] = ["root", "media"];
 

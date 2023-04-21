@@ -3,7 +3,7 @@ import { HvBaseProps } from "@core/types";
 import { StyledFormContainer, StyledRoot } from "./Login.styles";
 import loginClasses, { HvLoginClasses } from "./loginClasses";
 
-export type HvLoginProps = HvBaseProps & {
+export interface HvLoginProps extends HvBaseProps {
   /**
    *  The path for the background image.
    */
@@ -12,7 +12,7 @@ export type HvLoginProps = HvBaseProps & {
    * Class names to be applied.
    */
   classes?: HvLoginClasses;
-};
+}
 
 /**
  * Container layout for the login form.

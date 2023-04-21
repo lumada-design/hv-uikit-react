@@ -1,12 +1,10 @@
 import { forwardRef } from "react";
 import { HvButton } from "../Button";
-import { useControlled } from "../../hooks";
+import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
 
-export type HvToggleButtonProps = HvBaseProps<
-  HTMLButtonElement,
-  { onClick }
-> & {
+export interface HvToggleButtonProps
+  extends HvBaseProps<HTMLButtonElement, { onClick }> {
   /** When uncontrolled, defines the initial selected state. */
   defaultSelected?: boolean;
   /** Defines if the button is selected. When defined the button state becomes controlled. */
@@ -22,7 +20,7 @@ export type HvToggleButtonProps = HvBaseProps<
     event: React.MouseEvent<HTMLButtonElement>,
     selected: boolean
   ) => void;
-};
+}
 
 export const HvToggleButton = forwardRef<
   HTMLButtonElement,

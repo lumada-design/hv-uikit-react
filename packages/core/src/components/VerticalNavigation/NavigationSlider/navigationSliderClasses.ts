@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationSliderClasses = {
+export interface HvVerticalNavigationSliderClasses {
   root?: string;
   listItemSelected?: string;
-};
+}
 
 const classKeys: string[] = ["root", "listItemSelected"];
 

@@ -63,10 +63,11 @@ import {
 } from "../BaseInput/validations";
 import inputClasses, { HvInputClasses } from "./inputClasses";
 
-export type HvInputProps = HvBaseProps<
-  HTMLElement,
-  { onChange; onBlur; onFocus; onKeyDown; color }
-> & {
+export interface HvInputProps
+  extends HvBaseProps<
+    HTMLElement,
+    { onChange; onBlur; onFocus; onKeyDown; color }
+  > {
   /** The form element name. */
   name?: string;
   /** The value of the form element. */
@@ -184,7 +185,7 @@ export type HvInputProps = HvBaseProps<
   minCharQuantity?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvInputClasses;
-};
+}
 
 const DEFAULT_LABELS = {
   clearButtonLabel: "Clear the text",

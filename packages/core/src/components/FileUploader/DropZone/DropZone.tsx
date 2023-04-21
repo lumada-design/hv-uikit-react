@@ -21,7 +21,7 @@ import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { convertUnits } from "../utils";
 import withId from "@core/hocs/withId";
 
-export type HvDropZoneLabels = {
+export interface HvDropZoneLabels {
   /**
    * Extensions of the accepted file types
    */
@@ -54,9 +54,9 @@ export type HvDropZoneLabels = {
    * Message to display when file type is greater than allowed
    * */
   fileTypeError?: string;
-};
+}
 
-export type HvDropZoneProps = {
+export interface HvDropZoneProps {
   /**
    * Id to be applied to the root node.
    */
@@ -97,7 +97,7 @@ export type HvDropZoneProps = {
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvDropZoneClasses;
-};
+}
 
 export const HvDropZone = withId(
   ({

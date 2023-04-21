@@ -11,7 +11,8 @@ import { useControlled, useUniqueId } from "@core/hooks";
 import { setId } from "@core/utils";
 import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
-export type HvRadioGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
+export interface HvRadioGroupProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * The form element name.
    *
@@ -81,7 +82,7 @@ export type HvRadioGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvRadioGroupClasses;
-};
+}
 
 const getValueFromSelectedChildren = (children: React.ReactNode) => {
   const childrenArray = Children.toArray(children);

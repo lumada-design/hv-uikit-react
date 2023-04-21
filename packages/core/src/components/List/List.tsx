@@ -16,7 +16,7 @@ import { parseList } from "./utils";
 import { HvListContainer, HvTypography } from "@core/components";
 import { setId, wrapperTooltip } from "@core/utils";
 
-export type HvListValue = {
+export interface HvListValue extends HvExtraProps {
   id?: string | number;
   label: React.ReactNode;
   searchValue?: string;
@@ -33,19 +33,17 @@ export type HvListValue = {
   path?: string;
   params?: object;
   tabIndex?: number;
-} & HvExtraProps;
+}
 
-export type HvListLabels = {
+export interface HvListLabels {
   /** The label used for the All checkbox action. */
   selectAll?: string;
   /** The label used in the middle of the multi-selection count. */
   selectionConjunction?: string;
-};
+}
 
-export type HvListProps = HvBaseProps<
-  HTMLUListElement,
-  { onChange; onClick }
-> & {
+export interface HvListProps
+  extends HvBaseProps<HTMLUListElement, { onChange; onClick }> {
   /**
    * A list containing the elements to be rendered.
    *
@@ -91,7 +89,7 @@ export type HvListProps = HvBaseProps<
   virtualized?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListClasses;
-};
+}
 
 const DEFAULT_LABELS = {
   selectAll: "Select All",

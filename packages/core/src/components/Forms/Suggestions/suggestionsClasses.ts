@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvSuggestionsClasses = {
+export interface HvSuggestionsClasses {
   root?: string;
   list?: string;
   popper?: string;
-};
+}
 
 const classKeys: string[] = ["root", "list", "popper"];
 

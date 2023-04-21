@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvTagsInputClasses = {
+export interface HvTagsInputClasses {
   /** Styles applied to the input element. */
   input?: string;
   /** Styles applied to the list item gutters. */
@@ -49,7 +49,7 @@ export type HvTagsInputClasses = {
   suggestionsContainer?: string;
   /** Styles applied to the suggestions list. */
   suggestionList?: string;
-};
+}
 
 const classKeys: string[] = [
   "input",

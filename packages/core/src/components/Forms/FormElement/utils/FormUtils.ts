@@ -1,9 +1,9 @@
 import React from "react";
 
-type Descriptor = {
+interface Descriptor {
   id?: string;
   htmlFor?: string;
-};
+}
 /**
  * Scans the element's children looking for the children IDs that match the different form element types.
  * This function will produce an object that has a key for each provided name

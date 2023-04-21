@@ -19,48 +19,49 @@ import { clsx } from "clsx";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
-export type HvSnackbarProps = Omit<MuiSnackbarProps, "action" | "classes"> &
-  HvBaseProps & {
-    /** If true, Snackbar is open. */
-    open?: boolean;
-    /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
-    onClose?:
-      | ((
-          event: Event | SyntheticEvent<any, Event>,
-          reason: SnackbarCloseReason
-        ) => void)
-      | undefined;
-    /** The message to display. */
-    label?: React.ReactNode;
-    /** The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation */
-    anchorOrigin?: SnackbarOrigin;
-    /** The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar */
-    autoHideDuration?: number;
-    /** Variant of the snackbar. */
-    variant?: HvSnackbarVariant;
-    /** Custom icon to replace the variant default. */
-    customIcon?: React.ReactNode;
-    /** Controls if the associated icon to the variant should be shown. */
-    showIcon?: boolean;
-    /** Action to display. */
-    action?: React.ReactNode | HvActionGeneric;
-    /** The callback function ran when an action is triggered, receiving `action` as param */
-    actionCallback?: (
-      event: React.SyntheticEvent,
-      id: string,
-      action: HvActionGeneric
-    ) => void;
-    /** Duration of transition in milliseconds. */
-    transitionDuration?: number;
-    /** Direction of slide transition. */
-    transitionDirection?: "up" | "down" | "left" | "right";
-    /** Custom offset from top/bottom of the page, in px. */
-    offset?: number;
-    /** Others applied to the content of the snackbar. */
-    snackbarContentProps?: HvSnackbarContentProps;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvSnackbarClasses;
-  };
+export interface HvSnackbarProps
+  extends Omit<MuiSnackbarProps, "action" | "classes">,
+    Omit<HvBaseProps, "children"> {
+  /** If true, Snackbar is open. */
+  open?: boolean;
+  /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
+  onClose?:
+    | ((
+        event: Event | SyntheticEvent<any, Event>,
+        reason: SnackbarCloseReason
+      ) => void)
+    | undefined;
+  /** The message to display. */
+  label?: React.ReactNode;
+  /** The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation */
+  anchorOrigin?: SnackbarOrigin;
+  /** The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar */
+  autoHideDuration?: number;
+  /** Variant of the snackbar. */
+  variant?: HvSnackbarVariant;
+  /** Custom icon to replace the variant default. */
+  customIcon?: React.ReactNode;
+  /** Controls if the associated icon to the variant should be shown. */
+  showIcon?: boolean;
+  /** Action to display. */
+  action?: React.ReactNode | HvActionGeneric;
+  /** The callback function ran when an action is triggered, receiving `action` as param */
+  actionCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
+  /** Duration of transition in milliseconds. */
+  transitionDuration?: number;
+  /** Direction of slide transition. */
+  transitionDirection?: "up" | "down" | "left" | "right";
+  /** Custom offset from top/bottom of the page, in px. */
+  offset?: number;
+  /** Others applied to the content of the snackbar. */
+  snackbarContentProps?: HvSnackbarContentProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvSnackbarClasses;
+}
 
 const transLeft = (props) => <Slide {...props} direction="left" />;
 const transRight = (props) => <Slide {...props} direction="right" />;

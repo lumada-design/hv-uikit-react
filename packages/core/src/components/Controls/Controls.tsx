@@ -9,13 +9,13 @@ import { HvControlsContextProvider } from "./context/ControlsContext";
 import { Children } from "react";
 import { HvTableInstance } from "@core/components/Table/hooks/useTable";
 
-export type HvControlsViewConfiguration = {
+export interface HvControlsViewConfiguration extends HvExtraProps {
   id?: string;
   label?: string;
   icon?: React.ReactNode;
-} & HvExtraProps;
+}
 
-export type HvControlsProps = HvBaseProps & {
+export interface HvControlsProps extends HvBaseProps {
   /**
    * An instance of useHvTable or useTable used to manage the data
    * if this is not provided data sorting and search must be handled externally
@@ -48,7 +48,7 @@ export type HvControlsProps = HvBaseProps & {
   hideViewSwitcher?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvControlsClasses;
-};
+}
 
 export const HvControls = ({
   id,

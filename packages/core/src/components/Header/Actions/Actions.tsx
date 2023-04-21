@@ -3,9 +3,9 @@ import { HvBaseProps } from "@core/types";
 import { StyledDiv } from "./Actions.styles";
 import headerActionsClasses, { HvHeaderActionsClasses } from "./actionsClasses";
 
-export type HvHeaderActionsProps = HvBaseProps & {
+export interface HvHeaderActionsProps extends HvBaseProps {
   classes?: HvHeaderActionsClasses;
-};
+}
 
 export const HvHeaderActions = ({
   classes,

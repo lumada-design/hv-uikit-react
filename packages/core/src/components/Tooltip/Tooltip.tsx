@@ -24,7 +24,8 @@ export type HvTooltipPlacementType =
   | "top-start"
   | "top";
 
-export type HvTooltipProps = Omit<MuiTooltipProps, "classes"> & {
+export interface HvTooltipProps
+  extends Omit<MuiTooltipProps, "classes" | "title"> {
   /**
    * Class names to be applied.
    */
@@ -68,7 +69,7 @@ export type HvTooltipProps = Omit<MuiTooltipProps, "classes"> & {
    * Node to apply the tooltip.
    */
   children: ReactElement;
-};
+}
 
 /**
  * Tooltips display informative text when users hover over, focus on, or tap an element.

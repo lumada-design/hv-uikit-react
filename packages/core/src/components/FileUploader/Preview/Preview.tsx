@@ -10,10 +10,8 @@ import {
   StyledPreviewIcon,
 } from "./Preview.styles";
 
-export type HvFileUploaderPreviewProps = Omit<
-  HvButtonProps,
-  "children" | "classes"
-> & {
+export interface HvFileUploaderPreviewProps
+  extends Omit<HvButtonProps, "children" | "classes"> {
   /**
    * Content that represents the preview of an uploaded file.
    */
@@ -34,7 +32,7 @@ export type HvFileUploaderPreviewProps = Omit<
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvFileUploaderPreviewClasses;
-};
+}
 
 /**
  * The `HvFileUploaderPreview` component is available to facilitate the styling

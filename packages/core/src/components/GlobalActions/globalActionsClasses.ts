@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvGlobalActionsClasses = {
+export interface HvGlobalActionsClasses {
   root?: string;
   global?: string;
   backButton?: string;
@@ -11,7 +11,7 @@ export type HvGlobalActionsClasses = {
   positionFixed?: string;
   positionSticky?: string;
   globalWrapperComplement?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

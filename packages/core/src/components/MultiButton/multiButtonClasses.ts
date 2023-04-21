@@ -1,11 +1,11 @@
 import { getClasses } from "@core/utils";
 
-export type HvMultiButtonClasses = {
+export interface HvMultiButtonClasses {
   root?: string;
   button?: string;
   vertical?: string;
   selected?: string;
-};
+}
 
 const classKeys: string[] = ["root", "button", "vertical", "selected"];
 

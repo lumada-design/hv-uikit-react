@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvInfoMessageClasses = {
+export interface HvInfoMessageClasses {
   root?: string;
   infoDisabled?: string;
   gutter?: string;
-};
+}
 
 const classKeys: string[] = ["root", "infoDisabled", "gutter"];
 

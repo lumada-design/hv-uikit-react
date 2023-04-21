@@ -17,28 +17,29 @@ import dialogClasses, { HvDialogClasses } from "./dialogClasses";
 import { useTheme } from "@core/hooks";
 import { ClassNames } from "@emotion/react";
 
-export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &
-  HvBaseProps & {
-    /** Id to be applied to the root node. */
-    id?: string;
-    /** Current state of the Dialog. */
-    open?: boolean;
-    /** Function executed on close. */
-    onClose?: (
-      event: React.SyntheticEvent,
-      reason?: "escapeKeyDown" | "backdropClick"
-    ) => void;
-    /** Element id that should be focus when the Dialog opens. */
-    firstFocusable?: string;
-    /** Title for the button close. */
-    buttonTitle?: string;
-    /** Set the dialog to fullscreen mode. */
-    fullscreen?: boolean;
-    /** Prevent closing the dialog when clicking on the backdrop. */
-    disableBackdropClick?: boolean;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvDialogClasses;
-  };
+export interface HvDialogProps
+  extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open">,
+    HvBaseProps {
+  /** Id to be applied to the root node. */
+  id?: string;
+  /** Current state of the Dialog. */
+  open?: boolean;
+  /** Function executed on close. */
+  onClose?: (
+    event: React.SyntheticEvent,
+    reason?: "escapeKeyDown" | "backdropClick"
+  ) => void;
+  /** Element id that should be focus when the Dialog opens. */
+  firstFocusable?: string;
+  /** Title for the button close. */
+  buttonTitle?: string;
+  /** Set the dialog to fullscreen mode. */
+  fullscreen?: boolean;
+  /** Prevent closing the dialog when clicking on the backdrop. */
+  disableBackdropClick?: boolean;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvDialogClasses;
+}
 
 export const HvDialog = ({
   classes,

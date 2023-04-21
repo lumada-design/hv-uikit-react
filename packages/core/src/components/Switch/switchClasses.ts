@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvSwitchClasses = {
+export interface HvSwitchClasses {
   /** Styles applied to the component. */
   root?: string;
   /** Styles applied to the label. */
@@ -11,7 +11,7 @@ export type HvSwitchClasses = {
   switchContainer?: string;
   /** Styles applied to the switch container when the validations status is invalid. */
   invalidSwitch?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

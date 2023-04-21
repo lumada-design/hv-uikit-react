@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvFileListClasses = {
+export interface HvFileListClasses {
   list?: string;
   listItem?: string;
-};
+}
 
 const classKeys: string[] = ["list", "listItem"];
 

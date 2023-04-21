@@ -1,13 +1,13 @@
 import { getClasses } from "@core/utils";
 
-export type HvCardClasses = {
+export interface HvCardClasses {
   root?: string;
   selectable?: string;
   selected?: string;
   semanticBar?: string;
   semanticContainer?: string;
   icon?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

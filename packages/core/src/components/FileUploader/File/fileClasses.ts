@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvFileClasses = {
+export interface HvFileClasses {
   root?: string;
   progressbar?: string;
   progressbarBack?: string;
@@ -10,7 +10,7 @@ export type HvFileClasses = {
   previewContainer?: string;
   icon?: string;
   fail?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

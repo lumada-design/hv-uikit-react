@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvTextAreaClasses = {
+export interface HvTextAreaClasses {
   root?: string;
   disabled?: string;
   resizable?: string;
@@ -13,7 +13,7 @@ export type HvTextAreaClasses = {
   description?: string;
   characterCounter?: string;
   error?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

@@ -20,7 +20,8 @@ export type HvGlobalActionsPosition = "sticky" | "fixed" | "relative";
 
 export type HvGlobalActionsHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type HvGlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
+export interface HvGlobalActionsProps
+  extends HvBaseProps<HTMLDivElement, { title }> {
   /** Text to display in the component. */
   title?: React.ReactNode;
   /** Denotes if this is a global or section component. */
@@ -36,7 +37,7 @@ export type HvGlobalActionsProps = HvBaseProps<HTMLDivElement, { title }> & {
   position?: HvGlobalActionsPosition;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvGlobalActionsClasses;
-};
+}
 
 /**
  * Global Actions are actions that affect the entire page they live in.

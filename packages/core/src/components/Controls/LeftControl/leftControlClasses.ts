@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvLeftControlClasses = {
+export interface HvLeftControlClasses {
   root: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

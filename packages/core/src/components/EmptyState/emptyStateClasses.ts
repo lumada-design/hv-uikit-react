@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvEmptyStateClasses = {
+export interface HvEmptyStateClasses {
   root?: string;
   container?: string;
   containerMessageOnly?: string;
@@ -9,7 +9,7 @@ export type HvEmptyStateClasses = {
   textContainer?: string;
   messageContainer?: string;
   actionContainer?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

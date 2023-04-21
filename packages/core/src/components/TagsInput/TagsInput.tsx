@@ -35,10 +35,11 @@ import { HvTagProps } from "../Tag";
 import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
 import { HvCharCounterProps, HvFormStatus } from "../Forms";
 
-export type HvTagsInputProps = HvBaseProps<
-  HTMLElement,
-  { onChange; onBlur; onFocus; onKeyDown; color }
-> & {
+export interface HvTagsInputProps
+  extends HvBaseProps<
+    HTMLElement,
+    { onChange; onBlur; onFocus; onKeyDown; color; defaultValue }
+  > {
   /** The form element name. */
   name?: string;
   /** The value of the form element. */
@@ -127,7 +128,7 @@ export type HvTagsInputProps = HvBaseProps<
   suggestionListCallback?: (value: string) => HvTagSuggestion[] | null;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagsInputClasses;
-};
+}
 
 /**
  * A tags input is a single or multiline control that allows the input of tags.

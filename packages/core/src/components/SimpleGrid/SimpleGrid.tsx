@@ -3,14 +3,14 @@ import { StyledContainer } from "./SimpleGrid.styles";
 
 export type Spacing = "sm" | "md" | "lg" | "xl";
 
-export type Breakpoint = {
+export interface Breakpoint {
   cols?: number;
   maxWidth?: number;
   minWidth?: number;
   spacing?: Spacing;
-};
+}
 
-export type HvSimpleGridProps = HvBaseProps & {
+export interface HvSimpleGridProps extends HvBaseProps {
   /**
    * Spacing with pre-defined values according the values defined in the theme
    */
@@ -29,7 +29,7 @@ export type HvSimpleGridProps = HvBaseProps & {
    * Number of how many columns the content will be displayed
    */
   cols?: number;
-};
+}
 
 export const HvSimpleGrid = ({
   children,

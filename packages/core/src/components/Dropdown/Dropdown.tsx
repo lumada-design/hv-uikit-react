@@ -22,7 +22,7 @@ import {
   HvWarningText,
 } from "@core/components";
 
-export type HvDropdownLabelsProps = {
+export interface HvDropdownLabelsProps {
   /**
    * Label for overwrite the default header behavior.
    */
@@ -47,11 +47,12 @@ export type HvDropdownLabelsProps = {
    * The label used in search.
    */
   searchPlaceholder?: string;
-};
+}
 
 export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
-export type HvDropdownProps = HvBaseProps<HTMLDivElement, { onChange }> & {
+export interface HvDropdownProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * Class names to be applied.
    */
@@ -239,7 +240,7 @@ export type HvDropdownProps = HvBaseProps<HTMLDivElement, { onChange }> & {
    * Extra props passed to the list.
    */
   listProps?: HvDropdownListProps;
-};
+}
 
 const DEFAULT_LABELS: HvDropdownLabelsProps = {
   select: undefined,

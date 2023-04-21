@@ -30,7 +30,8 @@ import dropDownMenuClasses, {
   HvDropDownMenuClasses,
 } from "./dropDownMenuClasses";
 
-export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
+export interface HvDropDownMenuProps
+  extends HvBaseProps<HTMLDivElement, { onClick }> {
   /** Icon. */
   icon?: React.ReactElement;
   /**
@@ -66,7 +67,7 @@ export type HvDropDownMenuProps = HvBaseProps<HTMLDivElement, { onClick }> & {
   category?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
-};
+}
 
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.

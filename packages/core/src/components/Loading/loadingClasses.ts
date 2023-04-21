@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvLoadingClasses = {
+export interface HvLoadingClasses {
   root?: string;
   barContainer?: string;
   loadingBar?: string;
@@ -12,7 +12,7 @@ export type HvLoadingClasses = {
   regular?: string;
   smallColor?: string;
   regularColor?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

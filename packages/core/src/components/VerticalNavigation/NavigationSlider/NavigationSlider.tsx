@@ -6,7 +6,7 @@ import verticalNavigationSliderClasses, {
   HvVerticalNavigationSliderClasses,
 } from "./navigationSliderClasses";
 
-export type HvVerticalNavigationSliderProps = {
+export interface HvVerticalNavigationSliderProps {
   /**
    * Id to be applied to the root node of the panel.
    */
@@ -44,7 +44,7 @@ export type HvVerticalNavigationSliderProps = {
     event: React.MouseEvent<HTMLButtonElement>,
     item: NavigationData
   ) => void;
-};
+}
 
 export const HvVerticalNavigationSlider = ({
   id,

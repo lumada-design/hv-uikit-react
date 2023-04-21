@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvSnackbarContentClasses = {
+export interface HvSnackbarContentClasses {
   root?: string;
   message?: string;
   messageSpan?: string;
@@ -11,7 +11,7 @@ export type HvSnackbarContentClasses = {
   success?: string;
   warning?: string;
   error?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

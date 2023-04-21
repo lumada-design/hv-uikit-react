@@ -1,11 +1,11 @@
 import { getClasses } from "@core/utils";
 
-export type HvTabsClasses = {
+export interface HvTabsClasses {
   root?: string;
   flexContainer?: string;
   indicator?: string;
   scroller?: string;
-};
+}
 
 const classKeys: string[] = ["root", "flexContainer", "indicator", "scroller"];
 

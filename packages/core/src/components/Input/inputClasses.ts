@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvInputClasses = {
+export interface HvInputClasses {
   /** Styles applied to the root container of the input. */
   root?: string;
   /** Styles applied to the root container when the suggestion list is open. */
@@ -39,7 +39,7 @@ export type HvInputClasses = {
   suggestionsContainer?: string;
   /** Styles applied to the suggestions list. */
   suggestionList?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

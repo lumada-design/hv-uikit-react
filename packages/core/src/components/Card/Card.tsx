@@ -10,7 +10,7 @@ import {
 import { styles } from "./Card.styles";
 import cardClasses, { HvCardClasses } from "./cardClasses";
 
-export type HvCardProps = HvBaseProps & {
+export interface HvCardProps extends HvBaseProps {
   /** The renderable content inside the icon slot of the header. */
   icon?: React.ReactNode;
   /** Whether the card is selectable. */
@@ -30,7 +30,7 @@ export type HvCardProps = HvBaseProps & {
   statusColor?: "sema0" | HvSemanticColorKeys | HvAtmosphereColorKeys;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCardClasses;
-};
+}
 
 /**
  * A card is a container for a few short and related pieces of content.

@@ -42,7 +42,7 @@ const focusStyles = css`
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
-export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
+export interface HvFocusProps extends HvBaseProps<HTMLElement, { children }> {
   children: React.ReactElement;
   /** Extra configuration for the child element. */
   configuration?: {
@@ -72,7 +72,7 @@ export type HvFocusProps = HvBaseProps<HTMLElement, { children }> & {
   navigationJump?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFocusClasses;
-};
+}
 
 export const HvFocus = ({
   classes,

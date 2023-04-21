@@ -360,10 +360,8 @@ export const HvVerticalNavigationTree = ({
   );
 };
 
-export type HvVerticalNavigationTreeProps = HvBaseProps<
-  HTMLDivElement,
-  { onChange }
-> & {
+export interface HvVerticalNavigationTreeProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * Id to be applied to the root node.
    */
@@ -429,6 +427,6 @@ export type HvVerticalNavigationTreeProps = HvBaseProps<
    * target - the behavior when opening an url.
    */
   data?: NavigationData[];
-};
+}
 
 export type NavigationMode = "treeview" | "navigation" | "slider";

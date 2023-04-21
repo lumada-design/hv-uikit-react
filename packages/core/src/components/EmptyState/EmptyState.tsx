@@ -12,7 +12,8 @@ import { HvTypographyProps } from "@core/components";
 import { useTheme as useHvTheme } from "@core/hooks";
 import { useTheme } from "@mui/material/styles";
 
-export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
+export interface HvEmptyStateProps
+  extends HvBaseProps<HTMLDivElement, { title }> {
   /** Icon to be presented. */
   icon: React.ReactNode;
   /** The title to be shown. */
@@ -23,7 +24,7 @@ export type HvEmptyStateProps = HvBaseProps<HTMLDivElement, { title }> & {
   action?: string | React.ReactNode;
   /** A Jss Object used to override or extend the styles applied to the empty state component. */
   classes?: HvEmptyStateClasses;
-};
+}
 
 /**
  * Empty states communicate that there’s no information, data or values to display in a given context.

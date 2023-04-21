@@ -11,7 +11,7 @@ import { StyledRoot } from "./TreeView.styles";
 import { NavigationMode } from "../Navigation";
 import treeViewClasses from "./treeViewClasses";
 
-export type HvVerticalNavigationTreeViewProps = {
+export interface HvVerticalNavigationTreeViewProps {
   /**
    * Id to be applied to the root node.
    */
@@ -99,7 +99,7 @@ export type HvVerticalNavigationTreeViewProps = {
    * The content of the component.
    */
   children?: React.ReactNode;
-};
+}
 
 function isPrintableCharacter(string) {
   return string && string.length === 1 && string.match(/\S/);

@@ -1,13 +1,13 @@
 import { getClasses } from "@core/utils";
 
-export type HvAdornmentClasses = {
+export interface HvAdornmentClasses {
   root?: string;
   icon?: string;
   adornment?: string;
   adornmentIcon?: string;
   hideIcon?: string;
   adornmentButton?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

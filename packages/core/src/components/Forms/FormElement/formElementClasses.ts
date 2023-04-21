@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvFormElementClasses = {
+export interface HvFormElementClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

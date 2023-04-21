@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvPanelClasses = {
+export interface HvPanelClasses {
   /** Styles applied to the component root class. */
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

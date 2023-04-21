@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvHeaderBrandClasses = {
+export interface HvHeaderBrandClasses {
   root?: string;
   separator?: string;
-};
+}
 
 const classKeys: string[] = ["root", "separator"];
 

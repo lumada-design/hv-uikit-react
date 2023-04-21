@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationPopupClasses = {};
+export interface HvVerticalNavigationPopupClasses {}
 
 const classKeys: string[] = [];
 

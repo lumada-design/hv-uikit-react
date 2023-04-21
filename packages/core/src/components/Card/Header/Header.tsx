@@ -8,19 +8,20 @@ import { styles } from "./Header.styles";
 import { useTheme } from "@core/hooks";
 import { ClassNames } from "@emotion/react";
 
-export type HvCardHeaderProps = Omit<MuiCardHeaderProps, "classes"> &
-  HvBaseProps<HTMLDivElement, { title }> & {
-    /** The renderable content inside the title slot of the header. */
-    title: React.ReactNode;
-    /** The renderable content inside the subheader slot of the header. */
-    subheader?: React.ReactNode;
-    /** The renderable content inside the icon slot of the header. */
-    icon?: React.ReactNode;
-    /** The function that will be executed when this section is clicked. */
-    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvCardHeaderClasses;
-  };
+export interface HvCardHeaderProps
+  extends Omit<MuiCardHeaderProps, "classes">,
+    HvBaseProps<HTMLDivElement, { title }> {
+  /** The renderable content inside the title slot of the header. */
+  title: React.ReactNode;
+  /** The renderable content inside the subheader slot of the header. */
+  subheader?: React.ReactNode;
+  /** The renderable content inside the icon slot of the header. */
+  icon?: React.ReactNode;
+  /** The function that will be executed when this section is clicked. */
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvCardHeaderClasses;
+}
 
 export const HvCardHeader = ({
   classes,

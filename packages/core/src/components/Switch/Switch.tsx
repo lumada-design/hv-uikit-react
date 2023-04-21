@@ -18,108 +18,109 @@ import {
 import { HvBaseProps } from "@core/types";
 import switchClasses, { HvSwitchClasses } from "./switchClasses";
 
-export type HvSwitchProps = Omit<MuiSwitchProps, "onChange" | "classes"> &
-  HvBaseProps<HTMLInputElement, { onChange }> & {
-    /**
-     * Class names to be applied.
-     */
-    className?: string;
-    /**
-     * A Jss Object used to override or extend the styles applied to the switch.
-     */
-    classes?: HvSwitchClasses;
-    /**
-     * Id to be applied to the form element root node.
-     */
-    id?: string;
-    /**
-     * The form element name.
-     */
-    name?: string;
-    /**
-     * The value of the form element.
-     *
-     * Is up to the application's logic when to consider the submission of this value.
-     * Generally it should be used only when the switch is neither unchecked nor indeterminate.
-     *
-     * The default value is "on".
-     */
-    value?: any;
-    /**
-     * The label of the form element.
-     *
-     * The form element must be labeled for accessibility reasons.
-     * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
-     */
-    label?: React.ReactNode;
-    /**
-     * @ignore
-     */
-    "aria-label"?: string;
-    /**
-     * @ignore
-     */
-    "aria-labelledby"?: string;
-    /**
-     * @ignore
-     */
-    "aria-describedby"?: string;
-    /**
-     * Properties passed on to the label element.
-     */
-    labelProps?: HvLabelProps;
-    /**
-     * Indicates that the form element is disabled.
-     */
-    disabled?: boolean;
-    /**
-     * Indicates that the form element is not editable.
-     */
-    readOnly?: boolean;
-    /**
-     * Indicates that user input is required on the form element.
-     */
-    required?: boolean;
-    /**
-     * If `true` the switch is selected, if set to `false` the switch is not selected.
-     *
-     * When defined the switch state becomes controlled.
-     */
-    checked?: boolean;
-    /**
-     * When uncontrolled, defines the initial checked state.
-     */
-    defaultChecked?: boolean;
-    /**
-     * The status of the form element.
-     *
-     * Valid is correct, invalid is incorrect and standBy means no validations have run.
-     *
-     * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
-     * or "invalid" after any change to `checked`, depending of the values of both `required` and `checked`.
-     */
-    status?: HvFormStatus;
-    /**
-     * The error message to show when the validation status is "invalid".
-     *
-     * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
-     */
-    statusMessage?: string;
-    /**
-     * Identifies the element that provides an error message for the switch.
-     *
-     * Will only be used when the validation status is invalid.
-     */
-    "aria-errormessage"?: string;
-    /**
-     * The callback fired when the switch is pressed.
-     */
-    onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
-    /**
-     * Properties passed on to the input element.
-     */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-  };
+export interface HvSwitchProps
+  extends Omit<MuiSwitchProps, "onChange" | "classes">,
+    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+  /**
+   * Class names to be applied.
+   */
+  className?: string;
+  /**
+   * A Jss Object used to override or extend the styles applied to the switch.
+   */
+  classes?: HvSwitchClasses;
+  /**
+   * Id to be applied to the form element root node.
+   */
+  id?: string;
+  /**
+   * The form element name.
+   */
+  name?: string;
+  /**
+   * The value of the form element.
+   *
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the switch is neither unchecked nor indeterminate.
+   *
+   * The default value is "on".
+   */
+  value?: any;
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
+   */
+  label?: React.ReactNode;
+  /**
+   * @ignore
+   */
+  "aria-label"?: string;
+  /**
+   * @ignore
+   */
+  "aria-labelledby"?: string;
+  /**
+   * @ignore
+   */
+  "aria-describedby"?: string;
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps?: HvLabelProps;
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Indicates that the form element is not editable.
+   */
+  readOnly?: boolean;
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required?: boolean;
+  /**
+   * If `true` the switch is selected, if set to `false` the switch is not selected.
+   *
+   * When defined the switch state becomes controlled.
+   */
+  checked?: boolean;
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked?: boolean;
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to `checked`, depending of the values of both `required` and `checked`.
+   */
+  status?: HvFormStatus;
+  /**
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
+   */
+  statusMessage?: string;
+  /**
+   * Identifies the element that provides an error message for the switch.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
+  /**
+   * The callback fired when the switch is pressed.
+   */
+  onChange?: (event: React.ChangeEvent, checked: boolean, value: any) => void;
+  /**
+   * Properties passed on to the input element.
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+}
 
 /**
  * A Switch is <b>binary</b> and work as a digital on/off button.

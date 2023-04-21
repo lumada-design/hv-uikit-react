@@ -29,10 +29,11 @@ import isNil from "lodash/isNil";
 import { HvValidationMessages } from "@core/types";
 import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
 
-export type HvTextAreaProps = Omit<
-  HvBaseInputProps,
-  "onChange" | "onBlur" | "rows" | "classes" | "onFocus"
-> & {
+export interface HvTextAreaProps
+  extends Omit<
+    HvBaseInputProps,
+    "onChange" | "onBlur" | "rows" | "classes" | "onFocus"
+  > {
   /**
    * The label of the form element.
    *
@@ -137,7 +138,7 @@ export type HvTextAreaProps = Omit<
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvTextAreaClasses;
-};
+}
 
 /**
  * A text area is a multiline text input box, with an optional character counter when there is a length limit.
