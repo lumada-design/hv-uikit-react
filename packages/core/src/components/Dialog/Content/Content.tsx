@@ -6,12 +6,13 @@ import { HvBaseProps } from "@core/types";
 import { StyledTypography } from "./Content.styles";
 import dialogContentClasses, { HvDialogContentClasses } from "./contentClasses";
 
-export type HvDialogContentProps = Omit<MuiDialogContentProps, "classes"> &
-  HvBaseProps & {
-    /** Content should be indented in relationship to the Dialog title. */
-    indentContent?: boolean;
-    classes?: HvDialogContentClasses;
-  };
+export interface HvDialogContentProps
+  extends Omit<MuiDialogContentProps, "classes">,
+    HvBaseProps {
+  /** Content should be indented in relationship to the Dialog title. */
+  indentContent?: boolean;
+  classes?: HvDialogContentClasses;
+}
 
 export const HvDialogContent = ({
   classes,

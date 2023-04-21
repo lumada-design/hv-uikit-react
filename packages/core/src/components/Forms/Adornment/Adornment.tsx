@@ -12,10 +12,11 @@ import adornmentClasses, { HvAdornmentClasses } from "./adornmentClasses";
 const preventDefault = (event) => event.preventDefault();
 const noop = () => {};
 
-export type HvAdornmentProps = HvBaseProps<
-  HTMLDivElement | HTMLButtonElement,
-  { onMouseDown; onKeyDown }
-> & {
+export interface HvAdornmentProps
+  extends HvBaseProps<
+    HTMLDivElement | HTMLButtonElement,
+    { onMouseDown; onKeyDown }
+  > {
   /** The icon to be added into the input. */
   icon: React.ReactNode;
   /** When the adornment should be displayed. */
@@ -26,7 +27,7 @@ export type HvAdornmentProps = HvBaseProps<
   isVisible?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvAdornmentClasses;
-};
+}
 
 /**
  * Allows to add a decorative icon or an action to a form element, usually on the right side of an input.

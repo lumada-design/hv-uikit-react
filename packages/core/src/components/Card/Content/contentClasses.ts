@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvCardContentClasses = {
+export interface HvCardContentClasses {
   content?: string;
-};
+}
 
 const classKeys: string[] = ["content"];
 

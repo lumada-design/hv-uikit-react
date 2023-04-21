@@ -18,19 +18,17 @@ export type HvDialogTitleVariant =
   | "info"
   | "default";
 
-export type HvDialogTitleProps = Omit<
-  MuiDialogTitleProps,
-  "variant" | "classes"
-> &
-  HvBaseProps & {
-    /** Variant of the Dialog. */
-    variant?: HvDialogTitleVariant;
-    /** Controls if the associated icon to the variant should be shown. */
-    showIcon?: boolean;
-    /** Custom icon to replace the variant default. */
-    customIcon?: React.ReactNode;
-    classes?: HvDialogTitleClasses;
-  };
+export interface HvDialogTitleProps
+  extends Omit<MuiDialogTitleProps, "variant" | "classes">,
+    HvBaseProps<HTMLSpanElement, { color }> {
+  /** Variant of the Dialog. */
+  variant?: HvDialogTitleVariant;
+  /** Controls if the associated icon to the variant should be shown. */
+  showIcon?: boolean;
+  /** Custom icon to replace the variant default. */
+  customIcon?: React.ReactNode;
+  classes?: HvDialogTitleClasses;
+}
 
 export const HvDialogTitle = ({
   classes,

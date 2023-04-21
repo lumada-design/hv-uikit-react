@@ -26,7 +26,7 @@ import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { usePageInput, getSafePage, setColor } from "./utils";
 import { useLabels } from "@core/hooks";
 
-export type HvPaginationLabels = {
+export interface HvPaginationLabels {
   /** The show label. */
   pageSizePrev?: string;
   /** Indicate the units of the page size selection. */
@@ -53,9 +53,9 @@ export type HvPaginationLabels = {
   nextPage?: string;
   /** Aria-label of the last page button */
   lastPage?: string;
-};
+}
 
-export type HvPaginationProps = HvBaseProps & {
+export interface HvPaginationProps extends HvBaseProps {
   /** The number of pages the component has. */
   pages?: number;
   /** The currently selected page (0-indexed). */
@@ -86,7 +86,7 @@ export type HvPaginationProps = HvBaseProps & {
   currentPageInputProps?: HvInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvPaginationClasses;
-};
+}
 
 const DEFAULT_LABELS = {
   pageSizePrev: "Show",

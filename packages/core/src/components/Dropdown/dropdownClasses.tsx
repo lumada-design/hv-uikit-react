@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvDropdownClasses = {
+export interface HvDropdownClasses {
   root?: string;
   labelContainer?: string;
   label?: string;
@@ -15,7 +15,7 @@ export type HvDropdownClasses = {
   dropdownHeaderOpen?: string;
   dropdownListContainer?: string;
   rootList?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

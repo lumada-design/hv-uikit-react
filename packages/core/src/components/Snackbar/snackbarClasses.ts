@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvSnackbarClasses = {
+export interface HvSnackbarClasses {
   root?: string;
   /** Styles applied to the component when define as top right.  */
   anchorOriginTopRight?: string;
@@ -14,7 +14,7 @@ export type HvSnackbarClasses = {
   anchorOriginBottomLeft?: string;
   /** Styles applied to the component when define as bottom right.  */
   anchorOriginBottomRight?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

@@ -11,7 +11,7 @@ import { setId } from "@core/utils";
 
 import { StyledPopupContainer } from "./NavigationPopup.styles";
 
-export type HvVerticalNavigationPopupProps = {
+export interface HvVerticalNavigationPopupProps {
   id?: string;
   anchorEl?: HTMLElement | null;
   fixedMode?: boolean;
@@ -19,7 +19,7 @@ export type HvVerticalNavigationPopupProps = {
   selected?: string;
   onClose?: () => void;
   onChange?: any;
-};
+}
 
 export const HvVerticalNavigationPopup = ({
   id,

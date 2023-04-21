@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvStackClasses = {
+export interface HvStackClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

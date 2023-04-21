@@ -15,30 +15,28 @@ import snackbarContentClasses, {
   HvSnackbarContentClasses,
 } from "./snackbarContentWrapperClasses";
 
-export type HvSnackbarContentProps = Omit<
-  MuiSnackbarContentProps,
-  "variant" | "action" | "classes"
-> &
-  HvBaseProps & {
-    /** The message to display. */
-    label?: React.ReactNode;
-    /** Variant of the snackbar. */
-    variant: HvSnackbarVariant;
-    /** Controls if the associated icon to the variant should be shown. */
-    showIcon?: boolean;
-    /** Custom icon to replace the variant default. */
-    customIcon?: React.ReactNode;
-    /** Action to display. */
-    action?: React.ReactNode | HvActionGeneric;
-    /** The callback function ran when an action is triggered, receiving `action` as param */
-    actionCallback?: (
-      event: React.SyntheticEvent,
-      id: string,
-      action: HvActionGeneric
-    ) => void;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvSnackbarContentClasses;
-  };
+export interface HvSnackbarContentProps
+  extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes">,
+    HvBaseProps {
+  /** The message to display. */
+  label?: React.ReactNode;
+  /** Variant of the snackbar. */
+  variant: HvSnackbarVariant;
+  /** Controls if the associated icon to the variant should be shown. */
+  showIcon?: boolean;
+  /** Custom icon to replace the variant default. */
+  customIcon?: React.ReactNode;
+  /** Action to display. */
+  action?: React.ReactNode | HvActionGeneric;
+  /** The callback function ran when an action is triggered, receiving `action` as param */
+  actionCallback?: (
+    event: React.SyntheticEvent,
+    id: string,
+    action: HvActionGeneric
+  ) => void;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvSnackbarContentClasses;
+}
 
 const HvSnackbarContent = forwardRef<HTMLDivElement, HvSnackbarContentProps>(
   (

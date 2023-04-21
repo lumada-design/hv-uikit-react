@@ -8,7 +8,7 @@ import overflowTooltipClasses, {
   HvOverflowTooltipClasses,
 } from "./overflowTooltipClasses";
 
-export type HvOverflowTooltipProps = HvBaseProps & {
+export interface HvOverflowTooltipProps extends HvBaseProps {
   /** The node that will be rendered inside the tooltip. */
   data: React.ReactNode;
   /** If true, the tooltip is shown. */
@@ -33,7 +33,7 @@ export type HvOverflowTooltipProps = HvBaseProps & {
   tooltipsProps?: HvTooltipProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvOverflowTooltipClasses;
-};
+}
 
 const isParagraph = (children) => /\s/.test(children);
 

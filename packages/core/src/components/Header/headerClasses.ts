@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvHeaderClasses = {
+export interface HvHeaderClasses {
   root?: string;
   header?: string;
   backgroundColor?: string;
-};
+}
 
 const classKeys: string[] = ["root", "header", "backgroundColor"];
 

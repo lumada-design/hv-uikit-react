@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvDropZoneClasses = {
+export interface HvDropZoneClasses {
   dropZoneContainer?: string;
   dropZoneLabelsGroup?: string;
   dragAction?: string;
@@ -12,7 +12,7 @@ export type HvDropZoneClasses = {
   dropZoneLabel?: string;
   dragText?: string;
   selectFilesText?: string;
-};
+}
 
 const classKeys: string[] = [
   "dropZoneContainer",

@@ -7,7 +7,7 @@ import actionClasses, {
   HvVerticalNavigationActionClasses,
 } from "./actionClasses";
 
-export type HvVerticalNavigationActionProps = {
+export interface HvVerticalNavigationActionProps {
   /**
    * Class names to be applied.
    */
@@ -32,7 +32,7 @@ export type HvVerticalNavigationActionProps = {
    * Callback called when clicked.
    */
   onClick?: MouseEventHandler<HTMLElement>;
-};
+}
 
 export const HvVerticalNavigationAction = ({
   className,

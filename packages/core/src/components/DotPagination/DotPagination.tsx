@@ -11,7 +11,8 @@ import {
 } from "./DotPagination.styles";
 import { cloneElement } from "react";
 
-export type HvDotPaginationProps = Omit<HvRadioGroupProps, "classes"> & {
+export interface HvDotPaginationProps
+  extends Omit<HvRadioGroupProps, "classes"> {
   /**
    * Icon to override the default one used for the unselected state.
    *
@@ -47,7 +48,7 @@ export type HvDotPaginationProps = Omit<HvRadioGroupProps, "classes"> & {
    * A Jss Object used to override or extend the styles applied.
    */
   classes?: HvDotPaginationClasses;
-};
+}
 
 const getSelectorIcons = (
   radioIcon?: React.ReactElement,

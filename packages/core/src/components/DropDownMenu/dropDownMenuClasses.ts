@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvDropDownMenuClasses = {
+export interface HvDropDownMenuClasses {
   /** Styles applied to the root. */
   root?: string;
   /** Styles applied to the container. */
@@ -13,7 +13,7 @@ export type HvDropDownMenuClasses = {
   iconSelected?: string;
   /** Styles applied to the list. */
   menuList?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

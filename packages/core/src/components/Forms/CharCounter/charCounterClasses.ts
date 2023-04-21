@@ -1,11 +1,11 @@
 import { getClasses } from "@core/utils";
 
-export type HvCharCounterClasses = {
+export interface HvCharCounterClasses {
   root?: string;
   counterDisabled?: string;
   gutter?: string;
   overloaded?: string;
-};
+}
 
 const classKeys: string[] = ["root", "counterDisabled", "gutter", "overloaded"];
 

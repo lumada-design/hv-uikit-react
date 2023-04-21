@@ -10,7 +10,8 @@ import formElementClasses, { HvFormElementClasses } from "./formElementClasses";
 
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
-export type HvFormElementProps = HvBaseProps<HTMLDivElement, { onChange }> & {
+export interface HvFormElementProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * Name of the form element.
    *
@@ -53,7 +54,7 @@ export type HvFormElementProps = HvBaseProps<HTMLDivElement, { onChange }> & {
   onChange?: (event: React.FormEvent<HTMLDivElement>) => void;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFormElementClasses;
-};
+}
 
 export const HvFormElement = ({
   classes,

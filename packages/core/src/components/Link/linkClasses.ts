@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvLinkClasses = {
+export interface HvLinkClasses {
   a?: string;
-};
+}
 
 const classKeys: string[] = ["a"];
 

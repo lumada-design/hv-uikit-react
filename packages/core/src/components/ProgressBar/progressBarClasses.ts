@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvProgressBarClasses = {
+export interface HvProgressBarClasses {
   root?: string;
   progress?: string;
   progressBar?: string;
@@ -9,7 +9,7 @@ export type HvProgressBarClasses = {
   progressDone?: string;
   progressBarContainer?: string;
   progressError?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

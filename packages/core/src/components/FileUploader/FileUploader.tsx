@@ -5,14 +5,14 @@ import { HvDropZone, HvDropZoneLabels } from "./DropZone";
 import { HvFileData, HvFileRemovedEvent, HvFilesAddedEvent } from "./File";
 import { HvFileList } from "./FileList";
 
-export type HvFileUploaderLabels = HvDropZoneLabels & {
+export interface HvFileUploaderLabels extends HvDropZoneLabels {
   /**
    * Value of aria-label to apply to remove file button in FileList
    * */
   removeFileButtonLabel?: string;
-};
+}
 
-export type HvFileUploaderProps = HvBaseProps & {
+export interface HvFileUploaderProps extends HvBaseProps {
   /**
    * An object containing all the labels.
    */
@@ -53,7 +53,7 @@ export type HvFileUploaderProps = HvBaseProps & {
    * Attributes applied to the input element.
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-};
+}
 
 // TODO: This component needs to adopt the Form element shape and deprecate its way of composing labels
 

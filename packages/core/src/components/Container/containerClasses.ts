@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvContainerClasses = {
+export interface HvContainerClasses {
   root?: string;
   disableGutters?: string;
   fixed?: string;
@@ -9,7 +9,7 @@ export type HvContainerClasses = {
   maxWidthMd?: string;
   maxWidthLg?: string;
   maxWidthXl?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

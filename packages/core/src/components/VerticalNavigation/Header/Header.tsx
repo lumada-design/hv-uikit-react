@@ -8,7 +8,7 @@ import verticalNavigationHeaderClasses, {
   HvVerticalNavigationHeaderClasses,
 } from "./headerClasses";
 
-export type HvVerticalNavigationHeaderProps = {
+export interface HvVerticalNavigationHeaderProps {
   /**
    * Id to be applied to the root node.
    */
@@ -45,7 +45,7 @@ export type HvVerticalNavigationHeaderProps = {
    * Handler for the collapse button.
    */
   onCollapseButtonClick?: MouseEventHandler<HTMLElement>;
-};
+}
 
 export const HvVerticalNavigationHeader = ({
   title,

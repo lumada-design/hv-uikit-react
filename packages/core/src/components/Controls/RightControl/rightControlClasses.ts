@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvRightControlClasses = {
+export interface HvRightControlClasses {
   root?: string;
   sortDropdown?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

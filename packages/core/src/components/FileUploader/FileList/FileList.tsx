@@ -5,7 +5,7 @@ import { setId } from "@core/utils";
 import { StyledList } from "./FileList.styles";
 import { clsx } from "clsx";
 
-export type HvFileListProps = {
+export interface HvFileListProps {
   /**
    * Id to be applied to the root node.
    */
@@ -26,7 +26,7 @@ export type HvFileListProps = {
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes?: HvFileListClasses;
-};
+}
 
 export const HvFileList = ({
   id,

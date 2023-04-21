@@ -1,11 +1,11 @@
 import { getClasses } from "@core/utils";
 
-export type HvDialogTitleClasses = {
+export interface HvDialogTitleClasses {
   root?: string;
   fullscreen?: string;
   messageContainer?: string;
   textWithIcon?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

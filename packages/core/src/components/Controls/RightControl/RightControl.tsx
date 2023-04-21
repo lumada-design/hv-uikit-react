@@ -9,12 +9,12 @@ import rightControlClasses, {
 } from "./rightControlClasses";
 import { HvControlsContext } from "../context/ControlsContext";
 
-export type HvRightListControls = HvListValue & {
+export interface HvRightListControls extends HvListValue {
   accessor: string;
   desc: boolean;
-};
+}
 
-export type HvRightControlProps = HvBaseProps & {
+export interface HvRightControlProps extends HvBaseProps {
   /** if `true` the hide sort by dropdown is not rendered */
   hideSortBy?: boolean;
   /** options for the dropdown to sort */
@@ -25,7 +25,7 @@ export type HvRightControlProps = HvBaseProps & {
   sortProps?: HvDropdownProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvRightControlClasses;
-};
+}
 
 export const HvRightControl = ({
   id,

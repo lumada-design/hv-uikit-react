@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvCheckBoxClasses = {
+export interface HvCheckBoxClasses {
   root?: string;
   container?: string;
   disabled?: string;
@@ -9,7 +9,7 @@ export type HvCheckBoxClasses = {
   checkbox?: string;
   invalidCheckbox?: string;
   label?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

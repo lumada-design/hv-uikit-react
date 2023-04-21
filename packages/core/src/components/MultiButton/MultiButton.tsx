@@ -5,7 +5,7 @@ import { HvBaseProps } from "@core/types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
 import multiButtonClasses, { HvMultiButtonClasses } from "./multiButtonClasses";
 
-export type HvMultiButtonProps = HvBaseProps & {
+export interface HvMultiButtonProps extends HvBaseProps {
   /** If all the buttons are disabled. */
   disabled?: boolean;
   /** If the MultiButton is to be displayed vertically. */
@@ -14,7 +14,7 @@ export type HvMultiButtonProps = HvBaseProps & {
   variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMultiButtonClasses;
-};
+}
 
 export const HvMultiButton = ({
   className,

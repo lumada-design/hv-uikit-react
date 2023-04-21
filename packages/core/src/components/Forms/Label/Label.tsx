@@ -7,7 +7,7 @@ import { findDescriptors } from "../FormElement/utils/FormUtils";
 import { StyledTypography } from "./Label.styles";
 import labelClasses, { HvLabelClasses } from "./labelClasses";
 
-export type HvLabelProps = HvBaseProps & {
+export interface HvLabelProps extends HvBaseProps {
   /** The text to be shown by the label. */
   label?: React.ReactNode;
   /** The id of the form element the label is bound to. */
@@ -18,7 +18,7 @@ export type HvLabelProps = HvBaseProps & {
   required?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLabelClasses;
-};
+}
 
 /**
  * Provides the user with a recognizable name for a given form element.

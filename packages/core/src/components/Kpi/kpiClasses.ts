@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvKpiClasses = {
+export interface HvKpiClasses {
   root?: string;
   visualIndicatorContainer?: string;
   comparisons?: string;
@@ -11,7 +11,7 @@ export type HvKpiClasses = {
   indicatorUnit?: string;
   spacingToTheRight?: string;
   trendLine?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

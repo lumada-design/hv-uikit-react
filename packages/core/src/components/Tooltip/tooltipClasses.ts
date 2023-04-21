@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvTooltipClasses = {
+export interface HvTooltipClasses {
   /** Styles applied to the tooltip root class. */
   root?: string;
   /** Styles applied to the tooltip class when it is single. */
@@ -23,7 +23,7 @@ export type HvTooltipClasses = {
   separator?: string;
   /** Styles applied to the values wrapper. */
   valueWrapper?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

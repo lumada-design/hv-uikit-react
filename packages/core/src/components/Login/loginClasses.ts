@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvLoginClasses = {
+export interface HvLoginClasses {
   root?: string;
   formContainer?: string;
-};
+}
 
 const classKeys: string[] = ["root", "formContainer"];
 

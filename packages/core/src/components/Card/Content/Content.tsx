@@ -7,15 +7,16 @@ import MuiCardContent, {
 import cardContentClasses, { HvCardContentClasses } from "./contentClasses";
 import { ClassNames } from "@emotion/react";
 
-export type HvCardContentProps = Omit<MuiCardContentProps, "classes"> &
-  HvBaseProps & {
-    /** Id to be applied to the root node. */
-    id?: string;
-    /** The function that will be executed when this section is clicked. */
-    onClick?: (event: React.SyntheticEvent) => void;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvCardContentClasses;
-  };
+export interface HvCardContentProps
+  extends Omit<MuiCardContentProps, "classes">,
+    HvBaseProps {
+  /** Id to be applied to the root node. */
+  id?: string;
+  /** The function that will be executed when this section is clicked. */
+  onClick?: (event: React.SyntheticEvent) => void;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvCardContentClasses;
+}
 
 export const HvCardContent = ({
   id,

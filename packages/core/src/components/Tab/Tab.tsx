@@ -5,19 +5,20 @@ import { StyledTab } from "./Tab.styles";
 import tabClasses, { HvTabClasses } from "./tabClasses";
 
 // Mui Tab props: https://mui.com/material-ui/api/tab/#props
-export type HvTabProps = Omit<MuiTabProps, "children"> &
-  HvBaseProps<HTMLDivElement, { children }> & {
-    /** If `true`, the tab will be disabled. */
-    disabled?: boolean;
-    /** The icon element. */
-    icon?: React.ReactElement | string;
-    /** The label element. */
-    label?: React.ReactNode;
-    /** The position of the icon relative to the label. */
-    iconPosition?: "bottom" | "end" | "start" | "top";
-    /** A Jss Object used to override or extend the component styles. */
-    classes?: HvTabClasses;
-  };
+export interface HvTabProps
+  extends Omit<MuiTabProps, "children">,
+    HvBaseProps<HTMLDivElement, { children }> {
+  /** If `true`, the tab will be disabled. */
+  disabled?: boolean;
+  /** The icon element. */
+  icon?: React.ReactElement | string;
+  /** The label element. */
+  label?: React.ReactNode;
+  /** The position of the icon relative to the label. */
+  iconPosition?: "bottom" | "end" | "start" | "top";
+  /** A Jss Object used to override or extend the component styles. */
+  classes?: HvTabClasses;
+}
 
 export const HvTab = ({
   classes,

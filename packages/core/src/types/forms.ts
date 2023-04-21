@@ -1,4 +1,4 @@
-export type HvValidationMessages = {
+export interface HvValidationMessages {
   /** The value when a validation fails. */
   error?: string;
   /** The message that appears when there are too many characters. */
@@ -9,9 +9,9 @@ export type HvValidationMessages = {
   requiredError?: string;
   /** The message that appears when the input is value is incompatible with the expected type. */
   typeMismatchError?: string;
-};
+}
 
-export type HvInputLabels = {
+export interface HvInputLabels {
   /** The label of the clear button. */
   clearButtonLabel?: string;
   /** The label of the reveal password button. */
@@ -22,12 +22,12 @@ export type HvInputLabels = {
   revealPasswordButtonClickToHideTooltip?: string;
   /** The label of the search button. */
   searchButtonLabel?: string;
-};
+}
 
-export type HvInputSuggestion = {
+export interface HvInputSuggestion {
   id: string;
   label: string;
   value?: string;
-};
+}
 
-export type HvTagSuggestion = HvInputSuggestion;
+export interface HvTagSuggestion extends HvInputSuggestion {}

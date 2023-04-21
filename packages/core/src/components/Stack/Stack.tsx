@@ -14,9 +14,9 @@ import { HvBreakpoints } from "@core/types/tokens";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 
 export type HvStackDirection = "column" | "row" | Partial<HvStackBreakpoints>;
-export type HvStackBreakpoints = Record<HvBreakpoints, string>;
+export interface HvStackBreakpoints extends Record<HvBreakpoints, string> {}
 
-export type HvStackProps = HvBaseProps & {
+export interface HvStackProps extends HvBaseProps {
   /** The direction of the stack. Can be either a string or an object that states the direction for each breakpoint. */
   direction?: HvStackDirection;
   /** The spacing between elements of the stack. */
@@ -32,7 +32,7 @@ export type HvStackProps = HvBaseProps & {
   withNavigation?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvStackClasses;
-};
+}
 
 /**
  * @returns {string} - Returns a direction for the stack: column or row. If the

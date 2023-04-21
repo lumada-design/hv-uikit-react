@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvRadioGroupClasses = {
+export interface HvRadioGroupClasses {
   root?: string;
   label?: string;
   group?: string;
@@ -8,7 +8,7 @@ export type HvRadioGroupClasses = {
   horizontal?: string;
   invalid?: string;
   error?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

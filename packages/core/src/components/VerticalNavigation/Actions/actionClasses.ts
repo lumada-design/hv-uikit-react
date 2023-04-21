@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationActionClasses = {
+export interface HvVerticalNavigationActionClasses {
   action?: string;
   noIcon?: string;
   minimized?: string;
-};
+}
 
 const classKeys: string[] = ["action", "noIcon", "minimized"];
 

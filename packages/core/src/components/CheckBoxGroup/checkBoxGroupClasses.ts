@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvCheckBoxGroupClasses = {
+export interface HvCheckBoxGroupClasses {
   root?: string;
   label?: string;
   group?: string;
@@ -9,7 +9,7 @@ export type HvCheckBoxGroupClasses = {
   invalid?: string;
   selectAll?: string;
   error?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

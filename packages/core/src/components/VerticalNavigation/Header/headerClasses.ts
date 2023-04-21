@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationHeaderClasses = {
+export interface HvVerticalNavigationHeaderClasses {
   root?: string;
   minimized?: string;
-};
+}
 
 const classKeys: string[] = ["root", "minimized"];
 

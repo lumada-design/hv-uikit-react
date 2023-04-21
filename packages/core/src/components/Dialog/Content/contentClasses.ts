@@ -1,9 +1,9 @@
 import { getClasses } from "@core/utils";
 
-export type HvDialogContentClasses = {
+export interface HvDialogContentClasses {
   root?: string;
   textContent?: string;
-};
+}
 
 const classKeys: string[] = ["root", "textContent"];
 

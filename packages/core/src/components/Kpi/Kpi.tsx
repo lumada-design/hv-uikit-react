@@ -16,7 +16,7 @@ import {
 } from "./Kpi.styles";
 import kpiClasses, { HvKpiClasses } from "./kpiClasses";
 
-export type HvKpiLabelProps = {
+export interface HvKpiLabelProps {
   /**
    * The text at the top of the kpi.
    */
@@ -33,9 +33,9 @@ export type HvKpiLabelProps = {
    * The text to the right of the visual comparison.
    */
   comparisonIndicatorInfo?: string;
-};
+}
 
-export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
+export interface HvKpiProps extends HvBaseProps<HTMLDivElement, { children }> {
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
    */
@@ -64,7 +64,7 @@ export type HvKpiProps = HvBaseProps<HTMLDivElement, { children }> & {
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvKpiClasses;
-};
+}
 
 const DEFAULT_LABELS = {
   title: "",

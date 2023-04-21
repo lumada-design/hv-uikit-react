@@ -224,7 +224,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
 
       // See https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#using_object_urls
       // specially to understand the need to explicitly call URL.revokeObjectURL() in Single Page Applications.
-      const url = URL.createObjectURL(file);
+      const url = URL.createObjectURL(file as File);
 
       newFile.preview = (
         <HvFileUploaderPreview

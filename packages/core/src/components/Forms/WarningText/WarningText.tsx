@@ -7,7 +7,7 @@ import { StyledRoot, StyledTypography, StyledIcon } from "./WarningText.styles";
 import warningTextClasses, { HvWarningTextClasses } from "./warningTextClasses";
 import { HvFormElementContext } from "../FormElement";
 
-export type HvWarningTextProps = HvBaseProps & {
+export interface HvWarningTextProps extends HvBaseProps {
   /** Icon to be rendered alongside the warning text. */
   adornment?: React.ReactNode;
   /** If `true` the text is not rendered. */
@@ -24,7 +24,7 @@ export type HvWarningTextProps = HvBaseProps & {
   hideText?: boolean;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvWarningTextClasses;
-};
+}
 
 /**
  * Provides the user with a descriptive text, signaling an error, for when the form element is in an invalid state.

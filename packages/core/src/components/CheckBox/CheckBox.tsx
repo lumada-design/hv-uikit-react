@@ -12,7 +12,7 @@ import {
 } from "./CheckBox.styles";
 import checkBoxClasses, { HvCheckBoxClasses } from "./checkBoxClasses";
 
-export type HvCheckBoxProps = Omit<HvBaseCheckBoxProps, "classes"> & {
+export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
   /**
    * The label of the form element.
    *
@@ -43,7 +43,7 @@ export type HvCheckBoxProps = Omit<HvBaseCheckBoxProps, "classes"> & {
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
   classes?: HvCheckBoxClasses;
-};
+}
 
 /**
  * A Checkbox is a mechanism that allows the user to select one or more options.

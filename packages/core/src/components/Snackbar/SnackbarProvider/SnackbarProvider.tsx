@@ -8,7 +8,7 @@ import { HvSnackbarVariant } from "../Snackbar";
 import { transientOptions } from "@core/utils/transientOptions";
 import { HvSnackbarContentProps } from "../SnackbarContentWrapper/SnackbarContentWrapper";
 
-export type HvSnackbarProviderProps = {
+export interface HvSnackbarProviderProps {
   /** Your component tree. */
   children: React.ReactNode;
   /** Max visible snackbars. */
@@ -19,9 +19,9 @@ export type HvSnackbarProviderProps = {
   anchorOrigin?: SnackbarOrigin;
   /** Class object used to override notistack classes. */
   notistackClassesOverride?: object;
-};
+}
 
-export type HvNotistackSnackMessageProps = {
+export interface HvNotistackSnackMessageProps {
   /** Id to be applied to the root node. */
   id?: string;
   /** Classname to apply on the root node */
@@ -32,7 +32,7 @@ export type HvNotistackSnackMessageProps = {
   variant?: HvSnackbarVariant;
   /** Extra values to pass to the snackbar. */
   snackbarContentProps?: HvSnackbarContentProps;
-};
+}
 
 const HvNotistackSnackMessage = forwardRef<
   HTMLDivElement,

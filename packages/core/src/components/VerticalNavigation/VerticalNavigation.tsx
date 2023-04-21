@@ -12,7 +12,7 @@ import {
 } from "./NavigationSlider/utils";
 import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
 
-export type HvVerticalNavigationProps = {
+export interface HvVerticalNavigationProps {
   /**
    * Id to be applied to the root node.
    */
@@ -41,7 +41,7 @@ export type HvVerticalNavigationProps = {
    * The content inside the actions container.
    */
   children?: React.ReactNode;
-};
+}
 
 /**
  * Navigation enables users to move through an app to complete tasks.

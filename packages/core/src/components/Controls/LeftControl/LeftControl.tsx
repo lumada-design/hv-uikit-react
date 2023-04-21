@@ -7,7 +7,7 @@ import { HvInput, HvInputProps } from "@core/components";
 import leftControlClasses, { HvLeftControlClasses } from "./leftControlClasses";
 import { HvControlsContext } from "../context/ControlsContext";
 
-export type HvLeftControlProps = HvBaseProps & {
+export interface HvLeftControlProps extends HvBaseProps {
   /** if `true` the hide sort by dropdown is not rendered */
   hideSearch?: boolean;
   /** placeholder of the input */
@@ -21,7 +21,7 @@ export type HvLeftControlProps = HvBaseProps & {
   searchProps?: HvInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvLeftControlClasses;
-};
+}
 
 export const HvLeftControl = ({
   id,

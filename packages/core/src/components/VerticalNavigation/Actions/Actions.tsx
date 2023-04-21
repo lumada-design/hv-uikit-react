@@ -6,7 +6,7 @@ import actionsClasses, {
   HvVerticalNavigationActionsClasses,
 } from "./actionsClasses";
 
-export type HvVerticalNavigationActionsProps = {
+export interface HvVerticalNavigationActionsProps {
   /**
    * Class names to be applied.
    */
@@ -23,7 +23,7 @@ export type HvVerticalNavigationActionsProps = {
    * Node to be rendered
    */
   children?: React.ReactNode;
-};
+}
 
 export const HvVerticalNavigationActions = ({
   className,

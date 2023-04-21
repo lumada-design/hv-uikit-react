@@ -4,12 +4,13 @@ import { HvBaseProps } from "@core/types";
 import { StyledActions } from "./Actions.styles";
 import dialogActionClasses, { HvDialogActionClasses } from "./actionsClasses";
 
-export type HvDialogActionsProps = Omit<MuiDialogActionsProps, "classes"> &
-  HvBaseProps & {
-    /** Set the dialog to fullscreen mode. */
-    fullscreen?: boolean;
-    classes?: HvDialogActionClasses;
-  };
+export interface HvDialogActionsProps
+  extends Omit<MuiDialogActionsProps, "classes">,
+    HvBaseProps {
+  /** Set the dialog to fullscreen mode. */
+  fullscreen?: boolean;
+  classes?: HvDialogActionClasses;
+}
 
 export const HvDialogActions = ({
   classes,

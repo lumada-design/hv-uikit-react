@@ -1,6 +1,6 @@
 import { getClasses } from "@core/utils";
 
-export type HvSelectionListClasses = {
+export interface HvSelectionListClasses {
   root?: string;
   error?: string;
   listbox?: string;
@@ -9,7 +9,7 @@ export type HvSelectionListClasses = {
   horizontal?: string;
   vertical?: string;
   invalid?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

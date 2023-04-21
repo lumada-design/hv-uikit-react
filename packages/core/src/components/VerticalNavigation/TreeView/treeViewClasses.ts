@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvVerticalNavigationTreeViewClasses = {
+export interface HvVerticalNavigationTreeViewClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

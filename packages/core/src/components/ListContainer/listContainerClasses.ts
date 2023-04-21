@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvListContainerClasses = {
+export interface HvListContainerClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

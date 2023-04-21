@@ -41,7 +41,8 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
   return selectedValues;
 };
 
-export type HvCheckBoxGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
+export interface HvCheckBoxGroupProps
+  extends HvBaseProps<HTMLDivElement, { onChange }> {
   /**
    * The form element name.
    *
@@ -124,7 +125,7 @@ export type HvCheckBoxGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {
    * A Jss Object used to override or extend the component styles applied.
    */
   classes?: HvCheckBoxGroupClasses;
-};
+}
 
 /**
  * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.

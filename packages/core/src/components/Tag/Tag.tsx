@@ -13,36 +13,37 @@ import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
 import { useTheme } from "@core/hooks";
 
-export type HvTagProps = Omit<MuiChipProps, "color" | "classes"> &
-  HvBaseProps<HTMLDivElement, { children }> & {
-    /** Inline styles to be applied to the root element. */
-    style?: CSSProperties;
-    /** The label of the tag element. */
-    label?: React.ReactNode;
-    /** Indicates that the form element is disabled. */
-    disabled?: boolean;
-    /** The type of the tag element. A tag can be of semantic or categoric type. */
-    type?: "semantic" | "categorical";
-    /** Background color to be applied to the tag */
-    color?: HvSemanticColorKeys | HvCategoricalColorKeys | string;
-    /** Icon used to customize the delete icon in the Chip element */
-    deleteIcon?: React.ReactElement;
-    /**
-     * The callback fired when the delete icon is pressed.
-     * This function has to be provided to the component, in order to render the delete icon
-     * */
-    onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
-    /** Callback triggered when any item is clicked. */
-    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-    /** The role of the element with an attributed event. */
-    role?: string;
-    /** Aria properties to apply to delete button in tag */
-    deleteButtonArialLabel?: string;
-    /** Props to apply to delete button */
-    deleteButtonProps?: HvButtonProps;
-    /** A Jss Object used to override or extend the styles applied to the component. */
-    classes?: HvTagClasses;
-  };
+export interface HvTagProps
+  extends Omit<MuiChipProps, "color" | "classes">,
+    HvBaseProps<HTMLDivElement, { children }> {
+  /** Inline styles to be applied to the root element. */
+  style?: CSSProperties;
+  /** The label of the tag element. */
+  label?: React.ReactNode;
+  /** Indicates that the form element is disabled. */
+  disabled?: boolean;
+  /** The type of the tag element. A tag can be of semantic or categoric type. */
+  type?: "semantic" | "categorical";
+  /** Background color to be applied to the tag */
+  color?: HvSemanticColorKeys | HvCategoricalColorKeys | string;
+  /** Icon used to customize the delete icon in the Chip element */
+  deleteIcon?: React.ReactElement;
+  /**
+   * The callback fired when the delete icon is pressed.
+   * This function has to be provided to the component, in order to render the delete icon
+   * */
+  onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** Callback triggered when any item is clicked. */
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** The role of the element with an attributed event. */
+  role?: string;
+  /** Aria properties to apply to delete button in tag */
+  deleteButtonArialLabel?: string;
+  /** Props to apply to delete button */
+  deleteButtonProps?: HvButtonProps;
+  /** A Jss Object used to override or extend the styles applied to the component. */
+  classes?: HvTagClasses;
+}
 
 const getColor = (customColor, type, colors) => {
   const defaultSemanticColor = theme.colors.neutral_20;

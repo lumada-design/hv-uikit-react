@@ -5,7 +5,7 @@ import HvListContext from "../ListContext";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import listItemClasses, { HvListItemClasses } from "./listItemClasses";
 
-export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
+export interface HvListItemProps extends HvBaseProps<HTMLLIElement, { role }> {
   /**
    * Overrides the implicit list item role.
    * It defaults to "option" if unspecified and the container list role is "listbox".
@@ -51,7 +51,7 @@ export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {
   value?: any;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvListItemClasses;
-};
+}
 
 const applyClassNameAndStateToElement = (
   element,

@@ -1,9 +1,9 @@
 import React, { createContext, useMemo, useReducer } from "react";
 
-type SetItemFocused = {
+interface SetItemFocused {
   type: "setItemFocused";
   itemFocused: EventTarget & Element;
-};
+}
 
 const reducer = (state, action) => {
   switch (action.type) {

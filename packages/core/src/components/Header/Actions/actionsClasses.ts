@@ -1,8 +1,8 @@
 import { getClasses } from "@core/utils";
 
-export type HvHeaderActionsClasses = {
+export interface HvHeaderActionsClasses {
   root?: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

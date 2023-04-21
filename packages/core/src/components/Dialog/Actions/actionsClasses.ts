@@ -1,10 +1,10 @@
 import { getClasses } from "@core/utils";
 
-export type HvDialogActionClasses = {
+export interface HvDialogActionClasses {
   root?: string;
   fullscreen?: string;
   spacing?: string;
-};
+}
 
 const classKeys: string[] = ["root", "fullscreen", "spacing"];
 

@@ -10,7 +10,7 @@ import {
 } from "./Loading.styles";
 import loadingClasses, { HvLoadingClasses } from "./loadingClasses";
 
-export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
+export interface HvLoadingProps extends HvBaseProps<HTMLDivElement> {
   /** Indicates if the component should be render in a small size. */
   small?: boolean;
   /** The label to be displayed.  */
@@ -20,7 +20,7 @@ export type HvLoadingProps = HvBaseProps<HTMLDivElement> & {
   /** Color applied to the bars. */
   color?: string;
   classes?: HvLoadingClasses;
-};
+}
 
 /**
  * Loading provides feedback about a process that is taking place in the application.
