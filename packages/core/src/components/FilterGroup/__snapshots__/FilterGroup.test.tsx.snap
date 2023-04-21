@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FilterGroup > should render correctly 1`] = `
+<div>
+  <div
+    style="width: 180px;"
+  >
+    <div
+      class="HvFilterGroup-root HvFormElement-root"
+      id="filter-group-main"
+    >
+      <div
+        class="HvBaseDropdown-root HvFilterGroupContent-dropdown css-1nukton-StyledRoot eapzthe9"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+          id="filter-group-main-dropdown"
+          role="combobox"
+          tabindex="-1"
+        >
+          <div
+            class="HvBaseDropdown-header HvFilterGroupContent-header css-1vsvx69-StyledHeaderRoot eapzthe7"
+            id="filter-group-main-dropdown-header"
+            role="textbox"
+            tabindex="0"
+          >
+            <div
+              class="HvBaseDropdown-selection HvFilterGroupContent-baseDropdownSelection css-dcsvb4-StyledSelection eapzthe6"
+            >
+              <div
+                class="css-f95wjz"
+                name="Filters"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M1 2v1.6l6 6.1V14h2V9.7l6-6.1V2H1M0 1h16v3l-6 6v5H6v-4.9L0 4z"
+                    fill="var(--uikit-colors-secondary)"
+                  />
+                </svg>
+              </div>
+              <label
+                class="HvTypography-root HvTypography-label css-9vbp9s-getStyledComponent e1tnpalo0"
+              >
+                Filters
+              </label>
+            </div>
+            <div
+              class="css-10czyyf"
+            >
+              <p
+                class="css-atimhy"
+              >
+                4
+              </p>
+               / 20
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

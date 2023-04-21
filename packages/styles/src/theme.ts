@@ -268,6 +268,18 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     defaultSeparatorHeight: "string",
     simpleSeparatorHeight: "string",
   },
+  filterGroup: {
+    applyButtonVariant: "string",
+    cancelButtonVariant: "string",
+    applyButtonMarginRight: "string",
+    panelsBorder: "string",
+    panelsBorderBottom: "string",
+    actionBarBorder: "string",
+    actionBarBorderTop: "string",
+    rightPanelBorderLeft: "string",
+    rightPanelShadow: "string",
+    partialCounterFontWeight: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

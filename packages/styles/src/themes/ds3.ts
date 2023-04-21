@@ -484,6 +484,18 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     defaultSeparatorHeight: 3,
     simpleSeparatorHeight: 2,
   },
+  filterGroup: {
+    applyButtonVariant: "secondaryGhost",
+    cancelButtonVariant: "secondaryGhost",
+    applyButtonMarginRight: "0px",
+    panelsBorder: "none",
+    panelsBorderBottom: "none",
+    actionBarBorder: "none",
+    actionBarBorderTop: `3px solid ${theme.colors.atmo2}`,
+    rightPanelBorderLeft: "none",
+    rightPanelShadow: `inset 8px 0 8px -6px ${theme.colors.shad1}`,
+    partialCounterFontWeight: theme.fontWeights.bold,
+  },
 }));
 
 export default ds3;

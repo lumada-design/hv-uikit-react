@@ -1,6 +1,6 @@
 import { getClasses } from "@hitachivantara/uikit-react-core";
 
-export type HvStepClasses = {
+export interface HvStepClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the ghost class. */
@@ -23,7 +23,7 @@ export type HvStepClasses = {
   avatar?: string;
   /** Styles applied to the title of a step element. */
   stepTitle?: string;
-};
+}
 
 const classKeys: string[] = [
   "root",

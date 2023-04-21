@@ -1,6 +1,6 @@
 import { getClasses } from "@hitachivantara/uikit-react-core";
 
-export type HvStepNavigationClasses = {
+export interface HvStepNavigationClasses {
   /** Styles applied to the component root class. */
   root?: string;
   /** Styles applied to the title element. */
@@ -11,7 +11,7 @@ export type HvStepNavigationClasses = {
   ol?: string;
   /** Styles applied to the separator element. */
   separator?: string;
-};
+}
 
 const classKeys: string[] = ["root", "li", "ol", "separator", "titles"];
 

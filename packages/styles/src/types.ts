@@ -275,6 +275,18 @@ export type HvThemeComponents = {
     defaultSeparatorHeight: number;
     simpleSeparatorHeight: number;
   };
+  filterGroup: {
+    applyButtonVariant: string;
+    cancelButtonVariant: string;
+    applyButtonMarginRight: string;
+    panelsBorder: string;
+    panelsBorderBottom: string;
+    actionBarBorder: string;
+    actionBarBorderTop: string;
+    rightPanelBorderLeft: string;
+    rightPanelShadow: string;
+    partialCounterFontWeight: string;
+  };
 };
 
 // Theme typography

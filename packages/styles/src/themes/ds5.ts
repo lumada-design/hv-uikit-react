@@ -427,6 +427,18 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     defaultSeparatorHeight: 1,
     simpleSeparatorHeight: 1,
   },
+  filterGroup: {
+    applyButtonVariant: "primary",
+    cancelButtonVariant: "secondarySubtle",
+    applyButtonMarginRight: "8px",
+    panelsBorder: `1px solid ${theme.colors.secondary_80}`,
+    panelsBorderBottom: "none",
+    actionBarBorder: `1px solid ${theme.colors.secondary_80}`,
+    actionBarBorderTop: `1px solid ${theme.colors.atmo3}`,
+    rightPanelBorderLeft: `1px solid ${theme.colors.atmo3}`,
+    rightPanelShadow: "none",
+    partialCounterFontWeight: theme.fontWeights.normal,
+  },
 }));
 
 export default ds5;

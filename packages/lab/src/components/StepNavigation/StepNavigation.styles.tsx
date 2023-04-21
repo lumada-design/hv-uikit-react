@@ -1,6 +1,12 @@
 import { CSSInterpolation } from "@emotion/serialize";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  root: CSSInterpolation;
+  titles: CSSInterpolation;
+  ol: CSSInterpolation;
+  li: CSSInterpolation;
+  separator: CSSInterpolation;
+} = {
   root: {
     display: "flex",
     flexDirection: "column",

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
@@ -61,7 +61,7 @@ export interface HvStepNavigationProps extends HvBaseProps {
  * * Choose a <b>type</b> of layout: 'Simple' or 'Default';
  * * Choose the <b>stepSize</b> of the step component: "xs", "sm", "md", "lg", "xl". The default size will be
  * correspondent to the current media breakpoint;
- * * Choose either you want to <b>showTitles</b> near to each step component or a tootlip on hover;
+ * * Choose either you want to <b>showTitles</b> near to each step component or a tooltip on hover;
  * * Define a <b>width</b> of the component. If you don't define any value and the step component has no title
  * displayed above, the width of the separator element will be 100px.
  * If the step component has titles, each one will have 215px of width by default.

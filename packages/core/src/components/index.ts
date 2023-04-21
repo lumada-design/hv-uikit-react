@@ -71,3 +71,4 @@ export * from "./Controls";
 export * from "./Calendar";
 export * from "./VerticalNavigation";
 export * from "./Slider";
+export * from "./FilterGroup";
