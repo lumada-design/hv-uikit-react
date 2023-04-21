@@ -1,5 +1,4 @@
 import { css } from "@emotion/css";
-// import { theme } from "@hitachivantara/uikit-styles";
 
 const styles = {
   root: css({
@@ -7,6 +6,11 @@ const styles = {
     flexDirection: "row",
     gap: 40,
     marginTop: 20,
+  }),
+  tutorial: css({
+    display: "flex",
+    justifyContent: "center",
+    padding: 10,
   }),
   section: css({
     display: "flex",

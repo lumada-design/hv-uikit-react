@@ -6,10 +6,18 @@ import navigation from "lib/navigation";
 import Routes from "lib/routes";
 import { GeneratorContext } from "./GeneratorContext";
 import { useContext } from "react";
+import { Tutorial } from "pages/Instructions/Tutorial";
 
 const Content = () => {
   const { selectedMode } = useTheme();
-  const { customTheme, open } = useContext(GeneratorContext);
+  const {
+    customTheme,
+    open,
+    tutorialOpen,
+    setTutorialOpen,
+    currentStep,
+    setCurrentStep,
+  } = useContext(GeneratorContext);
 
   return (
     <div
@@ -29,6 +37,13 @@ const Content = () => {
           cssBaseline="none" // the main provider already applies the baseline styles globally
         >
           <NavigationProvider navigation={navigation}>
+            {tutorialOpen && (
+              <Tutorial
+                setTutorialOpen={setTutorialOpen}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+              />
+            )}
             <Container maxWidth="xl">
               <Routes />
             </Container>

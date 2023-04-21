@@ -1,5 +1,6 @@
 import {
   HvBox,
+  HvButton,
   HvCard,
   HvCardContent,
   HvCardHeader,
@@ -20,11 +21,28 @@ import {
   ColorPicker,
   FontSizeBigger,
 } from "@hitachivantara/uikit-react-icons";
+import { GeneratorContext } from "generator/GeneratorContext";
+import { useContext } from "react";
 import classes from "./styles";
 
 const Instructions = () => {
+  const { setTutorialOpen } = useContext(GeneratorContext);
+
+  const tutorialClickHandler = () => {
+    setTutorialOpen?.((prev) => !prev);
+  };
+
   return (
     <HvContainer maxWidth="lg">
+      <HvBox className={classes.tutorial}>
+        <HvButton
+          variant="secondaryGhost"
+          onClick={tutorialClickHandler}
+          style={{ padding: 10 }}
+        >
+          <HvTypography variant="title2">Check our tutorial!</HvTypography>
+        </HvButton>
+      </HvBox>
       <HvBox className={classes.root}>
         <HvBox className={classes.section}>
           <HvBox>
