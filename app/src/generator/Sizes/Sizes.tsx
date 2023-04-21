@@ -54,6 +54,7 @@ const Sizes = () => {
 
   return (
     <div className={styles.root}>
+      <HvTypography variant="title4">Sizes</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.sizes).map((r) => {
           return (

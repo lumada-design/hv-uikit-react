@@ -7,7 +7,8 @@ export const styles = {
     display: "flex",
     flexDirection: "column",
     gap: theme.space.xs,
-    paddingLeft: theme.space.xs,
+    paddingLeft: theme.space.md,
+    marginBottom: theme.space.lg,
   }),
   item: css({
     display: "flex",

@@ -58,6 +58,7 @@ const Spacing = () => {
 
   return (
     <div className={styles.root}>
+      <HvTypography variant="title4">Spacing</HvTypography>
       {activeTheme &&
         Object.keys(activeTheme.space).map((s) => {
           return (
