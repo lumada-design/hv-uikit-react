@@ -1,4 +1,4 @@
-import { getClasses } from "~/utils";
+import { getClasses } from "@core/utils";
 
 export type HvInputClasses = {
   /** Styles applied to the root container of the input. */

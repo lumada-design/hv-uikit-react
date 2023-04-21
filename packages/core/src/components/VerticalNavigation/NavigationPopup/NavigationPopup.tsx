@@ -1,13 +1,13 @@
 import { Popper, ClickAwayListener } from "@mui/material";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 import {
   NavigationData,
   HvVerticalNavigationTree,
   HvVerticalNavigation,
   verticalNavigationTreeClasses,
-} from "~/components";
-import { setId } from "~/utils";
+} from "@core/components";
+import { setId } from "@core/utils";
 
 import { StyledPopupContainer } from "./NavigationPopup.styles";
 

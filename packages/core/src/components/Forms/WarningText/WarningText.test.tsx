@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { HvProvider } from "~/providers";
+import { HvProvider } from "@core/providers";
 import { describe, expect, it } from "vitest";
-import { HvWarningText } from "~/components";
+import { HvWarningText } from "@core/components";
 
 const TEXT = "text-content";
 

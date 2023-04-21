@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Snackbar, { snackbarClasses } from "@mui/material/Snackbar";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledSnackbar = styled(
   Snackbar,

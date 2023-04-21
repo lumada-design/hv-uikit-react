@@ -1,9 +1,9 @@
-import { HvBaseProps } from "../../../types";
+import { clsx } from "clsx";
+import { useContext } from "react";
+import { setId } from "@core/utils";
+import { HvBaseProps } from "@core/types";
 import { StyledTypography } from "./InfoMessage.styles";
 import { HvFormElementContext } from "../FormElement";
-import { useContext } from "react";
-import { setId } from "~/utils";
-import clsx from "clsx";
 import infoMessageClasses, { HvInfoMessageClasses } from "./infoMessageClasses";
 
 export type HvInfoMessageProps = HvBaseProps & {

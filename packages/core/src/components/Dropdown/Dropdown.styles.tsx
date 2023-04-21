@@ -7,8 +7,8 @@ import {
   HvFormElementProps,
   HvLabel,
   HvTypography,
-} from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
+} from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
 import dropdownClasses from "./dropdownClasses";
 
 export const StyledHvFormElement = styled(

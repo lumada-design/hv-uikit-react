@@ -10,7 +10,7 @@ import {
   dropdownClasses,
   HvInputProps,
   HvButtonProps,
-} from "~/components";
+} from "@core/components";
 import { HvLogin, HvLoginProps } from "./Login";
 import background from "./resources/background.png";
 import customBackground from "./resources/background-custom.jpg";

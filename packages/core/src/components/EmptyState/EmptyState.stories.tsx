@@ -5,7 +5,7 @@ import {
   HvTypography,
   HvEmptyState,
   HvEmptyStateProps,
-} from "~/components";
+} from "@core/components";
 
 const meta: Meta<typeof HvEmptyState> = {
   title: "Components/Empty State",

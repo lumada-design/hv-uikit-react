@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvFormStatus, HvRadio } from "~/components";
+import { HvFormStatus, HvRadio } from "@core/components";
 import React, { useState } from "react";
 import { HvRadioGroup, HvRadioGroupProps } from "./RadioGroup";
 

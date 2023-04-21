@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvTypography } from "~/components";
+import { HvTypography } from "@core/components";
 
 export const StyledYes = styled(HvTypography)({
   cursor: "pointer",

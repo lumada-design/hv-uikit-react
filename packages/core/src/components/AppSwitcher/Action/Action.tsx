@@ -1,9 +1,9 @@
 import { useState } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvAvatar, HvTooltip, HvTypography } from "~/components";
+import { HvAvatar, HvTooltip, HvTypography } from "@core/components";
 import { HvAppSwitcherActionApplication } from "../AppSwitcher";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import TitleWithTooltip from "../TitleWithTooltip";
 import {
   StyledIcon,
@@ -15,7 +15,7 @@ import {
 import appSwitcherActionClasses, {
   HvAppSwitcherActionClasses,
 } from "./actionClasses";
-import { useUniqueId } from "~/hooks";
+import { useUniqueId } from "@core/hooks";
 
 export interface HvAppSwitcherActionProps extends HvBaseProps {
   /** The application data to be used to render the Action object. */

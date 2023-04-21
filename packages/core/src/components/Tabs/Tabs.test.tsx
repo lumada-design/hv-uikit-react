@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvTabs } from "~/components";
+import { HvTabs } from "@core/components";
 import { Main } from "./Tabs.stories";
 
 describe("Tabs", () => {

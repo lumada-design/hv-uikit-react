@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { MouseEvent } from "react";
-import { useSelectionPath } from "~/hooks";
-import { HvBaseProps } from "../../../types";
+import { useSelectionPath } from "@core/hooks";
+import { HvBaseProps } from "@core/types";
 import { HvMenuBar } from "./MenuBar";
 import { StyledNav } from "./Navigation.styles";
 import { FocusProvider } from "./utils/FocusContext";

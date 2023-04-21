@@ -1,25 +1,25 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
+import { forwardRef } from "react";
 import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
+import { HvBaseProps } from "@core/types";
+import { iconVariant } from "@core/utils";
+import {
+  HvActionGeneric,
+  HvBannerActionPosition,
+  HvBannerVariant,
+} from "@core/components";
 import bannerContentClasses, {
   HvBannerContentClasses,
 } from "./bannerContentClasses";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
 import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
-import { HvBaseProps } from "~/types";
-import {
-  HvActionGeneric,
-  HvBannerActionPosition,
-  HvBannerVariant,
-} from "~/components";
-import { forwardRef } from "react";
-import { iconVariant } from "~/utils";
 
 export interface HvBannerContentProps
   extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose">,
     HvBaseProps {
   /** The message to display. */
-  content?: React.ReactNode;
+  content?: string;
   /** Variant of the snackbar. */
   variant?: HvBannerVariant;
   /** Controls if the associated icon to the variant should be shown. */

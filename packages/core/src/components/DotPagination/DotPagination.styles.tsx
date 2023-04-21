@@ -4,7 +4,7 @@ import {
   HvRadioGroup,
   HvRadioGroupProps,
   HvRadioProps,
-} from "~/components";
+} from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import dotPaginationClasses from "./dotPaginationClasses";
 import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";

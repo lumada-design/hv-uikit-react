@@ -1,8 +1,8 @@
+import { clsx } from "clsx";
 import React, { useCallback, useContext, useMemo } from "react";
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
-import { StyledListItem, StyledFocus } from "./ListItem.styles";
+import { HvBaseProps } from "@core/types";
 import HvListContext from "../ListContext";
+import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import listItemClasses, { HvListItemClasses } from "./listItemClasses";
 
 export type HvListItemProps = HvBaseProps<HTMLLIElement, { role }> & {

@@ -1,4 +1,4 @@
-import { getClasses } from "~/utils";
+import { getClasses } from "@core/utils";
 
 export type HvVerticalNavigationActionClasses = {
   action?: string;

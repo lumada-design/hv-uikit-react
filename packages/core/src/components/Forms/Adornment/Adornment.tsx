@@ -1,6 +1,6 @@
 import { useContext, forwardRef, MouseEventHandler, ForwardedRef } from "react";
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { StyledRoot, StyledIcon, StyledButton } from "./Adornment.styles";
 import {
   HvFormElementContext,

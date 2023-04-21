@@ -26,7 +26,7 @@ import {
   HvTypography,
   HvEmptyState,
   HvBulkActions,
-} from "~/components";
+} from "@core/components";
 import {
   makeData,
   getColumns,

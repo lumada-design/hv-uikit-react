@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBanner, HvBannerProps, HvButton, HvTypography } from "~/components";
+import {
+  HvBanner,
+  HvBannerProps,
+  HvButton,
+  HvTypography,
+} from "@core/components";
 import { useState } from "react";
 import { HvBannerContent } from "./BannerContent";
 

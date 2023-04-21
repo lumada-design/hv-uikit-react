@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import { HvProvider } from "~/providers";
+import { HvProvider } from "@core/providers";
 import { describe, expect, it } from "vitest";
-import { HvDropDownMenu } from "~/components";
+import { HvDropDownMenu } from "@core/components";
 
 describe("DropDownMenu", () => {
   it("should be defined", () => {

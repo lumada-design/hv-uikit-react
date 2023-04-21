@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
-import { Random } from "~/utils";
-import { HvCellProps, HvTableColumnConfig } from "~/components";
+import { Random } from "@core/utils";
+import { HvCellProps, HvTableColumnConfig } from "@core/components";
 
 export interface NewRendererEntry {
   id: string;

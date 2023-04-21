@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import Select from "./Select";
 import ButtonIconTooltip from "./ButtonIconTooltip";
-import { inputClasses } from "~/components";
+import { inputClasses } from "@core/components";
 import paginationClasses from "./paginationClasses";
 import { CSSProperties } from "react";
 

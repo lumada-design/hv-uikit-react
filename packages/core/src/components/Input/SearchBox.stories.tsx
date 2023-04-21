@@ -11,8 +11,8 @@ import {
   HvPanel,
   HvTypography,
   HvInput,
-} from "~/components";
-import { HvInputSuggestion } from "~/types";
+} from "@core/components";
+import { HvInputSuggestion } from "@core/types";
 import countryNamesArray, { continents, countries } from "./countries";
 
 /**

@@ -1,11 +1,11 @@
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
-import { StyledRoot } from "./LeftControl.styles";
-import leftControlClasses, { HvLeftControlClasses } from "./leftControlClasses";
-import { HvInput, HvInputProps } from "~/components";
+import { clsx } from "clsx";
 import { useContext } from "react";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
+import { StyledRoot } from "./LeftControl.styles";
+import { HvInput, HvInputProps } from "@core/components";
+import leftControlClasses, { HvLeftControlClasses } from "./leftControlClasses";
 import { HvControlsContext } from "../context/ControlsContext";
-import { setId } from "~/utils";
 
 export type HvLeftControlProps = HvBaseProps & {
   /** if `true` the hide sort by dropdown is not rendered */

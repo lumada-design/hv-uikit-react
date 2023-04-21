@@ -1,4 +1,4 @@
-import { VisibilitySelectorActions } from "./Calendar";
+import { VisibilitySelectorActions } from ".";
 
 /**
  * View modes for the calendar component.

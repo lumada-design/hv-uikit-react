@@ -1,4 +1,8 @@
-import { HvTooltip, HvTooltipPlacementType, HvTypography } from "~/components";
+import {
+  HvTooltip,
+  HvTooltipPlacementType,
+  HvTypography,
+} from "@core/components";
 
 interface TooltipWrapperProps {
   showTooltip: boolean;

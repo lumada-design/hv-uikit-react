@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvBox, HvTypography } from "~/components";
+import { HvBox, HvTypography } from "@core/components";
 import { HvTooltip, HvTooltipProps } from "./Tooltip";
 import tooltipClasses from "./tooltipClasses";
 

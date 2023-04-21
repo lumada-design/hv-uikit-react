@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import { isKeypress, keyboardCodes, setId } from "~/utils";
-import { HvTypography } from "~/components";
-import { HvBaseProps } from "~/types";
+import { clsx } from "clsx";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { HvTypography } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import {
   StyledDropLeftIcon,
   StyledDropRightIcon,

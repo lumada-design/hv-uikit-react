@@ -1,7 +1,7 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import React, { cloneElement } from "react";
-import { HvButtonVariant } from "~/components";
-import { HvBaseProps } from "../../types";
+import { HvButtonVariant } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import { StyledButton, StyledRoot } from "./MultiButton.styles";
 import multiButtonClasses, { HvMultiButtonClasses } from "./multiButtonClasses";
 

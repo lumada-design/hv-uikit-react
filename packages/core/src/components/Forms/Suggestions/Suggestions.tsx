@@ -1,12 +1,12 @@
+import { clsx } from "clsx";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
 import {
   StyledRoot,
   StyledSelectionList,
   StyledPopper,
 } from "./Suggestions.styles";
-import { setId } from "../../../utils";
 import { HvFormElementContext } from "../FormElement";
 import { HvListItem } from "../../ListContainer/ListItem";
 import { HvClickOutsideEvent, useClickOutside } from "../../../hooks";

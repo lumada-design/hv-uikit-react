@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HvTypography } from "~/components";
+import { HvTypography } from "@core/components";
 import { useState } from "react";
 import { describe, expect, it } from "vitest";
 import { HvDotPagination } from "./DotPagination";

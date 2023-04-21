@@ -1,14 +1,14 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { Hidden } from "@mui/material";
-import { HvInput, HvInputProps, HvTypography } from "~/components";
+import { HvInput, HvInputProps, HvTypography } from "@core/components";
 import {
   Start,
   End,
   Backwards,
   Forwards,
 } from "@hitachivantara/uikit-react-icons";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import { Option } from "./Select";
 import {
   StyledRoot,
@@ -22,9 +22,9 @@ import {
   StyledPageInfo,
 } from "./Pagination.styles";
 import paginationClasses, { HvPaginationClasses } from "./paginationClasses";
-import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { usePageInput, getSafePage, setColor } from "./utils";
-import { useLabels } from "~/hooks";
+import { useLabels } from "@core/hooks";
 
 export type HvPaginationLabels = {
   /** The show label. */

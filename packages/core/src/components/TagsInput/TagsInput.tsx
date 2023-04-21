@@ -5,13 +5,16 @@ import React, {
   useRef,
   useState,
 } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import isNil from "lodash/isNil";
+import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 import {
   HvBaseProps,
   HvTagSuggestion,
   HvValidationMessages,
-} from "../../types";
+} from "@core/types";
+import { useControlled, useIsMounted, useUniqueId } from "@core/hooks";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import {
   StyledCharCounter,
   StyledDescription,
@@ -28,12 +31,9 @@ import {
 } from "./TagsInput.styles";
 import validationStates from "../Forms/FormElement/validationStates";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
-import { useControlled, useIsMounted, useUniqueId } from "../../hooks";
-import { isKeypress, keyboardCodes, setId } from "../../utils";
 import { HvTagProps } from "../Tag";
 import tagsInputClasses, { HvTagsInputClasses } from "./tagsInputClasses";
 import { HvCharCounterProps, HvFormStatus } from "../Forms";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material";
 
 export type HvTagsInputProps = HvBaseProps<
   HTMLElement,

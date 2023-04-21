@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvFormElement, HvFormElementProps, HvLabel } from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
+import { HvFormElement, HvFormElementProps, HvLabel } from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledFormElement = styled((props: HvFormElementProps) => (
   <HvFormElement {...props} />

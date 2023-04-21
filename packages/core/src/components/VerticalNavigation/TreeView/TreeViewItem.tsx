@@ -7,10 +7,10 @@ import {
   useRef,
   useState,
 } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-import { useForkRef } from "~/hooks";
-import { setId } from "~/utils";
+import { useForkRef } from "@core/hooks";
+import { setId } from "@core/utils";
 import treeViewItemClasses, {
   HvVerticalNavigationTreeViewItemClasses,
 } from "./treeViewItemClasses";

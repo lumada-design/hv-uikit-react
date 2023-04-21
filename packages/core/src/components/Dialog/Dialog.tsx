@@ -1,15 +1,20 @@
 import React, { useCallback, useRef } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import isNil from "lodash/isNil";
-import { HvBaseProps } from "../../types/generic";
+import { HvBaseProps } from "@core/types/generic";
 import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
-import { isKeypress, keyboardCodes, setId, getFocusableList } from "~/utils";
-import { withTooltip } from "~/hocs";
+import {
+  isKeypress,
+  keyboardCodes,
+  setId,
+  getFocusableList,
+} from "@core/utils";
+import { withTooltip } from "@core/hocs";
 import dialogClasses, { HvDialogClasses } from "./dialogClasses";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 import { ClassNames } from "@emotion/react";
 
 export type HvDialogProps = Omit<MuiDialogProps, "fullScreen" | "classes"> &

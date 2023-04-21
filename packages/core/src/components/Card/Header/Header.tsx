@@ -1,11 +1,11 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import MuiCardHeader, {
   CardHeaderProps as MuiCardHeaderProps,
 } from "@mui/material/CardHeader";
-import { HvBaseProps } from "../../../types/generic";
+import { HvBaseProps } from "@core/types";
 import cardHeaderClasses, { HvCardHeaderClasses } from "./headerClasses";
 import { styles } from "./Header.styles";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 import { ClassNames } from "@emotion/react";
 
 export type HvCardHeaderProps = Omit<MuiCardHeaderProps, "classes"> &

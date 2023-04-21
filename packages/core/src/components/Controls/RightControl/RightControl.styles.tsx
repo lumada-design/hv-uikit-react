@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvDropdown, HvDropdownProps } from "~/components";
+import { HvDropdown, HvDropdownProps } from "@core/components";
 
 export const StyledRoot = styled("div")({
   display: "inline-flex",

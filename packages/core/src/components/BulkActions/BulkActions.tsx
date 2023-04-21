@@ -1,4 +1,4 @@
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import bulkActionsClasses, { HvBulkActionsClasses } from "./bulkActionsClasses";
 import {
   HvButton,
@@ -9,7 +9,7 @@ import {
   HvActionGeneric,
   HvActionsGenericProps,
   HvTypography,
-} from "~/components";
+} from "@core/components";
 import { useEffect, useState } from "react";
 import {
   StyledGenericActions,
@@ -17,10 +17,10 @@ import {
   StyledSelectAllContainer,
   StyledDivider,
 } from "./BulkActions.styles";
-import clsx from "clsx";
-import { setId } from "~/utils";
+import { clsx } from "clsx";
+import { setId } from "@core/utils";
 import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 
 export interface HvBulkActionsProps extends HvBaseProps {
   /**

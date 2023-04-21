@@ -10,8 +10,8 @@ import {
   HvInfoMessage,
   HvAdornment,
   HvFormStatus,
-} from "~/components";
-import { setId } from "~/utils";
+} from "@core/components";
+import { setId } from "@core/utils";
 
 const meta: Meta<typeof HvFormElement> = {
   title: "Guides/Forms/Form Element",

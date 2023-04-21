@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import styled from "@emotion/styled";
 import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import {
@@ -15,12 +15,12 @@ import {
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 import capitalize from "lodash/capitalize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {

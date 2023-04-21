@@ -1,14 +1,14 @@
 import { Children, useMemo, useCallback, cloneElement } from "react";
 import { HvFormStatus, HvInfoMessage, HvWarningText } from "../Forms";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import {
   StyledFormElement,
   StyledGroup,
   StyledLabel,
 } from "./RadioGroup.styles";
-import clsx from "clsx";
-import { useControlled, useUniqueId } from "~/hooks";
-import { setId } from "~/utils";
+import { clsx } from "clsx";
+import { useControlled, useUniqueId } from "@core/hooks";
+import { setId } from "@core/utils";
 import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
 export type HvRadioGroupProps = HvBaseProps<HTMLDivElement, { onChange }> & {

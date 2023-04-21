@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvTypography } from "~/components";
+import { HvTypography } from "@core/components";
 import { useState } from "react";
 import { HvDotPagination, HvDotPaginationProps } from "./DotPagination";
 import dotPaginationClasses from "./dotPaginationClasses";

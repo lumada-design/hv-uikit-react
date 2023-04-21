@@ -1,4 +1,4 @@
-import { HvListValue } from "~/components";
+import { HvListValue } from "@core/components";
 
 /**
  * Filter selected elements.

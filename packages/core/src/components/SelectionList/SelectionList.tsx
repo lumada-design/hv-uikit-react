@@ -1,6 +1,13 @@
 import React, { useCallback, useMemo, useRef, useEffect } from "react";
-import clsx from "clsx";
-import { HvBaseProps } from "../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
+import { useControlled, useUniqueId } from "@core/hooks";
+import {
+  isKeypress,
+  keyboardCodes,
+  setId,
+  multiSelectionEventHandler,
+} from "@core/utils";
 import {
   StyledListContainer,
   StyledFormElement,
@@ -8,13 +15,6 @@ import {
   StyledInfoMessage,
   StyledError,
 } from "./SelectionList.styles";
-import {
-  isKeypress,
-  keyboardCodes,
-  setId,
-  multiSelectionEventHandler,
-} from "../../utils";
-import { useControlled, useUniqueId } from "../../hooks";
 import { HvFormStatus } from "../Forms/FormElement";
 import selectionListClasses, {
   HvSelectionListClasses,

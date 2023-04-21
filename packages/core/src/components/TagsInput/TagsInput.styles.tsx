@@ -19,9 +19,9 @@ import {
   HvTagProps,
   HvInputProps,
   HvSuggestionsProps,
-} from "~/components";
+} from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import tagsInputClasses from "./tagsInputClasses";
 import baseInputClasses from "../BaseInput/baseInputClasses";
 import suggestionsClasses from "../Forms/Suggestions/suggestionsClasses";

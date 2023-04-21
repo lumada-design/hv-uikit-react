@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvListItem, HvListItemProps, HvTypography } from "~/components";
+import { HvListItem, HvListItemProps, HvTypography } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import appSwitcherActionClasses from "./actionClasses";

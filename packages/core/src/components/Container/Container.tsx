@@ -1,10 +1,10 @@
 import { useTheme } from "@mui/material/styles";
 import { ContainerProps as MuiContainerProps } from "@mui/material/Container";
 import { forwardRef } from "react";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import { StyledRoot } from "./Container.styles";
 import containerClasses, { HvContainerClasses } from "./containerClasses";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export type HvContainerProps = Omit<MuiContainerProps, "classes"> &
   HvBaseProps & {

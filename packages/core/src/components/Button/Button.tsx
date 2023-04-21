@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { useTheme } from "~/hooks";
+import { clsx } from "clsx";
+import { useTheme } from "@core/hooks";
 import React, { forwardRef, ReactElement } from "react";
 import {
   StyledButton,

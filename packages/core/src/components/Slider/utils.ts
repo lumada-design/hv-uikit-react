@@ -1,9 +1,9 @@
-import validationStates from "~/components/Forms/FormElement/validationStates";
-import { HvFormStatus } from "~/components";
-import { HvKnobProperty, HvMarkProperty } from "./Slider";
-import { theme } from "@hitachivantara/uikit-styles";
-import { SliderStyles } from "./Slider.styles";
 import { CSSProperties } from "react";
+import { theme } from "@hitachivantara/uikit-styles";
+import validationStates from "@core/components/Forms/FormElement/validationStates";
+import { HvFormStatus } from "@core/components";
+import { HvKnobProperty, HvMarkProperty } from ".";
+import { SliderStyles } from "./Slider.styles";
 
 /**
  * Transform the scaled values into knobs positions.

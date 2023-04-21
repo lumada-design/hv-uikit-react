@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import isNil from "lodash/isNil";
-import { DateRangeProp } from "./Calendar";
+import { DateRangeProp } from ".";
 import { DATETIMEFORMAT_OPTIONS, REPRESENTATION_VALUES } from "./enums";
 
 /**

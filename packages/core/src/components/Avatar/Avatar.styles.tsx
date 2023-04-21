@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { Avatar as MuiAvatar } from "@mui/material";
-import { transientOptions } from "~/utils/transientOptions";
-import { outlineStyles } from "~/utils/focusUtils";
-import { HvAvatarSize, HvAvatarVariant } from "./Avatar";
+import { transientOptions } from "@core/utils/transientOptions";
+import { outlineStyles } from "@core/utils/focusUtils";
+import { HvAvatarSize, HvAvatarVariant } from ".";
 
 const EXTRA_SMALL = { container: "32px", avatar: "24px" };
 const SMALL = { container: "40px", avatar: "32px" };

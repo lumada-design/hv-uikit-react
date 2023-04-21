@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { HvBaseProps } from "../../types";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { StyledA } from "./Link.styles";
 import linkClasses, { HvLinkClasses } from "./linkClasses";
 import { MouseEventHandler } from "react";

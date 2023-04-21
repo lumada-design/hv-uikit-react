@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
-import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./Button";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvButtonRadius, HvButtonSize, HvButtonVariant } from ".";
 
 export interface StyledButtonProps {
   $radius?: HvButtonRadius;

@@ -11,9 +11,9 @@ import {
   HvCheckBoxProps,
   HvLinkProps,
   HvRadioProps,
-} from "~/components";
+} from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { CSSProperties } from "react";
 

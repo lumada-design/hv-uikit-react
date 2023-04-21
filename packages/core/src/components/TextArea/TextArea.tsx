@@ -9,11 +9,11 @@ import {
   StyledLabelContainer,
   StyledWarningText,
 } from "./TextArea.styles";
-import { useControlled, useUniqueId } from "~/hooks";
+import { useControlled, useUniqueId } from "@core/hooks";
 import validationStates, {
   isInvalid,
-} from "~/components/Forms/FormElement/validationStates";
-import clsx from "clsx";
+} from "@core/components/Forms/FormElement/validationStates";
+import { clsx } from "clsx";
 import { useCallback, useRef, useState, useMemo, useEffect } from "react";
 import {
   computeValidationMessage,
@@ -24,9 +24,9 @@ import {
   validateInput,
   validationTypes,
 } from "../BaseInput/validations";
-import { setId } from "~/utils";
+import { setId } from "@core/utils";
 import isNil from "lodash/isNil";
-import { HvValidationMessages } from "~/types";
+import { HvValidationMessages } from "@core/types";
 import textAreaClasses, { HvTextAreaClasses } from "./textAreaClasses";
 
 export type HvTextAreaProps = Omit<

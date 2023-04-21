@@ -4,7 +4,7 @@ import {
   HvThemeColorModeStructure,
 } from "@hitachivantara/uikit-styles";
 import type { HvTheme } from "@hitachivantara/uikit-react-shared";
-import { HvExtraDeepPartialProps } from "~/types";
+import { HvExtraDeepPartialProps } from "@core/types";
 
 export type { HvTheme };
 

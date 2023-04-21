@@ -15,8 +15,8 @@ import {
   HvStack,
   HvStackProps,
   HvButton,
-} from "~/components";
-import { useWidth } from "~/hooks";
+} from "@core/components";
+import { useWidth } from "@core/hooks";
 import styled from "@emotion/styled";
 
 const StyledBox = styled("div")({

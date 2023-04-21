@@ -5,10 +5,10 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvLabel,
-} from "~/components";
+} from "@core/components";
 import { CSSProperties } from "react";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledHvBaseRadio = styled(
   HvBaseRadio,

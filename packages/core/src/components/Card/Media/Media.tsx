@@ -2,9 +2,9 @@ import MuiCardMedia, {
   CardMediaProps as MuiCardMediaProps,
 } from "@mui/material/CardMedia";
 import { styles } from "./Media.styles";
-import { HvBaseProps } from "../../../types/generic";
+import { HvBaseProps } from "@core/types";
 import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { ImgHTMLAttributes } from "react";
 import { ClassNames } from "@emotion/react";
 

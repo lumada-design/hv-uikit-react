@@ -9,7 +9,7 @@ import {
   HvInfoMessage,
   HvLabel,
   HvTypography,
-} from "~/components";
+} from "@core/components";
 import { HvSwitch, HvSwitchProps } from "./Switch";
 
 const StyledDecorator = styled("div")({

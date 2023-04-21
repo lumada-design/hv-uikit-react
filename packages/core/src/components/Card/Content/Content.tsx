@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types/generic";
+import { clsx } from "clsx";
+import { HvBaseProps } from "@core/types";
 import { styles } from "./Content.styles";
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,

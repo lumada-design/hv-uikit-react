@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "~/components";
+import { HvTypography } from "@core/components";
 
 export const StyledIconContainer = styled("div")({
   marginRight: theme.space.xs,

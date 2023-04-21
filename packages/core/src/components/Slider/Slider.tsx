@@ -1,5 +1,5 @@
 import { SliderProps } from "rc-slider";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import React, {
   useCallback,
   useEffect,
@@ -7,11 +7,11 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { HvBaseProps } from "~/types";
-import { setId } from "~/utils";
-import { useControlled, useUniqueId } from "~/hooks";
-import validationStates from "~/components/Forms/FormElement/validationStates";
-import { HvFormStatus, HvLabel, HvInputProps } from "~/components";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
+import { useControlled, useUniqueId } from "@core/hooks";
+import validationStates from "@core/components/Forms/FormElement/validationStates";
+import { HvFormStatus, HvLabel, HvInputProps } from "@core/components";
 import sliderClasses, { HvSliderClasses } from "./sliderClasses";
 import {
   sliderStyles,

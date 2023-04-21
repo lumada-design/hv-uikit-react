@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvInput } from "~/components";
+import { HvInput } from "@core/components";
 
 export const StyledRoot = styled("div")({ display: "flex" });
 

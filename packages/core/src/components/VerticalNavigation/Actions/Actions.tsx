@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useContext } from "react";
 import { VerticalNavigationContext } from "../";
 import { StyledRoot } from "./Actions.styles";

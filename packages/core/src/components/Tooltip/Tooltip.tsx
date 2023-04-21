@@ -7,8 +7,8 @@ import { forwardRef, ReactElement } from "react";
 import { TransitionProps as MuiTransitionProps } from "@mui/material/transitions";
 import { popperSx } from "./Tooltip.styles";
 import tooltipClasses, { HvTooltipClasses } from "./tooltipClasses";
-import clsx from "clsx";
-import { useTheme } from "~/hooks";
+import { clsx } from "clsx";
+import { useTheme } from "@core/hooks";
 
 export type HvTooltipPlacementType =
   | "bottom-end"

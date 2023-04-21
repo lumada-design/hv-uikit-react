@@ -1,6 +1,6 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import styled from "@emotion/styled";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import tableContainerClasses, {
   HvTableContainerClasses,
 } from "./tableContainerClasses";

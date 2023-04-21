@@ -4,8 +4,8 @@ import {
   Switch as MuiSwitch,
   switchClasses as MuiSwitchClasses,
 } from "@mui/material";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledSwitch = styled(
   MuiSwitch,

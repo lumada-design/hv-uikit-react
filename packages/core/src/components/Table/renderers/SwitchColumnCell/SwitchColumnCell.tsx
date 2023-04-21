@@ -1,4 +1,4 @@
-import { HvBaseSwitch, HvBaseSwitchProps } from "~/components";
+import { HvBaseSwitch, HvBaseSwitchProps } from "@core/components";
 import { StyledYes, StyledNo } from "./SwitchColumnCell.styles";
 
 export interface HvSwitchColumnCellProp {

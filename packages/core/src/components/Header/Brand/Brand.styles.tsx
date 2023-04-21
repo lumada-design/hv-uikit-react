@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import { forwardRef, Ref } from "react";
-import { HvTypography, HvTypographyProps } from "~/components";
+import { HvTypography, HvTypographyProps } from "@core/components";
 
 export const BrandRoot = styled("div")({
   display: "flex",

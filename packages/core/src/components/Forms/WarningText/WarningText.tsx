@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import isNil from "lodash/isNil";
-import { HvBaseProps } from "../../../types";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
 import { StyledRoot, StyledTypography, StyledIcon } from "./WarningText.styles";
-import { HvFormElementContext } from "../FormElement";
-import { setId } from "~/utils";
 import warningTextClasses, { HvWarningTextClasses } from "./warningTextClasses";
+import { HvFormElementContext } from "../FormElement";
 
 export type HvWarningTextProps = HvBaseProps & {
   /** Icon to be rendered alongside the warning text. */

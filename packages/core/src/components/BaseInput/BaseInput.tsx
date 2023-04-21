@@ -3,7 +3,7 @@ import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   InputProps as MuiInputProps,
 } from "@mui/material";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import {
   StyledRoot,
   StyledInputBorderContainer,
@@ -14,8 +14,8 @@ import {
   HvFormElementDescriptorsContext,
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
-} from "~/components";
-import clsx from "clsx";
+} from "@core/components";
+import { clsx } from "clsx";
 import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
 import { css, Global } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";

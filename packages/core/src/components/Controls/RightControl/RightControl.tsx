@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import { HvBaseProps } from "../../../types";
+import { clsx } from "clsx";
+import { useContext, useState } from "react";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
+import { HvDropdownProps, HvListValue } from "@core/components";
 import { StyledDropdown, StyledRoot } from "./RightControl.styles";
 import rightControlClasses, {
   HvRightControlClasses,
 } from "./rightControlClasses";
-import { HvDropdownProps, HvListValue } from "~/components";
-import { useContext, useState } from "react";
 import { HvControlsContext } from "../context/ControlsContext";
-import { setId } from "~/utils";
 
 export type HvRightListControls = HvListValue & {
   accessor: string;

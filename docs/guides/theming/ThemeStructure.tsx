@@ -11,7 +11,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { css } from "@emotion/css";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 const tokens: string[] = [
   "breakpoints",

@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import SnackbarContent, {
   snackbarContentClasses,
 } from "@mui/material/SnackbarContent";
-import { transientOptions } from "~/utils/transientOptions";
-import { HvBannerVariant } from "../Banner";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvBannerVariant } from "..";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const StyledRoot = styled("div")({

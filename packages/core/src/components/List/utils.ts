@@ -1,4 +1,4 @@
-import { HvListValue } from "./List";
+import { HvListValue } from ".";
 
 const isItemSelected = (item: HvListValue, newItem: HvListValue) => {
   const selectionKey = item?.id ? "id" : "label";

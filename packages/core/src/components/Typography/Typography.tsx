@@ -5,14 +5,14 @@ import {
   AllHTMLAttributes,
   Ref,
 } from "react";
-import { HvBaseProps } from "~/types";
+import { HvBaseProps } from "@core/types";
 import styled from "@emotion/styled";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 import { theme } from "@hitachivantara/uikit-styles";
 import { mapVariant } from "./utils";
 import typographyClasses, { HvTypographyClasses } from "./typographyClasses";
-import clsx from "clsx";
-import { useTheme } from "~/hooks";
+import { clsx } from "clsx";
+import { useTheme } from "@core/hooks";
 
 export type HvTypographyVariants =
   | "display"

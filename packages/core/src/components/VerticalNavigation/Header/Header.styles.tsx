@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { HvButton, HvButtonProps } from "~/components";
+import { HvButton, HvButtonProps } from "@core/components";
 import verticalNavigationHeaderClasses from "./headerClasses";
 import { forwardRef, Ref } from "react";
 

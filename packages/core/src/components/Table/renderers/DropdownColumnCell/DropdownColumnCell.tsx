@@ -1,4 +1,4 @@
-import { HvDropdownProps, HvDropdown, HvListValue } from "~/components";
+import { HvDropdownProps, HvDropdown, HvListValue } from "@core/components";
 
 export interface HvDropdownColumnCellProp {
   /** Values to render in the dropdown. */

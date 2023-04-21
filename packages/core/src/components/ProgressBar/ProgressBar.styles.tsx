@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
-import { HvProgressBarStatus } from "./ProgressBar";
+import { HvTypography } from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
+import { HvProgressBarStatus } from ".";
 
 export const StyledRoot = styled("div")({
   display: "flex",

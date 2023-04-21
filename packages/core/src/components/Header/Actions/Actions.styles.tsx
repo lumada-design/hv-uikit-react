@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
-import { buttonClasses } from "~/components";
+import { buttonClasses } from "@core/components";
 
 export const StyledDiv = styled.div({
   backgroundColor: "transparent",

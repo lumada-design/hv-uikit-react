@@ -6,7 +6,7 @@ import viteConfig from "../../.config/vite.config";
 export default mergeConfig(viteConfig, {
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "src"),
+      "@core": path.resolve(__dirname, "src"),
     },
   },
 });

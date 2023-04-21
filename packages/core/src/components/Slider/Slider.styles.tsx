@@ -3,9 +3,13 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { CSSProperties } from "react";
 import Tooltip from "rc-tooltip";
 import Slider from "rc-slider";
-import { HvFormElement, HvFormElementProps, HvWarningText } from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
-import { outlineStyles } from "~/utils";
+import {
+  HvFormElement,
+  HvFormElementProps,
+  HvWarningText,
+} from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
+import { outlineStyles } from "@core/utils";
 import base from "./base";
 
 const dot: CSSProperties = {

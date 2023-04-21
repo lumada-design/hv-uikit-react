@@ -1,14 +1,17 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { CSSProperties, useState } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
-import { HvBaseProps } from "../../types";
+import { HvBaseProps } from "@core/types";
 import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
 import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
-import { HvSemanticColorKeys, HvCategoricalColorKeys } from "~/types/tokens";
+import {
+  HvSemanticColorKeys,
+  HvCategoricalColorKeys,
+} from "@core/types/tokens";
 import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
-import { useTheme } from "~/hooks";
+import { useTheme } from "@core/hooks";
 
 export type HvTagProps = Omit<MuiChipProps, "color" | "classes"> &
   HvBaseProps<HTMLDivElement, { children }> & {

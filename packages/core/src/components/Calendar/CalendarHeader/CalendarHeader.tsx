@@ -3,16 +3,16 @@ import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import {
   HvFormElementContext,
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
   HvTypography,
-} from "~/components";
+} from "@core/components";
 import { isRange, isSameDay, formatToLocale, isDate } from "../utils";
-import { isKeypress, keyboardCodes, setId } from "~/utils";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import { DateRangeProp } from "../Calendar";
 import calendarHeaderClasses, {

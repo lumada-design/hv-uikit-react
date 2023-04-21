@@ -2,9 +2,9 @@ import { CSSProperties } from "@emotion/serialize";
 import styled from "@emotion/styled";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import { HvTypography } from "~/components";
-import { outlineStyles } from "~/utils";
-import { transientOptions } from "~/utils/transientOptions";
+import { HvTypography } from "@core/components";
+import { outlineStyles } from "@core/utils";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledRoot = styled("div")({
   width: "100%",

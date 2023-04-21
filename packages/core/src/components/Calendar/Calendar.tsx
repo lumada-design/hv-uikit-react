@@ -1,10 +1,13 @@
+import { clsx } from "clsx";
 import React, { useContext } from "react";
-import { setId } from "~/utils";
-import { HvFormElementContext, HvFormElementValueContext } from "~/components";
+import { setId } from "@core/utils";
+import {
+  HvFormElementContext,
+  HvFormElementValueContext,
+} from "@core/components";
 import { isRange } from "./utils";
 import { HvSingleCalendar } from "./SingleCalendar";
 import calendarClasses, { HvCalendarClasses } from "./calendarClasses";
-import clsx from "clsx";
 import { StyledRangeCalendarContainer, StyledRoot } from "./Calendar.styles";
 
 export const HvCalendar = ({

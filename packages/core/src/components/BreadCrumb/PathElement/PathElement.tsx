@@ -1,5 +1,5 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { StyledLi } from "./PathElement.styles";
 import pathElementClasses, { HvPathElementClasses } from "./pathElementClasses";
 

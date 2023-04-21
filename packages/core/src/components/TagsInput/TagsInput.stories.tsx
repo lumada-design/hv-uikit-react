@@ -8,7 +8,7 @@ import {
   HvTypography,
   HvTagProps,
   HvFormStatus,
-} from "~/components";
+} from "@core/components";
 import isEmpty from "lodash/isEmpty";
 import { useState } from "react";
 import countryNamesArray from "./countries";

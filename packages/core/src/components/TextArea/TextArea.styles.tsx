@@ -12,8 +12,8 @@ import {
   HvLabelProps,
   HvWarningText,
   HvWarningTextProps,
-} from "~/components";
-import { transientOptions } from "~/utils/transientOptions";
+} from "@core/components";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledFormElement = styled(
   (props: HvFormElementProps) => <HvFormElement {...props} />,

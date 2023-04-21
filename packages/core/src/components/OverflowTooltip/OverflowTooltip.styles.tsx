@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { transientOptions } from "~/utils/transientOptions";
+import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledDataContainer = styled(
   "div",

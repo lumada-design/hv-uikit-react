@@ -1,4 +1,4 @@
-import { getClasses } from "~/utils";
+import { getClasses } from "@core/utils";
 
 export interface HvBannerClasses {
   /** Styles applied to the component root class. */

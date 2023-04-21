@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useCallback } from "react";
 import Slide from "@mui/material/Slide";
 import {
@@ -6,9 +6,9 @@ import {
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
 import capitalize from "lodash/capitalize";
-import { HvActionGeneric } from "~/components";
-import { HvBaseProps } from "~/types";
-import { setId } from "~/utils";
+import { HvActionGeneric } from "@core/components";
+import { HvBaseProps } from "@core/types";
+import { setId } from "@core/utils";
 import { StyledSnackbar } from "./Banner.styles";
 import bannerClasses, { HvBannerClasses } from "./bannerClasses";
 import {
@@ -28,7 +28,7 @@ export interface HvBannerProps
   /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** The message to display. */
-  label?: React.ReactNode;
+  label?: string;
   /** The anchor of the Snackbar. */
   anchorOrigin?: "top" | "bottom";
   /** Variant of the snackbar. */

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useEffect, useMemo, useState } from "react";
 import { StyledRoot } from "./VerticalNavigation.styles";
 import verticalNavigationClasses, {
