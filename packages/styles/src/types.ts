@@ -270,6 +270,11 @@ export type HvThemeComponents = {
     ringColor: string;
     ringOpacity: string;
   };
+  stepNavigation: {
+    separatorMargin: string;
+    defaultSeparatorHeight: number;
+    simpleSeparatorHeight: number;
+  };
 };
 
 // Theme typography
