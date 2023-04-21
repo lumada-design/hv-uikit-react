@@ -422,6 +422,11 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     ringColor: theme.colors.primary_20,
     ringOpacity: "100%",
   },
+  stepNavigation: {
+    separatorMargin: "4px",
+    defaultSeparatorHeight: 1,
+    simpleSeparatorHeight: 1,
+  },
 }));
 
 export default ds5;

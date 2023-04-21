@@ -479,6 +479,11 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     ringColor: theme.colors.secondary,
     ringOpacity: "20%",
   },
+  stepNavigation: {
+    separatorMargin: "0px",
+    defaultSeparatorHeight: 3,
+    simpleSeparatorHeight: 2,
+  },
 }));
 
 export default ds3;

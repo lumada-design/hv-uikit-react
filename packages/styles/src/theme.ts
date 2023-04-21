@@ -263,6 +263,11 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     ringColor: "string",
     ringOpacity: "string",
   },
+  stepNavigation: {
+    separatorMargin: "string",
+    defaultSeparatorHeight: "string",
+    simpleSeparatorHeight: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {
