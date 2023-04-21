@@ -24,7 +24,7 @@ export const styles: { [key: string]: CSSInterpolation } = {
       boxShadow: ["none", "0 2px 12px rgba(65,65,65,0.12)"],
       borderRadius: theme.dialog.borderRadius,
       [`&.${MuiPaperClasses.root}`]: {
-        width: "inherit",
+        // width: "inherit",
         minWidth: "33.3333333%",
         maxWidth: "83.3333333%",
         "&.fullscreen": {
