@@ -1,0 +1,134 @@
+import { theme } from "@hitachivantara/uikit-styles";
+
+interface StepProps {
+  title?: string;
+  content?: string;
+  orientation?: string;
+  position?: {
+    top?: number | string;
+    bottom?: number | string;
+    right?: number | string;
+    left?: number | string;
+  };
+  size?: {
+    width?: number;
+    height?: number;
+  };
+  arrow?: {
+    top?: number | string;
+    bottom?: number | string;
+    right?: number | string;
+    left?: number | string;
+  };
+}
+
+export const tutorialData: StepProps[] = [
+  {
+    title: "Open the Theme Creator",
+    content: "Click the menu icon to open the Theme Creator.",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: 10,
+      top: 60,
+    },
+    arrow: {
+      right: 10,
+    },
+  },
+  {
+    title: "Theme base configuration",
+    content:
+      "Enter the name of your custom theme and select the base theme and color mode.",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: 20,
+      top: 170,
+    },
+    arrow: {
+      right: "calc(50% - 15px)",
+    },
+  },
+  {
+    title: "Code Editor",
+    content:
+      "All the changes you make to your theme will be available here. You can use the icons to reset or copy the code.",
+    orientation: "right",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: 415,
+      top: 180,
+    },
+    arrow: {
+      top: "calc(50% - 15px)",
+    },
+  },
+  {
+    title: "Theme Tools",
+    content:
+      "The Theme Tools allow you to configure basic definitions of your theme: customize the palette, add new fonts, update typography settings and tune several layout definitions like the radii, sizes, zIndices or spacings",
+    orientation: "right",
+    size: {
+      width: 450,
+    },
+    position: {
+      right: 415,
+      top: 455,
+    },
+    arrow: {
+      top: "calc(50% - 15px)",
+    },
+  },
+  {
+    title: "Preview",
+    content: "This is the preview tab.",
+    orientation: "up",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: "calc(50% - 40px)",
+      top: `calc(${theme.header.height} + 20px)`,
+    },
+    arrow: {
+      right: "calc(50% - 15px)",
+    },
+  },
+  {
+    title: "Templates",
+    content:
+      "In the Preview section you can view your theme in several different templates.",
+    orientation: "up",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: "calc(50% - 40px)",
+      top: `calc(2 * ${theme.header.height} + 20px)`,
+    },
+    arrow: {
+      right: "calc(50% - 15px)",
+    },
+  },
+  {
+    title: "Components",
+    content:
+      "In the Components section you can view your theme in specific isolated components.",
+    orientation: "up",
+    size: {
+      width: 350,
+    },
+    position: {
+      right: "calc(50% + 70px)",
+      top: `calc(${theme.header.height} + 20px)`,
+    },
+    arrow: {
+      right: "calc(50% - 15px)",
+    },
+  },
+];

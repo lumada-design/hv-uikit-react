@@ -29,7 +29,7 @@ export const StyledPaper = styled(
   "& svg *.color0": {
     fill: theme.colors.secondary,
   },
-  [`&.${MuiPaperClasses.root}`]: {
+  [`.${MuiPaperClasses.root}`]: {
     width: "inherit",
     minWidth: $fullscreen ? "100%" : "33.3333333%",
     maxWidth: $fullscreen ? "100%" : "83.3333333%",

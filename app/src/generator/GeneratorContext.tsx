@@ -11,6 +11,9 @@ type GeneratorContextProp = {
 
   open?: boolean;
   setOpen?: Dispatch<SetStateAction<boolean>>;
+
+  tutorialOpen?: boolean;
+  setTutorialOpen?: Dispatch<SetStateAction<boolean>>;
 };
 
 export const GeneratorContext = createContext<GeneratorContextProp>({
@@ -20,7 +23,7 @@ export const GeneratorContext = createContext<GeneratorContextProp>({
 
 const GeneratorProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
-
+  const [tutorialOpen, setTutorialOpen] = useState(false);
   const [changedValues, setChangedValues] = useState({});
 
   const [customTheme, setCustomTheme] = useState(
@@ -62,6 +65,8 @@ const GeneratorProvider = ({ children }) => {
         updateChangedValues,
         open,
         setOpen,
+        tutorialOpen,
+        setTutorialOpen,
       }}
     >
       {children}
