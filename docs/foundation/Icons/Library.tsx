@@ -1,9 +1,18 @@
-import { HvTypography, HvDropdown } from "@hitachivantara/uikit-react-core";
+import {
+  HvAccordion,
+  HvBox,
+  HvButton,
+  HvDropdown,
+  HvInput,
+  HvSimpleGrid,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 import {
   icons as iconComponentList,
   pictograms as pictogramComponentList,
 } from "@hitachivantara/uikit-react-icons";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import iconCategories from "./IconCategories";
 
 const iconContainer = {
   margin: "5px",
@@ -32,7 +41,7 @@ const dropdownSizes = [
 
 const Icon = ({ widerSpacing, name, Component, iconSize }) => (
   <div style={widerSpacing ? widerIconContainer : iconContainer}>
-    <Component iconSize={iconSize && iconSize.label} />
+    <Component iconSize={iconSize} />
     <HvTypography style={{ margin: "6px 0" }} variant="caption1">
       {name}
     </HvTypography>
@@ -56,13 +65,89 @@ const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
   );
 };
 
-const Library = ({ isIcons }) => {
-  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
+const Library = ({ isIcons }: { isIcons?: boolean }) => {
+  const iconList = isIcons ? iconComponentList : pictogramComponentList;
 
-  const library = isIcons ? iconComponentList : pictogramComponentList;
+  const [iconListResults, setIconListResults] = useState<
+    typeof iconComponentList | typeof pictogramComponentList
+  >(iconList);
+  const [iconSize, setIconSize] = useState<(typeof dropdownSizes)[0]>();
+  const [expandedState, setExpandedState] = useState(
+    iconCategories.map((category) => {
+      return {
+        category: Object.keys(category)[0],
+        open: false,
+      };
+    })
+  );
+  const [isAnyExpanded, setIsAnyExpanded] = useState(
+    expandedState.some((category) => {
+      return category.open === true;
+    })
+  );
+
+  useEffect(() => {
+    setIsAnyExpanded(
+      expandedState.some((state) => {
+        return state.open === true;
+      })
+    );
+  }, [expandedState, setExpandedState]);
+
+  const handleToggle = (category) => {
+    const newExpandedState = expandedState.map((element) => {
+      if (element.category == category) {
+        return { ...element, open: !element.open };
+      }
+      return element;
+    });
+    setExpandedState(newExpandedState);
+  };
+
+  const handleAll = (option: boolean) => {
+    setExpandedState(
+      expandedState.map((category) => {
+        return { ...category, open: option };
+      })
+    );
+  };
+
+  const handleIconSearch = (searchTerm: string) => {
+    const filteredIcons = Object.keys(iconList)
+      .filter((key) => key.toLowerCase().includes(searchTerm.toLowerCase()))
+      .reduce((obj, key) => {
+        return Object.assign(obj, {
+          [key]: iconList[key],
+        });
+      }, {});
+    setIconListResults(filteredIcons as typeof iconComponentList);
+  };
+
+  const filterByCategory = (category: string) => {
+    const categoryObject = iconCategories.find(
+      (categoryE) => Object.keys(categoryE)[0] === category
+    );
+
+    if (categoryObject) {
+      const categoryKeys = categoryObject[category];
+      return Object.keys(iconListResults)
+        .filter((key) => categoryKeys.includes(key))
+        .reduce((obj, key) => {
+          return Object.assign(obj, {
+            [key]: iconListResults[key],
+          });
+        }, {});
+    }
+    return [];
+  };
+
   return (
     <>
-      <div style={{ padding: "20px 0", width: 220 }}>
+      <HvSimpleGrid
+        spacing="sm"
+        cols={2}
+        style={{ maxWidth: 400, paddingBottom: "20px" }}
+      >
         <HvDropdown
           label="Select icon size"
           values={dropdownSizes}
@@ -70,12 +155,54 @@ const Library = ({ isIcons }) => {
           onChange={(item) => setIconSize(item)}
           notifyChangesOnFirstRender
         />
-      </div>
-      <Group
-        iconSize={iconSize}
-        widerSpacing={!isIcons}
-        iconsLibrary={library}
-      />
+        <HvInput
+          label="Search All Categories"
+          aria-label="Search Icons"
+          onChange={(e, value) => handleIconSearch(value)}
+          placeholder="Search"
+          type="search"
+        />
+        <HvButton
+          variant="secondarySubtle"
+          onClick={() => handleAll(!isAnyExpanded)}
+        >
+          {isAnyExpanded ? "Collapse All" : "Expand All"}
+        </HvButton>
+      </HvSimpleGrid>
+      <HvBox>
+        {isIcons ? (
+          expandedState.map((element) => (
+            <HvAccordion
+              key={element.category + "Accordion"}
+              label={element.category}
+              expanded={element.open}
+              onChange={() => handleToggle(element.category)}
+            >
+              {/* <Library
+              isIcons
+              size={iconSize?.label}
+              iconList={filterByCategory(element.category)}
+            /> */}
+              <Group
+                iconSize={iconSize?.label}
+                widerSpacing={!isIcons}
+                iconsLibrary={filterByCategory(element.category)}
+              />
+            </HvAccordion>
+          ))
+        ) : (
+          //   <Library
+          //   isIcons={false}
+          //   size={iconSize?.label}
+          //   iconList={iconList}
+          // />
+          <Group
+            iconSize={iconSize?.label}
+            widerSpacing={!isIcons}
+            iconsLibrary={iconListResults}
+          />
+        )}
+      </HvBox>
     </>
   );
 };
