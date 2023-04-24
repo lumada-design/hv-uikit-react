@@ -43,6 +43,7 @@ export type HvThemeComponents = {
     semanticColorDisabled: string;
     hoverColor: string;
     secondaryBackgroundColor: string;
+    secondarySubtleBorderColor: string;
   };
   header: {
     color: string;
@@ -286,6 +287,9 @@ export type HvThemeComponents = {
     rightPanelBorderLeft: string;
     rightPanelShadow: string;
     partialCounterFontWeight: string;
+  };
+  multiButton: {
+    disabledBackgroundColor: string;
   };
 };
 

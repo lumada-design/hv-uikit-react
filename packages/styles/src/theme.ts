@@ -36,6 +36,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     semanticColorDisabled: "string",
     hoverColor: "string",
     secondaryBackgroundColor: "string",
+    secondarySubtleBorderColor: "string",
   },
   header: {
     color: "string",
@@ -279,6 +280,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     rightPanelBorderLeft: "string",
     rightPanelShadow: "string",
     partialCounterFontWeight: "string",
+  },
+  multiButton: {
+    disabledBackgroundColor: "string",
   },
 };
 

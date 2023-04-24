@@ -252,6 +252,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
     hoverColor: theme.colors.atmo3,
     secondaryBackgroundColor: theme.colors.atmo1,
+    secondarySubtleBorderColor: theme.colors.atmo4,
   },
   header: {
     color: theme.colors.secondary,
@@ -495,6 +496,9 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     rightPanelBorderLeft: "none",
     rightPanelShadow: `inset 8px 0 8px -6px ${theme.colors.shad1}`,
     partialCounterFontWeight: theme.fontWeights.bold,
+  },
+  multiButton: {
+    disabledBackgroundColor: theme.colors.atmo2,
   },
 }));
 
