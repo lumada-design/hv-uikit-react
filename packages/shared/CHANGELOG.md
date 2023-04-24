@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.3...@hitachivantara/uikit-react-shared@5.0.4) (2023-04-24)
+
+### Bug Fixes
+
+- restore shared package esm bundle ([63962ea](https://github.com/lumada-design/hv-uikit-react/commit/63962eac5223022dce3c6472df891c090b6cf26a))
+
 ## [5.0.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.0.2...@hitachivantara/uikit-react-shared@5.0.3) (2023-04-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared
