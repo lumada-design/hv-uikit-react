@@ -15,6 +15,7 @@ import {
   HvPanel,
   HvRightControl,
   HvSimpleGrid,
+  HvSlider,
   HvTableColumnConfig,
   useHvData,
   useHvFilters,
@@ -291,7 +292,7 @@ export const CustomControls = () => {
   const originalData = useMemo(() => makeData(15), []);
   const [data] = useState(originalData);
   const [severitySelection, setSeveritySelection] = useState(0);
-  const [temperatureSelection] = useState(0);
+  const [temperatureSelection, setTemperatureSelection] = useState(0);
   const buttons = useMemo(
     () => ["All", "Critical", "Major", "Average", "Minor"],
     []
@@ -342,10 +343,10 @@ export const CustomControls = () => {
     setFilter?.("severity", buttons[idx]);
   };
 
-  // const onSliderChange = (values) => {
-  //   setTemperatureSelection(values[0]);
-  //   setFilter("temperature", values[0]);
-  // };
+  const onSliderChange = (values) => {
+    setTemperatureSelection(values[0]);
+    setFilter?.("temperature", values[0]);
+  };
 
   const cardsId = "CustomControlsCardsId";
 
@@ -374,8 +375,8 @@ export const CustomControls = () => {
         </HvLeftControl>
         <HvRightControl hideSortBy>
           <HvLabel id="temp-label" htmlFor="tempFilter" label="Temperature:" />
-          {/* <HvSlider
-            style={{ width: "240px", zIndex: 40 }}
+          <HvSlider
+            style={{ width: "200px", zIndex: 40 }}
             id="tempFilter-controls"
             hideInput
             onChange={onSliderChange}
@@ -388,7 +389,7 @@ export const CustomControls = () => {
                 "aria-controls": cardsId,
               },
             ]}
-          /> */}
+          />
         </HvRightControl>
       </HvControls>
       <HvSimpleGrid id={cardsId} cols={3}>
@@ -417,7 +418,7 @@ export const MixedControls = () => {
   const originalData = useMemo(() => makeData(15), []);
   const [data] = useState(originalData);
   const [severitySelection, setSeveritySelection] = useState(0);
-  const [temperatureSelection] = useState(0);
+  const [temperatureSelection, setTemperatureSelection] = useState(0);
   const buttons = useMemo(
     () => ["All", "Critical", "Major", "Average", "Minor"],
     []
@@ -469,10 +470,10 @@ export const MixedControls = () => {
     setFilter?.("severity", buttons[idx]);
   };
 
-  // const onSliderChange = (values) => {
-  //   setTemperatureSelection(values[0]);
-  //   setFilter("temperature", values[0]);
-  // };
+  const onSliderChange = (values) => {
+    setTemperatureSelection(values[0]);
+    setFilter?.("temperature", values[0]);
+  };
 
   const cardsId = "mixedControlsCardsId";
 
@@ -506,8 +507,8 @@ export const MixedControls = () => {
         </HvLeftControl>
         <HvRightControl hideSortBy>
           <HvLabel id="temp-label" htmlFor="tempFilter" label="Temperature:" />
-          {/* <HvSlider
-            style={{ width: "240px", zIndex: 40 }}
+          <HvSlider
+            style={{ width: "200px", zIndex: 40 }}
             id="tempFilter-mixed"
             hideInput
             onChange={onSliderChange}
@@ -520,7 +521,7 @@ export const MixedControls = () => {
                 "aria-controls": cardsId,
               },
             ]}
-          /> */}
+          />
         </HvRightControl>
       </HvControls>
       <HvSimpleGrid id={cardsId} cols={3}>
