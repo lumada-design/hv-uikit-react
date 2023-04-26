@@ -12,6 +12,12 @@
     },
     {
       "path": "../packages/shared/tsconfig.json"
+    },
+    {
+      "path": "../packages/lab/tsconfig.json"
+    },
+    {
+      "path": "../packages/code-editor/tsconfig.json"
     }
   ]
 }

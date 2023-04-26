@@ -21,7 +21,8 @@
       "@hitachivantara/uikit-react-lab": ["packages/lab/src"],
       "@hitachivantara/uikit-react-icons": ["packages/icons/bin"],
       "@hitachivantara/uikit-react-icons/dist/*": ["packages/icons/bin/*"],
-      "@hitachivantara/uikit-styles": ["packages/styles/src"]
+      "@hitachivantara/uikit-styles": ["packages/styles/src"],
+      "@hitachivantara/uikit-react-code-editor": ["packages/code-editor/src"]
     },
     "preserveSymlinks": true,
     "noImplicitAny": false
