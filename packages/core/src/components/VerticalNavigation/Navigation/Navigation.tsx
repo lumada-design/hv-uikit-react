@@ -229,6 +229,12 @@ export const HvVerticalNavigationTree = ({
         event.stopPropagation();
       } else {
         setSelected(selectedId);
+        setExpanded((prevState) => {
+          if (!isOpen) {
+            return [...prevState, ...pathToElement(data, selectedId)];
+          }
+          return [...prevState];
+        });
         setNavigationPopup(null);
         if (onChange) {
           onChange(event, selectedItem);

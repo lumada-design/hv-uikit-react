@@ -434,7 +434,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           onMouseDown={handleMouseDown}
           style={{
             paddingLeft:
-              (expandable || icon != null ? 0 : 10) +
+              (expandable || icon != null || !isOpen ? 0 : 10) +
               level * (collapsible ? 32 : 10),
           }}
           {...(treeviewMode
@@ -447,7 +447,11 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 role: "button",
                 tabIndex: selectable || expandable ? 0 : -1,
                 onKeyDown: handleKeyDown,
-                "aria-current": selectable && selected ? "page" : undefined,
+                "aria-current":
+                  (selectable && selected) ||
+                  (!isOpen && isChildSelected?.(nodeId))
+                    ? "page"
+                    : undefined,
                 "aria-expanded": expandable ? expanded : undefined,
                 "aria-controls": expandable ? setId(id, "group") : undefined,
                 "aria-label": payload?.label,
