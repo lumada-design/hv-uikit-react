@@ -1274,7 +1274,122 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
       >
         <div
           class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
-        />
+        >
+          <label
+            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-yrcxlf-getStyledComponent-StyledTypography e1tnpalo0"
+            for="tempFilter"
+            id="temp-label"
+          >
+            Temperature:
+          </label>
+          <div
+            class="HvSlider-root css-1tzm1r4-StyledFormElement e153xy1v6 HvFormElement-root"
+            id="tempFilter-controls"
+            style="width: 200px; z-index: 40;"
+          >
+            <div
+              class="HvSlider-sliderBase HvSlider-sliderContainer css-19d1hfv-StyledSliderContainer e153xy1v0"
+            >
+              <div
+                class="rc-slider HvSlider-sliderRoot css-o4hpnk-StyledSlider e153xy1v3 rc-slider-horizontal rc-slider-with-marks"
+              >
+                <div
+                  class="rc-slider-rail"
+                  style="height: 1px; z-index: -3;"
+                />
+                <div
+                  class="rc-slider-track"
+                  style="left: 0%; width: 0%; height: 3px; z-index: -1; margin-top: -1px;"
+                />
+                <div
+                  class="rc-slider-step"
+                >
+                  <span
+                    class="rc-slider-dot rc-slider-dot-active"
+                    style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                </div>
+                <div
+                  class="HvSlider-handleContainer css-a596pv-StyledTooltipContainer e153xy1v2"
+                >
+                  <div
+                    aria-controls="CustomControlsCardsId"
+                    aria-disabled="false"
+                    aria-label="temp-slider"
+                    aria-valuemax="70"
+                    aria-valuemin="25"
+                    aria-valuenow="25"
+                    class="rc-slider-handle HvSlider-handle css-rmjw4i-StyledTooltip e153xy1v1"
+                    id="tempFilter-controls-knob-0"
+                    role="slider"
+                    style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; width: 16px; height: 16px;"
+                    tabindex="0"
+                  />
+                </div>
+                <div
+                  class="rc-slider-mark"
+                >
+                  <span
+                    class="rc-slider-mark-text rc-slider-mark-text-active"
+                    style="left: 0%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    25
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 20%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    34
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 40%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    43
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 60%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    52
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 80%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    61
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 100%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    70
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -2143,7 +2258,122 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
       >
         <div
           class="HvRightControl-root css-binna-StyledRoot e16dy5r71"
-        />
+        >
+          <label
+            class="HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-yrcxlf-getStyledComponent-StyledTypography e1tnpalo0"
+            for="tempFilter"
+            id="temp-label"
+          >
+            Temperature:
+          </label>
+          <div
+            class="HvSlider-root css-1tzm1r4-StyledFormElement e153xy1v6 HvFormElement-root"
+            id="tempFilter-mixed"
+            style="width: 200px; z-index: 40;"
+          >
+            <div
+              class="HvSlider-sliderBase HvSlider-sliderContainer css-19d1hfv-StyledSliderContainer e153xy1v0"
+            >
+              <div
+                class="rc-slider HvSlider-sliderRoot css-o4hpnk-StyledSlider e153xy1v3 rc-slider-horizontal rc-slider-with-marks"
+              >
+                <div
+                  class="rc-slider-rail"
+                  style="height: 1px; z-index: -3;"
+                />
+                <div
+                  class="rc-slider-track"
+                  style="left: 0%; width: 0%; height: 3px; z-index: -1; margin-top: -1px;"
+                />
+                <div
+                  class="rc-slider-step"
+                >
+                  <span
+                    class="rc-slider-dot rc-slider-dot-active"
+                    style="left: 0%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 20%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 40%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 60%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 80%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                  <span
+                    class="rc-slider-dot"
+                    style="left: 100%; transform: translateX(-50%); position: absolute; bottom: -1px; margin-left: 0px; width: 1px; height: 4px; border-radius: 0%; cursor: pointer; vertical-align: middle; z-index: -3;"
+                  />
+                </div>
+                <div
+                  class="HvSlider-handleContainer css-a596pv-StyledTooltipContainer e153xy1v2"
+                >
+                  <div
+                    aria-controls="mixedControlsCardsId"
+                    aria-disabled="false"
+                    aria-label="temp-slider"
+                    aria-valuemax="70"
+                    aria-valuemin="25"
+                    aria-valuenow="25"
+                    class="rc-slider-handle HvSlider-handle css-rmjw4i-StyledTooltip e153xy1v1"
+                    id="tempFilter-mixed-knob-0"
+                    role="slider"
+                    style="left: 0%; transform: translateX(-50%); border-color: transparent; box-shadow: none; width: 16px; height: 16px;"
+                    tabindex="0"
+                  />
+                </div>
+                <div
+                  class="rc-slider-mark"
+                >
+                  <span
+                    class="rc-slider-mark-text rc-slider-mark-text-active"
+                    style="left: 0%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    25
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 20%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    34
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 40%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    43
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 60%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    52
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 80%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    61
+                  </span>
+                  <span
+                    class="rc-slider-mark-text"
+                    style="left: 100%; transform: translateX(-50%); letter-spacing: var(--uikit-typography-caption1-letterSpacing); line-height: var(--uikit-typography-caption1-lineHeight); font-weight: var(--uikit-typography-caption1-fontWeight); text-decoration: var(--uikit-typography-caption1-textDecoration); font-family: var(--uikit-fontFamily-body); top: -2px; z-index: -1;"
+                  >
+                    70
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div

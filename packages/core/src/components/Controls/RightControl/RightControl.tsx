@@ -73,6 +73,7 @@ export const HvRightControl = ({
           {...sortProps}
         />
       )}
+      {children}
     </StyledRoot>
   );
 };
