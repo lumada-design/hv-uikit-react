@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import {
-  Paper as MuiPaper,
   paperClasses as MuiPaperClasses,
   Backdrop as MuiBackdrop,
 } from "@mui/material";
@@ -9,32 +8,38 @@ import { transientOptions } from "@core/utils/transientOptions";
 import fade from "@core/utils/hexToRgbA";
 import { HvButton, HvButtonProps } from "@core/components";
 import { forwardRef, Ref } from "react";
+import { CSSInterpolation } from "@emotion/serialize";
 
-export const StyledPaper = styled(
-  MuiPaper,
-  transientOptions
-)(({ $fullscreen }: { $fullscreen: boolean }) => ({
-  color: theme.colors.secondary,
-  flex: $fullscreen ? "1" : "0 0 83.3333333%",
-  backgroundColor: theme.colors.atmo1,
-  padding: "0px",
-  overflow: "auto",
-  boxShadow: ["none", "0 2px 12px rgba(65,65,65,0.12)"],
-  borderRadius: theme.dialog.borderRadius,
-  ...(!$fullscreen && {
-    maxHeight: `calc(100% - (2 * ${theme.dialog.margin}))`,
-    display: "flex",
-    flexDirection: "column",
-  }),
-  "& svg *.color0": {
-    fill: theme.colors.secondary,
+export const styles: { [key: string]: CSSInterpolation } = {
+  paper: {
+    [`&.MuiDialog-paper`]: {
+      maxHeight: `calc(100% - (2 * ${theme.dialog.margin}))`,
+      display: "flex",
+      flexDirection: "column",
+      color: theme.colors.secondary,
+      flex: "0 0 83.3333333%",
+      backgroundColor: theme.colors.atmo1,
+      padding: "0px",
+      overflow: "auto",
+      boxShadow: ["none", "0 2px 12px rgba(65,65,65,0.12)"],
+      borderRadius: theme.dialog.borderRadius,
+      [`&.${MuiPaperClasses.root}`]: {
+        width: "inherit",
+        minWidth: "33.3333333%",
+        maxWidth: "83.3333333%",
+        "&.fullscreen": {
+          flex: "1",
+          borderRadius: "0",
+          width: "inherit",
+          minWidth: "100%",
+          maxWidth: "100%",
+          minHeight: "100%",
+          maxHeight: "100%",
+        },
+      },
+    },
   },
-  [`&.${MuiPaperClasses.root}`]: {
-    width: "inherit",
-    minWidth: $fullscreen ? "100%" : "33.3333333%",
-    maxWidth: $fullscreen ? "100%" : "83.3333333%",
-  },
-}));
+};
 
 export const StyledBackdrop = styled(
   MuiBackdrop,

@@ -246,7 +246,6 @@ export const HvStepNavigation = ({
           TITLE_MARGIN,
         SEPARATOR_WIDTH * (steps.length - 1) + stepsWidth
       );
-    // const next = theme.breakpoints.keys.find((_, index, self) =>
     const next = Object.keys(theme.breakpoints.values).find((_, index, self) =>
       index - 1 >= 0 ? self[index - 1] === breakpoint : false
     );
