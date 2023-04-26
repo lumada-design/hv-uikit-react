@@ -11,6 +11,8 @@ export interface StyledButtonProps {
   $iconOnly?: Boolean;
   $overrideIconColors?: Boolean;
   $disabled?: Boolean;
+  $startIcon?: Boolean;
+  $endIcon?: Boolean;
 }
 
 export const StyledContentDiv = styled.div<{}>({
@@ -21,8 +23,8 @@ export const StyledContentDiv = styled.div<{}>({
 });
 
 export const StyledIconSpan = styled.span<{}>({
-  marginRight: theme.button.marginIconRight,
-  marginLeft: theme.button.marginIconLeft,
+  display: "flex",
+  gap: theme.space.sm,
 });
 
 export const StyledChildren = styled.span<{}>({
@@ -41,6 +43,8 @@ export const StyledButton = styled(
     $radius,
     $overrideIconColors,
     $disabled,
+    $startIcon,
+    $endIcon,
   }: StyledButtonProps) => ({
     display: "inline-flex",
     justifyContent: "center",
@@ -65,6 +69,13 @@ export const StyledButton = styled(
     height: "32px",
     borderRadius: theme.button.borderRadius,
     padding: theme.button.padding,
+
+    ...($startIcon && {
+      paddingLeft: theme.space.xs,
+    }),
+    ...($endIcon && {
+      paddingRight: theme.space.xs,
+    }),
 
     ...($overrideIconColors &&
       $variant === "primary" && {

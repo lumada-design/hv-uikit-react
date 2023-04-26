@@ -25,15 +25,15 @@ describe("Button", () => {
       const { getAllByRole } = render(<Icons onClick={() => {}} />);
 
       const playButton = getAllByRole("button", { name: "Play" });
-      expect(playButton.length).toEqual(2);
+      expect(playButton.length).toEqual(3);
       expect(playButton[0]).toBeInTheDocument();
       expect(playButton[1]).toBeInTheDocument();
       const pauseButton = getAllByRole("button", { name: "Pause" });
-      expect(pauseButton.length).toEqual(2);
+      expect(pauseButton.length).toEqual(3);
       expect(pauseButton[0]).toBeInTheDocument();
       expect(pauseButton[1]).toBeInTheDocument();
       const stopButton = getAllByRole("button", { name: "Stop" });
-      expect(stopButton.length).toEqual(2);
+      expect(stopButton.length).toEqual(3);
       expect(stopButton[0]).toBeInTheDocument();
       expect(stopButton[1]).toBeInTheDocument();
     });

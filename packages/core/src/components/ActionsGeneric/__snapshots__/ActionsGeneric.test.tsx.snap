@@ -13,7 +13,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -48,7 +48,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -83,7 +83,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -118,7 +118,7 @@ exports[`ActionsGeneric > should render correctly 1`] = `
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
