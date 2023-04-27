@@ -12,7 +12,7 @@ import wizardTitleClasses, { HvWizardTitleClasses } from "./wizardTitleClasses";
 import { styles } from "./WizardTitle.styles";
 import { HvStepNavigation, HvStepNavigationProps } from "../..";
 import { useContext, useEffect, useState } from "react";
-import { WizardContext } from "../WizardContext/WizardContext";
+import { HvWizardContext } from "../WizardContext/WizardContext";
 import { HvStepProps } from "components/StepNavigation/DefaultNavigation/Step/Step";
 
 export interface HvWizardTitleProps extends HvBaseProps {
@@ -53,7 +53,9 @@ export const HvWizardTitle = ({
   customStep = {},
 }: HvWizardTitleProps) => {
   const { context, summary, setSummary, tab, setTab } =
-    useContext(WizardContext);
+    useContext(HvWizardContext);
+
+  console.log(context);
 
   const [steps, setSteps] = useState<HvStepProps[]>([]);
 
@@ -72,11 +74,13 @@ export const HvWizardTitle = ({
 
     if (contextArray.length) {
       const updatedSteps: HvStepProps[] = contextArray.map(
-        ([, childState], index) => ({
-          title: childState.name ?? `${index + 1}`,
-          state: switchTabState(childState, tab, index),
-          onClick: () => setTab(index),
-        })
+        ([, childState], index) => {
+          return {
+            title: childState?.name ?? `${index + 1}`,
+            state: switchTabState(childState, tab, index),
+            onClick: () => setTab(index),
+          };
+        }
       );
 
       setSteps(updatedSteps);

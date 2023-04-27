@@ -8,7 +8,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import mockText from "./mockData";
-import { WizardContext } from "./WizardContext/WizardContext";
+import { HvWizardContext } from "./WizardContext/WizardContext";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
@@ -18,11 +18,11 @@ const meta: Meta<typeof HvWizard> = {
 export default meta;
 
 const RandomFormComponent = () => {
-  const { context, updateContext, tab } = useContext(WizardContext);
+  const { context, updateContext, tab } = useContext(HvWizardContext);
   const [formData, setFormData] = useState({});
 
-  const [text, setText] = useState(context[tab].form.name ?? "");
-  const [isValid, setIsValid] = useState(!!context[tab].valid);
+  const [text, setText] = useState(context[tab]?.form.name ?? "");
+  const [isValid, setIsValid] = useState(!!context[tab]?.valid);
 
   const parseStatus = () => {
     return isValid ? "valid" : "invalid";
@@ -147,4 +147,61 @@ export const Main: StoryObj<HvWizardProps> = {
       </>
     );
   },
+};
+
+export const Skippable = () => {
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const title = "Cross browser test";
+  const labels = {
+    previous: "Previous Step",
+    next: "Next Step",
+  };
+  const mockSubmit = useCallback((context) => {
+    console.log("MainStory::mockSubmit", { context });
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setShow(false);
+    }, 2000);
+  }, []);
+  return (
+    <>
+      <HvButton onClick={() => setShow(true)}>Show Wizard</HvButton>
+      <HvWizard
+        open={show}
+        onClose={() => setShow(false)}
+        skippable
+        title={title}
+        hasSummary={false}
+        labels={labels}
+        fixedHeight={false}
+        loading={loading}
+        handleSubmit={mockSubmit}
+      >
+        {/* @ts-ignore */}
+        <div name="Review Model">
+          <HvTypography variant="mTitle" component="h2">
+            1. API details
+          </HvTypography>
+          <HvTypography variant="normalText" component="p">
+            Some text explaining what this section is about. It can be multiline
+            but 2 lines are the maximum recommended.
+          </HvTypography>
+        </div>
+        {/* @ts-ignore */}
+        <RandomFormComponent name="randomForm" mustValidate />
+        {/* @ts-ignore */}
+        <div name="Review Parameters">
+          <HvTypography variant="mTitle" component="h2">
+            2. Deployment details
+          </HvTypography>
+          <br />
+          {mockText}
+        </div>
+        {/* @ts-ignore */}
+        <div name="last">Last</div>
+      </HvWizard>
+    </>
+  );
 };

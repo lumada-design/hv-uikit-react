@@ -6,7 +6,8 @@ import React, {
   useCallback,
 } from "react";
 
-export type ContextProp = {
+export type HvWizardTab = {
+  name?: string;
   valid?: boolean;
   mustValidate?: boolean;
   touched?: boolean;
@@ -14,18 +15,22 @@ export type ContextProp = {
   children?: React.ReactNode;
 };
 
-type WizardContextProp = {
-  context: ContextProp;
-  updateContext: (values?: any) => void;
+export type HvWizardTabs<T extends HvWizardTab> = {
+  [tab in number]?: T;
+};
+
+type HvWizardContextProp = {
+  context: HvWizardTabs<HvWizardTab>;
+  updateContext: (values?: HvWizardTabs<HvWizardTab>) => void;
   summary: any;
   setSummary: (oldSummary?: any) => void;
   tab: any;
   setTab: Dispatch<SetStateAction<number>>;
 };
 
-export const WizardContext = createContext<WizardContextProp>({
+export const HvWizardContext = createContext<HvWizardContextProp>({
   context: {},
-  updateContext: ({}) => {},
+  updateContext: () => {},
   summary: undefined,
   setSummary: ({}) => {},
   tab: 0,
@@ -47,7 +52,7 @@ const WizardProvider = ({ children }) => {
   );
 
   return (
-    <WizardContext.Provider
+    <HvWizardContext.Provider
       value={{
         context,
         updateContext,
@@ -58,7 +63,7 @@ const WizardProvider = ({ children }) => {
       }}
     >
       {children}
-    </WizardContext.Provider>
+    </HvWizardContext.Provider>
   );
 };
 

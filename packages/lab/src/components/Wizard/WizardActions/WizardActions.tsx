@@ -12,7 +12,7 @@ import wizardActionsClasses, {
   HvWizardActionsClasses,
 } from "./wizardActionsClasses";
 import { styles } from "./WizardActions.styles";
-import { WizardContext } from "../WizardContext/WizardContext";
+import { HvWizardContext } from "../WizardContext/WizardContext";
 
 export interface HvWizardActionsProps extends HvBaseProps {
   /** Current tab to check if it's last page or first to disable previous button and swap between next and submit button. */
@@ -61,7 +61,7 @@ export const HvWizardActions = ({
     submit: "Submit",
   },
 }: HvWizardActionsProps) => {
-  const { context, updateContext, tab, setTab } = useContext(WizardContext);
+  const { context, updateContext, tab, setTab } = useContext(HvWizardContext);
   const [pages, setPages] = useState(0);
   const [canSubmit, setCanSubmit] = useState(false);
 
@@ -71,7 +71,7 @@ export const HvWizardActions = ({
       setPages(contextEntries.length);
 
       const validWizard = Object.entries(context).every(
-        ([, value]) => value.valid
+        ([, value]) => value?.valid
       );
       if (validWizard !== canSubmit) {
         setCanSubmit(validWizard);
@@ -85,8 +85,9 @@ export const HvWizardActions = ({
   const handleSkip = useCallback(() => {
     const skippedContext = Object.entries(context).map(([, child]) => ({
       ...child,
-      valid: child.valid !== false,
+      valid: child?.valid !== false,
     }));
+
     updateContext(skippedContext);
     setTab(lastPage);
   }, [setTab, context, lastPage, updateContext]);
@@ -95,6 +96,17 @@ export const HvWizardActions = ({
     () => handleSubmit(context),
     [handleSubmit, context]
   );
+
+  const onCloseHander = useCallback((event) => {
+    const clearContext = Object.entries(context).map(([, child]) => ({
+      ...child,
+      touched: false,
+    }));
+
+    updateContext(clearContext);
+    setTab(0);
+    handleClose?.(event);
+  }, []);
 
   return (
     <ClassNames>
@@ -109,7 +121,7 @@ export const HvWizardActions = ({
           <HvGrid>
             <HvButton
               variant="secondaryGhost"
-              onClick={handleClose}
+              onClick={onCloseHander}
               className={clsx(
                 classes?.buttonWidth,
                 wizardActionsClasses.buttonWidth,
@@ -151,10 +163,8 @@ export const HvWizardActions = ({
               onClick={() => setTab((t) => t - 1)}
               startIcon={<Backwards />}
             >
-              {/* <Backwards /> */}
               {`${labels.previous ?? "Previous"}`}
             </HvButton>
-
             {isLastPage ? (
               <HvButton
                 variant="primary"

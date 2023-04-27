@@ -1,8 +1,13 @@
 import { CSSInterpolation } from "@emotion/serialize";
+import { theme } from "@hitachivantara/uikit-react-core";
 
 export const styles: { [key: string]: CSSInterpolation } = {
   buttonWidth: {
     width: 120,
+    "& span": {
+      whiteSpace: "normal",
+      lineHeight: theme.lineHeights.sm,
+    },
   },
   actionsContainer: {
     display: "flex",

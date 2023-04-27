@@ -13,7 +13,11 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { ContextProp, WizardContext } from "../WizardContext/WizardContext";
+import {
+  HvWizardTabs,
+  HvWizardTab,
+  HvWizardContext,
+} from "../WizardContext/WizardContext";
 import { LoadingContainer } from "./LoadingContainer";
 
 export interface HvWizardContentProps extends HvBaseProps {
@@ -29,7 +33,7 @@ export interface HvWizardContentProps extends HvBaseProps {
   classes?: HvWizardContentClasses;
 }
 
-type ChildElement = React.ReactElement<ContextProp>;
+type ChildElement = React.ReactElement<HvWizardTabs<HvWizardTab>>;
 
 const DRAWER_PERCENTAGE = 0.3;
 const DRAWER_MIN_WIDTH = 280;
@@ -45,7 +49,10 @@ export const HvWizardContent = ({
 
   const initialContext = arrayChildren.reduce(
     (acc, child: ChildElement, index) => {
-      const invalid = child.props.mustValidate === true ? false : null;
+      const invalid =
+        "mustValidate" in child.props && child.props.mustValidate === true
+          ? false
+          : null;
       const valid = invalid ?? (index === 0 || null);
       return {
         ...acc,
@@ -55,7 +62,7 @@ export const HvWizardContent = ({
     {}
   );
 
-  const { context, updateContext, summary, tab } = useContext(WizardContext);
+  const { context, updateContext, summary, tab } = useContext(HvWizardContext);
 
   const summaryRef = useRef<HTMLElement>();
   const resizedRef = useRef({ height: 0, width: 0 });
@@ -109,7 +116,7 @@ export const HvWizardContent = ({
                 [key]: {
                   ...childState,
                   touched: true,
-                  valid: childState.valid ?? true,
+                  valid: childState?.valid ?? true,
                 },
               }
             : { [key]: childState }),
