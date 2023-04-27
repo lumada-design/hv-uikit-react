@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.1.3...@hitachivantara/uikit-react-core@5.2.0) (2023-04-27)
+
+### Bug Fixes
+
+- missing children in right controls ([8fa5ed4](https://github.com/lumada-design/hv-uikit-react/commit/8fa5ed422fb6a794cedca4da1d951422a95197c6))
+- multi button and button updated because of wrong secondarySubtle border color ([3ee1564](https://github.com/lumada-design/hv-uikit-react/commit/3ee1564800bdc27742fd69cf37efd7107f092899))
+- vertical navigation hover color ([#3298](https://github.com/lumada-design/hv-uikit-react/issues/3298)) ([79dd14d](https://github.com/lumada-design/hv-uikit-react/commit/79dd14d37908efcdc50ab17c75d93ace7410174a))
+
+### Features
+
+- **FilterGroup:** add FilterGroup component ([9fecace](https://github.com/lumada-design/hv-uikit-react/commit/9fecacedf6f8fb6bd834ee3ebc4afd2573fba9c7))
+
 ## [5.1.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.1.2...@hitachivantara/uikit-react-core@5.1.3) (2023-04-26)
 
 ### Bug Fixes

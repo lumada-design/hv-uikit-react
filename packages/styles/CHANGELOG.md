@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.2.0 (2023-04-27)
+
+### Bug Fixes
+
+- missing shad1 color added for DS3 ([06e3ee8](https://github.com/lumada-design/hv-uikit-react/commit/06e3ee8dac334c0eeccf79ec3f328e1b9bf65704))
+- multi button and button updated because of wrong secondarySubtle border color ([3ee1564](https://github.com/lumada-design/hv-uikit-react/commit/3ee1564800bdc27742fd69cf37efd7107f092899))
+
+### Features
+
+- **FilterGroup:** add FilterGroup component ([9fecace](https://github.com/lumada-design/hv-uikit-react/commit/9fecacedf6f8fb6bd834ee3ebc4afd2573fba9c7))
+
 ## [5.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.1.0...@hitachivantara/uikit-styles@5.1.1) (2023-04-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
