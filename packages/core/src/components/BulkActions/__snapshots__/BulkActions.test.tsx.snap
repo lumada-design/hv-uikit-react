@@ -72,7 +72,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
       class="e1nka4cc1 HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer css-tnxbad-StyledRoot-StyledGenericActions e4fkrgz1"
     >
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-octfpv-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
@@ -108,7 +108,7 @@ exports[`BulkActions > With actions > should render correctly 1`] = `
         </div>
       </button>
       <button
-        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-octfpv-StyledButton-StyledButton e138pvrm0"
+        class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
         disabled=""
       >
         <div
