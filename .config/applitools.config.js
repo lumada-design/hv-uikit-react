@@ -12,7 +12,7 @@ module.exports = {
     ignoreHTTPSErrors: true,
   },
 
-  appName: "Next UI Kit",
+  appName: "UI Kit",
   batchId: process.env.APPLITOOLS_BATCH_ID,
 
   browser: [
