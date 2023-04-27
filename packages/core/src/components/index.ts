@@ -73,3 +73,4 @@ export * from "./VerticalNavigation";
 export * from "./Slider";
 export * from "./FilterGroup";
 export * from "./DatePicker";
+export * from "./ScrollTo";

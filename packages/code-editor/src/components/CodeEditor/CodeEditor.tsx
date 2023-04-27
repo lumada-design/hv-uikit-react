@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export interface HvCodeEditorProps extends MonacoEditorProps {
   /** The properties of the Monaco editor. */
   editorProps?: MonacoEditorProps;
-  /* A Jss Object used to override or extend the styles applied. */
+  /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCodeEditorClasses;
   /** The initial value of the code editor */
   defaultValue?: string;

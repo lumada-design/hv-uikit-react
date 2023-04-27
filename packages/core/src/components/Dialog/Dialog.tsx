@@ -138,7 +138,7 @@ export const HvDialog = ({
   const closeButtonDisplay = () => <Close role="presentation" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "top", null, null, null)
+    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
   return (

@@ -291,6 +291,27 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     dropdownPlaceholderColor: "string",
     placeholderVariant: "string",
   },
+  scrollTo: {
+    horizontal: {
+      dotDisplay: "string",
+      buttonHeight: "string",
+      buttonHoverBackgroundColor: "string",
+      buttonBottomBorder: "string",
+      selectedButtonBottomBorder: "string",
+      textPadding: "string",
+      textMaxWidth: "string",
+    },
+    dotRootSize: "string",
+    dotRootRadius: "string",
+    dotHoverBackgroundColor: "string",
+    dotHoverColor: "string",
+    dotHoverSize: "string",
+    dotNotSelectedColor: "string",
+    dotNotSelectedSize: "string",
+    dotSelectedSize: "string",
+    backgroundColorOpacity: "string",
+    backgroundColorBlur: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

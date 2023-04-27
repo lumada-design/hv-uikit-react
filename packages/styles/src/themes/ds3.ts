@@ -507,6 +507,27 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     dropdownPlaceholderColor: theme.colors.secondary_60,
     placeholderVariant: "body",
   },
+  scrollTo: {
+    horizontal: {
+      dotDisplay: "none",
+      buttonHeight: "32px",
+      buttonHoverBackgroundColor: theme.colors.atmo3,
+      buttonBottomBorder: "2px solid transparent",
+      selectedButtonBottomBorder: `2px solid ${theme.colors.secondary}`,
+      textPadding: "8px 10px",
+      textMaxWidth: "180px",
+    },
+    dotRootSize: "32px",
+    dotRootRadius: "0%",
+    dotHoverBackgroundColor: theme.colors.atmo3,
+    dotHoverColor: theme.colors.atmo4,
+    dotHoverSize: "10px",
+    dotNotSelectedColor: theme.colors.atmo4,
+    dotNotSelectedSize: "6px",
+    dotSelectedSize: 10,
+    backgroundColorOpacity: 0.8,
+    backgroundColorBlur: "4px",
+  },
 }));
 
 export default ds3;

@@ -14,6 +14,6 @@ const hideTooltip = (evt) => {
 export const wrapperTooltip = (hasTooltips, Component, label) => {
   const ComponentFunction = () => Component;
   return hasTooltips
-    ? withTooltip(ComponentFunction, label, "top", hideTooltip, {}, {})
+    ? withTooltip(ComponentFunction, label, "top", hideTooltip)
     : ComponentFunction;
 };

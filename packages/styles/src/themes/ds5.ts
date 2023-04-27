@@ -450,6 +450,27 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     dropdownPlaceholderColor: theme.colors.secondary_80,
     placeholderVariant: "label",
   },
+  scrollTo: {
+    horizontal: {
+      dotDisplay: "flex",
+      buttonHeight: "48px",
+      buttonHoverBackgroundColor: "transparent",
+      buttonBottomBorder: "none",
+      selectedButtonBottomBorder: "none",
+      textPadding: "3px 10px",
+      textMaxWidth: "120px",
+    },
+    dotRootSize: "16px",
+    dotRootRadius: "50%",
+    dotHoverBackgroundColor: theme.colors.primary_20,
+    dotHoverColor: theme.colors.secondary,
+    dotHoverSize: "6px",
+    dotNotSelectedColor: theme.colors.secondary_60,
+    dotNotSelectedSize: "4px",
+    dotSelectedSize: 6,
+    backgroundColorOpacity: 0.9,
+    backgroundColorBlur: "4px",
+  },
 }));
 
 export default ds5;
