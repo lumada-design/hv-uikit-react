@@ -14,9 +14,6 @@ const selected = () => ({
 
 const hover = () => ({
   background: theme.verticalNavigation.hoverColor,
-  "& *": {
-    background: theme.verticalNavigation.hoverColor,
-  },
 });
 
 export const StyledGroup = styled("ul")({
