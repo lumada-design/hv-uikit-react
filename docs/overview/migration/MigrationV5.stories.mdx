@@ -38,6 +38,7 @@ Here's what there is to know about this migration:
   - [Vertical navigation](#vertical-navigation)
   - [Table](#table)
   - [Slider](#slider)
+  - [Code editor](#code-editor)
 
 ## React packages <a id="react-packages" />
 
@@ -51,7 +52,6 @@ system not compatible with v4.x components. Thus, if your application relies on 
 application at the moment since their development are still in progress. Over time, we will align these packages with v5 and add the missing components.
 
 - `@hitachivantara/uikit-react-viz`
-- `@hitachivantara/uikit-react-code-editor`
 - The following components from `@hitachivantara/uikit-react-lab` are missing:
   - Color Picker
   - Drawer
@@ -656,5 +656,9 @@ The following types and utilities were reviewed and type definitions changes wer
 - `HvCellInstance`
 
 ### Slider <a id="slider" />
+
+The `theme` property was removed since the component accesses the theme object internally.
+
+### Code editor <a id="code-editor" />
 
 The `theme` property was removed since the component accesses the theme object internally.
