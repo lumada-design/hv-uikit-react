@@ -263,9 +263,6 @@ export const HvDatePicker = ({
 
   const [validationMessage] = useControlled(statusMessage, "Required");
 
-  // const localeFromProvider = useLocale();
-
-  // const locale = localeProp || localeFromProvider;
   const locale = localeProp || "en-US";
 
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -513,7 +510,7 @@ export const HvDatePicker = ({
   const renderInput = (dateString) =>
     styledTypography(
       dateString,
-      "label",
+      theme.datePicker.placeholderVariant,
       (dateString || placeholder) === undefined ? "" : dateString || placeholder
     );
 
@@ -556,7 +553,6 @@ export const HvDatePicker = ({
             classes?.root,
             css(styles.root)
           )}
-          // locale={locale}
           readOnly={readOnly}
           {...others}
         >
