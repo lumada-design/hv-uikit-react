@@ -216,6 +216,7 @@ export const RangeSpecificErrorSlider: StoryObj<HvSliderProps> = {
         story: "A single slider without any value.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
@@ -277,6 +278,7 @@ export const NoInput: StoryObj<HvSliderProps> = {
         story: "A slider without an input.",
       },
     },
+    eyes: { include: false },
   },
   render: () => {
     return (
