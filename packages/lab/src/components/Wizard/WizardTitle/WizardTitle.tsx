@@ -55,8 +55,6 @@ export const HvWizardTitle = ({
   const { context, summary, setSummary, tab, setTab } =
     useContext(HvWizardContext);
 
-  console.log(context);
-
   const [steps, setSteps] = useState<HvStepProps[]>([]);
 
   useEffect(() => {
@@ -154,8 +152,9 @@ export const HvWizardTitle = ({
                   ),
                 }}
                 onClick={toggleSummary}
+                startIcon={<Report />}
               >
-                <Report /> {`${labels.summary ?? "Summary"}`}
+                {`${labels.summary ?? "Summary"}`}
               </HvButton>
             )}
           </HvGrid>

@@ -15,10 +15,6 @@ import { styles } from "./WizardActions.styles";
 import { HvWizardContext } from "../WizardContext/WizardContext";
 
 export interface HvWizardActionsProps extends HvBaseProps {
-  /** Current tab to check if it's last page or first to disable previous button and swap between next and submit button. */
-  tab?: number;
-  /** Function to change the tab when pressing previous and next buttons. */
-  changeTab?: any;
   /** Function to handle the cancel button. */
   handleClose: (
     event: React.SyntheticEvent,

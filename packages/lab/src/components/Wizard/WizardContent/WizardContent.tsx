@@ -45,6 +45,8 @@ export const HvWizardContent = ({
   children,
   summaryContent,
 }: HvWizardContentProps) => {
+  const { context, updateContext, summary, tab } = useContext(HvWizardContext);
+
   const arrayChildren = React.Children.toArray(children) as ChildElement[];
 
   const initialContext = arrayChildren.reduce(
@@ -61,8 +63,6 @@ export const HvWizardContent = ({
     },
     {}
   );
-
-  const { context, updateContext, summary, tab } = useContext(HvWizardContext);
 
   const summaryRef = useRef<HTMLElement>();
   const resizedRef = useRef({ height: 0, width: 0 });

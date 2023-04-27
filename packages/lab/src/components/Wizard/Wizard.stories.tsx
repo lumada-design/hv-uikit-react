@@ -2,13 +2,17 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HvWizard, HvWizardProps } from "./Wizard";
 import { useCallback, useContext, useState } from "react";
 import {
+  HvAccordion,
   HvButton,
   HvGrid,
   HvInput,
+  HvListContainer,
+  HvListItem,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import mockText from "./mockData";
 import { HvWizardContext } from "./WizardContext/WizardContext";
+import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
@@ -201,6 +205,105 @@ export const Skippable = () => {
         </div>
         {/* @ts-ignore */}
         <div name="last">Last</div>
+      </HvWizard>
+    </>
+  );
+};
+
+export const ComponentBreakDown = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = useCallback((evt, reason) => {
+    if (reason !== "backdropClick") {
+      setOpen(false);
+    }
+  }, []);
+
+  const handleSubmit = useCallback((newContext) => {
+    console.log(newContext);
+    setOpen(false);
+  }, []);
+
+  const classes = {
+    summaryContainer: css({
+      padding: 16,
+    }),
+    accordionSpacing: css({
+      "& > li": {
+        paddingLeft: 32,
+      },
+    }),
+  };
+
+  const summaryContent = (
+    <div className={classes.summaryContainer}>
+      <HvAccordion id="item1" label="Basics" headingLevel={3}>
+        <HvListContainer
+          className={classes.accordionSpacing}
+          interactive
+          condensed
+        >
+          <HvListItem>Views</HvListItem>
+          <HvListItem>Parameters</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      <HvAccordion id="item1" label="Code Base" headingLevel={3}>
+        <HvListContainer
+          className={classes.accordionSpacing}
+          interactive
+          condensed
+        >
+          <HvListItem>Settings</HvListItem>
+          <HvListItem>Network</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      <HvAccordion id="item1" label="Execution" headingLevel={3}>
+        <HvListContainer
+          className={classes.accordionSpacing}
+          interactive
+          condensed
+        >
+          <HvListItem>
+            <HvTypography variant="highlightText" component="span">
+              Status
+            </HvTypography>{" "}
+            Open
+          </HvListItem>
+          <HvListItem>
+            <HvTypography variant="highlightText" component="span">
+              Date
+            </HvTypography>{" "}
+            12/08/2018
+          </HvListItem>
+          <HvListItem>
+            <HvTypography variant="highlightText" component="span">
+              Assignee
+            </HvTypography>{" "}
+            Management
+          </HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      {mockText}
+    </div>
+  );
+
+  return (
+    <>
+      <HvButton onClick={() => setOpen(true)}>Show Wizard</HvButton>
+      <HvWizard
+        open={open}
+        hasSummary
+        summaryContent={summaryContent}
+        onClose={handleClose}
+        handleSubmit={handleSubmit}
+        title={"Super component"}
+        customStep={{ width: { xs: 200, sm: 250, md: 420, lg: 650 } }}
+      >
+        <div>1. Content</div>
+        <div>
+          <h2>2. Description</h2>
+          <p>{mockText}</p>
+        </div>
       </HvWizard>
     </>
   );
