@@ -64,7 +64,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
             <div
               aria-current="page"
               aria-label="Overview"
-              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-00-button"
               role="button"
               style="padding-left: 10px;"
@@ -88,7 +88,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           >
             <div
               aria-label="Analytics"
-              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-01-button"
               role="button"
               style="padding-left: 10px;"
@@ -114,7 +114,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               aria-controls="hvtreeview3-02-group"
               aria-expanded="false"
               aria-label="Storage"
-              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-02-button"
               role="button"
               style="padding-left: 0px;"
@@ -161,7 +161,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   aria-controls="hvtreeview3-02-01-group"
                   aria-expanded="false"
                   aria-label="Cloud"
-                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                   id="hvtreeview3-02-01-button"
                   role="button"
                   style="padding-left: 32px;"
@@ -206,7 +206,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   >
                     <a
                       aria-label="Servers"
-                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                       href="https://www.hitachivantara.com/en-us/news.html"
                       id="hvtreeview3-02-01-01-button"
                       role="button"
@@ -231,7 +231,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   >
                     <a
                       aria-label="HCP Anywhere"
-                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                      class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-link er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                       href="/?path=/story/structure-vertical-navigation--main"
                       id="hvtreeview3-02-01-02-button"
                       role="button"
@@ -256,7 +256,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   >
                     <div
                       aria-label="This Computer"
-                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1k3b862-getStyledComponent-StyledContent e1tnpalo0"
+                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1i34dze-getStyledComponent-StyledContent e1tnpalo0"
                       id="hvtreeview3-02-01-03-button"
                       role="button"
                       style="padding-left: 74px;"
@@ -286,7 +286,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
               aria-controls="hvtreeview3-03-group"
               aria-expanded="false"
               aria-label="Administration"
-              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+              class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
               id="hvtreeview3-03-button"
               role="button"
               style="padding-left: 0px;"
@@ -333,7 +333,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   aria-controls="hvtreeview3-03-01-group"
                   aria-expanded="false"
                   aria-label="Rest API"
-                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                  class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                   id="hvtreeview3-03-01-button"
                   role="button"
                   style="padding-left: 32px;"
@@ -378,7 +378,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
                   >
                     <div
                       aria-label="Log Bundle"
-                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                      class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                       id="hvtreeview3-03-01-01-button"
                       role="button"
                       style="padding-left: 74px;"
@@ -406,7 +406,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
         class="HvVerticalNavigationActions-root css-btrerb-StyledRoot e11q2fjk0"
       >
         <div
-          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-mbo5qa-getStyledComponent-StyledAction e1tnpalo0"
+          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-16jdk26-getStyledComponent-StyledAction e1tnpalo0"
           role="button"
           tabindex="0"
         >
@@ -431,7 +431,7 @@ exports[`VerticalNavigation > should render correctly 1`] = `
           Profile
         </div>
         <div
-          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-mbo5qa-getStyledComponent-StyledAction e1tnpalo0"
+          class="HvVerticalNavigationAction-action e13j4on70 HvTypography-root HvTypography-body css-16jdk26-getStyledComponent-StyledAction e1tnpalo0"
           role="button"
           tabindex="0"
         >

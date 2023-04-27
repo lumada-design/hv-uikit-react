@@ -11,7 +11,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
       id="hvtreeview2-1"
     >
       <div
-        class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+        class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
         id="hvtreeview2-1-button"
         role="button"
         style="padding-left: 0px;"
@@ -50,7 +50,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           id="hvtreeview2-2"
         >
           <div
-            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
             id="hvtreeview2-2-button"
             role="button"
             style="padding-left: 20px;"
@@ -70,7 +70,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
               id="hvtreeview2-3"
             >
               <div
-                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1k3b862-getStyledComponent-StyledContent e1tnpalo0"
+                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-placeholderText css-1i34dze-getStyledComponent-StyledContent e1tnpalo0"
                 id="hvtreeview2-3-button"
                 role="button"
                 style="padding-left: 30px;"
@@ -87,7 +87,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
               id="hvtreeview2-4"
             >
               <div
-                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                 id="hvtreeview2-4-button"
                 role="button"
                 style="padding-left: 30px;"
@@ -104,7 +104,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
               id="hvtreeview2-5"
             >
               <div
-                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                 id="hvtreeview2-5-button"
                 role="button"
                 style="padding-left: 30px;"
@@ -121,7 +121,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
               id="hvtreeview2-6"
             >
               <div
-                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+                class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
                 id="hvtreeview2-6-button"
                 role="button"
                 style="padding-left: 30px;"
@@ -143,7 +143,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
       id="hvtreeview2-7"
     >
       <div
-        class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+        class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
         id="hvtreeview2-7-button"
         role="button"
         style="padding-left: 0px;"
@@ -182,7 +182,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           id="hvtreeview2-8"
         >
           <div
-            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
             id="hvtreeview2-8-button"
             role="button"
             style="padding-left: 20px;"
@@ -199,7 +199,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           id="hvtreeview2-9"
         >
           <div
-            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
             id="hvtreeview2-9-button"
             role="button"
             style="padding-left: 20px;"
@@ -216,7 +216,7 @@ exports[`VerticalNavigation - Actions > should render correctly 1`] = `
           id="hvtreeview2-10"
         >
           <div
-            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-1gfazkx-getStyledComponent-StyledContent e1tnpalo0"
+            class="HvVerticalNavigationTreeViewItem-content er1eqbm0 HvTypography-root HvTypography-body css-9vz4rk-getStyledComponent-StyledContent e1tnpalo0"
             id="hvtreeview2-10-button"
             role="button"
             style="padding-left: 20px;"

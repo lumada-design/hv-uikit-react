@@ -6,9 +6,6 @@ import actionClasses from "./actionClasses";
 
 const hover = () => ({
   background: theme.verticalNavigation.hoverColor,
-  "& *": {
-    background: theme.verticalNavigation.hoverColor,
-  },
 });
 
 export const StyledAction = styled(HvTypography)({
