@@ -10,4 +10,3 @@ export { default as useIsMounted } from "./useIsMounted";
 export { default as useComputation } from "./useComputation";
 export * from "./useTheme";
 export * from "./useEnhancedEffect";
-export { default as useSavedState } from "./useSavedState";

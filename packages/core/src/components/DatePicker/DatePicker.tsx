@@ -16,14 +16,9 @@ import {
   HvBaseDropdown,
   HvLabel,
 } from "@core/components";
-import {
-  useControlled,
-  useLabels,
-  useSavedState,
-  useUniqueId,
-} from "@core/hooks";
+import { useControlled, useLabels, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import { setId } from "@core/utils";
+import { setId, useSavedState } from "@core/utils";
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import { isDate } from "../Calendar/utils";
 import { getDateLabel } from "./utils";
@@ -388,7 +383,7 @@ export const HvDatePicker = ({
     if (rangeMode) {
       if (!startDate || (startDate && endDate) || newDate < startDate) {
         setStartDate(newDate);
-        setEndDate(null);
+        setEndDate(undefined);
       } else {
         setEndDate(newDate);
       }
@@ -421,10 +416,10 @@ export const HvDatePicker = ({
     }
 
     if (position === "left") {
-      setStartDate(newDate > endDate ? endDate : newDate);
+      if (endDate) setStartDate(newDate > endDate ? endDate : newDate);
     } else if (position === "right") {
       if (!startDate) {
-        setStartDate(newDate > endDate ? endDate : newDate);
+        if (endDate) setStartDate(newDate > endDate ? endDate : newDate);
         return;
       }
       setEndDate(newDate < startDate ? startDate : newDate);
