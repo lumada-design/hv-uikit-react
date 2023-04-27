@@ -6,7 +6,7 @@ exports[`<Calendar /> with configurations > should render correctly 1`] = `
     class="HvCalendar-root css-xnsj8j-StyledRoot e6gej3i2"
   >
     <div
-      class="HvSingleCalendar-calendarContainer css-1utgy7p-StyledCalendarContainer e10ihr3e2"
+      class="HvSingleCalendar-calendarContainer css-1e2uj5c-StyledCalendarContainer e10ihr3e2"
     >
       <div
         class="HvSingleCalendar-calendarWrapper css-1otz5vv-StyledCalendarWrapper e10ihr3e1"
