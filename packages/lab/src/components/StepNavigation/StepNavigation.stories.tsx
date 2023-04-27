@@ -107,7 +107,7 @@ export const Main: StoryObj<HvStepNavigationProps> = {
   args: {
     type: "Default",
     steps: steps,
-    stepSize: "md",
+    stepSize: undefined,
   },
   argTypes: {
     classes: { control: { disable: true } },
