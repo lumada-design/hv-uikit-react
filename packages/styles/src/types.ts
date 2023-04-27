@@ -291,6 +291,12 @@ export type HvThemeComponents = {
   multiButton: {
     disabledBackgroundColor: string;
   };
+  datePicker: {
+    panelBorder: string;
+    panelBackgroundColor: string;
+    dropdownHeaderOpenBorder: string;
+    dropdownPlaceholderColor: string;
+  };
 };
 
 // Theme typography

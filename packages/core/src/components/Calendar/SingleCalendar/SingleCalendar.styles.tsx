@@ -4,7 +4,7 @@ import singleCalendarClasses from "./singleCalendarClasses";
 
 export const StyledCalendarContainer = styled("div")({
   backgroundColor: theme.colors.atmo1,
-  width: "320px",
+  width: "318px",
   minHeight: "440px",
   position: "relative",
 });

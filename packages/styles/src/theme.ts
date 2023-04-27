@@ -284,6 +284,12 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   multiButton: {
     disabledBackgroundColor: "string",
   },
+  datePicker: {
+    panelBorder: "string",
+    panelBackgroundColor: "string",
+    dropdownHeaderOpenBorder: "string",
+    dropdownPlaceholderColor: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

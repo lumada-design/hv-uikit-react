@@ -500,6 +500,12 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   multiButton: {
     disabledBackgroundColor: theme.colors.atmo2,
   },
+  datePicker: {
+    panelBorder: `1px solid ${theme.colors.atmo1}`,
+    panelBackgroundColor: theme.colors.atmo1,
+    dropdownHeaderOpenBorder: `1px solid ${theme.colors.atmo1}`,
+    dropdownPlaceholderColor: theme.colors.secondary_80,
+  },
 }));
 
 export default ds3;
