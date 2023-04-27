@@ -72,7 +72,7 @@ export const HvStepNavigation = ({
   width,
   steps,
   stepSize,
-  showTitles = true,
+  showTitles,
   type = "Default",
   ...others
 }: HvStepNavigationProps) => {
