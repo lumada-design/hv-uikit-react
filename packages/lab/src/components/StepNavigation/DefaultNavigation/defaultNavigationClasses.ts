@@ -1,8 +1,8 @@
 import { getClasses } from "@hitachivantara/uikit-react-core";
 
-export type HvDefaultNavigationClasses = {
+export interface HvDefaultNavigationClasses {
   root: string;
-};
+}
 
 const classKeys: string[] = ["root"];
 

@@ -60,6 +60,7 @@ export const themeColors = {
       "cat28",
       "catastrophic",
     ],
+    Shadow: ["shad1"],
   },
   ds5: {
     Base: ["base_light", "base_dark"],

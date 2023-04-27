@@ -148,12 +148,14 @@ export const StyledButton = styled(
         : theme.button.secondaryBackgroundColor,
       border: $disabled
         ? `1px solid ${theme.colors.atmo4}`
-        : `1px solid ${theme.colors.atmo4}`,
+        : `1px solid ${theme.button.secondarySubtleBorderColor}`,
       "&:hover": {
         backgroundColor: $disabled
           ? theme.colors.atmo3
           : theme.button.hoverColor,
-        border: `1px solid ${theme.colors.atmo4}`,
+        border: $disabled
+          ? `1px solid ${theme.colors.atmo4}`
+          : `1px solid ${theme.button.secondarySubtleBorderColor}`,
       },
       "&:focus-visible": {
         backgroundColor: $disabled

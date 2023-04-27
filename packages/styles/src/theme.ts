@@ -36,6 +36,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     semanticColorDisabled: "string",
     hoverColor: "string",
     secondaryBackgroundColor: "string",
+    secondarySubtleBorderColor: "string",
   },
   header: {
     color: "string",
@@ -267,6 +268,21 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     separatorMargin: "string",
     defaultSeparatorHeight: "string",
     simpleSeparatorHeight: "string",
+  },
+  filterGroup: {
+    applyButtonVariant: "string",
+    cancelButtonVariant: "string",
+    applyButtonMarginRight: "string",
+    panelsBorder: "string",
+    panelsBorderBottom: "string",
+    actionBarBorder: "string",
+    actionBarBorderTop: "string",
+    rightPanelBorderLeft: "string",
+    rightPanelShadow: "string",
+    partialCounterFontWeight: "string",
+  },
+  multiButton: {
+    disabledBackgroundColor: "string",
   },
 };
 

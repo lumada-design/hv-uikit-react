@@ -50,13 +50,16 @@ export const StyledRoot = styled(
         borderTop: `solid 1px ${theme.colors.atmo4}`,
         borderTopLeftRadius: "2px",
         borderTopRightRadius: "2px",
+        "&:disabled:hover": {
+          borderTop: `solid 1px ${theme.colors.atmo4}`,
+        },
       },
       "&:last-child": {
         borderBottom: `solid 1px ${theme.colors.atmo4}`,
         borderBottomLeftRadius: "2px",
         borderBottomRightRadius: "2px",
         "&:disabled:hover": {
-          borderBottom: `solid 1px ${theme.colors.atmo4} !important`,
+          borderBottom: `solid 1px ${theme.colors.atmo4}`,
         },
       },
       "&:not(:first-of-type)": {
@@ -108,6 +111,14 @@ export const StyledButton = (Element) =>
     borderLeft: "solid 1px transparent",
     borderRight: "solid 1px transparent",
     borderRadius: 0,
+    backgroundColor: theme.colors.atmo2,
+    ":disabled": { backgroundColor: theme.multiButton.disabledBackgroundColor },
+    ":hover": {
+      borderTop: `solid 1px ${theme.colors.atmo4}`,
+      borderBottom: `solid 1px ${theme.colors.atmo4}`,
+      borderLeft: "solid 1px transparent",
+      borderRight: "solid 1px transparent",
+    },
     ...(theme.typography.body as CSSProperties),
     "&:active": {
       backgroundColor: `${theme.colors.atmo3}`,
@@ -127,13 +138,16 @@ export const StyledButton = (Element) =>
       borderLeft: `solid 1px ${theme.colors.atmo4}`,
       borderTopLeftRadius: theme.radii.base,
       borderBottomLeftRadius: theme.radii.base,
+      "&:disabled:hover": {
+        borderLeft: `solid 1px ${theme.colors.atmo4}`,
+      },
     },
     "&:last-child": {
       borderRight: `solid 1px ${theme.colors.atmo4}`,
       borderTopRightRadius: theme.radii.base,
       borderBottomRightRadius: theme.radii.base,
       "&:disabled:hover": {
-        borderRight: `solid 1px ${theme.colors.atmo4} !important`,
+        borderRight: `solid 1px ${theme.colors.atmo4}`,
       },
     },
     "&:not(:first-of-type)": {

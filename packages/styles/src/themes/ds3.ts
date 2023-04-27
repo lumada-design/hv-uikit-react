@@ -252,6 +252,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     semanticColorDisabled: "rgba(251, 252, 252, 0.1)",
     hoverColor: theme.colors.atmo3,
     secondaryBackgroundColor: theme.colors.atmo1,
+    secondarySubtleBorderColor: theme.colors.atmo4,
   },
   header: {
     color: theme.colors.secondary,
@@ -483,6 +484,21 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     separatorMargin: "0px",
     defaultSeparatorHeight: 3,
     simpleSeparatorHeight: 2,
+  },
+  filterGroup: {
+    applyButtonVariant: "secondaryGhost",
+    cancelButtonVariant: "secondaryGhost",
+    applyButtonMarginRight: "0px",
+    panelsBorder: "none",
+    panelsBorderBottom: "none",
+    actionBarBorder: "none",
+    actionBarBorderTop: `3px solid ${theme.colors.atmo2}`,
+    rightPanelBorderLeft: "none",
+    rightPanelShadow: `inset 8px 0 8px -6px ${theme.colors.shad1}`,
+    partialCounterFontWeight: theme.fontWeights.bold,
+  },
+  multiButton: {
+    disabledBackgroundColor: theme.colors.atmo2,
   },
 }));
 

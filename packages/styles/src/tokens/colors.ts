@@ -191,6 +191,7 @@ const supportLight = {
 };
 
 const shadowLight = {
+  shad1: "rgba(65, 65, 65, 0.12)",
   shadow: "0 2px 12px rgba(65,65,65,0.12)",
 };
 
@@ -253,6 +254,7 @@ const supportDark = {
 };
 
 const shadowDark = {
+  shad1: "rgba(0,0,0,.16)",
   shadow: "0 3px 5px rgba(0,0,0,.16)",
 };
 
