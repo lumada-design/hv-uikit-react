@@ -512,7 +512,7 @@ export const HvDatePicker = ({
   const renderInput = (dateString) =>
     styledTypography(
       dateString,
-      activeTheme?.name == "ds3" ? "body" : "label",
+      activeTheme?.datePicker.placeholderVariant,
       (dateString || placeholder) === undefined ? "" : dateString || placeholder
     );
 

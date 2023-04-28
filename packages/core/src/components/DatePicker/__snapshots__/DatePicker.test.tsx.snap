@@ -24,11 +24,11 @@ exports[`HvDatepicker > calendar custom properties > should render correctly 1`]
           <div
             class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
           >
-            <label
-              class="e2irjnc0 HvTypography-root HvTypography-label css-17r5sw2-getStyledComponent-StyledTypography e1tnpalo0"
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
             >
               I'M THE PLACEHOLDER
-            </label>
+            </p>
           </div>
           <div
             class="HvDatePicker-icon css-u6h4jc"
@@ -78,11 +78,11 @@ exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
           <div
             class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
           >
-            <label
-              class="e2irjnc0 HvTypography-root HvTypography-label css-ha8qul-getStyledComponent-StyledTypography e1tnpalo0"
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
             >
               5 - 10 Jan 2019
-            </label>
+            </p>
           </div>
           <div
             class="HvDatePicker-icon css-u6h4jc"
@@ -135,11 +135,11 @@ exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
           <div
             class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
           >
-            <label
-              class="e2irjnc0 HvTypography-root HvTypography-label css-17r5sw2-getStyledComponent-StyledTypography e1tnpalo0"
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
             >
               Select date
-            </label>
+            </p>
           </div>
           <div
             class="HvDatePicker-icon css-u6h4jc"
@@ -189,11 +189,11 @@ exports[`HvDatepicker > single calendar > should render correctly 1`] = `
           <div
             class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
           >
-            <label
-              class="e2irjnc0 HvTypography-root HvTypography-label css-ha8qul-getStyledComponent-StyledTypography e1tnpalo0"
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
             >
               1 Jan 2019
-            </label>
+            </p>
           </div>
           <div
             class="HvDatePicker-icon css-u6h4jc"
@@ -243,8 +243,8 @@ exports[`HvDatepicker > with minimum configuration > should render correctly 1`]
           <div
             class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
           >
-            <label
-              class="e2irjnc0 HvTypography-root HvTypography-label css-17r5sw2-getStyledComponent-StyledTypography e1tnpalo0"
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
             />
           </div>
           <div
