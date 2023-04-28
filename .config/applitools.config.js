@@ -14,7 +14,7 @@ module.exports = {
 
   appName: process.env.APPLITOOLS_APP_NAME,
   batchName: process.env.APPLITOOLS_BATCH_ID,
-  branchName: process.env.APPLITOOLS_BRANCH_NAME,
+  baselineBranchName: process.env.APPLITOOLS_BASELINE_BRANCH_NAME,
 
   browser: [
     { width: 1024, height: 768, name: "chrome" },
