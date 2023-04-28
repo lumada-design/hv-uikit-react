@@ -69,12 +69,6 @@ jobs:
             echo "published=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Archive Output
-        uses: actions/upload-artifact@v3
-        with:
-          name: logs
-          path: publish_logs.txt
-          
   publish-doc:
     name: Publish Doc
     needs: [publish]
