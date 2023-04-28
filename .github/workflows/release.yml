@@ -19,7 +19,7 @@ jobs:
       RELEASE_TYPE: ${{ github.event.client_payload.type }}
 
     outputs:
-      packages_published: ${{ steps.check-updates.outputs.published }}
+      published: ${{ steps.check-updates.outputs.published }}
 
     steps:
       - name: Checkout
@@ -50,9 +50,9 @@ jobs:
           npm ci --include=dev 
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           if [[ "${{ github.ref_name }}" == "master" ]]; then
-            npm run publish:release
+            npm run publish:release 2>&1 | tee publish_logs.txt
           elif [[ "${{ github.ref_name }}" == "next"* ]]; then
-            npm run publish:next
+            npm run publish:next 2>&1 | tee publish_logs.txt
           else
             echo "Invalid event type: ${{ github.ref_name }}"
             exit 1
@@ -61,7 +61,7 @@ jobs:
       - name: Check if packages were updated
         id: check-updates
         run: |
-          if [[ `echo ${{ steps.publish-npm.outputs.stdout }}` == *"new version"* ]]; then
+         if grep -q "lerna success published" publish_logs.txt; then
             echo "New packages were published"
             echo "published=true" >> "$GITHUB_OUTPUT"
           else
@@ -69,6 +69,12 @@ jobs:
             echo "published=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Archive Output
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: publish_logs.txt
+          
   publish-doc:
     name: Publish Doc
     needs: [publish]
