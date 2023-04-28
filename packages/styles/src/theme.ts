@@ -289,7 +289,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     panelBackgroundColor: "string",
     dropdownHeaderOpenBorder: "string",
     dropdownPlaceholderColor: "string",
-    placeholderVariant: "string",
   },
 };
 

@@ -296,7 +296,6 @@ export type HvThemeComponents = {
     panelBackgroundColor: string;
     dropdownHeaderOpenBorder: string;
     dropdownPlaceholderColor: string;
-    placeholderVariant: string;
   };
 };
 

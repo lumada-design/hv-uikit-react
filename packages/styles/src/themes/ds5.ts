@@ -448,7 +448,6 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     panelBackgroundColor: theme.colors.atmo1,
     dropdownHeaderOpenBorder: `1px solid ${theme.colors.secondary}`,
     dropdownPlaceholderColor: theme.colors.secondary_80,
-    placeholderVariant: "label",
   },
 }));
 

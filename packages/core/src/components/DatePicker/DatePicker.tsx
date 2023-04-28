@@ -16,7 +16,7 @@ import {
   HvBaseDropdown,
   HvLabel,
 } from "@core/components";
-import { useControlled, useLabels, useUniqueId } from "@core/hooks";
+import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
 import { setId, useSavedState } from "@core/utils";
 import { isInvalid } from "../Forms/FormElement/validationStates";
@@ -276,6 +276,8 @@ export const HvDatePicker = ({
 
   const focusTarget = useRef<HTMLDivElement>(null);
 
+  const { activeTheme } = useTheme();
+
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
     setEndDate(endValue, true);
@@ -510,7 +512,7 @@ export const HvDatePicker = ({
   const renderInput = (dateString) =>
     styledTypography(
       dateString,
-      theme.datePicker.placeholderVariant,
+      activeTheme?.name == "ds3" ? "body" : "label",
       (dateString || placeholder) === undefined ? "" : dateString || placeholder
     );
 

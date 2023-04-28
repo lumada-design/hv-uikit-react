@@ -505,7 +505,6 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     panelBackgroundColor: theme.colors.atmo1,
     dropdownHeaderOpenBorder: `1px solid ${theme.colors.atmo1}`,
     dropdownPlaceholderColor: theme.colors.secondary_60,
-    placeholderVariant: "body",
   },
 }));
 
