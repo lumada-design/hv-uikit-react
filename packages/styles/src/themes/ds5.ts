@@ -443,6 +443,13 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   multiButton: {
     disabledBackgroundColor: theme.colors.atmo3,
   },
+  datePicker: {
+    panelBorder: `1px solid ${theme.colors.secondary}`,
+    panelBackgroundColor: theme.colors.atmo1,
+    dropdownHeaderOpenBorder: `1px solid ${theme.colors.secondary}`,
+    dropdownPlaceholderColor: theme.colors.secondary_80,
+    placeholderVariant: "label",
+  },
 }));
 
 export default ds5;

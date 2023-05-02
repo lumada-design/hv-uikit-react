@@ -1,0 +1,273 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HvDatepicker > calendar custom properties > should render correctly 1`] = `
+<div>
+  <div
+    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    id="testingDatePicker"
+  >
+    <div
+      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+          >
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+            >
+              I'M THE PLACEHOLDER
+            </p>
+          </div>
+          <div
+            class="HvDatePicker-icon css-u6h4jc"
+            name="Calendar"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HvDatepicker > ranged calendar > should render correctly 1`] = `
+<div>
+  <div
+    class="HvDatePicker-root css-79elbk HvFormElement-root"
+  >
+    <div
+      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+          >
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
+            >
+              5 - 10 Jan 2019
+            </p>
+          </div>
+          <div
+            class="HvDatePicker-icon css-u6h4jc"
+            name="Calendar"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HvDatepicker > sample snapshot testing > Main 1`] = `
+<div>
+  <div
+    class="HvDatePicker-root css-79elbk HvFormElement-root"
+    id="DatePicker"
+  >
+    <div
+      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        aria-label="Date"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Date"
+          class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+          >
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+            >
+              Select date
+            </p>
+          </div>
+          <div
+            class="HvDatePicker-icon css-u6h4jc"
+            name="Calendar"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HvDatepicker > single calendar > should render correctly 1`] = `
+<div>
+  <div
+    class="HvDatePicker-root css-79elbk HvFormElement-root"
+  >
+    <div
+      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+          >
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-1uypsb3-getStyledComponent-StyledTypography e1tnpalo0"
+            >
+              1 Jan 2019
+            </p>
+          </div>
+          <div
+            class="HvDatePicker-icon css-u6h4jc"
+            name="Calendar"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HvDatepicker > with minimum configuration > should render correctly 1`] = `
+<div>
+  <div
+    class="HvDatePicker-root css-79elbk HvFormElement-root"
+  >
+    <div
+      class="HvBaseDropdown-root HvDatePicker-dropdown css-z8zbcm-StyledRoot eapzthe9"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
+        role="combobox"
+        tabindex="-1"
+      >
+        <div
+          class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
+          role="textbox"
+          tabindex="0"
+        >
+          <div
+            class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
+          >
+            <p
+              class="e2irjnc0 HvTypography-root HvTypography-body css-okb0r0-getStyledComponent-StyledTypography e1tnpalo0"
+            />
+          </div>
+          <div
+            class="HvDatePicker-icon css-u6h4jc"
+            name="Calendar"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
