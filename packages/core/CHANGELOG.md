@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.2.0...@hitachivantara/uikit-react-core@5.3.0) (2023-05-02)
+
+### Bug Fixes
+
+- add endIcon to the Button component ([f24afb8](https://github.com/lumada-design/hv-uikit-react/commit/f24afb87fc0814b54ec21767aa466e3791845570))
+- allow overriding styles on the Dialog component ([1725a45](https://github.com/lumada-design/hv-uikit-react/commit/1725a450ea8f18a4a4c0c74804f3e73f3969513c))
+- **DatePicker:** change theme variant to active theme check ([9ff6e37](https://github.com/lumada-design/hv-uikit-react/commit/9ff6e370c305fa0e0a48bcbb65d95d86a2635909))
+- **datePicker:** fix styles and update documentation and tests ([3614f68](https://github.com/lumada-design/hv-uikit-react/commit/3614f68560b3d8f422a6c20329dd8ba902f452fb))
+
+### Features
+
+- **datePicker:** add date picker component ([1574efe](https://github.com/lumada-design/hv-uikit-react/commit/1574efebf7970b4f49e55315d26aafd65c51491d))
+
 # [5.2.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.1.3...@hitachivantara/uikit-react-core@5.2.0) (2023-04-27)
 
 ### Bug Fixes
