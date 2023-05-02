@@ -34,6 +34,8 @@ export interface HvButtonProps
   className?: string;
   /** Element placed before the children. */
   startIcon?: ReactElement;
+  /** Element placed after the children. */
+  endIcon?: ReactElement;
   /** Button size. */
   size?: HvButtonSize;
   /** Button border radius. */
@@ -88,6 +90,7 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
       disabled,
       className,
       startIcon,
+      endIcon,
       icon = false,
       size,
       radius = "base",
@@ -128,6 +131,8 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
         $radius={radius}
         $overrideIconColors={overrideIconColors}
         $disabled={!!disabled}
+        $startIcon={!!startIcon}
+        $endIcon={!!endIcon}
         {...others}
       >
         <StyledContentDiv>
@@ -139,6 +144,13 @@ export const HvButton = forwardRef<HTMLButtonElement, HvButtonProps>(
             </StyledIconSpan>
           )}
           {children && <StyledChildren>{children}</StyledChildren>}
+          {endIcon && (
+            <StyledIconSpan
+              className={clsx(classes?.endIcon, buttonClasses.endIcon)}
+            >
+              {endIcon}
+            </StyledIconSpan>
+          )}
         </StyledContentDiv>
       </StyledButton>
     );

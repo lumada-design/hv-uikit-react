@@ -6,14 +6,14 @@ exports[`ActionsGeneric > should render correctly 1`] = `
     class="HvActionsGeneric-root css-1668iss-StyledRoot e4fkrgz1"
   >
     <button
-      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-octfpv-StyledButton-StyledButton e138pvrm0"
+      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1ktc6bx-StyledButton-StyledButton e138pvrm0"
       disabled=""
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -42,13 +42,13 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-ze0p4z-StyledButton-StyledButton e138pvrm0"
+      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -77,13 +77,13 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-ze0p4z-StyledButton-StyledButton e138pvrm0"
+      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"
@@ -112,13 +112,13 @@ exports[`ActionsGeneric > should render correctly 1`] = `
       </div>
     </button>
     <button
-      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-ze0p4z-StyledButton-StyledButton e138pvrm0"
+      class="HvActionsGeneric-button e4fkrgz0 HvButton-root css-1thpith-StyledButton-StyledButton e138pvrm0"
     >
       <div
         class="css-1nxr552-StyledContentDiv e138pvrm3"
       >
         <span
-          class="HvButton-startIcon css-16uosol-StyledIconSpan e138pvrm2"
+          class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
         >
           <div
             class="css-f95wjz"

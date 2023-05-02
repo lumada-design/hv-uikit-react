@@ -103,7 +103,6 @@ export const StyledButton = (Element) =>
     width: "100%",
     minWidth: 32,
     maxWidth: 200,
-    padding: 0,
     transition: "none",
     flex: "1 0 0px",
     borderTop: `solid 1px ${theme.colors.atmo4}`,

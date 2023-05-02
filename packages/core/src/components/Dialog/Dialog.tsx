@@ -5,7 +5,7 @@ import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import isNil from "lodash/isNil";
 import { HvBaseProps } from "@core/types/generic";
-import { StyledBackdrop, StyledClose, StyledPaper } from "./Dialog.styles";
+import { StyledBackdrop, StyledClose, styles } from "./Dialog.styles";
 import {
   isKeypress,
   keyboardCodes,
@@ -174,17 +174,19 @@ export const HvDialog = ({
               root: clsx(classes?.background, dialogClasses.background),
             },
           }}
-          PaperComponent={(paperProps) => (
-            <StyledPaper $fullscreen={fullscreen} {...paperProps} />
-          )}
           PaperProps={{
             classes: {
               root: clsx(
-                css({ position: "absolute" }),
+                css(styles.paper),
                 classes?.paper,
                 dialogClasses.paper,
+                css({ position: "absolute" }),
                 fullscreen &&
-                  clsx(dialogClasses.fullscreen, classes?.fullscreen)
+                  clsx(
+                    dialogClasses.fullscreen,
+                    classes?.fullscreen,
+                    "fullscreen"
+                  )
               ),
             },
           }}

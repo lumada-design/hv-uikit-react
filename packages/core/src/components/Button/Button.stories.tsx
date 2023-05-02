@@ -116,6 +116,32 @@ export const Icons = ({ onClick }) => {
           Stop
         </HvButton>
       </HvBox>
+      <HvBox sx={{ display: "flex", gap: 20, marginTop: 10 }}>
+        <HvButton
+          endIcon={<Play />}
+          variant="secondaryGhost"
+          aria-label="Play"
+          onClick={onClick}
+        >
+          Play
+        </HvButton>
+        <HvButton
+          endIcon={<Pause />}
+          variant="secondaryGhost"
+          aria-label="Pause"
+          onClick={onClick}
+        >
+          Pause
+        </HvButton>
+        <HvButton
+          endIcon={<Stop />}
+          variant="secondaryGhost"
+          aria-label="Stop"
+          onClick={onClick}
+        >
+          Stop
+        </HvButton>
+      </HvBox>
     </>
   );
 };
