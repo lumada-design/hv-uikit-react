@@ -25,10 +25,6 @@ export interface HvWizardTitleProps extends HvBaseProps {
     /** Summary button label. */
     summary?: string;
   };
-  /** Current tab to check if it's last page or first to disable previous button and swap between next and submit button. */
-  tab?: number;
-  /** Function to change the tab when pressing previous and next buttons. */
-  changeTab?: any;
   /** Custom object to define type, size and width of the StepNavigation component */
   customStep?: Pick<HvStepNavigationProps, "type" | "stepSize" | "width">;
   /** A Jss Object used to override or extend the styles applied to the empty state Wizard. */

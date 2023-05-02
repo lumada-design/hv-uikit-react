@@ -37,7 +37,7 @@ export const HvWizardContext = createContext<HvWizardContextProp>({
   setTab: () => {},
 });
 
-const WizardProvider = ({ children }) => {
+const HvWizardProvider = ({ children }) => {
   const [context, setContext] = useState({});
   const [summary, setSummary] = useState(undefined);
   const [tab, setTab] = useState(0);
@@ -67,4 +67,4 @@ const WizardProvider = ({ children }) => {
   );
 };
 
-export default WizardProvider;
+export default HvWizardProvider;

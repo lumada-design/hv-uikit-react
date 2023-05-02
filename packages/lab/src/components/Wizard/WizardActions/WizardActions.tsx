@@ -25,15 +25,15 @@ export interface HvWizardActionsProps extends HvBaseProps {
   /** An object containing all the labels for the wizard actions component. */
   labels?: {
     /** Cancel button label. */
-    cancel: string;
+    cancel?: string;
     /** Skip button label. */
-    skip: string;
+    skip?: string;
     /** Previous button label. */
-    previous: string;
+    previous?: string;
     /** Next button label. */
-    next: string;
+    next?: string;
     /** Submit button label. */
-    submit: string;
+    submit?: string;
   };
   /** Whether the submit button is disabled. */
   loading?: boolean;

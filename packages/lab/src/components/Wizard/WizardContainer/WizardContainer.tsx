@@ -5,7 +5,7 @@ import wizardContainerClasses, {
   HvWizardContainerClasses,
 } from "./wizardContainerClasses";
 import { styles } from "./WizardContainer.styles";
-import React, { useEffect } from "react";
+import React from "react";
 
 export interface HvWizardContainerProps extends Omit<HvBaseProps, "onClose"> {
   /** Current state of the Wizard. */
@@ -27,13 +27,6 @@ export const HvWizardContainer = ({
   open,
   ...others
 }: HvWizardContainerProps) => {
-  useEffect(() => {
-    return () => {
-      console.log("HERE");
-      // setContext({});
-    };
-  }, []);
-
   return (
     <ClassNames>
       {({ css }) => (

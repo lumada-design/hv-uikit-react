@@ -21,8 +21,6 @@ import {
 import { LoadingContainer } from "./LoadingContainer";
 
 export interface HvWizardContentProps extends HvBaseProps {
-  /** Current tab to show. */
-  tab?: number;
   /** Forces minimum height to the component. */
   fixedHeight?: boolean;
   /** Whether the loading animation is shown. */

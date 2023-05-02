@@ -4,10 +4,14 @@ import { HvWizardClasses } from "./wizardClasses";
 import { ModalProps } from "@mui/material";
 import React, { useCallback } from "react";
 import { HvWizardContainer } from "./WizardContainer/WizardContainer";
-import { HvWizardTitle } from "./WizardTitle/WizardTitle";
+import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle/WizardTitle";
 import { HvWizardContent } from "./WizardContent/WizardContent";
 import { HvWizardActions } from "./index";
-import WizardProvider from "./WizardContext/WizardContext";
+import WizardProvider, {
+  HvWizardTabs,
+  HvWizardTab,
+} from "./WizardContext/WizardContext";
+import { HvWizardActionsProps } from "./WizardActions/WizardActions";
 
 export interface HvWizardProps extends HvBaseProps {
   /** Current state of the Wizard. */
@@ -15,11 +19,11 @@ export interface HvWizardProps extends HvBaseProps {
   /** Function executed on close. */
   onClose: ModalProps["onClose"];
   /** Function executed on submit. */
-  handleSubmit: any;
+  handleSubmit: (context: HvWizardTabs<HvWizardTab>) => void;
   /** Title for the wizard. */
   title?: string;
   /** An object containing all the labels for the wizard. */
-  labels?: any; //HvWizardActionsProps["labels"] & HvWizardTitleProps["labels"];
+  labels?: HvWizardActionsProps["labels"] & HvWizardTitleProps["labels"];
   /** Shows the summary button. */
   hasSummary?: boolean;
   /** The content of the summary. */
