@@ -319,6 +319,10 @@ export type HvThemeComponents = {
     backgroundColorOpacity: number;
     backgroundColorBlur: string;
   };
+  inlineEditor: {
+    hoverBorderColor: string;
+    activeBorderColor: string;
+  };
 };
 
 // Theme typography

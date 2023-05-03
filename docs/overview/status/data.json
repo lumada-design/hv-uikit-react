@@ -69,11 +69,11 @@
       "status": "✅"
     },
     {
-      "name": "Input",
+      "name": "Inline Editor",
       "status": "✅"
     },
     {
-      "name": "Search Box",
+      "name": "Input",
       "status": "✅"
     },
     {
@@ -102,6 +102,10 @@
     },
     {
       "name": "Scroll To vertical",
+      "status": "✅"
+    },
+    {
+      "name": "Search Box",
       "status": "✅"
     },
     {
@@ -234,10 +238,6 @@
     },
     {
       "name": "Image Carrousel",
-      "status": "in progress"
-    },
-    {
-      "name": "Inline Editor",
       "status": "in progress"
     },
     {
