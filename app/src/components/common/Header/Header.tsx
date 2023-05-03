@@ -21,13 +21,18 @@ export const Header = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const { activePath } = useContext(NavigationContext);
-  const { setOpen, open } = useContext(GeneratorContext);
+  const { setOpen, open, setTutorialOpen } = useContext(GeneratorContext);
 
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
   const handleChange = (event: MouseEvent, selection: any): void => {
     if (selection.path) navigate(selection.path);
+  };
+
+  const handleOpenTutorial = () => {
+    navigate("/templates/instructions");
+    setTutorialOpen?.(true);
   };
 
   return (
@@ -61,6 +66,13 @@ export const Header = () => {
 
       {isMdUp && (
         <HvHeaderActions>
+          <HvButton
+            variant="secondaryGhost"
+            onClick={handleOpenTutorial}
+            style={{ padding: 10 }}
+          >
+            TUTORIAL
+          </HvButton>
           <HvBadge
             id="badge7"
             showCount

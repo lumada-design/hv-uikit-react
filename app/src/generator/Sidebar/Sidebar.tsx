@@ -43,8 +43,6 @@ const Sidebar = () => {
   const [typographyOpen, setTypographyOpen] = useState(false);
   const [layoutOpen, setLayoutOpen] = useState(false);
 
-  console.log(themes);
-
   // the `replace` bit below is just a regex to remove the quotes from
   // the properties names, for displaying effect only.
   useEffect(() => {
@@ -196,6 +194,9 @@ export default ${themeName};`
               value={fullCode}
             ></textarea>
           </HvBox>
+          <HvBox css={{ display: "flex", justifyContent: "center" }}>
+            <HvTypography variant="title3">Theme Tools</HvTypography>
+          </HvBox>
           <HvBox
             css={{
               display: "flex",
@@ -284,57 +285,6 @@ export default ${themeName};`
                 )}
               </HvAccordion>
             </Suspense>
-            {/* <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
-              <HvAccordion
-                id="radii"
-                label="radii"
-                expanded={radiiOpen}
-                onChange={() => setRadiiOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {radiiOpen && <Radii />}
-              </HvAccordion>
-            </Suspense>
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
-              <HvAccordion
-                id="spacing"
-                label="spacing"
-                expanded={spacingOpen}
-                onChange={() => setSpacingOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {spacingOpen && <Spacing />}
-              </HvAccordion>
-            </Suspense>
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
-              <HvAccordion
-                id="zindices"
-                label="zindices"
-                expanded={indicesOpen}
-                onChange={() => setIndicesOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {indicesOpen && <Zindices />}
-              </HvAccordion>
-            </Suspense> */}
           </HvBox>
         </div>
       )}
