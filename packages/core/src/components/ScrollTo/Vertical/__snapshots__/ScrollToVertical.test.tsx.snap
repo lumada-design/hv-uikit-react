@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ScrollToVertical > should render correctly 1`] = `
+<div>
+  <ol
+    class="HvScrollToVertical-root hv-uikit-css-1qyiqv5 hv-uikit-css-mnhjhi"
+    id="hvVerticalScrollto2"
+  >
+    <li
+      aria-current="true"
+      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      id="hvVerticalScrollto2-item-0"
+    >
+      <div
+        aria-label="Tab 1"
+        aria-labelledby="hvVerticalScrollto2-item-0-label"
+        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        id="hvVerticalScrollto2-item-0-button"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class=""
+          data-mui-internal-clone-element="true"
+          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+        >
+          <div
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-label hv-uikit-css-nikb6h-getStyledComponent e1tnpalo0"
+            id="hvVerticalScrollto2-item-0-label"
+          >
+            <div
+              class="hv-uikit-css-f95wjz"
+              name="CurrentStep"
+            >
+              <svg
+                focusable="false"
+                height="6"
+                viewBox="0 0 16 16"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M16 8a8.024 8.024 0 0 1-8 8 8.023 8.023 0 0 1-8-8 8.023 8.023 0 0 1 8-8 8.024 8.024 0 0 1 8 8z"
+                  fill="var(--uikit-colors-secondary)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      aria-current="false"
+      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      id="hvVerticalScrollto2-item-1"
+    >
+      <div
+        aria-label="Tab 2"
+        aria-labelledby="hvVerticalScrollto2-item-1-label"
+        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        id="hvVerticalScrollto2-item-1-button"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class=""
+          data-mui-internal-clone-element="true"
+          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+        >
+          <div
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            id="hvVerticalScrollto2-item-1-label"
+          >
+            <div
+              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      aria-current="false"
+      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      id="hvVerticalScrollto2-item-2"
+    >
+      <div
+        aria-label="Tab 3"
+        aria-labelledby="hvVerticalScrollto2-item-2-label"
+        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        id="hvVerticalScrollto2-item-2-button"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class=""
+          data-mui-internal-clone-element="true"
+          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+        >
+          <div
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            id="hvVerticalScrollto2-item-2-label"
+          >
+            <div
+              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      aria-current="false"
+      class="HvVerticalScrollListItem-root hv-uikit-css-1ip7bvy"
+      id="hvVerticalScrollto2-item-3"
+    >
+      <div
+        aria-label="Tab 4"
+        aria-labelledby="hvVerticalScrollto2-item-3-label"
+        class="HvVerticalScrollListItem-button hv-uikit-css-d71joc"
+        id="hvVerticalScrollto2-item-3-button"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class=""
+          data-mui-internal-clone-element="true"
+          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+        >
+          <div
+            class="HvVerticalScrollListItem-text HvTypography-root HvTypography-body hv-uikit-css-xi6bie-getStyledComponent e1tnpalo0"
+            id="hvVerticalScrollto2-item-3-label"
+          >
+            <div
+              class="HvVerticalScrollListItem-notSelected hv-uikit-css-1xppivs"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>
+`;

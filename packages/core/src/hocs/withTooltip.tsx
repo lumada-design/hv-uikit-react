@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { HvTypography, HvTooltip } from "@core/components";
+import {
+  HvTypography,
+  HvTooltip,
+  HvTooltipPlacementType,
+  HvTooltipProps,
+} from "@core/components";
+import { HvBaseProps } from "@core/types";
 
-const styles = {
+const styles: { truncate: React.CSSProperties } = {
   truncate: {
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -11,22 +17,24 @@ const styles = {
 
 const withTooltip =
   (
-    Component,
+    Component: React.FunctionComponent,
     // eslint-disable-next-line @typescript-eslint/default-param-last
     label = "",
-    placement,
-    hideTooltip,
-    tooltipProps,
-    tooltipContainerProps
+    placement: HvTooltipPlacementType,
+    hideTooltip?: (event: React.MouseEvent<HTMLDivElement>) => boolean,
+    tooltipProps?: HvTooltipProps,
+    tooltipContainerProps?: HvBaseProps
   ) =>
   (props) => {
-    const [isHoverDisabled, setIsHoverDisabled] = useState(false);
-    const [open, setOpen] = useState(false);
+    const [isHoverDisabled, setIsHoverDisabled] = useState<boolean | undefined>(
+      false
+    );
+    const [open, setOpen] = useState<boolean>(false);
 
     const title = <HvTypography>{label}</HvTypography>;
 
-    const handleMouseEnter = (evt) => {
-      const isHidden = hideTooltip?.(evt);
+    const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
+      const isHidden = hideTooltip?.(event);
       setIsHoverDisabled(isHidden);
       setOpen(!isHidden);
     };
