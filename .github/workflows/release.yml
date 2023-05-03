@@ -91,7 +91,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get Release Message
+      - name: Get Releases Commit Message
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -99,14 +99,16 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: ${{ github.ref_name }}
+              branch: "${{ github.ref_name }}"
             })
+
             const commitMessage = branch.data.commit.commit.message
             const slackMessage = commitMessage.replace('chore(release): publish', '')
               .replace(/\n/g, "\\n")
               .replace(/\r/g, "\\r")
               .replace(/\t/g, "\\t")
               .replace(/\f/g, "\\f")
+              
             core.exportVariable("SLACK_MESSAGE", slackMessage)
 
       - name: Notify release
