@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.3.0...@hitachivantara/uikit-styles@5.4.0) (2023-05-04)
+
+### Features
+
+- **InlineEditor:** add the Inline Editor component ([f9b9234](https://github.com/lumada-design/hv-uikit-react/commit/f9b92348b7872fe9436d9f524b1f55dbe27a2f95))
+- **ScrollTo:** add ScrollTo components ([f24f3ac](https://github.com/lumada-design/hv-uikit-react/commit/f24f3ac8e9c32ed38653704aafc7a0a8ee5e70c7))
+
 # [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.2.0...@hitachivantara/uikit-styles@5.3.0) (2023-05-02)
 
 ### Bug Fixes
