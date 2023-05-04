@@ -159,3 +159,17 @@ export const processThemes = (
     return [themes.ds5];
   }
 };
+
+/**
+ * Returns the computed value of a theme CSS var
+ */
+export const getVarValue = (cssVar: string): string => {
+  const tempEl = document.createElement("div");
+  tempEl.style.setProperty("--temp", cssVar);
+  document.body.appendChild(tempEl);
+  const computedValue = getComputedStyle(tempEl)
+    .getPropertyValue("--temp")
+    .trim();
+  document.body.removeChild(tempEl);
+  return computedValue;
+};

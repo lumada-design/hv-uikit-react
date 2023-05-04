@@ -528,6 +528,10 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     backgroundColorOpacity: 0.8,
     backgroundColorBlur: "4px",
   },
+  inlineEditor: {
+    hoverBorderColor: "transparent",
+    activeBorderColor: "transparent",
+  },
 }));
 
 export default ds3;

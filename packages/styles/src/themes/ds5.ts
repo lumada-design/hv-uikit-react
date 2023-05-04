@@ -471,6 +471,10 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     backgroundColorOpacity: 0.9,
     backgroundColorBlur: "4px",
   },
+  inlineEditor: {
+    hoverBorderColor: theme.colors.primary,
+    activeBorderColor: theme.colors.secondary,
+  },
 }));
 
 export default ds5;

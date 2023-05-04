@@ -312,6 +312,10 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     backgroundColorOpacity: "string",
     backgroundColorBlur: "string",
   },
+  inlineEditor: {
+    hoverBorderColor: "string",
+    activeBorderColor: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {
