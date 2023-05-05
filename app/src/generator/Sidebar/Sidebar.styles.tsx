@@ -24,13 +24,6 @@ export const styles = {
     ...theme.typography.sectionTitle,
     textTransform: "uppercase",
   }),
-  code: css({
-    width: "100%",
-    height: 260,
-    fontFamily: "Courier New",
-    fontSize: "12px",
-    border: `1px solid ${theme.colors.secondary_80}`,
-  }),
   themeName: css({
     display: "flex",
     gap: 10,

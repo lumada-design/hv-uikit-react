@@ -18,6 +18,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
 import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
+import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -188,11 +189,15 @@ export default ${themeName};`
                 </HvButton>
               </HvTooltip>
             </HvBox>
-            <textarea
-              readOnly
-              className={styles.code}
+            <HvCodeEditor
+              options={{
+                minimap: { enabled: false },
+              }}
+              language="typescript"
               value={fullCode}
-            ></textarea>
+              height={260}
+              width="100%"
+            />
           </HvBox>
           <HvBox css={{ display: "flex", justifyContent: "center" }}>
             <HvTypography variant="title3">Theme Tools</HvTypography>
