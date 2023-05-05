@@ -13,6 +13,7 @@
     "@hitachivantara/uikit-react-core": "^5.0.0",
     "@hitachivantara/uikit-react-icons": "^5.0.0",
     "@hitachivantara/uikit-styles": "^5.0.0",
+    "@hitachivantara/uikit-react-code-editor": "^5.0.0",
     "formik": "^2.2.9",
     "i18next": "^22.4.10",
     "i18next-browser-languagedetector": "^7.0.1",
