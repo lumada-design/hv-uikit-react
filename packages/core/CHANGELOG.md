@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.4.0...@hitachivantara/uikit-react-core@5.5.0) (2023-05-05)
+
+### Bug Fixes
+
+- @mui/base import breaking change ([4f7addf](https://github.com/lumada-design/hv-uikit-react/commit/4f7addfda5ff35d334ac16c308fd091c8f1e15e5))
+
+### Features
+
+- **TimeAgo:** add TimeAgo component to the core package ([54d547b](https://github.com/lumada-design/hv-uikit-react/commit/54d547ba6aa87336930f21b6f6bb3c9bcf268104))
+
 # [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.3.0...@hitachivantara/uikit-react-core@5.4.0) (2023-05-04)
 
 ### Features

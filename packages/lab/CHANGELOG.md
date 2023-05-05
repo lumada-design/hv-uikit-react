@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.1...@hitachivantara/uikit-react-lab@5.2.2) (2023-05-05)
+
+### Bug Fixes
+
+- @mui/base import breaking change ([4f7addf](https://github.com/lumada-design/hv-uikit-react/commit/4f7addfda5ff35d334ac16c308fd091c8f1e15e5))
+
 ## [5.2.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.0...@hitachivantara/uikit-react-lab@5.2.1) (2023-05-04)
 
 ### Bug Fixes
