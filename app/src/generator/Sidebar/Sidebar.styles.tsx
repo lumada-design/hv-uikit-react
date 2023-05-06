@@ -38,4 +38,16 @@ export const styles = {
     gap: 20,
     alignItems: "center",
   }),
+  codeEditor: css({
+    ".margin, .margin-view-overlays": {
+      width: "24px!important",
+    },
+    ".line-numbers": {
+      width: "19px!important",
+    },
+    ".monaco-scrollable-element": {
+      left: "24px!important",
+      width: "318px!important",
+    },
+  }),
 };

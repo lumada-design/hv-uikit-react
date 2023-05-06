@@ -192,11 +192,13 @@ export default ${themeName};`
             <HvCodeEditor
               options={{
                 minimap: { enabled: false },
+                readOnly: true,
               }}
               language="typescript"
               value={fullCode}
               height={260}
               width="100%"
+              className={styles.codeEditor}
             />
           </HvBox>
           <HvBox css={{ display: "flex", justifyContent: "center" }}>
