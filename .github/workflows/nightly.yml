@@ -76,5 +76,5 @@ jobs:
         run: |
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
-            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
+            -H 'Authorization: token ${{ secrets.ACCESS_TOKEN }}' \
             -d '{"event_type": "release"}'
