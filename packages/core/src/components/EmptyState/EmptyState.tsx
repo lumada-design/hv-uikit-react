@@ -15,7 +15,7 @@ import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 export interface HvEmptyStateProps
   extends HvBaseProps<HTMLDivElement, "title"> {
   /** Icon to be presented. */
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   /** The title to be shown. */
   title?: string | React.ReactNode;
   /** The message to be shown. */

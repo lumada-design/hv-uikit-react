@@ -13,7 +13,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "npm run dev -w app",
+    "dev": "npm run dev -w studio",
     "doc": "start-storybook -p 6006 --no-manager-cache",
     "build": "lerna run build",
     "build:doc": "build-storybook --docs -o dist --quiet",
@@ -113,6 +113,10 @@
   },
   "workspaces": [
     "packages/*",
-    "app/"
-  ]
+    "app/",
+    "studio/"
+  ],
+  "dependencies": {
+    "@dnd-kit/modifiers": "^6.0.1"
+  }
 }

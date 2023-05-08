@@ -1,0 +1,78 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  font-family: sans-serif;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  border-right: 1px solid black;
+}
+
+.sidebar-field {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar-field.overlay {
+  background: black;
+  color: white;
+}
+
+.canvas {
+  flex: 1;
+  border: 1px solid black;
+  margin: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.canvas-field {
+  padding: 15px;
+}
+
+.canvas-field.overlay {
+  opacity: 0.5;
+}
+
+.canvas-field > * {
+  width: 100%;
+  pointer-events: none;
+}
+
+.spacer {
+  background: black;
+  width: 100%;
+  opacity: 0.25;
+  height: 100px;
+}

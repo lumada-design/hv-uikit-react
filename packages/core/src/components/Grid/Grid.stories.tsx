@@ -5,7 +5,7 @@ import { HvTypography, HvGrid, HvGridProps } from "@core/components";
 import { useWidth } from "@core/hooks";
 
 const meta: Meta<typeof HvGrid> = {
-  title: "Components/Grid/Grid",
+  title: "Components/Grid",
   component: HvGrid,
   parameters: {
     eyes: { include: false },
@@ -115,5 +115,41 @@ export const The12Columns: StoryObj<HvGridProps> = {
         </StyledContainer>
       </>
     );
+  },
+};
+
+export const StudioGrid1Column = () => {
+  return (
+    <HvGrid container>
+      <HvGrid item xs={12}>
+        <div>col-12</div>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+StudioGrid1Column.parameters = {
+  studio: {
+    group: "sections/grid",
+  },
+};
+
+export const StudioGrid2Columns = () => {
+  return (
+    <HvGrid container>
+      <HvGrid item xs={6}>
+        <div>col-6</div>
+      </HvGrid>
+      <HvGrid item xs={6}>
+        <div>col-6</div>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+StudioGrid2Columns.parameters = {
+  studio: {
+    group: "sections/grid",
+    test: "someTest",
   },
 };

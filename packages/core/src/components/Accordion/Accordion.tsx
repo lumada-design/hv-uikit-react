@@ -5,9 +5,8 @@ import React, {
   HTMLAttributes,
 } from "react";
 
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
-
 import { useControlled } from "@core/hooks";
+import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types";
 import { ExtractNames, setId } from "@core/utils";
 import { HvTypography, HvTypographyVariants } from "@core/components";
@@ -162,7 +161,7 @@ export const HvAccordion = ({
         aria-expanded={isOpen}
         aria-disabled={disabled}
       >
-        {isOpen ? <DropUpXS color={color} /> : <DropDownXS color={color} />}
+        {isOpen ? <DropDownXS color={color} /> : <DropRightXS color={color} />}
         {label}
       </HvTypography>
     );

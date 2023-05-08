@@ -350,3 +350,38 @@ CustomRootComponent.parameters = {
     },
   },
 };
+
+export const StudioButton1 = () => {
+  return (
+    <>
+      <HvButton>Button1</HvButton>
+      <HvButton>Button2</HvButton>
+    </>
+  );
+};
+
+StudioButton1.parameters = {
+  studio: {
+    group: "components/inputs",
+  },
+};
+
+export const StudioButton2 = () => {
+  return <HvButton>Button2</HvButton>;
+};
+
+StudioButton1.parameters = {
+  studio: {
+    group: "components/inputs",
+  },
+};
+
+export const StudioButton3 = () => {
+  return <HvButton variant="primaryGhost">Button3</HvButton>;
+};
+
+StudioButton3.parameters = {
+  studio: {
+    group: "xpto/inputs",
+  },
+};
