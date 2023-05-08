@@ -1,7 +1,14 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  messageContainer: CSSInterpolation;
+  titleContainer: CSSInterpolation;
+  buttonWidth: CSSInterpolation;
+  rootSummaryButton: CSSInterpolation;
+  headerContainer: CSSInterpolation;
+  stepContainer: CSSInterpolation;
+} = {
   messageContainer: {
     "& > div": {
       width: "100%",

@@ -2,7 +2,11 @@ import { CSSInterpolation } from "@emotion/serialize";
 import { hexToRgbA, theme } from "@hitachivantara/uikit-react-core";
 import { alpha } from "@mui/material";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  loading: CSSInterpolation;
+  overlay: CSSInterpolation;
+  blur: CSSInterpolation;
+} = {
   loading: {
     width: "100%",
     height: "100%",

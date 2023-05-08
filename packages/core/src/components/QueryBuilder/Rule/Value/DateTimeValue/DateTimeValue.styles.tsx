@@ -1,7 +1,14 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  root: CSSInterpolation;
+  row: CSSInterpolation;
+  vertical: CSSInterpolation;
+  horizontal: CSSInterpolation;
+  datePicker: CSSInterpolation;
+  timePicker: CSSInterpolation;
+} = {
   root: {
     display: "flex",
     flexDirection: "column",

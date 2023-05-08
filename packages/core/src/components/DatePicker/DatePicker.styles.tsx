@@ -2,7 +2,26 @@ import { outlineStyles } from "@core/utils";
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  root: CSSInterpolation;
+  inputContainer: CSSInterpolation;
+  actionContainer: CSSInterpolation;
+  leftContainer: CSSInterpolation;
+  rightContainer: CSSInterpolation;
+  labelContainer: CSSInterpolation;
+  label: CSSInterpolation;
+  description: CSSInterpolation;
+  error: CSSInterpolation;
+  dropdown: CSSInterpolation;
+  panel: CSSInterpolation;
+  dropdownHeaderInvalid: CSSInterpolation;
+  dropdownHeaderOpen: CSSInterpolation;
+  icon: CSSInterpolation;
+  action: CSSInterpolation;
+  rangeMainContainer: CSSInterpolation;
+  rangeCalendarsContainer: CSSInterpolation;
+  rangeCalendarContainer: CSSInterpolation;
+} = {
   root: {
     position: "relative",
   },

@@ -3,7 +3,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 import queryBuilderClasses from "../queryBuilderClasses";
 
 export const styles: {
-  [key: string]: CSSInterpolation;
+  root: CSSInterpolation;
+  actionsContainer: CSSInterpolation;
+  isMdDown: CSSInterpolation;
 } = {
   root: {
     position: "relative",

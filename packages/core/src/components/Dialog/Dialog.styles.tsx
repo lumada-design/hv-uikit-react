@@ -10,7 +10,7 @@ import { HvButton, HvButtonProps } from "@core/components";
 import { forwardRef, Ref } from "react";
 import { CSSInterpolation } from "@emotion/serialize";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: { paper: CSSInterpolation } = {
   paper: {
     [`&.MuiDialog-paper`]: {
       maxHeight: `calc(100% - (2 * ${theme.dialog.margin}))`,

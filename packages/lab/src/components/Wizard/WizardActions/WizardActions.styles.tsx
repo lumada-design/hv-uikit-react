@@ -1,7 +1,12 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  buttonWidth: CSSInterpolation;
+  actionsContainer: CSSInterpolation;
+  buttonsContainer: CSSInterpolation;
+  buttonSpacing: CSSInterpolation;
+} = {
   buttonWidth: {
     width: 120,
     "& span": {

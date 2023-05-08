@@ -2,7 +2,23 @@ import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import queryBuilderClasses from "../queryBuilderClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  root: CSSInterpolation;
+  subGroup: CSSInterpolation;
+  topGroup: CSSInterpolation;
+  combinator: CSSInterpolation;
+  topCombinator: CSSInterpolation;
+  combinatorButton: CSSInterpolation;
+  actionButtonContainer: CSSInterpolation;
+  topActionButtonContainer: CSSInterpolation;
+  buttonBackground: CSSInterpolation;
+  removeButton: CSSInterpolation;
+  topRemoveButton: CSSInterpolation;
+  topRemoveButtonDisabled: CSSInterpolation;
+  rulesContainer: CSSInterpolation;
+  subRulesContainer: CSSInterpolation;
+  topRulesContainer: CSSInterpolation;
+} = {
   root: {
     position: "relative",
     padding: theme.space.sm,
@@ -93,6 +109,8 @@ export const styles: { [key: string]: CSSInterpolation } = {
   },
 
   rulesContainer: {},
+
+  topRulesContainer: {},
 
   subRulesContainer: {
     borderLeft: theme.queryBuilder.border,

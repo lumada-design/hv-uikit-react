@@ -1,7 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  paper: CSSInterpolation;
+  closeButton: CSSInterpolation;
+} = {
   paper: {
     width: "80%",
     maxWidth: "80%",

@@ -1,7 +1,13 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  contentContainer: CSSInterpolation;
+  fixedHeight: CSSInterpolation;
+  summaryRef: CSSInterpolation;
+  summarySticky: CSSInterpolation;
+  summaryContainer: CSSInterpolation;
+} = {
   contentContainer: {
     position: "relative",
     padding: 20,

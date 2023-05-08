@@ -1,8 +1,15 @@
-import { CSSInterpolation } from "@emotion/css";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import numericValueClasses from "./numericValueClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: {
+  root: CSSInterpolation;
+  label: CSSInterpolation;
+  inputContainer: CSSInterpolation;
+  rangeContainer: CSSInterpolation;
+  input: CSSInterpolation;
+  isMdDown: CSSInterpolation;
+} = {
   root: {
     display: "flex",
     flexGrow: 1,
