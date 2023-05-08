@@ -39,6 +39,8 @@ Here's what there is to know about this migration:
   - [Table](#table)
   - [Slider](#slider)
   - [Code editor](#code-editor)
+  - [Date picker](#date-picker)
+  - [Color picker](#color-picker)
 
 ## React packages <a id="react-packages" />
 
@@ -53,7 +55,6 @@ application at the moment since their development are still in progress. Over ti
 
 - `@hitachivantara/uikit-react-viz`
 - The following components from `@hitachivantara/uikit-react-lab` are missing:
-  - Color Picker
   - Drawer
   - Image carrousel
   - Navigation anchors
@@ -658,6 +659,26 @@ The `theme` property was removed since the component accesses the theme object i
 
 The `theme` property was removed since the component accesses the theme object internally.
 
-### DatePicker <a id="date-picker" />
+### Date picker <a id="date-picker" />
 
 The locale must be passed as a prop as the component no longer reads the locale from the provider.
+
+### Color picker <a id="color-picker" />
+
+The properties listed below were added to the color picker component to support the various use cases defined in the DS5 specifications. If you need to
+use the DS3 version, the component can easily be customized to meet the guidelines as shown in the example provided in this [story](/docs/lab-color-picker--main#customized-color-picker).
+
+- `placeholder`
+- `recommendedColors`
+- `recommendedColorsPosition`
+- `showLabels`
+- `labels`
+- `dropdownIcon`
+- `iconOnly`
+- `showSavedColors`
+- `showCustomColors`
+- `savedColorsValue`
+- `defaultSavedColorsValue`
+- `onSavedColorAdded`
+- `onSavedColorRemoved`
+- `deleteSavedColorButtonArialLabel`
