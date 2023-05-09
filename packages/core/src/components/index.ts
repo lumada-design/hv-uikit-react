@@ -76,3 +76,4 @@ export * from "./DatePicker";
 export * from "./ScrollTo";
 export * from "./InlineEditor";
 export * from "./TimeAgo";
+export * from "./QueryBuilder";

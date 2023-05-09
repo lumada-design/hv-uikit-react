@@ -316,6 +316,18 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     hoverBorderColor: "string",
     activeBorderColor: "string",
   },
+  queryBuilder: {
+    ruleSubGroupLeftConnectorPosition: "string",
+    ruleSubGroupContainerLeftConnectorPosition: "string",
+    ruleLeftConnectorPosition: "string",
+    ruleConnectorHorizontalSize: "string",
+    ruleConnectorHeight: "string",
+    ruleConnectorBorder: "string",
+    actionsContainerMarginTop: "string",
+    topActionButtonContainerBottom: "string",
+    topActionButtonContainerRight: "string",
+    border: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

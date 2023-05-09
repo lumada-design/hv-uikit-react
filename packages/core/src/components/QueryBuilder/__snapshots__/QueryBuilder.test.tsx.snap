@@ -1,0 +1,237 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
+<div>
+  <div
+    class="HvQueryBuilder-root css-1tj67ks HvQueryBuilder-topGroup css-17mp3s"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <div
+          class="HvQueryBuilder-combinator HvQueryBuilder-topCombinator HvMultiButton-root css-1fmieop-StyledRoot e17vrbb41"
+        >
+          <button
+            aria-pressed="true"
+            class="button selected e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                AND
+              </span>
+            </div>
+          </button>
+          <button
+            aria-pressed="false"
+            class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                OR
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <div
+          class="HvQueryBuilder-buttonBackground css-ea20jo HvQueryBuilder-topRemoveButton css-fig0a"
+        >
+          <button
+            aria-label="Reset query"
+            class="HvQueryBuilder-removeButton HvButton-root css-17gbypf-StyledButton e138pvrm0"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                <div
+                  class=""
+                  data-mui-internal-clone-element="true"
+                  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                >
+                  <div
+                    class=" css-f95wjz"
+                    name="Delete"
+                  >
+                    <svg
+                      focusable="false"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                        fill="var(--uikit-colors-secondary)"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="HvEmptyState-root css-1uyydw8-StyledRoot e1r2ohw13"
+    >
+      <div
+        class="HvEmptyState-container css-8n8vyk-StyledContainer e1r2ohw12"
+      >
+        <div
+          class="HvEmptyState-iconContainer"
+        >
+          <div
+            class="css-f95wjz"
+            name="Info"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M8 16a8 8 0 1 1 8-8 8 8 0 0 1-8 8zM8 1a6.957 6.957 0 0 0-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 0 0 6.91373 7q.04314.00027.08627 0a6.957 6.957 0 0 0 7-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 0 0-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                fill="var(--uikit-colors-secondary)"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="HvEmptyState-textContainer css-1jusbkl-StyledTextContainer e1r2ohw11"
+        >
+          <p
+            class="HvEmptyState-titleContainer e1r2ohw10 HvTypography-root HvTypography-body css-1cuxejy-getStyledComponent-StyledTypography e1tnpalo0"
+          >
+            No conditions created yet
+          </p>
+          <p
+            class="HvEmptyState-messageContainer e1r2ohw10 HvTypography-root HvTypography-body css-vzxsl1-getStyledComponent-StyledTypography e1tnpalo0"
+          >
+            <a
+              class="HvTypography-root HvTypography-link css-cweeuc-getStyledComponent e1tnpalo0"
+              style="cursor: pointer; text-decoration: underline;"
+            >
+              Create a condition
+            </a>
+             or a 
+            <a
+              class="HvTypography-root HvTypography-link css-cweeuc-getStyledComponent e1tnpalo0"
+              style="cursor: pointer; text-decoration: underline;"
+            >
+              condition group
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item HvQueryBuilder-actionButtonContainer css-101cv3g HvQueryBuilder-topActionButtonContainer css-1t8086o css-13i4rnv-MuiGrid-root"
+      >
+        <div
+          class="HvQueryBuilder-buttonBackground css-ea20jo"
+        >
+          <button
+            class="HvButton-root css-1u5hgoy-StyledButton e138pvrm0"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
+              >
+                <div
+                  class="css-f95wjz"
+                  name="Add"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                      fill="var(--uikit-colors-secondary)"
+                    />
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                Add condition
+              </span>
+            </div>
+          </button>
+        </div>
+        <div
+          class="HvQueryBuilder-buttonBackground css-ea20jo"
+        >
+          <button
+            class="HvButton-root css-1u5hgoy-StyledButton e138pvrm0"
+          >
+            <div
+              class="css-1nxr552-StyledContentDiv e138pvrm3"
+            >
+              <span
+                class="HvButton-startIcon css-spr17o-StyledIconSpan e138pvrm2"
+              >
+                <div
+                  class="css-f95wjz"
+                  name="Add"
+                >
+                  <svg
+                    focusable="false"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="color0"
+                      d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                      fill="var(--uikit-colors-secondary)"
+                    />
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="css-1o4qkkz-StyledChildren e138pvrm1"
+              >
+                Add group
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
