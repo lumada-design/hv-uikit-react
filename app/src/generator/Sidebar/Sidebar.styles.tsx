@@ -40,14 +40,22 @@ export const styles = {
   }),
   codeEditor: css({
     ".margin, .margin-view-overlays": {
-      width: "24px!important",
+      paddingLeft: "4px!important",
     },
-    ".line-numbers": {
-      width: "19px!important",
+    ".visible.scrollbar.horizontal": {
+      height: "10px!important",
+      "& .slider": {
+        top: "2px!important",
+      },
     },
-    ".monaco-scrollable-element": {
-      left: "24px!important",
-      width: "318px!important",
-    },
+  }),
+  codeEditorTools: css({
+    display: "flex",
+    gap: theme.space.xs,
+    padding: 8,
+    border: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: "none",
+    alignItems: "center",
+    justifyContent: "space-between",
   }),
 };

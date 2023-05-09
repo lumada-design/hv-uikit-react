@@ -17,7 +17,7 @@ import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
-import { Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
+import { Download, Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 
 const Colors = lazy(() => import("generator/Colors"));
@@ -28,6 +28,22 @@ const Spacing = lazy(() => import("generator/Spacing"));
 const Typography = lazy(() => import("generator/Typography"));
 const Zindices = lazy(() => import("generator/Zindices"));
 const Sizes = lazy(() => import("generator/Sizes"));
+
+function downloadTheme(filename, text) {
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+  );
+  element.setAttribute("download", filename);
+
+  element.style.display = "none";
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
@@ -89,6 +105,10 @@ export default ${themeName};`
   const onCopyHandler = () => {
     navigator.clipboard.writeText(fullCode);
     setCopied(true);
+  };
+
+  const onDownloadHandler = () => {
+    downloadTheme(`${themeName}.ts`, fullCode);
   };
 
   const onResetHandler = () => {
@@ -161,38 +181,52 @@ export default ${themeName};`
             </HvBox>
           </HvBox>
           <HvBox css={{ position: "relative" }}>
-            <HvBox css={{ position: "absolute", top: 10, right: 46 }}>
-              <HvTooltip
-                placement="bottom-end"
-                title={<HvTypography>Reset</HvTypography>}
-              >
-                <HvButton
-                  variant="secondarySubtle"
-                  icon
-                  onClick={onResetHandler}
-                >
-                  <Reset />
-                </HvButton>
-              </HvTooltip>
-            </HvBox>
-            <HvBox css={{ position: "absolute", top: 10, right: 10 }}>
-              <HvTooltip
-                placement="bottom-end"
-                title={<HvTypography>Copy to Clipboard</HvTypography>}
-              >
-                <HvButton
-                  variant="secondarySubtle"
-                  icon
-                  onClick={onCopyHandler}
-                >
-                  <Duplicate />
-                </HvButton>
-              </HvTooltip>
+            <HvBox className={styles.codeEditorTools}>
+              <HvBox css={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <HvTypography variant="label">{themeName}.ts</HvTypography>
+                <HvTooltip title={<HvTypography>Download</HvTypography>}>
+                  <HvButton
+                    variant="secondaryGhost"
+                    icon
+                    onClick={onDownloadHandler}
+                  >
+                    <Download />
+                  </HvButton>
+                </HvTooltip>
+              </HvBox>
+              <HvBox css={{ display: "flex", gap: 8 }}>
+                <HvBox>
+                  <HvTooltip title={<HvTypography>Reset</HvTypography>}>
+                    <HvButton
+                      variant="secondaryGhost"
+                      icon
+                      onClick={onResetHandler}
+                    >
+                      <Reset />
+                    </HvButton>
+                  </HvTooltip>
+                </HvBox>
+                <HvBox>
+                  <HvTooltip
+                    title={<HvTypography>Copy to Clipboard</HvTypography>}
+                  >
+                    <HvButton
+                      variant="secondaryGhost"
+                      icon
+                      onClick={onCopyHandler}
+                    >
+                      <Duplicate />
+                    </HvButton>
+                  </HvTooltip>
+                </HvBox>
+              </HvBox>
             </HvBox>
             <HvCodeEditor
               options={{
                 minimap: { enabled: false },
                 readOnly: true,
+                lineDecorationsWidth: 0,
+                lineNumbersMinChars: 0,
               }}
               language="typescript"
               value={fullCode}
