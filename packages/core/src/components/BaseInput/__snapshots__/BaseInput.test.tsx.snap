@@ -3,20 +3,20 @@
 exports[`BaseInput > should render correctly 1`] = `
 <div>
   <div
-    class="HvBaseInput-root css-1czkd-StyledRoot e8ibl7d2"
+    class="HvBaseInput-root css-rfscxw"
   >
     <div
-      class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+      class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot css-1swpg9k MuiInput-underline MuiInputBase-colorPrimary css-q0jhri-MuiInputBase-root-MuiInput-root"
     >
       <input
-        class="MuiInputBase-input MuiInput-input HvBaseInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+        class="MuiInputBase-input MuiInput-input HvBaseInput-input css-1e9q7rp css-1x51dt5-MuiInputBase-input-MuiInput-input"
         rows="10"
         type="text"
         value=""
       />
     </div>
     <div
-      class="HvBaseInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+      class="HvBaseInput-inputBorderContainer css-1ag2w2a"
       role="presentation"
     />
   </div>

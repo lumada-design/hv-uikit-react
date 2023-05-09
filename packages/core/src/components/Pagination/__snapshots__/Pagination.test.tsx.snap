@@ -143,24 +143,24 @@ exports[`Pagination > should render correctly 1`] = `
           class="HvPagination-pageJump hv-uikit-css-bz8qz2-StyledPageJump e1tn2n0k0"
         >
           <div
-            class="HvInput-root HvPagination-pageSizeInputContainer hv-uikit-css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+            class="HvInput-root hv-uikit-css-13o7eu2 HvPagination-pageSizeInputContainer HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root eryso6g0 hv-uikit-css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root hv-uikit-css-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot MuiInput-underline MuiInputBase-colorPrimary  hv-uikit-css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot hv-uikit-css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Current page"
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput hv-uikit-css-8684bs css-1x51dt5-MuiInputBase-input-MuiInput-input"
                   rows="10"
                   type="number"
                   value="1"
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer hv-uikit-css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer hv-uikit-css-8g6lar"
                 role="presentation"
               />
             </div>

@@ -22,18 +22,18 @@ exports[`Slider > should render correctly 1`] = `
           class="HvSliderInput-inputContainer css-oay593-StyledInputContainer e13c18d81"
         >
           <div
-            class="HvInput-root HvSliderInput-input e13c18d80 css-1ioikot-StyledFormElement-StyledInput eryso6g8 HvFormElement-root"
+            class="HvInput-root HvSliderInput-input e13c18d80 css-19adkf2-StyledInput HvFormElement-root"
             id="hvSlider1-input-0"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root css-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="Failure Rate-0"
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-8684bs css-1x51dt5-MuiInputBase-input-MuiInput-input"
                   id="hvSlider1-input-0-input"
                   rows="10"
                   type="text"
@@ -41,7 +41,7 @@ exports[`Slider > should render correctly 1`] = `
                 />
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-8g6lar"
                 role="presentation"
               />
             </div>

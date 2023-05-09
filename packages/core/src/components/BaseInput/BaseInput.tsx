@@ -2,26 +2,22 @@ import { RefObject, useContext } from "react";
 import {
   InputBaseComponentProps as MuiInputBaseComponentProps,
   InputProps as MuiInputProps,
+  Input as MuiInput,
 } from "@mui/material";
 import { HvBaseProps } from "@core/types";
-import {
-  StyledRoot,
-  StyledInputBorderContainer,
-  StyledInput,
-} from "./BaseInput.styles";
+import { styles } from "./BaseInput.styles";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   buildFormElementPropsFromContext,
   buildAriaPropsFromContext,
 } from "@core/components";
-import { clsx } from "clsx";
 import baseInputClasses, { HvBaseInputClasses } from "./baseInputClasses";
-import { css, Global } from "@emotion/react";
+import { ClassNames, css as emotionCss, Global } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 
 // Global styles for the base input.
-const baseInputStyles = css`
+const baseInputStyles = emotionCss`
   "input:-webkit-autofill": {
     "-webkit-box-shadow": 0 0 0px 1000px ${theme.colors.atmo1} inset,
     "-webkit-text-fill-color": ${theme.colors.secondary},
@@ -151,99 +147,114 @@ export const HvBaseInput = ({
   };
 
   return (
-    <>
-      <Global styles={baseInputStyles} />
-      <StyledRoot
-        className={clsx(
-          baseInputClasses.root,
-          classes?.root,
-          className,
-          formElementProps.disabled &&
-            clsx(baseInputClasses.disabled, classes?.disabled),
-          localInvalid && clsx(baseInputClasses.invalid, classes?.invalid),
-          multiline &&
-            resizable &&
-            clsx(baseInputClasses.resizable, classes?.resizable),
-          readOnly && clsx(baseInputClasses.readOnly, classes?.readOnly)
-        )}
-        $disabled={formElementProps.disabled}
-        $invalid={localInvalid}
-        $resizable={multiline && resizable}
-        $readOnly={!!readOnly}
-      >
-        <StyledInput
-          id={id}
-          name={formElementProps.name}
-          value={value}
-          defaultValue={defaultValue}
-          type={type}
-          placeholder={placeholder}
-          readOnly={!!formElementProps.readOnly}
-          disabled={formElementProps.disabled}
-          onChange={onChangeHandler}
-          className={clsx(
-            localInvalid &&
-              clsx(
-                baseInputClasses.inputRootInvalid,
-                classes?.inputRootInvalid
-              ),
-            readOnly &&
-              clsx(
-                baseInputClasses.inputRootReadOnly,
-                classes?.inputRootReadOnly
-              )
-          )}
-          classes={{
-            root: clsx(baseInputClasses.inputRoot, classes?.inputRoot),
-            focused: clsx(
-              baseInputClasses.inputRootFocused,
-              classes?.inputRootFocused
-            ),
-            disabled: clsx(
-              baseInputClasses.inputRootDisabled,
-              classes?.inputRootDisabled
-            ),
-            multiline: clsx(
-              baseInputClasses.inputRootMultiline,
-              classes?.inputRootMultiline
-            ),
-            input: clsx(
-              baseInputClasses.input,
-              classes?.input,
-              !formElementProps.disabled &&
-                resizable &&
-                clsx(baseInputClasses.inputResizable, classes?.inputResizable),
-              disabled &&
-                clsx(baseInputClasses.inputDisabled, classes?.inputDisabled),
-              readOnly &&
-                clsx(baseInputClasses.inputReadOnly, classes?.readOnly)
-            ),
-          }}
-          inputProps={{
-            // Avoid the required attribute at the root node
-            required: formElementProps.required,
-            ...inputProps,
-            ...ariaProps,
-          }}
-          inputRef={inputRef}
-          multiline={multiline}
-          rows={10}
-          $resizable={!formElementProps.disabled && resizable}
-          $disabled={!!disabled}
-          $readOnly={!!readOnly}
-          $invalid={localInvalid}
-          {...others}
-        />
-        {!multiline && (
-          <StyledInputBorderContainer
-            role="presentation"
-            className={clsx(
-              baseInputClasses.inputBorderContainer,
-              classes?.inputBorderContainer
+    <ClassNames>
+      {({ css, cx }) => (
+        <>
+          <Global styles={baseInputStyles} />
+          <div
+            className={cx(
+              baseInputClasses.root,
+              formElementProps.disabled && baseInputClasses.disabled,
+              localInvalid && baseInputClasses.invalid,
+              multiline && resizable && baseInputClasses.resizable,
+              formElementProps.readOnly && baseInputClasses.readOnly,
+              css(styles.root),
+              formElementProps.disabled && css(styles.disabled),
+              localInvalid && css(styles.invalid),
+              multiline && resizable && css(styles.resizable),
+              formElementProps.readOnly && css(styles.readOnly),
+              className,
+              classes?.root,
+              formElementProps.disabled && classes?.disabled,
+              localInvalid && classes?.invalid,
+              multiline && resizable && classes?.resizable,
+              formElementProps.readOnly && classes?.readOnly
             )}
-          />
-        )}
-      </StyledRoot>
-    </>
+          >
+            <MuiInput
+              id={id}
+              name={formElementProps.name}
+              value={value}
+              defaultValue={defaultValue}
+              type={type}
+              placeholder={placeholder}
+              readOnly={!!formElementProps.readOnly}
+              disabled={formElementProps.disabled}
+              onChange={onChangeHandler}
+              className={cx(
+                localInvalid && baseInputClasses.inputRootInvalid,
+                formElementProps.readOnly && baseInputClasses.inputRootReadOnly,
+                localInvalid && css(styles.inputRootInvalid),
+                formElementProps.readOnly && css(styles.inputRootReadOnly),
+                localInvalid && classes?.inputRootInvalid,
+                formElementProps.readOnly && classes?.inputRootReadOnly
+              )}
+              classes={{
+                root: cx(
+                  baseInputClasses.inputRoot,
+                  css(styles.inputRoot),
+                  classes?.inputRoot
+                ),
+                focused: cx(
+                  baseInputClasses.inputRootFocused,
+                  css(styles.inputRootFocused),
+                  classes?.inputRootFocused
+                ),
+                disabled: cx(
+                  baseInputClasses.inputRootDisabled,
+                  css(styles.inputRootDisabled),
+                  classes?.inputRootDisabled
+                ),
+                multiline: cx(
+                  baseInputClasses.inputRootMultiline,
+                  css(styles.inputRootMultiline),
+                  classes?.inputRootMultiline
+                ),
+                input: cx(
+                  baseInputClasses.input,
+                  !formElementProps.disabled &&
+                    resizable &&
+                    baseInputClasses.inputResizable,
+                  formElementProps.disabled && baseInputClasses.inputDisabled,
+                  formElementProps.readOnly && baseInputClasses.inputReadOnly,
+                  css(styles.input),
+                  !formElementProps.disabled &&
+                    resizable &&
+                    css(styles.inputResizable),
+                  formElementProps.disabled && css(styles.inputDisabled),
+                  formElementProps.readOnly && css(styles.inputReadOnly),
+                  classes?.input,
+                  !formElementProps.disabled &&
+                    resizable &&
+                    classes?.inputResizable,
+                  formElementProps.disabled && classes?.inputDisabled,
+                  formElementProps.readOnly && classes?.inputReadOnly
+                ),
+              }}
+              inputProps={{
+                // Avoid the required attribute at the root node
+                required: formElementProps.required,
+                ...inputProps,
+                ...ariaProps,
+              }}
+              inputRef={inputRef}
+              multiline={multiline}
+              rows={10}
+              {...others}
+            />
+            {!multiline && (
+              <div
+                role="presentation"
+                className={cx(
+                  baseInputClasses.inputBorderContainer,
+                  css(styles.inputBorderContainer),
+                  classes?.inputBorderContainer
+                )}
+              />
+            )}
+          </div>
+        </>
+      )}
+    </ClassNames>
   );
 };
