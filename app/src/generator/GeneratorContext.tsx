@@ -6,9 +6,6 @@ type GeneratorContextProp = {
   customTheme: HvTheme | HvThemeStructure;
   updateCustomTheme: (newTheme: any) => void;
 
-  changedValues?: Partial<HvTheme | HvThemeStructure>;
-  updateChangedValues?: (path: any, key: any, reset?: boolean) => void;
-
   open?: boolean;
   setOpen?: Dispatch<SetStateAction<boolean>>;
 
@@ -28,8 +25,6 @@ const GeneratorProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [tutorialOpen, setTutorialOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const [changedValues, setChangedValues] = useState({});
-
   const [customTheme, setCustomTheme] = useState(
     createTheme({ name: "customTheme", base: "ds5" })
   );
@@ -38,35 +33,11 @@ const GeneratorProvider = ({ children }) => {
     setCustomTheme(newTheme);
   };
 
-  const updateChangedValues = (path, value, reset = false) => {
-    if (reset) {
-      setChangedValues({ name: "customTheme", base: "ds5" });
-    } else {
-      setChangedValues((prevState) => {
-        const newState = { ...prevState };
-        let node = newState;
-        path.forEach((key, index) => {
-          if (!node[key]) {
-            node[key] = {};
-          }
-          if (index === path.length - 1) {
-            node[key] = value;
-          } else {
-            node = node[key];
-          }
-        });
-        return newState;
-      });
-    }
-  };
-
   return (
     <GeneratorContext.Provider
       value={{
         customTheme,
         updateCustomTheme,
-        changedValues,
-        updateChangedValues,
         open,
         setOpen,
         tutorialOpen,

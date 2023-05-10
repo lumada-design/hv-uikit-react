@@ -12,8 +12,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 
 const Sizes = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [currValues, setCurrValues] = useState<Map<string, string>>(
     new Map<string, string>()
   );
@@ -49,7 +48,6 @@ const Sizes = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["sizes", size], sizeValue);
   };
 
   return (

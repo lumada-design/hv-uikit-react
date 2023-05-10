@@ -15,8 +15,7 @@ import { css } from "@emotion/css";
 import { extractFontsNames } from "generator/utils";
 
 const FontFamily = () => {
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
 
   const [fontName, setFontName] = useState("");
   const [fontValues, setFontValues] = useState<HvListValue[]>([
@@ -34,7 +33,6 @@ const FontFamily = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["fontFamily", "body"], font);
   };
 
   const onAddHandler = () => {
@@ -101,7 +99,7 @@ const FontFamily = () => {
       <HvDropdown
         label="Font Family"
         values={fontValues}
-        onChange={(item) => onDropdownClickHandler(item.label)}
+        onChange={(item) => onDropdownClickHandler((item as HvListValue).label)}
       />
     </div>
   );

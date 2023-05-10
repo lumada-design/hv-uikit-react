@@ -17,8 +17,14 @@ import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
-import { Download, Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
+import {
+  Download,
+  Duplicate,
+  Reset,
+  Undo,
+} from "@hitachivantara/uikit-react-icons";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+import { downloadTheme, themeDiff } from "generator/utils";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -29,28 +35,17 @@ const Typography = lazy(() => import("generator/Typography"));
 const Zindices = lazy(() => import("generator/Zindices"));
 const Sizes = lazy(() => import("generator/Sizes"));
 
-function downloadTheme(filename, text) {
-  const element = document.createElement("a");
-  element.setAttribute(
-    "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
-  );
-  element.setAttribute("download", filename);
-
-  element.style.display = "none";
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-}
-
 const Sidebar = () => {
-  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
-    useTheme();
+  const {
+    activeTheme,
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    themes,
+    changeTheme,
+  } = useTheme();
 
-  const { updateCustomTheme, changedValues, updateChangedValues, open } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, open } = useContext(GeneratorContext);
   const [themeName, setThemeName] = useState("customTheme");
   const [fullCode, setFullCode] = useState("");
   const [copied, setCopied] = useState(false);
@@ -60,26 +55,31 @@ const Sidebar = () => {
   const [typographyOpen, setTypographyOpen] = useState(false);
   const [layoutOpen, setLayoutOpen] = useState(false);
 
-  // the `replace` bit below is just a regex to remove the quotes from
-  // the properties names, for displaying effect only.
   useEffect(() => {
+    const temp: any = {};
+    temp.name = themeName;
+    temp.base = selectedTheme;
+    const final = {
+      ...temp,
+      ...themeDiff(activeTheme as object, customTheme),
+    };
+
+    // the `replace` bit below is just a regex to remove the quotes from
+    // the properties names, for displaying effect only.
     setFullCode(
       `import { createTheme } from "@hitachivantara/uikit-react-core";
 
 const ${themeName} = createTheme(` +
-        JSON.stringify(changedValues, null, 2).replace(
-          /\"([^(\")"]+)\":/g,
-          "$1:"
-        ) +
+        JSON.stringify(final, null, 2).replace(/\"([^(\")"]+)\":/g, "$1:") +
         `)
     
 export default ${themeName};`
     );
-  }, [changedValues]);
+  }, [customTheme]);
 
-  useEffect(() => {
-    updateChangedValues?.(["name"], themeName);
-  }, [themeName]);
+  const nameChangeHandler = (name) => {
+    setThemeName(name);
+  };
 
   useEffect(() => {
     const newTheme = createTheme({
@@ -87,18 +87,7 @@ export default ${themeName};`
       base: selectedTheme as HvBaseTheme,
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["base"], selectedTheme);
-  }, [selectedTheme]);
-
-  const nameChangeHandler = (name) => {
-    const newTheme = createTheme({
-      name: name,
-      base: selectedTheme as HvBaseTheme,
-    });
-    updateCustomTheme(newTheme);
-    updateChangedValues?.(["name"], name);
-    setThemeName(name);
-  };
+  }, [themeName, selectedTheme]);
 
   const debouncedNameChangeHandler = debounce(nameChangeHandler, 250);
 
@@ -118,6 +107,10 @@ export default ${themeName};`
     });
     updateCustomTheme(newTheme);
     updateChangedValues?.([], "", true);
+  };
+
+  const onUndoHandler = () => {
+    undo?.();
   };
 
   const handleClose = (event, reason) => {
@@ -195,6 +188,17 @@ export default ${themeName};`
                 </HvTooltip>
               </HvBox>
               <HvBox css={{ display: "flex", gap: 8 }}>
+                <HvBox>
+                  <HvTooltip title={<HvTypography>Undo</HvTypography>}>
+                    <HvButton
+                      variant="secondaryGhost"
+                      icon
+                      onClick={onUndoHandler}
+                    >
+                      <Undo />
+                    </HvButton>
+                  </HvTooltip>
+                </HvBox>
                 <HvBox>
                   <HvTooltip title={<HvTypography>Reset</HvTypography>}>
                     <HvButton

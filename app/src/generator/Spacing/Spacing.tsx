@@ -12,8 +12,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 
 const Spacing = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [currValues, setCurrValues] = useState<Map<string, string | number>>(
     new Map<string, string | number>()
   );
@@ -53,7 +52,6 @@ const Spacing = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["space", spacing], spacingValue);
   };
 
   return (

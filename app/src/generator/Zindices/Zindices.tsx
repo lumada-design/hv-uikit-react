@@ -12,8 +12,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 
 const Zindices = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [currValues, setCurrValues] = useState<Map<string, number>>(
     new Map<string, number>()
   );
@@ -49,7 +48,6 @@ const Zindices = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["zIndices", zIndex], zIndexValue);
   };
 
   return (

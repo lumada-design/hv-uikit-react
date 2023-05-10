@@ -28,8 +28,7 @@ const typographyToShow = [
 ];
 
 const Typography = () => {
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [updatedHeights, setUpdatedHeights] = useState<Map<string, string>>(
     new Map<string, string>()
   );
@@ -75,10 +74,6 @@ const Typography = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(
-      ["typography", typographyName, "fontSize"],
-      sizeValue
-    );
   };
 
   const getLineHeights = (typographyName: string) => {
@@ -156,10 +151,6 @@ const Typography = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(
-      ["typography", typographyName, "lineHeight"],
-      getVarValue(customTheme?.lineHeights[lineHeight])
-    );
 
     let map = new Map<string, string>(updatedHeights);
     map.set(typographyName, lineHeight);
@@ -178,10 +169,6 @@ const Typography = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(
-      ["typography", typographyName, "fontWeight"],
-      getVarValue(customTheme?.fontWeights[fontWeight])
-    );
 
     let map = new Map<string, string>(updatedWeights);
     map.set(typographyName, fontWeight);
@@ -200,7 +187,6 @@ const Typography = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["typography", typographyName, "color"], colorValue);
   };
 
   const debouncedHandler = debounce(colorChangedHandler, 250);
