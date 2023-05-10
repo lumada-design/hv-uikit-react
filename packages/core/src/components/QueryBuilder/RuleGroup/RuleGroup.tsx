@@ -1,5 +1,4 @@
 import { useCallback, useContext } from "react";
-import { clsx } from "clsx";
 import { Add, Delete, Info } from "@hitachivantara/uikit-react-icons";
 import {
   HvButton,
@@ -44,10 +43,10 @@ export const RuleGroup = ({
 
   const actionButtons = (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <>
           <div
-            className={clsx(
+            className={cx(
               queryBuilderClasses.buttonBackground,
               css(styles.buttonBackground, classes?.buttonBackground)
             )}
@@ -67,7 +66,7 @@ export const RuleGroup = ({
           </div>
           {level <= normalizedMaxDepth && (
             <div
-              className={clsx(
+              className={cx(
                 queryBuilderClasses.buttonBackground,
                 css(styles.buttonBackground, classes?.buttonBackground)
               )}
@@ -94,11 +93,11 @@ export const RuleGroup = ({
   const DeleteIcon = withTooltip(
     () => (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <Delete
             className={
               readOnly
-                ? clsx(
+                ? cx(
                     queryBuilderClasses.topRemoveButtonDisabled,
                     css(
                       styles.topRemoveButtonDisabled,
@@ -130,26 +129,29 @@ export const RuleGroup = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <div
-          className={clsx(
+          className={cx(
             queryBuilderClasses.root,
-            css(styles.root, classes?.root),
+            css(styles.root),
+            classes?.root,
             level === 0
-              ? clsx(
+              ? cx(
                   queryBuilderClasses.topGroup,
-                  css(styles.topGroup, classes?.topGroup)
+                  css(styles.topGroup),
+                  classes?.topGroup
                 )
-              : clsx(
+              : cx(
                   queryBuilderClasses.subGroup,
-                  css(styles.subGroup, classes?.subGroup)
+                  css(styles.subGroup),
+                  classes?.subGroup
                 )
           )}
         >
           <HvGrid container>
             <HvGrid item>
               <HvMultiButton
-                className={clsx(
+                className={cx(
                   queryBuilderClasses.combinator,
                   css(styles.combinator, classes?.combinator),
                   queryBuilderClasses.topCombinator,
@@ -160,7 +162,7 @@ export const RuleGroup = ({
                 {combinators.map((item) => (
                   <HvButton
                     key={item.operand}
-                    className={clsx(
+                    className={cx(
                       queryBuilderClasses.combinatorButton,
 
                       css(styles.combinatorButton, classes?.combinatorButton)
@@ -168,6 +170,7 @@ export const RuleGroup = ({
                     selected={item.operand === combinator}
                     onClick={() => item.operand && onClickCombinator(item)}
                     disabled={readOnly}
+                    size={"xs"}
                   >
                     {item.label}
                   </HvButton>
@@ -176,7 +179,7 @@ export const RuleGroup = ({
             </HvGrid>
             <HvGrid item>
               <div
-                className={clsx(
+                className={cx(
                   queryBuilderClasses.buttonBackground,
                   css(styles.buttonBackground, classes?.buttonBackground),
                   queryBuilderClasses.topRemoveButton,
@@ -185,7 +188,7 @@ export const RuleGroup = ({
               >
                 <HvButton
                   icon
-                  className={clsx(
+                  className={cx(
                     queryBuilderClasses.removeButton,
                     classes?.removeButton,
                     css(styles.removeButton)
@@ -214,19 +217,19 @@ export const RuleGroup = ({
           </HvGrid>
           {rules?.length > 0 && (
             <div
-              className={clsx(
+              className={cx(
                 queryBuilderClasses.rulesContainer,
                 classes?.rulesContainer,
                 css(styles.rulesContainer),
                 level > 0
-                  ? clsx(
+                  ? cx(
                       queryBuilderClasses.subRulesContainer,
                       classes?.subRulesContainer,
                       css(styles.subRulesContainer)
                     )
                   : "",
                 level === 0
-                  ? clsx(
+                  ? cx(
                       queryBuilderClasses.topRulesContainer,
                       classes?.topRulesContainer,
                       css(styles.topRulesContainer)
@@ -315,7 +318,7 @@ export const RuleGroup = ({
           <HvGrid container>
             <HvGrid
               item
-              className={clsx(
+              className={cx(
                 queryBuilderClasses.actionButtonContainer,
                 classes?.actionButtonContainer,
                 css(styles.actionButtonContainer),

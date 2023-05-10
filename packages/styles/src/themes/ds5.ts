@@ -481,11 +481,11 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     ruleLeftConnectorPosition: `calc( -1 * 17px)`,
     ruleConnectorHorizontalSize: "17px",
     ruleConnectorHeight: "39px",
-    ruleConnectorBorder: theme.colors.atmo4,
     actionsContainerMarginTop: "24px",
     topActionButtonContainerBottom: `calc(-1 * ${theme.space.md} * 0.5 - 3px)`,
     topActionButtonContainerRight: `calc(${theme.space.sm} * 1.75 + 2px)`,
-    border: `1px solid ${theme.colors.secondary}`,
+    topGroupPaddingBottom: `calc(${theme.space.md} * 3)`,
+    border: `1px solid ${theme.colors.atmo4}`,
   },
 }));
 

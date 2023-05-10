@@ -542,6 +542,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     actionsContainerMarginTop: "22px",
     topActionButtonContainerBottom: `calc(-1 * ${theme.space.md} * 0.5)`,
     topActionButtonContainerRight: `calc(${theme.space.sm} * 1.75)`,
+    topGroupPaddingBottom: `calc(${theme.space.sm} * 3)`,
     border: `1px solid ${theme.colors.atmo4}`,
   },
 }));

@@ -3,7 +3,7 @@
 exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
 <div>
   <div
-    class="HvQueryBuilder-root css-1tj67ks HvQueryBuilder-topGroup css-17mp3s"
+    class="HvQueryBuilder-root HvQueryBuilder-topGroup css-10wnhl0"
   >
     <div
       class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
@@ -12,11 +12,11 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
         class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <div
-          class="HvQueryBuilder-combinator HvQueryBuilder-topCombinator HvMultiButton-root css-1fmieop-StyledRoot e17vrbb41"
+          class="HvQueryBuilder-combinator HvQueryBuilder-topCombinator HvMultiButton-root css-1kjgpr1-StyledRoot e17vrbb41"
         >
           <button
             aria-pressed="true"
-            class="button selected e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
+            class="button selected e17vrbb40 HvButton-root css-1gx6mqk-StyledButton-StyledButton e138pvrm0"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -30,7 +30,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
           </button>
           <button
             aria-pressed="false"
-            class="button e17vrbb40 HvButton-root css-drqpdh-StyledButton-StyledButton e138pvrm0"
+            class="button e17vrbb40 HvButton-root css-1gx6mqk-StyledButton-StyledButton e138pvrm0"
           >
             <div
               class="css-1nxr552-StyledContentDiv e138pvrm3"
@@ -48,7 +48,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
         class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <div
-          class="HvQueryBuilder-buttonBackground css-ea20jo HvQueryBuilder-topRemoveButton css-fig0a"
+          class="HvQueryBuilder-buttonBackground HvQueryBuilder-topRemoveButton css-1qbpflq"
         >
           <button
             aria-label="Reset query"
@@ -150,7 +150,7 @@ exports[`QueryBuilder > snapshot > matches snapshot 1`] = `
       class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item HvQueryBuilder-actionButtonContainer css-101cv3g HvQueryBuilder-topActionButtonContainer css-1t8086o css-13i4rnv-MuiGrid-root"
+        class="MuiGrid-root MuiGrid-item HvQueryBuilder-actionButtonContainer HvQueryBuilder-topActionButtonContainer css-amsqno css-13i4rnv-MuiGrid-root"
       >
         <div
           class="HvQueryBuilder-buttonBackground css-ea20jo"

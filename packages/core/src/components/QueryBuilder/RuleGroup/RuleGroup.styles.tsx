@@ -51,7 +51,7 @@ export const styles: { [key: string]: CSSInterpolation } = {
     maxWidth: "100%",
     minWidth: 740,
 
-    paddingBottom: `calc(${theme.space.sm} * 3)`,
+    paddingBottom: theme.queryBuilder.topGroupPaddingBottom,
   },
 
   combinator: {

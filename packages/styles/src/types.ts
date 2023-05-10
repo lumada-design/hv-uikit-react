@@ -329,10 +329,10 @@ export type HvThemeComponents = {
     ruleLeftConnectorPosition: string;
     ruleConnectorHorizontalSize: string;
     ruleConnectorHeight: string;
-    ruleConnectorBorder: string;
     actionsContainerMarginTop: string;
     topActionButtonContainerBottom: string;
     topActionButtonContainerRight: string;
+    topGroupPaddingBottom: string;
     border: string;
   };
 };

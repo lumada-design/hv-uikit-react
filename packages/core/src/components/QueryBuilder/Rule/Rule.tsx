@@ -66,10 +66,10 @@ export const Rule = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvGrid
           container
-          className={clsx(
+          className={cx(
             ruleClasses.root,
             css(styles.root),
             isMdDown ? clsx(ruleClasses.isMdDown, css(styles.isMdDown)) : ""
@@ -110,7 +110,7 @@ export const Rule = ({
             )}
           <HvGrid
             item
-            className={clsx(
+            className={cx(
               ruleClasses.actionsContainer,
               css(styles.actionsContainer)
             )}
