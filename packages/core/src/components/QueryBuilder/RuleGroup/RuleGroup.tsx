@@ -134,8 +134,7 @@ export const RuleGroup = ({
         <div
           className={clsx(
             queryBuilderClasses.root,
-            classes?.root,
-            css(styles.root),
+            css(styles.root, classes?.root),
             level === 0
               ? clsx(
                   queryBuilderClasses.topGroup,
