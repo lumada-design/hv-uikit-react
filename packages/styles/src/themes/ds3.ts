@@ -538,7 +538,6 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     ruleLeftConnectorPosition: `calc( -1 * 21px)`,
     ruleConnectorHorizontalSize: "21px",
     ruleConnectorHeight: "39px",
-    ruleConnectorBorder: theme.colors.atmo4,
     actionsContainerMarginTop: "22px",
     topActionButtonContainerBottom: `calc(-1 * ${theme.space.md} * 0.5)`,
     topActionButtonContainerRight: `calc(${theme.space.sm} * 1.75)`,
