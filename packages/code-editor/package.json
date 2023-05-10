@@ -39,9 +39,8 @@
     "@emotion/cache": "^11.10.5",
     "@hitachivantara/uikit-react-core": "^5.5.0",
     "@hitachivantara/uikit-styles": "^5.4.0",
-    "clsx": "^1.2.1",
-    "monaco-editor": "^0.37.1",
-    "react-monaco-editor": "^0.52.0"
+    "@monaco-editor/react": "^4.5.1",
+    "clsx": "^1.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

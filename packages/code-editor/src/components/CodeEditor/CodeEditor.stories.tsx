@@ -143,6 +143,11 @@ const defaultValueJson = `{
   }`;
 
 export const Main: StoryObj<HvCodeEditorProps> = {
+  parameters: {
+    eyes: {
+      waitBeforeCapture: 5000,
+    },
+  },
   render: () => {
     const getModalStyle = () => {
       return {
@@ -173,17 +178,12 @@ export const Main: StoryObj<HvCodeEditorProps> = {
     const codeEditor = (height: number) => {
       return (
         <HvCodeEditor
-          options={{
-            dimension: {
-              height,
-              width: 800,
-            },
-          }}
+          height={height}
           editorProps={{
             language: "json",
           }}
           onChange={(input) => {
-            setEditorContent(input);
+            setEditorContent(input || "");
           }}
           value={editorContent}
         />
@@ -220,16 +220,14 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
         story: "Yaml editor.",
       },
     },
+    eyes: {
+      waitBeforeCapture: 5000,
+    },
   },
   render: () => {
     return (
       <HvCodeEditor
-        options={{
-          dimension: {
-            height: 270,
-            width: 800,
-          },
-        }}
+        height={270}
         language="yaml"
         onChange={(input) => console.log(input)}
         value={defaultValueYaml}
