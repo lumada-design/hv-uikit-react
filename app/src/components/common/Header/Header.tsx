@@ -1,14 +1,13 @@
 import { useContext, MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { Alert, Menu } from "@hitachivantara/uikit-react-icons";
+import { Menu } from "@hitachivantara/uikit-react-icons";
 import {
   HvHeader,
   HvHeaderBrand,
   HvHeaderActions,
   HvHeaderNavigation,
   HvButton,
-  HvBadge,
   HvTooltip,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
@@ -73,13 +72,6 @@ export const Header = () => {
           >
             TUTORIAL
           </HvButton>
-          <HvBadge
-            id="badge7"
-            showCount
-            count={8}
-            icon={<Alert />}
-            style={{ marginRight: 10 }}
-          />
           <HvTooltip
             title={
               <HvTypography>
