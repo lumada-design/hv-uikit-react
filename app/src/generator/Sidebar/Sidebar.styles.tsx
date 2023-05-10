@@ -51,7 +51,6 @@ export const styles = {
   }),
   codeEditorTools: css({
     display: "flex",
-    gap: theme.space.xs,
     padding: 8,
     border: `1px solid ${theme.colors.atmo4}`,
     borderBottom: "none",

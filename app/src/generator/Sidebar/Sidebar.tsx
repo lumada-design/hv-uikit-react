@@ -22,6 +22,7 @@ import {
   Duplicate,
   Reset,
   Undo,
+  Redo,
 } from "@hitachivantara/uikit-react-icons";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { downloadTheme, themeDiff } from "generator/utils";
@@ -45,7 +46,8 @@ const Sidebar = () => {
     changeTheme,
   } = useTheme();
 
-  const { customTheme, updateCustomTheme, open } = useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme, open, undo, redo, canUndo, canRedo } =
+    useContext(GeneratorContext);
   const [themeName, setThemeName] = useState("customTheme");
   const [fullCode, setFullCode] = useState("");
   const [copied, setCopied] = useState(false);
@@ -54,6 +56,14 @@ const Sidebar = () => {
   const [fontsOpen, setFontsOpen] = useState(false);
   const [typographyOpen, setTypographyOpen] = useState(false);
   const [layoutOpen, setLayoutOpen] = useState(false);
+
+  useEffect(() => {
+    const newTheme = createTheme({
+      name: "customTheme",
+      base: selectedTheme as HvBaseTheme,
+    });
+    updateCustomTheme(newTheme);
+  }, []);
 
   useEffect(() => {
     const temp: any = {};
@@ -86,7 +96,7 @@ export default ${themeName};`
       name: themeName,
       base: selectedTheme as HvBaseTheme,
     });
-    updateCustomTheme(newTheme);
+    updateCustomTheme(newTheme, false);
   }, [themeName, selectedTheme]);
 
   const debouncedNameChangeHandler = debounce(nameChangeHandler, 250);
@@ -106,11 +116,14 @@ export default ${themeName};`
       base: selectedTheme as HvBaseTheme,
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.([], "", true);
   };
 
   const onUndoHandler = () => {
     undo?.();
+  };
+
+  const onRedoHandler = () => {
+    redo?.();
   };
 
   const handleClose = (event, reason) => {
@@ -175,7 +188,7 @@ export default ${themeName};`
           </HvBox>
           <HvBox css={{ position: "relative" }}>
             <HvBox className={styles.codeEditorTools}>
-              <HvBox css={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <HvBox css={{ display: "flex", alignItems: "center" }}>
                 <HvTypography variant="label">{themeName}.ts</HvTypography>
                 <HvTooltip title={<HvTypography>Download</HvTypography>}>
                   <HvButton
@@ -187,17 +200,40 @@ export default ${themeName};`
                   </HvButton>
                 </HvTooltip>
               </HvBox>
-              <HvBox css={{ display: "flex", gap: 8 }}>
+              <HvBox css={{ display: "flex" }}>
                 <HvBox>
-                  <HvTooltip title={<HvTypography>Undo</HvTypography>}>
-                    <HvButton
-                      variant="secondaryGhost"
-                      icon
-                      onClick={onUndoHandler}
-                    >
+                  {canUndo ? (
+                    <HvTooltip title={<HvTypography>Undo</HvTypography>}>
+                      <HvButton
+                        variant="secondaryGhost"
+                        icon
+                        onClick={onUndoHandler}
+                      >
+                        <Undo />
+                      </HvButton>
+                    </HvTooltip>
+                  ) : (
+                    <HvButton variant="secondaryGhost" icon disabled={!canUndo}>
                       <Undo />
                     </HvButton>
-                  </HvTooltip>
+                  )}
+                </HvBox>
+                <HvBox>
+                  {canRedo ? (
+                    <HvTooltip title={<HvTypography>Redo</HvTypography>}>
+                      <HvButton
+                        variant="secondaryGhost"
+                        icon
+                        onClick={onRedoHandler}
+                      >
+                        <Redo />
+                      </HvButton>
+                    </HvTooltip>
+                  ) : (
+                    <HvButton variant="secondaryGhost" icon disabled={!canRedo}>
+                      <Redo />
+                    </HvButton>
+                  )}
                 </HvBox>
                 <HvBox>
                   <HvTooltip title={<HvTypography>Reset</HvTypography>}>
