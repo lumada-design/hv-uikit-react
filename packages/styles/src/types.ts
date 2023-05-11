@@ -323,6 +323,18 @@ export type HvThemeComponents = {
     hoverBorderColor: string;
     activeBorderColor: string;
   };
+  queryBuilder: {
+    ruleSubGroupLeftConnectorPosition: string;
+    ruleSubGroupContainerLeftConnectorPosition: string;
+    ruleLeftConnectorPosition: string;
+    ruleConnectorHorizontalSize: string;
+    ruleConnectorHeight: string;
+    actionsContainerMarginTop: string;
+    topActionButtonContainerBottom: string;
+    topActionButtonContainerRight: string;
+    topGroupPaddingBottom: string;
+    border: string;
+  };
 };
 
 // Theme typography
