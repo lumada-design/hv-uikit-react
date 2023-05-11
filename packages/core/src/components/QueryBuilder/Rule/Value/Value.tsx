@@ -22,18 +22,13 @@ export const Value = ({
 }: ValueProps) => {
   const context = useContext(QueryBuilderContext);
   const { attributes, initialTouched } = context;
-  const value = attribute ? { ...attributes[attribute] } : { type: null };
+  const value =
+    attribute && attributes ? { ...attributes[attribute] } : { type: null };
   const { type } = value;
 
   switch (type) {
     case "boolean": {
-      return (
-        <BooleanValue
-          id={id}
-          value={!!valueProp}
-          // initialTouched={initialTouched}
-        />
-      );
+      return <BooleanValue id={id} value={!!valueProp} />;
     }
     case "numeric": {
       return (
@@ -41,7 +36,7 @@ export const Value = ({
           id={id}
           operator={operator}
           value={valueProp}
-          //initialTouched={initialTouched}
+          initialTouched={initialTouched}
         />
       );
     }
@@ -53,13 +48,7 @@ export const Value = ({
       );
     }
     case "dateandtime": {
-      return (
-        <BooleanValue
-          id={id}
-          value={!!valueProp}
-          // initialTouched={initialTouched}
-        />
-      );
+      return <BooleanValue id={id} value={!!valueProp} />;
     }
   }
 };

@@ -11,8 +11,8 @@ export interface ConfirmationDialogProps {
   title?: string;
   message?: string;
   isOpen?: boolean;
-  onConfirm?: any;
-  onCancel?: any;
+  onConfirm?: (event: React.MouseEvent<HTMLButtonElement> | Event) => void;
+  onCancel?: () => void;
   confirmButtonLabel?: string;
   cancelButtonLabel?: string;
   closeButtonTooltip?: string;

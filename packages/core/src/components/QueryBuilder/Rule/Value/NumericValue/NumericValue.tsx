@@ -6,7 +6,6 @@ import { QueryBuilderContext } from "../../../Context";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./Numeric.styles";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { clsx } from "clsx";
 import numericValueClasses from "./numericValueClasses";
 
 export interface NumericValueProps {
@@ -113,23 +112,25 @@ export const NumericValue = ({
 
   const renderRangeInputs = (rangeValue) => (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <div
-          className={clsx(
+          className={cx(
             numericValueClasses.rangeContainer,
             css(styles.rangeContainer),
-            isMdDown ? clsx("isMdDown", css(styles.isMdDown)) : ""
+            isMdDown
+              ? cx(numericValueClasses.isMdDown, css(styles.isMdDown))
+              : ""
           )}
         >
           <div
-            className={clsx(
+            className={cx(
               numericValueClasses.inputContainer,
               css(styles.inputContainer)
             )}
           >
             <HvInput
               label={labels.rule.value.numeric.range.leftLabel}
-              className={clsx(numericValueClasses.input, css(styles.input))}
+              className={cx(numericValueClasses.input, css(styles.input))}
               id={`${elementId}-numeric-from`}
               name={`${elementId}-numeric-from`}
               value={rangeValue?.from?.toString() || ""}
@@ -157,14 +158,14 @@ export const NumericValue = ({
             />
           </div>
           <div
-            className={clsx(
+            className={cx(
               numericValueClasses.inputContainer,
               css(styles.inputContainer)
             )}
           >
             <HvInput
               label={labels.rule.value.numeric.range.rightLabel}
-              className={clsx(numericValueClasses.input, css(styles.input))}
+              className={cx(numericValueClasses.input, css(styles.input))}
               id={`${elementId}-numeric-to`}
               name={`${elementId}-numeric-to`}
               value={rangeValue?.to?.toString() || ""}
@@ -198,14 +199,14 @@ export const NumericValue = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
-        <div className={clsx(numericValueClasses.root, css(styles.root))}>
+      {({ css, cx }) => (
+        <div className={cx(numericValueClasses.root, css(styles.root))}>
           {isRange && renderRangeInputs(value || {})}
           {!isRange && (
             <div className={css(styles.inputContainer)}>
               <HvInput
                 label={labels.rule.value.numeric.label}
-                className={css(styles.input)}
+                className={cx(numericValueClasses.input, css(styles.input))}
                 id={`${elementId}-numeric`}
                 name={`${elementId}-numeric`}
                 value={value ? value.toString() : ""}

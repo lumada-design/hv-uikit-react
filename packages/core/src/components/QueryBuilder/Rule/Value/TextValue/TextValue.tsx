@@ -1,6 +1,5 @@
 import { HvFormStatus, HvInput } from "@core/components";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import { memo, useContext, useState } from "react";
 
 import { QueryBuilderContext } from "../../../Context";
@@ -28,9 +27,9 @@ const TextValue = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvInput
-          className={clsx(textValueClasses.location, css(styles.location))}
+          className={cx(textValueClasses.location, css(styles.location))}
           label={labels.rule.value.text.label}
           required
           status={status}

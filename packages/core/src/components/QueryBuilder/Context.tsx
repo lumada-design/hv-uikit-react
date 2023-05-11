@@ -1,5 +1,12 @@
 import { createContext } from "react";
-import { AskAction } from "./types";
+import {
+  AskAction,
+  Attribute,
+  QueryAction,
+  QueryBuilderLabels,
+  QueryCombinator,
+  QueryOperator,
+} from "./types";
 
 export const defaultOperators = {
   numeric: [
@@ -304,14 +311,14 @@ export const defaultLabels = {
 };
 
 interface QueryBuilderContextValue {
-  dispatchAction: React.Dispatch<any>;
+  dispatchAction: React.Dispatch<QueryAction>;
   askAction: React.Dispatch<React.SetStateAction<AskAction | undefined>>;
-  selectLocation?: any;
-  attributes?: any;
-  operators;
-  combinators;
+  selectLocation?: React.Dispatch<unknown>;
+  attributes?: Record<string, Attribute>;
+  operators: Record<string, QueryOperator[]>;
+  combinators: QueryCombinator[];
   maxDepth: number;
-  labels;
+  labels: QueryBuilderLabels;
   initialTouched: boolean;
   readOnly: boolean;
 }

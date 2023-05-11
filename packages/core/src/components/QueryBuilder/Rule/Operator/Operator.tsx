@@ -18,7 +18,8 @@ export const Operator = ({ id, combinator, attribute, operator }) => {
   const value = operator ?? null;
 
   const values = useMemo(() => {
-    const attributeSpec = attribute ? attributes[attribute] : null;
+    const attributeSpec =
+      attribute && attributes ? attributes[attribute] : null;
     const options = attributeSpec
       ? operators[attributeSpec.type].filter((o) =>
           o.combinators.includes(combinator)
@@ -46,7 +47,7 @@ export const Operator = ({ id, combinator, attribute, operator }) => {
           dispatchAction({
             type: "set-operator",
             id,
-            operator: selected.id,
+            operator: selected.id.toString(),
             value:
               value === "range" || selected.id === "range" ? null : undefined,
           });

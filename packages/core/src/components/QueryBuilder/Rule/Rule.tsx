@@ -3,7 +3,6 @@ import { withTooltip } from "@core/hocs";
 import { ClassNames } from "@emotion/react";
 import { Delete } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { clsx } from "clsx";
 import { useContext, useMemo } from "react";
 import { QueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
@@ -40,7 +39,8 @@ export const Rule = ({
   const { askAction, attributes, operators, labels, readOnly } = context;
 
   const availableOperators = useMemo(() => {
-    const attributeSpec = attribute != null ? attributes[attribute] : null;
+    const attributeSpec =
+      attribute != null && attributes ? attributes[attribute] : null;
     if (attributeSpec != null) {
       const typeOperators = operators[attributeSpec.type];
       if (typeOperators != null) {
@@ -72,7 +72,7 @@ export const Rule = ({
           className={cx(
             ruleClasses.root,
             css(styles.root),
-            isMdDown ? clsx(ruleClasses.isMdDown, css(styles.isMdDown)) : ""
+            isMdDown ? cx(ruleClasses.isMdDown, css(styles.isMdDown)) : ""
           )}
           spacing={0}
           wrap="nowrap"

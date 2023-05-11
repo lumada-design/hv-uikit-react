@@ -48,7 +48,8 @@ export const RuleGroup = ({
           <div
             className={cx(
               queryBuilderClasses.buttonBackground,
-              css(styles.buttonBackground, classes?.buttonBackground)
+              css(styles.buttonBackground),
+              classes?.buttonBackground
             )}
           >
             <HvButton
@@ -68,7 +69,8 @@ export const RuleGroup = ({
             <div
               className={cx(
                 queryBuilderClasses.buttonBackground,
-                css(styles.buttonBackground, classes?.buttonBackground)
+                css(styles.buttonBackground),
+                classes?.buttonBackground
               )}
             >
               <HvButton
@@ -99,10 +101,8 @@ export const RuleGroup = ({
               readOnly
                 ? cx(
                     queryBuilderClasses.topRemoveButtonDisabled,
-                    css(
-                      styles.topRemoveButtonDisabled,
-                      classes?.topRemoveButtonDisabled
-                    )
+                    css(styles.topRemoveButtonDisabled),
+                    classes?.topRemoveButtonDisabled
                   )
                 : ""
             }
@@ -153,45 +153,50 @@ export const RuleGroup = ({
               <HvMultiButton
                 className={cx(
                   queryBuilderClasses.combinator,
-                  css(styles.combinator, classes?.combinator),
+                  css(styles.combinator),
+                  classes?.combinator,
                   queryBuilderClasses.topCombinator,
-                  css(styles.topCombinator, classes?.topCombinator)
+                  css(styles.topCombinator),
+                  classes?.topCombinator
                 )}
                 disabled={readOnly}
               >
-                {combinators.map((item) => (
-                  <HvButton
-                    key={item.operand}
-                    className={cx(
-                      queryBuilderClasses.combinatorButton,
-
-                      css(styles.combinatorButton, classes?.combinatorButton)
-                    )}
-                    selected={item.operand === combinator}
-                    onClick={() => item.operand && onClickCombinator(item)}
-                    disabled={readOnly}
-                    size={"xs"}
-                  >
-                    {item.label}
-                  </HvButton>
-                ))}
+                {combinators &&
+                  combinators.map((item) => (
+                    <HvButton
+                      key={item.operand}
+                      className={cx(
+                        queryBuilderClasses.combinatorButton,
+                        css(styles.combinatorButton),
+                        classes?.combinatorButton
+                      )}
+                      selected={item.operand === combinator}
+                      onClick={() => item.operand && onClickCombinator(item)}
+                      disabled={readOnly}
+                      size={"xs"}
+                    >
+                      {item.label}
+                    </HvButton>
+                  ))}
               </HvMultiButton>
             </HvGrid>
             <HvGrid item>
               <div
                 className={cx(
                   queryBuilderClasses.buttonBackground,
-                  css(styles.buttonBackground, classes?.buttonBackground),
+                  css(styles.buttonBackground),
+                  classes?.buttonBackground,
                   queryBuilderClasses.topRemoveButton,
-                  css(styles.topRemoveButton, classes?.topRemoveButton)
+                  css(styles.topRemoveButton),
+                  classes?.topRemoveButton
                 )}
               >
                 <HvButton
                   icon
                   className={cx(
                     queryBuilderClasses.removeButton,
-                    classes?.removeButton,
-                    css(styles.removeButton)
+                    css(styles.removeButton),
+                    classes?.removeButton
                   )}
                   onClick={() => {
                     askAction({
@@ -219,20 +224,20 @@ export const RuleGroup = ({
             <div
               className={cx(
                 queryBuilderClasses.rulesContainer,
-                classes?.rulesContainer,
                 css(styles.rulesContainer),
+                classes?.rulesContainer,
                 level > 0
                   ? cx(
                       queryBuilderClasses.subRulesContainer,
-                      classes?.subRulesContainer,
-                      css(styles.subRulesContainer)
+                      css(styles.subRulesContainer),
+                      classes?.subRulesContainer
                     )
                   : "",
                 level === 0
                   ? cx(
                       queryBuilderClasses.topRulesContainer,
-                      classes?.topRulesContainer,
-                      css(styles.topRulesContainer)
+                      css(styles.topRulesContainer),
+                      classes?.topRulesContainer
                     )
                   : ""
               )}
@@ -320,11 +325,11 @@ export const RuleGroup = ({
               item
               className={cx(
                 queryBuilderClasses.actionButtonContainer,
-                classes?.actionButtonContainer,
                 css(styles.actionButtonContainer),
+                classes?.actionButtonContainer,
                 queryBuilderClasses.topActionButtonContainer,
-                classes?.topActionButtonContainer,
-                css(styles.topActionButtonContainer)
+                css(styles.topActionButtonContainer),
+                classes?.topActionButtonContainer
               )}
             >
               {actionButtons}

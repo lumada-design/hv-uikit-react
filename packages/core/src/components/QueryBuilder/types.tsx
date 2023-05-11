@@ -86,7 +86,7 @@ interface SetAttributeAction {
   type: "set-attribute";
   id?: number;
 
-  attribute: string | null;
+  attribute?: string | null;
   operator?: string | null;
   value?: QueryRuleValue | null;
 }
@@ -141,6 +141,7 @@ export interface QueryBuilderLabels {
   };
   rule: {
     attribute: {
+      exists: string;
       label: string;
       placeholder: string;
     };
@@ -231,15 +232,4 @@ export interface QueryBuilderLabels {
     createGroup: string;
     spacer: string;
   };
-}
-
-export interface QueryBuilderContext {
-  dispatchAction: React.Dispatch<QueryAction>;
-  askAction: React.Dispatch<AskAction>;
-  attributes: Record<string, Attribute>;
-  operators: Record<string, QueryOperator[]>;
-  combinators: QueryCombinator[];
-  maxDepth: number;
-  labels: QueryBuilderLabels;
-  initialTouched: boolean;
 }

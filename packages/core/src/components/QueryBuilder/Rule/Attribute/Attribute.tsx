@@ -20,17 +20,18 @@ export const Attribute = ({
   const context = useContext(QueryBuilderContext);
   const { dispatchAction, attributes, operators, labels, readOnly } = context;
 
-  const values = useMemo(
-    () =>
-      Object.keys(attributes).map((key) => ({
-        id: key,
-        label: attributes[key].label,
-        selected: key === attribute,
-      })),
-    [attributes, attribute]
-  );
+  const values = useMemo(() => {
+    if (!attributes) return [];
 
-  const currentType = attribute != null ? attributes[attribute]?.type : null;
+    return Object.keys(attributes).map((key) => ({
+      id: key,
+      label: attributes[key].label,
+      selected: key === attribute,
+    }));
+  }, [attributes, attribute]);
+
+  const currentType =
+    attribute != null && attributes ? attributes[attribute]?.type : null;
 
   return (
     <HvDropdown
@@ -46,8 +47,9 @@ export const Attribute = ({
         if (selected && !Array.isArray(selected)) {
           const attributeId = selected.id;
 
-          const { type } = attributeId ? attributes[attributeId] : undefined;
-          const typeOperators = operators[type];
+          const type =
+            attributes && attributeId && attributes[attributeId]?.type;
+          const typeOperators = type ? operators[type] : undefined;
 
           let operator;
           if (currentType === type) {
@@ -64,7 +66,7 @@ export const Attribute = ({
           dispatchAction({
             type: "set-attribute",
             id,
-            attribute: attributeId,
+            attribute: attributeId?.toString(),
             operator,
             value,
           });
