@@ -24,7 +24,7 @@ jobs:
         with:
           repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
           ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           path: gh-docs
           fetch-depth: 1
 
