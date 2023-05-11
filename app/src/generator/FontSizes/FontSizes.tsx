@@ -14,8 +14,7 @@ import { css } from "@emotion/css";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [fontSizes, setFontSizes] = useState<HvListValue[]>([]);
   const [fontSize, setFontSize] = useState(""); // base, sm, ...
   const [fontValue, setFontValue] = useState<number>(0); // 14, 16, ...
@@ -64,7 +63,6 @@ const FontSizes = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["fontSizes", fontSize], `${value}${unit}`);
 
     // update curr sizes
     let map = new Map<string, string>(currSizes);
@@ -81,10 +79,6 @@ const FontSizes = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(
-      ["fontSizes", fontSize],
-      `${fontValue}${selectedUnit}`
-    );
     // update curr sizes
     let map = new Map<string, string>(currSizes);
     map.set(fontSize, `${fontValue}${selectedUnit}`);

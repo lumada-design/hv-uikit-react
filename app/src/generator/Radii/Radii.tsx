@@ -12,8 +12,7 @@ import { GeneratorContext } from "generator/GeneratorContext";
 
 const Radii = () => {
   const { activeTheme } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
   const [currValues, setCurrValues] = useState<Map<string, string | number>>(
     new Map<string, string | number>()
   );
@@ -49,7 +48,6 @@ const Radii = () => {
       },
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.(["radii", radii], radiiValue);
   };
 
   return (

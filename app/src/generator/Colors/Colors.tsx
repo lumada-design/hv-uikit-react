@@ -14,8 +14,7 @@ export const groupsToShow = ["acce", "atmo", "base", "sema"] as const; // "sup",
 
 const Colors = (): JSX.Element => {
   const { activeTheme, selectedMode } = useTheme();
-  const { customTheme, updateCustomTheme, updateChangedValues } =
-    useContext(GeneratorContext);
+  const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
 
   const colors = activeTheme?.colors.modes[selectedMode];
 
@@ -33,11 +32,8 @@ const Colors = (): JSX.Element => {
         },
       },
     });
+
     updateCustomTheme(newTheme);
-    updateChangedValues?.(
-      ["colors", "modes", selectedMode, colorName],
-      colorValue
-    );
   };
 
   const debouncedHandler = debounce(colorChangedHandler, 250);

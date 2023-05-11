@@ -17,8 +17,15 @@ import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
-import { Download, Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
+import {
+  Download,
+  Duplicate,
+  Reset,
+  Undo,
+  Redo,
+} from "@hitachivantara/uikit-react-icons";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+import { downloadTheme, themeDiff } from "generator/utils";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -29,27 +36,17 @@ const Typography = lazy(() => import("generator/Typography"));
 const Zindices = lazy(() => import("generator/Zindices"));
 const Sizes = lazy(() => import("generator/Sizes"));
 
-function downloadTheme(filename, text) {
-  const element = document.createElement("a");
-  element.setAttribute(
-    "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
-  );
-  element.setAttribute("download", filename);
-
-  element.style.display = "none";
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-}
-
 const Sidebar = () => {
-  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
-    useTheme();
+  const {
+    activeTheme,
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    themes,
+    changeTheme,
+  } = useTheme();
 
-  const { updateCustomTheme, changedValues, updateChangedValues, open } =
+  const { customTheme, updateCustomTheme, open, undo, redo, canUndo, canRedo } =
     useContext(GeneratorContext);
   const [themeName, setThemeName] = useState("customTheme");
   const [fullCode, setFullCode] = useState("");
@@ -60,45 +57,47 @@ const Sidebar = () => {
   const [typographyOpen, setTypographyOpen] = useState(false);
   const [layoutOpen, setLayoutOpen] = useState(false);
 
-  // the `replace` bit below is just a regex to remove the quotes from
-  // the properties names, for displaying effect only.
   useEffect(() => {
+    const newTheme = createTheme({
+      name: "customTheme",
+      base: selectedTheme as HvBaseTheme,
+    });
+    updateCustomTheme(newTheme);
+  }, []);
+
+  useEffect(() => {
+    const temp: any = {};
+    temp.name = themeName;
+    temp.base = selectedTheme;
+    const final = {
+      ...temp,
+      ...themeDiff(activeTheme as object, customTheme),
+    };
+
+    // the `replace` bit below is just a regex to remove the quotes from
+    // the properties names, for displaying effect only.
     setFullCode(
       `import { createTheme } from "@hitachivantara/uikit-react-core";
 
 const ${themeName} = createTheme(` +
-        JSON.stringify(changedValues, null, 2).replace(
-          /\"([^(\")"]+)\":/g,
-          "$1:"
-        ) +
+        JSON.stringify(final, null, 2).replace(/\"([^(\")"]+)\":/g, "$1:") +
         `)
     
 export default ${themeName};`
     );
-  }, [changedValues]);
+  }, [customTheme]);
 
-  useEffect(() => {
-    updateChangedValues?.(["name"], themeName);
-  }, [themeName]);
+  const nameChangeHandler = (name) => {
+    setThemeName(name);
+  };
 
   useEffect(() => {
     const newTheme = createTheme({
       name: themeName,
       base: selectedTheme as HvBaseTheme,
     });
-    updateCustomTheme(newTheme);
-    updateChangedValues?.(["base"], selectedTheme);
-  }, [selectedTheme]);
-
-  const nameChangeHandler = (name) => {
-    const newTheme = createTheme({
-      name: name,
-      base: selectedTheme as HvBaseTheme,
-    });
-    updateCustomTheme(newTheme);
-    updateChangedValues?.(["name"], name);
-    setThemeName(name);
-  };
+    updateCustomTheme(newTheme, false);
+  }, [themeName, selectedTheme]);
 
   const debouncedNameChangeHandler = debounce(nameChangeHandler, 250);
 
@@ -117,7 +116,14 @@ export default ${themeName};`
       base: selectedTheme as HvBaseTheme,
     });
     updateCustomTheme(newTheme);
-    updateChangedValues?.([], "", true);
+  };
+
+  const onUndoHandler = () => {
+    undo?.();
+  };
+
+  const onRedoHandler = () => {
+    redo?.();
   };
 
   const handleClose = (event, reason) => {
@@ -182,7 +188,7 @@ export default ${themeName};`
           </HvBox>
           <HvBox css={{ position: "relative" }}>
             <HvBox className={styles.codeEditorTools}>
-              <HvBox css={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <HvBox css={{ display: "flex", alignItems: "center" }}>
                 <HvTypography variant="label">{themeName}.ts</HvTypography>
                 <HvTooltip title={<HvTypography>Download</HvTypography>}>
                   <HvButton
@@ -194,7 +200,41 @@ export default ${themeName};`
                   </HvButton>
                 </HvTooltip>
               </HvBox>
-              <HvBox css={{ display: "flex", gap: 8 }}>
+              <HvBox css={{ display: "flex" }}>
+                <HvBox>
+                  {canUndo ? (
+                    <HvTooltip title={<HvTypography>Undo</HvTypography>}>
+                      <HvButton
+                        variant="secondaryGhost"
+                        icon
+                        onClick={onUndoHandler}
+                      >
+                        <Undo />
+                      </HvButton>
+                    </HvTooltip>
+                  ) : (
+                    <HvButton variant="secondaryGhost" icon disabled={!canUndo}>
+                      <Undo />
+                    </HvButton>
+                  )}
+                </HvBox>
+                <HvBox>
+                  {canRedo ? (
+                    <HvTooltip title={<HvTypography>Redo</HvTypography>}>
+                      <HvButton
+                        variant="secondaryGhost"
+                        icon
+                        onClick={onRedoHandler}
+                      >
+                        <Redo />
+                      </HvButton>
+                    </HvTooltip>
+                  ) : (
+                    <HvButton variant="secondaryGhost" icon disabled={!canRedo}>
+                      <Redo />
+                    </HvButton>
+                  )}
+                </HvBox>
                 <HvBox>
                   <HvTooltip title={<HvTypography>Reset</HvTypography>}>
                     <HvButton

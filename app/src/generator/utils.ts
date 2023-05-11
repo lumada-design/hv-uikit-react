@@ -33,3 +33,42 @@ export const extractFontsNames = (webfontLink: string): string[] => {
 
   return fontNames;
 };
+
+export const themeDiff = (a: object, b: object, rootLevel = true): object => {
+  const diff = {};
+  for (const key in b) {
+    if (rootLevel && (key === "name" || key === "base")) {
+      continue; // ignore 'name' and 'base' at the root level
+    }
+    if (
+      typeof b[key] === "object" &&
+      b[key] !== null &&
+      typeof a[key] === "object" &&
+      a[key] !== null
+    ) {
+      const nestedDiff = themeDiff(a[key], b[key], false);
+      if (Object.keys(nestedDiff).length > 0) {
+        diff[key] = nestedDiff;
+      }
+    } else if (!a.hasOwnProperty(key) || a[key] !== b[key]) {
+      diff[key] = b[key];
+    }
+  }
+  return diff;
+};
+
+export const downloadTheme = (filename, text) => {
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+  );
+  element.setAttribute("download", filename);
+
+  element.style.display = "none";
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+};
