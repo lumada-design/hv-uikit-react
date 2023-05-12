@@ -1,10 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
+import { HvWizardContainerClasses } from "./wizardContainerClasses";
 
-export const styles: {
-  paper: CSSInterpolation;
-  closeButton: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvWizardContainerClasses, CSSInterpolation>
+> = {
   paper: {
     width: "80%",
     maxWidth: "80%",

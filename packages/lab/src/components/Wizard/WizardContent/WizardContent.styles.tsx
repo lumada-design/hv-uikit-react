@@ -1,13 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
+import { HvWizardContentClasses } from "./wizardContentClasses";
 
-export const styles: {
-  contentContainer: CSSInterpolation;
-  fixedHeight: CSSInterpolation;
-  summaryRef: CSSInterpolation;
-  summarySticky: CSSInterpolation;
-  summaryContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvWizardContentClasses, CSSInterpolation>
+> = {
   contentContainer: {
     position: "relative",
     padding: 20,

@@ -1,12 +1,9 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import queryBuilderClasses from "../queryBuilderClasses";
+import { HvRuleClasses } from "./ruleClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  actionsContainer: CSSInterpolation;
-  isMdDown: CSSInterpolation;
-} = {
+export const styles: Partial<Record<keyof HvRuleClasses, CSSInterpolation>> = {
   root: {
     position: "relative",
     marginTop: theme.space.xs,

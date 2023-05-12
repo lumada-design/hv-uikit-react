@@ -1,26 +1,55 @@
-import { clsx } from "clsx";
-import { HvLoading } from "@hitachivantara/uikit-react-core";
+import { HvLoading, HvLoadingProps } from "@hitachivantara/uikit-react-core";
 import { styles } from "./LoadingContainer.styles";
+import wizardLoadingContainerClasses, {
+  HvWizardLoadingContainerClasses,
+} from "./loadingContainerClasses";
+import { ClassNames } from "@emotion/react";
 
-export const LoadingContainer = ({ children, hidden, ...others }) => {
+interface LoadingContainerProps extends Omit<HvLoadingProps, "classes"> {
+  classes?: HvWizardLoadingContainerClasses;
+}
+
+export const LoadingContainer = ({
+  children,
+  hidden,
+  classes,
+  ...others
+}: LoadingContainerProps) => {
   return (
-    <>
-      <div
-        style={{
-          top: 0,
-          left: 0,
-          height: "100%",
-          width: "100%",
-        }}
-        className={clsx(styles?.overlay, !hidden && styles?.blur)}
-      >
-        <HvLoading
-          classes={{ root: clsx(styles?.loading) }}
-          hidden={hidden}
-          {...others}
-        />
-      </div>
-      <div style={{ display: "flow-root" }}>{children}</div>
-    </>
+    <ClassNames>
+      {({ css, cx }) => (
+        <>
+          <div
+            style={{
+              top: 0,
+              left: 0,
+              height: "100%",
+              width: "100%",
+            }}
+            className={cx(
+              wizardLoadingContainerClasses.overlay,
+              !hidden && wizardLoadingContainerClasses.blur,
+              css(styles.overlay),
+              !hidden && css(styles.blur),
+              classes?.overlay,
+              !hidden && classes?.blur
+            )}
+          >
+            <HvLoading
+              classes={{
+                root: cx(
+                  wizardLoadingContainerClasses.loading,
+                  css(styles.loading),
+                  classes?.loading
+                ),
+              }}
+              hidden={hidden}
+              {...others}
+            />
+          </div>
+          <div style={{ display: "flow-root" }}>{children}</div>
+        </>
+      )}
+    </ClassNames>
   );
 };

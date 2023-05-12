@@ -1,14 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
+import { HvWizardTitleClasses } from "./wizardTitleClasses";
 
-export const styles: {
-  messageContainer: CSSInterpolation;
-  titleContainer: CSSInterpolation;
-  buttonWidth: CSSInterpolation;
-  rootSummaryButton: CSSInterpolation;
-  headerContainer: CSSInterpolation;
-  stepContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvWizardTitleClasses, CSSInterpolation>
+> = {
   messageContainer: {
     "& > div": {
       width: "100%",
