@@ -5,7 +5,7 @@ import HvListContext from "../ListContext";
 import { StyledListItem, StyledFocus } from "./ListItem.styles";
 import listItemClasses, { HvListItemClasses } from "./listItemClasses";
 
-export interface HvListItemProps extends HvBaseProps<HTMLLIElement, { role }> {
+export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
   /**
    * Overrides the implicit list item role.
    * It defaults to "option" if unspecified and the container list role is "listbox".

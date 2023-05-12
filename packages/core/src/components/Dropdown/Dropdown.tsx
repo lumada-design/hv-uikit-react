@@ -52,7 +52,7 @@ export interface HvDropdownLabelsProps {
 export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
 export interface HvDropdownProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Class names to be applied.
    */

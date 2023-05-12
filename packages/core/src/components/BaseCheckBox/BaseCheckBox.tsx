@@ -14,7 +14,7 @@ import baseCheckBoxClasses, {
 
 export interface HvBaseCheckBoxProps
   extends Omit<MuiCheckboxProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
    * The input name.
    */

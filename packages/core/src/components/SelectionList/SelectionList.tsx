@@ -21,7 +21,7 @@ import selectionListClasses, {
 } from "./selectionListClasses";
 
 export interface HvSelectionListProps
-  extends HvBaseProps<HTMLUListElement, { onChange }> {
+  extends HvBaseProps<HTMLUListElement, "onChange"> {
   /** The form element name. */
   name?: string;
   /**

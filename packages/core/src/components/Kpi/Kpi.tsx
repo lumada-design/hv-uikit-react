@@ -35,7 +35,7 @@ export interface HvKpiLabelProps {
   comparisonIndicatorInfo?: string;
 }
 
-export interface HvKpiProps extends HvBaseProps<HTMLDivElement, { children }> {
+export interface HvKpiProps extends HvBaseProps<HTMLDivElement, "children"> {
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
    */

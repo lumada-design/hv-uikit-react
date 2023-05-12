@@ -42,7 +42,7 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
 };
 
 export interface HvCheckBoxGroupProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * The form element name.
    *

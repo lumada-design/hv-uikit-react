@@ -6,7 +6,7 @@ import { HvMenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
 
-export interface HvMenuBarProps extends HvBaseProps<"div", { onClick }> {
+export interface HvMenuBarProps extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
   type: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;

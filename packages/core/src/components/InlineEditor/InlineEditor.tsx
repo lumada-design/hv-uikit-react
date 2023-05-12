@@ -20,7 +20,7 @@ import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
 export interface HvInlineEditorProps
-  extends Omit<HvBaseProps<HTMLDivElement>, "onBlur" | "onChange"> {
+  extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
   /** The value of the form element. */
   value?: string;
   /** Whether the Edit icon should always be visible */

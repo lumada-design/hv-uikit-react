@@ -20,7 +20,7 @@ export interface HvBreadCrumbPathElement {
 }
 
 export interface HvBreadCrumbProps
-  extends HvBaseProps<HTMLDivElement, { onClick }> {
+  extends HvBaseProps<HTMLDivElement, "onClick"> {
   /** List of breadcrumb. */
   listRoute?: HvBreadCrumbPathElement[];
   /** URL to build the breadcrumb. */

@@ -8,7 +8,7 @@ import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
 
 export interface HvTableHeadProps
-  extends HvBaseProps<HTMLTableSectionElement, { children }> {
+  extends HvBaseProps<HTMLTableSectionElement, "children"> {
   /**
    * Content to be rendered
    */

@@ -15,7 +15,7 @@ import { useTheme } from "@core/hooks";
 
 export interface HvTagProps
   extends Omit<MuiChipProps, "color" | "classes">,
-    HvBaseProps<HTMLDivElement, { children }> {
+    HvBaseProps<HTMLDivElement, "children"> {
   /** Inline styles to be applied to the root element. */
   style?: CSSProperties;
   /** The label of the tag element. */

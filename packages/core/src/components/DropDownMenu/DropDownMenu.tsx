@@ -31,7 +31,7 @@ import dropDownMenuClasses, {
 } from "./dropDownMenuClasses";
 
 export interface HvDropDownMenuProps
-  extends HvBaseProps<HTMLDivElement, { onClick }> {
+  extends HvBaseProps<HTMLDivElement, "onClick"> {
   /** Icon. */
   icon?: React.ReactElement;
   /**

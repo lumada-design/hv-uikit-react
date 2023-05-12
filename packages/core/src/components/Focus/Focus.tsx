@@ -42,7 +42,7 @@ const focusStyles = css`
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
-export interface HvFocusProps extends HvBaseProps<HTMLElement, { children }> {
+export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   children: React.ReactElement;
   /** Extra configuration for the child element. */
   configuration?: {

@@ -179,7 +179,7 @@ const getStyledComponent = <T extends keyof JSX.IntrinsicElements>(c: T) =>
 
 export interface HvTypographyProps
   extends Omit<AllHTMLAttributes<HTMLElement>, "disabled">,
-    HvBaseProps<HTMLElement, { disabled }> {
+    HvBaseProps<HTMLElement> {
   component?: React.ReactNode | React.ElementType;
   /** Use the variant prop to change the visual style of the Typography. */
   variant?: HvTypographyVariants | HvTypographyLegacyVariants;

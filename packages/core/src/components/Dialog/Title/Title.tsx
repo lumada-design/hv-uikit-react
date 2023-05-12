@@ -20,7 +20,7 @@ export type HvDialogTitleVariant =
 
 export interface HvDialogTitleProps
   extends Omit<MuiDialogTitleProps, "variant" | "classes">,
-    HvBaseProps<HTMLSpanElement, { color }> {
+    HvBaseProps<HTMLSpanElement, "color"> {
   /** Variant of the Dialog. */
   variant?: HvDialogTitleVariant;
   /** Controls if the associated icon to the variant should be shown. */

@@ -22,7 +22,7 @@ export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 
 export interface HvBannerProps
   extends Omit<MuiSnackbarProps, "anchorOrigin" | "classes" | "onClose">,
-    HvBaseProps<HTMLDivElement, { children }> {
+    HvBaseProps<HTMLDivElement, "children"> {
   /** If true, the snackbar is open. */
   open: boolean;
   /** Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway. */

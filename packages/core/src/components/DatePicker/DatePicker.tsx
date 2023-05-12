@@ -35,7 +35,7 @@ const DEFAULT_LABELS = {
 export type HvDatePickerStatus = "standBy" | "valid" | "invalid";
 
 export interface HvDatePickerProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Class names to be applied.
    */

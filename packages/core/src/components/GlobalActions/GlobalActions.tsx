@@ -21,7 +21,7 @@ export type HvGlobalActionsPosition = "sticky" | "fixed" | "relative";
 export type HvGlobalActionsHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface HvGlobalActionsProps
-  extends HvBaseProps<HTMLDivElement, { title }> {
+  extends HvBaseProps<HTMLDivElement, "title"> {
   /** Text to display in the component. */
   title?: React.ReactNode;
   /** Denotes if this is a global or section component. */

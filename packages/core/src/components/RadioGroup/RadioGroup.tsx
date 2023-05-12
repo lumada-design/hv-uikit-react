@@ -12,7 +12,7 @@ import { setId } from "@core/utils";
 import radioGroupClasses, { HvRadioGroupClasses } from "./radioGroupClasses";
 
 export interface HvRadioGroupProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * The form element name.
    *

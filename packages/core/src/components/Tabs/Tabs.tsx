@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 // Mui Tabs props: https://mui.com/material-ui/api/tabs/#props
 export interface HvTabsProps
   extends MuiTabsProps,
-    HvBaseProps<HTMLButtonElement, { onChange }> {
+    HvBaseProps<HTMLButtonElement, "onChange"> {
   /**
    * The value of the currently selected Tab. If you don't want any selected Tab, you can set this property to `false`.
    */

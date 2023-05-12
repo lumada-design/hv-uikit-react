@@ -5,7 +5,7 @@ import isEmpty from "lodash/isEmpty";
 import timeAgoClasses, { HvTimeAgoClasses } from "./timeAgoClasses";
 import useTimeAgo from "./useTimeAgo";
 
-export interface HvTimeAgoProps extends HvBaseProps<HTMLElement, { children }> {
+export interface HvTimeAgoProps extends HvBaseProps<HTMLElement, "children"> {
   /**
    * The timestamp to format, in seconds or milliseconds.
    * Defaults to `emptyElement` if value is null or 0

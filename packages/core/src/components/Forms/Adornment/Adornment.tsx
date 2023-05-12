@@ -15,7 +15,7 @@ const noop = () => {};
 export interface HvAdornmentProps
   extends HvBaseProps<
     HTMLDivElement | HTMLButtonElement,
-    { onMouseDown; onKeyDown }
+    "onMouseDown" | "onKeyDown"
   > {
   /** The icon to be added into the input. */
   icon: React.ReactNode;

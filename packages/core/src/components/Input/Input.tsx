@@ -66,7 +66,7 @@ import inputClasses, { HvInputClasses } from "./inputClasses";
 export interface HvInputProps
   extends HvBaseProps<
     HTMLElement,
-    { onChange; onBlur; onFocus; onKeyDown; color }
+    "onChange" | "onBlur" | "onFocus" | "onKeyDown" | "color"
   > {
   /** The form element name. */
   name?: string;

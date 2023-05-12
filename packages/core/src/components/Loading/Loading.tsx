@@ -10,7 +10,7 @@ import {
 } from "./Loading.styles";
 import loadingClasses, { HvLoadingClasses } from "./loadingClasses";
 
-export interface HvLoadingProps extends HvBaseProps<HTMLDivElement> {
+export interface HvLoadingProps extends HvBaseProps {
   /** Indicates if the component should be render in a small size. */
   small?: boolean;
   /** The label to be displayed.  */

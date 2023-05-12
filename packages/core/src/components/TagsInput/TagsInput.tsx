@@ -38,7 +38,7 @@ import { HvCharCounterProps, HvFormStatus } from "../Forms";
 export interface HvTagsInputProps
   extends HvBaseProps<
     HTMLElement,
-    { onChange; onBlur; onFocus; onKeyDown; color; defaultValue }
+    "onChange" | "onBlur" | "onFocus" | "onKeyDown" | "color" | "defaultValue"
   > {
   /** The form element name. */
   name?: string;
