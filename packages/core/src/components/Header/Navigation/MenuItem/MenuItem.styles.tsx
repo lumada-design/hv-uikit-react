@@ -29,7 +29,7 @@ export const MenuItemLi = styled(
       borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelSelectedItemBorderBottomColor}`,
       paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
       height: "100%",
-      "& > div > span": {
+      "& > * > span": {
         color: theme.header.selectedItemColor,
       },
     }),
@@ -39,7 +39,7 @@ export const MenuItemLi = styled(
       borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
       paddingTop: theme.header.selectedItemBorderBottomThickness,
       height: "100%",
-      "& > div > span": {
+      "& > * > span": {
         color: theme.header.selectedItemColor,
       },
     }),
