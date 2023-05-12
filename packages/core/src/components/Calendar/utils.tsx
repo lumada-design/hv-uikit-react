@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import isNil from "lodash/isNil";
+import capitalize from "lodash/capitalize";
 import { DateRangeProp } from ".";
-import { DATETIMEFORMAT_OPTIONS, REPRESENTATION_VALUES } from "./enums";
 
 /**
  * Constant with the number of weeks to be displayed on the calendar.
@@ -15,66 +15,74 @@ export const DEFAULT_LOCALE = "en";
 
 /**
  * Pads a string value with leading zeroes(0) until length is reached.
- * For example: zeroPad(5, 2) => "05".
  *
- * @param {number} value - Value to be padded.
- * @param {number} length - Length of the value after the padding is added.
- * @returns {string} The value as a string with the received amount of padding.
+ * @param value - Value to be padded.
+ * @param length - Length of the value after the padding is added.
+ * @returns The value as a string with the received amount of padding.
+ *
+ * @example zeroPad(5, 2) => "05"
  */
-export const zeroPad = (value, length) => `${value}`.padStart(length, "0");
+export const zeroPad = (value: number, length: number) =>
+  `${value}`.padStart(length, "0");
 
 /**
  * Returns the number of days in the month given a month and year.
  *
- * @param {number} month - Number of the month (1 to 12).
- * @param {number} year - Number of the year.
- * @returns {number} The number of days in a month for the received year.
+ * @param month - Number of the month (1 to 12).
+ * @param year - Number of the year.
+ * @returns The number of days in a month for the received year.
  */
-export const getMonthDays = (month, year) => new Date(year, month, 0).getDate();
+export const getMonthDays = (month: number, year: number) =>
+  new Date(year, month, 0).getDate();
 
 /**
  * Gets the week day of the first day of a given month and year.
  * From 0 (Sunday) to 6 (Saturday).
  *
- * @param {number} month - Number of the month (1 to 12).
- * @param {number} year - Number of the year.
- * @returns {number} The zero indexed week day where 0 is Sunday (0 to 6).
+ * @param month - Number of the month (1 to 12).
+ * @param year - Number of the year.
+ * @returns The zero indexed week day where 0 is Sunday (0 to 6).
  */
-export const getMonthFirstWeekday = (month, year) =>
+export const getMonthFirstWeekday = (month: number, year: number) =>
   new Date(year, month - 1, 1).getDay();
 
 /**
  * Creates a `Date` instance in UTC timezone.
  *
- * @param {number} year - The year of the date.
- * @param {number} monthIndex - The zero indexed month of the year (0 to 11).
- * @param {number} day - The day of the month.
- * @param {number} [hour=1] - The hour of the day.
- * @returns {Date} A `Date` instance in UTC timezone.
+ * @param year - The year of the date.
+ * @param monthIndex - The zero indexed month of the year (0 to 11).
+ * @param day - The day of the month.
+ * @param [hour=1] - The hour of the day.
+ * @returns A `Date` instance in UTC timezone.
  */
-export const makeUTCDate = (year, monthIndex, day, hour = 1) =>
-  new Date(Date.UTC(year, monthIndex, day, hour));
+export const makeUTCDate = (
+  year: number,
+  monthIndex: number,
+  day: number,
+  hour = 1
+) => new Date(Date.UTC(year, monthIndex, day, hour));
 
 /**
  * Checks if the received date is a valid date.
  *
- * @param {Date} date - The date to be validated.
- * @returns {boolean} A flag stating if the date is valid or not.
+ * @param date - The date to be validated.
+ * @returns A flag stating if the date is valid or not.
  */
-export const isDate = (date): date is Date =>
+export const isDate = (date: any): date is Date =>
   Object.prototype.toString.call(date) === "[object Date]" &&
   !Number.isNaN(date.valueOf());
 
 export const isDateRangeProp = (date: any): date is DateRangeProp =>
   "startDate" in date;
+
 /**
  * Checks if two dates are in the same month and year.
  *
- * @param {Date} date1 - First date.
- * @param {Date} date2 - Second date.
- * @returns {boolean} A flag stating if the dates are in the same month and year or not.
+ * @param date1 - First date.
+ * @param date2 - Second date.
+ * @returns A flag stating if the dates are in the same month and year or not.
  */
-export const isSameMonth = (date1, date2) => {
+export const isSameMonth = (date1: any, date2: any) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
   return (
@@ -86,11 +94,11 @@ export const isSameMonth = (date1, date2) => {
 /**
  * Checks if two dates are on the same day.
  *
- * @param {Date} date1 - First date.
- * @param {Date} date2 - Second date.
- * @returns {boolean} A flag stating if the dates are in the same day or not.
+ * @param date1 - First date.
+ * @param date2 - Second date.
+ * @returns A flag stating if the dates are in the same day or not.
  */
-export const isSameDay = (date1, date2) => {
+export const isSameDay = (date1: any, date2: any) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
   return (
@@ -103,10 +111,10 @@ export const isSameDay = (date1, date2) => {
 /**
  * Formats the received date using the ISO format (YYYY-MM-DD).
  *
- * @param {Date} date - The date to be formatted.
- * @returns {string || null} The formatted date in ISO format.
+ * @param date - The date to be formatted.
+ * @returns The formatted date in ISO format.
  */
-export const getDateISO = (date) => {
+export const getDateISO = (date?: Date) => {
   if (!isDate(date)) return null;
 
   return [
@@ -120,11 +128,11 @@ export const getDateISO = (date) => {
  * Returns an object with the previous month taking also into consideration the year.
  * For example the previous month of January 2000 will be December 1999.
  *
- * @param {number} month - Number of the month.
- * @param {number} year - Number of the year.
- * @returns {({month: number, year: number})} Object with new month and year defined.
+ * @param month - Number of the month.
+ * @param year - Number of the year.
+ * @returns Object with new month and year defined.
  */
-export const getPreviousMonth = (month, year) => {
+export const getPreviousMonth = (month: number, year: number) => {
   const prevMonth = month > 1 ? month - 1 : 12;
   const prevMonthYear = month > 1 ? year : year - 1;
 
@@ -135,51 +143,46 @@ export const getPreviousMonth = (month, year) => {
  * Returns an object with the next month taking also into consideration the year.
  * For example the next month of December 2000 will be January 2001.
  *
- * @param {number} month - Number of the month.
- * @param {number} year - Number of the year.
- * @returns {({month: number, year: number})} Object with new month and year defined.
+ * @param month - Number of the month.
+ * @param year - Number of the year.
+ * @returns Object with new month and year defined.
  */
-export const getNextMonth = (month, year) => {
+export const getNextMonth = (month: number, year: number) => {
   const nextMonth = month < 12 ? month + 1 : 1;
   const nextMonthYear = month < 12 ? year : year + 1;
 
   return { month: nextMonth, year: nextMonthYear };
 };
 
-const uppercaseFirstLetter = (monthName) =>
-  monthName[0].toUpperCase() + monthName.substring(1);
-
 /**
  * Returns a list with the names of all the months localized in the received locale and representation value.
  *
- * @param {string} locale - The locale to be applied to the Intl format.
- * @param {RepresentationValuesType} [representationValue=REPRESENTATION_VALUES.LONG] - The representation value for the month.
- * @returns {Array} An array with all the months names.
+ * @param locale - The locale to be applied to the Intl format.
+ * @param representationValue - The representation value for the month.
+ * @returns An array with all the months names.
  */
 export const getMonthNamesList = (
-  locale,
-  representationValue = REPRESENTATION_VALUES.LONG
+  locale: string | undefined,
+  representationValue: Intl.DateTimeFormatOptions["month"] = "long"
 ) => {
   const options = { month: representationValue, timeZone: "UTC" };
 
   return [...new Array(12)].map((n, index) => {
     const auxDate = makeUTCDate(1970, index, 1);
-    return uppercaseFirstLetter(
-      Intl.DateTimeFormat(locale, options).format(auxDate)
-    );
+    return capitalize(Intl.DateTimeFormat(locale, options).format(auxDate));
   });
 };
 
 /**
  * Returns a list with the names of all the weekdays localized in the received locale and representation value.
  *
- * @param {string} locale - The locale to be applied.
- * @param {DateTimeFormatOptions} [dateTimeFormatValue = DATETIMEFORMAT_OPTIONS.LONG] - The representation value for the weekday.
- * @returns {Array} An array with all the weekday names.
+ * @param locale - The locale to be applied.
+ * @param dateTimeFormatValue - The representation value for the weekday.
+ * @returns An array with all the weekday names.
  */
 export const getWeekdayNamesList = (
   locale: string,
-  dateTimeFormatValue = DATETIMEFORMAT_OPTIONS.LONG
+  dateTimeFormatValue: Intl.DateTimeFormatOptions["weekday"] = "long"
 ) => {
   const options = { weekday: dateTimeFormatValue, timeZone: "UTC" };
   const weekdayNames: string[] = [];
@@ -194,15 +197,15 @@ export const getWeekdayNamesList = (
 /**
  * Returns the name of the month for the supplied month localized in the received locale and representation value.
  *
- * @param {Date} date - The date from which the month name is extracted.
- * @param {string} locale - The locale to be applied to the Intl format.
- * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The locale to be applied to the Intl format.
- * @returns {string} The name of the month.
+ * @param date - The date from which the month name is extracted.
+ * @param locale - The locale to be applied to the Intl format.
+ * @param representationValue - The locale to be applied to the Intl format.
+ * @returns The name of the month.
  */
 export const getMonthName = (
-  date,
-  locale,
-  representationValue = REPRESENTATION_VALUES.LONG
+  date: Date,
+  locale: string,
+  representationValue: Intl.DateTimeFormatOptions["month"] = "long"
 ) =>
   new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
 
@@ -210,25 +213,27 @@ export const getMonthName = (
  * Formats the received date according to Design System specifications.
  * Currently: day month, year => `14 Aug, 2019`.
  *
- * @param {Date} date - UTC date to be formatted.
- * @param {string} locale - The locale to be applied to the Intl format.
- * @returns {string} The formatted date as a string.
+ * @param date - UTC date to be formatted.
+ * @param locale - The locale to be applied to the Intl format.
+ * @returns The formatted date as a string.
  */
 export const getFormattedDate = (
-  date,
-  locale,
-  rep = REPRESENTATION_VALUES.SHORT
+  // TODO: fix this
+  date: any,
+  locale: any,
+  rep: Intl.DateTimeFormatOptions["month"] = "short"
 ) =>
   `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
+
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
  * the 42 positions.
  *
- * @param {number} month - The number of the month (1 to 12).
- * @param {number} year - The number of the year.
- * @returns {Array} The array of dates.
+ * @param month - The number of the month (1 to 12).
+ * @param year - The number of the year.
+ * @returns The array of dates.
  */
-export const createDatesArray = (month, year) => {
+export const createDatesArray = (month: number, year: number) => {
   // Initializes the variables needed to calculate the dates for the received month and year
   const monthDays = getMonthDays(month, year);
   const daysFromPrevMonth = getMonthFirstWeekday(month, year);
@@ -258,10 +263,10 @@ export const createDatesArray = (month, year) => {
 /**
  * Checks if the received locale is valid according to Intl.
  *
- * @param {string} locale - The locale to be checked
- * @returns {boolean} - True if the locale is valid, false otherwise.
+ * @param locale - The locale to be checked
+ * @returns True if the locale is valid, false otherwise.
  */
-export const isValidLocale = (locale) => {
+export const isValidLocale = (locale: string) => {
   try {
     if (Intl.DateTimeFormat.supportedLocalesOf(locale).length > 0) {
       return true;
@@ -296,11 +301,14 @@ export const isRange = (date): date is DateRangeProp =>
 /**
  * Checks if the date falls within a specified date range.
  *
- * @param {Date} date - The date to be evaluated.
- * @param {object} providedValueRange - Provided selection range.
- * @returns {boolean} - True if the date falls within the range, false otherwise.
+ * @param date - The date to be evaluated.
+ * @param providedValueRange - Provided selection range.
+ * @returns - True if the date falls within the range, false otherwise.
  */
-export const dateInProvidedValueRange = (date, providedValueRange) => {
+export const dateInProvidedValueRange = (
+  date: any,
+  providedValueRange: any
+) => {
   const { startDate, endDate } = providedValueRange;
 
   if (!isRange(providedValueRange) || isNil(endDate)) return false;

@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { isKeypress, keyboardCodes } from "@core/utils";
 import { getMonthNamesList } from "../../utils";
-import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
+import { ViewMode } from "../../enums";
 import monthSelectorClasses, {
   HvMonthSelectorClasses,
 } from "./monthSelectorClasses";
@@ -22,14 +22,11 @@ export const HvMonthSelector = ({
   visibleMonth,
   ...others
 }: HvMonthSelectorProps) => {
-  const listMonthNamesShort = getMonthNamesList(
-    locale,
-    REPRESENTATION_VALUES.SHORT
-  );
+  const listMonthNamesShort = getMonthNamesList(locale, "short");
   const onKeyDownHandler = (event, index) => {
     if (isKeypress(event, keyboardCodes.Enter)) {
-      if (onChange) onChange(event, NAV_OPTIONS.MONTH, index + 1);
-      onViewModeChange(VIEW_MODE.CALENDAR);
+      onChange?.(event, "month", index + 1);
+      onViewModeChange("calendar");
     }
   };
   return (
@@ -51,8 +48,8 @@ export const HvMonthSelector = ({
           key={monthName}
           role="button"
           onClick={(event) => {
-            if (onChange) onChange(event, NAV_OPTIONS.MONTH, index + 1);
-            onViewModeChange(VIEW_MODE.CALENDAR);
+            onChange?.(event, "month", index + 1);
+            onViewModeChange("calendar");
           }}
           onKeyDown={(event) => onKeyDownHandler(event, index)}
           tabIndex={0}
@@ -102,7 +99,7 @@ export interface HvMonthSelectorProps {
   /**
    * Callback to define the input date.
    */
-  onViewModeChange: (viewMode: string) => void;
+  onViewModeChange: (viewMode: ViewMode) => void;
   /**
    * Controls the visible month of the Calendar
    */

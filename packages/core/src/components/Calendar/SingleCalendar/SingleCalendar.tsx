@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { clsx } from "clsx";
 import isNil from "lodash/isNil";
 import { setId, keyboardCodes, isKeypress } from "@core/utils";
-import { VIEW_MODE, DATETIMEFORMAT_OPTIONS } from "../enums";
+import { ViewMode } from "../enums";
 import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
@@ -45,7 +45,7 @@ export const HvSingleCalendar = ({
   const today = new Date();
   const localValue = isNil(value) ? today : value;
 
-  const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
+  const [calViewMode, setCalViewMode] = useState<ViewMode>("calendar");
 
   const rangeMode = isRange(localValue);
   const isDateSelectionMode = rangeMode && !isDate(localValue.endDate);
@@ -56,7 +56,7 @@ export const HvSingleCalendar = ({
   const firstDayOfCurrentMonthTime = firstDayOfCurrentMonth.getTime();
 
   const listWeekdayNames = useMemo(
-    () => getWeekdayNamesList(locale, DATETIMEFORMAT_OPTIONS.NARROW),
+    () => getWeekdayNamesList(locale, "narrow"),
     [locale]
   );
 
@@ -158,13 +158,13 @@ export const HvSingleCalendar = ({
           showEndDate={showEndDate && !isDateSelectionMode}
           showDayOfWeek={showDayOfWeek}
         />
-        {calViewMode === VIEW_MODE.CALENDAR && (
+        {calViewMode === "calendar" && (
           <div>
             <HvComposedNavigation
               id={id}
               locale={locale}
               onChange={onVisibleDateChange}
-              onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+              onViewModeChange={setCalViewMode}
               visibleYear={visibleYear || today.getFullYear()}
               visibleMonth={visibleMonth || today.getMonth() + 1}
             />
@@ -180,12 +180,12 @@ export const HvSingleCalendar = ({
             </StyledCalendarGrid>
           </div>
         )}
-        {calViewMode === VIEW_MODE.MONTHLY && (
+        {calViewMode === "monthly" && (
           <HvMonthSelector
             id={id}
             locale={locale}
             onChange={onVisibleDateChange}
-            onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+            onViewModeChange={setCalViewMode}
             visibleMonth={visibleMonth || today.getMonth() + 1}
             rangeMode={rangeMode}
           />

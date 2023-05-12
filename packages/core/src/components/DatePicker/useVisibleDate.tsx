@@ -1,8 +1,8 @@
-import { useReducer } from "react";
+import { Reducer, useReducer } from "react";
 
 import { validateDate } from "./utils";
 
-import { NAV_OPTIONS } from "../Calendar/enums";
+import { VisibilitySelectorActions } from "..";
 
 function stateToLeftRight({
   visibleYear,
@@ -80,11 +80,19 @@ export function isSameYearMonth(d1, d2) {
   return d1.year === d2.year && d1.month === d2.month;
 }
 
-function visibleDateReducer(state, action) {
+type State = {
+  visibleYear: any;
+  visibleMonth: any;
+  rightVisibleYear: any;
+  rightVisibleMonth: any;
+};
+type Action = { type: VisibilitySelectorActions } & Record<string, any>;
+
+const visibleDateReducer: Reducer<State, Action> = (state, action) => {
   let { left, right } = stateToLeftRight(state);
 
   switch (action.type) {
-    case NAV_OPTIONS.PREVIOUS_YEAR:
+    case "previous_year":
       if (action.target === "right") {
         right = subtractYear(right);
         return ensureNoOverlap(left, right, true);
@@ -93,7 +101,7 @@ function visibleDateReducer(state, action) {
       left = subtractYear(left);
       return ensureNoOverlap(left, right, false);
 
-    case NAV_OPTIONS.NEXT_YEAR:
+    case "next_year":
       if (action.target === "right") {
         right = addYear(right);
         return ensureNoOverlap(left, right, true);
@@ -102,7 +110,7 @@ function visibleDateReducer(state, action) {
       left = addYear(left);
       return ensureNoOverlap(left, right, false);
 
-    case NAV_OPTIONS.PREVIOUS_MONTH:
+    case "previous_month":
       if (action.target === "right") {
         right = subtractMonth(right);
         return ensureNoOverlap(left, right, true);
@@ -111,7 +119,7 @@ function visibleDateReducer(state, action) {
       left = subtractMonth(left);
       return ensureNoOverlap(left, right, false);
 
-    case NAV_OPTIONS.NEXT_MONTH:
+    case "next_month":
       if (action.target === "right") {
         right = addMonth(right);
         return ensureNoOverlap(left, right, true);
@@ -120,7 +128,7 @@ function visibleDateReducer(state, action) {
       left = addMonth(left);
       return ensureNoOverlap(left, right, false);
 
-    case NAV_OPTIONS.MONTH:
+    case "month":
       if (action.month != null) {
         if (action.target === "right") {
           if (right.month !== action.month) {
@@ -134,7 +142,7 @@ function visibleDateReducer(state, action) {
       }
       break;
 
-    case NAV_OPTIONS.MONTH_YEAR:
+    case "month_year":
       if (action.month != null && action.year != null) {
         if (action.target === "right") {
           if (
@@ -159,7 +167,7 @@ function visibleDateReducer(state, action) {
   }
 
   return state;
-}
+};
 
 function stateFromRange(startDate, endDate) {
   const initialStartDate = validateDate(startDate);
@@ -175,14 +183,8 @@ function stateFromRange(startDate, endDate) {
   );
 }
 
-export default function useVisibleDate(startDate, endDate) {
-  const [state, dispatchAction] = useReducer(
-    visibleDateReducer,
-    { startDate, endDate },
-    (initData) => {
-      return stateFromRange(initData.startDate, initData.endDate);
-    }
+export default function useVisibleDate(startDate?: Date, endDate?: Date) {
+  return useReducer(visibleDateReducer, { startDate, endDate }, (initData) =>
+    stateFromRange(initData.startDate, initData.endDate)
   );
-
-  return [state, dispatchAction];
 }
