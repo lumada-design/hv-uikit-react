@@ -239,6 +239,7 @@ export const HvStepNavigation = ({
   };
 
   const getDynamicValues = (stepsWidth) => {
+    const themeBreakpoints = activeTheme?.breakpoints.values || {};
     const maxWidth =
       width?.[breakpoint] ??
       Math.max(
@@ -246,22 +247,19 @@ export const HvStepNavigation = ({
           TITLE_MARGIN,
         SEPARATOR_WIDTH * (steps.length - 1) + stepsWidth
       );
-    const next = Object.keys(theme.breakpoints.values).find((_, index, self) =>
+    const next = Object.keys(themeBreakpoints).find((_, index, self) =>
       index - 1 >= 0 ? self[index - 1] === breakpoint : false
     );
+
     const navWidth =
-      (next &&
-        Math.min(
-          maxWidth,
-          activeTheme?.breakpoints.values[next] ?? maxWidth
-        )) ||
-      0;
+      (next && Math.min(maxWidth, themeBreakpoints[next] ?? maxWidth)) ||
+      themeBreakpoints[breakpoint];
+
     const titleWidth =
       Number(hasTitles) * Math.ceil((navWidth + TITLE_MARGIN) / steps.length);
     const separatorWidth =
       Number(!hasTitles) *
       Math.ceil((navWidth - stepsWidth) / (steps.length - 1));
-
     return { width: navWidth, titleWidth, separatorWidth };
   };
 
