@@ -11,7 +11,7 @@ export interface HvEmptyStateClasses {
   actionContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvEmptyStateClasses)[] = [
   "root",
   "container",
   "containerMessageOnly",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "actionContainer",
 ];
 
-const emptyStateClasses = getClasses<HvEmptyStateClasses>(
-  classKeys,
-  "HvEmptyState"
-);
+const emptyStateClasses = getClasses(classKeys, "HvEmptyState");
 
 export default emptyStateClasses;

@@ -32,7 +32,7 @@ export interface HvVerticalNavigationTreeViewItemClasses {
   hide?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvVerticalNavigationTreeViewItemClasses)[] = [
   "node",
   "content",
   "link",
@@ -49,7 +49,7 @@ const classKeys: string[] = [
   "hide",
 ];
 
-const treeViewItemClasses = getClasses<HvVerticalNavigationTreeViewItemClasses>(
+const treeViewItemClasses = getClasses(
   classKeys,
   "HvVerticalNavigationTreeViewItem"
 );

@@ -6,11 +6,12 @@ export interface HvSliderInputClasses {
   inputContainer?: string;
 }
 
-const classKeys: string[] = ["inputRoot", "input", "inputContainer"];
+const classKeys: (keyof HvSliderInputClasses)[] = [
+  "inputRoot",
+  "input",
+  "inputContainer",
+];
 
-const sliderInputClasses = getClasses<HvSliderInputClasses>(
-  classKeys,
-  "HvSliderInput"
-);
+const sliderInputClasses = getClasses(classKeys, "HvSliderInput");
 
 export default sliderInputClasses;

@@ -15,7 +15,7 @@ export interface HvDropDownMenuClasses {
   menuList?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDropDownMenuClasses)[] = [
   "root",
   "container",
   "baseContainer",
@@ -24,9 +24,6 @@ const classKeys: string[] = [
   "menuList",
 ];
 
-const dropDownMenuClasses = getClasses<HvDropDownMenuClasses>(
-  classKeys,
-  "HvDropDownMenu"
-);
+const dropDownMenuClasses = getClasses(classKeys, "HvDropDownMenu");
 
 export default dropDownMenuClasses;

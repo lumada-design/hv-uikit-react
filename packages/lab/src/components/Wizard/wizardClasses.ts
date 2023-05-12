@@ -5,8 +5,8 @@ export type HvWizardClasses = {
   root?: string;
 };
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvWizardClasses)[] = ["root"];
 
-const wizardClasses = getClasses<HvWizardClasses>(classKeys, "HvWizard");
+const wizardClasses = getClasses(classKeys, "HvWizard");
 
 export default wizardClasses;

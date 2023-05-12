@@ -10,7 +10,7 @@ export interface HvBreadCrumbClasses {
   a?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBreadCrumbClasses)[] = [
   "root",
   "link",
   "orderedList",
@@ -20,9 +20,6 @@ const classKeys: string[] = [
   "a",
 ];
 
-const breadCrumbClasses = getClasses<HvBreadCrumbClasses>(
-  classKeys,
-  "HvBreadCrumb"
-);
+const breadCrumbClasses = getClasses(classKeys, "HvBreadCrumb");
 
 export default breadCrumbClasses;

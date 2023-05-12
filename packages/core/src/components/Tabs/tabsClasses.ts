@@ -7,8 +7,13 @@ export interface HvTabsClasses {
   scroller?: string;
 }
 
-const classKeys: string[] = ["root", "flexContainer", "indicator", "scroller"];
+const classKeys: (keyof HvTabsClasses)[] = [
+  "root",
+  "flexContainer",
+  "indicator",
+  "scroller",
+];
 
-const tabsClasses = getClasses<HvTabsClasses>(classKeys, "HvTabs");
+const tabsClasses = getClasses(classKeys, "HvTabs");
 
 export default tabsClasses;

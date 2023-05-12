@@ -6,8 +6,8 @@ export interface HvDotClasses {
   ghostDisabled?: string;
 }
 
-const classKeys: string[] = ["root", "active", "ghostDisabled"];
+const classKeys: (keyof HvDotClasses)[] = ["root", "active", "ghostDisabled"];
 
-const dotClasses = getClasses<HvDotClasses>(classKeys, "HvDot");
+const dotClasses = getClasses(classKeys, "HvDot");
 
 export default dotClasses;

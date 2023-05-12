@@ -7,8 +7,13 @@ export interface HvButtonClasses {
   focusVisible?: string;
 }
 
-const classKeys: string[] = ["root", "startIcon", "endIcon", "focusVisible"];
+const classKeys: (keyof HvButtonClasses)[] = [
+  "root",
+  "startIcon",
+  "endIcon",
+  "focusVisible",
+];
 
-const buttonClasses = getClasses<HvButtonClasses>(classKeys, "HvButton");
+const buttonClasses = getClasses(classKeys, "HvButton");
 
 export default buttonClasses;

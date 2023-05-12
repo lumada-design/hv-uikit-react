@@ -7,12 +7,16 @@ export interface HvVerticalScrollListItemClasses {
   text?: string;
 }
 
-const classKeys: string[] = ["root", "notSelected", "button", "text"];
+const classKeys: (keyof HvVerticalScrollListItemClasses)[] = [
+  "root",
+  "notSelected",
+  "button",
+  "text",
+];
 
-const verticalScrollListItemClasses =
-  getClasses<HvVerticalScrollListItemClasses>(
-    classKeys,
-    "HvVerticalScrollListItem"
-  );
+const verticalScrollListItemClasses = getClasses(
+  classKeys,
+  "HvVerticalScrollListItem"
+);
 
 export default verticalScrollListItemClasses;

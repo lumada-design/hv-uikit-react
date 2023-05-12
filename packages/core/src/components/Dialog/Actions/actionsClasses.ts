@@ -6,11 +6,12 @@ export interface HvDialogActionClasses {
   spacing?: string;
 }
 
-const classKeys: string[] = ["root", "fullscreen", "spacing"];
+const classKeys: (keyof HvDialogActionClasses)[] = [
+  "root",
+  "fullscreen",
+  "spacing",
+];
 
-const dialogActionClasses = getClasses<HvDialogActionClasses>(
-  classKeys,
-  "HvDialog-Action"
-);
+const dialogActionClasses = getClasses(classKeys, "HvDialog-Action");
 
 export default dialogActionClasses;

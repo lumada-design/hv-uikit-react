@@ -5,11 +5,8 @@ export interface HvCardMediaClasses {
   media?: string;
 }
 
-const classKeys: string[] = ["root", "media"];
+const classKeys: (keyof HvCardMediaClasses)[] = ["root", "media"];
 
-const cardMediaClasses = getClasses<HvCardMediaClasses>(
-  classKeys,
-  "HvCard-Media"
-);
+const cardMediaClasses = getClasses(classKeys, "HvCard-Media");
 
 export default cardMediaClasses;

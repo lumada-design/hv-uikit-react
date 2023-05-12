@@ -11,7 +11,7 @@ export interface HvCheckBoxClasses {
   label?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCheckBoxClasses)[] = [
   "root",
   "container",
   "disabled",
@@ -22,6 +22,6 @@ const classKeys: string[] = [
   "label",
 ];
 
-const checkBoxClasses = getClasses<HvCheckBoxClasses>(classKeys, "HvCheckBox");
+const checkBoxClasses = getClasses(classKeys, "HvCheckBox");
 
 export default checkBoxClasses;

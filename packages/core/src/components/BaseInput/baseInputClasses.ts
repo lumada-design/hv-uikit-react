@@ -35,7 +35,7 @@ export interface HvBaseInputClasses {
   readOnly?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBaseInputClasses)[] = [
   "root",
   "disabled",
   "invalid",
@@ -54,9 +54,6 @@ const classKeys: string[] = [
   "readOnly",
 ];
 
-const baseInputClasses = getClasses<HvBaseInputClasses>(
-  classKeys,
-  "HvBaseInput"
-);
+const baseInputClasses = getClasses(classKeys, "HvBaseInput");
 
 export default baseInputClasses;

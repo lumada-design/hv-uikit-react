@@ -9,7 +9,7 @@ export interface HvScrollToHorizontalClasses {
   selected?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvScrollToHorizontalClasses)[] = [
   "root",
   "positionSticky",
   "positionFixed",
@@ -18,9 +18,6 @@ const classKeys: string[] = [
   "selected",
 ];
 
-const scrollToHorizontalClasses = getClasses<HvScrollToHorizontalClasses>(
-  classKeys,
-  "HvScrollToHorizontal"
-);
+const scrollToHorizontalClasses = getClasses(classKeys, "HvScrollToHorizontal");
 
 export default scrollToHorizontalClasses;

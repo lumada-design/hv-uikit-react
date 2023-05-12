@@ -15,7 +15,7 @@ export interface HvTextAreaClasses {
   error?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTextAreaClasses)[] = [
   "root",
   "disabled",
   "resizable",
@@ -30,6 +30,6 @@ const classKeys: string[] = [
   "error",
 ];
 
-const textAreaClasses = getClasses<HvTextAreaClasses>(classKeys, "HvTextArea");
+const textAreaClasses = getClasses(classKeys, "HvTextArea");
 
 export default textAreaClasses;

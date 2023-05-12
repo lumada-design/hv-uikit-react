@@ -8,7 +8,7 @@ export interface HvFooterClasses {
   rightContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvFooterClasses)[] = [
   "root",
   "name",
   "copyright",
@@ -16,6 +16,6 @@ const classKeys: string[] = [
   "rightContainer",
 ];
 
-const footerClasses = getClasses<HvFooterClasses>(classKeys, "HvFooter");
+const footerClasses = getClasses(classKeys, "HvFooter");
 
 export default footerClasses;

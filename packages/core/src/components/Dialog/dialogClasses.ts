@@ -8,7 +8,7 @@ export interface HvDialogClasses {
   paper?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDialogClasses)[] = [
   "root",
   "closeButton",
   "fullscreen",
@@ -16,6 +16,6 @@ const classKeys: string[] = [
   "paper",
 ];
 
-const dialogClasses = getClasses<HvDialogClasses>(classKeys, "HvDialog");
+const dialogClasses = getClasses(classKeys, "HvDialog");
 
 export default dialogClasses;

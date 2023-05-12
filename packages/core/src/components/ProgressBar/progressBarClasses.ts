@@ -11,7 +11,7 @@ export interface HvProgressBarClasses {
   progressError?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvProgressBarClasses)[] = [
   "root",
   "progress",
   "progressBar",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "progressError",
 ];
 
-const progressBarClasses = getClasses<HvProgressBarClasses>(
-  classKeys,
-  "HvProgressBar"
-);
+const progressBarClasses = getClasses(classKeys, "HvProgressBar");
 
 export default progressBarClasses;

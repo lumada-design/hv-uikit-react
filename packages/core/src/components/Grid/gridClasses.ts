@@ -36,7 +36,7 @@ export interface HvGridClasses {
   "grid-xs-12"?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvGridClasses)[] = [
   "root",
   "container",
   "item",
@@ -72,6 +72,6 @@ const classKeys: string[] = [
   "grid-xs-12",
 ];
 
-const gridClasses = getClasses<HvGridClasses>(classKeys, "HvGrid");
+const gridClasses = getClasses(classKeys, "HvGrid");
 
 export default gridClasses;

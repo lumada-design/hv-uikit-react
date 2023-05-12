@@ -5,9 +5,12 @@ export interface HvFileUploaderPreviewClasses {
   overlay?: string;
 }
 
-const classKeys: string[] = ["previewButton", "overlay"];
+const classKeys: (keyof HvFileUploaderPreviewClasses)[] = [
+  "previewButton",
+  "overlay",
+];
 
-const fileUploaderPreviewClasses = getClasses<HvFileUploaderPreviewClasses>(
+const fileUploaderPreviewClasses = getClasses(
   classKeys,
   "HvFileUploaderPreview"
 );

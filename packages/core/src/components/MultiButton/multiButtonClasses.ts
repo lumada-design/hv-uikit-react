@@ -7,11 +7,13 @@ export interface HvMultiButtonClasses {
   selected?: string;
 }
 
-const classKeys: string[] = ["root", "button", "vertical", "selected"];
+const classKeys: (keyof HvMultiButtonClasses)[] = [
+  "root",
+  "button",
+  "vertical",
+  "selected",
+];
 
-const multiButtonClasses = getClasses<HvMultiButtonClasses>(
-  classKeys,
-  "HvMultiButton"
-);
+const multiButtonClasses = getClasses(classKeys, "HvMultiButton");
 
 export default multiButtonClasses;

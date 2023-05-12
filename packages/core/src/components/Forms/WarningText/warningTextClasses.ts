@@ -10,7 +10,7 @@ export interface HvWarningTextClasses {
   topBorder?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvWarningTextClasses)[] = [
   "root",
   "defaultIcon",
   "warningText",
@@ -20,9 +20,6 @@ const classKeys: string[] = [
   "topBorder",
 ];
 
-const warningTextClasses = getClasses<HvWarningTextClasses>(
-  classKeys,
-  "HvWarningText"
-);
+const warningTextClasses = getClasses(classKeys, "HvWarningText");
 
 export default warningTextClasses;

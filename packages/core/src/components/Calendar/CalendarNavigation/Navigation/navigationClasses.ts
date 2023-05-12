@@ -8,7 +8,7 @@ export interface HvNavigationClasses {
   textWithoutHover?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvNavigationClasses)[] = [
   "root",
   "icon",
   "disabled",
@@ -16,9 +16,6 @@ const classKeys: string[] = [
   "textWithoutHover",
 ];
 
-const navigationClasses = getClasses<HvNavigationClasses>(
-  classKeys,
-  "HvNavigation"
-);
+const navigationClasses = getClasses(classKeys, "HvNavigation");
 
 export default navigationClasses;

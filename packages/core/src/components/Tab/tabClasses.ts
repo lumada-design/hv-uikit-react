@@ -7,8 +7,13 @@ export interface HvTabClasses {
   focusVisible?: string;
 }
 
-const classKeys: string[] = ["root", "selected", "disabled", "focusVisible"];
+const classKeys: (keyof HvTabClasses)[] = [
+  "root",
+  "selected",
+  "disabled",
+  "focusVisible",
+];
 
-const tabClasses = getClasses<HvTabClasses>(classKeys, "HvTab");
+const tabClasses = getClasses(classKeys, "HvTab");
 
 export default tabClasses;

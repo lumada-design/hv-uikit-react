@@ -11,7 +11,7 @@ export interface HvContainerClasses {
   maxWidthXl?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvContainerClasses)[] = [
   "root",
   "disableGutters",
   "fixed",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "maxWidthXl",
 ];
 
-const containerClasses = getClasses<HvContainerClasses>(
-  classKeys,
-  "HvContainer"
-);
+const containerClasses = getClasses(classKeys, "HvContainer");
 
 export default containerClasses;

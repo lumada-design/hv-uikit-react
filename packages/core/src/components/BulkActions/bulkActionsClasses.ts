@@ -9,7 +9,7 @@ export interface HvBulkActionsClasses {
   selectAllPages?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBulkActionsClasses)[] = [
   "root",
   "semantic",
   "actions",
@@ -18,9 +18,6 @@ const classKeys: string[] = [
   "selectAllPages",
 ];
 
-const bulkActionsClasses = getClasses<HvBulkActionsClasses>(
-  classKeys,
-  "HvBulkActions"
-);
+const bulkActionsClasses = getClasses(classKeys, "HvBulkActions");
 
 export default bulkActionsClasses;

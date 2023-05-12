@@ -9,11 +9,12 @@ export type HvWizardContainerClasses = {
   closeButton?: string;
 };
 
-const classKeys: string[] = ["root", "paper", "closeButton"];
+const classKeys: (keyof HvWizardContainerClasses)[] = [
+  "root",
+  "paper",
+  "closeButton",
+];
 
-const wizardContainerClasses = getClasses<HvWizardContainerClasses>(
-  classKeys,
-  "HvWizardContainer"
-);
+const wizardContainerClasses = getClasses(classKeys, "HvWizardContainer");
 
 export default wizardContainerClasses;

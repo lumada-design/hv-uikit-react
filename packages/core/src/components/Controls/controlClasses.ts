@@ -7,8 +7,13 @@ export interface HvControlsClasses {
   leftSection: string;
 }
 
-const classKeys: string[] = ["root", "section", "rightSection", "leftSection"];
+const classKeys: (keyof HvControlsClasses)[] = [
+  "root",
+  "section",
+  "rightSection",
+  "leftSection",
+];
 
-const controlsClasses = getClasses<HvControlsClasses>(classKeys, "HvControls");
+const controlsClasses = getClasses(classKeys, "HvControls");
 
 export default controlsClasses;

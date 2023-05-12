@@ -41,7 +41,7 @@ export interface HvInputClasses {
   suggestionList?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvInputClasses)[] = [
   "root",
   "hasSuggestions",
   "inputRoot",
@@ -63,6 +63,6 @@ const classKeys: string[] = [
   "suggestionList",
 ];
 
-const inputClasses = getClasses<HvInputClasses>(classKeys, "HvInput");
+const inputClasses = getClasses(classKeys, "HvInput");
 
 export default inputClasses;

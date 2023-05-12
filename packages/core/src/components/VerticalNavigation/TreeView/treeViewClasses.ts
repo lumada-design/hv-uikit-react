@@ -4,11 +4,8 @@ export interface HvVerticalNavigationTreeViewClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvVerticalNavigationTreeViewClasses)[] = ["root"];
 
-const treeViewClasses = getClasses<HvVerticalNavigationTreeViewClasses>(
-  classKeys,
-  "HvVerticalNavigationTreeView"
-);
+const treeViewClasses = getClasses(classKeys, "HvVerticalNavigationTreeView");
 
 export default treeViewClasses;

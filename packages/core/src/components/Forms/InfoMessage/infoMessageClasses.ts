@@ -6,11 +6,12 @@ export interface HvInfoMessageClasses {
   gutter?: string;
 }
 
-const classKeys: string[] = ["root", "infoDisabled", "gutter"];
+const classKeys: (keyof HvInfoMessageClasses)[] = [
+  "root",
+  "infoDisabled",
+  "gutter",
+];
 
-const infoMessageClasses = getClasses<HvInfoMessageClasses>(
-  classKeys,
-  "HvInfoMessage"
-);
+const infoMessageClasses = getClasses(classKeys, "HvInfoMessage");
 
 export default infoMessageClasses;

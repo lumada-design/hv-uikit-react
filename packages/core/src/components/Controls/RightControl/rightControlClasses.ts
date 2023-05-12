@@ -5,11 +5,8 @@ export interface HvRightControlClasses {
   sortDropdown?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvRightControlClasses)[] = ["root"];
 
-const rightControlClasses = getClasses<HvRightControlClasses>(
-  classKeys,
-  "HvRightControl"
-);
+const rightControlClasses = getClasses(classKeys, "HvRightControl");
 
 export default rightControlClasses;

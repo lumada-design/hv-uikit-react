@@ -5,11 +5,11 @@ export interface HvVerticalNavigationActionsClasses {
   hide?: string;
 }
 
-const classKeys: string[] = ["root", "hide"];
+const classKeys: (keyof HvVerticalNavigationActionsClasses)[] = [
+  "root",
+  "hide",
+];
 
-const actionsClasses = getClasses<HvVerticalNavigationActionsClasses>(
-  classKeys,
-  "HvVerticalNavigationActions"
-);
+const actionsClasses = getClasses(classKeys, "HvVerticalNavigationActions");
 
 export default actionsClasses;

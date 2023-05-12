@@ -11,13 +11,13 @@ export interface HvBannerClasses {
   anchorOriginBottomCenter?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBannerClasses)[] = [
   "root",
   "rootClosed",
   "anchorOriginTopCenter",
   "anchorOriginBottomCenter",
 ];
 
-const bannerClasses = getClasses<HvBannerClasses>(classKeys, "HvBanner");
+const bannerClasses = getClasses(classKeys, "HvBanner");
 
 export default bannerClasses;

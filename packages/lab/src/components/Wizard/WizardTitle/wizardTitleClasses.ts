@@ -15,7 +15,7 @@ export type HvWizardTitleClasses = {
   stepContainer?: string;
 };
 
-const classKeys: string[] = [
+const classKeys: (keyof HvWizardTitleClasses)[] = [
   "headerContainer",
   "messageContainer",
   "titleContainer",
@@ -24,9 +24,6 @@ const classKeys: string[] = [
   "stepContainer",
 ];
 
-const wizardTitleClasses = getClasses<HvWizardTitleClasses>(
-  classKeys,
-  "HvWizardTitle"
-);
+const wizardTitleClasses = getClasses(classKeys, "HvWizardTitle");
 
 export default wizardTitleClasses;

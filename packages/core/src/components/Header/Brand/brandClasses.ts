@@ -5,11 +5,8 @@ export interface HvHeaderBrandClasses {
   separator?: string;
 }
 
-const classKeys: string[] = ["root", "separator"];
+const classKeys: (keyof HvHeaderBrandClasses)[] = ["root", "separator"];
 
-const headerBrandClasses = getClasses<HvHeaderBrandClasses>(
-  classKeys,
-  "HvHeader-Brand"
-);
+const headerBrandClasses = getClasses(classKeys, "HvHeader-Brand");
 
 export default headerBrandClasses;

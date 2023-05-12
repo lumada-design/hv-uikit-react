@@ -4,11 +4,8 @@ export interface HvCodeEditorClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvCodeEditorClasses)[] = ["root"];
 
-const codeEditorClasses = getClasses<HvCodeEditorClasses>(
-  classKeys,
-  "HvCodeEditor"
-);
+const codeEditorClasses = getClasses(classKeys, "HvCodeEditor");
 
 export default codeEditorClasses;

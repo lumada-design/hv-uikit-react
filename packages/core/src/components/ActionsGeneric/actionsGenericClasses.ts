@@ -15,7 +15,7 @@ export interface HvActionsGenericClasses {
   dropDownMenuButtonSelected?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvActionsGenericClasses)[] = [
   "root",
   "button",
   "actionContainer",
@@ -24,9 +24,6 @@ const classKeys: string[] = [
   "dropDownMenuButtonSelected",
 ];
 
-const actionsGenericClasses = getClasses<HvActionsGenericClasses>(
-  classKeys,
-  "HvActionsGeneric"
-);
+const actionsGenericClasses = getClasses(classKeys, "HvActionsGeneric");
 
 export default actionsGenericClasses;

@@ -4,11 +4,8 @@ export interface HvCalendarWeekLabelsClasses {
   calendarDay?: string;
 }
 
-const classKeys: string[] = ["calendarDay"];
+const classKeys: (keyof HvCalendarWeekLabelsClasses)[] = ["calendarDay"];
 
-const calendarWeekLabelsClasses = getClasses<HvCalendarWeekLabelsClasses>(
-  classKeys,
-  "HvCalendarWeekLabels"
-);
+const calendarWeekLabelsClasses = getClasses(classKeys, "HvCalendarWeekLabels");
 
 export default calendarWeekLabelsClasses;

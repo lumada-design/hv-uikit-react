@@ -5,8 +5,8 @@ export interface HvPanelClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvPanelClasses)[] = ["root"];
 
-const panelClasses = getClasses<HvPanelClasses>(classKeys, "HvPanel");
+const panelClasses = getClasses(classKeys, "HvPanel");
 
 export default panelClasses;

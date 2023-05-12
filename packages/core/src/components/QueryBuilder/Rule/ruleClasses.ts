@@ -9,8 +9,12 @@ export interface HvRuleClasses {
   isMdDown?: string;
 }
 
-const classKeys: string[] = ["root", "actionsContainer", "isMdDown"];
+const classKeys: (keyof HvRuleClasses)[] = [
+  "root",
+  "actionsContainer",
+  "isMdDown",
+];
 
-const ruleClasses = getClasses<HvRuleClasses>(classKeys, "HvRule");
+const ruleClasses = getClasses(classKeys, "HvRule");
 
 export default ruleClasses;

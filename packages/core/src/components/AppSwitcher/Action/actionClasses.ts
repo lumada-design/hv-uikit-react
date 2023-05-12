@@ -11,7 +11,7 @@ export interface HvAppSwitcherActionClasses {
   title?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvAppSwitcherActionClasses)[] = [
   "root",
   "icon",
   "iconUrl",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "title",
 ];
 
-const appSwitcherActionClasses = getClasses<HvAppSwitcherActionClasses>(
-  classKeys,
-  "HvAppSwitcher-Action"
-);
+const appSwitcherActionClasses = getClasses(classKeys, "HvAppSwitcher-Action");
 
 export default appSwitcherActionClasses;

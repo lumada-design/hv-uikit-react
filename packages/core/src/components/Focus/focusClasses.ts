@@ -11,7 +11,7 @@ export interface HvFocusClasses {
   focusDisabled?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvFocusClasses)[] = [
   "root",
   "selected",
   "focused",
@@ -22,6 +22,6 @@ const classKeys: string[] = [
   "focusDisabled",
 ];
 
-const focusClasses = getClasses<HvFocusClasses>(classKeys, "HvFocus");
+const focusClasses = getClasses(classKeys, "HvFocus");
 
 export default focusClasses;

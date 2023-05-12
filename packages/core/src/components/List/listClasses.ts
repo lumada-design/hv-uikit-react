@@ -23,7 +23,7 @@ export interface HvListClasses {
   selectAllSelector?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvListClasses)[] = [
   "root",
   "virtualizedRoot",
   "selectorRoot",
@@ -36,6 +36,6 @@ const classKeys: string[] = [
   "selectAllSelector",
 ];
 
-const listClasses = getClasses<HvListClasses>(classKeys, "HvList");
+const listClasses = getClasses(classKeys, "HvList");
 
 export default listClasses;

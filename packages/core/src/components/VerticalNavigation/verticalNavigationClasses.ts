@@ -9,11 +9,12 @@ export interface HvVerticalNavigationClasses {
   slider?;
 }
 
-const classKeys: string[] = ["root", "collapsed", "slider"];
+const classKeys: (keyof HvVerticalNavigationClasses)[] = [
+  "root",
+  "collapsed",
+  "slider",
+];
 
-const verticalNavigationClasses = getClasses<HvVerticalNavigationClasses>(
-  classKeys,
-  "HvVerticalNavigation"
-);
+const verticalNavigationClasses = getClasses(classKeys, "HvVerticalNavigation");
 
 export default verticalNavigationClasses;

@@ -4,11 +4,8 @@ export interface HvHeaderNavigationClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvHeaderNavigationClasses)[] = ["root"];
 
-const headerNavigationClasses = getClasses<HvHeaderNavigationClasses>(
-  classKeys,
-  "HvHeader-Navigation"
-);
+const headerNavigationClasses = getClasses(classKeys, "HvHeader-Navigation");
 
 export default headerNavigationClasses;

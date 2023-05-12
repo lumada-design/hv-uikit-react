@@ -1,7 +1,10 @@
-export const getClasses = <T>(keys: string[], name: string): T => {
-  const classesObj = {};
+export const getClasses = <T extends string, N extends string>(
+  keys: T[],
+  name: N
+) => {
+  const classesObj: Record<string, string> = {};
   keys.forEach((key: string) => {
     classesObj[key] = `${name}-${key}`;
   });
-  return classesObj as T;
+  return classesObj as { [P in T]: `${N}-${P}` };
 };

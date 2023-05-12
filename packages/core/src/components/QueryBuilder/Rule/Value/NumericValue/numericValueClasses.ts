@@ -15,7 +15,7 @@ export interface HvNumericValueClasses {
   isMdDown?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvNumericValueClasses)[] = [
   "root",
   "label",
   "inputContainer",
@@ -24,9 +24,6 @@ const classKeys: string[] = [
   "isMdDown",
 ];
 
-const numericValueClasses = getClasses<HvNumericValueClasses>(
-  classKeys,
-  "HvNumericValue"
-);
+const numericValueClasses = getClasses(classKeys, "HvNumericValue");
 
 export default numericValueClasses;

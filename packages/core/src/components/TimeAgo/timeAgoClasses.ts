@@ -4,8 +4,8 @@ export interface HvTimeAgoClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvTimeAgoClasses)[] = ["root"];
 
-const timeAgoClasses = getClasses<HvTimeAgoClasses>(classKeys, "HvTimeAgo");
+const timeAgoClasses = getClasses(classKeys, "HvTimeAgo");
 
 export default timeAgoClasses;

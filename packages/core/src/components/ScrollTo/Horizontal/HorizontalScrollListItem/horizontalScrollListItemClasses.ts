@@ -7,12 +7,16 @@ export interface HvHorizontalScrollListItemClasses {
   text?: string;
 }
 
-const classKeys: string[] = ["root", "selected", "button", "text"];
+const classKeys: (keyof HvHorizontalScrollListItemClasses)[] = [
+  "root",
+  "selected",
+  "button",
+  "text",
+];
 
-const horizontalScrollListItemClasses =
-  getClasses<HvHorizontalScrollListItemClasses>(
-    classKeys,
-    "HvHorizontalScrollListItem"
-  );
+const horizontalScrollListItemClasses = getClasses(
+  classKeys,
+  "HvHorizontalScrollListItem"
+);
 
 export default horizontalScrollListItemClasses;

@@ -25,7 +25,7 @@ export interface HvStepClasses {
   stepTitle?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvStepClasses)[] = [
   "root",
   "ghost",
   "ghostDisabled",
@@ -39,6 +39,6 @@ const classKeys: string[] = [
   "stepTitle",
 ];
 
-const stepClasses = getClasses<HvStepClasses>(classKeys, "HvStep");
+const stepClasses = getClasses(classKeys, "HvStep");
 
 export default stepClasses;

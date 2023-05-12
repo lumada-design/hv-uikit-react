@@ -69,7 +69,7 @@ export interface HvTableHeaderClasses {
   resizer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTableHeaderClasses)[] = [
   "root",
   "head",
   "body",
@@ -105,9 +105,6 @@ const classKeys: string[] = [
   "resizer",
 ];
 
-const tableHeaderClasses = getClasses<HvTableHeaderClasses>(
-  classKeys,
-  "HvTableHeader"
-);
+const tableHeaderClasses = getClasses(classKeys, "HvTableHeader");
 
 export default tableHeaderClasses;

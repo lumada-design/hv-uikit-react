@@ -8,12 +8,17 @@ export interface HvVerticalNavigationTreeClasses {
   popup?: string;
 }
 
-const classKeys: string[] = ["root", "list", "listItem", "collapsed", "popup"];
+const classKeys: (keyof HvVerticalNavigationTreeClasses)[] = [
+  "root",
+  "list",
+  "listItem",
+  "collapsed",
+  "popup",
+];
 
-const verticalNavigationTreeClasses =
-  getClasses<HvVerticalNavigationTreeClasses>(
-    classKeys,
-    "HvVerticalNavigationTree"
-  );
+const verticalNavigationTreeClasses = getClasses(
+  classKeys,
+  "HvVerticalNavigationTree"
+);
 
 export default verticalNavigationTreeClasses;

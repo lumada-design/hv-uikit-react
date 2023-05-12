@@ -5,12 +5,14 @@ export interface HvVerticalNavigationSliderClasses {
   listItemSelected?: string;
 }
 
-const classKeys: string[] = ["root", "listItemSelected"];
+const classKeys: (keyof HvVerticalNavigationSliderClasses)[] = [
+  "root",
+  "listItemSelected",
+];
 
-const verticalNavigationSliderClasses =
-  getClasses<HvVerticalNavigationSliderClasses>(
-    classKeys,
-    "HvVerticalNavigationSlider"
-  );
+const verticalNavigationSliderClasses = getClasses(
+  classKeys,
+  "HvVerticalNavigationSlider"
+);
 
 export default verticalNavigationSliderClasses;

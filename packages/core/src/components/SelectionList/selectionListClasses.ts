@@ -11,7 +11,7 @@ export interface HvSelectionListClasses {
   invalid?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSelectionListClasses)[] = [
   "root",
   "error",
   "listbox",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "invalid",
 ];
 
-const selectionListClasses = getClasses<HvSelectionListClasses>(
-  classKeys,
-  "HvSelectionList"
-);
+const selectionListClasses = getClasses(classKeys, "HvSelectionList");
 
 export default selectionListClasses;

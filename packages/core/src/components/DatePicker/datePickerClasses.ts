@@ -20,7 +20,7 @@ export type HvDatePickerClasses = {
   rightContainer?: string;
 };
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDatePickerClasses)[] = [
   "root",
   "labelContainer",
   "label",
@@ -40,9 +40,6 @@ const classKeys: string[] = [
   "rightContainer",
 ];
 
-const datePickerClasses = getClasses<HvDatePickerClasses>(
-  classKeys,
-  "HvDatePicker"
-);
+const datePickerClasses = getClasses(classKeys, "HvDatePicker");
 
 export default datePickerClasses;

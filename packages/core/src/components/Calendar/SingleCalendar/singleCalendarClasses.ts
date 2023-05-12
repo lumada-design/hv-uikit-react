@@ -19,7 +19,7 @@ export interface HvSingleCalendarClasses {
   cellContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSingleCalendarClasses)[] = [
   "calendarContainer",
   "calendarWrapper",
   "calendarGrid",
@@ -38,9 +38,6 @@ const classKeys: string[] = [
   "cellContainer",
 ];
 
-const singleCalendarClasses = getClasses<HvSingleCalendarClasses>(
-  classKeys,
-  "HvSingleCalendar"
-);
+const singleCalendarClasses = getClasses(classKeys, "HvSingleCalendar");
 
 export default singleCalendarClasses;

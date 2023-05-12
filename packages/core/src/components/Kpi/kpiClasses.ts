@@ -13,7 +13,7 @@ export interface HvKpiClasses {
   trendLine?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvKpiClasses)[] = [
   "root",
   "visualIndicatorContainer",
   "comparisons",
@@ -26,6 +26,6 @@ const classKeys: string[] = [
   "trendLine",
 ];
 
-const kpiClasses = getClasses<HvKpiClasses>(classKeys, "HvKpi");
+const kpiClasses = getClasses(classKeys, "HvKpi");
 
 export default kpiClasses;

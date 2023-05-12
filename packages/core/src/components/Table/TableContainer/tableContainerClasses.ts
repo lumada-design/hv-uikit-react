@@ -5,11 +5,8 @@ export interface HvTableContainerClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvTableContainerClasses)[] = ["root"];
 
-const tableContainerClasses = getClasses<HvTableContainerClasses>(
-  classKeys,
-  "HvTableContainer"
-);
+const tableContainerClasses = getClasses(classKeys, "HvTableContainer");
 
 export default tableContainerClasses;

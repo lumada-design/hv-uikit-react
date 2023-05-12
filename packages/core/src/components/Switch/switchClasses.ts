@@ -13,7 +13,7 @@ export interface HvSwitchClasses {
   invalidSwitch?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSwitchClasses)[] = [
   "root",
   "label",
   "error",
@@ -21,6 +21,6 @@ const classKeys: string[] = [
   "invalidSwitch",
 ];
 
-const switchClasses = getClasses<HvSwitchClasses>(classKeys, "HvSwitch");
+const switchClasses = getClasses(classKeys, "HvSwitch");
 
 export default switchClasses;

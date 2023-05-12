@@ -33,7 +33,7 @@ export interface HvQueryBuilderClasses {
   buttonBackground?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvQueryBuilderClasses)[] = [
   "root",
   "topGroup",
   "subGroup",
@@ -50,9 +50,6 @@ const classKeys: string[] = [
   "buttonBackground",
 ];
 
-const queryBuilderClasses = getClasses<HvQueryBuilderClasses>(
-  classKeys,
-  "HvQueryBuilder"
-);
+const queryBuilderClasses = getClasses(classKeys, "HvQueryBuilder");
 
 export default queryBuilderClasses;

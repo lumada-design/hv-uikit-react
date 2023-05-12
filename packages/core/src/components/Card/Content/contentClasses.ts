@@ -4,11 +4,8 @@ export interface HvCardContentClasses {
   content?: string;
 }
 
-const classKeys: string[] = ["content"];
+const classKeys: (keyof HvCardContentClasses)[] = ["content"];
 
-const cardContentClasses = getClasses<HvCardContentClasses>(
-  classKeys,
-  "HvCard-Content"
-);
+const cardContentClasses = getClasses(classKeys, "HvCard-Content");
 
 export default cardContentClasses;
