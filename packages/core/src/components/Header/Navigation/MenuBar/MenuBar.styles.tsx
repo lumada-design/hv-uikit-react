@@ -1,10 +1,12 @@
+import { transientOptions } from "@core/utils/transientOptions";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
+import headerMenuBarClasses from "./menuBarClasses";
 
 export interface MenuBarRootProps {
-  type: string;
-  hidden?: boolean;
-  active?: boolean;
+  $type: string;
+  $hidden?: boolean;
+  $active?: boolean;
 }
 
 const show = {
@@ -22,31 +24,32 @@ export const hide = {
   transitionDuration: "300ms",
 };
 
-export const MenuBarRoot = styled("div")(
-  ({ type, hidden, active }: MenuBarRootProps) => ({
-    left: 0,
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    ...(type === "menubar" && {
-      position: "relative",
-      backgroundColor: theme.header.backgroundColor,
-    }),
-    ...(type === "menu" && {
-      position: "absolute",
-      paddingTop: theme.header.selectedItemBorderBottomThickness,
-      zIndex: -2,
-      backgroundColor: theme.header.secondLevelBackgroundColor,
-      "& li > div": {
-        marginTop: 0,
-      },
-    }),
-    ...(hidden && { ...hide }),
-    ...(active && { ...show }),
-  })
-);
+export const MenuBarRoot = styled(
+  "div",
+  transientOptions
+)(({ $type, $hidden, $active }: MenuBarRootProps) => ({
+  left: 0,
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  ...($type === "menubar" && {
+    position: "relative",
+    backgroundColor: theme.header.backgroundColor,
+  }),
+  ...($type === "menu" && {
+    position: "absolute",
+    zIndex: -2,
+    height: theme.header.secondLevelHeight,
+    backgroundColor: theme.header.secondLevelBackgroundColor,
+    "& li > div": {
+      marginTop: 0,
+    },
+  }),
+  ...($hidden && { ...hide }),
+  ...($active && { ...show }),
+}));
 
 export const MenuBarUl = styled("ul")({
   margin: 0,
@@ -54,18 +57,18 @@ export const MenuBarUl = styled("ul")({
   display: "inherit",
   alignItems: "center",
   height: "100%",
-  "&:hover .active": {
+  [`&:hover .${headerMenuBarClasses.active}`]: {
     ...hide,
   },
-  "& li:hover > .hidden": {
+  [`& li:hover > .${headerMenuBarClasses.hidden}`]: {
     ...show,
   },
 
-  "&:focus-within .active": {
+  [`&:focus-within .${headerMenuBarClasses.active}`]: {
     ...hide,
     zIndex: -2,
   },
-  "& li:focus-within > .hidden": {
+  [`& li:focus-within > .${headerMenuBarClasses.hidden}`]: {
     ...show,
     zIndex: -1,
   },

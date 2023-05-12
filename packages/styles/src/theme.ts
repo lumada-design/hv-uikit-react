@@ -44,6 +44,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     height: "string",
     backgroundColor: "string",
     secondLevelBackgroundColor: "string",
+    secondLevelHeight: "string",
     hoverColor: "string",
     borderTopThickness: "string",
     borderTopColor: "string",
@@ -53,6 +54,10 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     selectedItemBorderTopThickness: "string",
     selectedItemBorderBottomColor: "string",
     selectedItemBorderBottomThickness: "string",
+    secondLevelSelectedItemBorderTopColor: "string",
+    secondLevelSelectedItemBorderTopThickness: "string",
+    secondLevelSelectedItemBorderBottomColor: "string",
+    secondLevelSelectedItemBorderBottomThickness: "string",
     shadow: "string",
   },
   card: {

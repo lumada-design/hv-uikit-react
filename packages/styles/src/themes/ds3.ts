@@ -260,6 +260,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     height: "44px",
     backgroundColor: theme.colors.atmo1,
     secondLevelBackgroundColor: theme.colors.atmo2,
+    secondLevelHeight: "40px",
     hoverColor: theme.colors.atmo3,
     borderTopThickness: "4px",
     borderTopColor: `${theme.colors.negative}`,
@@ -269,6 +270,10 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     selectedItemBorderTopThickness: "2px",
     selectedItemBorderBottomColor: "transparent",
     selectedItemBorderBottomThickness: "0px",
+    secondLevelSelectedItemBorderTopColor: "transparent",
+    secondLevelSelectedItemBorderTopThickness: "2px",
+    secondLevelSelectedItemBorderBottomColor: "transparent",
+    secondLevelSelectedItemBorderBottomThickness: "0px",
     shadow: theme.colors.shadow,
   },
   card: {

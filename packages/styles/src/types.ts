@@ -51,6 +51,7 @@ export type HvThemeComponents = {
     height: string;
     backgroundColor: string;
     secondLevelBackgroundColor: string;
+    secondLevelHeight: string;
     hoverColor: string;
     borderTopThickness: string;
     borderTopColor: string;
@@ -61,6 +62,10 @@ export type HvThemeComponents = {
     selectedItemBorderBottomColor: string;
     selectedItemBorderBottomThickness: string;
     shadow: string;
+    secondLevelSelectedItemBorderTopColor: string;
+    secondLevelSelectedItemBorderTopThickness: string;
+    secondLevelSelectedItemBorderBottomColor: string;
+    secondLevelSelectedItemBorderBottomThickness: string;
   };
   card: {
     iconMargin: string;
