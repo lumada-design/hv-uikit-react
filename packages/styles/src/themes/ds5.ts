@@ -204,7 +204,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     backgroundColor: theme.colors.atmo1,
     secondLevelBackgroundColor: theme.colors.atmo2,
     secondLevelHeight: "56px",
-    hoverColor: theme.colors.atmo3,
+    hoverColor: theme.colors.primary_20,
     borderTopThickness: "0px",
     borderTopColor: "transparent",
     selectedItemColor: theme.colors.secondary,
