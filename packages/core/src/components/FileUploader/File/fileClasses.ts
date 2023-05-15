@@ -12,7 +12,7 @@ export interface HvFileClasses {
   fail?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvFileClasses)[] = [
   "root",
   "progressbar",
   "progressbarBack",
@@ -24,6 +24,6 @@ const classKeys: string[] = [
   "fail",
 ];
 
-const fileClasses = getClasses<HvFileClasses>(classKeys, "HvFile");
+const fileClasses = getClasses(classKeys, "HvFile");
 
 export default fileClasses;

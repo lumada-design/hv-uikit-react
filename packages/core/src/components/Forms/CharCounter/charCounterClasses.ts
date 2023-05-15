@@ -7,11 +7,13 @@ export interface HvCharCounterClasses {
   overloaded?: string;
 }
 
-const classKeys: string[] = ["root", "counterDisabled", "gutter", "overloaded"];
+const classKeys: (keyof HvCharCounterClasses)[] = [
+  "root",
+  "counterDisabled",
+  "gutter",
+  "overloaded",
+];
 
-const charCounterClasses = getClasses<HvCharCounterClasses>(
-  classKeys,
-  "HvCharCounter"
-);
+const charCounterClasses = getClasses(classKeys, "HvCharCounter");
 
 export default charCounterClasses;

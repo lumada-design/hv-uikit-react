@@ -11,16 +11,13 @@ export type HvWizardActionsClasses = {
   buttonSpacing?: string;
 };
 
-const classKeys: string[] = [
+const classKeys: (keyof HvWizardActionsClasses)[] = [
   "actionsContainer",
   "buttonsContainer",
   "buttonWidth",
   "buttonSpacing",
 ];
 
-const wizardActionsClasses = getClasses<HvWizardActionsClasses>(
-  classKeys,
-  "HvWizardActions"
-);
+const wizardActionsClasses = getClasses(classKeys, "HvWizardActions");
 
 export default wizardActionsClasses;

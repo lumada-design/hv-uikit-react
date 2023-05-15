@@ -6,8 +6,12 @@ export interface HvLabelClasses {
   childGutter?: string;
 }
 
-const classKeys: string[] = ["root", "labelDisabled", "childGutter"];
+const classKeys: (keyof HvLabelClasses)[] = [
+  "root",
+  "labelDisabled",
+  "childGutter",
+];
 
-const labelClasses = getClasses<HvLabelClasses>(classKeys, "HvLabel");
+const labelClasses = getClasses(classKeys, "HvLabel");
 
 export default labelClasses;

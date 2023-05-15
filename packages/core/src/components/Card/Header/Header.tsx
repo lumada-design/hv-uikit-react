@@ -10,7 +10,7 @@ import { ClassNames } from "@emotion/react";
 
 export interface HvCardHeaderProps
   extends Omit<MuiCardHeaderProps, "classes">,
-    HvBaseProps<HTMLDivElement, { title }> {
+    HvBaseProps<HTMLDivElement, "title"> {
   /** The renderable content inside the title slot of the header. */
   title: React.ReactNode;
   /** The renderable content inside the subheader slot of the header. */

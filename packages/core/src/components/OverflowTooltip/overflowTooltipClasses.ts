@@ -7,16 +7,13 @@ export interface HvOverflowTooltipClasses {
   tooltipData?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvOverflowTooltipClasses)[] = [
   "root",
   "tooltipAnchor",
   "tooltipAnchorParagraph",
   "tooltipData",
 ];
 
-const overflowTooltipClasses = getClasses<HvOverflowTooltipClasses>(
-  classKeys,
-  "HvOverflowTooltip"
-);
+const overflowTooltipClasses = getClasses(classKeys, "HvOverflowTooltip");
 
 export default overflowTooltipClasses;

@@ -13,7 +13,7 @@ export interface HvBannerContentClasses {
   default?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBannerContentClasses)[] = [
   "outContainer",
   "root",
   "message",
@@ -26,9 +26,6 @@ const classKeys: string[] = [
   "default",
 ];
 
-const bannerContentClasses = getClasses<HvBannerContentClasses>(
-  classKeys,
-  "HvBanner-Content"
-);
+const bannerContentClasses = getClasses(classKeys, "HvBanner-Content");
 
 export default bannerContentClasses;

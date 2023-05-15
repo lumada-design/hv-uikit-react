@@ -14,7 +14,7 @@ import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
 import { HvTypographyVariants } from "@core/components";
 
 export interface HvAccordionProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Id to be applied to the root node of the accordion.
    */

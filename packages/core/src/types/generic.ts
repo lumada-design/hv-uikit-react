@@ -27,16 +27,16 @@ export type PolymorphicComponentRef<
   Props = {}
 > = PolymorphicComponent<C, Props> & { ref?: PolymorphicRef<C> };
 
-// HV base props
-export type HvBaseProps<E = HTMLDivElement, P = {}> = Omit<
-  HTMLAttributes<E>,
-  keyof P
->;
+/** HV Base Props. Extends `HTMLAttributes` of an element `E`, and filters `K` keys. */
+export type HvBaseProps<
+  E extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLAttributes<E> = never
+> = Omit<HTMLAttributes<E>, K>;
 
-// This type allows to do a deep partial by applying the Partial type to each key recursively
+/** This type allows to do a deep partial by applying the Partial type to each key recursively */
 type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
 
-// This type combines the HvExtraProps and DeepPartial types
+/** This type combines the HvExtraProps and DeepPartial types */
 export type HvExtraDeepPartialProps<T> = Partial<{
   [P in keyof T]: DeepPartial<T[P]> & HvExtraProps;
 }> &

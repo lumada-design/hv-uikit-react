@@ -27,7 +27,7 @@ export interface HvPaginationClasses {
   icon?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvPaginationClasses)[] = [
   "root",
   "pageSizeOptions",
   "pageSizeOptionsSelect",
@@ -42,9 +42,6 @@ const classKeys: string[] = [
   "icon",
 ];
 
-const paginationClasses = getClasses<HvPaginationClasses>(
-  classKeys,
-  "HvPagination"
-);
+const paginationClasses = getClasses(classKeys, "HvPagination");
 
 export default paginationClasses;

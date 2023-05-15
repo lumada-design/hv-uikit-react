@@ -5,11 +5,8 @@ export interface HvDialogContentClasses {
   textContent?: string;
 }
 
-const classKeys: string[] = ["root", "textContent"];
+const classKeys: (keyof HvDialogContentClasses)[] = ["root", "textContent"];
 
-const dialogContentClasses = getClasses<HvDialogContentClasses>(
-  classKeys,
-  "HvDialog-Content"
-);
+const dialogContentClasses = getClasses(classKeys, "HvDialog-Content");
 
 export default dialogContentClasses;

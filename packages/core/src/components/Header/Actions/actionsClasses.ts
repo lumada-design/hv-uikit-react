@@ -4,11 +4,8 @@ export interface HvHeaderActionsClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvHeaderActionsClasses)[] = ["root"];
 
-const headerActionsClasses = getClasses<HvHeaderActionsClasses>(
-  classKeys,
-  "HvHeader-Actions"
-);
+const headerActionsClasses = getClasses(classKeys, "HvHeader-Actions");
 
 export default headerActionsClasses;

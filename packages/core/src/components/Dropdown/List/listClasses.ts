@@ -11,7 +11,7 @@ export interface HvDropdownListClasses {
   selectAll?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDropdownListClasses)[] = [
   "rootList",
   "dropdownListContainer",
   "searchContainer",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "selectAll",
 ];
 
-const dropdownListClasses = getClasses<HvDropdownListClasses>(
-  classKeys,
-  "HvDropdownList"
-);
+const dropdownListClasses = getClasses(classKeys, "HvDropdownList");
 
 export default dropdownListClasses;

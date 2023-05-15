@@ -6,13 +6,13 @@ export interface HvMessageContainerClasses {
   actionMessageContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvMessageContainerClasses)[] = [
   "iconContainer",
   "message",
   "actionMessageContainer",
 ];
 
-const messageContainerClasses = getClasses<HvMessageContainerClasses>(
+const messageContainerClasses = getClasses(
   classKeys,
   "HvBanner-MessageContainer"
 );

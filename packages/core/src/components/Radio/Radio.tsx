@@ -19,7 +19,7 @@ export type HvRadioStatus = "standBy" | "valid" | "invalid";
 
 export interface HvRadioProps
   extends Omit<MuiRadioProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
    * Class names to be applied.
    */

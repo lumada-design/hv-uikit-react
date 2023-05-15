@@ -13,7 +13,7 @@ import { useTheme as useHvTheme } from "@core/hooks";
 import { useTheme } from "@mui/material/styles";
 
 export interface HvEmptyStateProps
-  extends HvBaseProps<HTMLDivElement, { title }> {
+  extends HvBaseProps<HTMLDivElement, "title"> {
   /** Icon to be presented. */
   icon: React.ReactNode;
   /** The title to be shown. */

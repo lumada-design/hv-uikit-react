@@ -9,7 +9,7 @@ export interface HvAdornmentClasses {
   adornmentButton?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvAdornmentClasses)[] = [
   "root",
   "icon",
   "adornment",
@@ -18,9 +18,6 @@ const classKeys: string[] = [
   "adornmentButton",
 ];
 
-const adornmentClasses = getClasses<HvAdornmentClasses>(
-  classKeys,
-  "HvAdornment"
-);
+const adornmentClasses = getClasses(classKeys, "HvAdornment");
 
 export default adornmentClasses;

@@ -8,7 +8,7 @@ export interface HvFilterGroupClasses {
   error?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvFilterGroupClasses)[] = [
   "root",
   "labelContainer",
   "label",
@@ -16,9 +16,6 @@ const classKeys: string[] = [
   "error",
 ];
 
-const filterGroupClasses = getClasses<HvFilterGroupClasses>(
-  classKeys,
-  "HvFilterGroup"
-);
+const filterGroupClasses = getClasses(classKeys, "HvFilterGroup");
 
 export default filterGroupClasses;

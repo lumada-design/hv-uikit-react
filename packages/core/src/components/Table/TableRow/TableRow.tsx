@@ -12,7 +12,7 @@ import { getBorderStyles } from "../utils/utils";
 import { useTheme } from "@core/hooks";
 
 export interface HvTableRowProps
-  extends HvBaseProps<HTMLTableRowElement, { children }> {
+  extends HvBaseProps<HTMLTableRowElement, "children"> {
   /** Content to be rendered */
   children: React.ReactNode;
   /** The component used for the root node. Either a string to use a HTML element or a component. Defaults to tbody. */

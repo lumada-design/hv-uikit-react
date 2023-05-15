@@ -9,7 +9,7 @@ export interface HvCardClasses {
   icon?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCardClasses)[] = [
   "root",
   "selectable",
   "selected",
@@ -18,6 +18,6 @@ const classKeys: string[] = [
   "icon",
 ];
 
-const cardClasses = getClasses<HvCardClasses>(classKeys, "HvCard");
+const cardClasses = getClasses(classKeys, "HvCard");
 
 export default cardClasses;

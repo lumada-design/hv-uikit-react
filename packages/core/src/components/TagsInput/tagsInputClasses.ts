@@ -51,7 +51,7 @@ export interface HvTagsInputClasses {
   suggestionList?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTagsInputClasses)[] = [
   "input",
   "listItemGutters",
   "listItemRoot",
@@ -78,9 +78,6 @@ const classKeys: string[] = [
   "suggestionList",
 ];
 
-const tagsInputClasses = getClasses<HvTagsInputClasses>(
-  classKeys,
-  "HvTagsInput"
-);
+const tagsInputClasses = getClasses(classKeys, "HvTagsInput");
 
 export default tagsInputClasses;

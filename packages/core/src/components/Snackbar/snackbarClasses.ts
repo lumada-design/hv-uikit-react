@@ -16,7 +16,7 @@ export interface HvSnackbarClasses {
   anchorOriginBottomRight?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSnackbarClasses)[] = [
   "root",
   "anchorOriginTopRight",
   "anchorOriginTopLeft",
@@ -26,6 +26,6 @@ const classKeys: string[] = [
   "anchorOriginBottomRight",
 ];
 
-const snackbarClasses = getClasses<HvSnackbarClasses>(classKeys, "HvSnackbar");
+const snackbarClasses = getClasses(classKeys, "HvSnackbar");
 
 export default snackbarClasses;

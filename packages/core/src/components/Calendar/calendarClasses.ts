@@ -9,7 +9,7 @@ export interface HvCalendarClasses {
   calendarMonthlyCellSelected?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCalendarClasses)[] = [
   "root",
   "rangeCalendarContainer",
   "singleCalendar",
@@ -18,6 +18,6 @@ const classKeys: string[] = [
   "calendarMonthlyCellSelected",
 ];
 
-const calendarClasses = getClasses<HvCalendarClasses>(classKeys, "HvCalendar");
+const calendarClasses = getClasses(classKeys, "HvCalendar");
 
 export default calendarClasses;

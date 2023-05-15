@@ -367,7 +367,7 @@ export const HvVerticalNavigationTree = ({
 };
 
 export interface HvVerticalNavigationTreeProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Id to be applied to the root node.
    */

@@ -11,13 +11,13 @@ export interface HvTableClasses {
   listRow?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTableClasses)[] = [
   "root",
   "stickyHeader",
   "stickyColumns",
   "listRow",
 ];
 
-const tableClasses = getClasses<HvTableClasses>(classKeys, "HvTable");
+const tableClasses = getClasses(classKeys, "HvTable");
 
 export default tableClasses;

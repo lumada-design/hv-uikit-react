@@ -14,7 +14,7 @@ export interface HvLoadingClasses {
   regularColor?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvLoadingClasses)[] = [
   "root",
   "barContainer",
   "loadingBar",
@@ -28,6 +28,6 @@ const classKeys: string[] = [
   "regularColor",
 ];
 
-const loadingClasses = getClasses<HvLoadingClasses>(classKeys, "HvLoading");
+const loadingClasses = getClasses(classKeys, "HvLoading");
 
 export default loadingClasses;

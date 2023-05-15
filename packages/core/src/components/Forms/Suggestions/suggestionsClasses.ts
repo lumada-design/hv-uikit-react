@@ -6,11 +6,8 @@ export interface HvSuggestionsClasses {
   popper?: string;
 }
 
-const classKeys: string[] = ["root", "list", "popper"];
+const classKeys: (keyof HvSuggestionsClasses)[] = ["root", "list", "popper"];
 
-const suggestionsClasses = getClasses<HvSuggestionsClasses>(
-  classKeys,
-  "HvSuggestions"
-);
+const suggestionsClasses = getClasses(classKeys, "HvSuggestions");
 
 export default suggestionsClasses;

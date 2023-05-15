@@ -6,11 +6,12 @@ export interface HvVerticalNavigationActionClasses {
   minimized?: string;
 }
 
-const classKeys: string[] = ["action", "noIcon", "minimized"];
+const classKeys: (keyof HvVerticalNavigationActionClasses)[] = [
+  "action",
+  "noIcon",
+  "minimized",
+];
 
-const actionClasses = getClasses<HvVerticalNavigationActionClasses>(
-  classKeys,
-  "HvVerticalNavigationAction"
-);
+const actionClasses = getClasses(classKeys, "HvVerticalNavigationAction");
 
 export default actionClasses;

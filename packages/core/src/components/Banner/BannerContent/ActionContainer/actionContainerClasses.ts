@@ -7,14 +7,14 @@ export interface HvActionContainerClasses {
   actionsInnerContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvActionContainerClasses)[] = [
   "actionContainer",
   "closeAction",
   "iconContainer",
   "actionsInnerContainer",
 ];
 
-const actionContainerClasses = getClasses<HvActionContainerClasses>(
+const actionContainerClasses = getClasses(
   classKeys,
   "HvBanner-ActionContainer"
 );

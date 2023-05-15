@@ -35,7 +35,7 @@ export interface HvTypographyClasses {
   xsInlineLink?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTypographyClasses)[] = [
   "root",
   "noWrap",
   "display",
@@ -69,9 +69,6 @@ const classKeys: string[] = [
   "xsInlineLink",
 ];
 
-const typographyClasses = getClasses<HvTypographyClasses>(
-  classKeys,
-  "HvTypography"
-);
+const typographyClasses = getClasses(classKeys, "HvTypography");
 
 export default typographyClasses;

@@ -1,4 +1,4 @@
-import { REPRESENTATION_VALUES } from "../Calendar/enums";
+import { DateRangeProp } from "..";
 import {
   getFormattedDate,
   getMonthName,
@@ -9,9 +9,9 @@ import {
 export const validateDate = (date) => (isDate(date) && date) || new Date();
 
 export const getFormattedDateRange = (
-  date,
-  locale,
-  rep = REPRESENTATION_VALUES.SHORT
+  date: DateRangeProp,
+  locale: string,
+  rep: Intl.DateTimeFormatOptions["month"] = "short"
 ) => {
   const { startDate, endDate } = date;
   const monthYear = `${getMonthName(
@@ -19,7 +19,7 @@ export const getFormattedDateRange = (
     locale,
     rep
   )} ${startDate.getFullYear()}`;
-  return `${startDate.getDate()} - ${endDate.getDate()} ${monthYear}`;
+  return `${startDate.getDate()} - ${endDate?.getDate()} ${monthYear}`;
 };
 
 export const getSingleDateLabel = (date, locale?) =>
@@ -37,7 +37,11 @@ export const getRangeDateLabel = ({ startDate, endDate }, locale) => {
       )}`;
 };
 
-export const getDateLabel = (date, rangeMode, locale) =>
+export const getDateLabel = (
+  date: Date | Partial<DateRangeProp> | undefined,
+  rangeMode: boolean,
+  locale: string
+) =>
   rangeMode
-    ? getRangeDateLabel(date, locale)
+    ? getRangeDateLabel(date as Required<DateRangeProp>, locale)
     : getSingleDateLabel(date, locale);

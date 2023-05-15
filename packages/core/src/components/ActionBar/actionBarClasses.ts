@@ -4,11 +4,8 @@ export interface HvActionBarClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvActionBarClasses)[] = ["root"];
 
-const actionBarClasses = getClasses<HvActionBarClasses>(
-  classKeys,
-  "HvActionBar"
-);
+const actionBarClasses = getClasses(classKeys, "HvActionBar");
 
 export default actionBarClasses;

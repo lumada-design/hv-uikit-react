@@ -7,11 +7,13 @@ export interface HvBaseCheckBoxClasses {
   icon?: string;
 }
 
-const classKeys: string[] = ["root", "disabled", "focusVisible", "icon"];
+const classKeys: (keyof HvBaseCheckBoxClasses)[] = [
+  "root",
+  "disabled",
+  "focusVisible",
+  "icon",
+];
 
-const baseCheckBoxClasses = getClasses<HvBaseCheckBoxClasses>(
-  classKeys,
-  "HvBaseCheckBox"
-);
+const baseCheckBoxClasses = getClasses(classKeys, "HvBaseCheckBox");
 
 export default baseCheckBoxClasses;

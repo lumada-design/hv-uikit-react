@@ -6,8 +6,12 @@ export interface HvHeaderClasses {
   backgroundColor?: string;
 }
 
-const classKeys: string[] = ["root", "header", "backgroundColor"];
+const classKeys: (keyof HvHeaderClasses)[] = [
+  "root",
+  "header",
+  "backgroundColor",
+];
 
-const headerClasses = getClasses<HvHeaderClasses>(classKeys, "HvHeader");
+const headerClasses = getClasses(classKeys, "HvHeader");
 
 export default headerClasses;

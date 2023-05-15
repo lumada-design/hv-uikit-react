@@ -56,7 +56,7 @@ export interface HvMarkProperty {
 }
 
 export interface HvSliderProps
-  extends HvBaseProps<HTMLDivElement, { onChange; onBlur }> {
+  extends HvBaseProps<HTMLDivElement, "onChange" | "onBlur"> {
   /**
    * The slider name.
    */

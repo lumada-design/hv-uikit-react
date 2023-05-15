@@ -5,8 +5,8 @@ export interface HvLoginClasses {
   formContainer?: string;
 }
 
-const classKeys: string[] = ["root", "formContainer"];
+const classKeys: (keyof HvLoginClasses)[] = ["root", "formContainer"];
 
-const loginClasses = getClasses<HvLoginClasses>(classKeys, "HvLogin");
+const loginClasses = getClasses(classKeys, "HvLogin");
 
 export default loginClasses;

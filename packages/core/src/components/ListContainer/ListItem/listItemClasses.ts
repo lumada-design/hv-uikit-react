@@ -14,7 +14,7 @@ export interface HvListItemClasses {
   withEndAdornment?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvListItemClasses)[] = [
   "root",
   "focus",
   "startAdornment",
@@ -28,6 +28,6 @@ const classKeys: string[] = [
   "withEndAdornment",
 ];
 
-const listItemClasses = getClasses<HvListItemClasses>(classKeys, "HvListItem");
+const listItemClasses = getClasses(classKeys, "HvListItem");
 
 export default listItemClasses;

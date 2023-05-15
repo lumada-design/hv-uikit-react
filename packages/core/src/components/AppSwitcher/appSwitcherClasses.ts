@@ -19,7 +19,7 @@ export interface HvAppSwitcherClasses {
   fluid?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvAppSwitcherClasses)[] = [
   "root",
   "item",
   "itemSelected",
@@ -38,9 +38,6 @@ const classKeys: string[] = [
   "fluid",
 ];
 
-const appSwitcherClasses = getClasses<HvAppSwitcherClasses>(
-  classKeys,
-  "HvAppSwitcher"
-);
+const appSwitcherClasses = getClasses(classKeys, "HvAppSwitcher");
 
 export default appSwitcherClasses;

@@ -5,8 +5,8 @@ export interface HvFileListClasses {
   listItem?: string;
 }
 
-const classKeys: string[] = ["list", "listItem"];
+const classKeys: (keyof HvFileListClasses)[] = ["list", "listItem"];
 
-const fileListClasses = getClasses<HvFileListClasses>(classKeys, "HvFileList");
+const fileListClasses = getClasses(classKeys, "HvFileList");
 
 export default fileListClasses;

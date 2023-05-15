@@ -4,8 +4,7 @@ import { StyledA } from "./Link.styles";
 import linkClasses, { HvLinkClasses } from "./linkClasses";
 import { MouseEventHandler } from "react";
 
-export interface HvLinkProps
-  extends HvBaseProps<HTMLAnchorElement, { onClick }> {
+export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   onClick?: (
     event: MouseEventHandler<HTMLAnchorElement>,
     data: any

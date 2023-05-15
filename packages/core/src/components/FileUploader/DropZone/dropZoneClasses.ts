@@ -14,7 +14,7 @@ export interface HvDropZoneClasses {
   selectFilesText?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDropZoneClasses)[] = [
   "dropZoneContainer",
   "dropZoneLabelsGroup",
   "dragAction",
@@ -28,6 +28,6 @@ const classKeys: string[] = [
   "selectFilesText",
 ];
 
-const dropZoneClasses = getClasses<HvDropZoneClasses>(classKeys, "HvDropZone");
+const dropZoneClasses = getClasses(classKeys, "HvDropZone");
 
 export default dropZoneClasses;

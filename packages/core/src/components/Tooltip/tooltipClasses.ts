@@ -25,7 +25,7 @@ export interface HvTooltipClasses {
   valueWrapper?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTooltipClasses)[] = [
   "root",
   "tooltip",
   "tooltipMulti",
@@ -39,6 +39,6 @@ const classKeys: string[] = [
   "valueWrapper",
 ];
 
-const tooltipClasses = getClasses<HvTooltipClasses>(classKeys, "HvTooltip");
+const tooltipClasses = getClasses(classKeys, "HvTooltip");
 
 export default tooltipClasses;

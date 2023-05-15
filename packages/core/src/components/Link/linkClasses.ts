@@ -4,8 +4,8 @@ export interface HvLinkClasses {
   a?: string;
 }
 
-const classKeys: string[] = ["a"];
+const classKeys: (keyof HvLinkClasses)[] = ["a"];
 
-const linkClasses = getClasses<HvLinkClasses>(classKeys, "HvLink");
+const linkClasses = getClasses(classKeys, "HvLink");
 
 export default linkClasses;

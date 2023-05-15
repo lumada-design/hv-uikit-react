@@ -5,11 +5,8 @@ export interface HvTextValueClasses {
   location?: string;
 }
 
-const classKeys: string[] = ["location"];
+const classKeys: (keyof HvTextValueClasses)[] = ["location"];
 
-const textValueClasses = getClasses<HvTextValueClasses>(
-  classKeys,
-  "HvTextValue"
-);
+const textValueClasses = getClasses(classKeys, "HvTextValue");
 
 export default textValueClasses;

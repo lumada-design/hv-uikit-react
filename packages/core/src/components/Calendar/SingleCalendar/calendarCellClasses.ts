@@ -15,7 +15,7 @@ export interface HvCalendarCellClasses {
   cellsOutsideRange?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCalendarCellClasses)[] = [
   "cellContainer",
   "focusSelection",
   "calendarDate",
@@ -30,9 +30,6 @@ const classKeys: string[] = [
   "cellsOutsideRange",
 ];
 
-const calendarCellClasses = getClasses<HvCalendarCellClasses>(
-  classKeys,
-  "HvSingleCalendar"
-);
+const calendarCellClasses = getClasses(classKeys, "HvSingleCalendar");
 
 export default calendarCellClasses;

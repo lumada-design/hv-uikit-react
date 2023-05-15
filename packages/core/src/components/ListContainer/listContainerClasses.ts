@@ -4,11 +4,8 @@ export interface HvListContainerClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvListContainerClasses)[] = ["root"];
 
-const listContainerClasses = getClasses<HvListContainerClasses>(
-  classKeys,
-  "HvListContainer"
-);
+const listContainerClasses = getClasses(classKeys, "HvListContainer");
 
 export default listContainerClasses;

@@ -11,7 +11,7 @@ import baseRadioClasses, { HvBaseRadioClasses } from "./baseRadioClasses";
 
 export interface HvBaseRadioProps
   extends Omit<MuiRadioProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
    * Class names to be applied.
    */

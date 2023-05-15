@@ -53,7 +53,7 @@ export interface HvTableCellClasses {
   resizing?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTableCellClasses)[] = [
   "root",
   "head",
   "body",
@@ -81,9 +81,6 @@ const classKeys: string[] = [
   "resizing",
 ];
 
-const tableCellClasses = getClasses<HvTableCellClasses>(
-  classKeys,
-  "HvTableCell"
-);
+const tableCellClasses = getClasses(classKeys, "HvTableCell");
 
 export default tableCellClasses;

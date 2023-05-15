@@ -9,7 +9,7 @@ export interface HvMonthSelectorClasses {
   calendarMonthlyCellSelected?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvMonthSelectorClasses)[] = [
   "calendarMonthlyGrid",
   "rangeModeWidth",
   "normalWidth",
@@ -18,9 +18,6 @@ const classKeys: string[] = [
   "calendarMonthlyCellSelected",
 ];
 
-const monthSelectorClasses = getClasses<HvMonthSelectorClasses>(
-  classKeys,
-  "HvMothSelector"
-);
+const monthSelectorClasses = getClasses(classKeys, "HvMothSelector");
 
 export default monthSelectorClasses;

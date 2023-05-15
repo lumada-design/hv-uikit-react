@@ -16,7 +16,7 @@ export interface HvTagClasses {
   disabledDeleteIcon?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTagClasses)[] = [
   "root",
   "tagButton",
   "focusVisible",
@@ -32,6 +32,6 @@ const classKeys: string[] = [
   "disabledDeleteIcon",
 ];
 
-const tagClasses = getClasses<HvTagClasses>(classKeys, "HvTag");
+const tagClasses = getClasses(classKeys, "HvTag");
 
 export default tagClasses;

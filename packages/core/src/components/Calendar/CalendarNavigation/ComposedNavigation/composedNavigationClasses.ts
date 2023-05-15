@@ -5,11 +5,11 @@ export interface HvComposedNavigationClasses {
   navigationMonth?: string;
 }
 
-const classKeys: string[] = ["navigationContainer", "navigationMonth"];
+const classKeys: (keyof HvComposedNavigationClasses)[] = [
+  "navigationContainer",
+  "navigationMonth",
+];
 
-const composedNavigationClasses = getClasses<HvComposedNavigationClasses>(
-  classKeys,
-  "HvComposedNavigation"
-);
+const composedNavigationClasses = getClasses(classKeys, "HvComposedNavigation");
 
 export default composedNavigationClasses;

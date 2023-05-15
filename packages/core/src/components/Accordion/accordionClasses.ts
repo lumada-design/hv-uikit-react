@@ -13,7 +13,7 @@ export interface HvAccordionClasses {
   disabled?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvAccordionClasses)[] = [
   "root",
   "hidden",
   "container",
@@ -21,9 +21,6 @@ const classKeys: string[] = [
   "disabled",
 ];
 
-const accordionClasses = getClasses<HvAccordionClasses>(
-  classKeys,
-  "HvAccordion"
-);
+const accordionClasses = getClasses(classKeys, "HvAccordion");
 
 export default accordionClasses;

@@ -21,7 +21,7 @@ export interface HvBaseSwitchClasses {
   focusVisible?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBaseSwitchClasses)[] = [
   "root",
   "disabled",
   "readOnly",
@@ -33,9 +33,6 @@ const classKeys: string[] = [
   "focusVisible",
 ];
 
-const baseSwitchClasses = getClasses<HvBaseSwitchClasses>(
-  classKeys,
-  "HvBaseSwitch"
-);
+const baseSwitchClasses = getClasses(classKeys, "HvBaseSwitch");
 
 export default baseSwitchClasses;

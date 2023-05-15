@@ -32,7 +32,7 @@ import baseDropdownClasses, {
 const { Tab, Enter, Esc, Space, ArrowDown } = keyboardCodes;
 
 export interface HvBaseDropdownProps
-  extends HvBaseProps<HTMLDivElement, { placeholder }> {
+  extends HvBaseProps<HTMLDivElement, "placeholder"> {
   /**
    * The role of the element that triggers the popup.
    *

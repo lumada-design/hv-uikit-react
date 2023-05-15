@@ -7,7 +7,7 @@ import tableContainerClasses, {
 import { forwardRef, useMemo } from "react";
 
 export interface HvTableContainerProps
-  extends HvBaseProps<HTMLDivElement, { children }> {
+  extends HvBaseProps<HTMLDivElement, "children"> {
   /**
    * Content to be rendered
    */

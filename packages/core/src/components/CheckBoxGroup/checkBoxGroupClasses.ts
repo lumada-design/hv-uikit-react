@@ -11,7 +11,7 @@ export interface HvCheckBoxGroupClasses {
   error?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCheckBoxGroupClasses)[] = [
   "root",
   "label",
   "group",
@@ -22,9 +22,6 @@ const classKeys: string[] = [
   "error",
 ];
 
-const checkBoxGroupClasses = getClasses<HvCheckBoxGroupClasses>(
-  classKeys,
-  "HvCheckBoxGroup"
-);
+const checkBoxGroupClasses = getClasses(classKeys, "HvCheckBoxGroup");
 
 export default checkBoxGroupClasses;

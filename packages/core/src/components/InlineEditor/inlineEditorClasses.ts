@@ -13,7 +13,7 @@ export interface HvInlineEditorClasses {
   inputBorderContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvInlineEditorClasses)[] = [
   "root",
   "button",
   "largeText",
@@ -26,9 +26,6 @@ const classKeys: string[] = [
   "inputBorderContainer",
 ];
 
-const inlineEditorClasses = getClasses<HvInlineEditorClasses>(
-  classKeys,
-  "HvInlineEditor"
-);
+const inlineEditorClasses = getClasses(classKeys, "HvInlineEditor");
 
 export default inlineEditorClasses;

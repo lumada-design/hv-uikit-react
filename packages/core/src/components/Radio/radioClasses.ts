@@ -19,7 +19,7 @@ export interface HvRadioClasses {
   focusVisible?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvRadioClasses)[] = [
   "root",
   "container",
   "invalidContainer",
@@ -30,6 +30,6 @@ const classKeys: string[] = [
   "focusVisible",
 ];
 
-const radioClasses = getClasses<HvRadioClasses>(classKeys, "HvRadio");
+const radioClasses = getClasses(classKeys, "HvRadio");
 
 export default radioClasses;

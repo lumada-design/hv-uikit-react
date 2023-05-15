@@ -11,7 +11,7 @@ import { ClassNames } from "@emotion/react";
 export interface HvCardMediaProps
   extends Omit<MuiCardMediaProps, "classes">,
     ImgHTMLAttributes<HTMLDivElement>,
-    HvBaseProps<HTMLDivElement, { onClick; title }> {
+    HvBaseProps<HTMLDivElement, "onClick" | "title"> {
   /** Id to be applied to the root node. */
   id?: string;
   /** The title of the media. */

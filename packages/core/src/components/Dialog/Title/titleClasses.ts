@@ -7,16 +7,13 @@ export interface HvDialogTitleClasses {
   textWithIcon?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDialogTitleClasses)[] = [
   "root",
   "fullscreen",
   "messageContainer",
   "textWithIcon",
 ];
 
-const dialogTitleClasses = getClasses<HvDialogTitleClasses>(
-  classKeys,
-  "HvDialog-Title"
-);
+const dialogTitleClasses = getClasses(classKeys, "HvDialog-Title");
 
 export default dialogTitleClasses;

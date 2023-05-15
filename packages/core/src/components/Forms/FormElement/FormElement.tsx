@@ -11,7 +11,7 @@ import formElementClasses, { HvFormElementClasses } from "./formElementClasses";
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
 export interface HvFormElementProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Name of the form element.
    *

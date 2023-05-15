@@ -13,7 +13,7 @@ export type HvWizardContentClasses = {
   summaryContainer?: string;
 };
 
-const classKeys: string[] = [
+const classKeys: (keyof HvWizardContentClasses)[] = [
   "contentContainer",
   "fixedHeight",
   "summaryRef",
@@ -21,9 +21,6 @@ const classKeys: string[] = [
   "summaryContainer",
 ];
 
-const wizardContentClasses = getClasses<HvWizardContentClasses>(
-  classKeys,
-  "HvWizardContent"
-);
+const wizardContentClasses = getClasses(classKeys, "HvWizardContent");
 
 export default wizardContentClasses;

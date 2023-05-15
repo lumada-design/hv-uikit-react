@@ -21,7 +21,7 @@ export interface HvSliderClasses {
   sliderContainer?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSliderClasses)[] = [
   "root",
   "rootRange",
   "labelContainer",
@@ -42,6 +42,6 @@ const classKeys: string[] = [
   "sliderContainer",
 ];
 
-const sliderClasses = getClasses<HvSliderClasses>(classKeys, "HvSlider");
+const sliderClasses = getClasses(classKeys, "HvSlider");
 
 export default sliderClasses;

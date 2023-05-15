@@ -5,11 +5,11 @@ export interface HvPathElementClasses {
   separatorContainer?: string;
 }
 
-const classKeys: string[] = ["centerContainer", "separatorContainer"];
+const classKeys: (keyof HvPathElementClasses)[] = [
+  "centerContainer",
+  "separatorContainer",
+];
 
-const fileClasses = getClasses<HvPathElementClasses>(
-  classKeys,
-  "HvPathElement"
-);
+const fileClasses = getClasses(classKeys, "HvPathElement");
 
 export default fileClasses;

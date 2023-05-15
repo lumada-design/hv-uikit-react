@@ -13,7 +13,7 @@ import { HvFormStatus, HvInputProps } from "@core/components";
 import { HvBaseProps } from "@core/types";
 
 export interface HvSliderInputProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Used to generate the aria-label for the inputs.
    */

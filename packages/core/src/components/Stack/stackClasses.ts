@@ -4,8 +4,8 @@ export interface HvStackClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvStackClasses)[] = ["root"];
 
-const stackClasses = getClasses<HvStackClasses>(classKeys, "HvStack");
+const stackClasses = getClasses(classKeys, "HvStack");
 
 export default stackClasses;

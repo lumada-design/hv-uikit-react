@@ -23,7 +23,6 @@ import { isInvalid } from "../Forms/FormElement/validationStates";
 import { isDate } from "../Calendar/utils";
 import { getDateLabel } from "./utils";
 import useVisibleDate from "./useVisibleDate";
-import { NAV_OPTIONS } from "../Calendar/enums";
 import datePickerClasses, { HvDatePickerClasses } from "./datePickerClasses";
 import { styles } from "./DatePicker.styles";
 
@@ -36,7 +35,7 @@ const DEFAULT_LABELS = {
 export type HvDatePickerStatus = "standBy" | "valid" | "invalid";
 
 export interface HvDatePickerProps
-  extends HvBaseProps<HTMLDivElement, { onChange }> {
+  extends HvBaseProps<HTMLDivElement, "onChange"> {
   /**
    * Class names to be applied.
    */
@@ -157,6 +156,7 @@ export interface HvDatePickerProps
   endValue?: Date;
   /**
    * Flag informing if the the component should be in range mode or in single mode.
+   * TODO: remove this in favour of discriminated union
    */
   rangeMode?: boolean;
   /**
@@ -289,7 +289,7 @@ export const HvDatePicker = ({
   useEffect(() => {
     if (startDate != null) {
       dispatchAction({
-        type: NAV_OPTIONS.MONTH_YEAR,
+        type: "month_year",
         target: endDateIsSet.current ? "left" : "best",
         year: startDate.getFullYear(),
         month: startDate.getMonth() + 1,
@@ -300,7 +300,7 @@ export const HvDatePicker = ({
   useEffect(() => {
     if (endDate != null) {
       dispatchAction({
-        type: NAV_OPTIONS.MONTH_YEAR,
+        type: "month_year",
         target: "right",
         year: endDate.getFullYear(),
         month: endDate.getMonth() + 1,

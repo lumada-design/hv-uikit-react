@@ -4,11 +4,8 @@ export interface HvFormElementClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvFormElementClasses)[] = ["root"];
 
-const formElementClasses = getClasses<HvFormElementClasses>(
-  classKeys,
-  "HvFormElement"
-);
+const formElementClasses = getClasses(classKeys, "HvFormElement");
 
 export default formElementClasses;

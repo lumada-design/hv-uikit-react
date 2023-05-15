@@ -10,7 +10,7 @@ export interface HvCalendarHeaderClasses {
   invalidMessageStyling?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCalendarHeaderClasses)[] = [
   "root",
   "invalid",
   "headerDayOfWeek",
@@ -20,9 +20,6 @@ const classKeys: string[] = [
   "invalidMessageStyling",
 ];
 
-const calendarHeaderClasses = getClasses<HvCalendarHeaderClasses>(
-  classKeys,
-  "HvCalendarHeader"
-);
+const calendarHeaderClasses = getClasses(classKeys, "HvCalendarHeader");
 
 export default calendarHeaderClasses;

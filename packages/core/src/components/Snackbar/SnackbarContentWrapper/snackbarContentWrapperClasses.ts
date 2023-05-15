@@ -13,7 +13,7 @@ export interface HvSnackbarContentClasses {
   error?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvSnackbarContentClasses)[] = [
   "root",
   "message",
   "messageSpan",
@@ -26,9 +26,6 @@ const classKeys: string[] = [
   "error",
 ];
 
-const snackbarContentClasses = getClasses<HvSnackbarContentClasses>(
-  classKeys,
-  "HvSnackbar-Content"
-);
+const snackbarContentClasses = getClasses(classKeys, "HvSnackbar-Content");
 
 export default snackbarContentClasses;

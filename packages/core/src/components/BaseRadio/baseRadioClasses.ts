@@ -11,11 +11,13 @@ export interface HvBaseRadioClasses {
   icon?: string;
 }
 
-const classKeys: string[] = ["root", "disabled", "focusVisible", "icon"];
+const classKeys: (keyof HvBaseRadioClasses)[] = [
+  "root",
+  "disabled",
+  "focusVisible",
+  "icon",
+];
 
-const baseRadioClasses = getClasses<HvBaseRadioClasses>(
-  classKeys,
-  "HvBaseRadio"
-);
+const baseRadioClasses = getClasses(classKeys, "HvBaseRadio");
 
 export default baseRadioClasses;

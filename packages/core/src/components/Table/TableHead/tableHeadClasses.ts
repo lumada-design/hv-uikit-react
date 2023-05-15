@@ -7,11 +7,8 @@ export interface HvTableHeadClasses {
   stickyHeader?: string;
 }
 
-const classKeys: string[] = ["root", "stickyHeader"];
+const classKeys: (keyof HvTableHeadClasses)[] = ["root", "stickyHeader"];
 
-const tableHeadClasses = getClasses<HvTableHeadClasses>(
-  classKeys,
-  "HvTableHead"
-);
+const tableHeadClasses = getClasses(classKeys, "HvTableHead");
 
 export default tableHeadClasses;

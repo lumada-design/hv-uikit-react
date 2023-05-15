@@ -6,11 +6,12 @@ export interface HvScrollToVerticalClasses {
   positionFixed?: string;
 }
 
-const classKeys: string[] = ["root", "positionAbsolute", "positionFixed"];
+const classKeys: (keyof HvScrollToVerticalClasses)[] = [
+  "root",
+  "positionAbsolute",
+  "positionFixed",
+];
 
-const scrollToVerticalClasses = getClasses<HvScrollToVerticalClasses>(
-  classKeys,
-  "HvScrollToVertical"
-);
+const scrollToVerticalClasses = getClasses(classKeys, "HvScrollToVertical");
 
 export default scrollToVerticalClasses;

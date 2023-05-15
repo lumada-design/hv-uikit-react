@@ -13,11 +13,14 @@ export interface HvStepNavigationClasses {
   separator?: string;
 }
 
-const classKeys: string[] = ["root", "li", "ol", "separator", "titles"];
+const classKeys: (keyof HvStepNavigationClasses)[] = [
+  "root",
+  "li",
+  "ol",
+  "separator",
+  "titles",
+];
 
-const stepNavigationClasses = getClasses<HvStepNavigationClasses>(
-  classKeys,
-  "HvStepNavigation"
-);
+const stepNavigationClasses = getClasses(classKeys, "HvStepNavigation");
 
 export default stepNavigationClasses;

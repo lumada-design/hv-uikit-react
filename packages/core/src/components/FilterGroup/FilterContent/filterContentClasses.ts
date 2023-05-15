@@ -12,7 +12,7 @@ export interface HvFilterGroupContentClasses {
   space?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvFilterGroupContentClasses)[] = [
   "dropdown",
   "panel",
   "baseDropdownSelection",
@@ -24,9 +24,6 @@ const classKeys: string[] = [
   "space",
 ];
 
-const filterGroupContentClasses = getClasses<HvFilterGroupContentClasses>(
-  classKeys,
-  "HvFilterGroupContent"
-);
+const filterGroupContentClasses = getClasses(classKeys, "HvFilterGroupContent");
 
 export default filterGroupContentClasses;

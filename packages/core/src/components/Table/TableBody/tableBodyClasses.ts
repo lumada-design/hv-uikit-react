@@ -5,11 +5,8 @@ export interface HvTableBodyClasses {
   root?: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvTableBodyClasses)[] = ["root"];
 
-const tableBodyClasses = getClasses<HvTableBodyClasses>(
-  classKeys,
-  "HvTableBody"
-);
+const tableBodyClasses = getClasses(classKeys, "HvTableBody");
 
 export default tableBodyClasses;

@@ -4,11 +4,8 @@ export interface HvLeftControlClasses {
   root: string;
 }
 
-const classKeys: string[] = ["root"];
+const classKeys: (keyof HvLeftControlClasses)[] = ["root"];
 
-const leftControlClasses = getClasses<HvLeftControlClasses>(
-  classKeys,
-  "HvLeftControl"
-);
+const leftControlClasses = getClasses(classKeys, "HvLeftControl");
 
 export default leftControlClasses;

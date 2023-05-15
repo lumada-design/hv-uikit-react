@@ -9,7 +9,7 @@ export interface HvCardHeaderClasses {
   content?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvCardHeaderClasses)[] = [
   "root",
   "title",
   "titleShort",
@@ -18,9 +18,6 @@ const classKeys: string[] = [
   "content",
 ];
 
-const cardHeaderClasses = getClasses<HvCardHeaderClasses>(
-  classKeys,
-  "HvCard-Header"
-);
+const cardHeaderClasses = getClasses(classKeys, "HvCard-Header");
 
 export default cardHeaderClasses;

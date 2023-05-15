@@ -17,7 +17,7 @@ export interface HvAvatarClasses {
   square?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvAvatarClasses)[] = [
   "root",
   "container",
   "img",
@@ -34,6 +34,6 @@ const classKeys: string[] = [
   "square",
 ];
 
-const avatarClasses = getClasses<HvAvatarClasses>(classKeys, "HvAvatar");
+const avatarClasses = getClasses(classKeys, "HvAvatar");
 
 export default avatarClasses;

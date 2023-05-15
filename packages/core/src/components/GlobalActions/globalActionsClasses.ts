@@ -13,7 +13,7 @@ export interface HvGlobalActionsClasses {
   globalWrapperComplement?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvGlobalActionsClasses)[] = [
   "root",
   "global",
   "backButton",
@@ -26,9 +26,6 @@ const classKeys: string[] = [
   "globalWrapperComplement",
 ];
 
-const globalActionsClasses = getClasses<HvGlobalActionsClasses>(
-  classKeys,
-  "HvGlobalActions"
-);
+const globalActionsClasses = getClasses(classKeys, "HvGlobalActions");
 
 export default globalActionsClasses;

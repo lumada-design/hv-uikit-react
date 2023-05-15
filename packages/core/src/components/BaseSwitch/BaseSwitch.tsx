@@ -7,7 +7,7 @@ import baseSwitchClasses, { HvBaseSwitchClasses } from "./baseSwitchClasses";
 
 export interface HvBaseSwitchProps
   extends Omit<MuiSwitchProps, "onChange" | "classes">,
-    HvBaseProps<HTMLButtonElement, { onChange; color }> {
+    HvBaseProps<HTMLButtonElement, "onChange" | "color"> {
   /**
    * Class names to be applied.
    */

@@ -23,7 +23,7 @@ export interface HvTableRowClasses {
   variantListHead?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvTableRowClasses)[] = [
   "root",
   "selected",
   "expanded",
@@ -36,6 +36,6 @@ const classKeys: string[] = [
   "variantListHead",
 ];
 
-const tableRowClasses = getClasses<HvTableRowClasses>(classKeys, "HvTableRow");
+const tableRowClasses = getClasses(classKeys, "HvTableRow");
 
 export default tableRowClasses;

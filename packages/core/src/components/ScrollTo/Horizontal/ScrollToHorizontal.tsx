@@ -30,7 +30,7 @@ export interface HvScrollToHorizontalOption {
 export type HvScrollToHorizontalPositions = "sticky" | "fixed" | "relative";
 
 export interface HvScrollToHorizontalProps
-  extends HvBaseProps<HTMLOListElement, { onChange; onClick }> {
+  extends HvBaseProps<HTMLOListElement, "onChange" | "onClick"> {
   /** An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied */
   options: HvScrollToHorizontalOption[];
   /** True if the href location link should be applied. It will create an a element around every list item */

@@ -16,7 +16,7 @@ import TableSectionContext from "../TableSectionContext";
 import { HvFocus } from "@core/components";
 
 export interface HvTableBodyProps
-  extends HvBaseProps<HTMLTableSectionElement, { children }> {
+  extends HvBaseProps<HTMLTableSectionElement, "children"> {
   /**
    * Content to be rendered
    */

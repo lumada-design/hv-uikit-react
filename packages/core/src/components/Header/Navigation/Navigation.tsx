@@ -20,7 +20,7 @@ export interface HvHeaderNavigationItemProp {
 }
 
 export interface HvHeaderNavigationProps
-  extends HvBaseProps<HTMLDivElement, { onClick }> {
+  extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
   selected?: string;
   onClick?: (event: MouseEvent, selection: HvHeaderNavigationItemProp) => void;

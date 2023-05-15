@@ -43,7 +43,7 @@ export interface HvListLabels {
 }
 
 export interface HvListProps
-  extends HvBaseProps<HTMLUListElement, { onChange; onClick }> {
+  extends HvBaseProps<HTMLUListElement, "onChange" | "onClick"> {
   /**
    * A list containing the elements to be rendered.
    *

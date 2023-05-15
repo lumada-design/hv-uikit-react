@@ -6,8 +6,8 @@ export interface HvPageClasses {
   label?: string;
 }
 
-const classKeys: string[] = ["a", "link", "label"];
+const classKeys: (keyof HvPageClasses)[] = ["a", "link", "label"];
 
-const pageClasses = getClasses<HvPageClasses>(classKeys, "HvPage");
+const pageClasses = getClasses(classKeys, "HvPage");
 
 export default pageClasses;

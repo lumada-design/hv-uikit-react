@@ -1,5 +1,5 @@
 import { getMonthNamesList } from "../../utils";
-import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
+import { ViewMode } from "../../enums";
 import { setId } from "@core/utils";
 import { Navigation } from "../Navigation";
 import { clsx } from "clsx";
@@ -22,10 +22,7 @@ export const HvComposedNavigation = ({
   visibleMonth,
   ...others
 }: HvComposedNavigationProps) => {
-  const listMonthNamesLong = getMonthNamesList(
-    locale,
-    REPRESENTATION_VALUES.LONG
-  );
+  const listMonthNamesLong = getMonthNamesList(locale, "long");
   const monthName = listMonthNamesLong[visibleMonth - 1];
 
   return (
@@ -46,13 +43,13 @@ export const HvComposedNavigation = ({
           id={setId(id, "navigation-month")}
           navigationText={monthName}
           onNavigatePrevious={(event) => {
-            onChange?.(event, NAV_OPTIONS.PREVIOUS_MONTH);
+            onChange?.(event, "previous_month");
           }}
           onNavigateNext={(event) => {
-            onChange?.(event, NAV_OPTIONS.NEXT_MONTH);
+            onChange?.(event, "next_month");
           }}
           onTextClick={() => {
-            onViewModeChange(VIEW_MODE.MONTHLY);
+            onViewModeChange("monthly");
           }}
           className={clsx(
             composedNavigationClasses.navigationMonth,
@@ -65,10 +62,10 @@ export const HvComposedNavigation = ({
         id={setId(id, "navigation-year")}
         navigationText={visibleYear.toString()}
         onNavigatePrevious={(event) => {
-          onChange?.(event, NAV_OPTIONS.PREVIOUS_YEAR);
+          onChange?.(event, "previous_year");
         }}
         onNavigateNext={(event) => {
-          onChange?.(event, NAV_OPTIONS.NEXT_YEAR);
+          onChange?.(event, "next_year");
         }}
       />
     </StyledNavigationContainer>
@@ -95,7 +92,7 @@ export interface HvComposedNavigationProps {
   /**
    * Callback to define the view mode.
    */
-  onViewModeChange: (viewMode: string) => void;
+  onViewModeChange: (viewMode: ViewMode) => void;
   /**
    * Controls the visible month of the Calendar
    */

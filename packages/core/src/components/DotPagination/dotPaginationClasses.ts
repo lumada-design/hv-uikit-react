@@ -8,7 +8,7 @@ export interface HvDotPaginationClasses {
   icon?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvDotPaginationClasses)[] = [
   "root",
   "horizontal",
   "radioRoot",
@@ -16,9 +16,6 @@ const classKeys: string[] = [
   "icon",
 ];
 
-const dotPaginationClasses = getClasses<HvDotPaginationClasses>(
-  classKeys,
-  "HvDotPagination"
-);
+const dotPaginationClasses = getClasses(classKeys, "HvDotPagination");
 
 export default dotPaginationClasses;

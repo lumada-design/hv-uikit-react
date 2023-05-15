@@ -23,7 +23,7 @@ export interface HvBaseDropdownClasses {
   inputExtensionFloatLeft?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBaseDropdownClasses)[] = [
   "root",
   "rootDisabled",
   "anchor",
@@ -46,9 +46,6 @@ const classKeys: string[] = [
   "inputExtensionFloatLeft",
 ];
 
-const baseDropdownClasses = getClasses<HvBaseDropdownClasses>(
-  classKeys,
-  "HvBaseDropdown"
-);
+const baseDropdownClasses = getClasses(classKeys, "HvBaseDropdown");
 
 export default baseDropdownClasses;

@@ -10,7 +10,7 @@ export interface HvRadioGroupClasses {
   error?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvRadioGroupClasses)[] = [
   "root",
   "label",
   "group",
@@ -20,9 +20,6 @@ const classKeys: string[] = [
   "error",
 ];
 
-const radioGroupClasses = getClasses<HvRadioGroupClasses>(
-  classKeys,
-  "HvRadioGroup"
-);
+const radioGroupClasses = getClasses(classKeys, "HvRadioGroup");
 
 export default radioGroupClasses;

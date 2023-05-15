@@ -54,7 +54,13 @@ export interface HvBaseInputProps
   extends Omit<MuiInputProps, "onChange" | "classes">,
     HvBaseProps<
       HTMLDivElement,
-      { onChange; color; onBlur; onFocus; onInvalid; onKeyDown; onKeyUp }
+      | "onChange"
+      | "color"
+      | "onBlur"
+      | "onFocus"
+      | "onInvalid"
+      | "onKeyDown"
+      | "onKeyUp"
     > {
   /** The input name. */
   name?: string;

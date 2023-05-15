@@ -5,12 +5,14 @@ export interface HvVerticalNavigationHeaderClasses {
   minimized?: string;
 }
 
-const classKeys: string[] = ["root", "minimized"];
+const classKeys: (keyof HvVerticalNavigationHeaderClasses)[] = [
+  "root",
+  "minimized",
+];
 
-const verticalNavigationHeaderClasses =
-  getClasses<HvVerticalNavigationHeaderClasses>(
-    classKeys,
-    "HvVerticalNavigationHeader"
-  );
+const verticalNavigationHeaderClasses = getClasses(
+  classKeys,
+  "HvVerticalNavigationHeader"
+);
 
 export default verticalNavigationHeaderClasses;

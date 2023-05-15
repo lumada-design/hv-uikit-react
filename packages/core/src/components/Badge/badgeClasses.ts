@@ -11,7 +11,7 @@ export interface HvBadgeClasses {
   badgeOneDigit?: string;
 }
 
-const classKeys: string[] = [
+const classKeys: (keyof HvBadgeClasses)[] = [
   "root",
   "badgeContainer",
   "badgePosition",
@@ -22,6 +22,6 @@ const classKeys: string[] = [
   "badgeOneDigit",
 ];
 
-const badgeClasses = getClasses<HvBadgeClasses>(classKeys, "HvBadgeClasses");
+const badgeClasses = getClasses(classKeys, "HvBadgeClasses");
 
 export default badgeClasses;
