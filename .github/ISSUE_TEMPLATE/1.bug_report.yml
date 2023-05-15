@@ -8,6 +8,13 @@ body:
         Please provide a searchable summary of the issue in the title above ⬆️.
 
         Thanks for contributing by creating an issue! ❤️
+  - type: dropdown
+    attributes:
+      label: Which version of NEXT UI Kit are you opening this bug for?
+      options:
+        - v3.x
+        - v4.x
+        - v5.x
   - type: checkboxes
     attributes:
       label: Latest version
