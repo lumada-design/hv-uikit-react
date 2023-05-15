@@ -1,24 +1,19 @@
-import styled from "@emotion/styled";
-import Snackbar, { snackbarClasses } from "@mui/material/Snackbar";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "@core/utils/transientOptions";
+import { HvBannerClasses } from "./bannerClasses";
 
-export const StyledSnackbar = styled(
-  Snackbar,
-  transientOptions
-)(({ $isOpen }: { $isOpen: boolean }) => ({
-  [`&.${snackbarClasses.root}`]: {
-    ...($isOpen && {
-      minWidth: `calc(100% - ${theme.space.sm})`,
-    }),
-    ...(!$isOpen && {
+export const styles: Partial<Record<keyof HvBannerClasses, CSSInterpolation>> =
+  {
+    rootClosed: {
       display: "none",
-    }),
-  },
-  [`&.${snackbarClasses.anchorOriginTopCenter}`]: {
-    top: theme.space.xs,
-  },
-  [`&.${snackbarClasses.anchorOriginBottomCenter}`]: {
-    bottom: theme.space.xs,
-  },
-}));
+    },
+    root: {
+      minWidth: `calc(100% - ${theme.space.sm})`,
+    },
+    anchorOriginTopCenter: {
+      top: theme.space.xs,
+    },
+    anchorOriginBottomCenter: {
+      bottom: theme.space.xs,
+    },
+  };

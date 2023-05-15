@@ -1,17 +1,11 @@
-import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
 import actionContainerClasses, {
   HvActionContainerClasses,
 } from "./actionContainerClasses";
-import {
-  StyledActionContainer,
-  StyledButton,
-  StyledClose,
-  StyledActionsInnerContainer,
-} from "./ActionContainer.styles";
-import { HvActionGeneric, HvActionsGeneric } from "@core/components";
-import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks";
+import { HvActionGeneric, HvActionsGeneric, HvButton } from "@core/components";
+import { Close } from "@hitachivantara/uikit-react-icons";
+import { ClassNames } from "@emotion/react";
+import { styles } from "./ActionContainer.styles";
 
 export interface HvActionContainerProps extends HvBaseProps<HTMLButtonElement> {
   /** onClose function. */
@@ -36,55 +30,57 @@ export const HvActionContainer = ({
   actionCallback,
   ...others
 }: HvActionContainerProps) => {
-  const { activeTheme, selectedMode } = useTheme();
-
   return (
-    <StyledActionContainer
-      className={clsx(
-        actionContainerClasses.actionContainer,
-        classes?.actionContainer
-      )}
-    >
-      <StyledButton
-        icon
-        className={clsx(
-          actionContainerClasses.closeAction,
-          classes?.closeAction
-        )}
-        variant="secondaryGhost"
-        aria-label="Close"
-        onClick={onClose}
-        tabIndex={0}
-        $baseColor={
-          activeTheme?.colors?.modes[selectedMode].base_light ||
-          theme.colors.base_light
-        }
-        {...others}
-      >
-        <StyledClose
-          iconSize="XS"
-          className={clsx(
-            actionContainerClasses.iconContainer,
-            classes?.iconContainer
-          )}
-          color="base_dark"
-        />
-      </StyledButton>
-      {action && (
-        <StyledActionsInnerContainer
-          className={clsx(
-            actionContainerClasses.actionsInnerContainer,
-            classes?.actionsInnerContainer
+    <ClassNames>
+      {({ css, cx }) => (
+        <div
+          className={cx(
+            actionContainerClasses.actionContainer,
+            css(styles.actionContainer),
+            classes?.actionContainer
           )}
         >
-          <HvActionsGeneric
-            id={id}
-            category="secondaryGhost"
-            actions={action}
-            actionsCallback={actionCallback}
-          />
-        </StyledActionsInnerContainer>
+          <HvButton
+            icon
+            className={cx(
+              actionContainerClasses.closeAction,
+              css(styles.closeAction),
+              classes?.closeAction
+            )}
+            variant="semantic"
+            aria-label="Close"
+            onClick={onClose}
+            tabIndex={0}
+            {...others}
+          >
+            <Close
+              iconSize="XS"
+              className={cx(
+                actionContainerClasses.iconContainer,
+                css(styles.iconContainer),
+                classes?.iconContainer
+              )}
+              color="base2"
+            />
+          </HvButton>
+          {action && (
+            <div
+              className={cx(
+                actionContainerClasses.actionsInnerContainer,
+                css(styles.actionsInnerContainer),
+                classes?.actionsInnerContainer
+              )}
+            >
+              <HvActionsGeneric
+                id={id}
+                category="semantic"
+                actions={action}
+                actionsCallback={actionCallback}
+              />
+            </div>
+          )}
+        </div>
       )}
-    </StyledActionContainer>
+    </ClassNames>
   );
 };

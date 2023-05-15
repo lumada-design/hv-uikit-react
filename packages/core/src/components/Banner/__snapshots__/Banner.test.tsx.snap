@@ -3,34 +3,34 @@
 exports[`Banner > should render correctly 1`] = `
 <div>
   <div
-    class="MuiSnackbar-root HvBanner-root MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter css-16qewzr-StyledSnackbar e14yk37x0 css-zzms1-MuiSnackbar-root"
+    class="MuiSnackbar-root HvBanner-root css-a16ynx MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter css-1s4dbob css-j35vtm css-zzms1-MuiSnackbar-root"
     role="presentation"
     style="top: 60px;"
   >
     <div
-      class="HvBanner-Content-outContainer css-2xe4f4-StyledRoot ey1hm771"
+      class="HvBanner-Content-outContainer css-1kxonj9"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root HvBanner-Content-root HvBanner-Content-baseVariant HvBanner-Content-default css-aelqi0-StyledSnackbarContent ey1hm770 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root css-1gkohjr HvBanner-Content-baseVariant HvBanner-Content-default css-1ffogu7 css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
         role="alert"
         style="webkit-transform: none; transform: none; webkit-transition: -webkit-transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; transition: transform 300ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;"
       >
         <div
-          class="MuiSnackbarContent-message HvBanner-Content-message css-1exqwzz-MuiSnackbarContent-message"
+          class="MuiSnackbarContent-message css-vfvgre css-1exqwzz-MuiSnackbarContent-message"
         >
           <p
-            class="HvBanner-MessageContainer-message e3wuhfa1 HvTypography-root HvTypography-body css-v3ptcf-getStyledComponent-StyledTypography e1tnpalo0"
+            class="HvBanner-MessageContainer-message HvTypography-root HvTypography-body css-r1qw90-getStyledComponent e1tnpalo0"
           />
         </div>
         <div
-          class="MuiSnackbarContent-action HvBanner-Content-action css-1kr9x0n-MuiSnackbarContent-action"
+          class="MuiSnackbarContent-action css-u5xit6 css-1kr9x0n-MuiSnackbarContent-action"
         >
           <div
-            class="HvBanner-ActionContainer-actionContainer css-uzerey-StyledActionContainer euz8sqk3"
+            class="HvBanner-ActionContainer-actionContainer css-dmmwmi"
           >
             <button
               aria-label="Close"
-              class="HvBanner-ActionContainer-closeAction euz8sqk2 HvButton-root css-52xh9j-StyledButton-StyledButton e138pvrm0"
+              class="HvBanner-ActionContainer-closeAction HvButton-root css-48f9xl-StyledButton e138pvrm0"
               tabindex="0"
             >
               <div
@@ -40,7 +40,7 @@ exports[`Banner > should render correctly 1`] = `
                   class="css-1o4qkkz-StyledChildren e138pvrm1"
                 >
                   <div
-                    class="HvBanner-ActionContainer-iconContainer euz8sqk1 css-1q4rkgi-StyledClose"
+                    class="HvBanner-ActionContainer-iconContainer css-jada57"
                     name="Close"
                   >
                     <svg
@@ -53,7 +53,7 @@ exports[`Banner > should render correctly 1`] = `
                       <path
                         class="color0"
                         d="m8.7 8 5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                        fill="var(--uikit-colors-base_dark)"
+                        fill="base2"
                       />
                     </svg>
                   </div>
