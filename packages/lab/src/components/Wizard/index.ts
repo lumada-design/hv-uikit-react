@@ -1,7 +1,8 @@
 export { default as wizardClasses } from "./wizardClasses";
 export * from "./wizardClasses";
 export * from "./Wizard";
-export { HvWizardContainer } from "./WizardContainer";
-export { HvWizardTitle } from "./WizardTitle";
-export { HvWizardContent } from "./WizardContent";
-export { HvWizardActions } from "./WizardActions";
+export * from "./WizardActions";
+export * from "./WizardContainer";
+export * from "./WizardContent";
+export * from "./WizardContext";
+export * from "./WizardTitle";
