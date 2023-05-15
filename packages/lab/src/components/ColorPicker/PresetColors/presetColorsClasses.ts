@@ -14,10 +14,9 @@ const classKeys: (keyof HvColorPickerPresetColorsClasses)[] = [
   "title",
 ];
 
-const colorPickerPresetColorsClasses =
-  getClasses<HvColorPickerPresetColorsClasses>(
-    classKeys,
-    "HvColorPicker-PresetColors"
-  );
+const colorPickerPresetColorsClasses = getClasses(
+  classKeys,
+  "HvColorPicker-PresetColors"
+);
 
 export default colorPickerPresetColorsClasses;

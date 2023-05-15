@@ -12,9 +12,6 @@ const classKeys: (keyof HvColorPickerFieldsClasses)[] = [
   "single",
 ];
 
-const colorPickerFieldsClasses = getClasses<HvColorPickerFieldsClasses>(
-  classKeys,
-  "HvColorPicker-Fields"
-);
+const colorPickerFieldsClasses = getClasses(classKeys, "HvColorPicker-Fields");
 
 export default colorPickerFieldsClasses;

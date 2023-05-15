@@ -12,10 +12,9 @@ const classKeys: (keyof HvWizardLoadingContainerClasses)[] = [
   "overlay",
 ];
 
-const wizardLoadingContainerClasses =
-  getClasses<HvWizardLoadingContainerClasses>(
-    classKeys,
-    "HvWizard-LoadingContainer"
-  );
+const wizardLoadingContainerClasses = getClasses(
+  classKeys,
+  "HvWizard-LoadingContainer"
+);
 
 export default wizardLoadingContainerClasses;

@@ -18,10 +18,9 @@ const classKeys: (keyof HvColorPickerSavedColorsClasses)[] = [
   "swatchWrap",
 ];
 
-const colorPickerSavedColorsClasses =
-  getClasses<HvColorPickerSavedColorsClasses>(
-    classKeys,
-    "HvColorPicker-SavedColors"
-  );
+const colorPickerSavedColorsClasses = getClasses(
+  classKeys,
+  "HvColorPicker-SavedColors"
+);
 
 export default colorPickerSavedColorsClasses;

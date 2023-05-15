@@ -18,9 +18,6 @@ const classKeys: (keyof HvDateTimeValueClasses)[] = [
   "vertical",
 ];
 
-const dateTimeValueClasses = getClasses<HvDateTimeValueClasses>(
-  classKeys,
-  "HvDateTimeValue"
-);
+const dateTimeValueClasses = getClasses(classKeys, "HvDateTimeValue");
 
 export default dateTimeValueClasses;
