@@ -1,7 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvDateTimeValueClasses } from "./dateTimeValueClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvDateTimeValueClasses, CSSInterpolation>
+> = {
   root: {
     display: "flex",
     flexDirection: "column",

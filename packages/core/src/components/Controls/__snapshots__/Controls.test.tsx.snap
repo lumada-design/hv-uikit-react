@@ -15,17 +15,17 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
           class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
         >
           <div
-            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+            class="HvInput-root css-13o7eu2 HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root css-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="cardsGrid itemList"
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-8684bs MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
                   placeholder="Search"
                   rows="10"
                   type="search"
@@ -33,11 +33,11 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                 />
                 <div
                   aria-hidden="true"
-                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                  class="HvInput-adornmentsBox css-11np0mm"
                 >
                   <div
                     aria-label="Search"
-                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-536elk-StyledRoot ek2tbgi2"
                     role="presentation"
                   >
                     <div
@@ -66,7 +66,7 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
                 </div>
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-8g6lar"
                 role="presentation"
               />
             </div>
@@ -629,17 +629,17 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
           class="HvLeftControl-root css-binna-StyledRoot e1ezp8s40"
         >
           <div
-            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+            class="HvInput-root css-13o7eu2 HvFormElement-root"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root css-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-controls="controlledCardsGrid controlledItemList"
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-8684bs MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
                   placeholder="Search"
                   rows="10"
                   type="search"
@@ -647,11 +647,11 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                 />
                 <div
                   aria-hidden="true"
-                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                  class="HvInput-adornmentsBox css-11np0mm"
                 >
                   <div
                     aria-label="Search"
-                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-536elk-StyledRoot ek2tbgi2"
                     role="presentation"
                   >
                     <div
@@ -680,7 +680,7 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
                 </div>
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-8g6lar"
                 role="presentation"
               />
             </div>
@@ -2109,17 +2109,17 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
           id="MultibuttonFilter"
         >
           <div
-            class="HvInput-root css-b8m0re-StyledFormElement eryso6g8 HvFormElement-root"
+            class="HvInput-root css-13o7eu2 HvFormElement-root"
             id="MultibuttonFilter-search-input"
           >
             <div
-              class="HvBaseInput-root eryso6g0 css-1njcp56-StyledRoot-StyledBaseInput e8ibl7d2"
+              class="HvBaseInput-root css-rfscxw"
             >
               <div
-                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd  css-hj0rzp-StyledInput e8ibl7d0 css-q0jhri-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot css-ftwxz3 MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-adornedEnd css-q0jhri-MuiInputBase-root-MuiInput-root"
               >
                 <input
-                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input css-8684bs MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
                   id="MultibuttonFilter-search-input-input"
                   placeholder="Search"
                   rows="10"
@@ -2128,11 +2128,11 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
                 />
                 <div
                   aria-hidden="true"
-                  class="HvInput-adornmentsBox css-rhowtp-StyledAdornmentsBox eryso6g3"
+                  class="HvInput-adornmentsBox css-11np0mm"
                 >
                   <div
                     aria-label="Search"
-                    class="HvInput-adornmentButton eryso6g2 HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-zrabyx-StyledRoot-StyledAdornmentButton ek2tbgi2"
+                    class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon css-536elk-StyledRoot ek2tbgi2"
                     role="presentation"
                   >
                     <div
@@ -2161,7 +2161,7 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
                 </div>
               </div>
               <div
-                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-1h7z4po-StyledInputBorderContainer e8ibl7d1"
+                class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer css-8g6lar"
                 role="presentation"
               />
             </div>

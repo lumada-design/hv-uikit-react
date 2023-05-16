@@ -1,7 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-react-core";
+import { HvWizardActionsClasses } from "./wizardActionsClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvWizardActionsClasses, CSSInterpolation>
+> = {
   buttonWidth: {
     width: 120,
     "& span": {

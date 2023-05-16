@@ -6,7 +6,7 @@ import { defaultOperators } from "./Context";
 import queryToMongo from "./queryToMongo";
 
 const meta: Meta<typeof HvQueryBuilder> = {
-  title: "Widgets/QueryBuilder",
+  title: "Widgets/Query Builder",
   component: HvQueryBuilder,
 };
 export default meta;

@@ -1,8 +1,12 @@
-import { CSSInterpolation } from "@emotion/css";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import numericValueClasses from "./numericValueClasses";
+import numericValueClasses, {
+  HvNumericValueClasses,
+} from "./numericValueClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvNumericValueClasses, CSSInterpolation>
+> = {
   root: {
     display: "flex",
     flexGrow: 1,

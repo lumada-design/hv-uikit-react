@@ -203,7 +203,12 @@ export const NumericValue = ({
         <div className={cx(numericValueClasses.root, css(styles.root))}>
           {isRange && renderRangeInputs(value || {})}
           {!isRange && (
-            <div className={css(styles.inputContainer)}>
+            <div
+              className={cx(
+                numericValueClasses.inputContainer,
+                css(styles.inputContainer)
+              )}
+            >
               <HvInput
                 label={labels.rule.value.numeric.label}
                 className={cx(numericValueClasses.input, css(styles.input))}

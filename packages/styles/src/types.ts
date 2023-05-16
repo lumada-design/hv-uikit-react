@@ -301,7 +301,7 @@ export type HvThemeComponents = {
     panelBackgroundColor: string;
     dropdownHeaderOpenBorder: string;
     dropdownPlaceholderColor: string;
-    placeholderVariant: string;
+    placeholderVariant: keyof HvThemeTypography["typography"];
   };
   scrollTo: {
     horizontal: {
@@ -339,6 +339,55 @@ export type HvThemeComponents = {
     topActionButtonContainerRight: string;
     topGroupPaddingBottom: string;
     border: string;
+  };
+  colorPicker: {
+    inputValueVariant: keyof HvThemeTypography["typography"];
+    panelBorder: string;
+    panelBorderRadius: string;
+    panelMinWidth: string;
+    panelPadding: string;
+    pickersFlexDirection: CSSProperties["flexDirection"];
+    hueHeight: string;
+    hueWidth: string;
+    hueDirection: "horizontal" | "vertical";
+    hueMarginTop: string;
+    hueBorderRadius: string;
+    hueSliderWidth: string;
+    hueSliderHeight: string;
+    hueSliderBorderRadius: string;
+    hueSliderBackground: string;
+    hueSliderBorder: string;
+    hueSliderMarginLeft: string;
+    saturationWidth: string;
+    saturationHeight: string;
+    saturationMarginRight: string;
+    saturationBorderRadius: string;
+    saturationPointerWidth: string;
+    saturationPointerHeight: string;
+    colorPickerWidth: string;
+    recommendedColorsRootWidth: string;
+    recommendedColorsWidth: string;
+    recommendedColorsMargin: string;
+    recommendedColorsBottomPadding: string;
+    recommendedColorsSwatchWidth: string;
+    recommendedColorsSwatchHeight: string;
+    recommendedColorsSwatchMargin: string;
+    recommendedColorsSwatchBorderRadius: string;
+    fieldsPaddingTop: string;
+    fieldsMarginRight: string;
+    fieldsHexPaddingRight: string;
+    fieldsRgbPaddingLeft: string;
+    fieldsHexWidth: string;
+    fieldsRgbWidth: string;
+    addSavedColorButtonMargin: string;
+    addSavedColorButtonWidth: string;
+    addSavedColorButtonHeight: string;
+    savedColorsWidth: string;
+    savedColorsMargin: string;
+    savedColorsSwatchWidth: string;
+    savedColorsSwatchHeight: string;
+    savedColorsSwatchMargin: string;
+    savedColorsSwatchBorderRadius: string;
   };
 };
 

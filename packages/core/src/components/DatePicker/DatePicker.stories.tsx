@@ -21,7 +21,7 @@ const Decorator = ({ children }) => {
 };
 
 const meta: Meta<typeof HvDatePicker> = {
-  title: "Components/DatePicker",
+  title: "Components/Date Picker",
   component: HvDatePicker,
   decorators: [(Story) => <Decorator>{Story()}</Decorator>],
 };

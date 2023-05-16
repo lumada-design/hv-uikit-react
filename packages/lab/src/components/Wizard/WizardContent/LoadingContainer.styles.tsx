@@ -1,8 +1,11 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { hexToRgbA, theme } from "@hitachivantara/uikit-react-core";
 import { alpha } from "@mui/material";
+import { HvWizardLoadingContainerClasses } from "./loadingContainerClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvWizardLoadingContainerClasses, CSSInterpolation>
+> = {
   loading: {
     width: "100%",
     height: "100%",

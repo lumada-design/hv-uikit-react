@@ -36,14 +36,14 @@ exports[`TextArea > should render correctly 1`] = `
       </label>
     </div>
     <div
-      class="HvBaseInput-root HvTextArea-baseInput e1e5t49x0 css-1lzob26-StyledRoot-StyledBaseInput e8ibl7d2"
+      class="HvBaseInput-root e1e5t49x0 HvTextArea-baseInput css-pepa35-StyledBaseInput"
     >
       <div
-        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline  css-hj0rzp-StyledInput e8ibl7d0 css-he3345-MuiInputBase-root-MuiInput-root"
+        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot css-1swpg9k MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-multiline HvBaseInput-inputRootMultiline css-wzb5q5 css-he3345-MuiInputBase-root-MuiInput-root"
       >
         <textarea
           aria-controls="hvtextarea3-charCounter"
-          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvTextArea-input MuiInputBase-inputMultiline css-66dh3a-MuiInputBase-input-MuiInput-input"
+          class="MuiInputBase-input MuiInput-input HvBaseInput-input css-1e9q7rp HvTextArea-input MuiInputBase-inputMultiline css-66dh3a-MuiInputBase-input-MuiInput-input"
           id="hvtextarea3-input"
           placeholder="Enter value"
           rows="5"
@@ -51,7 +51,7 @@ exports[`TextArea > should render correctly 1`] = `
         />
         <textarea
           aria-hidden="true"
-          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvTextArea-input MuiInputBase-inputMultiline css-66dh3a-MuiInputBase-input-MuiInput-input"
+          class="MuiInputBase-input MuiInput-input HvBaseInput-input css-1e9q7rp HvTextArea-input MuiInputBase-inputMultiline css-66dh3a-MuiInputBase-input-MuiInput-input"
           readonly=""
           style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); padding: 0px; width: 100%;"
           tabindex="-1"

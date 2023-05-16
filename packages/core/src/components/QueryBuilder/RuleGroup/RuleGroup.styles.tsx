@@ -1,8 +1,12 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import queryBuilderClasses from "../queryBuilderClasses";
+import queryBuilderClasses, {
+  HvQueryBuilderClasses,
+} from "../queryBuilderClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvQueryBuilderClasses, CSSInterpolation>
+> = {
   root: {
     position: "relative",
     padding: theme.space.sm,
@@ -93,6 +97,8 @@ export const styles: { [key: string]: CSSInterpolation } = {
   },
 
   rulesContainer: {},
+
+  topRulesContainer: {},
 
   subRulesContainer: {
     borderLeft: theme.queryBuilder.border,

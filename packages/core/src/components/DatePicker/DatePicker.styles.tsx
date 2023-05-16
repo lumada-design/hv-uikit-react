@@ -1,20 +1,12 @@
-import { outlineStyles } from "@core/utils";
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvDatePickerClasses } from "./datePickerClasses";
 
-export const styles: { [key: string]: CSSInterpolation } = {
+export const styles: Partial<
+  Record<keyof HvDatePickerClasses, CSSInterpolation>
+> = {
   root: {
     position: "relative",
-  },
-  inputContainer: {
-    position: "relative",
-    background: theme.colors.atmo1,
-    height: 32,
-    paddingLeft: theme.space.xs,
-    paddingRight: theme.space.md,
-    "&:focus": {
-      ...outlineStyles,
-    },
   },
   actionContainer: {
     justifyContent: "space-between",
@@ -63,34 +55,4 @@ export const styles: { [key: string]: CSSInterpolation } = {
       marginRight: theme.space.xs,
     },
   },
-
-  rangeMainContainer: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: theme.colors.atmo1,
-    width: "640px",
-  },
-  rangeCalendarsContainer: {
-    display: "flex",
-    flexDirection: "row",
-  },
-  rangeCalendarContainer: {
-    width: "50%",
-  },
 };
-
-// export const StyledButton = styled(HvButton)({
-//     "&:first-of-type": {
-//         marginRight: theme.space.xs
-//       },
-// })
-
-// export const StyledTypography = styled(
-//     HvTypography,
-//     transientOptions,
-//     )(({ $dateString } : { $dateString: boolean }) => ({
-//         color: theme.colors.secondary_80,
-//     ...($dateString && {
-//         color: theme.colors.secondary,
-//     })
-// }))

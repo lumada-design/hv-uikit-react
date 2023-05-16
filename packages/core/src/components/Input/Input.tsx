@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import React, {
   HTMLInputTypeAttribute,
   isValidElement,
@@ -14,6 +13,7 @@ import {
   PreviewOff,
   Preview,
   Search,
+  Success,
 } from "@hitachivantara/uikit-react-icons";
 import { isBrowser, isKeypress, keyboardCodes, setId } from "@core/utils";
 import {
@@ -24,9 +24,14 @@ import {
   HvValidationMessages,
 } from "@core/types";
 import {
+  HvAdornment,
+  HvBaseInput,
+  HvFormElement,
   HvFormStatus,
   HvInfoMessage,
+  HvLabel,
   HvSuggestion,
+  HvSuggestions,
   HvTooltip,
   HvTypography,
   HvWarningText,
@@ -37,17 +42,7 @@ import {
   useLabels,
   useUniqueId,
 } from "@core/hooks";
-import {
-  StyledFormElement,
-  StyledLabelContainer,
-  StyledLabel,
-  StyledSuggestions,
-  StyledBaseInput,
-  StyledInputExtension,
-  StyledAdornmentsBox,
-  StyledAdornmentButton,
-  StyledSuccess,
-} from "./Input.styles";
+import { styles } from "./Input.styles";
 import validationStates, {
   isValid,
   isInvalid,
@@ -62,6 +57,7 @@ import {
   HvInputValidity,
 } from "../BaseInput/validations";
 import inputClasses, { HvInputClasses } from "./inputClasses";
+import { ClassNames } from "@emotion/react";
 
 export interface HvInputProps
   extends HvBaseProps<
@@ -256,15 +252,15 @@ export const HvInput = ({
 
   const [focused, setFocused] = useState(false);
 
-  // signals that the user has manually edited the input value
+  // Signals that the user has manually edited the input value
   const isDirty = useRef(false);
 
-  // value related state
+  // Value related state
   const [value, setValue] = useControlled(valueProp, defaultValue);
 
   const isEmptyValue = value == null || value === "";
 
-  // validation related state
+  // Validation related state
   const [validationState, setValidationState] = useControlled(
     status,
     validationStates.standBy
@@ -290,7 +286,7 @@ export const HvInput = ({
 
   const validationType = useMemo(() => computeValidationType(type), [type]);
 
-  // validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
+  // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
   // and returns the validity state of the input.
   const performValidation = useCallback(() => {
     const inputValidity = validateInput(
@@ -303,10 +299,10 @@ export const HvInput = ({
       validation
     );
 
-    // this will only run if status is uncontrolled
+    // This will only run if status is uncontrolled
     setValidationState(computeValidationState(inputValidity, isEmptyValue));
 
-    // this will only run if statusMessage is uncontrolled
+    // This will only run if statusMessage is uncontrolled
     setValidationMessage(
       computeValidationMessage(inputValidity, errorMessages)
     );
@@ -325,7 +321,7 @@ export const HvInput = ({
     value,
   ]);
 
-  // the error message area will only be created if:
+  // The error message area will only be created if:
   // - an external element that provides an error message isn't identified via aria-errormessage AND
   //   - both status and statusMessage properties are being controlled OR
   //   - status is uncontrolled and any of the built-in validations are active
@@ -344,7 +340,7 @@ export const HvInput = ({
 
   const isStateInvalid = isInvalid(validationState);
 
-  // input type related state
+  // Input type related state
   const [revealPassword, setRevealPassword] = useState(false);
 
   const realType = useMemo(() => {
@@ -359,7 +355,7 @@ export const HvInput = ({
     return "text";
   }, [revealPassword, type]);
 
-  // suggestions related state
+  // Suggestions related state
   const [suggestionValues, setSuggestionValues] = useState<
     HvSuggestion[] | null
   >(null);
@@ -377,7 +373,7 @@ export const HvInput = ({
     );
   }, [elementId]);
 
-  // miscellaneous state
+  // Miscellaneous state
   const hasLabel = label != null;
   const hasDescription = description != null;
 
@@ -571,20 +567,25 @@ export const HvInput = ({
     }
 
     return (
-      <StyledAdornmentButton
-        // don't control visibility when the search icon is enabled
-        className={clsx(
-          inputClasses.adornmentButton,
-          classes?.adornmentButton,
-          !showSearchIcon &&
-            clsx("iconClear", inputClasses.iconClear, classes?.iconClear)
+      <ClassNames>
+        {({ css, cx }) => (
+          <HvAdornment
+            // Don't control visibility when the search icon is enabled
+            className={cx(
+              inputClasses.adornmentButton,
+              !showSearchIcon && inputClasses.iconClear,
+              css(styles.adornmentButton),
+              !showSearchIcon && css(styles.iconClear),
+              classes?.adornmentButton,
+              !showSearchIcon && classes?.iconClear
+            )}
+            onClick={handleClear}
+            aria-label={labels?.clearButtonLabel}
+            aria-controls={setId(elementId, "input")}
+            icon={<CloseXS />}
+          />
         )}
-        onClick={handleClear}
-        aria-label={labels?.clearButtonLabel}
-        aria-controls={setId(elementId, "input")}
-        icon={<CloseXS />}
-        $iconClear={!showSearchIcon}
-      />
+      </ClassNames>
     );
   }, [
     showClear,
@@ -607,7 +608,7 @@ export const HvInput = ({
   );
 
   const searchButton = useMemo(() => {
-    // if the search icon is not actionable, only show it when the input is empty or active
+    // If the search icon is not actionable, only show it when the input is empty or active
     const reallyShowIt =
       showSearchIcon &&
       (isEmptyValue ||
@@ -618,12 +619,20 @@ export const HvInput = ({
     }
 
     return (
-      <StyledAdornmentButton
-        className={clsx(inputClasses.adornmentButton, classes?.adornmentButton)}
-        onClick={hasOnEnter ? handleSearch : undefined}
-        aria-label={labels?.searchButtonLabel}
-        icon={<Search />}
-      />
+      <ClassNames>
+        {({ css, cx }) => (
+          <HvAdornment
+            className={cx(
+              inputClasses.adornmentButton,
+              css(styles.adornmentButton),
+              classes?.adornmentButton
+            )}
+            onClick={hasOnEnter ? handleSearch : undefined}
+            aria-label={labels?.searchButtonLabel}
+            icon={<Search />}
+          />
+        )}
+      </ClassNames>
     );
   }, [
     showSearchIcon,
@@ -648,28 +657,33 @@ export const HvInput = ({
     }
 
     return (
-      <HvTooltip
-        disableFocusListener
-        disableTouchListener
-        title={
-          <HvTypography>
-            {revealPassword
-              ? labels?.revealPasswordButtonClickToHideTooltip
-              : labels?.revealPasswordButtonClickToShowTooltip}
-          </HvTypography>
-        }
-      >
-        <StyledAdornmentButton
-          className={clsx(
-            inputClasses.adornmentButton,
-            classes?.adornmentButton
-          )}
-          onClick={handleRevealPassword}
-          aria-label={labels?.revealPasswordButtonLabel}
-          aria-controls={setId(elementId, "input")}
-          icon={revealPassword ? <PreviewOff /> : <Preview />}
-        />
-      </HvTooltip>
+      <ClassNames>
+        {({ css, cx }) => (
+          <HvTooltip
+            disableFocusListener
+            disableTouchListener
+            title={
+              <HvTypography>
+                {revealPassword
+                  ? labels?.revealPasswordButtonClickToHideTooltip
+                  : labels?.revealPasswordButtonClickToShowTooltip}
+              </HvTypography>
+            }
+          >
+            <HvAdornment
+              className={cx(
+                inputClasses.adornmentButton,
+                css(styles.adornmentButton),
+                classes?.adornmentButton
+              )}
+              onClick={handleRevealPassword}
+              aria-label={labels?.revealPasswordButtonLabel}
+              aria-controls={setId(elementId, "input")}
+              icon={revealPassword ? <PreviewOff /> : <Preview />}
+            />
+          </HvTooltip>
+        )}
+      </ClassNames>
     );
   }, [
     showRevealPasswordButton,
@@ -692,24 +706,34 @@ export const HvInput = ({
     }
 
     return (
-      <StyledSuccess
-        semantic="positive"
-        className={clsx(inputClasses.icon, classes?.icon)}
-      />
+      <ClassNames>
+        {({ css, cx }) => (
+          <Success
+            semantic="positive"
+            className={cx(inputClasses.icon, css(styles.icon), classes?.icon)}
+          />
+        )}
+      </ClassNames>
     );
   }, [showValidationIcon, validationState, classes?.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
   const customIconEl = useMemo(
     () =>
-      isValidElement(endAdornment) &&
-      React.cloneElement(endAdornment as React.ReactElement, {
-        className: clsx(
-          inputClasses.icon,
-          classes?.icon,
-          endAdornment.props.className
-        ),
-      }),
+      isValidElement(endAdornment) && (
+        <ClassNames>
+          {({ css, cx }) =>
+            React.cloneElement(endAdornment as React.ReactElement, {
+              className: cx(
+                inputClasses.icon,
+                css(styles.icon),
+                endAdornment.props.className,
+                classes?.icon
+              ),
+            })
+          }
+        </ClassNames>
+      ),
     [classes?.icon, endAdornment]
   );
 
@@ -726,15 +750,23 @@ export const HvInput = ({
     // note: specification implies that the custom icon should be hidden when
     // a validation feedback icon is being shown.
     return (
-      <StyledAdornmentsBox
-        className={clsx(inputClasses.adornmentsBox, classes?.adornmentsBox)}
-        aria-hidden="true"
-      >
-        {clearButton}
-        {revealPasswordButton}
-        {searchButton}
-        {validationIcon || customIconEl}
-      </StyledAdornmentsBox>
+      <ClassNames>
+        {({ css, cx }) => (
+          <div
+            className={cx(
+              inputClasses.adornmentsBox,
+              css(styles.adornmentsBox),
+              classes?.adornmentsBox
+            )}
+            aria-hidden="true"
+          >
+            {clearButton}
+            {revealPasswordButton}
+            {searchButton}
+            {validationIcon || customIconEl}
+          </div>
+        )}
+      </ClassNames>
     );
   }, [
     classes?.adornmentsBox,
@@ -765,148 +797,175 @@ export const HvInput = ({
   }
 
   return (
-    <StyledFormElement
-      id={id}
-      name={name}
-      status={validationState}
-      disabled={disabled}
-      required={required}
-      readOnly={readOnly}
-      className={clsx(
-        inputClasses.root,
-        classes?.root,
-        className,
-        hasSuggestions &&
-          clsx(inputClasses.hasSuggestions, classes?.hasSuggestions)
-      )}
-      onBlur={onContainerBlurHandler}
-    >
-      {(hasLabel || hasDescription) && (
-        <StyledLabelContainer
-          className={clsx(inputClasses.labelContainer, classes?.labelContainer)}
+    <ClassNames>
+      {({ css, cx }) => (
+        <HvFormElement
+          id={id}
+          name={name}
+          status={validationState}
+          disabled={disabled}
+          required={required}
+          readOnly={readOnly}
+          className={cx(
+            inputClasses.root,
+            hasSuggestions && inputClasses.hasSuggestions,
+            css(styles.root),
+            className,
+            classes?.root,
+            hasSuggestions && classes?.hasSuggestions
+          )}
+          onBlur={onContainerBlurHandler}
         >
-          {hasLabel && (
-            <StyledLabel
-              id={setId(elementId, "label")}
-              className={clsx(inputClasses.label, classes?.label)}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-            />
-          )}
-
-          {hasDescription && (
-            <HvInfoMessage
-              id={setId(elementId, "description")}
-              className={clsx(inputClasses.description, classes?.description)}
-            >
-              {description}
-            </HvInfoMessage>
-          )}
-        </StyledLabelContainer>
-      )}
-      <StyledBaseInput
-        id={
-          hasLabel || showClear || showRevealPasswordButton
-            ? setId(elementId, "input")
-            : setId(id, "input")
-        }
-        name={name}
-        value={value}
-        required={required}
-        readOnly={readOnly}
-        disabled={disabled}
-        onChange={onChangeHandler}
-        autoFocus={autoFocus}
-        onKeyDown={onKeyDownHandler}
-        onBlur={onInputBlurHandler}
-        onFocus={onFocusHandler}
-        placeholder={placeholder}
-        type={realType}
-        classes={{
-          input: clsx(inputClasses.input, classes?.input),
-          inputRoot: clsx(inputClasses.inputRoot, classes?.inputRoot),
-          inputRootFocused: clsx(
-            inputClasses.inputRootFocused,
-            classes?.inputRootFocused
-          ),
-          inputRootDisabled: clsx(
-            inputClasses.inputRootDisabled,
-            classes?.inputRootDisabled
-          ),
-          inputRootMultiline: clsx(
-            inputClasses.inputRootMultiline,
-            classes?.inputRootMultiline
-          ),
-          inputBorderContainer: clsx(
-            inputClasses.inputBorderContainer,
-            classes?.inputBorderContainer
-          ),
-        }}
-        invalid={isStateInvalid}
-        inputProps={{
-          "aria-label": ariaLabel,
-          "aria-labelledby": ariaLabelledBy,
-          "aria-invalid": isStateInvalid ? true : undefined,
-          "aria-errormessage": errorMessageId,
-          "aria-describedby":
-            ariaDescribedBy != null
-              ? ariaDescribedBy
-              : description
-              ? setId(elementId, "description")
-              : undefined,
-          "aria-controls": canShowSuggestions
-            ? setId(elementId, "suggestions")
-            : undefined,
-
-          ref: materialInputRef,
-
-          // prevent browsers auto-fill/suggestions when we have our own
-          autoComplete: canShowSuggestions ? "off" : undefined,
-
-          ...inputProps,
-        }}
-        inputRef={inputRefProp || inputRef}
-        endAdornment={adornments}
-        {...others}
-      />
-      {canShowSuggestions && (
-        <>
-          {hasSuggestions && (
-            <StyledInputExtension
-              role="presentation"
-              className={clsx(
-                inputClasses.inputExtension,
-                classes?.inputExtension
+          {(hasLabel || hasDescription) && (
+            <div
+              className={cx(
+                inputClasses.labelContainer,
+                css(styles.labelContainer),
+                classes?.labelContainer
               )}
-            />
+            >
+              {hasLabel && (
+                <HvLabel
+                  id={setId(elementId, "label")}
+                  className={cx(
+                    inputClasses.label,
+                    css(styles.label),
+                    classes?.label
+                  )}
+                  htmlFor={setId(elementId, "input")}
+                  label={label}
+                />
+              )}
+
+              {hasDescription && (
+                <HvInfoMessage
+                  id={setId(elementId, "description")}
+                  className={cx(inputClasses.description, classes?.description)}
+                >
+                  {description}
+                </HvInfoMessage>
+              )}
+            </div>
           )}
-          <StyledSuggestions
-            id={setId(elementId, "suggestions")}
+          <HvBaseInput
+            id={
+              hasLabel || showClear || showRevealPasswordButton
+                ? setId(elementId, "input")
+                : setId(id, "input")
+            }
+            name={name}
+            value={value}
+            required={required}
+            readOnly={readOnly}
+            disabled={disabled}
+            onChange={onChangeHandler}
+            autoFocus={autoFocus}
+            onKeyDown={onKeyDownHandler}
+            onBlur={onInputBlurHandler}
+            onFocus={onFocusHandler}
+            placeholder={placeholder}
+            type={realType}
             classes={{
-              root: clsx(
-                inputClasses.suggestionsContainer,
-                classes?.suggestionsContainer
+              input: cx(inputClasses.input, css(styles.input), classes?.input),
+              inputRoot: cx(
+                inputClasses.inputRoot,
+                css(styles.inputRoot),
+                classes?.inputRoot
               ),
-              list: clsx(inputClasses.suggestionList, classes?.suggestionList),
+              inputRootFocused: cx(
+                inputClasses.inputRootFocused,
+                css(styles.inputRootFocused),
+                classes?.inputRootFocused
+              ),
+              inputRootDisabled: cx(
+                inputClasses.inputRootDisabled,
+                css(styles.inputRootDisabled),
+                classes?.inputRootDisabled
+              ),
+              inputRootMultiline: cx(
+                inputClasses.inputRootMultiline,
+                css(styles.inputRootMultiline),
+                classes?.inputRootMultiline
+              ),
+              inputBorderContainer: cx(
+                inputClasses.inputBorderContainer,
+                css(styles.inputBorderContainer),
+                classes?.inputBorderContainer
+              ),
             }}
-            expanded={hasSuggestions}
-            anchorEl={inputRef?.current?.parentElement}
-            onClose={suggestionClearHandler}
-            onKeyDown={onSuggestionKeyDown}
-            onSuggestionSelected={suggestionSelectedHandler}
-            suggestionValues={suggestionValues}
+            invalid={isStateInvalid}
+            inputProps={{
+              "aria-label": ariaLabel,
+              "aria-labelledby": ariaLabelledBy,
+              "aria-invalid": isStateInvalid ? true : undefined,
+              "aria-errormessage": errorMessageId,
+              "aria-describedby":
+                ariaDescribedBy != null
+                  ? ariaDescribedBy
+                  : description
+                  ? setId(elementId, "description")
+                  : undefined,
+              "aria-controls": canShowSuggestions
+                ? setId(elementId, "suggestions")
+                : undefined,
+
+              ref: materialInputRef,
+
+              // prevent browsers auto-fill/suggestions when we have our own
+              autoComplete: canShowSuggestions ? "off" : undefined,
+
+              ...inputProps,
+            }}
+            inputRef={inputRefProp || inputRef}
+            endAdornment={adornments}
+            {...others}
           />
-        </>
+          {canShowSuggestions && (
+            <>
+              {hasSuggestions && (
+                <div
+                  role="presentation"
+                  className={cx(
+                    inputClasses.inputExtension,
+                    css(styles.inputExtension),
+                    classes?.inputExtension
+                  )}
+                />
+              )}
+              <HvSuggestions
+                id={setId(elementId, "suggestions")}
+                classes={{
+                  root: cx(
+                    inputClasses.suggestionsContainer,
+                    css(styles.suggestionsContainer),
+                    classes?.suggestionsContainer
+                  ),
+                  list: cx(
+                    inputClasses.suggestionList,
+                    css(styles.suggestionList),
+                    classes?.suggestionList
+                  ),
+                }}
+                expanded={hasSuggestions}
+                anchorEl={inputRef?.current?.parentElement}
+                onClose={suggestionClearHandler}
+                onKeyDown={onSuggestionKeyDown}
+                onSuggestionSelected={suggestionSelectedHandler}
+                suggestionValues={suggestionValues}
+              />
+            </>
+          )}
+          {canShowError && (
+            <HvWarningText
+              id={setId(elementId, "error")}
+              disableBorder
+              className={cx(inputClasses.error, classes?.error)}
+            >
+              {validationMessage}
+            </HvWarningText>
+          )}
+        </HvFormElement>
       )}
-      {canShowError && (
-        <HvWarningText
-          id={setId(elementId, "error")}
-          disableBorder
-          className={clsx(inputClasses.error, classes?.error)}
-        >
-          {validationMessage}
-        </HvWarningText>
-      )}
-    </StyledFormElement>
+    </ClassNames>
   );
 };
