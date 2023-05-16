@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { ClassNames } from "@emotion/react";
+import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   HvBaseProps,
@@ -10,15 +11,13 @@ import {
   HvTooltip,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { HvDefaultNavigation } from "./DefaultNavigation";
+import { HvDefaultNavigation, HvStepProps } from "./DefaultNavigation";
 import { HvSimpleNavigation } from "./SimpleNavigation";
-import { HvStepProps } from "./DefaultNavigation/Step/Step";
 import { styles } from "./StepNavigation.styles";
 import stepNavigationClasses, {
   HvStepNavigationClasses,
 } from "./stepNavigationClasses";
 import { SEPARATOR_WIDTH, TITLE_MARGIN, TITLE_WIDTH } from "./utils";
-import styled from "@emotion/styled";
 
 export interface HvStepNavigationProps extends HvBaseProps {
   /** Type of step navigation. Values = {"Simple", "Default"} */

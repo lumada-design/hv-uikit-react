@@ -4,7 +4,7 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvDefaultNavigationClasses } from "./defaultNavigationClasses";
-import { HvStep, HvStepProps } from "./Step/Step";
+import { HvStep, HvStepProps } from "./Step";
 import { getColor, stepSizes } from "./utils";
 
 export type ComponentChildProps = {

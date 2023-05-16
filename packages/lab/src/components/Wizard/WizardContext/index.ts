@@ -1,2 +1,2 @@
-export { default as HvWizardProvider } from "./WizardContext";
+export { default } from "./WizardContext";
 export * from "./WizardContext";

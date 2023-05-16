@@ -2,12 +2,9 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
-import { HvDefaultNavigation } from "./DefaultNavigation";
-import { HvSimpleNavigation } from "./SimpleNavigation";
-import { HvDot } from "./SimpleNavigation/Dot";
-import { HvStep, HvStepProps } from "./DefaultNavigation/Step";
+import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
+import { HvDot, HvSimpleNavigation, dotClasses } from "./SimpleNavigation";
 import { theme } from "@hitachivantara/uikit-styles";
-import dotClasses from "./SimpleNavigation/Dot/dotClasses";
 
 const FlexDecorator = ({ children }) => {
   const StyledDiv = styled("div")({

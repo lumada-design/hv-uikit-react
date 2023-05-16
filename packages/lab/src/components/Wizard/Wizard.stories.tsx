@@ -11,7 +11,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import mockText from "./mockData";
-import { HvWizardContext } from "./WizardContext/WizardContext";
+import HvWizardContext from "./WizardContext";
 import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvWizard> = {
@@ -22,7 +22,7 @@ const meta: Meta<typeof HvWizard> = {
 export default meta;
 
 const RandomFormComponent = () => {
-  const { context, updateContext, tab } = useContext(HvWizardContext);
+  const { context, setContext, tab } = useContext(HvWizardContext);
   const [formData, setFormData] = useState({});
 
   const [text, setText] = useState(context[tab]?.form.name ?? "");
@@ -37,8 +37,8 @@ const RandomFormComponent = () => {
   };
 
   const toggleContextValid = useCallback(
-    (valid) => updateContext({ ...context, [tab]: { ...context[tab], valid } }),
-    [context, updateContext, tab]
+    (valid) => setContext({ ...context, [tab]: { ...context[tab], valid } }),
+    [context, setContext, tab]
   );
 
   const handleFieldValue = (fieldName, fieldValue) => {
@@ -57,14 +57,14 @@ const RandomFormComponent = () => {
       const updatedForm = { ...fd, [fieldName]: fieldValue };
       return updatedForm;
     });
-    updateContext({
-      ...context,
+    setContext((c) => ({
+      ...c,
       [tab]: {
-        ...context[tab],
+        ...c[tab],
         form: { ...formData, [fieldName]: fieldValue },
         valid: valid,
       },
-    });
+    }));
   };
 
   return (

@@ -2,16 +2,12 @@ import { HvBaseProps } from "@hitachivantara/uikit-react-core";
 import { HvStepNavigationProps } from "..";
 import { HvWizardClasses } from "./wizardClasses";
 import { ModalProps } from "@mui/material";
-import React, { useCallback } from "react";
-import { HvWizardContainer } from "./WizardContainer/WizardContainer";
-import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle/WizardTitle";
-import { HvWizardContent } from "./WizardContent/WizardContent";
-import { HvWizardActions } from "./index";
-import WizardProvider, {
-  HvWizardTabs,
-  HvWizardTab,
-} from "./WizardContext/WizardContext";
-import { HvWizardActionsProps } from "./WizardActions/WizardActions";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { HvWizardContainer } from "./WizardContainer";
+import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle";
+import { HvWizardContent } from "./WizardContent";
+import HvWizardContext, { HvWizardTabs } from "./WizardContext";
+import { HvWizardActions, HvWizardActionsProps } from "./WizardActions";
 
 export interface HvWizardProps extends HvBaseProps {
   /** Current state of the Wizard. */
@@ -19,7 +15,7 @@ export interface HvWizardProps extends HvBaseProps {
   /** Function executed on close. */
   onClose: ModalProps["onClose"];
   /** Function executed on submit. */
-  handleSubmit: (context: HvWizardTabs<HvWizardTab>) => void;
+  handleSubmit: (context: HvWizardTabs) => void;
   /** Title for the wizard. */
   title?: string;
   /** An object containing all the labels for the wizard. */
@@ -63,6 +59,10 @@ export const HvWizard = ({
   customStep,
   ...others
 }: HvWizardProps) => {
+  const [context, setContext] = useState<HvWizardTabs>({});
+  const [summary, setSummary] = useState(false);
+  const [tab, setTab] = useState(0);
+
   const handleClose = useCallback(
     (evt, reason) => {
       if (reason !== "backdropClick") {
@@ -72,8 +72,34 @@ export const HvWizard = ({
     [onClose]
   );
 
+  // on unmount
+  useEffect(() => {
+    return () => {
+      if (!open) {
+        setContext((c) =>
+          Object.entries(c).reduce(
+            (acc, [key, child]) => ({
+              ...acc,
+              [+key]: {
+                ...child,
+                touched: false,
+              },
+            }),
+            {} as HvWizardTabs
+          )
+        );
+        setTab(0);
+      }
+    };
+  }, [open]);
+
+  const value = useMemo(
+    () => ({ context, setContext, summary, setSummary, tab, setTab }),
+    [context, setContext, summary, setSummary, tab, setTab]
+  );
+
   return (
-    <WizardProvider>
+    <HvWizardContext.Provider value={value}>
       <HvWizardContainer
         className={className}
         handleClose={handleClose}
@@ -101,6 +127,6 @@ export const HvWizard = ({
           handleSubmit={handleSubmit}
         />
       </HvWizardContainer>
-    </WizardProvider>
+    </HvWizardContext.Provider>
   );
 };

@@ -12,7 +12,7 @@ import wizardActionsClasses, {
   HvWizardActionsClasses,
 } from "./wizardActionsClasses";
 import { styles } from "./WizardActions.styles";
-import { HvWizardContext } from "../WizardContext/WizardContext";
+import HvWizardContext, { HvWizardTabs } from "../WizardContext";
 
 export interface HvWizardActionsProps extends HvBaseProps {
   /** Function to handle the cancel button. */
@@ -57,7 +57,7 @@ export const HvWizardActions = ({
     submit: "Submit",
   },
 }: HvWizardActionsProps) => {
-  const { context, updateContext, tab, setTab } = useContext(HvWizardContext);
+  const { context, setContext, tab, setTab } = useContext(HvWizardContext);
   const [pages, setPages] = useState(0);
   const [canSubmit, setCanSubmit] = useState(false);
 
@@ -79,30 +79,25 @@ export const HvWizardActions = ({
   const isLastPage = tab >= lastPage;
 
   const handleSkip = useCallback(() => {
-    const skippedContext = Object.entries(context).map(([, child]) => ({
-      ...child,
-      valid: child?.valid !== false,
-    }));
-
-    updateContext(skippedContext);
+    setContext((c) =>
+      Object.entries(c).reduce(
+        (acc, [key, child]) => ({
+          ...acc,
+          [+key]: {
+            ...child,
+            valid: child?.valid !== false,
+          },
+        }),
+        {} as HvWizardTabs
+      )
+    );
     setTab(lastPage);
-  }, [setTab, context, lastPage, updateContext]);
+  }, [setTab, lastPage, setContext]);
 
   const handleSubmitInternal = useCallback(
     () => handleSubmit(context),
     [handleSubmit, context]
   );
-
-  const onCloseHander = useCallback((event) => {
-    const clearContext = Object.entries(context).map(([, child]) => ({
-      ...child,
-      touched: false,
-    }));
-
-    updateContext(clearContext);
-    setTab(0);
-    handleClose?.(event);
-  }, []);
 
   return (
     <ClassNames>
@@ -117,7 +112,7 @@ export const HvWizardActions = ({
           <HvGrid>
             <HvButton
               variant="secondaryGhost"
-              onClick={onCloseHander}
+              onClick={handleClose}
               className={clsx(
                 classes?.buttonWidth,
                 wizardActionsClasses.buttonWidth,
