@@ -2,13 +2,11 @@ import { outlineStyles } from "@core/utils";
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import scrollToHorizontalClasses from "../scrollToHorizontalClasses";
+import { HvHorizontalScrollListItemClasses } from "./horizontalScrollListItemClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  button: CSSInterpolation;
-  text: CSSInterpolation;
-  selected: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvHorizontalScrollListItemClasses, CSSInterpolation>
+> = {
   root: {
     padding: "10px 0",
   },

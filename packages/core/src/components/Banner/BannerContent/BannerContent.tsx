@@ -88,9 +88,21 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
               ref={ref}
               id={id}
               classes={{
-                root: cx(css(styles.root), classes?.root),
-                message: cx(css(styles.message), classes?.message),
-                action: cx(css(styles.action), classes?.action),
+                root: cx(
+                  bannerContentClasses.root,
+                  css(styles.root),
+                  classes?.root
+                ),
+                message: cx(
+                  bannerContentClasses.message,
+                  css(styles.message),
+                  classes?.message
+                ),
+                action: cx(
+                  bannerContentClasses.action,
+                  css(styles.action),
+                  classes?.action
+                ),
               }}
               className={cx(
                 bannerContentClasses.baseVariant,

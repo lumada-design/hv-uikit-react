@@ -246,7 +246,11 @@ export const HvFilterGroupContent = ({
                 activeTheme?.filterGroup.applyButtonVariant as HvButtonVariant
               }
               onClick={onApplyHandler}
-              className={css(styles.applyButton)}
+              className={clsx(
+                filterGroupContentClasses.applyButton,
+                css(styles.applyButton),
+                classes?.applyButton
+              )}
             >
               {labels?.applyLabel}
             </HvButton>

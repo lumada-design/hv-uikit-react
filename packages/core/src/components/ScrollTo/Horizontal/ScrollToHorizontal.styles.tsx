@@ -1,14 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvScrollToHorizontalClasses } from "./scrollToHorizontalClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  positionSticky: CSSInterpolation;
-  positionFixed: CSSInterpolation;
-  notSelectedRoot: CSSInterpolation;
-  notSelected: CSSInterpolation;
-  selected: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvScrollToHorizontalClasses, CSSInterpolation>
+> = {
   root: {
     display: "flex",
     padding: "0 30px",

@@ -1,9 +1,9 @@
 import { CSSInterpolation } from "@emotion/serialize";
+import { HvFilterGroupClasses } from "./filterGroupClasses";
 
-export const styles: {
-  label: CSSInterpolation;
-  labelContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvFilterGroupClasses, CSSInterpolation>
+> = {
   label: {
     display: "flex",
     alignItems: "flex-start",

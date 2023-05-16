@@ -1,9 +1,10 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSInterpolation } from "@emotion/serialize";
+import { HvScrollToVerticalClasses } from "./scrollToVerticalClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvScrollToVerticalClasses, CSSInterpolation>
+> = {
   root: {
     display: "flex",
     width: "32px",
@@ -26,10 +27,9 @@ const calculateOffset = (quantityOfOptions: number) => {
 export const generateDynamicStyles = (quantityOfOptions: number) => {
   const positionOffset = calculateOffset(quantityOfOptions);
 
-  const generatedStyles: {
-    positionAbsolute: CSSInterpolation;
-    positionFixed: CSSInterpolation;
-  } = {
+  const generatedStyles: Partial<
+    Record<keyof HvScrollToVerticalClasses, CSSInterpolation>
+  > = {
     positionAbsolute: {
       width: "32px",
       position: "absolute",

@@ -1,12 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { outlineStyles } from "@core/utils";
+import { HvActionContainerClasses } from "./actionContainerClasses";
 
-export const styles: {
-  actionContainer: CSSInterpolation;
-  actionsInnerContainer: CSSInterpolation;
-  closeAction: CSSInterpolation;
-  iconContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvActionContainerClasses, CSSInterpolation>
+> = {
   actionContainer: {
     display: "flex",
     flexDirection: "column",

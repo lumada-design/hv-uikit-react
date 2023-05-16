@@ -108,7 +108,7 @@ export const HvBanner = ({
         <Snackbar
           id={id}
           open={open}
-          className={cx(css(bannerClasses.root), className)}
+          className={className}
           classes={{
             root: cx(
               open

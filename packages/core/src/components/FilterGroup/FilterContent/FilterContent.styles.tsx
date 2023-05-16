@@ -1,17 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvFilterGroupContentClasses } from "./filterContentClasses";
 
-export const styles: {
-  panel: CSSInterpolation;
-  header: CSSInterpolation;
-  baseDropdownSelection: CSSInterpolation;
-  root: CSSInterpolation;
-  actionBar: CSSInterpolation;
-  space: CSSInterpolation;
-  rightSidePanel: CSSInterpolation;
-  leftSidePanel: CSSInterpolation;
-  applyButton: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvFilterGroupContentClasses, CSSInterpolation>
+> = {
   panel: {
     maxHeight: 500,
     minHeight: 370,

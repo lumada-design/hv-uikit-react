@@ -1,10 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvFilterGroupCounterClasses } from "./counterClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  partialCounter: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvFilterGroupCounterClasses, CSSInterpolation>
+> = {
   root: {
     height: "100%",
     lineHeight: "32px",
