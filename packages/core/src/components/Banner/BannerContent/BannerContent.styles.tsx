@@ -1,17 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvBannerContentClasses } from "./bannerContentClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  message: CSSInterpolation;
-  action: CSSInterpolation;
-  baseVariant: CSSInterpolation;
-  success: CSSInterpolation;
-  warning: CSSInterpolation;
-  error: CSSInterpolation;
-  default: CSSInterpolation;
-  outContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvBannerContentClasses, CSSInterpolation>
+> = {
   root: {
     minWidth: "100%",
     position: "relative",

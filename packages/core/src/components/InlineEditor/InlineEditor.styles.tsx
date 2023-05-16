@@ -1,19 +1,13 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
-import { baseInputClasses, inputClasses } from "../index";
-import inlineEditorClasses from "./inlineEditorClasses";
+import { baseInputClasses, inputClasses } from "@core/components";
+import inlineEditorClasses, {
+  HvInlineEditorClasses,
+} from "./inlineEditorClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  inputBorderContainer: CSSInterpolation;
-  input: CSSInterpolation;
-  text: CSSInterpolation;
-  textEmpty: CSSInterpolation;
-  button: CSSInterpolation;
-  icon: CSSInterpolation;
-  iconVisible: CSSInterpolation;
-  largeText: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvInlineEditorClasses, CSSInterpolation>
+> = {
   root: {
     [`& .${baseInputClasses.inputRoot}.${inputClasses.inputRoot}`]: {
       height: "100%",

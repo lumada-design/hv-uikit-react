@@ -10,6 +10,7 @@ export interface HvFilterGroupContentClasses {
   rightSidePanel?: string;
   actionBar?: string;
   space?: string;
+  applyButton?: string;
 }
 
 const classKeys: (keyof HvFilterGroupContentClasses)[] = [
@@ -22,6 +23,7 @@ const classKeys: (keyof HvFilterGroupContentClasses)[] = [
   "rightSidePanel",
   "actionBar",
   "space",
+  "applyButton",
 ];
 
 const filterGroupContentClasses = getClasses(classKeys, "HvFilterGroupContent");

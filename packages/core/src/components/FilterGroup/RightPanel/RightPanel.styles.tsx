@@ -1,12 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvFilterGroupRightPanelClasses } from "./rightPanelClasses";
 
-export const styles: {
-  search: CSSInterpolation;
-  selectAllContainer: CSSInterpolation;
-  selectAll: CSSInterpolation;
-  list: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvFilterGroupRightPanelClasses, CSSInterpolation>
+> = {
   search: {
     marginBottom: theme.spacing("xs"),
   },

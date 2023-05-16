@@ -1,12 +1,9 @@
 import { CSSInterpolation } from "@emotion/serialize";
+import { HvStepNavigationClasses } from "./stepNavigationClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  titles: CSSInterpolation;
-  ol: CSSInterpolation;
-  li: CSSInterpolation;
-  separator: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvStepNavigationClasses, CSSInterpolation>
+> = {
   root: {
     display: "flex",
     flexDirection: "column",

@@ -5,17 +5,23 @@ import { setId, wrapperTooltip } from "@core/utils";
 import { HvFilterGroupCounter } from "../Counter";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./LeftPanel.styles";
+import { clsx } from "clsx";
+import filterGroupLeftPanelClasses, {
+  HvFilterGroupLeftPanelClasses,
+} from "./leftPanelClasses";
 
 export interface HvFilterGroupLeftPanelProps {
   id?: string;
   className?: string;
   emptyElement?: React.ReactNode;
+  classes?: HvFilterGroupLeftPanelClasses;
 }
 
 export const HvFilterGroupLeftPanel = ({
   id,
   className,
   emptyElement,
+  classes,
 }: HvFilterGroupLeftPanelProps) => {
   const { filterOptions, activeGroup, setActiveGroup } =
     useContext(HvFilterGroupContext);
@@ -37,7 +43,11 @@ export const HvFilterGroupLeftPanel = ({
                   <HvListItem
                     id={group.id}
                     key={group.name}
-                    className={css(styles.listItem)}
+                    className={clsx(
+                      filterGroupLeftPanelClasses.listItem,
+                      css(styles.listItem),
+                      classes?.listItem
+                    )}
                     onClick={() => setActiveGroup(index)}
                     selected={filterOptions[activeGroup].id === group.id}
                     endAdornment={<HvFilterGroupCounter id={group.id} />}

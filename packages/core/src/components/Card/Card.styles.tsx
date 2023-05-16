@@ -1,15 +1,9 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "@core/utils/focusUtils";
+import { HvCardClasses } from "./cardClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  selected: CSSInterpolation;
-  selectable: CSSInterpolation;
-  semanticContainer: CSSInterpolation;
-  icon: CSSInterpolation;
-  semanticBar: CSSInterpolation;
-} = {
+export const styles: Partial<Record<keyof HvCardClasses, CSSInterpolation>> = {
   root: {
     overflow: "visible",
     position: "relative",

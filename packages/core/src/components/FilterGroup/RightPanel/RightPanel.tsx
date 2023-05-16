@@ -11,6 +11,10 @@ import { HvFilterGroupContext } from "../FilterGroupContext";
 import cloneDeep from "lodash/cloneDeep";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./RightPanel.styles";
+import { clsx } from "clsx";
+import filterGroupRightPanelClasses, {
+  HvFilterGroupRightPanelClasses,
+} from "./rightPanelClasses";
 
 export interface HvFilterGroupRightPanelProps {
   id?: string;
@@ -21,6 +25,7 @@ export interface HvFilterGroupRightPanelProps {
     multiSelectionConjunction?: string;
   };
   emptyElement?: React.ReactNode;
+  classes?: HvFilterGroupRightPanelClasses;
 }
 
 export const HvFilterGroupRightPanel = ({
@@ -28,6 +33,7 @@ export const HvFilterGroupRightPanel = ({
   className,
   labels,
   emptyElement,
+  classes,
 }: HvFilterGroupRightPanelProps) => {
   const [searchStr, setSearchStr] = useState<string>("");
   const [allSelected, setAllSelected] = useState<boolean>(false);
@@ -129,12 +135,22 @@ export const HvFilterGroupRightPanel = ({
     return (
       <ClassNames>
         {({ css }) => (
-          <div className={css(styles.selectAllContainer)}>
+          <div
+            className={clsx(
+              filterGroupRightPanelClasses.selectAllContainer,
+              css(styles.selectAllContainer),
+              classes?.selectAllContainer
+            )}
+          >
             <HvCheckBox
               id={setId(id, "select-all")}
               label={defaultLabel}
               onChange={() => handleSelectAll()}
-              className={css(styles.selectAll)}
+              className={clsx(
+                filterGroupRightPanelClasses.selectAll,
+                css(styles.selectAll),
+                classes?.selectAll
+              )}
               indeterminate={anySelected && !allSelected}
               checked={allSelected}
             />
@@ -161,7 +177,11 @@ export const HvFilterGroupRightPanel = ({
               <HvInput
                 id={setId(id, "search")}
                 classes={{
-                  root: css(styles.search),
+                  root: clsx(
+                    filterGroupRightPanelClasses.search,
+                    css(styles.search),
+                    classes?.search
+                  ),
                 }}
                 type="search"
                 placeholder={labels?.searchBoxPlaceholder}
@@ -173,7 +193,11 @@ export const HvFilterGroupRightPanel = ({
                 key={activeGroup}
                 id={setId(id, "list")}
                 values={listValues}
-                className={css(styles.list)}
+                className={clsx(
+                  filterGroupRightPanelClasses.list,
+                  css(styles.list),
+                  classes?.list
+                )}
                 multiSelect
                 useSelector
                 showSelectAll={false}

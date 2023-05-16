@@ -54,10 +54,10 @@ exports[`FilterGroup > should render correctly 1`] = `
               </label>
             </div>
             <div
-              class="css-10czyyf"
+              class="HvFilterGroupCounter-root css-10czyyf"
             >
               <p
-                class="css-atimhy"
+                class="HvFilterGroupCounter-partialCounter css-atimhy"
               >
                 4
               </p>

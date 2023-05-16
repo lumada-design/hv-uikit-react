@@ -1,11 +1,10 @@
 import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
+import { HvMessageContainerClasses } from "./messageContainerClasses";
 
-export const styles: {
-  message: CSSInterpolation;
-  iconContainer: CSSInterpolation;
-  actionMessageContainer: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvMessageContainerClasses, CSSInterpolation>
+> = {
   message: {
     color: theme.colors.base_dark,
     wordBreak: "break-word",

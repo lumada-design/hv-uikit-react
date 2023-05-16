@@ -1,13 +1,10 @@
 import { theme } from "@hitachivantara/uikit-styles";
 import { CSSInterpolation } from "@emotion/serialize";
+import { HvCardHeaderClasses } from "./headerClasses";
 
-export const styles: {
-  root: CSSInterpolation;
-  titleShort: CSSInterpolation;
-  title: CSSInterpolation;
-  subheader: CSSInterpolation;
-  action: CSSInterpolation;
-} = {
+export const styles: Partial<
+  Record<keyof HvCardHeaderClasses, CSSInterpolation>
+> = {
   root: { padding: `15px ${theme.space.sm}`, position: "relative" },
   titleShort: {
     fontFamily: theme.fontFamily.body,
