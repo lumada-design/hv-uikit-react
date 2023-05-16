@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import MuiCardHeader, {
   CardHeaderProps as MuiCardHeaderProps,
 } from "@mui/material/CardHeader";
@@ -36,51 +35,51 @@ export const HvCardHeader = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <MuiCardHeader
           title={title}
           subheader={subheader}
           action={icon}
           onClick={onClick}
-          className={clsx(
-            css(styles.root),
-            classes?.root,
+          className={cx(
             cardHeaderClasses.root,
-            className
+            css(styles.root),
+            className,
+            classes?.root
           )}
           classes={{
             title: icon
-              ? clsx(
-                  css(styles.titleShort),
+              ? cx(
                   cardHeaderClasses.titleShort,
-                  classes?.titleShort,
+                  css(styles.titleShort),
                   css({
                     ...activeTheme?.typography[activeTheme?.card.titleVariant],
-                  })
+                  }),
+                  classes?.titleShort
                 )
-              : clsx(
-                  css(styles.title),
+              : cx(
                   cardHeaderClasses.title,
-                  classes?.title,
+                  css(styles.title),
                   css({
                     ...activeTheme?.typography[activeTheme?.card.titleVariant],
-                  })
+                  }),
+                  classes?.title
                 ),
-            subheader: clsx(
-              css(styles.subheader),
+            subheader: cx(
               cardHeaderClasses.subheader,
-              classes?.subheader,
+              css(styles.subheader),
               css({
                 ...activeTheme?.typography[activeTheme?.card.subheaderVariant],
                 color: activeTheme?.card.subheaderColor,
-              })
+              }),
+              classes?.subheader
             ),
-            action: clsx(
-              css(styles.action),
+            action: cx(
               cardHeaderClasses.action,
+              css(styles.action),
               classes?.action
             ),
-            content: clsx(cardHeaderClasses.content, classes?.content),
+            content: cx(cardHeaderClasses.content, classes?.content),
           }}
           {...others}
         />

@@ -210,400 +210,400 @@ exports[`<HvControls> > sample snapshot testing > Controls 1`] = `
       spacing="sm"
     >
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 1
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 2
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 3
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 4
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 5
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 6
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 7
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 8
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 9
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 10
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -823,340 +823,340 @@ exports[`<HvControls> > sample snapshot testing > Controls Controlled 1`] = `
       spacing="sm"
     >
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 1
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 2
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 3
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 4
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 5
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 6
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 7
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 8
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 9
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 10
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
@@ -1399,690 +1399,690 @@ exports[`<HvControls> > sample snapshot testing > Custom Controls 1`] = `
       spacing="sm"
     >
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 1
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           35
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 2
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           36
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 3
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           37
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 4
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           38
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 5
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           39
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 6
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           40
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 7
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           41
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 8
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           42
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 9
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           43
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 10
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           44
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 11
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           45
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 12
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           46
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 13
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           47
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 14
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           48
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 15
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           49
@@ -2383,690 +2383,690 @@ exports[`<HvControls> > sample snapshot testing > Mixed Controls 1`] = `
       spacing="sm"
     >
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 1
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           35
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 2
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           36
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 3
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           37
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 4
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           38
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 5
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           39
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 6
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           40
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 7
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           41
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 8
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           42
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 9
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           43
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 10
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           44
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 11
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           45
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 12
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 3
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Minor
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           46
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 13
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 0
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Critical
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           47
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 14
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 1
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Major
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           48
         </div>
       </div>
       <div
-        class="css-kdjrpy css-jvotyo HvIsCardGridElement HvCard-root"
+        class="HvIsCardGridElement HvCard-root css-9vqflq"
         style="width: 100%;"
       >
         <div
-          class="css-emolmc HvCard-semanticContainer"
+          class="HvCard-semanticContainer css-emolmc"
         >
           <div
-            class="css-1v84tfs css-1hhae7u HvCard-semanticBar"
+            class="HvCard-semanticBar css-12y48s9"
           />
           <div
-            class="css-pzj2c4 HvCard-icon"
+            class="HvCard-icon css-pzj2c4"
           />
         </div>
         <div
-          class="MuiCardHeader-root css-pqwkee HvCard-Header-root css-185gdzj-MuiCardHeader-root"
+          class="MuiCardHeader-root HvCard-Header-root css-pqwkee css-185gdzj-MuiCardHeader-root"
         >
           <div
             class="MuiCardHeader-content HvCard-Header-content css-1qbkelo-MuiCardHeader-content"
           >
             <span
-              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title css-1weuf4q HvCard-Header-title css-0 css-1qvr50w-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h5 MuiCardHeader-title HvCard-Header-title css-yragcd css-1qvr50w-MuiTypography-root"
             >
               Event 15
             </span>
           </div>
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Event: 
           Anomaly detection 2
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Severity: 
           Average
         </div>
         <div
-          class="MuiCardContent-root css-1ly90im HvCard-Content-content css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root HvCard-Content-content css-1ly90im css-46bh2p-MuiCardContent-root"
         >
           Temperature: 
           49

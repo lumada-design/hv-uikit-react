@@ -133,19 +133,13 @@ export const RuleGroup = ({
         <div
           className={cx(
             queryBuilderClasses.root,
-            css(styles.root),
-            classes?.root,
             level === 0
-              ? cx(
-                  queryBuilderClasses.topGroup,
-                  css(styles.topGroup),
-                  classes?.topGroup
-                )
-              : cx(
-                  queryBuilderClasses.subGroup,
-                  css(styles.subGroup),
-                  classes?.subGroup
-                )
+              ? queryBuilderClasses.topGroup
+              : queryBuilderClasses.subGroup,
+            css(styles.root),
+            level === 0 ? css(styles.topGroup) : css(styles.subGroup),
+            classes?.root,
+            level === 0 ? classes?.topGroup : classes?.subGroup
           )}
         >
           <HvGrid container>
@@ -153,10 +147,10 @@ export const RuleGroup = ({
               <HvMultiButton
                 className={cx(
                   queryBuilderClasses.combinator,
-                  css(styles.combinator),
-                  classes?.combinator,
                   queryBuilderClasses.topCombinator,
+                  css(styles.combinator),
                   css(styles.topCombinator),
+                  classes?.combinator,
                   classes?.topCombinator
                 )}
                 disabled={readOnly}
@@ -184,10 +178,10 @@ export const RuleGroup = ({
               <div
                 className={cx(
                   queryBuilderClasses.buttonBackground,
-                  css(styles.buttonBackground),
-                  classes?.buttonBackground,
                   queryBuilderClasses.topRemoveButton,
+                  css(styles.buttonBackground),
                   css(styles.topRemoveButton),
+                  classes?.buttonBackground,
                   classes?.topRemoveButton
                 )}
               >
@@ -224,22 +218,14 @@ export const RuleGroup = ({
             <div
               className={cx(
                 queryBuilderClasses.rulesContainer,
+                level > 0 && queryBuilderClasses.subRulesContainer,
+                level === 0 && queryBuilderClasses.topRulesContainer,
                 css(styles.rulesContainer),
+                level > 0 && css(styles.subRulesContainer),
+                level === 0 && css(styles.topRulesContainer),
                 classes?.rulesContainer,
-                level > 0
-                  ? cx(
-                      queryBuilderClasses.subRulesContainer,
-                      css(styles.subRulesContainer),
-                      classes?.subRulesContainer
-                    )
-                  : "",
-                level === 0
-                  ? cx(
-                      queryBuilderClasses.topRulesContainer,
-                      css(styles.topRulesContainer),
-                      classes?.topRulesContainer
-                    )
-                  : ""
+                level > 0 && classes?.subRulesContainer,
+                level === 0 && classes?.topRulesContainer
               )}
             >
               {rules.map((rule, index) => {
@@ -325,10 +311,10 @@ export const RuleGroup = ({
               item
               className={cx(
                 queryBuilderClasses.actionButtonContainer,
-                css(styles.actionButtonContainer),
-                classes?.actionButtonContainer,
                 queryBuilderClasses.topActionButtonContainer,
+                css(styles.actionButtonContainer),
                 css(styles.topActionButtonContainer),
+                classes?.actionButtonContainer,
                 classes?.topActionButtonContainer
               )}
             >

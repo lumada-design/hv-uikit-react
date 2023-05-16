@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { HvBox } from "@core/components";
@@ -51,44 +50,39 @@ export const HvCard = ({
 }: HvCardProps) => {
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvBox
           aria-selected={selectable ? selected : undefined}
-          className={clsx(
+          className={cx(
+            "HvIsCardGridElement",
+            cardClasses.root,
+            selectable && cardClasses.selectable,
+            selected && cardClasses.selected,
             css(styles.root),
             css({
               backgroundColor:
                 (bgcolor && theme.colors[bgcolor]) ||
                 theme.card.backgroundColor,
             }),
-            "HvIsCardGridElement",
-            cardClasses.root,
-            classes?.root,
+            selectable && css(styles.selectable),
+            selected && css(styles.selected),
             className,
-            selectable &&
-              clsx(
-                css(styles.selectable),
-                cardClasses.selectable,
-                classes?.selectable
-              ),
-            selected &&
-              clsx(
-                css(styles.selected),
-                cardClasses.selected,
-                classes?.selected
-              )
+            classes?.root,
+            selectable && css(styles.selectable),
+            selected && css(styles.selected)
           )}
           {...others}
         >
           <div
-            className={clsx(
-              css(styles.semanticContainer),
+            className={cx(
               cardClasses.semanticContainer,
+              css(styles.semanticContainer),
               classes?.semanticContainer
             )}
           >
             <div
-              className={clsx(
+              className={cx(
+                cardClasses.semanticBar,
                 css(styles.semanticBar),
                 css({
                   height: selected ? 4 : 2,
@@ -99,16 +93,11 @@ export const HvCard = ({
                         : theme.colors.atmo4
                       : theme.colors[statusColor],
                 }),
-                cardClasses.semanticBar,
                 classes?.semanticBar
               )}
             />
             <div
-              className={clsx(
-                css(styles.icon),
-                cardClasses.icon,
-                classes?.icon
-              )}
+              className={cx(cardClasses.icon, css(styles.icon), classes?.icon)}
             >
               {icon}
             </div>

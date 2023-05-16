@@ -3,7 +3,6 @@ import horizontalScrollListItemClasses, {
   HvHorizontalScrollListItemClasses,
 } from "./horizontalScrollListItemClasses";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import { setId } from "@core/utils";
 import { HvTypographyProps } from "@core/components";
 import { styles } from "./HorizontalScrollListItem.styles";
@@ -49,14 +48,14 @@ export const HvHorizontalScrollListItem = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <li
           id={id}
-          className={clsx(
-            className,
-            classes?.root,
+          className={cx(
             horizontalScrollListItemClasses.root,
-            css(styles.root)
+            css(styles.root),
+            className,
+            classes?.root
           )}
           aria-current={selected}
         >
@@ -66,26 +65,23 @@ export const HvHorizontalScrollListItem = ({
             tabIndex={0}
             onClick={onClick}
             onKeyDown={onKeyDown}
-            className={clsx(
-              classes?.button,
+            className={cx(
               horizontalScrollListItemClasses.button,
-              css(styles.button)
+              css(styles.button),
+              classes?.button
             )}
             aria-labelledby={labelId}
             {...others}
           >
             <Tooltip
               id={labelId}
-              className={clsx(
-                classes?.text,
+              className={cx(
                 horizontalScrollListItemClasses.text,
+                selected && horizontalScrollListItemClasses.selected,
                 css(styles.text),
-                selected &&
-                  clsx(
-                    classes?.selected,
-                    horizontalScrollListItemClasses.selected,
-                    css(styles.selected)
-                  )
+                selected && css(styles.selected),
+                classes?.text,
+                selected && classes?.selected
               )}
               variant={variant}
             >

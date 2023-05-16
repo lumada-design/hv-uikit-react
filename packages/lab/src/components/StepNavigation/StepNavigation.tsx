@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -120,18 +119,18 @@ export const HvStepNavigation = ({
 
     return (
       <ClassNames key={`separator-${title}`}>
-        {({ css }) => (
+        {({ css, cx }) => (
           <StyledLi
             aria-hidden
-            className={clsx(
-              css(styles.separator),
+            className={cx(
               stepNavigationClasses.separator,
+              css(styles.separator),
               classes?.separator
             )}
           >
             <div
               aria-label={`separator-${title}`}
-              className={clsx(separatorClassName)}
+              className={separatorClassName}
             />
           </StyledLi>
         )}
@@ -159,11 +158,11 @@ export const HvStepNavigation = ({
         };
         const stepElement = (
           <ClassNames key={`step-${title}`}>
-            {({ css }) => (
+            {({ css, cx }) => (
               <StepContainer
-                className={clsx(
-                  css(styles.li),
+                className={cx(
                   stepNavigationClasses.li,
+                  css(styles.li),
                   classes?.li
                 )}
               >
@@ -182,9 +181,9 @@ export const HvStepNavigation = ({
                   >
                     <div aria-label={`step-container-${title}`}>
                       <Step
-                        className={clsx(
-                          css(styles.li),
+                        className={cx(
                           stepNavigationClasses.li,
+                          css(styles.li),
                           classes?.li
                         )}
                       >
@@ -222,11 +221,11 @@ export const HvStepNavigation = ({
 
     return (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <ol
-            className={clsx(
-              css(styles.ol),
+            className={cx(
               stepNavigationClasses.ol,
+              css(styles.ol),
               classes?.ol
             )}
           >
@@ -290,11 +289,11 @@ export const HvStepNavigation = ({
   const getTitles = (getTitleProps) =>
     hasTitles ? (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <div
-            className={clsx(
-              css(styles.titles),
+            className={cx(
               stepNavigationClasses.titles,
+              css(styles.titles),
               classes?.titles
             )}
           >
@@ -330,18 +329,18 @@ export const HvStepNavigation = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <StepNavigation
           {...{
             numSteps: steps.length,
             stepSize: stepSizeKey,
             getTitles,
             getDynamicValues,
-            className: clsx(
-              className,
+            className: cx(
               stepNavigationClasses.root,
-              classes?.root,
-              css(styles.root)
+              css(styles.root),
+              className,
+              classes?.root
             ),
             ...others,
           }}

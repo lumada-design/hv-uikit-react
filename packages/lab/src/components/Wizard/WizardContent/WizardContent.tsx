@@ -1,6 +1,5 @@
 import { ClassNames } from "@emotion/react";
 import { HvBaseProps, HvDialogContent } from "@hitachivantara/uikit-react-core";
-import { clsx } from "clsx";
 import wizardContentClasses, {
   HvWizardContentClasses,
 } from "./wizardContentClasses";
@@ -126,12 +125,12 @@ export const HvWizardContent = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <div
-          className={clsx(
-            classes?.summaryRef,
+          className={cx(
             wizardContentClasses.summaryRef,
-            css(styles.summaryRef)
+            css(styles.summaryRef),
+            classes?.summaryRef
           )}
           ref={(el) => {
             containerRef(el);
@@ -142,17 +141,17 @@ export const HvWizardContent = ({
         >
           {summary !== null && (
             <div
-              className={clsx(
-                classes?.summarySticky,
+              className={cx(
                 wizardContentClasses.summarySticky,
-                css(styles.summarySticky)
+                css(styles.summarySticky),
+                classes?.summarySticky
               )}
             >
               <div
-                className={clsx(
-                  classes?.summaryContainer,
+                className={cx(
                   wizardContentClasses.summaryContainer,
-                  css(styles.summaryContainer)
+                  css(styles.summaryContainer),
+                  classes?.summaryContainer
                 )}
                 style={{
                   left: summaryLeft,
@@ -166,16 +165,13 @@ export const HvWizardContent = ({
             </div>
           )}
           <HvDialogContent
-            className={clsx(
-              classes?.contentContainer,
+            className={cx(
               wizardContentClasses.contentContainer,
+              fixedHeight && wizardContentClasses.fixedHeight,
               css(styles.contentContainer),
-              fixedHeight &&
-                clsx(
-                  classes?.fixedHeight,
-                  wizardContentClasses.fixedHeight,
-                  css(styles.fixedHeight)
-                )
+              fixedHeight && css(styles.fixedHeight),
+              classes?.contentContainer,
+              fixedHeight && classes?.fixedHeight
             )}
             indentContent
           >

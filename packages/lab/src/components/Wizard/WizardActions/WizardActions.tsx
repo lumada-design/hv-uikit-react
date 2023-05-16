@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import {
   HvBaseProps,
   HvButton,
@@ -101,22 +100,22 @@ export const HvWizardActions = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvDialogActions
-          className={clsx(
-            classes?.actionsContainer,
+          className={cx(
             wizardActionsClasses.actionsContainer,
-            css(styles.actionsContainer)
+            css(styles.actionsContainer),
+            classes?.actionsContainer
           )}
         >
           <HvGrid>
             <HvButton
               variant="secondaryGhost"
               onClick={handleClose}
-              className={clsx(
-                classes?.buttonWidth,
+              className={cx(
                 wizardActionsClasses.buttonWidth,
-                css(styles.buttonWidth)
+                css(styles.buttonWidth),
+                classes?.buttonWidth
               )}
             >
               {`${labels.cancel ?? "Cancel"}`}
@@ -125,10 +124,10 @@ export const HvWizardActions = ({
               <HvButton
                 variant="secondaryGhost"
                 disabled={isLastPage}
-                className={clsx(
-                  classes?.buttonWidth,
+                className={cx(
                   wizardActionsClasses.buttonWidth,
-                  css(styles.buttonWidth)
+                  css(styles.buttonWidth),
+                  classes?.buttonWidth
                 )}
                 onClick={handleSkip}
               >
@@ -137,18 +136,18 @@ export const HvWizardActions = ({
             )}
           </HvGrid>
           <HvGrid
-            className={clsx(
-              classes?.buttonsContainer,
+            className={cx(
               wizardActionsClasses.buttonsContainer,
-              css(styles.buttonsContainer)
+              css(styles.buttonsContainer),
+              classes?.buttonsContainer
             )}
           >
             <HvButton
               variant="secondaryGhost"
-              className={clsx(
-                classes?.buttonWidth,
+              className={cx(
                 wizardActionsClasses.buttonWidth,
-                css(styles.buttonWidth)
+                css(styles.buttonWidth),
+                classes?.buttonWidth
               )}
               disabled={tab <= 0}
               onClick={() => setTab((t) => t - 1)}
@@ -159,10 +158,10 @@ export const HvWizardActions = ({
             {isLastPage ? (
               <HvButton
                 variant="primary"
-                className={clsx(
-                  classes?.buttonWidth,
+                className={cx(
                   wizardActionsClasses.buttonWidth,
-                  css(styles.buttonWidth)
+                  css(styles.buttonWidth),
+                  classes?.buttonWidth
                 )}
                 disabled={loading || !canSubmit}
                 onClick={handleSubmitInternal}
@@ -172,13 +171,13 @@ export const HvWizardActions = ({
             ) : (
               <HvButton
                 variant="secondaryGhost"
-                className={clsx(
-                  classes?.buttonWidth,
+                className={cx(
                   wizardActionsClasses.buttonWidth,
-                  css(styles.buttonWidth),
-                  classes?.buttonSpacing,
                   wizardActionsClasses.buttonSpacing,
-                  css(styles.buttonSpacing)
+                  css(styles.buttonWidth),
+                  css(styles.buttonSpacing),
+                  classes?.buttonWidth,
+                  classes?.buttonSpacing
                 )}
                 onClick={() => setTab((t) => t + 1)}
                 disabled={!skippable && !context?.[tab]?.valid}

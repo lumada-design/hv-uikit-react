@@ -1,6 +1,5 @@
 import { ClassNames } from "@emotion/react";
 import { HvBaseProps, HvDialog } from "@hitachivantara/uikit-react-core";
-import { clsx } from "clsx";
 import wizardContainerClasses, {
   HvWizardContainerClasses,
 } from "./wizardContainerClasses";
@@ -29,25 +28,21 @@ export const HvWizardContainer = ({
 }: HvWizardContainerProps) => {
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvDialog
           classes={{
-            closeButton: clsx(
-              classes?.closeButton,
+            closeButton: cx(
               wizardContainerClasses.closeButton,
-              css(styles.closeButton)
+              css(styles.closeButton),
+              classes?.closeButton
             ),
-            paper: clsx(
-              classes?.paper,
+            paper: cx(
               wizardContainerClasses.paper,
-              css(styles.paper)
+              css(styles.paper),
+              classes?.paper
             ),
           }}
-          className={clsx(
-            className,
-            classes?.root,
-            wizardContainerClasses.root
-          )}
+          className={cx(wizardContainerClasses.root, className, classes?.root)}
           open={open}
           onClose={handleClose}
           {...others}

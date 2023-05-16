@@ -7,7 +7,7 @@ exports[`StepNavigation > should render correctly 1`] = `
       style="margin: 0px;"
     >
       <ol
-        class="css-fg3xwr HvStepNavigation-ol"
+        class="HvStepNavigation-ol css-fg3xwr"
       >
         <li
           class="HvStepNavigation-li css-6715mb-styledLi e1wrrltm3"
@@ -83,7 +83,6 @@ exports[`StepNavigation > should render correctly 1`] = `
         >
           <div
             aria-label="separator-Completed"
-            class=""
           />
         </li>
         <li
@@ -158,7 +157,6 @@ exports[`StepNavigation > should render correctly 1`] = `
         >
           <div
             aria-label="separator-Failed"
-            class=""
           />
         </li>
         <li
@@ -228,7 +226,6 @@ exports[`StepNavigation > should render correctly 1`] = `
         >
           <div
             aria-label="separator-Pending"
-            class=""
           />
         </li>
         <li
@@ -283,7 +280,6 @@ exports[`StepNavigation > should render correctly 1`] = `
         >
           <div
             aria-label="separator-Current"
-            class=""
           />
         </li>
         <li
@@ -336,7 +332,6 @@ exports[`StepNavigation > should render correctly 1`] = `
         >
           <div
             aria-label="separator-Enabled"
-            class=""
           />
         </li>
         <li

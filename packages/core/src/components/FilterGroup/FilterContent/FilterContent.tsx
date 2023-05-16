@@ -20,7 +20,6 @@ import filterGroupContentClasses, {
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { useContext, useMemo, useRef, useState } from "react";
 import { Filters } from "@hitachivantara/uikit-react-icons";
-import { clsx } from "clsx";
 import { HvFilterGroupCounter } from "../Counter";
 import { ClassNames } from "@emotion/react";
 import { HvFilterGroupLeftPanel } from "../LeftPanel";
@@ -130,26 +129,26 @@ export const HvFilterGroupContent = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvBaseDropdown
           id={setId(id, "dropdown")}
           role="combobox"
           classes={{
-            root: clsx(classes?.dropdown, filterGroupContentClasses.dropdown),
-            panel: clsx(
-              classes?.panel,
+            root: cx(filterGroupContentClasses.dropdown, classes?.dropdown),
+            panel: cx(
               filterGroupContentClasses.panel,
-              css(styles.panel)
+              css(styles.panel),
+              classes?.panel
             ),
-            selection: clsx(
-              classes?.baseDropdownSelection,
+            selection: cx(
               filterGroupContentClasses.baseDropdownSelection,
-              css(styles.baseDropdownSelection)
+              css(styles.baseDropdownSelection),
+              classes?.baseDropdownSelection
             ),
-            header: clsx(
-              classes?.header,
+            header: cx(
               filterGroupContentClasses.header,
-              css(styles.header)
+              css(styles.header),
+              classes?.header
             ),
           }}
           disabled={disabled}
@@ -183,38 +182,38 @@ export const HvFilterGroupContent = ({
         >
           <div ref={focusTarget} tabIndex={-1} />
           <div
-            className={clsx(
-              classes?.root,
+            className={cx(
               filterGroupContentClasses.root,
-              css(styles.root)
+              css(styles.root),
+              classes?.root
             )}
             style={{ height }}
           >
             <HvFilterGroupLeftPanel
               id={id}
-              className={clsx(
-                classes?.leftSidePanel,
+              className={cx(
                 filterGroupContentClasses.leftSidePanel,
-                css(styles.leftSidePanel)
+                css(styles.leftSidePanel),
+                classes?.leftSidePanel
               )}
               emptyElement={leftEmptyElement}
             />
             <HvFilterGroupRightPanel
               id={id}
-              className={clsx(
-                classes?.rightSidePanel,
+              className={cx(
                 filterGroupContentClasses.rightSidePanel,
-                css(styles.rightSidePanel)
+                css(styles.rightSidePanel),
+                classes?.rightSidePanel
               )}
               emptyElement={rightEmptyElement}
               labels={labels}
             />
           </div>
           <HvActionBar
-            className={clsx(
-              classes?.actionBar,
+            className={cx(
               filterGroupContentClasses.actionBar,
-              css(styles.actionBar)
+              css(styles.actionBar),
+              classes?.actionBar
             )}
           >
             <HvButton
@@ -231,10 +230,10 @@ export const HvFilterGroupContent = ({
             </HvButton>
             <div
               aria-hidden="true"
-              className={clsx(
-                classes?.space,
+              className={cx(
                 filterGroupContentClasses.space,
-                css(styles.space)
+                css(styles.space),
+                classes?.space
               )}
             >
               &nbsp;
@@ -246,7 +245,7 @@ export const HvFilterGroupContent = ({
                 activeTheme?.filterGroup.applyButtonVariant as HvButtonVariant
               }
               onClick={onApplyHandler}
-              className={clsx(
+              className={cx(
                 filterGroupContentClasses.applyButton,
                 css(styles.applyButton),
                 classes?.applyButton

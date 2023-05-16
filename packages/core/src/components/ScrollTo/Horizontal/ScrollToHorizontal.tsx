@@ -3,7 +3,6 @@ import scrollToHorizontalClasses, {
   HvScrollToHorizontalClasses,
 } from "./scrollToHorizontalClasses";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import { useTheme, useUniqueId } from "@core/hooks";
 import { styles } from "./ScrollToHorizontal.styles";
 import { useScrollTo } from "../useScrollTo";
@@ -133,19 +132,19 @@ export const HvScrollToHorizontal = ({
   const NotSelected = useCallback(() => {
     return (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <div
-            className={clsx(
-              classes?.notSelectedRoot,
+            className={cx(
               scrollToHorizontalClasses.notSelectedRoot,
-              css(styles.notSelectedRoot)
+              css(styles.notSelectedRoot),
+              classes?.notSelectedRoot
             )}
           >
             <div
-              className={clsx(
-                classes?.notSelected,
+              className={cx(
                 scrollToHorizontalClasses.notSelected,
-                css(styles.notSelected)
+                css(styles.notSelected),
+                classes?.notSelected
               )}
             />
           </div>
@@ -157,14 +156,14 @@ export const HvScrollToHorizontal = ({
   const Selected = useCallback(() => {
     return (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <CurrentStep
             height={activeTheme?.scrollTo.dotSelectedSize}
             width={activeTheme?.scrollTo.dotSelectedSize}
-            className={clsx(
-              classes?.selected,
+            className={cx(
               scrollToHorizontalClasses.selected,
-              css(styles.selected)
+              css(styles.selected),
+              classes?.selected
             )}
           />
         )}
@@ -201,12 +200,12 @@ export const HvScrollToHorizontal = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <ol
-          className={clsx(
-            className,
-            classes?.root,
+          className={cx(
             scrollToHorizontalClasses.root,
+            position === "sticky" && scrollToHorizontalClasses.positionSticky,
+            position === "fixed" && scrollToHorizontalClasses.positionFixed,
             css(styles.root),
             css({
               width:
@@ -228,18 +227,12 @@ export const HvScrollToHorizontal = ({
                 activeTheme?.scrollTo.backgroundColorOpacity
               ),
             }),
-            position === "sticky" &&
-              clsx(
-                classes?.positionSticky,
-                scrollToHorizontalClasses.positionSticky,
-                css(styles.positionSticky)
-              ),
-            position === "fixed" &&
-              clsx(
-                classes?.positionFixed,
-                scrollToHorizontalClasses.positionFixed,
-                css(styles.positionFixed)
-              )
+            position === "sticky" && css(styles.positionSticky),
+            position === "fixed" && css(styles.positionFixed),
+            className,
+            classes?.root,
+            position === "sticky" && classes?.positionSticky,
+            position === "fixed" && classes?.positionFixed
           )}
           id={elementId}
           {...others}

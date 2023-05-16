@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { HvBaseProps } from "@hitachivantara/uikit-react-core";
 import { StyledButton } from "./Dot.styles";
 import dotClasses, { HvDotClasses } from "./dotClasses";
@@ -30,12 +29,13 @@ export const HvDot = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <StyledButton
-          className={clsx(
-            className,
-            classes?.root,
+          className={cx(
             dotClasses.root,
+            state === "Current" && dotClasses.active,
+            (disabled ?? ["Current", "Disabled"].includes(state)) &&
+              dotClasses.ghostDisabled,
             css({
               backgroundColor: getColor(state, theme),
               width: dotSize,
@@ -44,9 +44,11 @@ export const HvDot = ({
                 backgroundColor: getColor(state, theme),
               },
             }),
-            state === "Current" && clsx(dotClasses.active, classes?.active),
+            className,
+            classes?.root,
+            state === "Current" && classes?.active,
             (disabled ?? ["Current", "Disabled"].includes(state)) &&
-              clsx(dotClasses.ghostDisabled, classes?.ghostDisabled)
+              classes?.ghostDisabled
           )}
           aria-label={`step-${title}`}
           icon

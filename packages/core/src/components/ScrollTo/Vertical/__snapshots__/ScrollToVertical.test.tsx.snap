@@ -3,7 +3,7 @@
 exports[`ScrollToVertical > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToVertical-root hv-uikit-css-1qyiqv5 hv-uikit-css-mnhjhi"
+    class="HvScrollToVertical-root hv-uikit-css-1iz8oef"
     id="hvVerticalScrollto2"
   >
     <li

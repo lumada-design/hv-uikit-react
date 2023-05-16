@@ -3,7 +3,7 @@
 exports[`ScrollToHorizontal > should render correctly 1`] = `
 <div>
   <ol
-    class="HvScrollToHorizontal-root hv-uikit-css-4hrf9l hv-uikit-css-h74ip1"
+    class="HvScrollToHorizontal-root hv-uikit-css-jnv3q4"
     id="hvHorizontalScrollto2"
   >
     <li
@@ -24,7 +24,7 @@ exports[`ScrollToHorizontal > should render correctly 1`] = `
           style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
         >
           <div
-            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-label hv-uikit-css-119jq4f-getStyledComponent e1tnpalo0"
+            class="HvHorizontalScrollListItem-text HvHorizontalScrollListItem-selected HvTypography-root HvTypography-label hv-uikit-css-1ofmnzo-getStyledComponent e1tnpalo0"
             id="hvHorizontalScrollto2-item-0-label"
           >
             <p>

@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { ClassNames } from "@emotion/react";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { HvBaseProps } from "@core/types";
@@ -116,29 +115,29 @@ export const HvInlineEditor = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <div
-          className={clsx(
-            className,
+          className={cx(
             inlineEditorClasses.root,
-            classes?.root,
-            css(styles.root)
+            css(styles.root),
+            className,
+            classes?.root
           )}
         >
           {editMode ? (
             <InputComponent
               inputRef={inputRef}
               classes={{
-                root: clsx(classes?.inputRoot, inlineEditorClasses.inputRoot),
-                input: clsx(
-                  classes?.input,
+                root: cx(inlineEditorClasses.inputRoot, classes?.inputRoot),
+                input: cx(
                   inlineEditorClasses.input,
-                  css(styles.input)
+                  css(styles.input),
+                  classes?.input
                 ),
-                inputBorderContainer: clsx(
-                  classes?.inputBorderContainer,
+                inputBorderContainer: cx(
                   inlineEditorClasses.inputBorderContainer,
-                  css(styles.inputBorderContainer)
+                  css(styles.inputBorderContainer),
+                  classes?.inputBorderContainer
                 ),
               }}
               inputProps={{
@@ -157,16 +156,15 @@ export const HvInlineEditor = ({
             <HvButton
               variant="secondaryGhost"
               overrideIconColors={false}
-              className={clsx(
-                classes?.button,
+              className={cx(
                 inlineEditorClasses.button,
+                parseInt(lineHeight as string, 10) >= 28 &&
+                  inlineEditorClasses.largeText,
                 css(styles.button),
                 parseInt(lineHeight as string, 10) >= 28 &&
-                  clsx(
-                    classes?.largeText,
-                    inlineEditorClasses.largeText,
-                    css(styles.largeText)
-                  )
+                  css(styles.largeText),
+                classes?.button,
+                parseInt(lineHeight as string, 10) >= 28 && classes?.largeText
               )}
               onClick={handleClick}
               {...buttonProps}
@@ -174,16 +172,13 @@ export const HvInlineEditor = ({
               <HvTypography
                 variant={variant}
                 noWrap
-                className={clsx(
-                  classes?.text,
+                className={cx(
                   inlineEditorClasses.text,
+                  !value && inlineEditorClasses.textEmpty,
                   css(styles.text),
-                  !value &&
-                    clsx(
-                      classes?.textEmpty,
-                      inlineEditorClasses.textEmpty,
-                      css(styles.textEmpty)
-                    )
+                  !value && css(styles.textEmpty),
+                  classes?.text,
+                  !value && classes?.textEmpty
                 )}
                 {...typographyProps}
               >
@@ -192,16 +187,13 @@ export const HvInlineEditor = ({
               <Edit
                 color="secondary_60"
                 role="presentation"
-                className={clsx(
-                  classes?.icon,
+                className={cx(
                   inlineEditorClasses.icon,
+                  showIcon && inlineEditorClasses.iconVisible,
                   css(styles.icon),
-                  showIcon &&
-                    clsx(
-                      classes?.iconVisible,
-                      inlineEditorClasses.iconVisible,
-                      css(styles.iconVisible)
-                    )
+                  showIcon && css(styles.iconVisible),
+                  classes?.icon,
+                  showIcon && classes?.iconVisible
                 )}
               />
             </HvButton>
