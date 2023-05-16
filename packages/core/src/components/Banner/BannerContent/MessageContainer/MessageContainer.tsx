@@ -1,15 +1,15 @@
-import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
-import { HvActionGeneric, HvActionsGeneric } from "@core/components";
+import {
+  HvActionGeneric,
+  HvActionsGeneric,
+  HvTypography,
+} from "@core/components";
 import messageContainerClasses, {
   HvMessageContainerClasses,
 } from "./messageContainerClasses";
-import {
-  StyledIconContainer,
-  StyledTypography,
-  StyledMessageContainer,
-} from "./MessageContainer.styles";
 import { setId } from "@core/utils";
+import { ClassNames } from "@emotion/react";
+import { styles } from "./MessageContainer.styles";
 
 export interface HvMessageContainerProps extends HvBaseProps {
   /** Icon to be presented. */
@@ -37,39 +37,49 @@ export const HvMessageContainer = ({
   message,
 }: HvMessageContainerProps) => {
   return (
-    <>
-      {icon && (
-        <StyledIconContainer
-          className={clsx(
-            messageContainerClasses.iconContainer,
-            classes?.iconContainer
+    <ClassNames>
+      {({ css, cx }) => (
+        <>
+          {icon && (
+            <div
+              className={cx(
+                messageContainerClasses.iconContainer,
+                css(styles.iconContainer),
+                classes?.iconContainer
+              )}
+            >
+              {icon}
+            </div>
           )}
-        >
-          {icon}
-        </StyledIconContainer>
-      )}
-      <StyledTypography
-        id={setId(id, "message-text")}
-        className={clsx(messageContainerClasses.message, classes?.message)}
-      >
-        {message}
-      </StyledTypography>
-      {actionsOnMessage && (
-        <StyledMessageContainer
-          id={setId(id, "message-actions")}
-          className={clsx(
-            messageContainerClasses.actionMessageContainer,
-            classes?.actionMessageContainer
+          <HvTypography
+            id={setId(id, "message-text")}
+            className={cx(
+              messageContainerClasses.message,
+              css(styles.message),
+              classes?.message
+            )}
+          >
+            {message}
+          </HvTypography>
+          {actionsOnMessage && (
+            <div
+              id={setId(id, "message-actions")}
+              className={cx(
+                messageContainerClasses.actionMessageContainer,
+                css(styles.actionMessageContainer),
+                classes?.actionMessageContainer
+              )}
+            >
+              <HvActionsGeneric
+                id={id}
+                category="semantic"
+                actions={actionsOnMessage}
+                actionsCallback={actionsOnMessageCallback}
+              />
+            </div>
           )}
-        >
-          <HvActionsGeneric
-            id={id}
-            category="semantic"
-            actions={actionsOnMessage}
-            actionsCallback={actionsOnMessageCallback}
-          />
-        </StyledMessageContainer>
+        </>
       )}
-    </>
+    </ClassNames>
   );
 };

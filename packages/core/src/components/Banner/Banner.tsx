@@ -1,7 +1,6 @@
-import { clsx } from "clsx";
 import { useCallback } from "react";
 import Slide from "@mui/material/Slide";
-import {
+import Snackbar, {
   SnackbarProps as MuiSnackbarProps,
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
@@ -9,12 +8,13 @@ import capitalize from "lodash/capitalize";
 import { HvActionGeneric } from "@core/components";
 import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
-import { StyledSnackbar } from "./Banner.styles";
+import { styles } from "./Banner.styles";
 import bannerClasses, { HvBannerClasses } from "./bannerClasses";
 import {
   HvBannerContent,
   HvBannerContentProps,
 } from "./BannerContent/BannerContent";
+import { ClassNames } from "@emotion/react";
 
 export type HvBannerVariant = "success" | "warning" | "error" | "default";
 
@@ -103,42 +103,53 @@ export const HvBanner = ({
   );
 
   return (
-    <StyledSnackbar
-      style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]}
-      className={className}
-      id={id}
-      classes={{
-        root: open
-          ? clsx(bannerClasses.root, classes?.root)
-          : clsx(bannerClasses.rootClosed, classes?.rootClosed),
-        anchorOriginTopCenter: clsx(
-          bannerClasses.anchorOriginTopCenter,
-          classes?.anchorOriginTopCenter
-        ),
-        anchorOriginBottomCenter: clsx(
-          bannerClasses.anchorOriginBottomCenter,
-          classes?.anchorOriginBottomCenter
-        ),
-      }}
-      anchorOrigin={anchorOriginBanner}
-      TransitionComponent={SlideTransition}
-      open={open}
-      $isOpen={open}
-      transitionDuration={transitionDuration}
-      {...others}
-    >
-      <HvBannerContent
-        id={setId(id, "content")}
-        content={label}
-        variant={variant}
-        customIcon={customIcon}
-        showIcon={showIcon}
-        actions={actions}
-        actionsCallback={actionsCallback}
-        actionsPosition={actionsPosition}
-        onClose={onClose}
-        {...bannerContentProps}
-      />
-    </StyledSnackbar>
+    <ClassNames>
+      {({ css, cx }) => (
+        <Snackbar
+          id={id}
+          open={open}
+          className={cx(css(bannerClasses.root), className)}
+          classes={{
+            root: cx(
+              open
+                ? cx(bannerClasses.root, css(styles.root), classes?.root)
+                : cx(
+                    bannerClasses.rootClosed,
+                    css(styles.rootClosed),
+                    classes?.rootClosed
+                  )
+            ),
+            anchorOriginTopCenter: cx(
+              bannerClasses.anchorOriginTopCenter,
+              css(styles.anchorOriginTopCenter),
+              classes?.anchorOriginTopCenter
+            ),
+            anchorOriginBottomCenter: cx(
+              bannerClasses.anchorOriginBottomCenter,
+              css(styles.anchorOriginBottomCenter),
+              classes?.anchorOriginBottomCenter
+            ),
+          }}
+          style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]}
+          anchorOrigin={anchorOriginBanner}
+          TransitionComponent={SlideTransition}
+          transitionDuration={transitionDuration}
+          {...others}
+        >
+          <HvBannerContent
+            id={setId(id, "content")}
+            content={label}
+            variant={variant}
+            customIcon={customIcon}
+            showIcon={showIcon}
+            actions={actions}
+            actionsCallback={actionsCallback}
+            actionsPosition={actionsPosition}
+            onClose={onClose}
+            {...bannerContentProps}
+          />
+        </Snackbar>
+      )}
+    </ClassNames>
   );
 };

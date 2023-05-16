@@ -1,15 +1,18 @@
-import styled from "@emotion/styled";
-import SnackbarContent, {
-  snackbarContentClasses,
-} from "@mui/material/SnackbarContent";
-import { transientOptions } from "@core/utils/transientOptions";
-import { HvBannerVariant } from "..";
+import { CSSInterpolation } from "@emotion/serialize";
 import { theme } from "@hitachivantara/uikit-styles";
 
-export const StyledRoot = styled("div")({
-  width: "100%",
-  position: "relative",
-  [`& .${snackbarContentClasses.root}`]: {
+export const styles: {
+  root: CSSInterpolation;
+  message: CSSInterpolation;
+  action: CSSInterpolation;
+  baseVariant: CSSInterpolation;
+  success: CSSInterpolation;
+  warning: CSSInterpolation;
+  error: CSSInterpolation;
+  default: CSSInterpolation;
+  outContainer: CSSInterpolation;
+} = {
+  root: {
     minWidth: "100%",
     position: "relative",
     display: "flex",
@@ -17,35 +20,35 @@ export const StyledRoot = styled("div")({
     boxShadow: "none",
     borderRadius: theme.radii.none,
   },
-  [`& .${snackbarContentClasses.message}`]: {
+  message: {
     display: "flex",
     alignItems: "center",
-    padding: `${theme.space.xs} 0`,
+    padding: theme.spacing(["xs", 0]),
     paddingLeft: theme.space.sm,
   },
-  [`& .${snackbarContentClasses.action}`]: {
-    padding: theme.space.xs,
+  action: {
+    padding: theme.spacing("xs"),
     marginRight: 0,
     flex: "0 0 auto",
     placeSelf: "stretch",
   },
-});
-
-export const StyledSnackbarContent = styled(
-  SnackbarContent,
-  transientOptions
-)(({ $variant }: { $variant: HvBannerVariant }) => ({
-  padding: 0,
-  ...($variant === "success" && {
+  baseVariant: {
+    padding: 0,
+  },
+  success: {
     backgroundColor: theme.colors.positive_20,
-  }),
-  ...($variant === "warning" && {
+  },
+  warning: {
     backgroundColor: theme.colors.warning_20,
-  }),
-  ...($variant === "error" && {
+  },
+  error: {
     backgroundColor: theme.colors.negative_20,
-  }),
-  ...($variant === "default" && {
+  },
+  default: {
     backgroundColor: theme.colors.neutral_20,
-  }),
-}));
+  },
+  outContainer: {
+    width: "100%",
+    position: "relative",
+  },
+};

@@ -1,6 +1,7 @@
-import { clsx } from "clsx";
 import { forwardRef } from "react";
-import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
+import SnackbarContent, {
+  SnackbarContentProps as MuiSnackbarContentProps,
+} from "@mui/material/SnackbarContent";
 import { HvBaseProps } from "@core/types";
 import { iconVariant } from "@core/utils";
 import {
@@ -13,7 +14,8 @@ import bannerContentClasses, {
 } from "./bannerContentClasses";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
-import { StyledRoot, StyledSnackbarContent } from "./BannerContent.styles";
+import { ClassNames } from "@emotion/react";
+import { styles } from "./BannerContent.styles";
 
 export interface HvBannerContentProps
   extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose">,
@@ -73,52 +75,58 @@ export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
       actionsPosition === "auto" ? "inline" : actionsPosition;
 
     return (
-      <StyledRoot
-        className={clsx(
-          bannerContentClasses.outContainer,
-          classes?.outContainer
+      <ClassNames>
+        {({ css, cx }) => (
+          <div
+            className={cx(
+              bannerContentClasses.outContainer,
+              css(styles.outContainer),
+              classes?.outContainer
+            )}
+          >
+            <SnackbarContent
+              ref={ref}
+              id={id}
+              classes={{
+                root: cx(css(styles.root), classes?.root),
+                message: cx(css(styles.message), classes?.message),
+                action: cx(css(styles.action), classes?.action),
+              }}
+              className={cx(
+                bannerContentClasses.baseVariant,
+                css(styles.baseVariant),
+                classes?.baseVariant,
+                bannerContentClasses[variant],
+                css(styles[variant]),
+                classes?.[variant]
+              )}
+              message={
+                <HvMessageContainer
+                  id={id}
+                  icon={icon}
+                  {...(effectiveActionsPosition === "inline" && {
+                    actionsOnMessage: actions,
+                    actionsOnMessageCallback: actionsCallback,
+                  })}
+                  message={content}
+                />
+              }
+              action={
+                <HvActionContainer
+                  id={id}
+                  onClose={onClose}
+                  {...(effectiveActionsPosition === "bottom-right" && {
+                    action: actions,
+                    actionCallback: actionsCallback,
+                  })}
+                  {...actionProps}
+                />
+              }
+              {...others}
+            />
+          </div>
         )}
-      >
-        <StyledSnackbarContent
-          ref={ref}
-          id={id}
-          classes={{
-            root: clsx(bannerContentClasses.root, classes?.root),
-            message: clsx(bannerContentClasses.message, classes?.message),
-            action: clsx(bannerContentClasses.action, classes?.action),
-          }}
-          className={clsx(
-            bannerContentClasses.baseVariant,
-            classes?.baseVariant,
-            bannerContentClasses[variant],
-            classes?.[variant]
-          )}
-          message={
-            <HvMessageContainer
-              id={id}
-              icon={icon}
-              {...(effectiveActionsPosition === "inline" && {
-                actionsOnMessage: actions,
-                actionsOnMessageCallback: actionsCallback,
-              })}
-              message={content}
-            />
-          }
-          action={
-            <HvActionContainer
-              id={id}
-              onClose={onClose}
-              {...(effectiveActionsPosition === "bottom-right" && {
-                action: actions,
-                actionCallback: actionsCallback,
-              })}
-              {...actionProps}
-            />
-          }
-          $variant={variant as HvBannerVariant}
-          {...others}
-        />
-      </StyledRoot>
+      </ClassNames>
     );
   }
 );
