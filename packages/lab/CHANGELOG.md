@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.2...@hitachivantara/uikit-react-lab@5.2.3) (2023-05-16)
+
+### Bug Fixes
+
+- **StepNavigation:** fix StepNavigation breaking when in the biggest breakpoint ([#3323](https://github.com/lumada-design/hv-uikit-react/issues/3323)) ([bc3b6d1](https://github.com/lumada-design/hv-uikit-react/commit/bc3b6d1ea96c9a6368b65ee8c6f82080a2ff53f7))
+- **Wizard:** fix exports of the Wizard component ([#3328](https://github.com/lumada-design/hv-uikit-react/issues/3328)) ([cee88b5](https://github.com/lumada-design/hv-uikit-react/commit/cee88b572973eec8ae6313fb28b3ed94f5645df9))
+
 ## [5.2.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.1...@hitachivantara/uikit-react-lab@5.2.2) (2023-05-05)
 
 ### Bug Fixes

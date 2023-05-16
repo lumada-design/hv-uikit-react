@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.5.0...@hitachivantara/uikit-react-core@5.6.0) (2023-05-16)
+
+### Bug Fixes
+
+- header design system inconsistencies ([#3326](https://github.com/lumada-design/hv-uikit-react/issues/3326)) ([0df6fce](https://github.com/lumada-design/hv-uikit-react/commit/0df6fcebfdec12544809b0e0ca42d1eb7b2942ca))
+
+### Features
+
+- **queryBuilder:** add query-builder component ([#3318](https://github.com/lumada-design/hv-uikit-react/issues/3318)) ([2770c65](https://github.com/lumada-design/hv-uikit-react/commit/2770c659f527c01c2e76332aec4cadcbc0b9430b))
+
 # [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.4.0...@hitachivantara/uikit-react-core@5.5.0) (2023-05-05)
 
 ### Bug Fixes
