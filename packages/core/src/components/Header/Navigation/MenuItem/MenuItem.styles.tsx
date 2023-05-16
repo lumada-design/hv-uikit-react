@@ -8,36 +8,55 @@ const hoverColor = theme.header.hoverColor;
 export const MenuItemLi = styled(
   "li",
   transientOptions
-)(({ $selected }: { $selected?: string }) => ({
+)(({ $selected, $isMenu }: { $selected: boolean; $isMenu: boolean }) => ({
   display: "inline",
   "& span": {
     color: theme.header.color,
   },
   "&:hover": {
-    "& > [role='button']": {
+    "& > a:first-child, div:first-child": {
       backgroundColor: hoverColor,
     },
     "&:focus-within": {
-      "& > [role='button']": {
+      "& > a:first-child, div:first-child": {
         backgroundColor: hoverColor,
       },
     },
   },
-  ...($selected === "selectedItem" && {
-    borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.selectedItemBorderTopColor}`,
-    borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
-    paddingTop: theme.header.selectedItemBorderBottomThickness,
-    height: "100%",
-    "& > div > span": {
-      color: theme.header.selectedItemColor,
-    },
-  }),
-  ...($selected === "notSelectedItem" && {
-    marginTop: theme.header.selectedItemBorderTopThickness,
-    marginBottom: theme.header.selectedItemBorderBottomThickness,
-    paddingTop: theme.header.selectedItemBorderBottomThickness,
-    height: `calc(100% - 4px)`,
-  }),
+  ...($selected &&
+    $isMenu && {
+      borderTop: `${theme.header.secondLevelSelectedItemBorderTopThickness} solid ${theme.header.secondLevelSelectedItemBorderTopColor}`,
+      borderBottom: `${theme.header.secondLevelSelectedItemBorderBottomThickness} solid ${theme.header.secondLevelSelectedItemBorderBottomColor}`,
+      paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
+      height: "100%",
+      "& > * > span": {
+        color: theme.header.selectedItemColor,
+      },
+    }),
+  ...($selected &&
+    !$isMenu && {
+      borderTop: `${theme.header.selectedItemBorderTopThickness} solid ${theme.header.selectedItemBorderTopColor}`,
+      borderBottom: `${theme.header.selectedItemBorderBottomThickness} solid ${theme.header.selectedItemBorderBottomColor}`,
+      paddingTop: theme.header.selectedItemBorderBottomThickness,
+      height: "100%",
+      "& > * > span": {
+        color: theme.header.selectedItemColor,
+      },
+    }),
+  ...(!$selected &&
+    !$isMenu && {
+      marginTop: theme.header.selectedItemBorderTopThickness,
+      marginBottom: theme.header.selectedItemBorderBottomThickness,
+      paddingTop: theme.header.selectedItemBorderBottomThickness,
+      height: `calc(100% - ${theme.header.selectedItemBorderTopThickness} - ${theme.header.selectedItemBorderBottomThickness})`,
+    }),
+  ...(!$selected &&
+    $isMenu && {
+      marginTop: theme.header.secondLevelSelectedItemBorderTopThickness,
+      marginBottom: theme.header.secondLevelSelectedItemBorderBottomThickness,
+      paddingTop: theme.header.secondLevelSelectedItemBorderBottomThickness,
+      height: `calc(100% - ${theme.header.secondLevelSelectedItemBorderTopThickness} - ${theme.header.secondLevelSelectedItemBorderBottomThickness})`,
+    }),
 }));
 
 export const MenuItemLabel = styled(

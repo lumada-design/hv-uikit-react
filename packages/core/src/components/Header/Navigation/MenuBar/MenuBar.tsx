@@ -5,6 +5,7 @@ import { HvBaseProps } from "@core/types";
 import { HvMenuItem } from "../MenuItem";
 import { SelectionContext } from "../utils/SelectionContext";
 import { MenuBarRoot, MenuBarUl } from "./MenuBar.styles";
+import headerMenuBarClasses from "./menuBarClasses";
 
 export interface HvMenuBarProps extends HvBaseProps<HTMLDivElement, "onClick"> {
   data: HvHeaderNavigationItemProp[];
@@ -28,10 +29,14 @@ export const HvMenuBar = ({
 
   return (
     <MenuBarRoot
-      className={clsx(className, isMenu && "hidden", isActive && "active")}
-      type={type}
-      hidden={isMenu}
-      active={isActive}
+      className={clsx(
+        className,
+        isMenu && headerMenuBarClasses.hidden,
+        isActive && headerMenuBarClasses.active
+      )}
+      $type={type}
+      $hidden={isMenu}
+      $active={isActive}
     >
       <MenuBarUl id={id} onFocus={() => {}}>
         {data.map((item: HvHeaderNavigationItemProp) => (

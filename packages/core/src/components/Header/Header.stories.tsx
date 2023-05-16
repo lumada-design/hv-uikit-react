@@ -79,6 +79,7 @@ export default {
   title: "Widgets/Header",
   component: HvHeader,
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
+  decorators: [(Story) => <div style={{ height: 150 }}>{Story()}</div>],
 };
 
 export const Main: StoryObj<HvHeaderProps> = {

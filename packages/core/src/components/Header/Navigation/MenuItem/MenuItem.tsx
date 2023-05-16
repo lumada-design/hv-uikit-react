@@ -86,7 +86,8 @@ export const HvMenuItem = ({ id, item, type, onClick }: MenuItemProps) => {
     <MenuItemLi
       id={id}
       key={item.label}
-      $selected={!isMenu && isSelected ? "selectedItem" : "notSelectedItem"}
+      $selected={isSelected ? true : false}
+      $isMenu={isMenu}
     >
       {itemHref ? (
         <MenuItemLink
