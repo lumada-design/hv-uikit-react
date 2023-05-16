@@ -320,6 +320,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   inlineEditor: {
     hoverBorderColor: "string",
     activeBorderColor: "string",
+    borderWidth: "string",
   },
   queryBuilder: {
     ruleSubGroupLeftConnectorPosition: "string",

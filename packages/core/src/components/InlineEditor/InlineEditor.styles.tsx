@@ -11,14 +11,12 @@ export const styles: Partial<
   root: {
     [`& .${baseInputClasses.inputRoot}.${inputClasses.inputRoot}`]: {
       height: "100%",
+      minHeight: "32px",
     },
   },
   inputBorderContainer: {
     top: "unset",
     bottom: 0,
-  },
-  input: {
-    padding: theme.spacing([0, "8px"]),
   },
   text: {
     overflow: "hidden",
@@ -30,47 +28,58 @@ export const styles: Partial<
     color: theme.typography.placeholderText.color,
   },
   button: {
-    padding: theme.spacing([0, "8px"]),
+    padding: theme.spacing(["6px", "8px", "5px", "8px"]),
+    minHeight: "32px",
+
     boxSizing: "border-box",
     cursor: "text",
     height: "100%",
     width: "100%",
     maxWidth: "100%",
     justifyContent: "flex-start",
+    alignItems: "center",
 
     backgroundColor: "transparent",
+    border: `${theme.inlineEditor.borderWidth} solid transparent`,
+
     "&:hover, &:focus": {
-      outline: `1px solid ${theme.inlineEditor.hoverBorderColor}`,
+      border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.hoverBorderColor}`,
       backgroundColor: "transparent",
+
       [`& .${inlineEditorClasses.icon}`]: {
         visibility: "visible",
       },
     },
+
     "&:active": {
-      outline: `1px solid ${theme.inlineEditor.activeBorderColor}`,
+      border: `${theme.inlineEditor.borderWidth} solid ${theme.inlineEditor.activeBorderColor}`,
       backgroundColor: "transparent",
+
       [`& .${inlineEditorClasses.icon}`]: {
         visibility: "visible",
       },
     },
+
     "& > div": {
       width: "100%",
     },
     "& > div > span": {
       width: "100%",
-      overflow: "hidden",
     },
   },
   icon: {
     cursor: "pointer",
     visibility: "hidden",
-    minWidth: 32,
     alignSelf: "center",
+    height: "16px",
+    width: "32px",
+    minWidth: "32px",
+
+    "& svg": {
+      margin: theme.spacing([0, "8px"]),
+    },
   },
   iconVisible: {
     visibility: "visible",
-  },
-  largeText: {
-    margin: theme.spacing([0, "8px"]),
   },
 };

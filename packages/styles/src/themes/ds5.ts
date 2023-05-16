@@ -479,6 +479,7 @@ const ds5 = makeTheme((theme: HvTheme) => ({
   inlineEditor: {
     hoverBorderColor: theme.colors.primary,
     activeBorderColor: theme.colors.secondary,
+    borderWidth: "1px",
   },
   queryBuilder: {
     ruleSubGroupLeftConnectorPosition: "-38px",
