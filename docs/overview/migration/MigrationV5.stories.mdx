@@ -23,6 +23,7 @@ Here's what there is to know about this migration:
 - [MUI packages](#mui-packages)
   - [Breaking changes in the theme object](#theme-object)
   - [Update styling and theme utilities](#update-utilities)
+- [Promoted components](#promoted-components)
 - [Renamed components and types](#renamed-components-types)
 - [Colors](#colors)
 - [Breaking changes and deprecated values in components](#breaking-changes-deprecated-components)
@@ -62,6 +63,7 @@ application at the moment since their development are still in progress. Over ti
 - The following components from `@hitachivantara/uikit-react-core` are missing:
   - Time picker
   - User preferences
+  - Query builder
 
 The `@hitachivantara/uikit-react-compat` and `@hitachivantara/uikit-common-themes` packages are **deprecated** in v5.
 
@@ -430,9 +432,24 @@ that can be consumed all over your code. Furthermore, your components can contin
 + export default CustomButton;
 ```
 
+## Promoted components <a id="promoted-components" />
+
+In v5.x the components below were promoted from the lab to the core package:
+
+- Inline editor
+- Time ago
+- Vertical navigation
+
+In order to use them, you'll need to update the necessary imports. Please find an example below.
+
+```diff
+-  import { HvTimeAgo } from "@hitachivantara/uikit-react-lab"
++  import { HvTimeAgo } from "@hitachivantara/uikit-react-core"
+```
+
 ## Renamed components and types <a id="renamed-components-types" />
 
-In v5.x, some components and types were renamed as detailed in the table below.
+In v5.x some components and types were renamed as detailed in the table below.
 
 | Type or component | v4.x                   | v5.x                       |
 | ----------------- | ---------------------- | -------------------------- |
