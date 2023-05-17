@@ -43,16 +43,17 @@
   "dependencies": {
     "@emotion/cache": "^11.10.5",
     "@hitachivantara/uikit-react-core": "^5.6.0",
-    "usehooks-ts": "^2.9.1",
-    "react-color": "^2.19.3"
+    "clsx": "^1.2.1",
+    "react-color": "^2.19.3",
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
+    "@types/react-color": "^2.17.5",
     "@types/react-dom": "^18.0.11",
     "@vitest/coverage-c8": "^0.29.7",
     "npm-run-all": "^4.1.5",
-    "tsc-alias": "^1.8.2",
-    "@types/react-color": "^2.17.5"
+    "tsc-alias": "^1.8.2"
   },
   "files": [
     "dist"
