@@ -7,11 +7,13 @@ import {
   HvGrid,
 } from "@hitachivantara/uikit-react-core";
 import { Backwards, Forwards } from "@hitachivantara/uikit-react-icons";
-import wizardActionsClasses, {
-  HvWizardActionsClasses,
-} from "./wizardActionsClasses";
 import { styles } from "./WizardActions.styles";
-import HvWizardContext, { HvWizardTabs } from "../WizardContext";
+import {
+  HvWizardContext,
+  HvWizardTabs,
+  wizardActionsClasses,
+  HvWizardActionsClasses,
+} from "..";
 
 export interface HvWizardActionsProps extends HvBaseProps {
   /** Function to handle the cancel button. */

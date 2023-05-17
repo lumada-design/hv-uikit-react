@@ -1,13 +1,18 @@
 import { HvBaseProps } from "@hitachivantara/uikit-react-core";
-import { HvStepNavigationProps } from "..";
 import { HvWizardClasses } from "./wizardClasses";
 import { ModalProps } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { HvWizardContainer } from "./WizardContainer";
-import { HvWizardTitle, HvWizardTitleProps } from "./WizardTitle";
-import { HvWizardContent } from "./WizardContent";
-import HvWizardContext, { HvWizardTabs } from "./WizardContext";
-import { HvWizardActions, HvWizardActionsProps } from "./WizardActions";
+import {
+  HvWizardContainer,
+  HvWizardContent,
+  HvWizardContext,
+  HvWizardTitle,
+  HvWizardTitleProps,
+  HvWizardTabs,
+  HvWizardActions,
+  HvWizardActionsProps,
+} from ".";
+import { HvStepNavigationProps } from "..";
 
 export interface HvWizardProps extends HvBaseProps {
   /** Current state of the Wizard. */

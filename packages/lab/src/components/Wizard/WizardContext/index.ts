@@ -1,2 +1,2 @@
-export { default } from "./WizardContext";
+export { default as HvWizardContext } from "./WizardContext";
 export * from "./WizardContext";
