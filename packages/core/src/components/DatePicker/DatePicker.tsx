@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ClassNames } from "@emotion/react";
 import styled from "@emotion/styled";
-import { clsx } from "clsx";
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
@@ -430,31 +429,31 @@ export const HvDatePicker = ({
    */
   const renderActions = () => (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvActionBar
           className={
             showClear
-              ? clsx(
+              ? cx(
                   datePickerClasses.actionContainer,
-                  classes?.actionContainer,
-                  css(styles.actionContainer)
+                  css(styles.actionContainer),
+                  classes?.actionContainer
                 )
               : ""
           }
         >
           {showClear && (
             <div
-              className={clsx(
+              className={cx(
                 datePickerClasses.leftContainer,
                 classes?.leftContainer
               )}
             >
               <HvButton
                 id={setId(id, "action", "clear")}
-                className={clsx(
+                className={cx(
                   datePickerClasses.action,
-                  classes?.action,
-                  css(styles.action)
+                  css(styles.action),
+                  classes?.action
                 )}
                 variant="primaryGhost"
                 onClick={handleClear}
@@ -464,17 +463,17 @@ export const HvDatePicker = ({
             </div>
           )}
           <div
-            className={clsx(
+            className={cx(
               datePickerClasses.rightContainer,
               classes?.rightContainer
             )}
           >
             <HvButton
               id={setId(id, "action", "apply")}
-              className={clsx(
+              className={cx(
                 datePickerClasses.action,
-                classes?.action,
-                css(styles.action)
+                css(styles.action),
+                classes?.action
               )}
               variant="primaryGhost"
               onClick={handleApply}
@@ -483,10 +482,10 @@ export const HvDatePicker = ({
             </HvButton>
             <HvButton
               id={setId(id, "action", "cancel")}
-              className={clsx(
+              className={cx(
                 datePickerClasses.action,
-                classes?.action,
-                css(styles.action)
+                css(styles.action),
+                classes?.action
               )}
               variant="primaryGhost"
               onClick={handleCancel}
@@ -541,7 +540,7 @@ export const HvDatePicker = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvFormElement
           id={id}
           name={name}
@@ -549,31 +548,31 @@ export const HvDatePicker = ({
           status={validationState}
           disabled={disabled}
           required={required}
-          className={clsx(
-            className,
+          className={cx(
             datePickerClasses.root,
-            classes?.root,
-            css(styles.root)
+            css(styles.root),
+            className,
+            classes?.root
           )}
           readOnly={readOnly}
           {...others}
         >
           {(hasLabel || hasDescription) && (
             <div
-              className={clsx(
+              className={cx(
                 datePickerClasses.labelContainer,
-                classes?.labelContainer,
-                css(styles.labelContainer)
+                css(styles.labelContainer),
+                classes?.labelContainer
               )}
             >
               {hasLabel && (
                 <HvLabel
                   id={setId(elementId, "label")}
                   label={label}
-                  className={clsx(
+                  className={cx(
                     datePickerClasses.label,
-                    classes?.label,
-                    css(styles.label)
+                    css(styles.label),
+                    classes?.label
                   )}
                 />
               )}
@@ -581,10 +580,10 @@ export const HvDatePicker = ({
               {hasDescription && (
                 <HvInfoMessage
                   id={setId(elementId, "description")}
-                  className={clsx(
+                  className={cx(
                     datePickerClasses.description,
-                    classes?.description,
-                    css(styles.description)
+                    css(styles.description),
+                    classes?.description
                   )}
                 >
                   {description}
@@ -595,27 +594,27 @@ export const HvDatePicker = ({
           <HvBaseDropdown
             role="combobox"
             classes={{
-              root: clsx(
+              root: cx(
                 datePickerClasses.dropdown,
-                classes?.dropdown,
-                css(styles.dropdown)
+                css(styles.dropdown),
+                classes?.dropdown
               ),
-              panel: clsx(
+              panel: cx(
                 datePickerClasses.panel,
-                classes?.panel,
-                css(styles.panel)
+                css(styles.panel),
+                classes?.panel
               ),
               header: isStateInvalid
-                ? clsx(
+                ? cx(
                     datePickerClasses.dropdownHeaderInvalid,
-                    classes?.dropdownHeaderInvalid,
-                    css(styles.dropdownHeaderInvalid)
+                    css(styles.dropdownHeaderInvalid),
+                    classes?.dropdownHeaderInvalid
                   )
                 : undefined,
-              headerOpen: clsx(
+              headerOpen: cx(
                 datePickerClasses.dropdownHeaderOpen,
-                classes?.dropdownHeaderOpen,
-                css(styles.dropdownHeaderOpen)
+                css(styles.dropdownHeaderOpen),
+                classes?.dropdownHeaderOpen
               ),
             }}
             readOnly={readOnly}
@@ -632,10 +631,10 @@ export const HvDatePicker = ({
             )}
             adornment={
               <Calendar
-                className={clsx(
+                className={cx(
                   datePickerClasses.icon,
-                  classes?.icon,
-                  css(styles.icon)
+                  css(styles.icon),
+                  classes?.icon
                 )}
                 color={disabled ? "secondary_80" : undefined}
               />
@@ -680,7 +679,7 @@ export const HvDatePicker = ({
             <HvWarningText
               id={setId(elementId, "error")}
               disableBorder
-              className={clsx(datePickerClasses.error, classes?.error)}
+              className={cx(datePickerClasses.error, classes?.error)}
             >
               {validationMessage}
             </HvWarningText>

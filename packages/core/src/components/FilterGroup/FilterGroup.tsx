@@ -11,7 +11,6 @@ import {
   HvFilterGroupContent,
   HvFilterGroupContentProps,
 } from "./FilterContent";
-import { clsx } from "clsx";
 import { useControlled, useLabels, useUniqueId } from "@core/hooks";
 import { styles } from "./FilterGroup.styles";
 import { setId } from "@core/utils";
@@ -171,7 +170,7 @@ export const HvFilterGroup = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvFormElement
           id={id}
           name={name}
@@ -179,15 +178,15 @@ export const HvFilterGroup = ({
           status={status}
           disabled={disabled}
           required={required}
-          className={clsx(className, classes?.root, filterGroupClasses.root)}
+          className={cx(filterGroupClasses.root, className, classes?.root)}
           {...others}
         >
           {(hasLabel || hasDescription) && (
             <div
-              className={clsx(
-                classes?.labelContainer,
+              className={cx(
                 filterGroupClasses.labelContainer,
-                css(styles.labelContainer)
+                css(styles.labelContainer),
+                classes?.labelContainer
               )}
             >
               {hasLabel && (
@@ -195,10 +194,10 @@ export const HvFilterGroup = ({
                   id={setId(elementId, "label")}
                   htmlFor={setId(elementId, "input")}
                   label={label}
-                  className={clsx(
-                    classes?.label,
+                  className={cx(
                     filterGroupClasses.label,
-                    css(styles.label)
+                    css(styles.label),
+                    classes?.label
                   )}
                 />
               )}
@@ -206,9 +205,9 @@ export const HvFilterGroup = ({
               {hasDescription && (
                 <HvInfoMessage
                   id={setId(elementId, "description")}
-                  className={clsx(
-                    classes?.description,
-                    filterGroupClasses.description
+                  className={cx(
+                    filterGroupClasses.description,
+                    classes?.description
                   )}
                 >
                   {description}
@@ -242,7 +241,7 @@ export const HvFilterGroup = ({
               <HvWarningText
                 id={setId(elementId, "error")}
                 disableBorder
-                className={clsx(classes?.error, filterGroupClasses.error)}
+                className={cx(filterGroupClasses.error, classes?.error)}
               >
                 {validationMessage}
               </HvWarningText>

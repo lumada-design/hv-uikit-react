@@ -3,7 +3,6 @@ import verticalScrollListItemClasses, {
   HvVerticalScrollListItemClasses,
 } from "./verticalScrollListItemClasses";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import { styles } from "./VerticalScrollListItem.styles";
 import { HvTypographyProps } from "@core/components";
 import { setId } from "@core/utils";
@@ -56,12 +55,12 @@ export const HvVerticalScrollListItem = ({
   const NotSelected = useCallback(() => {
     return (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <div
-            className={clsx(
-              classes?.notSelected,
+            className={cx(
               verticalScrollListItemClasses.notSelected,
-              css(styles.notSelected)
+              css(styles.notSelected),
+              classes?.notSelected
             )}
           />
         )}
@@ -80,14 +79,14 @@ export const HvVerticalScrollListItem = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <li
           id={id}
-          className={clsx(
-            className,
-            classes?.root,
+          className={cx(
             verticalScrollListItemClasses.root,
-            css(styles.root)
+            css(styles.root),
+            className,
+            classes?.root
           )}
           aria-current={selected}
         >
@@ -97,10 +96,10 @@ export const HvVerticalScrollListItem = ({
             tabIndex={0}
             onClick={onClick}
             onKeyDown={onKeyDown}
-            className={clsx(
-              classes?.button,
+            className={cx(
               verticalScrollListItemClasses.button,
-              css(styles.button)
+              css(styles.button),
+              classes?.button
             )}
             aria-label={ariaLabel}
             aria-labelledby={labelId}
@@ -108,10 +107,10 @@ export const HvVerticalScrollListItem = ({
           >
             <Tooltip
               id={labelId}
-              className={clsx(
-                classes?.text,
+              className={cx(
                 verticalScrollListItemClasses.text,
-                css(styles.text)
+                css(styles.text),
+                classes?.text
               )}
               variant={variant}
             >

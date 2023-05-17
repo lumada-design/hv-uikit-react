@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
 import { styles } from "./Content.styles";
 import MuiCardContent, {
@@ -28,14 +27,14 @@ export const HvCardContent = ({
 }: HvCardContentProps) => {
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <MuiCardContent
           id={id}
-          className={clsx(
-            css(styles.content),
-            classes?.content,
+          className={cx(
             cardContentClasses.content,
-            className
+            css(styles.content),
+            className,
+            classes?.content
           )}
           onClick={onClick}
           {...others}

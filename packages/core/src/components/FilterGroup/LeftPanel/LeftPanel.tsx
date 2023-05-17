@@ -5,7 +5,6 @@ import { setId, wrapperTooltip } from "@core/utils";
 import { HvFilterGroupCounter } from "../Counter";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./LeftPanel.styles";
-import { clsx } from "clsx";
 import filterGroupLeftPanelClasses, {
   HvFilterGroupLeftPanelClasses,
 } from "./leftPanelClasses";
@@ -28,7 +27,7 @@ export const HvFilterGroupLeftPanel = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvPanel id={setId(id, "leftPanel")} className={className}>
           {filterOptions.length > 0 ? (
             <HvListContainer
@@ -43,7 +42,7 @@ export const HvFilterGroupLeftPanel = ({
                   <HvListItem
                     id={group.id}
                     key={group.name}
-                    className={clsx(
+                    className={cx(
                       filterGroupLeftPanelClasses.listItem,
                       css(styles.listItem),
                       classes?.listItem

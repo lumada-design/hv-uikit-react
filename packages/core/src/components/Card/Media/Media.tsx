@@ -4,7 +4,6 @@ import MuiCardMedia, {
 import { styles } from "./Media.styles";
 import { HvBaseProps } from "@core/types";
 import cardMediaClasses, { HvCardMediaClasses } from "./mediaClasses";
-import { clsx } from "clsx";
 import { ImgHTMLAttributes } from "react";
 import { ClassNames } from "@emotion/react";
 
@@ -37,12 +36,12 @@ export const HvCardMedia = ({
 }: HvCardMediaProps) => {
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <MuiCardMedia
           id={id}
           classes={{
-            root: clsx(css(styles.root), cardMediaClasses.root, classes?.root),
-            media: clsx(cardMediaClasses.media, classes?.media),
+            root: cx(cardMediaClasses.root, css(styles.root), classes?.root),
+            media: cx(cardMediaClasses.media, classes?.media),
           }}
           className={className}
           role="img"

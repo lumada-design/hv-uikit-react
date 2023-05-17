@@ -11,7 +11,6 @@ import { HvFilterGroupContext } from "../FilterGroupContext";
 import cloneDeep from "lodash/cloneDeep";
 import { ClassNames } from "@emotion/react";
 import { styles } from "./RightPanel.styles";
-import { clsx } from "clsx";
 import filterGroupRightPanelClasses, {
   HvFilterGroupRightPanelClasses,
 } from "./rightPanelClasses";
@@ -134,9 +133,9 @@ export const HvFilterGroupRightPanel = ({
 
     return (
       <ClassNames>
-        {({ css }) => (
+        {({ css, cx }) => (
           <div
-            className={clsx(
+            className={cx(
               filterGroupRightPanelClasses.selectAllContainer,
               css(styles.selectAllContainer),
               classes?.selectAllContainer
@@ -146,7 +145,7 @@ export const HvFilterGroupRightPanel = ({
               id={setId(id, "select-all")}
               label={defaultLabel}
               onChange={() => handleSelectAll()}
-              className={clsx(
+              className={cx(
                 filterGroupRightPanelClasses.selectAll,
                 css(styles.selectAll),
                 classes?.selectAll
@@ -170,14 +169,14 @@ export const HvFilterGroupRightPanel = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvPanel id={setId(id, "rightPanel")} className={className}>
           {listValues.length > 0 ? (
             <>
               <HvInput
                 id={setId(id, "search")}
                 classes={{
-                  root: clsx(
+                  root: cx(
                     filterGroupRightPanelClasses.search,
                     css(styles.search),
                     classes?.search
@@ -193,7 +192,7 @@ export const HvFilterGroupRightPanel = ({
                 key={activeGroup}
                 id={setId(id, "list")}
                 values={listValues}
-                className={clsx(
+                className={cx(
                   filterGroupRightPanelClasses.list,
                   css(styles.list),
                   classes?.list

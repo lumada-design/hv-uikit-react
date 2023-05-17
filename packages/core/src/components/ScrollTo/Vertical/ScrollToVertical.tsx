@@ -3,7 +3,6 @@ import scrollToVerticalClasses, {
   HvScrollToVerticalClasses,
 } from "./scrollToVerticalClasses";
 import { generateDynamicStyles, styles } from "./ScrollToVertical.styles";
-import { clsx } from "clsx";
 import { useTheme, useUniqueId } from "@core/hooks";
 import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
@@ -150,12 +149,12 @@ export const HvScrollToVertical = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <ol
-          className={clsx(
-            className,
-            classes?.root,
+          className={cx(
             scrollToVerticalClasses.root,
+            position === "fixed" && scrollToVerticalClasses.positionFixed,
+            position === "absolute" && scrollToVerticalClasses.positionAbsolute,
             css(styles.root),
             css({
               backgroundColor: fade(
@@ -163,18 +162,12 @@ export const HvScrollToVertical = ({
                 activeTheme?.scrollTo.backgroundColorOpacity
               ),
             }),
-            position === "fixed" &&
-              clsx(
-                classes?.positionFixed,
-                scrollToVerticalClasses.positionFixed,
-                css(dynamicClasses.positionFixed)
-              ),
-            position === "absolute" &&
-              clsx(
-                classes?.positionAbsolute,
-                scrollToVerticalClasses.positionAbsolute,
-                css(dynamicClasses.positionAbsolute)
-              )
+            position === "fixed" && css(dynamicClasses.positionFixed),
+            position === "absolute" && css(dynamicClasses.positionAbsolute),
+            className,
+            classes?.root,
+            position === "fixed" && classes?.positionFixed,
+            position === "absolute" && classes?.positionAbsolute
           )}
           id={elementId}
           {...others}

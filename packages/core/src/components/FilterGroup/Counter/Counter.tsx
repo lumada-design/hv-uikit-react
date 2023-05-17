@@ -3,7 +3,6 @@ import { HvFilterGroupContext } from "../FilterGroupContext";
 import { styles } from "./Counter.styles";
 import { HvFilterGroupFilters, HvFilterGroupValue } from "../FilterGroup";
 import { ClassNames } from "@emotion/react";
-import { clsx } from "clsx";
 import filterGroupCounterClasses, {
   HvFilterGroupCounterClasses,
 } from "./counterClasses";
@@ -66,9 +65,9 @@ export const HvFilterGroupCounter = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <div
-          className={clsx(
+          className={cx(
             filterGroupCounterClasses.root,
             css(styles.root),
             className,
@@ -77,7 +76,7 @@ export const HvFilterGroupCounter = ({
         >
           {partialCounter > 0 ? (
             <p
-              className={clsx(
+              className={cx(
                 filterGroupCounterClasses.partialCounter,
                 css(styles.partialCounter),
                 classes?.partialCounter

@@ -7,7 +7,6 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
-import { clsx } from "clsx";
 import wizardTitleClasses, { HvWizardTitleClasses } from "./wizardTitleClasses";
 import { styles } from "./WizardTitle.styles";
 import { useContext, useEffect, useState } from "react";
@@ -87,18 +86,18 @@ export const HvWizardTitle = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <HvDialogTitle
-          className={clsx(
-            classes?.headerContainer,
+          className={cx(
             wizardTitleClasses.headerContainer,
-            css(styles.headerContainer)
+            css(styles.headerContainer),
+            classes?.headerContainer
           )}
           classes={{
-            messageContainer: clsx(
-              classes?.messageContainer,
+            messageContainer: cx(
               wizardTitleClasses.messageContainer,
-              css(styles.messageContainer)
+              css(styles.messageContainer),
+              classes?.messageContainer
             ),
           }}
         >
@@ -106,10 +105,10 @@ export const HvWizardTitle = ({
             container
             justifyContent="space-between"
             alignItems="center"
-            className={clsx(
-              classes?.titleContainer,
+            className={cx(
               wizardTitleClasses.titleContainer,
-              css(styles.titleContainer)
+              css(styles.titleContainer),
+              classes?.titleContainer
             )}
           >
             {title && (
@@ -119,10 +118,10 @@ export const HvWizardTitle = ({
             )}
             {!!steps.length && (
               <HvStepNavigation
-                className={clsx(
-                  classes?.stepContainer,
+                className={cx(
                   wizardTitleClasses.stepContainer,
-                  css(styles.stepContainer)
+                  css(styles.stepContainer),
+                  classes?.stepContainer
                 )}
                 steps={steps}
                 type={customStep?.type ?? "Default"}
@@ -135,16 +134,16 @@ export const HvWizardTitle = ({
             {hasSummary && (
               <HvButton
                 variant="secondarySubtle"
-                className={clsx(
-                  classes?.buttonWidth,
+                className={cx(
                   wizardTitleClasses.buttonWidth,
-                  css(styles.buttonWidth)
+                  css(styles.buttonWidth),
+                  classes?.buttonWidth
                 )}
                 classes={{
-                  root: clsx(
-                    classes?.rootSummaryButton,
+                  root: cx(
                     wizardTitleClasses.rootSummaryButton,
-                    css(styles.rootSummaryButton)
+                    css(styles.rootSummaryButton),
+                    classes?.rootSummaryButton
                   ),
                 }}
                 onClick={toggleSummary}

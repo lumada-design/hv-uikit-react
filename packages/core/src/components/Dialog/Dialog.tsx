@@ -1,5 +1,4 @@
 import React, { useCallback, useRef } from "react";
-import { clsx } from "clsx";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
@@ -143,10 +142,10 @@ export const HvDialog = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <MuiDialog
           container={document.getElementById(rootId || "") || document.body}
-          className={clsx(dialogClasses.root, classes?.root, className)}
+          className={cx(dialogClasses.root, className, classes?.root)}
           id={id}
           ref={measuredRef}
           open={open}
@@ -171,22 +170,18 @@ export const HvDialog = ({
           classes={{ container: css({ position: "relative" }) }}
           BackdropProps={{
             classes: {
-              root: clsx(classes?.background, dialogClasses.background),
+              root: cx(dialogClasses.background, classes?.background),
             },
           }}
           PaperProps={{
             classes: {
-              root: clsx(
-                css(styles.paper),
-                classes?.paper,
+              root: cx(
                 dialogClasses.paper,
+                fullscreen && cx(dialogClasses.fullscreen, "fullscreen"),
+                css(styles.paper),
                 css({ position: "absolute" }),
-                fullscreen &&
-                  clsx(
-                    dialogClasses.fullscreen,
-                    classes?.fullscreen,
-                    "fullscreen"
-                  )
+                classes?.paper,
+                fullscreen && classes?.fullscreen
               ),
             },
           }}
@@ -195,7 +190,7 @@ export const HvDialog = ({
         >
           <StyledClose
             id={setId(id, "close")}
-            className={clsx(dialogClasses.closeButton, classes?.closeButton)}
+            className={cx(dialogClasses.closeButton, classes?.closeButton)}
             variant="secondaryGhost"
             onClick={(event) => wrappedClose(event, true, undefined)}
             aria-label={buttonTitle}

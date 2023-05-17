@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import { ClassNames } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
-
 import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
 import withId from "@core/hocs/withId";
@@ -146,27 +145,27 @@ const HvDropDownMenu = ({
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css, cx }) => (
         <StyledBaseDropDown
           id={id}
-          className={clsx(
-            className,
+          className={cx(
             dropDownMenuClasses.container,
+            className,
             classes?.container
           )}
           classes={{
-            root: clsx(
+            root: cx(
               dropDownMenuClasses.root,
-              classes?.root,
               css({
                 display: "inline-block",
                 width: "auto",
                 "&.focus-visible $icon": {
                   ...outlineStyles,
                 },
-              })
+              }),
+              classes?.root
             ),
-            container: clsx(
+            container: cx(
               dropDownMenuClasses.baseContainer,
               classes?.baseContainer
             ),
@@ -199,7 +198,7 @@ const HvDropDownMenu = ({
               }}
               onKeyDown={handleKeyDown}
               classes={{
-                root: clsx(dropDownMenuClasses.menuList, classes?.menuList),
+                root: cx(dropDownMenuClasses.menuList, classes?.menuList),
               }}
             />
           </StyledPanel>
