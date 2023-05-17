@@ -29,7 +29,6 @@ export const StyledButton = styled(
 
   borderRadius: theme.dropDownMenu.borderRadius,
   border: theme.dropDownMenu.borderClosed,
-  borderBottom: "none",
 
   ...($open && {
     backgroundColor: theme.colors.atmo1,
@@ -45,7 +44,6 @@ export const StyledButton = styled(
 
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     border: theme.dropDownMenu.borderOpened,
-    borderBottom: "none",
   }),
 }));
 
