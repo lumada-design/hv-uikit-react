@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-core",
-  "version": "5.6.0",
+  "version": "5.7.0",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Core React components for the NEXT Design System.",
@@ -42,9 +42,9 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
-    "@hitachivantara/uikit-react-icons": "^5.1.4",
-    "@hitachivantara/uikit-react-shared": "^5.0.8",
-    "@hitachivantara/uikit-styles": "^5.5.0",
+    "@hitachivantara/uikit-react-icons": "^5.1.5",
+    "@hitachivantara/uikit-react-shared": "^5.0.9",
+    "@hitachivantara/uikit-styles": "^5.6.0",
     "@popperjs/core": "^2.11.6",
     "@types/react-table": "^7.7.14",
     "attr-accept": "^2.2.2",
@@ -56,19 +56,19 @@
     "notistack": "^2.0.8",
     "rc-slider": "^10.1.1",
     "rc-tooltip": "^6.0.1",
+    "react-color": "^2.19.3",
     "react-popper": "^2.3.0",
     "react-resize-detector": "^8.0.4",
     "react-table": "^7.8.0",
-    "react-window": "^1.8.8",
-    "react-color": "^2.19.3"
+    "react-window": "^1.8.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
+    "@types/react-color": "^2.17.5",
     "@types/react-dom": "^18.0.11",
     "@vitest/coverage-c8": "^0.29.7",
     "npm-run-all": "^4.1.5",
-    "tsc-alias": "^1.8.2",
-    "@types/react-color": "^2.17.5"
+    "tsc-alias": "^1.8.2"
   },
   "files": [
     "dist"

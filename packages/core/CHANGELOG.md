@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.6.0...@hitachivantara/uikit-react-core@5.7.0) (2023-05-17)
+
+### Features
+
+- color picker promoted to core ([75b3d33](https://github.com/lumada-design/hv-uikit-react/commit/75b3d33bb8909be7f2957d12935902e328e8ffc4))
+- **ColorPicker:** add ColorPicker component ([#3322](https://github.com/lumada-design/hv-uikit-react/issues/3322)) ([ebe00ea](https://github.com/lumada-design/hv-uikit-react/commit/ebe00eafb5d9ab03de4659932983eb9bf96bde8b))
+
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.5.0...@hitachivantara/uikit-react-core@5.6.0) (2023-05-16)
 
 ### Bug Fixes

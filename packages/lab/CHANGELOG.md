@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.3...@hitachivantara/uikit-react-lab@5.3.0) (2023-05-17)
+
+### Bug Fixes
+
+- install missing clsx in lab package ([#3337](https://github.com/lumada-design/hv-uikit-react/issues/3337)) ([22877e2](https://github.com/lumada-design/hv-uikit-react/commit/22877e29a519390f4e3f3ba81f14b2577767e967))
+- **Wizard, StepNavigation:** reviewed component with missing props ([dfd058c](https://github.com/lumada-design/hv-uikit-react/commit/dfd058c1efeca32bd5e2c5c73d71353f48687e37))
+
+### Features
+
+- color picker promoted to core ([75b3d33](https://github.com/lumada-design/hv-uikit-react/commit/75b3d33bb8909be7f2957d12935902e328e8ffc4))
+- **ColorPicker:** add ColorPicker component ([#3322](https://github.com/lumada-design/hv-uikit-react/issues/3322)) ([ebe00ea](https://github.com/lumada-design/hv-uikit-react/commit/ebe00eafb5d9ab03de4659932983eb9bf96bde8b))
+
 ## [5.2.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.2...@hitachivantara/uikit-react-lab@5.2.3) (2023-05-16)
 
 ### Bug Fixes

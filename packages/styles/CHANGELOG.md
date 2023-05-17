@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.5.0...@hitachivantara/uikit-styles@5.6.0) (2023-05-17)
+
+### Features
+
+- **ColorPicker:** add ColorPicker component ([#3322](https://github.com/lumada-design/hv-uikit-react/issues/3322)) ([ebe00ea](https://github.com/lumada-design/hv-uikit-react/commit/ebe00eafb5d9ab03de4659932983eb9bf96bde8b))
+
 # 5.5.0 (2023-05-16)
 
 ### Bug Fixes
