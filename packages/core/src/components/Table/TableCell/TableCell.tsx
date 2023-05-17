@@ -1,26 +1,16 @@
-import { clsx } from "clsx";
-import styled from "@emotion/styled";
-import {
-  CSSProperties,
-  forwardRef,
-  TdHTMLAttributes,
-  useContext,
-  useMemo,
-} from "react";
-import { hexToRgb, alpha } from "@mui/material";
-import { transientOptions } from "@core/utils/transientOptions";
-import capitalize from "lodash/capitalize";
-import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks";
+import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
+import { CSSProperties, forwardRef, TdHTMLAttributes, useContext } from "react";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
+
 import TableSectionContext from "../TableSectionContext";
-import { getBorderStyles } from "../utils/utils";
-import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
+import capitalize from "lodash/capitalize";
+import { ClassNames } from "@emotion/react";
+import { styles } from "./TableCell.styles";
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
@@ -58,208 +48,6 @@ export interface HvTableCellProps
 
 const defaultComponent = "td";
 
-interface StyledTableCellProps {
-  $variantList: boolean;
-  $variantListHead: boolean;
-  $stickyColumn: boolean;
-  $stickyColumnMostLeft: boolean;
-  $stickyColumnLeastRight: boolean;
-  $groupColumnMostLeft: boolean;
-  $groupColumnMostRight: boolean;
-  $resizable: boolean;
-  $resizing: boolean;
-  $align: string;
-  $variant: string;
-  $type: string;
-  $atmo1Color: string;
-}
-
-const StyledTableCell = (c: any) =>
-  styled(
-    c,
-    transientOptions
-  )(
-    ({
-      $variantList,
-      $variantListHead,
-      $stickyColumn,
-      $stickyColumnMostLeft,
-      $stickyColumnLeastRight,
-      $groupColumnMostLeft,
-      $groupColumnMostRight,
-      $resizable,
-      $resizing,
-      $align,
-      $variant,
-      $type,
-      $atmo1Color,
-    }: StyledTableCellProps) => ({
-      // root
-      verticalAlign: "inherit",
-      textAlign: "left",
-      paddingTop: theme.space.xs,
-      paddingRight: theme.space.xs,
-      paddingBottom: theme.space.xs,
-      paddingLeft: theme.spacing(4),
-      borderBottom: `1px solid ${theme.colors.atmo4}`,
-
-      ...($resizable && {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-      }),
-      ...($resizing && {
-        borderRight: `solid 2px ${theme.colors.secondary}`,
-      }),
-
-      ...($groupColumnMostLeft && {
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-
-        "&:first-of-type": {
-          borderLeft: 0,
-        },
-      }),
-      ...($groupColumnMostRight && {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-
-        // due to the ":has()" selector not being supported in browsers,
-        // this need to be managed with inline styles
-        // To be uncommented when not needed (see comment in src/Table/hooks/useSticky.js)
-        // "&:last-child,&:has(+ $stickyColumnLeastRight)": {
-        "&:last-child": {
-          borderRight: 0,
-        },
-
-        [`&+:not(.${tableCellClasses.stickyColumn})`]: {
-          borderLeft: 0,
-        },
-      }),
-
-      // align
-      ...($align === "center" && {
-        textAlign: "center",
-      }),
-      ...($align === "justify" && {
-        textAlign: "justify",
-      }),
-      ...($align === "left" && {
-        textAlign: "left",
-      }),
-      ...($align === "right" && {
-        textAlign: "right",
-        flexDirection: "row-reverse",
-      }),
-
-      // variant
-      ...($variant === "checkbox" && {
-        padding: 0,
-        width: 32,
-        maxWidth: 32,
-        overflow: "hidden",
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-      }),
-      ...($variant === "actions" && {
-        padding: 0,
-        width: 32,
-        maxWidth: 32,
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      }),
-      ...($variant === "none" && {
-        padding: 0,
-      }),
-      ...($variant === "expand" && {
-        paddingLeft: 0,
-        paddingTop: 0,
-        paddingBottom: 0,
-      }),
-      ...($variant === "listcheckbox" && {
-        borderRight: `solid 2px ${theme.colors.atmo2}`,
-        padding: 0,
-        textAlign: "center",
-        width: 34,
-        maxWidth: 34,
-      }),
-      ...($variant === "listactions" && {
-        borderLeft: `solid 2px red`, // ${theme.colors.atmo2}`,
-        textAlign: "center",
-        width: 138,
-        maxWidth: 138,
-      }),
-
-      // type
-      ...($type === "head" && {
-        height: 52,
-        verticalAlign: "top",
-
-        backgroundColor: $variantList ? "inherit" : theme.colors.atmo1,
-        borderTop: $variantList
-          ? 0
-          : `1px solid ${theme.table.headerBorderTopColor}`,
-        borderBottom: $variantList ? 0 : `1px solid ${theme.colors.atmo4}`,
-        ...(theme.typography.label as CSSProperties),
-      }),
-      ...($type === "body" && {
-        minHeight: 32,
-        "td&": {
-          height: 32,
-        },
-        backgroundColor: "inherit",
-        ...(theme.typography.body as CSSProperties),
-        fontFamily: theme.fontFamily.body,
-
-        [`&.${tableCellClasses.sorted}`]: {
-          backgroundColor: alpha(hexToRgb($atmo1Color), 0.4),
-        },
-      }),
-      ...($variantList && {
-        minHeight: 52,
-        "td&": {
-          height: 52,
-        },
-        paddingTop: 0,
-        paddingBottom: 0,
-        ...($variant !== "listactions" && { paddingRight: 0 }),
-        ...($variant === "listactions" && { paddingRight: theme.space.xs }),
-        ...($variant !== "listactions" && { paddingLeft: 32 }),
-        ...($variant === "listactions" && { paddingLeft: 0 }),
-        border: 0,
-        ...($type === "body" && {
-          ...getBorderStyles("cell", theme.table.rowBorderColor),
-        }),
-      }),
-
-      ...($stickyColumn && {
-        position: "sticky",
-        zIndex: 2,
-        backgroundColor: theme.colors.atmo2,
-
-        [`&.${tableCellClasses.groupColumnMostRight}+.${tableCellClasses.stickyColumn}`]:
-          {
-            borderLeft: 0,
-          },
-
-        [`&.${tableCellClasses.sorted}`]: {
-          backgroundColor: theme.colors.atmo2,
-          backgroundImage: `linear-gradient(to right, ${alpha(
-            hexToRgb($atmo1Color),
-            0.4
-          )}, ${alpha(hexToRgb($atmo1Color), 0.4)})`,
-        },
-      }),
-      ...($stickyColumnMostLeft && {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-      }),
-      ...($stickyColumnLeastRight && {
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      }),
-
-      ...($variantListHead && {
-        backgroundColor: "inherit",
-        "td&": {
-          height: 16,
-        },
-      }),
-    })
-  );
-
 /**
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
@@ -286,7 +74,6 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     },
     externalRef
   ) => {
-    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -295,80 +82,78 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
     const Component =
       component || tableContext?.components?.Td || defaultComponent;
 
-    const TableCell = useMemo(() => StyledTableCell(Component), [Component]);
-
     return (
-      <TableCell
-        ref={externalRef}
-        role={Component === defaultComponent ? null : "cell"}
-        style={style}
-        className={clsx(
-          className,
-          tableCellClasses.root,
-          classes?.root,
-          tableCellClasses[type],
-          classes?.[type],
-          align !== "inherit" &&
-            clsx(
-              tableCellClasses[`align${capitalize(align)}`],
-              classes?.[`align${capitalize(align)}`]
-            ),
-          variant !== "default" &&
-            clsx(
-              tableCellClasses[`variant${capitalize(variant)}`],
-              classes?.[`variant${capitalize(variant)}`]
-            ),
-          tableContext.variant === "listrow" &&
-            clsx(tableCellClasses.variantList, classes?.variantList),
-          tableContext.variant === "listrow" &&
-            type !== "body" &&
-            clsx(tableCellClasses.variantListHead, classes?.variantListHead),
-          sorted && clsx(tableCellClasses.sorted, classes?.sorted),
-          stickyColumn &&
-            clsx(tableCellClasses.stickyColumn, classes?.stickyColumn),
-          stickyColumnMostLeft &&
-            clsx(
-              tableCellClasses.stickyColumnMostLeft,
-              classes?.stickyColumnMostLeft
-            ),
-          stickyColumnLeastRight &&
-            clsx(
-              tableCellClasses.stickyColumnLeastRight,
-              classes?.stickyColumnLeastRight
-            ),
-          groupColumnMostLeft &&
-            clsx(
-              tableCellClasses.groupColumnMostLeft,
-              classes?.groupColumnMostLeft
-            ),
-          groupColumnMostRight &&
-            clsx(
-              tableCellClasses.groupColumnMostRight,
-              classes?.groupColumnMostRight
-            ),
-          resizable && clsx(tableCellClasses.resizable, classes?.resizable),
-          resizing && clsx(tableCellClasses.resizing, classes?.resizing)
+      <ClassNames>
+        {({ css, cx }) => (
+          <Component
+            ref={externalRef}
+            role={Component === defaultComponent ? null : "cell"}
+            style={style}
+            className={cx(
+              className,
+              tableCellClasses.root,
+              tableCellClasses[type],
+              align !== "inherit" &&
+                cx(tableCellClasses[`align${capitalize(align)}`]),
+              tableContext.variant === "listrow" &&
+                cx(tableCellClasses[`align${capitalize(align)}`]),
+              tableContext.variant === "listrow" &&
+                type !== "body" &&
+                cx(tableCellClasses.variantListHead),
+              variant !== "default" &&
+                cx(tableCellClasses[`variant${capitalize(variant)}`]),
+              sorted && cx(tableCellClasses.sorted),
+              stickyColumn && cx(tableCellClasses.stickyColumn),
+              stickyColumnMostLeft && cx(tableCellClasses.stickyColumnMostLeft),
+              stickyColumnLeastRight &&
+                cx(tableCellClasses.stickyColumnLeastRight),
+              groupColumnMostLeft && cx(tableCellClasses.groupColumnMostLeft),
+              groupColumnMostRight && cx(tableCellClasses.groupColumnMostRight),
+              resizable && cx(tableCellClasses.resizable),
+              resizing && cx(tableCellClasses.resizing),
+
+              css(styles.root),
+              css(styles[type]),
+              align !== "inherit" &&
+                cx(css(styles[`align${capitalize(align)}`])),
+              tableContext.variant === "listrow" && cx(css(styles.variantList)),
+              tableContext.variant === "listrow" &&
+                type !== "body" &&
+                cx(css(styles.variantListHead)),
+              variant !== "default" &&
+                cx(css(styles[`variant${capitalize(variant)}`])),
+              sorted && cx(css(styles.sorted)),
+              stickyColumn && cx(css(styles.stickyColumn)),
+              stickyColumnMostLeft && cx(css(styles.stickyColumnMostLeft)),
+              stickyColumnLeastRight && cx(css(styles.stickyColumnLeastRight)),
+              groupColumnMostLeft && cx(css(styles.groupColumnMostLeft)),
+              groupColumnMostRight && cx(css(styles.groupColumnMostRight)),
+              resizable && cx(css(styles.resizable)),
+              resizing && cx(css(styles.resizing)),
+              classes?.root,
+              classes?.[type],
+              align !== "inherit" && cx(classes?.[`align${capitalize(align)}`]),
+              tableContext.variant === "listrow" && cx(classes?.variantList),
+              tableContext.variant === "listrow" &&
+                type !== "body" &&
+                cx(classes?.variantListHead),
+              variant !== "default" &&
+                cx(classes?.[`variant${capitalize(variant)}`]),
+              sorted && cx(classes?.sorted),
+              stickyColumn && cx(classes?.stickyColumn),
+              stickyColumnMostLeft && cx(classes?.stickyColumnMostLeft),
+              stickyColumnLeastRight && cx(classes?.stickyColumnLeastRight),
+              groupColumnMostLeft && cx(classes?.groupColumnMostLeft),
+              groupColumnMostRight && cx(classes?.groupColumnMostRight),
+              resizable && cx(classes?.resizable),
+              resizing && cx(classes?.resizing)
+            )}
+            {...others}
+          >
+            {children}
+          </Component>
         )}
-        $variantList={tableContext.variant === "listrow"}
-        $variantListHead={tableContext.variant === "listrow" && type !== "body"}
-        $sorted={sorted}
-        $stickyColumn={stickyColumn}
-        $stickyColumnMostLeft={stickyColumnMostLeft}
-        $stickyColumnLeastRight={stickyColumnLeastRight}
-        $groupColumnMostLeft={groupColumnMostLeft}
-        $groupColumnMostRight={groupColumnMostRight}
-        $resizable={resizable}
-        $resizing={resizing}
-        $align={align}
-        $variant={variant}
-        $type={type}
-        $atmo1Color={
-          activeTheme?.colors?.modes[selectedMode].atmo1 || theme.colors.atmo1
-        }
-        {...others}
-      >
-        {children}
-      </TableCell>
+      </ClassNames>
     );
   }
 );

@@ -1,15 +1,10 @@
-import { clsx } from "clsx";
-import styled from "@emotion/styled";
-import { hexToRgb, alpha } from "@mui/material";
 import { HvBaseProps } from "@core/types";
-import { forwardRef, useContext, useMemo } from "react";
-import { transientOptions } from "@core/utils/transientOptions";
-import { theme } from "@hitachivantara/uikit-styles";
-import { useTheme } from "@core/hooks";
 import tableRowClasses, { HvTableRowClasses } from "./tableRowClasses";
+import { forwardRef, useContext } from "react";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
-import { getBorderStyles } from "../utils/utils";
+import { ClassNames } from "@emotion/react";
+import { styles } from "./TableRow.styles";
 
 export interface HvTableRowProps
   extends HvBaseProps<HTMLTableRowElement, "children"> {
@@ -31,116 +26,6 @@ export interface HvTableRowProps
 
 const defaultComponent = "tr";
 
-const StyledTableRow = (c: any) =>
-  styled(
-    c,
-    transientOptions
-  )(
-    ({
-      $hover,
-      $selected,
-      $expanded,
-      $striped,
-      $variantList,
-      $variantListHead,
-      $stripedColor,
-      $type,
-    }: {
-      $hover: boolean;
-      $selected: boolean;
-      $expanded: boolean;
-      $striped: boolean;
-      $variantList: boolean;
-      $variantListHead: boolean;
-      $type: string;
-      $stripedColor: string;
-    }) => ({
-      backgroundColor: theme.table.rowBackgroundColor,
-      color: "inherit",
-      verticalAlign: "middle",
-      outline: 0,
-      minHeight: 32,
-      "tr&": {
-        height: 32,
-      },
-
-      ":hover": {
-        ...($type === "body" && {
-          backgroundColor: theme.table.rowHoverColor,
-        }),
-      },
-      ...($hover && {
-        transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-        "&:hover": {
-          backgroundColor: theme.table.rowHoverColor,
-        },
-      }),
-      ...($selected && {
-        backgroundColor: theme.table.selectedRowBackgroundColor,
-      }),
-      ...($expanded && {
-        "& > *[role=cell]": {
-          borderBottom: "none",
-        },
-        [`&.${tableRowClasses.expanded}`]: {
-          backgroundColor: theme.colors.atmo1,
-        },
-      }),
-      ...($striped && {
-        "&:nth-of-type(even)": {
-          backgroundColor: $stripedColor,
-          "&:hover": {
-            backgroundColor: theme.table.rowHoverColor,
-          },
-        },
-      }),
-
-      // type
-      ...($type === "head" && {
-        backgroundColor: "transparent",
-        "&:first-of-type": {
-          height: 52,
-        },
-
-        "tr&:first-of-type": {
-          height: 52,
-        },
-      }),
-
-      ...($variantList && {
-        borderBottom: 0,
-        ...(!$selected && {
-          backgroundColor: theme.colors.atmo1,
-        }),
-        height: 52,
-        "&:hover": {
-          ...getBorderStyles("row", theme.table.rowHoverBorderColor),
-        },
-        [`&.${tableRowClasses.selected}`]: {
-          ...getBorderStyles("row", theme.colors.secondary),
-
-          "&:hover": {
-            ...getBorderStyles("row", theme.table.rowHoverBorderColor),
-          },
-        },
-      }),
-      ...($variantListHead && {
-        height: 16,
-        "&:first-of-type": {
-          height: 16,
-        },
-
-        "tr&:first-of-type": {
-          height: 16,
-        },
-      }),
-
-      "&.HvIsFocused": {
-        borderRadius: theme.table.rowBorderRadius,
-      },
-    })
-  );
-
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
@@ -158,7 +43,6 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     },
     externalRef
   ) => {
-    const { activeTheme, selectedMode } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -169,45 +53,46 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
     const Component =
       component || tableContext?.components?.Tr || defaultComponent;
 
-    const TableRow = useMemo(() => StyledTableRow(Component), [Component]);
-
     return (
-      <TableRow
-        ref={externalRef}
-        className={clsx(
-          className,
-          tableSectionContext.filterClassName,
-          tableRowClasses.root,
-          classes?.root,
-          tableRowClasses[type],
-          classes?.[type],
-          hover && clsx(tableRowClasses.hover, classes?.hover),
-          selected && clsx(tableRowClasses.selected, classes?.selected),
-          expanded && clsx(tableRowClasses.expanded, classes?.expanded),
-          striped && clsx(tableRowClasses.striped, classes?.striped),
-          isList &&
-            type === "body" &&
-            clsx(tableRowClasses.variantList, classes?.variantList),
-          isList &&
-            type === "head" &&
-            clsx(tableRowClasses.variantListHead, classes?.variantListHead)
+      <ClassNames>
+        {({ css, cx }) => (
+          <Component
+            ref={externalRef}
+            className={cx(
+              className,
+              tableSectionContext.filterClassName,
+              tableRowClasses.root,
+              tableRowClasses[type],
+              hover && cx(tableRowClasses.hover),
+              selected && cx(tableRowClasses.selected),
+              expanded && cx(tableRowClasses.expanded),
+              striped && cx(tableRowClasses.striped),
+              isList && type === "body" && cx(tableRowClasses.variantList),
+              isList && type === "head" && cx(tableRowClasses.variantListHead),
+
+              css(styles.root),
+              css(styles[type]),
+              hover && cx(css(styles.hover)),
+              selected && cx(css(styles.selected)),
+              expanded && cx(css(styles.expanded)),
+              striped && cx(css(styles.striped)),
+              isList && type === "body" && cx(css(styles.variantList)),
+              isList && type === "head" && cx(css(styles.variantListHead)),
+
+              classes?.root,
+              classes?.[type],
+              hover && cx(classes?.hover),
+              selected && cx(classes?.selected),
+              expanded && cx(classes?.expanded),
+              striped && cx(classes?.striped),
+              isList && type === "body" && cx(classes?.variantList),
+              isList && type === "head" && cx(classes?.variantListHead)
+            )}
+            role={Component === defaultComponent ? null : "row"}
+            {...others}
+          />
         )}
-        role={Component === defaultComponent ? null : "row"}
-        $hover={hover}
-        $selected={selected}
-        $expanded={expanded}
-        $striped={striped}
-        $variantList={isList && type === "body"}
-        $variantListHead={isList && type === "head"}
-        $type={type}
-        $stripedColor={alpha(
-          hexToRgb(
-            activeTheme?.colors?.modes[selectedMode].atmo1 || theme.colors.atmo1
-          ),
-          0.6
-        )}
-        {...others}
-      />
+      </ClassNames>
     );
   }
 );

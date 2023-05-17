@@ -29,6 +29,7 @@ import {
   hvProgressColumn,
 } from "../../renderers/renderers";
 import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { theme } from "@hitachivantara/uikit-styles";
 
 const AllColumnRenderers = () => {
   const getColumns = () => [
@@ -157,6 +158,8 @@ const AllColumnRenderers = () => {
                 paddingTop: 0,
                 textAlign: "center",
                 height: 100,
+                backgroundColor: theme.colors.atmo2,
+                borderTop: `solid 1px ${theme.colors.atmo4}`,
               }}
               colSpan={100}
             >
@@ -328,6 +331,8 @@ const rowRenderer = (pages: HvRowInstance<NewRendererEntry, string>[]) => {
               paddingTop: 0,
               textAlign: "center",
               height: 100,
+              backgroundColor: theme.colors.atmo2,
+              borderTop: solid 1px theme.colors.atmo4,
             }}
             colSpan={100}
           >
@@ -1067,6 +1072,8 @@ const ExpandColumnRenderer = () => {
                 paddingTop: 0,
                 textAlign: "center",
                 height: 100,
+                backgroundColor: theme.colors.atmo2,
+                borderTop: `solid 1px ${theme.colors.atmo4}`,
               }}
               // @ts-ignore
               colSpan="100%"

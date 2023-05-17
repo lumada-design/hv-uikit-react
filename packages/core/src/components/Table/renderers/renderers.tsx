@@ -1,4 +1,4 @@
-import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { setId } from "@core/utils";
 import {
   HvOverflowTooltip,
@@ -17,6 +17,7 @@ import SwitchColumnCell from "./SwitchColumnCell";
 import ProgressColumnCell from "./ProgressColumnCell";
 import DropdownColumnCell from "./DropdownColumnCell";
 import { hvStringFallback, hvNumberFallback } from "../utils";
+import { css } from "@emotion/css";
 
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
@@ -60,6 +61,15 @@ export function hvDateColumn<
   };
 }
 
+const classes = {
+  root: css({
+    position: "absolute",
+    left: 0,
+    top: "50%",
+    transform: "translateY(-50%)",
+  }),
+};
+
 export function hvExpandColumn<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer
@@ -67,7 +77,9 @@ export function hvExpandColumn<
   col: HvTableColumnConfig<D, H>,
   expandRowButtonAriaLabel: string,
   collapseRowButtonAriaLabel: string,
-  getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean
+  getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean,
+  isExpandedIcon?: React.ReactNode,
+  isCollapsedIcon?: React.ReactNode
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -75,6 +87,10 @@ export function hvExpandColumn<
       const expandedProps = row.getToggleRowExpandedProps?.();
 
       const hasContent = getCanRowExpand?.(row) ?? true;
+
+      const ExpandedIcon = isExpandedIcon ? isExpandedIcon : <DropUpXS />;
+
+      const CollapsedIcon = isCollapsedIcon ? isCollapsedIcon : <DropDownXS />;
 
       return (
         <>
@@ -89,9 +105,9 @@ export function hvExpandColumn<
               }
               aria-expanded={row.isExpanded}
               onClick={expandedProps?.onClick}
-              style={{ position: "absolute", left: 0, top: 0 }}
+              classes={{ root: classes.root }}
             >
-              {row.isExpanded ? <DropDownXS /> : <DropRightXS />}
+              {row.isExpanded ? ExpandedIcon : CollapsedIcon}
             </HvButton>
           )}
 
