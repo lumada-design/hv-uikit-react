@@ -14,11 +14,17 @@ export const MenuItemLi = styled(
     color: theme.header.color,
   },
   "&:hover": {
-    "& > a:first-child, div:first-child": {
+    "& > a:first-child": {
+      backgroundColor: hoverColor,
+    },
+    "& > div:first-child": {
       backgroundColor: hoverColor,
     },
     "&:focus-within": {
-      "& > a:first-child, div:first-child": {
+      "& > div:first-child": {
+        backgroundColor: hoverColor,
+      },
+      "& > a:first-child": {
         backgroundColor: hoverColor,
       },
     },
