@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvWizard, HvWizardProps } from "./Wizard";
 import { useCallback, useContext, useState } from "react";
 import {
   HvAccordion,
@@ -11,7 +10,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import mockText from "./mockData";
-import HvWizardContext from "./WizardContext";
+import { HvWizard, HvWizardProps, HvWizardContext } from ".";
 import { css } from "@emotion/css";
 
 const meta: Meta<typeof HvWizard> = {

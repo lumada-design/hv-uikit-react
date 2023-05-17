@@ -1,10 +1,6 @@
 import { ClassNames } from "@emotion/react";
 import { HvBaseProps, HvDialogContent } from "@hitachivantara/uikit-react-core";
-import wizardContentClasses, {
-  HvWizardContentClasses,
-} from "./wizardContentClasses";
 import { useElementSize } from "usehooks-ts";
-import { styles } from "./WizardContent.styles";
 import React, {
   useCallback,
   useContext,
@@ -12,7 +8,13 @@ import React, {
   useRef,
   useState,
 } from "react";
-import HvWizardContext, { HvWizardTabs } from "../WizardContext";
+import {
+  HvWizardContext,
+  HvWizardTabs,
+  wizardContentClasses,
+  HvWizardContentClasses,
+} from "..";
+import { styles } from "./WizardContent.styles";
 import { LoadingContainer } from "./LoadingContainer";
 
 export interface HvWizardContentProps extends HvBaseProps {

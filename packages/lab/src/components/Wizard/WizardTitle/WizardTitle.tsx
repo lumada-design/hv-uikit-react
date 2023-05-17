@@ -7,12 +7,11 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Report } from "@hitachivantara/uikit-react-icons";
-import wizardTitleClasses, { HvWizardTitleClasses } from "./wizardTitleClasses";
-import { styles } from "./WizardTitle.styles";
 import { useContext, useEffect, useState } from "react";
-import { HvStepProps } from "components/StepNavigation/DefaultNavigation";
 import { HvStepNavigation, HvStepNavigationProps } from "components";
-import HvWizardContext from "../WizardContext/WizardContext";
+import { HvStepProps } from "components/StepNavigation/DefaultNavigation";
+import { HvWizardContext, wizardTitleClasses, HvWizardTitleClasses } from "..";
+import { styles } from "./WizardTitle.styles";
 
 export interface HvWizardTitleProps extends HvBaseProps {
   /** Title for the wizard. */
