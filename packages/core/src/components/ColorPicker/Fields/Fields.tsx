@@ -1,6 +1,6 @@
 import { ClassNames } from "@emotion/react";
 import { useEffect, useRef, useState } from "react";
-import { HvInput } from "@hitachivantara/uikit-react-core";
+import { HvInput } from "@core/components";
 import { HSLColor, HSVColor, RGBColor } from "react-color";
 import * as color from "react-color/lib/helpers/color";
 import { styles } from "./Fields.styles";

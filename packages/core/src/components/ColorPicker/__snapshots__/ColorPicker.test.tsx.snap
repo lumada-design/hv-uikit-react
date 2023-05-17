@@ -12,30 +12,30 @@ exports[`ColorPicker > should render correctly full color icon picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown50-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-qqldeu"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown50-label"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown50-label"
-            class="HvBaseDropdown-header css-syatow"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             />
             <div
               class="HvColorPicker-colorPickerIcon css-1rtiqvt"
@@ -75,35 +75,35 @@ exports[`ColorPicker > should render correctly full color picker 1`] = `
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown1-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1kxonj9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown1-label"
           aria-owns="hvbasedropdown3-children-container"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown3-children-container"
             aria-labelledby="hvdropdown1-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-qn77fs"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             >
               <p
-                class="HvBaseDropdown-placeholder HvTypography-root HvTypography-body css-1isf4j6"
+                class="HvBaseDropdown-placeholder eapzthe5 HvTypography-root HvTypography-body css-1cbtqw8-getStyledComponent-StyledPlaceholder e1tnpalo0"
               >
                 Select color...
               </p>
@@ -146,32 +146,32 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown44-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1kxonj9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown44-label"
           aria-owns="hvbasedropdown46-children-container"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown46-children-container"
             aria-labelledby="hvdropdown44-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-qn77fs"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             >
               <div
                 class="HvColorPicker-headerColorIcon css-11agson"
@@ -196,7 +196,7 @@ exports[`ColorPicker > should render correctly recommended colors only color pic
                 </svg>
               </div>
               <p
-                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-body css-1p2262w"
+                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-body css-wwgt76-getStyledComponent e1tnpalo0"
               >
                 #de2beb
               </p>
@@ -239,30 +239,30 @@ exports[`ColorPicker > should render correctly recommended colors only icon colo
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown58-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-qqldeu"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown58-label"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown58-label"
-            class="HvBaseDropdown-header css-syatow"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             />
             <div
               class="HvColorPicker-headerColorIconOnly css-zlcxrp"
@@ -306,32 +306,32 @@ exports[`ColorPicker > should render correctly without saved colors color picker
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown22-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root css-1kxonj9"
+        class="HvBaseDropdown-root css-1nukton-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="true"
           aria-labelledby="hvdropdown22-label"
           aria-owns="hvbasedropdown24-children-container"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-controls="hvbasedropdown24-children-container"
             aria-labelledby="hvdropdown22-label"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-qn77fs"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown css-ntsilr-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             >
               <div
                 class="HvColorPicker-headerColorIcon css-11agson"
@@ -356,7 +356,7 @@ exports[`ColorPicker > should render correctly without saved colors color picker
                 </svg>
               </div>
               <p
-                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-body css-1p2262w"
+                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-body css-wwgt76-getStyledComponent e1tnpalo0"
               >
                 #de2beb
               </p>
@@ -399,30 +399,30 @@ exports[`ColorPicker > should render correctly without saved colors icon color p
         class="HvColorPicker-labelContainer css-1yp4ln"
       >
         <label
-          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-label css-1e6khw8"
+          class="HvColorPicker-label HvLabel-root e17iqvr40 HvTypography-root HvTypography-label css-1xzmr6d-getStyledComponent-StyledTypography e1tnpalo0"
           id="hvdropdown54-label"
         >
           Color
         </label>
       </div>
       <div
-        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-qqldeu"
+        class="HvBaseDropdown-root HvColorPicker-dropdownRootIconOnly css-4fbzw2-StyledRoot eapzthe9"
       >
         <div
           aria-expanded="false"
           aria-labelledby="hvdropdown54-label"
-          class="HvBaseDropdown-anchor css-fa7ybv"
+          class="HvBaseDropdown-anchor css-c41kvr-StyledAnchor eapzthe8"
           role="combobox"
           tabindex="-1"
         >
           <div
             aria-labelledby="hvdropdown54-label"
-            class="HvBaseDropdown-header css-syatow"
+            class="HvBaseDropdown-header css-4bvoko-StyledHeaderRoot eapzthe7"
             role="textbox"
             tabindex="0"
           >
             <div
-              class="HvBaseDropdown-selection css-16osxvy"
+              class="HvBaseDropdown-selection css-b6yxdh-StyledSelection eapzthe6"
             />
             <div
               class="HvColorPicker-colorPickerIcon css-1rtiqvt"

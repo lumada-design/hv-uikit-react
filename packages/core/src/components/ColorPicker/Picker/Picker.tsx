@@ -10,7 +10,8 @@ import {
 } from "react-color";
 import { styles } from "./Picker.styles";
 import { Fields } from "../Fields";
-import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
+import { HvTypography } from "@core/components";
+import { useTheme } from "@core/hooks";
 import colorPickerPickerClasses, {
   HvColorPickerPickerClasses,
 } from "./pickerClasses";

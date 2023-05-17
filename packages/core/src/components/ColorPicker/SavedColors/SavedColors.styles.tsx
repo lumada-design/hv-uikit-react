@@ -1,5 +1,5 @@
 import { CSSInterpolation } from "@emotion/serialize";
-import { theme } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-styles";
 import { HvColorPickerSavedColorsClasses } from "./savedColorsClasses";
 
 export const styles: Partial<
