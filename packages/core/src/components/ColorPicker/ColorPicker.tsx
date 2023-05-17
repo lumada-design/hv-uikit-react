@@ -1,16 +1,11 @@
 import {
-  useControlled,
-  useUniqueId,
-  useTheme,
-  setId,
   HvBaseDropdown,
   HvFormElement,
   HvInfoMessage,
   HvLabel,
   HvPanel,
   HvTypography,
-  useLabels,
-} from "@hitachivantara/uikit-react-core";
+} from "@core/components";
 import { ClassNames } from "@emotion/react";
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
 import { Picker } from "./Picker";
@@ -19,6 +14,8 @@ import colorPickerClasses, { HvColorPickerClasses } from "./colorPickerClasses";
 import { ColorState } from "react-color";
 import { PresetColors } from "./PresetColors";
 import { SavedColors } from "./SavedColors";
+import { useControlled, useLabels, useTheme, useUniqueId } from "@core/hooks";
+import { setId } from "@core/utils";
 
 export interface HvColorPickerProps {
   "aria-label"?: string;

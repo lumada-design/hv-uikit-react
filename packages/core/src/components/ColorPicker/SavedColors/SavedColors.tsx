@@ -1,5 +1,5 @@
 import { ClassNames } from "@emotion/react";
-import { HvButton } from "@hitachivantara/uikit-react-core";
+import { HvButton } from "@core/components";
 import { CloseXS, Add } from "@hitachivantara/uikit-react-icons";
 import { styles } from "./SavedColors.styles";
 

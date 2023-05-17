@@ -185,6 +185,10 @@
       "status": "✅"
     },
     {
+      "name": "Color Picker",
+      "status": "✅"
+    },
+    {
       "name": "Controls",
       "status": "✅"
     },
@@ -232,10 +236,6 @@
     }
   ],
   "Lab": [
-    {
-      "name": "Color Picker",
-      "status": "✅"
-    },
     {
       "name": "Drawer",
       "status": "in progress"

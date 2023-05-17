@@ -1,6 +1,6 @@
 import { ClassNames } from "@emotion/react";
 import { styles } from "./PresetColors.styles";
-import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { HvTypography } from "@core/components";
 import colorPickerPresetColorsClasses, {
   HvColorPickerPresetColorsClasses,
 } from "./presetColorsClasses";

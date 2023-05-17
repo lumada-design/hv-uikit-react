@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { HvColorPicker, HvColorPickerProps } from "./ColorPicker";
 
 const meta: Meta<typeof HvColorPicker> = {
-  title: "Lab/Color Picker",
+  title: "Widgets/Color Picker",
   component: HvColorPicker,
 };
 export default meta;

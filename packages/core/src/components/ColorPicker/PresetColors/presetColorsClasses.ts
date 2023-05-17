@@ -1,4 +1,4 @@
-import { getClasses } from "@hitachivantara/uikit-react-core";
+import { getClasses } from "@core/utils";
 
 export interface HvColorPickerPresetColorsClasses {
   root?: string;
