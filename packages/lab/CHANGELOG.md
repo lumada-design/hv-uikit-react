@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.3.0...@hitachivantara/uikit-react-lab@5.3.1) (2023-05-17)
+
+### Bug Fixes
+
+- **Wizard:** fix export `HvWizardContext` ([#3340](https://github.com/lumada-design/hv-uikit-react/issues/3340)) ([5041840](https://github.com/lumada-design/hv-uikit-react/commit/5041840733e64f7b78eec545acf1748b9ea41ee4))
+
 # [5.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.2.3...@hitachivantara/uikit-react-lab@5.3.0) (2023-05-17)
 
 ### Bug Fixes

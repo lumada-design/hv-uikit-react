@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.6.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.6.0...@hitachivantara/uikit-styles@5.6.1) (2023-05-17)
+
+### Bug Fixes
+
+- inline editor heights variation ([#3333](https://github.com/lumada-design/hv-uikit-react/issues/3333)) ([937227b](https://github.com/lumada-design/hv-uikit-react/commit/937227ba80d0ef6080df0cd9666670ad9443c005))
+
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.5.0...@hitachivantara/uikit-styles@5.6.0) (2023-05-17)
 
 ### Features
