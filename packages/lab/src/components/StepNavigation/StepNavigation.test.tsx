@@ -2,7 +2,7 @@ import { act, render, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { HvStepNavigation } from "./StepNavigation";
-import { HvStepProps } from "./DefaultNavigation/Step/Step";
+import { HvStepProps } from "./DefaultNavigation";
 
 type StepType = Pick<
   HvStepProps,

@@ -10,10 +10,10 @@ import { Report } from "@hitachivantara/uikit-react-icons";
 import { clsx } from "clsx";
 import wizardTitleClasses, { HvWizardTitleClasses } from "./wizardTitleClasses";
 import { styles } from "./WizardTitle.styles";
-import { HvStepNavigation, HvStepNavigationProps } from "../..";
 import { useContext, useEffect, useState } from "react";
-import { HvWizardContext } from "../WizardContext/WizardContext";
-import { HvStepProps } from "components/StepNavigation/DefaultNavigation/Step/Step";
+import { HvStepProps } from "components/StepNavigation/DefaultNavigation";
+import { HvStepNavigation, HvStepNavigationProps } from "components";
+import HvWizardContext from "../WizardContext/WizardContext";
 
 export interface HvWizardTitleProps extends HvBaseProps {
   /** Title for the wizard. */

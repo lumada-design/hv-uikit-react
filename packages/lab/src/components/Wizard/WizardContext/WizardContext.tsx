@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useCallback,
-} from "react";
+import React, { createContext, Dispatch, SetStateAction } from "react";
 
 export type HvWizardTab = {
   name?: string;
@@ -13,58 +7,29 @@ export type HvWizardTab = {
   touched?: boolean;
   form?: any;
   children?: React.ReactNode;
+  [other: string]: any;
 };
 
-export type HvWizardTabs<T extends HvWizardTab> = {
-  [tab in number]?: T;
+export type HvWizardTabs = {
+  [tab in number]?: HvWizardTab;
 };
 
 type HvWizardContextProp = {
-  context: HvWizardTabs<HvWizardTab>;
-  updateContext: (values?: HvWizardTabs<HvWizardTab>) => void;
-  summary: any;
-  setSummary: (oldSummary?: any) => void;
-  tab: any;
+  context: HvWizardTabs;
+  setContext: React.Dispatch<React.SetStateAction<HvWizardTabs>>;
+  summary: boolean;
+  setSummary: React.Dispatch<React.SetStateAction<boolean>>;
+  tab: number;
   setTab: Dispatch<SetStateAction<number>>;
 };
 
-export const HvWizardContext = createContext<HvWizardContextProp>({
+const HvWizardContext = createContext<HvWizardContextProp>({
   context: {},
-  updateContext: () => {},
-  summary: undefined,
-  setSummary: ({}) => {},
+  setContext: () => {},
+  summary: false,
+  setSummary: () => {},
   tab: 0,
   setTab: () => {},
 });
 
-const HvWizardProvider = ({ children }) => {
-  const [context, setContext] = useState({});
-  const [summary, setSummary] = useState(undefined);
-  const [tab, setTab] = useState(0);
-
-  const updateContext = useCallback(
-    (newContext) => {
-      if (Object.entries(newContext).length > 0) {
-        setContext(newContext);
-      }
-    },
-    [setContext]
-  );
-
-  return (
-    <HvWizardContext.Provider
-      value={{
-        context,
-        updateContext,
-        summary,
-        setSummary,
-        tab,
-        setTab,
-      }}
-    >
-      {children}
-    </HvWizardContext.Provider>
-  );
-};
-
-export default HvWizardProvider;
+export default HvWizardContext;

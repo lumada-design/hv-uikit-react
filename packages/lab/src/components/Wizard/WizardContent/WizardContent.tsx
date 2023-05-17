@@ -13,11 +13,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  HvWizardTabs,
-  HvWizardTab,
-  HvWizardContext,
-} from "../WizardContext/WizardContext";
+import HvWizardContext, { HvWizardTabs } from "../WizardContext";
 import { LoadingContainer } from "./LoadingContainer";
 
 export interface HvWizardContentProps extends HvBaseProps {
@@ -31,7 +27,7 @@ export interface HvWizardContentProps extends HvBaseProps {
   classes?: HvWizardContentClasses;
 }
 
-type ChildElement = React.ReactElement<HvWizardTabs<HvWizardTab>>;
+type ChildElement = React.ReactElement<HvWizardTabs>;
 
 const DRAWER_PERCENTAGE = 0.3;
 const DRAWER_MIN_WIDTH = 280;
@@ -43,7 +39,7 @@ export const HvWizardContent = ({
   children,
   summaryContent,
 }: HvWizardContentProps) => {
-  const { context, updateContext, summary, tab } = useContext(HvWizardContext);
+  const { context, setContext, summary, tab } = useContext(HvWizardContext);
 
   const arrayChildren = React.Children.toArray(children) as ChildElement[];
 
@@ -101,7 +97,7 @@ export const HvWizardContent = ({
   }, [tab, sizes, summary, updateSummaryMeasures]);
 
   useEffect(() => {
-    updateContext(initialContext);
+    setContext(initialContext);
   }, []);
 
   useEffect(() => {
@@ -122,7 +118,7 @@ export const HvWizardContent = ({
         {}
       );
 
-      updateContext(updatedContext);
+      setContext(updatedContext);
     }
   }, [tab]);
 

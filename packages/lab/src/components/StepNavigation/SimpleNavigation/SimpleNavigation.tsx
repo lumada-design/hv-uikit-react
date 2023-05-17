@@ -4,7 +4,7 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvStepNavigationProps } from "../StepNavigation";
-import { HvDot, HvDotProps } from "./Dot/Dot";
+import { HvDot, HvDotProps } from "./Dot";
 import { HvSimpleNavigationClasses } from "./simpleNavigationClasses";
 import { getColor, dotSizes } from "./utils";
 
