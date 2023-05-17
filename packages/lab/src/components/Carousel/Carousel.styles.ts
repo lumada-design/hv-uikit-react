@@ -1,216 +1,194 @@
 import { CSSInterpolation } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-react-core";
-import { HvCarouselClasses } from ".";
+import { getClasses } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-styles";
+import { CSSProperties } from "react";
 
-const styles: Record<keyof HvCarouselClasses, CSSInterpolation> = {
+export type HvCarouselClasses = Record<keyof typeof styles, string>;
+
+const styles = {
+  /** Styles applied to the component root class. */
   root: {
-    "&:not(.xs)": {
-      background: theme.colors.atmo1,
-      display: "flex",
-      alignItems: "center",
-      flexDirection: "column",
-      margin: "0px",
-      paddingTop: "15px",
-      paddingBottom: "15px",
+    display: "flex",
+    alignItems: "stretch",
+    flexDirection: "column",
+    backgroundColor: theme.colors.atmo1,
+    margin: 0,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+  },
+  xs: {
+    // increase specificity
+    "&:not(._)": {
+      padding: 0,
     },
-    "&:not(.nxs)": {
-      width: "100%",
-      maxWidth: "500px",
-      height: "200px",
-      padding: "0px",
+    // put dots on top of Slide
+    "& .HvCarousel-dots": {
+      position: "relative",
+      top: "-40px",
+    },
+    "& .HvCarousel-actions": {
+      top: 0,
+    },
+    "& .HvCarousel-controls": {
+      display: theme.carousel.xsControlsDisplay,
     },
   },
-  fullscreenStyle: {
+  fullscreen: {
     width: "100vw",
     height: "100vh",
     position: "fixed",
-    padding: "10px 150px 10px 150px",
-    top: 0,
-    left: 0,
-    zIndex: 1300,
+    inset: 0,
+    zIndex: theme.zIndices.modal,
+    // increase specificity
+    "&:not(._)": {
+      padding: theme.spacing(["xs", "xl"]),
+    },
   },
-  closeButton: {
+  title: {
+    display: "flex",
+    justifyContent: "flex-start",
+    marginBottom: theme.space.xs,
+  },
+  actions: {
+    display: "flex",
+    justifyContent: "flex-end",
+    height: 0,
+    zIndex: 1,
+
+    position: "relative",
+    top: theme.carousel.actionsOffsetTop,
+  },
+  closeButton: {},
+
+  idk: {
+    display: "flex",
+    flexDirection: theme.carousel
+      ?.idkFlexDirection as CSSProperties["flexDirection"],
+
+    // ...theme.carousel?.idk,
+  },
+
+  controls: {
+    display: "flex",
+    alignItems: "center",
+    height: 32,
+    justifyContent: theme.carousel.controlsJustifyContent,
+    backgroundColor: theme.carousel.controlsBackgroundColor,
+    border: theme.carousel.controlsBorder,
+    gap: theme.space.xs,
+    // ...theme.carousel?.controls,
+  },
+
+  main: {
+    padding: 0,
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    "&:hover .HvCarousel-slideControls": {
+      opacity: 1,
+    },
+  },
+  mainXs: {},
+  mainFullscreen: {
+    maxHeight: "80vh",
+  },
+  counterContainer: {
     position: "absolute",
-    right: "25px",
+    top: theme.space.xs,
+    right: theme.space.md,
+    zIndex: 1,
   },
-  selectedImage: {
-    "&:not(.contain)": {
-      objectFit: "cover",
+  counter: {
+    color: theme.colors.base_light,
+    backgroundColor: theme.colors.base_dark,
+    padding: theme.spacing([0, "sm"]),
+  },
+  slideControls: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: `calc(50% - (32px / 2))`,
+    padding: theme.spacing([0, "sm"]),
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    opacity: 0,
+    "& button": {
+      zIndex: 1,
     },
-    "&:not(.cover)": {
-      objectFit: "contain",
-    },
-    "&:not(.xs)": {
-      width: "100%",
-      textAlign: "center",
-      "&:not(.fullscreen)": {
-        // [theme.breakpoints.up("xs")]: { height: "150px", minHeight: "150px" },
-        // [theme.breakpoints.up("sm")]: { height: "300px", minHeight: "300px" },
-        // [theme.breakpoints.up("lg")]: { height: "450px", minHeight: "450px" },
-      },
-      "&:not(.notFullscreen)": {
-        height: "100%",
-      },
-    },
-    "&:not(.nxs)": {
-      width: "100%",
-      textAlign: "center",
+    "&:focus-within": {
+      opacity: 1,
     },
   },
-  imageBox: {
+  slidesViewport: {
+    overflow: "hidden",
+  },
+  slidesContainer: {
+    display: "flex",
+    flexDirection: "row",
+    height: "100%",
+  },
+  slide: {
     minWidth: "100%",
     display: "flex",
     justifyContent: "center",
   },
-  xsMode: {
-    width: "min-content",
-    height: "min-content",
-    margin: "0px",
-    textAlign: "center",
+  image: {
+    aspectRatio: "16/9",
   },
-  circles: {
+
+  dots: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    gap: theme.space.xs,
+    height: theme.space.md,
   },
-  xsCircles: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    transform: "translateY(-63px)",
-  },
-  hidden: {
-    visibility: "hidden",
-  },
-  title: {
-    display: "flex",
-    alignItems: "flex-start",
-    width: "100%",
-    justifyContent: "space-between",
-  },
-  divCounter: {
-    width: "100%",
-    paddingTop: "10px",
-    paddingRight: "15px",
-    display: "flex",
-    justifyContent: "flex-end",
-    position: "relative",
-    bottom: "102%",
-    "&:not(.nxs)": {
-      right: "5%",
-      bottom: "262px",
-      padding: "0px",
-    },
-  },
-  counter: {
-    width: "45px",
-    backgroundColor: theme.colors.base_dark,
-  },
-  img: {
-    width: "100%",
-    height: "70px",
-    // [theme.breakpoints.up("lg")]: { height: "75px" },
-    textAlign: "center",
-    objectFit: "cover",
-  },
-  xsImage: {},
-  thumbnailSelected: {
-    width: "100%",
-    height: "70px",
-    // [theme.breakpoints.up("lg")]: { height: "75px" },
-    textAlign: "center",
-    objectFit: "cover",
-    borderStyle: "solid",
-    borderColor: theme.colors.base_dark,
-    opacity: "50%",
-  },
-  thumbnailButton: {
-    width: "110px",
-    height: "70px",
-    padding: "0px 0px",
-    // [theme.breakpoints.up("lg")]: { width: "120px", height: "75px" },
-  },
-  miniCircle: {
-    width: "5px",
-    height: "5px",
+  dotsXs: {},
+  dot: {
+    width: 5,
+    height: 5,
+    margin: theme.space.xs,
     borderRadius: "50%",
     backgroundColor: theme.colors.atmo4,
-    display: "inline-block",
-    margin: "10px",
   },
-  selectedCircle: {
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    backgroundColor: theme.colors.atmo4, // TODO color
-    display: "inline-block",
-    margin: "10px",
+  dotSelected: {
+    width: 10,
+    height: 10,
+    backgroundColor: theme.colors.secondary_80,
   },
-  xsSelectedCircle: {
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    backgroundColor: theme.colors.atmo3,
-    display: "inline-block",
-    margin: "10px",
-  },
-  lowButtons: {
-    width: "95%",
-    display: "inline-flex",
-    justifyContent: "space-between",
-    position: "relative",
-    top: "-50%",
-    transform: "translateY(-16px)",
-    "&:not(.nxs)": {
-      width: "90%",
-      top: "-99px",
-    },
-  },
-  imageContainer: {
-    width: "100%",
-    marginTop: "20px",
-    margin: "0px",
-    textAlign: "center",
-    padding: "0px",
-    // [theme.breakpoints.up("xs")]: { height: "150px", minHeight: "150px" },
-    // [theme.breakpoints.up("sm")]: { height: "300px", minHeight: "300px" },
-    // [theme.breakpoints.up("lg")]: { height: "450px", minHeight: "450px" },
-    "&:not(.notFullscreen)": {
-      height: "85%",
-      alignItems: "center",
-    },
-  },
-  button: {
-    backgroundColor: theme.colors.atmo3,
-  },
-  stack: {
-    "&:not(.xs)": {
-      width: "100%",
-      display: "flex",
-      alignSelf: "center",
-      height: "100%",
-      padding: "0px",
-    },
-    "&:not(.flag)": {
-      overflowX: "hidden",
-    },
-    "&:not(.nxs)": {
-      height: "200px",
-      display: "flex",
-      padding: "0px",
-    },
-  },
-  normalButtons: {
-    padding: "5px 0px",
-  },
+
   panel: {
     display: "flex",
     width: "100%",
-    overflow: "hidden",
-    padding: "3px",
-    height: "75px",
+    overflowX: "auto", // "hidden",
+    overflowY: "hidden",
+    padding: theme.spacing(["xs", "2px", "2px"]),
   },
-};
+  thumbnailButton: {
+    height: "unset",
+    padding: 0,
+  },
+  thumbnail: {
+    width: "100%",
+    height: "100%",
+    textAlign: "center",
+    aspectRatio: "16/9",
+    opacity: "50%",
+    borderRadius: theme.radii.round,
+  },
+  thumbnailSelected: {
+    border: `1px solid ${theme.colors.base_dark}`,
+    opacity: "100%",
+  },
+} satisfies Record<string, CSSInterpolation>;
 
-export default styles;
+export const carouselClasses = getClasses(
+  Object.keys(styles) as (keyof HvCarouselClasses)[],
+  "HvCarousel"
+);
+
+const newStyles = styles; // replace $myClass with .HvCarousel-myClass
+
+export default newStyles;

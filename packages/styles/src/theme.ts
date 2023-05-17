@@ -383,6 +383,14 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     savedColorsSwatchMargin: "string",
     savedColorsSwatchBorderRadius: "string",
   },
+  carousel: {
+    xsControlsDisplay: "string",
+    actionsOffsetTop: "string",
+    idkFlexDirection: "string",
+    controlsBorder: "string",
+    controlsBackgroundColor: "string",
+    controlsJustifyContent: "string",
+  },
 };
 
 const typographyProps: DeepString<HvThemeTypographyProps> = {

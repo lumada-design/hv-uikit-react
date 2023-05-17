@@ -1,121 +1,76 @@
 /* eslint-env jest */
 
-import React from "react";
-
+import { vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import {
-  Main,
-  WithoutThumbnails,
-  LowCardinality,
-  ImageCarouselXS,
-} from "./Carousel.stories";
+import { HvCarousel } from ".";
+
+Element.prototype.scrollIntoView = vi.fn();
+
+const setup = ({ title = "TITLE", numImages = 10, onChange = () => {} }) => {
+  return render(
+    <HvCarousel
+      title={title}
+      onChange={onChange}
+      documents={Array.from(Array(numImages), (el, i) => ({
+        src: `/image-${i}`,
+        value: `label-${i}`,
+      }))}
+    />
+  );
+};
 
 describe("<HvCarousel>", () => {
-  describe("general structure", () => {
-    it("renders the image carousel as expected", () => {
-      render(<Main />);
-      const title = screen.getByText("Star Wars Characters");
-      expect(title).toBeInTheDocument();
-      const images = screen.getAllByRole("img");
-      expect(images.length).toBe(10);
-      const buttons = screen.getAllByRole("button");
-      expect(buttons.length).toBe(11);
-      const numberImage = screen.getByText("1");
-      expect(numberImage).toBeInTheDocument();
-      const numberImages = screen.getByText(/9/);
-      expect(numberImages).toBeInTheDocument();
-    });
-    it("renders WithoutThumbnails as expected", () => {
-      render(<WithoutThumbnails />);
-      const images = screen.getAllByRole("img");
-      expect(images.length).toBe(1);
-      const buttons = screen.getAllByRole("button");
-      expect(buttons.length).toBe(1);
-      const numberImage = screen.getByText("1");
-      expect(numberImage).toBeInTheDocument();
-      const numberImages = screen.getByText(/9/);
-      expect(numberImages).toBeInTheDocument();
-    });
-    it("renders the low cardinality image carousel", () => {
-      render(<LowCardinality />);
-      const title = screen.getByText("Landscapes");
-      expect(title).toBeInTheDocument();
-      const images = screen.getAllByRole("img");
-      expect(images.length).toBe(11);
-      const buttons = screen.getAllByRole("button");
-      expect(buttons.length).toBe(11);
-      const circles = screen.getAllByTitle(/Circle/);
-      expect(circles.length).toBe(10);
-    });
-    it("renders image carousel xs", () => {
-      render(<ImageCarouselXS />);
-      const images = screen.getAllByRole("img");
-      expect(images.length).toBe(10);
-    });
+  it("renders the general structure", () => {
+    const title = "MY_TITLE";
+    const numImages = 10;
+
+    setup({ title, numImages });
+
+    expect(screen.getByRole("heading", { name: title })).toBeInTheDocument();
+    const images = screen.getAllByRole("img");
+    expect(images.length).toBe(numImages * 2); // images + thumbnails
+
+    const prevButton = screen.getByRole("button", { name: "Backwards" });
+    expect(prevButton).toBeInTheDocument();
+    const nextButton = screen.getByRole("button", { name: "Forwards" });
+    expect(nextButton).toBeInTheDocument();
+
+    expect(screen.getByText(`1 / ${numImages}`)).toBeInTheDocument();
   });
 
-  describe("interactions", () => {
-    describe("Main", () => {
-      it("able to switch image with the buttons", async () => {
-        render(<Main />);
-        let image1 = screen.getAllByAltText(/DarthVader/);
-        expect(image1.length).toBe(2);
-        let image2 = screen.getAllByAltText(/Yoda/);
-        expect(image2.length).toBe(2);
-        let selImage = screen.getByText("1");
-        const buttons = screen.getAllByRole("button");
-        expect(buttons.length).toBe(11);
-        fireEvent.click(buttons[0]);
-        image1 = await screen.findAllByAltText(/DarthVader/);
-        expect(image2.length).toBe(2);
-        image2 = await screen.findAllByAltText(/Yoda/);
-        expect(image2.length).toBe(2);
-        selImage = screen.getByText("9");
-        expect(selImage).toBeInTheDocument();
-        fireEvent.click(buttons[1]);
-        image1 = await screen.findAllByAltText(/DarthVader/);
-        expect(image2.length).toBe(2);
-        image2 = await screen.findAllByAltText(/Yoda/);
-        expect(image2.length).toBe(2);
-        selImage = screen.getByText("1");
-        expect(selImage).toBeInTheDocument();
-      });
-    });
-    describe("WithoutThumbnails", () => {
-      it("able to switch images with the buttons", async () => {
-        render(<WithoutThumbnails />);
-        const img = screen.getAllByRole("img");
-        expect(img.length).toBe(1);
-        let selImage = screen.getByText("1");
-        expect(selImage).toBeInTheDocument();
-        let buttons = screen.getAllByRole("button");
-        expect(buttons.length).toBe(1);
-        fireEvent.click(buttons[0]);
-        buttons = await screen.findAllByRole("button");
-        expect(buttons.length).toBe(2);
-        selImage = screen.getByText("2");
-        expect(selImage).toBeInTheDocument();
-        fireEvent.click(buttons[0]);
-        buttons = await screen.findAllByRole("button");
-        expect(buttons.length).toBe(1);
-        selImage = screen.getByText("1");
-        expect(selImage).toBeInTheDocument();
-      });
-    });
-    describe("Low Cardinality", () => {
-      it("able to switch image", async () => {
-        render(<LowCardinality />);
-        let circles = screen.getAllByTitle(/Circle/);
-        expect(circles[0].title).toBe("BigCircle 0");
-        expect(circles[1].title).toBe("Circle 1");
-        const buttons = screen.getAllByRole("button");
-        expect(buttons.length).toBe(11);
-        fireEvent.click(buttons[2]);
-        circles = screen.getAllByTitle(/Circle/);
-        expect(circles[0].title).toBe("Circle 0");
-        expect(circles[1].title).toBe("BigCircle 1");
-      });
-    });
+  it("switches images on navigation button click", () => {
+    const numImages = 10;
+    const mockChange = vi.fn();
+
+    setup({ numImages, onChange: mockChange });
+
+    const prevButton = screen.getByRole("button", { name: "Backwards" });
+    const nextButton = screen.getByRole("button", { name: "Forwards" });
+
+    expect(screen.getByText(`1 / ${numImages}`)).toBeInTheDocument();
+    expect(mockChange).toHaveBeenCalledTimes(0);
+
+    fireEvent.click(nextButton);
+    expect(screen.getByText(`2 / ${numImages}`)).toBeInTheDocument();
+    expect(mockChange).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(prevButton);
+    expect(screen.getByText(`1 / ${numImages}`)).toBeInTheDocument();
+    expect(mockChange).toHaveBeenCalledTimes(2);
+  });
+
+  it("switches images on thumbnail click", () => {
+    const numImages = 10;
+    const mockChange = vi.fn();
+
+    setup({ numImages, onChange: mockChange });
+
+    const thumbnail4 = screen.getByRole("button", { name: "label-3" });
+    fireEvent.click(thumbnail4);
+
+    expect(screen.getByText(`4 / ${numImages}`)).toBeInTheDocument();
+    expect(mockChange).toHaveBeenCalledTimes(1);
+    expect(mockChange).toHaveBeenCalledWith(3);
   });
 });

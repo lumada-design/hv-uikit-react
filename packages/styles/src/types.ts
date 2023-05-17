@@ -390,6 +390,20 @@ export type HvThemeComponents = {
     savedColorsSwatchMargin: string;
     savedColorsSwatchBorderRadius: string;
   };
+  carousel: {
+    xsControlsDisplay: CSSProperties["display"];
+    actionsOffsetTop: CSSProperties["top"];
+    idkFlexDirection: CSSProperties["flexDirection"];
+    controlsJustifyContent: CSSProperties["justifyContent"];
+    controlsBackgroundColor: CSSProperties["backgroundColor"];
+    controlsBorder: CSSProperties["border"];
+  };
+  /*
+  carousel: {
+    idk?: CSSProperties;
+    controls?: CSSProperties;
+  };
+  */
 };
 
 // Theme typography

@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import { Button, Fade } from "@mui/material";
+import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import { ClassNames } from "@emotion/react";
 import {
-  setId,
-  useUniqueId,
+  HvBaseProps,
   HvButton,
   HvContainer,
-  HvTypography,
-  HvGrid,
   HvStack,
-  HvPanel,
-  useScrollTo,
+  HvTypography,
+  useBreakpoints,
 } from "@hitachivantara/uikit-react-core";
 import {
   Backwards,
@@ -18,60 +16,45 @@ import {
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
 
-import { HvBaseProps } from "@core/types";
-import { HvCarouselClasses } from "./carouselClasses";
+import styles, {
+  HvCarouselClasses,
+  carouselClasses as cc,
+} from "./Carousel.styles";
 
-export interface HvCarouselProps extends HvBaseProps<HTMLDivElement, "title"> {
-  /** Class names to be applied. */
-  className: string;
+const clamp = (num: number, max: number, min = 0) =>
+  Math.min(Math.max(num, min), max);
+
+export interface HvCarouselProps
+  extends HvBaseProps<HTMLDivElement, "title" | "onChange"> {
   /** A Jss Object used to override or extend the styles applied. */
-  classes: HvCarouselClasses;
-  /** Documents to be displayed. */
-  documents: any[];
+  classes?: Partial<HvCarouselClasses>;
+  /** TODO */
+  height?: CSSProperties["height"];
+  /** TODO */
+  thumbnailWidth?: CSSProperties["width"];
   /** Title of the image carousel */
-  title: React.ReactNode;
-  /** A function called each time the selected image changes. */
-  onChange: () => {};
-  /** Id to be applied to the root node. */
-  id: string;
-  /** A flag that activates the thumbnails. */
-  thumbnails: boolean;
+  title?: React.ReactNode;
+  /** Documents to be displayed. */
+  documents: { src: string; value: string }[];
+  /** Actions! */
+  actions?: React.ReactNode;
+  /** Whether Carousel is in "XS mode". Removed extra padding to use in embedded contexts */
+  xs?: boolean;
   /** A flag that switches to low cardinality mode */
-  lowCardinality: boolean;
-  /** A flag that activates the infinite carousel behavior */
-  infiniteCarousel: boolean;
+  showDots?: boolean;
   /** A flag that activates a counter on the top right corner of the selected image */
-  counter: boolean;
-  /** Set Image Carousel to fullscreen mode */
-  fullscreen: boolean;
-  /** Set selected image to a particular image in documents */
-  currentStep: number;
-  /** Function that changes the selected image */
-  setCurrentStep: () => {};
-  /** Image Carousel set to xs mode */
-  xs: boolean;
-  /** Arrows always displayed in low cardinality or xs mode */
-  visibleArrows: boolean;
-  /** Selected image fit variant */
-  variant: string;
+  showCounter?: boolean;
+  /** Whether to show the back/forwards buttons over the slide */
+  showSlideControls?: boolean;
+  /** Whether to show the Fullscreen toggle button */
+  showFullscreen?: boolean;
+  /** Whether to show the thumbnails */
+  hideThumbnails?: boolean;
+  /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
+  carouselOptions?: EmblaOptionsType;
+  /** A function called each time the selected image changes. */
+  onChange?: (index: number) => void;
 }
-
-const useStyles = () => {};
-/*makeStyles((theme) => ({
-  button: {
-    backgroundColor: theme.colors.atmo3,
-  },
-  imageBox: {
-    minWidth: "100%",
-    display: "flex",
-    justifyContent: "center",
-  },
-  allImages: {
-    width: "max-content",
-    display: "flex",
-  },
-}));
-*/
 
 /**
  * A Carousel is commonly used to browse images, it can also be used to browse any kind of content like text, video, or charts.
@@ -80,411 +63,266 @@ const useStyles = () => {};
 export const HvCarousel = (props: HvCarouselProps) => {
   const {
     className,
-    classes,
-    documents,
+    classes = {},
+    height: heightProp,
+    thumbnailWidth = 90,
     title,
-    id,
-    fullscreen: fullscreenProp = false,
-    thumbnails = false,
-    lowCardinality = false,
-    infiniteCarousel = false,
-    xs = false,
+    documents,
+    actions,
+    xs,
+    showDots,
+    showCounter,
+    showSlideControls,
+    showFullscreen: showFullscreenProp,
+    hideThumbnails: hideThumbnailsProp,
+    carouselOptions = { loop: true },
     onChange,
-    counter = false,
-    currentStep = 0,
-    setCurrentStep,
-    visibleArrows = false,
-    variant = "contain",
     ...others
   } = props;
-  const elementId = useUniqueId(id, "hvcarousel");
-  const [fullscreen, setFullscreen] = useState(false);
-  const options = documents.map((element) => ({
-    src: element.src,
-    value: setId(elementId, element.value),
-  }));
+  const thumbnailsRef = useRef<HTMLDivElement>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const { sm: isSmUp, lg: isLgUp } = useBreakpoints("up");
 
-  const [sliceStart, setSliceStart] = useState(0);
-  const [selImage, setImage] = useState(currentStep);
-  const [offset, setOffset] = useState(0);
-  const [imageHover, setImageHover] = useState(false);
-  let direction = "next";
+  const [containerRef, controller] = useCarousel(carouselOptions);
 
-  const style = useStyles();
-
-  const [selectedIndex, setScrollTo] = useScrollTo(
-    0,
-    setId(elementId, "panel"),
-    false,
-    100,
-    documents,
-    onChange,
-    "row"
-  );
-  const [selectedBigIndex, setBigScrollTo] = useScrollTo(
-    0,
-    setId(elementId, "bigPanel"),
-    false,
-    0,
-    options,
-    onChange,
-    "row"
-  );
-  const refBackwards = useRef(null);
-  const refForwards = useRef(null);
-  let typeCircle = "circle";
-
-  const handleSelection = useCallback(
-    (event, value, index) => {
-      const wrappedOnChange = () => {
-        onChange?.(event, index);
-      };
-      setScrollTo(event, value, index, wrappedOnChange);
-    },
-    [onChange, setScrollTo]
+  const [selectedIndex, setSelectedIndex] = useState(
+    carouselOptions.startIndex ?? 0
   );
 
-  const handleFocus = (focus) => {
-    if (focus === refBackwards.current || focus === refForwards.current)
-      focus.focus();
+  const handlePrevious = () => {
+    controller?.scrollPrev();
   };
 
-  const handleBigSelection = useCallback(
-    (event, value, index) => {
-      const wrappedOnChange = () => {
-        onChange?.(event, index);
-      };
-      setBigScrollTo(event, value, index, wrappedOnChange);
-    },
-    [onChange, setBigScrollTo]
-  );
+  const handleNext = () => {
+    controller?.scrollNext();
+  };
 
-  const handleVisibility = useCallback(
-    (event, value, index) => {
-      const image = document.getElementById(value);
-      const panel = document.getElementById(setId(elementId, "panel"));
-      const container = document.getElementById(setId(elementId, "container"));
-      const containerWidth = container.offsetWidth;
-      const offsetPanel = panel.offsetLeft;
-      const offsetImage = image.offsetLeft;
-      const imageWidth = image.offsetWidth;
-      const scroll = panel.scrollLeft;
-      const focus = document.activeElement;
+  const handleScroll = (index: number) => {
+    controller?.scrollTo(index);
+  };
 
-      if (
-        offsetPanel + offsetImage + offset + imageWidth - scroll >
-          containerWidth ||
-        offsetImage - scroll < 0
-      ) {
-        handleSelection(event, value, index);
-        handleFocus(focus);
-      }
-    },
-    [elementId, handleSelection, offset]
-  );
+  const handleSelect = () => {
+    if (!controller) return;
+
+    const slideIndex = controller.selectedScrollSnap();
+    setSelectedIndex(slideIndex);
+
+    // scroll to thumbnail button
+    thumbnailsRef.current
+      ?.querySelectorAll("button")
+      ?.[slideIndex]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+
+    onChange?.(slideIndex);
+  };
 
   useEffect(() => {
-    setCurrentStep?.(selImage);
-  }, [selImage, setCurrentStep]);
+    if (!controller) return;
+
+    controller.on("select", handleSelect);
+
+    return () => {
+      controller.off("select", handleSelect);
+    };
+  }, [controller]);
 
   useEffect(() => {
-    if (fullscreen) setOffset(150);
-    else setOffset(0);
+    if (!controller) return;
 
-    if (thumbnails) {
-      handleVisibility(
-        undefined,
-        documents[selImage].value,
-        selImage,
-        selectedIndex
-      );
-    }
-    handleBigSelection(
-      undefined,
-      options[selImage].value,
-      selImage,
-      selectedBigIndex
+    controller.reInit();
+    setSelectedIndex((currentIndex) =>
+      clamp(currentIndex, 0, documents.length)
     );
-  }, [
-    documents,
-    fullscreen,
-    handleBigSelection,
-    handleVisibility,
-    options,
-    selImage,
-    selectedBigIndex,
-    selectedIndex,
-    thumbnails,
-  ]);
+  }, [documents.length]);
 
-  const changeSlice = () => {
-    if (direction === "next") {
-      if (infiniteCarousel && selImage === documents.length - 1)
-        setSliceStart(0);
-      else if (selImage > sliceStart + 2 && selImage !== documents.length - 2)
-        setSliceStart(sliceStart + 1);
-    }
-    if (direction === "prev") {
-      if (infiniteCarousel && selImage === 0)
-        setSliceStart(documents.length > 5 ? documents.length - 5 : 0);
-      else if (selImage < sliceStart + 2 && selImage !== 1)
-        setSliceStart(sliceStart - 1);
-    }
-  };
-
-  const nextImage = () => {
-    let next;
-    if (selImage !== documents.length - 1) next = selImage + 1;
-    else if (infiniteCarousel) next = 0;
-    setImage(next);
-    if (xs) {
-      direction = "next";
-      changeSlice();
-    }
-  };
-
-  const previousImage = () => {
-    let previous;
-    if (selImage !== 0) previous = selImage - 1;
-    else if (infiniteCarousel) previous = documents.length - 1;
-    setImage(previous);
-    if (xs) {
-      direction = "prev";
-      changeSlice();
-    }
-  };
-
-  const styleThumbnail = (index) => {
-    if (index !== selImage) return classes.img;
-    return classes.thumbnailSelected;
-  };
-
-  const circleType = (index) => {
-    if (index === selImage) {
-      typeCircle = "BigCircle";
-      if (xs) return classes.xsSelectedCircle;
-      return classes.selectedCircle;
-    }
-    typeCircle = "Circle";
-    return classes.miniCircle;
-  };
+  const canPrev = controller?.canScrollPrev() ?? false;
+  const canNext = controller?.canScrollNext() ?? false;
+  const showTitle = !!title && (!xs || isFullscreen);
+  const showFullscreen = showFullscreenProp ?? xs;
+  const height = isFullscreen ? "100%" : isLgUp ? 600 : isSmUp ? 400 : 200;
+  const hideThumbnails = hideThumbnailsProp ?? (xs && !isFullscreen);
 
   return (
-    <HvContainer
-      id={setId(elementId, "container")}
-      className={clsx(
-        className,
-        classes.root,
-        fullscreen ? classes.fullscreenStyle : "",
-        xs ? "xs" : "nxs"
-      )}
-      {...others}
-    >
-      {!xs && (
-        <div className={classes.title}>
-          <div>{title}</div>
-          {fullscreenProp && (
-            <div>
-              {fullscreen ? (
-                <HvButton
-                  className={classes.closeButton}
-                  icon
-                  aria-label="Close"
-                  onClick={() => setFullscreen(!fullscreen)}
-                >
-                  <Close />
-                </HvButton>
+    <ClassNames>
+      {({ css, cx }) => (
+        <HvContainer
+          className={cx(
+            className,
+            cx(cc.root, classes.root, css(styles.root)),
+            xs && cx(cc.xs, css(styles.xs), "xs"),
+            isFullscreen && cx(cc.xs, css(styles.fullscreen), "fs")
+          )}
+          {...others}
+        >
+          {showTitle && (
+            <HvTypography
+              variant="title2"
+              className={cx(css(styles.title), cc.title)}
+            >
+              {title}
+            </HvTypography>
+          )}
+          <div className={cx(css(styles.actions), cc.actions)}>
+            {showFullscreen && (
+              <HvButton
+                icon
+                variant="secondaryGhost"
+                onClick={() => setIsFullscreen((curr) => !curr)}
+                className={cx(css(styles.closeButton), cc.closeButton)}
+              >
+                {isFullscreen ? (
+                  <Close aria-label="Close" />
+                ) : (
+                  <Fullscreen aria-label="Fullscreen" />
+                )}
+              </HvButton>
+            )}
+            {actions}
+          </div>
+
+          <div className={css(styles.idk)}>
+            <div className={cx(css(styles.controls), cc.controls)}>
+              {showDots ? (
+                <div className={cx(css(styles.dots), cc.dots)}>
+                  {documents.map((el, index) => (
+                    <span
+                      key={`circle-${index}`}
+                      className={cx(css(styles.dot), cc.dot, {
+                        [css(styles.dotSelected)]: index === selectedIndex,
+                      })}
+                    />
+                  ))}
+                </div>
               ) : (
-                <HvButton
-                  icon
-                  aria-label="Fullscreen"
-                  onClick={() => setFullscreen(true)}
-                >
-                  <Fullscreen />
-                </HvButton>
+                <>
+                  <HvButton
+                    icon
+                    disabled={!canPrev}
+                    variant="secondaryGhost"
+                    aria-label="Backwards"
+                    onClick={handlePrevious}
+                  >
+                    <Backwards iconSize="XS" />
+                  </HvButton>
+                  <div>{`${selectedIndex + 1} / ${documents.length}`}</div>
+                  <HvButton
+                    icon
+                    disabled={!canNext}
+                    variant="secondaryGhost"
+                    aria-label="Forwards"
+                    onClick={handleNext}
+                  >
+                    <Forwards iconSize="XS" />
+                  </HvButton>
+                </>
               )}
             </div>
-          )}
-        </div>
-      )}
-      <HvContainer
-        className={clsx(
-          classes.imageContainer,
-          !xs ? "nxs" : "",
-          fullscreen ? "fullscreen" : "notFullscreen"
-        )}
-        onFocus={() => setImageHover(true)}
-        onMouseOver={() => setImageHover(true)}
-        onBlur={() => setImageHover(false)}
-        onMouseOut={() => setImageHover(false)}
-      >
-        <HvPanel
-          className={clsx(classes.stack, xs ? "xs" : "nxs")}
-          id={setId(elementId, "bigPanel")}
-        >
-          {options.map((element, index) => (
+
             <div
-              className={style.imageBox}
-              id={element.value}
-              key={`div ${element.value}`}
+              className={cx(
+                cc.main,
+                cx(css(styles.main)),
+                xs && cx(css(styles.mainXs)),
+                isFullscreen && cx(css(styles.mainFullscreen))
+              )}
             >
-              <Fade
-                in={selImage === index || xs}
-                timeout={{ appear: 500, enter: 1200, exit: 200 }}
+              {showCounter && (
+                <div className={cx(css(styles.counterContainer))}>
+                  <span className={css(styles.counter)}>
+                    {`${selectedIndex + 1}/${documents.length}`}
+                  </span>
+                </div>
+              )}
+
+              {showSlideControls && (
+                <div
+                  className={cx(css(styles.slideControls), cc.slideControls)}
+                >
+                  {
+                    <HvButton
+                      icon
+                      disabled={!canPrev}
+                      variant="secondary"
+                      aria-label="Backwards"
+                      onClick={handlePrevious}
+                    >
+                      <Backwards iconSize="XS" />
+                    </HvButton>
+                  }
+                  <HvButton
+                    icon
+                    disabled={!canNext}
+                    variant="secondary"
+                    aria-label="Forwards"
+                    onClick={handleNext}
+                  >
+                    <Forwards iconSize="XS" />
+                  </HvButton>
+                </div>
+              )}
+
+              <div
+                ref={containerRef}
+                style={{ height }}
+                className={cx(css(styles.slidesViewport), cc.slidesViewport)}
               >
-                <img
-                  className={clsx(
-                    classes.selectedImage,
-                    xs ? "xs" : "nxs",
-                    fullscreen ? "fullscreen" : "notFullscreen",
-                    variant
+                <div
+                  className={cx(
+                    css(styles.slidesContainer),
+                    cc.slidesContainer
                   )}
-                  src={element.src}
-                  alt={element.value}
-                  key={`image ${element.value}`}
-                />
-              </Fade>
-            </div>
-          ))}
-        </HvPanel>
-        {(xs || lowCardinality) && (
-          <div className={clsx(classes.lowButtons, !xs ? "nxs" : "")}>
-            <div>
-              <Fade in={imageHover || visibleArrows}>
-                <HvButton
-                  ref={refBackwards}
-                  className={classes.button}
-                  icon
-                  aria-label="Backwards"
-                  onClick={(event) => previousImage(event)}
                 >
-                  <Backwards />
-                </HvButton>
-              </Fade>
-            </div>
-            <div>
-              <Fade in={imageHover || visibleArrows}>
-                <HvButton
-                  ref={refForwards}
-                  className={classes.button}
-                  icon
-                  aria-label="Forwards"
-                  onClick={(event) => nextImage(event)}
-                >
-                  <Forwards />
-                </HvButton>
-              </Fade>
+                  {documents.map((el) => (
+                    <div
+                      key={`slide-${el.value}`}
+                      className={cx(classes.slide, css(styles.slide), cc.slide)}
+                    >
+                      <img
+                        className={cx(css(styles.image))}
+                        src={el.src}
+                        alt={el.value}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        )}
-        {xs && (
-          <div className={classes.xsCircles}>
-            {documents
-              .map((element, index) => (
-                <span
-                  className={circleType(index)}
-                  title={typeCircle}
-                  key={`Circle ${element.value}`}
-                />
-              ))
-              .slice(sliceStart, sliceStart + 5)}
-          </div>
-        )}
-        {counter && (
-          <div className={clsx(classes.divCounter, !xs ? "nxs" : "")}>
-            <span className={classes.counter}>
-              <HvTypography variant="normalText" style={{ color: "white" }}>
-                {`${selImage + 1}/${documents.length}`}
-              </HvTypography>
-            </span>
-          </div>
-        )}
-      </HvContainer>
-      {!xs && (
-        <>
-          {lowCardinality ? (
-            <div className={classes.circles}>
-              {documents.map((element, index) => (
-                <span
-                  className={circleType(index)}
-                  title={`${typeCircle} ${index}`}
-                  key={`Circle ${element.value}`}
-                />
-              ))}
-            </div>
-          ) : (
-            <HvGrid
-              className={clsx(classes.normalButtons)}
-              container
-              justifyContent="space-between"
-              alignItems="center"
+
+          {!hideThumbnails && (
+            <div
+              ref={thumbnailsRef}
+              className={cx(cc.panel, css(styles.panel))}
             >
-              <HvGrid item>
-                <HvButton
-                  className={
-                    infiniteCarousel || selImage !== 0 ? "" : classes.hidden
-                  }
-                  ref={refBackwards}
-                  icon
-                  aria-label="Backwards"
-                  onClick={(event) => previousImage(event)}
-                >
-                  <Backwards />
-                </HvButton>
-              </HvGrid>
-              <HvGrid item>
-                <HvTypography variant="highlightText" component="a">
-                  {selImage + 1}
-                </HvTypography>
-                <HvTypography variant="normalText" component="a">
-                  {` /  ${documents.length}`}
-                </HvTypography>
-              </HvGrid>
-              <HvGrid item>
-                <HvButton
-                  className={
-                    infiniteCarousel || selImage !== documents.length - 1
-                      ? ""
-                      : classes.hidden
-                  }
-                  ref={refForwards}
-                  icon
-                  aria-label="Forwards"
-                  onClick={(event) => nextImage(event)}
-                >
-                  <Forwards />
-                </HvButton>
-              </HvGrid>
-            </HvGrid>
-          )}
-          {thumbnails && (
-            <HvPanel className={classes.panel} id={setId(elementId, "panel")}>
-              <HvStack
-                key="Thumbnails"
-                direction="row"
-                spacing="xs"
-                withNavigation
-              >
-                {documents.map((element, i) => (
-                  <Button
-                    id={element.value}
-                    key={`Button ${element.value}`}
-                    className={classes.thumbnailButton}
-                    onClick={() => setImage(i)}
+              <HvStack direction="row" spacing="xs">
+                {documents.map((doc, i) => (
+                  <HvButton
+                    icon
+                    variant="secondaryGhost"
+                    key={`button-${i}`}
+                    style={{ width: thumbnailWidth }}
+                    className={cx(
+                      css(styles.thumbnailButton),
+                      cc.thumbnailButton
+                    )}
+                    onClick={() => handleScroll(i)}
                   >
                     <img
-                      className={styleThumbnail(i)}
-                      src={element.src}
-                      alt={element.value}
-                      key={`Thumbnail ${element.value}`}
+                      className={cx(css(styles.thumbnail), {
+                        [css(styles.thumbnailSelected)]: i === selectedIndex,
+                      })}
+                      src={doc.src}
+                      alt={doc.value}
                     />
-                  </Button>
+                  </HvButton>
                 ))}
               </HvStack>
-            </HvPanel>
+            </div>
           )}
-        </>
+        </HvContainer>
       )}
-    </HvContainer>
+    </ClassNames>
   );
 };

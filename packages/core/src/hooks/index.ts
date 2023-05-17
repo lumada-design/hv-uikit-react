@@ -1,3 +1,4 @@
+export * from "./useBreakpoints";
 export * from "./useClickOutside";
 export * from "./useControlled";
 export { default as useForkRef } from "./useForkRef";

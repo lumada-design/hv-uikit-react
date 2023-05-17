@@ -599,6 +599,24 @@ const ds3 = makeTheme((theme: HvTheme) => ({
     savedColorsSwatchMargin: "4px",
     savedColorsSwatchBorderRadius: theme.radii.base,
   },
+  carousel: {
+    xsControlsDisplay: "none",
+    actionsOffsetTop: `calc(-32px - ${theme.space.xs})`,
+    idkFlexDirection: "column-reverse",
+    controlsBorder: "none",
+    controlsBackgroundColor: "transparent",
+    controlsJustifyContent: "space-between",
+    /*
+    idk: {
+      flexDirection: "column-reverse",
+    },
+    controls: {
+      justifyContent: "space-between",
+      backgroundColor: "transparent",
+      border: "unset",
+    },
+    */
+  },
 }));
 
 export default ds3;

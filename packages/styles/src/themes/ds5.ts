@@ -542,6 +542,14 @@ const ds5 = makeTheme((theme: HvTheme) => ({
     savedColorsSwatchMargin: "4px",
     savedColorsSwatchBorderRadius: theme.radii.base,
   },
+  carousel: {
+    xsControlsDisplay: "flex",
+    actionsOffsetTop: 0,
+    idkFlexDirection: "column",
+    controlsBorder: `1px solid ${theme.colors.atmo4}`,
+    controlsBackgroundColor: theme.colors.atmo2,
+    controlsJustifyContent: "center",
+  },
 }));
 
 export default ds5;
