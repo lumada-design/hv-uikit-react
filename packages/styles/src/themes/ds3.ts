@@ -536,6 +536,7 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   inlineEditor: {
     hoverBorderColor: "transparent",
     activeBorderColor: "transparent",
+    borderWidth: "0px",
   },
   queryBuilder: {
     ruleSubGroupLeftConnectorPosition: "-42px",
