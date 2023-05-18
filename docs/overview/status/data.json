@@ -57,15 +57,7 @@
       "status": "✅"
     },
     {
-      "name": "Global Actions",
-      "status": "✅"
-    },
-    {
       "name": "Grid",
-      "status": "✅"
-    },
-    {
-      "name": "Header",
       "status": "✅"
     },
     {
@@ -143,10 +135,6 @@
     {
       "name": "Time Picker",
       "status": "in progress"
-    },
-    {
-      "name": "Vertical Navigation",
-      "status": "✅"
     }
   ],
   "Visualizations": [
@@ -173,6 +161,10 @@
   ],
   "Widgets": [
     {
+      "name": "Action Bar",
+      "status": "✅"
+    },
+    {
       "name": "App Switcher",
       "status": "✅"
     },
@@ -182,6 +174,10 @@
     },
     {
       "name": "Bulk Actions",
+      "status": "✅"
+    },
+    {
+      "name": "Code Editor",
       "status": "✅"
     },
     {
@@ -205,6 +201,14 @@
       "status": "✅"
     },
     {
+      "name": "Global Actions",
+      "status": "✅"
+    },
+    {
+      "name": "Header",
+      "status": "✅"
+    },
+    {
       "name": "Login",
       "status": "✅"
     },
@@ -215,6 +219,10 @@
     {
       "name": "User Preferences",
       "status": "in progress"
+    },
+    {
+      "name": "Vertical Navigation",
+      "status": "✅"
     }
   ],
   "Templates": [
