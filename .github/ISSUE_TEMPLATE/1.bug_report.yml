@@ -41,14 +41,16 @@ body:
     attributes:
       label: Steps to reproduce 🕹
       description: |
-        Provide a link to a live example (you can use codesandbox.io) and an unambiguous set of steps to reproduce this bug.
+        Provide a link to a live example (you can use stackblitz.com) and an unambiguous set of steps to reproduce this bug.
         Include code to reproduce, if relevant (which it most likely is).
 
-        You can use the official codesandbox template as a starting point: https://codesandbox.io/p/sandbox/uikit-bug-report-4w2bg8?file=%2FREADME.md.
+        You can use the official stackblitz template as a starting point: https://stackblitz.com/github/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts
 
         Issues that we can't reproduce will be closed.
       value: |
-        Steps:
+        Enter sandbox link: 
+
+        And/or the steps to reproduce:
 
         1.
         2.
