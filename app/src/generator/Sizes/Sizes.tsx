@@ -7,7 +7,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 
 const Sizes = () => {
@@ -17,16 +17,6 @@ const Sizes = () => {
     new Map<string, string>()
   );
 
-  useEffect(() => {
-    let map = new Map<string, string>();
-    if (activeTheme) {
-      Object.keys(activeTheme.sizes).map((s) => {
-        map.set(s, activeTheme.sizes[s]);
-      });
-    }
-    setCurrValues(map);
-  }, []);
-
   const valueChangedHandler = (size: string, value) => {
     let map = new Map<string, string>(currValues);
     map.set(size, value);
@@ -34,16 +24,12 @@ const Sizes = () => {
   };
 
   const setValueHandler = (size: string) => {
-    let currSize = {};
-    for (const [key, val] of currValues.entries()) {
-      currSize[key] = val;
-    }
     const sizeValue = currValues.get(size) || 0;
 
     const newTheme = createTheme({
       ...customTheme,
       sizes: {
-        ...currSize,
+        ...customTheme.sizes,
         [size]: sizeValue,
       },
     });
@@ -62,7 +48,7 @@ const Sizes = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(r)?.toString() || ""}
+                  value={currValues?.get(r)?.toString() || customTheme.sizes[r]}
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(r, value)}
                 />

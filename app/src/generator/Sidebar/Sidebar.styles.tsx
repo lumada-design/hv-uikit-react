@@ -13,7 +13,6 @@ export const styles = {
     flexDirection: "column",
     gap: theme.space.sm,
     padding: theme.space.sm,
-    paddingRight: theme.space.md,
     position: "fixed",
     zIndex: theme.zIndices.overlay,
     height: "100vh",
@@ -37,24 +36,5 @@ export const styles = {
     justifyContent: "space-between",
     gap: 20,
     alignItems: "center",
-  }),
-  codeEditor: css({
-    ".margin, .margin-view-overlays": {
-      paddingLeft: "4px!important",
-    },
-    ".visible.scrollbar.horizontal": {
-      height: "10px!important",
-      "& .slider": {
-        top: "2px!important",
-      },
-    },
-  }),
-  codeEditorTools: css({
-    display: "flex",
-    padding: 8,
-    border: `1px solid ${theme.colors.atmo4}`,
-    borderBottom: "none",
-    alignItems: "center",
-    justifyContent: "space-between",
   }),
 };

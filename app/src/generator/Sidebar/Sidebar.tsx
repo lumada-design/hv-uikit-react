@@ -3,13 +3,11 @@ import {
   HvAccordion,
   HvBaseTheme,
   HvBox,
-  HvButton,
   HvDropdown,
   HvInput,
   HvListValue,
   HvLoading,
   HvSnackbar,
-  HvTooltip,
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
@@ -17,15 +15,7 @@ import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
-import {
-  Download,
-  Duplicate,
-  Reset,
-  Undo,
-  Redo,
-} from "@hitachivantara/uikit-react-icons";
-import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
-import { downloadTheme, themeDiff } from "generator/utils";
+import CodeEditor from "generator/CodeEditor";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -46,10 +36,11 @@ const Sidebar = () => {
     changeTheme,
   } = useTheme();
 
-  const { customTheme, updateCustomTheme, open, undo, redo, canUndo, canRedo } =
-    useContext(GeneratorContext);
+  const { updateCustomTheme, open } = useContext(GeneratorContext);
+
+  console.log(activeTheme);
+
   const [themeName, setThemeName] = useState("customTheme");
-  const [fullCode, setFullCode] = useState("");
   const [copied, setCopied] = useState(false);
 
   const [colorsOpen, setColorsOpen] = useState(false);
@@ -65,28 +56,6 @@ const Sidebar = () => {
     updateCustomTheme(newTheme);
   }, []);
 
-  useEffect(() => {
-    const temp: any = {};
-    temp.name = themeName;
-    temp.base = selectedTheme;
-    const final = {
-      ...temp,
-      ...themeDiff(activeTheme as object, customTheme),
-    };
-
-    // the `replace` bit below is just a regex to remove the quotes from
-    // the properties names, for displaying effect only.
-    setFullCode(
-      `import { createTheme } from "@hitachivantara/uikit-react-core";
-
-const ${themeName} = createTheme(` +
-        JSON.stringify(final, null, 2).replace(/\"([^(\")"]+)\":/g, "$1:") +
-        `)
-    
-export default ${themeName};`
-    );
-  }, [customTheme]);
-
   const nameChangeHandler = (name) => {
     setThemeName(name);
   };
@@ -100,31 +69,6 @@ export default ${themeName};`
   }, [themeName, selectedTheme]);
 
   const debouncedNameChangeHandler = debounce(nameChangeHandler, 250);
-
-  const onCopyHandler = () => {
-    navigator.clipboard.writeText(fullCode);
-    setCopied(true);
-  };
-
-  const onDownloadHandler = () => {
-    downloadTheme(`${themeName}.ts`, fullCode);
-  };
-
-  const onResetHandler = () => {
-    const newTheme = createTheme({
-      name: "customTheme",
-      base: selectedTheme as HvBaseTheme,
-    });
-    updateCustomTheme(newTheme);
-  };
-
-  const onUndoHandler = () => {
-    undo?.();
-  };
-
-  const onRedoHandler = () => {
-    redo?.();
-  };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
@@ -186,94 +130,8 @@ export default ${themeName};`
               />
             </HvBox>
           </HvBox>
-          <HvBox css={{ position: "relative" }}>
-            <HvBox className={styles.codeEditorTools}>
-              <HvBox css={{ display: "flex", alignItems: "center" }}>
-                <HvTypography variant="label">{themeName}.ts</HvTypography>
-                <HvTooltip title={<HvTypography>Download</HvTypography>}>
-                  <HvButton
-                    variant="secondaryGhost"
-                    icon
-                    onClick={onDownloadHandler}
-                  >
-                    <Download />
-                  </HvButton>
-                </HvTooltip>
-              </HvBox>
-              <HvBox css={{ display: "flex" }}>
-                <HvBox>
-                  {canUndo ? (
-                    <HvTooltip title={<HvTypography>Undo</HvTypography>}>
-                      <HvButton
-                        variant="secondaryGhost"
-                        icon
-                        onClick={onUndoHandler}
-                      >
-                        <Undo />
-                      </HvButton>
-                    </HvTooltip>
-                  ) : (
-                    <HvButton variant="secondaryGhost" icon disabled={!canUndo}>
-                      <Undo />
-                    </HvButton>
-                  )}
-                </HvBox>
-                <HvBox>
-                  {canRedo ? (
-                    <HvTooltip title={<HvTypography>Redo</HvTypography>}>
-                      <HvButton
-                        variant="secondaryGhost"
-                        icon
-                        onClick={onRedoHandler}
-                      >
-                        <Redo />
-                      </HvButton>
-                    </HvTooltip>
-                  ) : (
-                    <HvButton variant="secondaryGhost" icon disabled={!canRedo}>
-                      <Redo />
-                    </HvButton>
-                  )}
-                </HvBox>
-                <HvBox>
-                  <HvTooltip title={<HvTypography>Reset</HvTypography>}>
-                    <HvButton
-                      variant="secondaryGhost"
-                      icon
-                      onClick={onResetHandler}
-                    >
-                      <Reset />
-                    </HvButton>
-                  </HvTooltip>
-                </HvBox>
-                <HvBox>
-                  <HvTooltip
-                    title={<HvTypography>Copy to Clipboard</HvTypography>}
-                  >
-                    <HvButton
-                      variant="secondaryGhost"
-                      icon
-                      onClick={onCopyHandler}
-                    >
-                      <Duplicate />
-                    </HvButton>
-                  </HvTooltip>
-                </HvBox>
-              </HvBox>
-            </HvBox>
-            <HvCodeEditor
-              options={{
-                minimap: { enabled: false },
-                readOnly: true,
-                lineDecorationsWidth: 0,
-                lineNumbersMinChars: 0,
-              }}
-              language="typescript"
-              value={fullCode}
-              height={260}
-              width="100%"
-              className={styles.codeEditor}
-            />
+          <HvBox>
+            <CodeEditor themeName={themeName} setCopied={setCopied} />
           </HvBox>
           <HvBox css={{ display: "flex", justifyContent: "center" }}>
             <HvTypography variant="title3">Theme Tools</HvTypography>
