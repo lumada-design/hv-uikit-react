@@ -385,11 +385,14 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   carousel: {
     xsControlsDisplay: "string",
+    counterContainerDisplay: "string",
     actionsOffsetTop: "string",
-    idkFlexDirection: "string",
+    mainContainerFlexDirection: "string",
     controlsBorder: "string",
     controlsBackgroundColor: "string",
     controlsJustifyContent: "string",
+    thumbnailBorderRadius: "string",
+    thumbnailSelectedBorder: "string",
   },
 };
 

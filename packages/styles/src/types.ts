@@ -392,15 +392,18 @@ export type HvThemeComponents = {
   };
   carousel: {
     xsControlsDisplay: CSSProperties["display"];
+    counterContainerDisplay: CSSProperties["display"];
     actionsOffsetTop: CSSProperties["top"];
-    idkFlexDirection: CSSProperties["flexDirection"];
+    mainContainerFlexDirection: CSSProperties["flexDirection"];
+    controlsBorder: CSSProperties["border"];
     controlsJustifyContent: CSSProperties["justifyContent"];
     controlsBackgroundColor: CSSProperties["backgroundColor"];
-    controlsBorder: CSSProperties["border"];
+    thumbnailBorderRadius: CSSProperties["borderRadius"];
+    thumbnailSelectedBorder: CSSProperties["border"];
   };
   /*
   carousel: {
-    idk?: CSSProperties;
+    mainContainer?: CSSProperties;
     controls?: CSSProperties;
   };
   */

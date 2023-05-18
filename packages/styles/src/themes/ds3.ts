@@ -601,21 +601,14 @@ const ds3 = makeTheme((theme: HvTheme) => ({
   },
   carousel: {
     xsControlsDisplay: "none",
+    counterContainerDisplay: "block",
     actionsOffsetTop: `calc(-32px - ${theme.space.xs})`,
-    idkFlexDirection: "column-reverse",
+    mainContainerFlexDirection: "column-reverse",
     controlsBorder: "none",
     controlsBackgroundColor: "transparent",
     controlsJustifyContent: "space-between",
-    /*
-    idk: {
-      flexDirection: "column-reverse",
-    },
-    controls: {
-      justifyContent: "space-between",
-      backgroundColor: "transparent",
-      border: "unset",
-    },
-    */
+    thumbnailBorderRadius: theme.radii.none,
+    thumbnailSelectedBorder: `1px solid ${theme.colors.base_dark}`,
   },
 }));
 

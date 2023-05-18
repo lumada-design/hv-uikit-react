@@ -1,7 +1,8 @@
+import { CSSProperties } from "react";
 import { CSSInterpolation } from "@emotion/css";
 import { getClasses } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
-import { CSSProperties } from "react";
+import { replace$ } from "./utils";
 
 export type HvCarouselClasses = Record<keyof typeof styles, string>;
 
@@ -22,14 +23,14 @@ const styles = {
       padding: 0,
     },
     // put dots on top of Slide
-    "& .HvCarousel-dots": {
+    "& $dots": {
       position: "relative",
       top: "-40px",
     },
-    "& .HvCarousel-actions": {
+    "& $actions": {
       top: 0,
     },
-    "& .HvCarousel-controls": {
+    "& $controls": {
       display: theme.carousel.xsControlsDisplay,
     },
   },
@@ -60,12 +61,10 @@ const styles = {
   },
   closeButton: {},
 
-  idk: {
+  mainContainer: {
     display: "flex",
     flexDirection: theme.carousel
-      ?.idkFlexDirection as CSSProperties["flexDirection"],
-
-    // ...theme.carousel?.idk,
+      .mainContainerFlexDirection as CSSProperties["flexDirection"],
   },
 
   controls: {
@@ -76,15 +75,18 @@ const styles = {
     backgroundColor: theme.carousel.controlsBackgroundColor,
     border: theme.carousel.controlsBorder,
     gap: theme.space.xs,
-    // ...theme.carousel?.controls,
+    "&:has($dots)": {
+      justifyContent: "center",
+    },
   },
+  pageCounter: {},
 
   main: {
     padding: 0,
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    "&:hover .HvCarousel-slideControls": {
+    "&:hover $slideControls": {
       opacity: 1,
     },
   },
@@ -97,6 +99,7 @@ const styles = {
     top: theme.space.xs,
     right: theme.space.md,
     zIndex: 1,
+    display: theme.carousel.counterContainerDisplay,
   },
   counter: {
     color: theme.colors.base_light,
@@ -176,10 +179,10 @@ const styles = {
     textAlign: "center",
     aspectRatio: "16/9",
     opacity: "50%",
-    borderRadius: theme.radii.round,
+    borderRadius: theme.carousel.thumbnailBorderRadius,
   },
   thumbnailSelected: {
-    border: `1px solid ${theme.colors.base_dark}`,
+    border: theme.carousel.thumbnailSelectedBorder,
     opacity: "100%",
   },
 } satisfies Record<string, CSSInterpolation>;
@@ -189,6 +192,6 @@ export const carouselClasses = getClasses(
   "HvCarousel"
 );
 
-const newStyles = styles; // replace $myClass with .HvCarousel-myClass
+const newStyles = replace$(styles, "HvCarousel");
 
 export default newStyles;

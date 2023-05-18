@@ -7,7 +7,6 @@ import {
   HvContainer,
   HvStack,
   HvTypography,
-  useBreakpoints,
 } from "@hitachivantara/uikit-react-core";
 import {
   Backwards,
@@ -28,31 +27,31 @@ export interface HvCarouselProps
   extends HvBaseProps<HTMLDivElement, "title" | "onChange"> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: Partial<HvCarouselClasses>;
-  /** TODO */
+  /** Height of the Slider container. If undefined, adjusts according to the breakpoint width */
   height?: CSSProperties["height"];
-  /** TODO */
+  /** Width of the thumbnail. Height will try to maintain aspect-ratio */
   thumbnailWidth?: CSSProperties["width"];
-  /** Title of the image carousel */
+  /** Title of the carousel */
   title?: React.ReactNode;
   /** Documents to be displayed. */
   documents: { src: string; value: string }[];
-  /** Actions! */
+  /** Custom content to render in the actions area */
   actions?: React.ReactNode;
-  /** Whether Carousel is in "XS mode". Removed extra padding to use in embedded contexts */
+  /** Whether Carousel is in "xs mode" - to use in embedded contexts */
   xs?: boolean;
-  /** A flag that switches to low cardinality mode */
+  /** Whether to show dots instead of arrow pagination. Defaults to true under 5 elements */
   showDots?: boolean;
-  /** A flag that activates a counter on the top right corner of the selected image */
+  /** Whether to show the counter on the top-right corner of the active slide */
   showCounter?: boolean;
-  /** Whether to show the back/forwards buttons over the slide */
+  /** Whether to show the back/forwards buttons over the active slide */
   showSlideControls?: boolean;
-  /** Whether to show the Fullscreen toggle button */
+  /** Whether to enable the fullscreen toggle button */
   showFullscreen?: boolean;
-  /** Whether to show the thumbnails */
+  /** Whether to hide the thumbnails. Hidden by default in "xs" mode */
   hideThumbnails?: boolean;
   /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
   carouselOptions?: EmblaOptionsType;
-  /** A function called each time the selected image changes. */
+  /** The callback fired when the active slide changes. */
   onChange?: (index: number) => void;
 }
 
@@ -64,13 +63,13 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const {
     className,
     classes = {},
-    height: heightProp,
+    height: heightProp = "auto",
     thumbnailWidth = 90,
     title,
     documents,
     actions,
     xs,
-    showDots,
+    showDots: showDotsProp,
     showCounter,
     showSlideControls,
     showFullscreen: showFullscreenProp,
@@ -81,7 +80,6 @@ export const HvCarousel = (props: HvCarouselProps) => {
   } = props;
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const { sm: isSmUp, lg: isLgUp } = useBreakpoints("up");
 
   const [containerRef, controller] = useCarousel(carouselOptions);
 
@@ -141,8 +139,9 @@ export const HvCarousel = (props: HvCarouselProps) => {
   const canNext = controller?.canScrollNext() ?? false;
   const showTitle = !!title && (!xs || isFullscreen);
   const showFullscreen = showFullscreenProp ?? xs;
-  const height = isFullscreen ? "100%" : isLgUp ? 600 : isSmUp ? 400 : 200;
+  const height = isFullscreen ? "100%" : heightProp ?? "auto";
   const hideThumbnails = hideThumbnailsProp ?? (xs && !isFullscreen);
+  const showDots = showDotsProp ?? documents.length <= 5;
 
   return (
     <ClassNames>
@@ -151,26 +150,31 @@ export const HvCarousel = (props: HvCarouselProps) => {
           className={cx(
             className,
             cx(cc.root, classes.root, css(styles.root)),
-            xs && cx(cc.xs, css(styles.xs), "xs"),
-            isFullscreen && cx(cc.xs, css(styles.fullscreen), "fs")
+            xs && cx(cc.xs, classes.root, css(styles.xs)),
+            isFullscreen &&
+              cx(cc.xs, classes.fullscreen, css(styles.fullscreen))
           )}
           {...others}
         >
           {showTitle && (
             <HvTypography
               variant="title2"
-              className={cx(css(styles.title), cc.title)}
+              className={cx(cc.title, classes.title, css(styles.title))}
             >
               {title}
             </HvTypography>
           )}
-          <div className={cx(css(styles.actions), cc.actions)}>
+          <div className={cx(cc.actions, classes.actions, css(styles.actions))}>
             {showFullscreen && (
               <HvButton
                 icon
                 variant="secondaryGhost"
                 onClick={() => setIsFullscreen((curr) => !curr)}
-                className={cx(css(styles.closeButton), cc.closeButton)}
+                className={cx(
+                  cc.closeButton,
+                  classes.closeButton,
+                  css(styles.closeButton)
+                )}
               >
                 {isFullscreen ? (
                   <Close aria-label="Close" />
@@ -182,14 +186,26 @@ export const HvCarousel = (props: HvCarouselProps) => {
             {actions}
           </div>
 
-          <div className={css(styles.idk)}>
-            <div className={cx(css(styles.controls), cc.controls)}>
+          <div
+            className={cx(
+              cc.mainContainer,
+              classes.mainContainer,
+              css(styles.mainContainer)
+            )}
+          >
+            <div
+              className={cx(
+                cc.controls,
+                classes.controls,
+                css(styles.controls)
+              )}
+            >
               {showDots ? (
-                <div className={cx(css(styles.dots), cc.dots)}>
+                <div className={cx(cc.dots, classes.dots, css(styles.dots))}>
                   {documents.map((el, index) => (
                     <span
                       key={`circle-${index}`}
-                      className={cx(css(styles.dot), cc.dot, {
+                      className={cx(cc.dot, classes.dot, css(styles.dot), {
                         [css(styles.dotSelected)]: index === selectedIndex,
                       })}
                     />
@@ -206,7 +222,13 @@ export const HvCarousel = (props: HvCarouselProps) => {
                   >
                     <Backwards iconSize="XS" />
                   </HvButton>
-                  <div>{`${selectedIndex + 1} / ${documents.length}`}</div>
+                  <div
+                    className={cx(
+                      cc.pageCounter,
+                      classes.pageCounter,
+                      css(styles.pageCounter)
+                    )}
+                  >{`${selectedIndex + 1} / ${documents.length}`}</div>
                   <HvButton
                     icon
                     disabled={!canNext}
@@ -223,14 +245,25 @@ export const HvCarousel = (props: HvCarouselProps) => {
             <div
               className={cx(
                 cc.main,
-                cx(css(styles.main)),
-                xs && cx(css(styles.mainXs)),
-                isFullscreen && cx(css(styles.mainFullscreen))
+                cx(cc.main, classes.main, css(styles.main)),
+                xs && cx(cc.mainXs, classes.mainXs, css(styles.mainXs)),
+                isFullscreen &&
+                  cx(
+                    cc.mainFullscreen,
+                    classes.mainFullscreen,
+                    css(styles.mainFullscreen)
+                  )
               )}
             >
               {showCounter && (
-                <div className={cx(css(styles.counterContainer))}>
-                  <span className={css(styles.counter)}>
+                <div
+                  className={cx(
+                    cc.counterContainer,
+                    classes.counterContainer,
+                    css(styles.counterContainer)
+                  )}
+                >
+                  <span className={cx(cc.counter, css(styles.counter))}>
                     {`${selectedIndex + 1}/${documents.length}`}
                   </span>
                 </div>
