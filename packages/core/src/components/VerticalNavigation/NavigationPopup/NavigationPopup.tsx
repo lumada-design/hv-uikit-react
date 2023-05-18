@@ -1,4 +1,4 @@
-import { Popper, ClickAwayListener } from "@mui/material";
+import { ClickAwayListener } from "@mui/material";
 import { clsx } from "clsx";
 
 import {
@@ -9,7 +9,7 @@ import {
 } from "@core/components";
 import { setId } from "@core/utils";
 
-import { StyledPopupContainer } from "./NavigationPopup.styles";
+import { StyledPopper, StyledPopupContainer } from "./NavigationPopup.styles";
 
 export interface HvVerticalNavigationPopupProps {
   id?: string;
@@ -45,7 +45,7 @@ export const HvVerticalNavigationPopup = ({
   };
 
   return (
-    <Popper open anchorEl={anchorEl} placement="right-start">
+    <StyledPopper open anchorEl={anchorEl} placement="right-start">
       <ClickAwayListener onClickAway={handleClickAway}>
         <StyledPopupContainer>
           <HvVerticalNavigation open>
@@ -62,6 +62,6 @@ export const HvVerticalNavigationPopup = ({
           </HvVerticalNavigation>
         </StyledPopupContainer>
       </ClickAwayListener>
-    </Popper>
+    </StyledPopper>
   );
 };
