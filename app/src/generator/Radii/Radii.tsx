@@ -7,7 +7,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 
 const Radii = () => {
@@ -17,16 +17,6 @@ const Radii = () => {
     new Map<string, string | number>()
   );
 
-  useEffect(() => {
-    let map = new Map<string, string | number>();
-    if (activeTheme) {
-      Object.keys(activeTheme.radii).map((s) => {
-        map.set(s, activeTheme.radii[s]);
-      });
-    }
-    setCurrValues(map);
-  }, []);
-
   const valueChangedHandler = (spacing: string, value) => {
     let map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
@@ -34,16 +24,12 @@ const Radii = () => {
   };
 
   const setValueHandler = (radii: string) => {
-    let currRadii = {};
-    for (const [key, val] of currValues.entries()) {
-      currRadii[key] = val;
-    }
     const radiiValue = currValues.get(radii) || 0;
 
     const newTheme = createTheme({
       ...customTheme,
       radii: {
-        ...currRadii,
+        ...customTheme.radii,
         [radii]: radii === "base" ? radiiValue : radiiValue,
       },
     });
@@ -62,7 +48,7 @@ const Radii = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(r)?.toString() || ""}
+                  value={currValues?.get(r)?.toString() || customTheme.radii[r]}
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(r, value)}
                 />

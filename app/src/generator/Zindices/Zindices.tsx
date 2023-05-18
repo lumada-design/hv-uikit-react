@@ -7,7 +7,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 
 const Zindices = () => {
@@ -17,16 +17,6 @@ const Zindices = () => {
     new Map<string, number>()
   );
 
-  useEffect(() => {
-    let map = new Map<string, number>();
-    if (activeTheme) {
-      Object.keys(activeTheme.zIndices).map((s) => {
-        map.set(s, activeTheme.zIndices[s]);
-      });
-    }
-    setCurrValues(map);
-  }, []);
-
   const valueChangedHandler = (zIndex: string, value) => {
     let map = new Map<string, number>(currValues);
     map.set(zIndex, parseInt(value));
@@ -34,16 +24,12 @@ const Zindices = () => {
   };
 
   const setValueHandler = (zIndex: string) => {
-    let currzIndices = {};
-    for (const [key, val] of currValues.entries()) {
-      currzIndices[key] = val;
-    }
     const zIndexValue = currValues.get(zIndex) || 0;
 
     const newTheme = createTheme({
       ...customTheme,
       zIndices: {
-        ...currzIndices,
+        ...customTheme.zIndices,
         [zIndex]: zIndexValue,
       },
     });
@@ -62,7 +48,9 @@ const Zindices = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(r)?.toString() || ""}
+                  value={
+                    currValues?.get(r)?.toString() || customTheme.zIndices[r]
+                  }
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(r, value)}
                 />

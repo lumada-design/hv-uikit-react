@@ -7,7 +7,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
 
 const Spacing = () => {
@@ -17,16 +17,6 @@ const Spacing = () => {
     new Map<string, string | number>()
   );
 
-  useEffect(() => {
-    let map = new Map<string, string | number>();
-    if (activeTheme) {
-      Object.keys(activeTheme.space).map((s) => {
-        map.set(s, activeTheme.space[s]);
-      });
-    }
-    setCurrValues(map);
-  }, []);
-
   const valueChangedHandler = (spacing: string, value) => {
     let map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
@@ -34,10 +24,6 @@ const Spacing = () => {
   };
 
   const setValueHandler = (spacing: string) => {
-    let currSpacing = {};
-    for (const [key, val] of currValues.entries()) {
-      currSpacing[key] = val;
-    }
     const spacingValue =
       spacing === "base"
         ? parseInt(currValues.get(spacing)?.toString() || "")
@@ -46,7 +32,7 @@ const Spacing = () => {
     const newTheme = createTheme({
       ...customTheme,
       space: {
-        ...currSpacing,
+        ...customTheme.space,
         [spacing]:
           spacing === "base" ? parseInt(spacingValue.toString()) : spacingValue,
       },
@@ -66,10 +52,9 @@ const Spacing = () => {
               </div>
               <div className={styles.value}>
                 <HvInput
-                  value={currValues?.get(s)?.toString() || ""}
+                  value={currValues?.get(s)?.toString() || customTheme.space[s]}
                   classes={{ root: css({ width: "100%" }) }}
                   onChange={(event, value) => valueChangedHandler(s, value)}
-                  // onInput={inputHandler}
                 />
               </div>
               <div>

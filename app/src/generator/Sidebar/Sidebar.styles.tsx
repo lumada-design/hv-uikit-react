@@ -13,7 +13,6 @@ export const styles = {
     flexDirection: "column",
     gap: theme.space.sm,
     padding: theme.space.sm,
-    paddingRight: theme.space.md,
     position: "fixed",
     zIndex: theme.zIndices.overlay,
     height: "100vh",

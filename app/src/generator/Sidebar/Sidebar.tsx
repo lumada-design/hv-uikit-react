@@ -241,6 +241,7 @@ export default ${themeName};`
                       variant="secondaryGhost"
                       icon
                       onClick={onResetHandler}
+                      disabled={!canUndo && !canRedo}
                     >
                       <Reset />
                     </HvButton>
