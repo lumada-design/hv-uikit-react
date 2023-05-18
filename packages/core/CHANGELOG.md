@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.1...@hitachivantara/uikit-react-core@5.7.2) (2023-05-18)
+
+### Bug Fixes
+
+- **DropdownMenu:** missing border ([#3339](https://github.com/lumada-design/hv-uikit-react/issues/3339)) ([8cf7c33](https://github.com/lumada-design/hv-uikit-react/commit/8cf7c33b4f73eeca5d448d77faecaf40ddc73179))
+- header hover ([5770ba2](https://github.com/lumada-design/hv-uikit-react/commit/5770ba2301643182132849410ab07f33cea63c6e))
+
 ## [5.7.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.0...@hitachivantara/uikit-react-core@5.7.1) (2023-05-17)
 
 ### Bug Fixes
