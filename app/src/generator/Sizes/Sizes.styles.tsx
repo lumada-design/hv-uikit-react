@@ -7,7 +7,6 @@ export const styles = {
     display: "flex",
     flexDirection: "column",
     gap: theme.space.xs,
-    paddingLeft: theme.space.md,
     marginBottom: theme.space.lg,
   }),
   item: css({
@@ -17,6 +16,6 @@ export const styles = {
     gap: 10,
   }),
   size: css({ width: 60 }),
-  value: css({ width: 180 }),
+  value: css({ width: 140 }),
   set: css({ width: 70 }),
 };

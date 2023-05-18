@@ -1,6 +1,5 @@
 import {
   createTheme,
-  HvAccordion,
   HvBaseTheme,
   HvBox,
   HvDropdown,
@@ -8,7 +7,10 @@ import {
   HvListValue,
   HvLoading,
   HvSnackbar,
+  HvTab,
+  HvTabs,
   HvTypography,
+  theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { lazy, Suspense, useContext, useEffect, useState } from "react";
@@ -16,6 +18,13 @@ import { GeneratorContext } from "generator/GeneratorContext";
 import { styles } from "./Sidebar.styles";
 import debounce from "lodash/debounce";
 import CodeEditor from "generator/CodeEditor";
+import {
+  Bold,
+  FontSize,
+  PaintBucket,
+  Template,
+} from "@hitachivantara/uikit-react-icons";
+import { css } from "@emotion/css";
 
 const Colors = lazy(() => import("generator/Colors"));
 const FontSizes = lazy(() => import("generator/FontSizes"));
@@ -27,26 +36,14 @@ const Zindices = lazy(() => import("generator/Zindices"));
 const Sizes = lazy(() => import("generator/Sizes"));
 
 const Sidebar = () => {
-  const {
-    activeTheme,
-    selectedTheme,
-    selectedMode,
-    colorModes,
-    themes,
-    changeTheme,
-  } = useTheme();
+  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
+    useTheme();
 
   const { updateCustomTheme, open } = useContext(GeneratorContext);
 
-  console.log(activeTheme);
-
   const [themeName, setThemeName] = useState("customTheme");
   const [copied, setCopied] = useState(false);
-
-  const [colorsOpen, setColorsOpen] = useState(false);
-  const [fontsOpen, setFontsOpen] = useState(false);
-  const [typographyOpen, setTypographyOpen] = useState(false);
-  const [layoutOpen, setLayoutOpen] = useState(false);
+  const [tab, setTab] = useState(0);
 
   useEffect(() => {
     const newTheme = createTheme({
@@ -133,88 +130,63 @@ const Sidebar = () => {
           <HvBox>
             <CodeEditor themeName={themeName} setCopied={setCopied} />
           </HvBox>
-          <HvBox css={{ display: "flex", justifyContent: "center" }}>
-            <HvTypography variant="title3">Theme Tools</HvTypography>
-          </HvBox>
           <HvBox
             css={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-              marginBottom: 20,
+              overflowY: "scroll",
             }}
           >
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
+            <HvTabs
+              value={tab}
+              onChange={(e, val) => setTab(val)}
+              classes={{ flexContainer: styles.themeTools }}
             >
-              <HvAccordion
-                id="colors"
-                label="colors"
-                expanded={colorsOpen}
-                onChange={() => setColorsOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {colorsOpen && <Colors />}
-              </HvAccordion>
-            </Suspense>
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
+              <HvTab
+                icon={<PaintBucket />}
+                iconPosition="top"
+                label="Colors"
+                classes={{ root: css({ fontSize: 12 }) }}
+              />
+              <HvTab
+                icon={<FontSize />}
+                iconPosition="top"
+                label="Typography"
+                classes={{ root: css({ fontSize: 12 }) }}
+              />
+              <HvTab
+                icon={<Bold />}
+                iconPosition="top"
+                label="Fonts"
+                classes={{ root: css({ fontSize: 12 }) }}
+              />
+              <HvTab
+                icon={<Template />}
+                iconPosition="top"
+                label="Layout"
+                classes={{ root: css({ fontSize: 12 }) }}
+              />
+            </HvTabs>
+            <HvBox
+              css={{
+                padding: theme.space.sm,
+                paddingTop: theme.space.md,
+              }}
             >
-              <HvAccordion
-                id="typography"
-                label="typography"
-                expanded={typographyOpen}
-                onChange={() => setTypographyOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
+              <Suspense
+                fallback={
+                  <div>
+                    <HvLoading label="Loading..." />
+                  </div>
+                }
               >
-                {typographyOpen && <Typography />}
-              </HvAccordion>
-            </Suspense>
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
-              <HvAccordion
-                id="fonts"
-                label="fonts"
-                expanded={fontsOpen}
-                onChange={() => setFontsOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {fontsOpen && (
+                {tab === 0 && <Colors />}
+                {tab === 1 && <Typography />}
+                {tab === 2 && (
                   <>
                     <FontFamily />
                     <FontSizes />
                   </>
                 )}
-              </HvAccordion>
-            </Suspense>
-            <Suspense
-              fallback={
-                <div>
-                  <HvLoading label="Loading..." />
-                </div>
-              }
-            >
-              <HvAccordion
-                id="sizes"
-                label="layout"
-                expanded={layoutOpen}
-                onChange={() => setLayoutOpen((prev) => !prev)}
-                classes={{ label: styles.label }}
-              >
-                {layoutOpen && (
+                {tab === 3 && (
                   <>
                     <Sizes />
                     <Radii />
@@ -222,8 +194,8 @@ const Sidebar = () => {
                     <Zindices />
                   </>
                 )}
-              </HvAccordion>
-            </Suspense>
+              </Suspense>
+            </HvBox>
           </HvBox>
         </div>
       )}

@@ -7,6 +7,7 @@ import {
   HvDropdown,
   HvListValue,
   HvButton,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { styles } from "./Typography.styles";
 import { getVarValue } from "generator/utils";
@@ -29,6 +30,8 @@ const typographyToShow = [
 
 const Typography = () => {
   const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
+  const { rootId } = useTheme();
+
   const [updatedHeights, setUpdatedHeights] = useState<Map<string, string>>(
     new Map<string, string>()
   );
@@ -43,7 +46,10 @@ const Typography = () => {
     let map = new Map<string, string>();
     if (customTheme) {
       typographyToShow.map((t) => {
-        map.set(t, getVarValue(customTheme.typography[t].fontSize));
+        if (customTheme.typography[t].fontSize) {
+          const val = getVarValue(customTheme.typography[t].fontSize, rootId);
+          if (val) map.set(t, val);
+        }
       });
       setUpdatedSizes(map);
     }
@@ -207,7 +213,6 @@ const Typography = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: 10,
-                paddingLeft: 30,
                 marginBottom: 10,
               }}
             >

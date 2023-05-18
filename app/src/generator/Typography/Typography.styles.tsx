@@ -6,11 +6,9 @@ export const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: theme.space.xs,
   }),
   label: css({
     ...theme.typography.label,
-    textTransform: "capitalize",
   }),
   color: css({
     width: 20,

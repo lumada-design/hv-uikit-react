@@ -15,10 +15,15 @@ export const styles = {
   }),
   codeEditorTools: css({
     display: "flex",
-    padding: 8,
+    padding: 4,
+    paddingRight: theme.space.xs,
+    paddingLeft: theme.space.xs,
     border: `1px solid ${theme.colors.atmo4}`,
     borderBottom: "none",
     alignItems: "center",
     justifyContent: "space-between",
+  }),
+  themeName: css({
+    width: 175,
   }),
 };
