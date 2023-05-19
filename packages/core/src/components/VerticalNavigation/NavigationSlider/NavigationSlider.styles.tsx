@@ -39,6 +39,6 @@ export const StyledOverflowTooltip = styled(
   transientOptions
 )(({ $hasEndAdornment }: { $hasEndAdornment: boolean }) => ({
   ...(!$hasEndAdornment && {
-    paddingRight: 8,
+    paddingRight: theme.space.xs,
   }),
 }));
