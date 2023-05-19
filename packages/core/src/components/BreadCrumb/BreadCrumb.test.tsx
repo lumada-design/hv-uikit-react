@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { HvProvider } from "@core/providers";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { HvBreadCrumb } from "./BreadCrumb";
 
 const data = [
@@ -14,23 +14,6 @@ const data = [
 ];
 
 describe("BreadCrumb", () => {
-  const { ResizeObserver } = window;
-
-  beforeEach(() => {
-    // @ts-ignore
-    delete window.ResizeObserver;
-    window.ResizeObserver = vi.fn().mockImplementation(() => ({
-      observe: vi.fn(),
-      unobserve: vi.fn(),
-      disconnect: vi.fn(),
-    }));
-  });
-
-  afterEach(() => {
-    window.ResizeObserver = ResizeObserver;
-    vi.restoreAllMocks();
-  });
-
   it("should be defined", () => {
     const { container } = render(<HvBreadCrumb />);
     expect(container).toBeDefined();
