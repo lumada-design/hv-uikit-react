@@ -8,18 +8,13 @@ import React, {
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
 import { ClassNames } from "@emotion/react";
 import {
-  HvBaseProps,
-  HvButton,
-  HvContainer,
-  HvStack,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
-import {
   Backwards,
   Forwards,
   Close,
   Fullscreen,
 } from "@hitachivantara/uikit-react-icons";
+import { HvButton, HvContainer, HvStack, HvTypography } from "@core/components";
+import { HvBaseProps } from "@core/types";
 
 import styles, {
   HvCarouselClasses,

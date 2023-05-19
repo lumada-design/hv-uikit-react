@@ -7,10 +7,11 @@ import {
   HvCardHeader,
   HvCardMedia,
   HvCardContent,
+  HvCarousel,
+  HvCarouselProps,
+  HvCarouselSlide,
   HvDropDownMenu,
-} from "@hitachivantara/uikit-react-core";
-
-import { HvCarousel, HvCarouselProps, HvCarouselSlide } from "../..";
+} from "../..";
 
 export default {
   title: "Lab/Carousel",

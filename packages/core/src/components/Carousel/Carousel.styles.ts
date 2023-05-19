@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { CSSInterpolation } from "@emotion/css";
-import { getClasses } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
+import { getClasses } from "@core/utils";
 import { replace$ } from "./utils";
 
 export type HvCarouselClasses = Record<keyof typeof styles, string>;
