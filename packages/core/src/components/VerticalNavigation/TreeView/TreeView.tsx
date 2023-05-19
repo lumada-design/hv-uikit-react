@@ -231,7 +231,9 @@ export const HvVerticalNavigationTreeView = forwardRef(
     );
 
     const isChildSelected = useCallback(
-      (id) => selected.startsWith(id),
+      // the second part of the condition is to ensure that the id we're
+      // looking at is actually of a child (ie, there's at least one "-")
+      (id) => selected.startsWith(id) && selected.includes("-"),
       [selected]
     );
 
