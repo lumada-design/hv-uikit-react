@@ -24,13 +24,13 @@ export interface HvProviderProps {
    */
   children?: React.ReactNode;
   /**
-   * Id of your root element.
+   * Id of your root element. This element should already exist in your application and be a parent component of the `HvProvider`.
    */
   rootElementId?: string;
   /**
    * By default the baseline styles are applied globally, `global`, to the application for the UI Kit components to work properly.
    * If you need to scope the baseline styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the baseline to your root, you need to add the `rootElementId` property.
+   * To scope the baseline to your root, you need to add the `rootElementId` property to identify your root component.
    * If the `rootElementId` property is not set, the baseline will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
    * If you are providing your own baseline styles, you can set this property to `none` to disable the baseline styles.
    */
@@ -38,7 +38,7 @@ export interface HvProviderProps {
   /**
    * By default the theme styles are applied globally, `global`, to the application.
    * If you need to scope the theme styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the theme to your root, you need to add the `rootElementId` property.
+   * To scope the theme to your root, you need to add the `rootElementId` property to identify your root component.
    * If the `rootElementId` property is not set, the theme will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
    */
   cssTheme?: "global" | "scoped";
