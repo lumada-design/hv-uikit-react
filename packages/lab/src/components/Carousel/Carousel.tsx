@@ -1,4 +1,10 @@
-import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import React, {
+  CSSProperties,
+  Children,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import useCarousel, { EmblaOptionsType } from "embla-carousel-react";
 import { ClassNames } from "@emotion/react";
 import {
@@ -27,14 +33,14 @@ export interface HvCarouselProps
   extends HvBaseProps<HTMLDivElement, "title" | "onChange"> {
   /** A Jss Object used to override or extend the styles applied. */
   classes?: Partial<HvCarouselClasses>;
-  /** Height of the Slider container. If undefined, adjusts according to the breakpoint width */
+  /** Height of the Slider container. If `undefined`, images will keep a 16/9 aspect-ratio */
   height?: CSSProperties["height"];
-  /** Width of the thumbnail. Height will try to maintain aspect-ratio */
+  /** Width of the thumbnail. Height will try to maintain a 16/9 aspect-ratio */
   thumbnailWidth?: CSSProperties["width"];
   /** Title of the carousel */
   title?: React.ReactNode;
-  /** Documents to be displayed. */
-  documents: { src: string; value: string }[];
+  /** Content slides to be displayed. @see `<HvCarouselSlide />` */
+  children?: React.ReactNode;
   /** Custom content to render in the actions area */
   actions?: React.ReactNode;
   /** Whether Carousel is in "xs mode" - to use in embedded contexts */
@@ -51,6 +57,8 @@ export interface HvCarouselProps
   hideThumbnails?: boolean;
   /** Carousel configuration options. @see https://www.embla-carousel.com/api/options/ */
   carouselOptions?: EmblaOptionsType;
+  /** */
+  renderThumbnail?: (index: number) => React.ReactNode;
   /** The callback fired when the active slide changes. */
   onChange?: (index: number) => void;
 }
@@ -66,26 +74,33 @@ export const HvCarousel = (props: HvCarouselProps) => {
     height: heightProp = "auto",
     thumbnailWidth = 90,
     title,
-    documents,
+    children,
     actions,
     xs,
     showDots: showDotsProp,
-    showCounter,
+    showCounter: showCounterProp,
     showSlideControls,
     showFullscreen: showFullscreenProp,
     hideThumbnails: hideThumbnailsProp,
-    carouselOptions = { loop: true },
+    carouselOptions,
+    renderThumbnail,
     onChange,
     ...others
   } = props;
   const thumbnailsRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const [containerRef, controller] = useCarousel(carouselOptions);
+  const [containerRef, controller] = useCarousel({
+    align: "start",
+    loop: true,
+    ...carouselOptions,
+  });
 
   const [selectedIndex, setSelectedIndex] = useState(
-    carouselOptions.startIndex ?? 0
+    carouselOptions?.startIndex ?? 0
   );
+
+  const numSlides = Children.count(children);
 
   const handlePrevious = () => {
     controller?.scrollPrev();
@@ -130,18 +145,18 @@ export const HvCarousel = (props: HvCarouselProps) => {
     if (!controller) return;
 
     controller.reInit();
-    setSelectedIndex((currentIndex) =>
-      clamp(currentIndex, 0, documents.length)
-    );
-  }, [documents.length]);
+    setSelectedIndex((currentIndex) => clamp(currentIndex, 0, numSlides));
+  }, [numSlides]);
 
   const canPrev = controller?.canScrollPrev() ?? false;
   const canNext = controller?.canScrollNext() ?? false;
   const showTitle = !!title && (!xs || isFullscreen);
   const showFullscreen = showFullscreenProp ?? xs;
   const height = isFullscreen ? "100%" : heightProp ?? "auto";
+  const showCounter = xs;
   const hideThumbnails = hideThumbnailsProp ?? (xs && !isFullscreen);
-  const showDots = showDotsProp ?? documents.length <= 5;
+  const showThumbnails = !hideThumbnails && !!renderThumbnail;
+  const showDots = showDotsProp ?? numSlides <= 5;
 
   return (
     <ClassNames>
@@ -202,7 +217,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
             >
               {showDots ? (
                 <div className={cx(cc.dots, classes.dots, css(styles.dots))}>
-                  {documents.map((el, index) => (
+                  {Array.from(Array(numSlides)).map((el, index) => (
                     <span
                       key={`circle-${index}`}
                       className={cx(cc.dot, classes.dot, css(styles.dot), {
@@ -228,7 +243,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
                       classes.pageCounter,
                       css(styles.pageCounter)
                     )}
-                  >{`${selectedIndex + 1} / ${documents.length}`}</div>
+                  >{`${selectedIndex + 1} / ${numSlides}`}</div>
                   <HvButton
                     icon
                     disabled={!canNext}
@@ -264,7 +279,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
                   )}
                 >
                   <span className={cx(cc.counter, css(styles.counter))}>
-                    {`${selectedIndex + 1}/${documents.length}`}
+                    {`${selectedIndex + 1}/${numSlides}`}
                   </span>
                 </div>
               )}
@@ -307,48 +322,38 @@ export const HvCarousel = (props: HvCarouselProps) => {
                     cc.slidesContainer
                   )}
                 >
-                  {documents.map((el) => (
-                    <div
-                      key={`slide-${el.value}`}
-                      className={cx(classes.slide, css(styles.slide), cc.slide)}
-                    >
-                      <img
-                        className={cx(css(styles.image))}
-                        src={el.src}
-                        alt={el.value}
-                      />
-                    </div>
-                  ))}
+                  {children}
                 </div>
               </div>
             </div>
           </div>
 
-          {!hideThumbnails && (
+          {showThumbnails && (
             <div
               ref={thumbnailsRef}
               className={cx(cc.panel, css(styles.panel))}
             >
               <HvStack direction="row" spacing="xs">
-                {documents.map((doc, i) => (
+                {Array.from(Array(numSlides)).map((doc, i) => (
                   <HvButton
                     icon
                     variant="secondaryGhost"
                     key={`button-${i}`}
                     style={{ width: thumbnailWidth }}
                     className={cx(
-                      css(styles.thumbnailButton),
-                      cc.thumbnailButton
+                      cc.thumbnail,
+                      classes.thumbnail,
+                      css(styles.thumbnail),
+                      i === selectedIndex &&
+                        cx(
+                          cc.thumbnailSelected,
+                          classes.thumbnailSelected,
+                          css(styles.thumbnailSelected)
+                        )
                     )}
                     onClick={() => handleScroll(i)}
                   >
-                    <img
-                      className={cx(css(styles.thumbnail), {
-                        [css(styles.thumbnailSelected)]: i === selectedIndex,
-                      })}
-                      src={doc.src}
-                      alt={doc.value}
-                    />
+                    {renderThumbnail(i)}
                   </HvButton>
                 ))}
               </HvStack>

@@ -3,7 +3,7 @@
 import { vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { HvCarousel } from ".";
+import { HvCarousel, HvCarouselSlide } from ".";
 
 Element.prototype.scrollIntoView = vi.fn();
 
@@ -12,11 +12,12 @@ const setup = ({ title = "TITLE", numImages = 10, onChange = () => {} }) => {
     <HvCarousel
       title={title}
       onChange={onChange}
-      documents={Array.from(Array(numImages), (el, i) => ({
-        src: `/image-${i}`,
-        value: `label-${i}`,
-      }))}
-    />
+      renderThumbnail={(i) => <img src={`/image-${i}`} alt={`label-${i}`} />}
+    >
+      {Array.from(Array(numImages), (el, i) => (
+        <HvCarouselSlide src={`/image-${i}`} alt={`label-${i}`} />
+      ))}
+    </HvCarousel>
   );
 };
 

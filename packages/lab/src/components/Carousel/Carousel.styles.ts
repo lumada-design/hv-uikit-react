@@ -132,14 +132,6 @@ const styles = {
     flexDirection: "row",
     height: "100%",
   },
-  slide: {
-    minWidth: "100%",
-    display: "flex",
-    justifyContent: "center",
-  },
-  image: {
-    aspectRatio: "16/9",
-  },
 
   dots: {
     display: "flex",
@@ -169,29 +161,33 @@ const styles = {
     overflowY: "hidden",
     padding: theme.spacing(["xs", "2px", "2px"]),
   },
-  thumbnailButton: {
+  thumbnail: {
     height: "unset",
     padding: 0,
-  },
-  thumbnail: {
-    width: "100%",
-    height: "100%",
-    textAlign: "center",
-    aspectRatio: "16/9",
-    opacity: "50%",
-    borderRadius: theme.carousel.thumbnailBorderRadius,
+    "& img": {
+      width: "100%",
+      height: "100%",
+      textAlign: "center",
+      aspectRatio: "16/9",
+      opacity: "50%",
+      borderRadius: theme.carousel.thumbnailBorderRadius,
+    },
   },
   thumbnailSelected: {
-    border: theme.carousel.thumbnailSelectedBorder,
-    opacity: "100%",
+    "& img": {
+      border: theme.carousel.thumbnailSelectedBorder,
+      opacity: "100%",
+    },
   },
 } satisfies Record<string, CSSInterpolation>;
 
+const name = "HvCarousel";
+
 export const carouselClasses = getClasses(
   Object.keys(styles) as (keyof HvCarouselClasses)[],
-  "HvCarousel"
+  name
 );
 
-const newStyles = replace$(styles, "HvCarousel");
+const newStyles = replace$(styles, name);
 
 export default newStyles;
