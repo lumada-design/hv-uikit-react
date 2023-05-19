@@ -140,7 +140,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
     if (!controller) return;
 
     controller.reInit();
-    setSelectedIndex((currentIndex) => clamp(currentIndex, 0, numSlides));
+    setSelectedIndex((currentIndex) => clamp(currentIndex, numSlides, 0));
   }, [numSlides]);
 
   const canPrev = controller?.canScrollPrev() ?? false;
@@ -158,11 +158,11 @@ export const HvCarousel = (props: HvCarouselProps) => {
       {({ css, cx }) => (
         <HvContainer
           className={cx(
-            className,
             cx(cc.root, classes.root, css(styles.root)),
             xs && cx(cc.xs, classes.root, css(styles.xs)),
             isFullscreen &&
-              cx(cc.xs, classes.fullscreen, css(styles.fullscreen))
+              cx(cc.xs, classes.fullscreen, css(styles.fullscreen)),
+            className
           )}
           {...others}
         >
@@ -215,9 +215,17 @@ export const HvCarousel = (props: HvCarouselProps) => {
                   {Array.from(Array(numSlides)).map((el, index) => (
                     <span
                       key={`circle-${index}`}
-                      className={cx(cc.dot, classes.dot, css(styles.dot), {
-                        [css(styles.dotSelected)]: index === selectedIndex,
-                      })}
+                      className={cx(
+                        cc.dot,
+                        classes.dot,
+                        css(styles.dot),
+                        index === selectedIndex &&
+                          cx(
+                            cc.dotSelected,
+                            classes.dotSelected,
+                            css(styles.dotSelected)
+                          )
+                      )}
                     />
                   ))}
                 </div>
@@ -255,7 +263,8 @@ export const HvCarousel = (props: HvCarouselProps) => {
             <div
               className={cx(
                 cc.main,
-                cx(cc.main, classes.main, css(styles.main)),
+                classes.main,
+                css(styles.main),
                 xs && cx(cc.mainXs, classes.mainXs, css(styles.mainXs)),
                 isFullscreen &&
                   cx(
@@ -273,7 +282,13 @@ export const HvCarousel = (props: HvCarouselProps) => {
                     css(styles.counterContainer)
                   )}
                 >
-                  <span className={cx(cc.counter, css(styles.counter))}>
+                  <span
+                    className={cx(
+                      cc.counter,
+                      classes.counter,
+                      css(styles.counter)
+                    )}
+                  >
                     {`${selectedIndex + 1}/${numSlides}`}
                   </span>
                 </div>
@@ -281,7 +296,11 @@ export const HvCarousel = (props: HvCarouselProps) => {
 
               {showSlideControls && (
                 <div
-                  className={cx(css(styles.slideControls), cc.slideControls)}
+                  className={cx(
+                    cc.slideControls,
+                    classes.slideControls,
+                    css(styles.slideControls)
+                  )}
                 >
                   {
                     <HvButton
@@ -309,12 +328,17 @@ export const HvCarousel = (props: HvCarouselProps) => {
               <div
                 ref={containerRef}
                 style={{ height }}
-                className={cx(css(styles.slidesViewport), cc.slidesViewport)}
+                className={cx(
+                  cc.slidesViewport,
+                  classes.slidesViewport,
+                  css(styles.slidesViewport)
+                )}
               >
                 <div
                   className={cx(
-                    css(styles.slidesContainer),
-                    cc.slidesContainer
+                    cc.slidesContainer,
+                    classes.slidesContainer,
+                    css(styles.slidesContainer)
                   )}
                 >
                   {children}
@@ -326,7 +350,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
           {showThumbnails && (
             <div
               ref={thumbnailsRef}
-              className={cx(cc.panel, css(styles.panel))}
+              className={cx(cc.panel, classes.panel, css(styles.panel))}
             >
               <HvStack direction="row" spacing="xs">
                 {Array.from(Array(numSlides)).map((doc, i) => (

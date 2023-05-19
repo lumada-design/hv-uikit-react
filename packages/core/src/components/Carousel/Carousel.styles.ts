@@ -18,7 +18,6 @@ const styles = {
     paddingBottom: theme.spacing(2),
   },
   xs: {
-    // increase specificity
     "&:not(._)": {
       padding: 0,
     },
@@ -40,7 +39,6 @@ const styles = {
     position: "fixed",
     inset: 0,
     zIndex: theme.zIndices.modal,
-    // increase specificity
     "&:not(._)": {
       padding: theme.spacing(["xs", "xl"]),
     },

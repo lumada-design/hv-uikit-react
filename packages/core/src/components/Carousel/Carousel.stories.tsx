@@ -40,7 +40,6 @@ export const Main: StoryObj<HvCarouselProps> = {
   },
   render: (args: Partial<HvCarouselProps>) => {
     const images = [
-      "https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg",
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
@@ -49,7 +48,6 @@ export const Main: StoryObj<HvCarouselProps> = {
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
-      "https://cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg",
     ];
 
     const renderThumbnail = (i: number) => (
@@ -80,12 +78,12 @@ export const Actions: StoryObj<HvCarouselProps> = {
   render: () => {
     const [index, setIndex] = useState(0);
     const [images, setImages] = useState([
-      "https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg",
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
       "https://blog.nzibs.co.nz/wp-content/uploads/2020/02/Landscape-1280x640.jpg",
       "https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg",
+      "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
     ]);
 
     return (
@@ -107,7 +105,6 @@ export const Actions: StoryObj<HvCarouselProps> = {
             }}
           />
         }
-        renderThumbnail={(i) => <img src={images[i]} alt={`thumbnail-${i}`} />}
       >
         {images.map((src, i) => (
           <HvCarouselSlide key={src} src={src} alt={`image-${i}`} />
@@ -183,7 +180,6 @@ export const Options: StoryObj<HvCarouselProps> = {
   render: () => {
     const startIndex = 2;
     const images = [
-      "https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg",
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
@@ -192,7 +188,6 @@ export const Options: StoryObj<HvCarouselProps> = {
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
-      "https://cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg",
     ];
 
     const carouselOptions: HvCarouselProps["carouselOptions"] = {
@@ -227,7 +222,6 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
 
   render: () => {
     const images = [
-      "https://www.picturecorrect.com/wp-content/uploads/2016/11/landscape-photography-components.jpg",
       "https://images.theconversation.com/files/125391/original/image-20160606-13080-s7o3qu.jpg",
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
       "https://images.squarespace-cdn.com/content/v1/59ef2d3c9f8dce981401a30d/1592002341643-UCT10ZFLQ5GCJU8L1OVY/colorful+landscapes.jpg?format=1000w",
@@ -236,7 +230,6 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
       "https://static.photocdn.pt/images/articles/2018/08/20/articles/2017_8/easy_landscape_photography_tips.jpg",
       "https://images.squarespace-cdn.com/content/v1/56873b617086d7b18180c450/1570074633822-7J1FRR7Y80XR9A25DMFA/DSC_1341-Pano-Edit-2-Edit-Edit-Edit.jpg?format=1000w",
       "https://i1.adis.ws/i/canon/pro-landscape-photography-business-2_b76782acce404672b7d351dc98937699?$media-collection-full-dt-jpg$",
-      "https://cdn.photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg",
     ];
 
     return (
