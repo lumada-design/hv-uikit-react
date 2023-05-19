@@ -17,6 +17,9 @@
       "path": "../packages/lab/tsconfig.json"
     },
     {
+      "path": "../packages/viz/tsconfig.json"
+    },
+    {
       "path": "../packages/code-editor/tsconfig.json"
     }
   ]
