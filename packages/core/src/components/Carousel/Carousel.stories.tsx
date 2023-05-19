@@ -11,10 +11,11 @@ import {
   HvCarouselProps,
   HvCarouselSlide,
   HvDropDownMenu,
+  theme,
 } from "../..";
 
 export default {
-  title: "Lab/Carousel",
+  title: "Widgets/Carousel",
   component: HvCarousel,
   subcomponents: { HvCarouselSlide },
 } as Meta<typeof HvCarousel>;
@@ -247,14 +248,18 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
                 style={{
                   position: "absolute",
                   width: "70%",
-                  margin: 30,
+                  margin: theme.space.md,
+                  padding: theme.space.xs,
                   backgroundColor: `rgba(0, 0, 0, 0.5)`,
                 }}
               >
-                <HvTypography variant="title3">
+                <HvTypography
+                  variant="title3"
+                  style={{ color: theme.colors.base_light }}
+                >
                   Travel destination {i + 1}
                 </HvTypography>
-                <HvTypography>
+                <HvTypography style={{ color: theme.colors.base_light }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </HvTypography>

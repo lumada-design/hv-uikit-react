@@ -401,12 +401,6 @@ export type HvThemeComponents = {
     thumbnailBorderRadius: CSSProperties["borderRadius"];
     thumbnailSelectedBorder: CSSProperties["border"];
   };
-  /*
-  carousel: {
-    mainContainer?: CSSProperties;
-    controls?: CSSProperties;
-  };
-  */
 };
 
 // Theme typography

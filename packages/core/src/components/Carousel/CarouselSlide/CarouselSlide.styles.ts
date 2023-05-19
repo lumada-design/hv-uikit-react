@@ -1,4 +1,5 @@
-import { getClasses } from "@hitachivantara/uikit-react-core";
+import { CSSInterpolation } from "@emotion/css";
+import { getClasses } from "@core/utils";
 
 export type HvCarouselSlideClasses = Record<keyof typeof styles, string>;
 
@@ -9,13 +10,11 @@ const styles = {
     width: "100%",
     height: "100%",
   },
-};
-
-const name = "HvCarouselSlide";
+} satisfies Record<string, CSSInterpolation>;
 
 export const cc = getClasses(
   Object.keys(styles) as (keyof HvCarouselSlideClasses)[],
-  name
+  "HvCarouselSlide"
 );
 
 export default styles;
