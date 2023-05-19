@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.2...@hitachivantara/uikit-react-core@5.7.3) (2023-05-19)
+
+### Bug Fixes
+
+- **VerticalNavigation:** added appropriate z-index value to the popup ([#3347](https://github.com/lumada-design/hv-uikit-react/issues/3347)) ([ace8f29](https://github.com/lumada-design/hv-uikit-react/commit/ace8f2936ee6e82243e9908de09b218d82e83458))
+
 ## [5.7.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.1...@hitachivantara/uikit-react-core@5.7.2) (2023-05-18)
 
 ### Bug Fixes
