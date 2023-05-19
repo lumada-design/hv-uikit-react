@@ -1,10 +1,12 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useMemo, useRef } from "react";
+import { ClassNames } from "@emotion/react";
 import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
+import { BackdropProps } from "@mui/material";
+import isNil from "lodash/isNil";
+
 import { Close } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
-import isNil from "lodash/isNil";
 import { HvBaseProps } from "@core/types/generic";
-import { StyledBackdrop, StyledClose, styles } from "./Dialog.styles";
 import {
   isKeypress,
   keyboardCodes,
@@ -12,9 +14,9 @@ import {
   getFocusableList,
 } from "@core/utils";
 import { withTooltip } from "@core/hocs";
-import dialogClasses, { HvDialogClasses } from "./dialogClasses";
 import { useTheme } from "@core/hooks";
-import { ClassNames } from "@emotion/react";
+import dialogClasses, { HvDialogClasses } from "./dialogClasses";
+import { StyledBackdrop, StyledClose, styles } from "./Dialog.styles";
 
 export interface HvDialogProps
   extends Omit<MuiDialogProps, "fullScreen" | "classes" | "open">,
@@ -40,6 +42,18 @@ export interface HvDialogProps
   classes?: HvDialogClasses;
 }
 
+const DialogBackdrop = (backdropProps: BackdropProps) => {
+  const { activeTheme, selectedMode } = useTheme();
+  return (
+    <StyledBackdrop
+      $backColor={
+        activeTheme?.colors?.modes[selectedMode].atmo4 || theme.colors.atmo4
+      }
+      {...backdropProps}
+    />
+  );
+};
+
 export const HvDialog = ({
   classes,
   className,
@@ -55,7 +69,7 @@ export const HvDialog = ({
 }: HvDialogProps) => {
   delete (others as any).fullScreen;
 
-  const { activeTheme, selectedMode, rootId } = useTheme();
+  const { rootId } = useTheme();
 
   const focusableQueue = useRef<{
     first?: HTMLElement;
@@ -65,17 +79,20 @@ export const HvDialog = ({
   // Because the `disableBackdropClick` property was deprecated in MUI5
   // and we want to maintain that functionality to the user we're wrapping
   // the onClose call here to make that check.
-  const wrappedClose = (
-    event,
-    bypassValidation: boolean = false,
-    reason?: "escapeKeyDown" | "backdropClick"
-  ) => {
-    if (bypassValidation) {
-      onClose?.(event, reason);
-    } else if (!disableBackdropClick) {
-      onClose?.(event, reason);
-    }
-  };
+  const wrappedClose = useCallback(
+    (
+      event,
+      bypassValidation: boolean = false,
+      reason?: "escapeKeyDown" | "backdropClick"
+    ) => {
+      if (bypassValidation) {
+        onClose?.(event, reason);
+      } else if (!disableBackdropClick) {
+        onClose?.(event, reason);
+      }
+    },
+    [onClose]
+  );
 
   const measuredRef = useCallback(
     (node) => {
@@ -140,6 +157,15 @@ export const HvDialog = ({
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
+  const slots = useMemo<MuiDialogProps["slots"]>(
+    () => ({
+      backdrop: (backdropProps) => (
+        <DialogBackdrop open={open} onClick={wrappedClose} {...backdropProps} />
+      ),
+    }),
+    [open, wrappedClose]
+  );
+
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -154,19 +180,7 @@ export const HvDialog = ({
           onKeyDown={keyDownHandler}
           fullWidth
           maxWidth={false}
-          slots={{
-            backdrop: (backdropProps) => (
-              <StyledBackdrop
-                open={open}
-                onClick={(event) => wrappedClose(event)}
-                $backColor={
-                  activeTheme?.colors?.modes[selectedMode].atmo4 ||
-                  theme.colors.atmo4
-                }
-                {...backdropProps}
-              />
-            ),
-          }}
+          slots={slots}
           classes={{ container: css({ position: "relative" }) }}
           BackdropProps={{
             classes: {
