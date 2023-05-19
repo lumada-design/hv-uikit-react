@@ -79,7 +79,7 @@ export default ${themeName};`
   return (
     <HvBox css={{ position: "relative" }}>
       <HvBox className={styles.codeEditorTools}>
-        <HvBox css={{ display: "flex", alignItems: "center" }}>
+        <HvBox>
           <HvTypography variant="label">{themeName}.ts</HvTypography>
           <HvTooltip title={<HvTypography>Download</HvTypography>}>
             <HvButton variant="secondaryGhost" icon onClick={onDownloadHandler}>
@@ -133,6 +133,7 @@ export default ${themeName};`
               </HvButton>
             </HvTooltip>
           </HvBox>
+          <HvBox></HvBox>
         </HvBox>
       </HvBox>
       <HvCodeEditor

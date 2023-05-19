@@ -37,4 +37,8 @@ export const styles = {
     gap: 20,
     alignItems: "center",
   }),
+  themeTools: css({
+    justifyContent: "center",
+    fontSize: 12,
+  }),
 };
