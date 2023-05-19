@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
-import { HvButton } from "../Button";
 import { useControlled } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
+import { HvButton } from "..";
 
 export interface HvToggleButtonProps
   extends HvBaseProps<HTMLButtonElement, "onClick"> {

@@ -117,7 +117,7 @@ describe("HvDatepicker", () => {
       calendarButtons = await findAllByRole("button");
       firstDayOfTheMonth = await findAllByText("1");
       datepickerDropdownValue = await findAllByText("1 Jan 2019");
-      let dateInput = await getByDisplayValue("Jan 1, 2019");
+      const dateInput = await getByDisplayValue("Jan 1, 2019");
       expect(calendarButtons.length).toBe(42);
       expect(firstDayOfTheMonth.length).toBe(2);
       expect(datepickerDropdownValue.length).toBe(1);
@@ -200,8 +200,8 @@ describe("HvDatepicker", () => {
       calendarButtons = await findAllByRole("button");
       firstDayOfTheMonth = await findAllByText("1");
       datepickerDropdownValue = await findAllByText("5 - 10 Jan 2019");
-      let dateInputLeft = await getByDisplayValue("Jan 5, 2019");
-      let dateInputRight = await getByDisplayValue("Jan 10, 2019");
+      const dateInputLeft = await getByDisplayValue("Jan 5, 2019");
+      const dateInputRight = await getByDisplayValue("Jan 10, 2019");
       expect(calendarButtons.length).toBe(86);
       expect(firstDayOfTheMonth.length).toBe(4);
       expect(datepickerDropdownValue.length).toBe(1);

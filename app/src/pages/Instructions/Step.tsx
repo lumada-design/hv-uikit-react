@@ -44,56 +44,54 @@ export const Step = ({
   const isLastStep = idx === tutorialData.length;
 
   return (
-    <>
-      <HvDialog
-        open
-        firstFocusable="next"
-        disableBackdropClick
-        classes={{
-          background: css({
-            display: "none",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+    <HvDialog
+      open
+      firstFocusable="next"
+      disableBackdropClick
+      classes={{
+        background: css({
+          display: "none",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        }),
+        paper: clsx(
+          css({
+            ...stepData.position,
+            ...stepData.size,
           }),
-          paper: clsx(
-            css({
-              ...stepData.position,
-              ...stepData.size,
-            }),
-            classes.paper
-          ),
-        }}
-        onClose={onCloseHandler}
-      >
-        <HvDialogTitle>
-          <HvTypography variant="title3">{stepData.title}</HvTypography>
-        </HvDialogTitle>
-        <HvDialogContent>
-          <div
-            className={classes[`triangle_${stepData.orientation || "up"}`]}
-            style={{ ...stepData.arrow }}
-          ></div>
-          {stepData.content}
-        </HvDialogContent>
-        <HvDialogActions>
-          {!isLastStep && (
-            <HvButton
-              id="previous"
-              variant="secondaryGhost"
-              onClick={previousHandler}
-              disabled={idx === 1}
-            >
-              PREVIOUS
-            </HvButton>
-          )}
+          classes.paper
+        ),
+      }}
+      onClose={onCloseHandler}
+    >
+      <HvDialogTitle>
+        <HvTypography variant="title3">{stepData.title}</HvTypography>
+      </HvDialogTitle>
+      <HvDialogContent>
+        <div
+          className={classes[`triangle_${stepData.orientation || "up"}`]}
+          style={{ ...stepData.arrow }}
+        />
+        {stepData.content}
+      </HvDialogContent>
+      <HvDialogActions>
+        {!isLastStep && (
           <HvButton
-            id="next"
+            id="previous"
             variant="secondaryGhost"
-            onClick={() => nextHandler(isLastStep)}
+            onClick={previousHandler}
+            disabled={idx === 1}
           >
-            {isLastStep ? "END TUTORIAL" : "NEXT"}
+            PREVIOUS
           </HvButton>
-        </HvDialogActions>
-      </HvDialog>
-    </>
+        )}
+        <HvButton
+          id="next"
+          variant="secondaryGhost"
+          onClick={() => nextHandler(isLastStep)}
+        >
+          {isLastStep ? "END TUTORIAL" : "NEXT"}
+        </HvButton>
+      </HvDialogActions>
+    </HvDialog>
   );
 };

@@ -1,13 +1,13 @@
 import { clsx } from "clsx";
 import { HvBaseProps, HvExtraProps } from "@core/types";
-import { StyledRoot, StyledSection } from "./Controls.styles";
-import controlsClasses, { HvControlsClasses } from "./controlClasses";
 import { HvButton, HvMultiButton } from "@core/components";
 import { setId } from "@core/utils";
 import { useControlled } from "@core/hooks";
-import { HvControlsContextProvider } from "./context/ControlsContext";
 import { Children } from "react";
 import { HvTableInstance } from "@core/components/Table/hooks/useTable";
+import { HvControlsContextProvider } from "./context/ControlsContext";
+import controlsClasses, { HvControlsClasses } from "./controlClasses";
+import { StyledRoot, StyledSection } from "./Controls.styles";
 
 export interface HvControlsViewConfiguration extends HvExtraProps {
   id?: string;

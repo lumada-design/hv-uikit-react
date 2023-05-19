@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { HvBaseProps } from "@core/types";
+import { MouseEventHandler } from "react";
 import { StyledA } from "./Link.styles";
 import linkClasses, { HvLinkClasses } from "./linkClasses";
-import { MouseEventHandler } from "react";
 
 export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   onClick?: (

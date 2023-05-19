@@ -20,35 +20,33 @@ export const Main: StoryObj<HvMultiButtonProps> = {
     classes: { control: { disable: true } },
   },
   render: ({ vertical, disabled, variant }) => {
-    {
-      const [val, setVal] = useState(-1);
+    const [val, setVal] = useState(-1);
 
-      return (
-        <HvMultiButton
-          style={{ width: "210px" }}
-          vertical={vertical}
-          disabled={disabled}
-          variant={variant}
+    return (
+      <HvMultiButton
+        style={{ width: "210px" }}
+        vertical={vertical}
+        disabled={disabled}
+        variant={variant}
+      >
+        <HvButton
+          key="1"
+          startIcon={<Map />}
+          selected={val === 0}
+          onClick={() => setVal(0)}
         >
-          <HvButton
-            key="1"
-            startIcon={<Map />}
-            selected={val === 0}
-            onClick={() => setVal(0)}
-          >
-            Map
-          </HvButton>
-          <HvButton
-            key="2"
-            selected={val === 1}
-            onClick={() => setVal(1)}
-            startIcon={<LocationPin />}
-          >
-            Satellite
-          </HvButton>
-        </HvMultiButton>
-      );
-    }
+          Map
+        </HvButton>
+        <HvButton
+          key="2"
+          selected={val === 1}
+          onClick={() => setVal(1)}
+          startIcon={<LocationPin />}
+        >
+          Satellite
+        </HvButton>
+      </HvMultiButton>
+    );
   },
 };
 

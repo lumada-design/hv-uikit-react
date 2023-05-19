@@ -17,7 +17,7 @@ export const DropDownMenu = () => {
       }}
     >
       <HvDropDownMenu
-        expanded={true}
+        expanded
         dataList={[
           { label: "Label 1", icon: iconSelectedColor(User) },
           { label: "Label 2", icon: iconSelectedColor(Calendar) },

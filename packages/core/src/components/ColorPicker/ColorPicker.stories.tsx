@@ -81,10 +81,7 @@ export const IconOnly: StoryObj<HvColorPickerProps> = {
   render: () => {
     return (
       <div style={{ width: "134px" }}>
-        <HvColorPicker
-          iconOnly={true}
-          onChange={(color) => console.log(color)}
-        />
+        <HvColorPicker iconOnly onChange={(color) => console.log(color)} />
       </div>
     );
   },
@@ -103,7 +100,7 @@ export const IconOnlyWithoutSavedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
-          iconOnly={true}
+          iconOnly
           showSavedColors={false}
           defaultValue="#477DBD"
           onChange={(color) => console.log(color)}
@@ -126,7 +123,7 @@ export const IconOnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
     return (
       <div style={{ width: "134px" }}>
         <HvColorPicker
-          iconOnly={true}
+          iconOnly
           showSavedColors={false}
           showCustomColors={false}
           defaultValue="#59941B"

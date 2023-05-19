@@ -33,12 +33,7 @@ describe("DropZone", () => {
 
   it("should render correctly when disabled", () => {
     const { container } = render(
-      <HvDropZone
-        id="dropzone-test"
-        disabled={true}
-        multiple={true}
-        {...props}
-      />
+      <HvDropZone id="dropzone-test" disabled multiple {...props} />
     );
 
     expect(container).toMatchSnapshot();

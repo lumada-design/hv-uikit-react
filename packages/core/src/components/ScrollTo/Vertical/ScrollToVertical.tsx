@@ -1,16 +1,16 @@
 import { HvBaseProps } from "@core/types";
+import { useTheme, useUniqueId } from "@core/hooks";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import { useMemo } from "react";
+import { ClassNames } from "@emotion/react";
+import fade from "@core/utils/hexToRgbA";
 import scrollToVerticalClasses, {
   HvScrollToVerticalClasses,
 } from "./scrollToVerticalClasses";
 import { generateDynamicStyles, styles } from "./ScrollToVertical.styles";
-import { useTheme, useUniqueId } from "@core/hooks";
 import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { useScrollTo } from "../useScrollTo";
-import { useMemo } from "react";
 import { withTooltip } from "../withTooltip";
-import { ClassNames } from "@emotion/react";
-import fade from "@core/utils/hexToRgbA";
 import { HvScrollToTooltipPositions } from "../types";
 
 const { Enter } = keyboardCodes;

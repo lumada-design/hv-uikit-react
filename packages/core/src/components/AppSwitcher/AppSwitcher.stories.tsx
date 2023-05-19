@@ -71,16 +71,14 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
     };
 
     return (
-      <>
-        <HvAppSwitcher
-          title="My Apps"
-          layout={layout}
-          applications={applicationsList}
-          isActionSelectedCallback={handlesActionSelectedCallback}
-          onActionClickedCallback={handleActionClicked}
-          footer="And this is a footer"
-        />
-      </>
+      <HvAppSwitcher
+        title="My Apps"
+        layout={layout}
+        applications={applicationsList}
+        isActionSelectedCallback={handlesActionSelectedCallback}
+        onActionClickedCallback={handleActionClicked}
+        footer="And this is a footer"
+      />
     );
   },
 };

@@ -1,14 +1,14 @@
 import { HvBaseProps } from "@core/types";
-import verticalScrollListItemClasses, {
-  HvVerticalScrollListItemClasses,
-} from "./verticalScrollListItemClasses";
 import { ClassNames } from "@emotion/react";
-import { styles } from "./VerticalScrollListItem.styles";
 import { HvTypographyProps } from "@core/components";
 import { setId } from "@core/utils";
 import { useCallback } from "react";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 import { useTheme } from "@core/hooks";
+import { styles } from "./VerticalScrollListItem.styles";
+import verticalScrollListItemClasses, {
+  HvVerticalScrollListItemClasses,
+} from "./verticalScrollListItemClasses";
 
 export interface HvVerticalScrollListItemProps extends HvBaseProps {
   /** A function component that renders a typography wrapped with a tooltip. */

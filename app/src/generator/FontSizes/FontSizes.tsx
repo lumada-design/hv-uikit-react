@@ -9,8 +9,8 @@ import {
   HvListValue,
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { styles } from "./FontSizes.styles";
 import { css } from "@emotion/css";
+import { styles } from "./FontSizes.styles";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();
@@ -24,7 +24,7 @@ const FontSizes = () => {
   );
 
   useEffect(() => {
-    let sizes: HvListValue[] = [];
+    const sizes: HvListValue[] = [];
     if (activeTheme) {
       Object.keys(activeTheme.fontSizes).map((size) => {
         sizes.push({ label: size });
@@ -37,12 +37,12 @@ const FontSizes = () => {
     const currSize = currSizes.get(size);
     setFontSize(size);
     if (currSize) {
-      const value = parseInt(currSize);
+      const value = Number(currSize);
       setUnit(currSize.replace(value.toString(), ""));
       setFontValue(value);
     } else {
       setUnit("px");
-      setFontValue(parseInt(activeTheme?.fontSizes[size]));
+      setFontValue(Number(activeTheme?.fontSizes[size]));
     }
   };
 
@@ -50,7 +50,7 @@ const FontSizes = () => {
     setFontValue(value);
 
     // check updated font sizes
-    let currFontSizes = {};
+    const currFontSizes = {};
     for (const [key, val] of currSizes.entries()) {
       currFontSizes[key] = val;
     }
@@ -65,7 +65,7 @@ const FontSizes = () => {
     updateCustomTheme(newTheme);
 
     // update curr sizes
-    let map = new Map<string, string>(currSizes);
+    const map = new Map<string, string>(currSizes);
     map.set(fontSize, `${value}${unit}`);
     setCurrSizes(map);
   };
@@ -80,7 +80,7 @@ const FontSizes = () => {
     });
     updateCustomTheme(newTheme);
     // update curr sizes
-    let map = new Map<string, string>(currSizes);
+    const map = new Map<string, string>(currSizes);
     map.set(fontSize, `${fontValue}${selectedUnit}`);
     setCurrSizes(map);
   };

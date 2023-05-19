@@ -9,9 +9,9 @@ import { useControlled } from "@core/hooks";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
+import { HvTypographyVariants } from "@core/components";
 import { StyledContainer, StyledLabel, StyledRoot } from "./Accordion.styles";
 import accordionClasses, { HvAccordionClasses } from "./accordionClasses";
-import { HvTypographyVariants } from "@core/components";
 
 export interface HvAccordionProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {

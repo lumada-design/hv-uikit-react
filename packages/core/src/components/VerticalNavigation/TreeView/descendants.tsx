@@ -45,8 +45,8 @@ function binaryFindElement(array, element) {
       return middle;
     }
 
-    // eslint-disable-next-line no-bitwise
     if (
+      // eslint-disable-next-line no-bitwise
       array[middle].element.compareDocumentPosition(element) &
       Node.DOCUMENT_POSITION_PRECEDING
     ) {
@@ -137,7 +137,7 @@ export function useDescendant(descendant) {
       return (
         previousDescendants && previousDescendants[position]
         // previousDescendants[position].element !== newDescendant.element
-        //was not able to type check this, did not any difference
+        // was not able to type check this, did not any difference
       );
     }
   );

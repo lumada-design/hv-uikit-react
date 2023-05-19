@@ -6,7 +6,7 @@ import { HvVerticalNavigationHeader } from "@core/components";
 const Sample = () => {
   return (
     <HvVerticalNavigationHeader
-      title={"Menu"}
+      title="Menu"
       openIcon={<Play />}
       closeIcon={<Stop />}
       collapseButtonProps={{

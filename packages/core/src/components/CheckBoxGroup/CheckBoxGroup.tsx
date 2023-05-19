@@ -1,15 +1,15 @@
-import { HvFormStatus } from "../Forms";
 import { HvBaseProps } from "@core/types";
-import {
-  StyledFormElement,
-  StyledGroupContainer,
-  StyledLabel,
-} from "./CheckBoxGroup.styles";
 import { clsx } from "clsx";
 import { useControlled, useUniqueId } from "@core/hooks";
 import { multiSelectionEventHandler, setId } from "@core/utils";
 import { HvCheckBox, HvInfoMessage, HvWarningText } from "@core/components";
 import { Children, cloneElement, useCallback, useMemo, useRef } from "react";
+import {
+  StyledFormElement,
+  StyledGroupContainer,
+  StyledLabel,
+} from "./CheckBoxGroup.styles";
+import { HvFormStatus } from "../Forms";
 import checkBoxGroupClasses, {
   HvCheckBoxGroupClasses,
 } from "./checkBoxGroupClasses";
@@ -289,21 +289,18 @@ export const HvCheckBoxGroup = ({
     });
   };
 
-  const selectAllLabelComponent = (
-    <>
-      {selectedCount === 0 ? (
-        <>
-          <b>{selectAllLabel}</b>
-          {` (${Children.toArray(children).length})`}
-        </>
-      ) : (
-        <>
-          <b>{selectedCount}</b>
-          {` ${selectAllConjunctionLabel} ${Children.toArray(children).length}`}
-        </>
-      )}
-    </>
-  );
+  const selectAllLabelComponent =
+    selectedCount === 0 ? (
+      <>
+        <b>{selectAllLabel}</b>
+        {` (${Children.toArray(children).length})`}
+      </>
+    ) : (
+      <>
+        <b>{selectedCount}</b>
+        {` ${selectAllConjunctionLabel} ${Children.toArray(children).length}`}
+      </>
+    );
 
   // The error message area will only be created if:
   //   - an external element that provides an error message isn't identified via aria-errormessage AND

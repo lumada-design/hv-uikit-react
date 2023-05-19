@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { Remove } from "@hitachivantara/uikit-react-icons";
+import { setId } from "@core/utils";
+import { HvFormStatus, HvInputProps } from "@core/components";
+import { HvBaseProps } from "@core/types";
 import { knobsValuesToString, stringValuesToKnobs } from "../utils";
 import {
   StyledInput,
@@ -8,9 +11,6 @@ import {
   StyledRoot,
 } from "./SliderInput.styles";
 import sliderInputClasses, { HvSliderInputClasses } from "./sliderInputClasses";
-import { setId } from "@core/utils";
-import { HvFormStatus, HvInputProps } from "@core/components";
-import { HvBaseProps } from "@core/types";
 
 export interface HvSliderInputProps
   extends HvBaseProps<HTMLDivElement, "onChange"> {

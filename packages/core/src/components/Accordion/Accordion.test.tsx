@@ -23,7 +23,7 @@ describe("Accordion", () => {
       };
       const { getByRole } = render(
         <>
-          <HvAccordion id="item1" label={"Analytics"} headingLevel={1}>
+          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
             <HvTypography>item 1</HvTypography>
           </HvAccordion>
           <HvAccordion id="item2" label="System" headingLevel={2}>
@@ -47,7 +47,7 @@ describe("Accordion", () => {
     it("opens and closes the content", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label={"Analytics"} headingLevel={1}>
+          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
           <HvAccordion id="item2" label="System" headingLevel={2}>
@@ -76,7 +76,7 @@ describe("Accordion", () => {
     it("opens and closes the content using the keyboard", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label={"Analytics"} headingLevel={1}>
+          <HvAccordion id="item1" label="Analytics" headingLevel={1}>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
           <HvAccordion id="item2" label="System" headingLevel={2}>
@@ -111,7 +111,7 @@ describe("Accordion", () => {
     it("cannot open a disabled accordion", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label={"Analytics"} headingLevel={1} disabled>
+          <HvAccordion id="item1" label="Analytics" headingLevel={1} disabled>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
           <HvAccordion id="item2" label="System" headingLevel={2}>
@@ -141,7 +141,7 @@ describe("Accordion", () => {
     it("cannot open a disabled accordion with keyboard", async () => {
       const { getByRole, getByText } = render(
         <>
-          <HvAccordion id="item1" label={"Analytics"} headingLevel={1} disabled>
+          <HvAccordion id="item1" label="Analytics" headingLevel={1} disabled>
             <HvTypography>Views</HvTypography>
           </HvAccordion>
           <HvAccordion id="item2" label="System" headingLevel={2}>

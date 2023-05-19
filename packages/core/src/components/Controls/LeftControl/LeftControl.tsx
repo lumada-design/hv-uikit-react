@@ -2,8 +2,8 @@ import { clsx } from "clsx";
 import { useContext } from "react";
 import { HvBaseProps } from "@core/types";
 import { setId } from "@core/utils";
-import { StyledRoot } from "./LeftControl.styles";
 import { HvInput, HvInputProps } from "@core/components";
+import { StyledRoot } from "./LeftControl.styles";
 import leftControlClasses, { HvLeftControlClasses } from "./leftControlClasses";
 import { HvControlsContext } from "../context/ControlsContext";
 

@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { clsx } from "clsx";
-import BaseDropdownContext from "./BaseDropdownContext";
 import {
   ClickAwayListener,
   PopperPlacementType,
@@ -11,6 +10,8 @@ import { useControlled, useForkRef, useTheme, useUniqueId } from "@core/hooks";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { getFirstAndLastFocus } from "@core/utils/focusableElementFinder";
 import { HvBaseProps } from "@core/types";
+import { usePopper } from "react-popper";
+import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
 import {
   StyledAnchor,
   StyledContainer,
@@ -23,8 +24,7 @@ import {
   StyledRoot,
   StyledSelection,
 } from "./BaseDropdown.styles";
-import { usePopper } from "react-popper";
-import { detectOverflow, ModifierArguments, Options } from "@popperjs/core";
+import BaseDropdownContext from "./BaseDropdownContext";
 import baseDropdownClasses, {
   HvBaseDropdownClasses,
 } from "./baseDropdownClasses";
@@ -492,7 +492,7 @@ export const HvBaseDropdown = ({
                     )
                 )}
                 $leftPosition={false}
-                $openShadow={true}
+                $openShadow
                 $floatLeft={popperPlacement.includes("start")}
                 $floatRight={popperPlacement.includes("end")}
               />

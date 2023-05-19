@@ -1,8 +1,8 @@
 import userEvent from "@testing-library/user-event";
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { HvBaseDropdown } from "./BaseDropdown";
 import { HvProvider } from "@core/providers";
+import { HvBaseDropdown } from "./BaseDropdown";
 
 const Main = () => (
   <HvProvider>

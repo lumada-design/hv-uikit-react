@@ -98,6 +98,7 @@ export const HvQueryBuilder = ({
       dispatchAction,
       askAction,
       attributes,
+      /* eslint-disable react/destructuring-assignment */
       operators: operators ?? defaultcontext.operators,
       combinators: combinators ?? defaultcontext.combinators,
       maxDepth: maxDepth ?? defaultcontext.maxDepth,

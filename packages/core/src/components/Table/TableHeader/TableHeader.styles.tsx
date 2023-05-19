@@ -6,8 +6,8 @@ import {
   HvTypographyProps,
 } from "@core/components";
 import { transientOptions } from "@core/utils/transientOptions";
-import tableHeaderClasses from "./tableHeaderClasses";
 import { Ref, forwardRef } from "react";
+import tableHeaderClasses from "./tableHeaderClasses";
 
 export const StyledHeaderContent = styled(
   "div",

@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "@core/utils";
 import { transientOptions } from "@core/utils/transientOptions";
 
-const hoverColor = theme.header.hoverColor;
+const { hoverColor } = theme.header;
 
 export const MenuItemLi = styled(
   "li",

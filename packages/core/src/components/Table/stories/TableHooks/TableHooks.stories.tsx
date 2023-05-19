@@ -3,18 +3,6 @@ import range from "lodash/range";
 import { StoryObj } from "@storybook/react";
 import { useGroupBy } from "react-table";
 import {
-  useHvData,
-  useHvHeaderGroups,
-  useHvPagination,
-  useHvRowExpand,
-  useHvRowSelection,
-  useHvSortBy,
-  useHvTableSticky,
-  useHvBulkActions,
-  HvTableColumnConfig,
-  HvCellProps,
-} from "../../hooks";
-import {
   HvTable,
   HvTableBody,
   HvTableContainer,
@@ -27,14 +15,6 @@ import {
   HvEmptyState,
   HvBulkActions,
 } from "@core/components";
-import {
-  makeData,
-  getColumns,
-  makeSelectedData,
-  getGroupedRowsColumns,
-  getGroupedColumns,
-  NewEntry,
-} from "../storiesUtils";
 import { theme } from "@hitachivantara/uikit-styles";
 import {
   Ban,
@@ -43,6 +23,26 @@ import {
   Lock,
   Preview,
 } from "@hitachivantara/uikit-react-icons";
+import {
+  makeData,
+  getColumns,
+  makeSelectedData,
+  getGroupedRowsColumns,
+  getGroupedColumns,
+  NewEntry,
+} from "../storiesUtils";
+import {
+  useHvData,
+  useHvHeaderGroups,
+  useHvPagination,
+  useHvRowExpand,
+  useHvRowSelection,
+  useHvSortBy,
+  useHvTableSticky,
+  useHvBulkActions,
+  HvTableColumnConfig,
+  HvCellProps,
+} from "../../hooks";
 
 const UseHvHooks = () => {
   const data = useMemo(() => makeData(6), []);
@@ -635,8 +635,8 @@ const handleAction = useCallback(
       case "duplicate": {
         const newEls = selected.map((el) => ({
           ...el,
-          id: \`\${el.id}-copy\`\,
-          name: \`\${el.name}-copy\`\,
+          id: \`\${el.id}-copy\`,
+          name: \`\${el.name}-copy\`,
         }));
         setData([...data, ...newEls]);
         break;

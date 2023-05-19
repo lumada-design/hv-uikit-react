@@ -9,12 +9,12 @@ import {
   HvBannerActionPosition,
   HvBannerVariant,
 } from "@core/components";
+import { ClassNames } from "@emotion/react";
 import bannerContentClasses, {
   HvBannerContentClasses,
 } from "./bannerContentClasses";
 import { HvActionContainer, HvActionContainerProps } from "./ActionContainer";
 import { HvMessageContainer } from "./MessageContainer";
-import { ClassNames } from "@emotion/react";
 import { styles } from "./BannerContent.styles";
 
 export interface HvBannerContentProps

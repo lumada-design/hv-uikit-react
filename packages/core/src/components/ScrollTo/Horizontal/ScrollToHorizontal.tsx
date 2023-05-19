@@ -1,21 +1,21 @@
 import { HvBaseProps } from "@core/types";
-import scrollToHorizontalClasses, {
-  HvScrollToHorizontalClasses,
-} from "./scrollToHorizontalClasses";
 import { ClassNames } from "@emotion/react";
 import { useTheme, useUniqueId } from "@core/hooks";
-import { styles } from "./ScrollToHorizontal.styles";
-import { useScrollTo } from "../useScrollTo";
-import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
 import { isKeypress, keyboardCodes, setId } from "@core/utils";
 import { useCallback, useMemo } from "react";
-import { withTooltip } from "../withTooltip";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import { theme } from "@hitachivantara/uikit-styles";
 import fade from "@core/utils/hexToRgbA";
-import { HvScrollToTooltipPositions } from "../types";
 import { CurrentStep } from "@hitachivantara/uikit-react-icons";
 import { useMediaQuery } from "@mui/material";
+import { HvScrollToTooltipPositions } from "../types";
+import { withTooltip } from "../withTooltip";
+import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
+import { useScrollTo } from "../useScrollTo";
+import { styles } from "./ScrollToHorizontal.styles";
+import scrollToHorizontalClasses, {
+  HvScrollToHorizontalClasses,
+} from "./scrollToHorizontalClasses";
 
 const { Enter } = keyboardCodes;
 

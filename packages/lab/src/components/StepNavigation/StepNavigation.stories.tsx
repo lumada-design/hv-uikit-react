@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
+import { theme } from "@hitachivantara/uikit-styles";
 import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
 import { HvDot, HvSimpleNavigation, dotClasses } from "./SimpleNavigation";
-import { theme } from "@hitachivantara/uikit-styles";
 
 const FlexDecorator = ({ children }) => {
   const StyledDiv = styled("div")({
@@ -103,7 +103,7 @@ export default meta;
 export const Main: StoryObj<HvStepNavigationProps> = {
   args: {
     type: "Default",
-    steps: steps,
+    steps,
     stepSize: undefined,
   },
   argTypes: {

@@ -8,9 +8,9 @@ import isString from "lodash/isString";
 import isBoolean from "lodash/isBoolean";
 import { useWidth } from "@core/hooks";
 import { HvBaseProps } from "@core/types";
-import { StyledRoot } from "./Stack.styles";
 import { HvFocus } from "@core/components";
 import { HvBreakpoints } from "@core/types/tokens";
+import { StyledRoot } from "./Stack.styles";
 import stackClasses, { HvStackClasses } from "./stackClasses";
 
 export type HvStackDirection = "column" | "row" | Partial<HvStackBreakpoints>;

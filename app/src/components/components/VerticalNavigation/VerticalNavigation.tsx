@@ -110,7 +110,7 @@ export const VerticalNavigation = () => {
 
   return (
     <div style={{ display: "flex", width: 220, height: 530 }}>
-      <HvVerticalNavigation open={show} collapsedMode={"icon"}>
+      <HvVerticalNavigation open={show} collapsedMode="icon">
         <HvVerticalNavigationHeader
           title="Menu"
           onCollapseButtonClick={handleIsExpanded}

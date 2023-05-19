@@ -11,12 +11,12 @@ import {
   HvButton,
   HvTypography,
 } from "@core/components";
+import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
+import { Edit } from "@hitachivantara/uikit-react-icons";
 import inlineEditorClasses, {
   HvInlineEditorClasses,
 } from "./inlineEditorClasses";
 import { styles } from "./InlineEditor.styles";
-import { HvThemeTypographyProps, theme } from "@hitachivantara/uikit-styles";
-import { Edit } from "@hitachivantara/uikit-react-icons";
 
 export interface HvInlineEditorProps
   extends HvBaseProps<HTMLDivElement, "onBlur" | "onChange"> {
@@ -44,7 +44,7 @@ export interface HvInlineEditorProps
 }
 
 const getTypographyStyles = (typography): HvThemeTypographyProps => {
-  let typographyStyles = {};
+  const typographyStyles = {};
   Object.keys(typography).map((k) => {
     typographyStyles[k] = getVarValue(typography[k]);
   });

@@ -1,7 +1,7 @@
+import { CSSProperties } from "react";
 import { colors } from "./tokens/colors";
 import * as tokens from "./tokens";
 import * as themes from "./themes";
-import { CSSProperties } from "react";
 
 // Theme tokens
 const flattenTokens = {

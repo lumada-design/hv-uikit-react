@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { NodeTreeNavigationUtils } from "../utils";
+import { NodeTreeNavigationUtils } from ".";
 
 describe("NodeTreeNavigationUtils", () => {
   const nodeMap = {

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Meta, StoryObj } from "@storybook/react";
 import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
 import {

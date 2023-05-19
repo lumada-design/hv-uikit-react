@@ -1,11 +1,11 @@
 import { memo, useCallback, useContext, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import isEmpty from "lodash/isEmpty";
+import { ClassNames } from "@emotion/react";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { HvInput } from "../../../..";
 import { QueryBuilderContext } from "../../../Context";
-import { ClassNames } from "@emotion/react";
 import { styles } from "./Numeric.styles";
-import { useMediaQuery, useTheme } from "@mui/material";
 import numericValueClasses from "./numericValueClasses";
 
 export interface NumericValueProps {

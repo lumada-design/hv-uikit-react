@@ -42,6 +42,7 @@ import {
   useLabels,
   useUniqueId,
 } from "@core/hooks";
+import { ClassNames } from "@emotion/react";
 import { styles } from "./Input.styles";
 import validationStates, {
   isValid,
@@ -57,7 +58,6 @@ import {
   HvInputValidity,
 } from "../BaseInput/validations";
 import inputClasses, { HvInputClasses } from "./inputClasses";
-import { ClassNames } from "@emotion/react";
 
 export interface HvInputProps
   extends HvBaseProps<

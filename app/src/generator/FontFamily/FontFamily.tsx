@@ -9,10 +9,10 @@ import {
   HvSnackbar,
 } from "@hitachivantara/uikit-react-core";
 import { GeneratorContext } from "generator/GeneratorContext";
-import { styles } from "./FontFamily.styles";
 import { Add } from "@hitachivantara/uikit-react-icons";
 import { css } from "@emotion/css";
 import { extractFontsNames } from "generator/utils";
+import { styles } from "./FontFamily.styles";
 
 const FontFamily = () => {
   const { customTheme, updateCustomTheme } = useContext(GeneratorContext);
@@ -65,7 +65,7 @@ const FontFamily = () => {
     <div className={styles.root}>
       <HvSnackbar
         open={fontAdded}
-        variant={"success"}
+        variant="success"
         label={fontAddedMsg}
         onClose={handleClose}
         autoHideDuration={2000}

@@ -38,7 +38,7 @@ export const Main: StoryObj<HvBannerProps> = {
     actionsCallback: { control: { disable: true } },
   },
   render: (args) => {
-    return <StyledBanner {...args}></StyledBanner>;
+    return <StyledBanner {...args} />;
   },
 };
 

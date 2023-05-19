@@ -33,14 +33,11 @@ export const Typography = () => {
           gap: theme.spacing(4),
         }}
       >
-        <HvCheckBox
-          label="Link"
-          onChange={() => setIsLink((c) => !c)}
-        ></HvCheckBox>
+        <HvCheckBox label="Link" onChange={() => setIsLink((c) => !c)} />
         <HvCheckBox
           label="Disabled"
           onChange={() => setIsDisabled((c) => !c)}
-        ></HvCheckBox>
+        />
       </HvBox>
       <HvBox sx={{ marginBottom: theme.space.sm }}>
         {variants.map((variant: HvTypographyVariants) => {

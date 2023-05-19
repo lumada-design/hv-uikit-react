@@ -107,7 +107,7 @@ export const HvStepNavigation = ({
       width:
         separatorWidth -
         2 *
-          parseInt(
+          Number(
             (activeTheme?.stepNavigation.separatorMargin || "0px").replace(
               "px",
               ""
@@ -308,7 +308,7 @@ export const HvStepNavigation = ({
                 rawTitle,
                 number: index + 1,
               });
-              let Title = styledTitle(
+              const Title = styledTitle(
                 titleClassName,
                 variant,
                 title,

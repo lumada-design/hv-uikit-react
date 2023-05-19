@@ -24,7 +24,7 @@ const getBreakpointValue = (breakpoint: string) => {
   const root = document.querySelector("#root");
   if (root) {
     const breakpointValue = getComputedStyle(root).getPropertyValue(
-      "--breakpoints-values-" + breakpoint
+      `--breakpoints-values-${breakpoint}`
     );
     return breakpointValue;
   }

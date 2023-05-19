@@ -18,7 +18,7 @@ import {
   HvVerticalNavigationSlider,
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
-} from "./";
+} from ".";
 import {
   HvVerticalNavigationTree,
   NavigationData,
@@ -370,7 +370,7 @@ export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
 
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
-        <HvVerticalNavigation open={show} collapsedMode={"simple"}>
+        <HvVerticalNavigation open={show} collapsedMode="simple">
           <HvVerticalNavigationHeader
             title="Menu"
             onCollapseButtonClick={handleIsExpanded}
@@ -505,7 +505,7 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
 
     return (
       <div style={{ display: "flex", width: 220, height: 530 }}>
-        <HvVerticalNavigation open={show} collapsedMode={"icon"}>
+        <HvVerticalNavigation open={show} collapsedMode="icon">
           <HvVerticalNavigationHeader
             title="Menu"
             onCollapseButtonClick={handleIsExpanded}
@@ -582,7 +582,7 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
 
       return (
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open={show} collapsedMode={"icon"}>
+          <HvVerticalNavigation open={show} collapsedMode="icon">
             <HvVerticalNavigationHeader
               title="Menu"
               onCollapseButtonClick={handleIsExpanded}
@@ -695,7 +695,7 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
     return (
       <div>
         <div style={{ display: "flex", width: 220, height: 530 }}>
-          <HvVerticalNavigation open collapsedMode={"simple"} slider>
+          <HvVerticalNavigation open collapsedMode="simple" slider>
             <HvVerticalNavigationHeader title="Menu" />
             <HvVerticalNavigationTree
               collapsible
@@ -818,7 +818,7 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
         <div style={{ display: "flex", width: 220, height: 530 }}>
           <HvVerticalNavigation
             open={show}
-            collapsedMode={"simple"}
+            collapsedMode="simple"
             slider={isXs}
           >
             <HvVerticalNavigationHeader

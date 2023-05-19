@@ -4,11 +4,11 @@ import {
   HvActionsGeneric,
   HvTypography,
 } from "@core/components";
+import { setId } from "@core/utils";
+import { ClassNames } from "@emotion/react";
 import messageContainerClasses, {
   HvMessageContainerClasses,
 } from "./messageContainerClasses";
-import { setId } from "@core/utils";
-import { ClassNames } from "@emotion/react";
 import { styles } from "./MessageContainer.styles";
 
 export interface HvMessageContainerProps extends HvBaseProps {

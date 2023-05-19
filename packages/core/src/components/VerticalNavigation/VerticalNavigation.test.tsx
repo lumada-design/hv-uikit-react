@@ -96,7 +96,6 @@ const Sample = ({
           collapsible
           selected={value}
           onChange={(event, data) => {
-            console.log(data);
             if (data.id === "02-01-01") {
               event.preventDefault();
               event.stopPropagation();
@@ -193,7 +192,6 @@ const SliderSample = () => {
           collapsible
           selected={value}
           onChange={(event, data) => {
-            console.log(data);
             if (data.id === "02-01-01") {
               event.preventDefault();
               event.stopPropagation();

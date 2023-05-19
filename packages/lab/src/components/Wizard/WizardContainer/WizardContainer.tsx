@@ -1,10 +1,10 @@
+import React from "react";
 import { ClassNames } from "@emotion/react";
 import { HvBaseProps, HvDialog } from "@hitachivantara/uikit-react-core";
 import wizardContainerClasses, {
   HvWizardContainerClasses,
 } from "./wizardContainerClasses";
 import { styles } from "./WizardContainer.styles";
-import React from "react";
 
 export interface HvWizardContainerProps extends Omit<HvBaseProps, "onClose"> {
   /** Current state of the Wizard. */

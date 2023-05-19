@@ -1,4 +1,3 @@
-import { styles } from "./Spacing.styles";
 import { css } from "@emotion/css";
 import {
   createTheme,
@@ -9,6 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
+import { styles } from "./Spacing.styles";
 
 const Spacing = () => {
   const { activeTheme } = useTheme();
@@ -18,7 +18,7 @@ const Spacing = () => {
   );
 
   const valueChangedHandler = (spacing: string, value) => {
-    let map = new Map<string, string | number>(currValues);
+    const map = new Map<string, string | number>(currValues);
     map.set(spacing, value);
     setCurrValues(map);
   };
@@ -26,7 +26,7 @@ const Spacing = () => {
   const setValueHandler = (spacing: string) => {
     const spacingValue =
       spacing === "base"
-        ? parseInt(currValues.get(spacing)?.toString() || "")
+        ? parseInt(currValues.get(spacing)?.toString() || "", 10)
         : currValues.get(spacing) || 0;
 
     const newTheme = createTheme({
@@ -34,7 +34,9 @@ const Spacing = () => {
       space: {
         ...customTheme.space,
         [spacing]:
-          spacing === "base" ? parseInt(spacingValue.toString()) : spacingValue,
+          spacing === "base"
+            ? parseInt(spacingValue.toString(), 10)
+            : spacingValue,
       },
     });
     updateCustomTheme(newTheme);

@@ -40,15 +40,15 @@ export const Value = ({
         />
       );
     }
+    case "dateandtime": {
+      return <BooleanValue id={id} value={!!valueProp} />;
+    }
     case "text":
     case "textarea":
     default: {
       return (
         <TextValue id={id} value={valueProp} initialTouched={initialTouched} />
       );
-    }
-    case "dateandtime": {
-      return <BooleanValue id={id} value={!!valueProp} />;
     }
   }
 };

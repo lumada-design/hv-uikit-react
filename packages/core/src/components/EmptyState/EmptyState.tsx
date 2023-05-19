@@ -1,16 +1,16 @@
 import { clsx } from "clsx";
 import React from "react";
 import { HvBaseProps } from "@core/types";
-import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
+import { HvTypographyProps } from "@core/components";
+import { useTheme as useHvTheme } from "@core/hooks";
+import { useTheme } from "@mui/material/styles";
 import {
   StyledContainer,
   StyledRoot,
   StyledTextContainer,
   StyledTypography,
 } from "./EmptyState.styles";
-import { HvTypographyProps } from "@core/components";
-import { useTheme as useHvTheme } from "@core/hooks";
-import { useTheme } from "@mui/material/styles";
+import emptyStateClasses, { HvEmptyStateClasses } from "./emptyStateClasses";
 
 export interface HvEmptyStateProps
   extends HvBaseProps<HTMLDivElement, "title"> {

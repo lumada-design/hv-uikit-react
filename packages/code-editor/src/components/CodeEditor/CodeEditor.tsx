@@ -1,9 +1,9 @@
 import { HvTheme, useTheme } from "@hitachivantara/uikit-react-core";
 import { Editor, EditorProps, useMonaco } from "@monaco-editor/react";
-import { StyledContainer } from "./CodeEditor.styles";
-import codeEditorClasses, { HvCodeEditorClasses } from "./codeEditorClasses";
 import { clsx } from "clsx";
 import { useEffect } from "react";
+import { StyledContainer } from "./CodeEditor.styles";
+import codeEditorClasses, { HvCodeEditorClasses } from "./codeEditorClasses";
 
 export interface HvCodeEditorProps extends EditorProps {
   /** The properties of the Monaco editor. */

@@ -1,8 +1,8 @@
 import { HvTypography, HvTypographyVariants } from "@core/components";
-import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
 import { HvBaseProps } from "@core/types";
-import badgeClasses, { HvBadgeClasses } from "./badgeClasses";
 import { clsx } from "clsx";
+import { StyledBadge, StyledContainer, StyledRoot } from "./Badge.styles";
+import badgeClasses, { HvBadgeClasses } from "./badgeClasses";
 
 export interface HvBadgeProps extends HvBaseProps {
   /**
@@ -70,7 +70,7 @@ export const HvBadge = (props: HvBadgeProps) => {
     >
       {Component}
       <StyledContainer
-        $component={Component ? true : false}
+        $component={!!Component}
         className={
           Component
             ? clsx(badgeClasses.badgeContainer, classes?.badgeContainer)

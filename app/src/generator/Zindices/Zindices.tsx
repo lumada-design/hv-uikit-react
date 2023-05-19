@@ -1,4 +1,3 @@
-import { styles } from "./Zindices.styles";
 import { css } from "@emotion/css";
 import {
   createTheme,
@@ -9,6 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { useContext, useState } from "react";
 import { GeneratorContext } from "generator/GeneratorContext";
+import { styles } from "./Zindices.styles";
 
 const Zindices = () => {
   const { activeTheme } = useTheme();
@@ -18,8 +18,8 @@ const Zindices = () => {
   );
 
   const valueChangedHandler = (zIndex: string, value) => {
-    let map = new Map<string, number>(currValues);
-    map.set(zIndex, parseInt(value));
+    const map = new Map<string, number>(currValues);
+    map.set(zIndex, parseInt(value, 10));
     setCurrValues(map);
   };
 

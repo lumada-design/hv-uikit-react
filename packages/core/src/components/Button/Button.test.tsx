@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Disabled, Icons, Semantic } from "./Button.stories";
 import { HvButton } from "./Button";
@@ -148,19 +148,21 @@ describe("Button", () => {
       const buttonSpyDismiss = vi.fn();
       const buttonDismissText = "don't focus me";
       const buttonText = "focus me";
-      const { getByRole } = render(
-        <div role="outer-div">
+      render(
+        <div data-testid="outer-div">
           <HvButton onClick={buttonSpyDismiss}>{buttonDismissText}</HvButton>
           <HvButton onClick={buttonSpy}>{buttonText}</HvButton>
         </div>
       );
 
-      const div = getByRole("outer-div");
+      const div = screen.getByTestId("outer-div");
       expect(div).toBeInTheDocument();
-      const buttonToDismissTest = getByRole("button", {
+      const buttonToDismissTest = screen.getByRole("button", {
         name: buttonDismissText,
       });
-      const buttonToTest = getByRole("button", { name: buttonDismissText });
+      const buttonToTest = screen.getByRole("button", {
+        name: buttonDismissText,
+      });
       expect(buttonToTest).toBeInTheDocument();
       expect(buttonToDismissTest).toBeInTheDocument();
 
@@ -178,8 +180,8 @@ describe("Button", () => {
       const buttonSpyDismiss = vi.fn();
       const buttonDismissText = "don't focus me";
       const buttonText = "focus me";
-      const { getByRole } = render(
-        <div role="outer-div">
+      render(
+        <div data-testid="outer-div">
           <HvButton onClick={buttonSpyDismiss} onKeyDown={buttonSpyDismiss}>
             {buttonDismissText}
           </HvButton>
@@ -189,12 +191,14 @@ describe("Button", () => {
         </div>
       );
 
-      const div = getByRole("outer-div");
+      const div = screen.getByTestId("outer-div");
       expect(div).toBeInTheDocument();
-      const buttonToDismissTest = getByRole("button", {
+      const buttonToDismissTest = screen.getByRole("button", {
         name: buttonDismissText,
       });
-      const buttonToTest = getByRole("button", { name: buttonDismissText });
+      const buttonToTest = screen.getByRole("button", {
+        name: buttonDismissText,
+      });
       expect(buttonToTest).toBeInTheDocument();
       expect(buttonToDismissTest).toBeInTheDocument();
 

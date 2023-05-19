@@ -25,17 +25,15 @@ export const Main: StoryObj<HvSimpleGridProps> = {
     breakpoints: { control: { disable: true } },
   },
   render: (args) => {
-    {
-      return (
-        <HvSimpleGrid {...args}>
-          <div style={style}>1</div>
-          <div style={style}>2</div>
-          <div style={style}>3</div>
-          <div style={style}>4</div>
-          <div style={style}>5</div>
-        </HvSimpleGrid>
-      );
-    }
+    return (
+      <HvSimpleGrid {...args}>
+        <div style={style}>1</div>
+        <div style={style}>2</div>
+        <div style={style}>3</div>
+        <div style={style}>4</div>
+        <div style={style}>5</div>
+      </HvSimpleGrid>
+    );
   },
 };
 

@@ -9,10 +9,10 @@ import {
   HvButtonProps,
   HvBaseProps,
 } from "@hitachivantara/uikit-react-core";
+import { theme } from "@hitachivantara/uikit-styles";
 import { StyledRoot, StyledButton, StyledAvatar } from "./Step.styles";
 import stepClasses, { HvStepClasses } from "./stepClasses";
 import { getColor, getSemantic } from "../utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export interface HvStepProps
   extends Pick<HvButtonProps, "onClick">,

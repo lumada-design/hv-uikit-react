@@ -36,6 +36,7 @@ export const themeDiff = (a: object, b: object, rootLevel = true): object => {
   const diff = {};
   for (const key in b) {
     if (rootLevel && (key === "name" || key === "base")) {
+      // eslint-disable-next-line no-continue
       continue; // ignore 'name' and 'base' at the root level
     }
     if (
@@ -59,7 +60,7 @@ export const downloadTheme = (filename, text) => {
   const element = document.createElement("a");
   element.setAttribute(
     "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`
   );
   element.setAttribute("download", filename);
 

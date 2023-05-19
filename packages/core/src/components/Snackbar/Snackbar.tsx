@@ -5,17 +5,17 @@ import {
   SnackbarProps as MuiSnackbarProps,
 } from "@mui/material/Snackbar";
 import { HvBaseProps } from "@core/types";
-import { StyledSnackbar } from "./Snackbar.styles";
-import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
 import capitalize from "lodash/capitalize";
 import { SyntheticEvent } from "react";
 import { setId } from "@core/utils";
 import { HvActionGeneric } from "@core/components";
+import { clsx } from "clsx";
 import {
   HvSnackbarContentProps,
   HvSnackbarContent,
 } from "./SnackbarContentWrapper";
-import { clsx } from "clsx";
+import snackbarClasses, { HvSnackbarClasses } from "./snackbarClasses";
+import { StyledSnackbar } from "./Snackbar.styles";
 
 export type HvSnackbarVariant = "default" | "success" | "warning" | "error";
 
@@ -70,15 +70,15 @@ const transDown = (props) => <Slide {...props} direction="down" />;
 
 const snackBarDirComponent = (direction) => {
   switch (direction) {
-    default:
-    case "left":
-      return transLeft;
     case "right":
       return transRight;
     case "up":
       return transUp;
     case "down":
       return transDown;
+    case "left":
+    default:
+      return transLeft;
   }
 };
 

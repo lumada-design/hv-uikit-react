@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { HvBaseRadio, HvGrid } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
 import { useState } from "react";
-import { HvRadio, HvRadioProps, HvRadioStatus } from "./Radio";
 import { Meta, StoryObj } from "@storybook/react";
+import { HvRadio, HvRadioProps, HvRadioStatus } from "./Radio";
 
 const StyledDiv = styled("div")({
   display: "flex",
@@ -59,7 +59,7 @@ export const Main: StoryObj<HvRadioProps> = {
 };
 
 export const Disabled: StoryObj<HvRadioProps> = {
-  render: ({}) => {
+  render: () => {
     const [checkedValue, setCheckedValue] = useState("1");
 
     return (
@@ -92,7 +92,7 @@ Disabled.parameters = {
 };
 
 export const ReadOnly: StoryObj<HvRadioProps> = {
-  render: ({}) => {
+  render: () => {
     const [checkedValue, setCheckedValue] = useState("2");
 
     return (
@@ -125,7 +125,7 @@ ReadOnly.parameters = {
 };
 
 export const WithoutLabel: StoryObj<HvRadioProps> = {
-  render: ({}) => {
+  render: () => {
     const [checkedValue, setCheckedValue] = useState("2");
 
     return (
@@ -157,7 +157,7 @@ WithoutLabel.parameters = {
 };
 
 export const ErrorMessage: StoryObj<HvRadioProps> = {
-  render: ({}) => {
+  render: () => {
     return (
       <HvRadio
         status="invalid"
@@ -178,7 +178,7 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
     },
     eyes: { include: false },
   },
-  render: ({}) => {
+  render: () => {
     const [secondRadioStatus, setSecondRadioStatus] =
       useState<HvRadioStatus>("standBy");
     const [firstRadioErrorMessage, setFirstRadioErrorMessage] = useState<

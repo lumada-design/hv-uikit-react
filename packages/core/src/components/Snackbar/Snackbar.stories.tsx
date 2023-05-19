@@ -54,7 +54,7 @@ export const Main: StoryObj<HvSnackbarProps> = {
     ref: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvSnackbar {...args}></HvSnackbar>;
+    return <HvSnackbar {...args} />;
   },
 };
 

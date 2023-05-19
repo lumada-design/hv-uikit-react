@@ -1,13 +1,12 @@
 import { ClassNames } from "@emotion/react";
-import { styles } from "./PresetColors.styles";
 import { HvTypography } from "@core/components";
-import colorPickerPresetColorsClasses, {
-  HvColorPickerPresetColorsClasses,
-} from "./presetColorsClasses";
-
 // @types/react-color seems to be broken
 // @ts-ignore
 import { Swatch } from "react-color/lib/components/common";
+import { styles } from "./PresetColors.styles";
+import colorPickerPresetColorsClasses, {
+  HvColorPickerPresetColorsClasses,
+} from "./presetColorsClasses";
 
 interface PresetColorsProps {
   colors: string[];

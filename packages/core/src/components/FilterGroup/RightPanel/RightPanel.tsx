@@ -7,9 +7,9 @@ import {
 } from "@core/components";
 import { setId } from "@core/utils";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { HvFilterGroupContext } from "../FilterGroupContext";
 import cloneDeep from "lodash/cloneDeep";
 import { ClassNames } from "@emotion/react";
+import { HvFilterGroupContext } from "../FilterGroupContext";
 import { styles } from "./RightPanel.styles";
 import filterGroupRightPanelClasses, {
   HvFilterGroupRightPanelClasses,

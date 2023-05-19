@@ -26,6 +26,7 @@ export const ToggleEye = (props) => {
       >
         <defs>
           <style
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.colors.secondary}; } .dash { fill: ${theme.colors.secondary}; transition: width .2s ease-in-out; } .selected .dash { width: 19.8px; } .notSelected .dash { width: 0px; }`,
             }}

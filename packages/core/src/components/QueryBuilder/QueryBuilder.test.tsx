@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useMemo, useState } from "react";
-import { HvQueryBuilder } from "./";
+import { HvQueryBuilder } from ".";
 import { defaultOperators } from "./Context";
 import queryToMongo from "./queryToMongo";
 
@@ -127,11 +127,7 @@ export const InitialQuery = () => {
         attributes={attributes}
         query={initialQuery}
         onChange={(query) => {
-          try {
-            setMongoQuery(queryToMongo(query));
-          } catch (error: any) {
-            console.log("error: ", error.toString());
-          }
+          setMongoQuery(queryToMongo(query));
         }}
       />
       <pre>{JSON.stringify(mongoQuery, null, 2)}</pre>
@@ -207,11 +203,7 @@ export const ReadOnly = () => {
       attributes={attributes}
       query={initialQuery}
       onChange={(query) => {
-        try {
-          setMongoQuery(queryToMongo(query));
-        } catch (error: any) {
-          console.log("error: ", error.toString());
-        }
+        setMongoQuery(queryToMongo(query));
       }}
     />
   );

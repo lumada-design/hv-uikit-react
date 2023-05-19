@@ -4,7 +4,7 @@ import { StyledRoot } from "./VerticalNavigation.styles";
 import verticalNavigationClasses, {
   HvVerticalNavigationClasses,
 } from "./verticalNavigationClasses";
-import { NavigationData, VerticalNavigationContext } from "./";
+import { NavigationData, VerticalNavigationContext } from ".";
 import {
   fillDataWithParentId,
   getNavigationItemById,

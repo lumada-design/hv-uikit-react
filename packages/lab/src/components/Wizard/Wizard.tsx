@@ -1,7 +1,7 @@
 import { HvBaseProps } from "@hitachivantara/uikit-react-core";
-import { HvWizardClasses } from "./wizardClasses";
 import { ModalProps } from "@mui/material";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { HvWizardClasses } from "./wizardClasses";
 import {
   HvWizardContainer,
   HvWizardContent,

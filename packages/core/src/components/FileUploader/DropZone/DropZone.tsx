@@ -1,8 +1,10 @@
-import { HvFileData, HvFilesAddedEvent } from "../File";
-import dropZoneClasses, { HvDropZoneClasses } from "./dropZoneClasses";
 import React, { useRef, useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import accept from "attr-accept";
+import { clsx } from "clsx";
+import { isKeypress, keyboardCodes, setId } from "@core/utils";
+import withId from "@core/hocs/withId";
+import { convertUnits } from "../utils";
 import {
   StyledDragText,
   StyledDropArea,
@@ -16,10 +18,8 @@ import {
   StyledLabel,
   StyledSelectedFilesText,
 } from "./DropZone.styles";
-import { clsx } from "clsx";
-import { isKeypress, keyboardCodes, setId } from "@core/utils";
-import { convertUnits } from "../utils";
-import withId from "@core/hocs/withId";
+import dropZoneClasses, { HvDropZoneClasses } from "./dropZoneClasses";
+import { HvFileData, HvFilesAddedEvent } from "../File";
 
 export interface HvDropZoneLabels {
   /**

@@ -12,7 +12,7 @@ import verticalNavigationTreeClasses, {
   HvVerticalNavigationTreeClasses,
 } from "./navigationClasses";
 import { StyledNav } from "./Navigation.styles";
-import { HvVerticalNavigationSlider } from "../";
+import { HvVerticalNavigationSlider } from "..";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { HvVerticalNavigationPopup } from "../NavigationPopup/NavigationPopup";
 
@@ -299,7 +299,7 @@ export const HvVerticalNavigationTree = ({
     if (setParentData) setParentData(data);
   }, [data]);
 
-  //navigation slider
+  // navigation slider
   const navigateToTargetHandler = (event, selectedItem) => {
     handleChange(event, selectedItem.id, selectedItem);
   };
@@ -322,7 +322,7 @@ export const HvVerticalNavigationTree = ({
         verticalNavigationTreeClasses.root,
         classes?.root,
         !isOpen &&
-          collapsedMode == "simple" &&
+          collapsedMode === "simple" &&
           clsx(verticalNavigationTreeClasses.collapsed, classes?.collapsed)
       )}
       onMouseLeave={handleStyledNavMouseLeave}

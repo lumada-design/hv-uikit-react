@@ -3,6 +3,7 @@ import isNil from "lodash/isNil";
 import startCase from "lodash/startCase";
 import { isValidElement, MouseEventHandler } from "react";
 import { HvBaseProps } from "@core/types/generic";
+import { HvDropDownMenuProps } from "@core/components";
 import breadCrumbClasses, { HvBreadCrumbClasses } from "./breadCrumbClasses";
 import { HvPathElement } from "./PathElement";
 import { HvPage } from "./Page";
@@ -12,7 +13,6 @@ import {
   StyledTypography,
 } from "./BreadCrumb.styles";
 import { pathWithSubMenu, removeExtension } from "./utils";
-import { HvDropDownMenuProps } from "@core/components";
 
 export interface HvBreadCrumbPathElement {
   label: string;
@@ -102,48 +102,46 @@ export const HvBreadCrumb = ({
           const key = `key_${index}`;
           const isLast = index === breadcrumbPath.length - 1;
 
-          {
-            return (
-              <HvPathElement
-                classes={{
-                  centerContainer: clsx(
-                    breadCrumbClasses.centerContainer,
-                    classes?.centerContainer
-                  ),
-                  separatorContainer: clsx(
-                    breadCrumbClasses.separatorContainer,
-                    classes?.separatorContainer
-                  ),
-                }}
-                key={key}
-                last={isLast}
-              >
-                {(isValidElement(elem) && elem) ||
-                  (isLast && (
-                    <StyledTypography
-                      className={clsx(
-                        breadCrumbClasses.currentPage,
-                        classes?.currentPage
-                      )}
-                      variant="body"
-                    >
-                      {startCase(removeExtension(elem.label))}
-                    </StyledTypography>
-                  )) || (
-                    <HvPage
-                      key={key}
-                      elem={elem}
-                      classes={{
-                        a: clsx(breadCrumbClasses.a, classes?.a),
-                        link: clsx(breadCrumbClasses.link, classes?.link),
-                      }}
-                      Component={onClick ? component : undefined}
-                      onClick={onClick}
-                    />
-                  )}
-              </HvPathElement>
-            );
-          }
+          return (
+            <HvPathElement
+              classes={{
+                centerContainer: clsx(
+                  breadCrumbClasses.centerContainer,
+                  classes?.centerContainer
+                ),
+                separatorContainer: clsx(
+                  breadCrumbClasses.separatorContainer,
+                  classes?.separatorContainer
+                ),
+              }}
+              key={key}
+              last={isLast}
+            >
+              {(isValidElement(elem) && elem) ||
+                (isLast && (
+                  <StyledTypography
+                    className={clsx(
+                      breadCrumbClasses.currentPage,
+                      classes?.currentPage
+                    )}
+                    variant="body"
+                  >
+                    {startCase(removeExtension(elem.label))}
+                  </StyledTypography>
+                )) || (
+                  <HvPage
+                    key={key}
+                    elem={elem}
+                    classes={{
+                      a: clsx(breadCrumbClasses.a, classes?.a),
+                      link: clsx(breadCrumbClasses.link, classes?.link),
+                    }}
+                    Component={onClick ? component : undefined}
+                    onClick={onClick}
+                  />
+                )}
+            </HvPathElement>
+          );
         })}
       </StyledOrderedList>
     </StyledRoot>

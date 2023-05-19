@@ -20,7 +20,7 @@ import {
   TreeViewControlContext,
   TreeViewStateContext,
 } from "./TreeViewContext";
-import { VerticalNavigationContext } from "../";
+import { VerticalNavigationContext } from "..";
 import { IconWrapper } from "./IconWrapper";
 
 export interface HvVerticalNavigationTreeViewItemProps {
@@ -322,12 +322,8 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
           if (multiple) {
             if (event.shiftKey) {
               if (selectRange) return selectRange(event, { end: nodeId });
-            } else {
-              if (selectNode) return selectNode(event, nodeId, true);
-            }
-          } else {
-            if (selectNode) return selectNode(event, nodeId);
-          }
+            } else if (selectNode) return selectNode(event, nodeId, true);
+          } else if (selectNode) return selectNode(event, nodeId);
         } else {
           return false;
         }
@@ -548,10 +544,10 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             clsx(treeViewItemClasses.unselected, classes?.unselected),
           focused && clsx(treeViewItemClasses.focused, classes?.focused),
           !isOpen &&
-            collapsedMode == "simple" &&
+            collapsedMode === "simple" &&
             clsx(treeViewItemClasses.hide, classes?.hide),
           !isOpen &&
-            collapsedMode == "icon" &&
+            collapsedMode === "icon" &&
             isChildSelected &&
             isChildSelected(nodeId) &&
             clsx(treeViewItemClasses.selected, classes?.selected)

@@ -3,15 +3,15 @@ import { CSSProperties, useState } from "react";
 import { theme } from "@hitachivantara/uikit-styles";
 import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 import { HvBaseProps } from "@core/types";
-import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
-import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import {
   HvSemanticColorKeys,
   HvCategoricalColorKeys,
 } from "@core/types/tokens";
+import { useTheme } from "@core/hooks";
+import { StyledChip, StyledButton, StyledCloseXS } from "./Tag.styles";
+import { getOnDeleteCallback, hasDeleteAction, hasClickAction } from "./utils";
 import { HvButtonProps } from "../Button";
 import tagClasses, { HvTagClasses } from "./tagClasses";
-import { useTheme } from "@core/hooks";
 
 export interface HvTagProps
   extends Omit<MuiChipProps, "color" | "classes">,

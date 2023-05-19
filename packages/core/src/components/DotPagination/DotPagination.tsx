@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { cloneElement } from "react";
 import { HvRadioGroupProps } from "../RadioGroup";
 import dotPaginationClasses, {
   HvDotPaginationClasses,
@@ -9,7 +10,6 @@ import {
   StyledRadio,
   StyledRadioGroup,
 } from "./DotPagination.styles";
-import { cloneElement } from "react";
 
 export interface HvDotPaginationProps
   extends Omit<HvRadioGroupProps, "classes"> {

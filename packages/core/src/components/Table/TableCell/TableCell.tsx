@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
 import styled from "@emotion/styled";
-import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 import {
   CSSProperties,
   forwardRef,
@@ -9,18 +8,19 @@ import {
   useMemo,
 } from "react";
 import { hexToRgb, alpha } from "@mui/material";
+import { transientOptions } from "@core/utils/transientOptions";
+import capitalize from "lodash/capitalize";
+import { theme } from "@hitachivantara/uikit-styles";
+import { useTheme } from "@core/hooks";
 import {
   HvTableCellAlign,
   HvTableCellType,
   HvTableCellVariant,
 } from "../Table";
 import TableContext from "../TableContext";
-import { transientOptions } from "@core/utils/transientOptions";
 import TableSectionContext from "../TableSectionContext";
-import capitalize from "lodash/capitalize";
-import { theme } from "@hitachivantara/uikit-styles";
 import { getBorderStyles } from "../utils/utils";
-import { useTheme } from "@core/hooks";
+import tableCellClasses, { HvTableCellClasses } from "./tableCellClasses";
 
 export interface HvTableCellProps
   extends Omit<TdHTMLAttributes<HTMLTableCellElement>, "align"> {
@@ -178,7 +178,7 @@ const StyledTableCell = (c: any) =>
         maxWidth: 34,
       }),
       ...($variant === "listactions" && {
-        borderLeft: `solid 2px red`, //${theme.colors.atmo2}`,
+        borderLeft: `solid 2px red`, // ${theme.colors.atmo2}`,
         textAlign: "center",
         width: 138,
         maxWidth: 138,

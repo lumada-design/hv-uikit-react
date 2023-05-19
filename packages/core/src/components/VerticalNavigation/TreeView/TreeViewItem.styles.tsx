@@ -66,7 +66,7 @@ export const StyledContent = styled(HvTypography)({
   // selected state
   [`.${treeViewItemClasses.selected}>&`]: selected(),
 
-  //hover
+  // hover
   [`:not(.${treeViewItemClasses.disabled} > &):not(.${treeViewItemClasses.selected} > &):hover`]:
     hover(),
   [`:not(.${treeViewItemClasses.disabled} > &).${treeViewItemClasses.selected} >:hover`]:
