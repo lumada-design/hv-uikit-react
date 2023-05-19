@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import { useMemo, useState } from "react";
 import { LogOut, User } from "@hitachivantara/uikit-react-icons";
@@ -208,6 +208,23 @@ const SliderSample = () => {
 };
 
 describe("VerticalNavigation", () => {
+  const { ResizeObserver } = window;
+
+  beforeEach(() => {
+    // @ts-ignore
+    delete window.ResizeObserver;
+    window.ResizeObserver = vi.fn().mockImplementation(() => ({
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    vi.restoreAllMocks();
+  });
+
   it("should be defined", () => {
     const { container } = render(<Sample />);
     expect(container).toBeDefined();
@@ -253,8 +270,6 @@ describe("VerticalNavigation", () => {
     expect(collapseButton).toHaveAttribute("aria-expanded", "false");
     expect(nav).toHaveStyle(`display : block`);
   });
-
-  //it("should not have icons", () => {});
 
   describe("Slider Navigation", async () => {
     it("should change header text", async () => {
