@@ -19,6 +19,7 @@ export interface HvVerticalNavigationPopupProps {
   selected?: string;
   onClose?: () => void;
   onChange?: any;
+  popupStyles?: any;
 }
 
 export const HvVerticalNavigationPopup = ({
@@ -29,6 +30,7 @@ export const HvVerticalNavigationPopup = ({
   data,
   selected,
   onChange,
+  popupStyles,
 }: HvVerticalNavigationPopupProps) => {
   const handleClickAway = () => {
     onClose?.();
@@ -45,7 +47,12 @@ export const HvVerticalNavigationPopup = ({
   };
 
   return (
-    <StyledPopper open anchorEl={anchorEl} placement="right-start">
+    <StyledPopper
+      open
+      anchorEl={anchorEl}
+      placement="right-start"
+      style={popupStyles}
+    >
       <ClickAwayListener onClickAway={handleClickAway}>
         <StyledPopupContainer>
           <HvVerticalNavigation open>

@@ -160,6 +160,8 @@ export const HvVerticalNavigationTree = ({
   defaultSelected,
   onChange,
 
+  popupStyles,
+
   ...others
 }: HvVerticalNavigationTreeProps) => {
   const [selected, setSelected] = useControlled(selectedProp, defaultSelected);
@@ -357,6 +359,7 @@ export const HvVerticalNavigationTree = ({
               data={navigationPopup.data}
               onClose={handleNavigationPopupClose}
               onChange={handleChange}
+              popupStyles={popupStyles}
             />
           )}
           {children}
@@ -433,6 +436,10 @@ export interface HvVerticalNavigationTreeProps
    * target - the behavior when opening an url.
    */
   data?: NavigationData[];
+  /**
+   * Object with the custom css styles to be applied to the popup.
+   */
+  popupStyles?: any;
 }
 
 export type NavigationMode = "treeview" | "navigation" | "slider";
