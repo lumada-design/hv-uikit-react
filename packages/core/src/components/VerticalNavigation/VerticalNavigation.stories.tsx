@@ -675,7 +675,7 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
         },
         {
           id: "menu2",
-          label: "Menu 2",
+          label: "Menu 2 with a very big name that should be truncated",
           path: "",
           icon: <BarChart />,
           parent: null,
