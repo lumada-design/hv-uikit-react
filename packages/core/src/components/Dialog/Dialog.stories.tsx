@@ -84,8 +84,11 @@ export const Main: StoryObj<HvDialogProps> = {
     fullscreen: false,
     disableBackdropClick: false,
     buttonTitle: "Close",
+    maxWidth: "sm",
+    fullWidth: false,
   },
   argTypes: {
+    maxWidth: { control: "select", options: ["xs", "sm", "md", "lg", "xl"] },
     classes: { control: { disable: true } },
     BackdropComponent: { control: { disable: true } },
     BackdropProps: { control: { disable: true } },
@@ -93,8 +96,9 @@ export const Main: StoryObj<HvDialogProps> = {
     components: { control: { disable: true } },
     componentsProps: { control: { disable: true } },
   },
-  render: ({ fullscreen, disableBackdropClick, buttonTitle }) => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
+
     return (
       <div>
         <HvButton
@@ -105,13 +109,11 @@ export const Main: StoryObj<HvDialogProps> = {
           Open Dialog
         </HvButton>
         <HvDialog
-          disableBackdropClick={disableBackdropClick}
           id="test"
           open={open}
-          fullscreen={fullscreen}
+          {...args}
           onClose={() => setOpen(false)}
           firstFocusable="test-close"
-          buttonTitle={buttonTitle}
         >
           <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
           <HvDialogContent indentContent>
@@ -119,7 +121,11 @@ export const Main: StoryObj<HvDialogProps> = {
             visualization. You will need to re-select your fields.
           </HvDialogContent>
           <HvDialogActions>
-            <HvButton id="apply" variant="secondaryGhost">
+            <HvButton
+              id="apply"
+              variant="secondaryGhost"
+              onClick={() => setOpen(false)}
+            >
               Apply
             </HvButton>
             <HvButton
@@ -136,12 +142,13 @@ export const Main: StoryObj<HvDialogProps> = {
   },
 };
 
-export const TextAndSemantic: StoryObj<HvDialogProps> = {
+export const IconAndSemantic: StoryObj<HvDialogProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "The modal allow the definition of variants, that alters the presented icon.",
+          "`HvDialogTitle` accepts a `variant` prop, that changes the icon. <br />\
+          Alternatively, the `customIcon` prop allows for any custom icon",
       },
     },
   },
@@ -150,54 +157,33 @@ export const TextAndSemantic: StoryObj<HvDialogProps> = {
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         <SimpleDialog
           buttonMessage="No icon"
-          title={<HvDialogTitle showIcon={false}>Are you sure?</HvDialogTitle>}
-          content={
-            <HvDialogContent>
-              Switching to model view will clear all the fields in your
-              visualization. You will need to re-select your fields.
-            </HvDialogContent>
-          }
+          title={<HvDialogTitle showIcon={false}>Dialog</HvDialogTitle>}
         />
         <SimpleDialog
           buttonMessage="Warning"
-          title={<HvDialogTitle variant="warning">Are you sure?</HvDialogTitle>}
+          title={<HvDialogTitle variant="warning">Warn Dialog</HvDialogTitle>}
           indentContent
         />
         <SimpleDialog
           buttonMessage="Info"
-          title={<HvDialogTitle variant="info">Are you sure?</HvDialogTitle>}
+          title={<HvDialogTitle variant="info">Info Dialog</HvDialogTitle>}
           indentContent
         />
         <SimpleDialog
           buttonMessage="Error"
-          title={<HvDialogTitle variant="error">Are you sure?</HvDialogTitle>}
+          title={<HvDialogTitle variant="error">Error Dialog</HvDialogTitle>}
+          indentContent
+        />
+        <SimpleDialog
+          buttonMessage="Custom icon"
+          title={
+            <HvDialogTitle customIcon={<Ungroup iconSize="S" />}>
+              Custom icon Dialog
+            </HvDialogTitle>
+          }
           indentContent
         />
       </div>
-    );
-  },
-};
-
-export const CustomIcon: StoryObj<HvDialogProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <SimpleDialog
-        buttonMessage="Custom icon"
-        title={
-          <HvDialogTitle customIcon={<Ungroup iconSize="S" />}>
-            Are you sure?
-          </HvDialogTitle>
-        }
-        indentContent
-      />
     );
   },
 };

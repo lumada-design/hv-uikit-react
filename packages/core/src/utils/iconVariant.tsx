@@ -4,9 +4,15 @@ import {
   Success,
   Caution,
   Info,
+  IconBaseProps,
 } from "@hitachivantara/uikit-react-icons";
+import { HvDialogTitleVariant } from "..";
 
-const iconVariant = (variant, color, semantic) => {
+const iconVariant = (
+  variant: HvDialogTitleVariant,
+  color?: IconBaseProps["color"],
+  semantic?: true
+) => {
   switch (variant) {
     case "success":
       return <Success color={color} semantic={semantic && "positive"} />;
