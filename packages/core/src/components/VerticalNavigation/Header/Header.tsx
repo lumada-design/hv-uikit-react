@@ -88,6 +88,7 @@ export const HvVerticalNavigationHeader = ({
           icon
           variant="secondaryGhost"
           onClick={backButtonClickHandler}
+          aria-label="Go back"
           {...backButtonProps}
         >
           <Backwards iconSize="XS" />

@@ -85,6 +85,7 @@ export const HvVerticalNavigationSlider = ({
                   onClick={(event) => {
                     if (onNavigateToChild) onNavigateToChild(event, item);
                   }}
+                  aria-label={`View ${item.label}`}
                 >
                   <DropRightXS />
                 </HvButton>
