@@ -1,10 +1,12 @@
 import { DropRightXS } from "@hitachivantara/uikit-react-icons";
 import { clsx } from "clsx";
-import { HvButton, HvListContainer, NavigationData } from "@core/components";
 import {
-  StyledListItem,
-  StyledOverflowTooltip,
-} from "./NavigationSlider.styles";
+  HvButton,
+  HvListContainer,
+  HvOverflowTooltip,
+  NavigationData,
+} from "@core/components";
+import { StyledListItem } from "./NavigationSlider.styles";
 import verticalNavigationSliderClasses, {
   HvVerticalNavigationSliderClasses,
 } from "./navigationSliderClasses";
@@ -86,15 +88,10 @@ export const HvVerticalNavigationSlider = ({
                 >
                   <DropRightXS />
                 </HvButton>
-              ) : (
-                <div />
-              )
+              ) : undefined
             }
           >
-            <StyledOverflowTooltip
-              $hasEndAdornment={!!(item.data && item.data.length > 0)}
-              data={item.label}
-            />
+            <HvOverflowTooltip data={item.label} />
           </StyledListItem>
         ))}
     </HvListContainer>

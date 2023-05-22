@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
-import {
-  HvListItem,
-  HvOverflowTooltip,
-  HvOverflowTooltipProps,
-  listItemClasses,
-} from "@core/components";
+import { HvListItem, listItemClasses } from "@core/components";
 import { theme } from "@hitachivantara/uikit-styles";
-import { transientOptions } from "@core/utils/transientOptions";
 
 export const StyledListItem = styled(HvListItem)({
   display: "flex",
@@ -33,12 +27,3 @@ export const StyledListItem = styled(HvListItem)({
     },
   },
 });
-
-export const StyledOverflowTooltip = styled(
-  (props: HvOverflowTooltipProps) => <HvOverflowTooltip {...props} />,
-  transientOptions
-)(({ $hasEndAdornment }: { $hasEndAdornment: boolean }) => ({
-  ...(!$hasEndAdornment && {
-    paddingRight: theme.space.xs,
-  }),
-}));
