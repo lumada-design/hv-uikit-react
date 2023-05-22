@@ -30,6 +30,10 @@ export interface HvDialogProps
     event: React.SyntheticEvent,
     reason?: "escapeKeyDown" | "backdropClick"
   ) => void;
+  /** @inheritdoc */
+  maxWidth?: MuiDialogProps["maxWidth"];
+  /** @inheritdoc */
+  fullWidth?: MuiDialogProps["fullWidth"];
   /** Element id that should be focus when the Dialog opens. */
   firstFocusable?: string;
   /** Title for the button close. */
@@ -178,8 +182,6 @@ export const HvDialog = ({
           fullScreen={fullscreen}
           onClose={(event, reason) => wrappedClose(event, undefined, reason)}
           onKeyDown={keyDownHandler}
-          fullWidth
-          maxWidth={false}
           slots={slots}
           classes={{ container: css({ position: "relative" }) }}
           BackdropProps={{

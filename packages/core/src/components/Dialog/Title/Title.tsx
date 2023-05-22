@@ -46,7 +46,7 @@ export const HvDialogTitle = ({
   const { fullscreen } = others as any;
   delete (others as any).fullscreen;
 
-  const icon = customIcon || (showIcon && iconVariant(variant, "", ""));
+  const icon = customIcon || (showIcon && iconVariant(variant));
 
   return (
     <StyledTitle
