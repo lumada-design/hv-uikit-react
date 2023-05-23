@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.3...@hitachivantara/uikit-react-core@5.7.4) (2023-05-23)
+
+### Bug Fixes
+
+- **dialog:** maxWidth default & configuration ([1b2047d](https://github.com/lumada-design/hv-uikit-react/commit/1b2047d301e9eb28833aacbbddd3237c2cd4483b))
+- **HvDialog:** blinking background. [#3314](https://github.com/lumada-design/hv-uikit-react/issues/3314) ([#3350](https://github.com/lumada-design/hv-uikit-react/issues/3350)) ([16747f4](https://github.com/lumada-design/hv-uikit-react/commit/16747f4627bf2539172cdf15c9c043aaf1b1dd01))
+- **VerticalNavigation:** ensure no unselected items are marked as selected ([1ba5cf9](https://github.com/lumada-design/hv-uikit-react/commit/1ba5cf9175992208d59bf7893178d21378cf02a0))
+- **VerticalNavigation:** truncate text on slider navigation ([#3351](https://github.com/lumada-design/hv-uikit-react/issues/3351)) ([b61e29d](https://github.com/lumada-design/hv-uikit-react/commit/b61e29d78f16f0400fac0d29531f3849adb902b8))
+
 ## [5.7.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.7.2...@hitachivantara/uikit-react-core@5.7.3) (2023-05-19)
 
 ### Bug Fixes
