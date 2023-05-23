@@ -3,15 +3,18 @@ import type { ClassNamesContent } from "@emotion/react";
 
 type ClassObject<T extends string> = {
   cc: Record<T, string>;
-  classes?: Record<T, string>;
-  styles?: Record<T, CSSInterpolation>;
+  classes: Partial<Record<T, string>>;
+  styles: Record<T, CSSInterpolation>;
 };
 
 export const makeClasses = <T extends string>(
   { css, cx }: Pick<ClassNamesContent, "css" | "cx">,
-  key: T,
   { cc, classes, styles }: ClassObject<T>
-) => cx(cc?.[key], classes?.[key], css(styles?.[key]));
+) =>
+  Object.keys(cc).reduce((acc, key) => {
+    acc[key] = cx(cc?.[key], css(styles?.[key]), classes?.[key]);
+    return acc;
+  }, {} as { [P in T]: string });
 
 const deepRename = <T extends object>(
   obj: T,
