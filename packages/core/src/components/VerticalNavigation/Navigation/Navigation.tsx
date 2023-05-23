@@ -357,6 +357,10 @@ export const HvVerticalNavigationTree = ({
               data={navigationPopup.data}
               onClose={handleNavigationPopupClose}
               onChange={handleChange}
+              className={clsx(
+                verticalNavigationTreeClasses.navigationPopup,
+                classes?.navigationPopup
+              )}
             />
           )}
           {children}
