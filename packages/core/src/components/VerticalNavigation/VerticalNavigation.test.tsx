@@ -275,8 +275,8 @@ describe("VerticalNavigation", () => {
     it("should change header text", async () => {
       const { getByText, getByRole, queryByText } = render(<SliderSample />);
 
-      const title = getByText("Menu");
-      expect(title).toBeInTheDocument();
+      const title = queryByText("Menu");
+      expect(title).not.toBeInTheDocument();
 
       const navigateButton = getByRole("button");
       expect(navigateButton).toBeInTheDocument();
@@ -294,8 +294,8 @@ describe("VerticalNavigation", () => {
         <SliderSample />
       );
 
-      const title = getByText("Menu");
-      expect(title).toBeInTheDocument();
+      const title = queryByText("Menu");
+      expect(title).not.toBeInTheDocument();
 
       const navigateButton = getByRole("button");
       expect(navigateButton).toBeInTheDocument();

@@ -1,12 +1,13 @@
 import { Backwards, Forwards, Menu } from "@hitachivantara/uikit-react-icons";
 import { clsx } from "clsx";
 import { HvButton, HvButtonProps, HvTypography } from "@core/components";
-import { MouseEventHandler, useContext } from "react";
+import { MouseEventHandler, useContext, useMemo } from "react";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { StyledCollapseButton, StyledHeader } from "./Header.styles";
 import verticalNavigationHeaderClasses, {
   HvVerticalNavigationHeaderClasses,
 } from "./headerClasses";
+import isArray from "lodash/isArray";
 
 export interface HvVerticalNavigationHeaderProps {
   /**
@@ -64,6 +65,7 @@ export const HvVerticalNavigationHeader = ({
     headerTitle,
     slider,
     navigateToParentHandler,
+    parentItem,
   } = useContext(VerticalNavigationContext);
 
   openIcon = collapsedMode === "simple" ? <Menu /> : openIcon;
@@ -72,7 +74,14 @@ export const HvVerticalNavigationHeader = ({
     if (navigateToParentHandler) navigateToParentHandler();
   };
 
-  return (
+  // whenever we're in a sublevel, the parentItem is always a single item.
+  // In the first level it's always an array with the first level elements.
+  const shouldShowTitle = useMemo(
+    () => !slider || (slider && !isArray(parentItem)),
+    [parentItem]
+  );
+
+  return shouldShowTitle ? (
     <StyledHeader
       className={clsx(
         className,
@@ -112,5 +121,7 @@ export const HvVerticalNavigationHeader = ({
         </StyledCollapseButton>
       )}
     </StyledHeader>
+  ) : (
+    <></>
   );
 };
